@@ -17,6 +17,9 @@
 /.next/
 /out/
 
+# custom dist dir (Turbopack on Google Drive)
+/tmp/
+
 # production
 /build
 
