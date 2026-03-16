@@ -16,6 +16,7 @@ export const PLAYBOOKS: PlaybookEntry[] = [
   {
     id: 'fo',
     priceId: 'price_1TBZ94DVLJTOFkjUsH59B7x7',
+    previewImage: '/Previews/fo-preview.jpg.png',
     title: { en: 'Front Office Playbook', fr: 'Playbook Front Office' },
     dept: { en: 'Front Office', fr: 'Front Office' },
     desc: {
@@ -130,6 +131,7 @@ export const PLAYBOOKS: PlaybookEntry[] = [
   {
     id: 'fb',
     priceId: 'price_1TBZ9iDVLJTOFkjU3Os9VLRc',
+    previewImage: '/Previews/fb-preview.jpg.png',
     title: { en: 'F&B Playbook', fr: 'Playbook F&B' },
     dept: { en: 'Food & Beverage', fr: 'Food & Beverage' },
     desc: {
