@@ -186,7 +186,7 @@ export const PLAYBOOKS: PlaybookEntry[] = [
   },
   {
     id: 'spa',
-    priceId: 'price_1TBdcNDVLJTOFkjURLNAORmJ', // TEST 0€ — à remettre à price_1TBZ9vDVLJTOFkjUT1FHhqUiY après test
+    priceId: 'price_1TBZ9vDVLJTOFkjUT1FHhqUiY',
     title: { en: 'Spa & Wellness Playbook', fr: 'Playbook Spa & Wellness' },
     dept: { en: 'Spa & Wellness', fr: 'Spa & Wellness' },
     desc: {
