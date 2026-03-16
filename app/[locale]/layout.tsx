@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   title: 'LuxOps — Hotel Operations Playbooks, SOPs & Training',
   description:
     'Operational playbooks, SOP frameworks and on-property training for high-end hotels. Front Office, Housekeeping, F&B, Spa. Built from real hotel operations.',
+  verification: {
+    google: 'WSMYWLKVx8J9gq1vEj6wiRBqmej4G1StcRmx4W830SU',
+  },
 }
 
 export default async function LocaleLayout({
