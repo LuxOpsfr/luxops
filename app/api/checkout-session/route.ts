@@ -39,6 +39,7 @@ export async function POST(request: NextRequest) {
       })),
       return_url: `${origin}/${lang}/success?session_id={CHECKOUT_SESSION_ID}`,
       locale: lang === 'fr' ? 'fr' : 'en',
+      metadata: { locale: lang },
     })
 
     return NextResponse.json({ clientSecret: session.client_secret })
