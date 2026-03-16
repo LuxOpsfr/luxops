@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Homepage EN -->
+  <url>
+    <loc>https://www.luxops.fr/en</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr"/>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Homepage FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en"/>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Playbooks EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/playbooks</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/playbooks"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/playbooks"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Playbooks FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/playbooks</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/playbooks"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/playbooks"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Notion Templates EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/notion-templates</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/notion-templates"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/notion-templates"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Notion Templates FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/notion-templates</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/notion-templates"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/notion-templates"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Quality Audit EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/audit-qualite</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/audit-qualite"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/audit-qualite"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Quality Audit FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/audit-qualite</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/audit-qualite"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/audit-qualite"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Custom Process EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/process-sur-mesure</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/process-sur-mesure"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/process-sur-mesure"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Custom Process FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/process-sur-mesure</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/process-sur-mesure"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/process-sur-mesure"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Training EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/formation</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/formation"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/formation"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Training FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/formation</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/formation"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/formation"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Resources EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/resources</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/resources"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/resources"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Resources FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/resources</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/resources"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/resources"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- About EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/about"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/about"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- About FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/about</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/about"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Contact EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/contact"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Contact FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/contact</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/contact"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>
