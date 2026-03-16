@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { useTranslations } from 'next-intl'
 import { Check, Clock } from 'lucide-react'
+import CheckoutButton from '@/components/CheckoutButton'
 
 export async function generateMetadata({
   params,
@@ -74,19 +75,33 @@ const playbooksSchema = {
   ],
 }
 
-export default function PlaybooksPage() {
+export default async function PlaybooksPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}) {
+  const { locale } = await params
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(playbooksSchema) }}
       />
-      <PlaybooksContent />
+      <PlaybooksContent locale={locale} />
     </>
   )
 }
 
-function PlaybooksContent() {
+const PRICE_IDS = [
+  'price_1TBZ94DVLJTOFkjUsH59B7x7', // Front Office
+  'price_1TBZ9TDVLJTOFkjUwWnoKaGk', // Housekeeping
+  'price_1TBZ9iDVLJTOFkjU3Os9VLRc', // F&B
+  'price_1TBZ9vDVLJTOFkjUT1FHhqUiY', // Spa & Wellness
+]
+
+const BUNDLE_PRICE_ID = 'price_1TBZB5DVLJTOFkjUwmgvTPRW'
+
+function PlaybooksContent({ locale }: { locale: string }) {
   const t = useTranslations('playbooks_page')
 
   const playbooks = [
@@ -96,6 +111,7 @@ function PlaybooksContent() {
       desc: t('playbook1_desc'),
       pages: t('playbook1_pages'),
       highlights: [t('playbook1_h1'), t('playbook1_h2'), t('playbook1_h3'), t('playbook1_h4')],
+      priceId: PRICE_IDS[0],
     },
     {
       title: t('playbook2_title'),
@@ -103,6 +119,7 @@ function PlaybooksContent() {
       desc: t('playbook2_desc'),
       pages: t('playbook2_pages'),
       highlights: [t('playbook2_h1'), t('playbook2_h2'), t('playbook2_h3'), t('playbook2_h4')],
+      priceId: PRICE_IDS[1],
     },
     {
       title: t('playbook3_title'),
@@ -110,6 +127,7 @@ function PlaybooksContent() {
       desc: t('playbook3_desc'),
       pages: t('playbook3_pages'),
       highlights: [t('playbook3_h1'), t('playbook3_h2'), t('playbook3_h3'), t('playbook3_h4')],
+      priceId: PRICE_IDS[2],
     },
     {
       title: t('playbook4_title'),
@@ -117,6 +135,7 @@ function PlaybooksContent() {
       desc: t('playbook4_desc'),
       pages: t('playbook4_pages'),
       highlights: [t('playbook4_h1'), t('playbook4_h2'), t('playbook4_h3'), t('playbook4_h4')],
+      priceId: PRICE_IDS[3],
     },
   ]
 
@@ -159,12 +178,20 @@ function PlaybooksContent() {
             </div>
           </div>
           <div className="flex gap-3">
-            <button className="px-5 py-2.5 bg-white/10 hover:bg-white/20 text-white text-sm font-medium rounded-lg transition-colors border border-white/20">
+            <CheckoutButton
+              priceId={PRICE_IDS[0]}
+              locale={locale}
+              className="px-5 py-2.5 bg-white/10 hover:bg-white/20 text-white text-sm font-medium rounded-lg transition-colors border border-white/20 disabled:opacity-60"
+            >
               {t('buy_individual')}
-            </button>
-            <button className="px-5 py-2.5 bg-white text-[#111111] text-sm font-bold rounded-lg hover:bg-gray-100 transition-colors">
+            </CheckoutButton>
+            <CheckoutButton
+              priceId={BUNDLE_PRICE_ID}
+              locale={locale}
+              className="px-5 py-2.5 bg-white text-[#111111] text-sm font-bold rounded-lg hover:bg-gray-100 transition-colors disabled:opacity-60"
+            >
               {t('buy_bundle')}
-            </button>
+            </CheckoutButton>
           </div>
         </div>
       </section>
@@ -199,9 +226,13 @@ function PlaybooksContent() {
                     </li>
                   ))}
                 </ul>
-                <button className="w-full py-3 bg-[#111111] text-white text-sm font-medium rounded-xl hover:bg-[#333333] transition-colors">
+                <CheckoutButton
+                  priceId={pb.priceId}
+                  locale={locale}
+                  className="w-full py-3 bg-[#111111] text-white text-sm font-medium rounded-xl hover:bg-[#333333] transition-colors disabled:opacity-60"
+                >
                   {t('buy_individual')}
-                </button>
+                </CheckoutButton>
               </div>
             ))}
           </div>
