@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { useTranslations } from 'next-intl'
 import { Check, Clock } from 'lucide-react'
-import CheckoutButton from '@/components/CheckoutButton'
+import AddToCartButton from '@/components/AddToCartButton'
 
 export async function generateMetadata({
   params,
@@ -103,6 +103,7 @@ const BUNDLE_PRICE_ID = 'price_1TBZB5DVLJTOFkjUwmgvTPRW'
 
 function PlaybooksContent({ locale }: { locale: string }) {
   const t = useTranslations('playbooks_page')
+  const isEn = locale === 'en'
 
   const playbooks = [
     {
@@ -178,20 +179,20 @@ function PlaybooksContent({ locale }: { locale: string }) {
             </div>
           </div>
           <div className="flex gap-3">
-            <CheckoutButton
-              priceId={PRICE_IDS[0]}
-              locale={locale}
-              className="px-5 py-2.5 bg-white/10 hover:bg-white/20 text-white text-sm font-medium rounded-lg transition-colors border border-white/20 disabled:opacity-60"
+            <AddToCartButton
+              item={{ priceId: PRICE_IDS[0], title: t('playbook1_title'), price: 67 }}
+              addedLabel={isEn ? 'In Cart' : 'Ajouté'}
+              className="px-5 py-2.5 bg-white/10 hover:bg-white/20 text-white text-sm font-medium rounded-lg transition-colors border border-white/20"
             >
               {t('buy_individual')}
-            </CheckoutButton>
-            <CheckoutButton
-              priceId={BUNDLE_PRICE_ID}
-              locale={locale}
-              className="px-5 py-2.5 bg-white text-[#111111] text-sm font-bold rounded-lg hover:bg-gray-100 transition-colors disabled:opacity-60"
+            </AddToCartButton>
+            <AddToCartButton
+              item={{ priceId: BUNDLE_PRICE_ID, title: t('bundle_desc'), price: 199 }}
+              addedLabel={isEn ? 'In Cart' : 'Ajouté'}
+              className="px-5 py-2.5 bg-white text-[#111111] text-sm font-bold rounded-lg hover:bg-gray-100 transition-colors"
             >
               {t('buy_bundle')}
-            </CheckoutButton>
+            </AddToCartButton>
           </div>
         </div>
       </section>
@@ -226,13 +227,13 @@ function PlaybooksContent({ locale }: { locale: string }) {
                     </li>
                   ))}
                 </ul>
-                <CheckoutButton
-                  priceId={pb.priceId}
-                  locale={locale}
-                  className="w-full py-3 bg-[#111111] text-white text-sm font-medium rounded-xl hover:bg-[#333333] transition-colors disabled:opacity-60"
+                <AddToCartButton
+                  item={{ priceId: pb.priceId, title: pb.title, price: 67 }}
+                  addedLabel={isEn ? 'In Cart — View Cart' : 'Ajouté — Voir le Panier'}
+                  className="w-full py-3 bg-[#111111] text-white text-sm font-medium rounded-xl hover:bg-[#333333] transition-colors"
                 >
                   {t('buy_individual')}
-                </CheckoutButton>
+                </AddToCartButton>
               </div>
             ))}
           </div>

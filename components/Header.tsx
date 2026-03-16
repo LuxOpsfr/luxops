@@ -3,7 +3,8 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
-import { Menu, X, Globe } from 'lucide-react'
+import { Menu, X, Globe, ShoppingCart } from 'lucide-react'
+import { useCart } from '@/context/CartContext'
 
 interface HeaderProps {
   locale: string
@@ -13,6 +14,7 @@ export default function Header({ locale }: HeaderProps) {
   const t = useTranslations('nav')
   const [menuOpen, setMenuOpen] = useState(false)
   const otherLocale = locale === 'en' ? 'fr' : 'en'
+  const { items, openCart } = useCart()
 
   const navLinks = [
     { href: `/${locale}/playbooks`, label: t('playbooks') },
@@ -59,6 +61,20 @@ export default function Header({ locale }: HeaderProps) {
             <Globe size={14} />
             <span className="font-semibold uppercase">{otherLocale}</span>
           </Link>
+
+          {/* Cart */}
+          <button
+            onClick={openCart}
+            className="relative p-1.5 text-gray-600 hover:text-[#111111] transition-colors"
+            aria-label="Cart"
+          >
+            <ShoppingCart size={20} />
+            {items.length > 0 && (
+              <span className="absolute -top-1 -right-1 w-4 h-4 bg-[#111111] text-white text-[10px] font-bold rounded-full flex items-center justify-center">
+                {items.length}
+              </span>
+            )}
+          </button>
 
           {/* CTA */}
           <Link
