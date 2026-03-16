@@ -20,6 +20,7 @@ export default function Header({ locale }: HeaderProps) {
     { href: `/${locale}/audit-qualite`, label: t('audit') },
     { href: `/${locale}/process-sur-mesure`, label: t('process') },
     { href: `/${locale}/formation`, label: t('training') },
+    { href: `/${locale}/resources`, label: t('resources') },
     { href: `/${locale}/about`, label: t('about') },
   ]
 

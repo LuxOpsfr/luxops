@@ -1,6 +1,24 @@
+import type { Metadata } from 'next'
 import { useTranslations } from 'next-intl'
 import Link from 'next/link'
 import { ArrowRight, CheckCircle } from 'lucide-react'
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  const isEn = locale === 'en'
+  return {
+    title: isEn
+      ? 'Custom Hotel SOP Creation | Tailored Operations Manuals | LuxOps'
+      : 'Création de SOPs Hôteliers Sur-Mesure | Procédures Opérationnelles | LuxOps',
+    description: isEn
+      ? 'Custom operational process creation for hotel departments. Property-specific SOPs, procedures and operations manuals tailored to your brand and team.'
+      : 'Création de process opérationnels sur-mesure pour les départements hôteliers. SOPs, procédures et manuels adaptés à votre établissement et vos standards.',
+  }
+}
 
 export default async function ProcessPage({
   params,

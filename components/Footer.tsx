@@ -75,6 +75,14 @@ export default function Footer({ locale }: FooterProps) {
                   {tNav('training')}
                 </Link>
               </li>
+              <li>
+                <Link
+                  href={`/${locale}/resources`}
+                  className="text-gray-400 hover:text-white text-sm transition-colors"
+                >
+                  {tNav('resources')}
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -102,11 +110,11 @@ export default function Footer({ locale }: FooterProps) {
               </li>
               <li>
                 <a
-                  href="mailto:contact@luxops.com"
+                  href="mailto:contact@luxops.fr"
                   className="flex items-center gap-2 text-gray-400 hover:text-white text-sm transition-colors"
                 >
                   <Mail size={13} />
-                  contact@luxops.com
+                  contact@luxops.fr
                 </a>
               </li>
             </ul>

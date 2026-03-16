@@ -1,6 +1,24 @@
+import type { Metadata } from 'next'
 import { useTranslations } from 'next-intl'
 import Link from 'next/link'
 import { Check, ArrowRight } from 'lucide-react'
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  const isEn = locale === 'en'
+  return {
+    title: isEn
+      ? 'Hotel Operations Notion Templates | Customisable SOP Systems | LuxOps'
+      : 'Templates Notion pour Hôtels | Systèmes de SOPs Personnalisables | LuxOps',
+    description: isEn
+      ? 'Notion-based operational management workspaces for hotels. Customisable SOP database, procedures and standards structured for hospitality teams.'
+      : 'Espaces de gestion opérationnelle Notion pour hôtels. Base de données SOPs, procédures et standards structurés pour les équipes hôtelières.',
+  }
+}
 
 export default async function NotionPage({
   params,

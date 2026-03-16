@@ -10,9 +10,9 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-display' })
 
 export const metadata: Metadata = {
-  title: 'LuxOps — Operational Excellence for Luxury Hospitality',
+  title: 'LuxOps — Hotel Operations Playbooks, SOPs & Training',
   description:
-    'Field-built operational frameworks for luxury hotels. Playbooks, custom processes, and expert consulting.',
+    'Operational playbooks, SOP frameworks and on-property training for high-end hotels. Front Office, Housekeeping, F&B, Spa. Built from real hotel operations.',
 }
 
 export default async function LocaleLayout({

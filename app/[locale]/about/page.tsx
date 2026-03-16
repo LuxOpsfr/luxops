@@ -1,4 +1,22 @@
+import type { Metadata } from 'next'
 import { useTranslations } from 'next-intl'
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  const isEn = locale === 'en'
+  return {
+    title: isEn
+      ? 'About LuxOps | Hotel Operations Specialists'
+      : 'À Propos de LuxOps | Spécialistes des Opérations Hôtelières',
+    description: isEn
+      ? 'LuxOps provides structured operational methods for high-end hotels. Playbooks, SOPs, audits and training built from years of real hotel operations experience.'
+      : 'LuxOps propose des méthodes opérationnelles structurées pour les hôtels haut de gamme. Playbooks, SOPs, audits et formations issus de l\'exploitation hôtelière réelle.',
+  }
+}
 
 export default function AboutPage() {
   return <AboutContent />

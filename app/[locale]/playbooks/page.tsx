@@ -1,5 +1,23 @@
+import type { Metadata } from 'next'
 import { useTranslations } from 'next-intl'
 import { Check, Clock } from 'lucide-react'
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  const isEn = locale === 'en'
+  return {
+    title: isEn
+      ? 'Hotel Operations Playbooks | Front Office, Housekeeping, F&B, Spa SOPs | LuxOps'
+      : 'Playbooks Opérationnels Hôteliers | SOPs Front Office, Housekeeping, F&B, Spa | LuxOps',
+    description: isEn
+      ? 'Complete operational playbooks for high-end hotels. Documented procedures, service standards and SOPs for Front Office, Housekeeping, F&B and Spa departments.'
+      : 'Playbooks opérationnels complets pour les hôtels haut de gamme. Procédures documentées, standards de service et SOPs pour tous les départements clés.',
+  }
+}
 
 export default function PlaybooksPage() {
   return <PlaybooksContent />

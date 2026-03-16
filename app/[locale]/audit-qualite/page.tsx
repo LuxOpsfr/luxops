@@ -1,6 +1,24 @@
+import type { Metadata } from 'next'
 import { useTranslations } from 'next-intl'
 import Link from 'next/link'
 import { Check, ArrowRight } from 'lucide-react'
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  const isEn = locale === 'en'
+  return {
+    title: isEn
+      ? 'Hotel Quality Audit | Operational Standards Assessment | LuxOps'
+      : 'Audit Qualité Hôtelier | Évaluation des Standards Opérationnels | LuxOps',
+    description: isEn
+      ? '2-day comprehensive hotel operations audit. 100+ criteria evaluation, departmental gap analysis, and structured improvement roadmap.'
+      : 'Audit opérationnel hôtelier sur 2 jours. Évaluation 100+ critères, analyse des écarts par département et feuille de route structurée.',
+  }
+}
 
 export default async function AuditPage({
   params,

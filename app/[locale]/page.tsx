@@ -1,6 +1,24 @@
+import type { Metadata } from 'next'
 import { useTranslations } from 'next-intl'
 import Link from 'next/link'
 import { ArrowRight, BookOpen, Settings, Users } from 'lucide-react'
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  const isEn = locale === 'en'
+  return {
+    title: isEn
+      ? 'LuxOps | Hotel Operations Playbooks, SOPs & Training'
+      : 'LuxOps | Playbooks, SOPs et Formation Hôtelière',
+    description: isEn
+      ? 'Operational playbooks, SOP frameworks and on-property training for high-end hotels. Front Office, Housekeeping, F&B, Spa. Built from real hotel operations.'
+      : 'Playbooks opérationnels, procédures et formation pour les hôtels haut de gamme. Front Office, Housekeeping, F&B, Spa. Issus de l\'exploitation réelle.',
+  }
+}
 
 export default async function HomePage({
   params,
@@ -122,7 +140,7 @@ function HomeContent({ locale }: { locale: string }) {
             <h2 className="text-4xl font-bold text-[#111111]">{tOffers('title')}</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             {[
               {
                 icon: <BookOpen size={22} className="text-[#111111]" />,
@@ -164,6 +182,11 @@ function HomeContent({ locale }: { locale: string }) {
               </div>
             ))}
           </div>
+          <p className="text-center text-sm text-gray-400 mt-2">
+            {locale === 'en'
+              ? <>New to hotel SOPs? Visit our <Link href={`/${locale}/resources`} className="underline text-[#111111] hover:text-[#333333]">Resources page</Link> for operational guidance.</>
+              : <>Découvrir les SOPs hôteliers ? Consultez notre <Link href={`/${locale}/resources`} className="underline text-[#111111] hover:text-[#333333]">page Ressources</Link>.</>}
+          </p>
         </div>
       </section>
 

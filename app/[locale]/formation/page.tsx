@@ -1,6 +1,24 @@
+import type { Metadata } from 'next'
 import { useTranslations } from 'next-intl'
 import Link from 'next/link'
 import { ArrowRight, Clock, Users, Check } from 'lucide-react'
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  const isEn = locale === 'en'
+  return {
+    title: isEn
+      ? 'Hotel Staff Training | On-Property Operational Training | LuxOps'
+      : 'Formation Hôtelière | Formation Opérationnelle en Établissement | LuxOps',
+    description: isEn
+      ? 'On-property training for hotel teams. Operational procedures, service standards and SOP implementation. Half-day or full-day sessions for up to 15 participants.'
+      : 'Formation opérationnelle en établissement pour les équipes hôtelières. Procédures, standards de service et mise en oeuvre des SOPs. Formats demi-journée ou journée entière.',
+  }
+}
 
 export default async function FormationPage({
   params,
