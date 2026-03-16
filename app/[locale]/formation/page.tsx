@@ -16,7 +16,7 @@ export async function generateMetadata({
       : 'Formation Hôtelière | Formation Opérationnelle en Établissement | LuxOps',
     description: isEn
       ? 'On-property training for hotel teams. Operational procedures, service standards and SOP implementation. Half-day or full-day sessions for up to 15 participants.'
-      : 'Formation opérationnelle en établissement pour les équipes hôtelières. Procédures, standards de service et mise en oeuvre des SOPs. Formats demi-journée ou journée entière.',
+      : 'Formation opérationnelle en établissement. Standards de service et SOPs pour équipes hôtelières. Formats demi-journée ou journée entière, 15 participants.',
   }
 }
 

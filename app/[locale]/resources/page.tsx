@@ -15,7 +15,7 @@ export async function generateMetadata({
       : 'Ressources Opérationnelles Hôtelières | Guide SOPs & Standards | LuxOps',
     description: isEn
       ? 'Expert guidance on hotel operational standards, SOPs and procedures. Questions and answers for hotel GMs, department heads and hospitality professionals.'
-      : 'Conseils experts sur les standards opérationnels hôteliers, SOPs et procédures. Questions fréquentes pour DG, chefs de département et professionnels de l\'hôtellerie.',
+      : 'Conseils experts sur les standards opérationnels, SOPs et procédures hôtelières. Réponses pratiques pour DG, chefs de département et équipes opérationnelles.',
   }
 }
 

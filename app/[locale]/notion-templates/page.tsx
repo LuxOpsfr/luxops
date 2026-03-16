@@ -15,8 +15,8 @@ export async function generateMetadata({
       ? 'Hotel Operations Notion Templates | Customisable SOP Systems | LuxOps'
       : 'Templates Notion pour Hôtels | Systèmes de SOPs Personnalisables | LuxOps',
     description: isEn
-      ? 'Notion-based operational management workspaces for hotels. Customisable SOP database, procedures and standards structured for hospitality teams.'
-      : 'Espaces de gestion opérationnelle Notion pour hôtels. Base de données SOPs, procédures et standards structurés pour les équipes hôtelières.',
+      ? 'Notion-based operational management workspaces for hotels. Customisable SOP library, procedures and standards structured for hotel teams. Available now.'
+      : 'Espaces Notion de gestion opérationnelle pour hôtels. SOPs, procédures et standards structurés pour équipes hôtelières. Disponibles immédiatement.',
   }
 }
 

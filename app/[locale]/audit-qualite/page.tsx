@@ -15,8 +15,8 @@ export async function generateMetadata({
       ? 'Hotel Quality Audit | Operational Standards Assessment | LuxOps'
       : 'Audit Qualité Hôtelier | Évaluation des Standards Opérationnels | LuxOps',
     description: isEn
-      ? '2-day comprehensive hotel operations audit. 100+ criteria evaluation, departmental gap analysis, and structured improvement roadmap.'
-      : 'Audit opérationnel hôtelier sur 2 jours. Évaluation 100+ critères, analyse des écarts par département et feuille de route structurée.',
+      ? '2-day hotel quality audit covering 100+ operational criteria. Detailed gap analysis by department and a structured improvement roadmap. Available on-property.'
+      : 'Audit qualité hôtelier sur 2 jours. Plus de 100 critères évalués, analyse des écarts par département et feuille de route priorisée. Demandez un devis.',
   }
 }
 

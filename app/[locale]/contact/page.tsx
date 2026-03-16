@@ -1,6 +1,24 @@
+import type { Metadata } from 'next'
 import { useTranslations } from 'next-intl'
 import ContactForm from '@/components/ContactForm'
 import { Mail, Clock } from 'lucide-react'
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  const isEn = locale === 'en'
+  return {
+    title: isEn
+      ? 'Contact LuxOps | Hotel Operations Enquiries'
+      : 'Contacter LuxOps | Renseignements Opérations Hôtelières',
+    description: isEn
+      ? 'Get in touch with the LuxOps team. Questions about hotel playbooks, SOPs, audits, custom processes or on-property training. We respond within 24 hours.'
+      : 'Contactez l\'équipe LuxOps pour vos questions sur les playbooks, SOPs, audits, process sur-mesure ou formation hôtelière. Réponse sous 24 heures.',
+  }
+}
 
 export default function ContactPage() {
   return <ContactContent />
