@@ -20,13 +20,36 @@ export async function generateMetadata({
   }
 }
 
+const notionSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: 'Hotel Operations Notion Template',
+  description:
+    'A complete Notion workspace for hotel operations management. Includes dashboards, checklists, task management, and reporting templates for all key departments.',
+  offers: {
+    '@type': 'Offer',
+    price: '497',
+    priceCurrency: 'EUR',
+    availability: 'https://schema.org/InStock',
+    url: 'https://www.luxops.fr/en/notion-templates',
+  },
+}
+
 export default async function NotionPage({
   params,
 }: {
   params: Promise<{ locale: string }>
 }) {
   const { locale } = await params
-  return <NotionContent locale={locale} />
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(notionSchema) }}
+      />
+      <NotionContent locale={locale} />
+    </>
+  )
 }
 
 function NotionContent({ locale }: { locale: string }) {

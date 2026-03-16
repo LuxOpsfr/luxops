@@ -21,6 +21,7 @@ export default function Header({ locale }: HeaderProps) {
     { href: `/${locale}/process-sur-mesure`, label: t('process') },
     { href: `/${locale}/formation`, label: t('training') },
     { href: `/${locale}/resources`, label: t('resources') },
+    { href: `/${locale}/blog`, label: t('blog') },
     { href: `/${locale}/about`, label: t('about') },
   ]
 

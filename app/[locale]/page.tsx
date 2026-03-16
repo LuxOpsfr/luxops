@@ -20,13 +20,48 @@ export async function generateMetadata({
   }
 }
 
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': 'https://www.luxops.fr/#organization',
+      name: 'LuxOps',
+      url: 'https://www.luxops.fr',
+      description:
+        'Operational playbooks, SOP frameworks and on-property training for high-end hotels.',
+      contactPoint: {
+        '@type': 'ContactPoint',
+        email: 'contact@luxops.fr',
+        contactType: 'customer service',
+      },
+    },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://www.luxops.fr/#website',
+      name: 'LuxOps',
+      url: 'https://www.luxops.fr',
+      publisher: { '@id': 'https://www.luxops.fr/#organization' },
+      inLanguage: ['en', 'fr'],
+    },
+  ],
+}
+
 export default async function HomePage({
   params,
 }: {
   params: Promise<{ locale: string }>
 }) {
   const { locale } = await params
-  return <HomeContent locale={locale} />
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+      />
+      <HomeContent locale={locale} />
+    </>
+  )
 }
 
 function HomeContent({ locale }: { locale: string }) {

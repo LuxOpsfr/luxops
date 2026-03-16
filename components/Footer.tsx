@@ -83,6 +83,14 @@ export default function Footer({ locale }: FooterProps) {
                   {tNav('resources')}
                 </Link>
               </li>
+              <li>
+                <Link
+                  href={`/${locale}/blog`}
+                  className="text-gray-400 hover:text-white text-sm transition-colors"
+                >
+                  {tNav('blog')}
+                </Link>
+              </li>
             </ul>
           </div>
 

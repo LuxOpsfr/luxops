@@ -164,4 +164,112 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Blog Index EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/blog</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog Index FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/blog</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog: Hotel Operations Playbook EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/blog/hotel-operations-playbook</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-operations-playbook"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-operations-playbook"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: Hotel Operations Playbook FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/blog/hotel-operations-playbook</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-operations-playbook"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-operations-playbook"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: How to Write Hotel SOPs EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/blog/how-to-write-hotel-sops</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/how-to-write-hotel-sops"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/how-to-write-hotel-sops"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: How to Write Hotel SOPs FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/blog/how-to-write-hotel-sops</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/how-to-write-hotel-sops"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/how-to-write-hotel-sops"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: Hotel Front Office SOP EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/blog/hotel-front-office-sop</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-front-office-sop"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-front-office-sop"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: Hotel Front Office SOP FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/blog/hotel-front-office-sop</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-front-office-sop"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-front-office-sop"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: Hotel Housekeeping Checklist EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/blog/hotel-housekeeping-checklist</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-housekeeping-checklist"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-housekeeping-checklist"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: Hotel Housekeeping Checklist FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/blog/hotel-housekeeping-checklist</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-housekeeping-checklist"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-housekeeping-checklist"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: Hotel F&amp;B Service Standards EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/blog/hotel-fb-service-standards</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-fb-service-standards"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-fb-service-standards"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: Hotel F&amp;B Service Standards FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/blog/hotel-fb-service-standards</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-fb-service-standards"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-fb-service-standards"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>

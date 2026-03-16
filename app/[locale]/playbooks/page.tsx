@@ -19,8 +19,71 @@ export async function generateMetadata({
   }
 }
 
+const playbooksSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Hotel Operations Playbooks',
+  description:
+    'Complete operational playbooks for high-end hotels. Documented procedures, service standards and SOPs for Front Office, Housekeeping, F&B and Spa departments.',
+  url: 'https://www.luxops.fr/en/playbooks',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      item: {
+        '@type': 'Product',
+        name: 'Front Office Playbook',
+        description:
+          'Check-in/out procedures, guest communication protocols, concierge standards, and complaint handling methods. ~250 pages.',
+        offers: { '@type': 'Offer', price: '67', priceCurrency: 'EUR', availability: 'https://schema.org/InStock' },
+      },
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      item: {
+        '@type': 'Product',
+        name: 'Housekeeping Playbook',
+        description:
+          'Room inspection checklists, linen management, turndown service protocols, and deep cleaning procedures. ~220 pages.',
+        offers: { '@type': 'Offer', price: '67', priceCurrency: 'EUR', availability: 'https://schema.org/InStock' },
+      },
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      item: {
+        '@type': 'Product',
+        name: 'F&B Playbook',
+        description:
+          'Restaurant service standards, bar operations, room service protocols, and banquet service procedures. ~280 pages.',
+        offers: { '@type': 'Offer', price: '67', priceCurrency: 'EUR', availability: 'https://schema.org/InStock' },
+      },
+    },
+    {
+      '@type': 'ListItem',
+      position: 4,
+      item: {
+        '@type': 'Product',
+        name: 'Spa & Wellness Playbook',
+        description:
+          'Treatment protocols, therapist standards, booking management, and wellness programme structure. ~200 pages.',
+        offers: { '@type': 'Offer', price: '67', priceCurrency: 'EUR', availability: 'https://schema.org/InStock' },
+      },
+    },
+  ],
+}
+
 export default function PlaybooksPage() {
-  return <PlaybooksContent />
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(playbooksSchema) }}
+      />
+      <PlaybooksContent />
+    </>
+  )
 }
 
 function PlaybooksContent() {
