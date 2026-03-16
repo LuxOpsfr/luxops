@@ -44,6 +44,16 @@ export const DOWNLOADS: Record<string, PlaybookDownload> = {
     pptFr: 'PLACEHOLDER_FB_PPT_FR',
   },
 
+  // Spa TEST 0€
+  price_1TBdcNDVLJTOFkjURLNAORmJ: {
+    titleEn: 'Spa & Wellness Playbook',
+    titleFr: 'Playbook Spa & Wellness',
+    pdfEn: 'PLACEHOLDER_SPA_PDF_EN',
+    pptEn: 'PLACEHOLDER_SPA_PPT_EN',
+    pdfFr: 'PLACEHOLDER_SPA_PDF_FR',
+    pptFr: 'PLACEHOLDER_SPA_PPT_FR',
+  },
+
   // Spa & Wellness — €67
   price_1TBZ9vDVLJTOFkjUT1FHhqUiY: {
     titleEn: 'Spa & Wellness Playbook',

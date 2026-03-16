@@ -11,6 +11,7 @@ const VALID_PRICE_IDS = new Set([
   'price_1TBZ9TDVLJTOFkjUwWnoKaGk', // Housekeeping
   'price_1TBZ9iDVLJTOFkjU3Os9VLRc', // F&B
   'price_1TBZ9vDVLJTOFkjUT1FHhqUiY', // Spa & Wellness
+  'price_1TBdcNDVLJTOFkjURLNAORmJ', // Spa TEST 0€
 ])
 
 export async function POST(request: NextRequest) {
