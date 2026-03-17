@@ -12,40 +12,40 @@
     "blog": "Blog"
   },
   "hero": {
-    "badge": "Méthodes issues de l'exploitation réelle · Structurées · Opérationnelles",
+    "badge": "Méthodes issues de l'exploitation quotidienne · Structurées · Opérationnelles",
     "title": "Clarté opérationnelle pour l'hôtellerie haut de gamme",
-    "subtitle": "Des standards documentés, des procédures claires et des outils concrets issus de l'exploitation hôtelière réelle, prêts à être mis en place dans votre établissement.",
+    "subtitle": "Des standards documentés, des procédures claires et des outils concrets développés à partir du fonctionnement en pratique des équipes hôtelières — prêts à être mis en place, département par département.",
     "cta_primary": "Découvrir les Playbooks",
     "cta_secondary": "Réserver une Consultation"
   },
   "problem": {
     "title": "Le Défi",
-    "text": "La plupart des établissements haut de gamme partagent les mêmes difficultés : des standards incohérents, des process non documentés et un fort renouvellement des équipes. LuxOps apporte des méthodes structurées, des procédures claires et un accompagnement opérationnel pour aider vos équipes à performer de façon constante.",
+    "text": "La plupart des établissements, quel que soit leur niveau, font face aux mêmes problèmes : des standards qui varient selon les équipes, des méthodes qui ne sont jamais écrites, et un turnover qui remet tout en cause. LuxOps donne aux équipes les outils et la documentation pour fonctionner de façon constante — peu importe qui est en poste.",
     "point1_title": "Standards Incohérents",
-    "point1_text": "L'expérience client varie selon les équipes. Sans standards documentés, la qualité devient imprévisible.",
+    "point1_text": "Quand les standards ne sont pas écrits, la qualité dépend de qui est en service. La constance commence par la documentation.",
     "point2_title": "Process Non Documentés",
-    "point2_text": "Quand les méthodes de travail ne sont pas documentées, chaque départ représente une perte réelle. La documentation protège ce que vos équipes ont construit.",
+    "point2_text": "Quand un collaborateur part, il emporte ses méthodes avec lui. Documenter les process, c'est protéger ce que l'équipe a construit — et accélérer l'intégration des suivants.",
     "point3_title": "Impact du Turnover",
-    "point3_text": "Sans guides structurés, l'intégration est lente et les erreurs se répètent. Une documentation claire réduit le temps d'adaptation et sécurise la continuité."
+    "point3_text": "Sans support structuré, chaque nouvelle recrue repart de zéro. Une documentation claire réduit le temps d'intégration et limite les erreurs dès les premiers jours."
   },
   "solution": {
     "title": "L'Approche LuxOps",
-    "text": "Nous traduisons une expérience opérationnelle réelle en procédures structurées, playbooks utilisables et accompagnement sur-mesure pour que vos équipes assurent une constance de service à chaque étape du parcours client."
+    "text": "Nous prenons l'expérience accumulée dans la gestion des départements hôteliers et la structurons en outils concrets, utilisables par vos équipes, à chaque étape du séjour client."
   },
   "offers": {
     "title": "Nos Offres",
     "digital_title": "Ressources Opérationnelles",
-    "digital_desc": "Playbooks et templates Notion disponibles immédiatement. Achetez, téléchargez et mettez en place sans délai.",
+    "digital_desc": "Des playbooks et espaces Notion que votre équipe peut utiliser dès réception. Sans configuration, sans délai.",
     "digital_cta": "Voir les Ressources",
     "audit_title": "Audit & Process",
-    "audit_desc": "Audit qualité approfondi et création de process sur-mesure adaptés à votre établissement.",
+    "audit_desc": "Un audit qualité approfondi et une conception de process construits autour du fonctionnement en pratique de votre établissement.",
     "audit_cta": "En Savoir Plus",
     "training_title": "Formation en Établissement",
-    "training_desc": "Des sessions de formation opérationnelle conçues pour votre équipe et votre établissement. Formats demi-journée ou journée entière.",
+    "training_desc": "Des formations opérationnelles menées directement dans votre établissement, avec vos équipes. Demi-journée ou journée complète.",
     "training_cta": "En Savoir Plus"
   },
   "social_proof": {
-    "title": "Développé et appliqué dans des environnements hôteliers exigeants",
+    "title": "Des méthodes développées à partir de l'exploitation quotidienne d'un hôtel",
     "subtitle": "Témoignages à venir.",
     "stat1": "Issu de l'exploitation réelle",
     "stat2": "~1 000 procédures documentées",
@@ -53,13 +53,13 @@
     "stat4": "Utilisable immédiatement"
   },
   "cta_section": {
-    "title": "Vous souhaitez renforcer vos standards opérationnels ?",
+    "title": "Vous cherchez à renforcer vos opérations ?",
     "text": "Qu'il s'agisse d'un outil concret ou d'une refonte de vos procédures, nous pouvons vous accompagner.",
     "cta": "Nous Contacter"
   },
   "playbooks_page": {
     "title": "Playbooks Opérationnels",
-    "subtitle": "Des procédures documentées, issues de l'exploitation hôtelière réelle. Chaque playbook est disponible dans votre langue.",
+    "subtitle": "Des procédures documentées à partir du fonctionnement en pratique des départements hôteliers. Chaque playbook est disponible dans votre langue.",
     "individual_label": "Playbook Individuel",
     "bundle_label": "Bundle Complet",
     "bundle_badge": "Meilleure Offre",
@@ -72,7 +72,7 @@
     "coming_soon_text": "Modules RH, Planning, Admin en développement.",
     "playbook1_title": "Playbook Front Office",
     "playbook1_dept": "Front Office",
-    "playbook1_desc": "Procédures check-in/check-out, protocoles de communication client, standards concierge et gestion des réclamations.",
+    "playbook1_desc": "Procédures check-in/check-out, protocoles de communication client, techniques de vente additionnelle, night audit, systèmes PMS et standards concierge.",
     "playbook1_pages": "~250 pages",
     "playbook1_h1": "Procédures check-in/check-out",
     "playbook1_h2": "Templates communication client",
@@ -105,10 +105,10 @@
   },
   "notion_page": {
     "title": "Templates Notion",
-    "subtitle": "Des espaces de gestion opérationnelle structurés, conçus pour les équipes hôtelières.",
+    "subtitle": "Des espaces de gestion structurés autour du fonctionnement en pratique des équipes hôtelières.",
     "base_title": "Template Base Opérations",
     "base_price": "497€",
-    "base_desc": "Un espace de travail Notion complet pour la gestion opérationnelle hôtelière. Tableaux de bord, checklists, gestion des tâches et templates de reporting pour tous les départements clés.",
+    "base_desc": "Un espace Notion complet couvrant la gestion des opérations hôtelières. Tableaux de bord, checklists, suivi des tâches et structures de reporting pour tous les départements clés.",
     "base_f1": "Tableaux de bord multi-départements",
     "base_f2": "Checklists opérations journalières",
     "base_f3": "Système de suivi des incidents",
@@ -120,17 +120,17 @@
     "buy_base": "Acheter le Template — 497€",
     "custom_title": "Notion Sur-Mesure",
     "custom_price": "997€",
-    "custom_desc": "Personnalisation complète de l'espace Notion selon votre établissement, vos standards de marque et vos flux opérationnels.",
+    "custom_desc": "Personnalisation complète de l'espace selon la structure de votre établissement, vos standards de marque et le fonctionnement en pratique de vos équipes.",
     "custom_cta": "Demander une Personnalisation"
   },
   "audit_page": {
     "title": "Audit Qualité",
-    "subtitle": "Un audit opérationnel approfondi de 2 jours pour identifier les écarts et construire une feuille de route claire.",
+    "subtitle": "Un audit opérationnel de 2 jours pour identifier les points de fragilité et construire un plan d'amélioration priorisé.",
     "price": "À partir de 2 400€",
     "price_note": "2 jours minimum + frais de déplacement",
     "process_title": "Le Déroulé de l'Audit",
     "step1_title": "Briefing Pré-Audit",
-    "step1_desc": "Revue de la documentation existante, des standards et du contexte opérationnel.",
+    "step1_desc": "Revue de la documentation existante, des standards en place et du fonctionnement concret de l'établissement.",
     "step2_title": "Évaluation sur Site",
     "step2_desc": "Revue approfondie sur 2 jours dans tous les départements. Plus de 100 critères d'évaluation.",
     "step3_title": "Analyse & Rapport",
@@ -145,14 +145,14 @@
     "d5": "Liste d'actions rapides",
     "d6": "Appel de restitution de 30 min",
     "cta": "Demander un Devis",
-    "cta_subtitle": "Vous souhaitez faire évaluer votre établissement ? Parlons de vos besoins."
+    "cta_subtitle": "Un établissement en tête ? Parlez-nous de votre situation et voyons ce qui est pertinent."
   },
   "process_page": {
     "title": "Process Sur-Mesure",
-    "subtitle": "Création complète de procédures pour tout département hôtelier, alignées avec vos standards de marque et votre organisation.",
+    "subtitle": "Création complète de procédures pour tout département hôtelier, construites autour de vos standards de marque et du fonctionnement en pratique de vos équipes.",
     "price": "À partir de 1 497€",
     "price_note": "par département",
-    "desc": "Nous rédigeons des procédures complètes pour tout département hôtelier, au format PDF ou Notion. Nous pouvons partir de vos supports existants ou construire entièrement de nouveaux process.",
+    "desc": "Nous rédigeons des procédures complètes pour tout département hôtelier, en format PDF ou Notion. Nous pouvons partir de vos supports existants ou construire de nouveaux process depuis le début.",
     "formats_title": "Formats de Livraison",
     "f1": "PDF (prêt à imprimer)",
     "f2": "Espace Notion",
@@ -167,11 +167,11 @@
     "d7": "RH & Intégration",
     "d8": "Revenue Management",
     "cta": "Demander un Devis",
-    "cta_title": "Prêt à documenter vos opérations ?"
+    "cta_title": "Prêt à structurer et documenter vos opérations ?"
   },
   "training_page": {
     "title": "Formation en Établissement",
-    "subtitle": "Des formations opérationnelles conçues pour votre équipe et adaptées à votre établissement.",
+    "subtitle": "Des formations opérationnelles menées dans votre établissement, construites autour de votre équipe et de votre contexte de service.",
     "half_day": "Formation Demi-Journée",
     "full_day": "Formation Journée Entière",
     "half_price": "997€",
@@ -187,15 +187,15 @@
     "t5": "Méthodes de contrôle qualité",
     "t6": "Optimisation du parcours client",
     "cta": "Demander un Devis",
-    "cta_title": "Vous souhaitez former votre équipe ?"
+    "cta_title": "Vous souhaitez former vos équipes sur site ?"
   },
   "about_page": {
     "title": "À Propos de LuxOps",
-    "subtitle": "Des méthodes opérationnelles issues des établissements les plus exigeants, accessibles à toute propriété.",
+    "subtitle": "Des méthodes opérationnelles construites dans des établissements exigeants, aujourd'hui mises à disposition d'autres propriétés.",
     "story_title": "Notre Histoire",
-    "story_p1": "LuxOps est née d'années d'expérience opérationnelle dans des établissements haut de gamme et des groupes hôteliers indépendants.",
-    "story_p2": "En pilotant des opérations hôtelières complexes et multi-départements, nous avons développé des méthodes structurées, des procédures et des SOPs dans des environnements où la constance de service n'est pas négociable.",
-    "story_p3": "Le constat est simple : les établissements haut de gamme partagent les mêmes défis opérationnels. Pourquoi chaque propriété devrait-elle tout reconstruire à partir de rien ? LuxOps structure des méthodes testées pour que les équipes les mettent en place rapidement et se concentrent sur l'essentiel : leurs clients.",
+    "story_p1": "LuxOps est née d'années passées à gérer des opérations hôtelières concrètes, dans des établissements haut de gamme et des groupes indépendants.",
+    "story_p2": "Piloter des opérations multi-départements, c'est construire des procédures par nécessité — dans des établissements où une baisse de qualité de service n'est tout simplement pas acceptable.",
+    "story_p3": "Le constat était simple : la plupart des hôtels rencontrent les mêmes défis opérationnels, mais beaucoup reconstruisent encore tout depuis zéro. LuxOps structure des méthodes testées pour que les équipes les mettent en place rapidement et se concentrent sur l'essentiel : leurs clients.",
     "expertise_title": "Domaines d'Expertise",
     "e1": "Front Office & Relations Clients",
     "e2": "Housekeeping & Division Chambres",
@@ -205,15 +205,15 @@
     "e6": "Conception de Process & Rédaction de Procédures",
     "values_title": "Nos Valeurs",
     "v1_title": "Exigence",
-    "v1_desc": "Nous nous tenons aux standards attendus au plus haut niveau de l'industrie.",
+    "v1_desc": "Nous nous tenons aux standards attendus dans les établissements les plus exigeants.",
     "v2_title": "Clarté",
-    "v2_desc": "Les opérations complexes deviennent simples quand elles sont documentées avec précision et soin.",
+    "v2_desc": "Les opérations complexes deviennent gérables quand elles sont documentées clairement et maintenues à jour.",
     "v3_title": "Pragmatisme",
     "v3_desc": "Chaque recommandation est actionnable, ancrée dans une expérience opérationnelle réelle."
   },
   "contact_page": {
     "title": "Nous Contacter",
-    "subtitle": "Un projet en tête ? Nous serions ravis d'en discuter.",
+    "subtitle": "Un projet en tête ? Parlez-nous en.",
     "name": "Nom Complet",
     "email": "Adresse Email",
     "company": "Hôtel / Entreprise",

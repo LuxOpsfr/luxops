@@ -12,40 +12,40 @@
     "blog": "Blog"
   },
   "hero": {
-    "badge": "Built from real hotel operations · Structured · Ready to use",
+    "badge": "Developed from day-to-day hotel operations · Structured · Ready to use",
     "title": "Operational Clarity for High-End Hospitality",
-    "subtitle": "Documented standards, clear procedures, and practical tools built from real hotel operations and designed for immediate use across your property.",
+    "subtitle": "Documented standards, clear procedures, and practical tools developed from how hotel teams work in practice — designed to be used immediately, across departments.",
     "cta_primary": "Explore Playbooks",
     "cta_secondary": "Book a Consultation"
   },
   "problem": {
     "title": "The Challenge",
-    "text": "Most high-end hotels share the same operational challenges: inconsistent standards, undocumented processes, and the constant pressure of staff turnover. LuxOps provides structured SOPs, practical tools, and operational support to help teams perform consistently.",
+    "text": "Most hotels, regardless of category, face the same core issues: standards that shift with staff changes, processes that exist only in people's heads, and the ongoing pressure of turnover. LuxOps gives teams the structure and documentation to work consistently — regardless of who's on shift.",
     "point1_title": "Inconsistent Standards",
-    "point1_text": "Guest experience varies with staff changes. Without documented standards, quality becomes unpredictable.",
+    "point1_text": "When standards aren't written down, guest experience depends on who's working. Consistency starts with documentation.",
     "point2_title": "Undocumented Processes",
-    "point2_text": "When processes exist only in people's heads, every departure is a risk. Documented methods protect what your team has built.",
+    "point2_text": "When a team member leaves, they take their knowledge with them. Documented processes protect what's been built — and make onboarding faster.",
     "point3_title": "High Turnover Impact",
-    "point3_text": "Onboarding without structured guides is slow and inconsistent. Clear documentation reduces integration time and limits errors."
+    "point3_text": "Without structured guides, every new hire starts from scratch. Clear documentation cuts integration time and reduces errors from day one."
   },
   "solution": {
     "title": "The LuxOps Approach",
-    "text": "We turn real operational experience into structured processes, practical playbooks, and property-specific support so your teams deliver consistent service at every stage of the guest journey."
+    "text": "We take operational knowledge — the kind built from years of running hotel departments — and structure it into practical tools your teams can use daily, at every stage of the guest experience."
   },
   "offers": {
     "title": "Our Offerings",
     "digital_title": "Operational Resources",
-    "digital_desc": "Ready-to-use playbooks and Notion templates. Purchase, download, and put to work immediately.",
+    "digital_desc": "Playbooks and Notion templates your team can start using the same day. No setup required.",
     "digital_cta": "Browse Resources",
     "audit_title": "Audit & Process",
-    "audit_desc": "In-depth quality audit and custom process creation tailored to your property's needs.",
+    "audit_desc": "An in-depth quality audit and process design built around how your property works in practice.",
     "audit_cta": "Learn More",
     "training_title": "On-Property Training",
-    "training_desc": "Practical training sessions designed for your team and property. Half-day or full-day formats available.",
+    "training_desc": "Hands-on training run on your property, with your team. Half-day and full-day formats available.",
     "training_cta": "Learn More"
   },
   "social_proof": {
-    "title": "Methods built and applied across demanding hotel environments",
+    "title": "Methods developed through day-to-day hotel operations",
     "subtitle": "Testimonials coming soon.",
     "stat1": "Developed from real hotel operations",
     "stat2": "~1,000 documented procedures",
@@ -53,13 +53,13 @@
     "stat4": "Immediately usable"
   },
   "cta_section": {
-    "title": "Ready to Strengthen Your Operations?",
+    "title": "Looking to strengthen your operations?",
     "text": "Whether you need a practical tool or a structured review of your operations, we can help.",
     "cta": "Get in Touch"
   },
   "playbooks_page": {
     "title": "Operational Playbooks",
-    "subtitle": "Documented SOPs built from real hotel operations. Each playbook is available in your preferred language.",
+    "subtitle": "Documented SOPs built from how hotel departments work in practice. Each playbook is available in your preferred language.",
     "individual_label": "Individual Playbook",
     "bundle_label": "Complete Bundle",
     "bundle_badge": "Best Value",
@@ -72,7 +72,7 @@
     "coming_soon_text": "HR, Planning, Admin modules in development.",
     "playbook1_title": "Front Office Playbook",
     "playbook1_dept": "Front Office",
-    "playbook1_desc": "Check-in/out procedures, guest communication protocols, concierge standards, and complaint handling methods.",
+    "playbook1_desc": "Check-in/out procedures, guest communication protocols, upselling techniques, night audit, PMS systems and concierge standards.",
     "playbook1_pages": "~250 pages",
     "playbook1_h1": "Check-in/out SOPs",
     "playbook1_h2": "Guest communication templates",
@@ -105,10 +105,10 @@
   },
   "notion_page": {
     "title": "Notion Templates",
-    "subtitle": "Ready-to-use operational management workspaces, structured for hotel teams.",
+    "subtitle": "Operational management workspaces structured for how hotel teams work in practice.",
     "base_title": "Operations Base Template",
     "base_price": "€497",
-    "base_desc": "A complete Notion workspace for hotel operations management. Includes dashboards, checklists, task management, and reporting templates for all key departments.",
+    "base_desc": "A complete Notion workspace covering the daily management of hotel operations. Dashboards, checklists, task tracking, and reporting structures across all key departments.",
     "base_f1": "Multi-department dashboards",
     "base_f2": "Daily operations checklists",
     "base_f3": "Incident tracking system",
@@ -120,17 +120,17 @@
     "buy_base": "Purchase Template — €497",
     "custom_title": "Custom Notion Setup",
     "custom_price": "€997",
-    "custom_desc": "Full customisation of the Notion workspace to match your property, brand standards, and operational workflows.",
+    "custom_desc": "Full customisation of the workspace to reflect your property's structure, brand standards, and the way your teams work in practice.",
     "custom_cta": "Request Custom Setup"
   },
   "audit_page": {
     "title": "Quality Audit",
-    "subtitle": "An in-depth 2-day operational audit to identify gaps and build a clear improvement roadmap.",
+    "subtitle": "A 2-day operational audit to identify where operations break down and build a prioritised improvement plan.",
     "price": "From €2,400",
     "price_note": "2-day minimum + travel expenses",
     "process_title": "The Audit Process",
     "step1_title": "Pre-Audit Briefing",
-    "step1_desc": "Review of existing documentation, standards, and operational context.",
+    "step1_desc": "Review of existing documentation, current standards, and how the property works in practice.",
     "step2_title": "On-Site Assessment",
     "step2_desc": "2-day review across all departments. 100+ evaluation criteria.",
     "step3_title": "Analysis & Report",
@@ -145,14 +145,14 @@
     "d5": "Quick-win action list",
     "d6": "30-min debrief call",
     "cta": "Request a Quote",
-    "cta_subtitle": "Have a property you'd like us to review? Let's discuss what you need."
+    "cta_subtitle": "Have a property in mind? Tell us about it and we'll discuss what makes sense."
   },
   "process_page": {
     "title": "Custom Process Creation",
-    "subtitle": "Complete process creation for any hotel department, aligned with your brand standards and operational structure.",
+    "subtitle": "Complete process creation for any hotel department, built around your brand standards and how your teams work in practice.",
     "price": "From €1,497",
     "price_note": "per department",
-    "desc": "We create complete SOPs for any hotel department, formatted for print or Notion. We can build from your existing documentation or develop new processes from scratch.",
+    "desc": "We write complete SOPs for any hotel department, formatted for print or Notion. We can work from your existing documentation or build new processes entirely from scratch.",
     "formats_title": "Delivery Formats",
     "f1": "PDF (print-ready)",
     "f2": "Notion workspace",
@@ -167,11 +167,11 @@
     "d7": "HR & Onboarding",
     "d8": "Revenue Management",
     "cta": "Request a Quote",
-    "cta_title": "Ready to document your operations?"
+    "cta_title": "Ready to document your operations properly?"
   },
   "training_page": {
     "title": "On-Property Training",
-    "subtitle": "Practical operational training designed for your team and property.",
+    "subtitle": "Operational training run on your property, built around your team and service context.",
     "half_day": "Half-Day Training",
     "full_day": "Full-Day Training",
     "half_price": "€997",
@@ -187,15 +187,15 @@
     "t5": "Quality control methods",
     "t6": "Guest journey optimisation",
     "cta": "Request a Quote",
-    "cta_title": "Looking to train your team on-site?"
+    "cta_title": "Looking to train your team on property?"
   },
   "about_page": {
     "title": "About LuxOps",
-    "subtitle": "Structured operational methods from high-end hotel environments, available to every property.",
+    "subtitle": "Operational methods built in demanding hotel environments, now available to other properties.",
     "story_title": "Our Story",
-    "story_p1": "LuxOps was built from years of operational experience across high-end properties and independent hotel groups.",
-    "story_p2": "Through managing complex, multi-department hotel operations, we developed structured procedures, SOPs, and operating methods drawn from environments where consistent service is non-negotiable.",
-    "story_p3": "The logic was straightforward: high-end hotels share the same operational challenges. No property should have to build everything from scratch. LuxOps packages tested, structured methods so teams can implement them quickly and focus on what matters most: their guests.",
+    "story_p1": "LuxOps was built from years of hands-on experience running operations across high-end properties and independent hotel groups.",
+    "story_p2": "Managing multi-department hotel operations day-to-day meant building structured procedures and SOPs out of necessity — in environments where a drop in service quality isn't an option.",
+    "story_p3": "The logic was simple: most hotels face the same operational challenges, yet many still rebuild everything from scratch. LuxOps packages tested, structured methods so teams can implement them quickly and focus on what matters most: their guests.",
     "expertise_title": "Areas of Expertise",
     "e1": "Front Office & Guest Relations",
     "e2": "Housekeeping & Rooms Division",
@@ -205,15 +205,15 @@
     "e6": "Process Design & SOP Creation",
     "values_title": "Our Values",
     "v1_title": "Excellence",
-    "v1_desc": "We hold ourselves to the standards expected at the top of the industry.",
+    "v1_desc": "We hold ourselves to the standards expected in the most demanding properties.",
     "v2_title": "Clarity",
-    "v2_desc": "Complex operations become simple when documented with precision and care.",
+    "v2_desc": "Complex operations become manageable when they're documented clearly and kept up to date.",
     "v3_title": "Pragmatism",
     "v3_desc": "Every recommendation is actionable, rooted in real operational experience."
   },
   "contact_page": {
     "title": "Get in Touch",
-    "subtitle": "Have a project in mind? We'd love to hear from you.",
+    "subtitle": "Have a project in mind? Tell us about it.",
     "name": "Full Name",
     "email": "Email Address",
     "company": "Hotel / Company",
