@@ -18,6 +18,28 @@ export const metadata: Metadata = {
   title: 'LuxOps — Hotel Operations Playbooks, SOPs & Training',
   description:
     'Operational playbooks, SOP frameworks and on-property training for high-end hotels. Front Office, Housekeeping, F&B, Spa. Built from real hotel operations.',
+  keywords: [
+    'hotel operations playbook',
+    'hotel SOP',
+    'hotel standard operating procedures',
+    'hotel procedures',
+    'front office playbook',
+    'housekeeping SOP',
+    'F&B service standards',
+    'spa wellness protocols',
+    'hotel operations management',
+    'hotel training manual',
+    'luxury hotel standards',
+    'hotel staff training',
+    'hotel quality audit',
+    'playbook hôtelier',
+    'procédures hôtel',
+    'SOP hôtel',
+    'gestion opérations hôtelières',
+    'formation hôtelière',
+    'standards service hôtel',
+    'audit qualité hôtel',
+  ],
   verification: {
     google: 'WSMYWLKVx8J9gq1vEj6wiRBqmej4G1StcRmx4W830SU',
     other: {
