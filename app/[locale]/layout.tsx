@@ -4,9 +4,7 @@ import Script from 'next/script'
 import '../globals.css'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
-import CartDrawer from '@/components/CartDrawer'
+import SiteShell from '@/components/SiteShell'
 import { CartProvider } from '@/context/CartContext'
 
 const GA_ID = 'G-0CDGZY9FPZ'
@@ -77,10 +75,9 @@ export default async function LocaleLayout({
 
         <NextIntlClientProvider messages={messages}>
           <CartProvider>
-            <Header locale={locale} />
-            <main>{children}</main>
-            <Footer locale={locale} />
-            <CartDrawer locale={locale} />
+            <SiteShell locale={locale}>
+              {children}
+            </SiteShell>
           </CartProvider>
         </NextIntlClientProvider>
       </body>
