@@ -37,6 +37,13 @@ function buildEmailHtml(
   const footerNote = isEn
     ? 'Links are valid for Google Drive. If you have any issues, reply to this email.'
     : 'Les liens sont valides sur Google Drive. En cas de problème, répondez à cet email.'
+  const portalLabel = isEn ? 'Access my portal' : 'Accéder à mon espace'
+  const portalNote = isEn
+    ? 'You can also access your resources anytime from your personal portal:'
+    : 'Vous pouvez également accéder à vos ressources à tout moment depuis votre espace personnel :'
+  const portalUrl = isEn
+    ? 'https://www.luxops.fr/en/portal'
+    : 'https://www.luxops.fr/fr/portal'
   const closing = isEn
     ? 'Best regards,<br/>The LuxOps Team'
     : 'Cordialement,<br/>L\'équipe LuxOps'
@@ -101,6 +108,15 @@ function buildEmailHtml(
                   <p style="font-size:14px;color:#555555;margin:0 0 24px;line-height:1.6;">${thankYou}</p>
 
                   ${itemsHtml}
+
+                  <!-- Portal CTA -->
+                  <div style="background:#EEF2F7;border-radius:12px;padding:20px;margin:24px 0 0;text-align:center;">
+                    <p style="font-size:13px;color:#555555;margin:0 0 14px;line-height:1.5;">${portalNote}</p>
+                    <a href="${portalUrl}"
+                       style="display:inline-block;background:#1A2E44;color:#ffffff;text-decoration:none;padding:12px 24px;border-radius:8px;font-size:13px;font-weight:600;letter-spacing:0.3px;">
+                      ${portalLabel}
+                    </a>
+                  </div>
 
                   <p style="font-size:12px;color:#999999;margin:24px 0 0;line-height:1.6;">${footerNote}</p>
                   <p style="font-size:14px;color:#333333;margin:24px 0 0;line-height:1.6;">${closing}</p>

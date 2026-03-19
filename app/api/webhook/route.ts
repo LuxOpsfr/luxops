@@ -1,15 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server'
 import Stripe from 'stripe'
+import { createClient } from '@supabase/supabase-js'
 import { sendPlaybookEmail } from '@/lib/email'
+import { DOWNLOADS, BUNDLE_PRICE_ID, ALL_PLAYBOOK_PRICE_IDS } from '@/lib/downloads'
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   apiVersion: '2026-02-25.clover',
 })
 
-// Required: disable body parsing so we can verify the raw Stripe signature
-export const config = {
-  api: { bodyParser: false },
-}
+const supabaseAdmin = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.SUPABASE_SERVICE_ROLE_KEY!
+)
 
 export async function POST(request: NextRequest) {
   const body = await request.text()
@@ -32,11 +34,9 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Invalid signature' }, { status: 400 })
   }
 
-  // Only handle successful payments
   if (event.type === 'checkout.session.completed') {
     const session = event.data.object as Stripe.Checkout.Session
 
-    // Only process paid sessions
     if (session.payment_status !== 'paid') {
       return NextResponse.json({ received: true })
     }
@@ -49,7 +49,6 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ received: true })
     }
 
-    // Retrieve line items to know which products were purchased
     const lineItems = await stripe.checkout.sessions.listLineItems(session.id, {
       expand: ['data.price'],
       limit: 10,
@@ -59,10 +58,46 @@ export async function POST(request: NextRequest) {
       .map(item => (item.price as Stripe.Price)?.id)
       .filter(Boolean) as string[]
 
-    // Detect locale from session metadata or URL
     const locale = (session.metadata?.locale as string) || 'en'
 
-    console.log(`[Webhook] Sending playbook email to ${customerEmail} — priceIds: ${priceIds.join(', ')}`)
+    // Determine which playbooks to record in Supabase
+    const playbookPriceIds = priceIds.includes(BUNDLE_PRICE_ID)
+      ? ALL_PLAYBOOK_PRICE_IDS
+      : priceIds
+
+    // Insert each purchased playbook into Supabase
+    for (const priceId of playbookPriceIds) {
+      const download = DOWNLOADS[priceId]
+      if (!download) continue
+
+      const productName = locale === 'fr' ? download.titleFr : download.titleEn
+      const amount = lineItems.data.find(
+        item => (item.price as Stripe.Price)?.id === priceId
+      )?.price?.unit_amount ?? 0
+
+      const { error } = await supabaseAdmin.from('purchases').upsert(
+        {
+          email: customerEmail,
+          stripe_session_id: `${session.id}_${priceId}`,
+          price_id: priceId,
+          product_name: productName,
+          amount,
+          currency: session.currency ?? 'eur',
+          locale,
+          download_url: null, // Will be set when files are ready
+        },
+        { onConflict: 'stripe_session_id' }
+      )
+
+      if (error) {
+        console.error(`[Webhook] Supabase insert error for ${priceId}:`, error)
+      } else {
+        console.log(`[Webhook] Purchase saved to Supabase: ${productName} → ${customerEmail}`)
+      }
+    }
+
+    // Send confirmation email
+    console.log(`[Webhook] Sending email to ${customerEmail} — priceIds: ${priceIds.join(', ')}`)
 
     try {
       await sendPlaybookEmail({
@@ -71,10 +106,9 @@ export async function POST(request: NextRequest) {
         priceIds,
         locale,
       })
-      console.log(`[Webhook] Email sent successfully to ${customerEmail}`)
+      console.log(`[Webhook] Email sent to ${customerEmail}`)
     } catch (err) {
       console.error('[Webhook] Failed to send email:', err)
-      // Don't return error — Stripe would retry the webhook
     }
   }
 
