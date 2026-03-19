@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
-import { Menu, X, Globe, ShoppingCart } from 'lucide-react'
+import { Menu, X, Globe, ShoppingCart, User } from 'lucide-react'
 import { useCart } from '@/context/CartContext'
 
 interface HeaderProps {
@@ -59,6 +59,15 @@ export default function Header({ locale }: HeaderProps) {
             <span className="font-semibold uppercase">{otherLocale}</span>
           </Link>
 
+          {/* Mon espace */}
+          <Link
+            href={`/${locale}/portal`}
+            className="p-1.5 text-gray-600 hover:text-[#111111] transition-colors"
+            aria-label="Mon espace"
+          >
+            <User size={20} />
+          </Link>
+
           {/* Cart */}
           <button
             onClick={openCart}
@@ -105,6 +114,13 @@ export default function Header({ locale }: HeaderProps) {
               {link.label}
             </Link>
           ))}
+          <Link
+            href={`/${locale}/portal`}
+            onClick={() => setMenuOpen(false)}
+            className="text-gray-700 hover:text-[#111111] py-1 font-medium text-sm"
+          >
+            Mon espace
+          </Link>
           <Link
             href={`/${locale}/contact`}
             onClick={() => setMenuOpen(false)}
