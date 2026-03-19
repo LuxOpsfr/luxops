@@ -26,7 +26,7 @@ export default function Header({ locale }: HeaderProps) {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 py-4 grid grid-cols-3 items-center">
         {/* Logo */}
         <Link
           href={`/${locale}`}
@@ -35,8 +35,8 @@ export default function Header({ locale }: HeaderProps) {
           LuxOps
         </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-7">
+        {/* Desktop Nav — perfectly centered */}
+        <nav className="hidden lg:flex items-center justify-center gap-7">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -49,7 +49,7 @@ export default function Header({ locale }: HeaderProps) {
         </nav>
 
         {/* Right actions */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 justify-end">
           {/* Language switcher */}
           <Link
             href={`/${otherLocale}`}
