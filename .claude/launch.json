@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "luxops-dev",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev"],
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["/Users/belkheirbekhedda/Library/CloudStorage/GoogleDrive-belkheirb@icloud.com/Mon Drive/luxops/node_modules/next/dist/bin/next", "dev"],
       "port": 3000
     }
   ]
