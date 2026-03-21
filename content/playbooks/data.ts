@@ -74,6 +74,7 @@ export const PLAYBOOKS: PlaybookEntry[] = [
     },
   },
   {
+    previewImage: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&h=500&fit=crop&q=80',
     id: 'hsk',
     priceId: 'price_1TBZ9TDVLJTOFkjUwWnoKaGk',
     title: { en: 'Housekeeping Playbook', fr: 'Playbook Housekeeping' },
@@ -185,6 +186,7 @@ export const PLAYBOOKS: PlaybookEntry[] = [
     },
   },
   {
+    previewImage: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&h=500&fit=crop&q=80',
     id: 'spa',
     priceId: 'price_1TBZ9vDVLJTOFkjUT1FHhqUi',
     title: { en: 'Spa & Wellness Playbook', fr: 'Playbook Spa & Wellness' },

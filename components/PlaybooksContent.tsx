@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { Check, Clock, ChevronRight } from 'lucide-react'
+import Image from 'next/image'
 import AddToCartButton from '@/components/AddToCartButton'
 import PlaybookModal from '@/components/PlaybookModal'
 import { PLAYBOOKS, BUNDLE_PRICE_ID } from '@/content/playbooks/data'
@@ -87,38 +88,54 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
               <button
                 key={pb.id}
                 onClick={() => setOpenIndex(i)}
-                className="text-left border border-gray-100 rounded-2xl p-8 hover:border-[#111111]/30 hover:shadow-lg transition-all group cursor-pointer"
+                className="text-left border border-gray-100 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 group cursor-pointer"
               >
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <span className="text-xs font-semibold text-[#111111] uppercase tracking-wider bg-[#111111]/8 px-3 py-1 rounded-full">
+                {/* Image Hero */}
+                <div className="relative h-56 w-full bg-gray-100 overflow-hidden">
+                  {pb.previewImage ? (
+                    <Image
+                      src={pb.previewImage}
+                      alt={pb.title[lang]}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      unoptimized={pb.previewImage.startsWith('http')}
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-br from-[#1A2E44] to-[#0056D2]" />
+                  )}
+                  {/* Overlay badge */}
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-white/90 backdrop-blur-sm text-[#1A2E44] text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">
                       {pb.dept[lang]}
                     </span>
-                    <h3 className="text-xl font-bold text-[#111111] mt-3">{pb.title[lang]}</h3>
                   </div>
-                  <div className="flex items-center gap-1 text-gray-300 text-xs flex-shrink-0 ml-4">
-                    <Clock size={12} />
+                  <div className="absolute top-4 right-4 flex items-center gap-1 bg-black/40 backdrop-blur-sm text-white text-xs px-2.5 py-1.5 rounded-full">
+                    <Clock size={11} />
                     {pb.pages}
                   </div>
                 </div>
 
-                <p className="text-gray-400 text-sm leading-relaxed mb-5">{pb.desc[lang]}</p>
+                {/* Content */}
+                <div className="p-7">
+                  <h3 className="text-xl font-bold text-[#111111] mb-2">{pb.title[lang]}</h3>
+                  <p className="text-gray-400 text-sm leading-relaxed mb-5">{pb.desc[lang]}</p>
 
-                <ul className="space-y-2 mb-6">
-                  {pb.highlights[lang].map((h, j) => (
-                    <li key={j} className="flex items-center gap-2 text-sm text-gray-600">
-                      <Check size={14} className="text-[#111111] flex-shrink-0" />
-                      {h}
-                    </li>
-                  ))}
-                </ul>
+                  <ul className="space-y-2 mb-6">
+                    {pb.highlights[lang].slice(0, 3).map((h, j) => (
+                      <li key={j} className="flex items-center gap-2 text-sm text-gray-600">
+                        <Check size={14} className="text-[#2E7D32] flex-shrink-0" />
+                        {h}
+                      </li>
+                    ))}
+                  </ul>
 
-                <div className="flex items-center justify-between">
-                  <span className="text-[#111111] font-bold">€67</span>
-                  <span className="flex items-center gap-1.5 text-sm font-medium text-[#111111] group-hover:gap-2.5 transition-all">
-                    {isEn ? 'View Details' : 'Voir les détails'}
-                    <ChevronRight size={16} />
-                  </span>
+                  <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                    <span className="text-[#111111] font-bold text-xl">€67</span>
+                    <span className="flex items-center gap-1.5 text-sm font-semibold text-[#0056D2] group-hover:gap-2.5 transition-all">
+                      {isEn ? 'View Details' : 'Voir les détails'}
+                      <ChevronRight size={16} />
+                    </span>
+                  </div>
                 </div>
               </button>
             ))}
