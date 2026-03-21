@@ -7,8 +7,12 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params
   const isEn = locale === 'en'
   return {
-    title: isEn ? 'Custom Hotel SOP Creation | Tailored Operations Manuals | LuxOps' : 'Création de SOPs Hôteliers Sur-Mesure | Procédures Opérationnelles | LuxOps',
-    description: isEn ? 'Custom operational process creation for hotel departments. Property-specific SOPs, procedures and operations manuals tailored to your brand and team.' : 'Création de process opérationnels sur-mesure pour les départements hôteliers. SOPs, procédures et manuels adaptés à votre établissement et vos standards.',
+    title: isEn
+      ? 'Custom Hotel SOP Creation | Property-Specific Operational Procedures | LuxOps'
+      : 'Création de Process Hôteliers Sur-Mesure | Procédures Opérationnelles Spécifiques | LuxOps',
+    description: isEn
+      ? 'Custom operational procedures for any hotel department. Property-specific SOPs written around your standards, team structure, and daily operations. PDF and Notion formats.'
+      : "Procédures opérationnelles sur-mesure pour tout département hôtelier. SOPs construits autour de vos standards, de votre structure d'équipe et de votre fonctionnement quotidien.",
   }
 }
 
@@ -21,29 +25,76 @@ function ProcessContent({ locale }: { locale: string }) {
   const t = useTranslations('process_page')
   const isEn = locale === 'en'
 
-  const formats = [t('f1'), t('f2'), t('f3')]
   const departments = [t('d1'), t('d2'), t('d3'), t('d4'), t('d5'), t('d6'), t('d7'), t('d8')]
 
   const phases = isEn ? [
-    { n: '01', title: 'Existing Audit', desc: "We review what's already in place: existing docs, team habits, gaps. Before writing a single line." },
-    { n: '02', title: 'Custom Drafting', desc: "Procedures written around your property's actual standards, service sequences and team structure." },
-    { n: '03', title: 'Review & Delivery', desc: 'Iteration with your team until the output is accurate, usable, and ready to deploy immediately.' },
+    {
+      n: '01',
+      title: 'Existing Audit',
+      desc: "We review what already exists: how teams currently work, what is documented, and where the real gaps are. Before writing anything.",
+    },
+    {
+      n: '02',
+      title: 'Custom Drafting',
+      desc: "Procedures are written around your standards, service sequences, team structure, and daily operating reality. Not adapted from a generic template.",
+    },
+    {
+      n: '03',
+      title: 'Review & Delivery',
+      desc: "Everything is reviewed with your team before final delivery, so the output is accurate, practical, and ready to use from day one.",
+    },
   ] : [
-    { n: '01', title: "Analyse de l'Existant", desc: "Revue de ce qui est déjà en place : documents, habitudes d'équipe, écarts. Avant d'écrire quoi que ce soit." },
-    { n: '02', title: 'Rédaction Sur-Mesure', desc: "Procédures rédigées autour des standards réels de votre établissement, de vos séquences de service et de votre structure d'équipe." },
-    { n: '03', title: 'Validation & Livraison', desc: "Itérations avec votre équipe jusqu'à ce que le rendu soit précis, utilisable, et prêt à être déployé immédiatement." },
+    {
+      n: '01',
+      title: "Analyse de l'Existant",
+      desc: "Revue de ce qui existe déjà : comment les équipes travaillent actuellement, ce qui est documenté et où se trouvent les vrais écarts. Avant d'écrire quoi que ce soit.",
+    },
+    {
+      n: '02',
+      title: 'Rédaction Sur-Mesure',
+      desc: "Les procédures sont rédigées autour de vos standards, de vos séquences de service, de votre structure d'équipe et de votre fonctionnement réel. Pas adaptées d'un modèle générique.",
+    },
+    {
+      n: '03',
+      title: 'Validation & Livraison',
+      desc: "Tout est revu avec votre équipe avant la livraison finale, pour que le résultat soit précis, utilisable et prêt à être mis en place dès le premier jour.",
+    },
   ]
 
   const steps = isEn ? [
-    { title: 'Briefing', desc: 'We discuss the department, existing standards, team size and delivery format.' },
-    { title: 'Analysis', desc: 'We review any existing documentation and identify gaps before drafting.' },
-    { title: 'Drafting', desc: 'Full procedures written around your property. You review at each stage.' },
-    { title: 'Delivery', desc: 'Final PDF and/or Notion workspace delivered with a structured handover.' },
+    {
+      title: 'Audit',
+      desc: "Review the current state: existing documents, how teams work day to day, and where inconsistencies exist.",
+    },
+    {
+      title: 'Analysis',
+      desc: "Identify what needs to be standardised, clarified, or built from the ground up before drafting begins.",
+    },
+    {
+      title: 'Drafting',
+      desc: "Full procedures written around the property, with review points at each stage so nothing is finalised without your team's input.",
+    },
+    {
+      title: 'Delivery',
+      desc: "Final PDF and/or Notion workspace delivered with a structured handover and guidance on how to roll it out.",
+    },
   ] : [
-    { title: 'Briefing', desc: "Nous échangeons sur le département, les standards existants, la taille de l'équipe et le format de livraison." },
-    { title: 'Analyse', desc: "Revue des documents existants et identification des lacunes avant la rédaction." },
-    { title: 'Rédaction', desc: "Procédures complètes rédigées autour de votre établissement. Vous validez à chaque étape." },
-    { title: 'Livraison', desc: "PDF final et/ou espace Notion livré avec une remise structurée." },
+    {
+      title: 'Cadrage',
+      desc: "Revue de l'état actuel : documents existants, façon de travailler des équipes au quotidien et points d'incohérence.",
+    },
+    {
+      title: 'Analyse',
+      desc: "Identification de ce qui doit être standardisé, clarifié ou construit depuis le départ avant de commencer la rédaction.",
+    },
+    {
+      title: 'Rédaction',
+      desc: "Procédures complètes rédigées autour de l'établissement, avec des points de validation à chaque étape pour que rien ne soit finalisé sans l'accord de votre équipe.",
+    },
+    {
+      title: 'Livraison',
+      desc: "PDF final et/ou espace Notion livré avec une remise structurée et des repères pour faciliter le déploiement.",
+    },
   ]
 
   return (
@@ -59,6 +110,7 @@ function ProcessContent({ locale }: { locale: string }) {
         }}
       >
         <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row items-end gap-10">
+
           {/* Left 2/3 */}
           <div className="flex-1">
             <div
@@ -71,19 +123,23 @@ function ProcessContent({ locale }: { locale: string }) {
             <h1 className="font-display text-5xl md:text-7xl font-extrabold tracking-tighter leading-none text-[#0a1d2e] mb-6">
               {t('title')}
             </h1>
-            <div className="flex flex-wrap items-center gap-6 mt-8">
-              <div>
-                <div className="font-display text-4xl font-extrabold text-[#003d9b]">{t('price')}</div>
-              </div>
+            <p className="text-sm text-[#737685] max-w-lg leading-relaxed mb-8">{t('subtitle_context')}</p>
+            <div className="flex flex-wrap items-center gap-6">
+              <div className="font-display text-4xl font-extrabold text-[#003d9b]">{t('price')}</div>
               <Link
                 href={`/${locale}/contact`}
                 className="inline-flex items-center gap-2 px-8 py-4 text-white font-bold transition-all hover:opacity-90"
-                style={{ background: 'linear-gradient(135deg, #003d9b, #0052cc)', borderRadius: '0.125rem', boxShadow: '0 8px 24px rgba(0,61,155,0.2)' }}
+                style={{
+                  background: 'linear-gradient(135deg, #003d9b, #0052cc)',
+                  borderRadius: '0.125rem',
+                  boxShadow: '0 8px 24px rgba(0,61,155,0.2)',
+                }}
               >
                 {t('cta')} <ArrowRight size={18} />
               </Link>
             </div>
           </div>
+
           {/* Right 1/3 — pull-quote */}
           <div
             className="lg:w-80 pb-2 text-lg text-[#4f6074] leading-relaxed"
@@ -91,16 +147,20 @@ function ProcessContent({ locale }: { locale: string }) {
           >
             {t('subtitle')}
           </div>
+
         </div>
       </section>
 
-      {/* 3 numbered phases */}
+      {/* 3 numbered phases — How it works */}
       <section className="py-24 px-6 bg-white">
         <div className="max-w-screen-xl mx-auto">
           <h2 className="font-display text-3xl font-extrabold text-[#0a1d2e] tracking-tight mb-16">
             {isEn ? 'How it works' : 'Comment ça se passe'}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px" style={{ backgroundColor: 'rgba(195,198,214,0.15)' }}>
+          <div
+            className="grid grid-cols-1 md:grid-cols-3 gap-px"
+            style={{ backgroundColor: 'rgba(195,198,214,0.15)' }}
+          >
             {phases.map((p, i) => (
               <div
                 key={i}
@@ -118,7 +178,7 @@ function ProcessContent({ locale }: { locale: string }) {
             ))}
           </div>
 
-          {/* Navy impact block */}
+          {/* Impact statement */}
           <div
             className="mt-1 p-12 lg:p-16 relative overflow-hidden"
             style={{ backgroundColor: '#003d9b' }}
@@ -126,16 +186,15 @@ function ProcessContent({ locale }: { locale: string }) {
             <div className="relative z-10 max-w-2xl">
               <h3 className="font-display text-3xl lg:text-4xl font-extrabold text-white tracking-tight mb-4">
                 {isEn
-                  ? 'Every procedure we write is reviewed with your team before delivery.'
-                  : 'Chaque procédure rédigée est validée avec votre équipe avant livraison.'}
+                  ? 'The goal is not to produce documentation for its own sake.'
+                  : "L'objectif n'est pas de produire de la documentation pour elle-même."}
               </h3>
               <p className="text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.75)' }}>
                 {isEn
-                  ? "We don't deliver documents that sit in a drawer. We deliver procedures your teams will actually use."
-                  : "Nous ne livrons pas des documents qui dorment dans un tiroir. Nous livrons des procédures que vos équipes utilisent réellement."}
+                  ? "The goal is to give teams procedures they can actually follow, apply in their daily work, and maintain over time."
+                  : "L'objectif est de donner à vos équipes des procédures qu'elles peuvent réellement suivre, appliquer dans leur travail quotidien et maintenir dans le temps."}
               </p>
             </div>
-            {/* Ghost number */}
             <div
               className="absolute -bottom-8 -right-4 font-display font-extrabold text-[200px] leading-none select-none pointer-events-none"
               style={{ color: 'rgba(255,255,255,0.06)' }}
@@ -146,15 +205,19 @@ function ProcessContent({ locale }: { locale: string }) {
         </div>
       </section>
 
-      {/* Methodology timeline + sticky CTA */}
+      {/* Creation process timeline + sticky CTA */}
       <section className="py-24 px-6" style={{ backgroundColor: '#f8f9ff' }}>
         <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+
           {/* Timeline */}
           <div className="lg:col-span-7">
             <h2 className="font-display text-3xl font-extrabold text-[#0a1d2e] tracking-tight mb-16">
               {isEn ? 'The creation process' : 'Le déroulé de création'}
             </h2>
-            <div className="relative pl-14 border-l-2" style={{ borderColor: 'rgba(195,198,214,0.4)' }}>
+            <div
+              className="relative pl-14 border-l-2"
+              style={{ borderColor: 'rgba(195,198,214,0.4)' }}
+            >
               {steps.map((step, i) => (
                 <div key={i} className="mb-14 relative last:mb-0">
                   <div
@@ -172,15 +235,18 @@ function ProcessContent({ locale }: { locale: string }) {
 
           {/* Sticky CTA sidebar */}
           <div className="lg:col-span-5 lg:sticky lg:top-28">
-            <div className="p-10 bg-white" style={{ borderRadius: '0.125rem', boxShadow: '0 8px 32px rgba(10,29,46,0.08)' }}>
+            <div
+              className="p-10 bg-white"
+              style={{ borderRadius: '0.125rem', boxShadow: '0 8px 32px rgba(10,29,46,0.08)' }}
+            >
               <div className="font-display text-xs font-bold uppercase tracking-widest text-[#737685] mb-2">
                 {isEn ? 'Ready to start?' : 'Prêt à commencer ?'}
               </div>
               <div className="font-display text-3xl font-extrabold text-[#003d9b] mb-6">{t('price')}</div>
               <p className="text-sm text-[#4f6074] leading-relaxed mb-8">
                 {isEn
-                  ? 'A single department, fully documented. Built around your property, not a generic template.'
-                  : "Un département, entièrement documenté. Construit autour de votre établissement, pas d'un template générique."}
+                  ? "One department, fully documented and built around the way your property operates — not adapted from a generic template."
+                  : "Un département, entièrement documenté et construit autour du fonctionnement réel de votre établissement — pas adapté d'un modèle générique."}
               </p>
               <ul className="space-y-3 mb-8">
                 {[
@@ -197,7 +263,10 @@ function ProcessContent({ locale }: { locale: string }) {
               <Link
                 href={`/${locale}/contact`}
                 className="inline-flex items-center justify-center gap-2 w-full px-6 py-4 text-white font-bold transition-all hover:opacity-90"
-                style={{ background: 'linear-gradient(135deg, #003d9b, #0052cc)', borderRadius: '0.125rem' }}
+                style={{
+                  background: 'linear-gradient(135deg, #003d9b, #0052cc)',
+                  borderRadius: '0.125rem',
+                }}
               >
                 {t('cta')} <ArrowRight size={16} />
               </Link>
@@ -206,12 +275,15 @@ function ProcessContent({ locale }: { locale: string }) {
               </p>
             </div>
           </div>
+
         </div>
       </section>
 
       {/* When useful + What we build */}
       <section className="py-24 px-6 bg-white">
         <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+
+          {/* When useful */}
           <div>
             <h2 className="font-display text-2xl font-extrabold text-[#0a1d2e] tracking-tight mb-8">
               {t('when_useful_title')}
@@ -235,10 +307,12 @@ function ProcessContent({ locale }: { locale: string }) {
             </div>
           </div>
 
+          {/* What we build */}
           <div>
-            <h2 className="font-display text-2xl font-extrabold text-[#0a1d2e] tracking-tight mb-8">
+            <h2 className="font-display text-2xl font-extrabold text-[#0a1d2e] tracking-tight mb-3">
               {t('what_we_build_title')}
             </h2>
+            <p className="text-sm text-[#4f6074] leading-relaxed mb-8">{t('what_we_build_intro')}</p>
             <div className="space-y-2">
               {[t('wb1'), t('wb2'), t('wb3'), t('wb4'), t('wb5')].map((item, i) => (
                 <div
@@ -271,10 +345,11 @@ function ProcessContent({ locale }: { locale: string }) {
               ))}
             </div>
           </div>
+
         </div>
       </section>
 
-      {/* Formats + CTA */}
+      {/* Final CTA */}
       <section className="py-20 px-6 bg-[#003d9b] text-center">
         <div className="max-w-2xl mx-auto">
           <h2 className="font-display text-4xl font-extrabold text-white tracking-tight mb-4">
@@ -292,6 +367,7 @@ function ProcessContent({ locale }: { locale: string }) {
           </Link>
         </div>
       </section>
+
     </div>
   )
 }
