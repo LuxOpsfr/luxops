@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { useTranslations } from 'next-intl'
 import Link from 'next/link'
 import { ArrowRight, BookOpen, Settings, Users } from 'lucide-react'
+import ExpertiseSection from '@/components/ExpertiseSection'
 
 export async function generateMetadata({
   params,
@@ -237,6 +238,9 @@ function HomeContent({ locale }: { locale: string }) {
           {tProof('subtitle') && <p className="text-center text-[#737685] text-xs italic mt-6">{tProof('subtitle')}</p>}
         </div>
       </section>
+
+      {/* Expertise — humanisation */}
+      <ExpertiseSection locale={locale} />
 
       {/* Final CTA */}
       <section className="py-24 bg-[#003d9b] text-white text-center px-6">

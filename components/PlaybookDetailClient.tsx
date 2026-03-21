@@ -115,7 +115,9 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
             </div>
 
             <p className="text-xs text-[#737685]">
-              {pb.pages} · PDF + PowerPoint · {isEn ? 'FR & EN included' : 'FR & EN inclus'}
+              {isEn
+                ? `Instant delivery · ${pb.pages} · PDF + PowerPoint · FR & EN included · Lifetime updates`
+                : `Livraison instantanée · ${pb.pages} · PDF + PowerPoint · FR & EN inclus · Mises à jour à vie`}
             </p>
           </div>
 
@@ -136,7 +138,7 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
               {/* SOP Preview mockup */}
               <div className="border-b pb-4 mb-5" style={{ borderColor: 'rgba(195,198,214,0.3)' }}>
                 <p className="text-[10px] text-[#003d9b] font-bold uppercase tracking-widest mb-1">
-                  Standard Operating Procedure · {pb.dept[lang]}
+                  {isEn ? 'Standard Operating Procedure' : 'Procédure Opérationnelle Standard'} · {pb.dept[lang]}
                 </p>
                 <h4 className="font-display font-bold text-lg uppercase text-[#0a1d2e]">
                   {pb.chapters[lang][0]}

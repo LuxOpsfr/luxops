@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { useTranslations } from 'next-intl'
+import ExpertiseSection from '@/components/ExpertiseSection'
 
 export async function generateMetadata({
   params,
@@ -18,11 +19,12 @@ export async function generateMetadata({
   }
 }
 
-export default function AboutPage() {
-  return <AboutContent />
+export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
+  return <AboutContent locale={locale} />
 }
 
-function AboutContent() {
+function AboutContent({ locale }: { locale: string }) {
   const t = useTranslations('about_page')
 
   const expertise = [
@@ -124,6 +126,9 @@ function AboutContent() {
           </div>
         </div>
       </section>
+
+      {/* Expertise — humanisation */}
+      <ExpertiseSection locale={locale} />
     </div>
   )
 }
