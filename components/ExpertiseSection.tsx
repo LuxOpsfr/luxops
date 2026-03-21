@@ -98,16 +98,16 @@ export default function ExpertiseSection({ locale }: Props) {
           <div className="space-y-4 text-[#4f6074] leading-relaxed">
             <p>
               {isEn
-                ? "LuxOps was created from years spent managing hotel departments across high-end independent properties — not as a consultant looking in, but as someone responsible for the day-to-day. Every SOP, checklist and framework here was built under real operational pressure."
-                : "LuxOps est née d\u2019années passées à gérer des départements hôteliers dans des établissements indépendants haut de gamme \u2014 non pas en tant que consultant extérieur, mais en tant que responsable du fonctionnement quotidien. Chaque procédure, checklist et outil a été construit sous une vraie pression opérationnelle."}
+                ? "LuxOps was created from years spent managing hotel departments across high-end independent properties. Not as a consultant looking in, but as someone responsible for the day-to-day. Every SOP, checklist and framework here was built under real operational pressure."
+                : "LuxOps est née d\u2019années passées à gérer des départements hôteliers dans des établissements indépendants haut de gamme. Pas en tant que consultant extérieur, mais en tant que responsable du fonctionnement quotidien. Chaque procédure, checklist et outil a été construit sous une vraie pression opérationnelle."}
             </p>
             <p
               className="font-display font-bold text-[#0a1d2e] text-base leading-snug"
               style={{ borderLeft: '3px solid #003d9b', paddingLeft: '1.25rem' }}
             >
               {isEn
-                ? "The methods exist because they were needed. They work because they were tested \u2014 in the rooms, at the front desk, and during service."
-                : "Les méthodes existent parce qu\u2019elles étaient nécessaires. Elles fonctionnent parce qu\u2019elles ont été testées \u2014 dans les chambres, à la réception, pendant le service."}
+                ? "The methods exist because they were needed. They work because they were tested: in the rooms, at the front desk, during service."
+                : "Les méthodes existent parce qu\u2019elles étaient nécessaires. Elles fonctionnent parce qu\u2019elles ont été testées sur le terrain : dans les chambres, à la réception, pendant le service."}
             </p>
           </div>
 

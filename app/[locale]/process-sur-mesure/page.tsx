@@ -25,11 +25,11 @@ function ProcessContent({ locale }: { locale: string }) {
   const departments = [t('d1'), t('d2'), t('d3'), t('d4'), t('d5'), t('d6'), t('d7'), t('d8')]
 
   const phases = isEn ? [
-    { n: '01', title: 'Existing Audit', desc: "We review what's already in place — existing docs, team habits, gaps — before writing a single line." },
+    { n: '01', title: 'Existing Audit', desc: "We review what's already in place: existing docs, team habits, gaps. Before writing a single line." },
     { n: '02', title: 'Custom Drafting', desc: "Procedures written around your property's actual standards, service sequences and team structure." },
     { n: '03', title: 'Review & Delivery', desc: 'Iteration with your team until the output is accurate, usable, and ready to deploy immediately.' },
   ] : [
-    { n: '01', title: "Analyse de l'Existant", desc: "Revue de ce qui est déjà en place — documents, habitudes d'équipe, écarts — avant d'écrire quoi que ce soit." },
+    { n: '01', title: "Analyse de l'Existant", desc: "Revue de ce qui est déjà en place : documents, habitudes d'équipe, écarts. Avant d'écrire quoi que ce soit." },
     { n: '02', title: 'Rédaction Sur-Mesure', desc: "Procédures rédigées autour des standards réels de votre établissement, de vos séquences de service et de votre structure d'équipe." },
     { n: '03', title: 'Validation & Livraison', desc: "Itérations avec votre équipe jusqu'à ce que le rendu soit précis, utilisable, et prêt à être déployé immédiatement." },
   ]
@@ -74,7 +74,6 @@ function ProcessContent({ locale }: { locale: string }) {
             <div className="flex flex-wrap items-center gap-6 mt-8">
               <div>
                 <div className="font-display text-4xl font-extrabold text-[#003d9b]">{t('price')}</div>
-                <div className="text-sm text-[#737685] mt-1">{t('price_note')}</div>
               </div>
               <Link
                 href={`/${locale}/contact`}
@@ -177,8 +176,7 @@ function ProcessContent({ locale }: { locale: string }) {
               <div className="font-display text-xs font-bold uppercase tracking-widest text-[#737685] mb-2">
                 {isEn ? 'Ready to start?' : 'Prêt à commencer ?'}
               </div>
-              <div className="font-display text-3xl font-extrabold text-[#003d9b] mb-1">{t('price')}</div>
-              <div className="text-sm text-[#737685] mb-6">{t('price_note')}</div>
+              <div className="font-display text-3xl font-extrabold text-[#003d9b] mb-6">{t('price')}</div>
               <p className="text-sm text-[#4f6074] leading-relaxed mb-8">
                 {isEn
                   ? 'A single department, fully documented. Built around your property, not a generic template.'

@@ -43,7 +43,7 @@ const FAQ: Record<string, { q: { en: string; fr: string }; a: { en: string; fr: 
     },
     {
       q: { en: 'Can I adapt the content to my property?', fr: 'Puis-je adapter le contenu à mon établissement ?' },
-      a: { en: "The PowerPoint version is fully editable — add your logo, adjust terminology, and modify procedures to match your property's specific standards and brand voice.", fr: "La version PowerPoint est entièrement modifiable — ajoutez votre logo, adaptez la terminologie et modifiez les procédures pour correspondre aux standards et à la voix de marque de votre établissement." },
+      a: { en: "The PowerPoint version is fully editable. Add your logo, adjust terminology, and modify procedures to match your property's specific standards and brand voice.", fr: "La version PowerPoint est entièrement modifiable. Ajoutez votre logo, adaptez la terminologie et modifiez les procédures pour correspondre aux standards et à la voix de marque de votre établissement." },
     },
     {
       q: { en: 'Do these procedures follow international hotel standards?', fr: 'Ces procédures respectent-elles les standards hôteliers internationaux ?' },
@@ -65,11 +65,11 @@ const FAQ: Record<string, { q: { en: string; fr: string }; a: { en: string; fr: 
     },
     {
       q: { en: 'How do I roll out these procedures with my team?', fr: 'Comment déployer ces procédures avec mon équipe ?' },
-      a: { en: 'Start with the room inspection checklists and daily opening/closing procedures — these have the fastest visible impact. Use the PowerPoint for team briefings and introduce additional modules progressively over 2 to 4 weeks.', fr: "Commencez par les checklists d'inspection des chambres et les procédures d'ouverture/fermeture quotidiennes — c'est là que l'impact est le plus visible et le plus rapide. Utilisez le PowerPoint pour les briefings d'équipe et introduisez les modules supplémentaires progressivement sur 2 à 4 semaines." },
+      a: { en: 'Start with the room inspection checklists and daily opening/closing procedures: these have the fastest visible impact. Use the PowerPoint for team briefings and introduce additional modules progressively over 2 to 4 weeks.', fr: "Commencez par les checklists d'inspection des chambres et les procédures d'ouverture/fermeture quotidiennes : c'est là que l'impact est le plus visible et le plus rapide. Utilisez le PowerPoint pour les briefings d'équipe et introduisez les modules supplémentaires progressivement sur 2 à 4 semaines." },
     },
     {
       q: { en: 'Can I customise the checklists and procedures?', fr: 'Puis-je personnaliser les checklists et les procédures ?' },
-      a: { en: "The PowerPoint version is fully editable, allowing you to adapt all procedures, checklists and inspection criteria to your property's specific standards, room categories and brand requirements.", fr: "La version PowerPoint est entièrement modifiable, vous permettant d'adapter toutes les procédures, checklists et critères d'inspection aux standards, catégories de chambres et exigences de marque de votre établissement." },
+      a: { en: "The PowerPoint version is fully editable. Adapt all procedures, checklists and inspection criteria to your property's specific standards, room categories and brand requirements.", fr: "La version PowerPoint est entièrement modifiable. Adaptez toutes les procédures, checklists et critères d'inspection aux standards, catégories de chambres et exigences de marque de votre établissement." },
     },
     {
       q: { en: 'Do these procedures follow international hotel standards?', fr: 'Ces procédures respectent-elles les standards hôteliers internationaux ?' },
@@ -95,11 +95,11 @@ const FAQ: Record<string, { q: { en: string; fr: string }; a: { en: string; fr: 
     },
     {
       q: { en: 'Does it cover fine dining and casual dining?', fr: 'Couvre-t-il la restauration gastronomique et informelle ?' },
-      a: { en: 'Yes. The procedures are designed to be adaptable across all F&B formats — fine dining, brasserie, bar, room service and breakfast.', fr: 'Oui. Les procédures sont conçues pour être adaptables à tous les formats F&B : gastronomique, brasserie, bar, room service et petit-déjeuner.' },
+      a: { en: 'Yes. The procedures are designed to be adaptable across all F&B formats: fine dining, brasserie, bar, room service and breakfast.', fr: 'Oui. Les procédures sont conçues pour être adaptables à tous les formats F&B : gastronomique, brasserie, bar, room service et petit-déjeuner.' },
     },
     {
       q: { en: 'Can I adapt the content to my property?', fr: 'Puis-je adapter le contenu à mon établissement ?' },
-      a: { en: "The PowerPoint version is fully editable — customise service scripts, adjust covers, add your menu formats and align all procedures with your outlet's concept and brand standards.", fr: "La version PowerPoint est entièrement modifiable — personnalisez les scripts de service, ajustez les couverts, ajoutez vos formats de menu et alignez toutes les procédures avec le concept et les standards de marque de votre point de vente." },
+      a: { en: "The PowerPoint version is fully editable. Customise service scripts, adjust covers, add your menu formats and align all procedures with your outlet's concept and brand standards.", fr: "La version PowerPoint est entièrement modifiable. Personnalisez les scripts de service, ajustez les couverts, ajoutez vos formats de menu et alignez toutes les procédures avec le concept et les standards de marque de votre point de vente." },
     },
     {
       q: { en: 'Do these procedures follow international hotel standards?', fr: 'Ces procédures respectent-elles les standards hôteliers internationaux ?' },
@@ -125,7 +125,7 @@ const FAQ: Record<string, { q: { en: string; fr: string }; a: { en: string; fr: 
     },
     {
       q: { en: 'Can I adapt the content to my spa concept?', fr: 'Puis-je adapter le contenu au concept de mon spa ?' },
-      a: { en: "The PowerPoint version is fully editable — adjust treatment protocols, replace product references with your brand's range, and align all procedures with your spa's positioning and guest journey.", fr: "La version PowerPoint est entièrement modifiable — ajustez les protocoles de soins, remplacez les références produits par la gamme de votre marque et alignez toutes les procédures avec le positionnement et le parcours client de votre spa." },
+      a: { en: "The PowerPoint version is fully editable. Adjust treatment protocols, replace product references with your brand's range, and align all procedures with your spa's positioning and guest journey.", fr: "La version PowerPoint est entièrement modifiable. Ajustez les protocoles de soins, remplacez les références produits par la gamme de votre marque et alignez toutes les procédures avec le positionnement et le parcours client de votre spa." },
     },
     {
       q: { en: 'Does it include retail sales protocols?', fr: 'Inclut-il des protocoles de ventes retail ?' },

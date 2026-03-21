@@ -57,7 +57,6 @@ function AuditContent({ locale }: { locale: string }) {
           <div className="flex flex-wrap items-center gap-6">
             <div>
               <div className="font-display text-4xl font-extrabold text-[#003d9b]">{t('price')}</div>
-              <div className="text-sm text-[#737685] mt-1">{t('price_note')}</div>
             </div>
             <Link
               href={`/${locale}/contact`}
@@ -167,8 +166,7 @@ function AuditContent({ locale }: { locale: string }) {
             style={{ borderRadius: '0.125rem' }}
           >
             <div>
-              <div className="font-display text-4xl font-extrabold mb-2">{t('price')}</div>
-              <div className="text-sm mb-6" style={{ color: 'rgba(255,255,255,0.6)' }}>{t('price_note')}</div>
+              <div className="font-display text-4xl font-extrabold mb-6">{t('price')}</div>
               <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.8)' }}>{t('cta_subtitle')}</p>
             </div>
             <Link
