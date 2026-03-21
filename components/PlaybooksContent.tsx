@@ -49,12 +49,17 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
       </section>
 
       {/* Bundle Banner */}
-      <section className="py-5 bg-[#003d9b]">
+      <section className="py-6 bg-[#003d9b]">
         <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="text-white text-sm">
-            <span className="font-bold">{t('bundle_label')}</span>
-            <span className="opacity-70 mx-2">—</span>
-            <span className="opacity-80">{t('bundle_desc')}</span>
+          <div className="text-white">
+            <div className="flex items-center gap-2 text-sm mb-1">
+              <span className="font-bold">{t('bundle_label')}</span>
+              <span className="opacity-50">·</span>
+              <span className="opacity-80">{t('bundle_desc')}</span>
+              <span className="opacity-50">·</span>
+              <span className="font-bold">{t('bundle_price')}</span>
+            </div>
+            <p className="text-xs opacity-65">{t('bundle_subtitle')}</p>
           </div>
           <AddToCartButton
             item={{
@@ -63,7 +68,7 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
               price: 199,
             }}
             addedLabel={isEn ? 'In Cart' : 'Ajouté'}
-            className="px-5 py-2 bg-white text-[#003d9b] text-sm font-bold rounded-sm hover:bg-[#f8f9ff] transition-colors whitespace-nowrap"
+            className="px-5 py-2.5 bg-white text-[#003d9b] text-sm font-bold rounded-sm hover:bg-[#f8f9ff] transition-colors whitespace-nowrap flex-shrink-0"
           >
             {t('buy_bundle')}
           </AddToCartButton>
@@ -102,19 +107,19 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
               </ul>
             </div>
 
-            {/* Custom Audit CTA */}
+            {/* Custom SOP CTA */}
             <div style={{ borderTop: '1px solid rgba(195,198,214,0.3)', paddingTop: '1.5rem' }}>
               <div className="bg-[#003d9b] text-white p-6" style={{ borderRadius: '0.125rem' }}>
                 <p className="font-display font-bold text-base mb-2">
-                  {isEn ? 'Custom Audit?' : 'Audit Sur-Mesure ?'}
+                  {isEn ? 'Need something more specific?' : 'Besoin de quelque chose de plus spécifique ?'}
                 </p>
                 <p className="text-xs opacity-80 mb-5 leading-relaxed">
                   {isEn
-                    ? 'We can also build department-specific SOPs around your property.'
-                    : 'Nous pouvons aussi construire des procédures spécifiques autour de votre établissement.'}
+                    ? 'We can build department-specific SOPs around your property, your standards, and the way your teams operate.'
+                    : "Nous pouvons construire des procédures sur-mesure autour de votre établissement, de vos standards et du fonctionnement de vos équipes."}
                 </p>
                 <Link
-                  href={`/${locale}/audit-qualite`}
+                  href={`/${locale}/process-sur-mesure`}
                   className="block w-full py-2 bg-white text-[#003d9b] font-bold text-xs text-center hover:bg-[#f8f9ff] transition-colors"
                   style={{ borderRadius: '0.125rem' }}
                 >
@@ -136,6 +141,9 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                 {filteredPlaybooks.length} {isEn ? 'Playbooks' : 'Playbooks'}
               </p>
             </div>
+
+            {/* Product intro */}
+            <p className="text-sm text-[#4f6074] leading-relaxed mb-8 max-w-2xl">{t('product_intro')}</p>
 
             {/* Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

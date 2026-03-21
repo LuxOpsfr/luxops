@@ -59,10 +59,12 @@
   },
   "playbooks_page": {
     "title": "Playbooks Opérationnels",
-    "subtitle": "Des procédures documentées à partir du fonctionnement quotidien des départements hôteliers. Chaque playbook est disponible dans votre langue.",
+    "subtitle": "Des procédures documentées à partir du fonctionnement réel des départements hôteliers. Conçues pour aider les équipes à travailler de façon plus constante, intégrer plus vite et appliquer les standards plus clairement au quotidien.",
+    "product_intro": "Chaque playbook est conçu comme un document opérationnel de travail : procédures, standards de service, checklists et repères pensés pour être utilisés par les équipes, pas stockés.",
     "individual_label": "Playbook Individuel",
     "bundle_label": "Bundle Complet",
     "bundle_badge": "Meilleure Offre",
+    "bundle_subtitle": "L'ensemble des playbooks opérationnels principaux — pour les établissements qui veulent une structure cohérente sur tous les départements.",
     "individual_price": "67€",
     "bundle_price": "199€",
     "bundle_desc": "Les 4 Playbooks",
