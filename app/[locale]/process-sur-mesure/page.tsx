@@ -1,65 +1,81 @@
 import type { Metadata } from 'next'
 import { useTranslations } from 'next-intl'
 import Link from 'next/link'
-import { ArrowRight, CheckCircle } from 'lucide-react'
+import { Check, ArrowRight } from 'lucide-react'
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>
-}): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
   const isEn = locale === 'en'
   return {
-    title: isEn
-      ? 'Custom Hotel SOP Creation | Tailored Operations Manuals | LuxOps'
-      : 'Création de SOPs Hôteliers Sur-Mesure | Procédures Opérationnelles | LuxOps',
-    description: isEn
-      ? 'Custom operational process creation for hotel departments. Property-specific SOPs, procedures and operations manuals tailored to your brand and team.'
-      : 'Création de process opérationnels sur-mesure pour les départements hôteliers. SOPs, procédures et manuels adaptés à votre établissement et vos standards.',
+    title: isEn ? 'Custom Hotel SOP Creation | Tailored Operations Manuals | LuxOps' : 'Création de SOPs Hôteliers Sur-Mesure | Procédures Opérationnelles | LuxOps',
+    description: isEn ? 'Custom operational process creation for hotel departments. Property-specific SOPs, procedures and operations manuals tailored to your brand and team.' : 'Création de process opérationnels sur-mesure pour les départements hôteliers. SOPs, procédures et manuels adaptés à votre établissement et vos standards.',
   }
 }
 
-export default async function ProcessPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>
-}) {
+export default async function ProcessPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
   return <ProcessContent locale={locale} />
 }
 
 function ProcessContent({ locale }: { locale: string }) {
   const t = useTranslations('process_page')
+  const isEn = locale === 'en'
 
   const formats = [t('f1'), t('f2'), t('f3')]
-  const departments = [
-    t('d1'), t('d2'), t('d3'), t('d4'),
-    t('d5'), t('d6'), t('d7'), t('d8'),
-  ]
+  const departments = [t('d1'), t('d2'), t('d3'), t('d4'), t('d5'), t('d6'), t('d7'), t('d8')]
 
   return (
-    <div className="pt-16">
+    <div className="pt-16 bg-white">
+
       {/* Hero */}
-      <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h1 className="text-5xl font-bold text-[#111111] mb-4">{t('title')}</h1>
-          <p className="text-xl text-gray-400 mb-8">{t('subtitle')}</p>
-          <div className="text-4xl font-bold text-[#111111]">{t('price')}</div>
-          <div className="text-sm text-gray-400 mt-1">{t('price_note')}</div>
+      <section
+        className="relative py-24 px-6 overflow-hidden border-b"
+        style={{
+          backgroundImage: 'radial-gradient(#c3c6d6 0.5px, transparent 0.5px)',
+          backgroundSize: '24px 24px',
+          borderColor: 'rgba(195,198,214,0.2)',
+        }}
+      >
+        <div className="max-w-screen-xl mx-auto">
+          <div
+            className="inline-flex items-center gap-2 px-3 py-1 text-[#003d9b] font-bold text-[10px] uppercase tracking-widest mb-8"
+            style={{ backgroundColor: '#eef4ff', borderRadius: '0.125rem' }}
+          >
+            <span className="w-2 h-2 bg-[#003d9b] rounded-full" />
+            {isEn ? 'Bespoke Service' : 'Prestation sur-mesure'}
+          </div>
+          <h1 className="font-display text-5xl md:text-7xl font-extrabold tracking-tighter leading-none text-[#0a1d2e] mb-6">
+            {t('title')}
+          </h1>
+          <p className="text-xl text-[#4f6074] max-w-2xl leading-relaxed mb-10">{t('subtitle')}</p>
+          <div className="flex flex-wrap items-center gap-6">
+            <div>
+              <div className="font-display text-4xl font-extrabold text-[#003d9b]">{t('price')}</div>
+              <div className="text-sm text-[#737685] mt-1">{t('price_note')}</div>
+            </div>
+            <Link
+              href={`/${locale}/contact`}
+              className="inline-flex items-center gap-2 px-8 py-4 text-white font-bold transition-all hover:opacity-90"
+              style={{ background: 'linear-gradient(135deg, #003d9b, #0052cc)', borderRadius: '0.125rem', boxShadow: '0 8px 24px rgba(0,61,155,0.2)' }}
+            >
+              {t('cta')} <ArrowRight size={18} />
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* Content */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <section className="py-24 px-6 bg-white">
+        <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div>
-            <p className="text-gray-400 leading-relaxed mb-8 text-lg">{t('desc')}</p>
-            <h3 className="font-semibold text-[#111111] mb-4">{t('formats_title')}</h3>
-            <ul className="space-y-2 mb-8">
+            <p className="text-[#4f6074] leading-relaxed mb-10 text-lg">{t('desc')}</p>
+            <h3 className="font-display font-bold text-[#0a1d2e] mb-6 uppercase tracking-widest text-xs">
+              {t('formats_title')}
+            </h3>
+            <ul className="space-y-3">
               {formats.map((f, i) => (
-                <li key={i} className="flex items-center gap-2 text-sm text-gray-600">
-                  <CheckCircle size={14} className="text-[#111111] flex-shrink-0" />
+                <li key={i} className="flex items-center gap-3 text-sm text-[#0a1d2e]">
+                  <Check size={14} style={{ color: '#003d9b' }} className="flex-shrink-0" />
                   {f}
                 </li>
               ))}
@@ -67,12 +83,15 @@ function ProcessContent({ locale }: { locale: string }) {
           </div>
 
           <div>
-            <h3 className="font-semibold text-[#111111] mb-4">{t('depts_title')}</h3>
-            <div className="grid grid-cols-2 gap-3">
+            <h3 className="font-display font-bold text-[#0a1d2e] mb-6 uppercase tracking-widest text-xs">
+              {t('depts_title')}
+            </h3>
+            <div className="grid grid-cols-2 gap-2">
               {departments.map((d, i) => (
                 <div
                   key={i}
-                  className="px-4 py-3 bg-gray-50 rounded-xl text-sm text-gray-700 border border-gray-100"
+                  className="px-4 py-3 text-sm font-medium text-[#003d9b]"
+                  style={{ backgroundColor: '#eef4ff', borderRadius: '0.125rem' }}
                 >
                   {d}
                 </div>
@@ -83,12 +102,15 @@ function ProcessContent({ locale }: { locale: string }) {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-[#111111]">
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">{t('cta_title')}</h2>
+      <section className="py-20 px-6 bg-[#003d9b] text-center">
+        <div className="max-w-2xl mx-auto">
+          <h2 className="font-display text-4xl font-extrabold text-white tracking-tight mb-8">
+            {t('cta_title')}
+          </h2>
           <Link
             href={`/${locale}/contact`}
-            className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#111111] font-semibold rounded-xl hover:bg-gray-100 transition-colors"
+            className="inline-flex items-center gap-2 px-10 py-4 bg-white text-[#003d9b] font-bold hover:bg-[#f8f9ff] transition-colors"
+            style={{ borderRadius: '0.125rem' }}
           >
             {t('cta')} <ArrowRight size={18} />
           </Link>
