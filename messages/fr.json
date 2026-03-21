@@ -14,7 +14,7 @@
   "hero": {
     "badge": "Méthodes issues de l'exploitation quotidienne · Structurées · Opérationnelles",
     "title": "Clarté opérationnelle pour l'hôtellerie haut de gamme",
-    "subtitle": "Des standards documentés, des procédures claires et des outils concrets développés à partir du fonctionnement en pratique des équipes hôtelières, prêts à être mis en place département par département.",
+    "subtitle": "Des standards documentés, des procédures claires et des outils concrets développés à partir du fonctionnement quotidien des équipes hôtelières, prêts à être mis en place département par département.",
     "cta_primary": "Découvrir les Playbooks",
     "cta_secondary": "Réserver une Consultation"
   },
@@ -38,19 +38,19 @@
     "digital_desc": "Des playbooks et espaces Notion que votre équipe peut utiliser dès réception. Sans configuration, sans délai.",
     "digital_cta": "Voir les Ressources",
     "audit_title": "Audit & Process",
-    "audit_desc": "Un audit qualité approfondi et une conception de process construits autour du fonctionnement en pratique de votre établissement.",
+    "audit_desc": "Un audit qualité approfondi et une conception de process construits autour du fonctionnement réel de votre établissement.",
     "audit_cta": "En Savoir Plus",
     "training_title": "Formation en Établissement",
     "training_desc": "Des formations opérationnelles menées directement dans votre établissement, avec vos équipes. Demi-journée ou journée complète.",
     "training_cta": "En Savoir Plus"
   },
   "social_proof": {
-    "title": "Des méthodes développées à partir de l'exploitation quotidienne d'un hôtel",
-    "subtitle": "Témoignages à venir.",
-    "stat1": "Issu de l'exploitation réelle",
-    "stat2": "~1 000 procédures documentées",
-    "stat3": "Tous les départements clés",
-    "stat4": "Utilisable immédiatement"
+    "title": "Dans chaque ressource",
+    "subtitle": "",
+    "stat1": "Procédures par département",
+    "stat2": "Standards de service et checklists",
+    "stat3": "Format prêt pour les équipes",
+    "stat4": "Versions FR + EN incluses"
   },
   "cta_section": {
     "title": "Vous cherchez à renforcer vos opérations ?",
@@ -59,7 +59,7 @@
   },
   "playbooks_page": {
     "title": "Playbooks Opérationnels",
-    "subtitle": "Des procédures documentées à partir du fonctionnement en pratique des départements hôteliers. Chaque playbook est disponible dans votre langue.",
+    "subtitle": "Des procédures documentées à partir du fonctionnement quotidien des départements hôteliers. Chaque playbook est disponible dans votre langue.",
     "individual_label": "Playbook Individuel",
     "bundle_label": "Bundle Complet",
     "bundle_badge": "Meilleure Offre",
@@ -105,7 +105,7 @@
   },
   "notion_page": {
     "title": "Templates Notion",
-    "subtitle": "Des espaces de gestion structurés autour du fonctionnement en pratique des équipes hôtelières.",
+    "subtitle": "Des espaces de gestion structurés autour du fonctionnement quotidien des équipes hôtelières.",
     "base_title": "Template Base Opérations",
     "base_price": "497€",
     "base_desc": "Un espace Notion complet couvrant la gestion des opérations hôtelières. Tableaux de bord, checklists, suivi des tâches et structures de reporting pour tous les départements clés.",
@@ -114,13 +114,13 @@
     "base_f3": "Système de suivi des incidents",
     "base_f4": "Gestion des tâches équipes",
     "base_f5": "Journal des retours clients",
-    "base_f6": "Templates reporting KPI",
-    "base_f7": "Espace d'intégration RH",
-    "base_f8": "Structure bibliothèque de procédures",
+    "base_f6": "Modèles de reporting KPI",
+    "base_f7": "Espace d'intégration des équipes",
+    "base_f8": "Bibliothèque de procédures",
     "buy_base": "Acheter le Template · 497€",
     "custom_title": "Notion Sur-Mesure",
     "custom_price": "997€",
-    "custom_desc": "Personnalisation complète de l'espace selon la structure de votre établissement, vos standards de marque et le fonctionnement en pratique de vos équipes.",
+    "custom_desc": "Personnalisation complète de l'espace selon la structure de votre établissement, vos standards de marque et le fonctionnement quotidien de vos équipes.",
     "custom_cta": "Demander une Personnalisation"
   },
   "audit_page": {
@@ -145,11 +145,16 @@
     "d5": "Liste d'actions rapides",
     "d6": "Appel de restitution de 30 min",
     "cta": "Demander un Devis",
-    "cta_subtitle": "Un établissement en tête ? Parlez-nous de votre situation et voyons ce qui est pertinent."
+    "cta_subtitle": "Un établissement en tête ? Parlez-nous de votre situation et voyons ce qui est pertinent.",
+    "what_we_review_title": "Ce que nous observons sur place",
+    "wr1": "Contrôles chambres et standards physiques",
+    "wr2": "Séquences de service par département",
+    "wr3": "Passages de relais et transitions d'équipe",
+    "wr4": "Qualité et utilisabilité de la documentation"
   },
   "process_page": {
     "title": "Process Sur-Mesure",
-    "subtitle": "Création complète de procédures pour tout département hôtelier, construites autour de vos standards de marque et du fonctionnement en pratique de vos équipes.",
+    "subtitle": "Création complète de procédures pour tout département hôtelier, construites autour de vos standards de marque et du fonctionnement quotidien de vos équipes.",
     "price": "À partir de 1 497€",
     "price_note": "par département",
     "desc": "Nous rédigeons des procédures complètes pour tout département hôtelier, en format PDF ou Notion. Nous pouvons partir de vos supports existants ou construire de nouveaux process depuis le début.",
@@ -167,11 +172,23 @@
     "d7": "RH & Intégration",
     "d8": "Revenue Management",
     "cta": "Demander un Devis",
-    "cta_title": "Prêt à structurer et documenter vos opérations ?"
+    "cta_title": "Prêt à structurer et documenter vos opérations ?",
+    "when_useful_title": "Quand cette offre est pertinente",
+    "wu1": "Un département qui fonctionne sur la transmission orale, sans procédures écrites",
+    "wu2": "Une ouverture ou un rebranding qui nécessite une documentation complète",
+    "wu3": "Une équipe où chaque collaborateur travaille différemment",
+    "wu4": "En suite d'audit, quand les écarts ont été identifiés et doivent être traités",
+    "what_we_build_title": "Ce que nous construisons le plus souvent",
+    "wb1": "Procédures de département et scripts de service",
+    "wb2": "Checklists d'inspection et de prise de service",
+    "wb3": "Procédures d'ouverture et de fermeture",
+    "wb4": "Documentation d'intégration",
+    "wb5": "Bibliothèques de procédures au format Notion"
   },
   "training_page": {
     "title": "Formation en Établissement",
     "subtitle": "Des formations opérationnelles menées dans votre établissement, construites autour de votre équipe et de votre contexte de service.",
+    "training_context": "La formation peut être construite à partir d'un audit, d'un playbook existant ou d'un besoin opérationnel précis.",
     "half_day": "Formation Demi-Journée",
     "full_day": "Formation Journée Entière",
     "half_price": "997€",
@@ -194,8 +211,8 @@
     "subtitle": "Des méthodes opérationnelles construites dans des établissements exigeants, aujourd'hui mises à disposition d'autres propriétés.",
     "story_title": "Notre Histoire",
     "story_p1": "LuxOps est née d'années passées à gérer des opérations hôtelières concrètes, dans des établissements haut de gamme et des groupes indépendants.",
-    "story_p2": "Piloter des opérations multi-départements, c'est construire des procédures par nécessité, dans des établissements où une baisse de qualité de service n'est tout simplement pas acceptable.",
-    "story_p3": "Le constat était simple : la plupart des hôtels rencontrent les mêmes défis opérationnels, mais beaucoup reconstruisent encore tout depuis zéro. LuxOps structure des méthodes testées pour que les équipes les mettent en place rapidement et se concentrent sur l'essentiel : leurs clients.",
+    "story_p2": "Piloter des opérations multi-départements, c'est construire des procédures par nécessité — dans des établissements où une baisse de qualité de service n'est tout simplement pas acceptable.",
+    "story_p3": "LuxOps met ces méthodes en forme pour qu'elles soient utilisables rapidement par les équipes, et qu'elles se concentrent sur l'essentiel : leurs clients.",
     "expertise_title": "Domaines d'Expertise",
     "e1": "Front Office & Relations Clients",
     "e2": "Housekeeping & Division Chambres",
@@ -209,22 +226,31 @@
     "v2_title": "Clarté",
     "v2_desc": "Les opérations complexes deviennent gérables quand elles sont documentées clairement et maintenues à jour.",
     "v3_title": "Pragmatisme",
-    "v3_desc": "Chaque recommandation est actionnable, ancrée dans une expérience opérationnelle réelle."
+    "v3_desc": "Chaque recommandation est actionnable, ancrée dans l'exploitation hôtelière."
   },
   "contact_page": {
     "title": "Nous Contacter",
-    "subtitle": "Un projet en tête ? Parlez-nous en.",
+    "subtitle": "Un projet en tête ? Parlez-nous-en.",
     "name": "Nom Complet",
     "email": "Adresse Email",
     "company": "Hôtel / Entreprise",
-    "subject": "Sujet",
+    "subject": "Département concerné",
+    "need_type": "Type de besoin",
+    "need_placeholder": "Sélectionner...",
+    "need_playbooks": "Playbooks",
+    "need_audit": "Audit Qualité",
+    "need_process": "Process Sur-Mesure",
+    "need_training": "Formation",
+    "need_notion": "Templates Notion",
+    "need_other": "Autre",
     "message": "Message",
     "send": "Envoyer le Message",
     "sending": "Envoi en cours...",
-    "success": "Message envoyé ! Nous vous répondrons dans les 24 heures.",
+    "success": "Message envoyé. Nous vous répondrons habituellement sous un jour ouvré.",
     "error": "Une erreur s'est produite. Veuillez réessayer.",
     "email_label": "Email",
-    "response_time": "Réponse sous 24 heures"
+    "response_time_label": "Délai de réponse",
+    "response_time": "Réponse habituelle sous un jour ouvré."
   },
   "footer": {
     "tagline": "Standards opérationnels pour l'hôtellerie haut de gamme",

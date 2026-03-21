@@ -234,7 +234,7 @@ function HomeContent({ locale }: { locale: string }) {
               </div>
             ))}
           </div>
-          <p className="text-center text-[#737685] text-xs italic mt-6">{tProof('subtitle')}</p>
+          {tProof('subtitle') && <p className="text-center text-[#737685] text-xs italic mt-6">{tProof('subtitle')}</p>}
         </div>
       </section>
 

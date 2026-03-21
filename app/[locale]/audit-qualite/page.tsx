@@ -119,6 +119,32 @@ function AuditContent({ locale }: { locale: string }) {
         </div>
       </section>
 
+      {/* What we review */}
+      <section className="py-16 px-6" style={{ backgroundColor: '#f8f9ff' }}>
+        <div className="max-w-screen-xl mx-auto">
+          <h2 className="font-display text-2xl font-extrabold text-[#0a1d2e] tracking-tight mb-8">
+            {t('what_we_review_title')}
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            {[t('wr1'), t('wr2'), t('wr3'), t('wr4')].map((item, i) => (
+              <div
+                key={i}
+                className="flex items-start gap-3 p-5 bg-white"
+                style={{ borderRadius: '0.125rem' }}
+              >
+                <div
+                  className="w-5 h-5 flex items-center justify-center text-white text-[10px] font-bold flex-shrink-0 mt-0.5"
+                  style={{ backgroundColor: '#003d9b', borderRadius: '0.125rem' }}
+                >
+                  {String(i + 1).padStart(2, '0')}
+                </div>
+                <span className="text-sm text-[#0a1d2e] leading-relaxed">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Deliverables + CTA */}
       <section className="py-24 px-6" style={{ backgroundColor: '#eef4ff' }}>
         <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">

@@ -15,57 +15,84 @@ export async function generateMetadata({
       ? 'Contact LuxOps | Hotel Operations Enquiries'
       : 'Contacter LuxOps | Renseignements Opérations Hôtelières',
     description: isEn
-      ? 'Get in touch with the LuxOps team. Questions about hotel playbooks, SOPs, audits, custom processes or on-property training. We respond within 24 hours.'
-      : 'Contactez l\'équipe LuxOps pour vos questions sur les playbooks, SOPs, audits, process sur-mesure ou formation hôtelière. Réponse sous 24 heures.',
+      ? 'Get in touch with the LuxOps team. Questions about hotel playbooks, SOPs, audits, custom processes or on-property training. We usually respond within one business day.'
+      : "Contactez l'équipe LuxOps pour vos questions sur les playbooks, SOPs, audits, process sur-mesure ou formation hôtelière. Réponse habituellement sous un jour ouvré.",
   }
 }
 
-export default function ContactPage() {
-  return <ContactContent />
+export default async function ContactPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
+  return <ContactContent locale={locale} />
 }
 
-function ContactContent() {
+function ContactContent({ locale }: { locale: string }) {
   const t = useTranslations('contact_page')
 
   return (
-    <div className="pt-16">
+    <div className="pt-16 bg-white">
       {/* Hero */}
-      <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h1 className="text-5xl font-bold text-[#111111] mb-4">{t('title')}</h1>
-          <p className="text-xl text-gray-400">{t('subtitle')}</p>
+      <section
+        className="relative py-24 px-6 overflow-hidden border-b"
+        style={{
+          backgroundImage: 'radial-gradient(#c3c6d6 0.5px, transparent 0.5px)',
+          backgroundSize: '24px 24px',
+          borderColor: 'rgba(195,198,214,0.2)',
+        }}
+      >
+        <div className="max-w-screen-xl mx-auto">
+          <div
+            className="inline-flex items-center gap-2 px-3 py-1 text-[#003d9b] font-bold text-[10px] uppercase tracking-widest mb-8"
+            style={{ backgroundColor: '#eef4ff', borderRadius: '0.125rem' }}
+          >
+            <span className="w-2 h-2 bg-[#003d9b] rounded-full" />
+            {locale === 'en' ? 'Contact' : 'Contact'}
+          </div>
+          <h1 className="font-display text-5xl md:text-7xl font-extrabold tracking-tighter leading-none text-[#0a1d2e] mb-6">
+            {t('title')}
+          </h1>
+          <p className="text-xl text-[#4f6074] max-w-2xl leading-relaxed">{t('subtitle')}</p>
         </div>
       </section>
 
       {/* Form */}
-      <section className="py-20 bg-white">
-        <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-12">
+      <section className="py-24 px-6 bg-white">
+        <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-16">
           {/* Form */}
           <div className="lg:col-span-2">
             <ContactForm />
           </div>
 
           {/* Contact info */}
-          <div className="space-y-5">
-            <div className="p-6 bg-gray-50 rounded-2xl border border-gray-100">
-              <div className="flex items-center gap-3 mb-2">
-                <Mail size={16} className="text-[#111111]" />
-                <span className="font-semibold text-[#111111] text-sm">{t('email_label')}</span>
+          <div className="space-y-4">
+            <div className="p-8" style={{ backgroundColor: '#f8f9ff', borderRadius: '0.125rem' }}>
+              <div className="flex items-center gap-3 mb-3">
+                <div
+                  className="w-8 h-8 flex items-center justify-center"
+                  style={{ backgroundColor: '#eef4ff', borderRadius: '0.125rem' }}
+                >
+                  <Mail size={14} style={{ color: '#003d9b' }} />
+                </div>
+                <span className="font-bold text-[#0a1d2e] text-sm">{t('email_label')}</span>
               </div>
               <a
-                href="mailto:contact@luxops.com"
-                className="text-gray-400 hover:text-[#111111] text-sm transition-colors"
+                href="mailto:contact@luxops.fr"
+                className="text-[#4f6074] hover:text-[#003d9b] text-sm transition-colors"
               >
-                contact@luxops.com
+                contact@luxops.fr
               </a>
             </div>
 
-            <div className="p-6 bg-gray-50 rounded-2xl border border-gray-100">
-              <div className="flex items-center gap-3 mb-2">
-                <Clock size={16} className="text-[#111111]" />
-                <span className="font-semibold text-[#111111] text-sm">Response Time</span>
+            <div className="p-8" style={{ backgroundColor: '#f8f9ff', borderRadius: '0.125rem' }}>
+              <div className="flex items-center gap-3 mb-3">
+                <div
+                  className="w-8 h-8 flex items-center justify-center"
+                  style={{ backgroundColor: '#eef4ff', borderRadius: '0.125rem' }}
+                >
+                  <Clock size={14} style={{ color: '#003d9b' }} />
+                </div>
+                <span className="font-bold text-[#0a1d2e] text-sm">{t('response_time_label')}</span>
               </div>
-              <p className="text-gray-400 text-sm">{t('response_time')}</p>
+              <p className="text-[#4f6074] text-sm">{t('response_time')}</p>
             </div>
           </div>
         </div>

@@ -47,6 +47,7 @@ function FormationContent({ locale }: { locale: string }) {
             {t('title')}
           </h1>
           <p className="text-xl text-[#4f6074] max-w-2xl leading-relaxed">{t('subtitle')}</p>
+          <p className="text-sm text-[#737685] max-w-xl mt-4 leading-relaxed">{t('training_context')}</p>
         </div>
       </section>
 

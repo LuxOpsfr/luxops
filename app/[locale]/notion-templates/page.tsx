@@ -175,16 +175,22 @@ function NotionContent({ locale }: { locale: string }) {
                 <div className="w-52 flex-shrink-0 flex flex-col p-3 gap-1" style={{ backgroundColor: '#f7f6f3', borderRight: '1px solid rgba(195,198,214,0.3)' }}>
                   <div className="flex items-center gap-2 px-2 py-1 mb-3">
                     <div className="w-5 h-5 rounded flex items-center justify-center text-[10px] text-white font-bold" style={{ backgroundColor: '#003d9b' }}>GH</div>
-                    <span className="text-xs font-semibold text-[#0a1d2e] truncate">Grand Hotel Ops</span>
+                    <span className="text-xs font-semibold text-[#0a1d2e] truncate">{isEn ? 'Grand Hotel Ops' : 'Grand Hôtel Ops'}</span>
                   </div>
                   <div className="space-y-0.5 text-xs text-[#737685]">
-                    {[
+                    {(isEn ? [
                       { icon: '🏨', label: 'Operational Hub', active: true },
                       { icon: '🛎️', label: 'Front Office', active: false },
                       { icon: '🧹', label: 'Housekeeping', active: false },
                       { icon: '🍽️', label: 'F&B Ops', active: false },
                       { icon: '✨', label: 'Spa & Wellness', active: false },
-                    ].map((item, i) => (
+                    ] : [
+                      { icon: '🏨', label: 'Hub Opérations', active: true },
+                      { icon: '🛎️', label: 'Front Office', active: false },
+                      { icon: '🧹', label: 'Housekeeping', active: false },
+                      { icon: '🍽️', label: 'F&B', active: false },
+                      { icon: '✨', label: 'Spa & Wellness', active: false },
+                    ]).map((item, i) => (
                       <div
                         key={i}
                         className="flex items-center gap-2 px-2 py-1.5 rounded text-xs cursor-pointer"
@@ -197,7 +203,7 @@ function NotionContent({ locale }: { locale: string }) {
                   </div>
                   <div className="mt-4 border-t pt-3" style={{ borderColor: 'rgba(195,198,214,0.4)' }}>
                     <div className="text-[10px] font-bold text-[#737685] px-2 mb-2 tracking-wider uppercase">Resources</div>
-                    {['📋 Procédures', '📊 Reporting KPI', '👥 Équipes RH'].map((item, i) => (
+                    {(isEn ? ['📋 Procedures', '📊 KPI Reporting', '👥 HR Team'] : ['📋 Procédures', '📊 Reporting KPI', '👥 Équipes RH']).map((item, i) => (
                       <div key={i} className="flex items-center gap-2 px-2 py-1.5 rounded text-xs text-[#737685] cursor-pointer">
                         {item}
                       </div>
@@ -212,11 +218,11 @@ function NotionContent({ locale }: { locale: string }) {
                     <div className="absolute bottom-[-18px] left-10 w-10 h-10 bg-white rounded-lg shadow-sm flex items-center justify-center text-2xl" style={{ border: '1px solid rgba(195,198,214,0.3)' }}>🏨</div>
                   </div>
                   <div className="pt-8 px-10 pb-6 flex-1 overflow-hidden">
-                    <h2 className="text-lg font-bold text-[#0a1d2e] mb-1">Grand Hotel Operations</h2>
-                    <p className="text-[10px] text-[#737685] mb-4 italic">Dernière mise à jour : il y a 2 heures</p>
+                    <h2 className="text-lg font-bold text-[#0a1d2e] mb-1">{isEn ? 'Grand Hotel Operations' : 'Grand Hôtel Opérations'}</h2>
+                    <p className="text-[10px] text-[#737685] mb-4 italic">{isEn ? 'Last updated: 2 hours ago' : 'Dernière mise à jour : il y a 2 heures'}</p>
 
                     {/* Dept grid */}
-                    <div className="text-xs font-bold text-[#737685] uppercase tracking-wider mb-2">Départements</div>
+                    <div className="text-xs font-bold text-[#737685] uppercase tracking-wider mb-2">{isEn ? 'Departments' : 'Départements'}</div>
                     <div className="grid grid-cols-3 gap-2 mb-4">
                       {[
                         { icon: '🛎️', name: 'Reception', count: '12 SOPs' },
@@ -232,12 +238,16 @@ function NotionContent({ locale }: { locale: string }) {
                     </div>
 
                     {/* Tasks table */}
-                    <div className="text-xs font-bold text-[#737685] uppercase tracking-wider mb-2">Suivi Hebdomadaire</div>
+                    <div className="text-xs font-bold text-[#737685] uppercase tracking-wider mb-2">{isEn ? 'Weekly Tracking' : 'Suivi Hebdomadaire'}</div>
                     <div className="rounded overflow-hidden" style={{ border: '1px solid rgba(195,198,214,0.3)' }}>
                       <div className="grid grid-cols-3 text-[9px] font-bold uppercase tracking-wider text-[#737685] px-3 py-1.5" style={{ backgroundColor: '#f8f9ff' }}>
                         <span>TÂCHE</span><span>STATUT</span><span>ASSIGNEE</span>
                       </div>
-                      {[
+                      {isEn ? [
+                        { task: 'Morning Briefing', status: 'DONE', color: '#dcfce7', textColor: '#16a34a', initials: 'ML' },
+                        { task: 'VIP Inspection 204', status: 'IN PROGRESS', color: '#dbeafe', textColor: '#1d4ed8', initials: 'JD' },
+                        { task: 'Incident Report', status: 'TO DO', color: '#f3f4f6', textColor: '#6b7280', initials: 'SA' },
+                      ] : [
                         { task: 'Briefing Matinal', status: 'FAIT', color: '#dcfce7', textColor: '#16a34a', initials: 'ML' },
                         { task: 'Inspection VIP 204', status: 'EN COURS', color: '#dbeafe', textColor: '#1d4ed8', initials: 'JD' },
                         { task: "Rapport d'Incidents", status: 'À FAIRE', color: '#f3f4f6', textColor: '#6b7280', initials: 'SA' },
@@ -262,12 +272,12 @@ function NotionContent({ locale }: { locale: string }) {
         <div className="max-w-screen-xl mx-auto">
           <div className="max-w-2xl mb-16">
             <h2 className="font-display text-4xl font-extrabold text-[#0a1d2e] tracking-tight mb-4">
-              {isEn ? 'The efficiency of Notion design' : "L'efficacité par le Design Notion"}
+              {isEn ? 'What this looks like in daily operations' : "Notion appliqué à l'exploitation hôtelière"}
             </h2>
             <p className="text-lg text-[#4f6074] leading-relaxed">
               {isEn
-                ? 'The most flexible management framework in the world, pre-configured for high-end hospitality.'
-                : "Le framework de management le plus flexible au monde, pré-configuré pour l'hôtellerie d'exception."}
+                ? 'Four capabilities that change how a hotel team works day to day.'
+                : "Quatre fonctions qui changent le fonctionnement quotidien d'une équipe hôtelière."}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -292,12 +302,12 @@ function NotionContent({ locale }: { locale: string }) {
         <div className="max-w-screen-xl mx-auto">
           <div className="mb-16">
             <h2 className="font-display text-4xl font-extrabold text-[#0a1d2e] tracking-tight mb-4">
-              {isEn ? "The complete ecosystem." : "L'écosystème complet."}
+              {isEn ? "One workspace, multiple operational functions." : "Un espace de travail, plusieurs fonctions opérationnelles."}
             </h2>
             <p className="text-xl text-[#4f6074] max-w-2xl leading-relaxed">
               {isEn
-                ? 'A full operating system for your hotel, built with the best Notion blocks.'
-                : "Un système d'exploitation complet pour votre hôtel, construit avec les meilleurs blocs Notion."}
+                ? 'A single Notion workspace covering the key functions of daily hotel operations.'
+                : "Un espace Notion unique couvrant les fonctions clés de l'exploitation hôtelière au quotidien."}
             </p>
           </div>
 
@@ -494,10 +504,10 @@ function NotionContent({ locale }: { locale: string }) {
                 {
                   icon: <AlertCircle size={18} className="text-orange-500" />,
                   bg: '#fff7ed',
-                  title: isEn ? 'Goodbye fragile Excel sheets' : 'Adieu aux Tableaux Excel fragiles',
+                  title: isEn ? 'Built to replace fragmented files and disconnected trackers' : 'Conçu pour remplacer les fichiers dispersés',
                   desc: isEn
-                    ? 'A robust relational database that never breaks and links every task to a specific team member.'
-                    : 'Une base de données relationnelle robuste qui ne se casse pas et lie chaque tâche à un employé précis.',
+                    ? 'A reliable, easy-to-maintain database that links every task to a specific team member without breaking.'
+                    : 'Une base fiable et facile à maintenir, qui lie chaque tâche à un collaborateur précis.',
                 },
                 {
                   icon: <CheckCircle2 size={18} className="text-green-500" />,

@@ -101,6 +101,51 @@ function ProcessContent({ locale }: { locale: string }) {
         </div>
       </section>
 
+      {/* When useful + What we build */}
+      <section className="py-24 px-6" style={{ backgroundColor: '#f8f9ff' }}>
+        <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div>
+            <h2 className="font-display text-2xl font-extrabold text-[#0a1d2e] tracking-tight mb-8">
+              {t('when_useful_title')}
+            </h2>
+            <div className="space-y-3">
+              {[t('wu1'), t('wu2'), t('wu3'), t('wu4')].map((item, i) => (
+                <div
+                  key={i}
+                  className="flex items-start gap-3 p-4 bg-white"
+                  style={{ borderRadius: '0.125rem' }}
+                >
+                  <div
+                    className="w-5 h-5 flex items-center justify-center text-white text-[10px] font-bold flex-shrink-0 mt-0.5"
+                    style={{ backgroundColor: '#003d9b', borderRadius: '0.125rem' }}
+                  >
+                    {String(i + 1).padStart(2, '0')}
+                  </div>
+                  <span className="text-sm text-[#0a1d2e] leading-relaxed">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h2 className="font-display text-2xl font-extrabold text-[#0a1d2e] tracking-tight mb-8">
+              {t('what_we_build_title')}
+            </h2>
+            <div className="space-y-2">
+              {[t('wb1'), t('wb2'), t('wb3'), t('wb4'), t('wb5')].map((item, i) => (
+                <div
+                  key={i}
+                  className="flex items-center gap-3 px-4 py-3 text-sm font-medium text-[#003d9b]"
+                  style={{ backgroundColor: '#eef4ff', borderRadius: '0.125rem' }}
+                >
+                  <span className="w-1.5 h-1.5 flex-shrink-0 bg-[#003d9b]" style={{ borderRadius: '0.125rem' }} />
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-20 px-6 bg-[#003d9b] text-center">
         <div className="max-w-2xl mx-auto">

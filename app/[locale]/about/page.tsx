@@ -14,7 +14,7 @@ export async function generateMetadata({
       : 'À Propos de LuxOps | Spécialistes des Opérations Hôtelières',
     description: isEn
       ? 'LuxOps provides structured operational methods for high-end hotels. Playbooks, SOPs, audits and training built from years of real hotel operations experience.'
-      : 'LuxOps propose des méthodes opérationnelles structurées pour hôtels haut de gamme. Playbooks, SOPs, audits et formations issus de l\'exploitation réelle.',
+      : "LuxOps propose des méthodes opérationnelles structurées pour hôtels haut de gamme. Playbooks, SOPs, audits et formations issus de l'exploitation hôtelière réelle.",
   }
 }
 
@@ -36,58 +36,91 @@ function AboutContent() {
   ]
 
   return (
-    <div className="pt-16">
+    <div className="pt-16 bg-white">
+
       {/* Hero */}
-      <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h1 className="text-5xl font-bold text-[#111111] mb-4">{t('title')}</h1>
-          <p className="text-xl text-gray-400">{t('subtitle')}</p>
+      <section
+        className="relative py-24 px-6 overflow-hidden border-b"
+        style={{
+          backgroundImage: 'radial-gradient(#c3c6d6 0.5px, transparent 0.5px)',
+          backgroundSize: '24px 24px',
+          borderColor: 'rgba(195,198,214,0.2)',
+        }}
+      >
+        <div className="max-w-screen-xl mx-auto">
+          <div
+            className="inline-flex items-center gap-2 px-3 py-1 text-[#003d9b] font-bold text-[10px] uppercase tracking-widest mb-8"
+            style={{ backgroundColor: '#eef4ff', borderRadius: '0.125rem' }}
+          >
+            <span className="w-2 h-2 bg-[#003d9b] rounded-full" />
+            LuxOps
+          </div>
+          <h1 className="font-display text-5xl md:text-7xl font-extrabold tracking-tighter leading-none text-[#0a1d2e] mb-6">
+            {t('title')}
+          </h1>
+          <p className="text-xl text-[#4f6074] max-w-2xl leading-relaxed">{t('subtitle')}</p>
         </div>
       </section>
 
       {/* Story */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-[#111111] mb-8">{t('story_title')}</h2>
-          <div className="space-y-5">
-            {[t('story_p1'), t('story_p2'), t('story_p3')].map((para, i) => (
-              <p key={i} className="text-gray-400 leading-relaxed text-lg">
-                {para}
+      <section className="py-24 px-6 bg-white">
+        <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div>
+            <h2 className="font-display text-3xl font-extrabold text-[#0a1d2e] tracking-tight mb-8">
+              {t('story_title')}
+            </h2>
+            <div className="space-y-6">
+              <p className="text-[#4f6074] leading-relaxed text-lg">{t('story_p1')}</p>
+              <p className="text-[#4f6074] leading-relaxed">{t('story_p2')}</p>
+              <p
+                className="font-display font-bold text-[#0a1d2e] text-lg leading-snug"
+                style={{ borderLeft: '3px solid #003d9b', paddingLeft: '1.25rem' }}
+              >
+                {t('story_p3')}
               </p>
-            ))}
+            </div>
+          </div>
+
+          <div>
+            <div className="p-8" style={{ backgroundColor: '#f8f9ff', borderRadius: '0.125rem' }}>
+              <h3 className="font-display text-xs font-bold uppercase tracking-widest text-[#737685] mb-6">
+                {t('expertise_title')}
+              </h3>
+              <ul className="space-y-3">
+                {expertise.map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 text-sm text-[#0a1d2e]">
+                    <div
+                      className="w-1.5 h-1.5 flex-shrink-0"
+                      style={{ backgroundColor: '#003d9b', borderRadius: '0.125rem' }}
+                    />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Expertise + Values */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16">
-          <div>
-            <h2 className="text-2xl font-bold text-[#111111] mb-6">
-              {t('expertise_title')}
-            </h2>
-            <ul className="space-y-3">
-              {expertise.map((item, i) => (
-                <li key={i} className="flex items-center gap-3 text-gray-600 text-sm">
-                  <div className="w-1.5 h-1.5 bg-[#111111] rounded-full flex-shrink-0" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h2 className="text-2xl font-bold text-[#111111] mb-6">
-              {t('values_title')}
-            </h2>
-            <div className="space-y-6">
-              {values.map((v, i) => (
-                <div key={i}>
-                  <h3 className="font-semibold text-[#111111] mb-1">{v.title}</h3>
-                  <p className="text-gray-400 text-sm">{v.desc}</p>
+      {/* Values */}
+      <section className="py-24 px-6" style={{ backgroundColor: '#f8f9ff' }}>
+        <div className="max-w-screen-xl mx-auto">
+          <h2 className="font-display text-3xl font-extrabold text-[#0a1d2e] tracking-tight mb-12">
+            {t('values_title')}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {values.map((v, i) => (
+              <div key={i} className="p-8 bg-white" style={{ borderRadius: '0.125rem' }}>
+                <div
+                  className="w-8 h-8 flex items-center justify-center text-white text-xs font-bold mb-6"
+                  style={{ backgroundColor: '#003d9b', borderRadius: '0.125rem' }}
+                >
+                  {String(i + 1).padStart(2, '0')}
                 </div>
-              ))}
-            </div>
+                <h3 className="font-display font-bold text-[#0a1d2e] mb-3">{v.title}</h3>
+                <p className="text-[#4f6074] text-sm leading-relaxed">{v.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

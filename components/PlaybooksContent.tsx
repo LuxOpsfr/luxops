@@ -65,7 +65,7 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
             addedLabel={isEn ? 'In Cart' : 'Ajouté'}
             className="px-5 py-2 bg-white text-[#003d9b] text-sm font-bold rounded-sm hover:bg-[#f8f9ff] transition-colors whitespace-nowrap"
           >
-            {t('bundle_price')} — {t('buy_bundle')}
+            {t('buy_bundle')}
           </AddToCartButton>
         </div>
       </section>
@@ -110,8 +110,8 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                 </p>
                 <p className="text-xs opacity-80 mb-5 leading-relaxed">
                   {isEn
-                    ? 'Our consultants can build custom SOPs tailored to your property.'
-                    : 'Nos consultants créent des procédures sur-mesure pour votre établissement.'}
+                    ? 'We can also build department-specific SOPs around your property.'
+                    : 'Nous pouvons aussi construire des procédures spécifiques autour de votre établissement.'}
                 </p>
                 <Link
                   href={`/${locale}/audit-qualite`}
