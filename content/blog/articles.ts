@@ -1103,4 +1103,271 @@ export const articles: BilingualArticle[] = [
       cta: { text: 'Voir le Playbook F&B', href: '/fr/playbooks' },
     },
   },
+  {
+    slug: 'hotel-front-office-procedures',
+    en: {
+      title: 'Hotel Front Office Procedures: The Complete Guide for Luxury Properties',
+      description:
+        'A complete guide to hotel front office procedures: check-in, check-out, reservation handling, complaint management and guest communication standards for luxury hotels.',
+      date: '2026-03-21',
+      readTime: '8 min read',
+      intro:
+        'The front office is the heartbeat of your hotel. It is the first touchpoint every guest has with your property and the last thing they remember when they leave. Yet in most hotels, front office procedures are passed on verbally, shift to shift, with no written standard. This guide covers the core front office procedures every luxury hotel should have documented.',
+      sections: [
+        {
+          h2: 'Why Front Office Procedures Matter More Than You Think',
+          content:
+            'Guests form their first impression of your property within seconds of arriving at the front desk. A confident, warm, efficient check-in sets the tone for their entire stay. A hesitant, disorganised one — caused by a team member who was never properly trained — does the opposite.',
+          h3Items: [
+            {
+              heading: 'Consistency Across Every Shift',
+              text: 'With documented hotel front desk procedures, the quality of the check-in experience does not depend on which agent is working. The standard is the same whether it is Monday morning or Saturday night.',
+            },
+            {
+              heading: 'Faster Onboarding',
+              text: 'New front office agents can follow documented procedures from day one, reducing the time it takes to reach an autonomous, guest-ready level of performance.',
+            },
+            {
+              heading: 'Fewer Errors, Fewer Complaints',
+              text: 'Most front office complaints — wrong room, billing errors, missed requests — trace back to skipped steps. A checklist-based procedure eliminates the most common failure points.',
+            },
+          ],
+        },
+        {
+          h2: 'Check-In Procedure: Step by Step',
+          content:
+            'The check-in is the single most important interaction in the guest journey. It must be warm, efficient, and personalised. Here are the key steps every luxury hotel front office procedure should include.',
+          h3Items: [
+            {
+              heading: 'Pre-Arrival Preparation',
+              text: 'Review arrivals list before each shift. Flag VIPs, returning guests, special requests, and room upgrades. Brief the team. Ensure all rooms are inspected and marked ready in the PMS before expected arrival time.',
+            },
+            {
+              heading: 'Guest Welcome',
+              text: 'Greet every guest by name within three seconds of approach. Make eye contact. If the guest has stayed before, acknowledge it. Avoid scripted, robotic phrasing — warmth is a standard, not a personality trait.',
+            },
+            {
+              heading: 'Reservation Verification',
+              text: 'Confirm booking details, room type, rate, and length of stay. Verify ID and payment method. Upsell room upgrades naturally, based on availability and guest profile — never as a push sell.',
+            },
+            {
+              heading: 'Room Orientation',
+              text: 'Explain key amenities: Wi-Fi, breakfast times, spa, restaurant. Offer to arrange luggage assistance. If escorting the guest, accompany them — do not just hand them a keycard and point.',
+            },
+          ],
+        },
+        {
+          h2: 'Check-Out Procedure',
+          content:
+            'Check-out is the last impression your hotel makes. A slow, error-prone billing process erases all the goodwill built during the stay.',
+          h3Items: [
+            {
+              heading: 'Express Check-Out',
+              text: 'Offer express check-out at check-in for guests who prefer it. Send a pre-departure folio the evening before. This reduces morning queue pressure and gives guests the option to dispute charges calmly.',
+            },
+            {
+              heading: 'Folio Review',
+              text: 'Present the bill clearly. Walk the guest through any charges they may not recognise. Resolve disputes on the spot — never escalate unnecessarily. A well-handled billing issue can turn a complaint into a positive review.',
+            },
+            {
+              heading: 'Departure Experience',
+              text: 'Ask about their stay. Note any feedback in the PMS guest profile. Arrange transportation if needed. Thank them by name. A sincere, personalised farewell is your last opportunity to make the stay memorable.',
+            },
+          ],
+        },
+        {
+          h2: 'Reservation Handling Procedures',
+          content:
+            'Front office teams often manage inbound reservation requests alongside live guest interactions. Without a clear procedure, errors and double-bookings follow.',
+          h3Items: [
+            {
+              heading: 'Inbound Reservation SOP',
+              text: 'Capture full guest details, room preference, rate, and special requests on every call. Repeat back confirmation. Send a written confirmation within 15 minutes. Log everything in the PMS immediately.',
+            },
+            {
+              heading: 'Modification and Cancellation Protocol',
+              text: 'Every modification or cancellation must be processed in the PMS within the same call or within one hour. Confirm the change in writing. Flag revenue-impacting changes to the reservations manager.',
+            },
+            {
+              heading: 'No-Show Procedure',
+              text: 'Attempt to contact the guest within two hours of expected arrival. Charge per the cancellation policy. Release the room at a defined time — typically 11pm unless guaranteed by card. Document every step.',
+            },
+          ],
+        },
+        {
+          h2: 'Complaint Handling at the Front Desk',
+          content:
+            'The front office is the primary point of contact for guest complaints. How the team handles them — not whether they happen — determines guest loyalty.',
+          h3Items: [
+            {
+              heading: 'The HEART Method',
+              text: 'Hear the complaint fully without interrupting. Empathise genuinely. Apologise for the experience — not necessarily the cause. Resolve with a concrete action, immediately where possible. Thank the guest for raising it.',
+            },
+            {
+              heading: 'Empowerment Policy',
+              text: 'Front office agents should be empowered to resolve complaints up to a defined value threshold without manager approval — typically €50-100 in service recovery gestures. Anything above escalates to the duty manager.',
+            },
+            {
+              heading: 'Log Every Complaint',
+              text: 'All complaints, regardless of severity, must be logged in the PMS guest profile and the daily incident report. This data informs recurring issues, staff coaching, and quality audits.',
+            },
+          ],
+        },
+        {
+          h2: 'Night Audit Procedures',
+          content:
+            'The night audit closes the financial day, reconciles all transactions, and prepares the property for the next operational period. It is one of the most procedure-heavy roles in the front office.',
+          h3Items: [
+            {
+              heading: 'End-of-Day Reconciliation',
+              text: 'Run all PMS reports. Reconcile room revenue, F&B charges, and ancillary charges. Identify and resolve any open folios, discrepancies, or failed payment authorisations before the day roll.',
+            },
+            {
+              heading: 'Arrival and Departure Preparation',
+              text: 'Print and review the next day\'s arrival list. Flag VIPs and special requests. Confirm room allocations. Pre-block rooms based on guest profiles and preferences.',
+            },
+            {
+              heading: 'Security and Property Checks',
+              text: 'Conduct a full property walkthrough at defined intervals. Log any incidents, maintenance issues, or unusual activity. Maintain the security log and ensure all access protocols are followed.',
+            },
+          ],
+        },
+      ],
+      conclusion:
+        'Front office procedures are not bureaucracy — they are the infrastructure that allows your team to be consistently excellent. When the process is documented and understood, agents stop improvising and start performing. The guest feels the difference, and so does your review score.',
+      cta: { text: 'View Front Office Playbook', href: '/en/playbooks' },
+    },
+    fr: {
+      title: 'Procédures Front Office Hôtel : Le Guide Complet pour les Établissements de Luxe',
+      description:
+        'Guide complet des procédures front office hôtel : check-in, check-out, gestion des réservations, traitement des réclamations et standards de communication client pour les hôtels de luxe.',
+      date: '2026-03-21',
+      readTime: '8 min de lecture',
+      intro:
+        'Le front office est le cœur battant de votre hôtel. C\'est le premier point de contact que chaque client a avec votre établissement, et la dernière chose dont il se souvient en partant. Pourtant, dans la plupart des hôtels, les procédures front office se transmettent verbalement, d\'équipe en équipe, sans standard écrit. Ce guide couvre les procédures front office essentielles que tout hôtel de luxe devrait avoir documentées.',
+      sections: [
+        {
+          h2: 'Pourquoi les procédures front office comptent plus qu\'on ne le croit',
+          content:
+            'Les clients forment leur première impression de votre établissement en quelques secondes à la réception. Un check-in confiant, chaleureux et efficace donne le ton pour tout leur séjour. Un accueil hésitant et désorganisé, causé par un agent insuffisamment formé, produit l\'effet inverse.',
+          h3Items: [
+            {
+              heading: 'Cohérence sur chaque shift',
+              text: 'Avec des procédures front office documentées, la qualité du check-in ne dépend pas de l\'agent en poste. Le standard est le même le lundi matin ou le samedi soir.',
+            },
+            {
+              heading: 'Intégration plus rapide',
+              text: 'Les nouveaux agents front office peuvent suivre les procédures documentées dès le premier jour, réduisant le temps nécessaire pour atteindre un niveau de performance autonome et orienté client.',
+            },
+            {
+              heading: 'Moins d\'erreurs, moins de réclamations',
+              text: 'La plupart des réclamations front office — mauvaise chambre, erreurs de facturation, demandes oubliées — sont dues à des étapes manquées. Une procédure basée sur des checklists élimine les points de défaillance les plus courants.',
+            },
+          ],
+        },
+        {
+          h2: 'Procédure de check-in : étape par étape',
+          content:
+            'Le check-in est l\'interaction la plus importante du parcours client. Il doit être chaleureux, efficace et personnalisé. Voici les étapes clés que toute procédure front office d\'hôtel de luxe doit inclure.',
+          h3Items: [
+            {
+              heading: 'Préparation pré-arrivée',
+              text: 'Consulter la liste des arrivées avant chaque shift. Identifier les VIP, clients fidèles, demandes spéciales et surclassements disponibles. Briefer l\'équipe. S\'assurer que toutes les chambres sont inspectées et marquées prêtes dans le PMS avant l\'heure d\'arrivée prévue.',
+            },
+            {
+              heading: 'Accueil du client',
+              text: 'Saluer chaque client par son nom dans les trois secondes suivant son approche. Maintenir le contact visuel. Si le client est déjà venu, le reconnaître. Éviter les formules scriptées et robotiques — la chaleur est un standard, pas une question de personnalité.',
+            },
+            {
+              heading: 'Vérification de la réservation',
+              text: 'Confirmer les détails de la réservation, le type de chambre, le tarif et la durée du séjour. Vérifier la pièce d\'identité et le moyen de paiement. Proposer un surclassement naturellement, en fonction des disponibilités et du profil client — jamais comme une vente forcée.',
+            },
+            {
+              heading: 'Présentation de la chambre',
+              text: 'Expliquer les équipements clés : Wi-Fi, horaires du petit-déjeuner, spa, restaurant. Proposer l\'assistance bagagiste. Si vous accompagnez le client, escortez-le — ne lui tendez pas simplement une clé en pointant du doigt.',
+            },
+          ],
+        },
+        {
+          h2: 'Procédure de check-out',
+          content:
+            'Le check-out est la dernière impression que votre hôtel laisse. Un processus de facturation lent et entaché d\'erreurs efface tout le capital de confiance construit pendant le séjour.',
+          h3Items: [
+            {
+              heading: 'Check-out express',
+              text: 'Proposer le check-out express dès le check-in pour les clients qui le souhaitent. Envoyer le pré-folio la veille du départ. Cela réduit la pression en matinée et donne aux clients la possibilité de contester les charges sereinement.',
+            },
+            {
+              heading: 'Vérification du folio',
+              text: 'Présenter la note clairement. Accompagner le client dans les charges qu\'il ne reconnaît pas. Résoudre les litiges sur place — ne pas escalader inutilement. Un litige de facturation bien géré peut transformer une réclamation en avis positif.',
+            },
+            {
+              heading: 'Expérience de départ',
+              text: 'Se renseigner sur le séjour. Noter les retours dans le profil PMS du client. Organiser le transport si nécessaire. Remercier par le nom. Un au revoir sincère et personnalisé est la dernière opportunité de rendre le séjour mémorable.',
+            },
+          ],
+        },
+        {
+          h2: 'Procédures de gestion des réservations',
+          content:
+            'Les équipes front office gèrent souvent les demandes de réservation entrantes en parallèle des interactions clients en direct. Sans procédure claire, les erreurs et les doubles réservations s\'accumulent.',
+          h3Items: [
+            {
+              heading: 'SOP réservation entrante',
+              text: 'Collecter les coordonnées complètes du client, la préférence de chambre, le tarif et les demandes spéciales à chaque appel. Répéter la confirmation. Envoyer une confirmation écrite dans les 15 minutes. Tout saisir immédiatement dans le PMS.',
+            },
+            {
+              heading: 'Protocole de modification et d\'annulation',
+              text: 'Toute modification ou annulation doit être traitée dans le PMS lors du même appel ou dans l\'heure qui suit. Confirmer le changement par écrit. Signaler les modifications ayant un impact sur le revenu au responsable des réservations.',
+            },
+            {
+              heading: 'Procédure no-show',
+              text: 'Tenter de contacter le client dans les deux heures suivant l\'heure d\'arrivée prévue. Facturer selon la politique d\'annulation. Libérer la chambre à une heure définie — généralement 23h sauf garantie par carte. Documenter chaque étape.',
+            },
+          ],
+        },
+        {
+          h2: 'Gestion des réclamations à la réception',
+          content:
+            'Le front office est le premier point de contact pour les réclamations clients. La manière dont l\'équipe les gère — et non leur occurrence — détermine la fidélité des clients.',
+          h3Items: [
+            {
+              heading: 'La méthode HEART',
+              text: 'Écouter la réclamation complètement sans interrompre. Faire preuve d\'empathie sincèrement. S\'excuser pour l\'expérience — pas nécessairement pour la cause. Résoudre avec une action concrète, immédiatement si possible. Remercier le client d\'avoir signalé le problème.',
+            },
+            {
+              heading: 'Politique d\'autonomie',
+              text: 'Les agents front office doivent être habilités à résoudre les réclamations jusqu\'à un seuil de valeur défini sans approbation du manager — généralement 50-100€ en gestes commerciaux. Au-delà, escalade vers le duty manager.',
+            },
+            {
+              heading: 'Consigner chaque réclamation',
+              text: 'Toutes les réclamations, quelle que soit leur gravité, doivent être consignées dans le profil PMS du client et dans le rapport d\'incidents journalier. Ces données informent les problèmes récurrents, le coaching des équipes et les audits qualité.',
+            },
+          ],
+        },
+        {
+          h2: 'Procédures d\'audit de nuit',
+          content:
+            'L\'audit de nuit clôture la journée financière, rapproche toutes les transactions et prépare l\'établissement pour la prochaine période opérationnelle. C\'est l\'un des rôles les plus procéduriers du front office.',
+          h3Items: [
+            {
+              heading: 'Réconciliation de fin de journée',
+              text: 'Lancer tous les rapports PMS. Réconcilier les revenus chambres, les charges F&B et les charges annexes. Identifier et résoudre les folios ouverts, les écarts ou les autorisations de paiement échouées avant le basculement de journée.',
+            },
+            {
+              heading: 'Préparation des arrivées et départs',
+              text: 'Imprimer et vérifier la liste des arrivées du lendemain. Identifier les VIP et demandes spéciales. Confirmer les allocations de chambres. Pré-bloquer les chambres en fonction des profils et préférences clients.',
+            },
+            {
+              heading: 'Rondes de sécurité',
+              text: 'Effectuer une ronde complète de l\'établissement à intervalles définis. Consigner tout incident, problème de maintenance ou activité inhabituelle. Tenir le registre de sécurité et s\'assurer du respect de tous les protocoles d\'accès.',
+            },
+          ],
+        },
+      ],
+      conclusion:
+        'Les procédures front office ne sont pas de la bureaucratie — elles sont l\'infrastructure qui permet à votre équipe d\'être constamment excellente. Quand le processus est documenté et compris, les agents cessent d\'improviser et commencent à performer. Le client ressent la différence, et vos avis en ligne aussi.',
+      cta: { text: 'Voir le Playbook Front Office', href: '/fr/playbooks' },
+    },
+  },
 ]
