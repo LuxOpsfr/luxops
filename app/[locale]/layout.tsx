@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Playfair_Display } from 'next/font/google'
+import { Inter, Manrope } from 'next/font/google'
 import Script from 'next/script'
 import '../globals.css'
 import { NextIntlClientProvider } from 'next-intl'
@@ -10,7 +10,7 @@ import { CartProvider } from '@/context/CartContext'
 const GA_ID = 'G-0CDGZY9FPZ'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
-const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-display' })
+const manrope = Manrope({ subsets: ['latin'], variable: '--font-display', weight: ['400', '600', '700', '800'] })
 
 export const metadata: Metadata = {
   title: 'LuxOps — Hotel Operations Playbooks, SOPs & Training',
@@ -58,7 +58,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <body className={`${inter.variable} ${playfair.variable} font-sans`}>
+      <body className={`${inter.variable} ${manrope.variable} font-sans`}>
         {/* Google Analytics */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}

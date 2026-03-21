@@ -2,11 +2,18 @@
 
 import { useState } from 'react'
 import { useTranslations } from 'next-intl'
-import { Check, Clock, ChevronRight } from 'lucide-react'
-import Image from 'next/image'
+import { Building2, Sparkles, UtensilsCrossed, Waves, ChevronRight, ArrowRight } from 'lucide-react'
+import Link from 'next/link'
 import AddToCartButton from '@/components/AddToCartButton'
 import PlaybookModal from '@/components/PlaybookModal'
 import { PLAYBOOKS, BUNDLE_PRICE_ID } from '@/content/playbooks/data'
+
+const DEPT_ICONS = {
+  fo: Building2,
+  hsk: Sparkles,
+  fb: UtensilsCrossed,
+  spa: Waves,
+}
 
 export default function PlaybooksContent({ locale }: { locale: string }) {
   const t = useTranslations('playbooks_page')
@@ -14,145 +21,198 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
   const lang = locale as 'en' | 'fr'
 
   const [openIndex, setOpenIndex] = useState<number | null>(null)
+  const [activeFilter, setActiveFilter] = useState<string>('all')
+
+  const categories = [
+    { key: 'all', label: isEn ? 'All Playbooks' : 'Tous les Playbooks' },
+    { key: 'fo', label: 'Front Office' },
+    { key: 'hsk', label: 'Housekeeping' },
+    { key: 'fb', label: 'F&B' },
+    { key: 'spa', label: 'Spa & Wellness' },
+  ]
+
+  const filteredPlaybooks = activeFilter === 'all'
+    ? PLAYBOOKS
+    : PLAYBOOKS.filter(pb => pb.id === activeFilter)
 
   return (
-    <div className="pt-16">
+    <div className="pt-16" style={{ backgroundColor: '#f8f9ff' }}>
+
       {/* Hero */}
-      <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h1 className="text-5xl font-bold text-[#111111] mb-4">{t('title')}</h1>
-          <p className="text-xl text-gray-400 leading-relaxed">{t('subtitle')}</p>
-        </div>
-      </section>
-
-      {/* Pricing Banner */}
-      <section className="py-6 bg-[#111111]">
-        <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex flex-col sm:flex-row items-center gap-8">
-            <div className="text-white text-center sm:text-left">
-              <div className="text-xs text-gray-400 mb-0.5 uppercase tracking-wider">
-                {t('individual_label')}
-              </div>
-              <div className="text-2xl font-bold">{t('individual_price')}</div>
-            </div>
-            <div className="hidden sm:block w-px h-10 bg-white/20" />
-            <div className="text-white text-center sm:text-left">
-              <div className="flex items-center gap-2 mb-0.5 justify-center sm:justify-start">
-                <span className="text-xs text-gray-400 uppercase tracking-wider">
-                  {t('bundle_label')}
-                </span>
-                <span className="px-2 py-0.5 bg-white/20 text-white text-xs rounded-full font-medium">
-                  {t('bundle_badge')}
-                </span>
-              </div>
-              <div className="text-2xl font-bold">
-                {t('bundle_price')}{' '}
-                <span className="text-sm font-normal text-gray-400">
-                  — {t('bundle_desc')}
-                </span>
-              </div>
-            </div>
-          </div>
-          <div className="flex gap-3">
-            <AddToCartButton
-              item={{
-                priceId: PLAYBOOKS[0].priceId,
-                title: PLAYBOOKS[0].title[lang],
-                price: 67,
-              }}
-              addedLabel={isEn ? 'In Cart' : 'Ajouté'}
-              className="px-5 py-2.5 bg-white/10 hover:bg-white/20 text-white text-sm font-medium rounded-lg transition-colors border border-white/20"
-            >
-              {t('buy_individual')}
-            </AddToCartButton>
-            <AddToCartButton
-              item={{
-                priceId: BUNDLE_PRICE_ID,
-                title: isEn ? 'Complete Bundle — All 4 Playbooks' : 'Bundle Complet — 4 Playbooks',
-                price: 199,
-              }}
-              addedLabel={isEn ? 'In Cart' : 'Ajouté'}
-              className="px-5 py-2.5 bg-white text-[#111111] text-sm font-bold rounded-lg hover:bg-gray-100 transition-colors"
-            >
-              {t('buy_bundle')}
-            </AddToCartButton>
-          </div>
-        </div>
-      </section>
-
-      {/* Playbooks Grid */}
-      <section className="py-20 bg-white">
+      <section className="py-20" style={{ backgroundColor: '#f8f9ff' }}>
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {PLAYBOOKS.map((pb, i) => (
-              <button
-                key={pb.id}
-                onClick={() => setOpenIndex(i)}
-                className="text-left border border-gray-100 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 group cursor-pointer"
-              >
-                {/* Image Hero */}
-                <div className="relative h-56 w-full bg-gray-100 overflow-hidden">
-                  {pb.previewImage ? (
-                    <Image
-                      src={pb.previewImage}
-                      alt={pb.title[lang]}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      unoptimized={pb.previewImage.startsWith('http')}
-                    />
-                  ) : (
-                    <div className="w-full h-full bg-gradient-to-br from-[#1A2E44] to-[#0056D2]" />
-                  )}
-                  {/* Overlay badge */}
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-white/90 backdrop-blur-sm text-[#1A2E44] text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">
-                      {pb.dept[lang]}
-                    </span>
-                  </div>
-                  <div className="absolute top-4 right-4 flex items-center gap-1 bg-black/40 backdrop-blur-sm text-white text-xs px-2.5 py-1.5 rounded-full">
-                    <Clock size={11} />
-                    {pb.pages}
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="p-7">
-                  <h3 className="text-xl font-bold text-[#111111] mb-2">{pb.title[lang]}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed mb-5">{pb.desc[lang]}</p>
-
-                  <ul className="space-y-2 mb-6">
-                    {pb.highlights[lang].slice(0, 3).map((h, j) => (
-                      <li key={j} className="flex items-center gap-2 text-sm text-gray-600">
-                        <Check size={14} className="text-[#2E7D32] flex-shrink-0" />
-                        {h}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                    <span className="text-[#111111] font-bold text-xl">€67</span>
-                    <span className="flex items-center gap-1.5 text-sm font-semibold text-[#0056D2] group-hover:gap-2.5 transition-all">
-                      {isEn ? 'View Details' : 'Voir les détails'}
-                      <ChevronRight size={16} />
-                    </span>
-                  </div>
-                </div>
-              </button>
-            ))}
-          </div>
+          <h1 className="font-display text-5xl md:text-6xl font-extrabold text-[#0a1d2e] mb-4 leading-tight tracking-tight">
+            {t('title')}
+          </h1>
+          <p className="text-lg text-[#4f6074] leading-relaxed max-w-2xl">
+            {t('subtitle')}
+          </p>
         </div>
       </section>
 
-      {/* Coming Soon */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#111111]/8 rounded-full text-[#111111] text-sm font-medium mb-4">
-            <Clock size={14} />
-            {t('coming_soon_title')}
+      {/* Bundle Banner */}
+      <section className="py-5 bg-[#003d9b]">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="text-white text-sm">
+            <span className="font-bold">{t('bundle_label')}</span>
+            <span className="opacity-70 mx-2">—</span>
+            <span className="opacity-80">{t('bundle_desc')}</span>
           </div>
-          <p className="text-gray-400 text-sm">{t('coming_soon_text')}</p>
+          <AddToCartButton
+            item={{
+              priceId: BUNDLE_PRICE_ID,
+              title: isEn ? 'Complete Bundle — All 4 Playbooks' : 'Bundle Complet — 4 Playbooks',
+              price: 199,
+            }}
+            addedLabel={isEn ? 'In Cart' : 'Ajouté'}
+            className="px-5 py-2 bg-white text-[#003d9b] text-sm font-bold rounded-sm hover:bg-[#f8f9ff] transition-colors whitespace-nowrap"
+          >
+            {t('bundle_price')} — {t('buy_bundle')}
+          </AddToCartButton>
         </div>
       </section>
+
+      {/* Main */}
+      <main className="max-w-7xl mx-auto px-6 py-16">
+        <div className="flex flex-col lg:flex-row gap-12">
+
+          {/* Sidebar */}
+          <aside className="w-full lg:w-60 flex-shrink-0 space-y-10">
+
+            {/* Categories */}
+            <div>
+              <h3 className="font-display text-xs font-bold uppercase tracking-widest text-[#4f6074] mb-5">
+                {isEn ? 'Categories' : 'Catégories'}
+              </h3>
+              <ul className="space-y-1">
+                {categories.map((cat) => (
+                  <li key={cat.key}>
+                    <button
+                      onClick={() => setActiveFilter(cat.key)}
+                      className="w-full flex items-center justify-between text-sm font-medium px-3 py-2.5 transition-all"
+                      style={{
+                        color: activeFilter === cat.key ? '#003d9b' : '#4f6074',
+                        backgroundColor: activeFilter === cat.key ? '#eef4ff' : 'transparent',
+                        borderRadius: '0.125rem',
+                      }}
+                    >
+                      {cat.label}
+                      {activeFilter === cat.key && <ArrowRight size={14} />}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Custom Audit CTA */}
+            <div style={{ borderTop: '1px solid rgba(195,198,214,0.3)', paddingTop: '1.5rem' }}>
+              <div className="bg-[#003d9b] text-white p-6" style={{ borderRadius: '0.125rem' }}>
+                <p className="font-display font-bold text-base mb-2">
+                  {isEn ? 'Custom Audit?' : 'Audit Sur-Mesure ?'}
+                </p>
+                <p className="text-xs opacity-80 mb-5 leading-relaxed">
+                  {isEn
+                    ? 'Our consultants can build custom SOPs tailored to your property.'
+                    : 'Nos consultants créent des procédures sur-mesure pour votre établissement.'}
+                </p>
+                <Link
+                  href={`/${locale}/audit-qualite`}
+                  className="block w-full py-2 bg-white text-[#003d9b] font-bold text-xs text-center hover:bg-[#f8f9ff] transition-colors"
+                  style={{ borderRadius: '0.125rem' }}
+                >
+                  {isEn ? 'Learn More' : 'En savoir plus'}
+                </Link>
+              </div>
+            </div>
+          </aside>
+
+          {/* Grid */}
+          <div className="flex-1">
+
+            {/* Bar */}
+            <div
+              className="flex items-center justify-between mb-8 pb-4"
+              style={{ borderBottom: '1px solid rgba(195,198,214,0.25)' }}
+            >
+              <p className="text-xs font-bold uppercase tracking-widest text-[#737685]">
+                {filteredPlaybooks.length} {isEn ? 'Playbooks' : 'Playbooks'}
+              </p>
+            </div>
+
+            {/* Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {filteredPlaybooks.map((pb) => {
+                const Icon = DEPT_ICONS[pb.id]
+                const realIndex = PLAYBOOKS.indexOf(pb)
+
+                return (
+                  <button
+                    key={pb.id}
+                    onClick={() => setOpenIndex(realIndex)}
+                    className="text-left bg-white group transition-all duration-300 hover:shadow-2xl cursor-pointer"
+                    style={{ boxShadow: '0 2px 12px rgba(10,29,46,0.05)', borderRadius: '0.125rem' }}
+                  >
+                    {/* Blueprint area */}
+                    <div
+                      className="relative overflow-hidden"
+                      style={{ aspectRatio: '16/10', backgroundColor: '#dae9ff' }}
+                    >
+                      <div
+                        className="absolute inset-0 opacity-25 group-hover:opacity-40 transition-opacity duration-300"
+                        style={{
+                          backgroundImage: 'radial-gradient(#003d9b 0.5px, transparent 0.5px)',
+                          backgroundSize: '20px 20px',
+                        }}
+                      />
+                      <div
+                        className="absolute inset-8 flex flex-col items-center justify-center"
+                        style={{ border: '1px solid rgba(0,61,155,0.15)' }}
+                      >
+                        <Icon size={52} className="mb-3" style={{ color: '#003d9b', opacity: 0.28 }} />
+                        <div
+                          className="text-[10px] uppercase font-bold"
+                          style={{ letterSpacing: '0.25em', color: '#003d9b', opacity: 0.45 }}
+                        >
+                          {isEn ? 'Standard Operating Procedure' : 'Procédure Opérationnelle'}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="p-7">
+                      <div className="flex items-center justify-between mb-3">
+                        <span
+                          className="text-[10px] font-bold uppercase tracking-widest px-2 py-1 text-[#003d9b]"
+                          style={{ backgroundColor: '#eef4ff', borderRadius: '0.125rem' }}
+                        >
+                          {pb.dept[lang]}
+                        </span>
+                        <span className="font-display text-lg font-bold text-[#0a1d2e]">€67</span>
+                      </div>
+
+                      <h3 className="font-display text-xl font-bold text-[#0a1d2e] mb-2 group-hover:text-[#003d9b] transition-colors">
+                        {pb.title[lang]}
+                      </h3>
+
+                      <p className="text-sm text-[#4f6074] mb-7 leading-relaxed line-clamp-2">
+                        {pb.desc[lang]}
+                      </p>
+
+                      <div
+                        className="w-full flex items-center justify-center gap-2 py-3 text-[#003d9b] font-bold text-xs uppercase tracking-widest transition-all duration-200 group-hover:bg-[#003d9b] group-hover:text-white"
+                        style={{ border: '1px solid #003d9b', borderRadius: '0.125rem' }}
+                      >
+                        <span>{isEn ? 'View Details' : 'Voir les détails'}</span>
+                        <ChevronRight size={14} />
+                      </div>
+                    </div>
+                  </button>
+                )
+              })}
+            </div>
+          </div>
+        </div>
+      </main>
 
       {/* Modal */}
       <PlaybookModal
