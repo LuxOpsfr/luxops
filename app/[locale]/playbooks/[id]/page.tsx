@@ -106,10 +106,6 @@ const FAQ: Record<string, { q: { en: string; fr: string }; a: { en: string; fr: 
   ],
 }
 
-export async function generateStaticParams() {
-  return PLAYBOOKS.map((pb) => ({ id: pb.id }))
-}
-
 export async function generateMetadata({
   params,
 }: {
