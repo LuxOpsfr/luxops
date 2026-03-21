@@ -270,7 +270,7 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
                 <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.75)' }}>
                   {isEn
                     ? 'Advanced modules covering the final operational standards, quality control and continuous improvement.'
-                    : 'Modules avancés couvrant les standards opérationnels finaux, le contrôle qualité et l'amélioration continue.'}
+                    : "Modules avancés couvrant les standards opérationnels finaux, le contrôle qualité et l'amélioration continue."}
                 </p>
                 <div className="mt-6 space-y-1">
                   {featuredChapters.slice(1).map((ch, i) => (

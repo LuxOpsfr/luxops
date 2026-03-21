@@ -57,7 +57,7 @@ const FAQ: Record<string, { q: { en: string; fr: string }; a: { en: string; fr: 
     },
     {
       q: { en: 'Can I customise the checklists?', fr: 'Puis-je personnaliser les checklists ?' },
-      a: { en: 'The PowerPoint version is fully editable, allowing you to adapt procedures to your property's specific standards.', fr: 'La version PowerPoint est entièrement modifiable, vous permettant d'adapter les procédures aux standards spécifiques de votre établissement.' },
+      a: { en: "The PowerPoint version is fully editable, allowing you to adapt procedures to your property's specific standards.", fr: "La version PowerPoint est entièrement modifiable, vous permettant d'adapter les procédures aux standards spécifiques de votre établissement." },
     },
     {
       q: { en: 'Is the playbook available in French and English?', fr: 'Le playbook est-il disponible en français et en anglais ?' },
