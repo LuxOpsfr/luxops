@@ -5,7 +5,6 @@ import { useTranslations } from 'next-intl'
 import { Building2, Sparkles, UtensilsCrossed, Waves, ChevronRight, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import AddToCartButton from '@/components/AddToCartButton'
-import PlaybookModal from '@/components/PlaybookModal'
 import { PLAYBOOKS, BUNDLE_PRICE_ID } from '@/content/playbooks/data'
 
 const DEPT_ICONS = {
@@ -20,7 +19,6 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
   const isEn = locale === 'en'
   const lang = locale as 'en' | 'fr'
 
-  const [openIndex, setOpenIndex] = useState<number | null>(null)
   const [activeFilter, setActiveFilter] = useState<string>('all')
 
   const categories = [
@@ -36,10 +34,10 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
     : PLAYBOOKS.filter(pb => pb.id === activeFilter)
 
   return (
-    <div className="pt-16" style={{ backgroundColor: '#f8f9ff' }}>
+    <div className="pt-16 bg-white">
 
       {/* Hero */}
-      <section className="py-20" style={{ backgroundColor: '#f8f9ff' }}>
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <h1 className="font-display text-5xl md:text-6xl font-extrabold text-[#0a1d2e] mb-4 leading-tight tracking-tight">
             {t('title')}
@@ -143,13 +141,12 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {filteredPlaybooks.map((pb) => {
                 const Icon = DEPT_ICONS[pb.id]
-                const realIndex = PLAYBOOKS.indexOf(pb)
 
                 return (
-                  <button
+                  <Link
                     key={pb.id}
-                    onClick={() => setOpenIndex(realIndex)}
-                    className="text-left bg-white group transition-all duration-300 hover:shadow-2xl cursor-pointer"
+                    href={`/${locale}/playbooks/${pb.id}`}
+                    className="block text-left bg-white group transition-all duration-300 hover:shadow-2xl cursor-pointer"
                     style={{ boxShadow: '0 2px 12px rgba(10,29,46,0.05)', borderRadius: '0.125rem' }}
                   >
                     {/* Blueprint area */}
@@ -206,21 +203,13 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                         <ChevronRight size={14} />
                       </div>
                     </div>
-                  </button>
+                  </Link>
                 )
               })}
             </div>
           </div>
         </div>
       </main>
-
-      {/* Modal */}
-      <PlaybookModal
-        isOpen={openIndex !== null}
-        onClose={() => setOpenIndex(null)}
-        locale={locale}
-        playbook={openIndex !== null ? PLAYBOOKS[openIndex] : null}
-      />
     </div>
   )
 }
