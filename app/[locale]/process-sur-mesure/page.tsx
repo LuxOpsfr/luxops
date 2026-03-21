@@ -25,8 +25,8 @@ function ProcessContent({ locale }: { locale: string }) {
   const departments = [t('d1'), t('d2'), t('d3'), t('d4'), t('d5'), t('d6'), t('d7'), t('d8')]
 
   const phases = isEn ? [
-    { n: '01', title: 'Existing Audit', desc: 'We review what's already in place — existing docs, team habits, gaps — before writing a single line.' },
-    { n: '02', title: 'Custom Drafting', desc: 'Procedures written around your property's actual standards, service sequences and team structure.' },
+    { n: '01', title: 'Existing Audit', desc: "We review what's already in place — existing docs, team habits, gaps — before writing a single line." },
+    { n: '02', title: 'Custom Drafting', desc: "Procedures written around your property's actual standards, service sequences and team structure." },
     { n: '03', title: 'Review & Delivery', desc: 'Iteration with your team until the output is accurate, usable, and ready to deploy immediately.' },
   ] : [
     { n: '01', title: "Analyse de l'Existant", desc: "Revue de ce qui est déjà en place — documents, habitudes d'équipe, écarts — avant d'écrire quoi que ce soit." },

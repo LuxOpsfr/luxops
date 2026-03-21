@@ -185,7 +185,7 @@ function FormationContent({ locale }: { locale: string }) {
               <p className="text-sm italic" style={{ color: 'rgba(255,255,255,0.8)' }}>
                 {isEn
                   ? '"Training without follow-through is a briefing. We stay until it sticks."'
-                  : '"Former sans suivi, c'est juste un briefing. Nous restons jusqu'à l'ancrage."'}
+                  : '"Former sans suivi, c\u2019est juste un briefing. Nous restons jusqu\u2019\u00e0 l\u2019ancrage."'}
               </p>
             </div>
 
