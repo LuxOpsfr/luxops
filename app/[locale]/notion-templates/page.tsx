@@ -243,7 +243,7 @@ function NotionContent({ locale }: { locale: string }) {
                       <div className="grid grid-cols-3 text-[9px] font-bold uppercase tracking-wider text-[#737685] px-3 py-1.5" style={{ backgroundColor: '#f8f9ff' }}>
                         <span>TÂCHE</span><span>STATUT</span><span>ASSIGNEE</span>
                       </div>
-                      {isEn ? [
+                      {(isEn ? [
                         { task: 'Morning Briefing', status: 'DONE', color: '#dcfce7', textColor: '#16a34a', initials: 'ML' },
                         { task: 'VIP Inspection 204', status: 'IN PROGRESS', color: '#dbeafe', textColor: '#1d4ed8', initials: 'JD' },
                         { task: 'Incident Report', status: 'TO DO', color: '#f3f4f6', textColor: '#6b7280', initials: 'SA' },
@@ -251,7 +251,7 @@ function NotionContent({ locale }: { locale: string }) {
                         { task: 'Briefing Matinal', status: 'FAIT', color: '#dcfce7', textColor: '#16a34a', initials: 'ML' },
                         { task: 'Inspection VIP 204', status: 'EN COURS', color: '#dbeafe', textColor: '#1d4ed8', initials: 'JD' },
                         { task: "Rapport d'Incidents", status: 'À FAIRE', color: '#f3f4f6', textColor: '#6b7280', initials: 'SA' },
-                      ].map((row, i) => (
+                      ]).map((row, i) => (
                         <div key={i} className="grid grid-cols-3 px-3 py-2 items-center text-[10px]" style={{ borderTop: '1px solid rgba(195,198,214,0.2)' }}>
                           <span className="text-[#0a1d2e] font-medium truncate">{row.task}</span>
                           <span className="px-1.5 py-0.5 rounded text-[9px] font-bold inline-block w-fit" style={{ backgroundColor: row.color, color: row.textColor }}>{row.status}</span>
