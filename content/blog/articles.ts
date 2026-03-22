@@ -138,54 +138,54 @@ export const articles: BilingualArticle[] = [
       date: '2026-03-10',
       readTime: '7 min de lecture',
       intro:
-        "Entrez dans n'importe quel hôtel performant et vous trouverez la même chose en coulisses : des processus documentés. La réception sait exactement comment gérer un check-in tardif. L'étage suit une séquence de chambre précise. Le service F&B tourne au même standard à chaque shift. Cette cohérence ne doit rien au hasard — elle repose sur un playbook opérationnel.",
+        "La plupart des problèmes opérationnels dans les hôtels ne sont pas complexes. Ils résultent de procédures qui n\'ont jamais été écrites. Le check-in qui se déroule différemment selon qui est à la réception. L\'inspection de chambre qui varie d\'un valet à l\'autre. La réclamation traitée de façon incohérente parce qu\'il n\'existe pas de standard établi. Un playbook opérationnel hôtelier, c\'est la façon dont les établissements règlent ça -- pas d\'un coup, mais département par département, service par service.",
       sections: [
         {
           h2: "Qu'est-ce qu'un playbook opérationnel hôtelier ?",
           content:
-            "Un playbook opérationnel hôtelier est un document de référence complet, département par département, qui capture chaque procédure clé, standard et protocole dont vos équipes ont besoin pour opérer avec cohérence. C'est la mémoire institutionnelle de votre établissement — tout ce que le personnel expérimenté porte en tête, mis par écrit, structuré et rendu accessible à tous.",
+            "Un playbook opérationnel hôtelier est un document de référence structuré, département par département, qui documente les procédures, standards de service et protocoles dont les équipes ont besoin pour travailler de façon constante. C\'est la mémoire institutionnelle de l\'établissement -- ce que le personnel expérimenté porte dans sa tête, mis par écrit et rendu accessible à tous. Quand il fonctionne bien, un nouveau collaborateur arrivé le lundi peut travailler au même standard que quelqu\'un présent depuis trois ans.",
           h3Items: [
             {
               heading: 'SOPs (Procédures Opérationnelles Standard)',
-              text: "Instructions pas-à-pas pour les tâches récurrentes : check-in, service de couverture, gestion des réclamations, mise en place, préparation des soins. Chaque SOP ne laisse aucune place à l'interprétation.",
+              text: "Instructions pas-à-pas pour les tâches récurrentes : check-in, service de couverture, gestion des réclamations, mise en place, préparation des soins. Chacune rédigée pour ne laisser aucune place à l\'interprétation en plein service.",
             },
             {
               heading: 'Standards de service',
-              text: "La qualité, le rythme, le ton et la présentation attendus pour chaque interaction client. Les standards définissent ce que \"bien\" signifie dans votre contexte spécifique.",
+              text: "La qualité, le rythme, le ton et la présentation attendus pour chaque interaction client. Les standards définissent ce que bien faire signifie dans votre établissement -- pas en termes généraux, mais de façon précise, pour que l\'équipe sache quand elle l\'a atteint.",
             },
             {
               heading: 'Responsabilités par poste',
-              text: "Une responsabilité claire par fonction pour que chaque collaborateur comprenne son périmètre et ses points de passation.",
+              text: "Une responsabilité claire par fonction pour que chaque collaborateur comprenne son périmètre et l\'endroit où la passation vers un autre poste doit s\'effectuer.",
             },
             {
               heading: 'Parcours client',
-              text: "Une vue cartographiée de l'expérience client complète — de la pré-arrivée au départ — avec les actions du personnel correspondantes à chaque étape.",
+              text: "Une vue cartographiée de l\'expérience complète, de la pré-arrivée au départ, avec les actions du personnel correspondantes à chaque étape. Utile pour l\'intégration et pour identifier les angles morts dans la couverture de service.",
             },
           ],
         },
         {
           h2: "Pourquoi les hôtels sans playbook peinent à performer",
           content:
-            "La plupart des problèmes opérationnels hôteliers ont la même cause profonde : des processus qui vivent dans les têtes plutôt que sur le papier. Quand ces personnes partent — et dans l'hôtellerie, le turnover est élevé — les connaissances partent avec elles.",
+            "La plupart des problèmes opérationnels hôteliers ont la même cause : des savoirs qui vivent dans les têtes plutôt que sur le papier. Quand ces personnes partent -- et dans l\'hôtellerie, le turnover est élevé -- ces savoirs partent avec elles. Un nouveau collaborateur repart de zéro. L\'équipe fonctionne un peu différemment à chaque service. Les clients le sentent, même s\'ils ne savent pas l\'expliquer.",
           h3Items: [
             {
               heading: 'Expérience client incohérente',
-              text: "Sans standards documentés, la qualité du service dépend de qui est en poste ce jour-là. Un client qui séjourne deux fois peut vivre deux expériences entièrement différentes.",
+              text: "Quand les standards ne vivent que dans les têtes, chaque service se déroule légèrement différemment. Un client qui séjourne deux fois peut vivre deux expériences différentes -- même chambre, même prix, qualité variable.",
             },
             {
               heading: 'Intégration lente',
-              text: "Les nouveaux collaborateurs ont besoin de semaines ou de mois pour apprendre les standards de l'établissement de façon informelle. Un playbook réduit significativement le temps d'intégration.",
+              text: "Sans procédures documentées, les nouveaux collaborateurs passent des semaines à apprendre de façon informelle, par observation et correction. Un playbook réduit significativement ce délai et diminue les erreurs qui agacent les clients pendant les premières semaines d\'un nouveau.",
             },
             {
               heading: 'Dépendance au management',
-              text: "Quand les procédures ne sont pas documentées, les superviseurs passent leur temps à répondre à des questions basiques plutôt qu'à manager. Un playbook change cette dynamique.",
+              text: "Quand rien n\'est écrit, les superviseurs passent leur temps à répondre à des questions basiques au lieu de gérer le service. Un playbook change cette dynamique et donne à l\'équipe l\'autonomie de travailler selon un standard sans supervision constante.",
             },
           ],
         },
         {
           h2: 'Ce que couvre un playbook opérationnel hôtelier',
           content:
-            "Un playbook complet couvre tous les départements générateurs de revenus et en contact avec les clients. Les playbooks LuxOps sont structurés autour de quatre départements centraux, chacun avec des SOPs et standards de service dédiés.",
+            "Un playbook utile reflète le fonctionnement réel de l\'hôtel, département par département. Les playbooks LuxOps sont structurés autour de quatre domaines opérationnels centraux, chacun avec des procédures et standards de service issus du terrain.",
           h3Items: [
             {
               heading: 'Front Office',
@@ -208,34 +208,34 @@ export const articles: BilingualArticle[] = [
         {
           h2: 'Comment mettre en place un playbook dans votre établissement',
           content:
-            "Un playbook ne délivre de la valeur que lorsqu'il est ancré dans les opérations quotidiennes — pas rangé dans un tiroir. Voici comment les établissements performants le mettent en œuvre.",
+            "Un playbook ne délivre de la valeur que lorsqu\'il est ancré dans les opérations quotidiennes. Un PDF qui dort dans un dossier partagé sans jamais être ouvert ne sert à rien. Voici les étapes qui font réellement tenir un playbook dans la durée.",
           h3Items: [
             {
               heading: '1. Commencez par le département à plus fort impact',
-              text: "Le Front Office ou le Housekeeping présentent généralement les plus grands écarts de cohérence. Commencez là pour obtenir des résultats rapides.",
+              text: "Ne commencez pas par la procédure la plus rare ou la plus complexe. Choisissez une tâche à haute fréquence où l\'incohérence est déjà visible : check-in, inspection de chambre, gestion des réclamations. Commencez là, constatez les résultats, puis développez.",
             },
             {
               heading: '2. Impliquez les chefs de département',
-              text: "Les personnes qui font le travail connaissent les vraies procédures. Faites-les examiner, valider et contribuer à la section de leur département.",
+              text: "Les personnes qui font le travail savent comment il se déroule vraiment. Faites participer les chefs de département à la rédaction de leur section -- pas seulement à sa validation. Les procédures qui correspondent à la réalité sont suivies. Les autres ne le sont pas.",
             },
             {
               heading: '3. Formez, ne distribuez pas simplement',
-              text: "Un playbook introduit lors d'une session de formation a un impact très différent d'un PDF envoyé par email. Les sessions pratiques favorisent l'adoption.",
+              text: "Un playbook présenté lors d\'une session de formation a un impact très différent d\'un PDF envoyé par email. Faire parcourir les étapes, laisser l\'équipe poser des questions, pratiquer les séquences -- c\'est comme ça que l\'adoption se produit.",
             },
             {
               heading: '4. Révisez trimestriellement',
-              text: "Les opérations évoluent. Un playbook obsolète de six mois commence à travailler contre vous. Planifiez des révisions structurées par département.",
+              text: "Les opérations évoluent. Un playbook obsolète de six mois commence silencieusement à travailler contre vous : l\'équipe suit le document plutôt que le standard actuel, ou elle arrête de le suivre. Intégrez un calendrier de révision dès le départ.",
             },
           ],
         },
         {
           h2: 'Playbooks prêts à l\'emploi vs. construction from scratch',
           content:
-            "Construire un playbook opérationnel hôtelier complet from scratch prend des mois et requiert une expertise opérationnelle pour le structurer correctement. La plupart des établissements n'ont pas cette bande passante en interne. Les playbooks prêts à l'emploi — construits à partir d'une expérience réelle de l'hôtellerie — vous donnent une base professionnellement structurée que vous adaptez à votre établissement, plutôt que de partir d'une page blanche. Les playbooks LuxOps couvrent le Front Office, le Housekeeping, le F&B et le Spa & Wellness, chacun représentant 200 à 280 pages de procédures documentées.",
+            "Construire un playbook opérationnel complet depuis zéro prend des mois et requiert une expertise opérationnelle que la plupart des établissements ne peuvent pas dédier en interne. Les playbooks prêts à l\'emploi construits à partir de l\'expérience terrain donnent une base professionnellement structurée à adapter à l\'établissement, plutôt que de partir d\'une page blanche. Les playbooks LuxOps couvrent le Front Office, le Housekeeping, le F&B et le Spa, chacun représentant entre 200 et 280 pages de procédures et standards documentés.",
         },
       ],
       conclusion:
-        "Un playbook opérationnel hôtelier n'est pas un document bureaucratique. C'est le fondement qui permet à vos équipes de délivrer un service cohérent et de haute qualité quel que soit le collaborateur en poste. Que vous le construisiez en interne ou partiez d'un template structuré, l'investissement se rentabilise à chaque fois qu'un nouveau collaborateur s'intègre deux fois plus vite, ou qu'un client reçoit la même qualité qu'à son séjour précédent.",
+        "Un playbook opérationnel hôtelier n\'est pas un document bureaucratique. C\'est ce qui permet aux équipes de délivrer un service fiable et constant quel que soit le collaborateur en poste. Construit de zéro ou adapté à partir d\'un modèle structuré, la valeur se concrétise rapidement : temps d\'intégration raccourci, moins d\'erreurs, et clients qui retrouvent le même niveau à chaque séjour.",
       cta: { text: 'Voir nos Playbooks', href: '/fr/playbooks' },
     },
   },
@@ -375,124 +375,124 @@ export const articles: BilingualArticle[] = [
       date: '2026-03-12',
       readTime: '8 min de lecture',
       intro:
-        "Rédiger des SOPs hôteliers semble simple en théorie. En pratique, la plupart des hôtels qui s'y essaient finissent avec des documents trop longs pour être utilisés, trop vagues pour être suivis, ou trop incohérents pour être appliqués. Ce guide couvre comment rédiger des SOPs qui fonctionnent vraiment — des documents que vos équipes suivront parce qu'ils sont clairs, pratiques et construits autour de la réalité du travail.",
+        "Rédiger des SOPs hôteliers semble simple, jusqu\'à ce qu\'on s\'y attelle. La plupart des tentatives produisent des documents trop longs pour être consultés en plein service, trop vagues pour être suivis sans demander au superviseur, ou suffisamment incohérents d\'un département à l\'autre pour créer plus de confusion qu\'ils n\'en résolvent. Le problème n\'est généralement pas un manque de connaissance -- c\'est un manque de structure. Ce guide présente une approche pratique pour rédiger des SOPs que les équipes utiliseront vraiment.",
       sections: [
         {
           h2: "Qu'est-ce qui fait un bon SOP hôtelier ?",
           content:
-            "Avant de rédiger quoi que ce soit, il est utile de comprendre ce qui distingue un SOP efficace d'un document ignoré. Les meilleurs SOPs hôteliers partagent quatre caractéristiques.",
+            "La différence entre un SOP utilisé et un SOP ignoré tient rarement au contenu -- elle tient au format et au niveau de précision. Voici les quatre éléments qui comptent vraiment.",
           h3Items: [
             {
               heading: 'Actionnable, pas descriptif',
-              text: 'Un SOP doit dire exactement quoi faire, étape par étape — pas décrire à quoi le résultat final doit ressembler en termes généraux. "Accueillir le client par son nom dans les 10 secondes suivant l\'approche" est actionnable. "S\'assurer que les clients se sentent bienvenus" ne l\'est pas.',
+              text: "Un SOP doit dire exactement quoi faire, étape par étape. Pas décrire le résultat attendu en termes généraux. \'Accueillir le client par son nom dans les 10 secondes suivant l\'approche\' est actionnable. \'S\'assurer que les clients se sentent bienvenus\' ne l\'est pas -- il n\'existe aucun moyen de vérifier que c\'est fait.",
             },
             {
               heading: 'Le bon niveau de détail',
-              text: 'Trop peu de détails et le SOP est inutile. Trop et personne ne le lit. Le critère : un nouveau collaborateur compétent sans expérience de l\'établissement doit pouvoir suivre le SOP de façon autonome.',
+              text: "Trop peu de détails et le SOP est inutile. Trop et personne ne le lit en plein service. Le test pratique : un nouveau collaborateur sans expérience préalable de l\'établissement doit pouvoir le suivre de façon autonome.",
             },
             {
               heading: 'Spécifique au poste',
-              text: 'Chaque SOP doit appartenir à un seul poste ou département. Un SOP combinant réception et conciergerie crée de la confusion sur la responsabilité.',
+              text: "Chaque SOP appartient à un poste ou un département. Un SOP combinant réception et conciergerie crée de l\'ambiguïté sur qui fait quoi et à quel moment. Séparez-les avec un point de passation clair.",
             },
             {
               heading: 'Format cohérent',
-              text: 'Sur tous les départements, les SOPs doivent se ressembler — même structure, même convention de nommage, même numérotation de version. Cela facilite la navigation et les mises à jour.',
+              text: "Sur tous les départements, les SOPs doivent suivre la même structure, la même convention de nommage, le même format de version. Cela facilite la navigation et la maintenance de l\'ensemble du système dans la durée.",
             },
           ],
         },
         {
           h2: 'La structure d\'un SOP hôtelier',
           content:
-            "Chaque SOP doit contenir les mêmes éléments. Voici la structure utilisée dans les opérations hôtelières haut de gamme.",
+            "Chaque SOP doit contenir les mêmes éléments dans le même ordre. C\'est la structure qui fonctionne dans les départements hôteliers et qui reste facile à mettre à jour quand les procédures évoluent.",
           h3Items: [
             {
               heading: 'En-tête',
-              text: 'Titre, département, numéro de version, date de dernière mise à jour, responsable (poste ou nom).',
+              text: "Titre, département, numéro de version, date de dernière mise à jour et le poste responsable de la procédure.",
             },
             {
               heading: 'Objectif',
-              text: "Une ou deux phrases : que réalise ce SOP et pourquoi existe-t-il ? Cette section donne au personnel du contexte, pas seulement des instructions.",
+              text: "Une ou deux phrases expliquant ce que le SOP accomplit et pourquoi il existe. Ça donne au collaborateur du contexte, pas seulement des instructions -- et cela compte plus qu\'on ne le croit.",
             },
             {
               heading: 'Périmètre',
-              text: 'À qui ce SOP s\'applique-t-il ? Quels shifts, quels jours, quels scénarios ?',
+              text: "À qui ce SOP s\'applique. Quels services, quels jours, quelles situations. Si la procédure ne s\'applique pas partout, il faut le dire explicitement.",
             },
             {
               heading: 'Procédure',
-              text: 'Les instructions pas-à-pas. Numérotées, séquentielles, sans ambiguïté. Chaque étape doit être une action distincte. Évitez de combiner plusieurs actions en une seule étape.',
+              text: "Les instructions pas-à-pas. Numérotées, séquentielles, sans ambiguïté. Chaque étape doit être une seule action distincte. Évitez de combiner deux actions en une étape -- cela complique l\'exécution et rend la vérification difficile.",
             },
             {
               heading: 'Standards',
-              text: 'Les critères de qualité qui définissent une exécution correcte — timing, langage, présentation ou repères de mesure.',
+              text: "Les critères de qualité qui définissent une exécution correcte : timing, langage, présentation, repères mesurables. C\'est ce qu\'un superviseur utilise pour évaluer si la procédure a bien été réalisée.",
             },
             {
               heading: 'Exceptions et escalade',
-              text: "Que se passe-t-il quand la situation standard ne s'applique pas ? Qui le collaborateur contacte-t-il ? Quel est l'arbre de décision ?",
+              text: "Ce qui se passe quand la situation standard ne s\'applique pas. Qui le collaborateur contacte. Comment la décision s\'organise. C\'est la section que la plupart des SOPs omettent et dont les équipes ont le plus besoin en service.",
             },
           ],
         },
         {
           h2: 'Étape par étape : rédiger votre premier SOP hôtelier',
           content:
-            "Voici un processus pratique pour rédiger un SOP from scratch, basé sur des méthodes appliquées dans de vraies opérations hôtelières.",
+            "Voici un processus pratique pour rédiger un SOP, issu de méthodes appliquées dans des opérations hôtelières réelles.",
           h3Items: [
             {
               heading: 'Étape 1 : Choisir le bon point de départ',
-              text: "Ne commencez pas par la procédure la plus rare ou la plus complexe. Choisissez une tâche à haute fréquence qui présente des problèmes de cohérence visibles — une séquence de check-in courante, un processus d'inspection de chambre, un flux de gestion des réclamations.",
+              text: "Commencez par une tâche à haute fréquence qui présente déjà des problèmes de cohérence visibles. Une séquence de check-in. Un processus d\'inspection de chambre. Un flux de gestion des réclamations. Pas le scénario le plus rare -- le plus courant, parce que c\'est là que l\'incohérence fait le plus de dégâts.",
             },
             {
               heading: 'Étape 2 : Observer le meilleur exécutant',
-              text: "Trouvez la personne dans l'équipe qui réalise cette tâche le mieux et observez-la la faire. Documentez chaque action distincte au fur et à mesure. Ne comptez pas sur votre mémoire.",
+              text: "Trouvez la personne de l\'équipe qui exécute cette tâche le plus régulièrement et observez-la le faire. Documentez chaque action distincte au fur et à mesure. Ne comptez pas sur votre mémoire, et ne lui demandez pas de décrire la procédure après coup -- l\'observation est le seul moyen de capturer ce qui se passe réellement.",
             },
             {
               heading: 'Étape 3 : Rédiger en langage simple',
-              text: "Écrivez comme si vous expliquiez à quelqu'un qui n'a jamais travaillé dans un hôtel. Évitez le jargon, la voix passive et les qualificatifs vagues comme « de manière appropriée » ou « selon les besoins ».",
+              text: "Écrivez comme si vous expliquiez à quelqu\'un qui n\'a jamais travaillé dans un hôtel. Pas de jargon, pas de voix passive, pas de qualificatifs vagues comme \'selon les besoins\' ou \'de manière appropriée\'. Si vous ne pouvez pas définir ce que c\'est que bien faire, le SOP ne le peut pas non plus.",
             },
             {
               heading: 'Étape 4 : Tester avec un nouveau collaborateur',
-              text: "Donnez le brouillon à quelqu'un qui ne connaît pas la tâche et demandez-lui de le suivre. Chaque point de confusion est un manque dans le SOP, pas dans sa compréhension.",
+              text: "Donnez le brouillon à quelqu\'un qui ne connaît pas la tâche et demandez-lui de le suivre. Chaque moment d\'hésitation ou de question est un manque dans le SOP -- pas dans sa capacité.",
             },
             {
               heading: 'Étape 5 : Valider avec le chef de département',
-              text: "Obtenez la validation de la personne responsable des standards de ce département. Cela crée un sentiment d'appartenance et assure l'alignement avec les attentes générales de l'établissement.",
+              text: "Faites valider par le chef de département. Cela crée la responsabilité et confirme que le SOP reflète les standards réels de l\'établissement, pas une version générique.",
             },
             {
               heading: 'Étape 6 : Versionner et stocker de façon centralisée',
-              text: "Attribuez un numéro de version (v1.0) et une date de révision (généralement 6 à 12 mois). Stockez dans un système partagé accessible à l'équipe — espace Notion, drive partagé, ou classeurs imprimés par département.",
+              text: "Attribuez un numéro de version et une date de révision. Stockez dans un système accessible à l\'équipe en service -- drive partagé, espace Notion, ou classeurs imprimés par département. Si c\'est difficile à trouver, ce ne sera pas utilisé.",
             },
           ],
         },
         {
           h2: 'Erreurs fréquentes à éviter',
           content:
-            "Voici les erreurs de rédaction de SOPs les plus fréquentes dans les opérations hôtelières, et comment les éviter.",
+            "Ces erreurs apparaissent régulièrement dans les hôtels qui tentent de constituer leur bibliothèque de SOPs. Chacune est évitable.",
           h3Items: [
             {
               heading: "Rédiger pour la conformité, pas pour l'usage",
-              text: "Beaucoup de SOPs sont rédigés pour satisfaire un audit de marque plutôt que pour aider le personnel à faire son travail. Si le document n'est pas genuinement utile à la personne qui effectue la tâche, il ne sera pas utilisé.",
+              text: "Beaucoup de SOPs sont rédigés pour satisfaire un audit de marque, pas pour aider les équipes à faire leur travail. Si le document n\'est pas genuinement utile à la personne qui exécute la tâche, il ne sera pas utilisé -- et l\'audit n\'aura rien changé sur le terrain.",
             },
             {
               heading: 'Trop de texte, pas de structure visuelle',
-              text: "Les paragraphes denses sont difficiles à parcourir en cours de tâche. Utilisez des listes numérotées, des titres clairs et des tableaux pour rendre les SOPs lisibles sous pression.",
+              text: "Les paragraphes denses sont difficiles à parcourir en plein service. Des étapes numérotées, des titres clairs et quelques tableaux permettent de rendre les SOPs consultables rapidement, sous pression ou en pleine séquence de service.",
             },
             {
               heading: "Rédiger des procédures qui ne correspondent pas à la réalité",
-              text: "Un SOP basé sur la façon dont un manager pense que la tâche devrait être faite — plutôt que sur la façon dont elle se fait réellement — sera ignoré immédiatement. Commencez toujours par l'observation.",
+              text: "Un SOP basé sur la façon dont un manager imagine que la tâche devrait se faire -- plutôt que sur la façon dont elle se fait vraiment sur le terrain -- sera ignoré immédiatement. Commencez toujours par l\'observation.",
             },
             {
               heading: 'Pas de cadence de révision',
-              text: "Un SOP exact il y a deux ans peut maintenant contredire les systèmes, équipements ou standards de marque actuels. Intégrez un calendrier de révision dans le système dès le premier jour.",
+              text: "Un SOP qui était exact il y a dix-huit mois peut maintenant contredire les systèmes, équipements ou standards actuels. Intégrez le calendrier de révision dans le processus dès le départ, sinon cela ne se fera pas.",
             },
           ],
         },
         {
           h2: 'Utiliser un template vs. rédiger from scratch',
           content:
-            "Rédiger tous vos SOPs hôteliers depuis une page blanche est une entreprise significative. Un établissement bien structuré aura besoin de plusieurs centaines de procédures individuelles sur tous les départements. La plupart des hôtels qui tentent de tout construire en interne sous-estiment le temps et l'expertise requis. Les frameworks SOP prêts à l'emploi — construits à partir d'une expérience opérationnelle réelle et couvrant tous les départements clés — donnent à votre équipe une base de départ structurée. Les procédures sont déjà séquencées, les standards sont déjà définis et les formats sont déjà cohérents. Votre mission devient la personnalisation pour votre établissement plutôt que la construction from scratch.",
+            "Rédiger une bibliothèque de SOPs complète depuis zéro est un chantier important. Un établissement bien structuré a besoin de plusieurs centaines de procédures individuelles sur l\'ensemble de ses départements. La plupart des hôtels qui tentent de tout construire en interne sous-estiment ce que cela demande. Des frameworks SOP prêts à l\'emploi construits à partir d\'une expérience opérationnelle réelle donnent à l\'équipe une base de départ structurée : procédures déjà séquencées, standards déjà définis, format déjà cohérent. Le travail devient de la personnalisation pour l\'établissement, pas de la construction depuis rien.",
         },
       ],
       conclusion:
-        "Les SOPs hôteliers ne valent que ce que vaut le soin apporté à leur rédaction. L'investissement dans le bon processus — observation, langage simple, test, cadence de révision — c'est ce qui distingue une documentation rangée dans un tiroir d'une documentation qui façonne la façon dont vos équipes opèrent vraiment chaque jour.",
+        "Les SOPs hôteliers ne valent que ce que vaut le soin apporté à leur rédaction. L\'observation, le langage simple, le test avec un nouveau collaborateur, la mise en place d\'une cadence de révision -- c\'est ce qui distingue une documentation qui façonne les opérations quotidiennes d\'une documentation rangée dans un tiroir. L\'investissement est modeste. La différence opérationnelle ne l\'est pas.",
       cta: { text: 'Explorer nos Playbooks SOP', href: '/fr/playbooks' },
     },
   },
@@ -603,95 +603,95 @@ export const articles: BilingualArticle[] = [
       date: '2026-03-14',
       readTime: '9 min de lecture',
       intro:
-        "Le front office est le premier et dernier point de contact de chaque séjour client. Plus que tout autre département, il donne le ton de l'expérience entière. Pourtant, c'est aussi l'un des domaines les moins documentés dans les opérations hôtelières — où les procédures vivent souvent dans la tête d'un superviseur expérimenté plutôt que dans un manuel structuré. Ce guide couvre ce que les SOPs front office hôteliers doivent contenir, comment ils doivent être structurés, et les procédures clés que chaque établissement doit avoir documentées.",
+        "Certaines procédures sont trop importantes pour être transmises uniquement à l\'oral. Le front office en fait partie. C\'est le département avec le plus grand volume de contacts clients, la plus grande variété de situations, et dans la plupart des hôtels, le moins documenté. Quand un agent expérimenté part, un nouveau arrive et apprend les standards de façon informelle -- ce qui signifie qu\'il en apprend une version. Ce guide couvre ce que les SOPs front office doivent contenir et comment les structurer pour un usage quotidien.",
       sections: [
         {
           h2: 'Pourquoi les SOPs Front Office comptent plus qu\'on ne le croit',
           content:
-            "Le Front Office gère la plus grande variété de situations de tous les départements — des arrivées courantes aux séjours VIP, escalades de réclamations, litiges de facturation et urgences médicales. Quand les procédures ne sont pas documentées, cette variété crée de l'incohérence. L'expérience d'un client dépend du collaborateur qu'il rencontre plutôt que d'un standard défini.",
+            "Le front office gère plus de situations différentes que n\'importe quel autre département. Arrivées courantes, litiges de facturation, séjours VIP, départs tardifs, réclamations, situations médicales. Quand les procédures ne sont pas documentées, chaque scénario se déroule différemment selon l\'agent en poste. L\'expérience du client est déterminée par l\'individu, pas par l\'établissement.",
           h3Items: [
             {
               heading: 'Impact du turnover',
-              text: "Le turnover en réception est parmi les plus élevés de l'hôtellerie. Sans SOPs documentés, les connaissances institutionnelles partent avec chaque départ. Un front office bien documenté peut intégrer de nouveaux collaborateurs en jours plutôt qu'en semaines.",
+              text: "Le turnover en réception est parmi les plus élevés de l\'hôtellerie. Sans SOPs écrits, chaque départ emporte avec lui la connaissance institutionnelle. Un nouveau collaborateur commence par l\'observation et la correction informelle plutôt que par un standard clair. Cette période a un coût -- en expérience client et en temps superviseur.",
             },
             {
               heading: 'Cohérence de marque',
-              text: "Pour les hôtels indépendants ou haut de gamme, chaque interaction client est un moment de marque. Les SOPs définissent exactement à quoi ce moment doit ressembler — langage, timing, contact visuel, personnalisation — pas seulement les étapes fonctionnelles.",
+              text: "Pour les établissements indépendants et haut de gamme, chaque interaction à la réception est un signal de ce qu\'est l\'hôtel. Les SOPs définissent à quoi cette interaction doit ressembler : le langage, le timing, le contact visuel, les points de personnalisation. Pas seulement les étapes fonctionnelles, mais le standard derrière elles.",
             },
           ],
         },
         {
           h2: 'Les SOPs Front Office fondamentaux que chaque hôtel doit avoir',
           content:
-            "Voici les procédures fondamentales qui forment la colonne vertébrale d'un manuel de SOPs front office.",
+            "Ce sont les procédures qui doivent exister sous forme écrite dans chaque établissement. Pas parce qu\'un auditeur l\'exige, mais parce que le front office ne peut pas fonctionner de façon constante sans elles.",
           h3Items: [
             {
               heading: 'SOP Check-In',
-              text: "La procédure de check-in doit couvrir : la préparation pré-arrivée (révision de la liste d'arrivées, flags VIP, allocations de chambres), la séquence d'accueil (timing, langage, contact visuel), les étapes de vérification d'identité, la remise des clés, le script d'orientation dans l'établissement et la passation au concierge ou au porteur. Elle doit également définir comment gérer les arrivées tardives, les chambres non prêtes et les clients sans réservation.",
+              text: "Préparation pré-arrivée (révision de la liste des arrivées, flags VIP, allocations de chambres), séquence d\'accueil, vérification d\'identité, remise des clés, orientation dans l\'établissement, passation au porteur ou au concierge. Le SOP doit aussi couvrir les scénarios fréquents : arrivées tardives, chambre non prête au moment du check-in, clients sans réservation.",
             },
             {
               heading: 'SOP Check-Out',
-              text: "Les SOPs de check-out couvrent : la gestion des files aux heures de pointe, le processus de révision de facturation, le traitement des contestations, les procédures de départ express, l'assistance bagages et la séquence d'au revoir. Un élément souvent omis : le moment pour solliciter un avis ou un retour sans que cela paraisse scriptée.",
+              text: "Gestion de la file d\'attente aux heures de pointe du matin, processus de révision de la note, comment traiter une contestation sans l\'escalader inutilement, départ express, assistance bagages, séquence d\'au revoir. Un élément facile à négliger : le bon moment pour solliciter un retour, sans que cela paraisse scriptée.",
             },
             {
               heading: 'SOP Gestion des Réclamations',
-              text: "C'est l'une des procédures les plus importantes et les moins bien exécutées dans les opérations hôtelières. Un SOP de réclamations efficace définit le framework LEARN ou équivalent : Écouter, Empathiser, s'Excuser, Résoudre, Notifier. Il inclut les déclencheurs d'escalade, les directives de compensation par catégorie de réclamation et les exigences de documentation.",
+              text: "C\'est la procédure que la plupart des établissements exécutent de façon incohérente. Un SOP efficace définit la séquence complète : écouter sans interrompre, reconnaître, s\'excuser pour l\'expérience vécue, résoudre avec une action concrète, et documenter. Il doit inclure les déclencheurs d\'escalade, les directives de compensation par catégorie de réclamation, et où enregistrer l\'échange dans le PMS.",
             },
             {
               heading: 'SOP Téléphone et Communication',
-              text: "Couvre : script d'accueil, procédures de mise en attente, protocoles de transfert, prise de message, standards de temps de réponse et gestion des demandes externes.",
+              text: "Script d\'accueil, procédure de mise en attente, protocole de transfert, prise de message, standards de temps de réponse et gestion des demandes externes. Dans les environnements haut de gamme, la façon dont le téléphone est décroché a plus de poids que la plupart des équipes ne le réalisent.",
             },
             {
               heading: 'SOP Upselling',
-              text: "Quand il est bien fait, l'upselling améliore l'expérience client. Le SOP doit définir : quand présenter les options d'upgrade, le langage spécifique à utiliser, comment gérer un refus avec élégance et comment enregistrer les upsells pour le suivi.",
+              text: "Quand il est fait sans pression, l\'upselling améliore le séjour plutôt qu\'il ne l\'interrompt. Le SOP doit définir quand présenter l\'option, le langage à utiliser, comment gérer un refus avec naturel, et comment les upsells sont tracés pour le reporting.",
             },
             {
               heading: 'SOP VIP et Clients Fidèles',
-              text: "Couvre : préparation pré-arrivée pour les profils VIP, coordination du placement des attentions, points de personnalisation (chambre préférée, préférences alimentaires, demandes précédentes) et la séquence de service qui différencie une arrivée VIP d'une arrivée standard.",
+              text: "Préparation pré-arrivée, coordination du placement des attentions, détails de personnalisation issus du profil client, et la séquence de service qui distingue une arrivée VIP d\'une arrivée standard. Cette procédure repose sur des informations présentes dans le PMS -- ce qui signifie que le SOP doit aussi couvrir comment ces informations y arrivent.",
             },
           ],
         },
         {
           h2: 'Standards clés à définir en parallèle des procédures',
           content:
-            "Les SOPs disent à votre équipe quoi faire. Les standards leur disent à quel niveau le faire. Ces deux éléments fonctionnent ensemble.",
+            "Les SOPs définissent les étapes. Les standards définissent le niveau de qualité. Les deux fonctionnent ensemble, et les deux doivent être écrits.",
           h3Items: [
             {
-              heading: 'Standards de timing',
-              text: "Temps de check-in (objectif : moins de 3 minutes pour un standard, 5 minutes pour un VIP avec accueil complet), temps de réponse téléphonique (3 sonneries maximum), réponse aux demandes clients (accusé de réception sous 5 minutes, résolution dans le délai défini par catégorie).",
+              heading: 'Timing',
+              text: "Check-in en moins de trois minutes pour les arrivées standard, cinq minutes pour un accueil VIP complet. Téléphone décroché en trois sonneries. Demandes clients accusées dans les cinq minutes, résolues dans le délai défini par catégorie. Ces repères doivent être écrits pour pouvoir être formés et tenus.",
             },
             {
-              heading: 'Standards de langage et de ton',
-              text: "Définissez le vocabulaire et les formulations à utiliser (et à éviter). Dans les environnements haut de gamme : « certainement » plutôt que « pas de problème », fréquence d'utilisation du nom du client, registre formel vs. informel.",
+              heading: 'Langage',
+              text: "Définissez le vocabulaire et les formulations que l\'équipe utilise -- et celles qu\'elle évite. Dans un contexte haut de gamme : \'certainement\' plutôt que \'pas de problème\', fréquence d\'utilisation du nom du client, registre approprié à l\'établissement. Ce n\'est pas seulement de la politesse -- c\'est une partie de l\'expérience de marque.",
             },
             {
-              heading: 'Standards de présentation',
-              text: "Standards de tenue, posture, positionnement à l'accueil et gestion des téléphones personnels pendant le service. Souvent documentés aux côtés des SOPs dans le même manuel.",
+              heading: 'Présentation',
+              text: "Standards de tenue, posture à l\'accueil, gestion des téléphones personnels pendant le service. Généralement documentés aux côtés des SOPs dans le même manuel plutôt que dans un document séparé.",
             },
           ],
         },
         {
           h2: 'Structurer votre manuel de SOPs Front Office',
           content:
-            "Un manuel de SOPs front office n'est pas un seul document — c'est une collection structurée de procédures individuelles, organisées pour une récupération rapide pendant un shift.",
+            "Un manuel de SOPs front office n\'est pas un seul document. C\'est une collection structurée de procédures individuelles, organisées pour qu\'on puisse trouver la bonne rapidement en plein service -- pas seulement en formation.",
           h3Items: [
             {
-              heading: 'Organiser par scénario, pas par chronologie',
-              text: "Regroupez les SOPs par type de situation (arrivées, départs, réclamations, VIP) plutôt que par heure de la journée. Le personnel qui accède à un manuel en cours de tâche doit trouver rapidement la bonne procédure.",
+              heading: 'Par scénario',
+              text: "Regroupez les procédures par type de situation -- arrivées, départs, réclamations, gestion VIP -- plutôt que par heure de la journée. Un collaborateur qui cherche une procédure en plein service ne pense pas à quand elle se passe ; il pense à ce qui se passe maintenant.",
             },
             {
-              heading: 'Gardez chaque SOP sur une seule tâche',
-              text: "Un SOP combinant check-in et upselling est plus difficile à suivre que deux procédures séparées avec un point de passation clair entre elles.",
+              heading: 'Une tâche par SOP',
+              text: "Un SOP combinant check-in et upselling est plus difficile à former et à suivre que deux procédures avec un point de passation clair entre elles. Gardez chaque SOP sur une seule tâche définie.",
             },
             {
-              heading: 'Incluez des fiches de référence rapide',
-              text: "Pour les procédures à haute fréquence, un résumé d'une page plastifié à l'accueil est souvent plus pratique qu'un SOP complet aux heures de pointe.",
+              heading: 'Fiches de référence',
+              text: "Pour les procédures à haute fréquence, un résumé d\'une page plastifié à l\'accueil est plus pratique qu\'un SOP complet pendant une période de check-in chargée. Le SOP complet est pour la formation. La fiche de référence est pour le service. Les deux ont un rôle.",
             },
           ],
         },
       ],
       conclusion:
-        "Un front office documenté est un front office résilient. Quand votre équipe dispose de procédures structurées à suivre — pas seulement des instructions verbales d'un superviseur — elle peut délivrer une qualité cohérente quel que soit le niveau d'expérience ou la pression du service. Le client qui interagit avec un nouveau collaborateur un lundi matin doit recevoir la même qualité d'expérience qu'avec votre agent le plus expérimenté un vendredi soir.",
+        "Un front office documenté est un front office résilient. Quand l\'équipe dispose de procédures structurées à suivre -- pas seulement ce que lui a dit la personne qui l\'a formée -- la qualité cesse de dépendre du niveau d\'expérience. Un nouvel agent un lundi matin doit travailler au même standard que le membre le plus expérimenté de l\'équipe un vendredi soir. Des procédures écrites sont le seul moyen de rendre ça fiable.",
       cta: { text: 'Voir le Playbook Front Office', href: '/fr/playbooks' },
     },
   },
@@ -803,96 +803,96 @@ export const articles: BilingualArticle[] = [
       date: '2026-03-15',
       readTime: '8 min de lecture',
       intro:
-        "Le housekeeping est le département que les clients évaluent le plus instinctivement — et le plus sévèrement. Une tache sur une taie d'oreiller, un cheveu dans la salle de bain, une poubelle non vidée : ces détails sont remarqués immédiatement et retenus bien plus longtemps qu'un check-in fluide ou un dîner attentionné. Pourtant, le housekeeping est aussi l'un des départements opérationnellement les plus complexes à gérer. Des volumes élevés, des délais serrés et une grande équipe opérant sur des dizaines de chambres simultanément nécessitent des checklists structurées et des standards d'inspection clairs pour maintenir la cohérence.",
+        "Le housekeeping est le département que les clients évaluent le plus instinctivement et le plus sévèrement. Une tache sur une taie d\'oreiller. Un cheveu laissé dans la douche. Une poubelle non vidée. Ces détails s\'enregistrent immédiatement et persistent dans un avis bien après que le reste du séjour a été oublié. Gérer une opération housekeeping à volume élevé à un niveau constant est un vrai défi. Des délais serrés, des équipes importantes travaillant simultanément sur des dizaines de chambres, et la nature physique du travail font qu\'il est facile pour la qualité de dériver. Des checklists structurées et des standards d\'inspection clairs sont ce qui maintient le niveau.",
       sections: [
         {
           h2: "Pourquoi les checklists housekeeping ne sont pas optionnelles",
           content:
-            "Dans un hôtel qui fonctionne sans checklists housekeeping structurées, la qualité devient entièrement dépendante des standards individuels de chaque valet ou femme de chambre — qui varient considérablement. L'un remarque une trace sur le miroir. L'autre non. Sur une saison, cette incohérence s'accumule et devient visible dans les avis clients.",
+            "Dans un hôtel qui fonctionne sans checklists housekeeping structurées, la qualité devient entièrement dépendante de l\'individu. L\'un remarque une trace sur le miroir, l\'autre non. L\'un remplace une amenity à moitié utilisée, l\'autre la laisse. Sur une saison, cette variation s\'accumule dans les scores d\'évaluation.",
           h3Items: [
             {
-              heading: 'Cohérence à grande échelle',
-              text: "Un hôtel de 60 chambres peut avoir 10 valets de chambre travaillant sur deux services. Une checklist garantit que chaque chambre reçoit le même standard de nettoyage et d'inspection quel que soit le collaborateur qui l'a effectué.",
+              heading: 'Cohérence',
+              text: "Un hôtel de 60 chambres peut avoir 10 valets de chambre sur deux services. Une checklist garantit que chaque chambre atteint le même standard quel que soit le collaborateur qui l\'a effectuée. Sans elle, le superviseur n\'a pas de base pour une inspection cohérente.",
             },
             {
-              heading: 'Responsabilité et contrôle',
-              text: "Les checklists créent de la responsabilité. Quand un superviseur inspecte une chambre déjà validée, les écarts sont traçables. Cela crée une culture du soin plutôt qu'une culture de la précipitation.",
+              heading: 'Responsabilité',
+              text: "Quand un valet de chambre valide une chambre, le superviseur peut l\'inspecter sur la base de la même checklist. Les écarts sont traçables. Avec le temps, cela construit une culture où le détail compte -- plutôt qu\'une culture où l\'objectif est de passer les chambres le plus vite possible.",
             },
             {
-              heading: 'Intégration des nouveaux collaborateurs',
-              text: "Un nouveau valet de chambre avec une checklist structurée peut atteindre des standards de qualité acceptables en quelques jours. Sans elle, cela prend des semaines de shadowing et de corrections informelles.",
+              heading: 'Intégration',
+              text: "Un nouveau valet de chambre qui suit une checklist structurée peut atteindre un niveau de qualité acceptable en quelques jours. Sans elle, atteindre ce niveau prend des semaines de shadowing et de corrections informelles -- et les corrections sont inconsistantes selon qui supervise.",
             },
           ],
         },
         {
           h2: "La checklist complète d'inspection de chambre hôtelière",
           content:
-            "Une checklist d'inspection complète couvre six zones : entrée et couloir, chambre, salle de bain, minibar et bureau, fenêtres et espaces extérieurs, et CVC et technique.",
+            "Une checklist d\'inspection complète couvre six zones. Chaque zone comporte des éléments précis à vérifier, pas à supposer corrects parce que personne ne s\'est plaint la dernière fois.",
           h3Items: [
             {
-              heading: 'Entrée et couloir',
-              text: "Fonctionnement de la porte et état de la poignée, propreté du couloir devant la chambre, fonctionnement de la signalétique DND et Make Up Room, propreté du judas.",
+              heading: 'Entrée',
+              text: "Fonctionnement de la porte et état de la poignée. Propreté du couloir directement devant la chambre. Signalétique DND et Make Up Room fonctionnelle. Judas propre. Ces points sont souvent manqués parce qu\'ils se situent en dehors de la zone de nettoyage principale -- mais les clients les remarquent.",
             },
             {
               heading: 'Chambre',
-              text: "Lit fait selon le standard (linge repassé, coins en onglet ou pliage spécifique marque, oreillers positionnés correctement), tables de nuit dégagées et surfaces polies, lampes et interrupteurs fonctionnels, œuvres d'art droites et propres, armoire intérieure propre avec le bon nombre de cintres, coffre fonctionnel, rideaux et doublure occultante intacts, sol aspiré y compris sous le lit et les meubles.",
+              text: "Linge repassé et lit fait selon le standard (coins en onglet ou pliage spécifique à l\'établissement, oreillers positionnés correctement). Tables de nuit dégagées et surfaces essuyées. Lampes et interrupteurs fonctionnels. Armoire propre avec le bon nombre de cintres. Coffre fonctionnel. Rideaux et doublure occultante intacts. Sol aspiré y compris sous le lit et aux angles des meubles.",
             },
             {
               heading: 'Salle de bain',
-              text: "C'est la zone d'inspection la plus critique. Points clés : toilettes nettoyées à l'intérieur du bol et sous le rebord, douche et baignoire sans résidu ni cheveu, joints propres, miroir et verre poli sans traces, amenities positionnées selon le standard marque (pas seulement rechargées), serviettes fraîches pliées et placées correctement, sol de salle de bain séché et sans traces, poubelles vidées et re-doublées, papier toilette positionné avec pliage, extracteur propre.",
+              text: "La zone la plus scrutée lors de toute inspection. Toilettes nettoyées à l\'intérieur du bol et sous le rebord. Douche et baignoire sans résidu ni cheveu. Joints propres. Miroir et verre poli sans traces. Amenities positionnées selon le standard de l\'établissement, pas seulement rechargées. Serviettes fraîches pliées et placées correctement. Sol séché et sans traces. Poubelles vidées et re-doublées. Papier toilette plié. Extracteur propre.",
             },
             {
               heading: 'Minibar et bureau',
-              text: "Minibar réapprovisionné et validé, dates de péremption vérifiées sur les périssables, surface du bureau nettoyée, papeterie réapprovisionnée et positionnée selon le standard, répertoire en chambre à jour et propre.",
+              text: "Minibar réapprovisionné et validé. Dates de péremption vérifiées sur les périssables. Surface du bureau nettoyée. Papeterie réapprovisionnée et en place. Répertoire en chambre à jour et en bon état.",
             },
             {
               heading: 'Fenêtres et technique',
-              text: "Vitres nettoyées à l'intérieur (extérieur selon planning), stores ou volets fonctionnant correctement, climatisation réglée à la température par défaut et fonctionnelle, TV fonctionnant avec la bonne entrée, lignes téléphoniques testées, informations Wi-Fi visibles et correctes.",
+              text: "Vitres nettoyées à l\'intérieur. Stores ou volets fonctionnant correctement. Climatisation réglée à la température par défaut et fonctionnelle. TV sur la bonne entrée. Lignes téléphoniques testées. Informations Wi-Fi visibles et exactes.",
             },
           ],
         },
         {
           h2: 'Gestion et standards du linge',
           content:
-            "Le linge est l'un des indicateurs de qualité les plus visibles dans une chambre d'hôtel. Les clients remarquent immédiatement si les draps ne sont pas correctement repassés, si les serviettes présentent des marques, ou si les taies montrent du boulochage ou de l'usure.",
+            "Le linge est l\'un des signaux de qualité les plus visibles dans une chambre d\'hôtel. Les clients remarquent immédiatement si les draps ne sont pas correctement repassés, si les serviettes présentent des traces, ou si les taies commencent à s\'user. Le programme linge doit fonctionner avec précision pour soutenir le standard d\'inspection des chambres.",
           h3Items: [
             {
-              heading: "Critères d'inspection du linge",
-              text: "Chaque pièce de linge doit être inspectée avant le placement : sans taches, déchirures ni boulochage ; correctement repassée ; taille correcte pour le lit ou l'accessoire. Un programme d'inspection du linge doit contrôler un pourcentage d'articles de chaque lot de laverie.",
+              heading: 'Inspection',
+              text: "Chaque pièce de linge doit être contrôlée avant d\'entrer dans une chambre : sans tache, déchirure ni boulochage ; correctement repassée ; taille adaptée au lit. Un programme de contrôle par échantillonnage sur chaque lot de laverie permet de détecter les problèmes avant qu\'ils atteignent les étages.",
             },
             {
-              heading: 'Gestion du par stock',
-              text: "Chaque type de chambre nécessite un par stock défini — la quantité de linge nécessaire pour desservir la chambre, stockée dans l'office de l'étage, plus le calcul pour les articles en laverie. Les par stocks incohérents sont l'une des sources les plus fréquentes de retards dans les opérations housekeeping.",
+              heading: 'Par stock',
+              text: "Chaque type de chambre a besoin d\'un par stock défini : la quantité nécessaire pour desservir la chambre, stockée dans l\'office d\'étage, plus ce qui est en circuit en laverie. Des par stocks incohérents sont l\'une des sources les plus fréquentes de retards et d\'improvisation de dernière minute dans les opérations housekeeping.",
             },
             {
-              heading: 'Standards de fréquence de changement',
-              text: "Définissez clairement : ce qui est changé lors des nettoyages de départ vs. recouche, la fréquence minimale de changement pour les longs séjours, et comment gérer les demandes clients de réduction du linge (programmes de développement durable).",
+              heading: 'Fréquence',
+              text: "Définissez ce qui est changé lors d\'un nettoyage de départ par rapport à une recouche. Fixez la fréquence minimale pour les longs séjours. Précisez comment gérer les demandes clients de réduction du linge dans le cadre de programmes éco-responsables. Ces décisions doivent être écrites pour être appliquées de façon cohérente par toute l\'équipe.",
             },
           ],
         },
         {
           h2: 'Procédure de service de couverture',
           content:
-            "Le service de couverture est un service housekeeping premium qui transforme la chambre d'une atmosphère diurne à une atmosphère vespérale. Il nécessite sa propre checklist distincte du nettoyage de départ ou de recouche.",
+            "Le service de couverture est un service housekeeping premium. Il transforme la chambre de son état diurne à une atmosphère de soirée -- et bien exécuté, il signale une attention et un soin que les clients retiennent. Il nécessite sa propre checklist, distincte des procédures de départ et de recouche.",
           h3Items: [
             {
-              heading: 'Éléments standard de la checklist de couverture',
-              text: "Préparation du lit (rabat du coin de la couette ou du drap selon le standard marque, positionnement des oreillers de nuit), éclairage ambiant tamisé, fermeture des rideaux ou stores, réapprovisionnement des articles minibar consommés, vidage des poubelles, placement de l'attention couverture (chocolat, carte ou article spécifique à l'établissement), réglage de la climatisation à la température de nuit, rafraîchissement de la salle de bain (remplacement des serviettes utilisées, repliage du papier toilette, remplacement des amenities si utilisées).",
+              heading: 'Éléments standard',
+              text: "Préparation du lit selon le standard de l\'établissement (rabat du coin de couette ou drap, oreillers de nuit positionnés). Éclairage ambiant tamisé. Rideaux ou stores fermés. Articles minibar consommés depuis l\'arrivée réapprovisionnés. Poubelles vidées. Attention couverture déposée (chocolat, carte ou objet spécifique à l\'établissement). Climatisation réglée sur la température de nuit. Salle de bain rafraîchie : serviettes utilisées remplacées, papier toilette replié, amenities remplacées si utilisées.",
             },
             {
-              heading: 'Timing et séquençage',
-              text: "Le service de couverture doit être planifié pour éviter les chambres occupées dans la mesure du possible. Définissez la fenêtre (généralement 19h00–22h00), la logique de séquençage (types de chambre, priorité VIP) et la procédure DND.",
+              heading: 'Timing',
+              text: "Planifiez le service de couverture en évitant les chambres occupées dans la mesure du possible. Définissez la fenêtre de service (généralement 19h00 à 22h00), la logique de séquençage par type de chambre et priorité VIP, et la procédure DND pour que l\'équipe sache quoi faire quand une chambre est inaccessible.",
             },
           ],
         },
         {
           h2: 'Utiliser un Playbook Housekeeping',
           content:
-            "Un playbook housekeeping complet fournit des checklists d'inspection pré-construites par type de chambre (standard, supérieure, suite), des procédures de nettoyage de départ, des procédures de recouche, des procédures de couverture, des SOPs de gestion du linge, des plannings de nettoyage approfondi et des protocoles objets trouvés — le tout formaté pour être utilisé par votre équipe dès le premier jour.",
+            "Un playbook housekeeping complet fournit des checklists d\'inspection pré-construites par type de chambre, des procédures de nettoyage de départ, des procédures de recouche, des SOPs de couverture, des protocoles de gestion du linge, des plannings de nettoyage approfondi et des procédures d\'objets trouvés -- le tout formaté pour une utilisation immédiate par l\'équipe. Plutôt que de construire cette documentation depuis zéro, un playbook structuré donne à la gouvernante une base professionnelle à personnaliser selon les types de chambres et standards spécifiques de l\'établissement.",
         },
       ],
       conclusion:
-        "Le housekeeping fonctionne à la discipline et au détail. Les établissements qui maintiennent une qualité de chambre constamment élevée sont ceux où chaque collaborateur — pas seulement les plus expérimentés — sait exactement le standard vers lequel il travaille et dispose des checklists pour vérifier son propre travail. La structure en housekeeping n'est pas une question de micromanagement. C'est rendre facile pour votre équipe de faire un excellent travail, chaque chambre, chaque service.",
+        "Le housekeeping fonctionne à la discipline et au détail. Les établissements qui maintiennent un niveau de chambre constamment élevé sont ceux où chaque collaborateur -- pas seulement les plus expérimentés -- sait exactement quel standard est attendu et dispose de la checklist pour vérifier son propre travail. La structure en housekeeping n\'est pas une question de micromanagement. C\'est ce qui permet à l\'équipe de bien faire son travail, chaque chambre, chaque service.",
       cta: { text: 'Voir le Playbook Housekeeping', href: '/fr/playbooks' },
     },
   },
@@ -1007,99 +1007,99 @@ export const articles: BilingualArticle[] = [
       date: '2026-03-16',
       readTime: '7 min de lecture',
       intro:
-        "Le food and beverage est le deuxième aspect le plus commenté de l'expérience hôtelière après la qualité de la chambre — et l'écart entre une excellente opération F&B et une médiocre est presque entièrement attribuable aux standards de service. La cuisine peut être excellente. Mais si la séquence est incohérente, le timing est mauvais, ou l'équipe de service est incertaine de ses procédures, les clients ressentent de l'hésitation plutôt que de la confiance. Ce guide couvre les standards de service et SOPs centraux que les opérations F&B hôtelières haut de gamme doivent avoir documentés.",
+        "Le food and beverage est le deuxième aspect d\'un séjour hôtelier le plus commenté dans les avis, après la chambre. L\'écart entre une opération F&B solide et une qui ne l\'est pas tient rarement à la qualité de la nourriture -- il tient presque toujours au service. Une séquence qui avance à un rythme différent de celui attendu. Un collaborateur incertain sur la procédure à table. Des boissons qui arrivent avant que les couverts soient débarrassés. Les standards de service sont ce qui comble cet écart, et ils doivent être documentés pour être tenus sur chaque couvert et chaque service.",
       sections: [
         {
           h2: 'Service restaurant : la séquence centrale',
           content:
-            "La séquence de service est la colonne vertébrale des opérations restaurant. Chaque membre de l'équipe doit la connaître, l'exécuter avec cohérence et comprendre où son rôle commence et se termine.",
+            "La séquence de service est ce qui maintient l\'opération restaurant. Chaque membre de l\'équipe doit la connaître, l\'exécuter de façon constante, et comprendre où son rôle commence et se termine dans cette séquence. Quand la séquence est floue, l\'expérience varie d\'une table à l\'autre.",
           h3Items: [
             {
-              heading: 'Préparation pré-service (mise en place)',
-              text: "Standards de mise en place des tables (placement exact de chaque article, distances, alignement), standards d'inspection et de pliage du linge, procédure de polissage des verres, niveaux de stock en dressoir, briefing connaissance des menus, communication des suggestions du jour, briefing vins et boissons.",
+              heading: 'Mise en place',
+              text: "Mise en place de table aux standards de placement exact. Inspection du linge et pliage à la norme. Procédure de lustrage de la verrerie. Niveaux de stock du buffet de service confirmés. Briefing connaissance menu avant chaque service -- pas seulement en début de saison. Plats du jour communiqués. Briefing boissons couvrant les nouvelles références.",
             },
             {
-              heading: 'Accueil et placement des clients',
-              text: "Accueil dans les 30 secondes suivant l'arrivée, utilisation du nom si la réservation est connue, proposition du vestiaire, séquence de placement (dames en premier dans les contextes formels), procédure de décalage de table, présentation des serviettes, remise des menus dans le bon ordre.",
+              heading: 'Accueil',
+              text: "Accueil dans les 30 secondes suivant l\'arrivée. Nom utilisé si la réservation est connue. Vestiaire proposé selon le contexte. Séquence de placement respectée (dans les environnements formels, les dames en premier). Procédure de retrait de la chaise. Présentation de la serviette. Menus remis dans le bon ordre.",
             },
             {
               heading: 'Prise de commande',
-              text: "Timing d'approche (laisser 3 à 4 minutes après la présentation du menu), séquence de prise de commande, gestion des régimes alimentaires et des allergies, langage de vente suggestive, confirmation de lecture, standards de communication avec la cuisine.",
+              text: "Timing d\'approche : laisser trois à quatre minutes après la remise des menus. Séquence de prise de commande par couvert respectée. Régimes alimentaires et allergies traités de façon spécifique, pas générique. Formulations de vente suggestive utilisées naturellement, sans pression. Commande confirmée au client. Standards de communication avec la cuisine respectés.",
             },
             {
               heading: 'Séquence de service',
-              text: "Timing d'arrivée des plats, standards de présentation des assiettes, placement correct par couvert, service synchronisé pour les grandes tablées, débarrassage entre les plats (pas avant que tous les clients aient fini), procédure de ramassage des miettes, présentation et suggestion des desserts.",
+              text: "Timing d\'arrivée des plats. Présentation du dressage vérifiée avant que l\'assiette n\'atteigne la table. Placement correct par couvert. Service synchronisé pour les tablées de quatre ou plus. Débarrassage uniquement lorsque tous les convives ont terminé un plat -- pas dès que le premier couvert est fini. Procédure de ramassage des miettes. Dessert présenté et proposé clairement.",
             },
             {
               heading: 'Facturation et départ',
-              text: "Timing de présentation de l'addition (sur demande, pas par anticipation), gestion des moyens de paiement multiples, gestion de la monnaie, séquence d'au revoir, enregistrement des préférences clients pour les visites futures.",
+              text: "Addition présentée à la demande, pas posée préventivement sur la table. Plusieurs modes de paiement gérés sans friction. Au revoir par le nom dans la mesure du possible. Préférences du client notées dans le système pour les prochains passages.",
             },
           ],
         },
         {
           h2: 'Standards des opérations bar',
           content:
-            "Un bar hôtelier bien géré fonctionne à des standards aussi précis que le restaurant. L'incohérence dans les doses, la présentation ou l'approche de service est immédiatement perceptible par un client.",
+            "Un bar d\'hôtel fonctionne au même niveau de précision que le restaurant -- ou il devrait. L\'incohérence dans les doses, la présentation ou la façon d\'engager les clients en attente se remarque immédiatement. Le bar est souvent le premier ou le dernier contact de service d\'une soirée, ce qui lui donne plus de poids que son espace ne le laisse penser.",
           h3Items: [
             {
-              heading: 'Mise en place',
-              text: "Checklist d'ouverture (garnitures préparées, verrerie polie et positionnée par type, spiritueux alignés, ingrédients cocktails en place, comptoir propre), niveaux de stock requis, vérifications de température des réfrigérations.",
+              heading: 'Mise en place bar',
+              text: "Checklist d\'ouverture complète avant le service : garnitures préparées, verrerie lustrée et positionnée par type, spiritueux alignés, ingrédients cocktails en place, comptoir propre et dégagé. Niveaux de stock requis confirmés. Températures de réfrigération vérifiées.",
             },
             {
-              heading: 'Standards de service',
-              text: "Acknowledger les clients en attente dans les 30 secondes, cohérence de préparation des boissons (mesures, méthode de construction, verrerie par type de boisson), standards de garnitures, placement des serviettes, fréquence de remplacement des verres pour les clients de longue durée.",
+              heading: 'Standards',
+              text: "Clients en attente pris en charge dans les 30 secondes suivant leur approche du bar. Préparation des boissons cohérente au sein de l\'équipe : doses, méthode de construction, verrerie correcte par type de boisson. Standard de garniture respecté. Serviette déposée avec chaque boisson. Verres remplacés pour les clients de longue durée sans attendre qu\'ils le demandent.",
             },
             {
               heading: 'Service du vin',
-              text: "Présentation de la bouteille, procédure de débouchage, dégustation de service pour le client, volume de service correct, directives de température de service, procédure de décantation pour les vins appropriés.",
+              text: "Bouteille présentée au client avant ouverture. Procédure de débouchage respectée. Service de dégustation pour le client. Volume de service correct. Directives de température de service respectées. Décantation appliquée si appropriée -- et brièvement expliquée.",
             },
           ],
         },
         {
           h2: 'SOPs Room Service',
           content:
-            "Le room service est une extension de l'expérience restaurant délivrée dans un contexte entièrement différent — la chambre du client. L'absence d'atmosphère ambiante signifie que la qualité du service dépend entièrement de l'exécution.",
+            "Le room service est l\'expérience restaurant délivrée dans un contexte entièrement différent. Il n\'y a pas d\'atmosphère ambiante, pas de bruit de fond, pas de tables voisines pour normaliser l\'attente. Chaque élément de la livraison prend plus de poids. Le plateau qui arrive en désordre, la commande erronée, le coup frappé qui reste sans réponse trop longtemps -- ces détails sont amplifiés dans une chambre d\'hôtel d\'une façon qu\'ils ne sont pas au restaurant.",
           h3Items: [
             {
               heading: 'Prise de commande',
-              text: "Accueil téléphonique scripté, confirmation complète de la commande (incluant une estimation du délai de livraison), vérification des régimes et allergies, moment d'upselling (vin, dessert).",
+              text: "Accueil téléphonique scripté. Commande complète confirmée au client, délai de livraison inclus. Régimes alimentaires et allergies vérifiés à chaque appel. Moment naturel d\'upselling : vin, dessert, accompagnement.",
             },
             {
-              heading: 'Préparation du plateau et du chariot',
-              text: "Linge correct, standards de placement des couverts, verrerie selon le type de commande, condiments, collateral de marque, disposition des couverts, standards de présentation des plats correspondant à la présentation restaurant.",
+              heading: 'Préparation',
+              text: "Linge correct. Placement des couverts au même standard que le restaurant. Verrerie correspondant au type de commande. Condiments inclus sans que le client ait à les demander. Collateral de marque en place. Présentation des plats correspondant aux standards restaurant -- le room service n\'est pas une exception.",
             },
             {
-              heading: 'Procédure de livraison',
-              text: "Séquence de frappe et d'annonce, installation du plateau dans la chambre (pas remis à la porte pour un service haut de gamme), explication de chaque article, présentation de l'addition, départ.",
+              heading: 'Livraison',
+              text: "Séquence de frappe et d\'annonce. Plateau installé dans la chambre, pas remis à la porte pour un établissement haut de gamme. Chaque article brièvement expliqué. Addition présentée. Départ discret.",
             },
             {
-              heading: 'Collecte du plateau',
-              text: "Protocole de collecte proactive (appel après 30 minutes, ou tournées de collecte physique), gestion des situations Ne Pas Déranger, gestion des plateaux collectés dans les couloirs.",
+              heading: 'Collecte',
+              text: "Protocole de collecte proactive : appel après 30 minutes ou rondes physiques sur chaque étage. Procédure claire pour les chambres en DND. Les plateaux laissés dans les couloirs ne devraient pas exister par défaut ; la procédure doit expliquer pourquoi ils apparaissent et comment l\'éviter.",
             },
           ],
         },
         {
           h2: 'Service banquet et événements',
           content:
-            "Le service banquet opère sur une logistique plus serrée et des effectifs plus importants que le service restaurant. Les standards de service doivent tenir compte de cette échelle.",
+            "Le service banquet fonctionne sur une logistique plus serrée et des équipes plus importantes que le restaurant. Les standards doivent tenir compte de cette échelle, ce qui demande plus de préparation, pas moins.",
           h3Items: [
             {
-              heading: 'Standards de mise en place événement',
-              text: "Configuration du plan de table par type d'événement, standards et méthode de pliage du linge, standards de mise en place par type de menu, directives de placement des centres de table et de la décoration.",
+              heading: 'Mise en place événement',
+              text: "Plan de table installé selon le type d\'événement. Linge plié et mis en place selon le standard. Couvert dressé selon le type de menu. Centres de table et décoration positionnés selon le brief événement. Tout vérifié avant l\'ouverture des portes.",
             },
             {
-              heading: 'Briefing de service',
-              text: "Chaque service banquet commence par un briefing complet de l'équipe : détails du menu, informations allergènes, séquence de service, assignations de stations, signaux de communication entre membres de l'équipe.",
+              heading: 'Briefing',
+              text: "Chaque service banquet commence par un briefing complet de l\'équipe : détails du menu, informations allergènes, séquence de service, assignations de rangs, signaux de communication entre collaborateurs. Ce briefing n\'est pas optionnel. Sur un grand événement, il fait la différence entre un service maîtrisé et un service chaotique.",
             },
             {
               heading: 'Service synchronisé',
-              text: "Pour les banquets formels, le service synchronisé (toutes les assiettes placées ou débarrassées simultanément) nécessite des signaux d'équipe et des assignations claires de chef de rang.",
+              text: "Pour les banquets formels, le service synchronisé -- toutes les assiettes posées ou débarrassées en même temps -- demande des signaux d\'équipe clairs et des sections bien définies. Cela se répète, ça ne s\'improvise pas le soir même.",
             },
           ],
         },
       ],
       conclusion:
-        "Les standards de service F&B sont ce qui distingue une expérience gastronomique mémorable d'une expérience oubliable. La qualité technique de la cuisine compte, mais les clients repartent en parlant de ce qu'ils ont ressenti. Des SOPs de service structurés créent les conditions pour que votre équipe délivre cette expérience avec cohérence — pas seulement quand votre meilleur serveur est en service, mais sur chaque service, chaque couvert.",
+        "Les standards de service F&B sont ce qui transforme une bonne cuisine en une expérience mémorable. Les clients repartent en parlant de ce que le service leur a fait ressentir -- si l\'équipe était présente ou absente, assurée ou hésitante. Des SOPs structurés créent les conditions pour que l\'équipe délivre de façon constante sur chaque couvert et chaque service, pas seulement quand le collaborateur le plus expérimenté est en salle.",
       cta: { text: 'Voir le Playbook F&B', href: '/fr/playbooks' },
     },
   },
@@ -1244,129 +1244,129 @@ export const articles: BilingualArticle[] = [
       date: '2026-03-21',
       readTime: '8 min de lecture',
       intro:
-        'Le front office est le cœur battant de votre hôtel. C\'est le premier point de contact que chaque client a avec votre établissement, et la dernière chose dont il se souvient en partant. Pourtant, dans la plupart des hôtels, les procédures front office se transmettent verbalement, d\'équipe en équipe, sans standard écrit. Ce guide couvre les procédures front office essentielles que tout hôtel de luxe devrait avoir documentées.',
+        "Le front office est la partie de l\'hôtel sur laquelle la plupart des clients se forgent une opinion dans les deux premières minutes. Une arrivée bien gérée, confiante et attentive donne le ton pour tout ce qui suit. Une arrivée hésitante -- causée par un collaborateur formé de façon informelle ou pas du tout -- est difficile à rattraper. La plupart des procédures front office se transmettent à l\'oral, service après service, sans standard écrit. Ce guide couvre les procédures fondamentales que chaque établissement devrait avoir documentées.",
       sections: [
         {
           h2: 'Pourquoi les procédures front office comptent plus qu\'on ne le croit',
           content:
-            'Les clients forment leur première impression de votre établissement en quelques secondes à la réception. Un check-in confiant, chaleureux et efficace donne le ton pour tout leur séjour. Un accueil hésitant et désorganisé, causé par un agent insuffisamment formé, produit l\'effet inverse.',
+            "Les clients se font une opinion de l\'établissement à la réception plus vite qu\'à n\'importe quel autre endroit. Un check-in bien préparé, chaleureux et maîtrisé signale que le reste du séjour sera géré avec le même soin. Un check-in désorganisé crée une suspicion qui tend ensuite à se confirmer.",
           h3Items: [
             {
-              heading: 'Cohérence sur chaque shift',
-              text: 'Avec des procédures front office documentées, la qualité du check-in ne dépend pas de l\'agent en poste. Le standard est le même le lundi matin ou le samedi soir.',
+              heading: 'Cohérence',
+              text: "Des procédures documentées signifient que la qualité du check-in ne dépend pas de l\'agent en poste. Le standard est le même qu\'on soit lundi matin ou samedi soir, que ce soit le membre le plus expérimenté de l\'équipe ou quelqu\'un dans sa deuxième semaine.",
             },
             {
-              heading: 'Intégration plus rapide',
-              text: 'Les nouveaux agents front office peuvent suivre les procédures documentées dès le premier jour, réduisant le temps nécessaire pour atteindre un niveau de performance autonome et orienté client.',
+              heading: 'Intégration',
+              text: "Les nouveaux agents peuvent suivre des procédures écrites dès le premier jour. Cela réduit le temps pour atteindre un niveau autonome et opérationnel, et soulage les superviseurs qui devraient sinon combler l\'écart.",
             },
             {
-              heading: 'Moins d\'erreurs, moins de réclamations',
-              text: 'La plupart des réclamations front office — mauvaise chambre, erreurs de facturation, demandes oubliées — sont dues à des étapes manquées. Une procédure basée sur des checklists élimine les points de défaillance les plus courants.',
+              heading: "Moins d'erreurs",
+              text: "La plupart des réclamations front office remontent à une étape sautée. Une erreur de facturation parce que la note n\'a pas été révisée. Une mauvaise chambre parce que l\'allocation n\'a pas été vérifiée. Des procédures écrites avec des étapes claires éliminent les points de défaillance les plus courants.",
             },
           ],
         },
         {
           h2: 'Procédure de check-in : étape par étape',
           content:
-            'Le check-in est l\'interaction la plus importante du parcours client. Il doit être chaleureux, efficace et personnalisé. Voici les étapes clés que toute procédure front office d\'hôtel de luxe doit inclure.',
+            "Le check-in est l\'interaction la plus importante dans le parcours client. Il doit être chaleureux, efficace et personnalisé. Voici les éléments qu\'une procédure de check-in solide couvre.",
           h3Items: [
             {
-              heading: 'Préparation pré-arrivée',
-              text: 'Consulter la liste des arrivées avant chaque shift. Identifier les VIP, clients fidèles, demandes spéciales et surclassements disponibles. Briefer l\'équipe. S\'assurer que toutes les chambres sont inspectées et marquées prêtes dans le PMS avant l\'heure d\'arrivée prévue.',
+              heading: 'Préparation',
+              text: "Réviser la liste des arrivées avant le début du service. Identifier les VIP, les clients fidèles, les demandes spéciales et les upgrades potentiels. Briefer l\'équipe. Les chambres doivent être inspectées et marquées prêtes dans le PMS avant la fenêtre d\'arrivée prévue -- pas recherchées en plein check-in.",
             },
             {
-              heading: 'Accueil du client',
-              text: 'Saluer chaque client par son nom dans les trois secondes suivant son approche. Maintenir le contact visuel. Si le client est déjà venu, le reconnaître. Éviter les formules scriptées et robotiques — la chaleur est un standard, pas une question de personnalité.',
+              heading: 'Accueil',
+              text: "Accueillir chaque client par son nom dans les trois secondes suivant son approche. Contact visuel. Si le client est déjà venu, le reconnaître. La chaleur est un standard, pas un trait de personnalité -- elle peut être formée, briefée et tenue.",
             },
             {
-              heading: 'Vérification de la réservation',
-              text: 'Confirmer les détails de la réservation, le type de chambre, le tarif et la durée du séjour. Vérifier la pièce d\'identité et le moyen de paiement. Proposer un surclassement naturellement, en fonction des disponibilités et du profil client — jamais comme une vente forcée.',
+              heading: 'Vérification',
+              text: "Confirmer les détails de la réservation, le type de chambre, le tarif et la durée du séjour. Vérifier la pièce d\'identité et le moyen de paiement. Proposer un upgrade de chambre si approprié, en fonction de la disponibilité et du profil client. C\'est un moment de service, pas un moment de vente.",
             },
             {
-              heading: 'Présentation de la chambre',
-              text: 'Expliquer les équipements clés : Wi-Fi, horaires du petit-déjeuner, spa, restaurant. Proposer l\'assistance bagagiste. Si vous accompagnez le client, escortez-le — ne lui tendez pas simplement une clé en pointant du doigt.',
+              heading: 'Orientation',
+              text: "Donner les informations clés sur l\'établissement : Wi-Fi, horaires du petit-déjeuner, spa, restaurant. Proposer l\'assistance bagages. Si le standard de l\'établissement prévoit d\'accompagner le client, le faire -- pas de simplement lui tendre un badge clé en lui indiquant la direction.",
             },
           ],
         },
         {
           h2: 'Procédure de check-out',
           content:
-            'Le check-out est la dernière impression que votre hôtel laisse. Un processus de facturation lent et entaché d\'erreurs efface tout le capital de confiance construit pendant le séjour.',
+            "Le check-out est la dernière impression que laisse l\'hôtel. Un processus de facturation lent ou sujet aux erreurs efface une grande partie de la bonne volonté construite pendant le séjour. La procédure doit être aussi bien préparée que le check-in.",
           h3Items: [
             {
-              heading: 'Check-out express',
-              text: 'Proposer le check-out express dès le check-in pour les clients qui le souhaitent. Envoyer le pré-folio la veille du départ. Cela réduit la pression en matinée et donne aux clients la possibilité de contester les charges sereinement.',
+              heading: 'Express',
+              text: "Proposer le départ express au moment du check-in pour les clients qui le préfèrent. Envoyer la note pré-départ la veille au soir. Cela réduit la pression en ligne à la réception le matin et donne aux clients la possibilité de signaler une question de facturation sans la pression du temps.",
             },
             {
-              heading: 'Vérification du folio',
-              text: 'Présenter la note clairement. Accompagner le client dans les charges qu\'il ne reconnaît pas. Résoudre les litiges sur place — ne pas escalader inutilement. Un litige de facturation bien géré peut transformer une réclamation en avis positif.',
+              heading: 'Révision',
+              text: "Présenter la note clairement. Expliquer tout frais que le client pourrait ne pas reconnaître immédiatement. Résoudre les contestations sur le moment dans la mesure du possible. Un litige de facturation bien géré peut transformer une réclamation potentielle en une expérience neutre ou positive.",
             },
             {
-              heading: 'Expérience de départ',
-              text: 'Se renseigner sur le séjour. Noter les retours dans le profil PMS du client. Organiser le transport si nécessaire. Remercier par le nom. Un au revoir sincère et personnalisé est la dernière opportunité de rendre le séjour mémorable.',
+              heading: 'Départ',
+              text: "Demander comment s\'est passé le séjour. Noter les retours dans le profil client du PMS. Organiser le transport si nécessaire. Remercier le client par son nom. Un au revoir personnalisé est le dernier point de contact du séjour -- il reste.",
             },
           ],
         },
         {
           h2: 'Procédures de gestion des réservations',
           content:
-            'Les équipes front office gèrent souvent les demandes de réservation entrantes en parallèle des interactions clients en direct. Sans procédure claire, les erreurs et les doubles réservations s\'accumulent.',
+            "Les équipes front office gèrent souvent des demandes de réservation entrantes en même temps qu\'elles accueillent des clients à la réception. Sans procédure claire, cette combinaison produit des erreurs.",
           h3Items: [
             {
-              heading: 'SOP réservation entrante',
-              text: 'Collecter les coordonnées complètes du client, la préférence de chambre, le tarif et les demandes spéciales à chaque appel. Répéter la confirmation. Envoyer une confirmation écrite dans les 15 minutes. Tout saisir immédiatement dans le PMS.',
+              heading: 'Réservation entrante',
+              text: "Recueillir les coordonnées complètes du client, ses préférences de chambre, le tarif et les demandes spéciales à chaque appel. Confirmer la réservation à voix haute. Envoyer la confirmation écrite dans les 15 minutes. Tout enregistrer dans le PMS immédiatement -- pas en fin de service.",
             },
             {
-              heading: 'Protocole de modification et d\'annulation',
-              text: 'Toute modification ou annulation doit être traitée dans le PMS lors du même appel ou dans l\'heure qui suit. Confirmer le changement par écrit. Signaler les modifications ayant un impact sur le revenu au responsable des réservations.',
+              heading: 'Modification',
+              text: "Chaque modification ou annulation est traitée dans le PMS dans le même appel ou dans l\'heure qui suit. La modification est confirmée par écrit au client. Les changements ayant un impact sur le revenu sont signalés au responsable des réservations.",
             },
             {
-              heading: 'Procédure no-show',
-              text: 'Tenter de contacter le client dans les deux heures suivant l\'heure d\'arrivée prévue. Facturer selon la politique d\'annulation. Libérer la chambre à une heure définie — généralement 23h sauf garantie par carte. Documenter chaque étape.',
+              heading: 'No-show',
+              text: "Tentative de contact dans les deux heures suivant l\'heure d\'arrivée prévue. Facturation selon la politique d\'annulation applicable. Libération de la chambre à une heure définie -- généralement 23h00 sauf si la réservation est garantie par carte. Chaque étape est documentée dans le PMS.",
             },
           ],
         },
         {
           h2: 'Gestion des réclamations à la réception',
           content:
-            'Le front office est le premier point de contact pour les réclamations clients. La manière dont l\'équipe les gère — et non leur occurrence — détermine la fidélité des clients.',
+            "Le front office est le point de contact principal pour les réclamations clients -- qu\'elles y aient pris naissance ou non. Le client vient à la réception parce que c\'est le visage visible de l\'exploitation. La façon dont l\'équipe gère la situation compte plus que la réclamation elle-même.",
           h3Items: [
             {
-              heading: 'La méthode HEART',
-              text: 'Écouter la réclamation complètement sans interrompre. Faire preuve d\'empathie sincèrement. S\'excuser pour l\'expérience — pas nécessairement pour la cause. Résoudre avec une action concrète, immédiatement si possible. Remercier le client d\'avoir signalé le problème.',
+              heading: 'HEART',
+              text: "Écouter la réclamation en entier sans interrompre. Empathiser avec l\'expérience sans se justifier. S\'excuser. Résoudre avec une action concrète, immédiatement si possible. Remercier le client de l\'avoir signalé. Cette séquence doit être pratiquée, pas seulement lue -- elle se modifie sous la pression.",
             },
             {
-              heading: 'Politique d\'autonomie',
-              text: 'Les agents front office doivent être habilités à résoudre les réclamations jusqu\'à un seuil de valeur défini sans approbation du manager — généralement 50-100€ en gestes commerciaux. Au-delà, escalade vers le duty manager.',
+              heading: 'Empowerment',
+              text: "Les agents front office doivent être habilités à résoudre les réclamations jusqu\'à un seuil de valeur défini sans avoir besoin de l\'accord d\'un manager. Un montant de 50 à 100 euros en gestes commerciaux est courant. Au-delà, escalade vers le manager de permanence. Cette limite doit être écrite et formée -- sinon le réflexe est toujours d\'escalader, ce qui ralentit la résolution et frustre les clients.",
             },
             {
-              heading: 'Consigner chaque réclamation',
-              text: 'Toutes les réclamations, quelle que soit leur gravité, doivent être consignées dans le profil PMS du client et dans le rapport d\'incidents journalier. Ces données informent les problèmes récurrents, le coaching des équipes et les audits qualité.',
+              heading: 'Tracer',
+              text: "Toutes les réclamations, quelle que soit leur importance, sont enregistrées dans le profil client du PMS et dans le rapport d\'incidents quotidien. Ces données font remonter les problèmes récurrents, alimentent le coaching des équipes et sont essentielles pour tout audit qualité.",
             },
           ],
         },
         {
           h2: 'Procédures d\'audit de nuit',
           content:
-            'L\'audit de nuit clôture la journée financière, rapproche toutes les transactions et prépare l\'établissement pour la prochaine période opérationnelle. C\'est l\'un des rôles les plus procéduriers du front office.',
+            "L\'audit de nuit clôture la journée financière, rapproche toutes les transactions et prépare l\'établissement pour la période opérationnelle suivante. C\'est l\'un des postes les plus procéduraux du front office et l\'un des moins bien documentés.",
           h3Items: [
             {
-              heading: 'Réconciliation de fin de journée',
-              text: 'Lancer tous les rapports PMS. Réconcilier les revenus chambres, les charges F&B et les charges annexes. Identifier et résoudre les folios ouverts, les écarts ou les autorisations de paiement échouées avant le basculement de journée.',
+              heading: 'Rapprochement',
+              text: "Lancer tous les rapports PMS. Rapprocher les revenus chambre, les charges F&B et les éléments annexes. Identifier et résoudre les folios ouverts, les écarts et les autorisations de paiement échouées avant de lancer le passage de journée. Rien ne se reporte de ce qui peut être résolu cette nuit.",
             },
             {
-              heading: 'Préparation des arrivées et départs',
-              text: 'Imprimer et vérifier la liste des arrivées du lendemain. Identifier les VIP et demandes spéciales. Confirmer les allocations de chambres. Pré-bloquer les chambres en fonction des profils et préférences clients.',
+              heading: 'Préparation arrivées',
+              text: "Imprimer et réviser la liste des arrivées du lendemain. Identifier les VIP et les demandes spéciales. Confirmer les allocations de chambres. Pré-bloquer les chambres selon les profils clients si le système le permet. L\'équipe du matin ne devrait pas découvrir ces informations à 7h du matin en plein check-in.",
             },
             {
               heading: 'Rondes de sécurité',
-              text: 'Effectuer une ronde complète de l\'établissement à intervalles définis. Consigner tout incident, problème de maintenance ou activité inhabituelle. Tenir le registre de sécurité et s\'assurer du respect de tous les protocoles d\'accès.',
+              text: "Effectuer une ronde complète de l\'établissement à intervalles définis. Consigner tout incident, problème de maintenance ou activité inhabituelle. Tenir le registre de sécurité à jour. S\'assurer que tous les protocoles d\'accès sont respectés avant les premières arrivées du matin.",
             },
           ],
         },
       ],
       conclusion:
-        'Les procédures front office ne sont pas de la bureaucratie — elles sont l\'infrastructure qui permet à votre équipe d\'être constamment excellente. Quand le processus est documenté et compris, les agents cessent d\'improviser et commencent à performer. Le client ressent la différence, et vos avis en ligne aussi.',
+        "Les procédures front office ne sont pas de la bureaucratie. Elles sont ce qui permet à l\'équipe de performer au même niveau quel que soit le service, le volume ou le niveau d\'expérience de la personne à la réception. Quand les procédures sont documentées et comprises, la qualité cesse d\'être individuelle pour devenir structurelle. Les clients sentent cette différence -- et les scores d\'évaluation aussi.",
       cta: { text: 'Voir le Playbook Front Office', href: '/fr/playbooks' },
     },
   },
