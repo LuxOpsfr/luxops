@@ -47,12 +47,22 @@ export default function PortalShell({ locale, email, children }: PortalShellProp
     <aside className="w-64 flex-shrink-0 flex flex-col bg-[#1A2E44] text-white min-h-screen">
       {/* Logo */}
       <div className="px-6 py-6 border-b border-white/10">
-        <Link href={`/${locale}`} className="font-bold text-lg tracking-widest text-white">
-          LuxOps
+        <Link href={`/${locale}`} className="flex flex-col gap-[3px] no-underline">
+          <span
+            className="font-bold uppercase text-white"
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: '1rem',
+              letterSpacing: '0.22em',
+              lineHeight: 1,
+            }}
+          >
+            LuxOps
+          </span>
+          <span className="text-[9px] text-white/40 uppercase" style={{ letterSpacing: '0.12em' }}>
+            {isFr ? 'Espace client' : 'Client portal'}
+          </span>
         </Link>
-        <p className="text-[10px] text-white/40 mt-1 uppercase tracking-widest">
-          {isFr ? 'Espace client' : 'Client portal'}
-        </p>
       </div>
 
       {/* Nav */}
@@ -118,7 +128,19 @@ export default function PortalShell({ locale, email, children }: PortalShellProp
       <div className="flex-1 flex flex-col min-w-0">
         {/* Mobile top bar */}
         <div className="lg:hidden flex items-center justify-between px-4 py-3 bg-[#1A2E44] text-white">
-          <Link href={`/${locale}`} className="font-bold tracking-widest">LuxOps</Link>
+          <Link href={`/${locale}`} className="no-underline">
+            <span
+              className="font-bold uppercase text-white"
+              style={{
+                fontFamily: 'var(--font-display)',
+                fontSize: '0.9rem',
+                letterSpacing: '0.22em',
+                lineHeight: 1,
+              }}
+            >
+              LuxOps
+            </span>
+          </Link>
           <button onClick={() => setSidebarOpen(true)}>
             <Menu size={22} />
           </button>

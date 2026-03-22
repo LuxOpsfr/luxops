@@ -16,7 +16,19 @@ export default function Footer({ locale }: FooterProps) {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="md:col-span-1">
-            <div className="text-xl font-bold tracking-widest mb-3">LuxOps</div>
+            <div className="mb-3">
+              <span
+                className="font-bold uppercase text-white"
+                style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: '1rem',
+                  letterSpacing: '0.22em',
+                  lineHeight: 1,
+                }}
+              >
+                LuxOps
+              </span>
+            </div>
             <p className="text-gray-400 text-sm leading-relaxed">{t('tagline')}</p>
           </div>
 

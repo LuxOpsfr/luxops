@@ -36,8 +36,18 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-4">
       {/* Logo */}
-      <Link href={`/${locale}`} className="mb-8 text-[#1A2E44] font-bold text-xl tracking-widest">
-        LuxOps
+      <Link href={`/${locale}`} className="mb-8 no-underline">
+        <span
+          className="font-bold uppercase text-[#0a1d2e]"
+          style={{
+            fontFamily: 'var(--font-display)',
+            fontSize: '1rem',
+            letterSpacing: '0.22em',
+            lineHeight: 1,
+          }}
+        >
+          LuxOps
+        </span>
       </Link>
 
       <div className="w-full max-w-md bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
