@@ -45,7 +45,7 @@ function FormationContent({ locale }: { locale: string }) {
     {
       icon: <Users2 size={24} style={{ color: '#003d9b' }} />,
       title: 'Service Standards',
-      desc: 'How to greet, respond, recover, and close interactions at every guest touchpoint. Service sequences and communication standards built around your department and team context. Teams leave knowing what is expected, and why — not just what the script says.',
+      desc: 'How to greet, respond, recover, and close interactions at every guest touchpoint. Service sequences and communication standards built around your department and team context. Teams leave knowing what is expected and why, not just what the script says.',
       tags: ['Guest contact', 'Service sequences', 'Communication'],
       wide: false,
     },
@@ -374,7 +374,7 @@ function FormationContent({ locale }: { locale: string }) {
           <div className="flex-1">
             <h3 className="font-display text-2xl lg:text-3xl font-extrabold text-white leading-snug mb-8">
               {isEn
-                ? "A training session without follow-through stays theoretical. The goal is not to present standards — it is to help teams understand them well enough to apply them consistently, without being reminded every shift."
+                ? "A training session without follow-through stays theoretical. The goal is not to present standards; it is to help teams understand them well enough to apply them consistently, without being reminded every shift."
                 : "Une session de formation sans mise en application reste théorique. L'objectif n'est pas de présenter des standards, c'est d'aider les équipes à les comprendre assez bien pour les appliquer de façon constante, sans qu'on ait besoin de le redemander à chaque service."}
             </h3>
             <div className="flex items-center gap-4">

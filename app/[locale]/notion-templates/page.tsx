@@ -86,8 +86,8 @@ function NotionContent({ locale }: { locale: string }) {
       icon: <BarChart2 size={20} style={{ color: '#003d9b' }} />,
       title: isEn ? 'One View Per Role' : 'Une vue par rôle',
       desc: isEn
-        ? 'Managers, supervisors, and department heads each see what they need. Calendar, board, or table — filtered to their scope.'
-        : 'Directeurs, superviseurs et chefs de département voient ce dont ils ont besoin. Calendrier, tableau ou liste — filtré selon leur périmètre.',
+        ? 'Managers, supervisors, and department heads each see what they need. Calendar, board, or table, filtered to their scope.'
+        : 'Directeurs, superviseurs et chefs de département voient ce dont ils ont besoin. Calendrier, tableau ou liste, filtré selon leur périmètre.',
     },
     {
       icon: <Smartphone size={20} style={{ color: '#003d9b' }} />,
@@ -276,8 +276,8 @@ function NotionContent({ locale }: { locale: string }) {
             </h2>
             <p className="text-lg text-[#4f6074] leading-relaxed">
               {isEn
-                ? 'Four operational benefits — not software features.'
-                : "Quatre b\u00e9n\u00e9fices op\u00e9rationnels — pas des fonctionnalit\u00e9s logicielles."}
+                ? 'Four operational benefits, not software features.'
+                : "Quatre b\u00e9n\u00e9fices op\u00e9rationnels, pas des fonctionnalit\u00e9s logicielles."}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -395,8 +395,8 @@ function NotionContent({ locale }: { locale: string }) {
               </div>
               <p className="text-xs mt-6 leading-relaxed" style={{ color: 'rgba(255,255,255,0.6)' }}>
                 {isEn
-                  ? 'Procedures accessible directly in the workspace — structured, searchable, and always current. No printed binders, no shared drives with outdated versions.'
-                  : "Les proc\u00e9dures sont accessibles directement dans l\u2019espace de travail \u2014 structur\u00e9es, consultables, toujours \u00e0 jour. Ni classeurs imprim\u00e9s, ni dossiers partag\u00e9s avec des versions obsol\u00e8tes."}
+                  ? 'Procedures accessible directly in the workspace: structured, searchable, and always current. No printed binders, no shared drives with outdated versions.'
+                  : "Les proc\u00e9dures sont accessibles directement dans l\u2019espace de travail\u00a0: structur\u00e9es, consultables, toujours \u00e0 jour. Ni classeurs imprim\u00e9s, ni dossiers partag\u00e9s avec des versions obsol\u00e8tes."}
               </p>
             </div>
 
@@ -514,8 +514,8 @@ function NotionContent({ locale }: { locale: string }) {
                   bg: '#f0fdf4',
                   title: isEn ? 'A live view of what is happening' : "Une vue en direct de l\u2019activit\u00e9",
                   desc: isEn
-                    ? 'Dashboards show the current state of operations — tasks, incidents, KPIs — updated in real time without manual consolidation.'
-                    : "Les tableaux de bord refl\u00e8tent l\u2019\u00e9tat r\u00e9el des op\u00e9rations \u2014 t\u00e2ches, incidents, KPIs \u2014 mis \u00e0 jour en temps r\u00e9el, sans consolidation manuelle.",
+                    ? 'Dashboards show the current state of operations: tasks, incidents, KPIs, updated in real time without manual consolidation.'
+                    : "Les tableaux de bord refl\u00e8tent l\u2019\u00e9tat r\u00e9el des op\u00e9rations\u00a0: t\u00e2ches, incidents, KPIs, mis \u00e0 jour en temps r\u00e9el, sans consolidation manuelle.",
                 },
               ].map((item, i) => (
                 <div key={i} className="flex gap-6">

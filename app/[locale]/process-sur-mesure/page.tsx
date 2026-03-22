@@ -245,8 +245,8 @@ function ProcessContent({ locale }: { locale: string }) {
               <div className="font-display text-3xl font-extrabold text-[#003d9b] mb-6">{t('price')}</div>
               <p className="text-sm text-[#4f6074] leading-relaxed mb-8">
                 {isEn
-                  ? "One department, fully documented and built around the way your property operates — not adapted from a generic template."
-                  : "Un département, entièrement documenté et construit autour du fonctionnement réel de votre établissement — pas adapté d'un modèle générique."}
+                  ? "One department, fully documented and built around the way your property operates, not adapted from a generic template."
+                  : "Un département, entièrement documenté et construit autour du fonctionnement réel de votre établissement, pas adapté d'un modèle générique."}
               </p>
               <ul className="space-y-3 mb-8">
                 {[

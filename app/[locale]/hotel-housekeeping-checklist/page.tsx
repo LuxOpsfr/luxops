@@ -53,7 +53,7 @@ const checklistEN = [
       'Polish all chrome fixtures to shine',
       'Clean mirror with streak-free product',
       'Replace all amenities (shampoo, soap, gel)',
-      'Replace towels — count and fold per standard',
+      'Replace towels, count and fold per standard',
       'Clean and dry all surfaces',
       'Check grout and report if discoloured',
     ],
@@ -79,7 +79,7 @@ const checklistEN = [
       'Check under bed for lost items or dust',
       'Inspect skirting boards and corners',
       'Check air conditioning filter (monthly)',
-      'Ensure no odours — use approved freshener',
+      'Ensure no odours; use approved freshener',
     ],
   },
   {
@@ -193,8 +193,8 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
           </h1>
           <p className="text-lg text-blue-100 max-w-2xl mx-auto">
             {isEN
-              ? 'A complete room inspection checklist used by luxury hotels across Europe. Free to use — upgrade to the full Housekeeping Playbook for SOPs, training guides and audit templates.'
-              : 'Une checklist d\'inspection de chambre complète, utilisée par des hôtels de luxe en Europe. Gratuite — passez au Housekeeping Playbook complet pour les SOPs, guides de formation et modèles d\'audit.'}
+              ? 'A complete room inspection checklist used by luxury hotels across Europe. Free to use. Upgrade to the full Housekeeping Playbook for SOPs, training guides and audit templates.'
+              : 'Une checklist d\'inspection de chambre complète, utilisée par des hôtels de luxe en Europe. Gratuite. Passez au Housekeeping Playbook complet pour les SOPs, guides de formation et modèles d\'audit.'}
           </p>
         </div>
       </section>
@@ -206,7 +206,7 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">
           {isEN
-            ? 'A structured hotel housekeeping checklist eliminates inconsistency across your team. Whether you manage a boutique property or a multi-outlet luxury hotel, a room inspection checklist ensures every room meets the same standard — every time, regardless of who is on shift.'
+            ? 'A structured hotel housekeeping checklist eliminates inconsistency across your team. Whether you manage a boutique property or a multi-outlet luxury hotel, a room inspection checklist ensures every room meets the same standard, every time, regardless of who is on shift.'
             : 'Une checklist housekeeping structurée élimine les incohérences au sein de votre équipe. Que vous gériez un boutique-hôtel ou un établissement de luxe multi-services, une fiche d\'inspection garantit que chaque chambre respecte le même standard, à chaque fois, quel que soit le personnel en poste.'}
         </p>
         <p className="text-gray-600 leading-relaxed">
@@ -250,7 +250,7 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
           </h2>
           <p className="text-gray-600 mb-8">
             {isEN
-              ? 'The LuxOps Housekeeping Playbook includes 10 chapters, 40+ SOPs, audit templates, staff training guides and full PDF + PowerPoint files — ready to use on day one.'
+              ? 'The LuxOps Housekeeping Playbook includes 10 chapters, 40+ SOPs, audit templates, staff training guides and full PDF + PowerPoint files, ready to use on day one.'
               : 'Le Housekeeping Playbook LuxOps comprend 10 chapitres, 40+ SOPs, modèles d\'audit, guides de formation et fichiers PDF + PowerPoint complets, prêts à l\'emploi dès le premier jour.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

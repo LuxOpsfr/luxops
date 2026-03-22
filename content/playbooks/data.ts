@@ -80,8 +80,8 @@ export const PLAYBOOKS: PlaybookEntry[] = [
     title: { en: 'Housekeeping Playbook', fr: 'Playbook Housekeeping' },
     dept: { en: 'Housekeeping', fr: 'Housekeeping' },
     desc: {
-      en: 'Room inspection checklists, linen and product management, cleaning protocols, and quality control standards — structured to maintain the same operational level from the first room to the last.',
-      fr: "Checklists d'inspection des chambres, gestion du linge et des produits, protocoles de nettoyage et standards de contrôle qualité — structurés pour maintenir le même niveau opérationnel de la première chambre à la dernière.",
+      en: 'Room inspection checklists, linen and product management, cleaning protocols, and quality control standards, structured to maintain the same operational level from the first room to the last.',
+      fr: "Checklists d'inspection des chambres, gestion du linge et des produits, protocoles de nettoyage et standards de contrôle qualité, structurés pour maintenir le même niveau opérationnel de la première chambre à la dernière.",
     },
     pages: '~220 pages',
     highlights: {
@@ -136,8 +136,8 @@ export const PLAYBOOKS: PlaybookEntry[] = [
     title: { en: 'F&B Playbook', fr: 'Playbook F&B' },
     dept: { en: 'Food & Beverage', fr: 'Food & Beverage' },
     desc: {
-      en: 'Service sequences and standards for restaurant, bar, breakfast, and room service — a procedural framework that gives teams clarity on every guest interaction, every cover, and every service.',
-      fr: 'Séquences de service et standards pour le restaurant, le bar, le petit-déjeuner et le room service — un cadre procédural qui donne aux équipes une base claire pour chaque interaction client, chaque couvert et chaque service.',
+      en: 'Service sequences and standards for restaurant, bar, breakfast, and room service, a procedural framework that gives teams clarity on every guest interaction, every cover, and every service.',
+      fr: 'Séquences de service et standards pour le restaurant, le bar, le petit-déjeuner et le room service, un cadre procédural qui donne aux équipes une base claire pour chaque interaction client, chaque couvert et chaque service.',
     },
     pages: '~280 pages',
     highlights: {
@@ -192,8 +192,8 @@ export const PLAYBOOKS: PlaybookEntry[] = [
     title: { en: 'Spa & Wellness Playbook', fr: 'Playbook Spa & Wellness' },
     dept: { en: 'Spa & Wellness', fr: 'Spa & Wellness' },
     desc: {
-      en: 'Treatment protocols, guest journey standards, therapist conduct, retail procedures, and booking management — built for a spa where consistency and guest experience drive performance.',
-      fr: "Protocoles de soins, standards du parcours client, conduite des thérapeutes, procédures retail et gestion des réservations — conçu pour un spa où la constance et l'expérience client sont les principaux facteurs de performance.",
+      en: 'Treatment protocols, guest journey standards, therapist conduct, retail procedures, and booking management, built for a spa where consistency and guest experience drive performance.',
+      fr: "Protocoles de soins, standards du parcours client, conduite des thérapeutes, procédures retail et gestion des réservations, conçu pour un spa où la constance et l'expérience client sont les principaux facteurs de performance.",
     },
     pages: '~200 pages',
     highlights: {

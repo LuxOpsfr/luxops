@@ -64,7 +64,7 @@
     "individual_label": "Individual Playbook",
     "bundle_label": "Complete Bundle",
     "bundle_badge": "Best Value",
-    "bundle_subtitle": "The full set of core operational playbooks — for properties that want a consistent structure across all departments.",
+    "bundle_subtitle": "The full set of core operational playbooks, for properties that want a consistent structure across all departments.",
     "individual_price": "€67",
     "bundle_price": "€199",
     "bundle_desc": "All 4 Playbooks",
@@ -105,7 +105,7 @@
   },
   "notion_page": {
     "title": "Notion Templates",
-    "subtitle": "Operational workspaces structured around the way hotel teams work day to day. Procedures, task tracking, reporting, and team coordination — in one place.",
+    "subtitle": "Operational workspaces structured around the way hotel teams work day to day. Procedures, task tracking, reporting, and team coordination, all in one place.",
     "base_title": "Operations Base Template",
     "base_price": "€497",
     "base_desc": "A working management base covering the daily functions hotels usually track across too many separate systems. Structured for immediate use, easy to maintain, and built around how hotel teams actually operate.",

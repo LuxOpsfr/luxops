@@ -123,8 +123,8 @@ export default async function HousekeepingSopPage({ params }: { params: Promise<
           </p>
           <p className="text-gray-600 leading-relaxed">
             {isEN
-              ? 'For luxury and boutique hotels, having a robust housekeeping SOP is non-negotiable. Guests expect a flawless, consistent experience every single stay. A well-structured SOP is the foundation that makes this possible — reducing errors, cutting training time, and protecting your brand reputation.'
-              : 'Pour les hôtels de luxe et boutique, disposer d\'un SOP housekeeping solide est indispensable. Les clients attendent une expérience impeccable et cohérente à chaque séjour. Un SOP bien structuré est la base qui rend cela possible — réduisant les erreurs, diminuant le temps de formation et protégeant la réputation de votre établissement.'}
+              ? 'For luxury and boutique hotels, having a robust housekeeping SOP is non-negotiable. Guests expect a flawless, consistent experience every single stay. A well-structured SOP is the foundation that makes this possible, reducing errors, cutting training time, and protecting your brand reputation.'
+              : 'Pour les hôtels de luxe et boutique, disposer d\'un SOP housekeeping solide est indispensable. Les clients attendent une expérience impeccable et cohérente à chaque séjour. Un SOP bien structuré est la base qui rend cela possible, réduisant les erreurs, diminuant le temps de formation et protégeant la réputation de votre établissement.'}
           </p>
         </div>
       </section>

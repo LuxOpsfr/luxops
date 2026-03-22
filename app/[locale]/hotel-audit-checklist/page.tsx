@@ -133,8 +133,8 @@ export default async function HotelAuditPage({ params }: { params: Promise<{ loc
           </h2>
           <p className="text-gray-300 mb-8">
             {isEN
-              ? 'A LuxOps quality audit gives you a clear picture of your operation — what\'s working, what\'s not, and exactly what to fix first.'
-              : 'Un audit qualité LuxOps vous donne une vision claire de votre exploitation — ce qui fonctionne, ce qui ne fonctionne pas et exactement quoi corriger en premier.'}
+              ? 'A LuxOps quality audit gives you a clear picture of your operation: what is working, what is not, and exactly what to fix first.'
+              : 'Un audit qualité LuxOps vous donne une vision claire de votre exploitation\u00a0: ce qui fonctionne, ce qui ne fonctionne pas et exactement quoi corriger en premier.'}
           </p>
           <Link
             href={`/${locale}/quality-audit`}

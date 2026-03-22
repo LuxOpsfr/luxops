@@ -564,7 +564,7 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: 'Language and tone standards',
-              text: 'Define the vocabulary and phrasing the team uses — and what they avoid. In a high-end context: "certainly" over "no problem", "allow me" rather than "sure". Guest name frequency. The register appropriate for your property. This is more than politeness — it is part of the brand experience.',
+              text: 'Define the vocabulary and phrasing the team uses, and what they avoid. In a high-end context: "certainly" over "no problem", "allow me" rather than "sure". Guest name frequency. The register appropriate for your property. This is more than politeness; it is part of the brand experience.',
             },
             {
               heading: 'Grooming and presentation standards',
@@ -579,7 +579,7 @@ export const articles: BilingualArticle[] = [
           h3Items: [
             {
               heading: 'Organise by scenario, not by chronology',
-              text: 'Group procedures by situation type — arrivals, departures, complaints, VIP handling — rather than by time of day. A team member who needs a procedure mid-task is not thinking about when it happens; they are thinking about what is happening right now.',
+              text: 'Group procedures by situation type: arrivals, departures, complaints, VIP handling, rather than by time of day. A team member who needs a procedure mid-task is not thinking about when it happens; they are thinking about what is happening right now.',
             },
             {
               heading: 'Keep each SOP to a single task',
@@ -593,7 +593,7 @@ export const articles: BilingualArticle[] = [
         },
       ],
       conclusion:
-        'A documented front office is a resilient front office. When the team has structured procedures to follow — not just what they were told by the person who trained them — quality stops depending on experience level. A new agent on a Monday morning should be working to the same standard as your most experienced member on a Friday evening. Written procedures are the only way to make that reliable.',
+        'A documented front office is a resilient front office. When the team has structured procedures to follow, not just what they were told by the person who trained them, quality stops depending on experience level. A new agent on a Monday morning should be working to the same standard as your most experienced member on a Friday evening. Written procedures are the only way to make that reliable.',
       cta: { text: 'View the Front Office Playbook', href: '/en/playbooks' },
     },
     fr: {
@@ -774,7 +774,7 @@ export const articles: BilingualArticle[] = [
         {
           h2: 'Turndown Service Procedure',
           content:
-            'Turndown is a premium housekeeping service. It shifts the room from its daytime state to an evening one — and done well, it signals attention and care that guests remember. It requires its own checklist, separate from the departure and stayover procedures.',
+            'Turndown is a premium housekeeping service. It shifts the room from its daytime state to an evening one, and when done well, it signals attention and care that guests remember. It requires its own checklist, separate from the departure and stayover procedures.',
           h3Items: [
             {
               heading: 'Standard turndown checklist elements',
@@ -789,11 +789,11 @@ export const articles: BilingualArticle[] = [
         {
           h2: 'Using a Housekeeping Playbook',
           content:
-            "A complete housekeeping playbook provides pre-built inspection checklists by room type, departure clean procedures, stayover procedures, turndown SOPs, linen management protocols, deep cleaning schedules, and lost and found procedures — all formatted for immediate team use. Rather than building this documentation from scratch, a structured playbook gives the head of housekeeping a professional base to customise for the property's specific room types and standards.",
+            "A complete housekeeping playbook provides pre-built inspection checklists by room type, departure clean procedures, stayover procedures, turndown SOPs, linen management protocols, deep cleaning schedules, and lost and found procedures, all formatted for immediate team use. Rather than building this documentation from scratch, a structured playbook gives the head of housekeeping a professional base to customise for the property's specific room types and standards.",
         },
       ],
       conclusion:
-        'Housekeeping runs on discipline and detail. The properties that maintain consistently high room quality are the ones where every team member — not just the most experienced — knows exactly what standard they are working to and has the checklist to verify their own work. Structure in housekeeping is not about micromanaging the team. It is about making it straightforward for them to do their job well, every room, every shift.',
+        'Housekeeping runs on discipline and detail. The properties that maintain consistently high room quality are the ones where every team member, not just the most experienced, knows exactly what standard they are working to and has the checklist to verify their own work. Structure in housekeeping is not about micromanaging the team. It is about making it straightforward for them to do their job well, every room, every shift.',
       cta: { text: 'View the Housekeeping Playbook', href: '/en/playbooks' },
     },
     fr: {
@@ -964,7 +964,7 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: 'Tray and trolley preparation',
-              text: 'Correct linen. Cover placement to the same standard as the restaurant. Glassware matched to the order type. Condiments included without the guest having to ask. Branded collateral in place. Food presentation matching restaurant standards — room service is not an exception.',
+              text: 'Correct linen. Cover placement to the same standard as the restaurant. Glassware matched to the order type. Condiments included without the guest having to ask. Branded collateral in place. Food presentation matching restaurant standards. Room service is not an exception.',
             },
             {
               heading: 'Delivery procedure',
@@ -972,7 +972,7 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: 'Tray collection',
-              text: 'Proactive collection protocol — a call after 30 minutes, or physical collection rounds on each floor. Clear procedure for rooms with DND showing. Trays left in corridors should not exist as a default; the procedure should address why they appear and how to prevent it.',
+              text: 'Proactive collection protocol: a call after 30 minutes, or physical collection rounds on each floor. Clear procedure for rooms with DND showing. Trays left in corridors should not exist as a default; the procedure should address why they appear and how to prevent it.',
             },
           ],
         },
@@ -991,13 +991,13 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: 'Synchronised service',
-              text: 'For formal banquets, synchronised service — all plates placed or cleared at the same time — requires clear team signals and defined section assignments. It needs to be rehearsed, not improvised on the night.',
+              text: 'For formal banquets, synchronised service, all plates placed or cleared at the same time, requires clear team signals and defined section assignments. It needs to be rehearsed, not improvised on the night.',
             },
           ],
         },
       ],
       conclusion:
-        'F&B service standards are what turn good food into a memorable experience. Guests leave talking about how the service felt — whether the team was attentive or absent, confident or uncertain. Structured SOPs create the conditions for the team to deliver consistently across every cover and every shift, not just when the most experienced member is on the floor.',
+        'F&B service standards are what turn good food into a memorable experience. Guests leave talking about how the service felt, whether the team was attentive or absent, confident or uncertain. Structured SOPs create the conditions for the team to deliver consistently across every cover and every shift, not just when the most experienced member is on the floor.',
       cta: { text: 'View the F&B Playbook', href: '/en/playbooks' },
     },
     fr: {
@@ -1171,7 +1171,7 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: 'Departure Experience',
-              text: 'Ask about the stay. Note any feedback in the PMS guest profile. Arrange transport if needed. Thank them by name. A personalised farewell is the last touchpoint of the stay — and it is remembered.',
+              text: 'Ask about the stay. Note any feedback in the PMS guest profile. Arrange transport if needed. Thank them by name. A personalised farewell is the last touchpoint of the stay. It is remembered.',
             },
           ],
         },
@@ -1182,7 +1182,7 @@ export const articles: BilingualArticle[] = [
           h3Items: [
             {
               heading: 'Inbound Reservation SOP',
-              text: 'Capture full guest details, room preference, rate, and any special requests on every call. Read the confirmation back. Send written confirmation within 15 minutes. Log everything in the PMS immediately — not at the end of the shift.',
+              text: 'Capture full guest details, room preference, rate, and any special requests on every call. Read the confirmation back. Send written confirmation within 15 minutes. Log everything in the PMS immediately, not at the end of the shift.',
             },
             {
               heading: 'Modification and Cancellation Protocol',
@@ -1190,22 +1190,22 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: 'No-Show Procedure',
-              text: 'Attempt contact within two hours of the expected arrival time. Charge according to the cancellation policy. Release the room at a defined time — typically 23:00 unless the booking is card-guaranteed. Document every step in the PMS.',
+              text: 'Attempt contact within two hours of the expected arrival time. Charge according to the cancellation policy. Release the room at a defined time, typically 23:00 unless the booking is card-guaranteed. Document every step in the PMS.',
             },
           ],
         },
         {
           h2: 'Complaint Handling at the Front Desk',
           content:
-            'Front office is where most guest complaints surface — whether they originated there or not. The guest comes to the desk because it is the visible face of the operation. How the team handles it matters more than the complaint itself.',
+            'Front office is where most guest complaints surface, whether they originated there or not. The guest comes to the desk because it is the visible face of the operation. How the team handles it matters more than the complaint itself.',
           h3Items: [
             {
               heading: 'The HEART Method',
-              text: 'Hear the complaint fully without interrupting. Empathise with the experience without making excuses for it. Apologise. Resolve with a concrete action, immediately where possible. Thank the guest for raising it. This sequence needs to be practised, not just read — it changes under pressure.',
+              text: 'Hear the complaint fully without interrupting. Empathise with the experience without making excuses for it. Apologise. Resolve with a concrete action, immediately where possible. Thank the guest for raising it. This sequence needs to be practised, not just read; it changes under pressure.',
             },
             {
               heading: 'Empowerment Policy',
-              text: 'Front office agents should be empowered to resolve complaints up to a defined value threshold without needing manager approval. A figure of 50 to 100 euros in service recovery is common. Anything above escalates to the duty manager. This limit needs to be written down and trained into the team — otherwise the reflex is always to escalate, which slows resolution and frustrates guests.',
+              text: 'Front office agents should be empowered to resolve complaints up to a defined value threshold without needing manager approval. A figure of 50 to 100 euros in service recovery is common. Anything above escalates to the duty manager. This limit needs to be written down and trained into the team, otherwise the reflex is always to escalate, which slows resolution and frustrates guests.',
             },
             {
               heading: 'Log Every Complaint',
@@ -1234,7 +1234,7 @@ export const articles: BilingualArticle[] = [
         },
       ],
       conclusion:
-        'Front office procedures are not bureaucracy. They are what allows the team to perform at the same level regardless of the shift, the volume, or the experience level of the person at the desk. When procedures are documented and understood, the quality stops being individual and starts being structural. Guests feel that difference — and so do the review scores.',
+        'Front office procedures are not bureaucracy. They are what allows the team to perform at the same level regardless of the shift, the volume, or the experience level of the person at the desk. When procedures are documented and understood, the quality stops being individual and starts being structural. Guests feel that difference, and so do the review scores.',
       cta: { text: 'View Front Office Playbook', href: '/en/playbooks' },
     },
     fr: {
