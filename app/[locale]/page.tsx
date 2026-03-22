@@ -236,7 +236,7 @@ function HomeContent({ locale }: { locale: string }) {
           </div>
 
           {/* 3 Pillars */}
-          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x" style={{ '--tw-divide-opacity': '1', borderColor: 'transparent' }}>
+          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-[rgba(195,198,214,0.35)]">
             {[
               {
                 ordinal: '01',
