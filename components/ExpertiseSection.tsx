@@ -6,8 +6,8 @@ export default function ExpertiseSection({ locale }: Props) {
   const isEn = locale === 'en'
 
   const tags = isEn
-    ? ['Front Office Operations', 'Multi-dept Management', 'SOP Design', 'Team Training & Briefings']
-    : ['Opérations Front Office', 'Management Multi-depts', 'Conception de SOPs', 'Formation & Briefings Équipes']
+    ? ['Front Office Operations', 'Multi-Department Management', 'SOP Design', 'Team Training & Briefings']
+    : ['Opérations Front Office', 'Management Multi-Départements', 'Conception de SOPs', 'Formation & Briefings Équipes']
 
   return (
     <section
@@ -91,23 +91,23 @@ export default function ExpertiseSection({ locale }: Props) {
 
           <h2 className="font-display text-3xl lg:text-4xl font-extrabold tracking-tighter leading-tight text-[#0a1d2e]">
             {isEn
-              ? 'Built by someone who ran the operations.'
-              : "Construit par quelqu\u2019un qui a géré les opérations."}
+              ? 'Built through day-to-day hotel operations.'
+              : "Construit au fil des op\u00e9rations h\u00f4teli\u00e8res quotidiennes."}
           </h2>
 
           <div className="space-y-4 text-[#4f6074] leading-relaxed">
             <p>
               {isEn
-                ? "LuxOps was created from years spent managing hotel departments across high-end independent properties. Not as a consultant looking in, but as someone responsible for the day-to-day. Every SOP, checklist and framework here was built under real operational pressure."
-                : "LuxOps est née d\u2019années passées à gérer des départements hôteliers dans des établissements indépendants haut de gamme. Pas en tant que consultant extérieur, mais en tant que responsable du fonctionnement quotidien. Chaque procédure, checklist et outil a été construit sous une vraie pression opérationnelle."}
+                ? "LuxOps comes from years spent managing departments, supporting teams, and building structure where operations could not rely on improvisation. The procedures and tools presented here were developed in working hotels, under real service pressure, with the aim of making standards clearer, execution steadier, and onboarding easier."
+                : "LuxOps vient d\u2019ann\u00e9es pass\u00e9es \u00e0 g\u00e9rer des d\u00e9partements, accompagner des \u00e9quipes et construire des structures l\u00e0 o\u00f9 l\u2019exploitation ne pouvait pas reposer sur l\u2019improvisation. Les proc\u00e9dures et outils pr\u00e9sent\u00e9s ici ont \u00e9t\u00e9 d\u00e9velopp\u00e9s dans des h\u00f4tels en activit\u00e9, sous une vraie pression de service, avec pour objectif de rendre les standards plus clairs, l\u2019ex\u00e9cution plus stable et l\u2019int\u00e9gration plus simple."}
             </p>
             <p
               className="font-display font-bold text-[#0a1d2e] text-base leading-snug"
               style={{ borderLeft: '3px solid #003d9b', paddingLeft: '1.25rem' }}
             >
               {isEn
-                ? "The methods exist because they were needed. They work because they were tested: in the rooms, at the front desk, during service."
-                : "Les méthodes existent parce qu\u2019elles étaient nécessaires. Elles fonctionnent parce qu\u2019elles ont été testées sur le terrain : dans les chambres, à la réception, pendant le service."}
+                ? "They exist because they solved real operational needs, and they remain useful because they were built to be used by teams, not just reviewed by management."
+                : "Ils existent parce qu\u2019ils r\u00e9pondaient \u00e0 de vrais besoins op\u00e9rationnels, et ils restent utiles parce qu\u2019ils ont \u00e9t\u00e9 con\u00e7us pour \u00eatre utilis\u00e9s par les \u00e9quipes, pas seulement consult\u00e9s par le management."}
             </p>
           </div>
 
