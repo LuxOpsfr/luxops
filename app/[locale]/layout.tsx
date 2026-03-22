@@ -6,6 +6,7 @@ import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import SiteShell from '@/components/SiteShell'
 import { CartProvider } from '@/context/CartContext'
+import { Analytics } from '@vercel/analytics/next'
 
 const GA_ID = 'G-0CDGZY9FPZ'
 
@@ -80,6 +81,7 @@ export default async function LocaleLayout({
             </SiteShell>
           </CartProvider>
         </NextIntlClientProvider>
+        <Analytics />
       </body>
     </html>
   )
