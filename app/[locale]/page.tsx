@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { useTranslations } from 'next-intl'
 import Link from 'next/link'
-import { ArrowRight, BookOpen, Settings, Users } from 'lucide-react'
+import { ArrowRight, BookOpen, Settings, Users, Star, Clock } from 'lucide-react'
 import ExpertiseSection from '@/components/ExpertiseSection'
 
 export async function generateMetadata({
@@ -58,7 +58,6 @@ function HomeContent({ locale }: { locale: string }) {
   const tProblem = useTranslations('problem')
   const tSolution = useTranslations('solution')
   const tOffers = useTranslations('offers')
-  const tProof = useTranslations('social_proof')
   const tCta = useTranslations('cta_section')
   const isEn = locale === 'en'
 
@@ -217,25 +216,96 @@ function HomeContent({ locale }: { locale: string }) {
         </div>
       </section>
 
-      {/* Stats */}
-      <section style={{ backgroundColor: '#eef4ff' }}>
-        <div className="max-w-screen-xl mx-auto px-6 py-24">
-          <div className="max-w-xl mb-12">
-            <h2 className="font-display text-4xl font-extrabold text-[#0a1d2e] tracking-tight">
-              {tProof('title')}
+      {/* Our Goals */}
+      <section
+        className="py-32 bg-white border-t border-b"
+        style={{ borderColor: 'rgba(195,198,214,0.2)' }}
+      >
+        <div className="max-w-screen-xl mx-auto px-6">
+
+          {/* Header */}
+          <div className="max-w-2xl mb-24">
+            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#003d9b] mb-6">
+              {isEn ? 'Our Goals' : 'Notre Engagement'}
+            </p>
+            <h2 className="font-display text-4xl md:text-5xl font-extrabold text-[#0a1d2e] tracking-tight leading-tight">
+              {isEn
+                ? 'Three outcomes.\nEvery engagement.'
+                : 'Trois objectifs.\nChaque mission.'}
             </h2>
           </div>
-          <div
-            className="grid grid-cols-2 md:grid-cols-4 gap-px"
-            style={{ backgroundColor: 'rgba(195,198,214,0.2)' }}
-          >
-            {[tProof('stat1'), tProof('stat2'), tProof('stat3'), tProof('stat4')].map((stat, i) => (
-              <div key={i} className="bg-white p-10 text-center">
-                <div className="font-display font-bold text-sm text-[#0a1d2e]">{stat}</div>
+
+          {/* 3 Pillars */}
+          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x" style={{ '--tw-divide-opacity': '1', borderColor: 'transparent' }}>
+            {[
+              {
+                ordinal: '01',
+                icon: <Star size={22} strokeWidth={1.25} />,
+                title: isEn ? 'Service Excellence' : 'Excellence du Service',
+                desc: isEn
+                  ? 'Ensuring a consistent, flawless guest experience at every interaction, regardless of who is on shift.'
+                  : "Garantir une exp\u00e9rience client constante et irr\u00e9prochable \u00e0 chaque interaction.",
+              },
+              {
+                ordinal: '02',
+                icon: <Users size={22} strokeWidth={1.25} />,
+                title: isEn ? 'Team Stability' : 'Stabilit\u00e9 des \u00c9quipes',
+                desc: isEn
+                  ? 'Streamlining onboarding to reduce turnover and help your people grow with confidence.'
+                  : "Faciliter l\u2019int\u00e9gration pour r\u00e9duire le turnover et valoriser vos talents.",
+              },
+              {
+                ordinal: '03',
+                icon: <Clock size={22} strokeWidth={1.25} />,
+                title: isEn ? 'Operational Efficiency' : 'Efficacit\u00e9 Op\u00e9rationnelle',
+                desc: isEn
+                  ? 'Freeing up management time by making know-how transferable, documented, and always available.'
+                  : "Lib\u00e9rer du temps manag\u00e9rial en automatisant la transmission du savoir-faire.",
+              },
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="flex flex-col gap-8 py-10 md:py-0"
+                style={{ padding: i === 0 ? '0 3rem 0 0' : i === 2 ? '0 0 0 3rem' : '0 3rem' }}
+              >
+                {/* Ordinal + icon */}
+                <div className="flex items-center justify-between">
+                  <span
+                    className="font-display font-extrabold text-[#0a1d2e]"
+                    style={{ fontSize: '3rem', lineHeight: 1, opacity: 0.06 }}
+                  >
+                    {item.ordinal}
+                  </span>
+                  <div
+                    className="w-11 h-11 flex items-center justify-center text-[#003d9b]"
+                    style={{
+                      border: '1px solid rgba(0,61,155,0.18)',
+                      borderRadius: '50%',
+                    }}
+                  >
+                    {item.icon}
+                  </div>
+                </div>
+
+                {/* Thin separator */}
+                <div style={{ height: '1px', backgroundColor: 'rgba(195,198,214,0.4)' }} />
+
+                {/* Text */}
+                <div className="flex flex-col gap-3">
+                  <h3
+                    className="font-display font-bold text-[#0a1d2e] tracking-tight"
+                    style={{ fontSize: '1.2rem', lineHeight: 1.3 }}
+                  >
+                    {item.title}
+                  </h3>
+                  <p className="text-[#4f6074] leading-relaxed" style={{ fontSize: '0.9rem' }}>
+                    {item.desc}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
-          {tProof('subtitle') && <p className="text-center text-[#737685] text-xs italic mt-6">{tProof('subtitle')}</p>}
+
         </div>
       </section>
 
