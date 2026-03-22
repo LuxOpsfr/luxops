@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useTranslations } from 'next-intl'
 import { Menu, X, Globe, ShoppingCart, User } from 'lucide-react'
 import { useCart } from '@/context/CartContext'
@@ -14,6 +15,8 @@ export default function Header({ locale }: HeaderProps) {
   const t = useTranslations('nav')
   const [menuOpen, setMenuOpen] = useState(false)
   const otherLocale = locale === 'en' ? 'fr' : 'en'
+  const pathname = usePathname()
+  const switchLocalePath = pathname.replace(`/${locale}`, `/${otherLocale}`)
   const { items, openCart } = useCart()
 
   const navLinks = [
@@ -76,7 +79,7 @@ export default function Header({ locale }: HeaderProps) {
         <div className="flex items-center gap-4">
           {/* Language switcher */}
           <Link
-            href={`/${otherLocale}`}
+            href={switchLocalePath}
             className="flex items-center gap-1.5 text-sm text-gray-400 hover:text-[#111111] transition-colors"
           >
             <Globe size={14} />
