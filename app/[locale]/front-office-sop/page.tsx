@@ -67,7 +67,7 @@ export default async function FrontOfficeSopPage({ params }: { params: Promise<{
           </h1>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-10">
             {isEN
-              ? 'A complete front office SOP playbook for luxury hotels. 12 chapters covering every front desk procedure — from check-in to night audit — built to 5-star standards.'
+              ? 'A complete front office SOP playbook for luxury hotels. 12 chapters covering every front desk procedure, from check-in to night audit, built to 5-star standards.'
               : 'Un playbook SOP réception complet pour hôtels de luxe. 12 chapitres couvrant chaque procédure front office, du check-in à l\'audit de nuit, selon les standards 5 étoiles.'}
           </p>
           <Link
@@ -133,12 +133,12 @@ export default async function FrontOfficeSopPage({ params }: { params: Promise<{
           <div className="space-y-6">
             {(isEN ? [
               { title: 'Every guest interaction handled correctly', body: 'From the first greeting to check-out, SOPs ensure your team delivers a consistent, professional experience every time.' },
-              { title: 'Reduce front desk errors', body: 'Billing mistakes, missed requests, miscommunication — structured procedures eliminate the most common and costly front office errors.' },
+              { title: 'Reduce front desk errors', body: 'Billing mistakes, missed requests, miscommunication: structured procedures eliminate the most common and costly front office errors.' },
               { title: 'Train new staff in days', body: 'A documented SOP system means new front desk agents can be operational quickly without relying on tribal knowledge.' },
               { title: 'Protect your online reputation', body: 'Front office performance directly drives review scores. A well-run reception is your most powerful marketing tool.' },
             ] : [
               { title: 'Chaque interaction client correctement gérée', body: 'Du premier accueil au check-out, les SOPs garantissent une expérience cohérente et professionnelle à chaque fois.' },
-              { title: 'Réduire les erreurs de réception', body: 'Erreurs de facturation, demandes manquées, mauvaise communication — des procédures structurées éliminent les erreurs les plus fréquentes.' },
+              { title: 'Réduire les erreurs de réception', body: 'Erreurs de facturation, demandes manquées, mauvaise communication : des procédures structurées éliminent les erreurs les plus fréquentes.' },
               { title: 'Former le personnel en quelques jours', body: 'Un système SOP documenté permet aux nouveaux agents de réception d\'être opérationnels rapidement.' },
               { title: 'Protéger votre réputation en ligne', body: 'La performance de la réception impacte directement les scores d\'avis. Une réception bien gérée est votre meilleur outil marketing.' },
             ]).map((item) => (

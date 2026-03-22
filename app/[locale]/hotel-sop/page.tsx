@@ -110,12 +110,12 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
           </h2>
           <p className="text-gray-600 leading-relaxed mb-4">
             {isEN
-              ? 'A hotel SOP (Standard Operating Procedure) is only effective if it\'s specific, actionable and actually used by your team. Generic templates pulled from the internet rarely reflect the reality of luxury hotel operations — they miss the nuances, the brand standards, and the practical know-how that makes the difference between a 3-star and a 5-star experience.'
-              : 'Un SOP hôtelier n\'est efficace que s\'il est spécifique, actionnable et réellement utilisé par votre équipe. Les modèles génériques trouvés sur internet reflètent rarement la réalité des opérations hôtelières de luxe — ils manquent les nuances, les standards de marque et le savoir-faire pratique qui fait la différence entre une expérience 3 étoiles et 5 étoiles.'}
+              ? 'A hotel SOP (Standard Operating Procedure) is only effective if it\'s specific, actionable and actually used by your team. Generic templates pulled from the internet rarely reflect the reality of luxury hotel operations. They miss the nuances, the brand standards, and the practical know-how that separates a 3-star from a 5-star experience.'
+              : 'Un SOP hôtelier n\'est efficace que s\'il est spécifique, actionnable et réellement utilisé par votre équipe. Les modèles génériques trouvés sur internet reflètent rarement la réalité des opérations hôtelières de luxe. Ils manquent les nuances, les standards de marque et le savoir-faire pratique qui fait la différence entre une expérience 3 étoiles et 5 étoiles.'}
           </p>
           <p className="text-gray-600 leading-relaxed">
             {isEN
-              ? 'The LuxOps playbooks are built by hospitality professionals with direct experience in luxury and boutique hotel operations. Each SOP is practical, precise and immediately deployable — no customisation required to get started.'
+              ? 'The LuxOps playbooks are built by hospitality professionals with direct experience in luxury and boutique hotel operations. Each SOP is practical, precise and immediately deployable, with no customisation required to get started.'
               : 'Les playbooks LuxOps sont conçus par des professionnels de l\'hôtellerie avec une expérience directe dans les opérations d\'hôtels de luxe et boutique. Chaque SOP est pratique, précis et immédiatement déployable.'}
           </p>
         </div>

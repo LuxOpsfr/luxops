@@ -91,7 +91,7 @@ const frFaqs = [
   },
   {
     q: 'Que doit contenir un manuel opérationnel hôtelier ?',
-    a: 'Un manuel utile couvre tous les départements en contact avec les clients ou qui soutiennent leur expérience : Front Office, Housekeeping, F&B, Spa, Conciergerie, Maintenance et RH. Pour chacun, il doit documenter les procédures quotidiennes, les standards de service de référence, les checklists d\'inspection et les chemins d\'escalade quand quelque chose ne se passe pas comme prévu. Il doit aussi inclure des supports d\'intégration pour que les nouveaux collaborateurs aient une référence claire dès leur premier service. La différence entre un manuel qui fonctionne et un qui ne fonctionne pas, c\'est la structure pour un usage quotidien concret — pas un document classé pour les audits. Les playbooks LuxOps sont organisés par département et construits pour servir de références opérationnelles actives.',
+    a: 'Un manuel utile couvre tous les départements en contact avec les clients ou qui soutiennent leur expérience : Front Office, Housekeeping, F&B, Spa, Conciergerie, Maintenance et RH. Pour chacun, il doit documenter les procédures quotidiennes, les standards de service de référence, les checklists d\'inspection et les chemins d\'escalade quand quelque chose ne se passe pas comme prévu. Il doit aussi inclure des supports d\'intégration pour que les nouveaux collaborateurs aient une référence claire dès leur premier service. La différence entre un manuel qui fonctionne et un qui ne fonctionne pas, c\'est la structure pour un usage quotidien concret, pas un document classé pour les audits. Les playbooks LuxOps sont organisés par département et construits pour servir de références opérationnelles actives.',
     link: '/playbooks',
     linkLabel: 'Voir les playbooks hôteliers',
   },
@@ -103,7 +103,7 @@ const frFaqs = [
   },
   {
     q: 'Que sont les standards de service hôtelier ?',
-    a: 'Les standards de service définissent ce que signifie bien faire à chaque moment de contact avec le client — de la façon dont une arrivée est gérée à la façon dont une réclamation est traitée. Ils précisent des éléments concrets : les délais de réponse, le langage d\'accueil, les exigences de présentation, et comment les équipes communiquent entre départements. Les standards donnent à l\'équipe un point de référence au-delà du jugement individuel. Le défi n\'est pas de les définir — la plupart des établissements savent ce qu\'ils veulent. Le défi est de les maintenir appliqués de façon constante au fil des rotations et des évolutions de service. Les intégrer aux SOPs, aux sessions de formation et aux briefings quotidiens est ce qui fait passer un standard de l\'intention à la pratique.',
+    a: 'Les standards de service définissent ce que signifie bien faire à chaque moment de contact avec le client, de la façon dont une arrivée est gérée à la façon dont une réclamation est traitée. Ils précisent des éléments concrets : les délais de réponse, le langage d\'accueil, les exigences de présentation, et comment les équipes communiquent entre départements. Les standards donnent à l\'équipe un point de référence au-delà du jugement individuel. Le défi n\'est pas de les définir. La plupart des établissements savent ce qu\'ils veulent. Le défi est de les maintenir appliqués de façon constante au fil des rotations et des évolutions de service. Les intégrer aux SOPs, aux sessions de formation et aux briefings quotidiens est ce qui fait passer un standard de l\'intention à la pratique.',
     link: null,
     linkLabel: null,
   },
@@ -127,7 +127,7 @@ const frFaqs = [
   },
   {
     q: 'Qu\'est-ce qui fait une bonne procédure housekeeping ?',
-    a: 'La précision est ce qui distingue une procédure housekeeping utile d\'une procédure ignorée. Elle doit définir la tâche clairement, donner les étapes dans l\'ordre, et fixer des repères de qualité vérifiables — pas "la chambre doit être propre" mais ce que propre signifie à chaque point d\'inspection. Elle doit aussi tenir compte des variations qui se présentent vraiment sur le terrain : chambre occupée ou vacante, arrivée VIP, nettoyage approfondi. Elle doit être rédigée pour le valet de chambre, pas pour le directeur des opérations. Si la personne qui exécute la tâche ne peut pas suivre la procédure sans poser de questions, la procédure n\'a pas rempli son rôle.',
+    a: 'La précision est ce qui distingue une procédure housekeeping utile d\'une procédure ignorée. Elle doit définir la tâche clairement, donner les étapes dans l\'ordre, et fixer des repères de qualité vérifiables : pas "la chambre doit être propre" mais ce que propre signifie à chaque point d\'inspection. Elle doit aussi tenir compte des variations qui se présentent vraiment sur le terrain : chambre occupée ou vacante, arrivée VIP, nettoyage approfondi. Elle doit être rédigée pour le valet de chambre, pas pour le directeur des opérations. Si la personne qui exécute la tâche ne peut pas suivre la procédure sans poser de questions, la procédure n\'a pas rempli son rôle.',
     link: null,
     linkLabel: null,
   },

@@ -31,7 +31,7 @@ function FormationContent({ locale }: { locale: string }) {
     {
       icon: <BookOpen size={28} style={{ color: '#003d9b' }} />,
       title: 'Procedures & SOP Rollout',
-      desc: "The most common gap in operational training is not knowledge — it is application. This session takes the team through the actual procedures: how they are structured, why each step matters, and how to apply them from the first shift onward. Not a presentation. A working session.",
+      desc: "The most common gap in operational training is not knowledge; it is application. This session takes the team through the actual procedures: how they are structured, why each step matters, and how to apply them from the first shift onward. Not a presentation. A working session.",
       tags: ['SOPs', 'Procedures', 'Checklists'],
       wide: true,
     },
