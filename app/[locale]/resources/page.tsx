@@ -22,61 +22,61 @@ export async function generateMetadata({
 const enFaqs = [
   {
     q: 'What is a hotel SOP?',
-    a: 'A hotel SOP (Standard Operating Procedure) is a documented set of instructions that defines how a specific task or process should be performed within a hotel department. SOPs ensure consistent execution regardless of who is on shift, reducing errors and maintaining service quality. They cover everything from check-in procedures at the front desk to room inspection checklists in housekeeping. Well-structured hotel SOPs are the foundation of operational consistency. LuxOps provides complete, department-specific SOP playbooks built from real hotel operations.',
+    a: 'A hotel SOP is a written set of instructions that defines how a specific task should be performed in a hotel department. When procedures are written clearly, teams can work to the same standard across shifts, regardless of who is on duty. Without that documentation, the quality of a check-in or a room inspection depends on the individual doing it — which is not a reliable foundation. SOPs cover the full operational range: arrival and departure sequences at the front desk, room inspection criteria in housekeeping, service sequences in F&B, booking procedures in spa. LuxOps provides department-specific playbooks built from real hotel work, not from generic operations templates.',
     link: '/playbooks',
     linkLabel: 'Explore our operational playbooks',
   },
   {
     q: 'What should a hotel operations manual include?',
-    a: 'A hotel operations manual should cover all key departments: Front Office, Housekeeping, Food & Beverage, Spa, Concierge, Engineering and HR. For each department, it should document service standards, step-by-step procedures, quality control checklists, communication protocols and escalation paths. It should also include onboarding guides, brand standards, and guest journey touchpoints. The manual should be structured for practical daily use, not just reference. LuxOps playbooks are organised by department and designed to function as complete, ready-to-use operations manuals.',
+    a: 'A useful manual covers all the departments that interact with guests or support the guest experience: Front Office, Housekeeping, F&B, Spa, Concierge, Engineering and HR. For each one, it should document the procedures teams follow daily, the service standards they work to, quality checklists used for inspection, and escalation paths when something goes wrong. It should also include onboarding material so new team members have a clear reference from their first shift. The key distinction between a manual that works and one that does not is whether it is built for daily use — not filed away for audits. LuxOps playbooks are organised by department and built to serve as working operational references.',
     link: '/playbooks',
     linkLabel: 'View hotel operations playbooks',
   },
   {
     q: 'How are housekeeping SOPs structured?',
-    a: 'Effective housekeeping SOPs are structured around three core areas: room preparation (entry procedures, sequence of tasks, quality standards), linen and amenity management (par levels, replenishment cycles, handling protocols), and inspection processes (room release checklists, supervisory sign-off, defect reporting). Additional sections cover deep-cleaning schedules, turndown service standards, lost and found procedures, and guest request handling. Each procedure should be specific enough for a new team member to follow without supervision. LuxOps Housekeeping Playbook covers all of these with approximately 220 pages of documented procedures.',
+    a: 'Housekeeping SOPs typically organise around three operational areas. The first is room preparation: the entry sequence, task order, and quality criteria for a room ready for the guest. The second is linen and amenity management: par levels, replenishment cycles, and handling procedures that keep supplies consistent across floors. The third is the inspection process: room release checklists, supervisory sign-off, and how defects are logged and escalated. Additional procedures cover turndown service, deep-cleaning schedules, lost and found, and guest requests. Each SOP should be specific enough that someone new to the department can follow it without asking a supervisor. The LuxOps Housekeeping Playbook covers all of this across approximately 220 pages.',
     link: '/playbooks',
     linkLabel: 'Housekeeping Playbook',
   },
   {
     q: 'What are hotel service standards?',
-    a: 'Hotel service standards define the expected level of quality and consistency at each guest touchpoint — from arrival and check-in to dining, housekeeping, and departure. They specify response times, greeting protocols, presentation requirements, communication tone, and escalation procedures. Standards are typically set at brand level and then adapted for each property. Documenting them clearly is what allows teams to deliver consistent experiences regardless of staff changes. Service standards should be embedded in SOPs, training materials and daily briefings.',
+    a: 'Service standards define what good execution looks like at every guest-facing moment — from how an arrival is handled to how a complaint is managed. They specify response times, greeting language, presentation requirements, and how the team communicates across departments. Standards give teams a reference point beyond personal judgment. The challenge is not defining them — most properties have an idea of what they want. The challenge is keeping them consistently applied as staff change and services evolve. Embedding standards in SOPs, training sessions, and daily briefings is what moves them from aspiration to practice.',
     link: null,
     linkLabel: null,
   },
   {
     q: 'How do hotels maintain operational consistency?',
-    a: 'Operational consistency in hotels comes from three things working together: documented procedures, structured training, and regular quality review. When all three are in place, service quality becomes predictable and less dependent on individual staff. Documented SOPs eliminate ambiguity. Training embeds the standards into daily practice. Audits identify drift before it affects the guest experience. Properties that rely on informal knowledge transfer tend to see inconsistency spike with turnover. LuxOps offers audits and custom process creation to help hotels build this foundation.',
+    a: 'Most inconsistency in hotel operations traces back to the same source: knowledge that lives in people\'s heads rather than in written procedures. When a long-serving team member leaves, a shift supervisor is absent, or a new hire joins mid-season, the standard reverts to what each individual knows. Documented procedures give the team a clear reference. Structured training embeds those procedures into daily habits. Regular quality reviews catch drift before it shows up in guest feedback. Properties that rely on informal knowledge transfer will see their service quality track their staffing. LuxOps offers quality audits and custom process creation for properties building this structure.',
     link: '/audit-qualite',
     linkLabel: 'Learn about our quality audit',
   },
   {
     q: 'What is a hotel playbook?',
-    a: 'A hotel playbook is a comprehensive operational guide for a specific department. Unlike a general policy document, a playbook contains step-by-step procedures, service scripts, checklists, standards references and quality benchmarks — everything a team needs to operate consistently. Playbooks are designed for daily use, not shelf storage. They should be formatted clearly, logically ordered, and written at a level appropriate for the full team. LuxOps operational playbooks cover Front Office, Housekeeping, F&B and Spa, and are available in English and French.',
+    a: 'A useful hotel playbook gives teams one place to find the procedures, service standards, scripts, and checklists they need to work properly. It is organised by department and written for daily operational use — not as a reference document for managers, but as a working tool for the people delivering the service. Unlike a generic policy document, a playbook contains the actual steps: how a check-in runs, what a room inspection covers, how a complaint gets escalated. LuxOps playbooks cover Front Office, Housekeeping, F&B and Spa, and are available in both English and French.',
     link: '/playbooks',
     linkLabel: 'Browse operational playbooks',
   },
   {
     q: 'How are hotel procedures documented?',
-    a: 'Hotel procedures can be documented in several formats: printed manuals, PDF guides, digital workspaces (such as Notion or SharePoint), or training platforms. The format matters less than the structure and accessibility. Procedures should be easy to find, easy to read, and kept up to date. Digital systems allow for version control and easier updates. Notion-based systems, in particular, offer good flexibility for multi-department operations management. LuxOps delivers procedures in PDF and Notion formats, and can build custom Notion workspaces for hotel teams.',
+    a: 'Procedures can live in different formats: printed binders, PDF guides, shared drives, or digital workspaces like Notion or SharePoint. The format matters less than whether the procedures are findable, readable, and current. A well-structured manual that is two years out of date is less useful than a simpler document the team actually references. Digital systems have real advantages for maintenance: version control, easier updates, and access from the floor during a shift. Notion-based workspaces work well for multi-department operations because they allow different views and access levels by team. LuxOps delivers procedures in PDF and Notion formats, and can build custom Notion workspaces adapted to a property\'s structure.',
     link: '/notion-templates',
     linkLabel: 'Explore Notion templates for hotels',
   },
   {
     q: 'What makes an effective housekeeping SOP?',
-    a: 'An effective housekeeping SOP is specific, actionable and written for the team member who will execute it — not for management. It should define the task clearly, specify the sequence of actions, include quality benchmarks (what does "clean" look like?), and indicate how long each task should take. It should also account for variations such as occupied vs vacant rooms, VIP arrivals and deep-cleaning cycles. Clarity and precision are what turn a standard into a usable tool. Vague standards lead to inconsistent rooms; precise ones lead to predictable quality.',
+    a: 'Specificity is what separates a useful housekeeping SOP from one that gets ignored. The procedure needs to define the task clearly, give the steps in order, and set quality benchmarks that can actually be verified — not "the room should be clean" but what clean means at each inspection point. It should also account for the variations that come up regularly on the floor: occupied versus vacant rooms, VIP arrivals, deep-cleaning cycles. And it should be written for the room attendant, not for the operations director. If the person executing the task cannot follow the SOP without asking questions, the SOP has not done its job.',
     link: null,
     linkLabel: null,
   },
   {
     q: 'How do hotels train staff on operational procedures?',
-    a: 'Effective hotel staff training on procedures involves three stages: initial onboarding (structured introduction to standards and SOPs), supervised practice (hands-on execution with observation and feedback), and ongoing reinforcement (briefings, refresher sessions and quality reviews). Training should be built around the documented procedures, not delivered separately from them. On-property training sessions that directly reference the team\'s own SOPs are more effective than generic workshops. LuxOps offers half-day and full-day training sessions for hotel teams, designed around your property\'s specific procedures.',
+    a: 'Training that works is built around the actual procedures the team uses, not delivered separately from them. The structure that holds up in practice involves three stages: an initial onboarding period where new team members are walked through the SOPs governing their role, a supervised period where they execute tasks with direct observation and feedback, and ongoing reinforcement through briefings and quality reviews. The gap in most properties is not the first stage — it is the third. Standards drift when reinforcement stops. On-property training sessions built around a property\'s specific procedures are significantly more effective than generic hospitality workshops. LuxOps offers half-day and full-day sessions designed around your team\'s operational context.',
     link: '/formation',
     linkLabel: 'On-property training sessions',
   },
   {
     q: 'What operational standards apply to high-end hotels?',
-    a: 'High-end hotels are expected to meet elevated standards across every department: precise greeting protocols, zero-defect room presentation, proactive guest recognition, rapid response times and seamless inter-departmental communication. These standards are often codified in brand manuals but must be adapted to each property\'s layout, team size and guest profile. What distinguishes top-performing properties is not the existence of standards, but the consistency with which they are applied — which depends on documentation, training and regular review. LuxOps works with properties to build the operational structure that makes consistent performance achievable.',
+    a: 'High-end hotel operations are expected to hold a consistent level across every department and every shift: precise arrivals handling, zero-defect room presentation, proactive guest recognition, fast response to requests, and inter-departmental communication that does not leave guests waiting on a handover. These expectations do not change with the night or the team on duty. What separates properties that deliver on them from those that struggle is not the quality of their standards document. It is whether those standards are embedded in daily operations — through procedures, training, and regular review. LuxOps works with independent and high-end properties to build the operational structure that makes consistent execution achievable.',
     link: null,
     linkLabel: null,
   },
@@ -85,61 +85,61 @@ const enFaqs = [
 const frFaqs = [
   {
     q: 'Qu\'est-ce qu\'un SOP hôtelier ?',
-    a: 'Un SOP hôtelier (Standard Operating Procedure) est un ensemble d\'instructions documentées qui définit comment une tâche ou un process doit être exécuté au sein d\'un département hôtelier. Les SOPs garantissent une exécution cohérente quelle que soit l\'équipe en place, réduisent les erreurs et maintiennent la qualité de service. Ils couvrent aussi bien les procédures de check-in à la réception que les checklists d\'inspection des chambres en housekeeping. Des SOPs bien structurés sont le fondement de la constance opérationnelle. LuxOps propose des playbooks complets par département, issus de l\'exploitation hôtelière réelle.',
+    a: 'Un SOP hôtelier est un ensemble d\'instructions écrites qui définit comment une tâche précise doit être réalisée dans un département. Quand les procédures sont clairement rédigées, les équipes peuvent travailler au même standard d\'un service à l\'autre, quel que soit le collaborateur en poste. Sans cette documentation, la qualité d\'un check-in ou d\'une inspection de chambre dépend de la personne qui l\'exécute. Les SOPs couvrent l\'ensemble du spectre opérationnel : séquences d\'arrivée et de départ à la réception, critères d\'inspection des chambres en housekeeping, séquences de service en F&B, procédures de réservation au spa. LuxOps propose des playbooks par département issus du travail hôtelier réel, pas de templates opérationnels génériques.',
     link: '/playbooks',
     linkLabel: 'Découvrir nos playbooks opérationnels',
   },
   {
     q: 'Que doit contenir un manuel opérationnel hôtelier ?',
-    a: 'Un manuel opérationnel hôtelier doit couvrir tous les départements clés : Front Office, Housekeeping, Food & Beverage, Spa, Concierge, Maintenance et RH. Pour chaque département, il doit documenter les standards de service, les procédures étape par étape, les checklists de contrôle qualité, les protocoles de communication et les processus d\'escalade. Il doit également inclure des guides d\'intégration, les standards de marque et les étapes clés du parcours client. Le manuel doit être structuré pour un usage quotidien concret. Les playbooks LuxOps sont organisés par département et conçus pour servir de manuels opérationnels complets et directement utilisables.',
+    a: 'Un manuel utile couvre tous les départements en contact avec les clients ou qui soutiennent leur expérience : Front Office, Housekeeping, F&B, Spa, Conciergerie, Maintenance et RH. Pour chacun, il doit documenter les procédures quotidiennes, les standards de service de référence, les checklists d\'inspection et les chemins d\'escalade quand quelque chose ne se passe pas comme prévu. Il doit aussi inclure des supports d\'intégration pour que les nouveaux collaborateurs aient une référence claire dès leur premier service. La différence entre un manuel qui fonctionne et un qui ne fonctionne pas, c\'est la structure pour un usage quotidien concret — pas un document classé pour les audits. Les playbooks LuxOps sont organisés par département et construits pour servir de références opérationnelles actives.',
     link: '/playbooks',
     linkLabel: 'Voir les playbooks hôteliers',
   },
   {
     q: 'Comment sont structurées les procédures housekeeping ?',
-    a: 'Des procédures housekeeping efficaces s\'organisent autour de trois axes : la préparation des chambres (séquence d\'entrée, ordre des tâches, standards de qualité), la gestion du linge et des amenités (niveaux de stock, cycles de réapprovisionnement, protocoles de manipulation), et les processus d\'inspection (checklists de libération de chambre, validation par le superviseur, signalement des défauts). Des sections complémentaires couvrent le nettoyage approfondi, les protocoles de couverture, les objets trouvés et les demandes clients. Chaque procédure doit être suffisamment précise pour qu\'un nouvel employé puisse l\'exécuter sans supervision. Le Playbook Housekeeping LuxOps couvre l\'ensemble de ces éléments sur environ 220 pages.',
+    a: 'Les procédures housekeeping s\'organisent autour de trois domaines opérationnels. Le premier est la préparation des chambres : la séquence d\'entrée, l\'ordre des tâches et les critères de qualité qui définissent à quoi ressemble une chambre prête pour le client. Le deuxième est la gestion du linge et des amenities : niveaux de par stock, cycles de réapprovisionnement et protocoles de manipulation qui maintiennent la régularité des approvisionnements sur les étages. Le troisième est le processus d\'inspection : checklists de libération de chambre, validation par le superviseur, et comment les défauts sont notés et remontés. Des procédures complémentaires couvrent le service de couverture, les nettoyages approfondis, les objets trouvés et les demandes clients. Le Playbook Housekeeping LuxOps couvre l\'ensemble de ces éléments sur environ 220 pages.',
     link: '/playbooks',
     linkLabel: 'Playbook Housekeeping',
   },
   {
     q: 'Que sont les standards de service hôtelier ?',
-    a: 'Les standards de service hôtelier définissent le niveau de qualité et de constance attendu à chaque étape du parcours client — de l\'arrivée et du check-in jusqu\'au repas, au housekeeping et au départ. Ils précisent les délais de réponse, les protocoles d\'accueil, les exigences de présentation, le ton de communication et les procédures d\'escalade. Ces standards sont généralement définis au niveau de la marque, puis adaptés à chaque établissement. Les documenter clairement est ce qui permet aux équipes de délivrer une expérience constante indépendamment des rotations de personnel. Les standards de service doivent être intégrés aux SOPs, aux supports de formation et aux briefings quotidiens.',
+    a: 'Les standards de service définissent ce que signifie bien faire à chaque moment de contact avec le client — de la façon dont une arrivée est gérée à la façon dont une réclamation est traitée. Ils précisent des éléments concrets : les délais de réponse, le langage d\'accueil, les exigences de présentation, et comment les équipes communiquent entre départements. Les standards donnent à l\'équipe un point de référence au-delà du jugement individuel. Le défi n\'est pas de les définir — la plupart des établissements savent ce qu\'ils veulent. Le défi est de les maintenir appliqués de façon constante au fil des rotations et des évolutions de service. Les intégrer aux SOPs, aux sessions de formation et aux briefings quotidiens est ce qui fait passer un standard de l\'intention à la pratique.',
     link: null,
     linkLabel: null,
   },
   {
     q: 'Comment les hôtels maintiennent-ils la constance opérationnelle ?',
-    a: 'La constance opérationnelle dans les hôtels repose sur trois éléments qui fonctionnent ensemble : des procédures documentées, une formation structurée et des revues qualité régulières. Quand les trois sont en place, la qualité de service devient prévisible et moins dépendante des individus. Les SOPs documentés éliminent l\'ambiguïté. La formation ancre les standards dans la pratique quotidienne. Les audits identifient les dérives avant qu\'elles n\'affectent l\'expérience client. Les établissements qui s\'appuient sur une transmission informelle des savoirs sont les premiers touchés par les effets du turnover. LuxOps propose des audits et de la création de process pour aider les hôtels à construire cette base.',
+    a: 'La réponse honnête est que la plupart des incohérences dans les opérations hôtelières remontent à la même source : des savoirs qui vivent dans les têtes plutôt que dans des procédures écrites. Quand un collaborateur expérimenté part, qu\'un superviseur est absent ou qu\'un nouveau rejoint l\'équipe en pleine saison, le standard revient à ce que chaque individu connaît. Des procédures documentées donnent à l\'équipe un référentiel clair. Une formation structurée ancre ces procédures dans les habitudes quotidiennes. Des revues qualité régulières détectent les dérives avant qu\'elles n\'apparaissent dans les avis clients. Les établissements qui s\'appuient sur la transmission informelle verront leur qualité de service suivre l\'état de leurs effectifs. LuxOps propose des audits qualité et de la création de process pour les établissements qui construisent cette structure.',
     link: '/audit-qualite',
     linkLabel: 'En savoir plus sur notre audit qualité',
   },
   {
     q: 'Qu\'est-ce qu\'un playbook hôtelier ?',
-    a: 'Un playbook hôtelier est un guide opérationnel complet dédié à un département spécifique. Contrairement à un document de politique générale, un playbook contient des procédures étape par étape, des scripts de service, des checklists, des références de standards et des repères qualité — tout ce dont une équipe a besoin pour opérer de façon cohérente. Les playbooks sont conçus pour un usage quotidien, pas pour rester sur une étagère. Ils doivent être clairs, logiquement organisés et rédigés à un niveau accessible à l\'ensemble de l\'équipe. Les playbooks LuxOps couvrent le Front Office, le Housekeeping, le F&B et le Spa, et sont disponibles en français et en anglais.',
+    a: 'Un playbook hôtelier utile donne aux équipes un seul endroit où trouver les procédures, standards de service, scripts et checklists dont elles ont besoin pour bien travailler. Il est organisé par département et rédigé pour un usage opérationnel quotidien — pas comme un document de référence pour les managers, mais comme un outil de travail pour les personnes qui font le service. Contrairement à un document de politique générale, un playbook contient les étapes réelles : comment se déroule un check-in, ce que couvre une inspection de chambre, comment une réclamation est escaladée. Les playbooks LuxOps couvrent le Front Office, le Housekeeping, le F&B et le Spa, et sont disponibles en français et en anglais.',
     link: '/playbooks',
     linkLabel: 'Voir les playbooks opérationnels',
   },
   {
     q: 'Comment documenter les procédures hôtelières ?',
-    a: 'Les procédures hôtelières peuvent être documentées sous plusieurs formats : manuels imprimés, guides PDF, espaces de travail numériques (Notion, SharePoint) ou plateformes de formation. Le format importe moins que la structure et l\'accessibilité. Les procédures doivent être faciles à retrouver, lisibles et régulièrement mises à jour. Les systèmes numériques permettent le contrôle des versions et facilitent les modifications. Les espaces Notion offrent notamment une bonne flexibilité pour la gestion opérationnelle multi-départements. LuxOps livre les procédures en format PDF et Notion, et peut construire des espaces Notion sur-mesure pour les équipes hôtelières.',
+    a: 'Les procédures peuvent prendre différentes formes : classeurs imprimés, guides PDF, drives partagés ou espaces de travail numériques comme Notion ou SharePoint. Le format importe moins que le fait que les procédures soient trouvables, lisibles et à jour. Un manuel parfaitement structuré mais vieux de deux ans est moins utile qu\'un document simple que l\'équipe consulte vraiment. Les systèmes numériques ont des avantages réels pour la maintenance : contrôle des versions, mises à jour facilitées et accès depuis le terrain. Les espaces Notion fonctionnent bien pour les opérations multi-départements parce qu\'ils permettent différentes vues et niveaux d\'accès selon le rôle. LuxOps livre les procédures en format PDF et Notion, et peut construire des espaces Notion adaptés à la structure d\'un établissement.',
     link: '/notion-templates',
     linkLabel: 'Découvrir les templates Notion pour hôtels',
   },
   {
     q: 'Qu\'est-ce qui fait une bonne procédure housekeeping ?',
-    a: 'Une procédure housekeeping efficace est précise, actionnable et rédigée pour le collaborateur qui va l\'exécuter — pas pour la direction. Elle doit définir clairement la tâche, préciser la séquence d\'actions, inclure des repères qualité (à quoi ressemble une chambre "propre" ?) et indiquer le temps alloué à chaque étape. Elle doit également prendre en compte les variations : chambre occupée ou vacante, arrivée VIP, nettoyage approfondi. La clarté et la précision sont ce qui transforme un standard en outil utilisable. Des standards vagues produisent des chambres inégales ; des standards précis produisent une qualité prévisible.',
+    a: 'La précision est ce qui distingue une procédure housekeeping utile d\'une procédure ignorée. Elle doit définir la tâche clairement, donner les étapes dans l\'ordre, et fixer des repères de qualité vérifiables — pas "la chambre doit être propre" mais ce que propre signifie à chaque point d\'inspection. Elle doit aussi tenir compte des variations qui se présentent vraiment sur le terrain : chambre occupée ou vacante, arrivée VIP, nettoyage approfondi. Elle doit être rédigée pour le valet de chambre, pas pour le directeur des opérations. Si la personne qui exécute la tâche ne peut pas suivre la procédure sans poser de questions, la procédure n\'a pas rempli son rôle.',
     link: null,
     linkLabel: null,
   },
   {
     q: 'Comment former le personnel aux procédures opérationnelles ?',
-    a: 'La formation efficace du personnel hôtelier aux procédures comprend trois étapes : l\'intégration initiale (présentation structurée des standards et des SOPs), la pratique supervisée (exécution en situation avec observation et retour), et le renforcement continu (briefings, sessions de remise à niveau et revues qualité). La formation doit s\'appuyer sur les procédures documentées, pas être déconnectée d\'elles. Des sessions de formation en établissement directement basées sur les SOPs de votre propriété sont plus efficaces que des ateliers génériques. LuxOps propose des sessions demi-journée et journée entière pour les équipes hôtelières, conçues autour des procédures spécifiques de votre établissement.',
+    a: 'Une formation qui fonctionne est construite autour des procédures réelles que l\'équipe utilise, pas délivrée indépendamment d\'elles. La structure qui tient en pratique comprend trois phases : une période d\'intégration initiale où les nouveaux collaborateurs parcourent les SOPs qui régissent leur rôle, une période supervisée où ils exécutent les tâches avec observation directe et retour, et un renforcement continu via des briefings et des revues qualité. Le manque dans la plupart des établissements n\'est pas la première phase — c\'est la troisième. Les standards dérivent quand le renforcement s\'arrête. Des sessions de formation en établissement construites autour des procédures spécifiques de votre propriété sont nettement plus efficaces qu\'une formation hôtelière générique. LuxOps propose des sessions demi-journée et journée entière conçues autour du contexte opérationnel de votre équipe.',
     link: '/formation',
     linkLabel: 'Formation opérationnelle en établissement',
   },
   {
     q: 'Quels standards opérationnels s\'appliquent aux hôtels haut de gamme ?',
-    a: 'Les hôtels haut de gamme doivent répondre à des standards élevés dans chaque département : protocoles d\'accueil précis, présentation des chambres sans défaut, reconnaissance proactive des clients, délais de réponse courts et communication inter-départements fluide. Ces standards sont souvent codifiés dans les manuels de marque mais doivent être adaptés à chaque établissement selon sa configuration, la taille de ses équipes et son profil de clientèle. Ce qui distingue les établissements les plus performants, ce n\'est pas l\'existence de standards mais la constance avec laquelle ils sont appliqués — ce qui dépend de la documentation, de la formation et des revues régulières. LuxOps accompagne les établissements dans la construction de la structure opérationnelle qui rend cette constance atteignable.',
+    a: 'Les opérations d\'un hôtel haut de gamme sont censées tenir un niveau constant sur tous les départements et tous les services : une gestion des arrivées précise, une présentation des chambres sans défaut, une reconnaissance proactive des clients, des délais de réponse rapides et une communication inter-départements qui ne laisse pas les clients attendre sur une passation. Ces attentes ne changent pas avec le service ou l\'équipe en poste. Ce qui distingue les établissements qui y répondent de ceux qui peinent n\'est pas la qualité de leur document de standards. C\'est si ces standards sont réellement ancrés dans les opérations quotidiennes — via des procédures, une formation et des revues régulières. LuxOps accompagne les établissements indépendants et haut de gamme dans la construction de la structure qui rend une exécution constante atteignable.',
     link: null,
     linkLabel: null,
   },
@@ -182,8 +182,8 @@ export default async function ResourcesPage({
           </h1>
           <p className="text-xl text-gray-400 leading-relaxed">
             {isEn
-              ? 'Expert guidance on operational standards, SOPs and procedures for high-end hospitality.'
-              : 'Conseils experts sur les standards opérationnels, SOPs et procédures pour l\'hôtellerie haut de gamme.'}
+              ? 'Practical guidance on hotel SOPs, procedures, and service standards. Built around how hotel departments actually operate.'
+              : 'R\u00e9ponses pratiques sur les SOPs h\u00f4teliers, les proc\u00e9dures op\u00e9rationnelles et les standards de service. Construites autour du fonctionnement r\u00e9el des d\u00e9partements h\u00f4teliers.'}
           </p>
         </div>
       </section>
@@ -219,13 +219,13 @@ export default async function ResourcesPage({
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
             {isEn
-              ? 'Need Ready-to-Use Operational Resources?'
-              : 'Besoin de Ressources Opérationnelles Directement Utilisables ?'}
+              ? 'Putting structure behind these questions'
+              : 'Mettre de la structure derri\u00e8re ces questions'}
           </h2>
           <p className="text-gray-300 mb-10 text-lg font-light">
             {isEn
-              ? 'LuxOps provides complete playbooks, custom process creation and on-property training.'
-              : 'LuxOps propose des playbooks complets, de la création de process sur-mesure et de la formation en établissement.'}
+              ? 'If these are the operational questions your property is working through, LuxOps provides the tools to act on them. Playbooks, custom process creation, and on-property training built for real hotel teams.'
+              : 'Si ce sont les questions op\u00e9rationnelles que votre \u00e9tablissement cherche \u00e0 r\u00e9soudre, LuxOps propose les outils pour y r\u00e9pondre concr\u00e8tement. Playbooks, cr\u00e9ation de process sur-mesure et formation en \u00e9tablissement con\u00e7us pour les \u00e9quipes h\u00f4teli\u00e8res r\u00e9elles.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
