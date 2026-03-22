@@ -117,32 +117,52 @@ function HomeContent({ locale }: { locale: string }) {
             </div>
           </div>
 
-          {/* Right — stats preview */}
+          {/* Right — 3 pillars card */}
           <div className="flex-1 w-full max-w-sm lg:max-w-none">
             <div
-              className="bg-white p-8"
+              className="bg-white p-10 flex flex-col gap-8"
               style={{
                 borderRadius: '0.125rem',
                 boxShadow: '0 20px 60px rgba(10,29,46,0.08)',
                 border: '1px solid rgba(195,198,214,0.2)',
               }}
             >
-              <p className="text-[10px] font-bold uppercase tracking-widest text-[#737685] mb-6">
-                {isEn ? 'Operational Impact' : 'Impact Opérationnel'}
-              </p>
-              <div className="grid grid-cols-2 gap-1">
-                {[
-                  { v: '-40%', l: isEn ? 'Check-in Errors' : 'Erreurs Check-in' },
-                  { v: '+22%', l: isEn ? 'Guest Satisfaction' : 'Satisfaction Client' },
-                  { v: '-35%', l: isEn ? 'Inspection Time' : "Temps d'Inspection" },
-                  { v: 'ROI 3x', l: isEn ? 'First Semester' : 'Premier Semestre' },
-                ].map((s, i) => (
-                  <div key={i} className="p-5 text-center" style={{ backgroundColor: '#f8f9ff' }}>
-                    <div className="font-display text-2xl font-extrabold text-[#003d9b]">{s.v}</div>
-                    <div className="text-[10px] font-bold uppercase tracking-wider text-[#4f6074] mt-1">{s.l}</div>
+              {[
+                {
+                  icon: <Star size={18} strokeWidth={1.25} />,
+                  title: isEn ? 'Service Excellence' : 'Excellence du Service',
+                  desc: isEn
+                    ? 'A consistent, flawless guest experience at every interaction.'
+                    : 'Une exp\u00e9rience client constante et irr\u00e9prochable \u00e0 chaque interaction.',
+                },
+                {
+                  icon: <Users size={18} strokeWidth={1.25} />,
+                  title: isEn ? 'Team Stability' : 'Stabilit\u00e9 des \u00c9quipes',
+                  desc: isEn
+                    ? 'Structured onboarding that reduces turnover and builds confidence.'
+                    : "Une int\u00e9gration structur\u00e9e qui r\u00e9duit le turnover et valorise vos talents.",
+                },
+                {
+                  icon: <Clock size={18} strokeWidth={1.25} />,
+                  title: isEn ? 'Operational Efficiency' : 'Efficacit\u00e9 Op\u00e9rationnelle',
+                  desc: isEn
+                    ? 'Know-how documented, transferable, and always available.'
+                    : 'Le savoir-faire document\u00e9, transmissible, toujours disponible.',
+                },
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-4">
+                  <div
+                    className="flex-shrink-0 w-9 h-9 flex items-center justify-center text-[#003d9b]"
+                    style={{ border: '1px solid rgba(0,61,155,0.15)', borderRadius: '50%' }}
+                  >
+                    {item.icon}
                   </div>
-                ))}
-              </div>
+                  <div>
+                    <p className="font-display font-bold text-[#0a1d2e] text-sm mb-1">{item.title}</p>
+                    <p className="text-[#4f6074] text-xs leading-relaxed">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
