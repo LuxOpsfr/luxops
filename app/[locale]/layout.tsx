@@ -13,7 +13,7 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
 const manrope = Manrope({ subsets: ['latin'], variable: '--font-display', weight: ['400', '600', '700', '800'] })
 
 export const metadata: Metadata = {
-  title: 'LuxOps — Hotel Operations Playbooks, SOPs & Training',
+  title: 'LuxOps | Standardizing Excellence in High-End Hospitality',
   description:
     'Operational playbooks, SOP frameworks and on-property training for high-end hotels. Front Office, Housekeeping, F&B, Spa. Built from real hotel operations.',
   keywords: [

@@ -30,9 +30,33 @@ export default function Header({ locale }: HeaderProps) {
         {/* Logo */}
         <Link
           href={`/${locale}`}
-          className="text-[#111111] font-bold text-xl tracking-widest"
+          className="flex flex-col gap-[3px] no-underline"
         >
-          LuxOps
+          <span
+            className="font-bold uppercase text-[#0a1d2e]"
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: '1rem',
+              letterSpacing: '0.22em',
+              lineHeight: 1,
+            }}
+          >
+            LuxOps
+          </span>
+          <span
+            className="hidden lg:block text-[#003d9b] font-medium uppercase"
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: '7.5px',
+              letterSpacing: '0.14em',
+              lineHeight: 1,
+              opacity: 0.75,
+            }}
+          >
+            {locale === 'en'
+              ? 'Standardizing Excellence in High-End Hospitality'
+              : "L\u2019Excellence Op\u00e9rationnelle en H\u00f4tellerie de Luxe"}
+          </span>
         </Link>
 
         {/* Desktop Nav */}
