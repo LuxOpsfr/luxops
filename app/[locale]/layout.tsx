@@ -39,6 +39,37 @@ export const metadata: Metadata = {
     'standards service hôtel',
     'audit qualité hôtel',
   ],
+  openGraph: {
+    type: 'website',
+    siteName: 'LuxOps',
+    title: 'LuxOps | Standardizing Excellence in High-End Hospitality',
+    description:
+      'Operational playbooks, SOP frameworks and on-property training for high-end hotels. Front Office, Housekeeping, F&B, Spa. Built from real hotel operations.',
+    url: 'https://www.luxops.fr',
+    images: [
+      {
+        url: 'https://www.luxops.fr/Previews/fb-preview.jpg.png',
+        width: 1200,
+        height: 630,
+        alt: 'LuxOps — Hotel Operations Playbooks & SOP Frameworks',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'LuxOps | Hotel Operations Playbooks & SOPs',
+    description:
+      'Operational playbooks, SOP frameworks and on-property training for high-end hotels.',
+    images: ['https://www.luxops.fr/Previews/fb-preview.jpg.png'],
+  },
+  alternates: {
+    canonical: 'https://www.luxops.fr',
+    languages: {
+      'en': 'https://www.luxops.fr/en',
+      'fr': 'https://www.luxops.fr/fr',
+      'x-default': 'https://www.luxops.fr/en',
+    },
+  },
   verification: {
     google: 'WSMYWLKVx8J9gq1vEj6wiRBqmej4G1StcRmx4W830SU',
     other: {
