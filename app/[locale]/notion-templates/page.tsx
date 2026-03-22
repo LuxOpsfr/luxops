@@ -70,31 +70,31 @@ function NotionContent({ locale }: { locale: string }) {
   const benefits = [
     {
       icon: <LayoutGrid size={20} style={{ color: '#003d9b' }} />,
-      title: isEn ? '100% Modular' : '100% Modulaire',
+      title: isEn ? 'Modular by Design' : 'Structure modulaire',
       desc: isEn
-        ? 'Add blocks, duplicate databases and adapt every process without touching a single line of code.'
-        : 'Ajoutez des blocs, dupliquez des bases et adaptez chaque process sans toucher une ligne de code.',
+        ? 'Adapt by department, property, or workflow without rebuilding the structure. Each section works independently and connects to the whole.'
+        : "Adaptez par département, par établissement ou par flux de travail sans tout reconstruire. Chaque section fonctionne de façon autonome et s'intègre à l'ensemble.",
     },
     {
       icon: <MessageSquare size={20} style={{ color: '#003d9b' }} />,
-      title: isEn ? 'Comments & Mentions' : 'Commentaires & Mentions',
+      title: isEn ? 'Faster Handovers' : 'Passations plus claires',
       desc: isEn
-        ? 'Tag team members directly on any task or procedure for instant, contextual communication.'
-        : 'Taguez vos collaborateurs directement sur une tâche ou procédure pour une communication instantanée.',
+        ? 'Comments and mentions directly on tasks or procedures. Fewer missed follow-ups, clearer accountability between shifts and teams.'
+        : 'Commentaires et mentions directement sur les tâches ou procédures. Moins de suivis manqués, une responsabilité plus claire entre les services.',
     },
     {
       icon: <BarChart2 size={20} style={{ color: '#003d9b' }} />,
-      title: isEn ? 'Multi-View Dashboards' : 'Vues Multiples',
+      title: isEn ? 'One View Per Role' : 'Une vue par rôle',
       desc: isEn
-        ? 'Switch between Calendar, Kanban, Gallery or Table views to match your operational needs.'
-        : 'Basculez entre Calendrier, Kanban, Galerie ou Table selon vos besoins opérationnels.',
+        ? 'Managers, supervisors, and department heads each see what they need. Calendar, board, or table — filtered to their scope.'
+        : 'Directeurs, superviseurs et chefs de département voient ce dont ils ont besoin. Calendrier, tableau ou liste — filtré selon leur périmètre.',
     },
     {
       icon: <Smartphone size={20} style={{ color: '#003d9b' }} />,
-      title: isEn ? 'Cloud & Mobile' : 'Cloud & Mobile',
+      title: isEn ? 'Mobile-Ready' : 'Accessible en mobilité',
       desc: isEn
-        ? 'Access your hub from any device. Perfect for floor inspectors or kitchen supervisors on the go.'
-        : "Accédez depuis n'importe quel appareil. Parfait pour les inspections en étage ou la supervision en cuisine.",
+        ? 'Floor checks, maintenance follow-up, room inspections, shift coordination. The workspace goes where the team goes.'
+        : 'Rondes, suivi de maintenance, inspections de chambres, coordination de service. L\u2019espace de travail suit l\u2019\u00e9quipe sur le terrain.',
     },
   ]
 
@@ -272,12 +272,12 @@ function NotionContent({ locale }: { locale: string }) {
         <div className="max-w-screen-xl mx-auto">
           <div className="max-w-2xl mb-16">
             <h2 className="font-display text-4xl font-extrabold text-[#0a1d2e] tracking-tight mb-4">
-              {isEn ? 'What this looks like in daily operations' : "Notion appliqué à l'exploitation hôtelière"}
+              {isEn ? 'What this changes in daily operations' : "Ce que cela change dans l\u2019exploitation quotidienne"}
             </h2>
             <p className="text-lg text-[#4f6074] leading-relaxed">
               {isEn
-                ? 'Four capabilities that change how a hotel team works day to day.'
-                : "Quatre fonctions qui changent le fonctionnement quotidien d'une équipe hôtelière."}
+                ? 'Four operational benefits — not software features.'
+                : "Quatre b\u00e9n\u00e9fices op\u00e9rationnels — pas des fonctionnalit\u00e9s logicielles."}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -302,12 +302,12 @@ function NotionContent({ locale }: { locale: string }) {
         <div className="max-w-screen-xl mx-auto">
           <div className="mb-16">
             <h2 className="font-display text-4xl font-extrabold text-[#0a1d2e] tracking-tight mb-4">
-              {isEn ? "One workspace, multiple operational functions." : "Un espace de travail, plusieurs fonctions opérationnelles."}
+              {isEn ? "One workspace. Multiple operational functions." : "Un espace de travail. Plusieurs fonctions op\u00e9rationnelles."}
             </h2>
             <p className="text-xl text-[#4f6074] max-w-2xl leading-relaxed">
               {isEn
-                ? 'A single Notion workspace covering the key functions of daily hotel operations.'
-                : "Un espace Notion unique couvrant les fonctions clés de l'exploitation hôtelière au quotidien."}
+                ? 'Hotels usually manage these functions across separate files, folders, and trackers. This brings them together.'
+                : "Ces fonctions sont habituellement g\u00e9r\u00e9es dans des fichiers, dossiers et suivis s\u00e9par\u00e9s. Ce workspace les r\u00e9unit."}
             </p>
           </div>
 
@@ -395,8 +395,8 @@ function NotionContent({ locale }: { locale: string }) {
               </div>
               <p className="text-xs mt-6 leading-relaxed" style={{ color: 'rgba(255,255,255,0.6)' }}>
                 {isEn
-                  ? 'Toggle format enables quick reading and smooth navigation through your procedure manuals.'
-                  : 'Le format Toggle permet une lecture rapide et une navigation fluide dans vos manuels.'}
+                  ? 'Procedures accessible directly in the workspace — structured, searchable, and always current. No printed binders, no shared drives with outdated versions.'
+                  : "Les proc\u00e9dures sont accessibles directement dans l\u2019espace de travail \u2014 structur\u00e9es, consultables, toujours \u00e0 jour. Ni classeurs imprim\u00e9s, ni dossiers partag\u00e9s avec des versions obsol\u00e8tes."}
               </p>
             </div>
 
@@ -476,8 +476,8 @@ function NotionContent({ locale }: { locale: string }) {
               </div>
               <p className="text-xs text-[#737685] mt-4 leading-relaxed">
                 {isEn
-                  ? 'Automate onboarding with structured Notion training paths for new team members.'
-                  : "Automatisez l'onboarding avec des parcours de formation Notion structurés."}
+                  ? 'Track team composition, language skills, and onboarding status. New joiners follow a structured path rather than starting from informal knowledge transfer.'
+                  : "Suivez la composition des \u00e9quipes, les comp\u00e9tences et le statut d\u2019int\u00e9gration. Les nouveaux arrivants disposent d\u2019un parcours structur\u00e9 plut\u00f4t que d\u2019une transmission informelle."}
               </p>
             </div>
           </div>
@@ -489,33 +489,33 @@ function NotionContent({ locale }: { locale: string }) {
         <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <div>
             <h2 className="font-display text-4xl font-extrabold text-[#0a1d2e] tracking-tight mb-12">
-              {isEn ? 'The bridge between theory and reality.' : 'Le pont entre théorie et réalité.'}
+              {isEn ? 'Where documented standards become easier to apply.' : "L\u00e0 o\u00f9 les standards document\u00e9s deviennent plus simples \u00e0 appliquer."}
             </h2>
             <div className="space-y-8">
               {[
                 {
                   icon: <X size={18} className="text-red-500" />,
                   bg: '#fef2f2',
-                  title: isEn ? 'No more forgotten PDFs' : 'Fini les PDFs oubliés',
+                  title: isEn ? 'One reliable system' : 'Un syst\u00e8me fiable',
                   desc: isEn
-                    ? 'Dusty procedure binders are replaced by interactive guides accessible from anywhere.'
-                    : 'Les classeurs de procédures qui prennent la poussière remplacés par des guides interactifs accessibles partout.',
+                    ? 'Replaces scattered spreadsheets, shared drives, and disconnected trackers with a single structured base that stays current.'
+                    : "Remplace les feuilles de calcul dispers\u00e9es, les dossiers partag\u00e9s et les suivis d\u00e9connect\u00e9s par une base unique et structur\u00e9e, toujours \u00e0 jour.",
                 },
                 {
                   icon: <AlertCircle size={18} className="text-orange-500" />,
                   bg: '#fff7ed',
-                  title: isEn ? 'Built to replace fragmented files and disconnected trackers' : 'Conçu pour remplacer les fichiers dispersés',
+                  title: isEn ? 'Clearer operational follow-up' : 'Un suivi op\u00e9rationnel plus clair',
                   desc: isEn
-                    ? 'A reliable, easy-to-maintain database that links every task to a specific team member without breaking.'
-                    : 'Une base fiable et facile à maintenir, qui lie chaque tâche à un collaborateur précis.',
+                    ? 'Tasks are assigned, tracked, and visible across departments. Nothing falls through the gap between shifts or teams.'
+                    : "Les t\u00e2ches sont assign\u00e9es, suivies et visibles dans tous les d\u00e9partements. Rien ne passe entre les mailles lors des passations ou changements d\u2019\u00e9quipe.",
                 },
                 {
                   icon: <CheckCircle2 size={18} className="text-green-500" />,
                   bg: '#f0fdf4',
-                  title: isEn ? 'Real-Time Operations' : 'Opérations en Temps Réel',
+                  title: isEn ? 'A live view of what is happening' : "Une vue en direct de l\u2019activit\u00e9",
                   desc: isEn
-                    ? 'Visualise your hotel status by the second with dashboards updated automatically by Notion.'
-                    : "Visualisez l'état de votre établissement à la seconde près, avec des tableaux de bord mis à jour automatiquement.",
+                    ? 'Dashboards show the current state of operations — tasks, incidents, KPIs — updated in real time without manual consolidation.'
+                    : "Les tableaux de bord refl\u00e8tent l\u2019\u00e9tat r\u00e9el des op\u00e9rations \u2014 t\u00e2ches, incidents, KPIs \u2014 mis \u00e0 jour en temps r\u00e9el, sans consolidation manuelle.",
                 },
               ].map((item, i) => (
                 <div key={i} className="flex gap-6">

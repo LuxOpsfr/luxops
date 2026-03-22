@@ -105,23 +105,23 @@
   },
   "notion_page": {
     "title": "Templates Notion",
-    "subtitle": "Des espaces de gestion structurés autour du fonctionnement quotidien des équipes hôtelières.",
+    "subtitle": "Des espaces de travail opérationnels structurés autour du fonctionnement réel des équipes hôtelières. Procédures, suivi des tâches, reporting et coordination réunis en un seul endroit.",
     "base_title": "Template Base Opérations",
     "base_price": "497€",
-    "base_desc": "Un espace Notion complet couvrant la gestion des opérations hôtelières. Tableaux de bord, checklists, suivi des tâches et structures de reporting pour tous les départements clés.",
+    "base_desc": "Une base de gestion opérationnelle qui couvre les fonctions quotidiennes que les hôtels gèrent habituellement dans trop de systèmes séparés. Prête à l'emploi, facile à maintenir, et conçue autour du fonctionnement réel des équipes.",
     "base_f1": "Tableaux de bord multi-départements",
     "base_f2": "Checklists opérations journalières",
-    "base_f3": "Système de suivi des incidents",
-    "base_f4": "Gestion des tâches équipes",
+    "base_f3": "Suivi des incidents",
+    "base_f4": "Gestion des tâches par équipe",
     "base_f5": "Journal des retours clients",
     "base_f6": "Modèles de reporting KPI",
-    "base_f7": "Espace d'intégration des équipes",
-    "base_f8": "Bibliothèque de procédures",
+    "base_f7": "Espace d'onboarding",
+    "base_f8": "Bibliothèque de procédures structurée",
     "buy_base": "Acheter le Template · 497€",
-    "custom_title": "Notion Sur-Mesure",
+    "custom_title": "Configuration Sur-Mesure",
     "custom_price": "997€",
-    "custom_desc": "Personnalisation complète de l'espace selon la structure de votre établissement, vos standards de marque et le fonctionnement quotidien de vos équipes.",
-    "custom_cta": "Demander une Personnalisation"
+    "custom_desc": "Pour les établissements qui souhaitent un espace adapté à leur structure, leurs standards et leurs flux de travail internes. Construit autour de vos départements, vos procédures et la façon dont votre équipe travaille.",
+    "custom_cta": "Demander une configuration sur-mesure"
   },
   "audit_page": {
     "title": "Audit Qualité",
@@ -259,7 +259,7 @@
     "response_time": "Réponse habituelle sous un jour ouvré."
   },
   "footer": {
-    "tagline": "L\u2019Excellence Op\u00e9rationnelle en H\u00f4tellerie de Luxe",
+    "tagline": "Structure op\u00e9rationnelle pour les \u00e9quipes h\u00f4teli\u00e8res",
     "products": "Produits",
     "services": "Services",
     "company": "Entreprise",

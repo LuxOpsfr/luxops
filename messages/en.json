@@ -105,10 +105,10 @@
   },
   "notion_page": {
     "title": "Notion Templates",
-    "subtitle": "Operational management workspaces structured for how hotel teams work day to day.",
+    "subtitle": "Operational workspaces structured around the way hotel teams work day to day. Procedures, task tracking, reporting, and team coordination — in one place.",
     "base_title": "Operations Base Template",
     "base_price": "€497",
-    "base_desc": "A complete Notion workspace covering the daily management of hotel operations. Dashboards, checklists, task tracking, and reporting structures across all key departments.",
+    "base_desc": "A working management base covering the daily functions hotels usually track across too many separate systems. Structured for immediate use, easy to maintain, and built around how hotel teams actually operate.",
     "base_f1": "Multi-department dashboards",
     "base_f2": "Daily operations checklists",
     "base_f3": "Incident tracking system",
@@ -118,10 +118,10 @@
     "base_f7": "Onboarding workspace",
     "base_f8": "SOP library structure",
     "buy_base": "Purchase Template · €497",
-    "custom_title": "Custom Notion Setup",
+    "custom_title": "Bespoke Setup",
     "custom_price": "€997",
-    "custom_desc": "Full customisation built around your property's structure, brand standards, and day-to-day operations.",
-    "custom_cta": "Request Custom Setup"
+    "custom_desc": "For properties that want the workspace adapted to their structure, standards, and internal workflows. Built around your departments, your procedures, and your team's way of working.",
+    "custom_cta": "Discuss a Custom Setup"
   },
   "audit_page": {
     "title": "Quality Audit",
@@ -259,7 +259,7 @@
     "response_time": "We usually respond within one business day."
   },
   "footer": {
-    "tagline": "Standardizing Excellence in High-End Hospitality",
+    "tagline": "Operational structure for hotel teams",
     "products": "Products",
     "services": "Services",
     "company": "Company",
