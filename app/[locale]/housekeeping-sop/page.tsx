@@ -4,70 +4,93 @@ import Link from 'next/link'
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
   const isEN = locale === 'en'
-
   return {
     title: isEN
-      ? 'Hotel Housekeeping SOP — Standard Operating Procedures | LuxOps'
-      : 'SOP Housekeeping Hôtel — Procédures Opérationnelles Standards | LuxOps',
+      ? 'Hotel Housekeeping SOP — Procedures for Every Role and Moment | LuxOps'
+      : 'SOP Housekeeping Hôtel — Procédures Pour Chaque Rôle et Chaque Moment | LuxOps',
     description: isEN
-      ? 'Ready-to-use housekeeping SOP templates for luxury hotels. Complete standard operating procedures covering room cleaning, turndown service, laundry, inspections and quality control.'
-      : 'Modèles de SOP housekeeping prêts à l\'emploi pour hôtels de luxe. Procédures complètes : nettoyage des chambres, service de couverture, linge, inspections et contrôle qualité.',
+      ? 'Housekeeping SOP system for luxury hotels. Covers room attendant procedures, supervisor inspection protocols, linen management, turndown service and quality control frameworks.'
+      : 'Système SOP housekeeping pour hôtels de luxe. Couvre les procédures équipier, les protocoles d\'inspection superviseur, la gestion du linge, le service de couverture et les outils de contrôle qualité.',
     keywords: isEN
       ? 'housekeeping sop, housekeeping standard operating procedures, hotel housekeeping procedures, sop for housekeeping, hotel cleaning sop, luxury hotel housekeeping'
       : 'sop housekeeping, procédures housekeeping hôtel, SOP ménage hôtel, procédures opérationnelles housekeeping, housekeeping hôtel de luxe',
-    openGraph: {
-      title: isEN ? 'Hotel Housekeeping SOP | LuxOps' : 'SOP Housekeeping Hôtel | LuxOps',
-      description: isEN
-        ? 'Ready-to-use housekeeping SOP templates for luxury hotels.'
-        : 'Modèles de SOP housekeeping prêts à l\'emploi pour hôtels de luxe.',
-    },
   }
 }
 
-const CHECKLIST_EN = [
-  'Pre-cleaning room inspection protocol',
-  'Bed making and linen change standards',
-  'Bathroom deep-clean procedure (step-by-step)',
-  'In-room amenities replenishment checklist',
-  'Turndown service sequence',
-  'Lost & found handling procedure',
-  'Supervisor quality inspection form',
-  'Laundry and linen management SOP',
-  'Cleaning product usage and safety guidelines',
-  'Guest complaint escalation procedure',
+const SOP_EN = [
+  {
+    title: 'Room cleaning sequence — departing room',
+    body: 'The full step-by-step method for cleaning and preparing a departed guest\'s room to arrival standard. Covers entry protocol, linen change, bathroom clean, surface dusting, floor treatment and final verification.',
+  },
+  {
+    title: 'Room cleaning sequence — stay-over room',
+    body: 'A lighter sequence for occupied rooms: refresh service, towel replacement, amenity check, and surfaces. Includes what should and should not be moved or changed when a guest is in-house.',
+  },
+  {
+    title: 'Bed making to brand standard',
+    body: 'The precise method for making a bed according to the property\'s standard: linen alignment, fold type, pillow placement and decorative cushions. Includes the difference between a departing room and a turndown service.',
+  },
+  {
+    title: 'Bathroom deep clean',
+    body: 'Step-by-step bathroom procedure covering product selection, surface order (clean to dirty), chrome polishing, limescale treatment, amenity placement and final inspection points.',
+  },
+  {
+    title: 'Turndown service procedure',
+    body: 'The sequence and standard for an evening turndown service: what is adjusted, what is added, what must be removed or repositioned. Timing guidelines and the difference between a standard turndown and a VIP turndown.',
+  },
+  {
+    title: 'Supervisor room inspection protocol',
+    body: 'The structured inspection process run by a supervisor before a room is released as clean. Defines inspection sequence, sign-off criteria, defect logging and the process for returning a room to an attendant when it does not meet standard.',
+  },
+  {
+    title: 'Linen management and laundry handling',
+    body: 'Procedures for counting, transporting, sorting and tracking linen throughout the shift. Includes damaged linen reporting, linen reconciliation at end of shift, and coordination with the laundry team or external provider.',
+  },
+  {
+    title: 'Lost property procedure',
+    body: 'What to do when an item is found in a guest room or public area. Logging, secure storage, guest notification process and the timeline for retention before disposal.',
+  },
 ]
 
-const CHECKLIST_FR = [
-  'Protocole d\'inspection de la chambre avant nettoyage',
-  'Standards de refection des lits et changement de linge',
-  'Procédure de nettoyage approfondi de la salle de bain',
-  'Checklist de réapprovisionnement des amenités',
-  'Séquence du service de couverture',
-  'Procédure de gestion des objets trouvés',
-  'Grille d\'inspection qualité superviseur',
-  'SOP gestion du linge et de la blanchisserie',
-  'Utilisation des produits nettoyants et règles de sécurité',
-  'Procédure d\'escalade des plaintes clients',
-]
-
-const STATS_EN = [
-  { value: '10', label: 'SOP chapters', sub: 'covering every department touchpoint' },
-  { value: '68+', label: 'procedures', sub: 'ready to implement immediately' },
-  { value: '5★', label: 'standard', sub: 'built for luxury & boutique hotels' },
-]
-
-const STATS_FR = [
-  { value: '10', label: 'chapitres SOP', sub: 'couvrant chaque point de contact' },
-  { value: '68+', label: 'procédures', sub: 'prêtes à être mises en place' },
-  { value: '5★', label: 'standard', sub: 'conçu pour l\'hôtellerie de luxe' },
+const SOP_FR = [
+  {
+    title: 'Séquence de remise en état — chambre départ',
+    body: 'La méthode complète pas à pas pour nettoyer et préparer une chambre à l\'arrivée d\'un nouveau client. Couvre le protocole d\'entrée, le changement de linge, le nettoyage de la salle de bain, le dépoussiérage, le traitement des sols et la vérification finale.',
+  },
+  {
+    title: 'Séquence de remise en état — chambre recouche',
+    body: 'Une séquence allégée pour les chambres occupées : service de rafraîchissement, remplacement des serviettes, contrôle des amenités et surfaces. Inclut ce qui doit et ne doit pas être modifié quand un client est en séjour.',
+  },
+  {
+    title: 'Réfection du lit selon le standard de la marque',
+    body: 'La méthode précise pour faire un lit selon le standard de l\'établissement : alignement du linge, type de pliage, placement des oreillers et coussins décoratifs. Inclut la différence entre une chambre départ et un service de couverture.',
+  },
+  {
+    title: 'Nettoyage approfondi de la salle de bain',
+    body: 'Procédure salle de bain pas à pas couvrant la sélection des produits, l\'ordre de traitement des surfaces (du propre au sale), le polissage des éléments chromés, le traitement du tartre, le placement des amenités et les points de contrôle final.',
+  },
+  {
+    title: 'Procédure de service de couverture',
+    body: 'La séquence et le standard d\'un service de couverture en soirée : ce qui est ajusté, ce qui est ajouté, ce qui doit être retiré ou repositionné. Indications de timing et différence entre une couverture standard et une couverture VIP.',
+  },
+  {
+    title: 'Protocole d\'inspection chambre superviseur',
+    body: 'Le processus d\'inspection structuré réalisé par un superviseur avant qu\'une chambre soit libérée comme propre. Définit la séquence d\'inspection, les critères de validation, la consignation des défauts et la procédure de retour à l\'équipier quand la chambre n\'est pas conforme.',
+  },
+  {
+    title: 'Gestion du linge et de la blanchisserie',
+    body: 'Procédures de comptage, transport, tri et suivi du linge tout au long du service. Inclut le signalement du linge endommagé, le bilan de linge en fin de service et la coordination avec l\'équipe blanchisserie ou le prestataire externe.',
+  },
+  {
+    title: 'Procédure objets trouvés',
+    body: 'Ce qu\'il faut faire quand un objet est trouvé dans une chambre ou un espace commun. Consignation, mise en sécurité, processus de notification client et délai de conservation avant disposition.',
+  },
 ]
 
 export default async function HousekeepingSopPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
   const isEN = locale === 'en'
-
-  const checklist = isEN ? CHECKLIST_EN : CHECKLIST_FR
-  const stats = isEN ? STATS_EN : STATS_FR
+  const sops = isEN ? SOP_EN : SOP_FR
 
   return (
     <main className="bg-white">
@@ -80,108 +103,93 @@ export default async function HousekeepingSopPage({ params }: { params: Promise<
           </span>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
             {isEN
-              ? 'Hotel Housekeeping Standard Operating Procedures'
-              : 'Procédures Opérationnelles Standards Housekeeping Hôtel'}
+              ? 'Housekeeping SOPs: The Method Behind the Checklist'
+              : 'SOPs Housekeeping : La Méthode Derrière la Checklist'}
           </h1>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-10">
             {isEN
-              ? 'A complete, ready-to-use SOP playbook for luxury hotel housekeeping teams. Covers every procedure from room cleaning to laundry management, built to 5-star standards.'
-              : 'Un playbook SOP complet et prêt à l\'emploi pour les équipes housekeeping d\'hôtels de luxe. Couvre chaque procédure, du nettoyage des chambres à la gestion du linge, selon les standards 5 étoiles.'}
+              ? 'A housekeeping SOP tells the team how to do the work. The checklist confirms it was done correctly. Both are needed. Neither replaces the other.'
+              : 'Un SOP housekeeping indique à l\'équipe comment réaliser le travail. La checklist confirme qu\'il a été réalisé correctement. Les deux sont nécessaires. Aucun ne remplace l\'autre.'}
           </p>
           <Link
             href={`/${locale}/playbooks`}
             className="inline-block bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold px-8 py-4 rounded-lg transition-colors text-base"
           >
-            {isEN ? 'Get the Housekeeping Playbook — €67' : 'Obtenir le Playbook Housekeeping — 67€'}
+            {isEN ? 'View Housekeeping Playbook' : 'Voir le Playbook Housekeeping'}
           </Link>
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="py-14 px-6 bg-gray-50 border-b border-gray-100">
-        <div className="max-w-4xl mx-auto grid grid-cols-3 gap-8 text-center">
-          {stats.map((s) => (
-            <div key={s.label}>
-              <div className="text-4xl font-bold text-[#1A2E44]">{s.value}</div>
-              <div className="font-semibold text-gray-800 mt-1">{s.label}</div>
-              <div className="text-sm text-gray-500 mt-1">{s.sub}</div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* What is a Housekeeping SOP */}
+      {/* Two levels of housekeeping procedures */}
       <section className="py-16 px-6">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold text-[#1A2E44] mb-4">
-            {isEN ? 'What is a Housekeeping SOP?' : 'Qu\'est-ce qu\'un SOP Housekeeping ?'}
+          <h2 className="text-2xl font-bold text-[#1A2E44] mb-6">
+            {isEN ? 'Two levels of housekeeping procedures' : 'Deux niveaux de procédures housekeeping'}
           </h2>
-          <p className="text-gray-600 leading-relaxed mb-4">
-            {isEN
-              ? 'A housekeeping Standard Operating Procedure (SOP) is a documented, step-by-step guide that defines exactly how every cleaning and maintenance task should be performed in a hotel. It ensures consistency, quality and compliance across your entire housekeeping team — regardless of experience level or shift.'
-              : 'Un SOP Housekeeping (Standard Operating Procedure) est un guide documenté, étape par étape, qui définit exactement comment chaque tâche de nettoyage et d\'entretien doit être réalisée dans un hôtel. Il garantit la cohérence, la qualité et la conformité dans toute l\'équipe housekeeping, quel que soit le niveau d\'expérience ou le shift.'}
-          </p>
-          <p className="text-gray-600 leading-relaxed">
-            {isEN
-              ? 'For luxury and boutique hotels, having a robust housekeeping SOP is non-negotiable. Guests expect a flawless, consistent experience every single stay. A well-structured SOP is the foundation that makes this possible, reducing errors, cutting training time, and protecting your brand reputation.'
-              : 'Pour les hôtels de luxe et boutique, disposer d\'un SOP housekeeping solide est indispensable. Les clients attendent une expérience impeccable et cohérente à chaque séjour. Un SOP bien structuré est la base qui rend cela possible, réduisant les erreurs, diminuant le temps de formation et protégeant la réputation de votre établissement.'}
-          </p>
+          {isEN ? (
+            <>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Housekeeping SOPs operate at two distinct levels. The first is the attendant level: how to clean a room, how to make a bed to standard, how to set up a trolley, how to handle a DND room or a guest request encountered during a service. The second is the supervisory level: how to inspect a room before release, how to conduct a public area round, how to manage the shift handover and linen reconciliation.
+              </p>
+              <p className="text-gray-600 leading-relaxed">
+                These two levels require different documents. The room attendant does not need the supervisor inspection protocol. The supervisor does not use the room cleaning sequence. Combining them into one document, or ignoring one of them entirely, is where most generic SOP templates fall short.
+              </p>
+            </>
+          ) : (
+            <>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Les SOPs housekeeping fonctionnent à deux niveaux distincts. Le premier est le niveau équipier : comment nettoyer une chambre, comment faire un lit selon le standard, comment préparer un chariot, comment gérer une chambre en DND ou une demande client rencontrée pendant le service. Le second est le niveau superviseur : comment inspecter une chambre avant libération, comment effectuer une ronde des espaces communs, comment gérer la passation de service et le comptage du linge.
+              </p>
+              <p className="text-gray-600 leading-relaxed">
+                Ces deux niveaux nécessitent des documents différents. La femme de chambre n&apos;a pas besoin du protocole d&apos;inspection superviseur. Le superviseur n&apos;utilise pas la séquence de nettoyage de chambre. Les regrouper dans un seul document, ou ignorer l&apos;un d&apos;eux, c&apos;est là que la plupart des modèles SOP génériques échouent.
+              </p>
+            </>
+          )}
         </div>
       </section>
 
-      {/* Checklist */}
+      {/* Core housekeeping SOPs */}
       <section className="py-16 px-6 bg-gray-50">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold text-[#1A2E44] mb-2">
-            {isEN ? 'What\'s Included in Our Housekeeping SOP Playbook' : 'Ce que contient notre Playbook SOP Housekeeping'}
+          <h2 className="text-2xl font-bold text-[#1A2E44] mb-8">
+            {isEN ? 'Core housekeeping SOPs' : 'Les SOPs housekeeping essentiels'}
           </h2>
-          <p className="text-gray-500 mb-8">
-            {isEN
-              ? '10 detailed chapters covering the full scope of hotel housekeeping operations.'
-              : '10 chapitres détaillés couvrant l\'intégralité des opérations housekeeping hôtelières.'}
-          </p>
-          <div className="grid md:grid-cols-2 gap-3">
-            {checklist.map((item, i) => (
-              <div key={i} className="flex items-start gap-3 bg-white border border-gray-100 rounded-lg p-4">
-                <div className="w-6 h-6 rounded-full bg-[#2E7D32] flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <span className="text-sm text-gray-700">{item}</span>
+          <div className="space-y-6">
+            {sops.map((item) => (
+              <div key={item.title} className="bg-white border border-gray-100 rounded-lg p-6">
+                <h3 className="font-semibold text-[#1A2E44] mb-2">{item.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{item.body}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Why it matters */}
+      {/* How SOPs and checklists work together */}
       <section className="py-16 px-6">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold text-[#1A2E44] mb-8">
-            {isEN ? 'Why Luxury Hotels Need Structured Housekeeping SOPs' : 'Pourquoi les hôtels de luxe ont besoin de SOPs Housekeeping structurés'}
+          <h2 className="text-2xl font-bold text-[#1A2E44] mb-6">
+            {isEN ? 'How SOPs and checklists work together' : 'Comment les SOPs et les checklists fonctionnent ensemble'}
           </h2>
-          <div className="space-y-6">
-            {(isEN ? [
-              { title: 'Consistency across every shift', body: 'SOPs ensure the same high standard whether it\'s a seasoned housekeeper or a new hire. Every room, every time.' },
-              { title: 'Faster onboarding', body: 'New team members get up to speed in days, not weeks. Clear procedures eliminate guesswork and reduce training costs.' },
-              { title: 'Guest satisfaction', body: 'Cleanliness is consistently the #1 driver of hotel reviews. A structured SOP directly impacts your guest scores and repeat bookings.' },
-              { title: 'Reduced errors and complaints', body: 'Documented procedures create accountability. When something goes wrong, you have a clear process to review and improve.' },
-            ] : [
-              { title: 'Cohérence sur chaque shift', body: 'Les SOPs garantissent le même niveau d\'exigence, que ce soit une femme de chambre expérimentée ou une nouvelle recrue.' },
-              { title: 'Intégration plus rapide', body: 'Les nouveaux membres d\'équipe deviennent opérationnels en quelques jours. Des procédures claires éliminent les approximations.' },
-              { title: 'Satisfaction client', body: 'La propreté est constamment le premier critère des avis hôteliers. Un SOP structuré impacte directement vos scores et fidélisation.' },
-              { title: 'Moins d\'erreurs et de plaintes', body: 'Des procédures documentées créent de la responsabilité. En cas de problème, vous avez un processus clair à revoir.' },
-            ]).map((item) => (
-              <div key={item.title} className="flex gap-4">
-                <div className="w-2 h-2 rounded-full bg-[#2E7D32] flex-shrink-0 mt-2" />
-                <div>
-                  <h3 className="font-semibold text-[#1A2E44] mb-1">{item.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{item.body}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+          {isEN ? (
+            <>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Every SOP in a housekeeping system has a corresponding control moment where a checklist confirms compliance. The room cleaning SOP tells the attendant exactly how to clean the room. The room inspection checklist, run by the supervisor afterward, verifies the result. The turndown SOP defines the sequence. The supervisor sign-off confirms it was followed.
+              </p>
+              <p className="text-gray-600 leading-relaxed">
+                Without the SOP, the checklist has no standard to verify against. Without the checklist, the SOP has no control mechanism. For housekeeping teams to operate consistently across shifts, properties need both.
+              </p>
+            </>
+          ) : (
+            <>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Chaque SOP dans un système housekeeping a un moment de contrôle correspondant où une checklist confirme la conformité. Le SOP de remise en état indique précisément à l&apos;équipière comment nettoyer la chambre. La checklist d&apos;inspection superviseur, réalisée ensuite, vérifie le résultat. Le SOP de couverture définit la séquence. La validation superviseur confirme qu&apos;elle a été respectée.
+              </p>
+              <p className="text-gray-600 leading-relaxed">
+                Sans le SOP, la checklist n&apos;a pas de standard à vérifier. Sans la checklist, le SOP n&apos;a pas de mécanisme de contrôle. Pour que les équipes housekeeping opèrent de façon cohérente entre les services, les établissements ont besoin des deux.
+              </p>
+            </>
+          )}
         </div>
       </section>
 
@@ -189,22 +197,19 @@ export default async function HousekeepingSopPage({ params }: { params: Promise<
       <section className="bg-[#1A2E44] py-16 px-6 text-center text-white">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-2xl font-bold mb-4">
-            {isEN ? 'Ready-to-Use. Immediately Deployable.' : 'Prêt à l\'emploi. Déployable immédiatement.'}
+            {isEN ? 'The complete housekeeping system' : 'Le système housekeeping complet'}
           </h2>
           <p className="text-gray-300 mb-8">
             {isEN
-              ? 'Stop building SOPs from scratch. The LuxOps Housekeeping Playbook gives you a complete, professionally structured SOP system built for 4 and 5-star hotel operations.'
-              : 'Arrêtez de construire vos SOPs from scratch. Le Playbook Housekeeping LuxOps vous donne un système SOP complet et structuré professionnellement, conçu pour les opérations hôtelières 4 et 5 étoiles.'}
+              ? 'The LuxOps Housekeeping Playbook covers both levels: room attendant procedures and supervisory control protocols. 10 chapters, inspection frameworks, training guides and shift management tools. PDF and PowerPoint, EN and FR.'
+              : 'Le Playbook Housekeeping LuxOps couvre les deux niveaux : procédures équipier et protocoles de contrôle superviseur. 10 chapitres, grilles d\'inspection, guides de formation et outils de gestion de service. PDF et PowerPoint, EN et FR.'}
           </p>
           <Link
             href={`/${locale}/playbooks`}
             className="inline-block bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold px-8 py-4 rounded-lg transition-colors"
           >
-            {isEN ? 'Get the Housekeeping Playbook — €67' : 'Obtenir le Playbook Housekeeping — 67€'}
+            {isEN ? 'View Housekeeping Playbook' : 'Voir le Playbook Housekeeping'}
           </Link>
-          <p className="text-gray-400 text-sm mt-4">
-            {isEN ? 'PDF + PowerPoint · Available in EN & FR · Instant access' : 'PDF + PowerPoint · Disponible EN & FR · Accès immédiat'}
-          </p>
         </div>
       </section>
 

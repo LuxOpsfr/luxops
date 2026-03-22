@@ -6,213 +6,223 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const isEN = locale === 'en'
   return {
     title: isEN
-      ? 'Hotel Checklist — Complete Operations Checklists for Hotels | LuxOps'
-      : 'Checklist Hôtel — Checklists Opérationnelles Complètes | LuxOps',
+      ? 'Hotel Operational Checklists: What Actually Makes Them Useful | LuxOps'
+      : 'Checklists Opérationnelles Hôtel : Ce qui les rend vraiment utiles | LuxOps',
     description: isEN
-      ? 'Free hotel checklists for daily operations, housekeeping, front desk, F&B and quality audits. Built for luxury and boutique hotels. Download the full SOP playbooks.'
-      : 'Checklists hôtel gratuites pour les opérations quotidiennes, housekeeping, réception, F&B et audits qualité. Conçues pour les hôtels de luxe et boutique.',
-    keywords: isEN
-      ? 'hotel checklist, hotel operations checklist, hotel daily checklist, hotel cleanliness checklist, hotel inspection checklist, hotel management checklist, hotel opening checklist'
-      : 'checklist hôtel, checklist opérations hôtel, checklist journalière hôtel, checklist propreté hôtel, checklist inspection hôtel, checklist gestion hôtelière',
+      ? 'Hotel checklists only work when built around a role, a shift, and a specific control point. This guide explains what makes operational checklists useful in practice.'
+      : "Une checklist hôtelière n'est utile que si elle est construite autour d'un rôle, d'un moment et d'un point de contrôle précis. Ce guide explique ce qui les rend efficaces en pratique.",
     alternates: {
       canonical: `https://www.luxops.fr/${locale}/hotel-checklist`,
     },
   }
 }
 
-const CHECKLISTS_EN = [
+const WHY_FAIL_EN = [
   {
-    id: 'front-desk',
-    title: 'Front Desk Daily Checklist',
-    color: '#0056D2',
-    icon: '🏨',
-    items: [
-      'Review arrivals list and flag VIP guests',
-      'Check room allocation and special requests',
-      'Confirm outstanding reservations and pre-authorisations',
-      'Brief all front desk staff on key events of the day',
-      'Verify lobby cleanliness and ambient conditions',
-      'Check key inventory and key card stock',
-      'Review previous night audit report',
-      'Confirm transportation bookings and concierge requests',
-    ],
+    title: 'They are not attached to a responsibility',
+    body: 'A checklist without an owner is rarely completed properly. When the same list is shared across a whole department, no one is clearly accountable for each item.',
   },
   {
-    id: 'housekeeping',
-    title: 'Housekeeping Daily Checklist',
-    color: '#2E7D32',
-    icon: '🛏️',
-    items: [
-      'Distribute room assignment sheets',
-      'Check linen stock and laundry status',
-      'Inspect room attendant trolleys before start',
-      'Confirm priority rooms (early arrivals, VIPs)',
-      'Review maintenance defect log from previous day',
-      'Check public area cleaning schedule',
-      'Inspect back-of-house corridors and storage',
-      'Record and chase outstanding maintenance issues',
-    ],
+    title: 'They ignore timing',
+    body: 'An opening checklist and a closing checklist serve completely different purposes. A generic daily checklist that collapses both into one document gives the team nothing useful to act on.',
   },
   {
-    id: 'food-beverage',
-    title: 'Food & Beverage Daily Checklist',
-    color: '#B45309',
-    icon: '🍽️',
-    items: [
-      'Review covers forecast and prep requirements',
-      'Check buffet setup and mise en place standards',
-      'Verify bar stock and fridge temperatures',
-      'Inspect uniform and personal hygiene standards',
-      'Brief team on menu specials and allergen updates',
-      'Check reservation list for dietary requirements',
-      'Test all ordering systems (POS, printers)',
-      'Complete opening hygiene log',
-    ],
+    title: 'They do not reflect the operational moment',
+    body: 'Room readiness before a VIP arrival is a different check from a standard clean verification. A supervisor inspection after a complaint is different from a routine floor round. The same checklist cannot serve all these situations.',
   },
   {
-    id: 'quality',
-    title: 'Quality & Guest Experience Checklist',
-    color: '#7C3AED',
-    icon: '✅',
-    items: [
-      'Review previous day guest satisfaction scores',
-      'Respond to any new online reviews',
-      'Log unresolved guest complaints and follow up',
-      'Check lost property log and outstanding returns',
-      'Verify all service recovery actions completed',
-      'Inspect signage and printed materials across property',
-      'Review in-house guest satisfaction if applicable',
-      'Update shift handover log with all open items',
-    ],
+    title: 'They help teams tick boxes, not act',
+    body: 'A checklist should prompt action or verification at a precise point in the operation. If it is too broad, it becomes a formality rather than a control tool.',
   },
 ]
 
-const CHECKLISTS_FR = [
+const WHY_FAIL_FR = [
   {
-    id: 'front-desk',
-    title: 'Checklist journalière Réception',
-    color: '#0056D2',
-    icon: '🏨',
-    items: [
-      'Consulter la liste des arrivées et identifier les clients VIP',
-      'Vérifier l\'affectation des chambres et les demandes spéciales',
-      'Confirmer les réservations en attente et les pré-autorisations',
-      'Briefer l\'équipe réception sur les événements du jour',
-      'Vérifier la propreté et les conditions d\'ambiance du lobby',
-      'Contrôler l\'inventaire des clés et les stocks de cartes',
-      'Examiner le rapport de clôture de la nuit précédente',
-      'Confirmer les réservations de transport et demandes conciergerie',
-    ],
+    title: 'Elles ne sont rattachées à aucune responsabilité',
+    body: "Une checklist sans propriétaire est rarement complétée correctement. Quand la même liste est partagée à l'ensemble d'un département, personne n'est clairement responsable de chaque point.",
   },
   {
-    id: 'housekeeping',
-    title: 'Checklist journalière Housekeeping',
-    color: '#2E7D32',
-    icon: '🛏️',
-    items: [
-      'Distribuer les feuilles de travail aux équipiers',
-      'Contrôler le stock de linge et l\'état de la blanchisserie',
-      'Inspecter les chariots avant le début du service',
-      'Identifier les chambres prioritaires (arrivées anticipées, VIPs)',
-      'Consulter le carnet de défauts de la veille',
-      'Vérifier le programme de nettoyage des espaces communs',
-      'Inspecter les couloirs et zones de stockage back-of-house',
-      'Enregistrer et relancer les maintenances en attente',
-    ],
+    title: 'Elles ignorent le moment de la journée',
+    body: "Une checklist d'ouverture et une checklist de fermeture n'ont pas les mêmes objectifs. Un document quotidien générique qui regroupe les deux ne donne à l'équipe rien d'opérationnel sur lequel s'appuyer.",
   },
   {
-    id: 'food-beverage',
-    title: 'Checklist journalière Food & Beverage',
-    color: '#B45309',
-    icon: '🍽️',
-    items: [
-      'Examiner les prévisions de couverts et besoins de préparation',
-      'Contrôler la mise en place du buffet selon les standards',
-      'Vérifier le stock bar et les températures des réfrigérateurs',
-      'Inspecter les uniformes et l\'hygiène personnelle',
-      'Briefer l\'équipe sur les spéciaux du jour et allergènes',
-      'Vérifier les réservations pour les régimes alimentaires',
-      'Tester les systèmes de commande (POS, imprimantes)',
-      'Compléter le registre d\'hygiène d\'ouverture',
-    ],
+    title: 'Elles ne reflètent pas le moment opérationnel',
+    body: "La préparation d'une chambre avant une arrivée VIP n'est pas le même contrôle qu'une vérification de remise en état standard. Une inspection superviseur après une plainte n'est pas la même chose qu'une ronde de couloir habituelle. Une seule checklist ne peut pas couvrir toutes ces situations.",
   },
   {
-    id: 'quality',
-    title: 'Checklist Qualité et Expérience Client',
-    color: '#7C3AED',
-    icon: '✅',
-    items: [
-      'Consulter les scores de satisfaction de la veille',
-      'Répondre aux nouveaux avis en ligne',
-      'Suivre les plaintes non résolues et relancer',
-      'Vérifier le registre des objets trouvés',
-      'Confirmer les actions de service recovery effectuées',
-      'Inspecter la signalétique et les supports imprimés',
-      'Consulter les retours clients en cours de séjour si applicable',
-      'Mettre à jour le journal de passation de service',
-    ],
+    title: 'Elles aident les équipes à cocher des cases, pas à agir',
+    body: "Une checklist doit déclencher une action ou une vérification à un moment précis de l'opération. Si elle est trop large, elle devient une formalité plutôt qu'un outil de contrôle.",
   },
 ]
 
-const RELATED_EN = [
+const PRINCIPLES_EN = [
   {
-    href: '/hotel-housekeeping-checklist',
-    title: 'Hotel Housekeeping Checklist',
-    desc: 'Full room inspection checklist: bed, bathroom, surfaces, floors and final sign-off.',
-    color: '#2E7D32',
+    title: 'Role',
+    body: 'Who uses this checklist and what they are responsible for. A room attendant checklist is not a supervisor checklist. The person using it determines what the list needs to cover.',
   },
   {
-    href: '/hotel-audit-checklist',
-    title: 'Hotel Audit Checklist',
-    desc: 'Quality audit framework covering all departments: front office, housekeeping, F&B and guest experience.',
-    color: '#1A2E44',
+    title: 'Timing',
+    body: 'When in the shift or service sequence does this checklist get used. Opening, mid-shift, handover, closing, post-incident. The timing shapes what must be on it.',
   },
   {
-    href: '/hotel-sop',
-    title: 'Hotel SOP Templates',
-    desc: 'Complete standard operating procedures for luxury hotel departments.',
-    color: '#0056D2',
+    title: 'Objective',
+    body: 'What must be secured by completing this checklist. Room readiness, service standard compliance, stock levels, safety. The objective determines the level of detail required.',
   },
   {
-    href: '/front-office-sop',
-    title: 'Front Office SOP',
-    desc: '12-chapter front desk SOP playbook covering every guest interaction.',
-    color: '#0056D2',
+    title: 'Control point',
+    body: 'What must be verified before moving on. The sign-off moment. A checklist without a defined control point is often completed but not acted on.',
   },
 ]
 
-const RELATED_FR = [
+const PRINCIPLES_FR = [
   {
-    href: '/hotel-housekeeping-checklist',
-    title: 'Checklist Housekeeping Hôtel',
-    desc: 'Checklist complète d\'inspection de chambre : literie, salle de bain, surfaces, sols et contrôle final.',
-    color: '#2E7D32',
+    title: 'Le rôle',
+    body: "Qui utilise cette checklist et de quoi cette personne est responsable. Une checklist d'équipier n'est pas une checklist superviseur. La personne qui l'utilise détermine ce que la liste doit couvrir.",
   },
   {
-    href: '/hotel-audit-checklist',
-    title: 'Checklist Audit Hôtel',
-    desc: 'Cadre d\'audit qualité couvrant tous les départements : réception, housekeeping, F&B et expérience client.',
-    color: '#1A2E44',
+    title: 'Le moment',
+    body: "À quel moment du service cette checklist est utilisée. Ouverture, milieu de service, passation, fermeture, post-incident. Le moment détermine ce qui doit y figurer.",
   },
   {
-    href: '/hotel-sop',
-    title: 'Modèles SOP Hôtel',
-    desc: 'Procédures opérationnelles standards complètes pour les départements d\'un hôtel de luxe.',
-    color: '#0056D2',
+    title: "L'objectif",
+    body: "Ce qui doit être sécurisé en complétant cette checklist. Disponibilité des chambres, conformité aux standards, niveaux de stock, sécurité. L'objectif détermine le niveau de détail requis.",
   },
   {
-    href: '/front-office-sop',
-    title: 'SOP Réception Hôtel',
-    desc: 'Playbook SOP réception en 12 chapitres couvrant chaque interaction client.',
-    color: '#0056D2',
+    title: 'Le point de contrôle',
+    body: "Ce qui doit être vérifié avant de passer à l'étape suivante. Le moment de validation. Une checklist sans point de contrôle défini est souvent complétée sans être exploitée.",
+  },
+]
+
+const MOMENTS_EN = [
+  {
+    title: 'Opening checklist',
+    description:
+      'Used at the start of a shift or service period to confirm that all conditions are in place before the operation begins. Covers equipment, stock, staffing and any carry-over items from the previous shift.',
+  },
+  {
+    title: 'Shift handover checklist',
+    description:
+      'Structured transfer of information between outgoing and incoming shift. Captures open tasks, guest requests, pending maintenance, and anything requiring follow-up. One of the most critical documents in day-to-day operations.',
+  },
+  {
+    title: 'Supervisor inspection checklist',
+    description:
+      'Used by a manager or team leader to verify work completed by the team. Not a task list. A targeted quality control tool focused on standard compliance and exception flagging.',
+  },
+  {
+    title: 'Closing checklist',
+    description:
+      'End-of-service verification that all tasks have been completed, areas secured, and the operation handed over or closed correctly. Varies significantly by department.',
+  },
+  {
+    title: 'VIP preparation checklist',
+    description:
+      'A dedicated sequence for high-priority arrivals. Covers room readiness, amenities placement, pre-arrival communication, and any specific guest instructions confirmed by the front office.',
+  },
+  {
+    title: 'Room readiness checklist',
+    description:
+      'Used by a room attendant or supervisor before releasing a room as clean and available. More specific than a general cleaning task list. Focused on the final state of the room against the property standard.',
+  },
+  {
+    title: 'Incident follow-up checklist',
+    description:
+      'Structured response tool used after a guest complaint, maintenance failure or service issue. Ensures follow-up actions are tracked, communicated and signed off.',
+  },
+]
+
+const MOMENTS_FR = [
+  {
+    title: "Checklist d'ouverture",
+    description:
+      "Utilisée au début d'un service pour confirmer que toutes les conditions sont réunies avant le début de l'opération. Couvre l'équipement, les stocks, la présence des équipes et les points en suspens du service précédent.",
+  },
+  {
+    title: 'Checklist de passation de service',
+    description:
+      "Transfert structuré d'informations entre le service sortant et le service entrant. Capture les tâches ouvertes, les demandes clients, les maintenances en attente et tout ce qui nécessite un suivi. L'un des documents les plus importants dans les opérations quotidiennes.",
+  },
+  {
+    title: "Checklist d'inspection superviseur",
+    description:
+      "Utilisée par un manager ou un chef d'équipe pour vérifier le travail réalisé par l'équipe. Pas une liste de tâches. Un outil de contrôle qualité ciblé sur la conformité aux standards et la détection des écarts.",
+  },
+  {
+    title: 'Checklist de fermeture',
+    description:
+      "Vérification en fin de service que toutes les tâches ont été réalisées, les espaces sécurisés et l'opération transmise ou fermée correctement. Varie significativement selon le département.",
+  },
+  {
+    title: 'Checklist de préparation VIP',
+    description:
+      "Séquence dédiée aux arrivées prioritaires. Couvre la disponibilité de la chambre, le placement des amenités, la communication pré-arrivée et les instructions spécifiques confirmées par la réception.",
+  },
+  {
+    title: 'Checklist de disponibilité chambre',
+    description:
+      "Utilisée par une femme de chambre ou un superviseur avant de libérer une chambre comme propre et disponible. Plus précise qu'une liste de tâches de nettoyage. Centrée sur l'état final de la chambre par rapport au standard de l'établissement.",
+  },
+  {
+    title: 'Checklist de suivi post-incident',
+    description:
+      "Outil de réponse structuré utilisé après une plainte client, une défaillance technique ou un problème de service. Assure le suivi des actions, leur communication et leur validation.",
+  },
+]
+
+const ROLES_EN = [
+  {
+    role: 'Front desk agent',
+    note: 'Check-in sequences, billing verification, pre-arrival preparation, shift opening tasks.',
+  },
+  {
+    role: 'Housekeeping room attendant',
+    note: 'Room cleaning sequence, trolley setup, amenities replenishment, room status update.',
+  },
+  {
+    role: 'F&B shift leader',
+    note: 'Service opening, mise en place verification, team briefing, closing and handover.',
+  },
+  {
+    role: 'Housekeeping or floor supervisor',
+    note: 'Room inspection sign-off, public area rounds, team task allocation, complaint follow-up.',
+  },
+  {
+    role: 'Duty manager or department head',
+    note: 'Cross-department handover, incident review, VIP coordination, end-of-day reporting.',
+  },
+]
+
+const ROLES_FR = [
+  {
+    role: 'Agent de réception',
+    note: "Séquences de check-in, vérification de facturation, préparation pré-arrivée, ouverture de service.",
+  },
+  {
+    role: 'Femme ou valet de chambre',
+    note: "Séquence de remise en état, préparation du chariot, réapprovisionnement des amenités, mise à jour du statut chambre.",
+  },
+  {
+    role: 'Chef de rang ou responsable de service F&B',
+    note: "Ouverture de service, vérification de la mise en place, briefing d'équipe, fermeture et passation.",
+  },
+  {
+    role: 'Gouvernante d\'étage ou superviseur housekeeping',
+    note: "Validation d'inspection chambre, rondes des espaces communs, répartition des tâches, suivi des réclamations.",
+  },
+  {
+    role: 'Directeur de service ou chef de département',
+    note: "Passation inter-départements, revue des incidents, coordination VIP, reporting de fin de journée.",
   },
 ]
 
 export default async function HotelChecklistPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
   const isEN = locale === 'en'
-  const checklists = isEN ? CHECKLISTS_EN : CHECKLISTS_FR
-  const related = isEN ? RELATED_EN : RELATED_FR
+
+  const whyFail = isEN ? WHY_FAIL_EN : WHY_FAIL_FR
+  const principles = isEN ? PRINCIPLES_EN : PRINCIPLES_FR
+  const moments = isEN ? MOMENTS_EN : MOMENTS_FR
+  const roles = isEN ? ROLES_EN : ROLES_FR
 
   return (
     <main className="min-h-screen bg-white">
@@ -221,17 +231,17 @@ export default async function HotelChecklistPage({ params }: { params: Promise<{
       <section className="bg-[#1A2E44] text-white py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <span className="inline-block bg-white/10 text-white text-xs font-semibold px-3 py-1 rounded-full mb-6 tracking-widest uppercase">
-            {isEN ? 'Free Hotel Checklists' : 'Checklists Hôtel Gratuites'}
+            {isEN ? 'Hotel Operations' : 'Opérations Hôtelières'}
           </span>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
             {isEN
-              ? 'Hotel Operations Checklist — Complete Daily Templates'
-              : 'Checklist Hôtel — Modèles Opérationnels Quotidiens Complets'}
+              ? 'Hotel Operational Checklists: What Actually Makes Them Useful'
+              : 'Checklists Hôtel : Ce qui les rend vraiment utiles'}
           </h1>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-10">
             {isEN
-              ? 'Ready-to-use hotel checklists for every department. Front desk, housekeeping, F&B and quality control. Built to the standards of luxury and boutique hotel operations.'
-              : 'Checklists hôtel prêtes à l\'emploi pour chaque département. Réception, housekeeping, F&B et contrôle qualité. Conçues selon les standards des hôtels de luxe et boutique.'}
+              ? 'Most hotel checklists fail because they are too generic. A useful checklist is always tied to a role, a shift, and a specific operational need.'
+              : "La plupart des checklists hôtelières échouent parce qu'elles sont trop génériques. Une checklist utile est toujours liée à un rôle, un moment et un besoin opérationnel précis."}
           </p>
           <Link
             href={`/${locale}/playbooks`}
@@ -246,120 +256,136 @@ export default async function HotelChecklistPage({ params }: { params: Promise<{
       <section className="py-14 px-6 bg-gray-50 border-b border-gray-100">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold text-[#1A2E44] mb-4">
-            {isEN ? 'Why hotel checklists matter' : 'Pourquoi les checklists hôtelières sont indispensables'}
+            {isEN
+              ? 'Generic checklists rarely match how hotels actually run'
+              : 'Une checklist générique ne reflète pas la façon dont un hôtel fonctionne réellement'}
           </h2>
           <p className="text-gray-600 leading-relaxed mb-4">
             {isEN
-              ? 'A hotel runs on hundreds of small decisions and tasks repeated every day, across every shift. When those tasks are undocumented, the results depend entirely on who is working. A good hotel checklist removes that dependency. It makes the expected outcome explicit, repeatable and verifiable.'
-              : 'Un hôtel fonctionne sur des centaines de petites décisions et tâches répétées chaque jour, à chaque service. Quand ces tâches ne sont pas documentées, les résultats dépendent entièrement de qui est en poste. Une bonne checklist hôtelière supprime cette dépendance. Elle rend le résultat attendu explicite, reproductible et vérifiable.'}
+              ? 'In real hotel operations, a checklist is only useful when it belongs to someone at a specific moment in the day. A front desk opening checklist is not the same document as a shift handover checklist. A room attendant sequence card is not the same as a supervisor inspection form. Treating them as interchangeable is where most generic templates fall apart.'
+              : "Dans les opérations hôtelières réelles, une checklist n'est utile que lorsqu'elle appartient à quelqu'un, à un moment précis de la journée. La checklist d'ouverture de la réception n'est pas le même document que la fiche de passation de service. La séquence de travail d'une femme de chambre n'est pas la même chose qu'une grille d'inspection superviseur. Traiter ces outils comme interchangeables, c'est là que la plupart des modèles génériques échouent."}
           </p>
           <p className="text-gray-600 leading-relaxed">
             {isEN
-              ? 'The checklists below cover the four core operational areas of a hotel. They are designed to be used as daily briefing tools, not just inspection forms. For full standard operating procedures and training materials, see the LuxOps playbooks.'
-              : 'Les checklists ci-dessous couvrent les quatre domaines opérationnels principaux d\'un hôtel. Elles sont conçues pour être utilisées comme outils de briefing quotidien, pas seulement comme fiches d\'inspection. Pour les procédures opérationnelles complètes et les supports de formation, consultez les playbooks LuxOps.'}
+              ? 'The checklists that teams actually use are built around a shift, a handover, a service opening, or a control point that matters to a specific person. When those conditions are met, a checklist becomes a real operational tool. When they are not, it sits on a shelf.'
+              : "Les checklists que les équipes utilisent réellement sont construites autour d'un service, d'une passation, d'une ouverture de point de vente ou d'un point de contrôle qui compte pour une personne précise. Quand ces conditions sont réunies, une checklist devient un vrai outil opérationnel. Sinon, elle reste dans un tiroir."}
           </p>
         </div>
       </section>
 
-      {/* Checklists */}
-      <section className="py-16 px-6">
-        <div className="max-w-4xl mx-auto space-y-14">
-          {checklists.map((checklist) => (
-            <div key={checklist.id}>
-              <div className="flex items-center gap-3 mb-6">
-                <span className="text-2xl">{checklist.icon}</span>
-                <h2 className="text-xl font-bold text-[#1A2E44]">{checklist.title}</h2>
-              </div>
-              <div className="border border-gray-100 rounded-xl overflow-hidden">
-                <ul className="divide-y divide-gray-100">
-                  {checklist.items.map((item, i) => (
-                    <li key={i} className="flex items-start gap-4 px-6 py-4">
-                      <span
-                        className="mt-0.5 w-5 h-5 rounded border-2 flex-shrink-0"
-                        style={{ borderColor: checklist.color }}
-                      />
-                      <span className="text-sm text-gray-700">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* How to use section */}
-      <section className="py-16 px-6 bg-gray-50">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold text-[#1A2E44] mb-8">
-            {isEN ? 'How to use these hotel checklists' : 'Comment utiliser ces checklists hôtelières'}
-          </h2>
-          <div className="space-y-6">
-            {(isEN ? [
-              {
-                title: 'Use them at the start of every shift',
-                body: 'A checklist only works if it is used consistently. Assign a responsible person per checklist, per shift. The act of physically checking each item forces attention to areas that are easy to overlook when busy.',
-              },
-              {
-                title: 'Adapt them to your property',
-                body: 'These checklists are starting points. A 20-room boutique hotel has different priorities than a 200-room resort. Edit the items to reflect your actual setup, your brand standards and your team structure.',
-              },
-              {
-                title: 'Pair them with SOPs',
-                body: 'A checklist tells you what to check. An SOP tells you exactly how to do it. For teams that need full standard operating procedures with training content, the LuxOps playbooks provide the complete system.',
-              },
-            ] : [
-              {
-                title: 'Les utiliser à chaque prise de service',
-                body: 'Une checklist ne fonctionne que si elle est utilisée de façon cohérente. Assignez un responsable par checklist, par service. Le fait de cocher chaque point force l\'attention sur des zones faciles à négliger en période chargée.',
-              },
-              {
-                title: 'Les adapter à votre établissement',
-                body: 'Ces checklists sont des points de départ. Un boutique-hôtel de 20 chambres a des priorités différentes d\'un resort de 200 chambres. Adaptez les points à votre configuration réelle, vos standards de marque et votre structure d\'équipe.',
-              },
-              {
-                title: 'Les combiner avec les SOPs',
-                body: 'Une checklist indique quoi vérifier. Un SOP indique exactement comment le faire. Pour les équipes qui ont besoin de procédures opérationnelles complètes avec du contenu de formation, les playbooks LuxOps fournissent le système complet.',
-              },
-            ]).map((item) => (
-              <div key={item.title} className="flex gap-4">
-                <div className="w-2 h-2 rounded-full bg-[#1A2E44] flex-shrink-0 mt-2" />
-                <div>
-                  <h3 className="font-semibold text-[#1A2E44] mb-1">{item.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{item.body}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Related resources */}
+      {/* Why generic checklists fail */}
       <section className="py-16 px-6">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-xl font-bold text-[#1A2E44] mb-2">
-            {isEN ? 'More hotel checklists and SOP templates' : 'Plus de checklists hôtel et modèles SOP'}
-          </h2>
-          <p className="text-gray-500 text-sm mb-8">
+          <h2 className="text-2xl font-bold text-[#1A2E44] mb-2">
             {isEN
-              ? 'Go deeper with department-specific checklists and full SOP playbooks.'
-              : 'Approfondissez avec des checklists spécifiques par département et des playbooks SOP complets.'}
+              ? 'Why generic hotel checklists usually fail'
+              : 'Pourquoi les checklists hôtelières génériques échouent généralement'}
+          </h2>
+          <p className="text-gray-500 text-sm mb-10">
+            {isEN
+              ? 'Four patterns that make a checklist ineffective in practice.'
+              : 'Quatre raisons qui rendent une checklist inefficace en pratique.'}
           </p>
-          <div className="grid sm:grid-cols-2 gap-4">
-            {related.map((item) => (
-              <Link
-                key={item.href}
-                href={`/${locale}${item.href}`}
-                className="border border-gray-100 rounded-xl p-5 hover:shadow-md transition-shadow group"
-              >
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="w-2 h-2 rounded-full" style={{ background: item.color }} />
-                  <p className="font-semibold text-[#1A2E44] group-hover:underline text-sm">{item.title}</p>
-                </div>
-                <p className="text-xs text-gray-500 leading-relaxed">{item.desc}</p>
-              </Link>
+          <div className="grid sm:grid-cols-2 gap-6">
+            {whyFail.map((item) => (
+              <div key={item.title} className="border border-gray-100 rounded-xl p-6">
+                <h3 className="font-semibold text-[#1A2E44] mb-2 text-base">{item.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{item.body}</p>
+              </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Principles */}
+      <section className="py-16 px-6 bg-gray-50 border-t border-b border-gray-100">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-[#1A2E44] mb-2">
+            {isEN
+              ? 'What a useful hotel checklist is built around'
+              : 'Sur quoi repose une checklist hôtelière vraiment utile'}
+          </h2>
+          <p className="text-gray-500 text-sm mb-10">
+            {isEN
+              ? 'Four conditions that make the difference between a checklist that is used and one that is ignored.'
+              : "Quatre conditions qui font la différence entre une checklist utilisée et une checklist ignorée."}
+          </p>
+          <div className="grid sm:grid-cols-2 gap-6">
+            {principles.map((item) => (
+              <div key={item.title} className="bg-white border border-gray-100 rounded-xl p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-2 h-2 rounded-full bg-[#0056D2] flex-shrink-0" />
+                  <h3 className="font-semibold text-[#1A2E44] text-base">{item.title}</h3>
+                </div>
+                <p className="text-gray-600 text-sm leading-relaxed">{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Examples by moment */}
+      <section className="py-16 px-6">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-[#1A2E44] mb-2">
+            {isEN
+              ? 'Examples of operational checklists by moment'
+              : 'Exemples de checklists opérationnelles par moment'}
+          </h2>
+          <p className="text-gray-500 text-sm mb-10">
+            {isEN
+              ? 'Each of these serves a different purpose. They are not interchangeable.'
+              : "Chacune de ces checklists a un objectif différent. Elles ne sont pas interchangeables."}
+          </p>
+          <div className="space-y-4">
+            {moments.map((item) => (
+              <div key={item.title} className="border border-gray-100 rounded-xl px-6 py-5">
+                <h3 className="font-semibold text-[#1A2E44] mb-1 text-sm">{item.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Examples by role */}
+      <section className="py-16 px-6 bg-gray-50 border-t border-b border-gray-100">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-[#1A2E44] mb-2">
+            {isEN ? 'Examples by role' : 'Exemples par rôle'}
+          </h2>
+          <p className="text-gray-500 text-sm mb-10">
+            {isEN
+              ? 'The role determines the scope and depth of the checklist.'
+              : "Le rôle détermine le périmètre et le niveau de détail de la checklist."}
+          </p>
+          <div className="divide-y divide-gray-100 border border-gray-100 rounded-xl overflow-hidden">
+            {roles.map((item) => (
+              <div key={item.role} className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-6 bg-white px-6 py-5">
+                <span className="text-sm font-semibold text-[#1A2E44] sm:w-56 flex-shrink-0">{item.role}</span>
+                <span className="text-sm text-gray-600 leading-relaxed">{item.note}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Checklist vs procedure */}
+      <section className="py-14 px-6">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-2xl font-bold text-[#1A2E44] mb-4">
+            {isEN ? 'A checklist is not a procedure' : "Une checklist n'est pas une procédure"}
+          </h2>
+          <p className="text-gray-600 leading-relaxed mb-4">
+            {isEN
+              ? 'This distinction matters in practice. A checklist tells the team what must be verified at a given moment. It does not explain the full method. The procedure, SOP, or playbook sits behind it. When a room attendant checks that the bathroom meets standard, the checklist captures the sign-off. The SOP explains exactly how the bathroom should be cleaned to reach that standard.'
+              : "Cette distinction a des conséquences concrètes. Une checklist indique à l'équipe ce qui doit être vérifié à un moment donné. Elle n'explique pas la méthode complète. La procédure, le SOP ou le playbook se trouve derrière. Quand une femme de chambre valide que la salle de bain est conforme au standard, la checklist capture la validation. Le SOP explique exactement comment la salle de bain doit être nettoyée pour atteindre ce standard."}
+          </p>
+          <p className="text-gray-600 leading-relaxed">
+            {isEN
+              ? 'A checklist without a procedure behind it is often too shallow to be reliable. A procedure without a checklist to verify it is difficult to control consistently. The two tools work together. Neither replaces the other.'
+              : "Une checklist sans procédure derrière elle est souvent trop superficielle pour être fiable. Une procédure sans checklist pour la contrôler est difficile à piloter de façon cohérente. Les deux outils fonctionnent ensemble. Aucun ne remplace l'autre."}
+          </p>
         </div>
       </section>
 
@@ -367,12 +393,14 @@ export default async function HotelChecklistPage({ params }: { params: Promise<{
       <section className="bg-[#1A2E44] py-16 px-6 text-center text-white">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-2xl font-bold mb-4">
-            {isEN ? 'Need the complete SOP system?' : 'Besoin du système SOP complet ?'}
+            {isEN
+              ? 'Operational tools built to be used by teams'
+              : 'Des outils opérationnels conçus pour être utilisés par les équipes'}
           </h2>
           <p className="text-gray-300 mb-8">
             {isEN
-              ? 'The LuxOps playbooks go beyond checklists. Full standard operating procedures, training content, audit templates and management tools for every department. PDF and PowerPoint, EN and FR included.'
-              : 'Les playbooks LuxOps vont au-delà des checklists. Procédures opérationnelles standards complètes, contenu de formation, modèles d\'audit et outils de management pour chaque département. PDF et PowerPoint, EN et FR inclus.'}
+              ? 'The LuxOps playbooks include the procedures, service standards, checklists, and control tools that support consistent day-to-day execution. Built for front office, housekeeping, F&B and spa departments.'
+              : "Les playbooks LuxOps intègrent les procédures, les standards de service, les checklists et les outils de contrôle qui soutiennent une exécution quotidienne cohérente. Conçus pour la réception, le housekeeping, le F&B et le spa."}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
