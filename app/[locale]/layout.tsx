@@ -48,10 +48,10 @@ export const metadata: Metadata = {
     url: 'https://www.luxops.fr',
     images: [
       {
-        url: 'https://www.luxops.fr/Previews/fb-preview.jpg.png',
+        url: 'https://www.luxops.fr/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'LuxOps — Hotel Operations Playbooks & SOP Frameworks',
+        alt: 'LuxOps — Standardizing Excellence in High-End Hospitality',
       },
     ],
   },
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     title: 'LuxOps | Hotel Operations Playbooks & SOPs',
     description:
       'Operational playbooks, SOP frameworks and on-property training for high-end hotels.',
-    images: ['https://www.luxops.fr/Previews/fb-preview.jpg.png'],
+    images: ['https://www.luxops.fr/og-image.png'],
   },
   alternates: {
     canonical: 'https://www.luxops.fr',
