@@ -13,6 +13,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     description: isEn
       ? 'Custom operational procedures for any hotel department. Property-specific SOPs written around your standards, team structure, and daily operations. PDF and Notion formats.'
       : "Procédures opérationnelles sur-mesure pour tout département hôtelier. SOPs construits autour de vos standards, de votre structure d'équipe et de votre fonctionnement quotidien.",
+    alternates: {
+      canonical: `https://www.luxops.fr/${locale}/process-sur-mesure`,
+      languages: {
+        'en': 'https://www.luxops.fr/en/process-sur-mesure',
+        'fr': 'https://www.luxops.fr/fr/process-sur-mesure',
+        'x-default': 'https://www.luxops.fr/en/process-sur-mesure',
+      },
+    },
   }
 }
 

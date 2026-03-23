@@ -17,6 +17,14 @@ export async function generateMetadata({
   return {
     title: content.title + ' | LuxOps',
     description: content.description,
+    alternates: {
+      canonical: `https://www.luxops.fr/${locale}/blog/${slug}`,
+      languages: {
+        'en': `https://www.luxops.fr/en/blog/${slug}`,
+        'fr': `https://www.luxops.fr/fr/blog/${slug}`,
+        'x-default': `https://www.luxops.fr/en/blog/${slug}`,
+      },
+    },
   }
 }
 
