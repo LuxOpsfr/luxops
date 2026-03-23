@@ -272,4 +272,112 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Blog: Hotel Front Office Procedures EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/blog/hotel-front-office-procedures</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-front-office-procedures"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-front-office-procedures"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: Hotel Front Office Procedures FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/blog/hotel-front-office-procedures</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-front-office-procedures"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-front-office-procedures"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- SEO: Hotel Checklist EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/hotel-checklist</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/hotel-checklist"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/hotel-checklist"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- SEO: Hotel Checklist FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/hotel-checklist</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/hotel-checklist"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/hotel-checklist"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- SEO: Hotel Housekeeping Checklist EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/hotel-housekeeping-checklist</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/hotel-housekeeping-checklist"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/hotel-housekeeping-checklist"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- SEO: Hotel Housekeeping Checklist FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/hotel-housekeeping-checklist</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/hotel-housekeeping-checklist"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/hotel-housekeeping-checklist"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- SEO: Front Office SOP EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/front-office-sop</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/front-office-sop"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/front-office-sop"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- SEO: Front Office SOP FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/front-office-sop</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/front-office-sop"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/front-office-sop"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- SEO: Housekeeping SOP EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/housekeeping-sop</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/housekeeping-sop"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/housekeeping-sop"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- SEO: Housekeeping SOP FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/housekeeping-sop</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/housekeeping-sop"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/housekeeping-sop"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- SEO: Hotel SOP EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/hotel-sop</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/hotel-sop"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/hotel-sop"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- SEO: Hotel SOP FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/hotel-sop</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/hotel-sop"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/hotel-sop"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
