@@ -18,6 +18,36 @@ export async function generateMetadata({
   }
 }
 
+const sharedOfferFields = {
+  '@type': 'Offer',
+  price: '67',
+  priceCurrency: 'EUR',
+  priceValidUntil: '2027-12-31',
+  availability: 'https://schema.org/InStock',
+  hasMerchantReturnPolicy: {
+    '@type': 'MerchantReturnPolicy',
+    returnPolicyCategory: 'https://schema.org/MerchantReturnNotPermitted',
+    merchantReturnDays: 0,
+  },
+  shippingDetails: {
+    '@type': 'OfferShippingDetails',
+    shippingRate: {
+      '@type': 'MonetaryAmount',
+      value: '0',
+      currency: 'EUR',
+    },
+    deliveryTime: {
+      '@type': 'ShippingDeliveryTime',
+      handlingTime: { '@type': 'QuantitativeValue', minValue: 0, maxValue: 0, unitCode: 'DAY' },
+      transitTime: { '@type': 'QuantitativeValue', minValue: 0, maxValue: 0, unitCode: 'DAY' },
+    },
+    doesNotShip: true,
+  },
+}
+
+const sharedBrand = { '@type': 'Brand', name: 'LuxOps' }
+const sharedImage = 'https://www.luxops.fr/og-image.png'
+
 const playbooksSchema = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
@@ -34,13 +64,9 @@ const playbooksSchema = {
         name: 'Front Office Playbook',
         description:
           'Check-in/out procedures, guest communication protocols, upselling techniques, night audit, PMS systems and concierge standards. ~250 pages. PDF + PPT.',
-        offers: {
-          '@type': 'Offer',
-          price: '67',
-          priceCurrency: 'EUR',
-          priceValidUntil: '2027-12-31',
-          availability: 'https://schema.org/InStock',
-        },
+        image: sharedImage,
+        brand: sharedBrand,
+        offers: sharedOfferFields,
       },
     },
     {
@@ -51,13 +77,9 @@ const playbooksSchema = {
         name: 'Housekeeping Playbook',
         description:
           'Room inspection checklists, linen management, deep cleaning protocols, quality control and sustainability practices. ~220 pages. PDF + PPT.',
-        offers: {
-          '@type': 'Offer',
-          price: '67',
-          priceCurrency: 'EUR',
-          priceValidUntil: '2027-12-31',
-          availability: 'https://schema.org/InStock',
-        },
+        image: sharedImage,
+        brand: sharedBrand,
+        offers: sharedOfferFields,
       },
     },
     {
@@ -68,13 +90,9 @@ const playbooksSchema = {
         name: 'F&B Playbook',
         description:
           'Restaurant & bar service standards, wine service, room service protocols and mise en place procedures. ~280 pages. PDF + PPT.',
-        offers: {
-          '@type': 'Offer',
-          price: '67',
-          priceCurrency: 'EUR',
-          priceValidUntil: '2027-12-31',
-          availability: 'https://schema.org/InStock',
-        },
+        image: sharedImage,
+        brand: sharedBrand,
+        offers: sharedOfferFields,
       },
     },
     {
@@ -85,13 +103,9 @@ const playbooksSchema = {
         name: 'Spa & Wellness Playbook',
         description:
           'Treatment protocols, guest journey mapping, product knowledge, facilities management and therapist standards. ~200 pages. PDF + PPT.',
-        offers: {
-          '@type': 'Offer',
-          price: '67',
-          priceCurrency: 'EUR',
-          priceValidUntil: '2027-12-31',
-          availability: 'https://schema.org/InStock',
-        },
+        image: sharedImage,
+        brand: sharedBrand,
+        offers: sharedOfferFields,
       },
     },
   ],
