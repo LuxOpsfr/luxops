@@ -92,14 +92,14 @@ export default function ExpertiseSection({ locale }: Props) {
           <h2 className="font-display text-3xl lg:text-4xl font-extrabold tracking-tighter leading-tight text-[#0a1d2e]">
             {isEn
               ? 'Built through day-to-day hotel operations.'
-              : "Construit par quelqu\u2019un qui a géré les opérations."}
+              : "Construit au fil des opérations hôtelières quotidiennes."}
           </h2>
 
           <div className="space-y-4 text-[#4f6074] leading-relaxed">
             <p>
               {isEn
                 ? "LuxOps comes from years spent managing departments, supporting teams, and building structure where operations could not rely on improvisation. The procedures and tools presented here were developed in working hotels, under real service pressure, with the aim of making standards clearer, execution steadier, and onboarding easier."
-                : "LuxOps est née d\u2019années passées à gérer des départements hôteliers dans des établissements indépendants haut de gamme, non pas en tant que consultant extérieur, mais en tant que responsable du fonctionnement quotidien. Chaque procédure, checklist et outil a été construit sous une vraie pression opérationnelle."}
+                : "LuxOps vient d\u2019années passées à gérer des départements, accompagner des équipes et construire des structures là où l\u2019exploitation ne pouvait pas reposer sur l\u2019improvisation. Les procédures et outils présentés ici ont été développés dans des hôtels en activité, sous une vraie pression de service, avec pour objectif de rendre les standards plus clairs, l\u2019exécution plus stable et l\u2019intégration plus simple."}
             </p>
             <p
               className="font-display font-bold text-[#0a1d2e] text-base leading-snug"
@@ -107,7 +107,7 @@ export default function ExpertiseSection({ locale }: Props) {
             >
               {isEn
                 ? "They exist because they solved real operational needs, and they remain useful because they were built to be used by teams, not just reviewed by management."
-                : "Les méthodes existent parce qu\u2019elles étaient nécessaires. Elles fonctionnent parce qu\u2019elles ont été testées dans les chambres, à la réception, pendant le service."}
+                : "Ils existent parce qu\u2019ils répondaient à de vrais besoins opérationnels, et ils restent utiles parce qu\u2019ils ont été conçus pour être utilisés par les équipes, pas seulement consultés par le management."}
             </p>
           </div>
 
