@@ -26,14 +26,18 @@ const sharedOfferFields = {
   availability: 'https://schema.org/InStock',
   hasMerchantReturnPolicy: {
     '@type': 'MerchantReturnPolicy',
+    applicableCountry: 'FR',
     returnPolicyCategory: 'https://schema.org/MerchantReturnNotPermitted',
-    merchantReturnDays: 0,
   },
   shippingDetails: {
     '@type': 'OfferShippingDetails',
+    shippingDestination: {
+      '@type': 'DefinedRegion',
+      addressCountry: 'FR',
+    },
     shippingRate: {
       '@type': 'MonetaryAmount',
-      value: '0',
+      value: 0,
       currency: 'EUR',
     },
     deliveryTime: {
@@ -41,7 +45,6 @@ const sharedOfferFields = {
       handlingTime: { '@type': 'QuantitativeValue', minValue: 0, maxValue: 0, unitCode: 'DAY' },
       transitTime: { '@type': 'QuantitativeValue', minValue: 0, maxValue: 0, unitCode: 'DAY' },
     },
-    doesNotShip: true,
   },
 }
 
