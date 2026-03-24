@@ -11,8 +11,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       ? 'Hotel Quality Audit | Operational Gap Analysis & Improvement Roadmap | LuxOps'
       : 'Audit Qualité Hôtelier | Analyse des Écarts Opérationnels et Feuille de Route | LuxOps',
     description: isEn
-      ? '2-day on-site hotel audit covering 100+ operational criteria. Clear gap analysis by department and a prioritised improvement roadmap for management. Available on-property.'
-      : "Audit hôtelier sur 2 jours. Plus de 100 critères évalués, analyse des écarts par département et feuille de route priorisée pour la direction. Demandez un devis.",
+      ? 'On-site hotel audit covering 100+ operational criteria. Clear gap analysis by department and a prioritised improvement roadmap for management. Available on-property.'
+      : "Audit hôtelier sur site. Plus de 100 critères évalués, analyse des écarts par département et feuille de route priorisée pour la direction. Demandez un devis.",
   }
 }
 
@@ -121,11 +121,10 @@ function AuditContent({ locale }: { locale: string }) {
       {/* Key metrics */}
       <section style={{ backgroundColor: '#eef4ff' }}>
         <div
-          className="max-w-screen-xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-px"
+          className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-px"
           style={{ backgroundColor: 'rgba(195,198,214,0.2)' }}
         >
           {[
-            { v: '2', l: isEn ? 'Days on property' : 'Jours sur site' },
             { v: '100+', l: isEn ? 'Criteria evaluated' : 'Critères évalués' },
             { v: '4+', l: isEn ? 'Operational areas' : 'Domaines opérationnels' },
             { v: '1', l: isEn ? 'Structured roadmap' : 'Feuille de route structurée' },
