@@ -12,36 +12,36 @@
     "blog": "Blog"
   },
   "hero": {
-    "badge": "Méthodes issues de l'exploitation quotidienne · Structurées · Opérationnelles",
-    "title": "Clarté opérationnelle pour l'hôtellerie haut de gamme",
-    "subtitle": "Des standards documentés, des procédures claires et des outils concrets développés à partir du fonctionnement quotidien des équipes hôtelières, prêts à être mis en place département par département.",
-    "cta_primary": "Découvrir les Playbooks",
+    "badge": "Méthodes construites dans l'exploitation hôtelière. Structurées. Utilisables.",
+    "title": "Clarté opérationnelle pour les équipes hôtelières",
+    "subtitle": "Des procédures claires, des standards documentés et des outils concrets conçus pour aider les équipes à travailler avec plus de constance, à mieux transmettre les méthodes, et à réduire ce qui repose encore trop sur l'oral.",
+    "cta_primary": "Découvrir les Ressources",
     "cta_secondary": "Réserver une Consultation"
   },
   "problem": {
     "title": "Le Défi",
-    "text": "La plupart des établissements, quel que soit leur niveau, font face aux mêmes problèmes : des standards qui varient selon les équipes, des méthodes qui ne sont jamais écrites, et un turnover qui remet tout en cause. LuxOps donne aux équipes les outils et la documentation pour fonctionner de façon constante, peu importe qui est en poste.",
+    "text": "Dans beaucoup d'établissements, les méthodes existent, mais elles ne sont ni écrites, ni partagées de façon claire. Les standards varient selon les équipes, l'intégration repose trop sur la transmission orale, et chaque départ fragilise un peu plus le fonctionnement. LuxOps aide à remettre de la structure là où l'exploitation ne peut pas dépendre uniquement des personnes en place.",
     "point1_title": "Standards Incohérents",
-    "point1_text": "Quand les standards ne sont pas écrits, la qualité dépend de qui est en service. La constance commence par la documentation.",
+    "point1_text": "Quand les standards ne sont pas clairement posés, la qualité varie d'un shift à l'autre. La documentation permet de stabiliser l'exécution.",
     "point2_title": "Process Non Documentés",
-    "point2_text": "Quand un collaborateur part, il emporte ses méthodes avec lui. Documenter les process, c'est protéger ce que l'équipe a construit, et accélérer l'intégration des suivants.",
+    "point2_text": "Quand les méthodes restent dans les têtes, elles se perdent au fil des départs. Les documenter, c'est protéger ce qui a été construit et rendre le fonctionnement plus transmissible.",
     "point3_title": "Impact du Turnover",
-    "point3_text": "Sans support structuré, chaque nouvelle recrue repart de zéro. Une documentation claire réduit le temps d'intégration et limite les erreurs dès les premiers jours."
+    "point3_text": "Sans support structuré, chaque nouvelle recrue repart presque de zéro. Des procédures claires raccourcissent l'intégration et sécurisent l'exécution dès les premiers jours."
   },
   "solution": {
     "title": "L'Approche LuxOps",
-    "text": "Nous prenons l'expérience accumulée dans la gestion des départements hôteliers et la structurons en outils concrets, utilisables par vos équipes, à chaque étape du séjour client."
+    "text": "LuxOps rassemble des méthodes de travail construites dans l'exploitation hôtelière, puis les transforme en outils utilisables par les équipes, service après service, étape après étape."
   },
   "offers": {
     "title": "Nos Offres",
     "digital_title": "Ressources Opérationnelles",
-    "digital_desc": "Des playbooks et espaces Notion que votre équipe peut utiliser dès réception. Sans configuration, sans délai.",
+    "digital_desc": "Des playbooks et espaces Notion conçus pour être utilisés immédiatement par les équipes et les managers, sans déploiement lourd ni adaptation complexe.",
     "digital_cta": "Voir les Ressources",
     "audit_title": "Audit & Process",
-    "audit_desc": "Un audit qualité approfondi et une conception de process construits autour du fonctionnement réel de votre établissement.",
+    "audit_desc": "Un audit opérationnel pour identifier les points de fragilité, puis un travail de structuration pour remettre de la cohérence là où elle manque.",
     "audit_cta": "En Savoir Plus",
     "training_title": "Formation en Établissement",
-    "training_desc": "Des formations opérationnelles menées directement dans votre établissement, avec vos équipes. Demi-journée ou journée complète.",
+    "training_desc": "Des sessions menées sur site, à partir de vos enjeux réels, pour aider les équipes à appliquer les standards avec plus de clarté et de régularité.",
     "training_cta": "En Savoir Plus"
   },
   "social_proof": {
@@ -53,8 +53,8 @@
     "stat4": "Versions FR + EN incluses"
   },
   "cta_section": {
-    "title": "Vous cherchez à renforcer vos opérations ?",
-    "text": "Qu'il s'agisse d'un outil concret ou d'une refonte de vos procédures, nous pouvons vous accompagner.",
+    "title": "Vous cherchez à mieux structurer vos opérations ?",
+    "text": "Qu'il s'agisse d'un outil prêt à l'emploi, d'un audit ou d'un travail plus approfondi sur vos procédures, LuxOps peut vous accompagner.",
     "cta": "Nous Contacter"
   },
   "playbooks_page": {

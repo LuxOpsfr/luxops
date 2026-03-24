@@ -133,21 +133,21 @@ function HomeContent({ locale }: { locale: string }) {
                   title: isEn ? 'Service Excellence' : 'Excellence du Service',
                   desc: isEn
                     ? 'A consistent, flawless guest experience at every interaction.'
-                    : 'Une exp\u00e9rience client constante et irr\u00e9prochable \u00e0 chaque interaction.',
+                    : 'Des standards plus clairs pour offrir une expérience client plus régulière à chaque étape du séjour.',
                 },
                 {
                   icon: <Users size={18} strokeWidth={1.25} />,
                   title: isEn ? 'Team Stability' : 'Stabilit\u00e9 des \u00c9quipes',
                   desc: isEn
                     ? 'Structured onboarding that reduces turnover and builds confidence.'
-                    : "Une int\u00e9gration structur\u00e9e qui r\u00e9duit le turnover et valorise vos talents.",
+                    : "Des méthodes écrites pour faciliter l'intégration, réduire la dépendance aux individus et limiter les effets du turnover.",
                 },
                 {
                   icon: <Clock size={18} strokeWidth={1.25} />,
                   title: isEn ? 'Operational Efficiency' : 'Efficacit\u00e9 Op\u00e9rationnelle',
                   desc: isEn
                     ? 'Know-how documented, transferable, and always available.'
-                    : 'Le savoir-faire document\u00e9, transmissible, toujours disponible.',
+                    : 'Un cadre de travail structuré, accessible et transmissible, pour que les équipes puissent s\'appuyer sur autre chose que les habitudes.',
                 },
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-4">
@@ -264,7 +264,7 @@ function HomeContent({ locale }: { locale: string }) {
                 title: isEn ? 'Service Excellence' : 'Excellence du Service',
                 desc: isEn
                   ? 'Ensuring a consistent, flawless guest experience at every interaction, regardless of who is on shift.'
-                  : "Garantir une exp\u00e9rience client constante et irr\u00e9prochable \u00e0 chaque interaction.",
+                  : "Créer les conditions d'une exécution plus régulière, plus lisible, et plus fiable pour le client.",
               },
               {
                 ordinal: '02',
@@ -272,7 +272,7 @@ function HomeContent({ locale }: { locale: string }) {
                 title: isEn ? 'Team Stability' : 'Stabilit\u00e9 des \u00c9quipes',
                 desc: isEn
                   ? 'Streamlining onboarding to reduce turnover and help your people grow with confidence.'
-                  : "Faciliter l\u2019int\u00e9gration pour r\u00e9duire le turnover et valoriser vos talents.",
+                  : "Donner aux équipes une base de travail claire, plus simple à transmettre, à expliquer et à reprendre.",
               },
               {
                 ordinal: '03',
@@ -280,7 +280,7 @@ function HomeContent({ locale }: { locale: string }) {
                 title: isEn ? 'Operational Efficiency' : 'Efficacit\u00e9 Op\u00e9rationnelle',
                 desc: isEn
                   ? 'Freeing up management time by making know-how transferable, documented, and always available.'
-                  : "Lib\u00e9rer du temps manag\u00e9rial en automatisant la transmission du savoir-faire.",
+                  : "Mettre en place des supports qui rendent les méthodes plus accessibles, plus durables et plus faciles à piloter.",
               },
             ].map((item, i) => (
               <div
