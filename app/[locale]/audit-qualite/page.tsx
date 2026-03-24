@@ -89,7 +89,7 @@ function AuditContent({ locale }: { locale: string }) {
               }}
             >
               <p className="text-[10px] font-bold uppercase tracking-widest text-[#737685] mb-6">
-                {isEn ? 'What this produces' : 'Ce que cela produit'}
+                {isEn ? 'What this produces' : 'Ce que cela apporte'}
               </p>
               <ul className="space-y-3">
                 {(isEn ? [
@@ -97,9 +97,9 @@ function AuditContent({ locale }: { locale: string }) {
                   'A prioritised list of what to fix, in what order',
                   'A working roadmap management can act on immediately',
                 ] : [
-                  "Une vision claire de là où les standards sont appliqués et là où ils ne le sont pas",
-                  "Une liste priorisée de ce qui doit être corrigé, dans quel ordre",
-                  "Une feuille de route opérationnelle sur laquelle la direction peut agir immédiatement",
+                  "Une lecture claire de ce qui est bien tenu et de ce qui ne l'est pas",
+                  "Une vision priorisée des points à corriger",
+                  "Une base de travail concrète pour décider, arbitrer et remettre de la structure",
                 ]).map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-sm text-[#0a1d2e]">
                     <div
@@ -148,7 +148,7 @@ function AuditContent({ locale }: { locale: string }) {
             <p className="text-[#4f6074] leading-relaxed">
               {isEn
                 ? 'Four structured stages, from initial documentation review through to final roadmap delivery. Each stage builds directly on the previous one.'
-                : "Quatre étapes structurées, de la revue initiale de la documentation jusqu'à la remise de la feuille de route. Chaque étape s'appuie directement sur la précédente."}
+                : "L'audit suit une méthode simple et structurée, depuis la revue initiale de l'existant jusqu'à la restitution des priorités d'action."}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
