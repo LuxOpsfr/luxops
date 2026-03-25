@@ -7,10 +7,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: isEN
       ? 'Hotel Housekeeping Training — Building a Consistent Cleaning Team | LuxOps'
-      : 'Formation Housekeeping Hôtel — Structurer une Équipe de Ménage Performante | LuxOps',
+      : 'Formation Housekeeping Hôtel — Ce qu\'il Faut Vraiment Transmettre à une Équipe | LuxOps',
     description: isEN
       ? 'Practical hotel housekeeping training methods. How to train room attendants, supervisors and housekeeping teams on SOPs, inspection protocols and quality standards.'
-      : 'Méthodes concrètes de formation housekeeping hôtel. Former les équipiers, superviseurs et gouvernantes aux SOPs, protocoles d\'inspection et standards qualité.',
+      : 'Formation housekeeping hôtel structurée autour des séquences de service, des standards écrits et de l\'encadrement terrain. Méthodes concrètes pour installer un niveau qui tient dans le temps.',
     keywords: isEN
       ? 'hotel housekeeping training, housekeeping staff training, hotel cleaning team training, housekeeping sop training, hotel housekeeping management'
       : 'formation housekeeping hôtel, former équipe housekeeping, formation ménage hôtel, formation gouvernante, formation équipe étages',
@@ -47,27 +47,27 @@ const MODULES_EN = [
 const MODULES_FR = [
   {
     title: 'Séquence de nettoyage et méthodes de remise en état',
-    body: 'Former les équipiers à la séquence exacte pour une chambre départ, une chambre recouche et un service de couverture. Chacune a des priorités différentes, une allocation de temps différente et des points de vérification distincts. Les équipes formées sur les trois séquences comme des variations d\'une même méthode travaillent plus vite et plus régulièrement que celles formées sur des routines génériques.',
+    body: "Former une équipe housekeeping, ce n'est pas seulement montrer comment nettoyer une chambre. C'est transmettre un ordre de travail clair. Une chambre départ, une recouche et un service de couverture n'ont ni la même logique, ni le même rythme, ni les mêmes points de vigilance. Une bonne formation apprend aux équipiers à suivre une séquence stable, à gérer leur temps, et à contrôler ce qui doit l'être avant de quitter la chambre. C'est ce qui fait gagner en régularité et en efficacité.",
   },
   {
     title: 'Standards salle de bain et surfaces',
-    body: 'La salle de bain est la zone que les clients inspectent le plus attentivement. La formation couvre la sélection des produits, l\'ordre de traitement des surfaces (du propre au sale), le protocole tartre et chrome, le placement des amenités et les cinq points que les clients repèrent immédiatement. Les standards salle de bain sont parmi les leviers les plus impactants d\'un programme de formation housekeeping.',
+    body: "La salle de bain reste l'une des zones que le client remarque le plus vite. C'est souvent là que se voient les écarts de niveau. La formation doit donc couvrir de façon très concrète les produits à utiliser, l'ordre de traitement des surfaces, la gestion du tartre et du chrome, la remise en place des produits d'accueil, et les points que le client perçoit immédiatement. Quand ces standards sont bien transmis, l'impact sur la qualité perçue est immédiat.",
   },
   {
     title: 'Gestion du linge et organisation du chariot',
-    body: 'Comment charger le chariot, compter et trier le linge, et gérer le bilan en fin de service. Les erreurs de gestion du linge créent des problèmes en cascade pour l\'ensemble de l\'exploitation housekeeping. Former ce processus correctement dès le départ prévient les pertes et les retards évitables.',
+    body: "Une équipe peut perdre énormément de temps sur un mauvais chargement de chariot ou une gestion du linge mal maîtrisée. Il faut donc former les équipiers à préparer leur matériel, charger le chariot avec logique, trier correctement le linge, compter ce qui entre et ce qui sort, et garder une organisation simple jusqu'à la fin du service. Une mauvaise méthode ici crée très vite des retards, des oublis et des pertes évitables.",
   },
   {
-    title: 'Protocole d\'inspection superviseur',
-    body: 'Inspecter une chambre avant libération est une compétence qui nécessite une approche structurée. La formation superviseur couvre la séquence d\'inspection, l\'identification des défauts, la documentation et le processus de retour d\'une chambre non conforme à l\'équipier sans créer de retard de service.',
+    title: "Protocole d'inspection superviseur",
+    body: "Contrôler une chambre ne consiste pas seulement à repérer des défauts. Il faut aussi savoir quoi vérifier, dans quel ordre, et comment faire un retour utile à l'équipier. La formation superviseur doit donc inclure la séquence d'inspection, l'identification des écarts, la manière de reprendre une chambre, et la façon de transformer le contrôle en outil de progression. Un bon superviseur ne se contente pas de constater, il aide à stabiliser le niveau.",
   },
   {
     title: 'Interaction client pendant le service',
-    body: 'Quoi dire quand un client est croisé dans le couloir, comment gérer une chambre en DND, comment répondre à une demande faite directement à l\'équipier. Ces micro-interactions façonnent la perception du client sur l\'équipe et l\'établissement. Elles se forment, et elles sont souvent ignorées.',
+    body: "Le housekeeping n'est pas seulement un département technique. C'est aussi un département que le client croise, observe et juge. Savoir saluer dans un couloir, répondre à une demande simple, gérer une chambre en DND ou adopter la bonne posture face à un client fait partie du métier. Ces interactions paraissent mineures, mais elles influencent directement la perception du service et de l'établissement. Elles doivent donc être intégrées à la formation.",
   },
   {
     title: 'Contrôle qualité et briefings quotidiens',
-    body: 'Comment animer un briefing pré-service productif, comment utiliser les résultats d\'inspection pour coacher individuellement, et comment suivre la qualité des chambres dans le temps. La qualité housekeeping ne se maintient pas par l\'inspection seule. Elle se maintient par des équipes qui comprennent le standard et un superviseur qui le renforce quotidiennement.',
+    body: "La qualité ne tient pas uniquement grâce aux inspections. Elle tient parce que les équipes savent ce qui est attendu, comprennent pourquoi cela compte, et sont reprises régulièrement sur les écarts. Un bon programme de formation housekeeping doit donc inclure les briefings de début de service, la lecture des résultats d'inspection, et la manière de coacher une équipe dans le temps. C'est ce qui permet de maintenir le standard au lieu de seulement le rappeler.",
   },
 ]
 
@@ -88,12 +88,12 @@ export default async function FormationHousekeepingPage({ params }: { params: Pr
           <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
             {isEN
               ? 'Hotel Housekeeping Training: What to Cover and How to Structure It'
-              : 'Formation Housekeeping Hôtel : Ce qu\'il Faut Couvrir et Comment la Structurer'}
+              : "Formation Housekeeping Hôtel : ce qu'il faut vraiment transmettre à une équipe, et comment l'organiser"}
           </h1>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-10">
             {isEN
               ? 'A housekeeping team that works consistently is trained consistently. That means documented methods, structured modules and supervisors who know how to reinforce the standard on the floor.'
-              : 'Une équipe housekeeping qui travaille avec régularité est une équipe formée avec méthode. Cela suppose des procédures documentées, des modules structurés et des superviseurs capables de faire respecter le standard sur le terrain.'}
+              : "Une équipe housekeeping régulière ne se construit pas avec quelques jours d'observation. Elle se construit avec une méthode claire, des standards écrits, des séquences de travail compréhensibles et un encadrement capable de reprendre, corriger et faire progresser les équipes sur le terrain. Lorsqu'une formation est bien structurée, les chambres sortent plus régulièrement, les écarts diminuent et les superviseurs passent moins de temps à compenser ce qui n'a jamais été vraiment transmis."}
           </p>
           <Link
             href={`/${locale}/formation`}
@@ -104,7 +104,7 @@ export default async function FormationHousekeepingPage({ params }: { params: Pr
         </div>
       </section>
 
-      {/* Why training fails */}
+      {/* Pourquoi ça ne tient pas */}
       <section className="py-16 px-6">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold text-[#1A2E44] mb-6">
@@ -113,30 +113,30 @@ export default async function FormationHousekeepingPage({ params }: { params: Pr
           {isEN ? (
             <>
               <p className="text-gray-600 leading-relaxed mb-4">
-                The most common pattern in hotel housekeeping training is a brief induction, a few days working alongside an experienced attendant and then solo rooms. The experienced attendant passes on their habits, which may or may not align with the property's standard. The supervisor inspects occasionally. Over time, standards drift.
+                The most common pattern in hotel housekeeping training is a brief induction, a few days working alongside an experienced attendant and then solo rooms. The experienced attendant passes on their habits, which may or may not align with the property&apos;s standard. The supervisor inspects occasionally. Over time, standards drift.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Structured housekeeping training works differently. It begins with written procedures that define the standard precisely. It moves through supervised practice where the trainee demonstrates competency before working alone. It is reinforced by daily briefings and consistent inspections. The result is a team that holds a standard because they were trained to a standard, not to a person's habits.
+                Structured housekeeping training works differently. It begins with written procedures that define the standard precisely. It moves through supervised practice where the trainee demonstrates competency before working alone. It is reinforced by daily briefings and consistent inspections. The result is a team that holds a standard because they were trained to a standard, not to a person&apos;s habits.
               </p>
             </>
           ) : (
             <>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Le schéma le plus courant en formation housekeeping hôtel est une induction courte, quelques jours aux côtés d'un équipier expérimenté, puis des chambres en autonomie. L'équipier expérimenté transmet ses habitudes, qui correspondent ou non au standard de l'établissement. Le superviseur contrôle occasionnellement. Avec le temps, les standards dérivent.
+                {"Dans beaucoup d'hôtels, la formation housekeeping repose encore sur le même schéma : quelques jours en doublon avec un équipier expérimenté, puis une mise en autonomie rapide. Le problème, c'est que l'équipier transmet surtout ses habitudes, pas toujours le standard exact de l'établissement. Le superviseur repasse ensuite derrière, corrige ce qu'il peut, puis recommence avec la personne suivante. Avec le temps, les méthodes se déforment, les niveaux varient, et le service perd en régularité."}
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Une formation housekeeping structurée fonctionne différemment. Elle commence par des procédures écrites qui définissent le standard avec précision. Elle progresse par une pratique supervisée où le stagiaire démontre sa compétence avant de travailler seul. Elle est renforcée par des briefings quotidiens et des inspections régulières. Le résultat est une équipe qui tient un standard parce qu'elle a été formée à un standard, pas aux habitudes d'une personne.
+                {"Une formation housekeeping plus solide commence autrement. Elle pose d'abord des bases écrites. Elle distingue clairement les différents types de service. Elle prévoit une pratique encadrée avant l'autonomie. Et elle s'appuie sur des contrôles réguliers, des briefings courts et une reprise précise des écarts constatés. C'est ce qui permet d'installer un standard qui tient dans le temps, au lieu de dépendre uniquement des personnes présentes dans l'équipe."}
               </p>
             </>
           )}
         </div>
       </section>
 
-      {/* Training modules */}
+      {/* Modules */}
       <section className="py-16 px-6 bg-gray-50">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold text-[#1A2E44] mb-8">
-            {isEN ? 'Core modules in a housekeeping training programme' : 'Modules essentiels d\'un programme de formation housekeeping'}
+            {isEN ? 'Core modules in a housekeeping training programme' : "Modules essentiels d'un programme de formation housekeeping"}
           </h2>
           <div className="space-y-6">
             {modules.map((item) => (
@@ -149,7 +149,7 @@ export default async function FormationHousekeepingPage({ params }: { params: Pr
         </div>
       </section>
 
-      {/* Playbook cross-sell */}
+      {/* Cross-sell */}
       <section className="py-16 px-6">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold text-[#1A2E44] mb-6">
@@ -161,7 +161,7 @@ export default async function FormationHousekeepingPage({ params }: { params: Pr
             </p>
           ) : (
             <p className="text-gray-600 leading-relaxed mb-8">
-              Une session de formation sur site couvre la méthode et la pratique. Le Playbook Housekeeping donne à votre équipe le référentiel écrit qu'elle conserve après la session. 10 chapitres couvrant les procédures équipier, les protocoles superviseur, la gestion du linge et le contrôle qualité. PDF et PowerPoint inclus, en français et en anglais.
+              {"Une formation sur site permet de transmettre la méthode et de corriger les gestes. Mais pour que cela tienne dans le temps, l'équipe doit aussi garder un référentiel clair. Le Playbook Housekeeping sert à cela. Il donne aux équipiers, aux superviseurs et aux managers une base écrite qu'ils peuvent reprendre après la session, utiliser à l'intégration, et relire lorsque le niveau commence à bouger. Il couvre les procédures équipier, les protocoles superviseur, la gestion du linge et le contrôle qualité, avec les supports inclus en PDF et PowerPoint, en français et en anglais."}
             </p>
           )}
           <div className="flex flex-col sm:flex-row gap-4">
