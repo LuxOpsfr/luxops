@@ -7,10 +7,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: isEN
       ? 'Hotel Team Training — Structuring Operational Excellence Across Departments | LuxOps'
-      : 'Formation Equipe Hôtelière — Structurer l\'Excellence Opérationnelle dans Tous les Départements | LuxOps',
+      : "Formation Équipe Hôtelière — Donner à Chaque Département le Même Niveau de Cadre | LuxOps",
     description: isEN
       ? 'Hotel team training that builds consistency across departments. Onboarding, SOP integration, cross-department coordination and a quality framework that holds between management shifts.'
-      : 'Formation équipe hôtelière qui construit la régularité dans tous les départements. Intégration, déploiement des SOPs, coordination inter-départements et un cadre qualité qui tient entre les services.',
+      : "Formation équipe hôtelière qui construit la régularité dans tous les départements. Intégration, déploiement des SOPs, coordination inter-départements et un cadre qualité qui tient entre les services.",
     keywords: isEN
       ? 'hotel team training, hotel staff training programme, hotel operations training, hotel employee training, hospitality team training'
       : 'formation équipe hôtelière, formation personnel hôtel, formation opérations hôtelières, formation staff hôtel, programme formation hôtellerie',
@@ -19,47 +19,47 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 const PILLARS_EN = [
   {
-    title: 'Onboarding that builds operational habits',
-    body: 'Most hotel onboarding programmes focus on administrative steps and a property tour. A structured onboarding programme goes further: it introduces new team members to the procedures of their role, gives them a written reference for their first weeks on the floor and pairs them with a supervisor who validates competency before solo operation begins. The first 30 days determine how a team member works for the next three years.',
+    title: 'Onboarding that builds the right habits',
+    body: "In many hotels, onboarding still focuses on administrative steps, a property tour and a few days shadowing a colleague. That is not enough. Good onboarding introduces working methods from the start, provides a clear reference for the first weeks and includes a validation step before solo operation begins. The first weeks matter enormously. They are often where the habits that last for months are formed.",
   },
   {
-    title: 'SOP integration across roles and departments',
-    body: 'SOPs are only effective when the teams using them understand why each step exists. Training that introduces written procedures as a reference rather than a constraint creates better adoption. This means presenting SOPs in context, explaining the link between each step and the guest outcome, and giving teams the space to ask questions before the procedure becomes a daily habit.',
+    title: 'SOPs that are actually explained, not just handed over',
+    body: "SOPs serve no purpose if teams receive them as just another document. For them to be used, they need to be put in context, their logic explained, the link between each step and the guest outcome made visible, with space left for questions. That is the step that turns a document into a working method.",
   },
   {
-    title: 'Cross-department coordination',
-    body: 'The most common source of guest dissatisfaction in hotels is not poor individual performance. It is the gap between departments: the room that is clean but not ready because housekeeping and reception did not communicate. The breakfast request that did not reach the kitchen. Training cross-department coordination means making the handover points explicit and giving each team a clear protocol for the moments that require joint action.',
+    title: 'Better coordination between departments',
+    body: "Many guest problems do not come from poor individual execution. They come from the handover between departments. A room that is clean but not yet released. A guest request that never gets passed on. Information that arrives too late. Training a hotel team therefore means not only training each department separately. It also means clarifying the contact points between them and securing the moments where one depends on the other.",
   },
   {
-    title: 'Shift briefings and daily quality reinforcement',
-    body: 'A ten-minute pre-shift briefing, run consistently, is the most cost-effective quality tool in a hotel operation. It aligns the team before service begins, flags the day\'s priorities and gives the supervisor a daily opportunity to reinforce the standard. Training managers and supervisors to run effective briefings creates a multiplication effect: one trained supervisor reinforces the standard for an entire team, every day.',
+    title: 'Briefings that actually serve the shift',
+    body: "A useful briefing is not about reading through the day's programme. It aligns the team on priorities, flags sensitive points, resets the expected standard, and prepares the team before service begins. Training managers and supervisors to do this well makes a real difference. A good briefing has an immediate impact on execution. A poor briefing quickly becomes just another routine.",
   },
   {
-    title: 'Turnover and knowledge transfer',
-    body: 'High turnover is a structural reality in hospitality. A hotel team that depends on individuals to carry operational knowledge is permanently at risk. Structured training programmes reduce this risk by making the knowledge transferable: written procedures, documented standards and a training pathway that can be repeated for each new team member without relying on the memory of whoever trained last.',
+    title: 'Methods that hold despite turnover',
+    body: "Turnover is part of hotel reality. The real issue is not eliminating it entirely. It is preventing it from permanently undermining the service level. When a team relies too heavily on the habits of a few individuals, every departure creates a gap. When methods are written, transmitted and reinforced in a structured way, they stay with the property. They do not leave with the person who last trained the newest recruit.",
   },
 ]
 
 const PILLARS_FR = [
   {
-    title: 'Une intégration qui construit des habitudes opérationnelles',
-    body: 'La plupart des programmes d\'intégration hôteliers se concentrent sur les étapes administratives et la visite de l\'établissement. Un programme structuré va plus loin : il introduit les nouveaux membres au procédures de leur poste, leur donne un référentiel écrit pour leurs premières semaines sur le terrain et les associe à un superviseur qui valide la compétence avant que le travail en autonomie commence. Les 30 premiers jours déterminent comment un collaborateur travaillera pendant les trois années suivantes.',
+    title: 'Une intégration qui installe les bonnes habitudes',
+    body: "Dans beaucoup d'hôtels, l'intégration se limite encore aux sujets administratifs, à la visite de l'établissement et à quelques jours passés à suivre un collègue. Cela ne suffit pas. Une bonne intégration pose d'emblée les méthodes de travail, donne un support clair pour les premières semaines, et prévoit une validation avant la mise en autonomie. Les premières semaines comptent énormément. C'est souvent là que se fixent les habitudes qui resteront ensuite pendant des mois.",
   },
   {
-    title: 'Déploiement des SOPs dans chaque rôle et département',
-    body: 'Les SOPs ne sont efficaces que lorsque les équipes qui les utilisent comprennent pourquoi chaque étape existe. Une formation qui présente les procédures écrites comme un référentiel plutôt qu\'une contrainte crée une meilleure adoption. Cela signifie présenter les SOPs en contexte, expliquer le lien entre chaque étape et le résultat pour le client, et donner aux équipes l\'espace pour poser des questions avant que la procédure devienne une habitude quotidienne.',
+    title: 'Des SOP réellement expliquées, pas seulement remises',
+    body: "Des SOP ne servent à rien si les équipes les reçoivent comme un document de plus. Pour qu'elles soient utilisées, il faut les remettre en contexte, expliquer leur logique, montrer le lien entre chaque étape et le résultat pour le client, puis laisser de la place aux questions. C'est ce passage-là qui transforme un document en méthode de travail.",
   },
   {
-    title: 'Coordination inter-départements',
-    body: 'La source la plus fréquente d\'insatisfaction client dans les hôtels n\'est pas une mauvaise performance individuelle. C\'est le fossé entre les départements : la chambre propre mais pas prête parce que le housekeeping et la réception n\'ont pas communiqué. La demande de petit-déjeuner qui n\'est pas arrivée en cuisine. Former la coordination inter-départements signifie rendre explicites les points de passation et donner à chaque équipe un protocole clair pour les moments qui nécessitent une action conjointe.',
+    title: 'Une meilleure coordination entre départements',
+    body: "Beaucoup de problèmes clients ne viennent pas d'une mauvaise exécution isolée. Ils viennent du passage de relais entre services. Une chambre propre mais pas encore libérée. Une demande client qui ne remonte pas. Une information transmise trop tard. Former une équipe hôtelière, ce n'est donc pas seulement former chaque département séparément. C'est aussi clarifier les points de contact entre eux et sécuriser les moments où l'un dépend de l'autre.",
   },
   {
-    title: 'Briefings de service et renforcement quotidien de la qualité',
-    body: 'Un briefing pré-service de dix minutes, animé régulièrement, est l\'outil qualité le plus rentable dans une exploitation hôtelière. Il aligne l\'équipe avant le début du service, signale les priorités du jour et donne au superviseur une opportunité quotidienne de renforcer le standard. Former les managers et superviseurs à animer des briefings efficaces crée un effet de multiplication : un superviseur formé renforce le standard pour toute une équipe, chaque jour.',
+    title: 'Des briefings qui servent vraiment au service',
+    body: "Un briefing utile ne consiste pas à relire le programme du jour. Il sert à rappeler les priorités, à signaler les points sensibles, à remettre le niveau attendu au bon endroit, et à préparer l'équipe avant le service. Former les managers et superviseurs à faire cela correctement change beaucoup. Un bon briefing a un effet immédiat sur l'exécution. Un mauvais briefing devient vite une routine de plus.",
   },
   {
-    title: 'Turnover et transmission des savoir-faire',
-    body: 'Un fort turnover est une réalité structurelle dans l\'hôtellerie. Une équipe hôtelière qui dépend d\'individus pour porter les savoir-faire opérationnels est en permanence fragilisée. Des programmes de formation structurés réduisent ce risque en rendant les connaissances transmissibles : procédures écrites, standards documentés et parcours de formation reproductible pour chaque nouveau collaborateur, sans dépendre de la mémoire de la personne qui a formé en dernier.',
+    title: 'Des méthodes qui tiennent malgré le turnover',
+    body: "Le turnover fait partie de la réalité hôtelière. Le vrai sujet, ce n'est pas de l'éviter complètement, c'est d'empêcher qu'il fragilise en permanence le niveau de service. Quand une équipe dépend trop des habitudes de quelques personnes, chaque départ crée un vide. Quand les méthodes sont écrites, transmises et reprises de manière structurée, elles restent dans l'établissement. Elles ne repartent pas avec celui ou celle qui a formé la dernière recrue.",
   },
 ]
 
@@ -75,17 +75,17 @@ export default async function FormationEquipeHotelierePage({ params }: { params:
       <section className="bg-[#1A2E44] text-white py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <span className="inline-block bg-[#2E7D32] text-white text-xs font-semibold px-3 py-1 rounded-full mb-6 tracking-widest uppercase">
-            {isEN ? 'Hotel Team Training' : 'Formation Equipe Hôtelière'}
+            {isEN ? 'Hotel Team Training' : 'Formation Équipe Hôtelière'}
           </span>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
             {isEN
               ? 'Hotel Team Training: Building Consistency Across Every Department'
-              : 'Formation Equipe Hôtelière : Construire la Régularité dans Chaque Département'}
+              : "Formation Équipe Hôtelière : donner à chaque département le même niveau de cadre et de régularité"}
           </h1>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-10">
             {isEN
-              ? 'A hotel team performs consistently when every member has been trained to the same standard. Not trained once and left to figure it out. Trained with written procedures, supervised practice and a quality framework that holds between shifts.'
-              : 'Une équipe hôtelière performe avec régularité quand chaque membre a été formé au même standard. Pas formé une fois puis laissé se débrouiller. Formé avec des procédures écrites, une pratique supervisée et un cadre qualité qui tient entre les services.'}
+              ? "A hotel team performs consistently when every member has been trained to the same standard. Not trained once and left to figure it out. Trained with written procedures, supervised practice and a quality framework that holds between shifts."
+              : "Une équipe hôtelière ne devient pas régulière parce que quelques personnes sont solides. Elle le devient quand chacun travaille avec les mêmes repères, les mêmes attentes et les mêmes méthodes. Pas après une simple visite d'intégration ou quelques jours d'observation. Mais avec des procédures claires, une pratique encadrée, et un cadre de travail que les équipes retrouvent ensuite dans leur service."}
           </p>
           <Link
             href={`/${locale}/formation`}
@@ -96,39 +96,39 @@ export default async function FormationEquipeHotelierePage({ params }: { params:
         </div>
       </section>
 
-      {/* What makes a hotel team consistent */}
+      {/* Ce qui rend une équipe performante */}
       <section className="py-16 px-6">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold text-[#1A2E44] mb-6">
-            {isEN ? 'What makes a hotel team consistently good' : 'Ce qui rend une équipe hôtelière régulièrement performante'}
+            {isEN ? 'What makes a hotel team consistently good' : 'Ce qui rend une équipe régulièrement performante'}
           </h2>
           {isEN ? (
             <>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Consistency in a hotel team is not a product of individual talent. It is a product of shared standards. When every team member, regardless of experience level or shift, knows exactly what is expected and how to deliver it, the result is a guest experience that holds across time, across managers and across the inevitable turnover of hospitality work.
+                Consistency in a hotel team is not a product of individual talent. It is a product of shared standards. When every team member, regardless of role or experience level, knows what is expected and how to deliver it, the service holds over time. It holds from one shift to the next, from one manager to another, and it is far more resilient to turnover.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Building that consistency requires three things: written procedures that define the standard clearly, training that introduces those procedures in a structured and supervised way, and a daily reinforcement mechanism that keeps the standard active rather than allowing it to drift. None of these three elements works without the other two.
+                Building that consistency requires three things: written procedures that clearly define the expected standard, training that transmits them in a structured framework, and daily follow-up capable of correcting gaps before they become habits.
               </p>
             </>
           ) : (
             <>
               <p className="text-gray-600 leading-relaxed mb-4">
-                La régularité d\'une équipe hôtelière n\'est pas le produit du talent individuel. C\'est le produit de standards partagés. Quand chaque membre de l\'équipe, quel que soit son niveau d\'expérience ou son service, sait exactement ce qui est attendu et comment le produire, le résultat est une expérience client qui tient dans le temps, entre les managers et malgré le turnover inhérent au travail hôtelier.
+                {"La régularité ne repose pas sur le talent individuel. Elle repose sur des standards partagés. Quand chaque membre d'une équipe, quel que soit son poste ou son niveau d'expérience, sait ce qu'on attend de lui et comment le faire, le service tient mieux dans le temps. Il tient d'un shift à l'autre, d'un manager à l'autre, et résiste beaucoup mieux au turnover."}
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Construire cette régularité nécessite trois choses : des procédures écrites qui définissent le standard clairement, une formation qui introduit ces procédures de façon structurée et supervisée, et un mécanisme de renforcement quotidien qui maintient le standard actif plutôt que de le laisser dériver. Aucun de ces trois éléments ne fonctionne sans les deux autres.
+                {"Pour construire cette régularité, il faut trois choses. Des procédures écrites qui posent clairement le niveau attendu. Une formation qui les transmet dans un cadre structuré. Et un suivi quotidien capable de corriger les écarts avant qu'ils ne deviennent des habitudes."}
               </p>
             </>
           )}
         </div>
       </section>
 
-      {/* Five pillars */}
+      {/* Piliers */}
       <section className="py-16 px-6 bg-gray-50">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold text-[#1A2E44] mb-8">
-            {isEN ? 'Five pillars of effective hotel team training' : 'Cinq piliers d\'une formation équipe hôtelière efficace'}
+            {isEN ? 'Five pillars of effective hotel team training' : "Les piliers d'une formation équipe hôtelière efficace"}
           </h2>
           <div className="space-y-6">
             {pillars.map((item) => (
@@ -141,11 +141,11 @@ export default async function FormationEquipeHotelierePage({ params }: { params:
         </div>
       </section>
 
-      {/* CTA */}
+      {/* Cross-sell */}
       <section className="py-16 px-6">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold text-[#1A2E44] mb-6">
-            {isEN ? 'Training your team with the tools they keep' : 'Former votre équipe avec les outils qu\'elle conserve'}
+            {isEN ? 'Training your team with the tools they keep' : "Former avec des outils que l'équipe garde ensuite"}
           </h2>
           {isEN ? (
             <p className="text-gray-600 leading-relaxed mb-8">
@@ -153,7 +153,7 @@ export default async function FormationEquipeHotelierePage({ params }: { params:
             </p>
           ) : (
             <p className="text-gray-600 leading-relaxed mb-8">
-              Les sessions de formation sur site LuxOps sont structurées autour des playbooks et procédures que votre équipe utilisera après la fin de la session. Chaque participant repart avec l\'accès au référentiel écrit de son département. La formation construit l\'habitude. Le playbook la maintient.
+              {"Une formation sur site a plus de valeur quand elle ne s'arrête pas à la fin de la session. Chez LuxOps, les formations sont construites autour de playbooks et de procédures que les équipes peuvent reprendre ensuite dans leur quotidien. Chaque participant repart avec un cadre écrit que son département peut continuer à utiliser, relire, transmettre et faire évoluer. La formation installe les réflexes. Les supports permettent de les maintenir."}
             </p>
           )}
           <div className="flex flex-col sm:flex-row gap-4">
