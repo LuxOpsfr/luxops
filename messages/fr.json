@@ -40,7 +40,7 @@
     "audit_title": "Audit & Process",
     "audit_desc": "Un audit opérationnel pour identifier les points de fragilité, puis un travail de structuration pour remettre de la cohérence là où elle manque.",
     "audit_cta": "En Savoir Plus",
-    "training_title": "Formation en Établissement",
+    "training_title": "Formation sur Site",
     "training_desc": "Des sessions menées sur site, à partir de vos enjeux réels, pour aider les équipes à appliquer les standards avec plus de clarté et de régularité.",
     "training_cta": "En Savoir Plus"
   },
@@ -189,7 +189,7 @@
     "wb5": "Bibliothèques de procédures au format Notion"
   },
   "training_page": {
-    "title": "Formation en Établissement",
+    "title": "Formation sur Site",
     "subtitle": "Une formation construite autour de vos équipes, de vos standards et du fonctionnement réel de votre établissement.",
     "training_context": "Menée sur site, conçue pour aider les équipes à appliquer les procédures avec plus de rigueur, plus de confiance et moins de dépendance aux méthodes informelles. Adaptée au département, au niveau de l'équipe et à la réalité de votre exploitation.",
     "half_day": "Demi-journée",

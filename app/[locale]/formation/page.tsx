@@ -9,7 +9,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: isEn
       ? 'On-Property Hotel Training | Operational Standards Implementation | LuxOps'
-      : 'Formation Hôtelière en Établissement | Déploiement de Standards Opérationnels | LuxOps',
+      : 'Formation sur Site pour Équipes Hôtelières | Déploiement de Standards Opérationnels | LuxOps',
     description: isEn
       ? 'On-site training for hotel teams. Procedures, service standards and SOP implementation. Half-day or full-day sessions for up to 15 participants, built around your property.'
       : "Formation opérationnelle en établissement pour équipes hôtelières. Procédures, standards de service et mise en place des SOPs. Demi-journée ou journée complète, jusqu'à 15 participants.",
@@ -107,7 +107,7 @@ function FormationContent({ locale }: { locale: string }) {
               style={{ backgroundColor: '#eef4ff', borderRadius: '0.125rem' }}
             >
               <span className="w-2 h-2 bg-[#003d9b] rounded-full" />
-              {isEn ? 'On-Property Training' : 'Formation en établissement'}
+              {isEn ? 'On-Property Training' : 'Formation sur Site'}
             </div>
             <h1 className="font-display text-5xl md:text-7xl font-extrabold tracking-tighter leading-none text-[#0a1d2e] mb-6">
               {t('title')}
@@ -411,7 +411,7 @@ function FormationContent({ locale }: { locale: string }) {
               <div>
                 <div className="text-sm font-bold text-white">LuxOps</div>
                 <div className="text-xs font-bold uppercase tracking-widest" style={{ color: 'rgba(255,255,255,0.4)' }}>
-                  {isEn ? 'On-Property Training' : 'Formation en Établissement'}
+                  {isEn ? 'On-Property Training' : 'Formation sur Site'}
                 </div>
               </div>
             </div>
