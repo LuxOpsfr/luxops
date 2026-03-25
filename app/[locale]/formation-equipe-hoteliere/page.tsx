@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       : "Formation équipe hôtelière qui construit la régularité dans tous les départements. Intégration, déploiement des SOPs, coordination inter-départements et un cadre qualité qui tient entre les services.",
     keywords: isEN
       ? 'hotel team training, hotel staff training programme, hotel operations training, hotel employee training, hospitality team training'
-      : 'formation équipe hôtelière, formation personnel hôtel, formation opérations hôtelières, formation staff hôtel, programme formation hôtellerie',
+      : 'formation équipe hôtelière, formation collaborateurs hôtel, formation opérations hôtelières, formation staff hôtel, programme formation hôtellerie',
   }
 }
 

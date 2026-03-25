@@ -132,7 +132,7 @@ const frFaqs = [
     linkLabel: null,
   },
   {
-    q: 'Comment former le personnel aux procédures opérationnelles ?',
+    q: 'Comment former les équipes aux procédures opérationnelles ?',
     a: 'Une formation qui fonctionne est construite autour des procédures réelles que l\'équipe utilise, pas délivrée indépendamment d\'elles. La structure qui tient en pratique comprend trois phases : une période d\'intégration initiale où les nouveaux collaborateurs parcourent les SOPs qui régissent leur rôle, une période supervisée où ils exécutent les tâches avec observation directe et retour, et un renforcement continu via des briefings et des revues qualité. Le manque dans la plupart des établissements n\'est pas la première phase ; c\'est la troisième. Les standards dérivent quand le renforcement s\'arrête. Des sessions de formation en établissement construites autour des procédures spécifiques de votre propriété sont nettement plus efficaces qu\'une formation hôtelière générique. LuxOps propose des sessions demi-journée et journée entière conçues autour du contexte opérationnel de votre équipe.',
     link: '/formation',
     linkLabel: 'Formation opérationnelle en établissement',

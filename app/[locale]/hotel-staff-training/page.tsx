@@ -7,59 +7,59 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: isEN
       ? 'Hotel Staff Training — Practical Methods for Hospitality Teams | LuxOps'
-      : 'Formation du Personnel Hôtelier — Méthodes Pratiques pour les Équipes | LuxOps',
+      : "Formation Équipe Hôtelière — Structurer les Méthodes de Travail pour des Équipes Plus Régulières | LuxOps",
     description: isEN
       ? 'Hotel staff training methods that build real operational consistency. From onboarding to department-specific SOPs, structured training that reduces turnover impact and raises service standards.'
-      : 'Méthodes de formation du personnel hôtelier qui construisent une vraie régularité opérationnelle. De l\'intégration aux SOPs par département, une formation structurée qui réduit l\'impact du turnover et élève les standards de service.',
+      : "Formation équipe hôtelière structurée autour des procédures par département, de l'intégration et du suivi terrain. Des méthodes claires pour des équipes plus régulières, même face au turnover.",
     keywords: isEN
       ? 'hotel staff training, hospitality staff training, hotel employee training programme, hotel training methods, luxury hotel staff training'
-      : 'formation personnel hôtelier, formation staff hôtelier, programme formation personnel hôtel, méthodes formation hôtelière, formation personnel hôtel de luxe',
+      : "formation équipe hôtelière, formation collaborateurs hôtel, programme formation hôtellerie, méthodes formation hôtelière, formation équipe hôtel de luxe",
   }
 }
 
 const TOPICS_EN = [
   {
     title: 'Department-specific procedure training',
-    body: 'Generic hospitality training covers broad principles. Department-specific training is where consistency is actually built. A room attendant needs a different training programme than a receptionist or a spa therapist. Each role has distinct procedures, distinct quality indicators and distinct moments where the guest experience depends on what the team member does next. Training at the role level, with written procedures as the foundation, creates teams that hold a standard rather than approximate it.',
+    body: "A housekeeping team, a reception desk, a restaurant or a spa do not operate on the same logic. Each department has its own sequences, controls, priorities and moments of truth for the guest. Training by department means building methods adapted to the role, not just general principles. That is where consistency actually starts. When procedures are written, explained and properly reinforced, teams hold the standard rather than approximating it.",
   },
   {
-    title: 'Structured onboarding for new hires',
-    body: 'The first weeks of a new team member\'s employment determine their long-term habits. A structured onboarding programme introduces the property\'s standards before informal habits form. It pairs the new hire with a supervisor who validates competency at each stage, rather than assuming it. And it gives the new hire a written reference they can consult independently without repeatedly interrupting colleagues.',
+    title: 'Structured onboarding for new team members',
+    body: "The first weeks determine far more than most people realise. It is often when bad habits form, or when the right reflexes take hold. Structured onboarding sets the expected standard from day one, verifies competency step by step and gives the new team member a clear reference to return to. This avoids depending entirely on whichever colleagues happen to be most available or experienced at that moment.",
   },
   {
-    title: 'Training that accounts for turnover',
-    body: 'Hotel operations face consistent staff turnover. A training programme that relies on experienced team members to pass on knowledge informally is fragile: when those people leave, the knowledge leaves with them. Structured training solves this by making procedures explicit and documented. A new hire trained to a written standard reaches operational proficiency faster and more reliably than one trained by observation alone.',
+    title: 'Training built to hold despite turnover',
+    body: "Turnover is part of hotel reality. The point is not to pretend it can be avoided entirely, but to stop it from permanently destabilising the service level. When knowledge stays oral, every departure creates a loss. When methods are written, transmitted and reinforced in a structured framework, they stay with the property. A new team member can reach the right level faster, with fewer errors and less uncertainty.",
   },
   {
-    title: 'Supervisory and management training',
-    body: 'Front-line teams perform to the level their supervisors reinforce. Training supervisors to run effective pre-shift briefings, conduct structured room or area inspections and coach individuals in the moment creates a daily quality reinforcement mechanism that operates without requiring management intervention. The supervisor is the most important training lever in a hotel operation.',
+    title: 'Supervisor and manager training',
+    body: "In many hotels, quality holds or falls depending on the level of supervision. A good supervisor does not just observe. They know what to check, how to address a gap, how to run a useful briefing and how to keep the team at the right level before a problem becomes visible to the guest. Training supervisors and managers means giving them the means to maintain standards every day, on the floor, without depending permanently on senior management.",
   },
   {
     title: 'Cross-department service standards',
-    body: 'Guest satisfaction gaps are most often created at the intersection of departments rather than within them. The handover from housekeeping to reception when a room is ready. The communication between reception and F&B for in-room dining. Training cross-department coordination means making these handover points visible, giving each team a clear protocol and creating accountability for the moments that fall between job descriptions.',
+    body: "A large part of quality gaps does not come from an isolated department, but from the handover between services. A room ready but not released in time. A guest request poorly communicated. An unclear coordination between reception, housekeeping, F&B or maintenance. Training a hotel team also means clarifying these contact points. When responsibilities are clear and teams know what to pass on, to whom and when, service becomes more fluid and far more reliable.",
   },
 ]
 
 const TOPICS_FR = [
   {
     title: 'Formation aux procédures par département',
-    body: 'La formation générale en hôtellerie couvre des principes larges. La formation par département est là où la régularité se construit réellement. Une équipière a besoin d\'un programme de formation différent d\'un réceptionniste ou d\'un thérapeute spa. Chaque rôle a des procédures distinctes, des indicateurs qualité distincts et des moments où l\'expérience client dépend de ce que le collaborateur fait ensuite. Former au niveau du poste, avec des procédures écrites comme base, crée des équipes qui tiennent un standard plutôt que de l\'approximer.',
+    body: "Une équipe housekeeping, une réception, un restaurant ou un spa ne travaillent pas sur la même logique. Chaque département a ses séquences, ses contrôles, ses priorités et ses moments de vérité pour le client. Former par département permet donc de poser des méthodes adaptées au poste, et pas seulement des principes généraux. C'est là que la régularité commence vraiment. Quand les procédures sont écrites, expliquées et reprises correctement, les équipes tiennent mieux le standard au lieu de simplement s'en rapprocher.",
   },
   {
     title: 'Intégration structurée pour les nouvelles recrues',
-    body: 'Les premières semaines d\'un nouveau collaborateur déterminent ses habitudes à long terme. Un programme d\'intégration structuré introduit les standards de l\'établissement avant que des habitudes informelles ne se forment. Il associe le nouveau venu à un superviseur qui valide la compétence à chaque étape, plutôt que de la supposer. Et il donne au nouveau collaborateur un référentiel écrit qu\'il peut consulter de façon autonome sans interrompre constamment ses collègues.',
+    body: "Les premières semaines déterminent beaucoup plus qu'on ne le pense. C'est souvent à ce moment-là que les mauvaises habitudes s'installent, ou au contraire que les bons réflexes prennent. Une intégration structurée permet de poser le niveau attendu dès le départ, de vérifier les acquis étape par étape, et de donner au nouveau collaborateur un support clair auquel revenir. Cela évite de dépendre uniquement des collègues les plus disponibles ou les plus expérimentés du moment.",
   },
   {
-    title: 'Une formation qui prend en compte le turnover',
-    body: 'Les exploitations hôtelières font face à un turnover constant. Un programme de formation qui repose sur des membres expérimentés pour transmettre les savoir-faire informellement est fragile : quand ces personnes partent, les connaissances partent avec elles. La formation structurée résout ce problème en rendant les procédures explicites et documentées. Un nouveau collaborateur formé à un standard écrit atteint la maîtrise opérationnelle plus rapidement et plus sûrement que celui formé par observation seule.',
+    title: 'Une formation pensée pour tenir malgré le turnover',
+    body: "Le turnover fait partie de la réalité hôtelière. Le sujet n'est pas de prétendre l'éviter totalement, mais d'empêcher qu'il déstabilise en permanence le niveau d'exécution. Quand les savoir-faire restent oraux, chaque départ crée une perte. Quand les méthodes sont écrites, transmises et reprises dans un cadre structuré, elles restent dans l'établissement. Une nouvelle recrue peut alors monter plus vite en niveau, avec moins d'erreurs et moins de flottement.",
   },
   {
     title: 'Formation des superviseurs et managers',
-    body: 'Les équipes de terrain performent au niveau que leurs superviseurs renforcent. Former les superviseurs à animer des briefings pré-service efficaces, conduire des inspections structurées de chambres ou d\'espaces et coacher les individus en temps réel crée un mécanisme de renforcement quotidien de la qualité qui fonctionne sans nécessiter l\'intervention de la direction. Le superviseur est le levier de formation le plus important dans une exploitation hôtelière.',
+    body: "Dans beaucoup d'hôtels, la qualité tient ou retombe en fonction du niveau de supervision. Un bon superviseur ne se contente pas de constater. Il sait quoi contrôler, comment reprendre un écart, comment faire un briefing utile, et comment maintenir l'équipe au bon niveau sans attendre qu'un problème devienne visible pour le client. Former les superviseurs et les managers, c'est leur donner les moyens de faire vivre les standards chaque jour, sur le terrain, sans dépendre en permanence de la direction.",
   },
   {
     title: 'Standards de service inter-départements',
-    body: 'Les écarts de satisfaction client se créent le plus souvent à l\'intersection des départements plutôt qu\'en leur sein. La passation du housekeeping à la réception quand une chambre est prête. La communication entre la réception et le F&B pour le room service. Former la coordination inter-départements signifie rendre ces points de passation visibles, donner à chaque équipe un protocole clair et créer une responsabilité pour les moments qui se situent entre les fiches de poste.',
+    body: "Une grande partie des écarts de qualité ne vient pas d'un département isolé, mais du passage de relais entre services. Une chambre prête mais pas libérée à temps. Une demande client mal transmise. Une coordination floue entre réception, housekeeping, F&B ou maintenance. Former une équipe hôtelière, c'est aussi clarifier ces points de contact. Quand les responsabilités sont posées et que les équipes savent ce qu'elles doivent transmettre, à qui et à quel moment, le service devient plus fluide et beaucoup plus sûr.",
   },
 ]
 
@@ -75,17 +75,17 @@ export default async function HotelStaffTrainingPage({ params }: { params: Promi
       <section className="bg-[#1A2E44] text-white py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <span className="inline-block bg-[#2E7D32] text-white text-xs font-semibold px-3 py-1 rounded-full mb-6 tracking-widest uppercase">
-            {isEN ? 'Hotel Staff Training' : 'Formation Personnel Hôtelier'}
+            {isEN ? 'Hotel Team Training' : 'Formation Équipe Hôtelière'}
           </span>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
             {isEN
-              ? 'Hotel Staff Training: From Onboarding to Operational Excellence'
-              : 'Formation du Personnel Hôtelier : De l\'Intégration à l\'Excellence Opérationnelle'}
+              ? 'Hotel Team Training: From Onboarding to Operational Excellence'
+              : "Formation Équipe Hôtelière : structurer les méthodes de travail pour des équipes plus régulières"}
           </h1>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-10">
             {isEN
-              ? 'Hospitality training that stays with the team after the session. Written procedures, structured modules and on-site delivery designed for the realities of hotel operations: high turnover, multi-department coordination and service standards that must hold across every shift.'
-              : 'Une formation hôtelière qui reste avec l\'équipe après la session. Procédures écrites, modules structurés et déploiement sur site conçus pour les réalités des opérations hôtelières : fort turnover, coordination multi-départements et standards de service qui doivent tenir à chaque service.'}
+              ? "Hospitality training that stays with the team after the session. Written procedures, structured modules and on-site delivery designed for the realities of hotel operations: high turnover, multi-department coordination and service standards that must hold across every shift."
+              : "Une équipe hôtelière ne gagne pas en régularité simplement parce qu'elle a de bonnes personnes. Elle progresse quand les méthodes sont claires, partagées et reprises de façon cohérente d'un service à l'autre. Former une équipe hôtelière, ce n'est donc pas seulement transmettre des principes de service. C'est donner à chaque service un cadre concret pour travailler, intégrer les nouveaux, maintenir le niveau et éviter que tout repose sur quelques personnes clés."}
           </p>
           <Link
             href={`/${locale}/formation`}
@@ -96,28 +96,30 @@ export default async function HotelStaffTrainingPage({ params }: { params: Promi
         </div>
       </section>
 
-      {/* What separates effective training */}
+      {/* Ce qui distingue */}
       <section className="py-16 px-6">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold text-[#1A2E44] mb-6">
-            {isEN ? 'What separates effective hotel staff training from generic hospitality courses' : 'Ce qui distingue une formation du personnel hôtelier efficace des cours d\'hôtellerie génériques'}
+            {isEN
+              ? 'What separates effective hotel team training from generic hospitality courses'
+              : "Ce qui distingue une vraie formation d'équipe hôtelière d'un cours plus général"}
           </h2>
           {isEN ? (
             <>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Generic hospitality training builds awareness. It introduces service principles, covers broad etiquette and gives participants a framework for thinking about guest experience. It is useful as a foundation. It is not sufficient as a training programme for a hotel operation.
+                Generic hospitality training builds awareness. It covers service principles, broad etiquette and gives participants a framework for thinking about guest experience. That is useful as a foundation. It is not sufficient as a training programme for a real hotel operation.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Effective hotel staff training is role-specific, procedure-based and delivered in the property where the work happens. It trains the exact sequence a room attendant follows to prepare a departing room. It trains the exact phrase a receptionist uses to offer an upgrade. It trains the inspection routine a supervisor runs before releasing a floor. Specificity is what makes training transferable into consistent daily performance.
+                Effective hotel team training is role-specific, procedure-based and delivered where the work happens. It trains the exact sequence a room attendant follows to prepare a departing room. The exact phrase a receptionist uses to offer an upgrade. The inspection routine a supervisor runs before releasing a floor. Specificity is what turns training into consistent daily performance.
               </p>
             </>
           ) : (
             <>
               <p className="text-gray-600 leading-relaxed mb-4">
-                La formation générale en hôtellerie développe la sensibilisation. Elle introduit les principes de service, couvre l\'étiquette générale et donne aux participants un cadre pour réfléchir à l\'expérience client. Elle est utile comme base. Elle n\'est pas suffisante comme programme de formation pour une exploitation hôtelière.
+                {"Une formation générale en hôtellerie peut poser des bases utiles. Elle parle de service, d'attitude, d'expérience client. Mais elle reste souvent trop large pour une exploitation réelle. Dans un hôtel, les équipes ont besoin de beaucoup plus que cela. Elles ont besoin de savoir quoi faire, dans quel ordre, avec quel niveau attendu, et comment réagir quand la journée ne se passe pas comme prévu."}
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Une formation efficace du personnel hôtelier est spécifique au rôle, basée sur des procédures et délivrée dans l\'établissement où le travail se déroule. Elle forme la séquence exacte qu\'une équipière suit pour préparer une chambre départ. Elle forme la phrase exacte qu\'un réceptionniste utilise pour proposer une surclasse. Elle forme la routine d\'inspection qu\'un superviseur effectue avant de libérer un étage. La spécificité est ce qui rend la formation transférable en performance quotidienne régulière.
+                {"Une formation efficace d'équipe hôtelière est liée au poste, au service et au fonctionnement réel de l'établissement. Elle ne se contente pas de sensibiliser. Elle transmet des méthodes de travail, des séquences claires, des points de contrôle et des repères communs. C'est cela qui permet à une équipe de tenir un niveau dans le temps, au lieu de dépendre uniquement de l'observation ou des habitudes de chacun."}
               </p>
             </>
           )}
@@ -128,7 +130,7 @@ export default async function HotelStaffTrainingPage({ params }: { params: Promi
       <section className="py-16 px-6 bg-gray-50">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold text-[#1A2E44] mb-8">
-            {isEN ? 'Key areas of hotel staff training' : 'Domaines clés de la formation du personnel hôtelier'}
+            {isEN ? 'Key areas of hotel team training' : "Domaines clés de la formation d'équipe hôtelière"}
           </h2>
           <div className="space-y-6">
             {topics.map((item) => (
@@ -145,15 +147,17 @@ export default async function HotelStaffTrainingPage({ params }: { params: Promi
       <section className="py-16 px-6">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold text-[#1A2E44] mb-6">
-            {isEN ? 'On-site training built around your team and your procedures' : 'Une formation sur site construite autour de votre équipe et de vos procédures'}
+            {isEN
+              ? 'On-site training built around your team and your procedures'
+              : "Une formation sur site construite autour de vos équipes et de vos procédures"}
           </h2>
           {isEN ? (
             <p className="text-gray-600 leading-relaxed mb-8">
-              LuxOps training sessions are delivered on-site, structured around the department playbooks your team receives at the end of the session. Each participant leaves with a written reference for their role. The training builds the habit. The playbook maintains it between sessions and through staff changes.
+              LuxOps training sessions are delivered on-site, structured around the department playbooks your team receives at the end of the session. Each participant leaves with a written reference for their role. The training builds the habit. The playbook maintains it between sessions and through team changes.
             </p>
           ) : (
             <p className="text-gray-600 leading-relaxed mb-8">
-              Les sessions de formation LuxOps sont délivrées sur site, structurées autour des playbooks de département que votre équipe reçoit à la fin de la session. Chaque participant repart avec un référentiel écrit pour son poste. La formation construit l\'habitude. Le playbook la maintient entre les sessions et malgré les changements d\'équipe.
+              {"Une formation a beaucoup plus de valeur quand elle se déroule dans l'établissement, avec les équipes concernées, à partir des réalités du terrain. Chez LuxOps, les sessions sont construites autour des procédures du département, puis appuyées par des playbooks que l'équipe garde ensuite comme référentiel écrit. La formation sert à installer les bons réflexes. Les supports permettent de les maintenir dans le temps, même lorsque les équipes évoluent."}
             </p>
           )}
           <div className="flex flex-col sm:flex-row gap-4">
