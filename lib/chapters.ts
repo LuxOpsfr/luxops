@@ -1,0 +1,453 @@
+/**
+ * Chapter configuration for all playbooks.
+ * Paths are relative to the Supabase Storage bucket "playbooks".
+ * Full URL = SUPABASE_URL/storage/v1/object/public/playbooks/{path}
+ *
+ * File naming convention: ch{01-12}-slug.pdf / .pptx
+ * Folder structure: {playbook}/pdf/{locale}/ch{n}-slug.pdf
+ */
+
+export interface Chapter {
+  number: number
+  titleFr: string
+  titleEn: string
+  pdfFr: string
+  pdfEn: string
+  pptxFr: string
+  pptxEn: string
+}
+
+export interface Playbook {
+  id: string
+  titleFr: string
+  titleEn: string
+  color: string
+  chapters: Chapter[]
+}
+
+/** Map Stripe price_id → playbook id */
+export const PRICE_TO_PLAYBOOK: Record<string, string> = {
+  price_1TBZ94DVLJTOFkjUsH59B7x7: 'front-office',
+  price_1TBZ9TDVLJTOFkjUwWnoKaGk: 'housekeeping',
+  price_1TBZ9iDVLJTOFkjU3Os9VLRc: 'fb',
+  price_1TBdcNDVLJTOFkjURLNAORmJ: 'spa', // test 0€
+  price_1TBZ9vDVLJTOFkjUT1FHhqUiY: 'spa',
+  price_1TBZB5DVLJTOFkjUwmgvTPRW: 'bundle', // bundle = all 4
+}
+
+export const BUNDLE_PRICE_ID = 'price_1TBZB5DVLJTOFkjUwmgvTPRW'
+
+export const PLAYBOOKS: Record<string, Playbook> = {
+  'front-office': {
+    id: 'front-office',
+    titleFr: 'Playbook Front Office',
+    titleEn: 'Front Office Playbook',
+    color: '#0056D2',
+    chapters: [
+      {
+        number: 1,
+        titleFr: 'Introduction au manuel des procédures du front office',
+        titleEn: 'Introduction',
+        pdfFr: 'front-office/pdf/fr/ch01-introduction.pdf',
+        pdfEn: 'front-office/pdf/en/ch01-introduction.pdf',
+        pptxFr: 'front-office/pptx/fr/ch01-introduction.pptx',
+        pptxEn: 'front-office/pptx/en/ch01-introduction.pptx',
+      },
+      {
+        number: 2,
+        titleFr: 'Procédure de check-in',
+        titleEn: 'Check-in Procedure',
+        pdfFr: 'front-office/pdf/fr/ch02-check-in.pdf',
+        pdfEn: 'front-office/pdf/en/ch02-check-in.pdf',
+        pptxFr: 'front-office/pptx/fr/ch02-check-in.pptx',
+        pptxEn: 'front-office/pptx/en/ch02-check-in.pptx',
+      },
+      {
+        number: 3,
+        titleFr: 'Procédure de check-out',
+        titleEn: 'Check-out Procedure',
+        pdfFr: 'front-office/pdf/fr/ch03-check-out.pdf',
+        pdfEn: 'front-office/pdf/en/ch03-check-out.pdf',
+        pptxFr: 'front-office/pptx/fr/ch03-check-out.pptx',
+        pptxEn: 'front-office/pptx/en/ch03-check-out.pptx',
+      },
+      {
+        number: 4,
+        titleFr: 'Communication client',
+        titleEn: 'Guest Communication',
+        pdfFr: 'front-office/pdf/fr/ch04-communication-client.pdf',
+        pdfEn: 'front-office/pdf/en/ch04-guest-communication.pdf',
+        pptxFr: 'front-office/pptx/fr/ch04-communication-client.pptx',
+        pptxEn: 'front-office/pptx/en/ch04-guest-communication.pptx',
+      },
+      {
+        number: 5,
+        titleFr: "Techniques d'upselling",
+        titleEn: 'Upselling Techniques',
+        pdfFr: 'front-office/pdf/fr/ch05-upselling.pdf',
+        pdfEn: 'front-office/pdf/en/ch05-upselling.pdf',
+        pptxFr: 'front-office/pptx/fr/ch05-upselling.pptx',
+        pptxEn: 'front-office/pptx/en/ch05-upselling.pptx',
+      },
+      {
+        number: 6,
+        titleFr: 'Systèmes et opérations PMS',
+        titleEn: 'Systems and PMS Operations',
+        pdfFr: 'front-office/pdf/fr/ch06-pms.pdf',
+        pdfEn: 'front-office/pdf/en/ch06-pms.pdf',
+        pptxFr: 'front-office/pptx/fr/ch06-pms.pptx',
+        pptxEn: 'front-office/pptx/en/ch06-pms.pptx',
+      },
+      {
+        number: 7,
+        titleFr: 'Night Audit',
+        titleEn: 'Night Audit',
+        pdfFr: 'front-office/pdf/fr/ch07-night-audit.pdf',
+        pdfEn: 'front-office/pdf/en/ch07-night-audit.pdf',
+        pptxFr: 'front-office/pptx/fr/ch07-night-audit.pptx',
+        pptxEn: 'front-office/pptx/en/ch07-night-audit.pptx',
+      },
+      {
+        number: 8,
+        titleFr: "Management de l'équipe",
+        titleEn: 'Team Management',
+        pdfFr: 'front-office/pdf/fr/ch08-management.pdf',
+        pdfEn: 'front-office/pdf/en/ch08-management.pdf',
+        pptxFr: 'front-office/pptx/fr/ch08-management.pptx',
+        pptxEn: 'front-office/pptx/en/ch08-management.pptx',
+      },
+      {
+        number: 9,
+        titleFr: "Procédures d'urgence",
+        titleEn: 'Emergency Procedures',
+        pdfFr: 'front-office/pdf/fr/ch09-urgence.pdf',
+        pdfEn: 'front-office/pdf/en/ch09-emergency.pdf',
+        pptxFr: 'front-office/pptx/fr/ch09-urgence.pptx',
+        pptxEn: 'front-office/pptx/en/ch09-emergency.pptx',
+      },
+      {
+        number: 10,
+        titleFr: 'Excellence et normes de qualité',
+        titleEn: 'Excellence and Quality Standards',
+        pdfFr: 'front-office/pdf/fr/ch10-excellence.pdf',
+        pdfEn: 'front-office/pdf/en/ch10-excellence.pdf',
+        pptxFr: 'front-office/pptx/fr/ch10-excellence.pptx',
+        pptxEn: 'front-office/pptx/en/ch10-excellence.pptx',
+      },
+      {
+        number: 11,
+        titleFr: 'Concierge et services clients',
+        titleEn: 'Concierge and Guest Services',
+        pdfFr: 'front-office/pdf/fr/ch11-concierge.pdf',
+        pdfEn: 'front-office/pdf/en/ch11-concierge.pdf',
+        pptxFr: 'front-office/pptx/fr/ch11-concierge.pptx',
+        pptxEn: 'front-office/pptx/en/ch11-concierge.pptx',
+      },
+      {
+        number: 12,
+        titleFr: 'Bagagistes et portiers',
+        titleEn: 'Luggage and Porter Services',
+        pdfFr: 'front-office/pdf/fr/ch12-bagagistes.pdf',
+        pdfEn: 'front-office/pdf/en/ch12-luggage.pdf',
+        pptxFr: 'front-office/pptx/fr/ch12-bagagistes.pptx',
+        pptxEn: 'front-office/pptx/en/ch12-luggage.pptx',
+      },
+    ],
+  },
+
+  housekeeping: {
+    id: 'housekeeping',
+    titleFr: 'Playbook Housekeeping',
+    titleEn: 'Housekeeping Playbook',
+    color: '#2E7D32',
+    chapters: [
+      {
+        number: 1,
+        titleFr: "Introduction à l'excellence du housekeeping",
+        titleEn: 'Introduction to Housekeeping Excellence',
+        pdfFr: 'housekeeping/pdf/fr/ch01-introduction.pdf',
+        pdfEn: 'housekeeping/pdf/en/ch01-introduction.pdf',
+        pptxFr: 'housekeeping/pptx/fr/ch01-introduction.pptx',
+        pptxEn: 'housekeeping/pptx/en/ch01-introduction.pptx',
+      },
+      {
+        number: 2,
+        titleFr: 'Standards et procédures de nettoyage des chambres',
+        titleEn: 'Room Cleaning Standards and Procedures',
+        pdfFr: 'housekeeping/pdf/fr/ch02-nettoyage-chambres.pdf',
+        pdfEn: 'housekeeping/pdf/en/ch02-room-cleaning.pdf',
+        pptxFr: 'housekeeping/pptx/fr/ch02-nettoyage-chambres.pptx',
+        pptxEn: 'housekeeping/pptx/en/ch02-room-cleaning.pptx',
+      },
+      {
+        number: 3,
+        titleFr: 'Service du soir et Turndown',
+        titleEn: 'Turndown and Evening Service',
+        pdfFr: 'housekeeping/pdf/fr/ch03-turndown.pdf',
+        pdfEn: 'housekeeping/pdf/en/ch03-turndown.pdf',
+        pptxFr: 'housekeeping/pptx/fr/ch03-turndown.pptx',
+        pptxEn: 'housekeeping/pptx/en/ch03-turndown.pptx',
+      },
+      {
+        number: 4,
+        titleFr: 'Parties communes et nettoyage spécialisé',
+        titleEn: 'Public Areas and Specialty Cleaning',
+        pdfFr: 'housekeeping/pdf/fr/ch04-parties-communes.pdf',
+        pdfEn: 'housekeeping/pdf/en/ch04-public-areas.pdf',
+        pptxFr: 'housekeeping/pptx/fr/ch04-parties-communes.pptx',
+        pptxEn: 'housekeeping/pptx/en/ch04-public-areas.pptx',
+      },
+      {
+        number: 5,
+        titleFr: 'Services aux clients et interactions',
+        titleEn: 'Guest Services and Interaction',
+        pdfFr: 'housekeeping/pdf/fr/ch05-services-clients.pdf',
+        pdfEn: 'housekeeping/pdf/en/ch05-guest-services.pdf',
+        pptxFr: 'housekeeping/pptx/fr/ch05-services-clients.pptx',
+        pptxEn: 'housekeeping/pptx/en/ch05-guest-services.pptx',
+      },
+      {
+        number: 6,
+        titleFr: 'Contrôle qualité et inspections',
+        titleEn: 'Quality Control and Inspections',
+        pdfFr: 'housekeeping/pdf/fr/ch06-controle-qualite.pdf',
+        pdfEn: 'housekeeping/pdf/en/ch06-quality-control.pdf',
+        pptxFr: 'housekeeping/pptx/fr/ch06-controle-qualite.pptx',
+        pptxEn: 'housekeeping/pptx/en/ch06-quality-control.pptx',
+      },
+      {
+        number: 7,
+        titleFr: 'Gestion des stocks et approvisionnements',
+        titleEn: 'Inventory and Supplies Management',
+        pdfFr: 'housekeeping/pdf/fr/ch07-stocks.pdf',
+        pdfEn: 'housekeeping/pdf/en/ch07-inventory.pdf',
+        pptxFr: 'housekeeping/pptx/fr/ch07-stocks.pptx',
+        pptxEn: 'housekeeping/pptx/en/ch07-inventory.pptx',
+      },
+      {
+        number: 8,
+        titleFr: "Management des équipes et planification",
+        titleEn: 'Team Management and Scheduling',
+        pdfFr: 'housekeeping/pdf/fr/ch08-management.pdf',
+        pdfEn: 'housekeeping/pdf/en/ch08-management.pdf',
+        pptxFr: 'housekeeping/pptx/fr/ch08-management.pptx',
+        pptxEn: 'housekeeping/pptx/en/ch08-management.pptx',
+      },
+      {
+        number: 9,
+        titleFr: 'Santé, sécurité et conformité',
+        titleEn: 'Health, Safety and Compliance',
+        pdfFr: 'housekeeping/pdf/fr/ch09-sante-securite.pdf',
+        pdfEn: 'housekeeping/pdf/en/ch09-health-safety.pdf',
+        pptxFr: 'housekeeping/pptx/fr/ch09-sante-securite.pptx',
+        pptxEn: 'housekeeping/pptx/en/ch09-health-safety.pptx',
+      },
+      {
+        number: 10,
+        titleFr: 'Développement durable et bonnes pratiques',
+        titleEn: 'Sustainability and Best Practices',
+        pdfFr: 'housekeeping/pdf/fr/ch10-developpement-durable.pdf',
+        pdfEn: 'housekeeping/pdf/en/ch10-sustainability.pdf',
+        pptxFr: 'housekeeping/pptx/fr/ch10-developpement-durable.pptx',
+        pptxEn: 'housekeeping/pptx/en/ch10-sustainability.pptx',
+      },
+    ],
+  },
+
+  fb: {
+    id: 'fb',
+    titleFr: 'Playbook F&B',
+    titleEn: 'F&B Playbook',
+    color: '#B45309',
+    chapters: [
+      {
+        number: 1,
+        titleFr: "L'Art de l'excellence F&B",
+        titleEn: 'The Art of F&B Excellence',
+        pdfFr: 'fb/pdf/fr/ch01-excellence.pdf',
+        pdfEn: 'fb/pdf/en/ch01-excellence.pdf',
+        pptxFr: 'fb/pptx/fr/ch01-excellence.pptx',
+        pptxEn: 'fb/pptx/en/ch01-excellence.pptx',
+      },
+      {
+        number: 2,
+        titleFr: 'Séquence de service en restaurant',
+        titleEn: 'Restaurant Service Standards',
+        pdfFr: 'fb/pdf/fr/ch02-service-restaurant.pdf',
+        pdfEn: 'fb/pdf/en/ch02-service-restaurant.pdf',
+        pptxFr: 'fb/pptx/fr/ch02-service-restaurant.pptx',
+        pptxEn: 'fb/pptx/en/ch02-service-restaurant.pptx',
+      },
+      {
+        number: 3,
+        titleFr: 'Le service du petit-déjeuner',
+        titleEn: 'Breakfast Service',
+        pdfFr: 'fb/pdf/fr/ch03-petit-dejeuner.pdf',
+        pdfEn: 'fb/pdf/en/ch03-breakfast.pdf',
+        pptxFr: 'fb/pptx/fr/ch03-petit-dejeuner.pptx',
+        pptxEn: 'fb/pptx/en/ch03-breakfast.pptx',
+      },
+      {
+        number: 4,
+        titleFr: 'Bar et service des boissons',
+        titleEn: 'Bar and Beverage Service',
+        pdfFr: 'fb/pdf/fr/ch04-bar.pdf',
+        pdfEn: 'fb/pdf/en/ch04-bar.pdf',
+        pptxFr: 'fb/pptx/fr/ch04-bar.pptx',
+        pptxEn: 'fb/pptx/en/ch04-bar.pptx',
+      },
+      {
+        number: 5,
+        titleFr: 'Excellence du service du vin',
+        titleEn: 'Wine Service Excellence',
+        pdfFr: 'fb/pdf/fr/ch05-vin.pdf',
+        pdfEn: 'fb/pdf/en/ch05-wine.pdf',
+        pptxFr: 'fb/pptx/fr/ch05-vin.pptx',
+        pptxEn: 'fb/pptx/en/ch05-wine.pptx',
+      },
+      {
+        number: 6,
+        titleFr: 'Room service',
+        titleEn: 'Room Service & In-Room Dining',
+        pdfFr: 'fb/pdf/fr/ch06-room-service.pdf',
+        pdfEn: 'fb/pdf/en/ch06-room-service.pdf',
+        pptxFr: 'fb/pptx/fr/ch06-room-service.pptx',
+        pptxEn: 'fb/pptx/en/ch06-room-service.pptx',
+      },
+      {
+        number: 7,
+        titleFr: 'Interaction client et gestion des réclamations',
+        titleEn: 'Guest Interaction and Service Recovery',
+        pdfFr: 'fb/pdf/fr/ch07-interaction-client.pdf',
+        pdfEn: 'fb/pdf/en/ch07-guest-interaction.pdf',
+        pptxFr: 'fb/pptx/fr/ch07-interaction-client.pptx',
+        pptxEn: 'fb/pptx/en/ch07-guest-interaction.pptx',
+      },
+      {
+        number: 8,
+        titleFr: 'Mise en place et gestion des stations',
+        titleEn: 'Mise en Place and Station Management',
+        pdfFr: 'fb/pdf/fr/ch08-mise-en-place.pdf',
+        pdfEn: 'fb/pdf/en/ch08-mise-en-place.pdf',
+        pptxFr: 'fb/pptx/fr/ch08-mise-en-place.pptx',
+        pptxEn: 'fb/pptx/en/ch08-mise-en-place.pptx',
+      },
+      {
+        number: 9,
+        titleFr: "Gestion de l'équipe et opérations",
+        titleEn: 'Team Management and Operations',
+        pdfFr: 'fb/pdf/fr/ch09-management.pdf',
+        pdfEn: 'fb/pdf/en/ch09-management.pdf',
+        pptxFr: 'fb/pptx/fr/ch09-management.pptx',
+        pptxEn: 'fb/pptx/en/ch09-management.pptx',
+      },
+      {
+        number: 10,
+        titleFr: 'Standards qualité et conformité',
+        titleEn: 'Quality Standards and Compliance',
+        pdfFr: 'fb/pdf/fr/ch10-qualite.pdf',
+        pdfEn: 'fb/pdf/en/ch10-quality.pdf',
+        pptxFr: 'fb/pptx/fr/ch10-qualite.pptx',
+        pptxEn: 'fb/pptx/en/ch10-quality.pptx',
+      },
+    ],
+  },
+
+  spa: {
+    id: 'spa',
+    titleFr: 'Playbook Spa & Wellness',
+    titleEn: 'Spa & Wellness Playbook',
+    color: '#7C3AED',
+    chapters: [
+      {
+        number: 1,
+        titleFr: "Introduction à l'Excellence du Spa & Bien-Être",
+        titleEn: 'Introduction to Spa and Wellness Excellence',
+        pdfFr: 'spa/pdf/fr/ch01-introduction.pdf',
+        pdfEn: 'spa/pdf/en/ch01-introduction.pdf',
+        pptxFr: 'spa/pptx/fr/ch01-introduction.pptx',
+        pptxEn: 'spa/pptx/en/ch01-introduction.pptx',
+      },
+      {
+        number: 2,
+        titleFr: 'Standards et préparation de la salle de soins',
+        titleEn: 'Treatment Room Standards',
+        pdfFr: 'spa/pdf/fr/ch02-salle-soins.pdf',
+        pdfEn: 'spa/pdf/en/ch02-treatment-room.pdf',
+        pptxFr: 'spa/pptx/fr/ch02-salle-soins.pptx',
+        pptxEn: 'spa/pptx/en/ch02-treatment-room.pptx',
+      },
+      {
+        number: 3,
+        titleFr: 'Le parcours client et les protocoles de service',
+        titleEn: 'The Guest Journey and Service Protocol',
+        pdfFr: 'spa/pdf/fr/ch03-parcours-client.pdf',
+        pdfEn: 'spa/pdf/en/ch03-guest-journey.pdf',
+        pptxFr: 'spa/pptx/fr/ch03-parcours-client.pptx',
+        pptxEn: 'spa/pptx/en/ch03-guest-journey.pptx',
+      },
+      {
+        number: 4,
+        titleFr: 'Carte de soins et techniques',
+        titleEn: 'Treatment Menu and Techniques',
+        pdfFr: 'spa/pdf/fr/ch04-carte-soins.pdf',
+        pdfEn: 'spa/pdf/en/ch04-treatment-menu.pdf',
+        pptxFr: 'spa/pptx/fr/ch04-carte-soins.pptx',
+        pptxEn: 'spa/pptx/en/ch04-treatment-menu.pptx',
+      },
+      {
+        number: 5,
+        titleFr: 'Connaissance produit et vente retail',
+        titleEn: 'Product Knowledge and Retail',
+        pdfFr: 'spa/pdf/fr/ch05-retail.pdf',
+        pdfEn: 'spa/pdf/en/ch05-retail.pdf',
+        pptxFr: 'spa/pptx/fr/ch05-retail.pptx',
+        pptxEn: 'spa/pptx/en/ch05-retail.pptx',
+      },
+      {
+        number: 6,
+        titleFr: "Gestion des installations et des équipements spa",
+        titleEn: 'Spa Facilities and Amenities Management',
+        pdfFr: 'spa/pdf/fr/ch06-installations.pdf',
+        pdfEn: 'spa/pdf/en/ch06-facilities.pdf',
+        pptxFr: 'spa/pptx/fr/ch06-installations.pptx',
+        pptxEn: 'spa/pptx/en/ch06-facilities.pptx',
+      },
+      {
+        number: 7,
+        titleFr: "Gestion de l'équipe et planification",
+        titleEn: 'Team Management and Scheduling',
+        pdfFr: 'spa/pdf/fr/ch07-management.pdf',
+        pdfEn: 'spa/pdf/en/ch07-management.pdf',
+        pptxFr: 'spa/pptx/fr/ch07-management.pptx',
+        pptxEn: 'spa/pptx/en/ch07-management.pptx',
+      },
+      {
+        number: 8,
+        titleFr: 'Contrôle qualité et satisfaction client',
+        titleEn: 'Quality Control and Guest Satisfaction',
+        pdfFr: 'spa/pdf/fr/ch08-qualite.pdf',
+        pdfEn: 'spa/pdf/en/ch08-quality.pdf',
+        pptxFr: 'spa/pptx/fr/ch08-qualite.pptx',
+        pptxEn: 'spa/pptx/en/ch08-quality.pptx',
+      },
+      {
+        number: 9,
+        titleFr: 'Standards professionnels et présentation',
+        titleEn: 'Professional Standards and Grooming',
+        pdfFr: 'spa/pdf/fr/ch09-standards-pro.pdf',
+        pdfEn: 'spa/pdf/en/ch09-standards-pro.pdf',
+        pptxFr: 'spa/pptx/fr/ch09-standards-pro.pptx',
+        pptxEn: 'spa/pptx/en/ch09-standards-pro.pptx',
+      },
+    ],
+  },
+}
+
+/** Returns the list of playbook IDs accessible for a given price_id */
+export function getPlaybookIds(priceId: string): string[] {
+  const id = PRICE_TO_PLAYBOOK[priceId]
+  if (!id) return []
+  if (id === 'bundle') return ['front-office', 'housekeeping', 'fb', 'spa']
+  return [id]
+}

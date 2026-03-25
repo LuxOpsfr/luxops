@@ -5,7 +5,8 @@ import { useRouter, useParams } from 'next/navigation'
 import Link from 'next/link'
 import { supabase } from '@/lib/supabase'
 import PortalShell from '@/components/portal/PortalShell'
-import { Download, Lock, BookOpen, Package } from 'lucide-react'
+import { Download, BookOpen, Package, ChevronDown, ChevronUp, FileText } from 'lucide-react'
+import { PLAYBOOKS, PRICE_TO_PLAYBOOK, getPlaybookIds, type Playbook, type Chapter } from '@/lib/chapters'
 
 interface Purchase {
   id: string
@@ -16,28 +17,10 @@ interface Purchase {
   locale: string
 }
 
-const DEPT_COLORS: Record<string, string> = {
-  'Front Office': '#0056D2',
-  'Housekeeping': '#2E7D32',
-  'F&B': '#B45309',
-  'Spa & Wellness': '#7C3AED',
-  'Bundle': '#1A2E44',
-}
+const SUPABASE_STORAGE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL + '/storage/v1/object/public/playbooks/'
 
-const DEPT_MAP: Record<string, string> = {
-  'front office': 'Front Office',
-  'housekeeping': 'Housekeeping',
-  'f&b': 'F&B',
-  'spa': 'Spa & Wellness',
-  'bundle': 'Bundle',
-}
-
-function getDept(name: string): string {
-  const lower = name.toLowerCase()
-  for (const key of Object.keys(DEPT_MAP)) {
-    if (lower.includes(key)) return DEPT_MAP[key]
-  }
-  return 'Ressource'
+function fileUrl(path: string) {
+  return SUPABASE_STORAGE_URL + path
 }
 
 export default function DashboardPage() {
@@ -75,8 +58,17 @@ export default function DashboardPage() {
     )
   }
 
-  const available = purchases.filter(p => p.download_url && !p.download_url.startsWith('PLACEHOLDER'))
-  const pending = purchases.filter(p => !p.download_url || p.download_url.startsWith('PLACEHOLDER'))
+  // Collect unique playbook IDs from all purchases
+  const unlockedPlaybookIds = new Set<string>()
+  for (const p of purchases) {
+    for (const id of getPlaybookIds(p.price_id)) {
+      unlockedPlaybookIds.add(id)
+    }
+  }
+
+  const unlockedPlaybooks = Array.from(unlockedPlaybookIds)
+    .map(id => PLAYBOOKS[id])
+    .filter(Boolean)
 
   return (
     <PortalShell locale={locale} email={email}>
@@ -90,8 +82,8 @@ export default function DashboardPage() {
         </h1>
         <p className="text-sm text-gray-500 mt-1">
           {isFr
-            ? 'Vos playbooks et ressources téléchargeables.'
-            : 'Your playbooks and downloadable resources.'}
+            ? 'Vos playbooks et ressources téléchargeables, organisés par chapitre.'
+            : 'Your playbooks and downloadable resources, organised by chapter.'}
         </p>
       </div>
 
@@ -100,27 +92,29 @@ export default function DashboardPage() {
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
           <div className="bg-white rounded-xl border border-gray-100 p-5">
             <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">
-              {isFr ? 'Ressources achetées' : 'Purchased resources'}
+              {isFr ? 'Playbooks achetés' : 'Purchased playbooks'}
             </p>
-            <p className="text-3xl font-bold text-[#1A2E44]">{purchases.length}</p>
+            <p className="text-3xl font-bold text-[#1A2E44]">{unlockedPlaybooks.length}</p>
           </div>
           <div className="bg-white rounded-xl border border-gray-100 p-5">
             <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">
-              {isFr ? 'Disponibles' : 'Available'}
+              {isFr ? 'Chapitres disponibles' : 'Available chapters'}
             </p>
-            <p className="text-3xl font-bold text-[#2E7D32]">{available.length}</p>
+            <p className="text-3xl font-bold text-[#2E7D32]">
+              {unlockedPlaybooks.reduce((acc, p) => acc + p.chapters.length, 0)}
+            </p>
           </div>
           <div className="bg-white rounded-xl border border-gray-100 p-5 hidden lg:block">
             <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">
-              {isFr ? 'À venir' : 'Coming soon'}
+              {isFr ? 'Formats disponibles' : 'Available formats'}
             </p>
-            <p className="text-3xl font-bold text-gray-300">{pending.length}</p>
+            <p className="text-3xl font-bold text-[#1A2E44]">PDF + PPT</p>
           </div>
         </div>
       )}
 
       {/* Empty state */}
-      {purchases.length === 0 ? (
+      {unlockedPlaybooks.length === 0 ? (
         <div className="bg-white border border-gray-100 rounded-2xl p-12 text-center">
           <div className="w-14 h-14 bg-[#EEF2F7] rounded-2xl flex items-center justify-center mx-auto mb-4">
             <Package size={24} className="text-[#1A2E44]" />
@@ -141,9 +135,9 @@ export default function DashboardPage() {
           </Link>
         </div>
       ) : (
-        <div className="grid gap-4">
-          {purchases.map(purchase => (
-            <PurchaseCard key={purchase.id} purchase={purchase} isFr={isFr} />
+        <div className="grid gap-5">
+          {unlockedPlaybooks.map(playbook => (
+            <PlaybookCard key={playbook.id} playbook={playbook} isFr={isFr} locale={locale} />
           ))}
         </div>
       )}
@@ -161,59 +155,137 @@ export default function DashboardPage() {
   )
 }
 
-function PurchaseCard({ purchase, isFr }: { purchase: Purchase; isFr: boolean }) {
-  const dept = getDept(purchase.product_name)
-  const color = DEPT_COLORS[dept] ?? '#1A2E44'
-  const hasDownload = purchase.download_url && !purchase.download_url.startsWith('PLACEHOLDER')
-  const date = new Date(purchase.created_at).toLocaleDateString(
-    isFr ? 'fr-FR' : 'en-GB',
-    { day: 'numeric', month: 'long', year: 'numeric' }
-  )
+function PlaybookCard({ playbook, isFr, locale }: { playbook: Playbook; isFr: boolean; locale: string }) {
+  const [open, setOpen] = useState(true)
 
   return (
-    <div className="bg-white border border-gray-100 rounded-2xl p-6 flex items-center justify-between gap-4 hover:shadow-sm transition-shadow">
-      <div className="flex items-center gap-4 min-w-0">
-        {/* Dept color dot */}
-        <div
-          className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-          style={{ backgroundColor: `${color}15` }}
-        >
-          <BookOpen size={18} style={{ color }} />
-        </div>
-
-        <div className="min-w-0">
-          <div className="flex items-center gap-2 mb-0.5">
-            <span
-              className="text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full"
-              style={{ backgroundColor: `${color}15`, color }}
-            >
-              {dept}
-            </span>
+    <div className="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm">
+      {/* Playbook header */}
+      <button
+        onClick={() => setOpen(o => !o)}
+        className="w-full flex items-center justify-between px-6 py-5 hover:bg-gray-50 transition-colors"
+      >
+        <div className="flex items-center gap-4">
+          <div
+            className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+            style={{ backgroundColor: `${playbook.color}15` }}
+          >
+            <BookOpen size={18} style={{ color: playbook.color }} />
           </div>
-          <h3 className="font-semibold text-[#1A2E44] text-sm">{purchase.product_name}</h3>
-          <p className="text-xs text-gray-400 mt-0.5">
-            {isFr ? 'Acheté le' : 'Purchased'} {date}
-          </p>
+          <div className="text-left">
+            <h2 className="font-bold text-[#1A2E44] text-base">
+              {isFr ? playbook.titleFr : playbook.titleEn}
+            </h2>
+            <p className="text-xs text-gray-400 mt-0.5">
+              {playbook.chapters.length} {isFr ? 'chapitres' : 'chapters'} · PDF + PPT
+            </p>
+          </div>
         </div>
+        <div className="flex items-center gap-3">
+          <span
+            className="text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full hidden sm:inline"
+            style={{ backgroundColor: `${playbook.color}15`, color: playbook.color }}
+          >
+            {isFr ? 'Débloqué' : 'Unlocked'}
+          </span>
+          {open ? (
+            <ChevronUp size={18} className="text-gray-400" />
+          ) : (
+            <ChevronDown size={18} className="text-gray-400" />
+          )}
+        </div>
+      </button>
+
+      {/* Chapters list */}
+      {open && (
+        <div className="border-t border-gray-100">
+          {playbook.chapters.map((chapter, idx) => (
+            <ChapterRow
+              key={chapter.number}
+              chapter={chapter}
+              isFr={isFr}
+              locale={locale}
+              color={playbook.color}
+              isLast={idx === playbook.chapters.length - 1}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  )
+}
+
+function ChapterRow({
+  chapter,
+  isFr,
+  locale,
+  color,
+  isLast,
+}: {
+  chapter: Chapter
+  isFr: boolean
+  locale: string
+  color: string
+  isLast: boolean
+}) {
+  const pdfUrl = fileUrl(isFr ? chapter.pdfFr : chapter.pdfEn)
+  const pptxUrl = fileUrl(isFr ? chapter.pptxFr : chapter.pptxEn)
+
+  return (
+    <div className={`flex items-center justify-between px-6 py-4 gap-4 hover:bg-gray-50 transition-colors ${!isLast ? 'border-b border-gray-50' : ''}`}>
+      <div className="flex items-center gap-3 min-w-0">
+        <span
+          className="text-xs font-bold tabular-nums flex-shrink-0 w-7 text-center"
+          style={{ color }}
+        >
+          {String(chapter.number).padStart(2, '0')}
+        </span>
+        <p className="text-sm font-medium text-[#1A2E44] truncate">
+          {isFr ? chapter.titleFr : chapter.titleEn}
+        </p>
       </div>
 
-      <div className="flex-shrink-0">
-        {hasDownload ? (
-          <a
-            href={purchase.download_url!}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2 bg-[#2E7D32] text-white text-sm font-semibold rounded-lg hover:bg-[#236127] transition-colors"
-          >
-            <Download size={15} />
-            {isFr ? 'Télécharger' : 'Download'}
-          </a>
-        ) : (
-          <span className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-400 text-sm font-medium rounded-lg">
-            <Lock size={14} />
-            {isFr ? 'Bientôt' : 'Coming soon'}
-          </span>
-        )}
+      <div className="flex items-center gap-2 flex-shrink-0">
+        <a
+          href={pdfUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg border transition-colors"
+          style={{
+            borderColor: `${color}40`,
+            color: color,
+            backgroundColor: `${color}08`,
+          }}
+          onMouseEnter={e => {
+            (e.currentTarget as HTMLElement).style.backgroundColor = `${color}18`
+          }}
+          onMouseLeave={e => {
+            (e.currentTarget as HTMLElement).style.backgroundColor = `${color}08`
+          }}
+        >
+          <FileText size={12} />
+          PDF
+        </a>
+        <a
+          href={pptxUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg border transition-colors"
+          style={{
+            borderColor: '#64748b40',
+            color: '#475569',
+            backgroundColor: '#f8fafc',
+          }}
+          onMouseEnter={e => {
+            (e.currentTarget as HTMLElement).style.backgroundColor = '#f1f5f9'
+          }}
+          onMouseLeave={e => {
+            (e.currentTarget as HTMLElement).style.backgroundColor = '#f8fafc'
+          }}
+        >
+          <Download size={12} />
+          PPT
+        </a>
       </div>
     </div>
   )
