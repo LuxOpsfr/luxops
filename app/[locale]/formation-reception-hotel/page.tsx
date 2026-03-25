@@ -7,10 +7,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: isEN
       ? 'Hotel Front Desk Training — Standards and Procedures for Reception Teams | LuxOps'
-      : 'Formation Réception Hôtel — Standards et Procédures pour les Équipes de Réception | LuxOps',
+      : 'Formation Réception Hôtel — Standards, Procédures et Réflexes de Service | LuxOps',
     description: isEN
       ? 'Front desk training for hotel reception teams. Check-in and check-out procedures, PMS operation, guest communication standards, upselling techniques and complaint handling.'
-      : 'Formation réception hôtel pour les équipes de front office. Procédures check-in et check-out, utilisation du PMS, standards de communication client, techniques d\'upselling et gestion des réclamations.',
+      : "Formation réception hôtel pour les équipes de front office. Procédures check-in et check-out, utilisation du PMS, standards de communication, techniques d'upsell et gestion des réclamations.",
     keywords: isEN
       ? 'hotel front desk training, hotel reception training, front office training hotel, hotel check-in training, hotel guest service training'
       : 'formation réception hôtel, formation front office hôtel, formation réceptionniste hôtel, formation accueil hôtel, formation équipe réception',
@@ -19,55 +19,55 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 const MODULES_EN = [
   {
-    title: 'Check-in procedure and first impressions',
-    body: 'The check-in is the first moment of physical contact between the guest and the team. Training covers the full sequence from greeting to room assignment: identity verification, room confirmation, key handover, orientation to the property and the closing phrase that sets the tone for the stay. Each step has a standard. Each standard can be trained.',
+    title: 'Check-in and first impressions',
+    body: "The check-in sets the tone for the stay immediately. Training must cover the full sequence: greeting, verification, confirmation, key handover, orientation and how to close the interaction. But beyond the procedure, it also means training rhythm, posture, quality of presence and the ability to adapt to the guest in front of you. A successful check-in is not just a correct check-in. It is a moment that reassures, flows naturally and builds confidence.",
   },
   {
-    title: 'Check-out procedure and guest departure',
-    body: 'How to handle express check-outs, standard check-outs, bill queries and disputes. Includes the post-stay communication sequence, how to handle a guest who is unhappy at departure and how to close a folio accurately in the PMS without creating downstream accounting issues.',
+    title: 'Check-out and guest departure',
+    body: "Departure is often treated as a simple administrative step, yet it strongly influences the guest's final memory of the stay. The team must know how to handle express check-outs, standard departures, billing discrepancies, disputes and final interactions with calm and precision. The tone matters as much as the process. Good training helps the team stay composed and precise, even when a guest is leaving frustrated or in a hurry.",
   },
   {
     title: 'PMS operation and reservation management',
-    body: 'Training reception teams to use the property management system with confidence and accuracy. Covers daily operations: arrivals, departures, in-house movements, rate adjustments and room changes. Particular focus on reducing input errors that affect billing, housekeeping communication and reporting.',
+    body: "PMS proficiency remains essential. Training should give the team more confidence on arrivals, departures, extensions, room changes, rate adjustments and stay management. More importantly, it should reduce the errors that create downstream problems: incorrect billing, poor communication with housekeeping, wrong room status or incomplete guest profiles. Service quality often depends on this technical foundation.",
   },
   {
     title: 'Guest communication standards',
-    body: 'The language used by reception defines the guest\'s perception of the property. Training covers the vocabulary of hospitality: how to phrase requests, how to respond to enquiries, how to communicate a delay or a limitation without creating friction. Telephone standards and written communication are included.',
+    body: "The language of the front desk strongly shapes the guest's perception of the property. Knowing how to greet, rephrase, respond to a request, announce a delay or explain a constraint is part of the role. A well-trained front office team does not recite phrases. It maintains a clear, professional and appropriate tone, in person, on the phone and in writing. Every channel of communication must reflect the same level of service.",
   },
   {
     title: 'Upselling at check-in',
-    body: 'Upselling is a service skill before it is a revenue skill. Training covers when to offer an upgrade, how to frame the offer so it feels like a recommendation rather than a sales pitch, and how to handle a refusal without creating awkwardness. Results depend entirely on how the team is trained to present the offer.',
+    body: "Upselling is not about a learned phrase. It is about how the offer is framed. Good training helps teams identify the right moment, present the proposition naturally, communicate the value clearly and accept a refusal without creating awkwardness. Results vary significantly depending on how well the team has been prepared. When upselling is properly integrated, it becomes more fluid, more credible and more effective.",
   },
   {
     title: 'Complaint handling and service recovery',
-    body: 'A complaint handled well becomes a loyalty moment. Training covers the four-step recovery sequence: acknowledge, apologise, act, follow up. Includes how to handle a guest who is visibly upset at the desk, what can be offered and what must be escalated to management.',
+    body: "A well-handled complaint can strengthen the relationship rather than damage it. The team needs a clear sequence: listen, acknowledge the problem, apologise, act, then follow up. Training must also help receptionists distinguish what they can resolve themselves, what needs to be escalated and what deserves particular attention from management. At the front desk, the quality of service recovery is often decided in a matter of minutes.",
   },
 ]
 
 const MODULES_FR = [
   {
-    title: 'Procédure de check-in et premières impressions',
-    body: 'Le check-in est le premier moment de contact physique entre le client et l\'équipe. La formation couvre la séquence complète de l\'accueil à la remise des clés : vérification d\'identité, confirmation de la chambre, remise des clés, orientation dans l\'établissement et phrase de clôture qui donne le ton du séjour. Chaque étape a un standard. Chaque standard se forme.',
+    title: 'Check-in et premières impressions',
+    body: "Le check-in donne immédiatement le ton du séjour. La formation doit couvrir la séquence complète : accueil, vérification, confirmation, remise des clés, orientation dans l'établissement, et manière de conclure l'échange. Mais au-delà de la procédure, il faut aussi former le rythme, la posture, la qualité de présence et la capacité à s'adapter au client en face. Un check-in réussi, ce n'est pas seulement un check-in correct. C'est un moment qui rassure, fluidifie et met en confiance.",
   },
   {
-    title: 'Procédure de check-out et départ client',
-    body: 'Comment gérer les départs express, les check-outs standards, les contestations de facture et les litiges. Inclut la séquence de communication post-séjour, comment gérer un client insatisfait au départ et comment clôturer un folio avec précision dans le PMS sans créer de problèmes comptables en aval.',
+    title: 'Check-out et départ client',
+    body: "Le départ est souvent traité comme une simple étape administrative, alors qu'il influence fortement le souvenir final du séjour. L'équipe doit savoir gérer les départs express, les check-outs standards, les écarts de facturation, les litiges, et les derniers échanges avec calme et précision. C'est aussi un moment où la qualité du ton compte autant que la qualité du traitement. Une bonne formation aide l'équipe à garder de la justesse, même lorsque le client part contrarié ou pressé.",
   },
   {
     title: 'Utilisation du PMS et gestion des réservations',
-    body: 'Former les équipes de réception à utiliser le logiciel de gestion hôtelière avec confiance et précision. Couvre les opérations quotidiennes : arrivées, départs, mouvements en séjour, ajustements de tarifs et changements de chambre. Accent particulier sur la réduction des erreurs de saisie qui affectent la facturation, la communication avec le housekeeping et les rapports.',
+    body: "La maîtrise du PMS reste indispensable. La formation doit permettre à l'équipe de travailler avec plus de confiance sur les arrivées, départs, prolongations, changements de chambre, ajustements de tarifs et suivi du séjour. Mais elle doit surtout réduire les erreurs qui créent ensuite des problèmes plus loin : facturation fausse, mauvaise communication avec le housekeeping, mauvais statut de chambre, ou informations incomplètes dans le dossier client. La qualité de service dépend souvent de cette base technique.",
   },
   {
     title: 'Standards de communication client',
-    body: 'Le langage utilisé par la réception définit la perception du client sur l\'établissement. La formation couvre le vocabulaire de l\'hospitalité : comment formuler une demande, comment répondre à une question, comment communiquer un délai ou une contrainte sans créer de friction. Les standards téléphoniques et la communication écrite sont inclus.',
+    body: "Le langage de la réception façonne fortement la perception de l'établissement. Savoir accueillir, reformuler, répondre à une demande, annoncer un délai ou expliquer une contrainte fait partie du métier. Une équipe front office bien formée ne récite pas des phrases. Elle sait garder un ton juste, clair et professionnel, à l'oral comme à l'écrit. Les appels, les emails, les messages et les échanges au desk doivent tous refléter le même niveau de service.",
   },
   {
-    title: 'Upselling au check-in',
-    body: 'L\'upselling est une compétence de service avant d\'être une compétence commerciale. La formation couvre le moment opportun pour proposer une surclasse, comment formuler l\'offre pour qu\'elle ressemble à une recommandation plutôt qu\'à un argumentaire de vente, et comment gérer un refus sans créer de gêne. Les résultats dépendent entièrement de la façon dont l\'équipe est formée à présenter la proposition.',
+    title: 'Upsell au check-in',
+    body: "L'upsell ne tient pas à une phrase apprise, mais à la manière dont l'offre est présentée. Une bonne formation aide les équipes à repérer le bon moment, à formuler la proposition sans gêne, à présenter la valeur de manière naturelle, et à accepter un refus sans créer de malaise. Les résultats varient beaucoup selon la manière dont l'équipe a été préparée. Quand l'upsell est bien intégré, il devient plus fluide, plus crédible et plus efficace.",
   },
   {
-    title: 'Gestion des réclamations et service recovery',
-    body: 'Une réclamation bien gérée devient un moment de fidélisation. La formation couvre la séquence de reprise en quatre étapes : reconnaître, s\'excuser, agir, faire un suivi. Inclut comment gérer un client visiblement contrarié à la réception, ce qui peut être proposé et ce qui doit être escaladé à la direction.',
+    title: 'Gestion des réclamations et reprise de service',
+    body: "Une réclamation bien gérée peut renforcer la relation au lieu de l'abîmer. Encore faut-il que l'équipe sache comment réagir. La formation doit poser une séquence claire : écouter, reconnaître le problème, présenter des excuses, agir, puis faire un suivi. Elle doit aussi aider les réceptionnistes à distinguer ce qu'ils peuvent résoudre eux-mêmes, ce qui doit être escaladé, et ce qui mérite une attention particulière de la direction. À la réception, la qualité du service recovery se joue souvent en quelques minutes.",
   },
 ]
 
@@ -88,12 +88,12 @@ export default async function FormationReceptionPage({ params }: { params: Promi
           <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
             {isEN
               ? 'Hotel Reception Training: Procedures, Standards and Service Skills'
-              : 'Formation Réception Hôtel : Procédures, Standards et Savoir-Faire de Service'}
+              : "Formation Réception Hôtel : standards, procédures et réflexes de service pour les équipes de front office"}
           </h1>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-10">
             {isEN
-              ? 'Reception is where the guest\'s experience begins and ends. Training a front desk team means going beyond the PMS login and the welcome phrase. It means building consistent habits for every moment that matters.'
-              : 'La réception est là où l\'expérience client commence et se termine. Former une équipe de réception dépasse la connexion au PMS et la phrase d\'accueil. C\'est construire des habitudes cohérentes pour chaque moment qui compte.'}
+              ? "Reception is where the guest's experience begins and ends. Training a front desk team means going beyond the PMS login and the welcome phrase. It means building consistent habits for every moment that matters."
+              : "La réception est souvent le premier vrai contact avec l'hôtel, et souvent le dernier. Former une équipe de réception ne consiste pas seulement à apprendre à utiliser un PMS ou à suivre une procédure de check-in. Il s'agit aussi de transmettre des réflexes de service, une manière de gérer les arrivées, les demandes, les tensions, les temps d'attente et les départs sans faire retomber la qualité perçue. Quand la formation est bien construite, l'équipe gagne en assurance, les échanges sont plus fluides et l'expérience client devient plus régulière."}
           </p>
           <Link
             href={`/${locale}/formation`}
@@ -104,39 +104,39 @@ export default async function FormationReceptionPage({ params }: { params: Promi
         </div>
       </section>
 
-      {/* The gap in reception training */}
+      {/* Ce qui manque */}
       <section className="py-16 px-6">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold text-[#1A2E44] mb-6">
-            {isEN ? 'The gap in most hotel reception training' : 'Le manque dans la plupart des formations réception hôtel'}
+            {isEN ? 'The gap in most hotel reception training' : 'Ce qui manque dans beaucoup de formations réception'}
           </h2>
           {isEN ? (
             <>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Most front desk training covers the technical side: how to use the PMS, where to find the rate plan, how to print a registration card. What it often does not cover is the service side: how to greet a guest who has had a difficult journey, how to handle a queue at peak check-in time, how to deliver bad news without losing the guest's confidence.
+                Most front desk training covers the technical side: how to use the PMS, where to find the rate plan, how to print a registration card. What it often does not cover is the service side: how to greet a guest who has had a difficult journey, how to handle a queue at peak check-in time, how to deliver bad news without losing the guest&apos;s confidence.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                A complete reception training programme addresses both. The technical foundation ensures accuracy and efficiency. The service layer ensures the guest's experience at the desk reflects the property's positioning. Both are trainable. Both require documented standards and supervised practice.
+                A complete reception training programme addresses both. The technical foundation ensures accuracy and efficiency. The service layer ensures the guest&apos;s experience at the desk reflects the property&apos;s positioning. Both are trainable. Both require documented standards and supervised practice.
               </p>
             </>
           ) : (
             <>
               <p className="text-gray-600 leading-relaxed mb-4">
-                La plupart des formations réception couvrent le côté technique : comment utiliser le PMS, où trouver le plan tarifaire, comment imprimer une fiche de police. Ce qu'elles ne couvrent souvent pas, c'est le côté service : comment accueillir un client qui a eu un voyage difficile, comment gérer une file d'attente en pic d'arrivées, comment annoncer une mauvaise nouvelle sans perdre la confiance du client.
+                {"Dans beaucoup d'établissements, la formation réception se concentre sur la partie technique : ouvrir une réservation, modifier un tarif, imprimer une fiche de police, clôturer un folio. Tout cela est nécessaire, bien sûr. Mais ce n'est pas ce qui suffit à faire tenir une réception dans la vraie vie."}
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Un programme de formation réception complet adresse les deux. La base technique garantit la précision et l'efficacité. La couche service garantit que l'expérience du client à la réception reflète le positionnement de l'établissement. Les deux se forment. Les deux nécessitent des standards documentés et une pratique supervisée.
+                {"Le vrai sujet, c'est ce qui se passe quand le desk est sous pression. Accueillir un client fatigué après un long voyage. Gérer une file d'attente sans perdre le ton ni le rythme. Annoncer une mauvaise nouvelle sans casser la confiance. Répondre clairement, calmer vite, orienter sans confusion. C'est là que beaucoup d'équipes manquent de cadre. Une bonne formation réception doit travailler les deux : la précision technique et l'exécution du service. Les deux s'apprennent. Les deux doivent être transmis clairement."}
               </p>
             </>
           )}
         </div>
       </section>
 
-      {/* Training modules */}
+      {/* Modules */}
       <section className="py-16 px-6 bg-gray-50">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold text-[#1A2E44] mb-8">
-            {isEN ? 'Core modules in a hotel reception training programme' : 'Modules essentiels d\'un programme de formation réception hôtel'}
+            {isEN ? 'Core modules in a hotel reception training programme' : "Modules essentiels d'un programme de formation réception"}
           </h2>
           <div className="space-y-6">
             {modules.map((item) => (
@@ -149,11 +149,11 @@ export default async function FormationReceptionPage({ params }: { params: Promi
         </div>
       </section>
 
-      {/* Playbook cross-sell */}
+      {/* Cross-sell */}
       <section className="py-16 px-6">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold text-[#1A2E44] mb-6">
-            {isEN ? 'Procedures your team keeps after the training' : 'Des procédures que votre équipe conserve après la formation'}
+            {isEN ? 'Procedures your team keeps after the training' : "Des procédures que l'équipe garde après la formation"}
           </h2>
           {isEN ? (
             <p className="text-gray-600 leading-relaxed mb-8">
@@ -161,7 +161,7 @@ export default async function FormationReceptionPage({ params }: { params: Promi
             </p>
           ) : (
             <p className="text-gray-600 leading-relaxed mb-8">
-              La formation sur site construit la compétence. Le Playbook Front Office donne à votre équipe le référentiel écrit qu'elle utilise au quotidien. 12 chapitres couvrant chaque aspect des opérations de réception, du check-in au night audit. PDF et PowerPoint inclus, en français et en anglais.
+              {"La formation sur site permet de transmettre les bons réflexes, de corriger les écarts et de clarifier le niveau attendu. Mais pour que cela tienne dans le temps, l'équipe doit aussi pouvoir s'appuyer sur un référentiel clair. Le Playbook Front Office sert à cela. Il donne à l'équipe un cadre écrit qu'elle peut reprendre au quotidien, utiliser pendant l'intégration, et relire quand les standards commencent à se décaler. Il couvre l'ensemble des opérations réception, du check-in au night audit, avec les supports inclus en PDF et PowerPoint, en français et en anglais."}
             </p>
           )}
           <div className="flex flex-col sm:flex-row gap-4">
