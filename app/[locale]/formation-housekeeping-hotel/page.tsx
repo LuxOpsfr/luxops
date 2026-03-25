@@ -6,41 +6,41 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const isEN = locale === 'en'
   return {
     title: isEN
-      ? 'Hotel Housekeeping Training — Building a Consistent Cleaning Team | LuxOps'
-      : 'Formation Housekeeping Hôtel — Ce qu\'il Faut Vraiment Transmettre à une Équipe | LuxOps',
+      ? 'Housekeeping Team Training — What to Really Pass On and How to Structure It | LuxOps'
+      : "Formation Housekeeping Hôtel — Ce qu'il Faut Vraiment Transmettre à une Équipe | LuxOps",
     description: isEN
-      ? 'Practical hotel housekeeping training methods. How to train room attendants, supervisors and housekeeping teams on SOPs, inspection protocols and quality standards.'
-      : 'Formation housekeeping hôtel structurée autour des séquences de service, des standards écrits et de l\'encadrement terrain. Méthodes concrètes pour installer un niveau qui tient dans le temps.',
+      ? 'Structured housekeeping team training built around service sequences, written standards and floor supervision. Practical methods to build consistency that holds over time.'
+      : "Formation housekeeping hôtel structurée autour des séquences de service, des standards écrits et de l'encadrement terrain. Méthodes concrètes pour installer un niveau qui tient dans le temps.",
     keywords: isEN
-      ? 'hotel housekeeping training, housekeeping staff training, hotel cleaning team training, housekeeping sop training, hotel housekeeping management'
+      ? 'housekeeping team training, hotel housekeeping training, housekeeping staff training, hotel cleaning team training, housekeeping sop training'
       : 'formation housekeeping hôtel, former équipe housekeeping, formation ménage hôtel, formation gouvernante, formation équipe étages',
   }
 }
 
 const MODULES_EN = [
   {
-    title: 'Room cleaning sequence and methods',
-    body: 'Training room attendants on the exact sequence for a departing room, a stay-over room and a turndown service. Each has a different priority, a different time allocation and a different set of touch points. Teams that learn all three as variations of the same method work faster and more consistently than those trained on generic cleaning routines.',
+    title: 'Cleaning sequence and room preparation methods',
+    body: "Training a housekeeping team is not simply about showing how to clean a room. It is about passing on a clear work order. A departing room, a stay-over and a turndown service do not follow the same logic, the same pace or the same checkpoints. Good training teaches team members to follow a stable sequence, manage their time and check what needs checking before leaving the room. That is what builds consistency and efficiency.",
   },
   {
     title: 'Bathroom and surface standards',
-    body: 'The bathroom is the room guests inspect most carefully. Training covers product selection, surface order (clean to dirty), limescale and chrome protocol, amenity placement and the five points guests notice immediately. Consistent bathroom standards are among the highest-impact areas in a housekeeping training programme.',
+    body: "The bathroom remains one of the areas guests notice most immediately. It is often where gaps in quality show most clearly. Training must therefore cover in very concrete terms the products to use, the order of surface treatment, limescale and chrome management, amenity placement and the points guests pick up on straight away. When these standards are properly passed on, the impact on perceived quality is immediate.",
   },
   {
-    title: 'Linen handling and trolley organisation',
-    body: 'How the trolley is loaded, how linen is counted and sorted, and how end-of-shift reconciliation is managed. Errors in linen management create downstream problems for the entire housekeeping operation. Training this process correctly from the start prevents avoidable losses and delays.',
+    title: 'Linen management and trolley organisation',
+    body: "A team can lose a significant amount of time through poor trolley loading or weak linen management. Team members therefore need to be trained to prepare their equipment, load the trolley logically, sort linen correctly, count what comes in and goes out and maintain a simple organisation through to the end of the shift. A poor method here very quickly creates delays, oversights and avoidable losses.",
   },
   {
     title: 'Supervisor inspection protocol',
-    body: 'Inspecting a room before it is released is a skill that requires a structured approach. Training supervisors covers inspection sequence, defect identification, documentation and the process for returning a non-compliant room to the attendant without creating a service delay.',
+    body: "Checking a room is not simply about spotting defects. It also means knowing what to verify, in what order and how to give useful feedback to the team member. Supervisor training must therefore include the inspection sequence, gap identification, how to return a room and how to turn a check into a development tool. A good supervisor does not just observe problems, they help stabilise the level.",
   },
   {
     title: 'Guest interaction during service',
-    body: 'What to say when a guest is encountered in the corridor, how to handle a DND room, how to respond to a request made directly to a room attendant. These micro-interactions shape the guest\'s perception of the team and the property. They are trainable, and they are often untrained.',
+    body: "Housekeeping is not only a technical department. It is also one that guests cross, observe and judge. Knowing how to greet someone in a corridor, respond to a simple request, handle a DND room or adopt the right posture when facing a guest is part of the role. These interactions may seem minor, but they directly influence the guest's perception of the service and the property. They must therefore be part of the training.",
   },
   {
     title: 'Quality control and daily briefings',
-    body: 'How to run a productive pre-shift briefing, how to use inspection results to coach individuals, and how to track room quality over time. Housekeeping quality is not maintained by inspection alone. It is maintained by teams who understand the standard and have a supervisor who reinforces it daily.',
+    body: "Quality does not hold through inspections alone. It holds because teams know what is expected, understand why it matters and are consistently corrected when they fall short. A solid housekeeping training programme must therefore include pre-shift briefings, how to read inspection results and how to coach a team over time. That is what maintains the standard rather than simply restating it.",
   },
 ]
 
@@ -87,12 +87,12 @@ export default async function FormationHousekeepingPage({ params }: { params: Pr
           </span>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
             {isEN
-              ? 'Hotel Housekeeping Training: What to Cover and How to Structure It'
+              ? "Housekeeping Team Training: what really needs to be passed on, and how to organise it"
               : "Formation Housekeeping Hôtel : ce qu'il faut vraiment transmettre à une équipe, et comment l'organiser"}
           </h1>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-10">
             {isEN
-              ? 'A housekeeping team that works consistently is trained consistently. That means documented methods, structured modules and supervisors who know how to reinforce the standard on the floor.'
+              ? "A consistent housekeeping team is not built with a few days of observation. It is built with a clear method, written standards, understandable work sequences and supervision capable of correcting and developing teams on the floor. When training is well structured, rooms come out more consistently, gaps decrease and supervisors spend less time compensating for what was never properly passed on."
               : "Une équipe housekeeping régulière ne se construit pas avec quelques jours d'observation. Elle se construit avec une méthode claire, des standards écrits, des séquences de travail compréhensibles et un encadrement capable de reprendre, corriger et faire progresser les équipes sur le terrain. Lorsqu'une formation est bien structurée, les chambres sortent plus régulièrement, les écarts diminuent et les superviseurs passent moins de temps à compenser ce qui n'a jamais été vraiment transmis."}
           </p>
           <Link
@@ -113,10 +113,10 @@ export default async function FormationHousekeepingPage({ params }: { params: Pr
           {isEN ? (
             <>
               <p className="text-gray-600 leading-relaxed mb-4">
-                The most common pattern in hotel housekeeping training is a brief induction, a few days working alongside an experienced attendant and then solo rooms. The experienced attendant passes on their habits, which may or may not align with the property&apos;s standard. The supervisor inspects occasionally. Over time, standards drift.
+                In many hotels, housekeeping training still follows the same pattern: a few days alongside an experienced team member, then a quick move to working alone. The problem is that the experienced colleague mostly passes on their own habits, which may not match the property's exact standard. The supervisor then goes back over things, corrects what they can and starts again with the next person. Over time, methods drift, levels vary and the service loses consistency.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Structured housekeeping training works differently. It begins with written procedures that define the standard precisely. It moves through supervised practice where the trainee demonstrates competency before working alone. It is reinforced by daily briefings and consistent inspections. The result is a team that holds a standard because they were trained to a standard, not to a person&apos;s habits.
+                More solid housekeeping training starts differently. It lays written foundations first. It draws a clear distinction between the different types of service. It builds in supervised practice before solo working begins. And it relies on regular checks, short briefings and precise follow-up on identified gaps. That is what installs a standard that holds over time, rather than depending entirely on whoever happens to be in the team.
               </p>
             </>
           ) : (
@@ -153,11 +153,11 @@ export default async function FormationHousekeepingPage({ params }: { params: Pr
       <section className="py-16 px-6">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold text-[#1A2E44] mb-6">
-            {isEN ? 'Training works better with written procedures' : 'La formation fonctionne mieux avec des procédures écrites'}
+            {isEN ? 'Training works better with written procedures' : "La formation fonctionne mieux avec des procédures écrites"}
           </h2>
           {isEN ? (
             <p className="text-gray-600 leading-relaxed mb-8">
-              An on-site training session covers the method and the practice. The Housekeeping Playbook gives your team the written reference they keep after the session. 10 chapters covering attendant procedures, supervisor protocols, linen management and quality control. PDF and PowerPoint included, in English and French.
+              An on-site training session passes on the method and corrects the practice. But for it to hold over time, the team also needs to keep a clear written reference. The Housekeeping Playbook serves that purpose. It gives team members, supervisors and managers a written foundation they can return to after the session, use during onboarding and refer back to when standards start to slip. It covers team member procedures, supervisor protocols, linen management and quality control, with PDF and PowerPoint included in English and French.
             </p>
           ) : (
             <p className="text-gray-600 leading-relaxed mb-8">

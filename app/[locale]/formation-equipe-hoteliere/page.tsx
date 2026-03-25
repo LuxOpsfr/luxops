@@ -6,13 +6,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const isEN = locale === 'en'
   return {
     title: isEN
-      ? 'Hotel Team Training — Structuring Operational Excellence Across Departments | LuxOps'
+      ? 'Hotel Team Training — Giving Every Department the Same Level of Structure and Consistency | LuxOps'
       : "Formation Équipe Hôtelière — Donner à Chaque Département le Même Niveau de Cadre | LuxOps",
     description: isEN
-      ? 'Hotel team training that builds consistency across departments. Onboarding, SOP integration, cross-department coordination and a quality framework that holds between management shifts.'
+      ? 'Hotel team training that builds consistency across departments. Onboarding, SOP deployment, cross-department coordination and a quality framework that holds between shifts.'
       : "Formation équipe hôtelière qui construit la régularité dans tous les départements. Intégration, déploiement des SOPs, coordination inter-départements et un cadre qualité qui tient entre les services.",
     keywords: isEN
-      ? 'hotel team training, hotel staff training programme, hotel operations training, hotel employee training, hospitality team training'
+      ? 'hotel team training, hotel operations training, hospitality team training, hotel onboarding training, hotel department training'
       : 'formation équipe hôtelière, formation collaborateurs hôtel, formation opérations hôtelières, formation staff hôtel, programme formation hôtellerie',
   }
 }
@@ -20,11 +20,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 const PILLARS_EN = [
   {
     title: 'Onboarding that builds the right habits',
-    body: "In many hotels, onboarding still focuses on administrative steps, a property tour and a few days shadowing a colleague. That is not enough. Good onboarding introduces working methods from the start, provides a clear reference for the first weeks and includes a validation step before solo operation begins. The first weeks matter enormously. They are often where the habits that last for months are formed.",
+    body: "In many hotels, onboarding is still limited to administrative steps, a property tour and a few days shadowing a colleague. That is not enough. Good onboarding lays out the working methods from the start, provides a clear reference for the first weeks and includes a validation step before solo working begins. The first weeks matter enormously. They are often where the habits that persist for months are formed.",
   },
   {
     title: 'SOPs that are actually explained, not just handed over',
-    body: "SOPs serve no purpose if teams receive them as just another document. For them to be used, they need to be put in context, their logic explained, the link between each step and the guest outcome made visible, with space left for questions. That is the step that turns a document into a working method.",
+    body: "SOPs are worthless if the team receives them as just another document. For them to be used, they need to be put in context, their logic explained, the link between each step and the guest outcome made clear, with space for questions. That is the step that turns a document into a working method.",
   },
   {
     title: 'Better coordination between departments',
@@ -32,11 +32,11 @@ const PILLARS_EN = [
   },
   {
     title: 'Briefings that actually serve the shift',
-    body: "A useful briefing is not about reading through the day's programme. It aligns the team on priorities, flags sensitive points, resets the expected standard, and prepares the team before service begins. Training managers and supervisors to do this well makes a real difference. A good briefing has an immediate impact on execution. A poor briefing quickly becomes just another routine.",
+    body: "A useful briefing is not about reading through the day's programme. It aligns the team on priorities, flags sensitive points, resets the expected standard and prepares the team before service begins. Training managers and supervisors to do this well makes a real difference. A good briefing has an immediate impact on execution. A poor briefing quickly becomes just another routine.",
   },
   {
     title: 'Methods that hold despite turnover',
-    body: "Turnover is part of hotel reality. The real issue is not eliminating it entirely. It is preventing it from permanently undermining the service level. When a team relies too heavily on the habits of a few individuals, every departure creates a gap. When methods are written, transmitted and reinforced in a structured way, they stay with the property. They do not leave with the person who last trained the newest recruit.",
+    body: "Turnover is part of hotel reality. The point is not to pretend it can be avoided entirely, but to stop it from permanently undermining the service level. When knowledge stays with individuals, every departure creates a gap. When methods are written, transmitted and reinforced in a structured way, they stay with the property. They do not leave with whoever last trained the newest team member.",
   },
 ]
 
@@ -79,12 +79,12 @@ export default async function FormationEquipeHotelierePage({ params }: { params:
           </span>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
             {isEN
-              ? 'Hotel Team Training: Building Consistency Across Every Department'
+              ? "Hotel Team Training: giving every department the same level of structure and consistency"
               : "Formation Équipe Hôtelière : donner à chaque département le même niveau de cadre et de régularité"}
           </h1>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-10">
             {isEN
-              ? "A hotel team performs consistently when every member has been trained to the same standard. Not trained once and left to figure it out. Trained with written procedures, supervised practice and a quality framework that holds between shifts."
+              ? "A hotel team does not become consistent because a few people are solid. It becomes consistent when everyone works with the same reference points, the same expectations and the same methods. Not after a quick onboarding visit or a few days of observation. But with clear procedures, supervised practice and a working framework the teams can rely on in their daily service."
               : "Une équipe hôtelière ne devient pas régulière parce que quelques personnes sont solides. Elle le devient quand chacun travaille avec les mêmes repères, les mêmes attentes et les mêmes méthodes. Pas après une simple visite d'intégration ou quelques jours d'observation. Mais avec des procédures claires, une pratique encadrée, et un cadre de travail que les équipes retrouvent ensuite dans leur service."}
           </p>
           <Link
@@ -105,10 +105,10 @@ export default async function FormationEquipeHotelierePage({ params }: { params:
           {isEN ? (
             <>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Consistency in a hotel team is not a product of individual talent. It is a product of shared standards. When every team member, regardless of role or experience level, knows what is expected and how to deliver it, the service holds over time. It holds from one shift to the next, from one manager to another, and it is far more resilient to turnover.
+                Consistency does not rest on individual talent. It rests on shared standards. When every team member, regardless of their role or experience level, knows what is expected and how to do it, the service holds over time. It holds from one shift to the next, from one manager to another, and it is far more resilient to turnover.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Building that consistency requires three things: written procedures that clearly define the expected standard, training that transmits them in a structured framework, and daily follow-up capable of correcting gaps before they become habits.
+                Building that consistency requires three things: written procedures that clearly set the expected level, training that transmits them within a structured framework, and daily follow-up capable of correcting gaps before they become habits.
               </p>
             </>
           ) : (
@@ -128,7 +128,7 @@ export default async function FormationEquipeHotelierePage({ params }: { params:
       <section className="py-16 px-6 bg-gray-50">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold text-[#1A2E44] mb-8">
-            {isEN ? 'Five pillars of effective hotel team training' : "Les piliers d'une formation équipe hôtelière efficace"}
+            {isEN ? 'The pillars of effective hotel team training' : "Les piliers d'une formation équipe hôtelière efficace"}
           </h2>
           <div className="space-y-6">
             {pillars.map((item) => (
@@ -145,11 +145,11 @@ export default async function FormationEquipeHotelierePage({ params }: { params:
       <section className="py-16 px-6">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold text-[#1A2E44] mb-6">
-            {isEN ? 'Training your team with the tools they keep' : "Former avec des outils que l'équipe garde ensuite"}
+            {isEN ? 'Training with tools the team keeps afterwards' : "Former avec des outils que l'équipe garde ensuite"}
           </h2>
           {isEN ? (
             <p className="text-gray-600 leading-relaxed mb-8">
-              LuxOps on-site training sessions are structured around the playbooks and procedures your team will use after the session ends. Every participant leaves with access to the written reference for their department. The training builds the habit. The playbook maintains it.
+              On-site training has far more value when it does not stop at the end of the session. At LuxOps, training sessions are built around playbooks and procedures that teams can use in their daily work afterwards. Every participant leaves with a written framework their department can continue to use, revisit, pass on and build on. The training installs the reflexes. The materials help maintain them.
             </p>
           ) : (
             <p className="text-gray-600 leading-relaxed mb-8">
