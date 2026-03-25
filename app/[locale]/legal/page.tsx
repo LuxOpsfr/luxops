@@ -2,6 +2,10 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Mentions Légales | Legal Notices — LuxOps',
+  robots: {
+    index: false,
+    follow: false,
+  },
 }
 
 export default function LegalPage() {
