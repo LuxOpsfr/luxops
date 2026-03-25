@@ -218,6 +218,40 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
           </div>
         </div>
       </main>
+
+      {/* Cross-sell Formation */}
+      <section className="py-16 px-6" style={{ backgroundColor: '#f8f9ff' }}>
+        <div className="max-w-7xl mx-auto">
+          <div
+            className="flex flex-col lg:flex-row items-center gap-10 p-10"
+            style={{ backgroundColor: '#eef4ff', borderRadius: '0.125rem', borderLeft: '4px solid #003d9b' }}
+          >
+            <div className="flex-1">
+              <div className="text-xs font-bold uppercase tracking-widest text-[#003d9b] mb-4">
+                {isEn ? 'Go further' : 'Aller plus loin'}
+              </div>
+              <h2 className="font-display text-2xl font-extrabold text-[#0a1d2e] mb-3">
+                {isEn
+                  ? 'Deploy your playbooks with a trainer on site'
+                  : 'Déployez vos playbooks avec un formateur sur site'}
+              </h2>
+              <p className="text-[#4f6074] leading-relaxed text-sm max-w-xl">
+                {isEn
+                  ? 'Buying the playbooks is a strong first step. To make sure your teams understand them, apply them from day one and build lasting habits, our on-site training sessions go through each procedure with the team. Playbooks included and handed to every participant at the end of the session.'
+                  : "Acquérir les playbooks est une excellente première étape. Pour s'assurer que vos équipes les comprennent vraiment, les appliquent dès le premier service et construisent des habitudes durables, nos formations sur site parcourent chaque procédure avec l'équipe. Les playbooks sont remis à chaque participant en fin de session."}
+              </p>
+            </div>
+            <Link
+              href={`/${locale}/formation`}
+              className="flex-shrink-0 inline-flex items-center gap-2 px-8 py-4 bg-[#003d9b] text-white font-bold text-sm hover:bg-[#002d7a] transition-colors"
+              style={{ borderRadius: '0.125rem' }}
+            >
+              {isEn ? 'Discover on-site training' : 'Découvrir la formation sur site'}
+              <ArrowRight size={16} />
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   )
 }

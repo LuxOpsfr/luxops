@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { useTranslations } from 'next-intl'
 import Link from 'next/link'
-import { ArrowRight, Clock, Users, Check, BookOpen, Users2, Award } from 'lucide-react'
+import { ArrowRight, Clock, Users, Check, BookOpen, Users2, Award, Library } from 'lucide-react'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
@@ -134,6 +134,7 @@ function FormationContent({ locale }: { locale: string }) {
                 {[
                   { icon: <Clock size={13} />, label: isEn ? '4h or 8h formats' : 'Formats 4h ou 8h' },
                   { icon: <Users size={13} />, label: isEn ? 'Delivered on your property' : 'Menée dans votre établissement' },
+                  { icon: <Library size={13} />, label: isEn ? 'Playbooks included per participant' : 'Playbooks remis à chaque participant' },
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-2 text-xs text-[#4f6074]">
                     <span style={{ color: '#003d9b' }}>{item.icon}</span>
@@ -318,6 +319,34 @@ function FormationContent({ locale }: { locale: string }) {
               </div>
             </div>
 
+          </div>
+
+          {/* Playbooks inclus */}
+          <div
+            className="flex flex-col lg:flex-row items-center gap-8 p-8 mb-20"
+            style={{ backgroundColor: '#eef4ff', borderRadius: '0.125rem', borderLeft: '4px solid #003d9b' }}
+          >
+            <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-white" style={{ borderRadius: '0.125rem' }}>
+              <Library size={24} style={{ color: '#003d9b' }} />
+            </div>
+            <div className="flex-1">
+              <h3 className="font-display font-bold text-[#0a1d2e] text-lg mb-2">
+                {isEn ? 'Playbooks included in every session' : 'Les playbooks sont inclus dans chaque session'}
+              </h3>
+              <p className="text-sm text-[#4f6074] leading-relaxed">
+                {isEn
+                  ? 'Every participant leaves the session with the relevant playbook. The procedures covered during training become a reference they can consult, apply and pass on to their team independently.'
+                  : "Chaque participant repart avec le playbook du département concerné. Les procédures abordées pendant la formation deviennent une référence qu'ils peuvent consulter, appliquer et transmettre à leur équipe en toute autonomie."}
+              </p>
+            </div>
+            <Link
+              href={`/${locale}/playbooks`}
+              className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3 text-[#003d9b] font-bold text-sm border border-[#003d9b] hover:bg-[#003d9b] hover:text-white transition-colors"
+              style={{ borderRadius: '0.125rem' }}
+            >
+              {isEn ? 'View playbooks' : 'Voir les playbooks'}
+              <ArrowRight size={14} />
+            </Link>
           </div>
 
           {/* Topics */}
