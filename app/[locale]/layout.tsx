@@ -63,7 +63,6 @@ export const metadata: Metadata = {
     images: ['https://www.luxops.fr/og-image.png'],
   },
   alternates: {
-    canonical: 'https://www.luxops.fr',
     languages: {
       'en': 'https://www.luxops.fr/en',
       'fr': 'https://www.luxops.fr/fr',

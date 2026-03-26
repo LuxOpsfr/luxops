@@ -14,11 +14,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       ? 'Custom operational procedures for any hotel department. Property-specific SOPs written around your standards, team structure, and daily operations. PDF and Notion formats.'
       : "Procédures opérationnelles sur-mesure pour tout département hôtelier. SOPs construits autour de vos standards, de votre structure d'équipe et de votre fonctionnement quotidien.",
     alternates: {
-      canonical: `https://www.luxops.fr/${locale}/process-sur-mesure`,
+      canonical: `https://www.luxops.fr/fr/process-sur-mesure`,
       languages: {
-        'en': 'https://www.luxops.fr/en/process-sur-mesure',
+        'en': 'https://www.luxops.fr/en/bespoke-process',
         'fr': 'https://www.luxops.fr/fr/process-sur-mesure',
-        'x-default': 'https://www.luxops.fr/en/process-sur-mesure',
+        'x-default': 'https://www.luxops.fr/en/bespoke-process',
       },
     },
   }
@@ -29,7 +29,7 @@ export default async function ProcessPage({ params }: { params: Promise<{ locale
   return <ProcessContent locale={locale} />
 }
 
-function ProcessContent({ locale }: { locale: string }) {
+export function ProcessContent({ locale }: { locale: string }) {
   const t = useTranslations('process_page')
   const isEn = locale === 'en'
 

@@ -12,6 +12,15 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/en/process-sur-mesure',
+        destination: '/en/bespoke-process',
+        permanent: true,
+      },
+    ]
+  },
 }
 
 export default withNextIntl(nextConfig)
