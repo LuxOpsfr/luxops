@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Open book left page -->
+  <path d="M3 8 C3 8 3 24 3 24 C3 24 10 22.5 16 25 L16 9 C16 9 9 7 3 8Z" fill="#1A2E44"/>
+  <!-- Open book right page -->
+  <path d="M29 8 C29 8 29 24 29 24 C29 24 22 22.5 16 25 L16 9 C16 9 23 7 29 8Z" fill="#1A2E44" opacity="0.6"/>
+  <!-- Spine -->
+  <line x1="16" y1="9" x2="16" y2="25" stroke="#1A2E44" stroke-width="1.5"/>
+</svg>
