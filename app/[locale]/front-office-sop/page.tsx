@@ -7,13 +7,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: isEN
       ? 'Hotel Front Office SOP Templates — Download & Deploy Immediately | LuxOps'
-      : 'Modèles SOP Réception Hôtel — À Déployer Immédiatement | LuxOps',
+      : 'Procédures de réception hôtelière — Modèles opérationnels | LuxOps',
     description: isEN
       ? 'Front office SOP system for luxury hotels. Built around shift structure, guest journey, exception handling and handover. Not a list of topics. A working operational framework.'
-      : 'Système SOP réception pour hôtels de luxe. Construit autour de la structure du service, du parcours client, de la gestion des exceptions et de la passation. Un cadre opérationnel concret.',
+      : 'Procédures de réception pour hôtels de luxe. Check-in, check-out, gestion des réclamations, passation de service et audit de nuit. Un cadre opérationnel concret, applicable immédiatement.',
     keywords: isEN
       ? 'front office sop, hotel front desk procedures, front office hotel training, hotel reception sop, front desk standard operating procedures'
-      : 'sop réception hôtel, procédures front office hôtel, formation réception hôtel, SOP accueil hôtel',
+      : 'procédures réception hôtel, guide réception hôtel, procédures accueil hôtel, formation réception hôtel',
     alternates: {
       canonical: `https://www.luxops.fr/${locale}/front-office-sop`,
       languages: {
@@ -58,32 +58,32 @@ const SOP_AREAS_EN = [
 
 const SOP_AREAS_FR = [
   {
-    title: 'Procédure de check-in par type de client',
-    body: 'Standard, VIP, groupe, long séjour, walk-in et arrivée tardive nécessitent chacun une séquence différente. Un même agent de réception doit pouvoir les gérer tous avec la même qualité, sans s\'appuyer uniquement sur l\'expérience.',
+    title: 'Accueil selon le type de client',
+    body: 'Standard, VIP, groupe, long séjour, walk-in et arrivée tardive ne se gèrent pas de la même façon. Un même réceptionniste doit pouvoir traiter chaque cas avec le même niveau de qualité, sans avoir à improviser selon son expérience personnelle.',
   },
   {
     title: 'Check-out et facturation',
-    body: 'Les litiges de facturation au départ sont l\'une des sources les plus fréquentes de réclamations clients. Une procédure de check-out structurée incluant une revue de facturation pré-départ, un protocole de contestation et la gestion des reçus réduit significativement ces incidents.',
+    body: 'Les contestations de facture au départ sont parmi les réclamations les plus fréquentes. Une procédure de check-out structurée — relecture de la facture la veille, conduite à tenir en cas de litige, gestion des reçus — permet de réduire sensiblement ces situations.',
   },
   {
-    title: 'Gestion des réservations et modifications',
-    body: 'Comment les réservations sont créées, modifiées, annulées et communiquées aux autres départements. Inclut le contact pré-arrivée client, la logique d\'affectation des chambres et la gestion des demandes spéciales.',
+    title: 'Gestion des réservations et des modifications',
+    body: 'Comment les réservations sont créées, modifiées, annulées et transmises aux autres services. Cela inclut le contact pré-arrivée, la logique d\'attribution des chambres et la gestion des demandes particulières.',
   },
   {
     title: 'Ouverture de service et passation',
-    body: 'La réception ouvre ou change de main plusieurs fois par jour. Une séquence d\'ouverture cohérente et un document de passation structuré garantissent que les points ouverts, les arrivées VIP et les suivis en attente ne se perdent pas entre les services.',
+    body: 'La réception change d\'équipe plusieurs fois par jour. Une routine d\'ouverture claire et un support de passation structuré permettent de ne pas perdre les points en cours, les arrivées VIP et les suivis entre deux services.',
   },
   {
-    title: 'Gestion des plaintes et service recovery',
-    body: 'La procédure pour recevoir, consigner, escalader et résoudre les plaintes à la réception. Inclut ce que l\'agent peut résoudre seul, ce qui nécessite un manager et comment la résolution est documentée.',
+    title: 'Gestion des réclamations et service recovery',
+    body: 'La procédure pour recueillir, consigner, transmettre et résoudre une réclamation à la réception. Ce que le réceptionniste peut gérer seul, ce qui remonte au responsable, et comment la résolution est tracée.',
   },
   {
-    title: 'Procédure d\'audit de nuit',
-    body: 'La séquence nocturne qui clôture la journée opérationnelle, réconcilie les comptes, génère les rapports et prépare la réception pour le service du matin entrant. Souvent le processus le moins documenté dans une réception hôtelière.',
+    title: 'Audit de nuit',
+    body: 'La séquence nocturne qui clôture la journée opérationnelle, équilibre les comptes, génère les rapports et prépare la réception pour la prise de poste du matin. Souvent le process le moins documenté dans un hôtel.',
   },
   {
-    title: 'Gestion des urgences, de la sécurité et des incidents',
-    body: 'Les incendies, urgences médicales, incidents de sécurité et opérationnels nécessitent chacun une réponse définie. Ces procédures sont souvent supposées connues. Les documenter garantit une réponse cohérente quelle que soit l\'équipe en poste.',
+    title: 'Urgences, sécurité et gestion des incidents',
+    body: 'Incendie, urgence médicale, incident de sécurité : chaque situation nécessite un protocole défini. Ces procédures sont souvent supposées connues de tous. Les mettre par écrit garantit une réponse cohérente quelle que soit l\'équipe en poste.',
   },
 ]
 
@@ -95,10 +95,10 @@ export default async function FrontOfficeSopPage({ params }: { params: Promise<{
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: isEN ? 'Hotel Front Office SOP' : 'SOP Réception Hôtel',
+    name: isEN ? 'Hotel Front Office SOP' : 'Procédures de réception hôtelière',
     description: isEN
       ? 'Front office SOP system for luxury hotels. Built around shift structure, guest journey, exception handling and handover.'
-      : 'Système SOP réception pour hôtels de luxe. Construit autour de la structure du service, du parcours client et de la passation.',
+      : 'Procédures de réception pour hôtels de luxe. Check-in, check-out, gestion des réclamations, passation de service et audit de nuit.',
     provider: { '@type': 'Organization', name: 'LuxOps', url: 'https://www.luxops.fr' },
     serviceType: 'Hotel Operations Consulting',
     areaServed: 'Worldwide',
@@ -114,23 +114,23 @@ export default async function FrontOfficeSopPage({ params }: { params: Promise<{
       <section className="bg-[#1A2E44] text-white py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <span className="inline-block bg-[#0056D2] text-white text-xs font-semibold px-3 py-1 rounded-full mb-6 tracking-widest uppercase">
-            {isEN ? 'Front Office SOP' : 'SOP Réception'}
+            {isEN ? 'Front Office SOP' : 'Procédures réception'}
           </span>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
             {isEN
               ? 'Front Office SOPs: Built Around How the Desk Actually Works'
-              : 'SOPs Réception : Construits Autour du Fonctionnement Réel de la Réception'}
+              : 'Procédures de réception hôtelière : construites pour le fonctionnement réel du service'}
           </h1>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-10">
             {isEN
               ? 'A front office SOP system is not a list of topics. It is a structured set of procedures that covers the guest journey, handles exceptions, and gives every shift a clear framework to work from.'
-              : 'Un système SOP réception n\'est pas une liste de sujets. C\'est un ensemble structuré de procédures qui couvre le parcours client, gère les exceptions et donne à chaque service un cadre clair.'}
+              : 'Un guide de procédures pour la réception, ce n\'est pas une liste de bonnes intentions. C\'est un ensemble de protocoles structurés qui couvre le parcours client, prépare l\'équipe aux situations difficiles et donne à chaque service un cadre clair sur lequel s\'appuyer.'}
           </p>
           <Link
             href={`/${locale}/playbooks`}
             className="inline-block bg-[#0056D2] hover:bg-[#0041A3] text-white font-semibold px-8 py-4 rounded-lg transition-colors text-base"
           >
-            {isEN ? 'View Front Office Playbook' : 'Voir le Playbook Réception'}
+            {isEN ? 'View Front Office Playbook' : 'Voir le Playbook réception'}
           </Link>
         </div>
       </section>
@@ -141,7 +141,7 @@ export default async function FrontOfficeSopPage({ params }: { params: Promise<{
           <h2 className="text-2xl font-bold text-[#1A2E44] mb-6">
             {isEN
               ? 'What a front office SOP system actually covers'
-              : 'Ce que couvre réellement un système SOP réception'}
+              : 'Ce que doivent couvrir les procédures de réception'}
           </h2>
           {isEN ? (
             <>
@@ -155,10 +155,10 @@ export default async function FrontOfficeSopPage({ params }: { params: Promise<{
           ) : (
             <>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Les procédures réception existent à trois niveaux. L&apos;interaction standard : check-in, check-out, gestion des réservations, standards téléphoniques. Le cadre opérationnel : ouverture de service, passation, audit de nuit, reporting. La couche d&apos;exception : gestion des plaintes, litiges de facturation, protocoles VIP, arrivées tardives, no-shows, incidents de sécurité.
+                Les procédures de réception se structurent à trois niveaux. Les situations courantes : check-in, check-out, gestion des réservations, standards téléphoniques. Le cadre opérationnel du service : ouverture de poste, passation entre équipes, audit de nuit, reportings. La gestion des situations hors standard : réclamations clients, litiges de facturation, protocoles VIP, arrivées tardives, no-shows, incidents de sécurité.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Les listes SOP génériques couvrent généralement bien le premier niveau. Les deuxième et troisième niveaux sont là où la plupart des équipes réception fonctionnent par habitude et instinct plutôt que par procédure documentée. C&apos;est ce manque qui génère les incohérences de service.
+                Les guides génériques couvrent souvent correctement le premier niveau. Les deux suivants sont là où la plupart des équipes de réception fonctionnent encore à l&apos;instinct, sans procédure écrite. C&apos;est là que naissent les incohérences de service.
               </p>
             </>
           )}
@@ -169,7 +169,9 @@ export default async function FrontOfficeSopPage({ params }: { params: Promise<{
       <section className="py-16 px-6 bg-gray-50">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold text-[#1A2E44] mb-8">
-            {isEN ? 'Core procedure areas in a front office SOP' : 'Les domaines de procédures essentiels dans un SOP réception'}
+            {isEN
+              ? 'Core procedure areas in a front office SOP'
+              : 'Les procédures essentielles d\'une réception hôtelière'}
           </h2>
           <div className="space-y-6">
             {sopAreas.map((item) => (
@@ -186,7 +188,7 @@ export default async function FrontOfficeSopPage({ params }: { params: Promise<{
       <section className="py-16 px-6">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold text-[#1A2E44] mb-6">
-            {isEN ? 'Why this needs to be documented' : 'Pourquoi cela doit être documenté'}
+            {isEN ? 'Why this needs to be documented' : 'Pourquoi ces procédures doivent être écrites'}
           </h2>
           {isEN ? (
             <>
@@ -200,10 +202,10 @@ export default async function FrontOfficeSopPage({ params }: { params: Promise<{
           ) : (
             <>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Les équipes réception font face à un turnover élevé, des horaires irréguliers et des situations qui nécessitent un jugement rapide et indépendant. Un agent expérimenté développe cela avec le temps. Un nouvel arrivant n&apos;a pas cette base. Quand une procédure n&apos;existe que dans la tête de quelqu&apos;un, elle part avec lui.
+                Les équipes de réception font face à un turnover élevé, des horaires décalés et des situations qui demandent une décision rapide. Un réceptionniste expérimenté construit ses réflexes avec le temps. Un nouveau collaborateur n&apos;a pas cette base. Quand une procédure n&apos;existe que dans la tête de quelqu&apos;un, elle part avec lui.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Les procédures documentées créent aussi de la responsabilité. Quand une erreur de facturation se produit, ou qu&apos;une plainte n&apos;est pas correctement escaladée, ou qu&apos;une chambre VIP n&apos;est pas prête à temps, un système documenté permet d&apos;identifier où la rupture s&apos;est produite et de la corriger.
+                Des procédures écrites, c&apos;est aussi un outil de management. Quand une erreur de facturation se produit, qu&apos;une réclamation n&apos;est pas transmise correctement ou qu&apos;une chambre VIP n&apos;est pas prête à temps, un système documenté permet d&apos;identifier précisément où la rupture s&apos;est produite et de la corriger.
               </p>
             </>
           )}
@@ -214,18 +216,18 @@ export default async function FrontOfficeSopPage({ params }: { params: Promise<{
       <section className="bg-[#1A2E44] py-16 px-6 text-center text-white">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-2xl font-bold mb-4">
-            {isEN ? 'The complete front office SOP system' : 'Le système SOP réception complet'}
+            {isEN ? 'The complete front office SOP system' : 'Le playbook réception complet'}
           </h2>
           <p className="text-gray-300 mb-8">
             {isEN
               ? 'The LuxOps Front Office Playbook covers the full procedure set for a luxury hotel reception: guest interactions, shift structure, exception handling, night audit and reporting. 12 chapters, PDF and PowerPoint, EN and FR.'
-              : 'Le Playbook Réception LuxOps couvre l\'ensemble des procédures pour une réception d\'hôtel de luxe : interactions clients, structure de service, gestion des exceptions, audit de nuit et reporting. 12 chapitres, PDF et PowerPoint, EN et FR.'}
+              : 'Le Playbook Réception LuxOps couvre l\'ensemble des procédures pour une réception hôtelière haut de gamme : accueil client, organisation des services, gestion des situations difficiles, audit de nuit et reportings. 12 chapitres, PDF et PowerPoint, en français et en anglais.'}
           </p>
           <Link
             href={`/${locale}/playbooks`}
             className="inline-block bg-[#0056D2] hover:bg-[#0041A3] text-white font-semibold px-8 py-4 rounded-lg transition-colors"
           >
-            {isEN ? 'View Front Office Playbook' : 'Voir le Playbook Réception'}
+            {isEN ? 'View Front Office Playbook' : 'Voir le Playbook réception'}
           </Link>
         </div>
       </section>
