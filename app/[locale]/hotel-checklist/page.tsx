@@ -165,7 +165,7 @@ const MOMENTS_FR = [
   {
     title: 'Checklist de disponibilité chambre',
     description:
-      "Utilisée par une femme de chambre ou un superviseur avant de libérer une chambre comme propre et disponible. Plus précise qu'une liste de tâches de nettoyage. Centrée sur l'état final de la chambre par rapport au standard de l'établissement.",
+      "Utilisée par un équipier housekeeping ou un superviseur avant de libérer une chambre comme propre et disponible. Plus précise qu'une liste de tâches de nettoyage. Centrée sur l'état final de la chambre par rapport au standard de l'établissement.",
   },
   {
     title: 'Checklist de suivi post-incident',
@@ -199,11 +199,11 @@ const ROLES_EN = [
 
 const ROLES_FR = [
   {
-    role: 'Agent de réception',
+    role: 'Réceptionniste',
     note: "Séquences de check-in, vérification de facturation, préparation pré-arrivée, ouverture de service.",
   },
   {
-    role: 'Femme ou valet de chambre',
+    role: 'Équipier housekeeping',
     note: "Séquence de remise en état, préparation du chariot, réapprovisionnement des amenités, mise à jour du statut chambre.",
   },
   {
@@ -236,7 +236,7 @@ export default async function HotelChecklistPage({ params }: { params: Promise<{
       <section className="bg-[#1A2E44] text-white py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <span className="inline-block bg-white/10 text-white text-xs font-semibold px-3 py-1 rounded-full mb-6 tracking-widest uppercase">
-            {isEN ? 'Hotel Operations' : 'Opérations Hôtelières'}
+            {isEN ? 'Hotel Operations' : 'Opérations hôtelières'}
           </span>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
             {isEN
@@ -252,7 +252,7 @@ export default async function HotelChecklistPage({ params }: { params: Promise<{
             href={`/${locale}/playbooks`}
             className="inline-block bg-white text-[#1A2E44] font-semibold px-8 py-4 rounded-lg transition-colors hover:bg-gray-100"
           >
-            {isEN ? 'View Complete SOP Playbooks' : 'Voir les Playbooks SOP Complets'}
+            {isEN ? 'View Complete SOP Playbooks' : 'Voir les Playbooks complets'}
           </Link>
         </div>
       </section>
@@ -268,7 +268,7 @@ export default async function HotelChecklistPage({ params }: { params: Promise<{
           <p className="text-gray-600 leading-relaxed mb-4">
             {isEN
               ? 'In real hotel operations, a checklist is only useful when it belongs to someone at a specific moment in the day. A front desk opening checklist is not the same document as a shift handover checklist. A room attendant sequence card is not the same as a supervisor inspection form. Treating them as interchangeable is where most generic templates fall apart.'
-              : "Dans les opérations hôtelières réelles, une checklist n'est utile que lorsqu'elle appartient à quelqu'un, à un moment précis de la journée. La checklist d'ouverture de la réception n'est pas le même document que la fiche de passation de service. La séquence de travail d'une femme de chambre n'est pas la même chose qu'une grille d'inspection superviseur. Traiter ces outils comme interchangeables, c'est là que la plupart des modèles génériques échouent."}
+              : "Dans les opérations hôtelières réelles, une checklist n'est utile que lorsqu'elle appartient à quelqu'un, à un moment précis de la journée. La checklist d'ouverture de la réception n'est pas le même document que la fiche de passation de service. La séquence de travail d'un équipier housekeeping n'est pas la même chose qu'une grille d'inspection superviseur. Traiter ces outils comme interchangeables, c'est là que la plupart des modèles génériques échouent."}
           </p>
           <p className="text-gray-600 leading-relaxed">
             {isEN
@@ -384,7 +384,7 @@ export default async function HotelChecklistPage({ params }: { params: Promise<{
           <p className="text-gray-600 leading-relaxed mb-4">
             {isEN
               ? 'This distinction matters in practice. A checklist tells the team what must be verified at a given moment. It does not explain the full method. The procedure, SOP, or playbook sits behind it. When a room attendant checks that the bathroom meets standard, the checklist captures the sign-off. The SOP explains exactly how the bathroom should be cleaned to reach that standard.'
-              : "Cette distinction a des conséquences concrètes. Une checklist indique à l'équipe ce qui doit être vérifié à un moment donné. Elle n'explique pas la méthode complète. La procédure, le SOP ou le playbook se trouve derrière. Quand une femme de chambre valide que la salle de bain est conforme au standard, la checklist capture la validation. Le SOP explique exactement comment la salle de bain doit être nettoyée pour atteindre ce standard."}
+              : "Cette distinction a des conséquences concrètes. Une checklist indique à l'équipe ce qui doit être vérifié à un moment donné. Elle n'explique pas la méthode complète. La procédure, la SOP ou le playbook se trouve derrière. Quand un équipier housekeeping valide que la salle de bain est conforme au standard, la checklist capture la validation. La procédure explique exactement comment la salle de bain doit être nettoyée pour atteindre ce standard."}
           </p>
           <p className="text-gray-600 leading-relaxed">
             {isEN

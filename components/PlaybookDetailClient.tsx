@@ -106,11 +106,11 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
                   : (isEn ? 'Buy Playbook — €67' : 'Acheter — 67 €')}
               </button>
               <Link
-                href={`/${locale}/contact`}
+                href={`/${locale}/free-hotel-procedures`}
                 className="px-8 py-4 font-bold text-[#0a1d2e] hover:bg-[#dae9ff] transition-colors"
                 style={{ backgroundColor: '#eef4ff', borderRadius: '0.125rem' }}
               >
-                {isEn ? 'Request Preview' : 'Demander un extrait'}
+                {isEn ? 'Download a Free Chapter' : 'Télécharger un chapitre gratuit'}
               </Link>
             </div>
 

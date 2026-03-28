@@ -7,10 +7,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: isEN
       ? 'Hotel SOP Templates — Complete Standard Operating Procedures | LuxOps'
-      : 'Modèles SOP Hôtel — Procédures Opérationnelles Standards Complètes | LuxOps',
+      : 'Procédures opérationnelles hôtelières — complètes et prêtes à l\'emploi | LuxOps',
     description: isEN
       ? 'Complete hotel SOP system covering front office, housekeeping, F&B and spa. Built by hospitality professionals. Practical, structured and ready to use on day one.'
-      : 'Système SOP hôtel complet couvrant réception, housekeeping, F&B et spa. Conçu par des professionnels de l\'hôtellerie. Pratique, structuré et prêt à l\'emploi.',
+      : 'Procédures opérationnelles complètes couvrant la réception, le housekeeping, le F&B et le spa. Conçues par des professionnels de l\'hôtellerie. Pratiques, structurées et prêtes à l\'emploi.',
     keywords: isEN
       ? 'hotel sop, hotel sop template, hotel standard operating procedures, hotel sop sample, hotel operations manual template, luxury hotel sop'
       : 'sop hôtel, modèle sop hôtel, procédures opérationnelles hôtel, manuel opérations hôtel, procédures hôtelières',
@@ -91,10 +91,10 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: isEN ? 'Hotel SOP Templates' : 'Modèles SOP Hôtel',
+    name: isEN ? 'Hotel SOP Templates' : 'Procédures opérationnelles hôtelières',
     description: isEN
       ? 'Complete hotel SOP system covering front office, housekeeping, F&B and spa. Built by hospitality professionals.'
-      : 'Système SOP hôtel complet couvrant réception, housekeeping, F&B et spa. Conçu par des professionnels de l\'hôtellerie.',
+      : 'Procédures opérationnelles complètes couvrant la réception, le housekeeping, le F&B et le spa. Conçues par des professionnels de l\'hôtellerie.',
     provider: { '@type': 'Organization', name: 'LuxOps', url: 'https://www.luxops.fr' },
     serviceType: 'Hotel Operations Consulting',
     areaServed: 'Worldwide',
@@ -110,17 +110,17 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
       <section className="bg-[#1A2E44] text-white py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <span className="inline-block bg-white/10 text-white text-xs font-semibold px-3 py-1 rounded-full mb-6 tracking-widest uppercase">
-            {isEN ? 'Hotel SOP Templates' : 'Modèles SOP Hôtel'}
+            {isEN ? 'Hotel SOP Templates' : 'Procédures opérationnelles hôtelières'}
           </span>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
             {isEN
               ? 'Hotel Standard Operating Procedures: Built for How Hotels Actually Run'
-              : 'Procédures Opérationnelles Hôtel : Construites Pour le Fonctionnement Réel'}
+              : 'Procédures opérationnelles hôtelières : conçues pour le fonctionnement réel'}
           </h1>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-10">
             {isEN
               ? 'A complete SOP system for four hotel departments. Each playbook covers the full procedure set for its area: standard interactions, shift structure, exceptions and quality controls.'
-              : 'Un système SOP complet pour quatre départements hôteliers. Chaque playbook couvre l\'ensemble des procédures de son domaine : interactions standards, structure de service, exceptions et contrôles qualité.'}
+              : 'Des procédures opérationnelles complètes pour quatre départements hôteliers. Chaque playbook couvre l\'ensemble des procédures de son domaine : interactions standards, structure de service, cas d\'exception et contrôles qualité.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -163,10 +163,10 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
                 Un SOP hôtelier (Standard Operating Procedure) est une procédure documentée, pas à pas, qui définit comment une tâche ou une interaction spécifique doit être gérée. Quand il fonctionne, il donne à chaque membre de l'équipe une référence claire quelle que soit son expérience. Il réduit les erreurs, raccourcit le temps d'intégration et permet d'identifier où une rupture s'est produite quand quelque chose tourne mal.
               </p>
               <p className="text-gray-600 leading-relaxed mb-5">
-                Le problème avec la plupart des modèles SOP génériques est qu'ils documentent l'évident et omettent les parties difficiles. Check-in : accueillir le client, vérifier la pièce d'identité, attribuer la chambre. Ce n'est pas un SOP. C'est un résumé. Un vrai SOP réception couvre ce qui se passe quand la chambre attribuée n'est pas prête, quand le client conteste une facturation, quand un walk-in arrive en période de fort taux d'occupation, quand la demande pré-arrivée d'un VIP n'a pas été transmise au housekeeping.
+                Le problème avec la plupart des modèles génériques est qu'ils documentent l'évident et omettent les parties difficiles. Check-in : accueillir le client, vérifier la pièce d'identité, attribuer la chambre. Ce n'est pas une procédure. C'est un résumé. Une vraie procédure réception couvre ce qui se passe quand la chambre attribuée n'est pas prête, quand le client conteste une facturation, quand un walk-in arrive en période de fort taux d'occupation, quand la demande pré-arrivée d'un VIP n'a pas été transmise au housekeeping.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Il en va de même dans chaque département. Un SOP housekeeping qui ne couvre que la séquence de nettoyage manque le protocole d'inspection superviseur, la procédure d'escalade DND, le processus de bilan linge. Un SOP F&B qui couvre le déroulement du service mais pas la gestion des plaintes ou des allergènes est incomplet en pratique.
+                Il en va de même dans chaque département. Des procédures housekeeping qui ne couvrent que la séquence de remise en état manquent le protocole d'inspection superviseur, la gestion des chambres en DND, le bilan linge. Des procédures F&B qui couvrent le déroulement du service mais pas la gestion des plaintes ou des allergènes sont incomplètes en pratique.
               </p>
             </>
           )}
@@ -177,12 +177,12 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
       <section className="py-16 px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-[#1A2E44] mb-2 text-center">
-            {isEN ? '4 Department SOP Playbooks' : '4 Playbooks SOP par Département'}
+            {isEN ? '4 Department SOP Playbooks' : '4 playbooks par département'}
           </h2>
           <p className="text-gray-500 text-center mb-12">
             {isEN
               ? 'Each playbook is a complete, standalone SOP system for its department.'
-              : 'Chaque playbook est un système SOP complet et autonome pour son département.'}
+              : 'Chaque playbook est un système de procédures complet et autonome pour son département.'}
           </p>
           <div className="grid md:grid-cols-2 gap-6">
             {departments.map((dept) => (
@@ -226,7 +226,7 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
           ) : (
             <>
               <p className="text-gray-600 leading-relaxed mb-5">
-                Chaque playbook est un système SOP autonome pour son département. Une équipe réception peut déployer le playbook réception sans avoir besoin des autres. Il en va de même pour le housekeeping, le F&B et le spa.
+                Chaque playbook est un système de procédures autonome pour son département. Une équipe réception peut déployer le playbook réception sans avoir besoin des autres. Il en va de même pour le housekeeping, le F&B et le spa.
               </p>
               <p className="text-gray-600 leading-relaxed">
                 Pour les établissements qui gèrent plusieurs départements sous la même direction, le bundle fournit un cadre cohérent pour l'ensemble de l'opération. Les procédures, les standards d'inspection et les formats de passation sont alignés entre les départements, ce qui réduit les frictions liées à l'utilisation de formats incompatibles.
@@ -254,7 +254,7 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
             href={`/${locale}/playbooks`}
             className="inline-block bg-white text-[#1A2E44] font-semibold px-8 py-4 rounded-lg transition-colors hover:bg-gray-100"
           >
-            {isEN ? 'Get the Complete Bundle' : 'Obtenir le Bundle Complet'}
+            {isEN ? 'Get the Complete Bundle' : 'Obtenir le bundle complet'}
           </Link>
         </div>
       </section>

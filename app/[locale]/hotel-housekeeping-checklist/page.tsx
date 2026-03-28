@@ -7,13 +7,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: isEN
       ? 'Hotel Housekeeping Checklists: By Role, Shift and Control Point | LuxOps'
-      : 'Checklists Housekeeping Hôtel : Par Rôle, Service et Point de Contrôle | LuxOps',
+      : 'Checklists housekeeping hôtel : par rôle, service et point de contrôle | LuxOps',
     description: isEN
       ? 'Housekeeping checklists for hotels built around role and shift, not generic categories. Room attendant sequence, supervisor inspection, shift handover and public area rounds.'
       : 'Checklists housekeeping hôtel construites autour du rôle et du service. Séquence équipier, inspection superviseur, passation de service et rondes espaces communs.',
     keywords: isEN
       ? 'hotel housekeeping checklist, housekeeping inspection checklist, room attendant checklist, supervisor inspection hotel, housekeeping shift handover, public area checklist hotel'
-      : 'checklist housekeeping hotel, inspection superviseur housekeeping, séquence femme de chambre, passation de service housekeeping, contrôle espaces communs hôtel',
+      : 'checklist housekeeping hotel, inspection superviseur housekeeping, séquence équipier housekeeping, passation de service housekeeping, contrôle espaces communs hôtel',
     alternates: {
       canonical: `https://www.luxops.fr/${locale}/hotel-housekeeping-checklist`,
       languages: {
@@ -117,7 +117,7 @@ const SECTIONS_FR: ChecklistSection[] = [
   {
     title: 'Préparation du chariot et du linge — début de service',
     context:
-      "Utilisée par la femme de chambre avant de quitter l'office. Confirme que tout le nécessaire pour le bloc de chambres assigné est sur le chariot avant d'entrer dans la première chambre.",
+      "Utilisée par l'équipier housekeeping avant de quitter l'office. Confirme que tout le nécessaire pour le bloc de chambres assigné est sur le chariot avant d'entrer dans la première chambre.",
     items: [
       'Stock de linge correspondant au bloc de chambres assigné',
       "Serviettes chargées selon le standard de l'établissement",
@@ -151,7 +151,7 @@ const SECTIONS_FR: ChecklistSection[] = [
   {
     title: 'Inspection superviseur — avant libération de la chambre',
     context:
-      "Réalisée par le superviseur d'étage ou la gouvernante après que la femme de chambre a terminé la chambre. Pas une checklist de nettoyage. Un outil de vérification qualité ciblé.",
+      "Réalisée par le superviseur d'étage ou la gouvernante après que l'équipier a terminé la chambre. Pas une checklist de nettoyage. Un outil de vérification qualité ciblé.",
     items: [
       'Literie : alignement, standard de pliage, sans faux plis',
       "Salle de bain : pas de traces sur le miroir, éléments chromés brillants, pas de traces d'eau",
@@ -209,7 +209,7 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
           <h1 className="text-3xl md:text-4xl font-bold mb-4">
             {isEN
               ? 'Housekeeping Checklists That Reflect How the Department Actually Works'
-              : 'Des Checklists Housekeeping qui Reflètent le Fonctionnement Réel du Département'}
+              : 'Des checklists housekeeping qui reflètent le fonctionnement réel du département'}
           </h1>
           <p className="text-lg text-blue-100 max-w-2xl mx-auto mb-8">
             {isEN
@@ -247,7 +247,7 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
         ) : (
           <>
             <p className="text-gray-600 leading-relaxed mb-4">
-              Une femme de chambre qui commence son service a besoin d&apos;une checklist de préparation du chariot.
+              Un équipier housekeeping qui commence son service a besoin d&apos;une checklist de préparation du chariot.
               Quand elle entre dans une chambre, elle suit une séquence de remise en état. Quand la chambre est prête,
               un superviseur effectue une inspection distincte avant de libérer le statut dans le PMS. En fin de
               service, une passation documente tout ce qui reste en suspens. Ce sont quatre outils différents. Chacun
@@ -305,7 +305,7 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
           <>
             <p className="text-gray-600 leading-relaxed mb-4">
               Chacune de ces checklists renvoie à une méthode qui se trouve derrière elle. La séquence de remise en
-              état indique à la femme de chambre ce qu&apos;elle doit faire et dans quel ordre. Le SOP explique comment
+              état indique à l&apos;équipier ce qu&apos;il doit faire et dans quel ordre. La procédure explique comment
               chaque tâche doit être réalisée, quels produits utiliser, à quoi ressemble le standard quand il est
               correctement atteint.
             </p>
@@ -348,7 +348,7 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
             className="border border-gray-200 rounded-xl p-5 hover:border-[#1A2E44] transition-colors group"
           >
             <p className="font-semibold text-[#1A2E44] group-hover:underline">
-              {isEN ? 'Housekeeping SOP Guide' : 'Guide SOP Housekeeping'}
+              {isEN ? 'Housekeeping SOP Guide' : 'Guide des procédures housekeeping'}
             </p>
             <p className="text-sm text-gray-500 mt-1">
               {isEN

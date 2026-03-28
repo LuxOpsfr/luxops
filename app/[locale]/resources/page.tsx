@@ -196,6 +196,37 @@ export default async function ResourcesPage({
         </div>
       </section>
 
+      {/* Free chapter lead magnet */}
+      <section className="py-12 px-6 bg-white border-b border-gray-100">
+        <div className="max-w-4xl mx-auto">
+          <div
+            className="flex flex-col md:flex-row items-center justify-between gap-6 p-8"
+            style={{ backgroundColor: '#eef4ff', borderRadius: '0.125rem' }}
+          >
+            <div>
+              <p className="text-xs font-bold uppercase tracking-widest text-[#003d9b] mb-2">
+                {isEn ? 'Free resource' : 'Ressource gratuite'}
+              </p>
+              <h2 className="font-display text-xl font-extrabold text-[#0a1d2e] mb-1">
+                {isEn ? 'Download a free introduction chapter' : 'Télécharger un chapitre d\'introduction gratuit'}
+              </h2>
+              <p className="text-sm text-[#4f6074]">
+                {isEn
+                  ? 'Choose your department — Front Office, Housekeeping, F&B or Spa — and download the introduction chapter of the corresponding playbook. Free, in English and French.'
+                  : 'Choisissez votre département — Réception, Housekeeping, F&B ou Spa — et téléchargez le chapitre d\'introduction du playbook correspondant. Gratuit, en français et en anglais.'}
+              </p>
+            </div>
+            <Link
+              href={`/${locale}/free-hotel-procedures`}
+              className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3 bg-[#003d9b] text-white font-bold text-sm whitespace-nowrap"
+              style={{ borderRadius: '0.125rem' }}
+            >
+              {isEn ? 'Get the free chapter' : 'Obtenir le chapitre gratuit'} <ArrowRight size={14} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-6">

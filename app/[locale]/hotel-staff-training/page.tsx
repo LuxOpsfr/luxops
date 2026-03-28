@@ -7,7 +7,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: isEN
       ? 'Hotel Team Training — Structuring Working Methods for More Consistent Teams | LuxOps'
-      : "Formation Équipe Hôtelière — Structurer les Méthodes de Travail pour des Équipes Plus Régulières | LuxOps",
+      : "Formation équipe hôtelière : structurer les méthodes de travail pour des équipes plus régulières | LuxOps",
     description: isEN
       ? 'Hotel team training that builds real operational consistency. Department-specific procedures, structured onboarding, supervisor training and methods that hold despite turnover.'
       : "Formation équipe hôtelière structurée autour des procédures par département, de l'intégration et du suivi terrain. Des méthodes claires pour des équipes plus régulières, même face au turnover.",
@@ -88,7 +88,7 @@ export default async function HotelStaffTrainingPage({ params }: { params: Promi
           <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
             {isEN
               ? "Hotel Team Training: structuring working methods for more consistent teams"
-              : "Formation Équipe Hôtelière : structurer les méthodes de travail pour des équipes plus régulières"}
+              : "Formation équipe hôtelière : structurer les méthodes de travail pour des équipes plus régulières"}
           </h1>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-10">
             {isEN
@@ -179,7 +179,7 @@ export default async function HotelStaffTrainingPage({ params }: { params: Promi
               href={`/${locale}/playbooks`}
               className="inline-block border border-[#1A2E44] text-[#1A2E44] hover:bg-gray-50 font-semibold px-6 py-3 rounded-lg transition-colors text-center"
             >
-              {isEN ? 'View All Playbooks' : 'Voir Tous les Playbooks'}
+              {isEN ? 'View All Playbooks' : 'Voir tous les Playbooks'}
             </Link>
           </div>
         </div>

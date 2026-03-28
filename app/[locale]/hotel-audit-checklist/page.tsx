@@ -7,7 +7,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: isEN
       ? 'Hotel Audit Checklist — Quality Audit for Luxury Hotels | LuxOps'
-      : 'Checklist Audit Hôtel — Audit Qualité pour Hôtels de Luxe | LuxOps',
+      : 'Checklist d\'audit hôtel : audit qualité pour hôtels de luxe | LuxOps',
     description: isEN
       ? 'Professional hotel audit checklist for luxury and boutique properties. Evaluate operations, guest experience, cleanliness and service standards across all departments.'
       : 'Checklist d\'audit hôtelier professionnel pour établissements de luxe et boutique. Évaluez les opérations, l\'expérience client, la propreté et les standards de service.',
@@ -34,7 +34,7 @@ const AUDIT_AREAS_EN = [
 
 const AUDIT_AREAS_FR = [
   { area: 'Réception', items: ['Standards d\'accueil', 'Rapidité du check-in', 'Exactitude de facturation', 'Conformité upselling', 'Communication client'] },
-  { area: 'Housekeeping', items: ['Score de propreté des chambres', 'Qualité du linge', 'Réapprovisionnement des amenités', 'Exécution du couverture', 'Signalement maintenance'] },
+  { area: 'Housekeeping', items: ['Score de propreté des chambres', 'Qualité du linge', 'Réapprovisionnement des amenités', 'Réalisation du service de couverture', 'Signalement maintenance'] },
   { area: 'Food & Beverage', items: ['Connaissance de la carte', 'Séquence de service', 'Standards de présentation', 'Conformité hygiène', 'Mise en place du bar'] },
   { area: 'Expérience Client', items: ['Temps de réponse', 'Gestion des plaintes', 'Personnalisation', 'Expérience de départ', 'Suivi des scores d\'avis'] },
 ]
@@ -65,12 +65,12 @@ export default async function HotelAuditPage({ params }: { params: Promise<{ loc
       <section className="bg-[#1A2E44] text-white py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <span className="inline-block bg-white/10 text-white text-xs font-semibold px-3 py-1 rounded-full mb-6 tracking-widest uppercase">
-            {isEN ? 'Hotel Quality Audit' : 'Audit Qualité Hôtel'}
+            {isEN ? 'Hotel Quality Audit' : 'Audit qualité hôtel'}
           </span>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
             {isEN
               ? 'Hotel Audit Checklist for Luxury Operations'
-              : 'Checklist d\'Audit Hôtelier pour Opérations de Luxe'}
+              : 'Checklist d\'audit hôtelier pour établissements de luxe'}
           </h1>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-10">
             {isEN
@@ -81,7 +81,7 @@ export default async function HotelAuditPage({ params }: { params: Promise<{ loc
             href={`/${locale}/quality-audit`}
             className="inline-block bg-white text-[#1A2E44] font-semibold px-8 py-4 rounded-lg transition-colors hover:bg-gray-100 text-base"
           >
-            {isEN ? 'Discover Our Audit Service' : 'Découvrir notre Service d\'Audit'}
+            {isEN ? 'Discover Our Audit Service' : 'Découvrir notre service d\'audit'}
           </Link>
         </div>
       </section>
@@ -90,7 +90,7 @@ export default async function HotelAuditPage({ params }: { params: Promise<{ loc
       <section className="py-16 px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-[#1A2E44] mb-2 text-center">
-            {isEN ? 'What a LuxOps Hotel Audit Covers' : 'Ce que couvre un Audit Hôtel LuxOps'}
+            {isEN ? 'What a LuxOps Hotel Audit Covers' : 'Ce que couvre un audit hôtel LuxOps'}
           </h2>
           <p className="text-gray-500 text-center mb-12">
             {isEN ? 'A comprehensive review across all guest-facing departments.' : 'Une revue complète de tous les départements en contact avec le client.'}
@@ -122,7 +122,7 @@ export default async function HotelAuditPage({ params }: { params: Promise<{ loc
       <section className="py-16 px-6 bg-gray-50">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold text-[#1A2E44] mb-8 text-center">
-            {isEN ? 'The Audit Process' : 'Le Processus d\'Audit'}
+            {isEN ? 'The Audit Process' : 'Le processus d\'audit'}
           </h2>
           <div className="space-y-6">
             {(isEN ? [
@@ -163,7 +163,7 @@ export default async function HotelAuditPage({ params }: { params: Promise<{ loc
             href={`/${locale}/quality-audit`}
             className="inline-block bg-white text-[#1A2E44] font-semibold px-8 py-4 rounded-lg transition-colors hover:bg-gray-100"
           >
-            {isEN ? 'Request an Audit' : 'Demander un Audit'}
+            {isEN ? 'Request an Audit' : 'Demander un audit'}
           </Link>
         </div>
       </section>

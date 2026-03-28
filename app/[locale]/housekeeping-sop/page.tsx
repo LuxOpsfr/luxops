@@ -7,10 +7,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: isEN
       ? 'Hotel Housekeeping SOP — Procedures for Every Role and Moment | LuxOps'
-      : 'SOP Housekeeping Hôtel — Procédures Pour Chaque Rôle et Chaque Moment | LuxOps',
+      : 'Procédures housekeeping hôtel — pour chaque rôle et chaque moment de service | LuxOps',
     description: isEN
       ? 'Housekeeping SOP system for luxury hotels. Covers room attendant procedures, supervisor inspection protocols, linen management, turndown service and quality control frameworks.'
-      : 'Système SOP housekeeping pour hôtels de luxe. Couvre les procédures équipier, les protocoles d\'inspection superviseur, la gestion du linge, le service de couverture et les outils de contrôle qualité.',
+      : 'Procédures housekeeping pour hôtels de luxe. Couvre les séquences de remise en état, les protocoles d\'inspection superviseur, la gestion du linge, le service de couverture et le contrôle qualité.',
     keywords: isEN
       ? 'housekeeping sop, housekeeping standard operating procedures, hotel housekeeping procedures, sop for housekeeping, hotel cleaning sop, luxury hotel housekeeping'
       : 'sop housekeeping, procédures housekeeping hôtel, SOP ménage hôtel, procédures opérationnelles housekeeping, housekeeping hôtel de luxe',
@@ -103,10 +103,10 @@ export default async function HousekeepingSopPage({ params }: { params: Promise<
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: isEN ? 'Hotel Housekeeping SOP' : 'SOP Housekeeping Hôtel',
+    name: isEN ? 'Hotel Housekeeping SOP' : 'Procédures housekeeping hôtel',
     description: isEN
       ? 'Housekeeping SOP system for luxury hotels. Covers room attendant procedures, supervisor inspection, linen management and quality control.'
-      : 'Système SOP housekeeping pour hôtels de luxe. Couvre les procédures équipier, l\'inspection superviseur, la gestion du linge et le contrôle qualité.',
+      : 'Procédures housekeeping pour hôtels de luxe. Couvre les séquences de remise en état, l\'inspection superviseur, la gestion du linge et le contrôle qualité.',
     provider: { '@type': 'Organization', name: 'LuxOps', url: 'https://www.luxops.fr' },
     serviceType: 'Hotel Operations Consulting',
     areaServed: 'Worldwide',
@@ -122,17 +122,17 @@ export default async function HousekeepingSopPage({ params }: { params: Promise<
       <section className="bg-[#1A2E44] text-white py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <span className="inline-block bg-[#2E7D32] text-white text-xs font-semibold px-3 py-1 rounded-full mb-6 tracking-widest uppercase">
-            {isEN ? 'Housekeeping SOP' : 'SOP Housekeeping'}
+            {isEN ? 'Housekeeping SOP' : 'Procédures housekeeping'}
           </span>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
             {isEN
               ? 'Housekeeping SOPs: The Method Behind the Checklist'
-              : 'SOPs Housekeeping : La Méthode Derrière la Checklist'}
+              : 'Procédures housekeeping : la méthode derrière la checklist'}
           </h1>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-10">
             {isEN
               ? 'A housekeeping SOP tells the team how to do the work. The checklist confirms it was done correctly. Both are needed. Neither replaces the other.'
-              : 'Un SOP housekeeping indique à l\'équipe comment réaliser le travail. La checklist confirme qu\'il a été réalisé correctement. Les deux sont nécessaires. Aucun ne remplace l\'autre.'}
+              : 'Les procédures housekeeping indiquent à l\'équipe comment réaliser le travail. La checklist confirme qu\'il a été réalisé correctement. Les deux sont nécessaires. Aucun ne remplace l\'autre.'}
           </p>
           <Link
             href={`/${locale}/playbooks`}
@@ -164,7 +164,7 @@ export default async function HousekeepingSopPage({ params }: { params: Promise<
                 Les SOPs housekeeping fonctionnent à deux niveaux distincts. Le premier est le niveau équipier : comment nettoyer une chambre, comment faire un lit selon le standard, comment préparer un chariot, comment gérer une chambre en DND ou une demande client rencontrée pendant le service. Le second est le niveau superviseur : comment inspecter une chambre avant libération, comment effectuer une ronde des espaces communs, comment gérer la passation de service et le comptage du linge.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Ces deux niveaux nécessitent des documents différents. La femme de chambre n&apos;a pas besoin du protocole d&apos;inspection superviseur. Le superviseur n&apos;utilise pas la séquence de nettoyage de chambre. Les regrouper dans un seul document, ou ignorer l&apos;un d&apos;eux, c&apos;est là que la plupart des modèles SOP génériques échouent.
+                Ces deux niveaux nécessitent des documents différents. L&apos;équipier housekeeping n&apos;a pas besoin du protocole d&apos;inspection superviseur. Le superviseur n&apos;utilise pas la séquence de remise en état. Les regrouper dans un seul document, ou ignorer l&apos;un d&apos;eux, c&apos;est là que la plupart des modèles génériques échouent.
               </p>
             </>
           )}
@@ -206,7 +206,7 @@ export default async function HousekeepingSopPage({ params }: { params: Promise<
           ) : (
             <>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Chaque SOP dans un système housekeeping a un moment de contrôle correspondant où une checklist confirme la conformité. Le SOP de remise en état indique précisément à l&apos;équipière comment nettoyer la chambre. La checklist d&apos;inspection superviseur, réalisée ensuite, vérifie le résultat. Le SOP de couverture définit la séquence. La validation superviseur confirme qu&apos;elle a été respectée.
+                Chaque procédure housekeeping a un moment de contrôle correspondant où une checklist confirme la conformité. La procédure de remise en état indique précisément à l&apos;équipier comment nettoyer la chambre. La checklist d&apos;inspection superviseur, réalisée ensuite, vérifie le résultat. La procédure de couverture définit la séquence. La validation superviseur confirme qu&apos;elle a été respectée.
               </p>
               <p className="text-gray-600 leading-relaxed">
                 Sans le SOP, la checklist n&apos;a pas de standard à vérifier. Sans la checklist, le SOP n&apos;a pas de mécanisme de contrôle. Pour que les équipes housekeeping opèrent de façon cohérente entre les services, les établissements ont besoin des deux.
