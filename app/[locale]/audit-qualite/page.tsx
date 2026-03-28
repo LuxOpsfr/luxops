@@ -133,7 +133,7 @@ export function AuditContent({ locale }: { locale: string }) {
           style={{ backgroundColor: 'rgba(195,198,214,0.2)' }}
         >
           {[
-            { v: '2 j.', l: isEn ? 'Days on-site' : 'Jours sur site' },
+            { v: '6', l: isEn ? 'Deliverables included' : 'Livrables inclus' },
             { v: '4+', l: isEn ? 'Operational areas' : 'Domaines opérationnels' },
             { v: '1', l: isEn ? 'Structured roadmap' : 'Feuille de route structurée' },
           ].map((s, i) => (
