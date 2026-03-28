@@ -259,7 +259,7 @@ function HomeContent({ locale }: { locale: string }) {
             <h2 className="font-display text-4xl md:text-5xl font-extrabold text-[#0a1d2e] tracking-tight leading-tight">
               {isEn
                 ? 'Three outcomes.\nEvery engagement.'
-                : 'Trois objectifs.\nChaque mission.'}
+                : 'Trois engagements.\nSur chaque mission.'}
             </h2>
           </div>
 
