@@ -571,4 +571,27 @@
     <priority>0.7</priority>
   </url>
 
+
+  <!-- Free Hotel Procedures — Lead Magnet EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/free-hotel-procedures</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/free-hotel-procedures"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/free-hotel-procedures"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/free-hotel-procedures"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-03-28</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Free Hotel Procedures — Lead Magnet FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/free-hotel-procedures</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/free-hotel-procedures"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/free-hotel-procedures"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/free-hotel-procedures"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-03-28</lastmod>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
