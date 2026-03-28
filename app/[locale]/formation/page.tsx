@@ -45,8 +45,8 @@ export function FormationContent({ locale }: { locale: string }) {
     },
     {
       icon: null,
-      stat: '95%',
-      statLabel: 'adoption rate on new procedures',
+      stat: '~70%',
+      statLabel: 'annual staff turnover in hospitality',
       navy: true,
       wide: false,
     },
@@ -74,8 +74,8 @@ export function FormationContent({ locale }: { locale: string }) {
     },
     {
       icon: null,
-      stat: '95%',
-      statLabel: "taux d'adoption des nouvelles procédures",
+      stat: '~70%',
+      statLabel: 'de rotation annuelle du personnel hôtelier',
       navy: true,
       wide: false,
     },
