@@ -17,6 +17,14 @@ export async function generateMetadata({
     description: isEn
       ? 'Practical guides on hotel SOPs, service standards, housekeeping checklists, F&B procedures and operations playbooks. Written from real hotel operations experience.'
       : 'Guides pratiques sur les SOPs hôteliers, standards de service, checklists housekeeping, procédures F&B et playbooks opérationnels. Issus de l\'expérience terrain.',
+    alternates: {
+      canonical: `https://www.luxops.fr/${locale}/blog`,
+      languages: {
+        'en': 'https://www.luxops.fr/en/blog',
+        'fr': 'https://www.luxops.fr/fr/blog',
+        'x-default': 'https://www.luxops.fr/en/blog',
+      },
+    },
   }
 }
 

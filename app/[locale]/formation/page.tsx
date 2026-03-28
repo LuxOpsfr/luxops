@@ -13,6 +13,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     description: isEn
       ? 'On-site training for hotel teams. Procedures, service standards and SOP implementation. Half-day or full-day sessions for up to 15 participants, built around your property.'
       : "Formation opérationnelle en établissement pour équipes hôtelières. Procédures, standards de service et mise en place des SOPs. Demi-journée ou journée complète, jusqu'à 15 participants.",
+    alternates: {
+      canonical: isEn ? 'https://www.luxops.fr/en/training' : 'https://www.luxops.fr/fr/formation',
+      languages: {
+        'en': 'https://www.luxops.fr/en/training',
+        'fr': 'https://www.luxops.fr/fr/formation',
+        'x-default': 'https://www.luxops.fr/en/training',
+      },
+    },
   }
 }
 
@@ -21,7 +29,7 @@ export default async function FormationPage({ params }: { params: Promise<{ loca
   return <FormationContent locale={locale} />
 }
 
-function FormationContent({ locale }: { locale: string }) {
+export function FormationContent({ locale }: { locale: string }) {
   const t = useTranslations('training_page')
   const isEn = locale === 'en'
 

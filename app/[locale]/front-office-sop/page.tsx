@@ -14,6 +14,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     keywords: isEN
       ? 'front office sop, hotel front desk procedures, front office hotel training, hotel reception sop, front desk standard operating procedures'
       : 'sop réception hôtel, procédures front office hôtel, formation réception hôtel, SOP accueil hôtel',
+    alternates: {
+      canonical: `https://www.luxops.fr/${locale}/front-office-sop`,
+      languages: {
+        'en': 'https://www.luxops.fr/en/front-office-sop',
+        'fr': 'https://www.luxops.fr/fr/front-office-sop',
+        'x-default': 'https://www.luxops.fr/en/front-office-sop',
+      },
+    },
   }
 }
 
@@ -84,7 +92,22 @@ export default async function FrontOfficeSopPage({ params }: { params: Promise<{
   const isEN = locale === 'en'
   const sopAreas = isEN ? SOP_AREAS_EN : SOP_AREAS_FR
 
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: isEN ? 'Hotel Front Office SOP' : 'SOP Réception Hôtel',
+    description: isEN
+      ? 'Front office SOP system for luxury hotels. Built around shift structure, guest journey, exception handling and handover.'
+      : 'Système SOP réception pour hôtels de luxe. Construit autour de la structure du service, du parcours client et de la passation.',
+    provider: { '@type': 'Organization', name: 'LuxOps', url: 'https://www.luxops.fr' },
+    serviceType: 'Hotel Operations Consulting',
+    areaServed: 'Worldwide',
+    url: `https://www.luxops.fr/${locale}/front-office-sop`,
+  }
+
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
     <main className="bg-white">
 
       {/* Hero */}
@@ -208,5 +231,6 @@ export default async function FrontOfficeSopPage({ params }: { params: Promise<{
       </section>
 
     </main>
+    </>
   )
 }

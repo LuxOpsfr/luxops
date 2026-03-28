@@ -13,6 +13,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     description: isEn
       ? 'On-site hotel audit covering 100+ operational criteria. Clear gap analysis by department and a prioritised improvement roadmap for management. Available on-property.'
       : "Audit hôtelier sur site. Plus de 100 critères évalués, analyse des écarts par département et feuille de route priorisée pour la direction. Demandez un devis.",
+    alternates: {
+      canonical: isEn ? 'https://www.luxops.fr/en/quality-audit' : 'https://www.luxops.fr/fr/audit-qualite',
+      languages: {
+        'en': 'https://www.luxops.fr/en/quality-audit',
+        'fr': 'https://www.luxops.fr/fr/audit-qualite',
+        'x-default': 'https://www.luxops.fr/en/quality-audit',
+      },
+    },
   }
 }
 
@@ -21,7 +29,7 @@ export default async function AuditPage({ params }: { params: Promise<{ locale: 
   return <AuditContent locale={locale} />
 }
 
-function AuditContent({ locale }: { locale: string }) {
+export function AuditContent({ locale }: { locale: string }) {
   const t = useTranslations('audit_page')
   const isEn = locale === 'en'
 

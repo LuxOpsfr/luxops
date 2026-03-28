@@ -14,6 +14,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     keywords: isEN
       ? 'hotel audit checklist, hotel quality audit, hotel inspection checklist, luxury hotel audit, hotel operations audit, hotel standards checklist'
       : 'audit hôtel, checklist audit hôtelier, audit qualité hôtel, inspection hôtel, audit opérations hôtelières',
+    alternates: {
+      canonical: `https://www.luxops.fr/${locale}/hotel-audit-checklist`,
+      languages: {
+        'en': 'https://www.luxops.fr/en/hotel-audit-checklist',
+        'fr': 'https://www.luxops.fr/fr/hotel-audit-checklist',
+        'x-default': 'https://www.luxops.fr/en/hotel-audit-checklist',
+      },
+    },
   }
 }
 
@@ -36,7 +44,22 @@ export default async function HotelAuditPage({ params }: { params: Promise<{ loc
   const isEN = locale === 'en'
   const auditAreas = isEN ? AUDIT_AREAS_EN : AUDIT_AREAS_FR
 
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: isEN ? 'Hotel Audit Checklist' : 'Checklist Audit Hôtel',
+    description: isEN
+      ? 'Professional hotel audit checklist for luxury and boutique properties. Evaluate operations, guest experience, cleanliness and service standards.'
+      : 'Checklist d\'audit hôtelier professionnel pour établissements de luxe et boutique. Évaluez les opérations, l\'expérience client et les standards de service.',
+    provider: { '@type': 'Organization', name: 'LuxOps', url: 'https://www.luxops.fr' },
+    serviceType: 'Hotel Quality Audit',
+    areaServed: 'Worldwide',
+    url: `https://www.luxops.fr/${locale}/hotel-audit-checklist`,
+  }
+
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
     <main className="bg-white">
       {/* Hero */}
       <section className="bg-[#1A2E44] text-white py-20 px-6">
@@ -145,5 +168,6 @@ export default async function HotelAuditPage({ params }: { params: Promise<{ loc
         </div>
       </section>
     </main>
+    </>
   )
 }

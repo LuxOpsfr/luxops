@@ -16,6 +16,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       : 'checklist housekeeping hotel, inspection superviseur housekeeping, séquence femme de chambre, passation de service housekeeping, contrôle espaces communs hôtel',
     alternates: {
       canonical: `https://www.luxops.fr/${locale}/hotel-housekeeping-checklist`,
+      languages: {
+        'en': 'https://www.luxops.fr/en/hotel-housekeeping-checklist',
+        'fr': 'https://www.luxops.fr/fr/hotel-housekeeping-checklist',
+        'x-default': 'https://www.luxops.fr/en/hotel-housekeeping-checklist',
+      },
     },
   }
 }

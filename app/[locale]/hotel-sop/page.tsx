@@ -14,6 +14,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     keywords: isEN
       ? 'hotel sop, hotel sop template, hotel standard operating procedures, hotel sop sample, hotel operations manual template, luxury hotel sop'
       : 'sop hôtel, modèle sop hôtel, procédures opérationnelles hôtel, manuel opérations hôtel, procédures hôtelières',
+    alternates: {
+      canonical: `https://www.luxops.fr/${locale}/hotel-sop`,
+      languages: {
+        'en': 'https://www.luxops.fr/en/hotel-sop',
+        'fr': 'https://www.luxops.fr/fr/hotel-sop',
+        'x-default': 'https://www.luxops.fr/en/hotel-sop',
+      },
+    },
   }
 }
 
@@ -80,7 +88,22 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
   const isEN = locale === 'en'
   const departments = isEN ? DEPARTMENTS_EN : DEPARTMENTS_FR
 
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: isEN ? 'Hotel SOP Templates' : 'Modèles SOP Hôtel',
+    description: isEN
+      ? 'Complete hotel SOP system covering front office, housekeeping, F&B and spa. Built by hospitality professionals.'
+      : 'Système SOP hôtel complet couvrant réception, housekeeping, F&B et spa. Conçu par des professionnels de l\'hôtellerie.',
+    provider: { '@type': 'Organization', name: 'LuxOps', url: 'https://www.luxops.fr' },
+    serviceType: 'Hotel Operations Consulting',
+    areaServed: 'Worldwide',
+    url: `https://www.luxops.fr/${locale}/hotel-sop`,
+  }
+
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
     <main className="bg-white">
 
       {/* Hero */}
@@ -237,5 +260,6 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
       </section>
 
     </main>
+    </>
   )
 }

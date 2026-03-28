@@ -16,6 +16,14 @@ export async function generateMetadata({
     description: isEn
       ? 'LuxOps provides structured operational methods for high-end hotels. Playbooks, SOPs, audits and training built from years of real hotel operations experience.'
       : "LuxOps propose des méthodes opérationnelles structurées pour hôtels haut de gamme. Playbooks, SOPs, audits et formations issus de l'exploitation hôtelière réelle.",
+    alternates: {
+      canonical: `https://www.luxops.fr/${locale}/about`,
+      languages: {
+        'en': 'https://www.luxops.fr/en/about',
+        'fr': 'https://www.luxops.fr/fr/about',
+        'x-default': 'https://www.luxops.fr/en/about',
+      },
+    },
   }
 }
 

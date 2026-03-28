@@ -22,9 +22,9 @@ export default function Header({ locale }: HeaderProps) {
   const navLinks = [
     { href: `/${locale}/playbooks`, label: t('playbooks') },
     { href: `/${locale}/notion-templates`, label: t('notion') },
-    { href: `/${locale}/formation`, label: t('training') },
-    { href: `/${locale}/audit-qualite`, label: t('audit') },
-    { href: `/${locale}/process-sur-mesure`, label: t('process') },
+    { href: locale === 'en' ? '/en/training' : '/fr/formation', label: t('training') },
+    { href: locale === 'en' ? '/en/quality-audit' : '/fr/audit-qualite', label: t('audit') },
+    { href: locale === 'en' ? '/en/bespoke-process' : '/fr/process-sur-mesure', label: t('process') },
   ]
 
   return (

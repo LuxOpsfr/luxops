@@ -17,6 +17,14 @@ export async function generateMetadata({
     description: isEn
       ? 'Get in touch with the LuxOps team. Questions about hotel playbooks, SOPs, audits, custom processes or on-property training. We usually respond within one business day.'
       : "Contactez l'équipe LuxOps pour vos questions sur les playbooks, SOPs, audits, process sur-mesure ou formation hôtelière. Réponse habituellement sous un jour ouvré.",
+    alternates: {
+      canonical: `https://www.luxops.fr/${locale}/contact`,
+      languages: {
+        'en': 'https://www.luxops.fr/en/contact',
+        'fr': 'https://www.luxops.fr/fr/contact',
+        'x-default': 'https://www.luxops.fr/en/contact',
+      },
+    },
   }
 }
 

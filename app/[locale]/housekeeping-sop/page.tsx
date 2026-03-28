@@ -14,6 +14,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     keywords: isEN
       ? 'housekeeping sop, housekeeping standard operating procedures, hotel housekeeping procedures, sop for housekeeping, hotel cleaning sop, luxury hotel housekeeping'
       : 'sop housekeeping, procédures housekeeping hôtel, SOP ménage hôtel, procédures opérationnelles housekeeping, housekeeping hôtel de luxe',
+    alternates: {
+      canonical: `https://www.luxops.fr/${locale}/housekeeping-sop`,
+      languages: {
+        'en': 'https://www.luxops.fr/en/housekeeping-sop',
+        'fr': 'https://www.luxops.fr/fr/housekeeping-sop',
+        'x-default': 'https://www.luxops.fr/en/housekeeping-sop',
+      },
+    },
   }
 }
 
@@ -92,7 +100,22 @@ export default async function HousekeepingSopPage({ params }: { params: Promise<
   const isEN = locale === 'en'
   const sops = isEN ? SOP_EN : SOP_FR
 
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: isEN ? 'Hotel Housekeeping SOP' : 'SOP Housekeeping Hôtel',
+    description: isEN
+      ? 'Housekeeping SOP system for luxury hotels. Covers room attendant procedures, supervisor inspection, linen management and quality control.'
+      : 'Système SOP housekeeping pour hôtels de luxe. Couvre les procédures équipier, l\'inspection superviseur, la gestion du linge et le contrôle qualité.',
+    provider: { '@type': 'Organization', name: 'LuxOps', url: 'https://www.luxops.fr' },
+    serviceType: 'Hotel Operations Consulting',
+    areaServed: 'Worldwide',
+    url: `https://www.luxops.fr/${locale}/housekeeping-sop`,
+  }
+
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
     <main className="bg-white">
 
       {/* Hero */}
@@ -214,5 +237,6 @@ export default async function HousekeepingSopPage({ params }: { params: Promise<
       </section>
 
     </main>
+    </>
   )
 }

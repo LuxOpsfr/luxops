@@ -14,6 +14,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     keywords: isEN
       ? 'hotel reception training, front office team training, hotel check-in training, hotel front desk training, hotel guest service training'
       : 'formation réception hôtel, formation front office hôtel, formation réceptionniste hôtel, formation accueil hôtel, formation équipe réception',
+    alternates: {
+      canonical: `https://www.luxops.fr/${locale}/formation-reception-hotel`,
+      languages: {
+        'en': 'https://www.luxops.fr/en/formation-reception-hotel',
+        'fr': 'https://www.luxops.fr/fr/formation-reception-hotel',
+        'x-default': 'https://www.luxops.fr/en/formation-reception-hotel',
+      },
+    },
   }
 }
 

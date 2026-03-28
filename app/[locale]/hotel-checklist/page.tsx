@@ -13,6 +13,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       : "Une checklist hôtelière n'est utile que si elle est construite autour d'un rôle, d'un moment et d'un point de contrôle précis. Ce guide explique ce qui les rend efficaces en pratique.",
     alternates: {
       canonical: `https://www.luxops.fr/${locale}/hotel-checklist`,
+      languages: {
+        'en': 'https://www.luxops.fr/en/hotel-checklist',
+        'fr': 'https://www.luxops.fr/fr/hotel-checklist',
+        'x-default': 'https://www.luxops.fr/en/hotel-checklist',
+      },
     },
   }
 }

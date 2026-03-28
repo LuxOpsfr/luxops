@@ -18,6 +18,14 @@ export async function generateMetadata({
     description: isEn
       ? 'Operational playbooks, SOP frameworks and on-property training for high-end hotels. Front Office, Housekeeping, F&B, Spa. Built from real hotel operations.'
       : "Playbooks opérationnels, procédures et formation pour les hôtels haut de gamme. Front Office, Housekeeping, F&B, Spa. Issus de l'exploitation réelle.",
+    alternates: {
+      canonical: `https://www.luxops.fr/${locale}`,
+      languages: {
+        'en': 'https://www.luxops.fr/en',
+        'fr': 'https://www.luxops.fr/fr',
+        'x-default': 'https://www.luxops.fr/en',
+      },
+    },
   }
 }
 

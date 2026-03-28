@@ -15,6 +15,14 @@ export async function generateMetadata({
     description: isEn
       ? 'Complete operational playbooks for high-end hotels. Documented procedures, service standards and SOPs for Front Office, Housekeeping, F&B and Spa departments.'
       : 'Playbooks opérationnels complets pour les hôtels haut de gamme. Procédures documentées, standards de service et SOPs pour tous les départements clés.',
+    alternates: {
+      canonical: `https://www.luxops.fr/${locale}/playbooks`,
+      languages: {
+        'en': 'https://www.luxops.fr/en/playbooks',
+        'fr': 'https://www.luxops.fr/fr/playbooks',
+        'x-default': 'https://www.luxops.fr/en/playbooks',
+      },
+    },
   }
 }
 

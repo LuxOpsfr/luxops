@@ -19,6 +19,16 @@ const nextConfig: NextConfig = {
         destination: '/en/bespoke-process',
         permanent: true,
       },
+      {
+        source: '/en/formation',
+        destination: '/en/training',
+        permanent: true,
+      },
+      {
+        source: '/en/audit-qualite',
+        destination: '/en/quality-audit',
+        permanent: true,
+      },
     ]
   },
 }

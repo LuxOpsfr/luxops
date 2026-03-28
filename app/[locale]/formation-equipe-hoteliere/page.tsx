@@ -14,6 +14,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     keywords: isEN
       ? 'hotel team training, hotel operations training, hospitality team training, hotel onboarding training, hotel department training'
       : 'formation équipe hôtelière, formation collaborateurs hôtel, formation opérations hôtelières, formation staff hôtel, programme formation hôtellerie',
+    alternates: {
+      canonical: `https://www.luxops.fr/${locale}/formation-equipe-hoteliere`,
+      languages: {
+        'en': 'https://www.luxops.fr/en/formation-equipe-hoteliere',
+        'fr': 'https://www.luxops.fr/fr/formation-equipe-hoteliere',
+        'x-default': 'https://www.luxops.fr/en/formation-equipe-hoteliere',
+      },
+    },
   }
 }
 

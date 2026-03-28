@@ -14,6 +14,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     keywords: isEN
       ? 'housekeeping team training, hotel housekeeping training, housekeeping staff training, hotel cleaning team training, housekeeping sop training'
       : 'formation housekeeping hôtel, former équipe housekeeping, formation ménage hôtel, formation gouvernante, formation équipe étages',
+    alternates: {
+      canonical: `https://www.luxops.fr/${locale}/formation-housekeeping-hotel`,
+      languages: {
+        'en': 'https://www.luxops.fr/en/formation-housekeeping-hotel',
+        'fr': 'https://www.luxops.fr/fr/formation-housekeeping-hotel',
+        'x-default': 'https://www.luxops.fr/en/formation-housekeeping-hotel',
+      },
+    },
   }
 }
 

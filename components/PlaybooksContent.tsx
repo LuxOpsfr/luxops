@@ -242,7 +242,7 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
               </p>
             </div>
             <Link
-              href={`/${locale}/formation`}
+              href={locale === 'en' ? '/en/training' : '/fr/formation'}
               className="flex-shrink-0 inline-flex items-center gap-2 px-8 py-4 bg-[#003d9b] text-white font-bold text-sm hover:bg-[#002d7a] transition-colors"
               style={{ borderRadius: '0.125rem' }}
             >

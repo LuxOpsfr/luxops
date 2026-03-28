@@ -16,6 +16,14 @@ export async function generateMetadata({
     description: isEn
       ? 'Expert guidance on hotel operational standards, SOPs and procedures. Questions and answers for hotel GMs, department heads and hospitality professionals.'
       : 'Conseils experts sur les standards opérationnels, SOPs et procédures hôtelières. Réponses pratiques pour DG, chefs de département et équipes opérationnelles.',
+    alternates: {
+      canonical: `https://www.luxops.fr/${locale}/resources`,
+      languages: {
+        'en': 'https://www.luxops.fr/en/resources',
+        'fr': 'https://www.luxops.fr/fr/resources',
+        'x-default': 'https://www.luxops.fr/en/resources',
+      },
+    },
   }
 }
 

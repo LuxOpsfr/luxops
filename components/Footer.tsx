@@ -65,7 +65,7 @@ export default function Footer({ locale }: FooterProps) {
             <ul className="space-y-2.5">
               <li>
                 <Link
-                  href={`/${locale}/audit-qualite`}
+                  href={locale === 'en' ? '/en/quality-audit' : '/fr/audit-qualite'}
                   className="text-gray-400 hover:text-white text-sm transition-colors"
                 >
                   {tNav('audit')}
@@ -81,7 +81,7 @@ export default function Footer({ locale }: FooterProps) {
               </li>
               <li>
                 <Link
-                  href={`/${locale}/formation`}
+                  href={locale === 'en' ? '/en/training' : '/fr/formation'}
                   className="text-gray-400 hover:text-white text-sm transition-colors"
                 >
                   {tNav('training')}
