@@ -45,8 +45,8 @@ export function FormationContent({ locale }: { locale: string }) {
     },
     {
       icon: null,
-      stat: '~70%',
-      statLabel: 'annual staff turnover in hospitality',
+      stat: '1 in 3',
+      statLabel: "guests won't return after one bad experience",
       navy: true,
       wide: false,
     },
@@ -74,8 +74,8 @@ export function FormationContent({ locale }: { locale: string }) {
     },
     {
       icon: null,
-      stat: '~70%',
-      statLabel: 'de rotation annuelle du personnel hôtelier',
+      stat: '1 sur 3',
+      statLabel: 'clients ne revient pas après une mauvaise expérience',
       navy: true,
       wide: false,
     },
