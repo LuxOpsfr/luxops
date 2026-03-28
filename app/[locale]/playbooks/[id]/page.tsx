@@ -6,28 +6,28 @@ import PlaybookDetailClient from '@/components/PlaybookDetailClient'
 
 const STATS: Record<string, { value: string; label: { en: string; fr: string } }[]> = {
   fo: [
-    { value: '-40%', label: { en: 'Check-in Errors', fr: 'Erreurs Check-in' } },
-    { value: '-15min', label: { en: 'Onboarding Time', fr: "Temps d'Onboarding" } },
-    { value: '+22%', label: { en: 'Guest Satisfaction', fr: 'Satisfaction Client' } },
-    { value: '12', label: { en: 'Modules', fr: 'Modules' } },
+    { value: '12', label: { en: 'Chapters', fr: 'Chapitres' } },
+    { value: '~250', label: { en: 'Pages', fr: 'Pages' } },
+    { value: 'EN+FR', label: { en: 'Languages', fr: 'Langues' } },
+    { value: 'PDF+PPT', label: { en: 'Formats', fr: 'Formats' } },
   ],
   hsk: [
-    { value: '-35%', label: { en: 'Inspection Time', fr: "Temps d'Inspection" } },
-    { value: '+28%', label: { en: 'Compliance Rate', fr: 'Taux de Conformité' } },
-    { value: '-20%', label: { en: 'Product Waste', fr: 'Surconsommation' } },
-    { value: '10', label: { en: 'Modules', fr: 'Modules' } },
+    { value: '10', label: { en: 'Chapters', fr: 'Chapitres' } },
+    { value: '~200', label: { en: 'Pages', fr: 'Pages' } },
+    { value: 'EN+FR', label: { en: 'Languages', fr: 'Langues' } },
+    { value: 'PDF+PPT', label: { en: 'Formats', fr: 'Formats' } },
   ],
   fb: [
-    { value: '-22%', label: { en: 'Staff Turnover', fr: 'Turnover Équipe' } },
-    { value: '-15%', label: { en: 'Food Cost', fr: 'Coût Matières' } },
-    { value: '4.8/5', label: { en: 'Service Rating', fr: 'Note de Service' } },
-    { value: '10', label: { en: 'Modules', fr: 'Modules' } },
+    { value: '10', label: { en: 'Chapters', fr: 'Chapitres' } },
+    { value: '~200', label: { en: 'Pages', fr: 'Pages' } },
+    { value: 'EN+FR', label: { en: 'Languages', fr: 'Langues' } },
+    { value: 'PDF+PPT', label: { en: 'Formats', fr: 'Formats' } },
   ],
   spa: [
-    { value: '+18%', label: { en: 'Retail Sales', fr: 'Ventes Retail' } },
-    { value: '-25%', label: { en: 'Setup Time', fr: 'Temps Préparation' } },
-    { value: '4.9/5', label: { en: 'Guest Rating', fr: 'Satisfaction Client' } },
-    { value: '9', label: { en: 'Modules', fr: 'Modules' } },
+    { value: '9', label: { en: 'Chapters', fr: 'Chapitres' } },
+    { value: '~180', label: { en: 'Pages', fr: 'Pages' } },
+    { value: 'EN+FR', label: { en: 'Languages', fr: 'Langues' } },
+    { value: 'PDF+PPT', label: { en: 'Formats', fr: 'Formats' } },
   ],
 }
 

@@ -6,8 +6,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const isEN = locale === 'en'
   return {
     title: isEN
-      ? 'Hotel Front Office SOP — Procedures Built for How Reception Actually Works | LuxOps'
-      : 'SOP Réception Hôtel — Procédures Construites Pour le Fonctionnement Réel | LuxOps',
+      ? 'Hotel Front Office SOP Templates — Download & Deploy Immediately | LuxOps'
+      : 'Modèles SOP Réception Hôtel — À Déployer Immédiatement | LuxOps',
     description: isEN
       ? 'Front office SOP system for luxury hotels. Built around shift structure, guest journey, exception handling and handover. Not a list of topics. A working operational framework.'
       : 'Système SOP réception pour hôtels de luxe. Construit autour de la structure du service, du parcours client, de la gestion des exceptions et de la passation. Un cadre opérationnel concret.',

@@ -19,7 +19,7 @@
     "cta_secondary": "Book a Consultation"
   },
   "problem": {
-    "title": "The Challenge",
+    "title": "Why Hotel Operations Break Down",
     "text": "Most hotels, regardless of category, face the same core issues: standards that shift with staff changes, processes that exist only in people's heads, and the ongoing pressure of turnover. LuxOps gives teams the structure and documentation to work consistently, regardless of who's on shift.",
     "point1_title": "Inconsistent Standards",
     "point1_text": "When standards aren't written down, guest experience depends on who's working. Consistency starts with documentation.",
@@ -29,11 +29,11 @@
     "point3_text": "Without structured guides, every new hire starts from scratch. Clear documentation cuts integration time and reduces errors from day one."
   },
   "solution": {
-    "title": "The LuxOps Approach",
+    "title": "Structured SOPs & Playbooks for Hotel Teams",
     "text": "We take operational knowledge built from years of running hotel departments and structure it into practical tools your teams can use daily, at every stage of the guest experience."
   },
   "offers": {
-    "title": "Our Offerings",
+    "title": "Hotel SOP Templates, Training & Quality Audit",
     "digital_title": "Operational Resources",
     "digital_desc": "Playbooks and Notion templates your team can start using the same day. No setup required.",
     "digital_cta": "Browse Resources",
@@ -214,11 +214,11 @@
   },
   "about_page": {
     "title": "About LuxOps",
-    "subtitle": "Operational methods built in demanding hotel environments, now available to other properties.",
-    "story_title": "Our Story",
-    "story_p1": "LuxOps was built from years of hands-on experience running operations across high-end properties and independent hotel groups.",
-    "story_p2": "Managing multi-department hotel operations day-to-day meant building structured procedures and SOPs out of necessity, in environments where a drop in service quality isn't an option.",
-    "story_p3": "The point was never to write documents for their own sake. It was to make operations easier to run. LuxOps packages those methods so any team can implement them quickly.",
+    "subtitle": "Structured operations tools for independent luxury hotels, boutique properties, and hotel groups who want to raise standards without starting from scratch.",
+    "story_title": "Why We Built This",
+    "story_p1": "Most hotel operations run on informal knowledge: the check-in sequence each agent handles slightly differently, the housekeeping inspection that depends on who is on shift, the onboarding that relies on whoever happens to have time. When that knowledge leaves, the standard leaves with it.",
+    "story_p2": "The frameworks behind LuxOps were built inside real hotel operations: independent 4- and 5-star properties, boutique groups, and multi-department environments across Europe where a drop in service quality is not an option. Each tool was created out of operational necessity, not to produce documents, but to make teams easier to lead and operations easier to run.",
+    "story_p3": "LuxOps exists to make those methods available to any property, without the cost of building them from scratch.",
     "expertise_title": "Areas of Expertise",
     "e1": "Front Office & Guest Relations",
     "e2": "Housekeeping & Rooms Division",
@@ -226,13 +226,13 @@
     "e4": "Spa & Wellness",
     "e5": "Hotel Operations Management",
     "e6": "Process Design & SOP Creation",
-    "values_title": "Our Values",
-    "v1_title": "Excellence",
-    "v1_desc": "We hold ourselves to the standards expected in the most demanding properties.",
-    "v2_title": "Clarity",
-    "v2_desc": "Complex operations become manageable when they're documented clearly and kept up to date.",
-    "v3_title": "Pragmatism",
-    "v3_desc": "Every recommendation is actionable, rooted in real hotel operations."
+    "values_title": "How We Work",
+    "v1_title": "Operational First",
+    "v1_desc": "Every tool is designed to be used on the floor, not filed away. If it does not make the day-to-day easier for a supervisor or team lead, it is not finished.",
+    "v2_title": "Specific, Not Generic",
+    "v2_desc": "Generic SOP templates skip the situations that matter most. Our procedures cover standard interactions and the exceptions: the cases where consistency is hardest and most important.",
+    "v3_title": "Built for High-End Contexts",
+    "v3_desc": "The standards, language, and level of detail throughout reflect the expectations of 4- and 5-star hospitality. Properties at that level cannot use generic formats without significant adaptation."
   },
   "contact_page": {
     "title": "Get in Touch",

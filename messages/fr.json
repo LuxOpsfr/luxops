@@ -19,7 +19,7 @@
     "cta_secondary": "Réserver une Consultation"
   },
   "problem": {
-    "title": "Le Défi",
+    "title": "Pourquoi les Opérations Hôtelières Déraillent",
     "text": "Dans beaucoup d'établissements, les méthodes existent, mais elles ne sont ni écrites, ni partagées de façon claire. Les standards varient selon les équipes, l'intégration repose trop sur la transmission orale, et chaque départ fragilise un peu plus le fonctionnement. LuxOps aide à remettre de la structure là où l'exploitation ne peut pas dépendre uniquement des personnes en place.",
     "point1_title": "Standards Incohérents",
     "point1_text": "Quand les standards ne sont pas clairement posés, la qualité varie d'un shift à l'autre. La documentation permet de stabiliser l'exécution.",
@@ -29,11 +29,11 @@
     "point3_text": "Sans support structuré, chaque nouvelle recrue repart presque de zéro. Des procédures claires raccourcissent l'intégration et sécurisent l'exécution dès les premiers jours."
   },
   "solution": {
-    "title": "L'Approche LuxOps",
+    "title": "SOPs & Playbooks Structurés pour Équipes Hôtelières",
     "text": "LuxOps rassemble des méthodes de travail construites dans l'exploitation hôtelière, puis les transforme en outils utilisables par les équipes, service après service, étape après étape."
   },
   "offers": {
-    "title": "Nos Offres",
+    "title": "Modèles SOP, Formation & Audit Qualité",
     "digital_title": "Ressources Opérationnelles",
     "digital_desc": "Des playbooks et espaces Notion conçus pour être utilisés immédiatement par les équipes et les managers, sans déploiement lourd ni adaptation complexe.",
     "digital_cta": "Voir les Ressources",
@@ -213,26 +213,26 @@
     "cta_title": "Vous souhaitez aligner vos équipes autour de standards plus clairs ?"
   },
   "about_page": {
-    "title": "À Propos de LuxOps",
-    "subtitle": "Des méthodes opérationnelles construites dans des établissements exigeants, aujourd'hui mises à disposition d'autres propriétés.",
-    "story_title": "Notre Histoire",
-    "story_p1": "LuxOps est née d'années passées à gérer des opérations hôtelières concrètes, dans des établissements haut de gamme et des groupes indépendants.",
-    "story_p2": "Piloter des opérations multi-départements, c'est construire des procédures par nécessité, dans des établissements où une baisse de qualité de service n'est tout simplement pas acceptable.",
-    "story_p3": "LuxOps met ces méthodes en forme pour qu'elles soient utilisables rapidement par les équipes, et qu'elles se concentrent sur l'essentiel : leurs clients.",
-    "expertise_title": "Domaines d'Expertise",
+    "title": "À propos de LuxOps",
+    "subtitle": "Des outils opérationnels structurés pour les hôtels de luxe indépendants, les établissements boutique et les groupes hôteliers qui souhaitent élever leurs standards sans repartir de zéro.",
+    "story_title": "Pourquoi nous avons construit cela",
+    "story_p1": "La plupart des opérations hôtelières fonctionnent sur des savoirs informels : la séquence de check-in que chaque agent gère à sa façon, l'inspection housekeeping qui dépend de qui est en poste, l'intégration qui repose sur la disponibilité du moment. Quand ces connaissances partent, le standard part avec elles.",
+    "story_p2": "Les cadres derrière LuxOps ont été construits au sein d'opérations hôtelières réelles : établissements indépendants 4 et 5 étoiles, groupes boutique, environnements multi-départements à travers l'Europe où une baisse du niveau de service n'est pas une option. Chaque outil a été créé par nécessité opérationnelle, non pas pour produire des documents, mais pour rendre les équipes plus faciles à piloter et les opérations plus faciles à gérer.",
+    "story_p3": "LuxOps existe pour rendre ces méthodes accessibles à n'importe quel établissement, sans le coût de les construire de zéro.",
+    "expertise_title": "Domaines d'expertise",
     "e1": "Front Office & Relations Clients",
     "e2": "Housekeeping & Division Chambres",
     "e3": "Food & Beverage",
     "e4": "Spa & Wellness",
     "e5": "Direction des Opérations",
     "e6": "Conception de Process & Rédaction de Procédures",
-    "values_title": "Nos Valeurs",
-    "v1_title": "Exigence",
-    "v1_desc": "Nous nous tenons aux standards attendus dans les établissements les plus exigeants.",
-    "v2_title": "Clarté",
-    "v2_desc": "Les opérations complexes deviennent gérables quand elles sont documentées clairement et maintenues à jour.",
-    "v3_title": "Pragmatisme",
-    "v3_desc": "Chaque recommandation est actionnable, ancrée dans l'exploitation hôtelière."
+    "values_title": "Notre approche",
+    "v1_title": "L'opérationnel avant tout",
+    "v1_desc": "Chaque outil est conçu pour être utilisé sur le terrain, pas classé dans un dossier. S'il ne simplifie pas le quotidien d'un superviseur ou d'un responsable d'équipe, il n'est pas terminé.",
+    "v2_title": "Spécifique, pas générique",
+    "v2_desc": "Les modèles SOP génériques passent à côté des situations qui comptent le plus. Nos procédures couvrent les interactions standard et les exceptions : les cas où la cohérence est la plus difficile et la plus importante.",
+    "v3_title": "Conçu pour les contextes haut de gamme",
+    "v3_desc": "Les standards, le niveau de langage et le degré de détail reflètent les attentes de l'hôtellerie 4 et 5 étoiles. Les établissements à ce niveau ne peuvent pas utiliser des formats génériques sans adaptation significative."
   },
   "contact_page": {
     "title": "Nous Contacter",

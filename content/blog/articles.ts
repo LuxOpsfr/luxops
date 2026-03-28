@@ -499,7 +499,7 @@ export const articles: BilingualArticle[] = [
   {
     slug: 'hotel-front-office-sop',
     en: {
-      title: 'Hotel Front Office Standard Operating Procedures: The Complete Guide',
+      title: 'Hotel Front Office SOPs: What Good Procedures Actually Look Like',
       description:
         'A complete guide to hotel front office SOPs — covering check-in, check-out, complaint handling, upselling and concierge standards. Practical procedures for hotel reception teams.',
       date: '2026-03-14',
@@ -597,7 +597,7 @@ export const articles: BilingualArticle[] = [
       cta: { text: 'View the Front Office Playbook', href: '/en/playbooks' },
     },
     fr: {
-      title: 'Procédures Opérationnelles Front Office Hôtelier : Le Guide Complet',
+      title: 'SOPs Front Office Hôtelier : À Quoi Ressemblent de Vraies Procédures',
       description:
         "Guide complet des SOPs Front Office hôtelier — check-in, check-out, gestion des réclamations, upselling et standards conciergerie. Procédures pratiques pour les équipes de réception.",
       date: '2026-03-14',
@@ -1368,6 +1368,259 @@ export const articles: BilingualArticle[] = [
       conclusion:
         "Les procédures front office ne sont pas de la bureaucratie. Elles sont ce qui permet à l\'équipe de performer au même niveau quel que soit le service, le volume ou le niveau d\'expérience de la personne à la réception. Quand les procédures sont documentées et comprises, la qualité cesse d\'être individuelle pour devenir structurelle. Les clients sentent cette différence -- et les scores d\'évaluation aussi.",
       cta: { text: 'Voir le Playbook Front Office', href: '/fr/playbooks' },
+    },
+  },
+  {
+    slug: 'housekeeping-room-inspection',
+    en: {
+      title: 'Hotel Room Inspection Checklist: How Housekeeping Supervisors Maintain Consistent Standards',
+      description:
+        'A practical guide to the supervisor room inspection process in luxury hotels. Covers inspection sequence, what to check, how to document defects, and how to return a room that does not meet standard.',
+      date: '2026-03-28',
+      readTime: '8 min read',
+      intro:
+        'A clean room and a room that passes inspection are not always the same thing. Room attendants work to a sequence and aim for the standard they were trained to. What the supervisor inspection adds is a structured second check, run with different eyes, before the room is released to the front desk. When it is done well, it catches what slips through during a busy shift. When it is skipped or informal, the guest becomes the quality control. This guide covers how a structured room inspection works and what supervisors should be checking at each stage.',
+      sections: [
+        {
+          h2: 'What a Room Inspection Is (and What It Is Not)',
+          content:
+            'A room inspection is a quality gate, not a walkthrough. The distinction matters. A walkthrough confirms the room was serviced. An inspection verifies it was serviced to standard: that every element was addressed in the correct way, and that nothing was missed. In a luxury hotel context, inspection criteria need to be specific enough that two different supervisors would reach the same verdict on the same room. That requires a defined sequence and documented pass/fail criteria, not a general impression.',
+          h3Items: [
+            {
+              heading: 'Who runs the inspection',
+              text: 'In most properties, the housekeeping supervisor or floor supervisor runs room inspections before release. In properties with a quality or rooms division manager, spot inspections may be added at a second level. The key requirement is that the person running the inspection did not clean the room.',
+            },
+            {
+              heading: 'When it happens',
+              text: 'Inspection should occur after the attendant has completed the room and before the status is updated in the PMS. Releasing a room before inspection means any defect discovered afterward requires a re-service and a potential delay for a waiting arrival.',
+            },
+            {
+              heading: 'What the result looks like',
+              text: 'Pass: room is released as clean and ready. Fail: room is returned to the attendant with a specific defect list, not general feedback, but a documented record of what needs to be corrected and re-inspected.',
+            },
+          ],
+        },
+        {
+          h2: 'The Inspection Sequence: Where to Start',
+          content:
+            'The inspection sequence should follow a fixed path through the room to prevent missed areas. The most reliable approach is to enter, assess the room overall, then work from the furthest point back toward the door. This mirrors the cleaning sequence in reverse and makes it easier to identify whether the attendant followed the correct order.',
+          h3Items: [
+            {
+              heading: 'Overall impression on entry',
+              text: 'Before examining any specific area, note the overall impression: odour, natural light, presentation of the bed, general order. This is what the guest experiences first. If the overall impression is off, document it before proceeding.',
+            },
+            {
+              heading: 'Bathroom first',
+              text: 'The bathroom is the highest-scrutiny area for most guests and the most common source of inspection failures. Complete the bathroom check before moving to the main room.',
+            },
+            {
+              heading: 'Main room and bed',
+              text: 'Linen alignment, pillow placement, decorative elements, surfaces, tech functionality, floor condition. Work systematically from the furthest wall toward the entrance.',
+            },
+            {
+              heading: 'Back to the entrance',
+              text: 'Doors, handles, skirting boards, wardrobe interior, minibar. These are the areas most often skipped in informal inspections.',
+            },
+          ],
+        },
+        {
+          h2: 'Bathroom Inspection Checklist',
+          content:
+            'The bathroom concentrates the most inspection criteria in the smallest space. Rushed or informal inspections tend to pass on visual impression rather than working through a defined list. These are the areas that require specific checking.',
+          h3Items: [
+            {
+              heading: 'Chrome and fixtures',
+              text: 'Chrome fittings, including taps, showerhead and towel rail, must be dry and free of water marks. Limescale visible on tile grout or around the base of fittings is an immediate fail.',
+            },
+            {
+              heading: 'Amenity placement',
+              text: 'Amenities must be placed according to the property standard: correct products, correct position, correct orientation. Partially used amenities that were not replaced are a common failure point.',
+            },
+            {
+              heading: 'Mirror and glass',
+              text: 'Mirrors and glass surfaces must be streak-free. Check by looking across the surface at an angle, not straight on. This is a technique that should be part of the attendant standard as well.',
+            },
+            {
+              heading: 'Floor and grout',
+              text: 'Tile grout discolouration or residue at floor edges, particularly around the shower or bath base, is a failure that passes unnoticed in a quick visual scan. Inspect at floor level if needed.',
+            },
+            {
+              heading: 'Towel folding and placement',
+              text: 'Standard must match the property defined fold and placement exactly. This is one of the most visible indicators of whether a room was prepared with care.',
+            },
+          ],
+        },
+        {
+          h2: 'Bedroom and Linen Check',
+          content:
+            'The bedroom check should cover both presentation and functionality. Presentation failures are visible; functionality failures such as burnt-out bulbs, a malfunctioning TV, or a dead tablet are not spotted until the guest is already in the room.',
+          h3Items: [
+            {
+              heading: 'Linen alignment',
+              text: 'Both sides of the bed should have equal turndown. Top sheet and duvet alignment must match the property standard. The most common failure: the linen is centred from standing at the foot of the bed but off-axis when checked from the side.',
+            },
+            {
+              heading: 'Pillow and cushion placement',
+              text: 'Count and placement must match the standard for the room category. Decorative cushions must be placed in the defined order and orientation.',
+            },
+            {
+              heading: 'Surface condition',
+              text: 'Nightstands, desk, TV unit: dust-free and clear of the previous guest\'s items. Check inside drawers if the property standard requires it.',
+            },
+            {
+              heading: 'Lighting and tech',
+              text: 'Test bedside lamps, main room lighting and the TV. Note battery level on remotes if the property uses a check system. Functionality failures are among the most common guest complaints in luxury properties.',
+            },
+          ],
+        },
+        {
+          h2: 'Documenting Defects and Returning a Room',
+          content:
+            'When a room fails inspection, the return process needs to be handled in a way that does not create friction or ambiguity. The supervisor should document what was found, when, and what correction is required, not deliver verbal feedback that is open to interpretation and cannot be tracked.',
+          h3Items: [
+            {
+              heading: 'What to log',
+              text: 'Room number, inspection time, and a list of specific defects. Not "bathroom not clean" but "limescale on tap, amenity not replaced, towel refolded incorrectly". This log should be accessible during the shift and at handover.',
+            },
+            {
+              heading: 'Re-inspection',
+              text: 'When the attendant has corrected the room, the supervisor should re-inspect before releasing. Re-inspection should be documented separately from the initial check.',
+            },
+            {
+              heading: 'Tracking failure patterns',
+              text: 'Defect logs over time reveal patterns: attendants who consistently miss the same area, room categories that generate more failures, shift timing effects. Without logs, these patterns remain invisible and the same failures recur.',
+            },
+          ],
+        },
+      ],
+      conclusion:
+        'A room inspection is only as useful as the criteria behind it. A supervisor who works from a defined checklist and documents what they find creates a system that improves over time. One who relies on general impressions creates a system that is consistent only as long as that person is on shift. The inspection protocol is one of the most important procedures in a housekeeping SOP, and one of the most commonly under-documented.',
+      cta: { text: 'View the Housekeeping Playbook', href: '/en/playbooks' },
+    },
+    fr: {
+      title: "Checklist d'inspection des chambres : comment les superviseurs housekeeping maintiennent des standards cohérents",
+      description:
+        "Guide pratique du processus d'inspection superviseur en hôtellerie de luxe. Séquence d'inspection, points de contrôle, documentation des défauts et retour de chambre non conforme.",
+      date: '2026-03-28',
+      readTime: '8 min de lecture',
+      intro:
+        "Une chambre propre et une chambre qui passe l'inspection ne sont pas toujours la même chose. Les équipiers travaillent selon une séquence et visent le standard pour lequel ils ont été formés. Ce que l'inspection superviseur ajoute, c'est un second contrôle structuré, effectué avec un autre regard, avant que la chambre soit libérée à la réception. Quand elle est bien menée, elle rattrape ce qui passe au travers lors d'un shift chargé. Quand elle est sautée ou informelle, c'est le client qui devient le contrôle qualité. Ce guide couvre le fonctionnement d'une inspection structurée et ce que les superviseurs doivent vérifier à chaque étape.",
+      sections: [
+        {
+          h2: "Ce qu'est une inspection de chambre (et ce qu'elle n'est pas)",
+          content:
+            "Une inspection de chambre est une porte qualité, pas un passage rapide. La distinction est importante. Un passage confirme que la chambre a été faite. Une inspection vérifie qu'elle a été faite selon le standard : que chaque élément a été traité correctement, et que rien n'a été oublié. Dans un contexte hôtelier haut de gamme, les critères d'inspection doivent être suffisamment précis pour que deux superviseurs différents arrivent au même verdict sur la même chambre. Cela nécessite une séquence définie et des critères documentés, pas une impression générale.",
+          h3Items: [
+            {
+              heading: "Qui mène l'inspection",
+              text: "Dans la plupart des établissements, c'est le superviseur housekeeping ou le superviseur d'étage qui mène les inspections avant libération. Dans les établissements avec un responsable qualité ou de la division chambres, des inspections ponctuelles peuvent être ajoutées à un second niveau. Le critère essentiel : la personne qui inspecte ne doit pas avoir nettoyé la chambre.",
+            },
+            {
+              heading: 'Quand elle a lieu',
+              text: "L'inspection doit avoir lieu après que l'équipier a terminé la chambre et avant que le statut soit mis à jour dans le PMS. Libérer une chambre avant inspection signifie que tout défaut découvert ensuite nécessite un re-service et un potentiel délai pour une arrivée en attente.",
+            },
+            {
+              heading: 'À quoi ressemble le résultat',
+              text: "Conforme : la chambre est libérée comme propre et prête. Non conforme : la chambre est retournée à l'équipier avec une liste de défauts précis, pas un retour général, mais un relevé documenté de ce qui doit être corrigé et re-inspecté.",
+            },
+          ],
+        },
+        {
+          h2: "La séquence d'inspection : par où commencer",
+          content:
+            "La séquence d'inspection doit suivre un chemin fixe à travers la chambre pour éviter les zones manquées. L'approche la plus fiable consiste à entrer, évaluer la chambre dans son ensemble, puis travailler du point le plus éloigné vers la porte. Cela reflète la séquence de nettoyage en sens inverse et permet de vérifier plus facilement si l'équipier a suivi le bon ordre.",
+          h3Items: [
+            {
+              heading: "Impression générale à l'entrée",
+              text: "Avant d'examiner une zone spécifique, noter l'impression générale : odeur, lumière naturelle, présentation du lit, ordre général. C'est ce que le client perçoit en premier. Si l'impression générale est mauvaise, le documenter avant de continuer.",
+            },
+            {
+              heading: 'La salle de bain en premier',
+              text: "La salle de bain est la zone la plus scrutée par les clients et la source la plus fréquente d'échecs à l'inspection. Compléter le contrôle salle de bain avant de passer à la chambre.",
+            },
+            {
+              heading: 'Chambre et lit',
+              text: "Alignement du linge, placement des oreillers, éléments décoratifs, surfaces, fonctionnement des équipements, état du sol. Travailler systématiquement du mur le plus éloigné vers l'entrée.",
+            },
+            {
+              heading: "Retour vers l'entrée",
+              text: "Portes, poignées, plinthes, intérieur de l'armoire, minibar. Ce sont les zones les plus souvent sautées lors des inspections informelles.",
+            },
+          ],
+        },
+        {
+          h2: "Checklist d'inspection de la salle de bain",
+          content:
+            "La salle de bain concentre le plus grand nombre de critères d'inspection dans le plus petit espace. Les inspections rapides ou informelles ont tendance à valider sur l'impression visuelle plutôt qu'en travaillant une liste définie. Ce sont les zones qui nécessitent un contrôle précis.",
+          h3Items: [
+            {
+              heading: 'Robinetterie et chrome',
+              text: "Les éléments chromés, notamment les robinets, le pommeau de douche et le porte-serviettes, doivent être secs et sans traces d'eau. Le calcaire visible sur les joints carrelés ou à la base des éléments est un échec immédiat.",
+            },
+            {
+              heading: "Placement des produits d'accueil",
+              text: "Les produits d'accueil doivent être placés selon le standard de l'établissement : bons produits, bonne position, bonne orientation. Les produits partiellement utilisés non remplacés sont un point d'échec fréquent.",
+            },
+            {
+              heading: 'Miroir et surfaces vitrées',
+              text: "Les miroirs et surfaces vitrées doivent être sans traces. Vérifier en regardant la surface de biais, pas de face. C'est une technique qui doit faire partie du standard équipier également.",
+            },
+            {
+              heading: 'Sol et joints',
+              text: "La décoloration des joints carrelés ou les résidus en bordure de sol, notamment autour de la douche ou de la baignoire, sont des défauts qui passent inaperçus lors d'un simple regard. Inspecter au niveau du sol si nécessaire.",
+            },
+            {
+              heading: 'Pliage et placement des serviettes',
+              text: "Le standard doit correspondre exactement au pliage et au placement définis par l'établissement. C'est l'un des indicateurs les plus visibles du soin apporté à la préparation de la chambre.",
+            },
+          ],
+        },
+        {
+          h2: 'Contrôle de la chambre et du linge',
+          content:
+            "Le contrôle de la chambre doit couvrir à la fois la présentation et le fonctionnement. Les défauts de présentation sont visibles ; les défauts de fonctionnement comme une ampoule grillée, un téléviseur en panne ou une tablette déchargée ne sont détectés que lorsque le client est déjà dans la chambre.",
+          h3Items: [
+            {
+              heading: 'Alignement du linge',
+              text: "Les deux côtés du lit doivent avoir un retour égal. L'alignement du drap et de la couette doit correspondre au standard de l'établissement. L'erreur la plus fréquente : le linge est centré vu du pied du lit mais décalé vu de côté.",
+            },
+            {
+              heading: 'Placement des oreillers et coussins',
+              text: "Le nombre et le placement doivent correspondre au standard de la catégorie de chambre. Les coussins décoratifs doivent être disposés dans l'ordre et l'orientation définis.",
+            },
+            {
+              heading: 'État des surfaces',
+              text: "Tables de nuit, bureau, meuble TV : sans poussière et sans effets du client précédent. Vérifier l'intérieur des tiroirs si le standard de l'établissement l'exige.",
+            },
+            {
+              heading: 'Éclairage et équipements',
+              text: "Tester les lampes de chevet, l'éclairage principal et le téléviseur. Vérifier l'état des piles des télécommandes si l'établissement dispose d'un système de contrôle. Les défauts de fonctionnement font partie des réclamations les plus fréquentes dans les hôtels de luxe.",
+            },
+          ],
+        },
+        {
+          h2: 'Documenter les défauts et retourner une chambre',
+          content:
+            "Quand une chambre échoue à l'inspection, le processus de retour doit être géré de façon à ne pas créer de friction ou d'ambiguïté. Le superviseur doit documenter ce qui a été trouvé, à quel moment, et quelle correction est requise. Un retour verbal, ouvert à l'interprétation et impossible à tracer, ne suffit pas.",
+          h3Items: [
+            {
+              heading: 'Ce qu\'il faut consigner',
+              text: "Numéro de chambre, heure d'inspection, liste de défauts précis. Pas \"salle de bain pas propre\" mais \"calcaire sur le robinet, produit d'accueil non remplacé, serviette mal pliée\". Ce relevé doit être accessible pendant le shift et à la passation.",
+            },
+            {
+              heading: 'La re-inspection',
+              text: "Une fois la chambre corrigée par l'équipier, le superviseur doit re-inspecter avant de la libérer. La re-inspection doit être documentée séparément du contrôle initial.",
+            },
+            {
+              heading: 'Suivre les tendances',
+              text: "Les relevés de défauts dans le temps révèlent des tendances : équipiers qui manquent régulièrement la même zone, catégories de chambres qui génèrent plus d'échecs, effets du timing de shift. Sans relevés, ces tendances restent invisibles et les mêmes défauts se répètent.",
+            },
+          ],
+        },
+      ],
+      conclusion:
+        "Une inspection de chambre n'est utile que si les critères derrière elle le sont aussi. Un superviseur qui travaille à partir d'une checklist définie et documente ce qu'il trouve crée un système qui s'améliore dans le temps. Celui qui se base sur une impression générale crée un système qui n'est cohérent que tant que cette personne est en poste. Le protocole d'inspection est l'une des procédures les plus importantes dans un SOP housekeeping, et l'une des plus souvent sous-documentées.",
+      cta: { text: 'Voir le Playbook Housekeeping', href: '/fr/playbooks' },
     },
   },
 ]
