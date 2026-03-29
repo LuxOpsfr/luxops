@@ -86,34 +86,7 @@ export default async function BlogArticlePage({
           </div>
         </section>
 
-        {/* Article body — first section */}
-        <section className="pt-12 pb-0 bg-white">
-          <div className="max-w-3xl mx-auto px-6">
-            {content.sections[0] && (() => {
-              const section = content.sections[0]
-              return (
-                <div className="mb-12">
-                  <h2 className="text-2xl font-bold text-[#111111] mb-4">{section.h2}</h2>
-                  {section.content && (
-                    <p className="text-gray-500 leading-relaxed mb-6">{section.content}</p>
-                  )}
-                  {section.h3Items && (
-                    <div className="space-y-6">
-                      {section.h3Items.map((item, j) => (
-                        <div key={j}>
-                          <h3 className="text-lg font-semibold text-[#111111] mb-2">{item.heading}</h3>
-                          <p className="text-gray-500 leading-relaxed">{item.text}</p>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              )
-            })()}
-          </div>
-        </section>
-
-        {/* Lead magnet — after first section, visible without full scroll */}
+        {/* Lead magnet — right after intro, before any H2 */}
         {(() => {
           const DEPT_MAP: Record<string, { titleEn: string; titleFr: string }> = {
             'housekeeping-room-inspection': {
@@ -155,10 +128,7 @@ export default async function BlogArticlePage({
                 <Link
                   href={`/${locale}/free-hotel-procedures`}
                   className="inline-flex items-center gap-2 px-6 py-3 text-white font-bold text-sm flex-shrink-0 hover:opacity-90 transition-opacity"
-                  style={{
-                    background: 'linear-gradient(135deg, #003d9b, #0052cc)',
-                    borderRadius: '0.125rem',
-                  }}
+                  style={{ background: 'linear-gradient(135deg, #003d9b, #0052cc)', borderRadius: '0.125rem' }}
                 >
                   {isEn ? 'Download free' : 'Télécharger gratuitement'} <ArrowRight size={16} />
                 </Link>
@@ -167,12 +137,12 @@ export default async function BlogArticlePage({
           )
         })()}
 
-        {/* Article body — remaining sections + conclusion */}
-        <section className="pt-0 pb-12 bg-white">
+        {/* Article body — all sections */}
+        <section className="py-12 bg-white">
           <div className="max-w-3xl mx-auto px-6">
             <div className="prose-style">
-              {content.sections.slice(1).map((section, i) => (
-                <div key={i} className="mb-12 mt-12">
+              {content.sections.map((section, i) => (
+                <div key={i} className="mb-12">
                   <h2 className="text-2xl font-bold text-[#111111] mb-4">{section.h2}</h2>
                   {section.content && (
                     <p className="text-gray-500 leading-relaxed mb-6">{section.content}</p>
