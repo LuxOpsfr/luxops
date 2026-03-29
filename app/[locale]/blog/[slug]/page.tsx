@@ -119,6 +119,60 @@ export default async function BlogArticlePage({
           </div>
         </section>
 
+        {/* Lead magnet — shown on every article, contextual dept when known */}
+        {(() => {
+          const DEPT_MAP: Record<string, { titleEn: string; titleFr: string }> = {
+            'housekeeping-room-inspection': {
+              titleEn: 'Download a free chapter of the Housekeeping Playbook',
+              titleFr: 'Téléchargez un chapitre gratuit du Playbook Housekeeping',
+            },
+            'hotel-front-office-sop': {
+              titleEn: 'Download a free chapter of the Front Office Playbook',
+              titleFr: 'Téléchargez un chapitre gratuit du Playbook Réception',
+            },
+            'hotel-front-office-procedures': {
+              titleEn: 'Download a free chapter of the Front Office Playbook',
+              titleFr: 'Téléchargez un chapitre gratuit du Playbook Réception',
+            },
+          }
+          const lm = DEPT_MAP[slug] ?? {
+            titleEn: 'Download a free introductory chapter',
+            titleFr: 'Téléchargez un chapitre d\'introduction gratuit',
+          }
+          return (
+            <section
+              className="py-10 border-t border-b"
+              style={{ backgroundColor: '#eef4ff', borderColor: 'rgba(195,198,214,0.3)' }}
+            >
+              <div className="max-w-3xl mx-auto px-6 flex flex-col sm:flex-row items-start sm:items-center gap-6">
+                <div className="flex-1">
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-[#003d9b] mb-2">
+                    {isEn ? 'Free resource' : 'Ressource gratuite'}
+                  </p>
+                  <p className="font-bold text-[#0a1d2e] text-lg mb-1">
+                    {isEn ? lm.titleEn : lm.titleFr}
+                  </p>
+                  <p className="text-sm text-[#4f6074]">
+                    {isEn
+                      ? 'See what structured hotel procedures look like in practice.'
+                      : 'Découvrez à quoi ressemblent des procédures hôtelières structurées.'}
+                  </p>
+                </div>
+                <Link
+                  href={`/${locale}/free-hotel-procedures`}
+                  className="inline-flex items-center gap-2 px-6 py-3 text-white font-bold text-sm flex-shrink-0 hover:opacity-90 transition-opacity"
+                  style={{
+                    background: 'linear-gradient(135deg, #003d9b, #0052cc)',
+                    borderRadius: '0.125rem',
+                  }}
+                >
+                  {isEn ? 'Download free' : 'Télécharger gratuitement'} <ArrowRight size={16} />
+                </Link>
+              </div>
+            </section>
+          )
+        })()}
+
         {/* Related resources */}
         {(() => {
           const RELATED: Record<string, { href: string; labelEn: string; labelFr: string; descEn: string; descFr: string }[]> = {
