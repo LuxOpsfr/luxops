@@ -62,13 +62,6 @@ export const metadata: Metadata = {
       'Operational playbooks, SOP frameworks and on-property training for high-end hotels.',
     images: ['https://www.luxops.fr/og-image.png'],
   },
-  alternates: {
-    languages: {
-      'en': 'https://www.luxops.fr/en',
-      'fr': 'https://www.luxops.fr/fr',
-      'x-default': 'https://www.luxops.fr/en',
-    },
-  },
   verification: {
     google: 'WSMYWLKVx8J9gq1vEj6wiRBqmej4G1StcRmx4W830SU',
     other: {
