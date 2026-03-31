@@ -1623,4 +1623,605 @@ export const articles: BilingualArticle[] = [
       cta: { text: 'Voir le Playbook Housekeeping', href: '/fr/playbooks' },
     },
   },
+  {
+    slug: 'hotel-fb-restaurant-procedures',
+    en: {
+      title: 'Hotel Restaurant Service Procedures: A Practical Guide for F&B Teams',
+      description:
+        'The standard operating procedures that define consistent restaurant service in luxury hotels. Covers the sequence of service, table management, complaint handling, and shift close.',
+      date: '2026-03-29',
+      readTime: '8 min read',
+      intro:
+        'Restaurant service in a hotel is not the same as in a standalone restaurant. The guest has a room upstairs. They arrived on a flight this morning. Their expectations were set at check-in. When the restaurant experience does not match what the rest of the property delivered, the gap is noticed — and it tends to appear in reviews as a problem with the hotel rather than the restaurant. Consistent F&B service procedures are what close that gap. Not by scripting every interaction, but by giving the team a defined sequence, clear handover points, and a shared standard to work toward.',
+      sections: [
+        {
+          h2: 'The Sequence of Service: Why It Matters',
+          content:
+            'A defined sequence of service is not a constraint on hospitality — it is the structure that makes genuine hospitality possible. When a server knows exactly what happens at each step, they are free to focus on the guest rather than on what comes next. Without a sequence, service becomes reactive: responding to requests rather than anticipating them, catching up rather than leading.',
+          h3Items: [
+            {
+              heading: 'Before the guest sits down',
+              text: 'Mise en place must be completed before service begins: covers set, glassware polished, menus ready, side station stocked. The maître d\' or floor supervisor should verify the plan de salle against the reservation list. A table that is not ready when the guest arrives is a failure that the rest of the meal will not fully recover from.',
+            },
+            {
+              heading: 'Greeting and seating',
+              text: 'The greeting is the first impression the restaurant makes. It should happen within thirty seconds of arrival, regardless of how busy the floor is. The guest is escorted, not directed. Menus are presented before the team walks away. Water service begins immediately.',
+            },
+            {
+              heading: 'The aperitif offer',
+              text: 'The aperitif offer serves two purposes: it generates revenue and it gives the guest something while they orient themselves. It should happen within two minutes of seating and before the food menu is discussed. The offer should be made with a recommendation, not a question.',
+            },
+          ],
+        },
+        {
+          h2: 'Order Taking and Menu Knowledge',
+          content:
+            'Order taking is not transcription. A server who knows the menu can steer the guest toward what they will enjoy, flag allergens before they become problems, and manage kitchen timing through the sequencing of their tables. None of that is possible without genuine product knowledge.',
+          h3Items: [
+            {
+              heading: 'Allergen protocol',
+              text: 'Before taking any food order, confirm whether the guest has any dietary requirements or allergies. This is not optional and is not a formality. The kitchen must be informed on the ticket, not verbally during service. The fourteen major allergens should be known by all service staff.',
+            },
+            {
+              heading: 'Upselling without pressure',
+              text: 'A recommendation is not a sales pitch. When a server says "the duck is particularly good tonight" based on knowledge of the dish and the briefing, it reads as hospitality. When it reads as a scripted upsell, it creates friction. The distinction is whether the recommendation is specific and contextual.',
+            },
+            {
+              heading: 'Table timing',
+              text: 'The server is responsible for pacing each table: ensuring courses arrive at the right interval, flagging to the kitchen when a table needs to be held, and communicating to the guest if there is a wait. A table that finishes a starter and then waits fifteen minutes is a service failure regardless of food quality.',
+            },
+          ],
+        },
+        {
+          h2: 'Food and Beverage Service Standards',
+          content:
+            'Service standards at the plate and glass level define the physical execution of the sequence. They need to be specific enough that every team member serves in the same way, not individual enough to vary by server.',
+          h3Items: [
+            {
+              heading: 'Service direction',
+              text: 'Plates are served from the left, cleared from the right. Beverages are served and cleared from the right. These conventions exist to create a predictable and unobtrusive service flow. Deviations — reaching across guests, serving from the wrong side — create friction even when the guest does not consciously identify the cause.',
+            },
+            {
+              heading: 'Wine service',
+              text: 'The bottle is presented to the guest who ordered before opening. After opening, a small pour is offered for approval. Service goes to guests in order, with the host last. The bottle is placed within reach or in a wine cooler. Refills are offered proactively, not reactively.',
+            },
+            {
+              heading: 'Clearing protocol',
+              text: 'Tables are cleared only when all guests have finished a course — never while one guest is still eating. Clearing should be done in a single organised pass, not piecemeal. Crumbing between courses is part of the standard in a formal service context.',
+            },
+          ],
+        },
+        {
+          h2: 'Handling Complaints During Service',
+          content:
+            'A complaint during service is an opportunity that most properties handle badly. The instinct is to apologise and fix the technical problem. The guest\'s actual need is to feel heard before the fix happens. A team that is trained to listen first resolves complaints in less time and with better outcomes than one that jumps immediately to a solution.',
+          h3Items: [
+            {
+              heading: 'The LEARN protocol',
+              text: 'Listen without interrupting. Empathise with the experience, not the outcome. Acknowledge the specific issue. Resolve with a concrete action and timeline. Next steps: follow up before the end of the meal, not at the end. The server who took the complaint should be the one to follow up.',
+            },
+            {
+              heading: 'When to escalate',
+              text: 'Any complaint that cannot be resolved within two minutes at table level should involve the maître d\' or floor supervisor. Not as a handover, but as a reinforcement — the server stays present. Escalation signals that the property takes the complaint seriously, not that the server failed.',
+            },
+            {
+              heading: 'Documentation',
+              text: 'Complaints should be logged at the end of service: table number, nature of the issue, resolution, guest reaction. Over time this log identifies recurring patterns — dishes that consistently generate comments, service timing problems at peak covers, individual team members who need additional support.',
+            },
+          ],
+        },
+        {
+          h2: 'Shift Close and Handover',
+          content:
+            'The close of service is not the end of the shift — it is the preparation for the next one. A properly closed restaurant reduces the opening time for the next service, ensures nothing is left for the following team to discover, and gives the supervisor the information they need for the next briefing.',
+          h3Items: [
+            {
+              heading: 'Closing tasks',
+              text: 'Reset all covers to the standard layout. Return side stations to the defined par level. Complete the end-of-service cash reconciliation and close the POS. Log any maintenance issues, missing items, or guest feedback that affects the next service.',
+            },
+            {
+              heading: 'The end-of-service report',
+              text: 'A brief written summary of the service: covers, average spend, any notable incidents, kitchen observations, team performance. This is the information the maître d\' needs to run the briefing for the following shift. A service that is not documented is a service that cannot improve.',
+            },
+          ],
+        },
+      ],
+      conclusion:
+        'Consistent restaurant service in a hotel does not happen because the team is talented. It happens because the team has a shared sequence, a defined standard, and the operational tools to maintain it under pressure. Procedure gives the structure; the team delivers the hospitality within it. The two are not in tension — one makes the other possible.',
+      cta: { text: 'View the F&B Playbook', href: '/en/playbooks' },
+    },
+    fr: {
+      title: "Procédures de service en restauration hôtelière : guide pratique pour les équipes F&B",
+      description:
+        "Les procédures opérationnelles standard qui définissent un service restaurant cohérent en hôtellerie de luxe. Séquence de service, gestion des tables, gestion des plaintes et clôture de shift.",
+      date: '2026-03-29',
+      readTime: '8 min de lecture',
+      intro:
+        "Le service en restaurant hôtelier n'est pas identique à celui d'un restaurant indépendant. Le client a une chambre à l'étage. Il est peut-être arrivé ce matin après un vol. Ses attentes ont été calibrées dès le check-in. Quand l'expérience restaurant ne correspond pas à ce que le reste de l'établissement a livré, l'écart est perçu — et il tend à apparaître dans les avis comme un problème d'hôtel, pas de restaurant. Des procédures de service F&B cohérentes permettent de combler cet écart. Pas en scriptant chaque interaction, mais en donnant à l'équipe une séquence définie, des points de passation clairs, et un standard commun à atteindre.",
+      sections: [
+        {
+          h2: 'La séquence de service : pourquoi elle compte',
+          content:
+            "Une séquence de service définie n'est pas une contrainte sur l'hospitalité — c'est la structure qui rend l'hospitalité genuinement possible. Quand un serveur sait exactement ce qui se passe à chaque étape, il est libre de se concentrer sur le client plutôt que sur la suite. Sans séquence, le service devient réactif : on répond aux demandes plutôt qu'on les anticipe, on rattrape plutôt qu'on pilote.",
+          h3Items: [
+            {
+              heading: 'Avant que le client s\'assoie',
+              text: "La mise en place doit être complète avant le début du service : couverts dressés, verrerie polie, menus prêts, office approvisionné. Le maître d'hôtel ou le superviseur de salle doit vérifier le plan de salle en regard du carnet de réservations. Une table non prête à l'arrivée du client est un échec dont le reste du repas ne se remettra pas complètement.",
+            },
+            {
+              heading: 'Accueil et placement',
+              text: "L'accueil est la première impression que donne le restaurant. Il doit se produire dans les trente secondes suivant l'arrivée, quelle que soit l'affluence. Le client est accompagné, pas orienté. Les menus sont remis avant que l'équipe s'éloigne. Le service de l'eau commence immédiatement.",
+            },
+            {
+              heading: "L'offre d'apéritif",
+              text: "L'offre d'apéritif remplit deux fonctions : elle génère du chiffre d'affaires et donne au client quelque chose pendant qu'il s'installe. Elle doit se produire dans les deux minutes suivant le placement et avant que le menu soit discuté. L'offre doit être faite avec une recommandation, pas une question.",
+            },
+          ],
+        },
+        {
+          h2: 'Prise de commande et connaissance de la carte',
+          content:
+            "La prise de commande n'est pas de la transcription. Un serveur qui connaît la carte peut orienter le client vers ce qu'il appréciera, signaler les allergènes avant qu'ils deviennent des problèmes, et gérer le timing de la cuisine en séquençant ses tables. Rien de cela n'est possible sans une vraie connaissance produit.",
+          h3Items: [
+            {
+              heading: 'Protocole allergènes',
+              text: "Avant toute prise de commande alimentaire, confirmer si le client a des régimes ou allergies. Ce n'est pas facultatif, ce n'est pas une formalité. La cuisine doit être informée sur le bon, pas verbalement pendant le service. Les quatorze allergènes majeurs doivent être connus de tout le personnel de salle.",
+            },
+            {
+              heading: 'Vente additionnelle sans pression',
+              text: "Une recommandation n'est pas un argumentaire commercial. Quand un serveur dit \"le canard est particulièrement bon ce soir\" en s'appuyant sur sa connaissance du plat et le briefing, cela passe comme de l'hospitalité. Quand cela sonne comme une vente scriptée, cela crée une friction. La distinction tient à la spécificité et au contexte de la recommandation.",
+            },
+            {
+              heading: 'Timing des tables',
+              text: "Le serveur est responsable du rythme de chaque table : s'assurer que les plats arrivent à intervalles adéquats, signaler à la cuisine quand une table doit être retenue, communiquer au client en cas d'attente. Une table qui finit une entrée et attend ensuite quinze minutes est un échec de service quelle que soit la qualité de la cuisine.",
+            },
+          ],
+        },
+        {
+          h2: 'Standards de service à table',
+          content:
+            "Les standards de service au niveau de l'assiette et du verre définissent l'exécution physique de la séquence. Ils doivent être suffisamment précis pour que chaque membre de l'équipe serve de la même façon.",
+          h3Items: [
+            {
+              heading: 'Sens du service',
+              text: "Les assiettes sont servies par la gauche, débarrassées par la droite. Les boissons sont servies et débarrassées par la droite. Ces conventions créent un flux de service prévisible et discret. Les écarts — passer devant un client, servir du mauvais côté — créent une friction même quand le client n'en identifie pas consciemment la cause.",
+            },
+            {
+              heading: 'Service du vin',
+              text: "La bouteille est présentée au client qui a commandé avant ouverture. Après ouverture, une petite quantité est proposée pour validation. Le service s'effectue dans l'ordre, l'hôte en dernier. La bouteille est placée à portée ou dans un seau à glace. Le remplissage se fait de manière proactive, pas réactive.",
+            },
+            {
+              heading: 'Protocole de débarrassage',
+              text: "Les tables sont débarrassées uniquement quand tous les convives ont terminé un plat — jamais pendant qu'un client mange encore. Le débarrassage s'effectue en un passage organisé, pas de façon fragmentée. Le miettage entre les plats fait partie du standard dans un service formel.",
+            },
+          ],
+        },
+        {
+          h2: 'Gestion des plaintes pendant le service',
+          content:
+            "Une plainte pendant le service est une opportunité que la plupart des établissements gèrent mal. Le réflexe est de s'excuser et de corriger le problème technique. Le besoin réel du client est d'être entendu avant que la correction arrive. Une équipe formée à écouter d'abord résout les plaintes en moins de temps et avec de meilleurs résultats qu'une équipe qui saute directement à la solution.",
+          h3Items: [
+            {
+              heading: 'Le protocole LEARN',
+              text: "Écouter sans interrompre. Exprimer de l'empathie pour l'expérience, pas pour le résultat. Reconnaître le problème spécifique. Résoudre avec une action concrète et un délai. Suite : faire un suivi avant la fin du repas, pas en fin de repas. Le serveur qui a pris la plainte doit être celui qui assure le suivi.",
+            },
+            {
+              heading: 'Quand escalader',
+              text: "Toute plainte qui ne peut pas être résolue en deux minutes au niveau de la table doit impliquer le maître d'hôtel ou le superviseur de salle. Pas en passation, mais en renfort — le serveur reste présent. L'escalade signale que l'établissement prend la plainte au sérieux, pas que le serveur a échoué.",
+            },
+            {
+              heading: 'Documentation',
+              text: "Les plaintes doivent être consignées en fin de service : numéro de table, nature du problème, résolution, réaction du client. Dans le temps, ce journal identifie des tendances récurrentes — plats qui génèrent régulièrement des commentaires, problèmes de timing à fort couverts, membres d'équipe nécessitant un accompagnement.",
+            },
+          ],
+        },
+        {
+          h2: 'Clôture de service et passation',
+          content:
+            "La clôture de service n'est pas la fin du shift — c'est la préparation du suivant. Un restaurant correctement fermé réduit le temps d'ouverture du prochain service, garantit que rien n'est laissé à découvrir par l'équipe suivante, et donne au superviseur les informations nécessaires pour le prochain briefing.",
+          h3Items: [
+            {
+              heading: 'Tâches de clôture',
+              text: "Remettre tous les couverts selon la disposition standard. Remettre les offices au niveau de par stock défini. Effectuer la réconciliation de caisse de fin de service et clôturer le logiciel de caisse. Consigner tout problème technique, article manquant ou retour client affectant le prochain service.",
+            },
+            {
+              heading: 'Le rapport de fin de service',
+              text: "Un bref résumé écrit du service : couverts, ticket moyen, incidents notables, observations cuisine, performance équipe. C'est l'information dont le maître d'hôtel a besoin pour animer le briefing du shift suivant. Un service non documenté est un service qui ne peut pas s'améliorer.",
+            },
+          ],
+        },
+      ],
+      conclusion:
+        "La cohérence du service en restaurant hôtelier ne vient pas du talent de l'équipe. Elle vient d'une séquence commune, d'un standard défini, et des outils opérationnels pour le maintenir sous pression. La procédure donne la structure ; l'équipe délivre l'hospitalité à l'intérieur. Les deux ne s'opposent pas — l'une rend l'autre possible.",
+      cta: { text: 'Voir le Playbook F&B', href: '/fr/playbooks' },
+    },
+  },
+  {
+    slug: 'hotel-spa-wellness-sops',
+    en: {
+      title: 'Hotel Spa & Wellness SOPs: Service Standards for Luxury Treatment Operations',
+      description:
+        'Standard operating procedures for hotel spa and wellness departments. Covers treatment preparation, guest consultation, therapist protocols, and facility management standards.',
+      date: '2026-03-30',
+      readTime: '7 min read',
+      intro:
+        'The spa is where a luxury hotel earns or loses its claim to well-being. A guest who books a treatment has a specific expectation: that the environment will be immaculate, the therapist prepared, and the experience uninterrupted. When any part of that breaks down — a room that is not ready, a consultation that feels rushed, a transition between spaces that lacks intention — the effect lingers longer than the treatment itself. Spa SOPs are not about removing the human element from wellness. They are about creating the conditions under which a therapist can deliver their best work, consistently, to every guest.',
+      sections: [
+        {
+          h2: 'Pre-Treatment Preparation',
+          content:
+            'Treatment quality begins before the guest arrives. A therapist who is preparing their room while the guest is waiting in reception is already behind. Pre-treatment preparation should be completed at least fifteen minutes before the scheduled appointment time, with everything in place and verified.',
+          h3Items: [
+            {
+              heading: 'Treatment room setup',
+              text: 'Linens fresh and properly dressed. Massage table height adjusted for the therapist. Oil warmers and hot stones at temperature. Ambient lighting and music set to the standard. Room temperature confirmed. Products for the specific treatment laid out and ready. Any customisation for the guest — preferences from a previous visit, notes from the booking — reviewed before entry.',
+            },
+            {
+              heading: 'Facility check',
+              text: 'Wet areas — pools, steam rooms, saunas — checked and at correct temperature before the first guest of the day. Towels and robes at designated points. Relaxation lounge restocked with water, fruit, and wellness teas. Any maintenance issues logged immediately and front desk notified if a facility cannot be offered.',
+            },
+            {
+              heading: 'Product and equipment check',
+              text: 'All products verified as in date and correctly stored. Equipment — hot stone heaters, paraffin baths, electrical massage tools — checked for function. A faulty piece of equipment that is discovered during a treatment is a service failure that cannot be recovered in session.',
+            },
+          ],
+        },
+        {
+          h2: 'Guest Consultation and Intake',
+          content:
+            'The consultation is the operational step most commonly rushed in busy spas. It is also the one that most directly affects both service quality and guest safety. A consultation that takes three minutes because the next guest is waiting is not a consultation — it is a liability.',
+          h3Items: [
+            {
+              heading: 'Health intake',
+              text: 'Every new guest completes a health intake form before their first treatment. Repeat guests should have their form reviewed and updated at each visit. The therapist reviews the form before the consultation, not during it. Contraindications — pregnancy, recent surgery, cardiovascular conditions, skin sensitivities — must be identified and the treatment adapted or declined accordingly.',
+            },
+            {
+              heading: 'Preference and pressure discussion',
+              text: 'For massage treatments: confirm pressure preference, areas to focus on, areas to avoid. This is a brief, directed conversation — not a general enquiry. The therapist confirms what they heard before beginning. A guest who asked for light pressure and received medium has a legitimate complaint, regardless of how good the technique was.',
+            },
+            {
+              heading: 'Setting expectations',
+              text: 'Explain the sequence of the treatment, approximately how long each phase will take, and what the guest should do if something is not right. This removes ambiguity and gives the guest permission to communicate during the session without feeling like they are interrupting.',
+            },
+          ],
+        },
+        {
+          h2: 'Treatment Delivery Standards',
+          content:
+            'Treatment delivery standards define what happens from the moment the therapist begins to the moment the guest is returned to the relaxation space. They cover technique, communication, and the physical management of the session.',
+          h3Items: [
+            {
+              heading: 'Draping protocol',
+              text: 'Proper draping at all times. Only the area being worked on is exposed. Transitions between positions are smooth and maintain coverage. This is a professional standard and a guest comfort standard — it should be non-negotiable and consistent across all therapists.',
+            },
+            {
+              heading: 'During-session communication',
+              text: 'The therapist checks in once within the first five minutes of treatment — pressure, temperature, comfort. Then the session is quiet unless the guest initiates. Unsolicited conversation during a relaxation treatment is a standard breach in most luxury contexts.',
+            },
+            {
+              heading: 'Timing precision',
+              text: 'A 60-minute treatment is 60 minutes of hands-on time. Set-up and consultation are not counted within that time. The guest who paid for an hour should receive an hour. Treatments that start late due to operational delays should still deliver the full duration — the therapist absorbs the operational failure, not the guest.',
+            },
+          ],
+        },
+        {
+          h2: 'Post-Treatment and Guest Journey',
+          content:
+            'The quality of the post-treatment experience determines what the guest carries with them. A great treatment followed by a rushed transition back to reality — bright lights, a noisy corridor, a rushed robe exchange — loses much of what the treatment created. The post-treatment sequence should extend the experience, not end it.',
+          h3Items: [
+            {
+              heading: 'Recovery time',
+              text: 'After the treatment, the guest is given time to return to awareness before being assisted from the table. They are not asked questions or given instructions immediately. A brief, quiet moment before transition is standard in a luxury context.',
+            },
+            {
+              heading: 'Post-treatment guidance',
+              text: 'Hydration guidance, recommendations for the rest of the day, and any aftercare notes relevant to the treatment received. These should be brief, specific, and given as the guest is settling in the relaxation lounge — not as they are leaving.',
+            },
+            {
+              heading: 'Feedback and next booking',
+              text: 'Once the guest has had time to recover, a brief, natural enquiry about their experience. Not a survey. Not a request for a review. A genuine question that creates an opportunity to address anything that was not right and to note any preferences for their next visit.',
+            },
+          ],
+        },
+        {
+          h2: 'Facility Maintenance and End-of-Day Close',
+          content:
+            'The spa facility must be maintained to the same standard throughout the day as at opening. A wet area that deteriorates over the course of the day, or a relaxation lounge that is not restocked between guests, creates an inconsistent experience that reflects on the property\'s overall standards.',
+          h3Items: [
+            {
+              heading: 'Between-treatment reset',
+              text: 'Treatment rooms must be fully reset between guests: fresh linens, waste disposed of, surface areas sanitised, products restocked, temperature and ambient settings reset. Minimum reset time is ten minutes. Scheduling must account for this — back-to-back bookings without reset time is an operational error, not an efficiency gain.',
+            },
+            {
+              heading: 'End-of-day close',
+              text: 'All equipment switched off and stored correctly. Wet areas drained and cleaned. Product inventory checked against par levels. Any items for laundry bagged and logged. Treatment rooms locked. A brief end-of-day report noting any maintenance issues, guest feedback, and items for the opening team.',
+            },
+          ],
+        },
+      ],
+      conclusion:
+        'A spa SOP does not make every treatment the same. It makes every treatment possible. The structure behind a wellness experience — the prepared room, the properly conducted consultation, the precise timing — is what gives the therapist the conditions to do their best work. That work is human and individual. The procedures that frame it are not.',
+      cta: { text: 'View the Spa & Wellness Playbook', href: '/en/playbooks' },
+    },
+    fr: {
+      title: "SOPs Spa & Wellness en hôtellerie : standards de service pour les opérations de soin de luxe",
+      description:
+        "Procédures opérationnelles standard pour les départements spa et bien-être des hôtels. Préparation des soins, consultation client, protocoles thérapeutes et gestion des espaces.",
+      date: '2026-03-30',
+      readTime: '7 min de lecture',
+      intro:
+        "Le spa est l'endroit où un hôtel de luxe mérite ou perd son positionnement bien-être. Un client qui réserve un soin a une attente précise : que l'environnement soit impeccable, le thérapeute préparé, et l'expérience sans interruption. Quand l'une de ces dimensions s'effondre — une cabine non prête, une consultation bâclée, une transition entre les espaces sans intention — l'effet dure plus longtemps que le soin lui-même. Les SOPs spa ne visent pas à retirer l'élément humain du bien-être. Elles créent les conditions dans lesquelles un thérapeute peut délivrer son meilleur travail, de façon cohérente, à chaque client.",
+      sections: [
+        {
+          h2: 'Préparation avant le soin',
+          content:
+            "La qualité du soin commence avant l'arrivée du client. Un thérapeute qui prépare sa cabine pendant que le client attend en réception est déjà en retard. La préparation avant le soin doit être terminée au moins quinze minutes avant l'heure du rendez-vous, avec tout en place et vérifié.",
+          h3Items: [
+            {
+              heading: 'Mise en place de la cabine',
+              text: "Linge frais et correctement dressé. Hauteur de la table de massage ajustée pour le thérapeute. Chauffe-huiles et pierres chaudes à température. Éclairage ambiant et musique réglés selon le standard. Température de la cabine confirmée. Produits pour le soin spécifique disposés et prêts. Toute personnalisation pour le client — préférences d'une visite précédente, notes de réservation — relue avant l'entrée.",
+            },
+            {
+              heading: 'Contrôle des espaces',
+              text: "Espaces aquatiques — piscines, hammams, saunas — vérifiés et à bonne température avant le premier client de la journée. Serviettes et peignoirs aux points définis. Salon de relaxation réapprovisionné en eau, fruits et tisanes. Tout problème technique consigné immédiatement et la réception informée si un espace ne peut être proposé.",
+            },
+            {
+              heading: 'Contrôle produits et équipements',
+              text: "Tous les produits vérifiés comme dans leur date et correctement stockés. Équipements — chauffe-pierres, bains de paraffine, appareils de massage électriques — contrôlés en fonctionnement. Un équipement défectueux découvert pendant un soin est un échec de service qu'on ne peut pas rattraper en séance.",
+            },
+          ],
+        },
+        {
+          h2: 'Consultation et accueil du client',
+          content:
+            "La consultation est l'étape opérationnelle la plus souvent bâclée dans les spas chargés. C'est aussi celle qui impacte le plus directement la qualité du service et la sécurité du client. Une consultation de trois minutes parce que le client suivant attend n'est pas une consultation — c'est un risque.",
+          h3Items: [
+            {
+              heading: 'Fiche santé',
+              text: "Chaque nouveau client remplit une fiche santé avant son premier soin. Pour les clients habituels, la fiche doit être revue et mise à jour à chaque visite. Le thérapeute lit la fiche avant la consultation, pas pendant. Les contre-indications — grossesse, chirurgie récente, pathologies cardiovasculaires, sensibilités cutanées — doivent être identifiées et le soin adapté ou refusé en conséquence.",
+            },
+            {
+              heading: 'Discussion sur les préférences et la pression',
+              text: "Pour les massages : confirmer la pression souhaitée, les zones à travailler, les zones à éviter. C'est une conversation brève et ciblée — pas une enquête générale. Le thérapeute confirme ce qu'il a entendu avant de commencer. Un client qui a demandé une pression légère et reçu une pression moyenne a une réclamation légitime, quelle que soit la qualité de la technique.",
+            },
+            {
+              heading: 'Définir les attentes',
+              text: "Expliquer la séquence du soin, la durée approximative de chaque phase, et ce que le client doit faire si quelque chose ne va pas. Cela supprime l'ambiguité et donne au client la permission de communiquer pendant la séance sans avoir l'impression d'interrompre.",
+            },
+          ],
+        },
+        {
+          h2: 'Standards de réalisation du soin',
+          content:
+            "Les standards de réalisation définissent ce qui se passe du moment où le thérapeute commence au moment où le client retourne dans l'espace de relaxation. Ils couvrent la technique, la communication, et la gestion physique de la séance.",
+          h3Items: [
+            {
+              heading: 'Protocole de drapé',
+              text: "Drapé correct à tout moment. Seule la zone travaillée est exposée. Les transitions entre positions sont fluides et maintiennent le drapé. C'est un standard professionnel et un standard de confort client — il doit être non négociable et cohérent entre tous les thérapeutes.",
+            },
+            {
+              heading: 'Communication pendant la séance',
+              text: "Le thérapeute fait un point dans les cinq premières minutes du soin — pression, température, confort. Ensuite la séance est silencieuse sauf si c'est le client qui prend l'initiative. Une conversation spontanée pendant un soin de relaxation est une rupture de standard dans la plupart des contextes haut de gamme.",
+            },
+            {
+              heading: 'Précision du timing',
+              text: "Un soin de 60 minutes, c'est 60 minutes de temps de soin effectif. La mise en place et la consultation ne sont pas comptées dans ce temps. Le client qui a payé pour une heure doit recevoir une heure. Les soins qui démarrent en retard pour des raisons opérationnelles doivent quand même délivrer la durée complète — le thérapeute absorbe l'échec opérationnel, pas le client.",
+            },
+          ],
+        },
+        {
+          h2: 'Après le soin et parcours client',
+          content:
+            "La qualité de l'expérience post-soin détermine ce que le client emporte avec lui. Un excellent soin suivi d'une transition brusque vers le quotidien — lumières vives, couloir bruyant, échange de peignoir précipité — efface une grande partie de ce que le soin a créé. La séquence post-soin doit prolonger l'expérience, pas la terminer.",
+          h3Items: [
+            {
+              heading: 'Temps de récupération',
+              text: "Après le soin, le client dispose du temps nécessaire pour reprendre conscience avant d'être aidé à descendre de la table. On ne lui pose pas de questions ni ne lui donne d'instructions immédiatement. Un bref moment de silence avant la transition est le standard dans un contexte haut de gamme.",
+            },
+            {
+              heading: 'Conseils post-soin',
+              text: "Conseils d'hydratation, recommandations pour le reste de la journée, et toutes notes de suivi pertinentes pour le soin reçu. Ces conseils doivent être brefs, spécifiques, et donnés pendant que le client s'installe au salon de relaxation — pas au moment où il part.",
+            },
+            {
+              heading: 'Retour et prochaine réservation',
+              text: "Une fois que le client a eu le temps de récupérer, une question naturelle et brève sur son expérience. Pas un questionnaire. Pas une demande d'avis. Une question genuinement intéressée qui crée l'opportunité de corriger ce qui n'allait pas et de noter les préférences pour la prochaine visite.",
+            },
+          ],
+        },
+        {
+          h2: "Maintenance des espaces et clôture de journée",
+          content:
+            "Les espaces du spa doivent être maintenus au même niveau qu'à l'ouverture tout au long de la journée. Un espace aquatique qui se dégrade au fil de la journée, ou un salon de relaxation non réapprovisionné entre les clients, crée une expérience incohérente qui reflète sur les standards globaux de l'établissement.",
+          h3Items: [
+            {
+              heading: 'Remise en place entre les soins',
+              text: "Les cabines doivent être entièrement remises en place entre chaque client : linge frais, déchets évacués, surfaces désinfectées, produits réapprovisionnés, paramètres ambiance réinitialisés. Le temps minimum de remise en place est de dix minutes. La planification doit en tenir compte — des rendez-vous dos à dos sans temps de remise en place est une erreur opérationnelle, pas un gain d'efficacité.",
+            },
+            {
+              heading: 'Clôture de journée',
+              text: "Tous les équipements éteints et rangés correctement. Espaces aquatiques vidangés et nettoyés. Inventaire produits vérifié par rapport aux niveaux de par stock. Articles pour linge mis en sac et consignés. Cabines fermées à clé. Un bref rapport de fin de journée notant les problèmes techniques, les retours clients, et les éléments pour l'équipe d'ouverture.",
+            },
+          ],
+        },
+      ],
+      conclusion:
+        "Un SOP spa ne rend pas tous les soins identiques. Il rend chaque soin possible. La structure derrière une expérience bien-être — la cabine préparée, la consultation correctement menée, le timing précis — c'est ce qui donne au thérapeute les conditions pour faire son meilleur travail. Ce travail est humain et individuel. Les procédures qui l'encadrent ne le sont pas.",
+      cta: { text: 'Voir le Playbook Spa & Wellness', href: '/fr/playbooks' },
+    },
+  },
+  {
+    slug: 'hotel-room-service-sops',
+    en: {
+      title: 'Hotel Room Service SOPs: Procedures for Consistent In-Room Dining',
+      description:
+        'Standard operating procedures for hotel room service operations. Order taking, tray setup, delivery timing, in-room presentation, and billing protocol for in-room dining.',
+      date: '2026-03-31',
+      readTime: '7 min read',
+      intro:
+        'Room service is the hospitality department with the least margin for error and the least opportunity to recover. The interaction happens in private, with no ambient environment to soften a presentation problem, no floor manager passing to notice a delay, and no table of neighbouring guests to contextualise the experience. A guest who orders room service at eleven at night has often had a long day. What arrives at their door is not just food — it is the property\'s standard of care delivered to the most personal space the guest occupies. Getting that right, consistently, requires more than a good kitchen. It requires a defined operational procedure from call to door.',
+      sections: [
+        {
+          h2: 'Order Taking',
+          content:
+            'The room service call is the first operational step and the one that sets every expectation that follows. The way the order is taken determines the accuracy of what gets delivered, the timing the guest expects, and whether any allergens or preferences were properly captured.',
+          h3Items: [
+            {
+              heading: 'Answering standard',
+              text: 'The phone is answered before the third ring. The greeting includes the department name, the staff member\'s name, and the room number once it is confirmed. Calls that ring more than three times and go unanswered are an immediate service failure — the guest has already noticed.',
+            },
+            {
+              heading: 'Order confirmation',
+              text: 'Every order is read back to the guest before closing the call: each item, any modifications, and the timing. This is not a courtesy — it is a quality control step. An order that is confirmed incorrectly is discovered at the door, which is the worst possible moment.',
+            },
+            {
+              heading: 'Timing communication',
+              text: 'Delivery time is communicated as a range, not a promise: "between 25 and 35 minutes" rather than "30 minutes". If the actual delivery will fall outside the range given, the guest is called before the range expires — not when the order is already late. Standard delivery ranges: continental breakfast 20–25 minutes, full breakfast 25–30 minutes, lunch 30–35 minutes, dinner 35–45 minutes.',
+            },
+          ],
+        },
+        {
+          h2: 'Tray and Trolley Setup',
+          content:
+            'The tray or trolley setup is the physical presentation of the property\'s standard. Everything the guest sees when the door opens was set by the room service team. There is no maître d\' to intervene, no adjustment possible once the door is opened. The setup must be right before it leaves the kitchen.',
+          h3Items: [
+            {
+              heading: 'Checklist before departure',
+              text: 'Correct items in the correct quantity. Hot items in the correct cover, cold items appropriately chilled. Condiments specific to the order. Napkin folded to standard. Cutlery correct for the courses ordered. Glassware clean and correctly placed. Any special items — birthday amenities, allergy alternatives — confirmed and included.',
+            },
+            {
+              heading: 'Temperature management',
+              text: 'Food must leave the kitchen at the correct temperature. Hot food under a cloche, cold food with an ice pack or from a chilled section. Delivery time is part of temperature management: a dish that leaves at the correct temperature but arrives cold because of a slow delivery is a kitchen-to-door failure that will be attributed to food quality by the guest.',
+            },
+            {
+              heading: 'Presentation standard',
+              text: 'The tray or trolley is presented as it would be at a restaurant table. Plate placement consistent. Logo on napkin or packaging facing forward. Nothing slid or stacked in a way that would be acceptable in a service corridor but not at a guest\'s door.',
+            },
+          ],
+        },
+        {
+          h2: 'Delivery to the Room',
+          content:
+            'The delivery sequence has a defined protocol that balances speed, discretion, and service quality. A guest who ordered dinner at 8pm does not want a lengthy in-room presentation. They also do not want the order dropped at the door. The delivery should be efficient and complete.',
+          h3Items: [
+            {
+              heading: 'Door approach',
+              text: 'Three firm knocks, followed by "Room service". Wait. If no response within thirty seconds, knock again and announce once more. Do not use the phone from the corridor to announce arrival unless the guest has specifically requested it.',
+            },
+            {
+              heading: 'In-room placement',
+              text: 'Ask the guest where they would like the tray or trolley placed. Do not assume a default location. If the guest requests table setup — covers laid, dishes uncovered — complete the setup quickly and without unnecessary commentary. Confirm each item against the order while setting up, so any missing item is identified before the door closes.',
+            },
+            {
+              heading: 'Billing at delivery',
+              text: 'If the property posts charges to the room, inform the guest of the total and present the slip for signature. If the guest wishes to pay by card at delivery, the payment terminal must be brought with the order — returning for it after delivery is not acceptable. Include the standard service charge information as per property policy.',
+            },
+          ],
+        },
+        {
+          h2: 'Tray Collection',
+          content:
+            'Tray collection is the most frequently neglected part of the room service operation. A tray left in the corridor creates a hygiene and presentation problem that is immediately visible to any guest on the floor. A tray left inside a room at a guest\'s request must still be collected within a defined window.',
+          h3Items: [
+            {
+              heading: 'Collection timing',
+              text: 'Trays left in the corridor should be collected within thirty minutes. For in-room trays, the guest is offered a collection call at the time of delivery: "Just call us when you\'re done and we\'ll come to collect." If no call is received, a collection check should be made with a courtesy knock after ninety minutes.',
+            },
+            {
+              heading: 'Corridor management',
+              text: 'Any tray spotted in a corridor by any team member — not just room service — should be reported immediately. A corridor tray is a visible standard failure and should be treated with the same urgency as a guest complaint.',
+            },
+          ],
+        },
+      ],
+      conclusion:
+        'Room service is the in-room extension of the property\'s dining standard. Everything that makes a restaurant experience consistent — sequenced service, accurate ordering, temperature control, correct presentation — applies in miniature to every room service delivery. The difference is that in room service, there is no floor to manage, no second chances, and no one between the procedure and the guest. The standard either holds or it does not.',
+      cta: { text: 'View the F&B Playbook', href: '/en/playbooks' },
+    },
+    fr: {
+      title: "SOPs Room Service en hôtellerie : procédures pour un service en chambre cohérent",
+      description:
+        "Procédures opérationnelles standard pour les opérations de room service hôtelier. Prise de commande, dressage du plateau, timing de livraison, présentation en chambre et protocole de facturation.",
+      date: '2026-03-31',
+      readTime: '7 min de lecture',
+      intro:
+        "Le room service est le département hôtelier qui offre le moins de marge à l'erreur et le moins d'opportunité de rattraper. L'interaction se déroule en privé, sans environnement ambiant pour atténuer un problème de présentation, sans responsable de salle pour remarquer un retard, et sans voisins de table pour contextualiser l'expérience. Un client qui commande un room service à vingt-trois heures a souvent eu une longue journée. Ce qui arrive à sa porte n'est pas seulement de la nourriture — c'est le standard de soin de l'établissement livré dans l'espace le plus intime qu'il occupe. Garantir ce niveau, de façon constante, demande plus qu'une bonne cuisine. Cela demande une procédure opérationnelle définie du coup de téléphone à la porte.",
+      sections: [
+        {
+          h2: 'Prise de commande',
+          content:
+            "L'appel room service est la première étape opérationnelle et celle qui définit toutes les attentes qui suivent. La façon dont la commande est prise détermine l'exactitude de ce qui est livré, le timing que le client attend, et si les allergènes ou préférences ont été correctement notés.",
+          h3Items: [
+            {
+              heading: 'Standard de réponse',
+              text: "Le téléphone répond avant la troisième sonnerie. La formule d'accueil inclut le nom du département, le prénom du collaborateur et le numéro de chambre une fois confirmé. Des appels qui sonnent plus de trois fois sans réponse constituent un premier échec de service — le client l'a déjà remarqué.",
+            },
+            {
+              heading: 'Confirmation de commande',
+              text: "Chaque commande est relue au client avant de raccrocher : chaque article, toute modification, et le timing. Ce n'est pas une formalité — c'est une étape de contrôle qualité. Une commande confirmée incorrectement est découverte à la porte, ce qui est le pire moment possible.",
+            },
+            {
+              heading: 'Communication du timing',
+              text: "Le délai de livraison est communiqué comme une fourchette, pas une promesse : \"entre 25 et 35 minutes\" plutôt que \"30 minutes\". Si la livraison effective dépasse la fourchette donnée, le client est appelé avant que la fourchette soit écoulée — pas quand la commande est déjà en retard. Délais standard : petit-déjeuner continental 20-25 min, petit-déjeuner complet 25-30 min, déjeuner 30-35 min, dîner 35-45 min.",
+            },
+          ],
+        },
+        {
+          h2: 'Dressage du plateau ou du chariot',
+          content:
+            "Le dressage du plateau ou du chariot est la présentation physique du standard de l'établissement. Tout ce que le client voit quand la porte s'ouvre a été préparé par l'équipe room service. Il n'y a pas de maître d'hôtel pour intervenir, aucun ajustement possible une fois la porte ouverte. Le dressage doit être correct avant de quitter la cuisine.",
+          h3Items: [
+            {
+              heading: 'Checklist avant départ',
+              text: "Articles corrects en quantité correcte. Plats chauds sous la cloche adéquate, plats froids correctement maintenus au froid. Condiments spécifiques à la commande. Serviette pliée selon le standard. Couverts corrects pour les plats commandés. Verrerie propre et correctement positionnée. Tout article spécial — amenités anniversaire, alternatives pour allergies — confirmé et inclus.",
+            },
+            {
+              heading: 'Gestion de la température',
+              text: "Les plats doivent quitter la cuisine à la bonne température. Plats chauds sous cloche, plats froids avec accumulateur de froid ou issus d'une zone réfrigérée. Le délai de livraison fait partie de la gestion de la température : un plat qui part à la bonne température mais arrive froid en raison d'une livraison lente est un échec cuisine-à-porte qui sera attribué à la qualité alimentaire par le client.",
+            },
+            {
+              heading: 'Standard de présentation',
+              text: "Le plateau ou chariot est présenté comme il le serait à une table de restaurant. Placement des assiettes cohérent. Logo sur serviette ou packaging orienté vers l'avant. Rien de glissé ou empilé d'une façon acceptable dans un couloir de service mais pas à la porte d'un client.",
+            },
+          ],
+        },
+        {
+          h2: 'Livraison en chambre',
+          content:
+            "La séquence de livraison a un protocole défini qui équilibre rapidité, discrétion et qualité de service. Un client qui a commandé un dîner à 20h ne veut pas une présentation élaborée en chambre. Mais il ne veut pas non plus que sa commande soit déposée à la porte. La livraison doit être efficace et complète.",
+          h3Items: [
+            {
+              heading: 'Approche de la porte',
+              text: 'Trois coups fermes, suivis de "Service en chambre". Attendre. Sans réponse dans les trente secondes, frapper à nouveau et annoncer une fois encore. Ne pas utiliser le téléphone depuis le couloir pour annoncer l\'arrivée sauf si le client l\'a spécifiquement demandé.',
+            },
+            {
+              heading: 'Placement en chambre',
+              text: "Demander au client où il souhaite que le plateau ou chariot soit installé. Ne pas supposer un emplacement par défaut. Si le client demande un dressage — couverts disposés, plats découverts — effectuer la mise en place rapidement et sans commentaire inutile. Confirmer chaque article par rapport à la commande pendant la mise en place, pour identifier tout article manquant avant que la porte se ferme.",
+            },
+            {
+              heading: 'Facturation à la livraison',
+              text: "Si l'établissement poste les charges sur la chambre, informer le client du montant total et présenter le reçu à signer. Si le client souhaite payer par carte à la livraison, le terminal de paiement doit être apporté avec la commande — revenir le chercher après la livraison n'est pas acceptable. Inclure les informations sur le service standard selon la politique de l'établissement.",
+            },
+          ],
+        },
+        {
+          h2: 'Récupération du plateau',
+          content:
+            "La récupération du plateau est la partie la plus souvent négligée de l'opération room service. Un plateau laissé dans le couloir crée un problème d'hygiène et de présentation immédiatement visible par tout client circulant dans le couloir. Un plateau laissé en chambre à la demande du client doit quand même être récupéré dans un délai défini.",
+          h3Items: [
+            {
+              heading: 'Timing de récupération',
+              text: "Les plateaux dans le couloir doivent être récupérés dans les trente minutes. Pour les plateaux en chambre, le client est informé d'un appel de récupération au moment de la livraison : \"Appelez-nous simplement quand vous aurez terminé.\" Sans appel reçu, un passage de contrôle avec frappe courtoise doit être effectué après quatre-vingt-dix minutes.",
+            },
+            {
+              heading: 'Gestion des couloirs',
+              text: "Tout plateau repéré dans un couloir par n'importe quel membre de l'équipe — pas seulement le room service — doit être signalé immédiatement. Un plateau en couloir est un échec de standard visible et doit être traité avec la même urgence qu'une réclamation client.",
+            },
+          ],
+        },
+      ],
+      conclusion:
+        "Le room service est le prolongement en chambre du standard de restauration de l'établissement. Tout ce qui rend une expérience restaurant cohérente — service séquencé, prise de commande précise, gestion de la température, présentation correcte — s'applique en miniature à chaque livraison room service. La différence est qu'en room service, il n'y a pas de salle à gérer, pas de seconde chance, et personne entre la procédure et le client. Le standard tient ou ne tient pas.",
+      cta: { text: 'Voir le Playbook F&B', href: '/fr/playbooks' },
+    },
+  },
 ]
