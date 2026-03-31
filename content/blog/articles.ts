@@ -1632,12 +1632,12 @@ export const articles: BilingualArticle[] = [
       date: '2026-03-29',
       readTime: '8 min read',
       intro:
-        'Restaurant service in a hotel is not the same as in a standalone restaurant. The guest has a room upstairs. They arrived on a flight this morning. Their expectations were set at check-in. When the restaurant experience does not match what the rest of the property delivered, the gap is noticed — and it tends to appear in reviews as a problem with the hotel rather than the restaurant. Consistent F&B service procedures are what close that gap. Not by scripting every interaction, but by giving the team a defined sequence, clear handover points, and a shared standard to work toward.',
+        'Restaurant service in a hotel is not the same as in a standalone restaurant. The guest has a room upstairs. They arrived on a flight this morning. Their expectations were set at check-in. When the restaurant experience does not match what the rest of the property delivered, the gap is noticed, and it tends to appear in reviews as a problem with the hotel rather than the restaurant. Consistent F&B service procedures are what close that gap. Not by scripting every interaction, but by giving the team a defined sequence, clear handover points, and a shared standard to work toward.',
       sections: [
         {
           h2: 'The Sequence of Service: Why It Matters',
           content:
-            'A defined sequence of service is not a constraint on hospitality — it is the structure that makes genuine hospitality possible. When a server knows exactly what happens at each step, they are free to focus on the guest rather than on what comes next. Without a sequence, service becomes reactive: responding to requests rather than anticipating them, catching up rather than leading.',
+            'A defined sequence of service is not a constraint on hospitality. It is the structure that makes genuine hospitality possible. When a server knows exactly what happens at each step, they are free to focus on the guest rather than on what comes next. Without a sequence, service becomes reactive: responding to requests rather than anticipating them, catching up rather than leading.',
           h3Items: [
             {
               heading: 'Before the guest sits down',
@@ -1679,7 +1679,7 @@ export const articles: BilingualArticle[] = [
           h3Items: [
             {
               heading: 'Service direction',
-              text: 'Plates are served from the left, cleared from the right. Beverages are served and cleared from the right. These conventions exist to create a predictable and unobtrusive service flow. Deviations — reaching across guests, serving from the wrong side — create friction even when the guest does not consciously identify the cause.',
+              text: 'Plates are served from the left, cleared from the right. Beverages are served and cleared from the right. These conventions exist to create a predictable and unobtrusive service flow. Reaching across guests or serving from the wrong side creates friction even when the guest does not consciously identify the cause.',
             },
             {
               heading: 'Wine service',
@@ -1687,7 +1687,7 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: 'Clearing protocol',
-              text: 'Tables are cleared only when all guests have finished a course — never while one guest is still eating. Clearing should be done in a single organised pass, not piecemeal. Crumbing between courses is part of the standard in a formal service context.',
+              text: 'Tables are cleared only when all guests have finished a course, never while one guest is still eating. Clearing should be done in a single organised pass, not piecemeal. Crumbing between courses is part of the standard in a formal service context.',
             },
           ],
         },
@@ -1702,18 +1702,18 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: 'When to escalate',
-              text: 'Any complaint that cannot be resolved within two minutes at table level should involve the maître d\' or floor supervisor. Not as a handover, but as a reinforcement — the server stays present. Escalation signals that the property takes the complaint seriously, not that the server failed.',
+              text: 'Any complaint that cannot be resolved within two minutes at table level should involve the maître d\' or floor supervisor. Not as a handover, but as a reinforcement: the server stays present. Escalation signals that the property takes the complaint seriously, not that the server failed.',
             },
             {
               heading: 'Documentation',
-              text: 'Complaints should be logged at the end of service: table number, nature of the issue, resolution, guest reaction. Over time this log identifies recurring patterns — dishes that consistently generate comments, service timing problems at peak covers, individual team members who need additional support.',
+              text: 'Complaints should be logged at the end of service: table number, nature of the issue, resolution, guest reaction. Over time this log identifies recurring patterns: dishes that consistently generate comments, service timing problems at peak covers, individual team members who need additional support.',
             },
           ],
         },
         {
           h2: 'Shift Close and Handover',
           content:
-            'The close of service is not the end of the shift — it is the preparation for the next one. A properly closed restaurant reduces the opening time for the next service, ensures nothing is left for the following team to discover, and gives the supervisor the information they need for the next briefing.',
+            'The close of service is not the end of the shift. It is the preparation for the next one. A properly closed restaurant reduces the opening time for the next service, ensures nothing is left for the following team to discover, and gives the supervisor the information they need for the next briefing.',
           h3Items: [
             {
               heading: 'Closing tasks',
@@ -1727,22 +1727,22 @@ export const articles: BilingualArticle[] = [
         },
       ],
       conclusion:
-        'Consistent restaurant service in a hotel does not happen because the team is talented. It happens because the team has a shared sequence, a defined standard, and the operational tools to maintain it under pressure. Procedure gives the structure; the team delivers the hospitality within it. The two are not in tension — one makes the other possible.',
+        'Consistent restaurant service in a hotel does not happen because the team is talented. It happens because the team has a shared sequence, a defined standard, and the operational tools to maintain it under pressure. Procedure gives the structure; the team delivers the hospitality within it. The two are not in tension. One makes the other possible.',
       cta: { text: 'View the F&B Playbook', href: '/en/playbooks' },
     },
     fr: {
-      title: "Procédures de service en restauration hôtelière : guide pratique pour les équipes F&B",
+      title: "Le service en salle : procédures pratiques pour les équipes de restaurant",
       description:
-        "Les procédures opérationnelles standard qui définissent un service restaurant cohérent en hôtellerie de luxe. Séquence de service, gestion des tables, gestion des plaintes et clôture de shift.",
+        "Les procédures qui permettent à une équipe de salle de délivrer un service cohérent, du premier couvert au dernier. Séquence de service, gestion des tables, traitement des plaintes et clôture de shift.",
       date: '2026-03-29',
       readTime: '8 min de lecture',
       intro:
-        "Le service en restaurant hôtelier n'est pas identique à celui d'un restaurant indépendant. Le client a une chambre à l'étage. Il est peut-être arrivé ce matin après un vol. Ses attentes ont été calibrées dès le check-in. Quand l'expérience restaurant ne correspond pas à ce que le reste de l'établissement a livré, l'écart est perçu — et il tend à apparaître dans les avis comme un problème d'hôtel, pas de restaurant. Des procédures de service F&B cohérentes permettent de combler cet écart. Pas en scriptant chaque interaction, mais en donnant à l'équipe une séquence définie, des points de passation clairs, et un standard commun à atteindre.",
+        "Un service en salle cohérent ne s'improvise pas. Il repose sur une séquence définie, des standards partagés, et des points de passation clairs entre chaque étape. Sans ce cadre, le service devient réactif : on répond aux demandes plutôt qu'on les anticipe, et c'est le client qui finit par mesurer l'écart. Ces procédures donnent à l'équipe les outils pour travailler au même niveau à chaque service, que ce soit en restaurant gastronomique, en brasserie ou en salle d'hôtel.",
       sections: [
         {
           h2: 'La séquence de service : pourquoi elle compte',
           content:
-            "Une séquence de service définie n'est pas une contrainte sur l'hospitalité — c'est la structure qui rend l'hospitalité genuinement possible. Quand un serveur sait exactement ce qui se passe à chaque étape, il est libre de se concentrer sur le client plutôt que sur la suite. Sans séquence, le service devient réactif : on répond aux demandes plutôt qu'on les anticipe, on rattrape plutôt qu'on pilote.",
+            "Une séquence de service définie n'est pas une contrainte. C'est la structure qui rend l'hospitalité véritablement possible. Quand un serveur sait exactement ce qui se passe à chaque étape, il est libre de se concentrer sur le client plutôt que sur la suite. Sans séquence, le service devient réactif : on répond aux demandes plutôt qu'on les anticipe, on rattrape plutôt qu'on pilote.",
           h3Items: [
             {
               heading: 'Avant que le client s\'assoie',
@@ -1784,7 +1784,7 @@ export const articles: BilingualArticle[] = [
           h3Items: [
             {
               heading: 'Sens du service',
-              text: "Les assiettes sont servies par la gauche, débarrassées par la droite. Les boissons sont servies et débarrassées par la droite. Ces conventions créent un flux de service prévisible et discret. Les écarts — passer devant un client, servir du mauvais côté — créent une friction même quand le client n'en identifie pas consciemment la cause.",
+              text: "Les assiettes sont servies par la gauche, débarrassées par la droite. Les boissons sont servies et débarrassées par la droite. Ces conventions créent un flux de service prévisible et discret. Passer devant un client ou servir du mauvais côté crée une friction, même quand le client n'en identifie pas consciemment la cause.",
             },
             {
               heading: 'Service du vin',
@@ -1792,7 +1792,7 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: 'Protocole de débarrassage',
-              text: "Les tables sont débarrassées uniquement quand tous les convives ont terminé un plat — jamais pendant qu'un client mange encore. Le débarrassage s'effectue en un passage organisé, pas de façon fragmentée. Le miettage entre les plats fait partie du standard dans un service formel.",
+              text: "Les tables sont débarrassées uniquement quand tous les convives ont terminé un plat, jamais pendant qu'un client mange encore. Le débarrassage s'effectue en un passage organisé, pas de façon fragmentée. Le miettage entre les plats fait partie du standard dans un service formel.",
             },
           ],
         },
@@ -1807,18 +1807,18 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: 'Quand escalader',
-              text: "Toute plainte qui ne peut pas être résolue en deux minutes au niveau de la table doit impliquer le maître d'hôtel ou le superviseur de salle. Pas en passation, mais en renfort — le serveur reste présent. L'escalade signale que l'établissement prend la plainte au sérieux, pas que le serveur a échoué.",
+              text: "Toute plainte qui ne peut pas être résolue en deux minutes au niveau de la table doit impliquer le maître d'hôtel ou le superviseur de salle. Pas en passation, mais en renfort : le serveur reste présent. Faire appel à son responsable signale que l'établissement prend la plainte au sérieux, pas que le serveur a échoué.",
             },
             {
               heading: 'Documentation',
-              text: "Les plaintes doivent être consignées en fin de service : numéro de table, nature du problème, résolution, réaction du client. Dans le temps, ce journal identifie des tendances récurrentes — plats qui génèrent régulièrement des commentaires, problèmes de timing à fort couverts, membres d'équipe nécessitant un accompagnement.",
+              text: "Les plaintes doivent être consignées en fin de service : numéro de table, nature du problème, résolution, réaction du client. Sur la durée, ce journal fait apparaître des tendances : plats qui génèrent régulièrement des remarques, problèmes de cadence à fort couverts, membres d'équipe nécessitant un accompagnement.",
             },
           ],
         },
         {
           h2: 'Clôture de service et passation',
           content:
-            "La clôture de service n'est pas la fin du shift — c'est la préparation du suivant. Un restaurant correctement fermé réduit le temps d'ouverture du prochain service, garantit que rien n'est laissé à découvrir par l'équipe suivante, et donne au superviseur les informations nécessaires pour le prochain briefing.",
+            "La clôture de service n'est pas la fin du shift. C'est la préparation du suivant. Un restaurant correctement fermé réduit le temps d'ouverture du prochain service, garantit que rien n'est laissé à découvrir par l'équipe suivante, et donne au superviseur les informations nécessaires pour le prochain briefing.",
           h3Items: [
             {
               heading: 'Tâches de clôture',
@@ -1832,7 +1832,7 @@ export const articles: BilingualArticle[] = [
         },
       ],
       conclusion:
-        "La cohérence du service en restaurant hôtelier ne vient pas du talent de l'équipe. Elle vient d'une séquence commune, d'un standard défini, et des outils opérationnels pour le maintenir sous pression. La procédure donne la structure ; l'équipe délivre l'hospitalité à l'intérieur. Les deux ne s'opposent pas — l'une rend l'autre possible.",
+        "La cohérence du service en salle ne vient pas du talent de l'équipe. Elle vient d'une séquence commune, d'un standard défini, et des outils pour le tenir sous pression. La procédure donne la structure ; l'équipe y apporte l'hospitalité. Les deux ne s'opposent pas : l'une rend l'autre possible.",
       cta: { text: 'Voir le Playbook F&B', href: '/fr/playbooks' },
     },
   },
@@ -1845,7 +1845,7 @@ export const articles: BilingualArticle[] = [
       date: '2026-03-30',
       readTime: '7 min read',
       intro:
-        'The spa is where a luxury hotel earns or loses its claim to well-being. A guest who books a treatment has a specific expectation: that the environment will be immaculate, the therapist prepared, and the experience uninterrupted. When any part of that breaks down — a room that is not ready, a consultation that feels rushed, a transition between spaces that lacks intention — the effect lingers longer than the treatment itself. Spa SOPs are not about removing the human element from wellness. They are about creating the conditions under which a therapist can deliver their best work, consistently, to every guest.',
+        'The spa is where a luxury hotel earns or loses its claim to well-being. A guest who books a treatment has a specific expectation: that the environment will be immaculate, the therapist prepared, and the experience uninterrupted. When any part of that breaks down, a room that is not ready, a rushed consultation, or a transition that lacks intention, the effect lingers longer than the treatment itself. Spa procedures are not about removing the human element from wellness. They are about creating the conditions under which a therapist can deliver their best work, consistently, to every guest.',
       sections: [
         {
           h2: 'Pre-Treatment Preparation',
@@ -1854,30 +1854,30 @@ export const articles: BilingualArticle[] = [
           h3Items: [
             {
               heading: 'Treatment room setup',
-              text: 'Linens fresh and properly dressed. Massage table height adjusted for the therapist. Oil warmers and hot stones at temperature. Ambient lighting and music set to the standard. Room temperature confirmed. Products for the specific treatment laid out and ready. Any customisation for the guest — preferences from a previous visit, notes from the booking — reviewed before entry.',
+              text: 'Linens fresh and properly dressed. Massage table height adjusted for the therapist. Oil warmers and hot stones at temperature. Ambient lighting and music set to the standard. Room temperature confirmed. Products for the specific treatment laid out and ready. Any customisation for the guest, including preferences from a previous visit or notes from the booking, reviewed before entry.',
             },
             {
               heading: 'Facility check',
-              text: 'Wet areas — pools, steam rooms, saunas — checked and at correct temperature before the first guest of the day. Towels and robes at designated points. Relaxation lounge restocked with water, fruit, and wellness teas. Any maintenance issues logged immediately and front desk notified if a facility cannot be offered.',
+              text: 'Wet areas: pools, steam rooms, saunas, checked and at correct temperature before the first guest of the day. Towels and robes at designated points. Relaxation lounge restocked with water, fruit, and wellness teas. Any maintenance issues logged immediately and front desk notified if a facility cannot be offered.',
             },
             {
               heading: 'Product and equipment check',
-              text: 'All products verified as in date and correctly stored. Equipment — hot stone heaters, paraffin baths, electrical massage tools — checked for function. A faulty piece of equipment that is discovered during a treatment is a service failure that cannot be recovered in session.',
+              text: 'All products verified as in date and correctly stored. Equipment: hot stone heaters, paraffin baths, electrical massage tools, checked for function. A faulty piece of equipment that is discovered during a treatment is a service failure that cannot be recovered in session.',
             },
           ],
         },
         {
           h2: 'Guest Consultation and Intake',
           content:
-            'The consultation is the operational step most commonly rushed in busy spas. It is also the one that most directly affects both service quality and guest safety. A consultation that takes three minutes because the next guest is waiting is not a consultation — it is a liability.',
+            'The consultation is the operational step most commonly rushed in busy spas. It is also the one that most directly affects both service quality and guest safety. A consultation that takes three minutes because the next guest is waiting is not a consultation. It is a liability.',
           h3Items: [
             {
               heading: 'Health intake',
-              text: 'Every new guest completes a health intake form before their first treatment. Repeat guests should have their form reviewed and updated at each visit. The therapist reviews the form before the consultation, not during it. Contraindications — pregnancy, recent surgery, cardiovascular conditions, skin sensitivities — must be identified and the treatment adapted or declined accordingly.',
+              text: 'Every new guest completes a health intake form before their first treatment. Repeat guests should have their form reviewed and updated at each visit. The therapist reviews the form before the consultation, not during it. Contraindications such as pregnancy, recent surgery, cardiovascular conditions, or skin sensitivities must be identified and the treatment adapted or declined accordingly.',
             },
             {
               heading: 'Preference and pressure discussion',
-              text: 'For massage treatments: confirm pressure preference, areas to focus on, areas to avoid. This is a brief, directed conversation — not a general enquiry. The therapist confirms what they heard before beginning. A guest who asked for light pressure and received medium has a legitimate complaint, regardless of how good the technique was.',
+              text: 'For massage treatments: confirm pressure preference, areas to focus on, areas to avoid. This is a brief, directed conversation, not a general enquiry. The therapist confirms what they heard before beginning. A guest who asked for light pressure and received medium has a legitimate complaint, regardless of how good the technique was.',
             },
             {
               heading: 'Setting expectations',
@@ -1892,22 +1892,22 @@ export const articles: BilingualArticle[] = [
           h3Items: [
             {
               heading: 'Draping protocol',
-              text: 'Proper draping at all times. Only the area being worked on is exposed. Transitions between positions are smooth and maintain coverage. This is a professional standard and a guest comfort standard — it should be non-negotiable and consistent across all therapists.',
+              text: 'Proper draping at all times. Only the area being worked on is exposed. Transitions between positions are smooth and maintain coverage. This is a professional standard and a guest comfort standard. It should be non-negotiable and consistent across all therapists.',
             },
             {
               heading: 'During-session communication',
-              text: 'The therapist checks in once within the first five minutes of treatment — pressure, temperature, comfort. Then the session is quiet unless the guest initiates. Unsolicited conversation during a relaxation treatment is a standard breach in most luxury contexts.',
+              text: 'The therapist checks in once within the first five minutes of treatment: pressure, temperature, comfort. Then the session is quiet unless the guest initiates. Unsolicited conversation during a relaxation treatment is a standard breach in most luxury contexts.',
             },
             {
               heading: 'Timing precision',
-              text: 'A 60-minute treatment is 60 minutes of hands-on time. Set-up and consultation are not counted within that time. The guest who paid for an hour should receive an hour. Treatments that start late due to operational delays should still deliver the full duration — the therapist absorbs the operational failure, not the guest.',
+              text: 'A 60-minute treatment is 60 minutes of hands-on time. Set-up and consultation are not counted within that time. The guest who paid for an hour should receive an hour. Treatments that start late due to operational delays should still deliver the full duration. The therapist absorbs the operational failure, not the guest.',
             },
           ],
         },
         {
           h2: 'Post-Treatment and Guest Journey',
           content:
-            'The quality of the post-treatment experience determines what the guest carries with them. A great treatment followed by a rushed transition back to reality — bright lights, a noisy corridor, a rushed robe exchange — loses much of what the treatment created. The post-treatment sequence should extend the experience, not end it.',
+            'The quality of the post-treatment experience determines what the guest carries with them. A great treatment followed by a rushed transition back to reality, bright lights, a noisy corridor, a hurried robe exchange, loses much of what the treatment created. The post-treatment sequence should extend the experience, not end it.',
           h3Items: [
             {
               heading: 'Recovery time',
@@ -1915,7 +1915,7 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: 'Post-treatment guidance',
-              text: 'Hydration guidance, recommendations for the rest of the day, and any aftercare notes relevant to the treatment received. These should be brief, specific, and given as the guest is settling in the relaxation lounge — not as they are leaving.',
+              text: 'Hydration guidance, recommendations for the rest of the day, and any aftercare notes relevant to the treatment received. These should be brief, specific, and given while the guest is settling in the relaxation lounge, not as they are leaving.',
             },
             {
               heading: 'Feedback and next booking',
@@ -1930,7 +1930,7 @@ export const articles: BilingualArticle[] = [
           h3Items: [
             {
               heading: 'Between-treatment reset',
-              text: 'Treatment rooms must be fully reset between guests: fresh linens, waste disposed of, surface areas sanitised, products restocked, temperature and ambient settings reset. Minimum reset time is ten minutes. Scheduling must account for this — back-to-back bookings without reset time is an operational error, not an efficiency gain.',
+              text: 'Treatment rooms must be fully reset between guests: fresh linens, waste disposed of, surface areas sanitised, products restocked, temperature and ambient settings reset. Minimum reset time is ten minutes. Scheduling must account for this. Back-to-back bookings without reset time is an operational error, not an efficiency gain.',
             },
             {
               heading: 'End-of-day close',
@@ -1940,17 +1940,17 @@ export const articles: BilingualArticle[] = [
         },
       ],
       conclusion:
-        'A spa SOP does not make every treatment the same. It makes every treatment possible. The structure behind a wellness experience — the prepared room, the properly conducted consultation, the precise timing — is what gives the therapist the conditions to do their best work. That work is human and individual. The procedures that frame it are not.',
+        'A spa procedure does not make every treatment the same. It makes every treatment possible. The structure behind a wellness experience: the prepared room, the properly conducted consultation, the precise timing. That is what gives the therapist the conditions to do their best work. That work is human and individual. The procedures that frame it are not.',
       cta: { text: 'View the Spa & Wellness Playbook', href: '/en/playbooks' },
     },
     fr: {
-      title: "SOPs Spa & Wellness en hôtellerie : standards de service pour les opérations de soin de luxe",
+      title: "Procédures de service au spa : comment structurer les soins dans un établissement haut de gamme",
       description:
-        "Procédures opérationnelles standard pour les départements spa et bien-être des hôtels. Préparation des soins, consultation client, protocoles thérapeutes et gestion des espaces.",
+        "Les procédures qui permettent à une équipe spa de délivrer chaque soin avec le même niveau d'exigence. Préparation des cabines, consultation, réalisation du soin et clôture de journée.",
       date: '2026-03-30',
       readTime: '7 min de lecture',
       intro:
-        "Le spa est l'endroit où un hôtel de luxe mérite ou perd son positionnement bien-être. Un client qui réserve un soin a une attente précise : que l'environnement soit impeccable, le thérapeute préparé, et l'expérience sans interruption. Quand l'une de ces dimensions s'effondre — une cabine non prête, une consultation bâclée, une transition entre les espaces sans intention — l'effet dure plus longtemps que le soin lui-même. Les SOPs spa ne visent pas à retirer l'élément humain du bien-être. Elles créent les conditions dans lesquelles un thérapeute peut délivrer son meilleur travail, de façon cohérente, à chaque client.",
+        "Le spa est l'espace où un établissement haut de gamme tient ou perd sa promesse de bien-être. Un client qui réserve un soin a une attente précise : un environnement impeccable, un thérapeute préparé, une expérience sans interruption. Quand l'une de ces dimensions est mal gérée, cabine non prête, consultation bâclée ou transition sans intention, l'effet dure plus longtemps que le soin lui-même. Les procédures spa ne visent pas à retirer l'élément humain du bien-être. Elles créent les conditions dans lesquelles un thérapeute peut donner le meilleur de lui-même, à chaque client, sans exception.",
       sections: [
         {
           h2: 'Préparation avant le soin',
@@ -1959,30 +1959,30 @@ export const articles: BilingualArticle[] = [
           h3Items: [
             {
               heading: 'Mise en place de la cabine',
-              text: "Linge frais et correctement dressé. Hauteur de la table de massage ajustée pour le thérapeute. Chauffe-huiles et pierres chaudes à température. Éclairage ambiant et musique réglés selon le standard. Température de la cabine confirmée. Produits pour le soin spécifique disposés et prêts. Toute personnalisation pour le client — préférences d'une visite précédente, notes de réservation — relue avant l'entrée.",
+              text: "Linge frais et correctement dressé. Hauteur de la table de massage ajustée pour le thérapeute. Chauffe-huiles et pierres chaudes à température. Éclairage ambiant et musique réglés selon le standard. Température de la cabine vérifiée. Produits pour le soin en cours disposés et prêts. Toute personnalisation, préférences d'une visite précédente ou notes de réservation, relue avant d'entrer en cabine.",
             },
             {
               heading: 'Contrôle des espaces',
-              text: "Espaces aquatiques — piscines, hammams, saunas — vérifiés et à bonne température avant le premier client de la journée. Serviettes et peignoirs aux points définis. Salon de relaxation réapprovisionné en eau, fruits et tisanes. Tout problème technique consigné immédiatement et la réception informée si un espace ne peut être proposé.",
+              text: "Espaces aquatiques (piscines, hammams, saunas) vérifiés et à bonne température avant le premier client de la journée. Serviettes et peignoirs aux points définis. Salon de relaxation réapprovisionné en eau, fruits et tisanes. Tout problème technique consigné immédiatement et la réception informée si un espace ne peut être proposé.",
             },
             {
               heading: 'Contrôle produits et équipements',
-              text: "Tous les produits vérifiés comme dans leur date et correctement stockés. Équipements — chauffe-pierres, bains de paraffine, appareils de massage électriques — contrôlés en fonctionnement. Un équipement défectueux découvert pendant un soin est un échec de service qu'on ne peut pas rattraper en séance.",
+              text: "Tous les produits vérifiés, dans leur date et correctement stockés. Équipements, chauffe-pierres, bains de paraffine, appareils de massage, contrôlés en fonctionnement. Un équipement défectueux découvert pendant un soin est un échec de service qu'on ne peut pas rattraper en séance.",
             },
           ],
         },
         {
           h2: 'Consultation et accueil du client',
           content:
-            "La consultation est l'étape opérationnelle la plus souvent bâclée dans les spas chargés. C'est aussi celle qui impacte le plus directement la qualité du service et la sécurité du client. Une consultation de trois minutes parce que le client suivant attend n'est pas une consultation — c'est un risque.",
+            "La consultation est l'étape la plus souvent bâclée dans les spas chargés. C'est aussi celle qui conditionne le plus directement la qualité du soin et la sécurité du client. Une consultation de trois minutes parce que le client suivant attend n'est pas une consultation. C'est une prise de risque.",
           h3Items: [
             {
               heading: 'Fiche santé',
-              text: "Chaque nouveau client remplit une fiche santé avant son premier soin. Pour les clients habituels, la fiche doit être revue et mise à jour à chaque visite. Le thérapeute lit la fiche avant la consultation, pas pendant. Les contre-indications — grossesse, chirurgie récente, pathologies cardiovasculaires, sensibilités cutanées — doivent être identifiées et le soin adapté ou refusé en conséquence.",
+              text: "Chaque nouveau client remplit une fiche santé avant son premier soin. Pour les habitués, la fiche est revue et mise à jour à chaque visite. Le thérapeute la lit avant la consultation, pas pendant. Les contre-indications, grossesse, chirurgie récente, pathologies cardiovasculaires ou sensibilités cutanées, doivent être identifiées et le soin adapté ou refusé en conséquence.",
             },
             {
               heading: 'Discussion sur les préférences et la pression',
-              text: "Pour les massages : confirmer la pression souhaitée, les zones à travailler, les zones à éviter. C'est une conversation brève et ciblée — pas une enquête générale. Le thérapeute confirme ce qu'il a entendu avant de commencer. Un client qui a demandé une pression légère et reçu une pression moyenne a une réclamation légitime, quelle que soit la qualité de la technique.",
+              text: "Pour les massages : confirmer la pression souhaitée, les zones à travailler, les zones à éviter. C'est une conversation brève et ciblée, pas une enquête générale. Le thérapeute reformule ce qu'il a entendu avant de commencer. Un client qui a demandé une pression légère et reçu une pression moyenne a une réclamation légitime, quelle que soit la qualité de la technique.",
             },
             {
               heading: 'Définir les attentes',
@@ -1997,22 +1997,22 @@ export const articles: BilingualArticle[] = [
           h3Items: [
             {
               heading: 'Protocole de drapé',
-              text: "Drapé correct à tout moment. Seule la zone travaillée est exposée. Les transitions entre positions sont fluides et maintiennent le drapé. C'est un standard professionnel et un standard de confort client — il doit être non négociable et cohérent entre tous les thérapeutes.",
+              text: "Drapé correct à tout moment. Seule la zone travaillée est exposée. Les transitions entre positions sont fluides et maintiennent la couverture. C'est un standard professionnel autant qu'un standard de confort. Il doit être non négociable et identique chez tous les thérapeutes.",
             },
             {
               heading: 'Communication pendant la séance',
-              text: "Le thérapeute fait un point dans les cinq premières minutes du soin — pression, température, confort. Ensuite la séance est silencieuse sauf si c'est le client qui prend l'initiative. Une conversation spontanée pendant un soin de relaxation est une rupture de standard dans la plupart des contextes haut de gamme.",
+              text: "Dans les cinq premières minutes, le thérapeute fait un point rapide : pression, température, confort. Ensuite la séance est silencieuse, sauf si le client prend l'initiative. Une conversation non sollicitée pendant un soin de relaxation est une rupture de standard dans tout contexte haut de gamme.",
             },
             {
               heading: 'Précision du timing',
-              text: "Un soin de 60 minutes, c'est 60 minutes de temps de soin effectif. La mise en place et la consultation ne sont pas comptées dans ce temps. Le client qui a payé pour une heure doit recevoir une heure. Les soins qui démarrent en retard pour des raisons opérationnelles doivent quand même délivrer la durée complète — le thérapeute absorbe l'échec opérationnel, pas le client.",
+              text: "Un soin de 60 minutes, c'est 60 minutes de soin effectif sur table. La mise en place et la consultation ne rentrent pas dans ce compte. Le client qui a réservé une heure doit la recevoir. Si le soin démarre en retard pour une raison opérationnelle, la durée complète est quand même assurée. Le thérapeute absorbe le retard, pas le client.",
             },
           ],
         },
         {
           h2: 'Après le soin et parcours client',
           content:
-            "La qualité de l'expérience post-soin détermine ce que le client emporte avec lui. Un excellent soin suivi d'une transition brusque vers le quotidien — lumières vives, couloir bruyant, échange de peignoir précipité — efface une grande partie de ce que le soin a créé. La séquence post-soin doit prolonger l'expérience, pas la terminer.",
+            "Ce que le client emporte avec lui se joue souvent dans les minutes qui suivent le soin. Un excellent massage suivi d'une transition brusque vers le quotidien, lumières vives, couloir bruyant, échange de peignoir précipité, efface une grande partie de ce qui vient d'être créé. La séquence après le soin doit prolonger l'expérience, pas l'interrompre.",
           h3Items: [
             {
               heading: 'Temps de récupération',
@@ -2020,11 +2020,11 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: 'Conseils post-soin',
-              text: "Conseils d'hydratation, recommandations pour le reste de la journée, et toutes notes de suivi pertinentes pour le soin reçu. Ces conseils doivent être brefs, spécifiques, et donnés pendant que le client s'installe au salon de relaxation — pas au moment où il part.",
+              text: "Conseils d'hydratation, recommandations pour le reste de la journée, notes de suivi spécifiques au soin. Ces conseils doivent être brefs et donnés pendant que le client s'installe au salon de relaxation, pas au moment où il part.",
             },
             {
               heading: 'Retour et prochaine réservation',
-              text: "Une fois que le client a eu le temps de récupérer, une question naturelle et brève sur son expérience. Pas un questionnaire. Pas une demande d'avis. Une question genuinement intéressée qui crée l'opportunité de corriger ce qui n'allait pas et de noter les préférences pour la prochaine visite.",
+              text: "Une fois que le client a eu le temps de récupérer, une question simple et sincère sur son expérience. Pas un questionnaire. Pas une demande d'avis. Un échange qui permet de corriger ce qui n'allait pas et de noter les préférences pour la prochaine visite.",
             },
           ],
         },
@@ -2035,7 +2035,7 @@ export const articles: BilingualArticle[] = [
           h3Items: [
             {
               heading: 'Remise en place entre les soins',
-              text: "Les cabines doivent être entièrement remises en place entre chaque client : linge frais, déchets évacués, surfaces désinfectées, produits réapprovisionnés, paramètres ambiance réinitialisés. Le temps minimum de remise en place est de dix minutes. La planification doit en tenir compte — des rendez-vous dos à dos sans temps de remise en place est une erreur opérationnelle, pas un gain d'efficacité.",
+              text: "Les cabines doivent être entièrement remises en place entre chaque client : linge frais, déchets évacués, surfaces désinfectées, produits réapprovisionnés, ambiance réinitialisée. Le temps minimum de remise en place est de dix minutes. La planification doit en tenir compte. Des rendez-vous enchaînés sans battement entre les deux est une erreur de planning, pas un gain de productivité.",
             },
             {
               heading: 'Clôture de journée',
@@ -2045,7 +2045,7 @@ export const articles: BilingualArticle[] = [
         },
       ],
       conclusion:
-        "Un SOP spa ne rend pas tous les soins identiques. Il rend chaque soin possible. La structure derrière une expérience bien-être — la cabine préparée, la consultation correctement menée, le timing précis — c'est ce qui donne au thérapeute les conditions pour faire son meilleur travail. Ce travail est humain et individuel. Les procédures qui l'encadrent ne le sont pas.",
+        "Une procédure spa ne rend pas tous les soins identiques. Elle rend chaque soin possible. La cabine préparée, la consultation bien menée, le timing respecté : c'est ce qui donne au thérapeute les conditions pour faire son meilleur travail. Ce travail est humain et singulier. Ce qui l'encadre ne l'est pas.",
       cta: { text: 'Voir le Playbook Spa & Wellness', href: '/fr/playbooks' },
     },
   },
@@ -2058,7 +2058,7 @@ export const articles: BilingualArticle[] = [
       date: '2026-03-31',
       readTime: '7 min read',
       intro:
-        'Room service is the hospitality department with the least margin for error and the least opportunity to recover. The interaction happens in private, with no ambient environment to soften a presentation problem, no floor manager passing to notice a delay, and no table of neighbouring guests to contextualise the experience. A guest who orders room service at eleven at night has often had a long day. What arrives at their door is not just food — it is the property\'s standard of care delivered to the most personal space the guest occupies. Getting that right, consistently, requires more than a good kitchen. It requires a defined operational procedure from call to door.',
+        'Room service is the hospitality department with the least margin for error and the least opportunity to recover. The interaction happens in private, with no ambient environment to soften a presentation problem, no floor manager passing to notice a delay, and no table of neighbouring guests to contextualise the experience. A guest who orders room service at eleven at night has often had a long day. What arrives at their door is not just food. It is the property\'s standard of care delivered to the most personal space the guest occupies. Getting that right, consistently, requires more than a good kitchen. It requires a defined operational procedure from call to door.',
       sections: [
         {
           h2: 'Order Taking',
@@ -2067,15 +2067,15 @@ export const articles: BilingualArticle[] = [
           h3Items: [
             {
               heading: 'Answering standard',
-              text: 'The phone is answered before the third ring. The greeting includes the department name, the staff member\'s name, and the room number once it is confirmed. Calls that ring more than three times and go unanswered are an immediate service failure — the guest has already noticed.',
+              text: 'The phone is answered before the third ring. The greeting includes the department name, the staff member\'s name, and the room number once it is confirmed. Calls that ring more than three times and go unanswered are an immediate service failure: the guest has already noticed.',
             },
             {
               heading: 'Order confirmation',
-              text: 'Every order is read back to the guest before closing the call: each item, any modifications, and the timing. This is not a courtesy — it is a quality control step. An order that is confirmed incorrectly is discovered at the door, which is the worst possible moment.',
+              text: 'Every order is read back to the guest before closing the call: each item, any modifications, and the timing. This is not a courtesy. It is a quality control step. An order that is confirmed incorrectly is discovered at the door, which is the worst possible moment.',
             },
             {
               heading: 'Timing communication',
-              text: 'Delivery time is communicated as a range, not a promise: "between 25 and 35 minutes" rather than "30 minutes". If the actual delivery will fall outside the range given, the guest is called before the range expires — not when the order is already late. Standard delivery ranges: continental breakfast 20–25 minutes, full breakfast 25–30 minutes, lunch 30–35 minutes, dinner 35–45 minutes.',
+              text: 'Delivery time is communicated as a range, not a promise: "between 25 and 35 minutes" rather than "30 minutes". If the actual delivery will fall outside the range given, the guest is called before the range expires, not when the order is already late. Standard delivery ranges: continental breakfast 20–25 minutes, full breakfast 25–30 minutes, lunch 30–35 minutes, dinner 35–45 minutes.',
             },
           ],
         },
@@ -2086,7 +2086,7 @@ export const articles: BilingualArticle[] = [
           h3Items: [
             {
               heading: 'Checklist before departure',
-              text: 'Correct items in the correct quantity. Hot items in the correct cover, cold items appropriately chilled. Condiments specific to the order. Napkin folded to standard. Cutlery correct for the courses ordered. Glassware clean and correctly placed. Any special items — birthday amenities, allergy alternatives — confirmed and included.',
+              text: 'Correct items in the correct quantity. Hot items in the correct cover, cold items appropriately chilled. Condiments specific to the order. Napkin folded to standard. Cutlery correct for the courses ordered. Glassware clean and correctly placed. Any special items such as birthday amenities or allergy alternatives, confirmed and included.',
             },
             {
               heading: 'Temperature management',
@@ -2109,11 +2109,11 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: 'In-room placement',
-              text: 'Ask the guest where they would like the tray or trolley placed. Do not assume a default location. If the guest requests table setup — covers laid, dishes uncovered — complete the setup quickly and without unnecessary commentary. Confirm each item against the order while setting up, so any missing item is identified before the door closes.',
+              text: 'Ask the guest where they would like the tray or trolley placed. Do not assume a default location. If the guest requests table setup, covers laid and dishes uncovered, complete the setup quickly and without unnecessary commentary. Confirm each item against the order while setting up, so any missing item is identified before the door closes.',
             },
             {
               heading: 'Billing at delivery',
-              text: 'If the property posts charges to the room, inform the guest of the total and present the slip for signature. If the guest wishes to pay by card at delivery, the payment terminal must be brought with the order — returning for it after delivery is not acceptable. Include the standard service charge information as per property policy.',
+              text: 'If the property posts charges to the room, inform the guest of the total and present the slip for signature. If the guest wishes to pay by card at delivery, the payment terminal must be brought with the order. Returning for it after delivery is not acceptable. Include the standard service charge information as per property policy.',
             },
           ],
         },
@@ -2128,23 +2128,23 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: 'Corridor management',
-              text: 'Any tray spotted in a corridor by any team member — not just room service — should be reported immediately. A corridor tray is a visible standard failure and should be treated with the same urgency as a guest complaint.',
+              text: 'Any tray spotted in a corridor by any team member, not just room service, should be reported immediately. A corridor tray is a visible standard failure and should be treated with the same urgency as a guest complaint.',
             },
           ],
         },
       ],
       conclusion:
-        'Room service is the in-room extension of the property\'s dining standard. Everything that makes a restaurant experience consistent — sequenced service, accurate ordering, temperature control, correct presentation — applies in miniature to every room service delivery. The difference is that in room service, there is no floor to manage, no second chances, and no one between the procedure and the guest. The standard either holds or it does not.',
+        'Room service is the in-room extension of the property\'s dining standard. Everything that makes a restaurant experience consistent, sequenced service, accurate ordering, temperature control, correct presentation, applies in miniature to every room service delivery. The difference is that in room service, there is no floor to manage, no second chances, and no one between the procedure and the guest. The standard either holds or it does not.',
       cta: { text: 'View the F&B Playbook', href: '/en/playbooks' },
     },
     fr: {
-      title: "SOPs Room Service en hôtellerie : procédures pour un service en chambre cohérent",
+      title: "Room service : comment délivrer chaque commande au bon niveau",
       description:
-        "Procédures opérationnelles standard pour les opérations de room service hôtelier. Prise de commande, dressage du plateau, timing de livraison, présentation en chambre et protocole de facturation.",
+        "Les procédures qui font la différence entre un room service irréprochable et un qui laisse un mauvais souvenir. Prise de commande, dressage du plateau, livraison et récupération.",
       date: '2026-03-31',
       readTime: '7 min de lecture',
       intro:
-        "Le room service est le département hôtelier qui offre le moins de marge à l'erreur et le moins d'opportunité de rattraper. L'interaction se déroule en privé, sans environnement ambiant pour atténuer un problème de présentation, sans responsable de salle pour remarquer un retard, et sans voisins de table pour contextualiser l'expérience. Un client qui commande un room service à vingt-trois heures a souvent eu une longue journée. Ce qui arrive à sa porte n'est pas seulement de la nourriture — c'est le standard de soin de l'établissement livré dans l'espace le plus intime qu'il occupe. Garantir ce niveau, de façon constante, demande plus qu'une bonne cuisine. Cela demande une procédure opérationnelle définie du coup de téléphone à la porte.",
+        "Le room service est le service qui laisse le moins de place à l'erreur et le moins d'occasion de se rattraper. L'interaction se déroule en privé, sans ambiance pour atténuer un problème de présentation, sans responsable de salle pour repérer un retard, et sans voisins de table pour contextualiser l'expérience. Un client qui commande à vingt-trois heures a souvent eu une longue journée. Ce qui arrive à sa porte n'est pas seulement un repas. C'est le niveau de soin de l'établissement, livré dans l'espace le plus intime qu'il occupe. Tenir ce niveau, de façon constante, demande plus qu'une bonne cuisine. Cela demande une procédure claire du coup de téléphone à la porte.",
       sections: [
         {
           h2: 'Prise de commande',
@@ -2153,15 +2153,15 @@ export const articles: BilingualArticle[] = [
           h3Items: [
             {
               heading: 'Standard de réponse',
-              text: "Le téléphone répond avant la troisième sonnerie. La formule d'accueil inclut le nom du département, le prénom du collaborateur et le numéro de chambre une fois confirmé. Des appels qui sonnent plus de trois fois sans réponse constituent un premier échec de service — le client l'a déjà remarqué.",
+              text: "Le téléphone décroche avant la troisième sonnerie. La formule d'accueil inclut le nom du service, le prénom du collaborateur et le numéro de chambre une fois confirmé. Un appel qui sonne plus de trois fois sans réponse est déjà un premier manquement : le client l'a remarqué.",
             },
             {
               heading: 'Confirmation de commande',
-              text: "Chaque commande est relue au client avant de raccrocher : chaque article, toute modification, et le timing. Ce n'est pas une formalité — c'est une étape de contrôle qualité. Une commande confirmée incorrectement est découverte à la porte, ce qui est le pire moment possible.",
+              text: "Chaque commande est relue au client avant de raccrocher : chaque article, toute modification, et le délai annoncé. Ce n'est pas une formalité. C'est une étape de contrôle qualité. Une commande confirmée incorrectement, c'est une erreur découverte à la porte du client, au pire moment.",
             },
             {
               heading: 'Communication du timing',
-              text: "Le délai de livraison est communiqué comme une fourchette, pas une promesse : \"entre 25 et 35 minutes\" plutôt que \"30 minutes\". Si la livraison effective dépasse la fourchette donnée, le client est appelé avant que la fourchette soit écoulée — pas quand la commande est déjà en retard. Délais standard : petit-déjeuner continental 20-25 min, petit-déjeuner complet 25-30 min, déjeuner 30-35 min, dîner 35-45 min.",
+              text: "Le délai est annoncé comme une fourchette, pas une promesse : \"entre 25 et 35 minutes\" plutôt que \"30 minutes\". Si la livraison va dépasser cette fourchette, le client est rappelé avant qu'elle soit écoulée, pas après. Délais de référence : petit-déjeuner continental 20-25 min, petit-déjeuner complet 25-30 min, déjeuner 30-35 min, dîner 35-45 min.",
             },
           ],
         },
@@ -2172,7 +2172,7 @@ export const articles: BilingualArticle[] = [
           h3Items: [
             {
               heading: 'Checklist avant départ',
-              text: "Articles corrects en quantité correcte. Plats chauds sous la cloche adéquate, plats froids correctement maintenus au froid. Condiments spécifiques à la commande. Serviette pliée selon le standard. Couverts corrects pour les plats commandés. Verrerie propre et correctement positionnée. Tout article spécial — amenités anniversaire, alternatives pour allergies — confirmé et inclus.",
+              text: "Articles corrects, en bonne quantité. Plats chauds sous cloche, plats froids maintenus au froid. Condiments adaptés à la commande. Serviette pliée selon le standard. Couverts correspondant aux plats. Verrerie propre et bien positionnée. Tout article particulier, amenités anniversaire ou alternative pour allergie, confirmé et inclus.",
             },
             {
               heading: 'Gestion de la température',
@@ -2195,11 +2195,11 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: 'Placement en chambre',
-              text: "Demander au client où il souhaite que le plateau ou chariot soit installé. Ne pas supposer un emplacement par défaut. Si le client demande un dressage — couverts disposés, plats découverts — effectuer la mise en place rapidement et sans commentaire inutile. Confirmer chaque article par rapport à la commande pendant la mise en place, pour identifier tout article manquant avant que la porte se ferme.",
+              text: "Demander au client où il souhaite que le plateau ou le chariot soit installé. Ne pas supposer un emplacement. Si le client demande un dressage, couverts disposés et plats découverts, l'effectuer rapidement et sans commentaire inutile. Vérifier chaque article pendant la mise en place pour identifier tout oubli avant que la porte se referme.",
             },
             {
               heading: 'Facturation à la livraison',
-              text: "Si l'établissement poste les charges sur la chambre, informer le client du montant total et présenter le reçu à signer. Si le client souhaite payer par carte à la livraison, le terminal de paiement doit être apporté avec la commande — revenir le chercher après la livraison n'est pas acceptable. Inclure les informations sur le service standard selon la politique de l'établissement.",
+              text: "Si les charges sont portées sur la chambre, informer le client du total et présenter le reçu à signer. Si le client souhaite payer par carte à la livraison, le terminal doit être apporté avec la commande. Repartir le chercher après n'est pas acceptable. Appliquer la politique de l'établissement concernant les frais de service.",
             },
           ],
         },
@@ -2214,13 +2214,13 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: 'Gestion des couloirs',
-              text: "Tout plateau repéré dans un couloir par n'importe quel membre de l'équipe — pas seulement le room service — doit être signalé immédiatement. Un plateau en couloir est un échec de standard visible et doit être traité avec la même urgence qu'une réclamation client.",
+              text: "Tout plateau repéré dans un couloir par un membre de l'équipe, quel que soit son département, doit être signalé immédiatement. Un plateau qui traîne dans un couloir est un manquement visible. Il doit être traité avec la même réactivité qu'une réclamation client.",
             },
           ],
         },
       ],
       conclusion:
-        "Le room service est le prolongement en chambre du standard de restauration de l'établissement. Tout ce qui rend une expérience restaurant cohérente — service séquencé, prise de commande précise, gestion de la température, présentation correcte — s'applique en miniature à chaque livraison room service. La différence est qu'en room service, il n'y a pas de salle à gérer, pas de seconde chance, et personne entre la procédure et le client. Le standard tient ou ne tient pas.",
+        "Le room service est le prolongement en chambre de la table de l'établissement. Tout ce qui rend un service en salle cohérent, séquence de service, prise de commande précise, gestion de la température, présentation soignée, s'applique en miniature à chaque livraison. La différence est qu'en room service, il n'y a pas de salle à gérer, pas de seconde chance, et personne entre la procédure et le client. Le standard tient ou ne tient pas.",
       cta: { text: 'Voir le Playbook F&B', href: '/fr/playbooks' },
     },
   },
