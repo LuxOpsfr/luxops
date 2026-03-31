@@ -21,7 +21,8 @@ const DEPT_LABELS: Record<string, { en: string; fr: string }> = {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
-    const { email, department, locale } = body
+    const { email, department, locale, sourcePage } = body
+    const referer = request.headers.get('referer') || sourcePage || 'unknown'
 
     if (!email || !department) {
       return NextResponse.json({ error: 'Missing fields' }, { status: 400 })
@@ -43,6 +44,7 @@ export async function POST(request: NextRequest) {
           <p><strong>Email :</strong> ${email}</p>
           <p><strong>Département :</strong> ${dept.fr} / ${dept.en}</p>
           <p><strong>Langue de la page :</strong> ${(locale as string)?.toUpperCase()}</p>
+          <p><strong>Page source :</strong> ${referer}</p>
         </div>
       `,
     })
