@@ -29,6 +29,14 @@ const URLS = [
   `${SITE_URL}/fr/blog/hotel-housekeeping-checklist`,
   `${SITE_URL}/en/blog/hotel-fb-service-standards`,
   `${SITE_URL}/fr/blog/hotel-fb-service-standards`,
+  `${SITE_URL}/en/blog/housekeeping-room-inspection`,
+  `${SITE_URL}/fr/blog/housekeeping-room-inspection`,
+  `${SITE_URL}/en/blog/hotel-fb-restaurant-procedures`,
+  `${SITE_URL}/fr/blog/hotel-fb-restaurant-procedures`,
+  `${SITE_URL}/en/blog/hotel-spa-wellness-sops`,
+  `${SITE_URL}/fr/blog/hotel-spa-wellness-sops`,
+  `${SITE_URL}/en/blog/hotel-room-service-sops`,
+  `${SITE_URL}/fr/blog/hotel-room-service-sops`,
 ]
 
 async function pingIndexNow() {

@@ -4,6 +4,39 @@ import Link from 'next/link'
 import { ArrowRight, ArrowLeft, Clock } from 'lucide-react'
 import { articles } from '@/content/blog/articles'
 
+// Keywords per article — improves indexation signals for Google
+const KEYWORDS_EN: Record<string, string> = {
+  'hotel-operations-playbook': 'hotel operations playbook, hotel SOP, hotel procedures manual, hotel operations guide, luxury hotel management',
+  'how-to-write-hotel-sops': 'how to write hotel SOPs, hotel standard operating procedures, hotel SOP template, hotel procedure writing',
+  'hotel-front-office-sop': 'hotel front office SOP, hotel reception procedures, front desk standard operating procedures, check-in SOP hotel',
+  'hotel-housekeeping-checklist': 'hotel housekeeping checklist, housekeeping SOP, room attendant checklist, hotel cleaning checklist',
+  'hotel-fb-service-standards': 'hotel F&B service standards, hotel restaurant service procedures, food and beverage SOP hotel',
+  'hotel-front-office-procedures': 'hotel front office procedures, hotel reception SOP, check-in check-out procedures hotel',
+  'housekeeping-room-inspection': 'hotel room inspection checklist, housekeeping supervisor inspection, room inspection procedure hotel, quality control housekeeping',
+  'hotel-fb-restaurant-procedures': 'hotel restaurant service procedures, F&B procedures hotel, restaurant SOP hotel, sequence of service hotel',
+  'hotel-spa-wellness-sops': 'hotel spa SOP, wellness procedures hotel, spa standard operating procedures, spa treatment protocol hotel',
+  'hotel-room-service-sops': 'hotel room service SOP, in-room dining procedures, room service standards hotel',
+}
+
+const KEYWORDS_FR: Record<string, string> = {
+  'hotel-operations-playbook': 'playbook opérations hôtel, SOP hôtel, procédures hôtelières, guide opérations hôtel, gestion hôtel luxe',
+  'how-to-write-hotel-sops': 'rédiger SOP hôtel, procédures opérationnelles hôtel, modèle SOP hôtelier, écrire procédures hôtel',
+  'hotel-front-office-sop': 'SOP réception hôtel, procédures front office hôtel, standard opérationnel réception hôtel',
+  'hotel-housekeeping-checklist': 'checklist housekeeping hôtel, SOP housekeeping, checklist femme de chambre, procédures ménage hôtel',
+  'hotel-fb-service-standards': 'standards service F&B hôtel, procédures restaurant hôtel, SOP restauration hôtel',
+  'hotel-front-office-procedures': 'procédures réception hôtel, SOP front office, procédures check-in check-out hôtel',
+  'housekeeping-room-inspection': 'inspection chambre hôtel, checklist inspection superviseur, contrôle qualité housekeeping, gouvernante étage inspection',
+  'hotel-fb-restaurant-procedures': 'procédures service restaurant hôtel, SOP restauration hôtel, séquence service restaurant hôtel',
+  'hotel-spa-wellness-sops': 'SOP spa hôtel, procédures bien-être hôtel, standard opérationnel spa hôtel, protocole soin spa hôtel',
+  'hotel-room-service-sops': 'SOP room service hôtel, procédures service en chambre, standards room service hôtel',
+}
+
+export async function generateStaticParams() {
+  const locales = ['en', 'fr']
+  return articles.flatMap((article) =>
+    locales.map((locale) => ({ locale, slug: article.slug }))
+  )
+}
 
 export async function generateMetadata({
   params,
@@ -14,9 +47,11 @@ export async function generateMetadata({
   const article = articles.find((a) => a.slug === slug)
   if (!article) return {}
   const content = locale === 'en' ? article.en : article.fr
+  const keywords = locale === 'en' ? KEYWORDS_EN[slug] : KEYWORDS_FR[slug]
   return {
     title: content.title + ' | LuxOps',
     description: content.description,
+    ...(keywords && { keywords }),
     alternates: {
       canonical: `https://www.luxops.fr/${locale}/blog/${slug}`,
       languages: {
@@ -46,10 +81,25 @@ export default async function BlogArticlePage({
     headline: content.title,
     description: content.description,
     datePublished: content.date,
+    dateModified: content.date,
+    url: `https://www.luxops.fr/${locale}/blog/${slug}`,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://www.luxops.fr/${locale}/blog/${slug}`,
+    },
+    author: {
+      '@type': 'Organization',
+      name: 'LuxOps',
+      url: 'https://www.luxops.fr',
+    },
     publisher: {
       '@type': 'Organization',
       name: 'LuxOps',
       url: 'https://www.luxops.fr',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://www.luxops.fr/og-image.png',
+      },
     },
     inLanguage: locale,
   }

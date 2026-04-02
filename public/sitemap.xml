@@ -332,27 +332,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog: Hotel Front Office Procedures EN -->
-  <url>
-    <loc>https://www.luxops.fr/en/blog/hotel-front-office-procedures</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-front-office-procedures"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-front-office-procedures"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/hotel-front-office-procedures"/>
-    <changefreq>monthly</changefreq>
-    <lastmod>2026-03-18</lastmod>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Blog: Hotel Front Office Procedures FR -->
-  <url>
-    <loc>https://www.luxops.fr/fr/blog/hotel-front-office-procedures</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-front-office-procedures"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-front-office-procedures"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/hotel-front-office-procedures"/>
-    <changefreq>monthly</changefreq>
-    <lastmod>2026-03-18</lastmod>
-    <priority>0.7</priority>
-  </url>
+  <!-- Blog: Hotel Front Office Procedures — redirected to hotel-front-office-sop (301) -->
 
   <!-- SEO: Hotel Checklist EN -->
   <url>
@@ -571,6 +551,94 @@
     <priority>0.7</priority>
   </url>
 
+
+  <!-- Blog: Housekeeping Room Inspection EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/blog/housekeeping-room-inspection</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/housekeeping-room-inspection"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/housekeeping-room-inspection"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/housekeeping-room-inspection"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-03-28</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: Housekeeping Room Inspection FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/blog/housekeeping-room-inspection</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/housekeeping-room-inspection"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/housekeeping-room-inspection"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/housekeeping-room-inspection"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-03-28</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: Hotel F&B Restaurant Procedures EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/blog/hotel-fb-restaurant-procedures</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-fb-restaurant-procedures"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-fb-restaurant-procedures"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/hotel-fb-restaurant-procedures"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-03-29</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: Hotel F&B Restaurant Procedures FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/blog/hotel-fb-restaurant-procedures</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-fb-restaurant-procedures"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-fb-restaurant-procedures"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/hotel-fb-restaurant-procedures"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-03-29</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: Hotel Spa & Wellness SOPs EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/blog/hotel-spa-wellness-sops</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-spa-wellness-sops"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-spa-wellness-sops"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/hotel-spa-wellness-sops"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-03-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: Hotel Spa & Wellness SOPs FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/blog/hotel-spa-wellness-sops</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-spa-wellness-sops"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-spa-wellness-sops"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/hotel-spa-wellness-sops"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-03-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: Hotel Room Service SOPs EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/blog/hotel-room-service-sops</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-room-service-sops"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-room-service-sops"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/hotel-room-service-sops"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-03-31</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: Hotel Room Service SOPs FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/blog/hotel-room-service-sops</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-room-service-sops"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-room-service-sops"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/hotel-room-service-sops"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-03-31</lastmod>
+    <priority>0.7</priority>
+  </url>
 
   <!-- Free Hotel Procedures — Lead Magnet EN -->
   <url>

@@ -29,6 +29,17 @@ const nextConfig: NextConfig = {
         destination: '/en/quality-audit',
         permanent: true,
       },
+      // Duplicate content: Google chose hotel-front-office-sop as canonical
+      {
+        source: '/en/blog/hotel-front-office-procedures',
+        destination: '/en/blog/hotel-front-office-sop',
+        permanent: true,
+      },
+      {
+        source: '/fr/blog/hotel-front-office-procedures',
+        destination: '/fr/blog/hotel-front-office-sop',
+        permanent: true,
+      },
     ]
   },
 }
