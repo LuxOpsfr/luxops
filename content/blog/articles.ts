@@ -13,6 +13,7 @@ export interface BlogArticle {
   sections: BlogSection[]
   conclusion: string
   cta: { text: string; href: string }
+  faqs?: { question: string; answer: string }[]
 }
 
 export interface BilingualArticle {
@@ -1496,6 +1497,23 @@ export const articles: BilingualArticle[] = [
       conclusion:
         'A room inspection is only as useful as the criteria behind it. A supervisor who works from a defined checklist and documents what they find creates a system that improves over time. One who relies on general impressions creates a system that is consistent only as long as that person is on shift. The inspection protocol is one of the most important procedures in a housekeeping SOP, and one of the most commonly under-documented.',
       cta: { text: 'View the Housekeeping Playbook', href: '/en/playbooks' },
+      faqs: [
+        {
+          question: 'What is a room inspection checklist in housekeeping?',
+          answer:
+            "A room inspection checklist in housekeeping is a structured list of criteria used by a floor supervisor to verify that a room has been cleaned and prepared to the property's standard before it is released to the front desk. It differs from the cleaning sequence followed by the room attendant: the attendant uses the SOP to perform the work, the supervisor uses the checklist to confirm the result. A well-structured checklist covers the bathroom, bed and linen, surfaces and fixtures, lighting and tech functionality, and the entrance area including wardrobe and minibar.",
+        },
+        {
+          question: 'What does room inspection mean in housekeeping?',
+          answer:
+            'Room inspection in housekeeping refers to the structured quality check carried out by a floor supervisor after a room attendant has completed servicing a room, before the room status is updated to clean and available in the PMS. It is a quality gate, not a walkthrough. The purpose is to verify the room meets the defined standard at every point, including areas frequently missed under time pressure: grout lines, amenity placement, linen alignment and equipment functionality.',
+        },
+        {
+          question: 'What should a housekeeping supervisor check during a room inspection?',
+          answer:
+            'The supervisor should follow a fixed sequence from entry to exit. In the bathroom: chrome and fixtures (water marks, limescale), mirror and glass surfaces, amenity placement, towel folding and positioning, toilet exterior and interior, floor and grout. In the bedroom: linen alignment, pillow and cushion placement, surface condition, lighting and tech functionality, wardrobe interior, minibar and floor condition. Each item should be checked against a defined standard, not a general impression.',
+        },
+      ],
     },
     fr: {
       title: "Checklist d'inspection des chambres : comment les superviseurs housekeeping maintiennent des standards cohérents",
@@ -1621,6 +1639,23 @@ export const articles: BilingualArticle[] = [
       conclusion:
         "Une inspection de chambre n'est utile que si les critères derrière elle le sont aussi. Un superviseur qui travaille à partir d'une checklist définie et documente ce qu'il trouve crée un système qui s'améliore dans le temps. Celui qui se base sur une impression générale crée un système qui n'est cohérent que tant que cette personne est en poste. Le protocole d'inspection est l'une des procédures les plus importantes dans un SOP housekeeping, et l'une des plus souvent sous-documentées.",
       cta: { text: 'Voir le Playbook Housekeeping', href: '/fr/playbooks' },
+      faqs: [
+        {
+          question: "Qu'est-ce qu'une checklist d'inspection chambre en housekeeping ?",
+          answer:
+            "Une checklist d'inspection chambre est une liste structurée de critères précis utilisée par la gouvernante d'étage pour vérifier qu'une chambre a été nettoyée et préparée selon le standard de l'établissement, avant d'être libérée à la réception. Elle est différente de la séquence de nettoyage suivie par l'équipier : l'équipier utilise le SOP pour réaliser le travail, la gouvernante d'étage utilise la checklist pour vérifier le résultat. Une checklist bien structurée couvre la salle de bain, le lit et le linge, les surfaces et équipements, l'éclairage et les appareils, et la zone d'entrée incluant armoire et minibar.",
+        },
+        {
+          question: "Que signifie l'inspection de chambre en housekeeping ?",
+          answer:
+            "L'inspection de chambre désigne le contrôle qualité structuré réalisé par la gouvernante d'étage après qu'un équipier a terminé la remise en état d'une chambre, avant que le statut soit mis à jour comme propre et disponible dans le PMS. C'est une porte qualité, pas un passage rapide. L'objectif est de vérifier que la chambre répond au standard défini sur chaque point, y compris les zones fréquemment manquées sous pression : joints, placement des amenities, alignement du linge et fonctionnement des équipements.",
+        },
+        {
+          question: "Que doit vérifier la gouvernante lors de l'inspection d'une chambre ?",
+          answer:
+            "La gouvernante d'étage doit suivre une séquence fixe de l'entrée à la sortie. Dans la salle de bain : robinetterie et éléments chromés (traces d'eau, tartre), miroirs et surfaces vitrées, placement des amenities, pliage et placement des serviettes, WC extérieur et intérieur, sol et joints. Dans la chambre : alignement du linge, placement des oreillers et coussins décoratifs, état des surfaces, fonctionnement de l'éclairage et des équipements, intérieur de l'armoire, minibar et état du sol. Chaque point doit être vérifié par rapport à un standard défini, pas à une impression générale.",
+        },
+      ],
     },
   },
   {

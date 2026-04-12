@@ -12,7 +12,7 @@ const KEYWORDS_EN: Record<string, string> = {
   'hotel-housekeeping-checklist': 'hotel housekeeping checklist, housekeeping SOP, room attendant checklist, hotel cleaning checklist',
   'hotel-fb-service-standards': 'hotel F&B service standards, hotel restaurant service procedures, food and beverage SOP hotel',
   'hotel-front-office-procedures': 'hotel front office procedures, hotel reception SOP, check-in check-out procedures hotel',
-  'housekeeping-room-inspection': 'hotel room inspection checklist, housekeeping supervisor inspection, room inspection procedure hotel, quality control housekeeping',
+  'housekeeping-room-inspection': 'hotel room inspection checklist, housekeeping supervisor inspection, room inspection checklist, inspection checklist in housekeeping, room inspection meaning, room inspection procedure hotel, quality control housekeeping',
   'hotel-fb-restaurant-procedures': 'hotel restaurant service procedures, F&B procedures hotel, restaurant SOP hotel, sequence of service hotel',
   'hotel-spa-wellness-sops': 'hotel spa SOP, wellness procedures hotel, spa standard operating procedures, spa treatment protocol hotel',
   'hotel-room-service-sops': 'hotel room service SOP, in-room dining procedures, room service standards hotel',
@@ -25,7 +25,7 @@ const KEYWORDS_FR: Record<string, string> = {
   'hotel-housekeeping-checklist': 'checklist housekeeping hôtel, SOP housekeeping, checklist femme de chambre, procédures ménage hôtel',
   'hotel-fb-service-standards': 'standards service F&B hôtel, procédures restaurant hôtel, SOP restauration hôtel',
   'hotel-front-office-procedures': 'procédures réception hôtel, SOP front office, procédures check-in check-out hôtel',
-  'housekeeping-room-inspection': 'inspection chambre hôtel, checklist inspection superviseur, contrôle qualité housekeeping, gouvernante étage inspection',
+  'housekeeping-room-inspection': 'inspection chambre hôtel, checklist inspection superviseur, checklist inspection housekeeping, procédure inspection chambre hôtel, gouvernante étage inspection, contrôle qualité housekeeping',
   'hotel-fb-restaurant-procedures': 'procédures service restaurant hôtel, SOP restauration hôtel, séquence service restaurant hôtel',
   'hotel-spa-wellness-sops': 'SOP spa hôtel, procédures bien-être hôtel, standard opérationnel spa hôtel, protocole soin spa hôtel',
   'hotel-room-service-sops': 'SOP room service hôtel, procédures service en chambre, standards room service hôtel',
@@ -104,12 +104,30 @@ export default async function BlogArticlePage({
     inLanguage: locale,
   }
 
+  const faqSchema = content.faqs && content.faqs.length > 0
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: content.faqs.map((f) => ({
+          '@type': 'Question',
+          name: f.question,
+          acceptedAnswer: { '@type': 'Answer', text: f.answer },
+        })),
+      }
+    : null
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
       <div className="pt-16">
         {/* Hero */}
         <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
@@ -213,6 +231,23 @@ export default async function BlogArticlePage({
               <div className="mb-12 p-8 bg-gray-50 rounded-2xl border border-gray-100">
                 <p className="text-gray-600 leading-relaxed italic">{content.conclusion}</p>
               </div>
+
+              {/* FAQ section */}
+              {content.faqs && content.faqs.length > 0 && (
+                <div className="mb-12">
+                  <h2 className="text-2xl font-bold text-[#111111] mb-8">
+                    {isEn ? 'Frequently Asked Questions' : 'Foire aux questions'}
+                  </h2>
+                  <div className="space-y-6">
+                    {content.faqs.map((faq, i) => (
+                      <div key={i} className="border-b border-gray-100 pb-6 last:border-0 last:pb-0">
+                        <h3 className="text-lg font-semibold text-[#111111] mb-2">{faq.question}</h3>
+                        <p className="text-gray-500 leading-relaxed">{faq.answer}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </section>
