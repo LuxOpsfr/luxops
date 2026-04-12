@@ -288,27 +288,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog: Hotel Housekeeping Checklist EN -->
-  <url>
-    <loc>https://www.luxops.fr/en/blog/hotel-housekeeping-checklist</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-housekeeping-checklist"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-housekeeping-checklist"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/hotel-housekeeping-checklist"/>
-    <changefreq>monthly</changefreq>
-    <lastmod>2026-03-18</lastmod>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Blog: Hotel Housekeeping Checklist FR -->
-  <url>
-    <loc>https://www.luxops.fr/fr/blog/hotel-housekeeping-checklist</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-housekeeping-checklist"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-housekeeping-checklist"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/hotel-housekeeping-checklist"/>
-    <changefreq>monthly</changefreq>
-    <lastmod>2026-03-18</lastmod>
-    <priority>0.7</priority>
-  </url>
+  <!-- Blog: Hotel Housekeeping Checklist — redirected 301 to /en/hotel-housekeeping-checklist (standalone canonical page) -->
 
   <!-- Blog: Hotel F&B Service Standards EN -->
   <url>

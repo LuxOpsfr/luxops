@@ -40,6 +40,28 @@ const nextConfig: NextConfig = {
         destination: '/fr/blog/hotel-front-office-sop',
         permanent: true,
       },
+      // Duplicate content: blog article duplicates standalone optimized page
+      {
+        source: '/en/blog/hotel-housekeeping-checklist',
+        destination: '/en/hotel-housekeeping-checklist',
+        permanent: true,
+      },
+      {
+        source: '/fr/blog/hotel-housekeeping-checklist',
+        destination: '/fr/hotel-housekeeping-checklist',
+        permanent: true,
+      },
+      // No-locale URLs found by Googlebot — make redirect explicit and permanent
+      {
+        source: '/blog/hotel-room-service-sops',
+        destination: '/en/blog/hotel-room-service-sops',
+        permanent: true,
+      },
+      {
+        source: '/blog/hotel-fb-restaurant-procedures',
+        destination: '/en/blog/hotel-fb-restaurant-procedures',
+        permanent: true,
+      },
     ]
   },
 }
