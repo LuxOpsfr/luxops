@@ -14,6 +14,12 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Root URL without locale — explicit 301 so Google stops looping on the middleware redirect
+      {
+        source: '/',
+        destination: '/en',
+        permanent: true,
+      },
       {
         source: '/en/process-sur-mesure',
         destination: '/en/bespoke-process',
