@@ -17,7 +17,7 @@ interface Purchase {
   locale: string
 }
 
-const SUPABASE_STORAGE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL + '/storage/v1/object/public/playbooks/'
+const SUPABASE_STORAGE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL + '/storage/v1/object/public/Playbook/'
 
 function fileUrl(path: string) {
   return SUPABASE_STORAGE_URL + path
