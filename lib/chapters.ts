@@ -31,7 +31,7 @@ export const PRICE_TO_PLAYBOOK: Record<string, string> = {
   price_1TBZ9TDVLJTOFkjUwWnoKaGk: 'housekeeping',
   price_1TBZ9iDVLJTOFkjU3Os9VLRc: 'fb',
   price_1TBdcNDVLJTOFkjURLNAORmJ: 'spa', // test 0€
-  price_1TBZ9vDVLJTOFkjUT1FHhqUiY: 'spa',
+  price_1TBZ9vDVLJTOFkjUT1FHhqUi: 'spa',
   price_1TBZB5DVLJTOFkjUwmgvTPRW: 'bundle', // bundle = all 4
 }
 
