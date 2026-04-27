@@ -145,6 +145,24 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
             {/* Product intro */}
             <p className="text-sm text-[#4f6074] leading-relaxed mb-8 max-w-2xl">{t('product_intro')}</p>
 
+            {/* Free chapter banner */}
+            <div
+              className="flex flex-col sm:flex-row items-center justify-between gap-4 px-6 py-4 mb-8"
+              style={{ backgroundColor: '#eef4ff', borderLeft: '3px solid #003d9b', borderRadius: '0.125rem' }}
+            >
+              <p className="text-sm text-[#0a1d2e] font-medium">
+                {isEn
+                  ? 'Not ready to buy? Download a free introduction chapter.'
+                  : "Pas encore prêt à acheter ? Téléchargez un chapitre d'introduction gratuitement."}
+              </p>
+              <Link
+                href={`/${locale}/free-hotel-procedures`}
+                className="flex-shrink-0 text-xs font-bold text-[#003d9b] underline underline-offset-4 hover:text-[#002d7a] transition-colors whitespace-nowrap"
+              >
+                {isEn ? 'Download free chapter →' : 'Télécharger →'}
+              </Link>
+            </div>
+
             {/* Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {filteredPlaybooks.map((pb) => {
@@ -218,6 +236,52 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
           </div>
         </div>
       </main>
+
+      {/* Testimonials */}
+      <section className="py-20 px-6 bg-white" style={{ borderTop: '1px solid rgba(195,198,214,0.2)' }}>
+        <div className="max-w-7xl mx-auto">
+          <p className="text-xs font-bold uppercase tracking-widest text-[#4f6074] mb-10">
+            {isEn ? 'What professionals say' : 'Ce que disent les professionnels'}
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                quote: isEn
+                  ? 'The procedures clearly reflect real hotel experience. You can tell it was built from the floor up.'
+                  : 'Les procédures reflètent une vraie expérience du terrain. Ça se sent immédiatement.',
+                role: isEn ? 'Operations Manager' : 'Responsable des opérations',
+              },
+              {
+                quote: isEn
+                  ? 'Applicable from day one, regardless of property type or size.'
+                  : 'Applicable dès le premier jour, quel que soit le type ou la taille de l\'établissement.',
+                role: isEn ? 'Executive Housekeeper' : 'Gouvernante Générale',
+              },
+              {
+                quote: isEn
+                  ? 'We used it across two very different properties. It worked for both.'
+                  : 'Nous l\'avons utilisé dans deux établissements très différents. Ça a fonctionné dans les deux cas.',
+                role: isEn ? 'Hotel Group Manager' : 'Directeur de groupe hôtelier',
+              },
+              {
+                quote: isEn
+                  ? 'Solid procedures you can actually adapt to your own standards without rewriting everything.'
+                  : 'Des procédures solides que l\'on peut adapter à ses propres standards sans tout réécrire.',
+                role: isEn ? 'General Manager' : 'Directeur Général',
+              },
+            ].map((t, i) => (
+              <div
+                key={i}
+                className="flex flex-col justify-between p-6"
+                style={{ backgroundColor: '#f8f9ff', borderRadius: '0.125rem' }}
+              >
+                <p className="text-sm text-[#0a1d2e] leading-relaxed mb-6">"{t.quote}"</p>
+                <p className="text-xs font-bold text-[#4f6074] uppercase tracking-widest">{t.role}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Cross-sell Formation */}
       <section className="py-16 px-6" style={{ backgroundColor: '#f8f9ff' }}>
