@@ -6,11 +6,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const isEN = locale === 'en'
   return {
     title: isEN
-      ? 'Hotel Housekeeping Checklist: Room Inspection, SOP and Quality Audit | LuxOps'
-      : 'Checklist Housekeeping Hôtel : Inspection de Chambre, SOP et Audit Qualité | LuxOps',
+      ? 'Free Hotel Housekeeping Checklist (Printable PDF) | LuxOps'
+      : 'Checklist Housekeeping Hôtel Gratuite (PDF Imprimable) | LuxOps',
     description: isEN
-      ? 'Free printable hotel housekeeping checklist for room attendants, supervisors and quality audits. 30-point room inspection, supervisor rounds and LQA-ready audit grid.'
-      : 'Checklist housekeeping hôtel gratuite et imprimable pour femmes de chambre, gouvernantes d\'étage et audits qualité. Inspection 30 points, tournée superviseur et grille audit LQA.',
+      ? 'Download a free 30-point hotel room inspection checklist, a supervisor rounds template and an LQA audit grid. Printable and ready to use today.'
+      : 'Téléchargez une checklist inspection chambre 30 points, un modèle de tournée superviseur et une grille audit LQA. Gratuite et prête à imprimer.',
     keywords: isEN
       ? 'hotel housekeeping checklist, hotel room inspection checklist, hotel quality assurance checklist, hotel quality control checklist, housekeeping SOP checklist, housekeeping audit, hotel inspection'
       : 'checklist housekeeping hôtel, checklist inspection chambre hôtel, audit qualité housekeeping, gouvernante étage checklist, SOP housekeeping hôtel, contrôle qualité housekeeping',

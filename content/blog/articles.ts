@@ -1374,9 +1374,9 @@ export const articles: BilingualArticle[] = [
   {
     slug: 'housekeeping-room-inspection',
     en: {
-      title: 'Hotel Room Inspection Checklist: How Housekeeping Supervisors Maintain Consistent Standards',
+      title: 'Hotel Room Inspection Checklist for Supervisors',
       description:
-        'A practical guide to the supervisor room inspection process in luxury hotels. Covers inspection sequence, what to check, how to document defects, and how to return a room that does not meet standard.',
+        'How housekeeping supervisors run a structured room inspection in luxury hotels. Step-by-step sequence, defect documentation and how to fail a room correctly.',
       date: '2026-03-28',
       readTime: '8 min read',
       intro:

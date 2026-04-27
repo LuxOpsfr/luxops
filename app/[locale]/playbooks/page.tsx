@@ -10,11 +10,11 @@ export async function generateMetadata({
   const isEn = locale === 'en'
   return {
     title: isEn
-      ? 'Hotel Operations Playbooks | Front Office, Housekeeping, F&B, Spa SOPs | LuxOps'
-      : 'Playbooks Opérationnels Hôteliers | SOPs Front Office, Housekeeping, F&B, Spa | LuxOps',
+      ? 'Hotel SOP Playbooks for 5-Star Operations | LuxOps'
+      : 'Playbooks SOP pour Hôtels 5 Étoiles | LuxOps',
     description: isEn
-      ? 'Complete operational playbooks for high-end hotels. Documented procedures, service standards and SOPs for Front Office, Housekeeping, F&B and Spa departments.'
-      : 'Playbooks opérationnels complets pour les hôtels haut de gamme. Procédures documentées, standards de service et SOPs pour tous les départements clés.',
+      ? 'Professionally written SOP playbooks for luxury hotel teams — Front Office, Housekeeping, F&B and Spa. Download in PDF and PowerPoint. From €67.'
+      : 'Playbooks SOP rédigés pour les équipes hôtelières haut de gamme — Front Office, Housekeeping, F&B et Spa. Téléchargement PDF et PowerPoint. À partir de 67 €.',
     alternates: {
       canonical: `https://www.luxops.fr/${locale}/playbooks`,
       languages: {
