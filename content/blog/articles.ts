@@ -2259,4 +2259,590 @@ export const articles: BilingualArticle[] = [
       cta: { text: 'Voir le Playbook F&B', href: '/fr/playbooks' },
     },
   },
+  {
+    slug: 'hotel-standard-operating-procedures',
+    en: {
+      title: 'Hotel Standard Operating Procedures: A Complete Guide for Department Managers',
+      description:
+        'What hotel SOPs should cover, how to write them so staff actually follow them, and what separates a working SOP library from a document no one reads.',
+      date: '2026-04-28',
+      readTime: '9 min read',
+      intro:
+        'Most hotels have some version of standard operating procedures. Most of those documents are out of date, stored somewhere staff cannot find them, and written in a way that does not reflect how work actually gets done. A hotel SOP that works is not a compliance document. It is a training tool, a quality benchmark and an onboarding shortcut all in one. This guide covers what hotel SOPs should contain, how to write them so they get used, and how to maintain them when the property evolves.',
+      sections: [
+        {
+          h2: 'What Hotel Standard Operating Procedures Actually Are',
+          content:
+            'A standard operating procedure is a written description of how a specific task should be performed every time, by any qualified team member, to the same result. That definition is important because it sets the bar. An SOP is not a general policy statement. It is not a training video script. It is a step-by-step sequence that someone can follow without asking a supervisor and arrive at the correct outcome.',
+          h3Items: [
+            {
+              heading: 'SOPs vs. policies vs. training documents',
+              text: 'A policy sets a rule. "All guest complaints must be resolved within two hours." An SOP describes how. "Acknowledge the complaint, apologise, offer a resolution, confirm satisfaction, log in the PMS under the guest record." A training document explains the reasoning behind the rule. SOPs sit in the middle: practical, procedural, repeatable. All three serve different purposes and none replaces the other.',
+            },
+            {
+              heading: 'What makes an SOP actually usable',
+              text: 'An SOP that staff follow has four characteristics. It is short enough to read in under two minutes. It uses the vocabulary staff actually speak. It was written by or reviewed with the people doing the job. And it lives somewhere accessible during the shift, not in a shared drive folder that requires three clicks and a login.',
+            },
+          ],
+        },
+        {
+          h2: 'Why Most Hotel SOPs Fail in Practice',
+          content:
+            'The most common failure is not the content of the SOP. It is the delivery and maintenance. SOPs written during a pre-opening phase and never updated are a liability, not an asset. A procedure that describes how things used to work, before the PMS changed or the department was restructured, creates confusion rather than consistency.',
+          h3Items: [
+            {
+              heading: 'Written by management, ignored by operations',
+              text: 'SOPs drafted by a general manager or HR director without input from the team rarely get used. The language is formal, the sequence does not match the physical layout of the workspace, and the steps describe an ideal that does not account for what happens when two rooms finish at the same time. Effective SOPs are written collaboratively: management sets the standard, operations confirms the sequence.',
+            },
+            {
+              heading: 'No version control or review schedule',
+              text: 'Every SOP should carry a version date and a review date. When the check-in procedure changes because of a new PMS interface, the SOP needs to reflect that before the next training cycle. A quarterly review schedule for high-frequency procedures and an annual review for lower-frequency ones is a practical baseline for most properties.',
+            },
+            {
+              heading: 'No accountability loop',
+              text: 'An SOP without an attached inspection or audit process has no mechanism for enforcement. The quality check, whether a supervisor sign-off, a mystery audit or a peer review, is what converts a written procedure into an operational standard. Without it, following the SOP is optional.',
+            },
+          ],
+        },
+        {
+          h2: 'How to Structure a Hotel SOP',
+          content:
+            'Format matters as much as content. A well-structured SOP can be read quickly, used as a reference during a task and updated without rewriting the whole document. The following structure works for most hotel departments.',
+          h3Items: [
+            {
+              heading: 'Header information',
+              text: 'Every SOP should open with: the procedure name, the department it applies to, the role responsible for executing it, the version number, the date it was last reviewed, and who approved it. This is the document management layer that keeps your SOP library reliable.',
+            },
+            {
+              heading: 'Purpose statement',
+              text: 'One to two sentences explaining why this procedure exists and what a correct execution achieves. Keep it outcome-focused: "To ensure every departing guest receives a complete check-out that closes their account accurately and ends the stay on a positive interaction."',
+            },
+            {
+              heading: 'Step-by-step sequence',
+              text: 'Numbered steps, one action per step. Avoid compound steps. "Verify the bill and ask if the guest enjoyed their stay" should be two steps, not one. Each step should be specific enough that there is no ambiguity about what a completed step looks like. Include timing where it matters: "Within 30 seconds of the guest approaching the desk."',
+            },
+            {
+              heading: 'Exceptions and escalation triggers',
+              text: 'Every procedure has edge cases. Document the most common ones: what to do if the guest disputes a charge, if the PMS is down, if there is no manager on duty. An SOP that only covers the smooth scenario fails at the moment it is most needed.',
+            },
+          ],
+        },
+        {
+          h2: 'Core SOP Categories by Department',
+          content:
+            'Hotel operations divide into four primary departments, each with distinct SOP requirements. The procedures that drive the most guest-facing risk, front office, housekeeping, food and beverage, and spa, are where documented standards have the clearest ROI.',
+          h3Items: [
+            {
+              heading: 'Front desk (front office)',
+              text: 'Priority SOPs: check-in sequence, check-out sequence, late check-out handling, complaint resolution, VIP arrival protocol, telephone standards and no-show procedure. Check-in and check-out are the bookends of every guest stay. If the sequence is inconsistent, the guest experience is inconsistent by definition.',
+            },
+            {
+              heading: 'Housekeeping',
+              text: 'Priority SOPs: room attendant sequence for checkout rooms and stayovers, supervisor inspection procedure, lost and found handling, DND room management, deep cleaning schedule and amenity placement standards. Housekeeping is the highest-volume department in most hotels and the one where inconsistency is most visible.',
+            },
+            {
+              heading: 'Food and beverage',
+              text: 'Priority SOPs: table setup and mise en place, sequence of service, beverage service standards, allergy and dietary restriction handling, end-of-service closure and room service delivery procedure. F&B SOPs need to account for both the full-service standard and the exception: what happens when the kitchen is behind, when a guest has an undisclosed allergy, when a table runs over its reservation window.',
+            },
+            {
+              heading: 'Spa and wellness',
+              text: 'Priority SOPs: treatment room preparation, guest consultation and intake, contraindication screening, treatment protocol by modality, retail recommendation sequence and post-treatment follow-up. Spa SOPs carry a safety dimension that other departments do not. A guest with a health contraindication receiving a treatment that should not have been performed is an operational and legal failure, not just a service failure.',
+            },
+          ],
+        },
+        {
+          h2: 'Implementing Your SOP Library',
+          content:
+            'Writing SOPs is the easy part. Getting a team to use them, especially an existing team with established habits, requires a change management approach, not just a file upload to a shared drive.',
+          h3Items: [
+            {
+              heading: 'Start with the highest-risk procedures',
+              text: 'Do not try to document everything at once. Identify the five procedures in each department that, if done inconsistently, create the most guest complaints, the most rework or the highest operational risk. Write those first. An SOP library of fifty well-used documents is more valuable than two hundred that no one opens.',
+            },
+            {
+              heading: 'Train to the SOP, not alongside it',
+              text: 'When a new team member is onboarded, the SOP should be the primary training document, not a supplement. Walk through the procedure step by step. Have them perform it once with supervision, once independently. Sign off only when the output matches the standard. This makes the SOP the baseline, not an afterthought.',
+            },
+            {
+              heading: 'Review during briefings, not just during onboarding',
+              text: 'A short SOP review during a pre-shift briefing, one procedure, three minutes, keeps the standard visible. Over a quarter, you can cycle through the priority procedures for each department. Teams that revisit SOPs regularly treat them as live documents. Teams that see them only during training treat them as historical.',
+            },
+          ],
+        },
+        {
+          h2: 'What Good Hotel SOPs Enable',
+          content:
+            'The operational benefit of a working SOP library is consistency at scale: the same room, the same check-in, the same plate presentation whether it is Tuesday morning with a full team or Saturday night with a mix of seasonal staff. The less visible benefit is that documented procedures make everything else faster. Training new staff is faster. Auditing quality is faster. Identifying the source of a recurring complaint is faster. The SOP is the foundation that everything operational is built on.',
+          h3Items: [
+            {
+              heading: 'Scalability for multi-property operations',
+              text: 'For groups managing more than one property, SOPs become the mechanism for brand consistency. A guest who stays at your property in Miami and your property in San Francisco should recognise the same service standard. That only happens if the procedures are documented, shared and actively enforced across both locations.',
+            },
+            {
+              heading: 'Reduced reliance on institutional knowledge',
+              text: 'In most hotels, the most experienced team members carry the operating knowledge in their heads. When they leave, the knowledge leaves with them. A mature SOP library externalises that knowledge. The departure of a long-tenured supervisor does not create a gap in quality if the procedures they perfected over years are written down and trained.',
+            },
+          ],
+        },
+      ],
+      conclusion:
+        'A hotel standard operating procedure is only as useful as its adoption. Writing the document is the start. The work is building a culture where procedures are the default, where staff know where to find them, where managers enforce them during inspections and briefings, and where the library is kept current as the property evolves. That is a management discipline, not a documentation project.',
+      cta: { text: 'View Our SOP Playbooks', href: '/en/playbooks' },
+      faqs: [
+        {
+          question: 'How many SOPs does a hotel typically need?',
+          answer: 'A mid-size hotel with four to five departments typically maintains between 40 and 80 active SOPs across front desk, housekeeping, F&B and spa. The number matters less than coverage of high-frequency and high-risk procedures. Start with 8 to 10 per department and expand from there.',
+        },
+        {
+          question: 'How often should hotel SOPs be reviewed?',
+          answer: 'High-frequency procedures such as check-in, check-out and room cleaning should be reviewed at minimum annually, or whenever the underlying system or standard changes. Lower-frequency procedures can be reviewed every one to two years. Every SOP should carry a review date.',
+        },
+        {
+          question: 'What is the difference between a hotel SOP and a brand standard?',
+          answer: 'A brand standard defines what the output should look like: the amenity placement, the greeting script, the turn-down presentation. An SOP defines how to achieve it: the sequence, the timing, the materials used. Brand standards set the benchmark. SOPs are the instruction set for hitting it.',
+        },
+        {
+          question: 'Should hotel SOPs be the same for all properties in a group?',
+          answer: 'Core procedures should be consistent across properties in the same group to maintain brand standards. Execution details can be adapted to local context, property size and facility type. A 50-room boutique and a 300-room full-service hotel will have different sequences for the same procedure, but the quality standard should be identical.',
+        },
+      ],
+    },
+    fr: {
+      title: 'Procédures Opérationnelles Hôtelières (SOP) : Le Guide Complet pour les Managers',
+      description:
+        'Ce que doivent couvrir les SOP hôtelières, comment les rédiger pour que les équipes les appliquent, et ce qui distingue une bibliothèque SOP efficace d\'un document que personne ne lit.',
+      date: '2026-04-28',
+      readTime: '9 min de lecture',
+      intro:
+        'La plupart des hôtels disposent d\'une version de procédures opérationnelles standard. La plupart de ces documents sont obsolètes, stockés dans un endroit introuvable et rédigés d\'une manière qui ne reflète pas le travail réel. Une SOP hôtelière efficace n\'est pas un document de conformité. C\'est à la fois un outil de formation, un référentiel qualité et un accélérateur d\'intégration. Ce guide couvre ce que les SOP hôtelières doivent contenir, comment les rédiger pour qu\'elles soient utilisées et comment les maintenir à jour.',
+      sections: [
+        {
+          h2: 'Ce que sont réellement les procédures opérationnelles hôtelières',
+          content:
+            'Une procédure opérationnelle standard est une description écrite de la façon dont une tâche spécifique doit être réalisée à chaque fois, par n\'importe quel membre qualifié de l\'équipe, pour le même résultat. Cette définition est importante car elle fixe le niveau d\'exigence. Une SOP n\'est pas une déclaration de politique générale. Ce n\'est pas un script de vidéo de formation. C\'est une séquence étape par étape qu\'un collaborateur peut suivre sans demander à son superviseur et aboutir au résultat correct.',
+          h3Items: [
+            {
+              heading: 'SOP vs. politique vs. documents de formation',
+              text: 'Une politique fixe une règle. "Toutes les réclamations clients doivent être résolues dans les deux heures." Une SOP décrit comment. "Reconnaître la réclamation, présenter les excuses, proposer une solution, confirmer la satisfaction, noter dans le PMS sous la fiche client." Un document de formation explique le raisonnement derrière la règle. Les SOP se situent au milieu : pratiques, procédurales, reproductibles.',
+            },
+            {
+              heading: 'Ce qui rend une SOP vraiment utilisable',
+              text: 'Une SOP que le personnel suit présente quatre caractéristiques. Elle est suffisamment courte pour être lue en moins de deux minutes. Elle utilise le vocabulaire que le personnel emploie réellement. Elle a été rédigée par ou relue avec les personnes qui font le travail. Et elle se trouve quelque part d\'accessible pendant le service, pas dans un dossier partagé nécessitant trois clics et une connexion.',
+            },
+          ],
+        },
+        {
+          h2: 'Pourquoi la plupart des SOP hôtelières échouent en pratique',
+          content:
+            'L\'échec le plus courant n\'est pas le contenu de la SOP. C\'est la diffusion et la maintenance. Les SOP rédigées lors d\'une phase de pré-ouverture et jamais mises à jour sont un frein, pas un atout. Une procédure qui décrit comment les choses fonctionnaient avant le changement de PMS ou la restructuration du département crée de la confusion plutôt que de la cohérence.',
+          h3Items: [
+            {
+              heading: 'Rédigées par le management, ignorées par l\'opérationnel',
+              text: 'Les SOP rédigées par un directeur général ou un responsable RH sans apport de l\'équipe sont rarement utilisées. Le langage est formel, la séquence ne correspond pas à l\'organisation physique de l\'espace de travail et les étapes décrivent un idéal qui ne tient pas compte de ce qui se passe quand deux chambres se terminent en même temps. Les SOP efficaces sont co-construites : le management fixe le standard, l\'opérationnel valide la séquence.',
+            },
+            {
+              heading: 'Pas de contrôle de version ni de calendrier de révision',
+              text: 'Toute SOP doit porter une date de version et une date de révision. Quand la procédure d\'accueil change en raison d\'une nouvelle interface PMS, la SOP doit le refléter avant le prochain cycle de formation. Un calendrier de révision trimestriel pour les procédures haute fréquence et annuel pour les procédures moins fréquentes est une base pratique pour la plupart des établissements.',
+            },
+            {
+              heading: 'Pas de boucle de responsabilité',
+              text: 'Une SOP sans processus d\'inspection ou d\'audit associé n\'a pas de mécanisme d\'application. Le contrôle qualité, qu\'il s\'agisse d\'une validation superviseur, d\'un audit mystère ou d\'une révision par les pairs, est ce qui transforme une procédure écrite en standard opérationnel. Sans lui, respecter la SOP est facultatif.',
+            },
+          ],
+        },
+        {
+          h2: 'Comment structurer une SOP hôtelière',
+          content:
+            'La forme compte autant que le contenu. Une SOP bien structurée peut être lue rapidement, utilisée comme référence pendant une tâche et mise à jour sans réécrire l\'intégralité du document. La structure suivante fonctionne pour la plupart des départements hôteliers.',
+          h3Items: [
+            {
+              heading: 'Informations d\'en-tête',
+              text: 'Toute SOP doit s\'ouvrir avec : le nom de la procédure, le département concerné, le poste responsable de son exécution, le numéro de version, la date de dernière révision et le validateur. C\'est la couche de gestion documentaire qui maintient la fiabilité de votre bibliothèque SOP.',
+            },
+            {
+              heading: 'Objectif de la procédure',
+              text: 'Une à deux phrases expliquant pourquoi cette procédure existe et ce qu\'une exécution correcte produit. Restez orienté résultat : "S\'assurer que chaque client au départ reçoit un check-out complet qui solde son compte avec précision et termine le séjour sur une interaction positive."',
+            },
+            {
+              heading: 'Séquence étape par étape',
+              text: 'Étapes numérotées, une action par étape. Évitez les étapes composées. "Vérifier la note et demander si le client a apprécié son séjour" doit être deux étapes, pas une. Chaque étape doit être suffisamment précise pour qu\'il n\'y ait aucune ambiguïté sur ce à quoi ressemble une étape accomplie. Incluez les délais quand cela compte : "Dans les 30 secondes suivant l\'approche du client à la réception."',
+            },
+            {
+              heading: 'Exceptions et déclencheurs d\'escalade',
+              text: 'Toute procédure a des cas particuliers. Documentez les plus courants : que faire si le client conteste une charge, si le PMS est en panne, s\'il n\'y a pas de manager de service. Une SOP qui ne couvre que le scénario sans accroc échoue au moment où on en a le plus besoin.',
+            },
+          ],
+        },
+        {
+          h2: 'Catégories de SOP principales par département',
+          content:
+            'Les opérations hôtelières se divisent en quatre départements principaux, chacun avec des exigences SOP distinctes. Les procédures qui génèrent le plus de risques côté client, réception, housekeeping, restauration et spa, sont celles où les standards documentés ont le meilleur retour sur investissement.',
+          h3Items: [
+            {
+              heading: 'Réception (Front Office)',
+              text: 'SOP prioritaires : séquence check-in, séquence check-out, gestion des late check-out, résolution des réclamations, protocole d\'arrivée VIP, standards téléphoniques et procédure no-show. Le check-in et le check-out sont les deux extrémités de chaque séjour client. Si la séquence est incohérente, l\'expérience client l\'est par définition.',
+            },
+            {
+              heading: 'Housekeeping',
+              text: 'SOP prioritaires : séquence femme de chambre pour chambres départ et recouche, procédure d\'inspection superviseur, gestion des objets trouvés, gestion des chambres DND, calendrier de nettoyage approfondi et standards de placement des amenités. Le housekeeping est le département à plus haut volume dans la plupart des hôtels et celui où l\'incohérence est la plus visible.',
+            },
+            {
+              heading: 'Restauration (F&B)',
+              text: 'SOP prioritaires : mise en place et dressage de table, séquence de service, standards de service des boissons, gestion des allergies et régimes alimentaires, clôture de service et procédure de livraison room service. Les SOP F&B doivent tenir compte du service standard et de l\'exception : que se passe-t-il quand la cuisine est en retard, quand un client a une allergie non déclarée, quand une table dépasse son créneau de réservation.',
+            },
+            {
+              heading: 'Spa et bien-être',
+              text: 'SOP prioritaires : préparation de la salle de soins, consultation et prise en charge client, screening des contre-indications, protocole de soin par modalité, séquence de recommandation retail et suivi post-soin. Les SOP spa comportent une dimension sécurité que les autres départements n\'ont pas. Un client présentant une contre-indication recevant un soin qui n\'aurait pas dû être réalisé est un manquement opérationnel et juridique, pas seulement un manquement de service.',
+            },
+          ],
+        },
+        {
+          h2: 'Mettre en place votre bibliothèque SOP',
+          content:
+            'Rédiger les SOP est la partie facile. Amener une équipe à les utiliser, surtout une équipe existante avec des habitudes établies, nécessite une approche de conduite du changement, pas seulement un upload dans un dossier partagé.',
+          h3Items: [
+            {
+              heading: 'Commencez par les procédures à risque le plus élevé',
+              text: 'N\'essayez pas de tout documenter en une fois. Identifiez les cinq procédures dans chaque département qui, si elles sont réalisées de façon incohérente, génèrent le plus de réclamations clients, le plus de reprises ou le risque opérationnel le plus élevé. Rédigez celles-là en premier. Une bibliothèque SOP de cinquante documents bien utilisés vaut plus que deux cents que personne n\'ouvre.',
+            },
+            {
+              heading: 'Formez à partir de la SOP, pas en parallèle',
+              text: 'Lors de l\'intégration d\'un nouveau collaborateur, la SOP doit être le document de formation principal, pas un supplément. Parcourez la procédure étape par étape. Faites-la exécuter une fois avec supervision, une fois en autonomie. Validez uniquement quand le résultat correspond au standard. Cela fait de la SOP la référence, pas un accessoire.',
+            },
+            {
+              heading: 'Révisez en briefing, pas seulement en intégration',
+              text: 'Une courte révision SOP en briefing pré-service, une procédure, trois minutes, maintient le standard visible. Sur un trimestre, vous pouvez passer en revue les procédures prioritaires de chaque département. Les équipes qui revisitent régulièrement les SOP les traitent comme des documents vivants. Celles qui ne les voient que pendant la formation les traitent comme des documents historiques.',
+            },
+          ],
+        },
+        {
+          h2: 'Ce que de bonnes SOP hôtelières permettent',
+          content:
+            'Le bénéfice opérationnel d\'une bibliothèque SOP fonctionnelle est la cohérence à grande échelle : la même chambre, le même accueil, la même présentation d\'assiette qu\'il soit mardi matin avec une équipe complète ou samedi soir avec un mélange de saisonniers. L\'avantage moins visible est que les procédures documentées accélèrent tout le reste. Former de nouveaux collaborateurs est plus rapide. Auditer la qualité est plus rapide. Identifier la source d\'une réclamation récurrente est plus rapide.',
+          h3Items: [
+            {
+              heading: 'Scalabilité pour les opérations multi-établissements',
+              text: 'Pour les groupes gérant plusieurs établissements, les SOP deviennent le mécanisme de cohérence de marque. Un client qui séjourne dans votre établissement à Paris et dans votre établissement à Lyon doit reconnaître le même standard de service. Cela n\'arrive que si les procédures sont documentées, partagées et activement appliquées dans les deux établissements.',
+            },
+            {
+              heading: 'Réduction de la dépendance aux connaissances institutionnelles',
+              text: 'Dans la plupart des hôtels, les collaborateurs les plus expérimentés portent la connaissance opérationnelle dans leur tête. Quand ils partent, la connaissance part avec eux. Une bibliothèque SOP mature externalise cette connaissance. Le départ d\'un chef de service de longue date ne crée pas de lacune qualité si les procédures qu\'il a perfectionnées sur des années sont documentées et formées.',
+            },
+          ],
+        },
+      ],
+      conclusion:
+        'Une procédure opérationnelle hôtelière n\'est aussi utile que son adoption. Rédiger le document est le point de départ. Le travail consiste à construire une culture où les procédures sont la norme, où le personnel sait où les trouver, où les managers les appliquent lors des inspections et des briefings, et où la bibliothèque est maintenue à jour au fil de l\'évolution de l\'établissement. C\'est une discipline managériale, pas un projet documentaire.',
+      cta: { text: 'Voir nos Playbooks SOP', href: '/fr/playbooks' },
+      faqs: [
+        {
+          question: 'Combien de SOP un hôtel a-t-il généralement besoin ?',
+          answer: 'Un hôtel de taille moyenne avec quatre à cinq départements maintient généralement entre 40 et 80 SOP actives couvrant la réception, le housekeeping, la restauration et le spa. Le nombre importe moins que la couverture des procédures à haute fréquence et à haut risque. Commencez par 8 à 10 par département et développez à partir de là.',
+        },
+        {
+          question: 'À quelle fréquence les SOP hôtelières doivent-elles être révisées ?',
+          answer: 'Les procédures à haute fréquence comme le check-in, le check-out et le nettoyage des chambres doivent être révisées au minimum annuellement, ou chaque fois que le système ou le standard sous-jacent change. Les procédures moins fréquentes peuvent être révisées tous les un à deux ans. Chaque SOP doit porter une date de révision.',
+        },
+        {
+          question: 'Quelle est la différence entre une SOP hôtelière et un standard de marque ?',
+          answer: 'Un standard de marque définit à quoi doit ressembler le résultat : le placement des amenités, le script d\'accueil, la présentation du service de nuit. Une SOP définit comment y parvenir : la séquence, le timing, les matériaux utilisés. Les standards de marque fixent le repère. Les SOP sont la notice pour l\'atteindre.',
+        },
+      ],
+    },
+  },
+  {
+    slug: 'hotel-front-desk-procedures',
+    en: {
+      title: 'Hotel Front Desk Procedures: The Complete SOP Guide',
+      description:
+        'Step-by-step front desk procedures for hotel check-in, check-out, complaint handling and reservation management. Written for front desk agents and supervisors.',
+      date: '2026-04-28',
+      readTime: '10 min read',
+      intro:
+        'The front desk is where every guest stay begins and ends. It is also the department that absorbs the most variability: late arrivals, disputes, room changes, payment issues, special requests and complaints all land at the front desk. When procedures are documented and followed consistently, the team can handle that variability without losing the service standard. When they are not, the outcome depends entirely on the individual agent working the shift. This guide covers the core front desk procedures every hotel should have in place.',
+      sections: [
+        {
+          h2: 'Check-In Procedure',
+          content:
+            'Check-in sets the tone for the entire stay. A smooth check-in builds confidence in the property. A slow or inconsistent one creates doubt before the guest has seen their room. The procedure below covers the full sequence for a standard arrival. VIP arrivals require a separate protocol, typically with pre-blocked rooms, personalised welcome and manager presence.',
+          h3Items: [
+            {
+              heading: 'Pre-arrival preparation',
+              text: 'Before each shift, the front desk agent should review expected arrivals for the day. Flag VIPs, repeat guests, guests with special requests on file and any rooms blocked for early arrival. Identify rooms that are clean and inspected versus those still in progress. A prepared agent does not read the guest file for the first time when the guest is standing at the desk.',
+            },
+            {
+              heading: 'The check-in sequence',
+              text: 'Greet within 30 seconds of the guest approaching. Use the guest name if the arrival is flagged. Verify identity and reservation, confirm room type and rate, present the registration card or digital equivalent for signature. Explain key card operation, outlets, breakfast times and any property-specific information in under 90 seconds. Offer to carry luggage or arrange bell service. Close with "Enjoy your stay, Mr./Ms. [Name]."',
+            },
+            {
+              heading: 'Handling early arrivals and room not ready',
+              text: 'When the room is not ready: offer to store luggage, provide the estimated ready time, take a contact number and commit to a call when the room is confirmed. Do not give a room number that is not yet inspected and released. If the wait exceeds the estimated time, call the guest before they call the desk.',
+            },
+            {
+              heading: 'Credit card authorisation and incidental holds',
+              text: 'The authorisation amount and hold duration should be defined in the SOP and communicated to the guest at check-in. Disputes at check-out about unexpected holds are almost always the result of this step being skipped or communicated poorly. State the hold amount, explain it covers incidentals and that the hold releases within a defined window after departure.',
+            },
+          ],
+        },
+        {
+          h2: 'Check-Out Procedure',
+          content:
+            'Check-out is the final impression. A guest whose stay was acceptable can leave satisfied if check-out is smooth. A guest whose stay was good can leave frustrated if check-out is slow, if the bill is wrong or if no one acknowledges them. The procedure should be efficient and warm, not just efficient.',
+          h3Items: [
+            {
+              heading: 'Express check-out vs. counter check-out',
+              text: 'Offer both options. Express check-out, where the guest reviews the folio on the in-room TV or via app and keys are left in the room, suits guests in a hurry. Counter check-out allows for a final interaction, a chance to address any issues and a genuine farewell. Forcing all guests through counter check-out when they want express is a friction point. Removing counter check-out entirely misses service recovery opportunities.',
+            },
+            {
+              heading: 'The check-out sequence',
+              text: 'Greet by name and retrieve the folio. Ask: "Did you have the opportunity to enjoy any additional services during your stay?" before presenting the bill, not after a dispute starts. Review main line items. Address any discrepancy on the spot. Process payment and confirm email for receipt. Ask about the stay in one genuine question, not a survey script. Wish the guest a safe journey.',
+            },
+            {
+              heading: 'Late check-out handling',
+              text: 'Late check-out should be managed from the morning of departure. The front desk agent reviews which guests have flagged a late departure or have a late flight. Cross-reference with housekeeping load and occupancy. Offer late check-out within your available window: complimentary to loyalty members up to a defined time, charged for extended requests. Confirm the arrangement in writing, via a note on the guest folio and a brief message to the room.',
+            },
+          ],
+        },
+        {
+          h2: 'Complaint Handling Procedure',
+          content:
+            'How complaints are handled at the front desk directly determines whether a dissatisfied guest becomes a negative review or a loyal customer. The recovery procedure needs to be fast, genuine and fully documented. Agents should be trained not just on what to say but on the authority they have to resolve without manager escalation.',
+          h3Items: [
+            {
+              heading: 'The recovery sequence',
+              text: 'Listen fully without interrupting. Acknowledge the problem without defending the property: "I understand this was not the experience you expected." Apologise for the experience, not the system. Offer a concrete resolution with a defined timeline. Follow up to confirm resolution before the end of the shift. Log the complaint and resolution in the PMS under the guest record.',
+            },
+            {
+              heading: 'Agent authority and escalation triggers',
+              text: 'The SOP should define exactly what a front desk agent can offer without manager approval: room upgrade, complimentary breakfast, F&B credit up to a defined amount, late check-out. Anything beyond that triggers manager involvement. An agent who is empowered to resolve minor issues without making the guest wait for a supervisor handles complaints faster and builds more trust.',
+            },
+            {
+              heading: 'Documentation requirements',
+              text: 'Every complaint must be logged: the nature of the issue, the time reported, the resolution offered and the outcome. This documentation serves three purposes. It allows the manager to review patterns, it protects the property if a guest dispute escalates and it creates an audit trail for training. A complaint that is resolved but not logged is a missed learning opportunity.',
+            },
+          ],
+        },
+        {
+          h2: 'Reservation Management and Upselling',
+          content:
+            'Front desk agents interact with reservations constantly: modifications, upgrades, no-shows, walk-ins and upsell opportunities at check-in. Each of these interactions should have a defined procedure to ensure consistency and capture revenue.',
+          h3Items: [
+            {
+              heading: 'Check-in upsell procedure',
+              text: 'Upselling at check-in is most effective when it is framed as a guest benefit, not a sales pitch. "I see you are booked into a standard room. We do have a superior room with a city view available, it is an additional $30 for the night. Would that be of interest?" Train agents on the specific upgrade options available each day, the approved price delta and how to present the offer without pressure. Track conversion rate by agent to identify coaching opportunities.',
+            },
+            {
+              heading: 'No-show procedure',
+              text: 'A no-show is a reservation where the guest did not arrive and did not cancel. The procedure should define when to release the room for resale, when to apply the no-show charge per the booking conditions, and whether to attempt outbound contact. A documented no-show procedure reduces revenue leakage and ensures the charge is applied consistently.',
+            },
+            {
+              heading: 'Walk-in procedure',
+              text: 'Walk-ins are an opportunity, not an interruption. The procedure should define the rate authority the front desk agent has for walk-in bookings, whether to offer the best available rate or a walk-in premium, and how to process the reservation in the PMS to avoid double occupancy. Agents should be trained to capture the full guest profile at intake, including contact details and consent for marketing.',
+            },
+          ],
+        },
+        {
+          h2: 'Telephone and Communication Standards',
+          content:
+            'A significant share of front desk interactions happen by telephone: reservation inquiries, service requests, wake-up calls, internal transfers and guest complaints. The telephone standard defines how every call should be handled, from the greeting to the close.',
+          h3Items: [
+            {
+              heading: 'Answering standard',
+              text: 'Answer within three rings. Greeting format: property name, department or agent name, offer of assistance. "Good evening, [Property Name], this is [Name] speaking, how may I assist you?" Do not answer with just "Front desk" or "Hello." The greeting is the first signal of service standard.',
+            },
+            {
+              heading: 'Holding and transferring',
+              text: 'Ask for permission before placing a guest on hold: "May I place you on a brief hold?" Do not place a guest on hold without asking. Hold duration should not exceed 90 seconds without a return to the call. When transferring, announce the transfer before connecting: "I am transferring you to housekeeping now. Their extension is [number] in case we get disconnected." Never transfer a complaint call without a warm handover.',
+            },
+            {
+              heading: 'Wake-up call procedure',
+              text: 'Wake-up calls should be confirmed back to the guest at the time of request: "Confirmed, a wake-up call at 6:00 a.m. for room 412." Log the request in the system before ending the call. For automated wake-up systems, a backup manual call is standard practice when the guest has an early departure or a critical schedule.',
+            },
+          ],
+        },
+        {
+          h2: 'Shift Handover and Log Procedures',
+          content:
+            'The handover between shifts is one of the most failure-prone moments in front desk operations. Information that does not transfer creates problems that appear hours later, typically when the relevant manager is no longer on shift.',
+          h3Items: [
+            {
+              heading: 'The shift handover sequence',
+              text: 'The outgoing agent should brief the incoming agent on: current occupancy and expected arrivals, any open issues or pending complaints, VIPs arriving or in-house, rooms blocked for specific reasons, any pending maintenance flags that affect guest-facing rooms, and any operational irregularities from the shift. A written handover log is more reliable than verbal communication alone.',
+            },
+            {
+              heading: 'The front desk log',
+              text: 'Every significant interaction, complaint, unusual request, incident, or decision that deviated from standard procedure, should be logged with the time, guest name and room number, the nature of the interaction and the action taken. The log is the institutional memory of the desk. Managers reviewing it the next morning should be able to reconstruct the shift without asking each agent separately.',
+            },
+          ],
+        },
+      ],
+      conclusion:
+        'Front desk procedures are the connective tissue of the guest experience. Check-in sets the tone. Complaint handling determines whether problems become reviews. Check-out is the final impression. And the handover log is what keeps the quality consistent across shifts. When each of these procedures is documented, trained and enforced, the front desk operates as a system rather than a collection of individual performances.',
+      cta: { text: 'View the Front Office Playbook', href: '/en/playbooks' },
+      faqs: [
+        {
+          question: 'What is the most important front desk SOP in a hotel?',
+          answer: 'The check-in and complaint handling procedures consistently have the highest impact on guest satisfaction scores and reviews. Check-in determines first impression. Complaint handling determines whether a problem becomes a negative review or a loyalty-building moment. Both should be prioritised for documentation and training.',
+        },
+        {
+          question: 'How should front desk agents handle a guest who is upset at check-in?',
+          answer: 'The priority is to avoid a public confrontation and to resolve the issue quickly. Acknowledge the problem without defending the property. Offer a specific resolution with a defined timeline. If the issue cannot be resolved at the agent level, escalate to the supervisor immediately rather than making the guest wait while the agent attempts to resolve something outside their authority.',
+        },
+        {
+          question: 'What should be in a front desk shift handover?',
+          answer: 'A complete handover includes current occupancy, expected arrivals and departures, open complaints or pending service requests, VIPs in-house or arriving, blocked rooms, any maintenance issues affecting guest-facing areas and any decisions that deviated from standard procedure. Written logs are more reliable than verbal handover alone.',
+        },
+        {
+          question: 'How do you train front desk staff on procedures?',
+          answer: 'Walk through the SOP step by step, then have the agent role-play the procedure with a supervisor. Evaluate against the written standard, not general impression. Sign off only when the output matches the SOP. Follow up with observed performance reviews during the first 30 days and periodic spot checks thereafter.',
+        },
+      ],
+    },
+    fr: {
+      title: 'Procédures de Réception Hôtelière : Le Guide SOP Complet',
+      description:
+        'Procédures de réception étape par étape pour le check-in, check-out, la gestion des réclamations et la gestion des réservations. Rédigé pour les réceptionnistes et superviseurs.',
+      date: '2026-04-28',
+      readTime: '10 min de lecture',
+      intro:
+        'La réception est l\'endroit où chaque séjour client commence et se termine. C\'est aussi le département qui absorbe le plus de variabilité : arrivées tardives, litiges, changements de chambre, problèmes de paiement, demandes spéciales et réclamations arrivent tous à la réception. Quand les procédures sont documentées et suivies de façon cohérente, l\'équipe peut gérer cette variabilité sans perdre le standard de service. Quand elles ne le sont pas, le résultat dépend entièrement du réceptionniste qui travaille ce jour-là.',
+      sections: [
+        {
+          h2: 'Procédure de Check-In',
+          content:
+            'Le check-in donne le ton pour l\'intégralité du séjour. Un check-in fluide renforce la confiance dans l\'établissement. Un check-in lent ou incohérent crée du doute avant que le client ait vu sa chambre. La procédure ci-dessous couvre la séquence complète pour une arrivée standard. Les arrivées VIP nécessitent un protocole séparé, typiquement avec chambres pré-bloquées, accueil personnalisé et présence du manager.',
+          h3Items: [
+            {
+              heading: 'Préparation pré-arrivée',
+              text: 'Avant chaque service, le réceptionniste doit passer en revue les arrivées prévues de la journée. Identifier les VIP, les clients réguliers, les clients avec des demandes spéciales sur leur dossier et les chambres bloquées pour arrivée anticipée. Repérer les chambres propres et inspectées versus celles encore en cours. Un agent préparé ne lit pas le dossier client pour la première fois quand le client est devant le comptoir.',
+            },
+            {
+              heading: 'La séquence de check-in',
+              text: 'Accueil dans les 30 secondes suivant l\'approche du client. Utiliser le nom du client si l\'arrivée est identifiée. Vérifier l\'identité et la réservation, confirmer le type de chambre et le tarif, présenter la fiche de séjour pour signature. Expliquer le fonctionnement des cléfs, les équipements, les horaires du petit-déjeuner et les informations propres à l\'établissement en moins de 90 secondes. Proposer le portage des bagages. Conclure avec "Profitez bien de votre séjour, M./Mme [Nom]."',
+            },
+            {
+              heading: 'Gestion des arrivées anticipées et chambre non prête',
+              text: 'Quand la chambre n\'est pas prête : proposer le stockage des bagages, communiquer l\'heure estimée de disponibilité, prendre un numéro de contact et s\'engager à rappeler quand la chambre est confirmée. Ne pas donner un numéro de chambre qui n\'est pas encore inspectée et libérée. Si l\'attente dépasse l\'heure estimée, appeler le client avant qu\'il n\'appelle la réception.',
+            },
+            {
+              heading: 'Autorisation de carte et provision pour frais annexes',
+              text: 'Le montant d\'autorisation et la durée de provision doivent être définis dans la SOP et communiqués au client au check-in. Les litiges au check-out concernant des provisions inattendues résultent presque toujours d\'une étape sautée ou mal communiquée. Préciser le montant de la provision, expliquer qu\'elle couvre les frais annexes et qu\'elle est libérée dans un délai défini après le départ.',
+            },
+          ],
+        },
+        {
+          h2: 'Procédure de Check-Out',
+          content:
+            'Le check-out est la dernière impression. Un client dont le séjour était acceptable peut partir satisfait si le check-out est fluide. Un client dont le séjour était bon peut partir frustré si le check-out est lent, si la note est incorrecte ou si personne ne le reconnaît. La procédure doit être efficace et chaleureuse, pas seulement efficace.',
+          h3Items: [
+            {
+              heading: 'Express check-out vs. check-out au comptoir',
+              text: 'Proposer les deux options. L\'express check-out, où le client consulte sa note sur la TV de chambre ou via application et laisse les clés en chambre, convient aux clients pressés. Le check-out au comptoir permet une dernière interaction, une chance de traiter tout problème et un vrai au revoir. Forcer tous les clients par le comptoir quand ils veulent un express est un point de friction. Supprimer entièrement le check-out au comptoir rate les opportunités de récupération de service.',
+            },
+            {
+              heading: 'La séquence de check-out',
+              text: 'Accueil par le nom et récupération de la note. Demander : "Avez-vous eu l\'occasion de profiter de services supplémentaires pendant votre séjour ?" avant de présenter la note, pas après le début d\'un litige. Passer en revue les principales lignes. Traiter tout écart sur place. Traiter le paiement et confirmer l\'email pour le reçu. Poser une vraie question sur le séjour, pas un script de sondage. Souhaiter un bon voyage.',
+            },
+            {
+              heading: 'Gestion des late check-out',
+              text: 'Le late check-out doit être géré dès le matin du départ. Le réceptionniste passe en revue les clients qui ont signalé un départ tardif ou un vol tard. Croiser avec la charge de travail housekeeping et l\'occupation. Proposer le late check-out dans la fenêtre disponible : gratuit pour les membres fidélité jusqu\'à une heure définie, payant pour les demandes prolongées. Confirmer l\'arrangement par écrit, via une note sur la fiche client et un bref message en chambre.',
+            },
+          ],
+        },
+        {
+          h2: 'Procédure de Gestion des Réclamations',
+          content:
+            'La gestion des réclamations à la réception détermine directement si un client insatisfait devient un avis négatif ou un client fidèle. La procédure de récupération doit être rapide, sincère et entièrement documentée. Les agents doivent être formés non seulement sur ce qu\'ils doivent dire mais sur l\'autorité dont ils disposent pour résoudre sans escalade vers le manager.',
+          h3Items: [
+            {
+              heading: 'La séquence de récupération',
+              text: 'Écouter entièrement sans interrompre. Reconnaître le problème sans défendre l\'établissement : "Je comprends que ce n\'était pas l\'expérience que vous attendiez." S\'excuser pour l\'expérience, pas pour le système. Proposer une résolution concrète avec un délai défini. Faire un suivi pour confirmer la résolution avant la fin du service. Consigner la réclamation et la résolution dans le PMS sous le dossier client.',
+            },
+            {
+              heading: 'Autorité de l\'agent et déclencheurs d\'escalade',
+              text: 'La SOP doit définir exactement ce qu\'un réceptionniste peut proposer sans accord du manager : surclassement, petit-déjeuner offert, crédit F&B jusqu\'à un montant défini, late check-out. Au-delà, l\'implication du manager se déclenche. Un agent habilité à résoudre les problèmes mineurs sans faire attendre le client pour un superviseur gère les réclamations plus rapidement et instaure davantage de confiance.',
+            },
+            {
+              heading: 'Exigences de documentation',
+              text: 'Toute réclamation doit être consignée : la nature du problème, l\'heure de signalement, la résolution proposée et le résultat. Cette documentation sert trois objectifs. Elle permet au manager d\'identifier des tendances, elle protège l\'établissement si un litige client s\'intensifie et elle crée une piste d\'audit pour la formation. Une réclamation résolue mais non consignée est une opportunité d\'apprentissage manquée.',
+            },
+          ],
+        },
+        {
+          h2: 'Gestion des Réservations et Upselling',
+          content:
+            'Les réceptionnistes interagissent constamment avec les réservations : modifications, surclassements, no-shows, clients sans réservation et opportunités d\'upsell au check-in. Chacune de ces interactions doit avoir une procédure définie pour garantir la cohérence et capturer les revenus.',
+          h3Items: [
+            {
+              heading: 'Procédure d\'upsell au check-in',
+              text: 'L\'upselling au check-in est le plus efficace quand il est présenté comme un bénéfice client, pas une technique de vente. "Je vois que vous êtes réservé en chambre standard. Nous avons une chambre supérieure avec vue sur la ville disponible, c\'est 30 € supplémentaires cette nuit. Cela vous intéresserait-il ?" Former les agents sur les options de surclassement disponibles chaque jour, le différentiel de prix approuvé et comment présenter l\'offre sans pression. Suivre le taux de conversion par agent pour identifier les opportunités de coaching.',
+            },
+            {
+              heading: 'Procédure no-show',
+              text: 'Un no-show est une réservation où le client n\'est pas arrivé et n\'a pas annulé. La procédure doit définir quand libérer la chambre pour la revente, quand appliquer les frais de no-show selon les conditions de réservation, et s\'il faut tenter un contact sortant. Une procédure no-show documentée réduit les pertes de revenus et garantit que les frais sont appliqués de façon cohérente.',
+            },
+            {
+              heading: 'Procédure clients sans réservation',
+              text: 'Les clients sans réservation sont une opportunité, pas une interruption. La procédure doit définir l\'autorité tarifaire du réceptionniste pour les réservations à la volée, s\'il faut proposer le meilleur tarif disponible ou un tarif walk-in, et comment saisir la réservation dans le PMS pour éviter la double occupation. Les agents doivent être formés à capturer le profil complet du client à l\'accueil.',
+            },
+          ],
+        },
+        {
+          h2: 'Standards Téléphoniques et de Communication',
+          content:
+            'Une part significative des interactions à la réception se fait par téléphone : demandes de réservation, demandes de service, appels réveil, transferts internes et réclamations clients. Le standard téléphonique définit comment chaque appel doit être géré, de l\'accueil à la clôture.',
+          h3Items: [
+            {
+              heading: 'Standard de réponse',
+              text: 'Répondre dans les trois sonneries. Format d\'accueil : nom de l\'établissement, département ou nom de l\'agent, offre d\'assistance. "Bonsoir, [Nom de l\'établissement], c\'est [Prénom] à l\'appareil, comment puis-je vous aider ?" Ne pas répondre uniquement par "Réception" ou "Allô." L\'accueil est le premier signal du standard de service.',
+            },
+            {
+              heading: 'Mise en attente et transfert',
+              text: 'Demander la permission avant de mettre un client en attente : "Puis-je vous mettre brièvement en attente ?" Ne jamais mettre un client en attente sans demander. La durée de mise en attente ne doit pas dépasser 90 secondes sans retour à l\'appel. Lors d\'un transfert, annoncer le transfert avant de connecter : "Je vous transfère au housekeeping maintenant. Leur poste est le [numéro] au cas où la communication serait coupée." Ne jamais transférer un appel de réclamation sans passation chaleureuse.',
+            },
+            {
+              heading: 'Procédure d\'appel réveil',
+              text: 'Les appels réveil doivent être confirmés au client au moment de la demande : "Confirmé, un appel réveil à 6h00 pour la chambre 412." Enregistrer la demande dans le système avant de terminer l\'appel. Pour les systèmes d\'appel automatique, un appel manuel de secours est une pratique standard quand le client a un départ matinal ou un programme critique.',
+            },
+          ],
+        },
+        {
+          h2: 'Procédures de Passation de Service et de Journal',
+          content:
+            'La passation entre services est l\'un des moments les plus risqués dans les opérations de réception. Les informations qui ne se transmettent pas créent des problèmes qui apparaissent des heures plus tard, typiquement quand le manager concerné n\'est plus en service.',
+          h3Items: [
+            {
+              heading: 'La séquence de passation de service',
+              text: 'L\'agent sortant doit informer l\'agent entrant sur : l\'occupation actuelle et les arrivées prévues, tout problème ouvert ou réclamation en attente, les VIP arrivant ou en séjour, les chambres bloquées pour des raisons spécifiques, tout signalement de maintenance affectant les chambres côté client, et toute irrégularité opérationnelle du service. Un journal de passation écrit est plus fiable que la communication verbale seule.',
+            },
+            {
+              heading: 'Le journal de réception',
+              text: 'Toute interaction significative, réclamation, demande inhabituelle, incident ou décision déviant de la procédure standard, doit être consignée avec l\'heure, le nom du client et le numéro de chambre, la nature de l\'interaction et l\'action entreprise. Le journal est la mémoire institutionnelle du comptoir. Les managers qui le consultent le lendemain matin doivent pouvoir reconstituer le service sans interroger chaque agent séparément.',
+            },
+          ],
+        },
+      ],
+      conclusion:
+        'Les procédures de réception sont le tissu conjonctif de l\'expérience client. Le check-in donne le ton. La gestion des réclamations détermine si les problèmes deviennent des avis. Le check-out est la dernière impression. Et le journal de passation est ce qui maintient la qualité cohérente d\'un service à l\'autre. Quand chacune de ces procédures est documentée, formée et appliquée, la réception fonctionne comme un système plutôt qu\'une collection de performances individuelles.',
+      cta: { text: 'Voir le Playbook Front Office', href: '/fr/playbooks' },
+      faqs: [
+        {
+          question: 'Quelle est la procédure de réception la plus importante dans un hôtel ?',
+          answer: 'Les procédures de check-in et de gestion des réclamations ont systématiquement le plus fort impact sur les scores de satisfaction client et les avis. Le check-in détermine la première impression. La gestion des réclamations détermine si un problème devient un avis négatif ou un moment de fidélisation. Les deux doivent être prioritaires pour la documentation et la formation.',
+        },
+        {
+          question: 'Comment les réceptionnistes doivent-ils gérer un client mécontent au check-in ?',
+          answer: 'La priorité est d\'éviter un affrontement public et de résoudre le problème rapidement. Reconnaître le problème sans défendre l\'établissement. Proposer une résolution spécifique avec un délai défini. Si le problème ne peut pas être résolu au niveau de l\'agent, escalader immédiatement au superviseur plutôt que de faire attendre le client pendant que l\'agent tente de résoudre quelque chose hors de son autorité.',
+        },
+        {
+          question: 'Que doit contenir une passation de service à la réception ?',
+          answer: 'Une passation complète inclut l\'occupation actuelle, les arrivées et départs prévus, les réclamations ouvertes ou demandes de service en attente, les VIP en séjour ou arrivant, les chambres bloquées, les problèmes de maintenance affectant les zones côté client et toutes les décisions ayant dévié de la procédure standard. Les journaux écrits sont plus fiables que la passation verbale seule.',
+        },
+        {
+          question: 'Comment former le personnel de réception aux procédures ?',
+          answer: 'Parcourir la SOP étape par étape, puis faire jouer la procédure en jeu de rôle avec un superviseur. Évaluer par rapport au standard écrit, pas à l\'impression générale. Valider uniquement quand le résultat correspond à la SOP. Faire un suivi avec des revues de performance observées pendant les 30 premiers jours et des contrôles ponctuels périodiques ensuite.',
+        },
+      ],
+    },
+  },
 ]

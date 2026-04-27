@@ -16,6 +16,8 @@ const KEYWORDS_EN: Record<string, string> = {
   'hotel-fb-restaurant-procedures': 'hotel restaurant service procedures, F&B procedures hotel, restaurant SOP hotel, sequence of service hotel',
   'hotel-spa-wellness-sops': 'hotel spa SOP, wellness procedures hotel, spa standard operating procedures, spa treatment protocol hotel',
   'hotel-room-service-sops': 'hotel room service SOP, in-room dining procedures, room service standards hotel',
+  'hotel-standard-operating-procedures': 'hotel standard operating procedures, hotel SOP, hotel SOP template, hotel operations procedures, how to write hotel SOPs',
+  'hotel-front-desk-procedures': 'hotel front desk procedures, front desk SOP hotel, hotel check-in procedures, hotel check-out SOP, hotel front desk checklist',
 }
 
 const KEYWORDS_FR: Record<string, string> = {
@@ -29,6 +31,8 @@ const KEYWORDS_FR: Record<string, string> = {
   'hotel-fb-restaurant-procedures': 'procédures service restaurant hôtel, SOP restauration hôtel, séquence service restaurant hôtel',
   'hotel-spa-wellness-sops': 'SOP spa hôtel, procédures bien-être hôtel, standard opérationnel spa hôtel, protocole soin spa hôtel',
   'hotel-room-service-sops': 'SOP room service hôtel, procédures service en chambre, standards room service hôtel',
+  'hotel-standard-operating-procedures': 'procédures opérationnelles hôtelières, SOP hôtel, modèle SOP hôtelières, procédures opérations hôtel',
+  'hotel-front-desk-procedures': 'procédures réception hôtel, SOP réception hôtelière, procédures check-in hôtel, SOP check-out hôtel, checklist réception hôtel',
 }
 
 export async function generateStaticParams() {
