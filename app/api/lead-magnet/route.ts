@@ -1,21 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server'
-import nodemailer from 'nodemailer'
+import { Resend } from 'resend'
 import { createClient } from '@supabase/supabase-js'
+
+const resend = new Resend(process.env.RESEND_API_KEY)
 
 const supabaseAdmin = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
   process.env.SUPABASE_SERVICE_ROLE_KEY!
 )
-
-const transporter = nodemailer.createTransport({
-  host: 'ssl0.ovh.net',
-  port: 465,
-  secure: true,
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
-  },
-})
 
 const DEPT_LABELS: Record<string, { en: string; fr: string }> = {
   fo: { en: 'Front Office', fr: 'Front Office' },
@@ -41,11 +33,11 @@ export async function POST(request: NextRequest) {
     // 1. Sauvegarde Supabase — priorité absolue
     await supabaseAdmin.from('leads').insert({ email, department, locale })
 
-    // 2. Notification SMTP — non-bloquante
+    // 2. Notification Resend — non-bloquante
     try {
-      await transporter.sendMail({
-        from: `"LuxOps" <${process.env.SMTP_USER}>`,
-        to: process.env.SMTP_USER,
+      await resend.emails.send({
+        from: 'LuxOps <delivery@luxops.fr>',
+        to: 'contact@luxops.fr',
         replyTo: email,
         subject: `Nouveau lead : ${dept.fr} (${(locale as string)?.toUpperCase()}) — ${email}`,
         html: `
@@ -58,11 +50,11 @@ export async function POST(request: NextRequest) {
           </div>
         `,
       })
-    } catch (smtpError) {
-      console.error('[LuxOps SMTP Error — lead sauvegardé en Supabase]', smtpError)
+    } catch (emailError) {
+      console.error('[LuxOps Resend Error — lead sauvegardé en Supabase]', emailError)
     }
 
-    // 3. Toujours retourner succès — le téléchargement ne peut plus être bloqué
+    // 3. Toujours retourner succès
     return NextResponse.json({ success: true })
 
   } catch (error) {
