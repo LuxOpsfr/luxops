@@ -620,6 +620,50 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Blog: Hotel Standard Operating Procedures EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/blog/hotel-standard-operating-procedures</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-standard-operating-procedures"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-standard-operating-procedures"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/hotel-standard-operating-procedures"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-04-28</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: Hotel Standard Operating Procedures FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/blog/hotel-standard-operating-procedures</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-standard-operating-procedures"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-standard-operating-procedures"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/hotel-standard-operating-procedures"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-04-28</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: Hotel Front Desk Procedures EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/blog/hotel-front-desk-procedures</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-front-desk-procedures"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-front-desk-procedures"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/hotel-front-desk-procedures"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-04-28</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: Hotel Front Desk Procedures FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/blog/hotel-front-desk-procedures</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-front-desk-procedures"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-front-desk-procedures"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/hotel-front-desk-procedures"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-04-28</lastmod>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Free Hotel Procedures — Lead Magnet EN -->
   <url>
     <loc>https://www.luxops.fr/en/free-hotel-procedures</loc>
