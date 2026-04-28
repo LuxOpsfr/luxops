@@ -503,10 +503,10 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
                 : "Ces checklists sont extraites du Playbook Housekeeping LuxOps, un manuel SOP complet en 10 chapitres. Le pack complet comprend les checklists gouvernante d'étage matin et soir, les checklists équipier par vacation, la checklist lingère et office de linge, la checklist chambre VIP et service de couverture, et la checklist grand nettoyage mensuel."}
             </p>
             <Link
-              href={`/${locale}#playbooks`}
+              href={`/${locale}/free-hotel-procedures`}
               className="inline-block bg-[#1A2E44] text-white px-8 py-4 rounded-xl font-semibold hover:bg-[#243d57] transition-colors"
             >
-              {isEN ? 'Get the Full Playbook' : 'Obtenir le Playbook Complet'}
+              {isEN ? 'Download Free Checklist Pack' : 'Télécharger le Pack Gratuit'}
             </Link>
           </div>
         </section>

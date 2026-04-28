@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import { ArrowRight } from 'lucide-react'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
@@ -136,6 +137,37 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
               {isEN ? 'Get the Bundle — €199' : 'Obtenir le Bundle — 199€'}
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Lead magnet */}
+      <section
+        className="py-10 border-b"
+        style={{ backgroundColor: '#eef4ff', borderColor: 'rgba(195,198,214,0.3)' }}
+      >
+        <div className="max-w-screen-xl mx-auto px-6 flex flex-col sm:flex-row items-start sm:items-center gap-6">
+          <div className="flex-1">
+            <p className="text-[10px] font-bold uppercase tracking-widest text-[#003d9b] mb-2">
+              {isEN ? 'Free resource' : 'Ressource gratuite'}
+            </p>
+            <p className="font-bold text-[#0a1d2e] text-lg mb-1">
+              {isEN
+                ? 'Download a free chapter from any department playbook'
+                : "Téléchargez un chapitre gratuit d'un playbook de votre choix"}
+            </p>
+            <p className="text-sm text-[#4f6074]">
+              {isEN
+                ? 'Front Office, Housekeeping, F&B or Spa — see what structured hotel SOPs look like in practice.'
+                : 'Réception, Housekeeping, F&B ou Spa — découvrez à quoi ressemblent des procédures hôtelières structurées.'}
+            </p>
+          </div>
+          <Link
+            href={`/${locale}/free-hotel-procedures`}
+            className="inline-flex items-center gap-2 px-6 py-3 text-white font-bold text-sm flex-shrink-0 hover:opacity-90 transition-opacity"
+            style={{ background: 'linear-gradient(135deg, #003d9b, #0052cc)', borderRadius: '0.125rem' }}
+          >
+            {isEN ? 'Download free' : 'Télécharger gratuitement'} <ArrowRight size={18} />
+          </Link>
         </div>
       </section>
 
