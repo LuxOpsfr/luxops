@@ -1493,7 +1493,6 @@ export const articles: BilingualArticle[] = [
             },
           ],
         },
-      ],
         {
           h2: 'How to Build a Hotel Room Inspection Checklist',
           content:
@@ -1669,7 +1668,6 @@ export const articles: BilingualArticle[] = [
             },
           ],
         },
-      ],
         {
           h2: "Comment construire une checklist d'inspection chambre pour votre établissement",
           content:
