@@ -1380,7 +1380,7 @@ export const articles: BilingualArticle[] = [
       date: '2026-03-28',
       readTime: '8 min read',
       intro:
-        'A clean room and a room that passes inspection are not always the same thing. Room attendants work to a sequence and aim for the standard they were trained to. What the supervisor inspection adds is a structured second check, run with different eyes, before the room is released to the front desk. When it is done well, it catches what slips through during a busy shift. When it is skipped or informal, the guest becomes the quality control. This guide covers how a structured room inspection works and what supervisors should be checking at each stage.',
+        'A clean room and a room that passes inspection are not always the same thing. Room attendants work to a sequence and aim for the standard they were trained to. What the hotel room inspection adds is a structured second check, run with different eyes, before the room is released to the front desk. In luxury hotels, this step is not optional: it is the last quality gate before the guest walks in. When it is done well, it catches what slips through during a busy shift. When it is skipped or informal, the guest becomes the quality control. This guide covers how a structured housekeeping inspection works, what supervisors should check at each stage, and how to build a checklist that holds up under operational pressure.',
       sections: [
         {
           h2: 'What a Room Inspection Is (and What It Is Not)',
@@ -1494,6 +1494,30 @@ export const articles: BilingualArticle[] = [
           ],
         },
       ],
+        {
+          h2: 'How to Build a Hotel Room Inspection Checklist',
+          content:
+            'A room inspection checklist is only as useful as the criteria it is built on. A list that says "bathroom clean" is not a checklist: it is a reminder. A checklist that says "chrome fittings dry and free of water marks, amenities placed according to property standard, towel fold matches the diagram in the SOP" is a tool that two different supervisors can use and arrive at the same result.',
+          h3Items: [
+            {
+              heading: 'Organise by zone, not by task',
+              text: 'Structure the checklist to follow the physical path through the room: entry and overall impression, bathroom, bedroom and bed, surfaces and tech, wardrobe and minibar, floor and exit. This mirrors the inspection sequence and prevents the supervisor from skipping back and forth across the room.',
+            },
+            {
+              heading: 'Define pass and fail for each criterion',
+              text: 'Every item on the checklist needs a defined standard. "Clean mirror" is ambiguous. "Mirror streak-free when checked at 45 degrees" is not. The more specific the criterion, the less room for interpretation during a busy inspection and the more consistent the result across supervisors and shifts.',
+            },
+            {
+              heading: 'Include a defect log section',
+              text: 'The checklist should have space to record defects found: what, where, and time of discovery. This turns the inspection form into a trackable record that can be reviewed at handover, cross-referenced with re-inspection notes, and analysed over time to identify recurring failure patterns.',
+            },
+            {
+              heading: 'Review and update after recurring failures',
+              text: 'If the same defect appears repeatedly across different rooms or attendants, it belongs on the checklist as a flagged item. A checklist that does not evolve based on what the property actually finds is a checklist that will keep missing the same things.',
+            },
+          ],
+        },
+      ],
       conclusion:
         'A room inspection is only as useful as the criteria behind it. A supervisor who works from a defined checklist and documents what they find creates a system that improves over time. One who relies on general impressions creates a system that is consistent only as long as that person is on shift. The inspection protocol is one of the most important procedures in a housekeeping SOP, and one of the most commonly under-documented.',
       cta: { text: 'View the Housekeeping Playbook', href: '/en/playbooks' },
@@ -1513,6 +1537,16 @@ export const articles: BilingualArticle[] = [
           answer:
             'The supervisor should follow a fixed sequence from entry to exit. In the bathroom: chrome and fixtures (water marks, limescale), mirror and glass surfaces, amenity placement, towel folding and positioning, toilet exterior and interior, floor and grout. In the bedroom: linen alignment, pillow and cushion placement, surface condition, lighting and tech functionality, wardrobe interior, minibar and floor condition. Each item should be checked against a defined standard, not a general impression.',
         },
+        {
+          question: 'How often should a hotel room be inspected by a supervisor?',
+          answer:
+            'In most luxury hotel operations, every room should be inspected by a floor supervisor before being released to the front desk as clean and available. In properties with high room counts or time pressure, a percentage-based spot inspection system is sometimes used, but every departure and arrival room should be inspected as a minimum. The goal is to catch defects before the guest does, not after.',
+        },
+        {
+          question: 'What is the difference between a room attendant check and a supervisor inspection?',
+          answer:
+            'A room attendant checks their own work against the cleaning sequence and the standards they were trained to. A supervisor inspection is an independent quality check carried out by a different person who did not service the room. The distinction matters because self-checking and independent inspection catch different types of errors. The attendant knows what they did; the supervisor sees what the guest will see.',
+        },
       ],
     },
     fr: {
@@ -1522,7 +1556,7 @@ export const articles: BilingualArticle[] = [
       date: '2026-03-28',
       readTime: '8 min de lecture',
       intro:
-        "Une chambre propre et une chambre qui passe l'inspection ne sont pas toujours la même chose. Les équipiers travaillent selon une séquence et visent le standard pour lequel ils ont été formés. Ce que l'inspection superviseur ajoute, c'est un second contrôle structuré, effectué avec un autre regard, avant que la chambre soit libérée à la réception. Quand elle est bien menée, elle rattrape ce qui passe au travers lors d'un shift chargé. Quand elle est sautée ou informelle, c'est le client qui devient le contrôle qualité. Ce guide couvre le fonctionnement d'une inspection structurée et ce que les superviseurs doivent vérifier à chaque étape.",
+        "Une chambre propre et une chambre qui passe l'inspection ne sont pas toujours la même chose. Les équipiers d'étage travaillent selon une séquence et visent le standard pour lequel ils ont été formés. Ce que l'inspection superviseur housekeeping ajoute, c'est un second contrôle structuré, effectué par un autre regard, avant que la chambre soit libérée à la réception. Dans les hôtels haut de gamme, cette étape n'est pas facultative : c'est la dernière porte qualité avant que le client entre dans sa chambre. Quand elle est bien menée, elle rattrape ce qui passe au travers lors d'un service chargé. Quand elle est sautée ou informelle, c'est le client qui devient le contrôle qualité. Ce guide couvre le fonctionnement d'une inspection structurée, ce que la gouvernante d'étage doit vérifier à chaque étape, et comment construire une checklist qui tient sous la pression opérationnelle.",
       sections: [
         {
           h2: "Ce qu'est une inspection de chambre (et ce qu'elle n'est pas)",
@@ -1636,8 +1670,32 @@ export const articles: BilingualArticle[] = [
           ],
         },
       ],
+        {
+          h2: "Comment construire une checklist d'inspection chambre pour votre établissement",
+          content:
+            "Une checklist d'inspection de chambre n'est utile que si les critères sur lesquels elle repose le sont. Une liste qui dit \"salle de bain propre\" n'est pas une checklist : c'est un aide-mémoire. Une checklist qui précise \"robinetterie sèche et sans traces d'eau, produits d'accueil placés selon le standard de l'établissement, pliage des serviettes conforme au schéma du SOP\" est un outil que deux gouvernantes différentes peuvent utiliser et obtenir le même résultat.",
+          h3Items: [
+            {
+              heading: 'Organiser par zone, pas par tâche',
+              text: "Structurer la checklist pour suivre le chemin physique dans la chambre : entrée et impression générale, salle de bain, chambre et lit, surfaces et équipements, armoire et minibar, sol et sortie. Cela reflète la séquence d'inspection et évite à la gouvernante de faire des allers-retours dans la chambre.",
+            },
+            {
+              heading: 'Définir conforme et non conforme pour chaque critère',
+              text: "Chaque point de la checklist doit avoir un standard défini. \"Miroir propre\" est ambigu. \"Miroir sans traces vérifié à 45 degrés\" ne l'est pas. Plus le critère est précis, moins il y a de place à l'interprétation lors d'une inspection rapide, et plus le résultat est cohérent d'une gouvernante à l'autre.",
+            },
+            {
+              heading: 'Inclure une section relevé de défauts',
+              text: "La checklist doit prévoir un espace pour consigner les défauts constatés : quoi, où, et heure de constat. Cela transforme le formulaire d'inspection en un relevé traçable, consultable à la passation de service, croisable avec les notes de re-inspection, et analysable dans le temps pour identifier les défauts récurrents.",
+            },
+            {
+              heading: 'Mettre à jour la checklist après les défauts récurrents',
+              text: "Si le même défaut apparaît régulièrement sur des chambres ou des équipiers différents, il doit figurer sur la checklist comme point de vigilance. Une checklist qui n'évolue pas en fonction de ce que l'établissement constate réellement est une checklist qui continuera à manquer les mêmes choses.",
+            },
+          ],
+        },
+      ],
       conclusion:
-        "Une inspection de chambre n'est utile que si les critères derrière elle le sont aussi. Un superviseur qui travaille à partir d'une checklist définie et documente ce qu'il trouve crée un système qui s'améliore dans le temps. Celui qui se base sur une impression générale crée un système qui n'est cohérent que tant que cette personne est en poste. Le protocole d'inspection est l'une des procédures les plus importantes dans un SOP housekeeping, et l'une des plus souvent sous-documentées.",
+        "Une inspection de chambre n'est utile que si les critères derrière elle le sont aussi. Une gouvernante d'étage qui travaille à partir d'une checklist définie et documente ce qu'elle trouve crée un système qui s'améliore dans le temps. Celle qui se base sur une impression générale crée un système qui n'est cohérent que tant qu'elle est en poste. Le protocole d'inspection est l'une des procédures les plus importantes dans un SOP housekeeping, et l'une des plus souvent sous-documentées.",
       cta: { text: 'Voir le Playbook Housekeeping', href: '/fr/playbooks' },
       faqs: [
         {
@@ -1648,12 +1706,22 @@ export const articles: BilingualArticle[] = [
         {
           question: "Que signifie l'inspection de chambre en housekeeping ?",
           answer:
-            "L'inspection de chambre désigne le contrôle qualité structuré réalisé par la gouvernante d'étage après qu'un équipier a terminé la remise en état d'une chambre, avant que le statut soit mis à jour comme propre et disponible dans le PMS. C'est une porte qualité, pas un passage rapide. L'objectif est de vérifier que la chambre répond au standard défini sur chaque point, y compris les zones fréquemment manquées sous pression : joints, placement des amenities, alignement du linge et fonctionnement des équipements.",
+            "L'inspection de chambre désigne le contrôle qualité structuré réalisé par la gouvernante d'étage après qu'un équipier a terminé la remise en état d'une chambre, avant que le statut soit mis à jour comme propre et disponible dans le PMS. C'est une porte qualité, pas un passage rapide. L'objectif est de vérifier que la chambre répond au standard défini sur chaque point, y compris les zones fréquemment manquées sous pression : joints carrelés, placement des produits d'accueil, alignement du linge et fonctionnement des équipements.",
         },
         {
           question: "Que doit vérifier la gouvernante lors de l'inspection d'une chambre ?",
           answer:
-            "La gouvernante d'étage doit suivre une séquence fixe de l'entrée à la sortie. Dans la salle de bain : robinetterie et éléments chromés (traces d'eau, tartre), miroirs et surfaces vitrées, placement des amenities, pliage et placement des serviettes, WC extérieur et intérieur, sol et joints. Dans la chambre : alignement du linge, placement des oreillers et coussins décoratifs, état des surfaces, fonctionnement de l'éclairage et des équipements, intérieur de l'armoire, minibar et état du sol. Chaque point doit être vérifié par rapport à un standard défini, pas à une impression générale.",
+            "La gouvernante d'étage doit suivre une séquence fixe de l'entrée à la sortie. Dans la salle de bain : robinetterie et éléments chromés (traces d'eau, tartre), miroirs et surfaces vitrées, placement des produits d'accueil, pliage et placement des serviettes, WC extérieur et intérieur, sol et joints. Dans la chambre : alignement du linge, placement des oreillers et coussins décoratifs, état des surfaces, fonctionnement de l'éclairage et des équipements, intérieur de l'armoire, minibar et état du sol. Chaque point doit être vérifié par rapport à un standard défini, pas à une impression générale.",
+        },
+        {
+          question: "À quelle fréquence les chambres doivent-elles être inspectées par la gouvernante ?",
+          answer:
+            "Dans la plupart des hôtels de luxe, chaque chambre doit être inspectée par la gouvernante d'étage avant d'être libérée à la réception comme propre et disponible. Dans les établissements avec un grand nombre de chambres ou sous pression de temps, un système d'inspection par échantillonnage est parfois utilisé, mais chaque chambre départ et arrivée doit être inspectée en priorité. L'objectif est de détecter les défauts avant le client, pas après.",
+        },
+        {
+          question: "Quelle est la différence entre le contrôle de l'équipier et l'inspection superviseur ?",
+          answer:
+            "L'équipier vérifie son propre travail en fonction de la séquence de nettoyage et des standards pour lesquels il a été formé. L'inspection superviseur est un contrôle qualité indépendant réalisé par une personne différente qui n'a pas fait la chambre. La distinction est importante car l'autocontrôle et l'inspection indépendante ne détectent pas les mêmes types d'erreurs. L'équipier sait ce qu'il a fait ; la gouvernante voit ce que le client va voir.",
         },
       ],
     },
