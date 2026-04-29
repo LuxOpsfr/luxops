@@ -8,11 +8,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const isEn = locale === 'en'
   return {
     title: isEn
-      ? 'On-Property Hotel Training | Operational Standards Implementation | LuxOps'
-      : 'Formation sur Site pour Équipes Hôtelières | Déploiement de Standards Opérationnels | LuxOps',
+      ? 'Hotel Staff Training | On-Property SOP & Service Standards | LuxOps'
+      : 'Formation du Personnel Hôtelier | Standards de Service et SOPs sur Site | LuxOps',
     description: isEn
-      ? 'On-site training for hotel teams. Procedures, service standards and SOP implementation. Half-day or full-day sessions for up to 15 participants, built around your property.'
-      : "Formation opérationnelle en établissement pour équipes hôtelières. Procédures, standards de service et mise en place des SOPs. Demi-journée ou journée complète, jusqu'à 15 participants.",
+      ? 'On-site hotel staff training covering SOPs, service standards, guest journey and team leadership. Half-day (€997) or full-day (€1,497) sessions for up to 15 participants. Built around your property, your team, and your operational standards.'
+      : "Formation sur site pour le personnel hôtelier : procédures, standards de service, parcours client et leadership d'équipe. Sessions demi-journée (997€) ou journée complète (1 497€) jusqu'à 15 participants. Adaptée à votre établissement et à vos standards.",
     alternates: {
       canonical: isEn ? 'https://www.luxops.fr/en/training' : 'https://www.luxops.fr/fr/formation',
       languages: {
@@ -427,6 +427,118 @@ export function FormationContent({ locale }: { locale: string }) {
 
         </div>
       </section>
+
+      {/* FAQ */}
+      <section className="py-24 px-6 bg-white">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="max-w-2xl mb-12">
+            <p style={{ color: '#003d9b' }} className="text-xs font-bold uppercase tracking-widest mb-3">FAQ</p>
+            <h2 className="font-display text-3xl font-extrabold text-[#0a1d2e] tracking-tight">
+              {isEn ? 'Frequently asked questions' : 'Questions fréquentes'}
+            </h2>
+          </div>
+          <div className="max-w-3xl space-y-px">
+            {(isEn ? [
+              {
+                q: 'What departments does the hotel staff training cover?',
+                a: 'The training is adapted to any hotel department: Front Office, Housekeeping, Food & Beverage, Spa & Wellness, and supervisory roles. Topics are always built around the team and operational context of your property.',
+              },
+              {
+                q: 'How many participants can attend a session?',
+                a: 'Each session accommodates a maximum of 15 participants. This ensures the training remains hands-on and adapted to the real context of your team, rather than a generic presentation.',
+              },
+              {
+                q: 'Are materials included in the training?',
+                a: 'Yes. Every participant receives the relevant LuxOps operational playbook at the end of the session — a reference document they can consult, apply, and pass on independently after the training.',
+              },
+              {
+                q: 'What is the difference between the half-day and full-day format?',
+                a: 'The half-day (4h, €997) is best for a targeted rollout or one specific operational priority. The full-day (8h, €1,497) covers broader alignment across multiple topics and departments, with more time for guided practice.',
+              },
+              {
+                q: 'Is the training available in French and English?',
+                a: 'Yes. Sessions are delivered in French or English depending on your team\'s language. All materials are available in both languages.',
+              },
+              {
+                q: 'Does the training cover luxury hotel standards specifically?',
+                a: 'Yes. LuxOps training is designed for 4- and 5-star hotel environments. The standards, vocabulary, and level of detail reflect the expectations of high-end hospitality, not generic customer service training.',
+              },
+            ] : [
+              {
+                q: 'Quels départements la formation hôtelière couvre-t-elle ?',
+                a: 'La formation est adaptée à tous les départements : Front Office, Housekeeping, Food & Beverage, Spa & Wellness et encadrement. Les thèmes sont toujours construits autour du contexte opérationnel et du niveau de votre équipe.',
+              },
+              {
+                q: "Combien de participants peuvent assister à une session ?",
+                a: "Chaque session accueille 15 participants maximum. Ce format garantit que la formation reste opérationnelle et adaptée à la réalité de votre équipe, et non une présentation générique.",
+              },
+              {
+                q: 'Les supports sont-ils inclus dans la formation ?',
+                a: "Oui. Chaque participant repart avec le playbook opérationnel LuxOps correspondant à son département — un document de référence qu'il peut consulter, appliquer et transmettre en autonomie après la session.",
+              },
+              {
+                q: 'Quelle est la différence entre la demi-journée et la journée complète ?',
+                a: "La demi-journée (4h, 997€) est idéale pour un déploiement ciblé ou une priorité opérationnelle précise. La journée complète (8h, 1 497€) permet un alignement plus large sur plusieurs thèmes et départements, avec plus de temps pour la mise en pratique.",
+              },
+              {
+                q: 'La formation est-elle disponible en français et en anglais ?',
+                a: "Oui. Les sessions sont animées en français ou en anglais selon la langue de vos équipes. Tous les supports sont disponibles dans les deux langues.",
+              },
+              {
+                q: 'La formation est-elle spécifique aux hôtels de luxe ?',
+                a: "Oui. La formation LuxOps est conçue pour les établissements 4 et 5 étoiles. Les standards, le vocabulaire et le niveau de détail reflètent les exigences de l'hôtellerie haut de gamme, pas une formation générique au service client.",
+              },
+            ]).map((item, i) => (
+              <details
+                key={i}
+                className="group border border-[#e8edf5] bg-white"
+                style={{ borderRadius: '0.125rem' }}
+              >
+                <summary
+                  className="flex items-center justify-between px-6 py-5 cursor-pointer list-none font-display font-bold text-[#0a1d2e] text-sm"
+                  style={{ userSelect: 'none' }}
+                >
+                  {item.q}
+                  <span className="ml-4 flex-shrink-0 text-[#003d9b] font-bold text-lg leading-none group-open:rotate-45 transition-transform">+</span>
+                </summary>
+                <div className="px-6 pb-5 text-sm text-[#4f6074] leading-relaxed border-t border-[#e8edf5] pt-4">
+                  {item.a}
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: (isEn ? [
+              { q: 'What departments does the hotel staff training cover?', a: 'The training is adapted to any hotel department: Front Office, Housekeeping, Food & Beverage, Spa & Wellness, and supervisory roles.' },
+              { q: 'How many participants can attend a session?', a: 'Each session accommodates a maximum of 15 participants.' },
+              { q: 'Are materials included in the training?', a: 'Yes. Every participant receives the relevant LuxOps operational playbook.' },
+              { q: 'What is the difference between the half-day and full-day format?', a: 'The half-day (4h, €997) is best for targeted rollout. The full-day (8h, €1,497) covers broader alignment across multiple topics.' },
+              { q: 'Is the training available in French and English?', a: 'Yes. Sessions are delivered in French or English depending on your team\'s language.' },
+              { q: 'Does the training cover luxury hotel standards specifically?', a: 'Yes. LuxOps training is designed for 4- and 5-star hotel environments.' },
+            ] : [
+              { q: 'Quels départements la formation hôtelière couvre-t-elle ?', a: 'La formation est adaptée à tous les départements : Front Office, Housekeeping, Food & Beverage, Spa & Wellness et encadrement.' },
+              { q: 'Combien de participants peuvent assister à une session ?', a: 'Chaque session accueille 15 participants maximum.' },
+              { q: 'Les supports sont-ils inclus dans la formation ?', a: 'Oui. Chaque participant repart avec le playbook opérationnel LuxOps correspondant.' },
+              { q: 'Quelle est la différence entre la demi-journée et la journée complète ?', a: 'La demi-journée (4h, 997€) est idéale pour un déploiement ciblé. La journée complète (8h, 1 497€) permet un alignement plus large.' },
+              { q: 'La formation est-elle disponible en français et en anglais ?', a: 'Oui. Les sessions sont animées en français ou en anglais selon la langue de vos équipes.' },
+              { q: 'La formation est-elle spécifique aux hôtels de luxe ?', a: 'Oui. La formation LuxOps est conçue pour les établissements 4 et 5 étoiles.' },
+            ]).map(item => ({
+              '@type': 'Question',
+              name: item.q,
+              acceptedAnswer: { '@type': 'Answer', text: item.a },
+            })),
+          }),
+        }}
+      />
 
       {/* CTA */}
       <section className="py-20 px-6 bg-[#003d9b] text-center">
