@@ -18,6 +18,7 @@ const KEYWORDS_EN: Record<string, string> = {
   'hotel-room-service-sops': 'hotel room service SOP, in-room dining procedures, room service standards hotel',
   'hotel-standard-operating-procedures': 'hotel standard operating procedures, hotel SOP, hotel SOP template, hotel operations procedures, how to write hotel SOPs',
   'hotel-front-desk-procedures': 'hotel front desk procedures, front desk SOP hotel, hotel check-in procedures, hotel check-out SOP, hotel front desk checklist',
+  'hotel-staff-training-service-standards': 'hotel staff training, hotel service standards training, how to train hotel staff, on-property hotel training, hotel training program, luxury hotel training',
 }
 
 const KEYWORDS_FR: Record<string, string> = {
@@ -33,6 +34,7 @@ const KEYWORDS_FR: Record<string, string> = {
   'hotel-room-service-sops': 'SOP room service hôtel, procédures service en chambre, standards room service hôtel',
   'hotel-standard-operating-procedures': 'procédures opérationnelles hôtelières, SOP hôtel, modèle SOP hôtelières, procédures opérations hôtel',
   'hotel-front-desk-procedures': 'procédures réception hôtel, SOP réception hôtelière, procédures check-in hôtel, SOP check-out hôtel, checklist réception hôtel',
+  'hotel-staff-training-service-standards': 'formation personnel hôtelier, formation standards de service hôtel, former équipes hôtelières, formation sur site hôtel, programme formation hôtelière, formation hôtel luxe',
 }
 
 export async function generateStaticParams() {
