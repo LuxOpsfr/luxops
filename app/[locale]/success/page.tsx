@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Script from 'next/script'
 import { CheckCircle } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -16,6 +17,10 @@ export default async function SuccessPage({
   const isEn = locale === 'en'
 
   return (
+    <>
+    <Script id="google-ads-purchase" strategy="afterInteractive">
+      {`gtag('event', 'conversion_event_purchase', {});`}
+    </Script>
     <div className="pt-16 min-h-screen bg-gray-50 flex items-center justify-center">
       <div className="max-w-md mx-auto px-6 text-center py-24">
         <div className="flex justify-center mb-6">
@@ -37,5 +42,6 @@ export default async function SuccessPage({
         </Link>
       </div>
     </div>
+    </>
   )
 }
