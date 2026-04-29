@@ -37,154 +37,141 @@ function buildEmailHtml(
   const registerUrl = `https://www.luxops.fr/${lang}/portal/register`
   const loginUrl = `https://www.luxops.fr/${lang}/portal`
 
-  const greeting = isEn ? `Hi ${name},` : `Bonjour ${name},`
-
-  const thankYou = isEn
-    ? 'Thank you for your purchase. Your playbook(s) are available in your personal portal, ready to download at any time.'
-    : "Merci pour votre achat. Vos playbooks sont disponibles dans votre espace personnel, téléchargeables à tout moment."
-
-  const purchasedLabel = isEn ? 'Your purchase includes:' : 'Votre achat comprend :'
-
-  const step1Title = isEn ? 'Step 1 — Create your account' : 'Étape 1 — Créez votre compte'
-  const step1Body = isEn
-    ? `Visit <a href="${registerUrl}" style="color:#1A2E44;font-weight:600;">luxops.fr/portal/register</a> and sign up using the email address you used for payment: <strong>${recipientEmail}</strong>.`
-    : `Rendez-vous sur <a href="${registerUrl}" style="color:#1A2E44;font-weight:600;">luxops.fr/portal/register</a> et créez votre compte avec l'adresse email utilisée lors du paiement : <strong>${recipientEmail}</strong>.`
-
-  const step2Title = isEn ? 'Step 2 — Download your chapters' : 'Étape 2 — Téléchargez vos chapitres'
-  const step2Body = isEn
-    ? 'Once logged in, your playbooks appear in your dashboard. Download each chapter individually, in PDF format, whenever you need.'
-    : 'Une fois connecté(e), vos playbooks apparaissent dans votre tableau de bord. Téléchargez chaque chapitre en PDF, à votre convenance.'
-
-  const ctaLabel = isEn ? 'Create my account' : 'Créer mon compte'
-
-  const alreadyCustomer = isEn
-    ? `Already have an account? <a href="${loginUrl}" style="color:#1A2E44;font-weight:600;">Log in here</a>.`
-    : `Vous avez déjà un compte ? <a href="${loginUrl}" style="color:#1A2E44;font-weight:600;">Connectez-vous ici</a>.`
-
-  const footerNote = isEn
-    ? 'For any questions or issues, simply reply to this email.'
-    : 'Pour toute question ou problème, répondez simplement à cet email.'
-
-  const closing = isEn
-    ? 'Best regards,<br/>The LuxOps Team'
-    : "Cordialement,<br/>L'équipe LuxOps"
-
   const playbooksHtml = playbookNames
-    .map(n => `<li style="padding:4px 0;font-size:14px;color:#333333;">&#8226; ${n}</li>`)
+    .map(n => `
+      <tr>
+        <td style="padding:10px 0;border-bottom:1px solid #e8edf5;">
+          <span style="font-size:13px;color:#0a1d2e;font-weight:600;letter-spacing:0.2px;">${n}</span>
+        </td>
+      </tr>`)
     .join('')
 
-  return `
-    <!DOCTYPE html>
-    <html>
-    <head>
-      <meta charset="utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    </head>
-    <body style="margin:0;padding:0;background:#f4f4f4;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
-      <table width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f4;padding:40px 20px;">
-        <tr>
-          <td align="center">
-            <table width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+  const greeting     = isEn ? `Hi ${name},` : `Bonjour ${name},`
+  const thankYou     = isEn
+    ? 'Your purchase is confirmed. Access your playbook(s) anytime from your personal portal.'
+    : 'Votre achat est confirmé. Accédez à vos playbooks à tout moment depuis votre espace personnel.'
+  const purchasedLabel = isEn ? 'Order summary' : 'Récapitulatif de commande'
+  const step1Title   = isEn ? 'Create your account' : 'Créez votre compte'
+  const step1Body    = isEn
+    ? `Go to <a href="${registerUrl}" style="color:#003d9b;font-weight:600;text-decoration:none;">luxops.fr/portal/register</a> and sign up with the email used at checkout: <strong style="color:#0a1d2e;">${recipientEmail}</strong>`
+    : `Rendez-vous sur <a href="${registerUrl}" style="color:#003d9b;font-weight:600;text-decoration:none;">luxops.fr/portal/register</a> et créez votre compte avec l'adresse utilisée lors du paiement : <strong style="color:#0a1d2e;">${recipientEmail}</strong>`
+  const step2Title   = isEn ? 'Access your playbooks' : 'Accédez à vos playbooks'
+  const step2Body    = isEn
+    ? 'Your purchases will appear directly in your dashboard, ready to download in PDF format at any time.'
+    : 'Vos achats apparaissent directement dans votre tableau de bord, téléchargeables en PDF à tout moment.'
+  const ctaLabel     = isEn ? 'Create my account' : 'Créer mon compte'
+  const alreadyHave  = isEn
+    ? `Already have an account? <a href="${loginUrl}" style="color:#003d9b;font-weight:600;text-decoration:none;">Sign in</a>`
+    : `Vous avez déjà un compte ? <a href="${loginUrl}" style="color:#003d9b;font-weight:600;text-decoration:none;">Se connecter</a>`
+  const footerNote   = isEn
+    ? 'Any questions? Reply to this email.'
+    : 'Une question ? Répondez à cet email.'
+  const closing      = isEn ? 'The LuxOps Team' : "L'équipe LuxOps"
 
-              <!-- Header -->
-              <tr>
-                <td style="background:#111111;padding:28px 32px;text-align:center;">
-                  <span style="color:#ffffff;font-size:22px;font-weight:800;letter-spacing:3px;">LuxOps</span>
-                  <p style="color:#888888;font-size:11px;margin:6px 0 0;letter-spacing:2px;text-transform:uppercase;">
-                    ${isEn ? 'Operational Excellence' : 'Excellence Opérationnelle'}
-                  </p>
-                </td>
-              </tr>
+  return `<!DOCTYPE html>
+<html lang="${lang}">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+</head>
+<body style="margin:0;padding:0;background:#f0f2f8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background:#f0f2f8;padding:48px 20px;">
+    <tr>
+      <td align="center">
+        <table width="100%" cellpadding="0" cellspacing="0" style="max-width:580px;">
 
-              <!-- Body -->
-              <tr>
-                <td style="padding:32px;">
-                  <p style="font-size:16px;color:#111111;margin:0 0 8px;font-weight:600;">${greeting}</p>
-                  <p style="font-size:14px;color:#555555;margin:0 0 24px;line-height:1.6;">${thankYou}</p>
+          <!-- Header -->
+          <tr>
+            <td style="background:#0a1d2e;padding:32px 40px;text-align:center;border-radius:4px 4px 0 0;">
+              <p style="margin:0;color:#ffffff;font-size:24px;font-weight:800;letter-spacing:4px;text-transform:uppercase;">LuxOps</p>
+              <p style="margin:8px 0 0;color:#4f6074;font-size:10px;letter-spacing:3px;text-transform:uppercase;">${isEn ? 'Operational Excellence' : 'Excellence Opérationnelle'}</p>
+            </td>
+          </tr>
 
-                  <!-- Purchased items -->
-                  <div style="background:#f9f9f9;border-radius:12px;padding:20px;margin-bottom:24px;">
-                    <p style="font-size:13px;font-weight:600;color:#111111;margin:0 0 10px;">${purchasedLabel}</p>
-                    <ul style="margin:0;padding:0;list-style:none;">
-                      ${playbooksHtml}
-                    </ul>
-                  </div>
+          <!-- Body -->
+          <tr>
+            <td style="background:#ffffff;padding:40px;">
 
-                  <!-- Steps -->
-                  <div style="margin-bottom:24px;">
+              <p style="margin:0 0 4px;font-size:20px;font-weight:700;color:#0a1d2e;letter-spacing:-0.3px;">${greeting}</p>
+              <p style="margin:12px 0 32px;font-size:14px;color:#4f6074;line-height:1.7;">${thankYou}</p>
 
-                    <!-- Step 1 -->
-                    <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:12px;border:1.5px solid #e8e8e8;border-radius:12px;">
-                      <tr>
-                        <td style="padding:18px;vertical-align:top;">
-                          <table cellpadding="0" cellspacing="0">
-                            <tr>
-                              <td style="vertical-align:top;padding-right:14px;">
-                                <div style="width:32px;height:32px;background:#111111;border-radius:50%;color:#ffffff;font-size:14px;font-weight:700;text-align:center;line-height:32px;">1</div>
-                              </td>
-                              <td style="vertical-align:top;">
-                                <p style="font-size:14px;font-weight:700;color:#111111;margin:0 0 6px;">${step1Title}</p>
-                                <p style="font-size:13px;color:#555555;margin:0;line-height:1.6;">${step1Body}</p>
-                              </td>
-                            </tr>
-                          </table>
-                        </td>
-                      </tr>
-                    </table>
+              <!-- Order summary -->
+              <p style="margin:0 0 12px;font-size:11px;font-weight:700;color:#003d9b;letter-spacing:2px;text-transform:uppercase;">${purchasedLabel}</p>
+              <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:32px;border-top:1px solid #e8edf5;">
+                ${playbooksHtml}
+              </table>
 
-                    <!-- Step 2 -->
-                    <table width="100%" cellpadding="0" cellspacing="0" style="border:1.5px solid #e8e8e8;border-radius:12px;">
-                      <tr>
-                        <td style="padding:18px;vertical-align:top;">
-                          <table cellpadding="0" cellspacing="0">
-                            <tr>
-                              <td style="vertical-align:top;padding-right:14px;">
-                                <div style="width:32px;height:32px;background:#111111;border-radius:50%;color:#ffffff;font-size:14px;font-weight:700;text-align:center;line-height:32px;">2</div>
-                              </td>
-                              <td style="vertical-align:top;">
-                                <p style="font-size:14px;font-weight:700;color:#111111;margin:0 0 6px;">${step2Title}</p>
-                                <p style="font-size:13px;color:#555555;margin:0;line-height:1.6;">${step2Body}</p>
-                              </td>
-                            </tr>
-                          </table>
-                        </td>
-                      </tr>
-                    </table>
+              <!-- Divider -->
+              <div style="height:1px;background:linear-gradient(90deg,#003d9b22,#003d9b55,#003d9b22);margin-bottom:32px;"></div>
 
-                  </div>
+              <!-- Steps -->
+              <p style="margin:0 0 20px;font-size:11px;font-weight:700;color:#003d9b;letter-spacing:2px;text-transform:uppercase;">${isEn ? 'How to access your content' : 'Comment accéder à votre contenu'}</p>
 
-                  <!-- CTA -->
-                  <div style="text-align:center;margin-bottom:16px;">
+              <!-- Step 1 -->
+              <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:16px;">
+                <tr>
+                  <td style="vertical-align:top;padding-right:16px;width:36px;">
+                    <div style="width:32px;height:32px;background:#eef4ff;border-radius:50%;text-align:center;line-height:32px;font-size:13px;font-weight:800;color:#003d9b;">1</div>
+                  </td>
+                  <td style="vertical-align:top;padding:4px 0 0;">
+                    <p style="margin:0 0 4px;font-size:14px;font-weight:700;color:#0a1d2e;">${step1Title}</p>
+                    <p style="margin:0;font-size:13px;color:#4f6074;line-height:1.6;">${step1Body}</p>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Step 2 -->
+              <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:32px;">
+                <tr>
+                  <td style="vertical-align:top;padding-right:16px;width:36px;">
+                    <div style="width:32px;height:32px;background:#eef4ff;border-radius:50%;text-align:center;line-height:32px;font-size:13px;font-weight:800;color:#003d9b;">2</div>
+                  </td>
+                  <td style="vertical-align:top;padding:4px 0 0;">
+                    <p style="margin:0 0 4px;font-size:14px;font-weight:700;color:#0a1d2e;">${step2Title}</p>
+                    <p style="margin:0;font-size:13px;color:#4f6074;line-height:1.6;">${step2Body}</p>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- CTA -->
+              <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:16px;">
+                <tr>
+                  <td align="center">
                     <a href="${registerUrl}"
-                       style="display:inline-block;background:#111111;color:#ffffff;text-decoration:none;padding:14px 32px;border-radius:8px;font-size:14px;font-weight:700;letter-spacing:0.3px;">
+                       style="display:inline-block;background:linear-gradient(135deg,#003d9b,#0052cc);color:#ffffff;text-decoration:none;padding:15px 40px;border-radius:4px;font-size:14px;font-weight:700;letter-spacing:0.5px;">
                       ${ctaLabel}
                     </a>
-                  </div>
+                  </td>
+                </tr>
+              </table>
 
-                  <!-- Already a customer -->
-                  <p style="font-size:13px;color:#777777;text-align:center;margin:0 0 28px;line-height:1.6;">${alreadyCustomer}</p>
+              <p style="text-align:center;font-size:12px;color:#4f6074;margin:0 0 32px;">${alreadyHave}</p>
 
-                  <p style="font-size:12px;color:#999999;margin:0 0 20px;line-height:1.6;">${footerNote}</p>
-                  <p style="font-size:14px;color:#333333;margin:0;line-height:1.6;">${closing}</p>
-                </td>
-              </tr>
+              <!-- Divider -->
+              <div style="height:1px;background:#e8edf5;margin-bottom:24px;"></div>
 
-              <!-- Footer -->
-              <tr>
-                <td style="background:#f9f9f9;padding:20px 32px;border-top:1px solid #eeeeee;text-align:center;">
-                  <p style="font-size:11px;color:#aaaaaa;margin:0;">
-                    &copy; 2026 LuxOps &middot; <a href="https://www.luxops.fr" style="color:#aaaaaa;">luxops.fr</a>
-                  </p>
-                </td>
-              </tr>
+              <p style="font-size:12px;color:#4f6074;margin:0 0 4px;">${footerNote}</p>
+              <p style="font-size:13px;color:#0a1d2e;font-weight:600;margin:0;">${closing}</p>
 
-            </table>
-          </td>
-        </tr>
-      </table>
-    </body>
-    </html>
-  `
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td style="background:#0a1d2e;padding:20px 40px;text-align:center;border-radius:0 0 4px 4px;">
+              <p style="margin:0;font-size:11px;color:#4f6074;letter-spacing:1px;">
+                &copy; 2026 LuxOps &nbsp;&middot;&nbsp;
+                <a href="https://www.luxops.fr" style="color:#4f6074;text-decoration:none;">luxops.fr</a>
+              </p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>`
 }
 
 export async function sendPlaybookEmail({
