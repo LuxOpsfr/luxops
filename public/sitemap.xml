@@ -664,6 +664,28 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Blog: hotel-staff-turnover-training EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/blog/hotel-staff-turnover-training</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-staff-turnover-training"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-staff-turnover-training"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/hotel-staff-turnover-training"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: hotel-staff-turnover-training FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/blog/hotel-staff-turnover-training</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-staff-turnover-training"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-staff-turnover-training"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/hotel-staff-turnover-training"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Free Hotel Procedures — Lead Magnet EN -->
   <url>
     <loc>https://www.luxops.fr/en/free-hotel-procedures</loc>

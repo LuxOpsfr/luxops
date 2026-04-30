@@ -19,6 +19,7 @@ const KEYWORDS_EN: Record<string, string> = {
   'hotel-standard-operating-procedures': 'hotel standard operating procedures, hotel SOP, hotel SOP template, hotel operations procedures, how to write hotel SOPs',
   'hotel-front-desk-procedures': 'hotel front desk procedures, front desk SOP hotel, hotel check-in procedures, hotel check-out SOP, hotel front desk checklist',
   'hotel-staff-training-service-standards': 'hotel staff training, hotel service standards training, how to train hotel staff, on-property hotel training, hotel training program, luxury hotel training',
+  'hotel-staff-turnover-training': 'hotel staff turnover, reduce hotel staff turnover, hotel employee retention, hotel training retention, hospitality staff turnover, on-property hotel training, hotel turnover reduction, hotel staff attrition',
 }
 
 const KEYWORDS_FR: Record<string, string> = {
@@ -35,6 +36,7 @@ const KEYWORDS_FR: Record<string, string> = {
   'hotel-standard-operating-procedures': 'procédures opérationnelles hôtelières, SOP hôtel, modèle SOP hôtelières, procédures opérations hôtel',
   'hotel-front-desk-procedures': 'procédures réception hôtel, SOP réception hôtelière, procédures check-in hôtel, SOP check-out hôtel, checklist réception hôtel',
   'hotel-staff-training-service-standards': 'formation personnel hôtelier, formation standards de service hôtel, former équipes hôtelières, formation sur site hôtel, programme formation hôtelière, formation hôtel luxe',
+  'hotel-staff-turnover-training': 'turn-over hôtelier, réduire turn-over hôtel, fidélisation équipes hôtelières, formation hôtelière rétention, formation sur site hôtel, stabilité équipes hôtel, turn-over hôtellerie restauration',
 }
 
 export async function generateStaticParams() {
@@ -288,6 +290,10 @@ export default async function BlogArticlePage({
             'housekeeping-room-inspection': [
               { href: '/housekeeping-sop', labelEn: 'Housekeeping SOP Templates', labelFr: 'Procédures housekeeping', descEn: 'The procedures behind every room inspection, from trolley setup to supervisor sign-off.', descFr: 'Les procédures derrière chaque inspection de chambre, du chariot à la validation superviseur.' },
               { href: '/hotel-housekeeping-checklist', labelEn: 'Housekeeping Checklists', labelFr: 'Checklists housekeeping', descEn: 'Checklists by role and shift: room attendant, supervisor inspection, handover.', descFr: 'Checklists par rôle et service : équipier, inspection superviseur, passation.' },
+            ],
+            'hotel-staff-turnover-training': [
+              { href: '/training', labelEn: 'On-property training', labelFr: 'Formation sur site', descEn: 'Structured training formats built around your actual procedures and service standards.', descFr: 'Formats de formation structurés autour de vos propres procédures et standards de service.' },
+              { href: '/hotel-sop', labelEn: 'Hotel SOP templates', labelFr: 'Modèles SOP hôtel', descEn: 'The documented procedures that give your team a consistent standard to work from.', descFr: 'Les procédures documentées qui donnent à vos équipes un référentiel commun.' },
             ],
           }
           const links = RELATED[slug]
