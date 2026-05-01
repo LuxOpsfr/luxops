@@ -686,6 +686,28 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Blog: Hotel New Hire Onboarding EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/blog/hotel-new-hire-onboarding</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-new-hire-onboarding"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-new-hire-onboarding"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/hotel-new-hire-onboarding"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: Hotel New Hire Onboarding FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/blog/hotel-new-hire-onboarding</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-new-hire-onboarding"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-new-hire-onboarding"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/hotel-new-hire-onboarding"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Free Hotel Procedures — Lead Magnet EN -->
   <url>
     <loc>https://www.luxops.fr/en/free-hotel-procedures</loc>

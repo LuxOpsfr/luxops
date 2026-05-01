@@ -20,6 +20,7 @@ const KEYWORDS_EN: Record<string, string> = {
   'hotel-front-desk-procedures': 'hotel front desk procedures, front desk SOP hotel, hotel check-in procedures, hotel check-out SOP, hotel front desk checklist',
   'hotel-staff-training-service-standards': 'hotel staff training, hotel service standards training, how to train hotel staff, on-property hotel training, hotel training program, luxury hotel training',
   'hotel-staff-turnover-training': 'hotel staff turnover, reduce hotel staff turnover, hotel employee retention, hotel training retention, hospitality staff turnover, on-property hotel training, hotel turnover reduction, hotel staff attrition',
+  'hotel-new-hire-onboarding': 'hotel new hire onboarding, hotel onboarding program, hotel staff first 90 days, hotel employee onboarding, hospitality onboarding, hotel onboarding checklist, new hotel employee integration, hotel staff retention onboarding',
 }
 
 const KEYWORDS_FR: Record<string, string> = {
@@ -37,6 +38,7 @@ const KEYWORDS_FR: Record<string, string> = {
   'hotel-front-desk-procedures': 'procédures réception hôtel, SOP réception hôtelière, procédures check-in hôtel, SOP check-out hôtel, checklist réception hôtel',
   'hotel-staff-training-service-standards': 'formation personnel hôtelier, formation standards de service hôtel, former équipes hôtelières, formation sur site hôtel, programme formation hôtelière, formation hôtel luxe',
   'hotel-staff-turnover-training': 'turn-over hôtelier, réduire turn-over hôtel, fidélisation équipes hôtelières, formation hôtelière rétention, formation sur site hôtel, stabilité équipes hôtel, turn-over hôtellerie restauration',
+  'hotel-new-hire-onboarding': 'onboarding hôtelier, intégration nouvelles recrues hôtel, programme onboarding hôtel, intégration collaborateurs hôtellerie, fidélisation nouvelles recrues hôtel, 90 premiers jours hôtel, onboarding structuré hôtel',
 }
 
 export async function generateStaticParams() {
@@ -294,6 +296,10 @@ export default async function BlogArticlePage({
             'hotel-staff-turnover-training': [
               { href: '/training', labelEn: 'On-property training', labelFr: 'Formation sur site', descEn: 'Structured training formats built around your actual procedures and service standards.', descFr: 'Formats de formation structurés autour de vos propres procédures et standards de service.' },
               { href: '/hotel-sop', labelEn: 'Hotel SOP templates', labelFr: 'Modèles SOP hôtel', descEn: 'The documented procedures that give your team a consistent standard to work from.', descFr: 'Les procédures documentées qui donnent à vos équipes un référentiel commun.' },
+            ],
+            'hotel-new-hire-onboarding': [
+              { href: '/training', labelEn: 'On-property training', labelFr: 'Formation sur site', descEn: 'Build the structured onboarding system your new hires need to stay past 90 days.', descFr: "Construisez le système d'onboarding structuré dont vos nouvelles recrues ont besoin pour rester au-delà de 90 jours." },
+              { href: '/hotel-sop', labelEn: 'Hotel SOP templates', labelFr: 'Modèles SOP hôtel', descEn: 'The written procedures library every new hire should have access to from day one.', descFr: 'La bibliothèque de procédures écrites que chaque nouvelle recrue devrait pouvoir consulter dès le premier jour.' },
             ],
           }
           const links = RELATED[slug]
