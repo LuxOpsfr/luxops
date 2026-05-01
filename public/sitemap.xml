@@ -446,6 +446,72 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- SEO: How to Improve Hotel Operations EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/how-to-improve-hotel-operations</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/how-to-improve-hotel-operations"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/how-to-improve-hotel-operations"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/how-to-improve-hotel-operations"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-04-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- SEO: How to Improve Hotel Operations FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/how-to-improve-hotel-operations</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/how-to-improve-hotel-operations"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/how-to-improve-hotel-operations"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/how-to-improve-hotel-operations"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-04-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- SEO: Hotel Night Audit Checklist EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/hotel-night-audit-checklist</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/hotel-night-audit-checklist"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/hotel-night-audit-checklist"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/hotel-night-audit-checklist"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-04-01</lastmod>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- SEO: Hotel Night Audit Checklist FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/hotel-night-audit-checklist</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/hotel-night-audit-checklist"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/hotel-night-audit-checklist"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/hotel-night-audit-checklist"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-04-01</lastmod>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- SEO: Hotel Front Office Checklist EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/hotel-front-office-checklist</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/hotel-front-office-checklist"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/hotel-front-office-checklist"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/hotel-front-office-checklist"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-04-01</lastmod>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- SEO: Hotel Front Office Checklist FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/hotel-front-office-checklist</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/hotel-front-office-checklist"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/hotel-front-office-checklist"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/hotel-front-office-checklist"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-04-01</lastmod>
+    <priority>0.75</priority>
+  </url>
+
   <!-- SEO: Hotel Staff Training EN -->
   <url>
     <loc>https://www.luxops.fr/en/hotel-staff-training</loc>
@@ -531,6 +597,50 @@
     <priority>0.7</priority>
   </url>
 
+
+  <!-- Blog: Hotel Front Office Procedures EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/blog/hotel-front-office-procedures</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-front-office-procedures"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-front-office-procedures"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/hotel-front-office-procedures"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-03-28</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: Hotel Front Office Procedures FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/blog/hotel-front-office-procedures</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-front-office-procedures"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-front-office-procedures"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/hotel-front-office-procedures"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-03-28</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: Hotel Staff Training Service Standards EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/blog/hotel-staff-training-service-standards</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-staff-training-service-standards"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-staff-training-service-standards"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/hotel-staff-training-service-standards"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-04-28</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: Hotel Staff Training Service Standards FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/blog/hotel-staff-training-service-standards</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-staff-training-service-standards"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-staff-training-service-standards"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/hotel-staff-training-service-standards"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-04-28</lastmod>
+    <priority>0.7</priority>
+  </url>
 
   <!-- Blog: Housekeeping Room Inspection EN -->
   <url>
