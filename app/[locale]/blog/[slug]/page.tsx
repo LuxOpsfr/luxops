@@ -138,6 +138,154 @@ const CONTENT_UPGRADES: Record<string, {
   },
 }
 
+const PLAYBOOK_EXCERPTS: Record<string, {
+  en: {
+    label: string
+    title: string
+    intro: string
+    rows: { term: string; detail: string }[]
+    ctaText: string
+    ctaHref: string
+  }
+  fr: {
+    label: string
+    title: string
+    intro: string
+    rows: { term: string; detail: string }[]
+    ctaText: string
+    ctaHref: string
+  }
+}> = {
+  'housekeeping-room-inspection': {
+    en: {
+      label: 'Free excerpt from the LuxOps Housekeeping Playbook',
+      title: 'Departure room inspection: the LuxOps control flow',
+      intro:
+        'This extract is adapted from Chapter 6, Quality Control & Inspections. It shows how the playbook turns room inspection into a repeatable supervisor routine, not a subjective final look.',
+      rows: [
+        { term: 'Self-inspection', detail: 'Every room, owned by the room attendant before the room is marked Clean.' },
+        { term: 'Departure inspection', detail: '100% of departure rooms, physically verified by a supervisor before release.' },
+        { term: 'Stayover spot checks', detail: '20 to 30% of stayover rooms daily, prioritising newer attendants, VIPs and previous complaints.' },
+        { term: 'Scoring model', detail: '100 points: Bathroom 35, Bedroom 35, Presentation 20, Maintenance 10. Pass threshold: 90.' },
+        { term: 'Critical rule', detail: 'A Clean room is not sellable. Only an Inspected room may be assigned by Front Office.' },
+      ],
+      ctaText: 'View the Housekeeping Playbook',
+      ctaHref: '/en/playbooks/hsk',
+    },
+    fr: {
+      label: 'Extrait gratuit du Playbook Housekeeping LuxOps',
+      title: 'Inspection chambre départ : le flux de contrôle LuxOps',
+      intro:
+        'Cet extrait est adapté du chapitre Contrôle Qualité & Inspections. Il transforme l’inspection chambre en routine superviseur mesurable, pas en simple coup d’oeil subjectif.',
+      rows: [
+        { term: 'Auto-contrôle', detail: 'Chaque chambre, réalisé par la femme de chambre avant le passage en statut propre.' },
+        { term: 'Inspection départ', detail: '100% des chambres départ, vérifiées physiquement par la gouvernante avant libération.' },
+        { term: 'Recouches', detail: '20 à 30% des recouches contrôlées chaque jour, avec priorité aux nouveaux collaborateurs, VIP et réclamations.' },
+        { term: 'Score', detail: '100 points : salle de bain 35, chambre 35, présentation 20, maintenance 10. Seuil de passage : 90.' },
+        { term: 'Règle critique', detail: 'Une chambre propre n’est pas vendable. Seule une chambre inspectée peut être attribuée par la réception.' },
+      ],
+      ctaText: 'Voir le Playbook Housekeeping',
+      ctaHref: '/fr/playbooks/hsk',
+    },
+  },
+  'hotel-standard-operating-procedures': {
+    en: {
+      label: 'Playbook-based SOP example',
+      title: 'What “specific enough” looks like in a hotel SOP',
+      intro:
+        'A real SOP does not say “clean the room well.” It defines timing, ownership, sequence, exceptions and the status update that allows the next department to act.',
+      rows: [
+        { term: 'Trigger', detail: 'Departure room after guest checkout.' },
+        { term: 'Timing', detail: '45-60 minutes for a standard room, 75-90 minutes for a suite, full inspection required before release.' },
+        { term: 'Sequence', detail: 'Initial assessment, bathroom deep clean, bedroom cleaning, bed making, closet/storage, minibar, final presentation.' },
+        { term: 'Exception', detail: 'Guest belongings found during initial assessment: stop cleaning and follow Lost & Found immediately.' },
+        { term: 'Handover', detail: 'Attendant sets Clean; supervisor inspects and sets Inspected; Front Office may now assign the room.' },
+      ],
+      ctaText: 'Get the SOP Playbooks',
+      ctaHref: '/en/playbooks',
+    },
+    fr: {
+      label: 'Exemple SOP issu du playbook',
+      title: 'À quoi ressemble une SOP hôtelière assez précise',
+      intro:
+        'Une vraie SOP ne dit pas “bien nettoyer la chambre”. Elle définit le timing, le responsable, la séquence, les exceptions et le statut qui permet au département suivant d’agir.',
+      rows: [
+        { term: 'Déclencheur', detail: 'Chambre départ après check-out client.' },
+        { term: 'Timing', detail: '45-60 minutes pour une chambre standard, 75-90 minutes pour une suite, inspection obligatoire avant libération.' },
+        { term: 'Séquence', detail: 'Évaluation initiale, salle de bain, chambre, lit, penderie, minibar, présentation finale.' },
+        { term: 'Exception', detail: 'Objet client trouvé pendant l’évaluation initiale : arrêt du nettoyage et procédure objets trouvés.' },
+        { term: 'Passation', detail: 'La chambre passe en propre, puis la gouvernante inspecte et libère en inspectée pour la réception.' },
+      ],
+      ctaText: 'Voir les Playbooks SOP',
+      ctaHref: '/fr/playbooks',
+    },
+  },
+  'how-to-write-hotel-sops': {
+    en: {
+      label: 'Free SOP structure from LuxOps',
+      title: 'The five fields every hotel SOP should include',
+      intro:
+        'The LuxOps playbooks use SOPs as operating tools. Each procedure is written so a new team member can understand what happens before, during and after the task.',
+      rows: [
+        { term: 'Purpose', detail: 'Why the procedure exists and what guest or operational risk it protects.' },
+        { term: 'Owner', detail: 'Who performs the task, who verifies it and who can approve exceptions.' },
+        { term: 'Sequence', detail: 'The exact order of actions, including scripts or timing where relevant.' },
+        { term: 'Quality check', detail: 'How the result is verified: checklist, score, PMS status, photo, signature or supervisor inspection.' },
+        { term: 'Escalation', detail: 'What to do when the standard cannot be met: maintenance issue, guest complaint, DND, missing stock or lost property.' },
+      ],
+      ctaText: 'Download a free playbook chapter',
+      ctaHref: '/en/free-hotel-procedures',
+    },
+    fr: {
+      label: 'Structure SOP gratuite issue de LuxOps',
+      title: 'Les cinq champs que chaque SOP hôtelière doit contenir',
+      intro:
+        'Les playbooks LuxOps traitent les SOP comme des outils opérationnels. Chaque procédure doit permettre à un nouveau collaborateur de comprendre ce qui se passe avant, pendant et après la tâche.',
+      rows: [
+        { term: 'Objectif', detail: 'Pourquoi la procédure existe et quel risque client ou opérationnel elle protège.' },
+        { term: 'Responsable', detail: 'Qui réalise, qui vérifie et qui peut valider les exceptions.' },
+        { term: 'Séquence', detail: 'L’ordre exact des actions, avec scripts ou timing quand nécessaire.' },
+        { term: 'Contrôle qualité', detail: 'Comment le résultat est vérifié : checklist, score, PMS, photo, signature ou inspection.' },
+        { term: 'Escalade', detail: 'Que faire si le standard ne peut pas être tenu : maintenance, réclamation, DND, stock manquant ou objet trouvé.' },
+      ],
+      ctaText: 'Télécharger un chapitre gratuit',
+      ctaHref: '/fr/free-hotel-procedures',
+    },
+  },
+  'hotel-operations-playbook': {
+    en: {
+      label: 'What LuxOps playbooks contain',
+      title: 'A playbook is a system, not a folder of documents',
+      intro:
+        'The Housekeeping Playbook alone includes room cleaning, turndown, guest services, inspections, inventory, team management, health and safety and sustainability. The commercial value is the way these chapters connect.',
+      rows: [
+        { term: 'Room cleaning', detail: 'Service times, 7-phase departure sequence, stayover rules, suite adjustments and DND protocol.' },
+        { term: 'Quality control', detail: 'Self-inspection, 100% departure inspections, 20-30% stayover checks and deficiency tracking.' },
+        { term: 'Guest services', detail: 'Laundry, shoe polishing, request handling, LEARN complaint recovery and Lost & Found.' },
+        { term: 'Inventory', detail: 'Par levels, linen lifecycle, amenity standards, chemical safety, FIFO storage and CPOR tracking.' },
+        { term: 'Management', detail: 'Role clarity, assignment sheets, supervisor ratios, daily checklist and performance metrics.' },
+      ],
+      ctaText: 'View all playbooks',
+      ctaHref: '/en/playbooks',
+    },
+    fr: {
+      label: 'Ce que contiennent les playbooks LuxOps',
+      title: 'Un playbook est un système, pas un dossier de documents',
+      intro:
+        'Le Playbook Housekeeping couvre à lui seul nettoyage chambre, couverture, services client, inspections, stocks, management, santé-sécurité et durabilité. La valeur vient surtout de la façon dont ces chapitres se connectent.',
+      rows: [
+        { term: 'Nettoyage chambre', detail: 'Temps de passage, séquence départ en 7 phases, recouche, suites et protocole DND.' },
+        { term: 'Contrôle qualité', detail: 'Auto-contrôle, 100% des départs inspectés, 20-30% des recouches contrôlées et suivi des défauts.' },
+        { term: 'Services client', detail: 'Laundry, cirage, demandes client, méthode LEARN et objets trouvés.' },
+        { term: 'Stocks', detail: 'Par levels, cycle du linge, amenities, sécurité produits, FIFO et CPOR.' },
+        { term: 'Management', detail: 'Rôles, feuilles de route, ratios superviseur, checklist quotidienne et métriques.' },
+      ],
+      ctaText: 'Voir tous les playbooks',
+      ctaHref: '/fr/playbooks',
+    },
+  },
+}
+
 export async function generateStaticParams() {
   const locales = ['en', 'fr']
   return articles.flatMap((article) =>
@@ -220,6 +368,7 @@ export default async function BlogArticlePage({
     { name: content.title, url: localizedPath(locale, `/blog/${slug}`) },
   ])
   const upgrade = CONTENT_UPGRADES[slug]?.[isEn ? 'en' : 'fr']
+  const playbookExcerpt = PLAYBOOK_EXCERPTS[slug]?.[isEn ? 'en' : 'fr']
 
   return (
     <>
@@ -360,6 +509,29 @@ export default async function BlogArticlePage({
                       </div>
                     ))}
                   </div>
+                </div>
+              )}
+              {playbookExcerpt && (
+                <div className="mb-12 rounded-xl border border-[#d8e6f7] bg-[#f4f8ff] p-8">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-[#003d9b] mb-3">
+                    {playbookExcerpt.label}
+                  </p>
+                  <h2 className="text-2xl font-bold text-[#111111] mb-3">{playbookExcerpt.title}</h2>
+                  <p className="text-gray-600 leading-relaxed mb-6">{playbookExcerpt.intro}</p>
+                  <div className="divide-y divide-[#dbe8ff] rounded-lg overflow-hidden border border-[#dbe8ff] bg-white mb-6">
+                    {playbookExcerpt.rows.map((row) => (
+                      <div key={row.term} className="grid sm:grid-cols-[150px_1fr] gap-3 p-4">
+                        <h3 className="font-semibold text-[#111111] text-sm">{row.term}</h3>
+                        <p className="text-sm text-gray-600 leading-relaxed">{row.detail}</p>
+                      </div>
+                    ))}
+                  </div>
+                  <Link
+                    href={playbookExcerpt.ctaHref}
+                    className="inline-flex items-center gap-2 rounded-lg bg-[#003d9b] px-5 py-3 text-sm font-semibold text-white hover:bg-[#002d7a] transition-colors"
+                  >
+                    {playbookExcerpt.ctaText} <ArrowRight size={16} />
+                  </Link>
                 </div>
               )}
               {/* Conclusion */}

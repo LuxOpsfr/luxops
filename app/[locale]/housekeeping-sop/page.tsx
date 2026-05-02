@@ -201,7 +201,7 @@ export default async function HousekeepingSopPage({ params }: { params: Promise<
                 : "Les procédures housekeeping indiquent à l'équipe comment réaliser le travail. La checklist confirme qu'il a été réalisé correctement. Les deux sont nécessaires. Aucun ne remplace l'autre."}
             </p>
             <Link
-              href={`/${locale}/playbooks`}
+              href={`/${locale}/playbooks/hsk`}
               className="inline-block bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold px-8 py-4 rounded-lg transition-colors text-base"
             >
               {isEN ? 'View Housekeeping Playbook' : 'Voir le Playbook Housekeeping'}
@@ -237,6 +237,41 @@ export default async function HousekeepingSopPage({ params }: { params: Promise<
             >
               {isEN ? 'Download free' : 'Télécharger gratuitement'} <ArrowRight size={18} />
             </Link>
+          </div>
+        </section>
+
+        {/* Playbook excerpt */}
+        <section className="py-16 px-6 bg-white">
+          <div className="max-w-3xl mx-auto rounded-xl border border-[#d8e6f7] bg-[#f4f8ff] p-8">
+            <p className="text-xs font-semibold uppercase tracking-widest text-[#2E7D32] mb-3">
+              {isEN ? 'Adapted from the LuxOps Housekeeping Playbook' : 'Adapté du Playbook Housekeeping LuxOps'}
+            </p>
+            <h2 className="text-2xl font-bold text-[#1A2E44] mb-4">
+              {isEN ? 'A complete SOP includes timing, status and exception rules' : 'Une SOP complète inclut timing, statuts et règles d’exception'}
+            </h2>
+            <p className="text-gray-600 leading-relaxed mb-6">
+              {isEN
+                ? 'The departure room SOP in the LuxOps playbook is built around a 7-phase sequence, a 45-60 minute standard for a 25m² room, and a hard rule: a room marked Clean by the attendant is not sellable until a supervisor marks it Inspected.'
+                : "La SOP chambre départ du playbook LuxOps repose sur une séquence en 7 phases, un standard de 45 à 60 minutes pour une chambre de 25m², et une règle ferme : une chambre passée en propre par l'équipier n'est pas vendable tant qu'une gouvernante ne l'a pas passée en inspectée."}
+            </p>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {(isEN ? [
+                ['7-phase sequence', 'Assessment, bathroom, bedroom, bed, closet, minibar, final presentation.'],
+                ['Inspection rule', '100% of departures inspected; 20-30% of stayovers spot-checked daily.'],
+                ['Quality scoring', 'Bathroom 35, Bedroom 35, Presentation 20, Maintenance 10.'],
+                ['Exceptions', 'Lost item, DND, suspected bed bugs or maintenance fault trigger immediate escalation.'],
+              ] : [
+                ['Séquence 7 phases', 'Évaluation, salle de bain, chambre, lit, penderie, minibar, présentation finale.'],
+                ['Règle inspection', '100% des départs inspectés; 20-30% des recouches contrôlées chaque jour.'],
+                ['Score qualité', 'Salle de bain 35, chambre 35, présentation 20, maintenance 10.'],
+                ['Exceptions', 'Objet trouvé, DND, suspicion punaises ou panne maintenance déclenchent une escalade immédiate.'],
+              ]).map(([title, body]) => (
+                <div key={title} className="bg-white rounded-lg p-4">
+                  <h3 className="font-semibold text-[#1A2E44] mb-2">{title}</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">{body}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -376,7 +411,7 @@ export default async function HousekeepingSopPage({ params }: { params: Promise<
                 : "Le Playbook Housekeeping LuxOps couvre les deux niveaux : procédures équipier et protocoles de contrôle superviseur. 10 chapitres, grilles d'inspection, guides de formation et outils de gestion de service. PDF et PowerPoint, EN et FR."}
             </p>
             <Link
-              href={`/${locale}/playbooks`}
+              href={`/${locale}/playbooks/hsk`}
               className="inline-block bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold px-8 py-4 rounded-lg transition-colors"
             >
               {isEN ? 'View Housekeeping Playbook' : 'Voir le Playbook Housekeeping'}

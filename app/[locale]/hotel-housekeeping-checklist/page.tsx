@@ -6,10 +6,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const isEN = locale === 'en'
   return {
     title: isEN
-      ? 'Free Hotel Housekeeping Checklist (Printable PDF) | LuxOps'
+      ? 'Hotel Housekeeping Checklist: Room Inspection & SOP Template | LuxOps'
       : 'Checklist Housekeeping Hôtel Gratuite (PDF Imprimable) | LuxOps',
     description: isEN
-      ? 'Download a free 30-point hotel room inspection checklist, a supervisor rounds template and an LQA audit grid. Printable and ready to use today.'
+      ? 'Hotel housekeeping checklist adapted from the LuxOps Housekeeping Playbook. Room attendant sequence, departure inspection, supervisor controls, linen and amenities standards.'
       : 'Téléchargez une checklist inspection chambre 30 points, un modèle de tournée superviseur et une grille audit LQA. Gratuite et prête à imprimer.',
     keywords: isEN
       ? 'hotel housekeeping checklist, hotel room inspection checklist, hotel quality assurance checklist, hotel quality control checklist, housekeeping SOP checklist, housekeeping audit, hotel inspection'
@@ -49,55 +49,52 @@ const ROLES_EN: ChecklistRole[] = [
   {
     role: 'Room Attendant Checklist',
     intro:
-      'Use this sequence for every checkout and occupied room service. 30 control points covering cleanliness, amenities, maintenance and guest experience.',
+      'Adapted from the LuxOps Housekeeping Playbook. Use this sequence for departure rooms, stayovers and VIP priority rooms. It combines cleaning order, self-inspection and room status control.',
     sections: [
       {
         title: 'Entry and setup',
         items: [
-          'Knock and announce "Housekeeping", wait 10 seconds, knock again',
-          'Check DND sign and room status in PMS before entering',
-          'Position trolley to block doorway, place wet floor sign',
-          'Open curtains and windows to air the room',
+          'Review room status, VIP notes, special requests and maintenance alerts before entering',
+          'Park the trolley against the wall without blocking the corridor',
+          'Knock three times, announce "Housekeeping", wait 10 seconds, repeat, then open 6 to 8 inches before entering',
+          'Place the service sign and complete a first scan for guest belongings, damage, odor or maintenance issues',
         ],
       },
       {
-        title: 'Bedroom',
+        title: 'Departure room: 7-phase sequence',
         items: [
-          'Strip bed linen, check sheets for stains and damage and note on report',
-          'Check under pillows and mattress for lost items',
-          'Dust all surfaces top to bottom: lamps, headboard, nightstands, desk',
-          'Wipe all glass and mirrors to a streak-free finish',
-          'Empty and reline all bins',
-          'Check and restock minibar, note consumption on room report',
-          'Check all lighting, TV, remote control and A/C, report any faults immediately',
-          'Make beds: tight hospital corners or duvet fold per property standard',
-          'Arrange cushions and decorative items to brand standard',
-          'Vacuum or mop floors including under the bed',
+          'Initial assessment: open curtains and lights, scan for lost items, remove trash and used items',
+          'Bathroom deep clean: work clean to dirty, top to bottom, then complete the full amenity setup',
+          'Bedroom cleaning: high-to-low dusting, surfaces, technology check, mirrors and floor edges',
+          'Bed making: inspect mattress protector, apply tight sheets, center duvet, position pillows symmetrically',
+          'Closet and storage: hangers even, safe open and empty, robes and slippers fresh, extra linen verified',
+          'Minibar and beverage area: remove used items, polish glasses, restock items forward-facing',
+          'Final presentation: stationery aligned, curtains at arrival standard, climate set around 21 to 22°C',
         ],
       },
       {
-        title: 'Bathroom',
+        title: 'Bathroom self-inspection',
         items: [
-          'Replace used towels with a fresh set folded to standard',
-          'Clean toilet bowl, seat (inside and outside), lid, base and behind',
-          'Scrub sink, faucets and overflow drain, dry and polish',
-          'Clean shower or bathtub: tiles, grout, glass door and showerhead',
-          'Polish all chrome and mirrors, no water marks',
-          'Restock amenities: shampoo, conditioner, soap, cotton, dental kit',
-          'Replace toilet paper roll, fold to point or apply band',
-          'Mop bathroom floor, check grout for mold',
+          'Toilet clean inside, under rim, exterior, base and behind',
+          'Basin, counter and faucet dry-polished with no water spots',
+          'Shower or bath free of soap residue, hair, scale, mould or mildew',
+          'Mirror streak-free from multiple angles',
+          'Floor fully dry, corners clean, no hair anywhere',
+          'Towels folded uniformly and positioned per standard',
+          'Amenities complete, aligned, labels facing forward and packaging intact',
+          'Glasses polished, tissues available, toilet paper folded and spare roll present',
         ],
       },
       {
-        title: 'Final inspection',
+        title: 'Final self-check before leaving',
         items: [
-          'Check room temperature set to property standard',
-          'Smell test: no odors (smoking, cleaning product, humidity)',
-          'Scan floor for dust, hair, debris',
-          'Confirm all drawers and wardrobe are empty of previous guest items',
-          'Lock safe, close all drawers',
-          'Final visual sweep from the doorway, as a guest seeing the room for the first time',
-          'Update room status in PMS and inform floor supervisor',
+          'Stand at the entry door and view the room as the next guest would',
+          'Bed smooth, symmetrical and inviting with no visible wrinkles',
+          'All surfaces dust-free, glass streak-free and curtains hanging evenly',
+          'Floor clean with no debris, footprints or spots under bed edges',
+          'Pleasant neutral scent, no chemical smell, dampness or smoke odor',
+          'No guest belongings left behind; if found, stop and follow Lost & Found procedure',
+          'Update PMS to "Clean" only; the room is not sellable until supervisor marks it "Inspected"',
         ],
       },
     ],
@@ -105,37 +102,37 @@ const ROLES_EN: ChecklistRole[] = [
   {
     role: 'Floor Supervisor Checklist',
     intro:
-      'Quality control starts after the room attendant has finished. Use this checklist before releasing a room for check-in.',
+      'Adapted from the LuxOps Quality Control chapter. Departure rooms require 100% supervisor inspection before release. Stayover rooms should be spot-checked daily.',
     sections: [
       {
-        title: 'Morning briefing (8:00 to 8:30)',
+        title: 'Start of shift',
         items: [
           'Review departure, arrival and VIP list for the day',
           'Assign room blocks and priorities to each attendant',
-          'Verify trolley setup: correct linen counts, amenity stock, chemicals',
+          'Verify trolley setup: linen, amenities, chemicals and color-coded microfiber cloths',
           'Check attendance and redistribute workload if short-staffed',
         ],
       },
       {
-        title: 'Room quality inspection (minimum 20% of rooms)',
+        title: 'Departure inspection before release',
         items: [
-          'Bed making: no lumps or wrinkles, even overhang on both sides',
-          'Bathroom: toilet and shower glass inspected with torch',
-          'Mirrors and surfaces: touch test for dust',
-          'Smell test: enter and assess before touching anything',
-          'Amenities: correct type, quantity and placement',
-          'Maintenance: check for unreported faults (dripping tap, broken hinge, wall stain)',
-          'Floor and skirting boards: check corners and under furniture',
-          'Result: Pass / Re-clean required / Maintenance ticket raised',
+          'Entry assessment: temperature comfortable, scent neutral, first impression welcoming',
+          'Bedroom: bed smooth and symmetrical, pillows arranged, desk and nightstands clear',
+          'Wardrobe: safe open and empty, hangers even, robes present, drawers empty and clean',
+          'Bathroom: toilet, sink, shower, floor corners and behind toilet inspected for hair and residue',
+          'Technology: lights, TV, remote, clock, phone and HVAC checked',
+          'Final verification: door interior, hallway view, minibar, stationery and maintenance issues',
+          'Result: Pass = mark "Inspected"; 1-2 minor issues = correct and re-inspect; 3+ issues = re-clean and coach',
         ],
       },
       {
-        title: 'End of shift',
+        title: 'Daily quality control',
         items: [
-          'Update room inspection log',
-          'Debrief with room attendants, address quality issues without blame',
+          'Inspect 100% of departure rooms before they are released to Front Office',
+          'Spot-check 20 to 30% of stayover rooms, prioritising new attendants, VIP rooms and previous complaints',
+          'Track deficiency type, room number, attendant, shift and time',
+          'Review the top three recurring issues weekly and turn them into coaching topics',
           'Prepare handover report for afternoon supervisor',
-          'Secure linen room and chemical storage',
         ],
       },
     ],
@@ -143,22 +140,22 @@ const ROLES_EN: ChecklistRole[] = [
 ]
 
 const AUDIT_ROWS_EN: AuditRow[] = [
-  { category: 'Arrival', checkpoint: 'Room at correct temperature on arrival' },
-  { category: 'Arrival', checkpoint: 'No trace of previous guest: hair, item or odor' },
-  { category: 'Bed', checkpoint: 'Linen spotless, pressed, free of pilling' },
-  { category: 'Bed', checkpoint: 'Pillows firm, uniform and correctly arranged' },
-  { category: 'Bathroom', checkpoint: 'Toilet: no limescale, no residue' },
-  { category: 'Bathroom', checkpoint: 'Amenities full, correctly positioned and unexpired' },
-  { category: 'Bathroom', checkpoint: 'Grout and tile: no mold, no soap scum' },
-  { category: 'Surfaces', checkpoint: 'No dust on top of wardrobe, behind TV, along skirting' },
-  { category: 'Maintenance', checkpoint: 'No unreported faults in room' },
-  { category: 'Details', checkpoint: 'Complimentary items arranged to standard' },
+  { category: 'Bathroom /35', checkpoint: 'No hair anywhere: floor, corners, shower, behind toilet and bath mat area' },
+  { category: 'Bathroom /35', checkpoint: 'Toilet bowl, under rim, exterior, base and behind toilet fully clean' },
+  { category: 'Bathroom /35', checkpoint: 'Faucets, mirror and shower fixtures polished with no water spots' },
+  { category: 'Bathroom /35', checkpoint: 'Amenities complete, aligned, labels forward and packaging intact' },
+  { category: 'Bedroom /35', checkpoint: 'Bed crisp, wrinkle-free, symmetrical and professionally finished' },
+  { category: 'Bedroom /35', checkpoint: 'All surfaces dust-free: lamps, headboard, TV unit, desk, skirting and frames' },
+  { category: 'Bedroom /35', checkpoint: 'Wardrobe empty, hangers uniform, safe open, drawers clean' },
+  { category: 'Presentation /20', checkpoint: 'Pleasant temperature around 21-22°C and neutral scent with no chemical smell' },
+  { category: 'Presentation /20', checkpoint: 'Stationery, remote, minibar and guest directory positioned to standard' },
+  { category: 'Maintenance /10', checkpoint: 'No unreported faults: lights, HVAC, remote, phone, leaks, hinges or stains' },
 ]
 
 const FAQ_EN: FAQItem[] = [
   {
     q: 'What should be on a hotel room inspection checklist?',
-    a: 'A complete hotel room inspection checklist covers four areas: bedroom cleanliness and presentation, bathroom hygiene and amenities, technical checks (lighting, A/C, TV) and maintenance reporting. The LuxOps standard uses 30 checkpoints for room attendants and a separate 15-point quality sign-off for supervisors.',
+    a: 'A complete hotel room inspection checklist covers bedroom, bathroom, presentation and maintenance. The LuxOps Housekeeping Playbook uses a 100-point model: bathroom 35 points, bedroom 35 points, presentation 20 points and maintenance 10 points.',
   },
   {
     q: 'What is a housekeeping SOP checklist?',
@@ -166,7 +163,7 @@ const FAQ_EN: FAQItem[] = [
   },
   {
     q: 'How do hotels do quality control in housekeeping?',
-    a: 'Hotels use a two-layer quality control system: room attendants self-check using their room checklist before marking a room clean, and supervisors do a spot inspection on a minimum percentage of rooms, typically 20% daily and 100% on VIP and check-in rooms.',
+    a: 'A strong hotel housekeeping quality system has three layers: every room attendant self-inspects before marking the room clean, supervisors inspect 100% of departure rooms before release, and 20 to 30% of stayover rooms are spot-checked daily.',
   },
   {
     q: 'What is an LQA hotel inspection?',
@@ -309,20 +306,20 @@ const FAQ_FR: FAQItem[] = [
 
 const SOP_STEPS_EN = [
   {
-    title: 'Define your room types and service levels',
-    body: 'Checkout rooms, occupied rooms, suites and VIP rooms each require a specific protocol and time allocation. Start by mapping your room categories before writing your SOP.',
+    title: 'Separate departure, stayover, suite and deep clean standards',
+    body: 'The LuxOps Housekeeping Playbook uses different time and inspection expectations: 45-60 minutes for a standard departure, 25-35 minutes for a standard stayover and 90-120 minutes for a deep clean.',
   },
   {
-    title: 'Set time standards per room category',
-    body: 'A well-run housekeeping department knows exactly how long each service type takes. Industry benchmarks: 20 to 30 minutes for an occupied room service, 35 to 45 minutes for a checkout room, 60 to 90 minutes for a suite.',
+    title: 'Protect the Clean to Inspected workflow',
+    body: 'A room marked Clean by the attendant is not ready for sale. Only the supervisor or manager can mark the room Inspected. Front Office should only assign rooms in Inspected status.',
   },
   {
-    title: 'Train to the checklist, not from memory',
-    body: 'New room attendants who learn from observation will reproduce the habits, good and bad, of whoever trained them. A written SOP checklist breaks that cycle and sets a consistent baseline for the entire team.',
+    title: 'Use the checklist as a coaching tool',
+    body: 'Inspection scores should identify patterns: repeated hair in bathrooms, water spots, dust on lamps, uneven beds, incomplete amenities or recurring maintenance faults. The goal is targeted coaching, not blame.',
   },
   {
-    title: 'Use inspection scores as coaching tools, not punishment',
-    body: 'Quality control only works when it is safe to report problems. Share inspection scores in a weekly briefing. Focus on trends, not individuals. A team that improves together stays together.',
+    title: 'Link checklist, stock and timing',
+    body: 'A checklist fails if the trolley is short on linen, amenities or chemicals. Define par levels for floor pantries and trolleys, then review usage against occupancy and room assignment every day.',
   },
 ]
 
@@ -387,7 +384,7 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
                 : "Inspection de chambre, tournée gouvernante d'étage et audit qualité au même endroit. Checklist 30 points femme de chambre, inspection superviseur et grille de notation prête pour l'audit LQA."}
             </p>
             <Link
-              href={`/${locale}#playbooks`}
+              href={`/${locale}/playbooks/hsk`}
               className="inline-block bg-white text-[#1A2E44] px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 transition-colors"
             >
               {isEN ? 'View Housekeeping Playbook' : 'Voir le Playbook Housekeeping'}
@@ -420,6 +417,39 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
               standards de contrôle qualité des établissements certifiés LQA et Forbes.
             </p>
           )}
+        </section>
+
+        {/* Playbook excerpt */}
+        <section className="max-w-3xl mx-auto px-6 pb-12">
+          <div className="border border-[#d8e6f7] bg-[#f4f8ff] rounded-xl p-6">
+            <p className="text-xs font-bold uppercase tracking-widest text-[#0056D2] mb-3">
+              {isEN ? 'Free excerpt from the LuxOps Housekeeping Playbook' : 'Extrait gratuit du Playbook Housekeeping LuxOps'}
+            </p>
+            <h2 className="text-2xl font-bold text-[#1A2E44] mb-4">
+              {isEN ? 'The inspection rule that protects check-in quality' : 'La règle d’inspection qui protège la qualité des arrivées'}
+            </h2>
+            <p className="text-gray-600 leading-relaxed mb-5">
+              {isEN
+                ? 'In the LuxOps Housekeeping Playbook, a departure room follows a strict status workflow: Dirty, Clean, then Inspected. The room attendant may mark the room Clean after service, but that room is not sellable. Only a supervisor or manager can release it by marking it Inspected after physical verification.'
+                : "Dans le Playbook Housekeeping LuxOps, une chambre départ suit un workflow strict : sale, propre, puis inspectée. La femme de chambre peut passer la chambre en propre après service, mais elle n'est pas vendable. Seule la gouvernante ou le manager peut la libérer après inspection physique."}
+            </p>
+            <div className="grid sm:grid-cols-3 gap-3">
+              {(isEN ? [
+                ['Clean', 'Set by the room attendant after cleaning. Not ready for assignment.'],
+                ['Inspected', 'Set by the supervisor after checklist verification. Ready for Front Office.'],
+                ['Failed', 'Correct immediately, re-inspect, and record the deficiency for coaching.'],
+              ] : [
+                ['Propre', 'Statut posé par la femme de chambre après nettoyage. Pas encore attribuable.'],
+                ['Inspectée', 'Statut posé par la gouvernante après contrôle checklist. Attribuable par la réception.'],
+                ['Non conforme', "Correction immédiate, réinspection et défaut tracé pour coaching."],
+              ]).map(([label, body]) => (
+                <div key={label} className="bg-white rounded-lg p-4">
+                  <h3 className="font-semibold text-[#1A2E44] mb-2">{label}</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">{body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </section>
 
         {/* Role-based checklists */}
@@ -560,7 +590,7 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
                 : "Le Playbook Housekeeping LuxOps comprend l'ensemble de la documentation SOP, les grilles d'inspection, les guides de formation et les outils de contrôle utilisés par les équipes housekeeping des établissements de luxe et boutique. 10 chapitres, prêts à l'emploi."}
             </p>
             <Link
-              href={`/${locale}#playbooks`}
+              href={`/${locale}/playbooks/hsk`}
               className="inline-block bg-white text-[#1A2E44] px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 transition-colors"
             >
               {isEN ? 'View Housekeeping Playbook' : 'Voir le Playbook Housekeeping'}
