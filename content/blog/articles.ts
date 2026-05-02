@@ -1374,177 +1374,185 @@ export const articles: BilingualArticle[] = [
   {
     slug: 'housekeeping-room-inspection',
     en: {
-      title: 'Hotel Room Inspection Checklist for Supervisors',
+      title: 'Hotel Room Inspection Checklist: Supervisor SOP for Housekeeping',
       description:
-        'How housekeeping supervisors run a structured room inspection in luxury hotels. Step-by-step sequence, defect documentation and how to fail a room correctly.',
+        'A supervisor room inspection checklist adapted from the LuxOps Housekeeping Playbook: Clean vs Inspected workflow, 100-point scoring, bathroom checks, defect tracking and release rules.',
       date: '2026-03-28',
-      readTime: '8 min read',
+      readTime: '12 min read',
       intro:
-        'A clean room and a room that passes inspection are not always the same thing. Room attendants work to a sequence and aim for the standard they were trained to. What the hotel room inspection adds is a structured second check, run with different eyes, before the room is released to the front desk. In luxury hotels, this step is not optional: it is the last quality gate before the guest walks in. When it is done well, it catches what slips through during a busy shift. When it is skipped or informal, the guest becomes the quality control. This guide covers how a structured housekeeping inspection works, what supervisors should check at each stage, and how to build a checklist that holds up under operational pressure.',
+        'A clean room and an inspected room are not the same thing. In the LuxOps Housekeeping Playbook, a departure room is not ready for sale when the room attendant finishes cleaning it. It is only ready after a supervisor has physically inspected it, corrected any defects, and updated the PMS from Clean to Inspected. That distinction protects the guest experience, the front desk, and the housekeeping team. This guide is adapted from the LuxOps quality control chapter and shows how to run a supervisor room inspection with a clear sequence, scoring model, defect log and release rule.',
       sections: [
         {
-          h2: 'What a Room Inspection Is (and What It Is Not)',
+          h2: 'The Room Status Workflow: Clean Is Not Inspected',
           content:
-            'A room inspection is a quality gate, not a walkthrough. The distinction matters. A walkthrough confirms the room was serviced. An inspection verifies it was serviced to standard: that every element was addressed in the correct way, and that nothing was missed. In a luxury hotel context, inspection criteria need to be specific enough that two different supervisors would reach the same verdict on the same room. That requires a defined sequence and documented pass/fail criteria, not a general impression.',
+            'The most important rule in hotel room inspection is simple: a Clean room is not ready for assignment. Clean means the room attendant has finished the cleaning sequence. Inspected means the supervisor has verified the room against the standard and released it. Front Office should only assign rooms in Inspected status.',
           h3Items: [
             {
-              heading: 'Who runs the inspection',
-              text: 'In most properties, the housekeeping supervisor or floor supervisor runs room inspections before release. In properties with a quality or rooms division manager, spot inspections may be added at a second level. The key requirement is that the person running the inspection did not clean the room.',
+              heading: 'Dirty / vacant',
+              text: 'Set by the system or after checkout. The room cannot be sold and must enter the housekeeping assignment flow.',
             },
             {
-              heading: 'When it happens',
-              text: 'Inspection should occur after the attendant has completed the room and before the status is updated in the PMS. Releasing a room before inspection means any defect discovered afterward requires a re-service and a potential delay for a waiting arrival.',
+              heading: 'Clean',
+              text: 'Set by the room attendant after the room cleaning SOP is complete. This status tells the supervisor the room is ready for inspection, not that the room is ready for a guest.',
             },
             {
-              heading: 'What the result looks like',
-              text: 'Pass: room is released as clean and ready. Fail: room is returned to the attendant with a specific defect list, not general feedback, but a documented record of what needs to be corrected and re-inspected.',
+              heading: 'Inspected',
+              text: 'Set only by a supervisor or manager after physical inspection. This is the first status that should be visible to Front Office as available for assignment.',
+            },
+            {
+              heading: 'No exception rule',
+              text: 'If a guest is waiting, the process does not change. Assigning a Clean but uninspected room transfers the quality risk from housekeeping to the guest.',
             },
           ],
         },
         {
-          h2: 'The Inspection Sequence: Where to Start',
+          h2: 'Inspection Frequency and Responsibility',
           content:
-            'The inspection sequence should follow a fixed path through the room to prevent missed areas. The most reliable approach is to enter, assess the room overall, then work from the furthest point back toward the door. This mirrors the cleaning sequence in reverse and makes it easier to identify whether the attendant followed the correct order.',
+            'A useful hotel room inspection system separates self-inspection from supervisor inspection. The room attendant owns the first check. The supervisor owns the release decision. Managers own the trend review and training response.',
           h3Items: [
             {
-              heading: 'Overall impression on entry',
-              text: 'Before examining any specific area, note the overall impression: odour, natural light, presentation of the bed, general order. This is what the guest experiences first. If the overall impression is off, document it before proceeding.',
+              heading: 'Self-inspection: every room',
+              text: 'Before leaving the room, the attendant should complete a final scan from the guest perspective: bed smooth, bathroom dry, no hair, no dust, no odor, amenities aligned and no lost items.',
             },
             {
-              heading: 'Bathroom first',
-              text: 'The bathroom is the highest-scrutiny area for most guests and the most common source of inspection failures. Complete the bathroom check before moving to the main room.',
+              heading: 'Departure inspection: 100% of departures',
+              text: 'Every departure room should be physically inspected by a supervisor before release. This is non-negotiable in luxury and boutique hotels where the arrival room is the first major quality signal.',
             },
             {
-              heading: 'Main room and bed',
-              text: 'Linen alignment, pillow placement, decorative elements, surfaces, tech functionality, floor condition. Work systematically from the furthest wall toward the entrance.',
+              heading: 'Stayover spot checks: 20 to 30% daily',
+              text: 'Stayover rooms should be sampled daily, prioritising newer attendants, VIP rooms, long-stay rooms, prior guest feedback and rooms with inconsistent quality history.',
             },
             {
-              heading: 'Back to the entrance',
-              text: 'Doors, handles, skirting boards, wardrobe interior, minibar. These are the areas most often skipped in informal inspections.',
+              heading: 'Deep dive audit: weekly',
+              text: 'A manager or executive housekeeper should run a deeper weekly audit to identify room patterns, training needs, maintenance issues and standards that are drifting over time.',
             },
           ],
         },
         {
-          h2: 'Bathroom Inspection Checklist',
+          h2: 'Departure Room Inspection Sequence',
           content:
-            'The bathroom concentrates the most inspection criteria in the smallest space. Rushed or informal inspections tend to pass on visual impression rather than working through a defined list. These are the areas that require specific checking.',
+            'The LuxOps inspection sequence is designed to be fast enough for daily operations and precise enough to catch the defects guests notice. A standard departure inspection should follow the same path every time.',
           h3Items: [
             {
-              heading: 'Chrome and fixtures',
-              text: 'Chrome fittings, including taps, showerhead and towel rail, must be dry and free of water marks. Limescale visible on tile grout or around the base of fittings is an immediate fail.',
+              heading: '1. Entry assessment',
+              text: 'Stand at the doorway for a few seconds before touching anything. Check first impression, temperature, scent, light, bed presentation and overall order. This is the guest’s first view.',
             },
             {
-              heading: 'Amenity placement',
-              text: 'Amenities must be placed according to the property standard: correct products, correct position, correct orientation. Partially used amenities that were not replaced are a common failure point.',
+              heading: '2. Bedroom check',
+              text: 'Inspect bed symmetry, pillow placement, desk, nightstands, TV unit, window area, curtains, drawers, wardrobe, safe, robes, slippers, floor edges and under-bed edges.',
             },
             {
-              heading: 'Mirror and glass',
-              text: 'Mirrors and glass surfaces must be streak-free. Check by looking across the surface at an angle, not straight on. This is a technique that should be part of the attendant standard as well.',
+              heading: '3. Bathroom check',
+              text: 'Inspect toilet bowl, under rim, exterior and base; sink, counter and faucet; shower or bath surfaces; drain; mirror; floor corners; towels; glasses; tissues and amenities.',
             },
             {
-              heading: 'Floor and grout',
-              text: 'Tile grout discolouration or residue at floor edges, particularly around the shower or bath base, is a failure that passes unnoticed in a quick visual scan. Inspect at floor level if needed.',
+              heading: '4. Details and technology',
+              text: 'Check clock, alarms, TV input, remote, lights, phone, HVAC, minibar, stationery, guest directory, Wi-Fi information and any property-specific arrival setup.',
             },
             {
-              heading: 'Towel folding and placement',
-              text: 'Standard must match the property defined fold and placement exactly. This is one of the most visible indicators of whether a room was prepared with care.',
+              heading: '5. Final release decision',
+              text: 'If the room passes, update PMS to Inspected. If it fails, return it with specific defects, re-inspect after correction, and record the issue for trend tracking.',
             },
           ],
         },
         {
-          h2: 'Bedroom and Linen Check',
+          h2: 'Bathroom Inspection: The Highest-Risk Zone',
           content:
-            'The bedroom check should cover both presentation and functionality. Presentation failures are visible; functionality failures such as burnt-out bulbs, a malfunctioning TV, or a dead tablet are not spotted until the guest is already in the room.',
+            'Most housekeeping complaints come from details concentrated in the bathroom: hair, water spots, odor, residue, used amenities or a floor that looks clean from standing height but fails at the corners. Bathroom inspection needs its own standard, not just a quick visual scan.',
           h3Items: [
             {
-              heading: 'Linen alignment',
-              text: 'Both sides of the bed should have equal turndown. Top sheet and duvet alignment must match the property standard. The most common failure: the linen is centred from standing at the foot of the bed but off-axis when checked from the side.',
+              heading: 'No hair anywhere',
+              text: 'Check the shower, tub, floor, corners, behind the toilet, around the bath mat position and near the drain. In luxury hospitality, one hair can outweigh an otherwise perfect room.',
             },
             {
-              heading: 'Pillow and cushion placement',
-              text: 'Count and placement must match the standard for the room category. Decorative cushions must be placed in the defined order and orientation.',
+              heading: 'Chrome and mirror finishing',
+              text: 'Faucets, showerheads, towel rails and mirrors must be dry-polished. Check from an angle, because streaks and water marks often disappear when viewed straight on.',
             },
             {
-              heading: 'Surface condition',
-              text: 'Nightstands, desk, TV unit: dust-free and clear of the previous guest\'s items. Check inside drawers if the property standard requires it.',
+              heading: 'Toilet and floor detail',
+              text: 'Inspect inside bowl, under rim, seat, lid, exterior, base and floor connection. The floor must be dry, with clean corners and no residue behind the toilet.',
             },
             {
-              heading: 'Lighting and tech',
-              text: 'Test bedside lamps, main room lighting and the TV. Note battery level on remotes if the property uses a check system. Functionality failures are among the most common guest complaints in luxury properties.',
+              heading: 'Amenities and towels',
+              text: 'Amenities should be complete, aligned, labels facing forward and packaging intact. Towels must be stain-free, folded consistently and positioned to the property standard.',
             },
           ],
         },
         {
-          h2: 'Documenting Defects and Returning a Room',
+          h2: 'The 100-Point Room Inspection Score',
           content:
-            'When a room fails inspection, the return process needs to be handled in a way that does not create friction or ambiguity. The supervisor should document what was found, when, and what correction is required, not deliver verbal feedback that is open to interpretation and cannot be tracked.',
+            'A scoring model turns room inspection from opinion into data. The LuxOps model uses 100 points so supervisors can coach on patterns instead of arguing about impressions.',
           h3Items: [
             {
-              heading: 'What to log',
-              text: 'Room number, inspection time, and a list of specific defects. Not "bathroom not clean" but "limescale on tap, amenity not replaced, towel refolded incorrectly". This log should be accessible during the shift and at handover.',
+              heading: 'Bathroom: 35 points',
+              text: 'Toilet, shower, bath, mirror, floor, fixtures, amenities, towels, glasses and final hygiene details. Suggested pass threshold: 31 out of 35.',
             },
             {
-              heading: 'Re-inspection',
-              text: 'When the attendant has corrected the room, the supervisor should re-inspect before releasing. Re-inspection should be documented separately from the initial check.',
+              heading: 'Bedroom: 35 points',
+              text: 'Bed presentation, linen, surfaces, lamps, windows, wardrobe, safe, floor, stationery and guest-facing room presentation. Suggested pass threshold: 31 out of 35.',
             },
             {
-              heading: 'Tracking failure patterns',
-              text: 'Defect logs over time reveal patterns: attendants who consistently miss the same area, room categories that generate more failures, shift timing effects. Without logs, these patterns remain invisible and the same failures recur.',
+              heading: 'Presentation: 20 points',
+              text: 'Temperature, scent, first impression, symmetry, alignment, ambiance and brand-specific setup details. Suggested pass threshold: 18 out of 20.',
+            },
+            {
+              heading: 'Maintenance: 10 points',
+              text: 'Lights, HVAC, leaks, remote, phone, furniture, hinges, fixtures and any unresolved maintenance issue. Suggested pass threshold: 10 out of 10.',
             },
           ],
         },
         {
-          h2: 'How to Build a Hotel Room Inspection Checklist',
+          h2: 'Defect Logging and Coaching',
           content:
-            'A room inspection checklist is only as useful as the criteria it is built on. A list that says "bathroom clean" is not a checklist: it is a reminder. A checklist that says "chrome fittings dry and free of water marks, amenities placed according to property standard, towel fold matches the diagram in the SOP" is a tool that two different supervisors can use and arrive at the same result.',
+            'The goal of inspection is not to catch people out. It is to protect the guest experience and make the team better. That only works if defects are logged clearly and reviewed regularly.',
           h3Items: [
             {
-              heading: 'Organise by zone, not by task',
-              text: 'Structure the checklist to follow the physical path through the room: entry and overall impression, bathroom, bedroom and bed, surfaces and tech, wardrobe and minibar, floor and exit. This mirrors the inspection sequence and prevents the supervisor from skipping back and forth across the room.',
+              heading: 'What to record',
+              text: 'Room number, attendant, inspection time, defect type, exact location, correction required, re-inspection result and any coaching given.',
             },
             {
-              heading: 'Define pass and fail for each criterion',
-              text: 'Every item on the checklist needs a defined standard. "Clean mirror" is ambiguous. "Mirror streak-free when checked at 45 degrees" is not. The more specific the criterion, the less room for interpretation during a busy inspection and the more consistent the result across supervisors and shifts.',
+              heading: 'How to classify defects',
+              text: 'Group defects by category: bathroom, bedroom, closet/storage, presentation and maintenance. This makes weekly trend review faster.',
             },
             {
-              heading: 'Include a defect log section',
-              text: 'The checklist should have space to record defects found: what, where, and time of discovery. This turns the inspection form into a trackable record that can be reviewed at handover, cross-referenced with re-inspection notes, and analysed over time to identify recurring failure patterns.',
+              heading: 'What patterns reveal',
+              text: 'The same issue across multiple attendants points to training. The same issue with one attendant points to coaching. The same room failing repeatedly points to maintenance or deep-clean needs.',
             },
             {
-              heading: 'Review and update after recurring failures',
-              text: 'If the same defect appears repeatedly across different rooms or attendants, it belongs on the checklist as a flagged item. A checklist that does not evolve based on what the property actually finds is a checklist that will keep missing the same things.',
+              heading: 'Weekly action',
+              text: 'Review the top three recurring defects, refresh the standard in briefing, and verify the following week that the issue is improving.',
             },
           ],
         },
       ],
       conclusion:
-        'A room inspection is only as useful as the criteria behind it. A supervisor who works from a defined checklist and documents what they find creates a system that improves over time. One who relies on general impressions creates a system that is consistent only as long as that person is on shift. The inspection protocol is one of the most important procedures in a housekeeping SOP, and one of the most commonly under-documented.',
-      cta: { text: 'View the Housekeeping Playbook', href: '/en/playbooks' },
+        'A strong room inspection checklist does more than catch missed dust or a streaky mirror. It protects the room status workflow, gives Front Office confidence in the rooms it assigns, and gives housekeeping supervisors real coaching data. The standard is simple: every room attendant owns self-inspection, every departure room is verified before release, and every defect becomes information the team can use to improve.',
+      cta: { text: 'View the Housekeeping Playbook', href: '/en/playbooks/hsk' },
       faqs: [
         {
           question: 'What is a room inspection checklist in housekeeping?',
           answer:
-            "A room inspection checklist in housekeeping is a structured list of criteria used by a floor supervisor to verify that a room has been cleaned and prepared to the property's standard before it is released to the front desk. It differs from the cleaning sequence followed by the room attendant: the attendant uses the SOP to perform the work, the supervisor uses the checklist to confirm the result. A well-structured checklist covers the bathroom, bed and linen, surfaces and fixtures, lighting and tech functionality, and the entrance area including wardrobe and minibar.",
+            "A room inspection checklist in housekeeping is a structured supervisor tool used to verify that a room meets the property's standard before it is released to Front Office. The LuxOps model separates room attendant self-inspection from supervisor release inspection and uses a 100-point structure across bathroom, bedroom, presentation and maintenance.",
         },
         {
           question: 'What does room inspection mean in housekeeping?',
           answer:
-            'Room inspection in housekeeping refers to the structured quality check carried out by a floor supervisor after a room attendant has completed servicing a room, before the room status is updated to clean and available in the PMS. It is a quality gate, not a walkthrough. The purpose is to verify the room meets the defined standard at every point, including areas frequently missed under time pressure: grout lines, amenity placement, linen alignment and equipment functionality.',
+            'Room inspection in housekeeping is the structured quality gate between Clean and Inspected room status. A room attendant marks the room Clean after service; the supervisor inspects it physically and only then updates it to Inspected so Front Office can assign it to a guest.',
         },
         {
           question: 'What should a housekeeping supervisor check during a room inspection?',
           answer:
-            'The supervisor should follow a fixed sequence from entry to exit. In the bathroom: chrome and fixtures (water marks, limescale), mirror and glass surfaces, amenity placement, towel folding and positioning, toilet exterior and interior, floor and grout. In the bedroom: linen alignment, pillow and cushion placement, surface condition, lighting and tech functionality, wardrobe interior, minibar and floor condition. Each item should be checked against a defined standard, not a general impression.',
+            'The supervisor should check the room in a fixed sequence: entry impression, bedroom, bathroom, technology, amenities, wardrobe, minibar, floor and final doorway view. High-risk points include hair in the bathroom, water spots on chrome, uneven bed presentation, missing amenities, dust on lamps or skirting, and unreported maintenance faults.',
         },
         {
           question: 'How often should a hotel room be inspected by a supervisor?',
           answer:
-            'In most luxury hotel operations, every room should be inspected by a floor supervisor before being released to the front desk as clean and available. In properties with high room counts or time pressure, a percentage-based spot inspection system is sometimes used, but every departure and arrival room should be inspected as a minimum. The goal is to catch defects before the guest does, not after.',
+            'In the LuxOps Housekeeping Playbook, 100% of departure rooms should be inspected before release. Stayover rooms should be spot-checked at 20 to 30% per day, with priority for newer attendants, VIP rooms, long-stay guests and rooms connected to previous complaints.',
         },
         {
           question: 'What is the difference between a room attendant check and a supervisor inspection?',
           answer:
-            'A room attendant checks their own work against the cleaning sequence and the standards they were trained to. A supervisor inspection is an independent quality check carried out by a different person who did not service the room. The distinction matters because self-checking and independent inspection catch different types of errors. The attendant knows what they did; the supervisor sees what the guest will see.',
+            'A room attendant check is self-inspection before marking the room Clean. A supervisor inspection is an independent release check before the room becomes Inspected and assignable. The attendant owns the work; the supervisor owns the release decision.',
         },
       ],
     },

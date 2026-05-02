@@ -46,6 +46,9 @@ export default async function BlogPage({
     { href: '/housekeeping-sop', label: 'SOP Housekeeping', desc: 'Remise en état, inspection, linge, contrôle qualité et routines superviseur.' },
     { href: '/formation', label: 'Formation Hôtelière', desc: 'Formation sur site pour déployer SOPs et standards de service.' },
   ]
+  const visibleArticles = articles.filter(
+    (article) => !['hotel-housekeeping-checklist', 'hotel-front-office-procedures'].includes(article.slug)
+  )
 
   return (
     <div className="pt-16">
@@ -82,7 +85,7 @@ export default async function BlogPage({
             </div>
           </div>
           <div className="space-y-8">
-            {articles.map((article) => {
+            {visibleArticles.map((article) => {
               const content = isEn ? article.en : article.fr
               return (
                 <Link
