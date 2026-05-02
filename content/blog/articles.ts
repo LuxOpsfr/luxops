@@ -243,13 +243,13 @@ export const articles: BilingualArticle[] = [
   {
     slug: 'how-to-write-hotel-sops',
     en: {
-      title: 'How to Write Hotel SOPs: A Step-by-Step Guide',
+      title: 'How to Write Hotel SOPs: The LuxOps Playbook Method',
       description:
-        'Learn how to write effective hotel standard operating procedures (SOPs) that your team will actually follow. Includes structure, format tips, and a step-by-step process.',
+        'Learn how to write hotel SOPs using a playbook structure: trigger, owner, sequence, standard, exception, handover and supervisor check. Includes hotel SOP examples.',
       date: '2026-03-12',
       readTime: '8 min read',
       intro:
-        'Writing hotel SOPs sounds straightforward until you try it. Most attempts produce documents that are too long to reference mid-task, too vague to follow without asking a supervisor, or inconsistent enough across departments that they create more confusion than they resolve. The problem is usually not a lack of knowledge. It is a lack of structure. This is a practical guide to writing SOPs that teams will actually use.',
+        'Writing hotel SOPs sounds straightforward until you try to use them on shift. A useful SOP is not a polished policy paragraph. It is a playbook page: the trigger that starts the task, the role that owns it, the exact sequence, the quality standard, the exceptions, the escalation path and the handover evidence. This guide shows how to write hotel standard operating procedures in the same format used inside the LuxOps playbooks, with examples from housekeeping and front desk operations.',
       sections: [
         {
           h2: 'What Makes a Good Hotel SOP?',
@@ -275,33 +275,33 @@ export const articles: BilingualArticle[] = [
           ],
         },
         {
-          h2: 'The Structure of a Hotel SOP',
+          h2: 'The LuxOps Structure for a Hotel SOP',
           content:
-            'Every SOP should contain the same elements in the same order. This is the structure that works across hotel departments and is easy to update when procedures change.',
+            'Every SOP should contain the same operating fields in the same order. This is what turns a hotel SOP from a document into a usable playbook page that a new hire, supervisor and department head can all work from.',
           h3Items: [
             {
-              heading: 'Header',
-              text: 'Title, department, version number, date of last update, and the role responsible for the procedure.',
+              heading: 'Trigger',
+              text: 'Define exactly when the SOP starts. Examples: guest approaches the front desk for check-in, departure room appears on the housekeeping assignment sheet, DND still displayed at 2:00 PM, guest disputes a minibar charge at check-out.',
             },
             {
-              heading: 'Purpose',
-              text: 'One or two sentences explaining what the SOP achieves and why it exists. This gives staff context, not just instructions. It matters more than it sounds.',
+              heading: 'Owner and verifier',
+              text: 'Separate who performs the task from who releases it. In housekeeping, the room attendant marks the room Clean, but the supervisor marks it Inspected. At the front desk, the agent handles the interaction, but a supervisor approves compensation above the defined authority.',
             },
             {
-              heading: 'Scope',
-              text: 'Who this SOP applies to. Which shifts, which days, which situations. If it does not apply everywhere, say so explicitly.',
+              heading: 'Sequence',
+              text: 'Write the actions in the physical order they happen. For a departure room: initial assessment, bathroom deep clean, bedroom cleaning, bed making, closet and storage, minibar and beverage area, final presentation. For check-in: arrival review, welcome, identity verification, registration, payment, key issue, PMS update.',
             },
             {
-              heading: 'Procedure',
-              text: 'The step-by-step instructions. Numbered, sequential, unambiguous. Each step should be a single discrete action. Avoid combining two actions in one step. It makes the procedure harder to follow and harder to verify.',
-            },
-            {
-              heading: 'Standards',
-              text: 'The quality criteria that define correct execution: timing, language, presentation, or measurable benchmarks. This is what a supervisor uses to assess whether the procedure was done correctly.',
+              heading: 'Measurable standard',
+              text: 'Attach the quality target to the procedure. A housekeeping SOP can include 45-60 minutes for a standard departure, 25-35 minutes for a stayover, no hair anywhere in the bathroom, and a 90/100 room inspection pass threshold.',
             },
             {
               heading: 'Exceptions and escalation',
-              text: 'What happens when the standard situation does not apply. Who does the team member contact. What the decision path looks like. This is the section most SOPs omit and most shifts actually need.',
+              text: 'This is where most SOPs fail. Define what happens when the room is not ready, the card is declined, a guest item is found, a DND sign remains active, a complaint is recent, or a maintenance fault blocks room release.',
+            },
+            {
+              heading: 'Handover evidence',
+              text: 'Close the SOP with the evidence that the next person needs: PMS status, inspection score, defect log, guest profile note, shift log entry, signed checklist or manager approval. A procedure is not finished until the handover is usable.',
             },
           ],
         },
@@ -360,13 +360,13 @@ export const articles: BilingualArticle[] = [
           ],
         },
         {
-          h2: 'Using a Template vs. Writing From Scratch',
+          h2: 'Use a Playbook Template Instead of a Blank Page',
           content:
-            'Writing a full SOP library from scratch is a substantial project. A well-structured property will need several hundred individual procedures across departments. Most hotels that attempt this entirely in-house underestimate what it takes. Ready-made SOP frameworks built from operational experience give your team a structured starting point: procedures already sequenced, standards already defined, format already consistent. The work becomes customisation for your property, not construction from nothing.',
+            'Writing a full hotel SOP library from scratch is a substantial project. A working operation needs procedures for front desk, housekeeping, F&B, spa, night audit, Lost & Found, DND, room inspection, complaints, handovers and training. The value of a playbook template is that the operational logic is already built: sequence, timing, standards, exception rules and supervisor controls. Your work becomes customisation for your property, not invention from a blank page.',
         },
       ],
       conclusion:
-        'Hotel SOPs are only useful if they are written carefully. The work of observation, plain language, testing with a new hire, and building in a review schedule is exactly what separates a document that shapes daily operations from one that sits in a drawer. The investment is modest. The operational difference is not.',
+        'The best hotel SOPs read like operational tools, not office documents. They tell the team what triggers the task, who owns it, what sequence to follow, what standard to hit, when to escalate and what evidence to leave behind. That is the difference between a SOP folder and a hotel operations playbook.',
       cta: { text: 'Explore Our SOP Playbooks', href: '/en/playbooks' },
     },
     fr: {
@@ -500,22 +500,22 @@ export const articles: BilingualArticle[] = [
   {
     slug: 'hotel-front-office-sop',
     en: {
-      title: 'Hotel Front Office SOPs: What Good Procedures Actually Look Like',
+      title: 'Hotel Front Office SOPs: Front Desk Procedures, Check-In, Handover and Guest Recovery',
       description:
-        'A complete guide to hotel front office SOPs, covering check-in, check-out, complaint handling, upselling and concierge standards. Practical procedures for hotel reception teams.',
+        'A practical front office SOP guide covering front desk procedures, check-in, check-out, room not ready, billing disputes, complaint handling and shift handover.',
       date: '2026-03-14',
       readTime: '9 min read',
       intro:
-        'Some procedures are too important to leave to verbal handover. Front office is one of them. It is the department with the highest volume of guest contact, the most varied range of situations, and in most hotels, the least written down. When a long-serving agent leaves, a new one arrives and learns the standard informally. Which means they learn a version of it. This guide covers what front office SOPs should contain and how to structure them for daily use.',
+        'Front office is the management term. Front desk is what many hotel teams and guests call the place where the procedure actually happens. For SEO and for operations, both matter. A good front office SOP library must cover the front desk moments that create the stay: pre-arrival review, check-in, room not ready, payment handling, check-out, billing disputes, guest recovery, telephone standards and shift handover. This guide is adapted from the LuxOps Front Office Playbook and shows what these SOPs should contain when they are written for daily use, not for a dusty binder.',
       sections: [
         {
-          h2: 'Why Front Office SOPs Matter More Than You Think',
+          h2: 'Why Front Office and Front Desk SOPs Matter',
           content:
-            'Front office handles more different situations than any other hotel department. Routine arrivals, billing disputes, VIP arrivals, late check-outs, complaints, medical situations. When procedures are undocumented, each of those scenarios plays out differently depending on who is at the desk. The guest experience is determined by the individual, not by the property.',
+            'Front office handles more different situations than almost any other hotel department: routine arrivals, billing disputes, VIP arrivals, late check-outs, room moves, complaints, walk-ins, no-shows and medical situations. When front desk procedures are undocumented, each scenario plays out differently depending on who is working. The guest experience becomes individual performance instead of property standard.',
           h3Items: [
             {
               heading: 'Turnover impact',
-              text: 'Front desk turnover is among the highest in hospitality. Without written SOPs, every departure takes institutional knowledge with it. A new hire starts from observation and informal correction rather than from a clear standard. That period has a cost: in guest experience and in supervisor time.',
+              text: 'Front desk turnover is high in most hotels. Without written SOPs, every departure takes operating knowledge with it: how to handle early arrivals, what to say when a card is declined, which billing disputes can be solved by the agent and which need manager approval. A new hire should learn from the playbook first, then from shadowing, not the other way around.',
             },
             {
               heading: 'Brand consistency',
@@ -524,33 +524,33 @@ export const articles: BilingualArticle[] = [
           ],
         },
         {
-          h2: 'Core Front Office SOPs Every Hotel Needs',
+          h2: 'Core Front Desk SOPs Every Hotel Needs',
           content:
-            'These are the procedures that need to exist in written form at every property. Not because an auditor requires them, but because the front desk cannot run consistently without them.',
+            'These are the front desk procedures that need to exist in written form at every hotel. They are the procedures guests feel immediately when they go well, and remember sharply when they fail.',
           h3Items: [
             {
-              heading: 'Check-In SOP',
-              text: 'Pre-arrival preparation (arrival list review, VIP flags, room allocations), greeting sequence, identity verification, key issuance, property orientation, handover to porter or concierge. The SOP should also cover the scenarios that come up regularly: late arrivals, room not ready at check-in time, guests arriving without a reservation.',
+              heading: 'Check-in SOP',
+              text: 'The LuxOps sequence starts before the guest arrives: review arrivals in the PMS, flag VIPs and special occasions, verify room assignments, confirm requests and prepare registration or payment requirements. At the desk, the agent confirms the stay, verifies ID, reviews requests, processes payment or pre-authorisation, issues keys and updates the PMS immediately.',
             },
             {
-              heading: 'Check-Out SOP',
-              text: 'Queue management during peak morning hours, the billing review process, how to handle a disputed charge without escalating unnecessarily, express check-out flow, luggage assistance, and the farewell. One element that is easy to miss: the right moment to invite feedback, without it feeling scripted.',
+              heading: 'Room not ready SOP',
+              text: 'This procedure deserves its own SOP because it is one of the most common front desk pressure points. The agent stores luggage, offers a waiting option, gives a realistic timing, records a contact number and calls the guest before the guest has to chase. The SOP should explicitly say not to assign a room that housekeeping has not marked Inspected.',
             },
             {
-              heading: 'Complaint Handling SOP',
-              text: 'This is the procedure most properties handle inconsistently. An effective SOP defines the full sequence: listen without interrupting, acknowledge, apologise for the experience, resolve with a concrete action, and document it. It should include escalation triggers, compensation guidelines by complaint category, and where to log the interaction in the PMS.',
+              heading: 'Check-out and billing SOP',
+              text: 'The check-out SOP covers queue control, invoice review, minibar verification, F&B and spa postings, payment processing, receipt delivery and farewell. It also defines how to handle disputed charges: listen, review documentation, explain clearly, escalate if needed and document the outcome.',
             },
             {
-              heading: 'Telephone and Communication SOP',
-              text: 'Greeting script, hold procedure, transfer protocol, message taking, response time benchmarks, and how to handle external enquiries. In high-end environments, how the telephone is answered carries more weight than most teams realise.',
+              heading: 'Complaint handling SOP',
+              text: 'The LuxOps playbook uses the LEARN flow: Listen, Empathise, Apologise, Resolve, Notify. The critical rule is that active and recent complaints must be discussed at every morning meeting and every shift handover until they are closed.',
             },
             {
-              heading: 'Upselling SOP',
-              text: 'When done without pressure, upselling improves the stay rather than interrupting it. The SOP should define when to present the option, the language to use, how to handle a polite decline, and how upsells are tracked for reporting.',
+              heading: 'Telephone and communication SOP',
+              text: 'The standard covers greeting, hold permission, transfer protocol, wake-up calls, message taking and digital communication. A front desk call should never disappear into a transfer without context, especially when the guest is calling about a complaint.',
             },
             {
-              heading: 'VIP and Returning Guest SOP',
-              text: 'Pre-arrival preparation, amenity placement coordination, personalisation details from the guest profile, and the service sequence that distinguishes a VIP arrival from a standard one. This procedure relies on information being in the PMS. The SOP also has to cover how that information gets there.',
+              heading: 'Shift handover SOP',
+              text: 'Every open request, VIP note, pending complaint, room move, billing issue, maintenance flag and unusual decision must be passed in writing. A verbal handover is helpful, but the log is the desk’s memory.',
             },
           ],
         },
@@ -595,7 +595,7 @@ export const articles: BilingualArticle[] = [
       ],
       conclusion:
         'A documented front office is a resilient front office. When the team has structured procedures to follow, not just what they were told by the person who trained them, quality stops depending on experience level. A new agent on a Monday morning should be working to the same standard as your most experienced member on a Friday evening. Written procedures are the only way to make that reliable.',
-      cta: { text: 'View the Front Office Playbook', href: '/en/playbooks' },
+      cta: { text: 'View the Front Office Playbook', href: '/en/playbooks/fo' },
     },
     fr: {
       title: 'SOPs Front Office : à quoi ressemblent de vraies procédures',
@@ -1374,13 +1374,13 @@ export const articles: BilingualArticle[] = [
   {
     slug: 'housekeeping-room-inspection',
     en: {
-      title: 'Hotel Room Inspection Checklist: Supervisor SOP for Housekeeping',
+      title: 'Hotel Room Inspection Checklist: Housekeeping Supervisor SOP and 100-Point Score',
       description:
-        'A supervisor room inspection checklist adapted from the LuxOps Housekeeping Playbook: Clean vs Inspected workflow, 100-point scoring, bathroom checks, defect tracking and release rules.',
+        'A hotel room inspection checklist adapted from the LuxOps Housekeeping Playbook: Clean vs Inspected workflow, 100-point scoring, bathroom checks, defect tracking and supervisor release rules.',
       date: '2026-03-28',
       readTime: '12 min read',
       intro:
-        'A clean room and an inspected room are not the same thing. In the LuxOps Housekeeping Playbook, a departure room is not ready for sale when the room attendant finishes cleaning it. It is only ready after a supervisor has physically inspected it, corrected any defects, and updated the PMS from Clean to Inspected. That distinction protects the guest experience, the front desk, and the housekeeping team. This guide is adapted from the LuxOps quality control chapter and shows how to run a supervisor room inspection with a clear sequence, scoring model, defect log and release rule.',
+        'A clean room and an inspected room are not the same thing. In the LuxOps Housekeeping Playbook, a departure room is not ready for sale when the room attendant finishes cleaning it. It is only ready after a supervisor has physically inspected it, corrected any defects, and updated the PMS from Clean to Inspected. This hotel room inspection checklist is adapted from the LuxOps quality control chapter and shows the supervisor SOP: fixed inspection sequence, 100-point scoring model, bathroom and bedroom criteria, defect log and release rule for Front Desk.',
       sections: [
         {
           h2: 'The Room Status Workflow: Clean Is Not Inspected',
@@ -2336,18 +2336,18 @@ export const articles: BilingualArticle[] = [
   {
     slug: 'hotel-standard-operating-procedures',
     en: {
-      title: 'Hotel Standard Operating Procedures: A Complete Guide for Department Managers',
+      title: 'Hotel Standard Operating Procedures: SOP Playbook Guide for Hotel Managers',
       description:
-        'What hotel SOPs should cover, how to write them so staff actually follow them, and what separates a working SOP library from a document no one reads.',
+        'A practical hotel SOP guide covering front desk, housekeeping, room inspection, handover, escalation, SOP templates and playbook-based operating standards.',
       date: '2026-04-28',
       readTime: '9 min read',
       intro:
-        'Most hotels have some version of standard operating procedures. Most of those documents are out of date, stored somewhere staff cannot find them, and written in a way that does not reflect how work actually gets done. A hotel SOP that works is not a compliance document. It is a training tool, a quality benchmark and an onboarding shortcut all in one. This guide covers what hotel SOPs should contain, how to write them so they get used, and how to maintain them when the property evolves.',
+        'Most hotels have some version of standard operating procedures. Fewer have a real SOP playbook. The difference is operational. A SOP folder stores documents. A hotel operations playbook tells the team what triggers the task, who owns it, what sequence to follow, what standard to hit, when to escalate and what evidence to leave behind. This guide explains what hotel SOPs should cover, using concrete examples from housekeeping, room inspection and front desk procedures.',
       sections: [
         {
           h2: 'What Hotel Standard Operating Procedures Actually Are',
           content:
-            'A standard operating procedure is a written description of how a specific task should be performed every time, by any qualified team member, to the same result. That definition is important because it sets the bar. An SOP is not a general policy statement. It is not a training video script. It is a step-by-step sequence that someone can follow without asking a supervisor and arrive at the correct outcome.',
+            'A hotel SOP is a written operating sequence for one task, owned by one role, performed to one standard and verified by one quality control point. That definition matters. "Keep rooms clean" is not an SOP. "Clean a standard departure room in 45-60 minutes, follow the 7-phase sequence, mark it Clean, then wait for supervisor inspection before release" is an SOP.',
           h3Items: [
             {
               heading: 'SOPs vs. policies vs. training documents',
@@ -2381,23 +2381,23 @@ export const articles: BilingualArticle[] = [
         {
           h2: 'How to Structure a Hotel SOP',
           content:
-            'Format matters as much as content. A well-structured SOP can be read quickly, used as a reference during a task and updated without rewriting the whole document. The following structure works for most hotel departments.',
+            'Format matters as much as content. A well-structured SOP can be read quickly, used during a shift and updated without rewriting the whole library. The LuxOps format uses the same operating fields across departments so front desk, housekeeping and managers read procedures in the same way.',
           h3Items: [
             {
-              heading: 'Header information',
-              text: 'Every SOP should open with: the procedure name, the department it applies to, the role responsible for executing it, the version number, the date it was last reviewed, and who approved it. This is the document management layer that keeps your SOP library reliable.',
+              heading: 'Trigger and owner',
+              text: 'Open with the event that starts the procedure and the role that owns it. Examples: guest approaches for check-in, departure room appears on the assignment sheet, DND remains active at 2:00 PM, guest disputes a charge at check-out.',
             },
             {
-              heading: 'Purpose statement',
-              text: 'One to two sentences explaining why this procedure exists and what a correct execution achieves. Keep it outcome-focused: "To ensure every departing guest receives a complete check-out that closes their account accurately and ends the stay on a positive interaction."',
+              heading: 'Required sequence',
+              text: 'Write the task in the order it physically happens. A front desk SOP might move from welcome to ID verification, registration, payment, key issue and PMS update. A housekeeping SOP might move from initial assessment to bathroom, bedroom, bed, closet, minibar and final presentation.',
             },
             {
-              heading: 'Step-by-step sequence',
-              text: 'Numbered steps, one action per step. Avoid compound steps. "Verify the bill and ask if the guest enjoyed their stay" should be two steps, not one. Each step should be specific enough that there is no ambiguity about what a completed step looks like. Include timing where it matters: "Within 30 seconds of the guest approaching the desk."',
+              heading: 'Quality standard',
+              text: 'Define what "done correctly" means. Use measurable standards wherever possible: check-in greeting within 30 seconds, telephone answered within three rings, no hair anywhere in the bathroom, departure room inspection pass threshold 90/100.',
             },
             {
-              heading: 'Exceptions and escalation triggers',
-              text: 'Every procedure has edge cases. Document the most common ones: what to do if the guest disputes a charge, if the PMS is down, if there is no manager on duty. An SOP that only covers the smooth scenario fails at the moment it is most needed.',
+              heading: 'Exception, escalation and handover',
+              text: 'Every procedure needs an exception path. What if the card is declined, the room is not ready, the guest item is found, the DND sign remains, or the guest complains twice? Close the SOP with the handover evidence: PMS note, inspection score, defect log, shift log or manager sign-off.',
             },
           ],
         },
@@ -2408,11 +2408,11 @@ export const articles: BilingualArticle[] = [
           h3Items: [
             {
               heading: 'Front desk (front office)',
-              text: 'Priority SOPs: check-in sequence, check-out sequence, late check-out handling, complaint resolution, VIP arrival protocol, telephone standards and no-show procedure. Check-in and check-out are the bookends of every guest stay. If the sequence is inconsistent, the guest experience is inconsistent by definition.',
+              text: 'Priority SOPs: pre-arrival review, check-in sequence, room not ready, check-out, billing dispute, late check-out, complaint resolution, VIP arrival, telephone standard, wake-up call and shift handover. Use both terms in your library: front office for the department, front desk for the guest-facing procedures people search for.',
             },
             {
               heading: 'Housekeeping',
-              text: 'Priority SOPs: room attendant sequence for checkout rooms and stayovers, supervisor inspection procedure, lost and found handling, DND room management, deep cleaning schedule and amenity placement standards. Housekeeping is the highest-volume department in most hotels and the one where inconsistency is most visible.',
+              text: 'Priority SOPs: trolley setup, departure room cleaning, stayover service, suite cleaning, DND protocol, Lost & Found, supervisor room inspection, defect logging, turndown and deep cleaning. The LuxOps HSK model separates Clean from Inspected and uses 100% departure inspection before release.',
             },
             {
               heading: 'Food and beverage',
@@ -2627,22 +2627,22 @@ export const articles: BilingualArticle[] = [
   {
     slug: 'hotel-front-desk-procedures',
     en: {
-      title: 'Hotel Front Desk Procedures: The Complete SOP Guide',
+      title: 'Hotel Front Desk Procedures: Check-In, Check-Out, Billing and Handover SOPs',
       description:
-        'Step-by-step front desk procedures for hotel check-in, check-out, complaint handling and reservation management. Written for front desk agents and supervisors.',
+        'Step-by-step hotel front desk procedures from the LuxOps Front Office Playbook: check-in, check-out, room not ready, billing disputes, wake-up calls and shift handover.',
       date: '2026-04-28',
       readTime: '10 min read',
       intro:
-        'The front desk is where every guest stay begins and ends. It is also the department that absorbs the most variability: late arrivals, disputes, room changes, payment issues, special requests and complaints all land at the front desk. When procedures are documented and followed consistently, the team can handle that variability without losing the service standard. When they are not, the outcome depends entirely on the individual agent working the shift. This guide covers the core front desk procedures every hotel should have in place.',
+        'The front desk is where every guest stay begins and ends, but it is also where operational gaps become visible fastest. A room not ready, a declined card, a billing dispute, a wake-up call missed or a complaint transferred without context can undo a good stay in minutes. This guide is adapted from the LuxOps Front Office Playbook and focuses on the front desk procedures hotels should document first: check-in, check-out, room not ready, payment handling, guest recovery, telephone standards and shift handover.',
       sections: [
         {
           h2: 'Check-In Procedure',
           content:
-            'Check-in sets the tone for the entire stay. A smooth check-in builds confidence in the property. A slow or inconsistent one creates doubt before the guest has seen their room. The procedure below covers the full sequence for a standard arrival. VIP arrivals require a separate protocol, typically with pre-blocked rooms, personalised welcome and manager presence.',
+            'Check-in sets the tone for the entire stay. The LuxOps playbook treats check-in as a controlled sequence, not a greeting followed by PMS work. The agent should know the guest file before the guest reaches the desk, and the room should only be assigned once housekeeping has released it as Inspected.',
           h3Items: [
             {
               heading: 'Pre-arrival preparation',
-              text: 'Before each shift, the front desk agent should review expected arrivals for the day. Flag VIPs, repeat guests, guests with special requests on file and any rooms blocked for early arrival. Identify rooms that are clean and inspected versus those still in progress. A prepared agent does not read the guest file for the first time when the guest is standing at the desk.',
+              text: 'Before each shift, review arrivals in the PMS, flag VIPs, repeat guests, birthdays, anniversaries, honeymoons, special requests and early arrival notes. Verify room assignments against guest preferences and housekeeping status. A prepared agent does not read the guest profile for the first time while the guest is standing at the desk.',
             },
             {
               heading: 'The check-in sequence',
@@ -2650,18 +2650,18 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: 'Handling early arrivals and room not ready',
-              text: 'When the room is not ready: offer to store luggage, provide the estimated ready time, take a contact number and commit to a call when the room is confirmed. Do not give a room number that is not yet inspected and released. If the wait exceeds the estimated time, call the guest before they call the desk.',
+              text: 'When the room is not ready, store luggage, offer a beverage or waiting option, provide the estimated ready time, take a contact number and commit to a call when housekeeping confirms release. Do not assign a room in Clean status. Only an Inspected room should reach the guest.',
             },
             {
               heading: 'Credit card authorisation and incidental holds',
-              text: 'The authorisation amount and hold duration should be defined in the SOP and communicated to the guest at check-in. Disputes at check-out about unexpected holds are almost always the result of this step being skipped or communicated poorly. State the hold amount, explain it covers incidentals and that the hold releases within a defined window after departure.',
+              text: 'The authorisation amount and hold duration should be defined in the SOP and communicated clearly at check-in. The playbook formula should be property-specific, but the logic is consistent: room charges plus an incidental buffer by night, or incidentals only for prepaid stays. Disputes at check-out often start when this explanation is skipped.',
             },
           ],
         },
         {
           h2: 'Check-Out Procedure',
           content:
-            'Check-out is the final impression. A guest whose stay was acceptable can leave satisfied if check-out is smooth. A guest whose stay was good can leave frustrated if check-out is slow, if the bill is wrong or if no one acknowledges them. The procedure should be efficient and warm, not just efficient.',
+            'Check-out is the final impression and the last quality control point before departure. The front desk procedure should close the folio accurately, protect revenue, notify housekeeping and create a warm exit instead of a purely transactional payment moment.',
           h3Items: [
             {
               heading: 'Express check-out vs. counter check-out',
@@ -2669,11 +2669,11 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: 'The check-out sequence',
-              text: 'Greet by name and retrieve the folio. Ask: "Did you have the opportunity to enjoy any additional services during your stay?" before presenting the bill, not after a dispute starts. Review main line items. Address any discrepancy on the spot. Process payment and confirm email for receipt. Ask about the stay in one genuine question, not a survey script. Wish the guest a safe journey.',
+              text: 'Greet by name, retrieve the folio, verify minibar or late charges where relevant, then present the invoice clearly. Review room charges, F&B, minibar, spa, deposits and adjustments before payment. Once payment is successful, close the invoice, offer an email copy and notify housekeeping that the room has departed.',
             },
             {
               heading: 'Late check-out handling',
-              text: 'Late check-out should be managed from the morning of departure. The front desk agent reviews which guests have flagged a late departure or have a late flight. Cross-reference with housekeeping load and occupancy. Offer late check-out within your available window: complimentary to loyalty members up to a defined time, charged for extended requests. Confirm the arrangement in writing, via a note on the guest folio and a brief message to the room.',
+              text: 'Late check-out should be approved against four factors: occupancy, guest status, housekeeping capacity and season or demand. A guest recovery case may justify a complimentary extension; a high-occupancy day may require stricter limits. The decision and charge, if any, must be noted in the PMS.',
             },
           ],
         },
@@ -2684,7 +2684,7 @@ export const articles: BilingualArticle[] = [
           h3Items: [
             {
               heading: 'The recovery sequence',
-              text: 'Listen fully without interrupting. Acknowledge the problem without defending the property: "I understand this was not the experience you expected." Apologise for the experience, not the system. Offer a concrete resolution with a defined timeline. Follow up to confirm resolution before the end of the shift. Log the complaint and resolution in the PMS under the guest record.',
+              text: 'Use the LEARN framework from the playbook: Listen fully, Empathise with the impact, Apologise for the experience, Resolve with a concrete action and Notify the supervisor. The front desk agent should give a timeline, not a vague promise. "I will speak with housekeeping and have this resolved within 30 minutes" is stronger than "we will look into it."',
             },
             {
               heading: 'Agent authority and escalation triggers',
@@ -2692,7 +2692,7 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: 'Documentation requirements',
-              text: 'Every complaint must be logged: the nature of the issue, the time reported, the resolution offered and the outcome. This documentation serves three purposes. It allows the manager to review patterns, it protects the property if a guest dispute escalates and it creates an audit trail for training. A complaint that is resolved but not logged is a missed learning opportunity.',
+              text: 'Every complaint must be logged with date, time, room number, guest name, issue, owner, resolution and follow-up result. Active and recent complaints should appear in every shift handover until closed. A complaint that is resolved but not logged is invisible to the manager and impossible to learn from.',
             },
           ],
         },
@@ -2752,7 +2752,7 @@ export const articles: BilingualArticle[] = [
       ],
       conclusion:
         'Front desk procedures are the connective tissue of the guest experience. Check-in sets the tone. Complaint handling determines whether problems become reviews. Check-out is the final impression. And the handover log is what keeps the quality consistent across shifts. When each of these procedures is documented, trained and enforced, the front desk operates as a system rather than a collection of individual performances.',
-      cta: { text: 'View the Front Office Playbook', href: '/en/playbooks' },
+      cta: { text: 'View the Front Office Playbook', href: '/en/playbooks/fo' },
       faqs: [
         {
           question: 'What is the most important front desk SOP in a hotel?',

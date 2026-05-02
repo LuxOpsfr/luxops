@@ -375,12 +375,12 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
             </span>
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
               {isEN
-                ? 'The Complete Hotel Housekeeping Checklist'
+                ? 'Hotel Housekeeping Checklist: Room Attendant, Supervisor Inspection & HSK SOP'
                 : 'La Checklist Housekeeping Hôtelière Complète'}
             </h1>
             <p className="text-lg text-blue-100 max-w-2xl mx-auto mb-8">
               {isEN
-                ? 'Room inspection, supervisor rounds and quality audit in one place. 30-point room attendant checklist, floor supervisor inspection and an LQA-ready scoring grid.'
+                ? 'A playbook-based hotel housekeeping checklist covering departure rooms, stayovers, Clean vs Inspected room status, supervisor inspection and the 100-point HSK quality grid.'
                 : "Inspection de chambre, tournée gouvernante d'étage et audit qualité au même endroit. Checklist 30 points femme de chambre, inspection superviseur et grille de notation prête pour l'audit LQA."}
             </p>
             <Link
@@ -399,12 +399,12 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
           </h2>
           {isEN ? (
             <p className="text-gray-600 leading-relaxed">
-              A hotel housekeeping checklist is the backbone of consistent room quality. Whether you are a head
-              housekeeper standardizing your team&apos;s SOP, a floor supervisor running daily room inspections, or a
-              hotel manager preparing for a quality audit, the right checklist turns invisible excellence into a
-              repeatable standard. This page gives you free, printable checklists for every role: room attendants,
-              floor supervisors (gouvernantes d&apos;étage) and quality auditors. Each checklist follows the hotel
-              quality control standards used by LQA and Forbes-rated properties.
+              A hotel housekeeping checklist is not just a cleaning list. In a working HSK playbook, it connects the
+              room attendant sequence, trolley setup, Lost &amp; Found control, DND protocol, supervisor release
+              inspection and PMS room status workflow. The standard is simple: a room can be Clean after service, but
+              it is not ready for a guest until it is Inspected. Use this free checklist as an extract from the LuxOps
+              Housekeeping Playbook: departure rooms, stayovers, bathroom checks, bedroom presentation, defect logging
+              and supervisor scoring in one operational flow.
             </p>
           ) : (
             <p className="text-gray-600 leading-relaxed">
