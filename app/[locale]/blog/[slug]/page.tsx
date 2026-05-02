@@ -463,6 +463,35 @@ export default async function BlogArticlePage({
           )
         })()}
 
+        {/* Playbook excerpt — proof and CTA early in the read */}
+        {playbookExcerpt && (
+          <section className="py-12 bg-white border-b border-gray-100">
+            <div className="max-w-3xl mx-auto px-6">
+              <div className="rounded-xl border border-[#d8e6f7] bg-[#f4f8ff] p-8">
+                <p className="text-xs font-semibold uppercase tracking-widest text-[#003d9b] mb-3">
+                  {playbookExcerpt.label}
+                </p>
+                <h2 className="text-2xl font-bold text-[#111111] mb-3">{playbookExcerpt.title}</h2>
+                <p className="text-gray-600 leading-relaxed mb-6">{playbookExcerpt.intro}</p>
+                <div className="divide-y divide-[#dbe8ff] rounded-lg overflow-hidden border border-[#dbe8ff] bg-white mb-6">
+                  {playbookExcerpt.rows.map((row) => (
+                    <div key={row.term} className="grid sm:grid-cols-[150px_1fr] gap-3 p-4">
+                      <h3 className="font-semibold text-[#111111] text-sm">{row.term}</h3>
+                      <p className="text-sm text-gray-600 leading-relaxed">{row.detail}</p>
+                    </div>
+                  ))}
+                </div>
+                <Link
+                  href={playbookExcerpt.ctaHref}
+                  className="inline-flex items-center gap-2 rounded-lg bg-[#003d9b] px-5 py-3 text-sm font-semibold text-white hover:bg-[#002d7a] transition-colors"
+                >
+                  {playbookExcerpt.ctaText} <ArrowRight size={16} />
+                </Link>
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Article body — all sections */}
         <section className="py-12 bg-white">
           <div className="max-w-3xl mx-auto px-6">
@@ -509,29 +538,6 @@ export default async function BlogArticlePage({
                       </div>
                     ))}
                   </div>
-                </div>
-              )}
-              {playbookExcerpt && (
-                <div className="mb-12 rounded-xl border border-[#d8e6f7] bg-[#f4f8ff] p-8">
-                  <p className="text-xs font-semibold uppercase tracking-widest text-[#003d9b] mb-3">
-                    {playbookExcerpt.label}
-                  </p>
-                  <h2 className="text-2xl font-bold text-[#111111] mb-3">{playbookExcerpt.title}</h2>
-                  <p className="text-gray-600 leading-relaxed mb-6">{playbookExcerpt.intro}</p>
-                  <div className="divide-y divide-[#dbe8ff] rounded-lg overflow-hidden border border-[#dbe8ff] bg-white mb-6">
-                    {playbookExcerpt.rows.map((row) => (
-                      <div key={row.term} className="grid sm:grid-cols-[150px_1fr] gap-3 p-4">
-                        <h3 className="font-semibold text-[#111111] text-sm">{row.term}</h3>
-                        <p className="text-sm text-gray-600 leading-relaxed">{row.detail}</p>
-                      </div>
-                    ))}
-                  </div>
-                  <Link
-                    href={playbookExcerpt.ctaHref}
-                    className="inline-flex items-center gap-2 rounded-lg bg-[#003d9b] px-5 py-3 text-sm font-semibold text-white hover:bg-[#002d7a] transition-colors"
-                  >
-                    {playbookExcerpt.ctaText} <ArrowRight size={16} />
-                  </Link>
                 </div>
               )}
               {/* Conclusion */}
