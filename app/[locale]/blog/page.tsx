@@ -66,7 +66,7 @@ export default async function BlogPage({
         <div className="max-w-4xl mx-auto px-6">
           <div className="mb-14">
             <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-5">
-              {isEn ? 'Core SEO clusters' : 'Clusters principaux'}
+              {isEn ? 'Essential guides' : 'Guides essentiels'}
             </p>
             <div className="grid sm:grid-cols-2 gap-4">
               {topicClusters.map((cluster) => (
