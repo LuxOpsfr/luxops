@@ -3456,4 +3456,653 @@ export const articles: BilingualArticle[] = [
       ],
     },
   },
+  {
+    slug: 'hotel-room-attendant-checklist',
+    en: {
+      title: 'Hotel Room Attendant Checklist: Daily SOP for Departure Rooms and Stayovers',
+      description:
+        'A practical room attendant checklist adapted from the LuxOps Housekeeping Playbook: trolley setup, room entry, departure room sequence, stayover service, DND and final self-inspection.',
+      date: '2026-05-02',
+      readTime: '9 min read',
+      intro:
+        'A room attendant checklist is useful only if it follows the real rhythm of the floor. It should start before the room is opened, with trolley setup and assignment review, then guide the attendant through room entry, departure room cleaning, stayover service, bathroom standards, Lost & Found, DND and final self-inspection. This article is adapted from the LuxOps Housekeeping Playbook and gives hotels a practical daily SOP for room attendants, not a generic cleaning list.',
+      sections: [
+        {
+          h2: 'What a Room Attendant Checklist Should Actually Control',
+          content:
+            'A room attendant checklist should control three things: the sequence of work, the standard of finish and the handover to the supervisor. If it only lists items to clean, it misses the operational point. The checklist must help the attendant complete the room consistently and help the supervisor inspect it against the same standard.',
+          h3Items: [
+            {
+              heading: 'Before the room',
+              text: 'Review the assignment sheet, room status, VIP notes, special requests, early arrivals and maintenance alerts. A room attendant should not discover a VIP setup, connecting room or priority arrival only after entering the room.',
+            },
+            {
+              heading: 'During the room',
+              text: 'Follow the same physical sequence every time. For departure rooms, the LuxOps playbook uses seven phases: initial assessment, bathroom deep clean, bedroom cleaning, bed making, closet and storage, minibar and beverage area, final presentation.',
+            },
+            {
+              heading: 'Before leaving',
+              text: 'Complete a self-inspection from the guest perspective. The attendant can mark the room Clean, but the room is not ready for sale until a supervisor marks it Inspected after physical verification.',
+            },
+          ],
+        },
+        {
+          h2: 'Pre-Shift Trolley Setup',
+          content:
+            'The housekeeping trolley is the room attendant’s mobile workstation. A poorly stocked trolley creates return trips, delays and shortcuts. The checklist should define the par level and layout before the first room is started.',
+          h3Items: [
+            {
+              heading: 'Linen, amenities and chemicals',
+              text: 'Stock linen by room type, prepare complete towel sets, fill toiletries, tissues, toilet paper, laundry bags and stationery, then verify all cleaning products before going to the floor.',
+            },
+            {
+              heading: 'Color-coded microfiber',
+              text: 'Use a color-coded system: blue for glass and chrome, yellow for general surfaces, green for bathroom surfaces and red for toilet areas. This prevents cross-contamination and makes training clearer.',
+            },
+          ],
+        },
+        {
+          h2: 'Departure Room Cleaning: The 7-Phase SOP',
+          content:
+            'A departure room is the most complete room attendant task because the room must feel untouched for the next guest. The LuxOps target is 45 to 60 minutes for a standard departure room, with quality never sacrificed for speed.',
+          h3Items: [
+            {
+              heading: 'Phase 1: initial assessment',
+              text: 'Open curtains and lights, scan for guest belongings, damage, odor, heavy mess or maintenance issues. If a guest item is found, stop and follow Lost & Found immediately. Never assume an item is trash.',
+            },
+            {
+              heading: 'Phase 2: bathroom deep clean',
+              text: 'Work clean to dirty, top to bottom and dry to wet. Mirrors, vanity, sink, shower or bath, toilet and floor are cleaned in a fixed order. The bathroom must pass the no-hair-anywhere rule.',
+            },
+            {
+              heading: 'Phases 3 to 7: room finish',
+              text: 'Dust high to low, make the bed with a crisp symmetrical finish, check closet and safe, restock minibar and beverage items, align stationery and finish with a final doorway view.',
+            },
+          ],
+        },
+        {
+          h2: 'Stayover Service Checklist',
+          content:
+            'Stayover service is not a lighter version of departure cleaning. It is a different procedure because the guest still owns the room. The goal is to refresh the space without disturbing personal belongings or preferences.',
+          h3Items: [
+            {
+              heading: 'Respect guest belongings',
+              text: 'Tidy without relocating. Pair shoes, straighten desk items, close books with a bookmark if available, but do not reorganize the guest’s belongings into a different system.',
+            },
+            {
+              heading: 'Linen and towel decisions',
+              text: 'Maintain bed linen unless soiled, requested or scheduled for change. Towels on the floor are replaced; towels hung on the rack are normally reused under the environmental program.',
+            },
+          ],
+        },
+        {
+          h2: 'DND, Lost & Found and Final Self-Inspection',
+          content:
+            'The final part of the checklist protects privacy, security and room release quality. These are the steps that separate a professional housekeeping SOP from a simple cleaning list.',
+          h3Items: [
+            {
+              heading: 'DND rule',
+              text: 'If Do Not Disturb is displayed, do not knock and do not enter. Note the room, attempt contact at the property-defined time and document the result.',
+            },
+            {
+              heading: 'Lost & Found rule',
+              text: 'Do not move an item until its exact location, room number and condition are recorded. Valuables, documents, medication and perishable items need different storage and return rules.',
+            },
+            {
+              heading: 'Final self-inspection',
+              text: 'Stand at the door and view the room like the next guest: bed smooth, bathroom dry, no hair, no dust, amenities aligned, neutral scent and no unreported maintenance fault.',
+            },
+          ],
+        },
+      ],
+      conclusion:
+        'A strong room attendant checklist makes quality repeatable. It gives the attendant a fixed sequence, protects guest belongings, reduces missed details and gives the supervisor a clear basis for inspection.',
+      cta: { text: 'View the Housekeeping Playbook', href: '/playbooks/hsk' },
+      faqs: [
+        {
+          question: 'What is a room attendant checklist?',
+          answer:
+            'A room attendant checklist is a daily housekeeping SOP used to prepare the trolley, enter rooms correctly, clean departure rooms, refresh stayovers, manage DND and Lost & Found, and complete self-inspection.',
+        },
+        {
+          question: 'How long should a room attendant take to clean a hotel room?',
+          answer:
+            'In the LuxOps Housekeeping Playbook, a standard departure room target is 45 to 60 minutes, a standard stayover is 25 to 35 minutes, and a deep clean is 90 to 120 minutes.',
+        },
+      ],
+    },
+    fr: {
+      title: "Checklist équipier d'étage : SOP quotidienne pour chambres à blanc et recouches",
+      description:
+        "Checklist opérationnelle issue du Playbook Housekeeping LuxOps : chariot, entrée en chambre, chambre à blanc, recouche, DND, objets trouvés et auto-contrôle.",
+      date: '2026-05-02',
+      readTime: '9 min de lecture',
+      intro:
+        "Une checklist équipier d'étage n'est utile que si elle suit le rythme réel d'un étage. Elle doit commencer avant l'entrée en chambre, avec le chariot et la fiche de travail, puis guider l'équipier sur le protocole d'entrée, la chambre à blanc, la recouche, la salle de bain, les objets trouvés, le DND et l'auto-contrôle final. Cet article s'inspire du Playbook Housekeeping LuxOps et donne une SOP quotidienne exploitable, pas une simple liste de ménage.",
+      sections: [
+        {
+          h2: "Ce qu'une checklist équipier d'étage doit contrôler",
+          content:
+            "Une checklist housekeeping doit contrôler trois choses : la séquence de travail, le niveau de finition et la passation au superviseur. Si elle se limite aux éléments à nettoyer, elle manque sa fonction opérationnelle. Elle doit aider l'équipier à terminer la chambre selon le standard et permettre à la gouvernante d'étage de contrôler sur la même base.",
+          h3Items: [
+            {
+              heading: 'Avant la chambre',
+              text: "Relire la fiche de travail, le statut des chambres, les VIP, les demandes spéciales, les arrivées prioritaires et les alertes maintenance. Un équipier d'étage ne doit pas découvrir une chambre VIP ou une arrivée anticipée une fois déjà en chambre.",
+            },
+            {
+              heading: 'Pendant la chambre',
+              text: "Pour une chambre à blanc, le playbook LuxOps utilise sept phases : évaluation initiale, nettoyage approfondi de la salle de bain, nettoyage de la chambre, confection du lit, penderie et rangements, minibar et zone boissons, présentation finale.",
+            },
+            {
+              heading: 'Avant de sortir',
+              text: "Réaliser l'auto-contrôle depuis la perspective du client. L'équipier peut passer la chambre en Propre, mais elle ne doit être libérée à la réception qu'après inspection physique et statut Inspecté par la gouvernante.",
+            },
+          ],
+        },
+        {
+          h2: 'Mise en place du chariot',
+          content:
+            "Le chariot est le poste de travail mobile de l'équipier d'étage. Un chariot mal approvisionné crée des allers-retours, des retards et des raccourcis. La checklist doit définir le stock et l'organisation avant la première chambre.",
+          h3Items: [
+            {
+              heading: 'Linge et produits',
+              text: "Préparer draps, taies et housses selon les types de chambres. Charger serviettes, gants et tapis de bain en jeux complets, puis vérifier produits d'accueil, papier toilette, sacs de blanchisserie et papeterie.",
+            },
+            {
+              heading: 'Microfibres',
+              text: "Utiliser un code couleur clair : bleu pour vitres, miroirs et chromes, jaune pour les surfaces générales, vert pour les surfaces de salle de bain, rouge pour les toilettes.",
+            },
+          ],
+        },
+        {
+          h2: 'Chambre à blanc : SOP en 7 phases',
+          content:
+            "La chambre à blanc est la prestation la plus complète, car la chambre doit sembler intacte pour le prochain client. Le repère LuxOps est de 45 à 60 minutes pour une chambre standard, sans jamais sacrifier la qualité à la rapidité.",
+          h3Items: [
+            {
+              heading: 'Phase 1 : évaluation initiale',
+              text: "Ouvrir rideaux et lumières, vérifier objets oubliés, dommages, odeurs, désordre important et problèmes de maintenance. Si un objet client est trouvé, arrêter le nettoyage et appliquer immédiatement la procédure objets trouvés.",
+            },
+            {
+              heading: 'Phase 2 : salle de bain',
+              text: "Travailler du propre vers le sale, du haut vers le bas, du sec vers l'humide. Miroirs, plan vasque, lavabo, douche ou baignoire, toilettes et sol suivent un ordre fixe. Le standard est simple : aucun cheveu, nulle part.",
+            },
+            {
+              heading: 'Phases 3 à 7 : finitions chambre',
+              text: "Dépoussiérer du haut vers le bas, faire le lit avec une finition lisse et symétrique, contrôler penderie et coffre, remettre minibar et zone boissons au standard, aligner la papeterie et terminer par le regard client depuis la porte.",
+            },
+          ],
+        },
+        {
+          h2: 'Checklist recouche',
+          content:
+            "La recouche n'est pas une chambre à blanc plus rapide. C'est une procédure différente, car le client occupe encore son espace. L'objectif est de rafraîchir la chambre sans déranger ses affaires ni ses préférences.",
+          h3Items: [
+            {
+              heading: 'Respect des affaires client',
+              text: "Ranger sans déplacer inutilement. Apparier les chaussures, redresser les articles sur le bureau, fermer un livre avec un marque-page si disponible, mais ne pas réorganiser l'univers du client.",
+            },
+            {
+              heading: 'Linge et serviettes',
+              text: "Maintenir le linge de lit sauf s'il est sale, demandé ou prévu au planning. Les serviettes au sol sont remplacées ; les serviettes accrochées sont conservées selon le programme environnemental.",
+            },
+          ],
+        },
+        {
+          h2: 'DND, objets trouvés et auto-contrôle',
+          content:
+            "La fin de checklist protège la vie privée, la sécurité et la qualité de libération. C'est ce qui distingue une vraie SOP housekeeping d'une simple liste de nettoyage.",
+          h3Items: [
+            {
+              heading: 'Règle DND',
+              text: "Si le panneau ou voyant DND est actif, ne pas frapper et ne pas entrer. Noter la chambre, tenter le contact à l'heure définie par l'établissement et documenter le résultat.",
+            },
+            {
+              heading: 'Règle objets trouvés',
+              text: "Ne pas déplacer l'objet avant d'avoir noté l'emplacement exact, le numéro de chambre et l'état. Objets de valeur, documents, médicaments et périssables suivent des règles de stockage et de restitution différentes.",
+            },
+            {
+              heading: 'Auto-contrôle final',
+              text: "Se placer à la porte et regarder la chambre comme le prochain client : lit lisse, salle de bain sèche, aucun cheveu, aucune poussière, amenities alignées, odeur neutre et aucun défaut maintenance non signalé.",
+            },
+          ],
+        },
+      ],
+      conclusion:
+        "Une bonne checklist équipier d'étage rend la qualité répétable. Elle donne une séquence fixe, protège les affaires du client, réduit les oublis et donne à la gouvernante une base claire d'inspection.",
+      cta: { text: 'Voir le Playbook Housekeeping', href: '/playbooks/hsk' },
+      faqs: [
+        {
+          question: "Qu'est-ce qu'une checklist équipier d'étage ?",
+          answer:
+            "C'est une SOP quotidienne utilisée par les femmes, valets ou équipiers d'étage pour préparer le chariot, entrer en chambre, réaliser une chambre à blanc, effectuer une recouche, gérer DND et objets trouvés, puis faire l'auto-contrôle.",
+        },
+        {
+          question: "Combien de temps faut-il pour remettre une chambre d'hôtel ?",
+          answer:
+            "Dans le Playbook Housekeeping LuxOps, le repère est de 45 à 60 minutes pour une chambre à blanc standard, 25 à 35 minutes pour une recouche et 90 à 120 minutes pour un grand nettoyage.",
+        },
+      ],
+    },
+  },
+  {
+    slug: 'hotel-front-desk-checklist',
+    en: {
+      title: 'Hotel Front Desk Checklist: Shift Opening, Check-In, Check-Out and Handover',
+      description:
+        'A hotel front desk checklist adapted from the LuxOps Front Office Playbook: shift opening, arrivals, check-in, room not ready, check-out, billing and handover.',
+      date: '2026-05-02',
+      readTime: '8 min read',
+      intro:
+        'A hotel front desk checklist should protect the guest journey across the full shift, not just remind agents to smile. The desk controls arrivals, payments, room readiness, complaints, wake-up calls, billing, check-out and handover. This guide is adapted from the LuxOps Front Office Playbook and gives front desk agents and supervisors a practical shift checklist for daily use.',
+      sections: [
+        {
+          h2: 'Shift Opening Checklist',
+          content:
+            'A front desk shift starts before the first guest arrives. The agent needs to know the business of the day: occupancy, arrivals, departures, VIPs, room status, open complaints and any operational risk carried over from the previous shift.',
+          h3Items: [
+            {
+              heading: 'Review arrivals and departures',
+              text: 'Check all arrivals in the PMS, expected arrival times, VIPs, special occasions, room preferences, early arrivals and special requests. Review departures, balances, late check-out requests and high-priority rooms for housekeeping.',
+            },
+            {
+              heading: 'Check room readiness',
+              text: 'Separate rooms in Clean status from rooms in Inspected status. A Clean room is not ready for assignment. Front desk should only assign rooms released by housekeeping as Inspected.',
+            },
+            {
+              heading: 'Read the handover log',
+              text: 'Review open complaints, pending guest requests, billing issues, room moves, maintenance flags, VIP notes and any decision that deviated from standard procedure.',
+            },
+          ],
+        },
+        {
+          h2: 'Arrival and Check-In Checklist',
+          content:
+            'Check-in is the first operational test of the stay. A good checklist keeps the interaction warm while making sure identity, payment, room status and PMS updates are handled correctly.',
+          h3Items: [
+            {
+              heading: 'Guest welcome',
+              text: 'Stand up where appropriate, make eye contact, smile and use the guest name two to three times during the interaction. Confirm the reservation, dates, room type, rate and number of guests.',
+            },
+            {
+              heading: 'Registration and payment',
+              text: 'Verify ID, present the registration card or digital equivalent, confirm contact details, review requests, process pre-authorisation or payment and issue the correct number of keys.',
+            },
+            {
+              heading: 'Room not ready',
+              text: 'Store luggage, offer a waiting option, give a realistic time, collect a contact number and call the guest before they need to chase. Do not assign the room until housekeeping releases it as Inspected.',
+            },
+          ],
+        },
+        {
+          h2: 'Check-Out and Billing Checklist',
+          content:
+            'Check-out closes the stay and protects revenue. The agent should verify the folio before taking payment, then close the invoice cleanly and notify housekeeping immediately after departure.',
+          h3Items: [
+            {
+              heading: 'Invoice review',
+              text: 'Verify room charges, F&B, minibar, spa or other services, deposits, prepayments, adjustments and taxes. Present the invoice clearly and give the guest time to review it before payment.',
+            },
+            {
+              heading: 'Billing dispute',
+              text: 'Listen, review documentation, explain clearly, escalate if the adjustment exceeds agent authority and document the outcome in the guest profile and handover log.',
+            },
+          ],
+        },
+        {
+          h2: 'Communication, Recovery and Handover',
+          content:
+            'The front desk is the communication center of the property. The checklist should cover calls, transfers, wake-up calls, guest recovery and written handover.',
+          h3Items: [
+            {
+              heading: 'Telephone and wake-up calls',
+              text: 'Answer within three rings, ask permission before hold, never transfer a complaint without context, repeat wake-up call times back to the guest and add manual backup for critical departures.',
+            },
+            {
+              heading: 'Guest recovery',
+              text: 'Use LEARN: Listen, Empathise, Apologise, Resolve, Notify. Give a specific timeline and keep active complaints in every handover until closed.',
+            },
+            {
+              heading: 'Shift handover',
+              text: 'Pass on occupancy, arrivals, departures, VIPs, open complaints, pending requests, room moves, blocked rooms, high balances, late check-outs, maintenance issues and unusual decisions.',
+            },
+          ],
+        },
+      ],
+      conclusion:
+        'A front desk checklist is not admin. It is how the desk protects first impression, last impression, revenue, guest recovery and continuity between shifts.',
+      cta: { text: 'View the Front Office Playbook', href: '/playbooks/fo' },
+      faqs: [
+        {
+          question: 'What should be included in a hotel front desk checklist?',
+          answer:
+            'A hotel front desk checklist should include shift opening, arrivals, room readiness, check-in, payment, room not ready handling, check-out, billing disputes, guest recovery, telephone standards, wake-up calls and shift handover.',
+        },
+        {
+          question: 'What should be in a front desk handover?',
+          answer:
+            'A complete handover includes occupancy, arrivals, departures, VIPs, open complaints, pending requests, room moves, blocked rooms, billing issues, late check-outs and maintenance flags.',
+        },
+      ],
+    },
+    fr: {
+      title: 'Checklist réception hôtel : ouverture de shift, check-in, check-out et passation',
+      description:
+        'Checklist réception issue du Playbook Front Office LuxOps : prise de poste, arrivées, check-in, chambre non prête, check-out, litiges facture et passation.',
+      date: '2026-05-02',
+      readTime: '8 min de lecture',
+      intro:
+        "Une checklist réception ne sert pas seulement à rappeler de sourire au client. Elle protège le parcours client sur tout le shift : arrivées, paiements, statut des chambres, réclamations, appels réveil, facturation, check-out et passation. Ce guide s'inspire du Playbook Front Office LuxOps et propose une checklist de réception utilisable au quotidien par les réceptionnistes et chefs de réception.",
+      sections: [
+        {
+          h2: 'Checklist de prise de poste',
+          content:
+            "Un shift réception commence avant le premier client. Le réceptionniste doit connaître l'activité du jour : occupation, arrivées, départs, VIP, statut des chambres, réclamations ouvertes et points sensibles transmis par le shift précédent.",
+          h3Items: [
+            {
+              heading: 'Relire arrivées et départs',
+              text: "Consulter les arrivées du jour dans le PMS : heures prévues, VIP, occasions spéciales, préférences de chambre, early check-in et demandes particulières. Revoir aussi les départs, soldes, late check-out et chambres prioritaires pour le housekeeping.",
+            },
+            {
+              heading: 'Vérifier le statut des chambres',
+              text: "Distinguer les chambres Propre des chambres Inspectée. Une chambre Propre n'est pas encore attribuable. La réception ne devrait attribuer que les chambres libérées par le housekeeping en statut Inspectée.",
+            },
+            {
+              heading: 'Lire la passation',
+              text: "Reprendre les réclamations ouvertes, demandes clients en attente, litiges de facturation, changements de chambre, alertes maintenance, notes VIP et décisions ayant dévié de la procédure standard.",
+            },
+          ],
+        },
+        {
+          h2: 'Checklist arrivées et check-in',
+          content:
+            "Le check-in est le premier test opérationnel du séjour. La checklist doit permettre un accueil chaleureux tout en sécurisant identité, paiement, statut chambre et mise à jour PMS.",
+          h3Items: [
+            {
+              heading: 'Accueil client',
+              text: "Se lever si le standard de l'établissement le prévoit, établir le contact visuel, sourire et utiliser le nom du client deux à trois fois pendant l'interaction. Confirmer réservation, dates, type de chambre, tarif et nombre de clients.",
+            },
+            {
+              heading: 'Enregistrement et paiement',
+              text: "Vérifier la pièce d'identité, présenter la fiche d'enregistrement ou son équivalent digital, confirmer les coordonnées, revoir les demandes, traiter la Pre-Authorization ou le paiement et remettre le bon nombre de clés.",
+            },
+            {
+              heading: 'Chambre non prête',
+              text: "Conserver les bagages en lieu sûr, proposer une option d'attente, donner un délai réaliste, prendre un numéro de contact et rappeler le client avant qu'il ne relance. Ne pas attribuer la chambre avant le statut Inspectée.",
+            },
+          ],
+        },
+        {
+          h2: 'Checklist check-out et facturation',
+          content:
+            "Le check-out clôture le séjour et protège le revenu. Le réceptionniste doit vérifier le folio avant encaissement, clôturer proprement la facture puis notifier immédiatement le housekeeping du départ.",
+          h3Items: [
+            {
+              heading: 'Vérification de facture',
+              text: "Contrôler frais de chambre, F&B, minibar, spa ou autres services, acomptes, prépaiements, ajustements et taxes. Présenter la facture clairement et laisser au client le temps de la vérifier avant paiement.",
+            },
+            {
+              heading: 'Litige de facturation',
+              text: "Écouter, examiner la documentation, expliquer chaque charge, escalader si l'ajustement dépasse le niveau d'autorisation, puis documenter la résolution dans le profil client et la passation.",
+            },
+          ],
+        },
+        {
+          h2: 'Communication, réclamation et passation',
+          content:
+            "La réception est le centre de communication de l'établissement. La checklist doit couvrir appels, transferts, réveils, réclamations et passation écrite.",
+          h3Items: [
+            {
+              heading: 'Téléphone et appels réveil',
+              text: "Répondre dans les trois sonneries, demander l'autorisation avant une mise en attente, ne jamais transférer une réclamation sans contexte, répéter l'heure de réveil et prévoir un appel manuel pour les départs critiques.",
+            },
+            {
+              heading: 'Réclamation client',
+              text: "Utiliser LEARN : écouter, faire preuve d'empathie, s'excuser, résoudre, notifier. Donner un délai précis et maintenir les réclamations actives en passation jusqu'à clôture.",
+            },
+            {
+              heading: 'Passation',
+              text: "Transmettre occupation, arrivées, départs, VIP, réclamations ouvertes, demandes en attente, changements de chambre, chambres bloquées, soldes élevés, late check-out, problèmes maintenance et décisions inhabituelles.",
+            },
+          ],
+        },
+      ],
+      conclusion:
+        "Une checklist réception n'est pas de l'administratif. C'est ce qui protège la première impression, la dernière impression, le revenu, la récupération de service et la continuité entre shifts.",
+      cta: { text: 'Voir le Playbook Front Office', href: '/playbooks/fo' },
+      faqs: [
+        {
+          question: 'Que doit contenir une checklist réception hôtel ?',
+          answer:
+            "Elle doit couvrir prise de poste, arrivées, statut chambres, check-in, paiement, chambre non prête, check-out, litiges de facturation, réclamations, standard téléphonique, appels réveil et passation.",
+        },
+        {
+          question: 'Que doit contenir une passation réception ?',
+          answer:
+            "Une passation complète inclut occupation, arrivées, départs, VIP, réclamations ouvertes, demandes en attente, changements de chambre, chambres bloquées, litiges facture, late check-out et alertes maintenance.",
+        },
+      ],
+    },
+  },
+  {
+    slug: 'hotel-dnd-procedure',
+    en: {
+      title: 'Hotel DND Procedure: Housekeeping Do Not Disturb SOP for Hotels',
+      description:
+        'A practical hotel DND procedure for housekeeping teams: Do Not Disturb rules, 2 PM contact, door message, documentation, supervisor escalation and 24-hour welfare check.',
+      date: '2026-05-02',
+      readTime: '7 min read',
+      intro:
+        'A Do Not Disturb sign looks simple, but the procedure behind it is one of the most important housekeeping SOPs in a hotel. The team must respect guest privacy while maintaining safety awareness, service continuity and accurate documentation. This guide is adapted from the LuxOps Housekeeping Playbook and shows how to manage DND rooms without improvisation.',
+      sections: [
+        {
+          h2: 'The Core DND Rule',
+          content:
+            'When a Do Not Disturb sign or light is active, housekeeping does not knock and does not enter. The room is noted on the assignment sheet or housekeeping system, then revisited according to the property’s DND protocol.',
+          h3Items: [
+            {
+              heading: 'Privacy first',
+              text: 'DND is the guest’s explicit request for privacy. Ignoring it damages trust immediately, even if the intention was service.',
+            },
+            {
+              heading: 'Safety still matters',
+              text: 'Respecting privacy does not mean ignoring the room all day. The DND status must be documented and escalated if it continues beyond the normal service window.',
+            },
+          ],
+        },
+        {
+          h2: 'Standard Daytime DND Procedure',
+          content:
+            'The LuxOps model uses a clear daytime flow: record the DND during the floor round, avoid entry, attempt contact at the defined time and document the result.',
+          h3Items: [
+            {
+              heading: 'Morning floor round',
+              text: 'Note all DND rooms during the floor walk. Continue to other rooms. Do not create pressure on the guest by knocking or waiting at the door.',
+            },
+            {
+              heading: '2 PM contact attempt',
+              text: 'At the property-defined time, often around 2:00 PM, call the room. If there is no answer, leave a discreet door message explaining how the guest can request service.',
+            },
+            {
+              heading: 'Documentation',
+              text: 'Record the room number, time, contact attempt, guest response if any, and whether service was accepted, declined or pending.',
+            },
+          ],
+        },
+        {
+          h2: 'Door Message and Guest Communication',
+          content:
+            'The tone of a DND message matters. It should reassure the guest that privacy is respected while making it easy to request service later.',
+          h3Items: [
+            {
+              heading: 'What the message should say',
+              text: 'A good message states that housekeeping noticed the privacy sign, hopes the stay is going well, and invites the guest to contact the team or remove the sign when service is desired.',
+            },
+            {
+              heading: 'What to avoid',
+              text: 'Do not make the guest feel they did something wrong. Avoid language that sounds like pressure, warning or inconvenience to the hotel.',
+            },
+          ],
+        },
+        {
+          h2: 'Extended DND and Welfare Check',
+          content:
+            'Extended DND is a safety procedure, not a housekeeping preference. If the sign remains active for 24 hours, the situation must be escalated.',
+          h3Items: [
+            {
+              heading: 'Supervisor notification',
+              text: 'The room attendant informs the supervisor immediately when the DND reaches the defined escalation threshold.',
+            },
+            {
+              heading: 'Duty manager involvement',
+              text: 'The supervisor contacts Front Desk or the duty manager. The manager attempts guest contact by phone or message before any physical check is considered.',
+            },
+            {
+              heading: 'Welfare check',
+              text: 'If there is no response, a welfare check is conducted by a manager with security or a second staff member, following property policy and local law. Every action is documented.',
+            },
+          ],
+        },
+        {
+          h2: 'What to Include in the DND Log',
+          content:
+            'A DND log protects the guest, the team and the hotel. It creates a clear record of what happened and prevents the next shift from starting again with incomplete information.',
+          h3Items: [
+            {
+              heading: 'Minimum fields',
+              text: 'Room number, date, time observed, staff member, contact attempt, guest response, service status, supervisor notified and next action required.',
+            },
+            {
+              heading: 'Handover',
+              text: 'Unresolved DND rooms must appear in the housekeeping handover and, where needed, the Front Desk or duty manager log.',
+            },
+          ],
+        },
+      ],
+      conclusion:
+        'A hotel DND procedure protects privacy and safety at the same time. The rule is not complicated: do not knock, do not enter, document, contact at the defined time and escalate extended DND through the supervisor and duty manager.',
+      cta: { text: 'View the Housekeeping Playbook', href: '/playbooks/hsk' },
+      faqs: [
+        {
+          question: 'What does DND mean in hotel housekeeping?',
+          answer:
+            'DND means Do Not Disturb. It indicates that the guest does not want housekeeping or hotel staff to knock or enter the room during that period.',
+        },
+        {
+          question: 'Should housekeeping knock when DND is displayed?',
+          answer:
+            'No. If DND is displayed, housekeeping should not knock and should not enter. The room should be documented and handled according to the hotel’s DND procedure.',
+        },
+      ],
+    },
+    fr: {
+      title: 'Procédure DND hôtel : SOP Housekeeping pour les chambres Ne pas déranger',
+      description:
+        "Procédure DND issue du Playbook Housekeeping LuxOps : règle Ne pas déranger, contact à 14h, message sous la porte, documentation, escalade et contrôle sécurité après 24h.",
+      date: '2026-05-02',
+      readTime: '7 min de lecture',
+      intro:
+        "Un panneau Ne pas déranger semble simple, mais la procédure derrière est l'une des SOP housekeeping les plus importantes d'un hôtel. L'équipe doit respecter la vie privée du client tout en maintenant la vigilance sécurité, la continuité de service et une documentation claire. Ce guide s'inspire du Playbook Housekeeping LuxOps et montre comment gérer les chambres DND sans improvisation.",
+      sections: [
+        {
+          h2: 'La règle DND fondamentale',
+          content:
+            "Lorsqu'un panneau ou voyant DND est actif, le housekeeping ne frappe pas et n'entre pas. La chambre est notée sur la fiche de travail ou dans le système housekeeping, puis reprise selon le protocole DND de l'établissement.",
+          h3Items: [
+            {
+              heading: "Respect de la vie privée d'abord",
+              text: "Le DND est une demande explicite de tranquillité. L'ignorer détruit immédiatement la confiance, même si l'intention était de rendre service.",
+            },
+            {
+              heading: 'Vigilance sécurité',
+              text: "Respecter la vie privée ne signifie pas oublier la chambre toute la journée. Le statut DND doit être documenté et escaladé s'il dépasse la fenêtre normale de service.",
+            },
+          ],
+        },
+        {
+          h2: 'Procédure DND standard en journée',
+          content:
+            "Le modèle LuxOps suit un flux simple : noter le DND pendant la ronde, ne pas entrer, tenter le contact à l'heure définie et documenter le résultat.",
+          h3Items: [
+            {
+              heading: 'Ronde du matin',
+              text: "Noter toutes les chambres DND lors de la ronde de couloir. Continuer les autres chambres. Ne pas créer de pression en frappant ou en restant devant la porte.",
+            },
+            {
+              heading: 'Tentative de contact à 14h',
+              text: "À l'heure définie par l'établissement, souvent autour de 14h00, appeler la chambre. Sans réponse, laisser un message discret sous la porte indiquant comment demander le service.",
+            },
+            {
+              heading: 'Documentation',
+              text: "Tracer le numéro de chambre, l'heure, la tentative de contact, la réponse du client si elle existe, et le statut : service accepté, refusé ou en attente.",
+            },
+          ],
+        },
+        {
+          h2: 'Message sous la porte et communication client',
+          content:
+            "Le ton du message DND est important. Il doit rassurer le client sur le respect de sa tranquillité tout en rendant la demande de service simple.",
+          h3Items: [
+            {
+              heading: 'Ce que le message doit dire',
+              text: "Un bon message indique que le housekeeping a constaté le panneau Ne pas déranger, espère que le séjour se déroule agréablement et invite le client à contacter l'équipe ou retirer le panneau quand il souhaite le service.",
+            },
+            {
+              heading: 'Ce qu’il faut éviter',
+              text: "Ne pas donner au client l'impression qu'il a mal fait. Éviter tout ton de pression, d'avertissement ou de gêne pour l'hôtel.",
+            },
+          ],
+        },
+        {
+          h2: 'DND prolongé et contrôle sécurité',
+          content:
+            "Un DND prolongé relève de la sécurité, pas d'une préférence housekeeping. Si le panneau reste actif pendant 24 heures, la situation doit être escaladée.",
+          h3Items: [
+            {
+              heading: 'Information superviseur',
+              text: "L'équipier informe immédiatement la gouvernante ou le superviseur lorsque le DND atteint le seuil d'escalade défini.",
+            },
+            {
+              heading: 'Intervention du manager en duty',
+              text: "Le superviseur contacte la réception ou le manager en duty. Le manager tente de joindre le client par téléphone ou message avant tout contrôle physique.",
+            },
+            {
+              heading: 'Contrôle sécurité',
+              text: "Sans réponse, un contrôle est réalisé par un manager avec la sécurité ou un second collaborateur, selon la politique de l'établissement et la réglementation locale. Chaque action est documentée.",
+            },
+          ],
+        },
+        {
+          h2: 'Que tracer dans le registre DND',
+          content:
+            "Un registre DND protège le client, l'équipe et l'établissement. Il crée une trace claire et évite que le shift suivant reparte avec une information incomplète.",
+          h3Items: [
+            {
+              heading: 'Champs minimum',
+              text: "Numéro de chambre, date, heure constatée, collaborateur, tentative de contact, réponse client, statut du service, superviseur informé et prochaine action.",
+            },
+            {
+              heading: 'Passation',
+              text: "Toute chambre DND non résolue doit apparaître dans la passation housekeeping et, si nécessaire, dans la main courante réception ou duty manager.",
+            },
+          ],
+        },
+      ],
+      conclusion:
+        "Une procédure DND protège à la fois la vie privée et la sécurité. La règle est simple : ne pas frapper, ne pas entrer, documenter, contacter à l'heure définie et escalader les DND prolongés via le superviseur et le manager en duty.",
+      cta: { text: 'Voir le Playbook Housekeeping', href: '/playbooks/hsk' },
+      faqs: [
+        {
+          question: 'Que signifie DND en housekeeping hôtelier ?',
+          answer:
+            "DND signifie Do Not Disturb, ou Ne pas déranger. Cela indique que le client ne souhaite pas que le housekeeping ou un collaborateur de l'hôtel frappe ou entre dans la chambre pendant cette période.",
+        },
+        {
+          question: 'Le housekeeping doit-il frapper si le DND est affiché ?',
+          answer:
+            "Non. Si le DND est affiché, le housekeeping ne doit pas frapper et ne doit pas entrer. La chambre doit être documentée et traitée selon la procédure DND de l'établissement.",
+        },
+      ],
+    },
+  },
 ]

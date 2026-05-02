@@ -22,6 +22,9 @@ const KEYWORDS_EN: Record<string, string> = {
   'hotel-staff-training-service-standards': 'hotel staff training, hotel service standards training, how to train hotel staff, on-property hotel training, hotel training program, luxury hotel training',
   'hotel-staff-turnover-training': 'hotel staff turnover, reduce hotel staff turnover, hotel employee retention, hotel training retention, hospitality staff turnover, on-property hotel training, hotel turnover reduction, hotel staff attrition',
   'hotel-new-hire-onboarding': 'hotel new hire onboarding, hotel onboarding program, hotel staff first 90 days, hotel employee onboarding, hospitality onboarding, hotel onboarding checklist, new hotel employee integration, hotel staff retention onboarding',
+  'hotel-room-attendant-checklist': 'hotel room attendant checklist, room attendant SOP, departure room cleaning checklist, stayover room cleaning checklist, housekeeping room attendant duties',
+  'hotel-front-desk-checklist': 'hotel front desk checklist, front desk shift checklist hotel, hotel check-in checklist, hotel check-out checklist, front desk handover checklist',
+  'hotel-dnd-procedure': 'hotel DND procedure, housekeeping do not disturb procedure, hotel do not disturb SOP, DND room housekeeping, hotel welfare check DND',
 }
 
 const KEYWORDS_FR: Record<string, string> = {
@@ -40,6 +43,9 @@ const KEYWORDS_FR: Record<string, string> = {
   'hotel-staff-training-service-standards': 'formation personnel hôtelier, formation standards de service hôtel, former équipes hôtelières, formation sur site hôtel, programme formation hôtelière, formation hôtel luxe',
   'hotel-staff-turnover-training': 'turn-over hôtelier, réduire turn-over hôtel, fidélisation équipes hôtelières, formation hôtelière rétention, formation sur site hôtel, stabilité équipes hôtel, turn-over hôtellerie restauration',
   'hotel-new-hire-onboarding': 'onboarding hôtelier, intégration nouvelles recrues hôtel, programme onboarding hôtel, intégration collaborateurs hôtellerie, fidélisation nouvelles recrues hôtel, 90 premiers jours hôtel, onboarding structuré hôtel',
+  'hotel-room-attendant-checklist': 'checklist équipier étage hôtel, checklist femme de chambre hôtel, chambre à blanc checklist, recouche housekeeping, SOP housekeeping hôtel',
+  'hotel-front-desk-checklist': 'checklist réception hôtel, checklist check-in hôtel, checklist check-out hôtel, passation réception hôtel, main courante réception hôtel',
+  'hotel-dnd-procedure': 'procédure DND hôtel, procédure ne pas déranger hôtel, SOP housekeeping DND, chambre DND hôtel, contrôle sécurité DND hôtel',
 }
 
 const CONTENT_UPGRADES: Record<string, {
@@ -572,6 +578,90 @@ const PLAYBOOK_EXCERPTS: Record<string, {
       ctaHref: '/fr/formation',
     },
   },
+  'hotel-room-attendant-checklist': {
+    en: {
+      label: 'Free excerpt from the LuxOps Housekeeping Playbook',
+      title: 'Room attendant checklist: the LuxOps daily sequence',
+      intro: 'This extract is adapted from the room cleaning standards chapter. It links trolley setup, room entry, departure cleaning, stayover service and final self-inspection.',
+      rows: [
+        { term: 'Departure room', detail: '45-60 minutes for a standard room, following the 7-phase sequence before supervisor inspection.' },
+        { term: 'Stayover', detail: '25-35 minutes, refresh without disturbing guest belongings or preferences.' },
+        { term: 'DND', detail: 'Do not knock, do not enter, document and follow the property contact protocol.' },
+        { term: 'Release rule', detail: 'Room attendant marks Clean; supervisor releases as Inspected.' },
+      ],
+      ctaText: 'View the Housekeeping Playbook',
+      ctaHref: '/en/playbooks/hsk',
+    },
+    fr: {
+      label: 'Extrait gratuit du Playbook Housekeeping LuxOps',
+      title: 'Checklist équipier d’étage : la séquence quotidienne LuxOps',
+      intro: 'Cet extrait est adapté du chapitre Standards & procédures de nettoyage des chambres. Il relie chariot, entrée en chambre, chambre à blanc, recouche et auto-contrôle final.',
+      rows: [
+        { term: 'Chambre à blanc', detail: '45-60 minutes pour une chambre standard, avec séquence en 7 phases avant inspection gouvernante.' },
+        { term: 'Recouche', detail: '25-35 minutes, rafraîchir la chambre sans déranger les affaires ni les préférences client.' },
+        { term: 'DND', detail: 'Ne pas frapper, ne pas entrer, documenter et suivre le protocole de contact de l’établissement.' },
+        { term: 'Libération', detail: 'L’équipier passe en Propre ; la gouvernante libère en Inspectée.' },
+      ],
+      ctaText: 'Voir le Playbook Housekeeping',
+      ctaHref: '/fr/playbooks/hsk',
+    },
+  },
+  'hotel-front-desk-checklist': {
+    en: {
+      label: 'Free excerpt from the LuxOps Front Office Playbook',
+      title: 'Front desk checklist: what the shift must control',
+      intro: 'This extract is adapted from the check-in, check-out and communication chapters. It turns front desk work into a shift control system.',
+      rows: [
+        { term: 'Opening', detail: 'Review arrivals, departures, VIPs, room status, open complaints and billing issues.' },
+        { term: 'Check-in', detail: 'Confirm stay, ID, requests, payment or pre-authorisation, keys and PMS update.' },
+        { term: 'Check-out', detail: 'Verify folio, process payment, close invoice and notify housekeeping.' },
+        { term: 'Handover', detail: 'Log pending requests, complaints, room moves, billing issues and unusual decisions.' },
+      ],
+      ctaText: 'View the Front Office Playbook',
+      ctaHref: '/en/playbooks/fo',
+    },
+    fr: {
+      label: 'Extrait gratuit du Playbook Front Office LuxOps',
+      title: 'Checklist réception : ce que le shift doit contrôler',
+      intro: 'Cet extrait est adapté des chapitres check-in, check-out et communication client. Il transforme la réception en système de contrôle du shift.',
+      rows: [
+        { term: 'Prise de poste', detail: 'Revoir arrivées, départs, VIP, statut chambres, réclamations ouvertes et litiges de facturation.' },
+        { term: 'Check-in', detail: 'Confirmer séjour, identité, demandes, paiement ou Pre-Authorization, clés et mise à jour PMS.' },
+        { term: 'Check-out', detail: 'Vérifier le folio, traiter le paiement, clôturer la facture et notifier le housekeeping.' },
+        { term: 'Passation', detail: 'Tracer demandes en attente, réclamations, room moves, litiges facture et décisions inhabituelles.' },
+      ],
+      ctaText: 'Voir le Playbook Front Office',
+      ctaHref: '/fr/playbooks/fo',
+    },
+  },
+  'hotel-dnd-procedure': {
+    en: {
+      label: 'Free excerpt from the LuxOps Housekeeping Playbook',
+      title: 'DND procedure: privacy first, safety always',
+      intro: 'This extract is adapted from the DND protocol. The goal is to respect privacy while maintaining documentation, service continuity and safety awareness.',
+      rows: [
+        { term: 'Do not enter', detail: 'If DND is active, housekeeping does not knock and does not enter.' },
+        { term: 'Contact time', detail: 'Attempt contact at the property-defined time, often around 2:00 PM for daytime service.' },
+        { term: 'Door message', detail: 'Leave a discreet message if there is no answer, inviting the guest to request service.' },
+        { term: '24 hours', detail: 'Extended DND triggers supervisor and duty manager escalation for a welfare check.' },
+      ],
+      ctaText: 'View the Housekeeping Playbook',
+      ctaHref: '/en/playbooks/hsk',
+    },
+    fr: {
+      label: 'Extrait gratuit du Playbook Housekeeping LuxOps',
+      title: 'Procédure DND : vie privée d’abord, sécurité toujours',
+      intro: 'Cet extrait est adapté du protocole DND. L’objectif est de respecter la tranquillité du client tout en maintenant documentation, continuité de service et vigilance sécurité.',
+      rows: [
+        { term: 'Ne pas entrer', detail: 'Si le DND est actif, le housekeeping ne frappe pas et n’entre pas.' },
+        { term: 'Contact', detail: 'Tentative de contact à l’heure définie par l’établissement, souvent autour de 14h00 en journée.' },
+        { term: 'Message', detail: 'Sans réponse, laisser un message discret sous la porte pour proposer le service.' },
+        { term: '24 heures', detail: 'Un DND prolongé déclenche l’escalade superviseur et manager en duty pour contrôle sécurité.' },
+      ],
+      ctaText: 'Voir le Playbook Housekeeping',
+      ctaHref: '/fr/playbooks/hsk',
+    },
+  },
 }
 
 export async function generateStaticParams() {
@@ -883,6 +973,18 @@ export default async function BlogArticlePage({
             'housekeeping-room-inspection': [
               { href: '/housekeeping-sop', labelEn: 'Housekeeping SOP Templates', labelFr: 'Procédures housekeeping', descEn: 'The procedures behind every room inspection, from trolley setup to supervisor sign-off.', descFr: 'Les procédures derrière chaque inspection de chambre, du chariot à la validation superviseur.' },
               { href: '/hotel-housekeeping-checklist', labelEn: 'Housekeeping Checklists', labelFr: 'Checklists housekeeping', descEn: 'Checklists by role and shift: room attendant, supervisor inspection, handover.', descFr: 'Checklists par rôle et service : équipier, inspection superviseur, passation.' },
+            ],
+            'hotel-room-attendant-checklist': [
+              { href: '/hotel-housekeeping-checklist', labelEn: 'Housekeeping Checklist', labelFr: 'Checklist housekeeping', descEn: 'The full checklist system for room attendants and supervisors.', descFr: 'Le système complet de checklists pour équipiers et gouvernantes.' },
+              { href: '/housekeeping-sop', labelEn: 'Housekeeping SOP', labelFr: 'SOP Housekeeping', descEn: 'The procedures behind daily room cleaning and inspection.', descFr: 'Les procédures derrière la remise en état et l’inspection.' },
+            ],
+            'hotel-front-desk-checklist': [
+              { href: '/front-office-sop', labelEn: 'Front Office SOP', labelFr: 'SOP Réception Hôtel', descEn: 'Reception, check-in, billing, handover and night audit procedures.', descFr: 'Accueil, check-in, facturation, passation et audit de nuit.' },
+              { href: '/hotel-front-office-checklist', labelEn: 'Front Office Checklist', labelFr: 'Checklist Réception Hôtel', descEn: 'Shift opening, check-in, handover and quality scoring.', descFr: 'Prise de poste, check-in, passation et contrôle qualité.' },
+            ],
+            'hotel-dnd-procedure': [
+              { href: '/hotel-housekeeping-checklist', labelEn: 'Housekeeping Checklist', labelFr: 'Checklist housekeeping', descEn: 'The full housekeeping checklist and room release flow.', descFr: 'La checklist housekeeping complète et le flux de libération chambre.' },
+              { href: '/housekeeping-sop', labelEn: 'Housekeeping SOP', labelFr: 'SOP Housekeeping', descEn: 'Operational procedures for room attendants and supervisors.', descFr: 'Procédures opérationnelles pour équipiers et gouvernantes.' },
             ],
             'hotel-staff-turnover-training': [
               { href: '/training', labelEn: 'On-property training', labelFr: 'Formation sur site', descEn: 'Structured training formats built around your actual procedures and service standards.', descFr: 'Formats de formation structurés autour de vos propres procédures et standards de service.' },
