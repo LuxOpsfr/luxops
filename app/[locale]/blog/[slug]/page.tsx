@@ -284,6 +284,294 @@ const PLAYBOOK_EXCERPTS: Record<string, {
       ctaHref: '/fr/playbooks',
     },
   },
+  'hotel-front-office-sop': {
+    en: {
+      label: 'Free excerpt from the LuxOps Front Office Playbook',
+      title: 'Front office SOPs need trigger, sequence and escalation',
+      intro:
+        'This extract is adapted from the check-in, guest communication and handover chapters. The point is not to script reception like a call centre, but to make the critical moments consistent across every shift.',
+      rows: [
+        { term: 'Pre-arrival review', detail: 'Review arrivals in the PMS, flag VIPs and special occasions, verify room assignments and communicate requests before the guest arrives.' },
+        { term: 'Check-in sequence', detail: 'Confirm stay details, verify ID, review requests, process payment or pre-authorisation, issue keys and update the PMS immediately.' },
+        { term: 'Room not ready', detail: 'Store luggage, offer a waiting option, set a clear timing and contact the guest before they need to chase the desk.' },
+        { term: 'Complaint handling', detail: 'Listen, empathise, apologise, resolve and notify. Active complaints must be shared in every handover until closed.' },
+        { term: 'Shift handover', detail: 'Open requests, VIP notes, billing issues, room moves and recent complaints are documented so the next shift can act without rediscovery.' },
+      ],
+      ctaText: 'View the Front Office Playbook',
+      ctaHref: '/en/playbooks/fo',
+    },
+    fr: {
+      label: 'Extrait gratuit du Playbook Front Office LuxOps',
+      title: 'Une SOP réception doit définir déclencheur, séquence et escalade',
+      intro:
+        'Cet extrait est adapté des chapitres check-in, communication client et passation. L’objectif n’est pas de rendre la réception robotique, mais de rendre les moments critiques cohérents sur chaque shift.',
+      rows: [
+        { term: 'Revue pré-arrivée', detail: 'Revoir les arrivées PMS, identifier VIP et occasions spéciales, vérifier les attributions et communiquer les demandes avant l’arrivée client.' },
+        { term: 'Séquence check-in', detail: 'Confirmer le séjour, vérifier l’identité, revoir les demandes, gérer paiement ou préautorisation, remettre les clés et mettre à jour le PMS.' },
+        { term: 'Chambre non prête', detail: 'Prendre les bagages, proposer une attente claire, donner un timing et recontacter le client avant qu’il ne relance la réception.' },
+        { term: 'Réclamation', detail: 'Écouter, reconnaître, s’excuser, résoudre et notifier. Toute réclamation active reste en passation jusqu’à clôture.' },
+        { term: 'Passation', detail: 'Demandes ouvertes, VIP, facturation, room moves et réclamations récentes sont tracés pour que le shift suivant agisse sans repartir de zéro.' },
+      ],
+      ctaText: 'Voir le Playbook Front Office',
+      ctaHref: '/fr/playbooks/fo',
+    },
+  },
+  'hotel-front-desk-procedures': {
+    en: {
+      label: 'Free excerpt from the LuxOps Front Office Playbook',
+      title: 'The front desk procedure stack that protects every shift',
+      intro:
+        'The Front Office Playbook documents the routines that create the most guest impact and operational risk: check-in, check-out, billing review, complaint recovery and night handover.',
+      rows: [
+        { term: 'Arrival control', detail: 'Arrivals, VIPs, preferences, pre-authorisations and room readiness are reviewed before the first peak check-in wave.' },
+        { term: 'Billing review', detail: 'Room charges, F&B, minibar, spa, deposits and adjustments are verified before payment is taken at departure.' },
+        { term: 'Late check-out', detail: 'Decision factors include occupancy, VIP status, housekeeping capacity and demand before any extension is confirmed.' },
+        { term: 'Dispute recovery', detail: 'The desk listens, reviews documentation, explains clearly, escalates where needed and records the outcome in the guest profile.' },
+        { term: 'Night audit handover', detail: 'Open folios, discrepancies, high balances and next-day arrivals are prepared before the morning team starts.' },
+      ],
+      ctaText: 'View the Front Office Playbook',
+      ctaHref: '/en/playbooks/fo',
+    },
+    fr: {
+      label: 'Extrait gratuit du Playbook Front Office LuxOps',
+      title: 'Le socle de procédures réception qui protège chaque shift',
+      intro:
+        'Le Playbook Front Office documente les routines à plus fort impact client et opérationnel : check-in, check-out, revue facturation, gestion des réclamations et passation de nuit.',
+      rows: [
+        { term: 'Contrôle arrivées', detail: 'Arrivées, VIP, préférences, préautorisations et disponibilité chambres sont vérifiés avant le premier pic de check-in.' },
+        { term: 'Revue facturation', detail: 'Chambre, F&B, minibar, spa, acomptes et ajustements sont contrôlés avant encaissement au départ.' },
+        { term: 'Late check-out', detail: 'La décision tient compte de l’occupation, du statut client, de la capacité housekeeping et de la demande avant confirmation.' },
+        { term: 'Litige client', detail: 'La réception écoute, vérifie les preuves, explique clairement, escalade si nécessaire et trace la résolution dans le profil client.' },
+        { term: 'Passation audit de nuit', detail: 'Folios ouverts, écarts, soldes élevés et arrivées du lendemain sont préparés avant l’arrivée de l’équipe matin.' },
+      ],
+      ctaText: 'Voir le Playbook Front Office',
+      ctaHref: '/fr/playbooks/fo',
+    },
+  },
+  'hotel-fb-service-standards': {
+    en: {
+      label: 'Free excerpt from the LuxOps F&B Playbook',
+      title: 'Restaurant service standards become useful when they are sequenced',
+      intro:
+        'This extract is adapted from the restaurant service, mise en place and recovery chapters. A good F&B standard tells the team what to prepare, what to say, what to check and when to escalate.',
+      rows: [
+        { term: 'Pre-service briefing', detail: 'Covers reservations, VIPs, allergies, menu changes, unavailable items, station allocation and expected service pressure.' },
+        { term: 'Mise en place', detail: 'Station setup is verified before opening: tableware, service tools, POS readiness, water, bread, condiments and backup stock.' },
+        { term: 'Order taking', detail: 'The team confirms covers, pace, allergies, dietary restrictions and sequencing before sending the order.' },
+        { term: 'Service pacing', detail: 'Drinks, starters, mains, clearing and dessert are coordinated so the table never feels abandoned or rushed.' },
+        { term: 'Recovery', detail: 'A wrong dish, delay or allergen concern is acknowledged immediately, owned by one person and escalated before the guest repeats it.' },
+      ],
+      ctaText: 'View the F&B Playbook',
+      ctaHref: '/en/playbooks/fb',
+    },
+    fr: {
+      label: 'Extrait gratuit du Playbook F&B LuxOps',
+      title: 'Les standards F&B deviennent utiles quand ils sont séquencés',
+      intro:
+        'Cet extrait est adapté des chapitres service restaurant, mise en place et recovery. Un bon standard F&B précise quoi préparer, quoi dire, quoi vérifier et quand escalader.',
+      rows: [
+        { term: 'Briefing pré-service', detail: 'Réservations, VIP, allergies, changements menu, ruptures, allocation des rangs et pression attendue du service.' },
+        { term: 'Mise en place', detail: 'Le poste est vérifié avant ouverture : vaisselle, matériel de service, POS, eau, pain, condiments et stock de secours.' },
+        { term: 'Prise de commande', detail: 'L’équipe confirme couverts, rythme, allergies, régimes et séquençage avant d’envoyer la commande.' },
+        { term: 'Rythme du service', detail: 'Boissons, entrées, plats, débarrassage et dessert sont coordonnés pour éviter attente excessive ou précipitation.' },
+        { term: 'Recovery', detail: 'Erreur plat, délai ou allergène sont reconnus immédiatement, portés par une personne et escaladés avant que le client ne répète.' },
+      ],
+      ctaText: 'Voir le Playbook F&B',
+      ctaHref: '/fr/playbooks/fb',
+    },
+  },
+  'hotel-fb-restaurant-procedures': {
+    en: {
+      label: 'Free excerpt from the LuxOps F&B Playbook',
+      title: 'The restaurant SOP sequence from briefing to close',
+      intro:
+        'Hotel restaurant procedures need a full operating rhythm. The playbook links briefing, setup, sequence of service, issue recovery and closing handover so the next service inherits a clean operation.',
+      rows: [
+        { term: 'Opening briefing', detail: 'The shift starts with covers, VIPs, special requests, menu knowledge, allergies and service roles aligned.' },
+        { term: 'Station readiness', detail: 'Each station is checked for cleanliness, complete setup, backup mise en place and operational POS access.' },
+        { term: 'Sequence of service', detail: 'Greeting, seating, menu presentation, order taking, delivery, clearing and farewell follow one shared rhythm.' },
+        { term: 'Guest issue', detail: 'The server owns the first response, informs the supervisor and closes the loop with the guest after resolution.' },
+        { term: 'Closing handover', detail: 'Open checks, guest comments, stock issues, maintenance needs and next-service preparation are passed clearly.' },
+      ],
+      ctaText: 'View the F&B Playbook',
+      ctaHref: '/en/playbooks/fb',
+    },
+    fr: {
+      label: 'Extrait gratuit du Playbook F&B LuxOps',
+      title: 'La séquence SOP restaurant, du briefing à la clôture',
+      intro:
+        'Les procédures restaurant hôtel doivent suivre un vrai rythme opérationnel. Le playbook relie briefing, mise en place, séquence de service, recovery et passation pour que le service suivant reparte proprement.',
+      rows: [
+        { term: 'Briefing ouverture', detail: 'Couverts, VIP, demandes spéciales, connaissance menu, allergies et rôles de service sont alignés.' },
+        { term: 'Poste prêt', detail: 'Chaque rang est contrôlé : propreté, mise en place complète, stock de secours et accès POS opérationnel.' },
+        { term: 'Séquence service', detail: 'Accueil, placement, présentation menu, commande, envoi, débarrassage et départ suivent un rythme partagé.' },
+        { term: 'Incident client', detail: 'Le serveur porte la première réponse, informe le superviseur et boucle avec le client après résolution.' },
+        { term: 'Passation clôture', detail: 'Notes ouvertes, commentaires clients, problèmes stock, besoins maintenance et préparation du service suivant sont transmis.' },
+      ],
+      ctaText: 'Voir le Playbook F&B',
+      ctaHref: '/fr/playbooks/fb',
+    },
+  },
+  'hotel-room-service-sops': {
+    en: {
+      label: 'Free excerpt from the LuxOps F&B Playbook',
+      title: 'Room service SOPs are logistics, presentation and timing',
+      intro:
+        'Room service fails when order capture, tray setup, delivery timing and tray collection are treated as separate habits. The F&B playbook turns them into one controlled flow.',
+      rows: [
+        { term: 'Order capture', detail: 'Confirm room number, guest name, timing, allergies, modifiers, payment status and any access instruction before sending.' },
+        { term: 'Tray setup', detail: 'Tray or trolley presentation is checked for temperature, covers, cutlery, condiments, napkin, glassware and bill folder.' },
+        { term: 'Delivery timing', detail: 'The promised time is realistic, tracked and updated if kitchen or lift delays make the original timing impossible.' },
+        { term: 'In-room delivery', detail: 'Knock, announce, confirm placement preference, present items, explain bill or signature and leave the room cleanly.' },
+        { term: 'Tray collection', detail: 'Collection is planned, not left to guest corridors. Outstanding trays are followed during floor rounds and shift handover.' },
+      ],
+      ctaText: 'View the F&B Playbook',
+      ctaHref: '/en/playbooks/fb',
+    },
+    fr: {
+      label: 'Extrait gratuit du Playbook F&B LuxOps',
+      title: 'Le room service, c’est logistique, présentation et timing',
+      intro:
+        'Le room service se dégrade quand prise de commande, dressage, timing de livraison et débarrassage sont traités séparément. Le playbook F&B en fait un seul flux contrôlé.',
+      rows: [
+        { term: 'Prise de commande', detail: 'Confirmer chambre, nom client, timing, allergies, modifications, paiement et consigne d’accès avant envoi.' },
+        { term: 'Dressage plateau', detail: 'Plateau ou trolley contrôlé : température, couverts, condiments, serviette, verrerie et pochette addition.' },
+        { term: 'Timing livraison', detail: 'Le délai promis est réaliste, suivi et mis à jour si cuisine ou ascenseur rendent le timing impossible.' },
+        { term: 'Livraison chambre', detail: 'Frapper, annoncer, confirmer l’emplacement, présenter les items, expliquer addition ou signature et sortir proprement.' },
+        { term: 'Débarrassage', detail: 'La collecte est planifiée, pas abandonnée aux couloirs. Les plateaux ouverts sont suivis en ronde et en passation.' },
+      ],
+      ctaText: 'Voir le Playbook F&B',
+      ctaHref: '/fr/playbooks/fb',
+    },
+  },
+  'hotel-spa-wellness-sops': {
+    en: {
+      label: 'Free excerpt from the LuxOps Spa & Wellness Playbook',
+      title: 'Spa SOPs connect room setup, guest journey and safety',
+      intro:
+        'This extract is adapted from treatment room, guest journey and quality control chapters. Spa standards must protect both the sensory experience and the safety of the treatment.',
+      rows: [
+        { term: 'Room readiness', detail: 'Before each treatment: temperature, lighting, music, scent, linen, face cradle, robe, slippers, trolley and waste are checked.' },
+        { term: 'Consultation', detail: 'Health changes, contraindications, pressure preferences and expectations are confirmed before treatment begins.' },
+        { term: 'Therapist conduct', detail: 'Voice, movement, draping, transitions and guest communication are controlled because proximity makes every detail visible.' },
+        { term: 'Post-treatment', detail: 'Belongings are confirmed, treatment record completed, product recommendation noted and room status updated.' },
+        { term: 'Quality control', detail: 'Daily pre-opening inspections and monthly treatment observations turn quality into coaching, not surveillance.' },
+      ],
+      ctaText: 'View the Spa & Wellness Playbook',
+      ctaHref: '/en/playbooks/spa',
+    },
+    fr: {
+      label: 'Extrait gratuit du Playbook Spa & Wellness LuxOps',
+      title: 'Les SOP spa relient préparation, parcours client et sécurité',
+      intro:
+        'Cet extrait est adapté des chapitres treatment room, parcours client et contrôle qualité. Les standards spa protègent à la fois l’expérience sensorielle et la sécurité du soin.',
+      rows: [
+        { term: 'Cabine prête', detail: 'Avant chaque soin : température, lumière, musique, parfum, linge, têtière, peignoir, chaussons, trolley et poubelle sont contrôlés.' },
+        { term: 'Consultation', detail: 'Changements santé, contre-indications, préférence de pression et attentes sont confirmés avant le début du soin.' },
+        { term: 'Conduite thérapeute', detail: 'Voix, mouvement, draping, transitions et communication sont maîtrisés car la proximité rend chaque détail visible.' },
+        { term: 'Après-soin', detail: 'Effets personnels confirmés, fiche soin complétée, recommandation produit notée et statut cabine mis à jour.' },
+        { term: 'Contrôle qualité', detail: 'Inspections quotidiennes pré-ouverture et observations mensuelles transforment la qualité en coaching, pas en surveillance.' },
+      ],
+      ctaText: 'Voir le Playbook Spa & Wellness',
+      ctaHref: '/fr/playbooks/spa',
+    },
+  },
+  'hotel-staff-training-service-standards': {
+    en: {
+      label: 'Playbook-based training excerpt',
+      title: 'Train teams on procedures, not slogans',
+      intro:
+        'The strongest hotel training sessions use documented procedures as the spine. Teams practise the exact moments they face on shift: guest welcome, inspection, recovery, handover and escalation.',
+      rows: [
+        { term: 'Procedure walkthrough', detail: 'The trainer explains the operational trigger, the expected sequence and what good looks like in the guest experience.' },
+        { term: 'Role practice', detail: 'Team members rehearse the moment using real hotel cases: late room, billing dispute, delayed order or complaint.' },
+        { term: 'Supervisor observation', detail: 'Managers watch for timing, language, body position, handover discipline and decision quality.' },
+        { term: 'Feedback loop', detail: 'Feedback is specific, immediate and linked to the standard, so the team knows exactly what to repeat or adjust.' },
+        { term: 'Briefing reinforcement', detail: 'The same standard returns in shift briefings, checklist reviews and manager follow-up until it becomes normal behaviour.' },
+      ],
+      ctaText: 'View on-site hotel training',
+      ctaHref: '/en/training',
+    },
+    fr: {
+      label: 'Extrait formation basé sur les playbooks',
+      title: 'Former les équipes sur des procédures, pas sur des slogans',
+      intro:
+        'Les meilleures formations hôtelières utilisent les procédures documentées comme colonne vertébrale. Les équipes pratiquent les moments exacts vécus en service : accueil, inspection, recovery, passation et escalade.',
+      rows: [
+        { term: 'Déroulé procédure', detail: 'Le formateur explique le déclencheur, la séquence attendue et ce que le client doit percevoir.' },
+        { term: 'Mise en situation', detail: 'Les équipes répètent des cas réels : chambre tardive, litige facturation, commande retardée ou réclamation.' },
+        { term: 'Observation manager', detail: 'Les managers observent timing, langage, posture, discipline de passation et qualité de décision.' },
+        { term: 'Feedback', detail: 'Le retour est précis, immédiat et relié au standard pour savoir quoi répéter ou ajuster.' },
+        { term: 'Renforcement briefing', detail: 'Le même standard revient en briefing, revue checklist et suivi manager jusqu’à devenir un réflexe.' },
+      ],
+      ctaText: 'Voir la formation hôtelière sur site',
+      ctaHref: '/fr/formation',
+    },
+  },
+  'hotel-staff-turnover-training': {
+    en: {
+      label: 'Playbook-based training excerpt',
+      title: 'Procedure-based training reduces early friction',
+      intro:
+        'Turnover becomes more expensive when new hires learn through fragments. A playbook-based training system gives them the operating map before habits become inconsistent.',
+      rows: [
+        { term: 'First-week clarity', detail: 'New hires know the department’s core routines, quality gates, escalation points and vocabulary from the start.' },
+        { term: 'Consistent coaching', detail: 'Supervisors coach from the same written standard instead of passing on personal preferences.' },
+        { term: 'Fewer interruptions', detail: 'Basic questions move from repeated supervisor interruptions to documented references and structured practice.' },
+        { term: 'Visible progress', detail: 'Managers can see which procedures are understood, observed and ready for independent execution.' },
+        { term: 'Retention signal', detail: 'When expectations are clear, early stress drops and the new hire can feel progress instead of confusion.' },
+      ],
+      ctaText: 'View on-site hotel training',
+      ctaHref: '/en/training',
+    },
+    fr: {
+      label: 'Extrait formation basé sur les playbooks',
+      title: 'La formation par procédures réduit la friction des débuts',
+      intro:
+        'Le turnover coûte plus cher quand les nouvelles recrues apprennent par fragments. Une formation basée sur les playbooks donne la carte opérationnelle avant que les habitudes ne divergent.',
+      rows: [
+        { term: 'Clarté semaine 1', detail: 'Les nouvelles recrues connaissent routines clés, contrôles qualité, escalades et vocabulaire du département dès le départ.' },
+        { term: 'Coaching cohérent', detail: 'Les superviseurs coachent depuis le même standard écrit, pas depuis des préférences individuelles.' },
+        { term: 'Moins d’interruptions', detail: 'Les questions de base basculent des interruptions répétées vers des références documentées et de la pratique structurée.' },
+        { term: 'Progression visible', detail: 'Les managers voient quelles procédures sont comprises, observées et prêtes à être réalisées en autonomie.' },
+        { term: 'Signal rétention', detail: 'Quand les attentes sont claires, le stress initial baisse et la recrue ressent une progression plutôt qu’une confusion.' },
+      ],
+      ctaText: 'Voir la formation hôtelière sur site',
+      ctaHref: '/fr/formation',
+    },
+  },
+  'hotel-new-hire-onboarding': {
+    en: {
+      label: 'Playbook-based onboarding excerpt',
+      title: 'A 30/60/90 onboarding system needs documented standards',
+      intro:
+        'Hotel onboarding works when the first months are mapped to real operating standards. The playbooks give new hires a reference they can revisit after the first training session.',
+      rows: [
+        { term: 'Day 1', detail: 'Role expectations, grooming, guest language, safety rules, reporting lines and the department’s most important quality standards.' },
+        { term: 'Week 1', detail: 'Shadowing around core procedures: opening, guest interaction, task sequence, checklist use and handover.' },
+        { term: 'Week 2', detail: 'Supervised execution of repeatable tasks with immediate coaching against the written standard.' },
+        { term: 'Day 30', detail: 'Manager check on confidence, gaps, procedure knowledge and any friction with tools or team rhythm.' },
+        { term: 'Day 90', detail: 'Independence review: which standards are stable, which need coaching and which responsibilities can expand.' },
+      ],
+      ctaText: 'View on-site hotel training',
+      ctaHref: '/en/training',
+    },
+    fr: {
+      label: 'Extrait onboarding basé sur les playbooks',
+      title: 'Un onboarding 30/60/90 jours a besoin de standards documentés',
+      intro:
+        'L’onboarding hôtelier fonctionne quand les premiers mois sont reliés aux vrais standards opérationnels. Les playbooks donnent aux recrues une référence à reprendre après la première formation.',
+      rows: [
+        { term: 'Jour 1', detail: 'Attentes du rôle, grooming, langage client, sécurité, lignes hiérarchiques et standards qualité essentiels du département.' },
+        { term: 'Semaine 1', detail: 'Observation des procédures clés : ouverture, interaction client, séquence tâche, checklist et passation.' },
+        { term: 'Semaine 2', detail: 'Exécution supervisée des tâches répétables avec coaching immédiat depuis le standard écrit.' },
+        { term: 'Jour 30', detail: 'Point manager sur confiance, écarts, connaissance des procédures et frictions avec outils ou rythme équipe.' },
+        { term: 'Jour 90', detail: 'Revue autonomie : standards acquis, points à coacher et responsabilités pouvant être élargies.' },
+      ],
+      ctaText: 'Voir la formation hôtelière sur site',
+      ctaHref: '/fr/formation',
+    },
+  },
 }
 
 export async function generateStaticParams() {
