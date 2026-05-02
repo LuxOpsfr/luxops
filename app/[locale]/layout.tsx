@@ -7,6 +7,7 @@ import { getMessages } from 'next-intl/server'
 import SiteShell from '@/components/SiteShell'
 import { CartProvider } from '@/context/CartContext'
 import { Analytics } from '@vercel/analytics/next'
+import { organizationSchema } from '@/lib/seo'
 
 const GA_ID = 'G-0CDGZY9FPZ'
 
@@ -79,6 +80,7 @@ export default async function LocaleLayout({
 }) {
   const { locale } = await params
   const messages = await getMessages()
+  const orgSchema = organizationSchema(locale)
 
   return (
     <html lang={locale}>
@@ -106,6 +108,10 @@ export default async function LocaleLayout({
             document.head.appendChild(o)}initApollo();
           `}
         </Script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+        />
 
         <NextIntlClientProvider messages={messages}>
           <CartProvider>

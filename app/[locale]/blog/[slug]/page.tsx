@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { ArrowRight, ArrowLeft, Clock } from 'lucide-react'
+import { ArrowRight, ArrowLeft, Clock, CheckCircle2 } from 'lucide-react'
 import { articles } from '@/content/blog/articles'
+import { breadcrumbSchema, faqSchema as buildFaqSchema, localizedPath } from '@/lib/seo'
 
 // Keywords per article — improves indexation signals for Google
 const KEYWORDS_EN: Record<string, string> = {
@@ -39,6 +40,102 @@ const KEYWORDS_FR: Record<string, string> = {
   'hotel-staff-training-service-standards': 'formation personnel hôtelier, formation standards de service hôtel, former équipes hôtelières, formation sur site hôtel, programme formation hôtelière, formation hôtel luxe',
   'hotel-staff-turnover-training': 'turn-over hôtelier, réduire turn-over hôtel, fidélisation équipes hôtelières, formation hôtelière rétention, formation sur site hôtel, stabilité équipes hôtel, turn-over hôtellerie restauration',
   'hotel-new-hire-onboarding': 'onboarding hôtelier, intégration nouvelles recrues hôtel, programme onboarding hôtel, intégration collaborateurs hôtellerie, fidélisation nouvelles recrues hôtel, 90 premiers jours hôtel, onboarding structuré hôtel',
+}
+
+const CONTENT_UPGRADES: Record<string, {
+  en: { title: string; intro: string; items: string[] }
+  fr: { title: string; intro: string; items: string[] }
+}> = {
+  'hotel-standard-operating-procedures': {
+    en: {
+      title: 'Manager checklist before writing SOPs',
+      intro: 'Before documenting procedures, align the operational standard. This prevents the SOP from becoming a description of bad habits.',
+      items: [
+        'List the five highest-volume tasks in the department',
+        'Define who owns each task, who approves exceptions and who records completion',
+        'Document the normal sequence and the most common failure cases',
+        'Add the evidence required: checklist, PMS note, handover line, inspection score or manager sign-off',
+      ],
+    },
+    fr: {
+      title: 'Checklist manager avant de rédiger des SOPs',
+      intro: "Avant d'écrire les procédures, alignez le standard opérationnel. Cela évite de documenter simplement les mauvaises habitudes existantes.",
+      items: [
+        'Lister les cinq tâches les plus fréquentes du département',
+        "Définir qui réalise, qui valide les exceptions et qui trace l'exécution",
+        'Documenter la séquence normale et les cas de rupture les plus fréquents',
+        'Ajouter la preuve attendue : checklist, note PMS, ligne de passation, score inspection ou validation manager',
+      ],
+    },
+  },
+  'hotel-front-desk-procedures': {
+    en: {
+      title: 'Front desk procedures that should never stay informal',
+      intro: 'These routines create the highest risk when they depend only on memory or individual experience.',
+      items: [
+        'Room not ready at arrival',
+        'Guest disputes a charge at check-out',
+        'VIP request missing from the handover',
+        'Late arrival during night audit',
+        'Walk-in request when the hotel is close to full occupancy',
+      ],
+    },
+    fr: {
+      title: 'Procédures réception à ne jamais laisser informelles',
+      intro: "Ces routines créent le plus de risque lorsqu'elles reposent uniquement sur la mémoire ou l'expérience individuelle.",
+      items: [
+        "Chambre non prête à l'arrivée",
+        'Client qui conteste une facturation au départ',
+        'Demande VIP absente de la passation',
+        "Arrivée tardive pendant l'audit de nuit",
+        "Walk-in lorsque l'hôtel est presque complet",
+      ],
+    },
+  },
+  'housekeeping-room-inspection': {
+    en: {
+      title: 'Room inspection criteria worth tracking',
+      intro: 'A supervisor checklist should make quality measurable, not just visible.',
+      items: [
+        'Guest-facing defects: hair, dust, stains, fingerprints and odours',
+        'Operational defects: missing amenities, incorrect linen count, maintenance issues',
+        'Brand defects: setup, presentation, spacing and welcome details',
+        'Follow-up defects: items that require maintenance, minibar, laundry or front office action',
+      ],
+    },
+    fr: {
+      title: "Critères d'inspection chambre à suivre",
+      intro: 'Une checklist superviseur doit rendre la qualité mesurable, pas seulement visible.',
+      items: [
+        'Défauts visibles client : cheveux, poussière, taches, traces et odeurs',
+        'Défauts opérationnels : amenities manquants, linge incorrect, maintenance',
+        'Défauts de marque : mise en place, présentation, espacement et attentions',
+        'Suivis requis : maintenance, minibar, pressing ou action réception',
+      ],
+    },
+  },
+  'hotel-staff-training-service-standards': {
+    en: {
+      title: 'Signals that service standards training is working',
+      intro: 'Training should change what happens on shift, not only what people can repeat in a room.',
+      items: [
+        'Supervisors hear the same service language across different shifts',
+        'New hires can explain why the standard exists, not only recite it',
+        'Guest recovery decisions follow the same escalation rules',
+        'Briefings reference real situations from the previous day',
+      ],
+    },
+    fr: {
+      title: 'Signaux qu’une formation aux standards fonctionne',
+      intro: 'La formation doit changer ce qui se passe en service, pas seulement ce que les équipes savent répéter en salle.',
+      items: [
+        'Les superviseurs entendent le même langage de service selon les shifts',
+        'Les nouvelles recrues expliquent pourquoi le standard existe',
+        "Les décisions de service recovery suivent les mêmes règles d'escalade",
+        'Les briefings s’appuient sur des situations réelles de la veille',
+      ],
+    },
+  },
 }
 
 export async function generateStaticParams() {
@@ -114,17 +211,15 @@ export default async function BlogArticlePage({
     inLanguage: locale,
   }
 
-  const faqSchema = content.faqs && content.faqs.length > 0
-    ? {
-        '@context': 'https://schema.org',
-        '@type': 'FAQPage',
-        mainEntity: content.faqs.map((f) => ({
-          '@type': 'Question',
-          name: f.question,
-          acceptedAnswer: { '@type': 'Answer', text: f.answer },
-        })),
-      }
+  const faqJsonLd = content.faqs && content.faqs.length > 0
+    ? buildFaqSchema(content.faqs)
     : null
+  const breadcrumbs = breadcrumbSchema([
+    { name: 'LuxOps', url: localizedPath(locale) },
+    { name: isEn ? 'Blog' : 'Guides', url: localizedPath(locale, '/blog') },
+    { name: content.title, url: localizedPath(locale, `/blog/${slug}`) },
+  ])
+  const upgrade = CONTENT_UPGRADES[slug]?.[isEn ? 'en' : 'fr']
 
   return (
     <>
@@ -132,12 +227,16 @@ export default async function BlogArticlePage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
-      {faqSchema && (
+      {faqJsonLd && (
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
         />
       )}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
+      />
       <div className="pt-16">
         {/* Hero */}
         <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
@@ -219,8 +318,20 @@ export default async function BlogArticlePage({
         <section className="py-12 bg-white">
           <div className="max-w-3xl mx-auto px-6">
             <div className="prose-style">
+              <nav className="mb-12 rounded-xl border border-gray-100 bg-gray-50 p-6">
+                <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-4">
+                  {isEn ? 'In this guide' : 'Dans ce guide'}
+                </p>
+                <div className="grid sm:grid-cols-2 gap-3">
+                  {content.sections.map((section) => (
+                    <a key={section.h2} href={`#${section.h2.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`} className="text-sm font-medium text-[#111111] hover:underline">
+                      {section.h2}
+                    </a>
+                  ))}
+                </div>
+              </nav>
               {content.sections.map((section, i) => (
-                <div key={i} className="mb-12">
+                <div key={i} id={section.h2.toLowerCase().replace(/[^a-z0-9]+/g, '-')} className="mb-12 scroll-mt-24">
                   <h2 className="text-2xl font-bold text-[#111111] mb-4">{section.h2}</h2>
                   {section.content && (
                     <p className="text-gray-500 leading-relaxed mb-6">{section.content}</p>
@@ -237,6 +348,20 @@ export default async function BlogArticlePage({
                   )}
                 </div>
               ))}
+              {upgrade && (
+                <div className="mb-12 rounded-xl border border-[#dbe8ff] bg-[#f4f8ff] p-8">
+                  <h2 className="text-2xl font-bold text-[#111111] mb-3">{upgrade.title}</h2>
+                  <p className="text-gray-600 leading-relaxed mb-6">{upgrade.intro}</p>
+                  <div className="space-y-3">
+                    {upgrade.items.map((item) => (
+                      <div key={item} className="flex gap-3 text-sm text-gray-700 leading-relaxed">
+                        <CheckCircle2 size={16} className="mt-0.5 flex-shrink-0 text-[#003d9b]" />
+                        <span>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
               {/* Conclusion */}
               <div className="mb-12 p-8 bg-gray-50 rounded-2xl border border-gray-100">
                 <p className="text-gray-600 leading-relaxed italic">{content.conclusion}</p>

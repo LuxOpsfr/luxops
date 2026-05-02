@@ -35,6 +35,17 @@ export default async function BlogPage({
 }) {
   const { locale } = await params
   const isEn = locale === 'en'
+  const topicClusters = isEn ? [
+    { href: '/hotel-sop', label: 'Hotel SOP Templates', desc: 'The main pillar page for standard operating procedures across departments.' },
+    { href: '/front-office-sop', label: 'Front Office SOP', desc: 'Reception, check-in, billing, handover and night audit procedures.' },
+    { href: '/housekeeping-sop', label: 'Housekeeping SOP', desc: 'Room cleaning, inspection, linen, quality control and supervisor routines.' },
+    { href: '/training', label: 'Hotel Staff Training', desc: 'On-property training for SOP rollout and service standards.' },
+  ] : [
+    { href: '/hotel-sop', label: 'SOP Hôtel', desc: 'La page pilier pour structurer les procédures par département.' },
+    { href: '/front-office-sop', label: 'SOP Réception', desc: 'Accueil, check-in, facturation, passation et audit de nuit.' },
+    { href: '/housekeeping-sop', label: 'SOP Housekeeping', desc: 'Remise en état, inspection, linge, contrôle qualité et routines superviseur.' },
+    { href: '/formation', label: 'Formation Hôtelière', desc: 'Formation sur site pour déployer SOPs et standards de service.' },
+  ]
 
   return (
     <div className="pt-16">
@@ -53,6 +64,23 @@ export default async function BlogPage({
 
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-6">
+          <div className="mb-14">
+            <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-5">
+              {isEn ? 'Core SEO clusters' : 'Clusters principaux'}
+            </p>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {topicClusters.map((cluster) => (
+                <Link
+                  key={cluster.href}
+                  href={`/${locale}${cluster.href}`}
+                  className="block border border-gray-100 rounded-xl p-5 hover:border-[#111111]/20 hover:shadow-sm transition-all"
+                >
+                  <h2 className="text-base font-bold text-[#111111] mb-2">{cluster.label}</h2>
+                  <p className="text-sm text-gray-400 leading-relaxed">{cluster.desc}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
           <div className="space-y-8">
             {articles.map((article) => {
               const content = isEn ? article.en : article.fr

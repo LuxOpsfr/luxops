@@ -12,6 +12,41 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async headers() {
+    const marketingCache = [
+      {
+        key: 'Cache-Control',
+        value: 'public, s-maxage=86400, stale-while-revalidate=604800',
+      },
+    ]
+
+    return [
+      { source: '/robots.txt', headers: marketingCache },
+      { source: '/sitemap.xml', headers: marketingCache },
+      { source: '/:locale(en|fr)', headers: marketingCache },
+      { source: '/:locale(en|fr)/blog', headers: marketingCache },
+      { source: '/:locale(en|fr)/blog/:slug*', headers: marketingCache },
+      { source: '/:locale(en|fr)/playbooks', headers: marketingCache },
+      { source: '/:locale(en|fr)/playbooks/:id', headers: marketingCache },
+      { source: '/:locale(en|fr)/hotel-sop', headers: marketingCache },
+      { source: '/:locale(en|fr)/front-office-sop', headers: marketingCache },
+      { source: '/:locale(en|fr)/housekeeping-sop', headers: marketingCache },
+      { source: '/:locale(en|fr)/hotel-checklist', headers: marketingCache },
+      { source: '/:locale(en|fr)/hotel-front-office-checklist', headers: marketingCache },
+      { source: '/:locale(en|fr)/hotel-housekeeping-checklist', headers: marketingCache },
+      { source: '/:locale(en|fr)/hotel-staff-training', headers: marketingCache },
+      { source: '/:locale(en|fr)/training', headers: marketingCache },
+      { source: '/:locale(en|fr)/formation', headers: marketingCache },
+      { source: '/:locale(en|fr)/quality-audit', headers: marketingCache },
+      { source: '/:locale(en|fr)/audit-qualite', headers: marketingCache },
+      { source: '/:locale(en|fr)/bespoke-process', headers: marketingCache },
+      { source: '/:locale(en|fr)/process-sur-mesure', headers: marketingCache },
+      { source: '/:locale(en|fr)/free-hotel-procedures', headers: marketingCache },
+      { source: '/:locale(en|fr)/about', headers: marketingCache },
+      { source: '/:locale(en|fr)/contact', headers: marketingCache },
+      { source: '/:locale(en|fr)/resources', headers: marketingCache },
+    ]
+  },
   async redirects() {
     return [
       // Root URL without locale — explicit 301 so Google stops looping on the middleware redirect
@@ -33,6 +68,16 @@ const nextConfig: NextConfig = {
       {
         source: '/en/audit-qualite',
         destination: '/en/quality-audit',
+        permanent: true,
+      },
+      {
+        source: '/fr/training',
+        destination: '/fr/formation',
+        permanent: true,
+      },
+      {
+        source: '/fr/quality-audit',
+        destination: '/fr/audit-qualite',
         permanent: true,
       },
       // Duplicate content: Google chose hotel-front-office-sop as canonical

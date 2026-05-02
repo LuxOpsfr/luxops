@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
+import { breadcrumbSchema, faqSchema, localizedPath } from '@/lib/seo'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
@@ -84,22 +85,91 @@ const DEPARTMENTS_FR = [
   },
 ]
 
+const FAQS_EN = [
+  {
+    question: 'Do hotel SOP templates work for boutique hotels?',
+    answer:
+      'Yes, if the procedures are structured as an operational framework rather than a rigid script. Boutique hotels usually need clear standards even more because small teams cover multiple roles. LuxOps SOPs can be adapted to property size, service level and local routines.',
+  },
+  {
+    question: 'What is included in a complete hotel SOP system?',
+    answer:
+      'A complete system covers guest-facing interactions, back-of-house routines, handovers, quality checks, escalation rules and department-specific exceptions. For a hotel, that normally means Front Office, Housekeeping, F&B and Spa or Wellness procedures.',
+  },
+  {
+    question: 'Can SOPs be customized for independent hotels?',
+    answer:
+      'Yes. Ready-made SOPs should be treated as a professional operating base. Independent hotels can adapt names, timing, room categories, PMS references, approval flows and brand standards without rewriting every procedure from scratch.',
+  },
+  {
+    question: 'How quickly can a hotel deploy SOP templates?',
+    answer:
+      'A department can usually start with priority procedures within a few days: check-in, shift handover, room inspection or complaint handling. A full rollout works best department by department, with manager review and team training.',
+  },
+]
+
+const FAQS_FR = [
+  {
+    question: 'Les modèles de SOP fonctionnent-ils pour les boutique hotels ?',
+    answer:
+      "Oui, si les procédures sont construites comme un cadre opérationnel et non comme un script figé. Les boutique hotels ont souvent encore plus besoin de standards clairs, car les équipes sont réduites et couvrent plusieurs rôles.",
+  },
+  {
+    question: 'Que contient un système complet de procédures hôtelières ?',
+    answer:
+      "Un système complet couvre les interactions client, les routines back-of-house, les passations, les contrôles qualité, les règles d'escalade et les exceptions propres à chaque département. Pour un hôtel, cela inclut généralement la réception, le housekeeping, le F&B et le spa.",
+  },
+  {
+    question: 'Les SOPs peuvent-ils être adaptés à un hôtel indépendant ?',
+    answer:
+      "Oui. Les SOPs prêts à l'emploi doivent servir de base professionnelle. Un hôtel indépendant peut adapter les noms, horaires, catégories de chambres, références PMS, circuits de validation et standards de marque sans tout réécrire.",
+  },
+  {
+    question: 'En combien de temps un hôtel peut-il déployer des SOPs ?',
+    answer:
+      "Un département peut démarrer en quelques jours sur les procédures prioritaires : check-in, passation, inspection chambre ou gestion des réclamations. Un déploiement complet fonctionne mieux département par département, avec validation manager et formation équipe.",
+  },
+]
+
 export default async function HotelSopPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
   const isEN = locale === 'en'
   const departments = isEN ? DEPARTMENTS_EN : DEPARTMENTS_FR
+  const faqs = isEN ? FAQS_EN : FAQS_FR
 
   const schema = {
     '@context': 'https://schema.org',
-    '@type': 'Service',
-    name: isEN ? 'Hotel SOP Templates' : 'Procédures opérationnelles hôtelières',
-    description: isEN
-      ? 'Complete hotel SOP system covering front office, housekeeping, F&B and spa. Built by hospitality professionals.'
-      : 'Procédures opérationnelles complètes couvrant la réception, le housekeeping, le F&B et le spa. Conçues par des professionnels de l\'hôtellerie.',
-    provider: { '@type': 'Organization', name: 'LuxOps', url: 'https://www.luxops.fr' },
-    serviceType: 'Hotel Operations Consulting',
-    areaServed: 'Worldwide',
-    url: `https://www.luxops.fr/${locale}/hotel-sop`,
+    '@graph': [
+      {
+        '@type': 'Service',
+        name: isEN ? 'Hotel SOP Templates' : 'Procédures opérationnelles hôtelières',
+        description: isEN
+          ? 'Complete hotel SOP system covering front office, housekeeping, F&B and spa. Built by hospitality professionals.'
+          : 'Procédures opérationnelles complètes couvrant la réception, le housekeeping, le F&B et le spa. Conçues par des professionnels de l\'hôtellerie.',
+        provider: { '@id': 'https://www.luxops.fr/#organization' },
+        serviceType: 'Hotel Standard Operating Procedures',
+        areaServed: 'Worldwide',
+        url: localizedPath(locale, '/hotel-sop'),
+        hasOfferCatalog: {
+          '@type': 'OfferCatalog',
+          name: isEN ? 'Hotel SOP playbooks by department' : 'Playbooks SOP par département',
+          itemListElement: departments.map((department) => ({
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'CreativeWork',
+              name: `${department.name} SOP Playbook`,
+              description: department.desc,
+              url: `${localizedPath(locale)}${department.href ? department.href.replace(`/${locale}`, '') : '/playbooks'}`,
+            },
+          })),
+        },
+      },
+      breadcrumbSchema([
+        { name: 'LuxOps', url: localizedPath(locale) },
+        { name: isEN ? 'Hotel SOP Templates' : 'SOP hôtel', url: localizedPath(locale, '/hotel-sop') },
+      ]),
+      faqSchema(faqs),
+    ],
   }
 
   return (
@@ -180,25 +250,25 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
           {isEN ? (
             <>
               <p className="text-gray-600 leading-relaxed mb-5">
-                A hotel SOP (Standard Operating Procedure) is a documented, step-by-step procedure that defines how a specific task or interaction should be handled. When it works, it gives every team member a clear reference regardless of experience level. It reduces errors, shortens onboarding time, and makes it possible to identify where a breakdown occurred when something goes wrong.
+                {'A hotel SOP (Standard Operating Procedure) is a documented, step-by-step procedure that defines how a specific task or interaction should be handled. When it works, it gives every team member a clear reference regardless of experience level. It reduces errors, shortens onboarding time, and makes it possible to identify where a breakdown occurred when something goes wrong.'}
               </p>
               <p className="text-gray-600 leading-relaxed mb-5">
-                The problem with most generic SOP templates is that they document the obvious and skip the difficult parts. Check-in: greet the guest, verify ID, assign room. That is not an SOP. It is a summary. A real front office SOP covers what happens when the assigned room is not ready, when the guest disputes a charge, when a walk-in arrives during peak occupancy, when a VIP's pre-arrival request was not communicated to housekeeping.
+                {"The problem with most generic SOP templates is that they document the obvious and skip the difficult parts. Check-in: greet the guest, verify ID, assign room. That is not an SOP. It is a summary. A real front office SOP covers what happens when the assigned room is not ready, when the guest disputes a charge, when a walk-in arrives during peak occupancy, when a VIP's pre-arrival request was not communicated to housekeeping."}
               </p>
               <p className="text-gray-600 leading-relaxed">
-                The same applies in every department. A housekeeping SOP that only covers the cleaning sequence misses the supervisor inspection protocol, the DND escalation procedure, the linen reconciliation process. An F&B SOP that covers service flow but not complaint handling or allergen management is incomplete in practice.
+                {'The same applies in every department. A housekeeping SOP that only covers the cleaning sequence misses the supervisor inspection protocol, the DND escalation procedure, the linen reconciliation process. An F&B SOP that covers service flow but not complaint handling or allergen management is incomplete in practice.'}
               </p>
             </>
           ) : (
             <>
               <p className="text-gray-600 leading-relaxed mb-5">
-                Un SOP hôtelier (Standard Operating Procedure) est une procédure documentée, pas à pas, qui définit comment une tâche ou une interaction spécifique doit être gérée. Quand il fonctionne, il donne à chaque membre de l'équipe une référence claire quelle que soit son expérience. Il réduit les erreurs, raccourcit le temps d'intégration et permet d'identifier où une rupture s'est produite quand quelque chose tourne mal.
+                {"Un SOP hôtelier (Standard Operating Procedure) est une procédure documentée, pas à pas, qui définit comment une tâche ou une interaction spécifique doit être gérée. Quand il fonctionne, il donne à chaque membre de l'équipe une référence claire quelle que soit son expérience. Il réduit les erreurs, raccourcit le temps d'intégration et permet d'identifier où une rupture s'est produite quand quelque chose tourne mal."}
               </p>
               <p className="text-gray-600 leading-relaxed mb-5">
-                Le problème avec la plupart des modèles génériques est qu'ils documentent l'évident et omettent les parties difficiles. Check-in : accueillir le client, vérifier la pièce d'identité, attribuer la chambre. Ce n'est pas une procédure. C'est un résumé. Une vraie procédure réception couvre ce qui se passe quand la chambre attribuée n'est pas prête, quand le client conteste une facturation, quand un walk-in arrive en période de fort taux d'occupation, quand la demande pré-arrivée d'un VIP n'a pas été transmise au housekeeping.
+                {"Le problème avec la plupart des modèles génériques est qu'ils documentent l'évident et omettent les parties difficiles. Check-in : accueillir le client, vérifier la pièce d'identité, attribuer la chambre. Ce n'est pas une procédure. C'est un résumé. Une vraie procédure réception couvre ce qui se passe quand la chambre attribuée n'est pas prête, quand le client conteste une facturation, quand un walk-in arrive en période de fort taux d'occupation, quand la demande pré-arrivée d'un VIP n'a pas été transmise au housekeeping."}
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Il en va de même dans chaque département. Des procédures housekeeping qui ne couvrent que la séquence de remise en état manquent le protocole d'inspection superviseur, la gestion des chambres en DND, le bilan linge. Des procédures F&B qui couvrent le déroulement du service mais pas la gestion des plaintes ou des allergènes sont incomplètes en pratique.
+                {"Il en va de même dans chaque département. Des procédures housekeeping qui ne couvrent que la séquence de remise en état manquent le protocole d'inspection superviseur, la gestion des chambres en DND, le bilan linge. Des procédures F&B qui couvrent le déroulement du service mais pas la gestion des plaintes ou des allergènes sont incomplètes en pratique."}
               </p>
             </>
           )}
@@ -240,6 +310,38 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
         </div>
       </section>
 
+      {/* Practical sample */}
+      <section className="py-16 px-6 bg-white border-t border-gray-100">
+        <div className="max-w-4xl mx-auto">
+          <div className="max-w-3xl mb-10">
+            <h2 className="text-2xl font-bold text-[#1A2E44] mb-4">
+              {isEN ? 'What a real SOP should specify' : 'Ce qu\'une vraie procédure doit préciser'}
+            </h2>
+            <p className="text-gray-600 leading-relaxed">
+              {isEN
+                ? 'A useful hotel SOP removes ambiguity. It tells the team what to do, who owns the action, when to escalate and what evidence should be left behind for the next shift.'
+                : "Une procédure hôtelière utile enlève l'ambiguïté. Elle indique quoi faire, qui est responsable, quand escalader et quelle trace laisser pour le service suivant."}
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-px bg-gray-200 border border-gray-200 rounded-lg overflow-hidden">
+            {(isEN ? [
+              { label: 'Trigger', value: 'Guest disputes a minibar charge during check-out' },
+              { label: 'Owner', value: 'Front desk agent validates the item, then escalates above the approved adjustment limit' },
+              { label: 'Record', value: 'Billing note, adjustment reason, manager approval and housekeeping follow-up if stock count is unclear' },
+            ] : [
+              { label: 'Déclencheur', value: 'Un client conteste une consommation minibar au check-out' },
+              { label: 'Responsable', value: "Le réceptionniste vérifie l'élément, puis escalade au-delà du seuil d'ajustement autorisé" },
+              { label: 'Trace', value: 'Note de facturation, motif d\'ajustement, validation manager et suivi housekeeping si le stock est incertain' },
+            ]).map((item) => (
+              <div key={item.label} className="bg-white p-6">
+                <p className="text-xs font-bold uppercase tracking-widest text-[#0056D2] mb-3">{item.label}</p>
+                <p className="text-sm leading-relaxed text-gray-700">{item.value}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* How the system fits together */}
       <section className="py-16 px-6 bg-gray-50">
         <div className="max-w-3xl mx-auto">
@@ -261,10 +363,63 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
                 Chaque playbook est un système de procédures autonome pour son département. Une équipe réception peut déployer le playbook réception sans avoir besoin des autres. Il en va de même pour le housekeeping, le F&B et le spa.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Pour les établissements qui gèrent plusieurs départements sous la même direction, le bundle fournit un cadre cohérent pour l'ensemble de l'opération. Les procédures, les standards d'inspection et les formats de passation sont alignés entre les départements, ce qui réduit les frictions liées à l'utilisation de formats incompatibles.
+                {"Pour les établissements qui gèrent plusieurs départements sous la même direction, le bundle fournit un cadre cohérent pour l'ensemble de l'opération. Les procédures, les standards d'inspection et les formats de passation sont alignés entre les départements, ce qui réduit les frictions liées à l'utilisation de formats incompatibles."}
               </p>
             </>
           )}
+        </div>
+      </section>
+
+      {/* Internal cluster */}
+      <section className="py-16 px-6 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-[#1A2E44] mb-8">
+            {isEN ? 'Build your SOP library by department' : 'Construire votre bibliothèque SOP par département'}
+          </h2>
+          <div className="grid md:grid-cols-2 gap-4">
+            {[
+              {
+                href: `/${locale}/front-office-sop`,
+                title: isEN ? 'Front Office SOP' : 'SOP réception',
+                body: isEN ? 'Check-in, check-out, guest recovery, night audit and shift handover.' : 'Check-in, check-out, réclamations, audit de nuit et passation.',
+              },
+              {
+                href: `/${locale}/housekeeping-sop`,
+                title: isEN ? 'Housekeeping SOP' : 'SOP housekeeping',
+                body: isEN ? 'Room cleaning, inspection, linen, DND rooms, lost property and supervisor controls.' : 'Remise en état, inspection, linge, DND, objets trouvés et contrôles superviseur.',
+              },
+              {
+                href: `/${locale}/blog/hotel-fb-restaurant-procedures`,
+                title: isEN ? 'F&B service procedures' : 'Procédures F&B',
+                body: isEN ? 'Restaurant sequence of service, room service, mise en place and service recovery.' : 'Séquence de service, room service, mise en place et gestion des incidents.',
+              },
+              {
+                href: `/${locale}/blog/hotel-spa-wellness-sops`,
+                title: isEN ? 'Spa & Wellness SOP' : 'SOP spa & wellness',
+                body: isEN ? 'Treatment room setup, guest journey, therapist conduct and quality checks.' : 'Préparation cabine, parcours client, conduite thérapeute et contrôles qualité.',
+              },
+            ].map((item) => (
+              <Link key={item.href} href={item.href} className="border border-gray-100 rounded-lg p-6 hover:border-[#1A2E44] hover:shadow-sm transition-all">
+                <h3 className="font-semibold text-[#1A2E44] mb-2">{item.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{item.body}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-16 px-6 bg-gray-50">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-2xl font-bold text-[#1A2E44] mb-8">FAQ</h2>
+          <div className="space-y-4">
+            {faqs.map((faq) => (
+              <div key={faq.question} className="bg-white border border-gray-100 rounded-lg p-6">
+                <h3 className="font-semibold text-[#1A2E44] mb-2">{faq.question}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import PlaybooksContent from '@/components/PlaybooksContent'
+import { breadcrumbSchema, localizedPath } from '@/lib/seo'
 
 export async function generateMetadata({
   params,
@@ -59,14 +60,19 @@ const sharedOfferFields = {
 const sharedBrand = { '@type': 'Brand', name: 'LuxOps' }
 const sharedImage = 'https://www.luxops.fr/og-image.png'
 
-const playbooksSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'ItemList',
-  name: 'Hotel Operations Playbooks',
-  description:
-    'Complete operational playbooks for high-end hotels. Documented procedures, service standards and SOPs for Front Office, Housekeeping, F&B and Spa departments.',
-  url: 'https://www.luxops.fr/en/playbooks',
-  itemListElement: [
+function playbooksSchema(locale: string) {
+  const isEn = locale === 'en'
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'ItemList',
+        name: isEn ? 'Hotel Operations Playbooks' : 'Playbooks Opérationnels Hôteliers',
+        description: isEn
+          ? 'Complete operational playbooks for high-end hotels. Documented procedures, service standards and SOPs for Front Office, Housekeeping, F&B and Spa departments.'
+          : 'Playbooks opérationnels complets pour hôtels haut de gamme. Procédures, standards de service et SOPs pour la réception, le housekeeping, le F&B et le spa.',
+        url: localizedPath(locale, '/playbooks'),
+        itemListElement: [
     {
       '@type': 'ListItem',
       position: 1,
@@ -119,7 +125,28 @@ const playbooksSchema = {
         offers: sharedOfferFields,
       },
     },
-  ],
+        ],
+      },
+      {
+        '@type': 'Product',
+        name: isEn ? 'Complete Hotel SOP Bundle' : 'Bundle complet SOP Hôtel',
+        description: isEn
+          ? 'All four LuxOps hotel operations playbooks: Front Office, Housekeeping, F&B and Spa. PDF and PowerPoint formats.'
+          : 'Les quatre playbooks opérationnels LuxOps : Front Office, Housekeeping, F&B et Spa. Formats PDF et PowerPoint.',
+        image: sharedImage,
+        brand: sharedBrand,
+        offers: {
+          ...sharedOfferFields,
+          price: '199',
+          url: localizedPath(locale, '/playbooks'),
+        },
+      },
+      breadcrumbSchema([
+        { name: 'LuxOps', url: localizedPath(locale) },
+        { name: isEn ? 'Playbooks' : 'Playbooks', url: localizedPath(locale, '/playbooks') },
+      ]),
+    ],
+  }
 }
 
 export default async function PlaybooksPage({
@@ -132,7 +159,7 @@ export default async function PlaybooksPage({
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(playbooksSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(playbooksSchema(locale)) }}
       />
       <PlaybooksContent locale={locale} />
     </>
