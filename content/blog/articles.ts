@@ -874,7 +874,7 @@ export const articles: BilingualArticle[] = [
         {
           h2: 'Procédure de service de couverture',
           content:
-            "Le service de couverture est un service housekeeping premium. Il transforme la chambre de son état diurne à une atmosphère de soirée, et bien exécuté, il signale une attention et un soin que les clients retiennent. Il nécessite sa propre checklist, distincte des procédures de départ et de recouche.",
+            "Le service de couverture est une prestation premium du service de housekeeping. Il transforme la chambre de son état diurne à une atmosphère de soirée, et bien exécuté, il signale une attention et un soin que les clients retiennent. Il nécessite sa propre checklist, distincte des procédures de départ et de recouche.",
           h3Items: [
             {
               heading: 'Éléments standard',
@@ -4221,22 +4221,22 @@ export const articles: BilingualArticle[] = [
       ],
     },
     fr: {
-      title: 'Checklist nettoyage chambre hôtel : chambre à blanc, recouche et auto-contrôle',
+      title: 'Checklist de nettoyage de chambre d’hôtel : chambre à blanc, recouche et auto-contrôle',
       description:
-        'Checklist nettoyage chambre hôtel issue du Playbook Housekeeping LuxOps : chariot, entrée en chambre, chambre à blanc, recouche, salle de bain, lit et auto-contrôle final.',
+        'Checklist de nettoyage de chambre d’hôtel issue du Playbook Housekeeping LuxOps : chariot, entrée en chambre, chambre à blanc, recouche, salle de bain, lit et auto-contrôle final.',
       date: '2026-05-03',
       readTime: '9 min de lecture',
       intro:
-        'Une checklist de nettoyage chambre doit suivre le vrai déroulé du shift, pas une liste générique de tâches. Le Playbook Housekeeping LuxOps distingue la préparation du chariot, le protocole d’entrée, la chambre à blanc, la recouche, le deep cleaning, le DND et l’auto-contrôle final. Cet extrait gratuit donne une structure utilisable par les Room Attendants, gouvernantes et managers qui veulent stabiliser la qualité chambre.',
+        'Une checklist de nettoyage de chambre doit suivre le vrai déroulé du shift, pas une liste générique de tâches copiée-collée. Dans un service de housekeeping, la qualité se joue souvent avant même d’entrer dans la chambre : chariot prêt, feuille de route comprise, priorités claires, puis chambre à blanc ou recouche selon le statut. Cet extrait du Playbook Housekeeping LuxOps reprend cette logique terrain, avec une séquence utilisable par les Room Attendants, les gouvernantes et les managers.',
       sections: [
         {
           h2: 'Commencer avant la chambre : chariot, feuille de route et priorités',
           content:
-            'Beaucoup d’erreurs housekeeping commencent avant l’entrée en chambre. Un chariot incomplet crée des allers-retours, des oublis et de la pression inutile. Avant le départ en étage, la feuille de route doit être relue : chambres départ, recouches, VIP, arrivées anticipées, départs tardifs, DND, alertes maintenance et demandes spéciales.',
+            'Beaucoup d’erreurs dans le service de housekeeping commencent avant l’entrée en chambre. Un chariot incomplet crée des allers-retours, des oublis et de la pression inutile. Avant de monter en étage, la feuille de route doit être relue calmement : chambres à blanc, recouches, VIP, arrivées anticipées, départs tardifs, DND, alertes maintenance et demandes spéciales.',
           h3Items: [
             {
               heading: 'Préparation du chariot',
-              text: 'Prévoir draps housse, draps plats, taies, housses de couette, linge de bain, tapis de bain, amenities, papier toilette, mouchoirs, sacs blanchisserie, nettoyant vitres, désinfectant salle de bain, polish et microfibres avec code couleur.',
+              text: 'Prévoir draps housse, draps plats, taies, housses de couette, linge de bain, tapis de bain, amenities, papier toilette, mouchoirs, sacs de blanchisserie, nettoyant vitres, désinfectant salle de bain, polish et microfibres avec code couleur.',
             },
             {
               heading: 'Ordre de priorité',
@@ -4247,7 +4247,7 @@ export const articles: BilingualArticle[] = [
         {
           h2: 'Respecter le protocole d’entrée en chambre',
           content:
-            'Le protocole d’entrée protège la vie privée du client. La séquence LuxOps : positionner le chariot contre le mur, frapper trois fois, annoncer Housekeeping, attendre 10 secondes, répéter, ouvrir partiellement puis annoncer à nouveau avant d’entrer lentement.',
+            'Le protocole d’entrée protège la vie privée du client et évite les situations inconfortables. La séquence LuxOps est volontairement simple : positionner le chariot contre le mur, frapper trois fois, annoncer clairement le service Housekeeping, attendre 10 secondes, répéter, ouvrir partiellement puis annoncer à nouveau avant d’entrer lentement.',
           h3Items: [
             {
               heading: 'Client présent',
@@ -4262,7 +4262,7 @@ export const articles: BilingualArticle[] = [
         {
           h2: 'Chambre à blanc : la séquence en 7 phases',
           content:
-            'Une chambre à blanc est une remise en état complète pour le prochain client. Le standard LuxOps prévoit 45 à 60 minutes pour une chambre standard et une séquence fixe en sept phases. L’ordre évite les retours arrière et rend la qualité plus constante.',
+            'Une chambre à blanc est une remise en état complète pour le prochain client. Le standard LuxOps prévoit 45 à 60 minutes pour une chambre standard, avec une séquence fixe en sept phases. Cet ordre évite les retours arrière, limite les oublis et rend la qualité plus constante d’un Room Attendant à l’autre.',
           h3Items: [
             {
               heading: '1. Évaluation initiale',
@@ -4270,7 +4270,7 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: '2. Salle de bain',
-              text: 'Travailler du propre vers le sale, du haut vers le bas : miroir, plan vasque, lavabo, douche ou baignoire, toilettes, sol et mise en place complète des amenities. Aucun cheveu n’est acceptable.',
+              text: 'Travailler du propre vers le sale et du haut vers le bas : miroir, plan vasque, lavabo, douche ou baignoire, toilettes, sol et mise en place complète des amenities. En salle de bain, aucun cheveu n’est acceptable.',
             },
             {
               heading: '3. Chambre',
@@ -4289,11 +4289,11 @@ export const articles: BilingualArticle[] = [
         {
           h2: 'La recouche suit d’autres règles',
           content:
-            'Une recouche n’est pas une chambre à blanc raccourcie. Le client occupe toujours l’espace. Le Room Attendant rafraîchit la chambre tout en respectant les effets personnels, les préférences observées et la politique linge de l’établissement.',
+            'Une recouche n’est pas une chambre à blanc raccourcie. Le client occupe toujours l’espace, et cela change tout. Le Room Attendant rafraîchit la chambre en respectant les effets personnels, les préférences observées et la politique de linge de l’établissement.',
           h3Items: [
             {
               heading: 'Ce qui change',
-              text: 'Le linge de lit est maintenu sauf s’il est sale, demandé ou prévu au planning. Les effets client sont redressés seulement si nécessaire, jamais réorganisés. Les amenities sont remplacés lorsqu’ils sont consommés.',
+              text: 'Le linge de lit est maintenu sauf s’il est sale, demandé ou prévu au planning. Les effets personnels du client sont redressés seulement si nécessaire, jamais réorganisés. Les amenities sont remplacés lorsqu’ils sont consommés.',
             },
             {
               heading: 'Temps cible',
@@ -4304,7 +4304,7 @@ export const articles: BilingualArticle[] = [
         {
           h2: 'Auto-contrôle avant de quitter la chambre',
           content:
-            'Le Room Attendant porte le premier contrôle qualité. Avant de mettre à jour le statut, il doit se placer à la porte et regarder la chambre comme le prochain client.',
+            'Le Room Attendant porte le premier contrôle qualité. Avant de mettre à jour le statut, il doit se placer à la porte et regarder la chambre comme le ferait le prochain client en entrant.',
           h3Items: [
             {
               heading: 'Scan chambre',
@@ -4318,7 +4318,7 @@ export const articles: BilingualArticle[] = [
         },
       ],
       conclusion:
-        'Une bonne checklist nettoyage chambre ne remplace pas la formation. Elle protège la formation. Elle donne le même ordre à chaque Room Attendant, les mêmes points de contrôle à chaque gouvernante et la même première impression à chaque client.',
+        'Une bonne checklist de nettoyage de chambre ne remplace pas la formation. Elle la protège. Elle donne le même ordre à chaque Room Attendant, les mêmes points de contrôle à chaque gouvernante et la même première impression à chaque client.',
       cta: { text: 'Voir le Playbook Housekeeping', href: '/playbooks/hsk' },
       faqs: [
         {
@@ -4439,18 +4439,18 @@ export const articles: BilingualArticle[] = [
       ],
     },
     fr: {
-      title: 'Checklist gouvernante hôtel : inspection chambre, libération et coaching',
+      title: 'Checklist pour gouvernante d’hôtel : inspection chambre, libération et coaching',
       description:
-        'Checklist gouvernante hôtel issue du Playbook Housekeeping LuxOps : inspection chambre départ, statut Clean/Inspected, contrôles recouche, suivi des défauts et coaching.',
+        'Checklist pour gouvernante d’hôtel issue du Playbook Housekeeping LuxOps : inspection chambre départ, statut Clean/Inspected, contrôles de recouche, suivi des défauts et coaching.',
       date: '2026-05-03',
       readTime: '8 min de lecture',
       intro:
-        'La gouvernante est le point de contrôle entre une chambre qui paraît propre et une chambre réellement attribuable. Dans le Playbook Housekeeping LuxOps, le Room Attendant passe la chambre en Clean, mais seule la gouvernante ou le manager peut la libérer en Inspected. Cette checklist couvre ce moment critique : inspection, libération, suivi des défauts et coaching.',
+        'La gouvernante est le point de contrôle entre une chambre qui paraît propre et une chambre réellement attribuable. Dans le Playbook Housekeeping LuxOps, le Room Attendant passe la chambre en Clean après son service, mais seule la gouvernante ou le manager peut la libérer en Inspected. Cette checklist reprend ce moment critique du service de housekeeping : inspection, libération, suivi des défauts et coaching.',
       sections: [
         {
           h2: 'Première règle : Clean n’est pas vendable',
           content:
-            'La règle de statut chambre la plus importante est aussi celle qui saute le plus vite sous pression check-in. Une chambre en Clean a été faite par le Room Attendant, mais elle n’est pas encore attribuable. Seule une chambre Inspected peut être libérée à la réception.',
+            'La règle de statut chambre la plus importante est aussi celle qui saute le plus vite sous pression check-in. Une chambre en Clean a été faite par le Room Attendant, mais elle n’est pas encore attribuable. Seule une chambre passée en Inspected peut être libérée pour la réception.',
           h3Items: [
             {
               heading: 'Clean',
@@ -4458,7 +4458,7 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: 'Inspected',
-              text: 'Statut posé par la gouvernante après inspection checklist. La réception peut attribuer la chambre à un client arrivant.',
+              text: 'Statut posé par la gouvernante après inspection avec checklist. La réception peut alors attribuer la chambre à un client arrivant.',
             },
             {
               heading: 'Non conforme',
@@ -4467,17 +4467,17 @@ export const articles: BilingualArticle[] = [
           ],
         },
         {
-          h2: 'Checklist gouvernante en début de shift',
+          h2: 'Checklist de gouvernante en début de shift',
           content:
-            'La journée de la gouvernante commence avant la première inspection. L’étage doit être organisé selon les départs, arrivées, VIP, staffing et pression de libération chambres.',
+            'La journée de la gouvernante commence avant la première inspection. L’étage doit être organisé selon les départs, les arrivées, les VIP, les effectifs présents et la pression de libération des chambres.',
           h3Items: [
             {
               heading: 'Lire la situation opérationnelle',
-              text: 'Contrôler départs, arrivées, VIP, arrivées anticipées, départs tardifs, room moves, DND, chambres hors service et chambres liées à une réclamation récente.',
+              text: 'Contrôler les départs, les arrivées, les VIP, les arrivées anticipées, les départs tardifs, les room moves, les DND, les chambres hors service et les chambres liées à une réclamation récente.',
             },
             {
               heading: 'Distribuer clairement',
-              text: 'Affecter les chambres selon type de chambre, nombre de départs, suites, niveau d’expérience, contraintes horaires et priorités réception.',
+              text: 'Affecter les chambres selon le type de chambre, le nombre de départs, les suites, le niveau d’expérience de l’équipe, les contraintes horaires et les priorités de la réception.',
             },
             {
               heading: 'Vérifier la préparation',
@@ -4488,7 +4488,7 @@ export const articles: BilingualArticle[] = [
         {
           h2: 'Séquence d’inspection chambre départ',
           content:
-            'L’inspection doit être rapide, cohérente et physique. La séquence LuxOps commence depuis la porte et suit la première impression client : chambre, salle de bain, technologie et regard final.',
+            'L’inspection doit être rapide, cohérente et physique. La séquence LuxOps commence depuis la porte et suit la logique de la première impression client : chambre, salle de bain, équipements techniques, puis regard final.',
           h3Items: [
             {
               heading: 'Première impression',
@@ -4500,38 +4500,38 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: 'Contrôle salle de bain',
-              text: 'Toilettes propres intérieur, extérieur, base et arrière. Lavabo poli. Douche sans résidus. Sol sec. Aucun cheveu. Serviettes et amenities selon standard.',
+              text: 'Toilettes propres à l’intérieur, à l’extérieur, à la base et à l’arrière. Lavabo poli. Douche sans résidus. Sol sec. Aucun cheveu. Serviettes et amenities positionnés selon le standard.',
             },
             {
               heading: 'Détails et technique',
-              text: 'Réveil, TV, télécommande, téléphone, climatisation, minibar, papeterie, guide client et défauts maintenance sont vérifiés avant libération.',
+              text: 'Réveil, TV, télécommande, téléphone, climatisation, minibar, papeterie, guide client et défauts maintenance sont vérifiés avant de libérer la chambre.',
             },
           ],
         },
         {
           h2: 'Scoring et suivi des défauts',
           content:
-            'Les données d’inspection doivent faciliter le coaching. Un modèle 100 points rend la revue objective : salle de bain 35, chambre 35, présentation 20 et maintenance 10. Le seuil de passage est 90.',
+            'Les données d’inspection doivent faciliter le coaching, pas créer une ambiance de sanction. Un modèle 100 points rend la revue plus objective : salle de bain 35, chambre 35, présentation 20 et maintenance 10. Le seuil de passage est 90.',
           h3Items: [
             {
               heading: 'Ce qu’il faut tracer',
-              text: 'Numéro de chambre, Room Attendant, type de défaut, shift, heure, conforme ou non conforme, correction réalisée et caractère récurrent.',
+              text: 'Numéro de chambre, Room Attendant, type de défaut, shift, heure, résultat conforme ou non conforme, correction réalisée et caractère récurrent.',
             },
             {
               heading: 'Comment utiliser les données',
-              text: 'Revoir chaque semaine les trois défauts les plus fréquents. Si le même défaut touche plusieurs équipiers, former l’équipe. Si une chambre revient souvent, vérifier maintenance ou deep cleaning.',
+              text: 'Revoir chaque semaine les trois défauts les plus fréquents. Si le même défaut touche plusieurs équipiers, former l’équipe. Si une chambre revient souvent, prévoir une vérification maintenance ou un deep cleaning.',
             },
           ],
         },
       ],
       conclusion:
-        'Une checklist gouvernante n’est pas un outil de sanction. C’est le système qui protège les arrivées, soutient les Room Attendants et donne à la réception la certitude qu’une chambre attribuée est vraiment prête.',
+        'Une checklist pour gouvernante n’est pas un outil de sanction. C’est le système qui protège les arrivées, soutient les Room Attendants et donne à la réception la certitude qu’une chambre attribuée est vraiment prête.',
       cta: { text: 'Voir le Playbook Housekeeping', href: '/playbooks/hsk' },
       faqs: [
         {
           question: 'Faut-il inspecter toutes les chambres départ ?',
           answer:
-            'Pour un établissement haut de gamme, oui. Le standard LuxOps prévoit 100% d’inspection gouvernante sur les chambres départ avant passage en Inspected.',
+            'Pour un établissement haut de gamme, oui. Le standard LuxOps prévoit 100% d’inspection par la gouvernante sur les chambres départ avant passage en Inspected.',
         },
         {
           question: 'Quel pourcentage de recouches contrôler ?',
@@ -4608,66 +4608,66 @@ export const articles: BilingualArticle[] = [
       ],
     },
     fr: {
-      title: 'SOP nettoyage salle de bain hôtel : procédure housekeeping étape par étape',
+      title: 'SOP de nettoyage de salle de bain d’hôtel : procédure étape par étape',
       description:
-        'SOP nettoyage salle de bain hôtel issue du Playbook Housekeeping LuxOps : séquence propre-sale, miroir, vasque, douche, toilettes, sol, amenities et inspection gouvernante.',
+        'SOP de nettoyage de salle de bain d’hôtel issue du Playbook Housekeeping LuxOps : séquence propre-sale, miroir, vasque, douche, toilettes, sol, amenities et inspection par la gouvernante.',
       date: '2026-05-03',
       readTime: '7 min de lecture',
       intro:
-        'Les défauts de salle de bain déclenchent certaines des réactions client les plus fortes en hôtellerie. Un cheveu, une trace d’eau ou une odeur peut annuler l’impression d’une chambre pourtant bien présentée. Le Playbook Housekeeping LuxOps traite la salle de bain comme une séquence fixe : du propre vers le sale, du haut vers le bas, avec un contrôle final depuis la perspective client.',
+        'Les défauts de salle de bain déclenchent certaines des réactions client les plus fortes en hôtellerie. Un cheveu, une trace d’eau ou une odeur peut annuler l’impression d’une chambre pourtant bien présentée. Dans le Playbook Housekeeping LuxOps, le nettoyage de la salle de bain suit une séquence fixe : du propre vers le sale, du haut vers le bas, puis un contrôle final depuis la perspective client.',
       sections: [
         {
           h2: 'Préparer la salle de bain avant les produits',
           content:
-            'Avant de nettoyer, retirer serviettes utilisées, tapis de bain, verres, amenities ouverts et déchets visibles. Vérifier la présence d’objets client et arrêter immédiatement si un objet est trouvé dans une chambre à blanc. Lumière et ventilation doivent être activées pour voir traces et résidus.',
+            'Avant d’appliquer le moindre produit, retirer les serviettes utilisées, le tapis de bain, les verres, les amenities ouverts et les déchets visibles. Vérifier la présence d’objets client et arrêter immédiatement si un objet est trouvé dans une chambre à blanc. Lumière et ventilation doivent être activées pour bien voir les traces, les cheveux et les résidus.',
         },
         {
           h2: 'Suivre la séquence du propre vers le sale',
           content:
-            'L’ordre protège l’hygiène et évite la contamination croisée. Utiliser la bonne microfibre selon le code couleur. Les chiffons toilettes et outils de zone WC ne doivent jamais toucher miroir, vasque, amenities ou surfaces générales.',
+            'L’ordre protège l’hygiène et évite la contamination croisée. Utiliser la bonne microfibre selon le code couleur est indispensable. Les chiffons et outils dédiés aux toilettes ne doivent jamais toucher le miroir, la vasque, les amenities ou les surfaces générales.',
           h3Items: [
             {
               heading: '1. Miroir et vitres',
-              text: 'Nettoyer miroirs et vitres avec la microfibre dédiée. Vérifier sous plusieurs angles, car les traces apparaissent souvent depuis la position du client.',
+              text: 'Nettoyer les miroirs et les vitres avec la microfibre dédiée. Vérifier sous plusieurs angles, car les traces apparaissent souvent depuis la position du client, pas depuis celle de la personne qui nettoie.',
             },
             {
               heading: '2. Plan vasque, lavabo et chrome',
-              text: 'Nettoyer plan, vasque, trop-plein, bonde, robinetterie et poignées. Lustrer le chrome pour éliminer les traces d’eau autour du robinet et de la crédence.',
+              text: 'Nettoyer le plan vasque, le lavabo, le trop-plein, la bonde, la robinetterie et les poignées. Lustrer le chrome pour éliminer les traces d’eau autour du robinet et de la crédence.',
             },
             {
               heading: '3. Douche ou baignoire',
-              text: 'Nettoyer murs, faïences, joints, porte, rideau, bac, bonde, robinetterie et pommeau. Retirer savon incrusté et calcaire avant finition.',
+              text: 'Nettoyer les murs, faïences, joints, porte, rideau, bac, bonde, robinetterie et pommeau. Retirer le savon incrusté et le calcaire avant la finition.',
             },
             {
               heading: '4. Toilettes en dernier',
-              text: 'Nettoyer d’abord l’extérieur, puis abattant et dessous, puis cuvette et sous-rebord. Terminer par la base et l’arrière, zones souvent oubliées.',
+              text: 'Nettoyer d’abord l’extérieur, puis l’abattant et le dessous, puis la cuvette et le sous-rebord. Terminer par la base et l’arrière, deux zones souvent oubliées en fin de service.',
             },
           ],
         },
         {
           h2: 'Terminer par sol, amenities et odeur',
           content:
-            'Le sol se nettoie du fond vers la porte et doit rester complètement sec. Les amenities doivent être complets, alignés, étiquettes visibles et emballages intacts. L’odeur finale doit être fraîche et neutre, jamais chimique ou humide.',
+            'Le sol se nettoie du fond vers la porte et doit rester complètement sec. Les amenities doivent être complets, alignés, étiquettes visibles et emballages intacts. L’odeur finale doit être fraîche et neutre, jamais chimique, humide ou trop parfumée.',
         },
         {
-          h2: 'Points d’inspection gouvernante',
+          h2: 'Points de contrôle pour la gouvernante',
           content:
-            'Une salle de bain peut paraître propre depuis la porte et échouer au contrôle. La gouvernante vérifie l’arrière des toilettes, les coins, la bonde de douche, les angles miroir, la robinetterie, les joints, le pliage serviettes, les verres et la mise en place amenities.',
+            'Une salle de bain peut paraître propre depuis la porte et échouer au contrôle. La gouvernante vérifie l’arrière des toilettes, les coins, la bonde de douche, les angles du miroir, la robinetterie, les joints, le pliage des serviettes, les verres et la mise en place des amenities.',
         },
       ],
       conclusion:
-        'Une SOP salle de bain fonctionne lorsque la séquence ne change pas. Le Room Attendant sait quoi nettoyer, dans quel ordre et à quel standard ; la gouvernante sait exactement quoi vérifier avant libération.',
+        'Une SOP de salle de bain fonctionne lorsque la séquence ne change pas. Le Room Attendant sait quoi nettoyer, dans quel ordre et à quel standard ; la gouvernante sait exactement quoi vérifier avant libération.',
       cta: { text: 'Voir le Playbook Housekeeping', href: '/playbooks/hsk' },
       faqs: [
         {
           question: 'Dans quel ordre nettoyer une salle de bain d’hôtel ?',
           answer:
-            'La séquence LuxOps : miroir et vitres, plan vasque, douche ou baignoire, toilettes, sol, amenities et inspection finale. La logique est du propre vers le sale et du haut vers le bas.',
+            'La séquence LuxOps suit cet ordre : miroir et vitres, plan vasque, douche ou baignoire, toilettes, sol, amenities et inspection finale. La logique est du propre vers le sale et du haut vers le bas.',
         },
         {
           question: 'Quel défaut salle de bain est le plus critique ?',
           answer:
-            'Le cheveu est le défaut le plus visible et le moins toléré. Il faut contrôler coins, arrière toilettes, bonde de douche, zone tapis de bain et bords de sol.',
+            'Le cheveu est le défaut le plus visible et le moins toléré. Il faut contrôler les coins, l’arrière des toilettes, la bonde de douche, la zone du tapis de bain et les bords du sol.',
         },
       ],
     },

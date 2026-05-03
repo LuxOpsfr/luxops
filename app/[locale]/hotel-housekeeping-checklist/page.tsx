@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       : 'Checklist housekeeping hôtel issue du Playbook LuxOps : chambre à blanc, recouche, chariot, inspection gouvernante, statut Clean/Inspected, grille qualité 100 points.',
     keywords: isEN
       ? 'hotel housekeeping checklist, hotel room cleaning checklist, hotel room inspection checklist, room attendant checklist, housekeeping supervisor checklist, housekeeping SOP checklist, hotel cleaning SOP'
-      : 'checklist housekeeping hôtel, checklist chambre à blanc hôtel, checklist inspection chambre hôtel, checklist gouvernante hôtel, checklist femme de chambre hôtel, SOP housekeeping hôtel, contrôle qualité housekeeping',
+      : 'checklist pour service de housekeeping hôtel, checklist chambre à blanc hôtel, checklist inspection chambre hôtel, checklist pour gouvernante hôtel, checklist femme de chambre hôtel, SOP de housekeeping hôtel, contrôle qualité en housekeeping',
     alternates: {
       canonical: `https://www.luxops.fr/${locale}/hotel-housekeeping-checklist`,
       languages: {
@@ -613,14 +613,14 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
               },
               {
                 href: `/${locale}/blog/hotel-room-cleaning-checklist`,
-                title: isEN ? 'Hotel Room Cleaning Checklist' : 'Checklist nettoyage chambre hôtel',
+                title: isEN ? 'Hotel Room Cleaning Checklist' : 'Checklist de nettoyage de chambre d’hôtel',
                 desc: isEN
                   ? 'Departure room, stayover, trolley setup and final self-check'
                   : 'Chambre à blanc, recouche, chariot et auto-contrôle final',
               },
               {
                 href: `/${locale}/blog/hotel-housekeeping-supervisor-checklist`,
-                title: isEN ? 'Housekeeping Supervisor Checklist' : 'Checklist gouvernante hôtel',
+                title: isEN ? 'Housekeeping Supervisor Checklist' : 'Checklist pour gouvernante d’hôtel',
                 desc: isEN
                   ? 'Supervisor inspection workflow and room release rules'
                   : 'Inspection gouvernante et règles de libération chambre',

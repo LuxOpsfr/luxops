@@ -372,7 +372,7 @@ export default async function HousekeepingSopPage({ params }: { params: Promise<
             ) : (
               <>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  Chaque procédure housekeeping a un moment de contrôle correspondant où une checklist confirme la conformité. La procédure de remise en état indique précisément à l&apos;équipier comment nettoyer la chambre. La checklist d&apos;inspection superviseur, réalisée ensuite, vérifie le résultat. La procédure de couverture définit la séquence. La validation superviseur confirme qu&apos;elle a été respectée.
+                  Chaque procédure de housekeeping a un moment de contrôle correspondant où une checklist confirme la conformité. La procédure de remise en état indique précisément à l&apos;équipier comment nettoyer la chambre. La checklist d&apos;inspection superviseur, réalisée ensuite, vérifie le résultat. La procédure de couverture définit la séquence. La validation superviseur confirme qu&apos;elle a été respectée.
                 </p>
                 <p className="text-gray-600 leading-relaxed">
                   Sans le SOP, la checklist n&apos;a pas de standard à vérifier. Sans la checklist, le SOP n&apos;a pas de mécanisme de contrôle. Pour que les équipes housekeeping opèrent de façon cohérente entre les services, les établissements ont besoin des deux.
@@ -416,21 +416,21 @@ export default async function HousekeepingSopPage({ params }: { params: Promise<
                 },
                 {
                   href: `/${locale}/blog/hotel-room-cleaning-checklist`,
-                  title: isEN ? 'Hotel Room Cleaning Checklist' : 'Checklist nettoyage chambre hôtel',
+                  title: isEN ? 'Hotel Room Cleaning Checklist' : 'Checklist de nettoyage de chambre d’hôtel',
                   desc: isEN
                     ? 'The departure room and stayover sequence from the playbook.'
                     : 'La séquence chambre à blanc et recouche issue du playbook.',
                 },
                 {
                   href: `/${locale}/blog/hotel-housekeeping-supervisor-checklist`,
-                  title: isEN ? 'Housekeeping Supervisor Checklist' : 'Checklist gouvernante hôtel',
+                  title: isEN ? 'Housekeeping Supervisor Checklist' : 'Checklist pour gouvernante d’hôtel',
                   desc: isEN
                     ? 'Room release, inspection scores and coaching workflow.'
                     : 'Libération chambre, scores inspection et coaching.',
                 },
                 {
                   href: `/${locale}/blog/hotel-bathroom-cleaning-sop`,
-                  title: isEN ? 'Hotel Bathroom Cleaning SOP' : 'SOP nettoyage salle de bain hôtel',
+                  title: isEN ? 'Hotel Bathroom Cleaning SOP' : 'SOP de nettoyage de salle de bain d’hôtel',
                   desc: isEN
                     ? 'Bathroom sequence: clean to dirty, top to bottom.'
                     : 'Séquence salle de bain : du propre vers le sale, du haut vers le bas.',
