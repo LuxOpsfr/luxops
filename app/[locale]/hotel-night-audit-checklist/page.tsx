@@ -8,13 +8,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: isEN
       ? 'Hotel Night Audit Checklist — Step-by-Step Night Audit Procedure | LuxOps'
-      : 'Checklist Audit de Nuit Hôtel — Procédure complète pour l\'auditeur de nuit | LuxOps',
+      : 'Checklist Night Audit Hôtel — Clôture PMS, VCC, caisse et passation | LuxOps',
     description: isEN
       ? 'Free hotel night audit checklist: pre-closing checks, system reconciliation, no-show management, report generation and morning handover. Built for hotel night auditors.'
-      : 'Checklist audit de nuit hôtel gratuite : contrôles pré-fermeture, réconciliation système, gestion des no-shows, génération des rapports et passation matin.',
+      : 'Checklist Night Audit hôtel : clôture PMS, contrôle crédit, Pre-Authorizations, VCC, caisse, no-shows, rapports et Shift Handover matin.',
     keywords: isEN
       ? 'hotel night audit checklist, night audit procedure hotel, hotel night audit steps, night auditor hotel checklist, night audit process hotel, hotel night audit report'
-      : 'checklist audit de nuit hôtel, procédure audit de nuit hôtel, auditeur de nuit hôtel, audit nuit hôtel checklist, clôture journalière hôtel',
+      : 'checklist night audit hôtel, procédure night audit hôtel, night auditor hôtel, réceptionniste de nuit hôtel, clôture PMS hôtel, clôture journalière hôtel, VCC hôtel',
     alternates: {
       canonical: `https://www.luxops.fr/${locale}/hotel-night-audit-checklist`,
       languages: {
@@ -104,62 +104,62 @@ const PHASES_EN: ChecklistSection[] = [
 
 const PHASES_FR: ChecklistSection[] = [
   {
-    phase: 'Phase 1 : Contrôles pré-fermeture (avant le lancement du système)',
-    intro: 'Complétez toutes les tâches pré-fermeture avant de lancer la clôture PMS. La clôture est une action à sens unique : les erreurs non corrigées avant nécessiteront des corrections manuelles le lendemain.',
+    phase: 'Phase 1 : Contrôles avant clôture PMS',
+    intro: 'Le Night Audit commence avant le lancement de la clôture. Le Night Auditor doit sécuriser les départs, les folios, les points de vente, les no-shows, les statuts chambres et les comptes clients avant de basculer la date PMS.',
     items: [
-      'Vérifier que tous les départs sont check-out dans le PMS : aucune chambre occupée avec une date de départ à aujourd\'hui',
-      'Contrôler les late checkout encore présents dans l\'établissement et confirmer que la retenue de facturation est active',
-      'Poster toutes les charges non encore appliquées : minibar, room service, téléphone, parking',
-      'Vérifier la clôture de tous les points de vente F&B : confirmer que les charges ont été transférées et postées sur les folios clients',
-      'Examiner les litiges de facturation signalés dans la journée et noter leur statut pour le directeur du matin',
-      'Extraire la liste des no-shows du PMS : réservations non arrivées et non annulées',
-      'Appliquer les frais de no-show selon la politique tarifaire pour chaque no-show confirmé',
-      'Envoyer la confirmation de no-show par email au client si le plan tarifaire l\'exige',
-      'Consigner chaque no-show : numéro de réservation, charge appliquée, référence du plan tarifaire',
-      'Comparer le rapport de statuts chambres PMS avec le dernier rapport de la gouvernante d\'étage',
-      'Signaler les écarts : PMS affiche vacant-propre, housekeeping affiche occupé ou sale',
-      'Confirmer que les arrivées VIP du lendemain ont les bonnes attributions de chambres et apparaissent propres dans le PMS',
+      'Vérifier que tous les départs du jour sont bien passés en Check-out dans le PMS',
+      'Contrôler les Late Check-out encore présents et vérifier que la garantie de paiement couvre les extras',
+      'Vérifier que toutes les charges sont postées sur les bons folios : F&B, minibar, spa, parking, téléphone, Room Service',
+      'S’assurer que les points de vente F&B sont clôturés et que les additions ont bien été transférées vers les folios clients',
+      'Relire les litiges de facturation ou ajustements du jour et préparer une note claire pour le Shift AM',
+      'Sortir la liste des no-shows : réservations non arrivées et non annulées',
+      'Appliquer les frais de no-show selon la politique tarifaire et documenter réservation, montant et règle appliquée',
+      'Comparer les statuts chambres PMS avec le dernier état housekeeping : sale, propre, inspectée, occupée',
+      'Identifier les écarts de statut chambre et les mettre en passation pour la réception et la gouvernante',
+      'Contrôler les arrivées VIP du lendemain : attribution chambre, demandes spéciales, fiche d’enregistrement et Pre-Authorization',
     ],
   },
   {
-    phase: 'Phase 2 : Clôture système et audit de nuit',
-    intro: 'Lancer l\'audit de nuit uniquement après que tous les contrôles pré-fermeture sont terminés et tous les points de vente sont clôturés. Vérifier la séquence avec votre fournisseur PMS si c\'est la première clôture sur un nouveau système.',
+    phase: 'Phase 2 : Lancement du Night Audit et clôture journalière',
+    intro: 'La clôture PMS ne se lance qu’une fois les contrôles terminés. Selon le PMS, cette étape bascule la date opérationnelle, poste les nuitées, ferme la journée comptable et génère les rapports nécessaires au management.',
     items: [
-      'Confirmer que tous les rapports de points de vente sont clôturés avant de lancer la clôture',
-      'Lancer l\'audit de nuit (clôture système) dans le PMS selon la séquence propre à l\'établissement',
-      'Confirmer que la date système a basculé sur la nouvelle date opérationnelle',
-      'Imprimer ou sauvegarder le résumé du rapport d\'audit de nuit : vérifier les chiffres de CA total, CA chambres et taux d\'occupation',
-      'Générer le pack de rapports journaliers : liste des arrivées du jour, liste des départs, liste VIP, rapport soldes élevés',
-      'Générer et classer le rapport de revenus de nuit pour la comptabilité',
-      'Confirmer la sauvegarde ou l\'export si requis par la politique informatique de l\'établissement',
-      'Consigner l\'heure de clôture et toute erreur système rencontrée pendant la clôture',
+      'Confirmer que les outlets et terminaux de paiement concernés sont clôturés avant lancement',
+      'Lancer le Night Audit dans le PMS selon la procédure propre à l’établissement',
+      'Vérifier que la date PMS a bien basculé sur la nouvelle journée opérationnelle',
+      'Sauvegarder ou imprimer le Daily Report : chiffre d’affaires total, room revenue, occupation, ADR, RevPAR',
+      'Préparer le Night Report avec les incidents, écarts, demandes clients et points de suivi',
+      'Générer le Pick-up Report et les listes du jour : arrivées, départs, VIP, soldes élevés',
+      'Consigner l’heure de clôture, les éventuels messages PMS et toute anomalie système',
+      'Classer les rapports selon la procédure comptabilité et direction de l’établissement',
     ],
   },
   {
-    phase: 'Phase 3 : Tâches de nuit en cours de service',
-    intro: 'Ces tâches s\'effectuent en parallèle du service de nuit. Consigner toutes les activités et interactions clients dans le rapport de nuit du directeur de service.',
+    phase: 'Phase 3 : Contrôle crédit, VCC, caisse et opérations de nuit',
+    intro: 'Le Night Shift ne se limite pas à la clôture PMS. Le Night Auditor protège aussi l’exposition financière de l’hôtel, traite les VCC, contrôle les espèces et assure la continuité de service pendant la nuit.',
     items: [
-      'Surveiller l\'entrée et gérer les arrivées tardives selon le protocole late check-in',
-      'Traiter les check-ins en attente restant sur la liste des arrivées',
-      'Effectuer les rondes de sécurité horaires selon le protocole de l\'établissement et consigner l\'heure et les observations à chaque passage',
-      'Répondre aux demandes en chambre : consigner dans le PMS, traiter en moins de 15 minutes ou escalader au département concerné',
-      'Surveiller le tableau incendie, la CCTV et toutes les alarmes de sécurité selon le protocole d\'urgence',
-      'Signaler les pannes de maintenance découvertes pendant les rondes pour le brief technique du matin',
-      'Examiner les alertes soldes élevés : contacter les clients dont le solde dépasse le seuil selon la politique de l\'établissement',
-      'Consigner tous les incidents et interactions clients dans le rapport de nuit du directeur de service',
+      'Lancer le rapport de limite de crédit et identifier les comptes en vert, orange ou rouge selon le seuil de l’établissement',
+      'Vérifier que les Pre-Authorizations couvrent le séjour restant et les extras prévisibles',
+      'Signaler au Shift AM les cartes expirant pendant le séjour ou les autorisations insuffisantes',
+      'Identifier les réservations OTA prepaid avec VCC à traiter après Check-in',
+      'Débiter les VCC au montant exact indiqué par l’OTA et enregistrer la référence de transaction dans le PMS',
+      'Documenter les VCC refusées : montant incorrect, activation trop tôt, carte déjà débitée, carte expirée ou incident technique',
+      'Comparer les reçus TPE/POS avec le rapport de paiements PMS et corriger les modes de paiement mal saisis',
+      'Vérifier le fonds de caisse avec le réceptionniste PM ; tout écart doit être documenté',
+      'Gérer les arrivées tardives, Walk-ins, Wake-up calls, demandes clients et rondes de sécurité selon la main courante',
     ],
   },
   {
-    phase: 'Phase 4 : Préparation du pack matin et passation',
-    intro: 'L\'équipe du matin fonctionne entièrement sur la base de ce que l\'auditeur de nuit a préparé. Terminer cette phase avant l\'arrivée du premier réceptionniste du matin, pas après.',
+    phase: 'Phase 4 : Préparation AM et Shift Handover',
+    intro: 'Le travail du Night Auditor prépare directement la réussite du Shift AM. Le réceptionniste du matin doit retrouver des départs préparés, des arrivées lisibles, des folios propres et une passation exploitable.',
     items: [
-      'Imprimer la liste des arrivées du jour et surligner les VIP, early check-ins et chambres pré-attribuées',
-      'Imprimer la liste des départs avec aperçu de facture pour chaque client en séjour',
-      'Préparer le résumé de disponibilité des chambres pour l\'équipe de réception du matin',
-      'Rédiger le rapport de nuit du directeur de service : incidents, événements inhabituels, points de suivi, résumé d\'occupation',
-      'Confirmer le nombre de petits-déjeuners pour le F&B et transmettre à la cuisine si applicable',
-      'Briefer le réceptionniste du matin en personne : ne pas quitter le poste sans passation verbale',
-      'Consigner la passation dans le cahier de main courante avec l\'heure et la signature',
+      'Préparer les départs : ETD, folios pré-vérifiés, charges en attente, facturation directe et split bills',
+      'Identifier les départs sensibles : litige tarifaire, solde élevé, paiement manquant, client avec réclamation active',
+      'Imprimer ou préparer les fiches d’enregistrement des arrivées du jour avec montant de Pre-Authorization',
+      'Organiser les arrivées par heure prévue, avec early check-ins et VIP en priorité',
+      'Préparer la liste VIP et les demandes spéciales pour Guest Relations, Housekeeping et F&B',
+      'Transmettre les prévisions petit-déjeuner ou informations F&B utiles au service concerné',
+      'Rédiger le Night Report : occupation, incidents, sécurité, paiements, VCC, no-shows et points à suivre',
+      'Faire un Shift Handover verbal avec l’équipe AM et compléter la main courante avec heure et signature',
     ],
   },
 ]
@@ -189,24 +189,24 @@ const FAQ_EN: FAQItem[] = [
 
 const FAQ_FR: FAQItem[] = [
   {
-    q: 'En quoi consiste l\'audit de nuit dans un hôtel ?',
-    a: 'L\'audit de nuit hôtelier est la procédure de clôture journalière qui réconcilie toutes les transactions financières, confirme les statuts des chambres, génère les rapports de direction et bascule le PMS sur la nouvelle date opérationnelle. Il est généralement réalisé entre minuit et 4h du matin par un auditeur de nuit qui gère également les arrivées tardives et la sécurité nocturne. La procédure se déroule en quatre phases : contrôles pré-fermeture, clôture système, tâches de nuit en cours et préparation du pack matin.',
+    q: 'En quoi consiste le Night Audit dans un hôtel ?',
+    a: 'Le Night Audit est la clôture journalière de l’hôtel. Le Night Auditor ferme la journée PMS, réconcilie paiements et folios, contrôle les Pre-Authorizations, traite les VCC, vérifie la caisse, prépare les rapports et organise la passation du Shift AM. Dans beaucoup d’établissements, ce rôle est tenu par le réceptionniste de nuit.',
   },
   {
-    q: 'Quel est le rôle de l\'auditeur de nuit dans un hôtel ?',
-    a: 'L\'auditeur de nuit réalise la clôture journalière financière, traite les no-shows, réconcilie les postings des points de vente F&B, lance la clôture PMS, gère les demandes clients nocturnes, effectue les rondes de sécurité et prépare le pack de rapports pour l\'équipe du matin. Le poste combine les responsabilités de la réception, d\'une comptabilité de base et du directeur de service. C\'est l\'un des rôles les moins documentés dans la plupart des hôtels malgré son importance opérationnelle.',
+    q: 'Quel est le rôle du Night Auditor ?',
+    a: 'Le Night Auditor fait le pont entre la journée comptable qui se termine et celle qui commence. Il combine réception, contrôle financier, rapports, sécurité et service client : late check-ins, early check-outs, Walk-ins, Wake-up calls, rondes, Daily Report, Night Report, Pick-up Report et Shift Handover.',
   },
   {
-    q: 'Quels rapports l\'audit de nuit produit-il ?',
-    a: 'Le pack standard de rapports d\'audit de nuit comprend : rapport de revenus journalier (chambres, F&B, total), rapport d\'occupation, listes d\'arrivées et départs du lendemain, rapport des soldes élevés et résumé d\'audit de nuit signé par l\'auditeur. Des rapports supplémentaires varient selon l\'établissement et le PMS. Le pack matin doit être prêt avant l\'arrivée du premier réceptionniste.',
+    q: 'Quels rapports le Night Audit produit-il ?',
+    a: 'Le pack standard comprend généralement le Daily Report, le Night Report, le Pick-up Report, le rapport d’occupation, les listes arrivées/départs, la liste VIP, le rapport soldes élevés, le rapport paiements et les écarts à suivre. Le contenu exact dépend du PMS et des standards de l’établissement.',
   },
   {
-    q: 'Que se passe-t-il si l\'audit de nuit n\'est pas réalisé ?',
-    a: 'Si la clôture PMS n\'est pas réalisée, la date système ne bascule pas et les opérations du lendemain tournent sur la date précédente. Les charges de chambres ne sont pas postées, les arrivées ne peuvent pas être correctement traitées et les chiffres de revenus sont décalés. La plupart des PMS modernes signalent une clôture manquée, mais la correction nécessite toujours des ajustements manuels qui prennent beaucoup plus de temps que de réaliser la clôture correctement.',
+    q: 'Que se passe-t-il si la clôture PMS n’est pas lancée ?',
+    a: 'Si la clôture PMS n’est pas lancée, la date opérationnelle ne bascule pas correctement. Les nuitées peuvent ne pas être postées, les arrivées du jour peuvent être bloquées ou incohérentes, et les chiffres de revenu deviennent difficiles à réconcilier. La correction passe souvent par des ajustements manuels chronophages.',
   },
   {
-    q: 'Combien de temps dure l\'audit de nuit dans un hôtel ?',
-    a: 'La clôture système elle-même prend généralement 5 à 15 minutes selon le PMS et la taille de l\'établissement. La procédure complète d\'audit de nuit, comprenant les contrôles pré-fermeture, la clôture système et la préparation du pack matin, prend entre 60 et 90 minutes pour un hôtel avec services complets. L\'auditeur de nuit gère les rondes de sécurité et les demandes clients dans les intervalles.',
+    q: 'Combien de temps prend un Night Audit ?',
+    a: 'Le lancement système prend souvent 5 à 15 minutes selon le PMS, mais la procédure complète prend plutôt 60 à 90 minutes dans un hôtel avec services complets. Ce temps inclut les contrôles avant clôture, le lancement PMS, les VCC, la caisse, les rapports et la préparation du Shift Handover.',
   },
 ]
 
@@ -242,12 +242,12 @@ export default async function HotelNightAuditChecklistPage({ params }: { params:
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
               {isEN
                 ? 'Hotel Night Audit Checklist: What to Close, Reconcile and Hand Over'
-                : 'Checklist Audit de Nuit Hôtel : ce qu\'il faut clôturer, réconcilier et transmettre'}
+                : 'Checklist Night Audit Hôtel : clôture PMS, VCC, caisse et passation'}
             </h1>
             <p className="text-lg text-blue-100 max-w-2xl mx-auto mb-8">
               {isEN
                 ? 'A complete step-by-step night audit procedure. Pre-closing checks, system run, active night duties and morning pack. Free to download.'
-                : 'Une procédure complète d\'audit de nuit étape par étape. Contrôles pré-fermeture, clôture système, tâches nocturnes et pack matin. Gratuit.'}
+                : 'Une checklist terrain pour réceptionniste de nuit et Night Auditor : contrôles avant clôture, Pre-Authorizations, VCC, caisse, rapports et Shift Handover.'}
             </p>
             <Link
               href={`/${locale}/front-office-sop`}
@@ -276,7 +276,7 @@ export default async function HotelNightAuditChecklistPage({ params }: { params:
               <p className="text-sm text-[#4f6074]">
                 {isEN
                   ? 'The full playbook includes the complete night audit SOP and all shift management procedures.'
-                  : 'Le playbook complet inclut la procédure d\'audit de nuit complète et toutes les procédures de gestion des services.'}
+                  : 'Le playbook complet inclut la SOP Night Audit, la gestion des shifts, les check-ins tardifs, les départs, les VCC et les passations.'}
               </p>
             </div>
             <Link
@@ -294,7 +294,7 @@ export default async function HotelNightAuditChecklistPage({ params }: { params:
           <h2 className="text-2xl font-bold text-[#1A2E44] mb-4">
             {isEN
               ? 'Why the night audit is the most under-documented shift'
-              : 'Pourquoi l\'audit de nuit est le service le moins documenté'}
+              : 'Pourquoi le Night Audit est souvent le shift le moins documenté'}
           </h2>
           {isEN ? (
             <>
@@ -315,18 +315,17 @@ export default async function HotelNightAuditChecklistPage({ params }: { params:
           ) : (
             <>
               <p className="text-gray-600 leading-relaxed mb-4">
-                L&apos;audit de nuit clôture la journée opérationnelle. Il réconcilie chaque transaction financière,
-                confirme chaque statut de chambre, génère les rapports sur lesquels l&apos;équipe du matin va travailler
-                et crée l&apos;enregistrement définitif de la journée. Quand il est bien réalisé, rien de la journée
-                précédente ne se reporte incorrectement sur la suivante. Quand il est fait de mémoire, de petites
-                erreurs s&apos;accumulent nuit après nuit jusqu&apos;à ce qu&apos;un écart devienne impossible à
-                retrouver.
+                Le Night Audit clôture la journée comptable et prépare la suivante. Le Night Auditor, souvent
+                réceptionniste de nuit selon les établissements, réconcilie paiements et folios, vérifie les
+                Pre-Authorizations, traite les VCC, contrôle la caisse, prépare les rapports et transmet les points
+                sensibles au Shift AM. Quand cette routine est faite de mémoire, les écarts deviennent vite difficiles
+                à retrouver.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                La plupart des documents SOP réception couvrent le check-in et le check-out en détail. La section audit
-                de nuit se résume souvent à un paragraphe ou à une liste de clics système. Cette checklist fournit la
-                séquence complète en quatre phases que les établissements de luxe et indépendants utilisent pour
-                clôturer, réconcilier et transmettre correctement chaque nuit.
+                Beaucoup de SOP réception détaillent le check-in et le check-out, mais laissent le Night Audit en
+                simple liste de clics PMS. C’est une erreur : le Night Shift porte à la fois le contrôle financier, la
+                sécurité, les arrivées tardives, les Wake-up calls, les no-shows, les VCC et la passation du matin.
+                Cette checklist remet la procédure dans l’ordre hôtelier réel.
               </p>
             </>
           )}
@@ -358,7 +357,7 @@ export default async function HotelNightAuditChecklistPage({ params }: { params:
             <h2 className="text-2xl font-bold text-[#1A2E44] mb-4">
               {isEN
                 ? 'How the night audit connects to morning operations'
-                : 'Comment l\'audit de nuit conditionne les opérations du matin'}
+                : 'Comment le Night Audit conditionne le Shift AM'}
             </h2>
             {isEN ? (
               <>
@@ -377,17 +376,15 @@ export default async function HotelNightAuditChecklistPage({ params }: { params:
             ) : (
               <>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  L&apos;équipe de réception du matin fonctionne entièrement sur la base de ce que l&apos;auditeur de
-                  nuit a préparé. La liste des arrivées, le résumé de disponibilité des chambres, les alertes soldes
-                  élevés, le registre des no-shows : rien de tout cela n&apos;est exploitable par l&apos;équipe
-                  entrante si l&apos;auditeur de nuit ne l&apos;a pas produit correctement et transmis en personne.
+                  L&apos;équipe AM dépend directement de ce que le Night Auditor a préparé. Les arrivées, les départs,
+                  les VIP, les soldes élevés, les no-shows, les VCC non résolues, les écarts caisse et les réclamations
+                  actives doivent être lisibles dès la prise de poste. Une passation vague oblige le réceptionniste du
+                  matin à reconstruire la nuit au lieu de servir les clients.
                 </p>
                 <p className="text-gray-600 leading-relaxed">
-                  L&apos;audit de nuit est aussi le dernier moment où les erreurs de la journée précédente peuvent être
-                  corrigées avant de devenir des enregistrements financiers définitifs. C&apos;est pourquoi la séquence
-                  compte : contrôles pré-fermeture en premier, clôture système en second, tâches de nuit en cours de
-                  service, pack matin avant la passation. Inverser l&apos;une de ces étapes crée des erreurs
-                  rattrapables mais chronophages.
+                  La logique LuxOps est simple : contrôles avant clôture, lancement PMS, contrôle crédit et VCC, caisse,
+                  préparation des départs et arrivées, puis Shift Handover. Inverser cette séquence crée des erreurs
+                  rattrapables, mais coûteuses en temps et en crédibilité.
                 </p>
               </>
             )}
@@ -458,7 +455,7 @@ export default async function HotelNightAuditChecklistPage({ params }: { params:
             <p className="text-blue-100 mb-8">
               {isEN
                 ? 'The LuxOps Front Office Playbook covers every shift: opening, day operations, night audit and handover. 12 chapters, PDF and PowerPoint, EN and FR.'
-                : 'Le Playbook Réception LuxOps couvre chaque service : ouverture, opérations de jour, audit de nuit et passation. 12 chapitres, PDF et PowerPoint, EN et FR.'}
+                : 'Le Playbook Réception LuxOps couvre chaque shift : ouverture, opérations de jour, Night Audit, contrôle crédit, VCC, caisse et passation. 12 chapitres, PDF et PowerPoint, EN et FR.'}
             </p>
             <Link
               href={`/${locale}/playbooks`}
