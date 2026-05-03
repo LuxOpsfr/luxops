@@ -7,14 +7,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const isEN = locale === 'en'
   return {
     title: isEN
-      ? 'Housekeeping SOP: Complete Guide to Hotel Housekeeping Procedures | LuxOps'
-      : 'SOP Housekeeping : Guide complet des procédures housekeeping hôtel | LuxOps',
+      ? 'Housekeeping SOP: Hotel Room Cleaning, Inspection & HSK Procedures | LuxOps'
+      : 'SOP Housekeeping Hôtel : chambre à blanc, recouche & inspection | LuxOps',
     description: isEN
-      ? 'A complete guide to housekeeping SOPs in hotels. Covers room attendant procedures, bed making, bathroom deep clean, supervisor inspection, linen management and turndown service. Standard operating procedures for every role.'
-      : 'Guide complet des SOPs housekeeping en hôtellerie. Séquence chambre départ, recouche, réfection du lit, nettoyage salle de bain, service de couverture, inspection superviseur et gestion du linge.',
+      ? 'Complete housekeeping SOP guide for hotels: departure room cleaning, stayover service, bathroom deep clean, bed making, supervisor inspection, Clean vs Inspected workflow and linen handover.'
+      : 'Guide SOP housekeeping hôtel : chambre à blanc, recouche, salle de bain, lit, inspection gouvernante, workflow Clean/Inspected, linge et passation.',
     keywords: isEN
-      ? 'housekeeping sop, housekeeping standard operating procedures, sop for housekeeping, hotel housekeeping procedures, sop full form housekeeping, standard operating procedure in housekeeping, hotel housekeeping standard operating procedures, hotel cleaning sop, luxury hotel housekeeping'
-      : 'sop housekeeping, procédures housekeeping hôtel, SOP gouvernante, procédures opérationnelles housekeeping hôtel, procédures standard housekeeping hôtel de luxe',
+      ? 'housekeeping sop, hotel housekeeping SOP, hotel housekeeping procedures, hotel room cleaning SOP, bathroom cleaning SOP hotel, housekeeping supervisor SOP, room attendant SOP, standard operating procedure in housekeeping'
+      : 'sop housekeeping, SOP housekeeping hôtel, procédures housekeeping hôtel, procédure chambre à blanc hôtel, procédure recouche hôtel, SOP gouvernante, procédure nettoyage salle de bain hôtel',
     alternates: {
       canonical: `https://www.luxops.fr/${locale}/housekeeping-sop`,
       languages: {
@@ -193,12 +193,12 @@ export default async function HousekeepingSopPage({ params }: { params: Promise<
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
               {isEN
                 ? 'Housekeeping SOP: What It Covers and How to Structure One'
-                : 'Procédures housekeeping : ce que couvre un SOP et comment le structurer'}
+                : 'SOP Housekeeping Hôtel : structurer la chambre à blanc, la recouche et l’inspection'}
             </h1>
             <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-10">
               {isEN
                 ? 'A housekeeping SOP tells the team how to do the work. The checklist confirms it was done correctly. Both are needed. Neither replaces the other.'
-                : "Les procédures housekeeping indiquent à l'équipe comment réaliser le travail. La checklist confirme qu'il a été réalisé correctement. Les deux sont nécessaires. Aucun ne remplace l'autre."}
+                : 'Une SOP housekeeping explique la méthode. La checklist confirme le résultat. Chambre à blanc, recouche, salle de bain, lit, chariot, inspection et passation doivent fonctionner ensemble.'}
             </p>
             <Link
               href={`/${locale}/playbooks/hsk`}
@@ -227,7 +227,7 @@ export default async function HousekeepingSopPage({ params }: { params: Promise<
               <p className="text-sm text-[#4f6074]">
                 {isEN
                   ? 'See what structured housekeeping procedures look like in practice.'
-                  : "Découvrez à quoi ressemblent des procédures housekeeping structurées."}
+                  : "Découvrez à quoi ressemblent des procédures housekeeping structurées avec le vocabulaire et les séquences du terrain."}
               </p>
             </div>
             <Link
@@ -394,6 +394,56 @@ export default async function HousekeepingSopPage({ params }: { params: Promise<
                   <h3 className="font-semibold text-[#1A2E44] mb-2">{item.question}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed">{item.answer}</p>
                 </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="py-12 px-6 bg-gray-50 border-t border-gray-100">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl font-bold text-[#1A2E44] mb-6">
+              {isEN ? 'Housekeeping SOP cluster' : 'Cluster SOP housekeeping'}
+            </h2>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {[
+                {
+                  href: `/${locale}/hotel-housekeeping-checklist`,
+                  title: isEN ? 'Hotel Housekeeping Checklist' : 'Checklist housekeeping hôtel',
+                  desc: isEN
+                    ? 'Role-based checklists for attendants and supervisors.'
+                    : 'Checklists par rôle pour Room Attendants et gouvernantes.',
+                },
+                {
+                  href: `/${locale}/blog/hotel-room-cleaning-checklist`,
+                  title: isEN ? 'Hotel Room Cleaning Checklist' : 'Checklist nettoyage chambre hôtel',
+                  desc: isEN
+                    ? 'The departure room and stayover sequence from the playbook.'
+                    : 'La séquence chambre à blanc et recouche issue du playbook.',
+                },
+                {
+                  href: `/${locale}/blog/hotel-housekeeping-supervisor-checklist`,
+                  title: isEN ? 'Housekeeping Supervisor Checklist' : 'Checklist gouvernante hôtel',
+                  desc: isEN
+                    ? 'Room release, inspection scores and coaching workflow.'
+                    : 'Libération chambre, scores inspection et coaching.',
+                },
+                {
+                  href: `/${locale}/blog/hotel-bathroom-cleaning-sop`,
+                  title: isEN ? 'Hotel Bathroom Cleaning SOP' : 'SOP nettoyage salle de bain hôtel',
+                  desc: isEN
+                    ? 'Bathroom sequence: clean to dirty, top to bottom.'
+                    : 'Séquence salle de bain : du propre vers le sale, du haut vers le bas.',
+                },
+              ].map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="block rounded-lg border border-gray-200 bg-white p-5 hover:border-[#1A2E44] transition-colors"
+                >
+                  <h3 className="font-semibold text-[#1A2E44] mb-1">{item.title}</h3>
+                  <p className="text-sm text-gray-500 leading-relaxed">{item.desc}</p>
+                </Link>
               ))}
             </div>
           </div>

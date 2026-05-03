@@ -4105,4 +4105,571 @@ export const articles: BilingualArticle[] = [
       ],
     },
   },
+  {
+    slug: 'hotel-room-cleaning-checklist',
+    en: {
+      title: 'Hotel Room Cleaning Checklist: Departure Room, Stayover and Final Self-Check',
+      description:
+        'A playbook-based hotel room cleaning checklist for housekeeping teams: trolley setup, room entry, departure room sequence, stayover service, bathroom standards and final self-inspection.',
+      date: '2026-05-03',
+      readTime: '9 min read',
+      intro:
+        'A hotel room cleaning checklist should follow the way a room is actually serviced on shift. The LuxOps Housekeeping Playbook separates preparation, room entry, departure cleaning, stayover service, deep cleaning, DND and final self-inspection. This free extract gives housekeeping teams a practical structure for Room Attendants, supervisors and managers who need consistency without turning the room into a box-ticking exercise.',
+      sections: [
+        {
+          h2: 'Start before the room: trolley, assignment and priorities',
+          content:
+            'Most cleaning mistakes begin before the Room Attendant enters the room. A poorly stocked trolley creates delays, skipped steps and repeated returns to the pantry. The daily assignment sheet should be reviewed before service begins: departure rooms, stayovers, VIPs, early arrivals, late check-outs, DND rooms, maintenance alerts and special requests.',
+          h3Items: [
+            {
+              heading: 'Trolley setup',
+              text: 'Stock fitted sheets, flat sheets, pillowcases, duvet covers, bath towels, hand towels, bath mats, amenities, toilet paper, tissues, laundry bags, glass cleaner, bathroom disinfectant, furniture polish and colour-coded microfibre cloths before leaving the pantry.',
+            },
+            {
+              heading: 'Priority order',
+              text: 'Early arrivals, VIP rooms and rooms with confirmed ETAs come first. A room needed by Front Office should never wait behind a low-priority stayover unless the supervisor has made that decision.',
+            },
+          ],
+        },
+        {
+          h2: 'Use a professional room entry protocol',
+          content:
+            'The room entry sequence protects privacy and reduces incidents. The standard LuxOps sequence is simple: park the trolley against the wall, knock three times, announce Housekeeping, wait 10 seconds, repeat, open the door partially and announce again before entering slowly.',
+          h3Items: [
+            {
+              heading: 'If the guest is present',
+              text: 'Do not push the service. Ask whether the guest would like the room serviced now or later, confirm the preferred time and record the request if the timing changes.',
+            },
+            {
+              heading: 'If DND is displayed',
+              text: 'Do not knock and do not enter. Record the DND, continue the assignment and follow the property contact protocol at the defined time.',
+            },
+          ],
+        },
+        {
+          h2: 'Departure room cleaning: the 7-phase sequence',
+          content:
+            'A departure room is the full reset of the guest room. The LuxOps standard uses a 45-60 minute target for a standard room and a fixed seven-phase sequence. The sequence matters because it prevents rework and keeps quality consistent from one attendant to another.',
+          h3Items: [
+            {
+              heading: '1. Initial assessment',
+              text: 'Open curtains, turn on lights, ventilate if possible, scan for damage, odour, guest belongings, maintenance issues and unusual conditions. If guest belongings are found, stop and follow Lost & Found immediately.',
+            },
+            {
+              heading: '2. Bathroom deep clean',
+              text: 'Work clean to dirty, top to bottom: mirror, vanity, sink, shower or tub, toilet, floor and full amenity setup. No hair anywhere is the non-negotiable standard.',
+            },
+            {
+              heading: '3. Bedroom cleaning',
+              text: 'Dust high to low: vents, lamps, frames, headboard, nightstands, desk, TV, mirrors, plinths and door frames. Test lights, TV, remote, clock, phone and HVAC.',
+            },
+            {
+              heading: '4. Bed making',
+              text: 'Inspect mattress protector, apply tight sheets, centre the duvet, smooth every surface and position pillows symmetrically. The bed is the strongest visual signal in the room.',
+            },
+            {
+              heading: '5-7. Storage, minibar and final presentation',
+              text: 'Check wardrobe, safe, robes, slippers, minibar, glasses, stationery, curtains, scent, temperature and the final view from the entry door.',
+            },
+          ],
+        },
+        {
+          h2: 'Stayover rooms need different rules',
+          content:
+            'A stayover is not a lighter departure room. The guest still owns the space. The Room Attendant refreshes the room while respecting personal belongings, observed preferences and the property linen policy.',
+          h3Items: [
+            {
+              heading: 'What changes',
+              text: 'Linens are maintained unless soiled, requested or due for change. Guest items are straightened only when needed and never reorganised. Amenities are replaced when consumed, not automatically reset like a departure.',
+            },
+            {
+              heading: 'Timing standard',
+              text: 'A standard stayover usually targets 25-35 minutes. Suites and complex rooms require more time, especially when the guest has settled in for a long stay.',
+            },
+          ],
+        },
+        {
+          h2: 'Final self-check before leaving',
+          content:
+            'The Room Attendant owns the first quality gate. Before updating the status, stand at the entry door and inspect the room as the next guest would.',
+          h3Items: [
+            {
+              heading: 'Bedroom quick scan',
+              text: 'Bed smooth and symmetrical, surfaces dust-free, mirrors streak-free, curtains aligned, floor clean, wardrobe organised and no guest belongings left behind.',
+            },
+            {
+              heading: 'Bathroom quick scan',
+              text: 'Toilet spotless, sink polished, mirror streak-free, floor dry, no hair in corners or behind the toilet, towels folded correctly and amenities aligned.',
+            },
+          ],
+        },
+      ],
+      conclusion:
+        'A strong hotel room cleaning checklist does not replace training. It protects the training. It gives every Room Attendant the same order, every supervisor the same control points and every arriving guest the same first impression.',
+      cta: { text: 'View the Housekeeping Playbook', href: '/playbooks/hsk' },
+      faqs: [
+        {
+          question: 'How long should it take to clean a hotel room?',
+          answer:
+            'The LuxOps benchmark is 45-60 minutes for a standard departure room, 25-35 minutes for a standard stayover and 90-120 minutes for a deep clean. Suites require more time depending on size and setup.',
+        },
+        {
+          question: 'What is the difference between a departure room and a stayover?',
+          answer:
+            'A departure room is fully reset for the next guest. A stayover is refreshed while respecting the current guest’s belongings and preferences. The SOP, timing and inspection rules should be different.',
+        },
+      ],
+    },
+    fr: {
+      title: 'Checklist nettoyage chambre hôtel : chambre à blanc, recouche et auto-contrôle',
+      description:
+        'Checklist nettoyage chambre hôtel issue du Playbook Housekeeping LuxOps : chariot, entrée en chambre, chambre à blanc, recouche, salle de bain, lit et auto-contrôle final.',
+      date: '2026-05-03',
+      readTime: '9 min de lecture',
+      intro:
+        'Une checklist de nettoyage chambre doit suivre le vrai déroulé du shift, pas une liste générique de tâches. Le Playbook Housekeeping LuxOps distingue la préparation du chariot, le protocole d’entrée, la chambre à blanc, la recouche, le deep cleaning, le DND et l’auto-contrôle final. Cet extrait gratuit donne une structure utilisable par les Room Attendants, gouvernantes et managers qui veulent stabiliser la qualité chambre.',
+      sections: [
+        {
+          h2: 'Commencer avant la chambre : chariot, feuille de route et priorités',
+          content:
+            'Beaucoup d’erreurs housekeeping commencent avant l’entrée en chambre. Un chariot incomplet crée des allers-retours, des oublis et de la pression inutile. Avant le départ en étage, la feuille de route doit être relue : chambres départ, recouches, VIP, arrivées anticipées, départs tardifs, DND, alertes maintenance et demandes spéciales.',
+          h3Items: [
+            {
+              heading: 'Préparation du chariot',
+              text: 'Prévoir draps housse, draps plats, taies, housses de couette, linge de bain, tapis de bain, amenities, papier toilette, mouchoirs, sacs blanchisserie, nettoyant vitres, désinfectant salle de bain, polish et microfibres avec code couleur.',
+            },
+            {
+              heading: 'Ordre de priorité',
+              text: 'Les arrivées anticipées, chambres VIP et chambres avec ETA confirmé passent en priorité. Une chambre attendue par la réception ne doit pas rester derrière une recouche moins urgente sauf arbitrage de la gouvernante.',
+            },
+          ],
+        },
+        {
+          h2: 'Respecter le protocole d’entrée en chambre',
+          content:
+            'Le protocole d’entrée protège la vie privée du client. La séquence LuxOps : positionner le chariot contre le mur, frapper trois fois, annoncer Housekeeping, attendre 10 secondes, répéter, ouvrir partiellement puis annoncer à nouveau avant d’entrer lentement.',
+          h3Items: [
+            {
+              heading: 'Client présent',
+              text: 'Ne pas imposer le service. Demander si le client souhaite que la chambre soit faite maintenant ou plus tard, confirmer l’horaire et tracer la demande si le timing change.',
+            },
+            {
+              heading: 'DND affiché',
+              text: 'Ne pas frapper et ne pas entrer. Noter la chambre DND, poursuivre la feuille de route et appliquer le protocole de contact à l’heure définie par l’établissement.',
+            },
+          ],
+        },
+        {
+          h2: 'Chambre à blanc : la séquence en 7 phases',
+          content:
+            'Une chambre à blanc est une remise en état complète pour le prochain client. Le standard LuxOps prévoit 45 à 60 minutes pour une chambre standard et une séquence fixe en sept phases. L’ordre évite les retours arrière et rend la qualité plus constante.',
+          h3Items: [
+            {
+              heading: '1. Évaluation initiale',
+              text: 'Ouvrir rideaux et lumières, ventiler si possible, repérer odeur, dommage, objet oublié, anomalie maintenance ou condition inhabituelle. Si un objet client est trouvé, arrêter et appliquer la procédure objets trouvés.',
+            },
+            {
+              heading: '2. Salle de bain',
+              text: 'Travailler du propre vers le sale, du haut vers le bas : miroir, plan vasque, lavabo, douche ou baignoire, toilettes, sol et mise en place complète des amenities. Aucun cheveu n’est acceptable.',
+            },
+            {
+              heading: '3. Chambre',
+              text: 'Dépoussiérer du haut vers le bas : grilles, luminaires, cadres, tête de lit, chevets, bureau, TV, miroirs, plinthes et portes. Tester éclairage, TV, télécommande, réveil, téléphone et climatisation.',
+            },
+            {
+              heading: '4. Lit',
+              text: 'Contrôler le protège-matelas, tendre les draps, centrer la couette, lisser les surfaces et positionner les oreillers de façon symétrique. Le lit porte la première impression visuelle.',
+            },
+            {
+              heading: '5-7. Penderie, minibar et présentation finale',
+              text: 'Contrôler penderie, coffre, peignoirs, chaussons, minibar, verres, papeterie, rideaux, odeur, température et vue finale depuis la porte.',
+            },
+          ],
+        },
+        {
+          h2: 'La recouche suit d’autres règles',
+          content:
+            'Une recouche n’est pas une chambre à blanc raccourcie. Le client occupe toujours l’espace. Le Room Attendant rafraîchit la chambre tout en respectant les effets personnels, les préférences observées et la politique linge de l’établissement.',
+          h3Items: [
+            {
+              heading: 'Ce qui change',
+              text: 'Le linge de lit est maintenu sauf s’il est sale, demandé ou prévu au planning. Les effets client sont redressés seulement si nécessaire, jamais réorganisés. Les amenities sont remplacés lorsqu’ils sont consommés.',
+            },
+            {
+              heading: 'Temps cible',
+              text: 'Une recouche standard vise généralement 25 à 35 minutes. Les suites et longs séjours nécessitent plus de temps, surtout lorsque le client s’est installé dans la chambre.',
+            },
+          ],
+        },
+        {
+          h2: 'Auto-contrôle avant de quitter la chambre',
+          content:
+            'Le Room Attendant porte le premier contrôle qualité. Avant de mettre à jour le statut, il doit se placer à la porte et regarder la chambre comme le prochain client.',
+          h3Items: [
+            {
+              heading: 'Scan chambre',
+              text: 'Lit lisse et symétrique, surfaces sans poussière, miroirs sans traces, rideaux alignés, sol propre, penderie organisée et aucun objet client oublié.',
+            },
+            {
+              heading: 'Scan salle de bain',
+              text: 'Toilettes impeccables, lavabo et robinetterie polis, miroir sans traces, sol sec, aucun cheveu dans les coins ou derrière les toilettes, serviettes bien pliées et amenities alignés.',
+            },
+          ],
+        },
+      ],
+      conclusion:
+        'Une bonne checklist nettoyage chambre ne remplace pas la formation. Elle protège la formation. Elle donne le même ordre à chaque Room Attendant, les mêmes points de contrôle à chaque gouvernante et la même première impression à chaque client.',
+      cta: { text: 'Voir le Playbook Housekeeping', href: '/playbooks/hsk' },
+      faqs: [
+        {
+          question: 'Combien de temps faut-il pour nettoyer une chambre d’hôtel ?',
+          answer:
+            'Le repère LuxOps est de 45 à 60 minutes pour une chambre à blanc standard, 25 à 35 minutes pour une recouche et 90 à 120 minutes pour un deep cleaning. Les suites demandent plus de temps selon leur taille.',
+        },
+        {
+          question: 'Quelle différence entre chambre à blanc et recouche ?',
+          answer:
+            'La chambre à blanc est une remise en état complète pour le prochain client. La recouche rafraîchit une chambre occupée en respectant les affaires et préférences du client. SOP, timing et inspection doivent être différents.',
+        },
+      ],
+    },
+  },
+  {
+    slug: 'hotel-housekeeping-supervisor-checklist',
+    en: {
+      title: 'Hotel Housekeeping Supervisor Checklist: Room Inspection, Release and Coaching',
+      description:
+        'A hotel housekeeping supervisor checklist for departure room inspection, Clean vs Inspected status, stayover spot checks, defect tracking and team coaching.',
+      date: '2026-05-03',
+      readTime: '8 min read',
+      intro:
+        'The housekeeping supervisor is the quality gate between a room that looks clean and a room that can be sold. In the LuxOps Housekeeping Playbook, a Room Attendant marks the room Clean, but only a supervisor or manager can release it as Inspected. This checklist is built for that control moment: inspection, release, defect tracking and coaching.',
+      sections: [
+        {
+          h2: 'The supervisor’s first rule: Clean is not sellable',
+          content:
+            'The most important housekeeping status rule is also the easiest to break under check-in pressure. A room in Clean status has been serviced by the Room Attendant, but it is not ready for assignment. Only an Inspected room may be released to Front Office.',
+          h3Items: [
+            {
+              heading: 'Clean',
+              text: 'Set by the Room Attendant after cleaning and self-inspection. The room still requires physical verification.',
+            },
+            {
+              heading: 'Inspected',
+              text: 'Set by the supervisor after checklist inspection. Front Office may now assign the room to an arriving guest.',
+            },
+            {
+              heading: 'Failed inspection',
+              text: 'The attendant corrects the issue immediately, the supervisor re-inspects, and the deficiency is recorded for coaching.',
+            },
+          ],
+        },
+        {
+          h2: 'Start-of-shift supervisor checklist',
+          content:
+            'The supervisor’s day starts before the first inspection. The floor must be organised around departures, arrivals, VIPs, staffing and room readiness pressure.',
+          h3Items: [
+            {
+              heading: 'Review the operational picture',
+              text: 'Check departures, arrivals, VIPs, early arrivals, late check-outs, room moves, DND rooms, maintenance blocks and any rooms linked to prior complaints.',
+            },
+            {
+              heading: 'Allocate fairly and visibly',
+              text: 'Assign room blocks according to room type, departure count, suite workload, staff experience and priority deadlines. Make the priority order clear to the team.',
+            },
+            {
+              heading: 'Check readiness',
+              text: 'Verify trolley stock, pantry levels, linen availability, amenities, chemicals, equipment and any special setup required for VIP rooms.',
+            },
+          ],
+        },
+        {
+          h2: 'Departure room inspection sequence',
+          content:
+            'The inspection should be fast, consistent and physical. The LuxOps sequence starts at the doorway and follows the guest’s first impression through bedroom, bathroom, technology and final exit view.',
+          h3Items: [
+            {
+              heading: 'Entry assessment',
+              text: 'Stand at the doorway for five seconds. Temperature, scent, lighting and overall presentation should feel arrival-ready immediately.',
+            },
+            {
+              heading: 'Bedroom check',
+              text: 'Bed smooth and symmetrical, pillows aligned, surfaces dust-free, wardrobe empty, safe open, windows clean, curtains aligned, lights working, floor and under-bed edges clean.',
+            },
+            {
+              heading: 'Bathroom check',
+              text: 'Toilet clean inside, outside, base and behind. Basin polished. Shower free of residue. Floor dry. No hair anywhere. Towels and amenities positioned to standard.',
+            },
+            {
+              heading: 'Details and technology',
+              text: 'Clock, TV, remote, phone, HVAC, minibar, stationery, guest directory and maintenance issues are checked before release.',
+            },
+          ],
+        },
+        {
+          h2: 'Scoring and defect tracking',
+          content:
+            'Inspection data should make coaching easier. A simple 100-point model keeps the review objective: bathroom 35, bedroom 35, presentation 20 and maintenance 10. The pass threshold is 90.',
+          h3Items: [
+            {
+              heading: 'What to track',
+              text: 'Room number, attendant, defect type, shift, time, pass or fail, corrective action and whether the issue is recurring.',
+            },
+            {
+              heading: 'How to use the data',
+              text: 'Review the top three recurring issues weekly. If the same defect appears across several attendants, train the team. If one room repeats, investigate maintenance or deep cleaning needs.',
+            },
+          ],
+        },
+      ],
+      conclusion:
+        'A housekeeping supervisor checklist is not a policing tool. It is the system that protects arriving guests, supports Room Attendants and gives Front Office confidence that an assigned room is genuinely ready.',
+      cta: { text: 'View the Housekeeping Playbook', href: '/playbooks/hsk' },
+      faqs: [
+        {
+          question: 'Should every hotel departure room be inspected?',
+          answer:
+            'For luxury and high-standard properties, yes. The LuxOps standard is 100% supervisor inspection of departure rooms before they are released as Inspected.',
+        },
+        {
+          question: 'What percentage of stayover rooms should supervisors check?',
+          answer:
+            'The LuxOps benchmark is 20-30% of stayover rooms daily, prioritising new attendants, VIP rooms, long stays and rooms linked to prior complaints.',
+        },
+      ],
+    },
+    fr: {
+      title: 'Checklist gouvernante hôtel : inspection chambre, libération et coaching',
+      description:
+        'Checklist gouvernante hôtel issue du Playbook Housekeeping LuxOps : inspection chambre départ, statut Clean/Inspected, contrôles recouche, suivi des défauts et coaching.',
+      date: '2026-05-03',
+      readTime: '8 min de lecture',
+      intro:
+        'La gouvernante est le point de contrôle entre une chambre qui paraît propre et une chambre réellement attribuable. Dans le Playbook Housekeeping LuxOps, le Room Attendant passe la chambre en Clean, mais seule la gouvernante ou le manager peut la libérer en Inspected. Cette checklist couvre ce moment critique : inspection, libération, suivi des défauts et coaching.',
+      sections: [
+        {
+          h2: 'Première règle : Clean n’est pas vendable',
+          content:
+            'La règle de statut chambre la plus importante est aussi celle qui saute le plus vite sous pression check-in. Une chambre en Clean a été faite par le Room Attendant, mais elle n’est pas encore attribuable. Seule une chambre Inspected peut être libérée à la réception.',
+          h3Items: [
+            {
+              heading: 'Clean',
+              text: 'Statut posé par le Room Attendant après nettoyage et auto-contrôle. La chambre nécessite encore une vérification physique.',
+            },
+            {
+              heading: 'Inspected',
+              text: 'Statut posé par la gouvernante après inspection checklist. La réception peut attribuer la chambre à un client arrivant.',
+            },
+            {
+              heading: 'Non conforme',
+              text: 'L’équipier corrige immédiatement, la gouvernante réinspecte et le défaut est tracé pour coaching.',
+            },
+          ],
+        },
+        {
+          h2: 'Checklist gouvernante en début de shift',
+          content:
+            'La journée de la gouvernante commence avant la première inspection. L’étage doit être organisé selon les départs, arrivées, VIP, staffing et pression de libération chambres.',
+          h3Items: [
+            {
+              heading: 'Lire la situation opérationnelle',
+              text: 'Contrôler départs, arrivées, VIP, arrivées anticipées, départs tardifs, room moves, DND, chambres hors service et chambres liées à une réclamation récente.',
+            },
+            {
+              heading: 'Distribuer clairement',
+              text: 'Affecter les chambres selon type de chambre, nombre de départs, suites, niveau d’expérience, contraintes horaires et priorités réception.',
+            },
+            {
+              heading: 'Vérifier la préparation',
+              text: 'Contrôler chariots, offices, linge, amenities, produits, matériel et mises en place spécifiques VIP.',
+            },
+          ],
+        },
+        {
+          h2: 'Séquence d’inspection chambre départ',
+          content:
+            'L’inspection doit être rapide, cohérente et physique. La séquence LuxOps commence depuis la porte et suit la première impression client : chambre, salle de bain, technologie et regard final.',
+          h3Items: [
+            {
+              heading: 'Première impression',
+              text: 'Se placer à la porte pendant quelques secondes. Température, odeur, lumière et présentation doivent donner immédiatement une impression prête à l’arrivée.',
+            },
+            {
+              heading: 'Contrôle chambre',
+              text: 'Lit lisse et symétrique, oreillers alignés, surfaces sans poussière, placard vide, coffre ouvert, fenêtres propres, rideaux droits, éclairages fonctionnels, sol et dessous de lit propres.',
+            },
+            {
+              heading: 'Contrôle salle de bain',
+              text: 'Toilettes propres intérieur, extérieur, base et arrière. Lavabo poli. Douche sans résidus. Sol sec. Aucun cheveu. Serviettes et amenities selon standard.',
+            },
+            {
+              heading: 'Détails et technique',
+              text: 'Réveil, TV, télécommande, téléphone, climatisation, minibar, papeterie, guide client et défauts maintenance sont vérifiés avant libération.',
+            },
+          ],
+        },
+        {
+          h2: 'Scoring et suivi des défauts',
+          content:
+            'Les données d’inspection doivent faciliter le coaching. Un modèle 100 points rend la revue objective : salle de bain 35, chambre 35, présentation 20 et maintenance 10. Le seuil de passage est 90.',
+          h3Items: [
+            {
+              heading: 'Ce qu’il faut tracer',
+              text: 'Numéro de chambre, Room Attendant, type de défaut, shift, heure, conforme ou non conforme, correction réalisée et caractère récurrent.',
+            },
+            {
+              heading: 'Comment utiliser les données',
+              text: 'Revoir chaque semaine les trois défauts les plus fréquents. Si le même défaut touche plusieurs équipiers, former l’équipe. Si une chambre revient souvent, vérifier maintenance ou deep cleaning.',
+            },
+          ],
+        },
+      ],
+      conclusion:
+        'Une checklist gouvernante n’est pas un outil de sanction. C’est le système qui protège les arrivées, soutient les Room Attendants et donne à la réception la certitude qu’une chambre attribuée est vraiment prête.',
+      cta: { text: 'Voir le Playbook Housekeeping', href: '/playbooks/hsk' },
+      faqs: [
+        {
+          question: 'Faut-il inspecter toutes les chambres départ ?',
+          answer:
+            'Pour un établissement haut de gamme, oui. Le standard LuxOps prévoit 100% d’inspection gouvernante sur les chambres départ avant passage en Inspected.',
+        },
+        {
+          question: 'Quel pourcentage de recouches contrôler ?',
+          answer:
+            'Le repère LuxOps est de contrôler 20 à 30% des recouches chaque jour, avec priorité aux nouveaux Room Attendants, VIP, longs séjours et chambres liées à une réclamation.',
+        },
+      ],
+    },
+  },
+  {
+    slug: 'hotel-bathroom-cleaning-sop',
+    en: {
+      title: 'Hotel Bathroom Cleaning SOP: Step-by-Step Housekeeping Standard',
+      description:
+        'Hotel bathroom cleaning SOP for housekeeping teams: clean-to-dirty sequence, top-to-bottom method, toilet, sink, shower, floor, amenities and supervisor inspection points.',
+      date: '2026-05-03',
+      readTime: '7 min read',
+      intro:
+        'Bathroom defects create some of the strongest guest reactions in hotels. A single hair, water spot or odour can erase the impression of an otherwise well-presented room. The LuxOps Housekeeping Playbook treats bathroom cleaning as a fixed sequence: clean to dirty, top to bottom, dry to wet where possible, with final checks from the guest perspective.',
+      sections: [
+        {
+          h2: 'Prepare the bathroom before applying products',
+          content:
+            'Before cleaning starts, remove used towels, bath mat, glasses, open amenities and visible waste. Check for guest belongings and stop immediately if anything is found in a departure room. Ventilation and lighting should be turned on so residue and water spots are visible.',
+        },
+        {
+          h2: 'Follow the clean-to-dirty sequence',
+          content:
+            'The standard order protects hygiene and avoids cross-contamination. Use the correct colour-coded microfibre for each surface. Toilet cloths and toilet-area tools must never touch mirrors, basin, amenities or general surfaces.',
+          h3Items: [
+            {
+              heading: '1. Mirror and glass',
+              text: 'Clean mirrors and glass first using the dedicated glass cloth. Check from several angles because streaks often appear only from the guest’s viewing position.',
+            },
+            {
+              heading: '2. Vanity, basin and chrome',
+              text: 'Clean the counter, basin, overflow, drain, faucet and handles. Dry-polish chrome so there are no water spots around the tap or splashback.',
+            },
+            {
+              heading: '3. Shower or bath',
+              text: 'Clean walls, tiles, grout, door, curtain, tub, drain, fixtures and showerhead. Remove soap residue and scale before final polishing.',
+            },
+            {
+              heading: '4. Toilet last',
+              text: 'Clean exterior surfaces first, then seat and underside, then bowl and under-rim. Finish around the base and behind the toilet, where defects are often missed.',
+            },
+          ],
+        },
+        {
+          h2: 'Finish with floor, amenities and scent',
+          content:
+            'The floor should be cleaned from the farthest point toward the door and left completely dry. Amenities must be complete, aligned, labels forward and packaging intact. The final scent should be fresh and neutral, never chemical or damp.',
+        },
+        {
+          h2: 'Supervisor inspection points',
+          content:
+            'A bathroom can look clean from the doorway and still fail inspection. Supervisors should check behind the toilet, floor corners, shower drain, mirror angles, chrome, grout, towel folds, glassware and amenity placement.',
+        },
+      ],
+      conclusion:
+        'A hotel bathroom cleaning SOP succeeds when the sequence is always the same. The Room Attendant knows what to clean, in what order and to what standard; the supervisor knows exactly what to verify before release.',
+      cta: { text: 'View the Housekeeping Playbook', href: '/playbooks/hsk' },
+      faqs: [
+        {
+          question: 'What is the correct order for cleaning a hotel bathroom?',
+          answer:
+            'The LuxOps sequence is mirror and glass, vanity and basin, shower or bath, toilet, floor, amenities and final inspection. The logic is clean to dirty and top to bottom.',
+        },
+        {
+          question: 'What is the most common bathroom inspection failure?',
+          answer:
+            'Hair is the most visible and least tolerated defect. Supervisors should check corners, behind the toilet, shower drain, bath mat area and floor edges.',
+        },
+      ],
+    },
+    fr: {
+      title: 'SOP nettoyage salle de bain hôtel : procédure housekeeping étape par étape',
+      description:
+        'SOP nettoyage salle de bain hôtel issue du Playbook Housekeeping LuxOps : séquence propre-sale, miroir, vasque, douche, toilettes, sol, amenities et inspection gouvernante.',
+      date: '2026-05-03',
+      readTime: '7 min de lecture',
+      intro:
+        'Les défauts de salle de bain déclenchent certaines des réactions client les plus fortes en hôtellerie. Un cheveu, une trace d’eau ou une odeur peut annuler l’impression d’une chambre pourtant bien présentée. Le Playbook Housekeeping LuxOps traite la salle de bain comme une séquence fixe : du propre vers le sale, du haut vers le bas, avec un contrôle final depuis la perspective client.',
+      sections: [
+        {
+          h2: 'Préparer la salle de bain avant les produits',
+          content:
+            'Avant de nettoyer, retirer serviettes utilisées, tapis de bain, verres, amenities ouverts et déchets visibles. Vérifier la présence d’objets client et arrêter immédiatement si un objet est trouvé dans une chambre à blanc. Lumière et ventilation doivent être activées pour voir traces et résidus.',
+        },
+        {
+          h2: 'Suivre la séquence du propre vers le sale',
+          content:
+            'L’ordre protège l’hygiène et évite la contamination croisée. Utiliser la bonne microfibre selon le code couleur. Les chiffons toilettes et outils de zone WC ne doivent jamais toucher miroir, vasque, amenities ou surfaces générales.',
+          h3Items: [
+            {
+              heading: '1. Miroir et vitres',
+              text: 'Nettoyer miroirs et vitres avec la microfibre dédiée. Vérifier sous plusieurs angles, car les traces apparaissent souvent depuis la position du client.',
+            },
+            {
+              heading: '2. Plan vasque, lavabo et chrome',
+              text: 'Nettoyer plan, vasque, trop-plein, bonde, robinetterie et poignées. Lustrer le chrome pour éliminer les traces d’eau autour du robinet et de la crédence.',
+            },
+            {
+              heading: '3. Douche ou baignoire',
+              text: 'Nettoyer murs, faïences, joints, porte, rideau, bac, bonde, robinetterie et pommeau. Retirer savon incrusté et calcaire avant finition.',
+            },
+            {
+              heading: '4. Toilettes en dernier',
+              text: 'Nettoyer d’abord l’extérieur, puis abattant et dessous, puis cuvette et sous-rebord. Terminer par la base et l’arrière, zones souvent oubliées.',
+            },
+          ],
+        },
+        {
+          h2: 'Terminer par sol, amenities et odeur',
+          content:
+            'Le sol se nettoie du fond vers la porte et doit rester complètement sec. Les amenities doivent être complets, alignés, étiquettes visibles et emballages intacts. L’odeur finale doit être fraîche et neutre, jamais chimique ou humide.',
+        },
+        {
+          h2: 'Points d’inspection gouvernante',
+          content:
+            'Une salle de bain peut paraître propre depuis la porte et échouer au contrôle. La gouvernante vérifie l’arrière des toilettes, les coins, la bonde de douche, les angles miroir, la robinetterie, les joints, le pliage serviettes, les verres et la mise en place amenities.',
+        },
+      ],
+      conclusion:
+        'Une SOP salle de bain fonctionne lorsque la séquence ne change pas. Le Room Attendant sait quoi nettoyer, dans quel ordre et à quel standard ; la gouvernante sait exactement quoi vérifier avant libération.',
+      cta: { text: 'Voir le Playbook Housekeeping', href: '/playbooks/hsk' },
+      faqs: [
+        {
+          question: 'Dans quel ordre nettoyer une salle de bain d’hôtel ?',
+          answer:
+            'La séquence LuxOps : miroir et vitres, plan vasque, douche ou baignoire, toilettes, sol, amenities et inspection finale. La logique est du propre vers le sale et du haut vers le bas.',
+        },
+        {
+          question: 'Quel défaut salle de bain est le plus critique ?',
+          answer:
+            'Le cheveu est le défaut le plus visible et le moins toléré. Il faut contrôler coins, arrière toilettes, bonde de douche, zone tapis de bain et bords de sol.',
+        },
+      ],
+    },
+  },
 ]

@@ -25,6 +25,9 @@ const KEYWORDS_EN: Record<string, string> = {
   'hotel-room-attendant-checklist': 'hotel room attendant checklist, room attendant SOP, departure room cleaning checklist, stayover room cleaning checklist, housekeeping room attendant duties',
   'hotel-front-desk-checklist': 'hotel front desk checklist, front desk shift checklist hotel, hotel check-in checklist, hotel check-out checklist, front desk handover checklist',
   'hotel-dnd-procedure': 'hotel DND procedure, housekeeping do not disturb procedure, hotel do not disturb SOP, DND room housekeeping, hotel welfare check DND',
+  'hotel-room-cleaning-checklist': 'hotel room cleaning checklist, hotel room cleaning SOP, hotel housekeeping checklist, departure room cleaning checklist, stayover room cleaning checklist, room attendant checklist',
+  'hotel-housekeeping-supervisor-checklist': 'hotel housekeeping supervisor checklist, housekeeping supervisor inspection checklist, hotel room inspection checklist, Clean Inspected hotel room status, housekeeping quality control checklist',
+  'hotel-bathroom-cleaning-sop': 'hotel bathroom cleaning SOP, hotel bathroom cleaning checklist, housekeeping bathroom cleaning procedure, hotel bathroom inspection checklist, hotel cleaning SOP',
 }
 
 const KEYWORDS_FR: Record<string, string> = {
@@ -46,6 +49,9 @@ const KEYWORDS_FR: Record<string, string> = {
   'hotel-room-attendant-checklist': 'checklist équipier étage hôtel, checklist femme de chambre hôtel, chambre à blanc checklist, recouche housekeeping, SOP housekeeping hôtel',
   'hotel-front-desk-checklist': 'checklist réception hôtel, checklist check-in hôtel, checklist check-out hôtel, passation réception hôtel, main courante réception hôtel',
   'hotel-dnd-procedure': 'procédure DND hôtel, procédure ne pas déranger hôtel, SOP housekeeping DND, chambre DND hôtel, contrôle sécurité DND hôtel',
+  'hotel-room-cleaning-checklist': 'checklist nettoyage chambre hôtel, checklist chambre à blanc hôtel, procédure nettoyage chambre hôtel, recouche housekeeping, checklist femme de chambre hôtel, Room Attendant checklist',
+  'hotel-housekeeping-supervisor-checklist': 'checklist gouvernante hôtel, checklist inspection chambre hôtel, checklist gouvernante étage, contrôle qualité housekeeping, statut Clean Inspected hôtel',
+  'hotel-bathroom-cleaning-sop': 'SOP nettoyage salle de bain hôtel, procédure nettoyage salle de bain hôtel, checklist salle de bain hôtel, contrôle salle de bain housekeeping, procédure housekeeping hôtel',
 }
 
 const CONTENT_UPGRADES: Record<string, {
@@ -606,6 +612,96 @@ const PLAYBOOK_EXCERPTS: Record<string, {
       ctaHref: '/fr/playbooks/hsk',
     },
   },
+  'hotel-room-cleaning-checklist': {
+    en: {
+      label: 'Free excerpt from the LuxOps Housekeeping Playbook',
+      title: 'Room cleaning sequence: the 7 phases that keep quality stable',
+      intro: 'This extract is adapted from Chapter 2, Room Cleaning Standards & Procedures. It turns room cleaning into a repeatable operating flow for departure rooms and stayovers.',
+      rows: [
+        { term: 'Trolley first', detail: 'Stock linen, amenities, chemicals and colour-coded microfibres before leaving the pantry.' },
+        { term: 'Entry protocol', detail: 'Knock, announce, wait, repeat, open partially and announce again before entering.' },
+        { term: 'Departure room', detail: '45-60 minutes for a standard room, using the 7-phase sequence from assessment to final presentation.' },
+        { term: 'Stayover', detail: '25-35 minutes, refresh the room without disturbing guest belongings or preferences.' },
+        { term: 'Self-check', detail: 'The attendant stands at the doorway and inspects the room as the next guest would.' },
+      ],
+      ctaText: 'View the Housekeeping Playbook',
+      ctaHref: '/en/playbooks/hsk',
+    },
+    fr: {
+      label: 'Extrait gratuit du Playbook Housekeeping LuxOps',
+      title: 'Séquence nettoyage chambre : les 7 phases qui stabilisent la qualité',
+      intro: 'Cet extrait est adapté du chapitre Standards & procédures de nettoyage des chambres. Il transforme le nettoyage en flux opérationnel répétable pour chambre à blanc et recouche.',
+      rows: [
+        { term: 'Chariot d’abord', detail: 'Préparer linge, amenities, produits et microfibres code couleur avant de quitter l’office.' },
+        { term: 'Entrée chambre', detail: 'Frapper, annoncer, attendre, répéter, ouvrir partiellement puis annoncer à nouveau avant d’entrer.' },
+        { term: 'Chambre à blanc', detail: '45-60 minutes pour une chambre standard, avec séquence en 7 phases jusqu’à la présentation finale.' },
+        { term: 'Recouche', detail: '25-35 minutes, rafraîchir la chambre sans déranger les affaires ni préférences client.' },
+        { term: 'Auto-contrôle', detail: 'Le Room Attendant se place à la porte et inspecte la chambre comme le prochain client.' },
+      ],
+      ctaText: 'Voir le Playbook Housekeeping',
+      ctaHref: '/fr/playbooks/hsk',
+    },
+  },
+  'hotel-housekeeping-supervisor-checklist': {
+    en: {
+      label: 'Free excerpt from the LuxOps Housekeeping Playbook',
+      title: 'Supervisor inspection: Clean is not ready for sale',
+      intro: 'This extract is adapted from Chapter 6, Quality Control & Inspections. It defines the control point between housekeeping and front desk room assignment.',
+      rows: [
+        { term: 'Clean', detail: 'Set by the Room Attendant after cleaning. The room is not sellable yet.' },
+        { term: 'Inspected', detail: 'Set by the supervisor after physical checklist inspection. Front Office may assign it.' },
+        { term: '100% departures', detail: 'Every departure room is inspected before release in high-standard properties.' },
+        { term: '20-30% stayovers', detail: 'Stayover spot checks prioritise new attendants, VIPs, long stays and previous complaints.' },
+        { term: '90/100 threshold', detail: 'LuxOps scoring uses Bathroom 35, Bedroom 35, Presentation 20 and Maintenance 10.' },
+      ],
+      ctaText: 'View the Housekeeping Playbook',
+      ctaHref: '/en/playbooks/hsk',
+    },
+    fr: {
+      label: 'Extrait gratuit du Playbook Housekeeping LuxOps',
+      title: 'Inspection gouvernante : Clean n’est pas attribuable',
+      intro: 'Cet extrait est adapté du chapitre Contrôle Qualité & Inspections. Il définit le point de contrôle entre housekeeping et attribution réception.',
+      rows: [
+        { term: 'Clean', detail: 'Statut posé par le Room Attendant après nettoyage. La chambre n’est pas encore vendable.' },
+        { term: 'Inspected', detail: 'Statut posé par la gouvernante après inspection physique checklist. La réception peut attribuer.' },
+        { term: '100% départs', detail: 'Chaque chambre départ est inspectée avant libération dans un établissement haut de gamme.' },
+        { term: '20-30% recouches', detail: 'Les contrôles recouche priorisent nouveaux équipiers, VIP, longs séjours et réclamations.' },
+        { term: 'Seuil 90/100', detail: 'Le score LuxOps répartit salle de bain 35, chambre 35, présentation 20 et maintenance 10.' },
+      ],
+      ctaText: 'Voir le Playbook Housekeeping',
+      ctaHref: '/fr/playbooks/hsk',
+    },
+  },
+  'hotel-bathroom-cleaning-sop': {
+    en: {
+      label: 'Free excerpt from the LuxOps Housekeeping Playbook',
+      title: 'Bathroom SOP: clean to dirty, top to bottom',
+      intro: 'This extract is adapted from the bathroom standards section of the room cleaning chapter. It gives attendants and supervisors the same sequence and inspection language.',
+      rows: [
+        { term: 'Mirror first', detail: 'Clean glass and mirrors with the dedicated cloth and check from several angles.' },
+        { term: 'Vanity and chrome', detail: 'Clean basin, counter, drain and faucet, then dry-polish to remove water spots.' },
+        { term: 'Shower or bath', detail: 'Remove soap residue, scale and hair from walls, fixtures, drain and floor.' },
+        { term: 'Toilet last', detail: 'Exterior, seat, underside, bowl, under-rim, base and behind toilet are cleaned last.' },
+        { term: 'Final rule', detail: 'No hair anywhere. Floor dry, amenities aligned, scent fresh and neutral.' },
+      ],
+      ctaText: 'View the Housekeeping Playbook',
+      ctaHref: '/en/playbooks/hsk',
+    },
+    fr: {
+      label: 'Extrait gratuit du Playbook Housekeeping LuxOps',
+      title: 'SOP salle de bain : du propre vers le sale, du haut vers le bas',
+      intro: 'Cet extrait est adapté de la section salle de bain du chapitre nettoyage chambre. Il donne aux Room Attendants et gouvernantes la même séquence et le même langage d’inspection.',
+      rows: [
+        { term: 'Miroir d’abord', detail: 'Nettoyer vitres et miroirs avec la microfibre dédiée puis vérifier sous plusieurs angles.' },
+        { term: 'Vasque et chrome', detail: 'Nettoyer plan, bonde et robinetterie, puis lustrer pour supprimer les traces d’eau.' },
+        { term: 'Douche ou baignoire', detail: 'Retirer savon, calcaire et cheveux des parois, robinetteries, bonde et sol.' },
+        { term: 'Toilettes en dernier', detail: 'Extérieur, abattant, dessous, cuvette, sous-rebord, base et arrière sont nettoyés en dernier.' },
+        { term: 'Règle finale', detail: 'Aucun cheveu. Sol sec, amenities alignés, odeur fraîche et neutre.' },
+      ],
+      ctaText: 'Voir le Playbook Housekeeping',
+      ctaHref: '/fr/playbooks/hsk',
+    },
+  },
   'hotel-front-desk-checklist': {
     en: {
       label: 'Free excerpt from the LuxOps Front Office Playbook',
@@ -797,6 +893,26 @@ export default async function BlogArticlePage({
               titleEn: 'Download a free chapter of the Housekeeping Playbook',
               titleFr: 'Téléchargez un chapitre gratuit du Playbook Housekeeping',
             },
+            'hotel-room-attendant-checklist': {
+              titleEn: 'Download a free chapter of the Housekeeping Playbook',
+              titleFr: 'Téléchargez un chapitre gratuit du Playbook Housekeeping',
+            },
+            'hotel-room-cleaning-checklist': {
+              titleEn: 'Download a free chapter of the Housekeeping Playbook',
+              titleFr: 'Téléchargez un chapitre gratuit du Playbook Housekeeping',
+            },
+            'hotel-housekeeping-supervisor-checklist': {
+              titleEn: 'Download a free chapter of the Housekeeping Playbook',
+              titleFr: 'Téléchargez un chapitre gratuit du Playbook Housekeeping',
+            },
+            'hotel-bathroom-cleaning-sop': {
+              titleEn: 'Download a free chapter of the Housekeeping Playbook',
+              titleFr: 'Téléchargez un chapitre gratuit du Playbook Housekeeping',
+            },
+            'hotel-dnd-procedure': {
+              titleEn: 'Download a free chapter of the Housekeeping Playbook',
+              titleFr: 'Téléchargez un chapitre gratuit du Playbook Housekeeping',
+            },
             'hotel-front-office-sop': {
               titleEn: 'Download a free chapter of the Front Office Playbook',
               titleFr: 'Téléchargez un chapitre gratuit du Playbook Réception',
@@ -977,6 +1093,18 @@ export default async function BlogArticlePage({
             'hotel-room-attendant-checklist': [
               { href: '/hotel-housekeeping-checklist', labelEn: 'Housekeeping Checklist', labelFr: 'Checklist housekeeping', descEn: 'The full checklist system for room attendants and supervisors.', descFr: 'Le système complet de checklists pour équipiers et gouvernantes.' },
               { href: '/housekeeping-sop', labelEn: 'Housekeeping SOP', labelFr: 'SOP Housekeeping', descEn: 'The procedures behind daily room cleaning and inspection.', descFr: 'Les procédures derrière la remise en état et l’inspection.' },
+            ],
+            'hotel-room-cleaning-checklist': [
+              { href: '/hotel-housekeeping-checklist', labelEn: 'Hotel Housekeeping Checklist', labelFr: 'Checklist housekeeping hôtel', descEn: 'Role-based checklists for room attendants and supervisors.', descFr: 'Checklists par rôle pour Room Attendants et gouvernantes.' },
+              { href: '/housekeeping-sop', labelEn: 'Housekeeping SOP', labelFr: 'SOP Housekeeping', descEn: 'The procedures behind room cleaning, inspection and handover.', descFr: 'Les procédures derrière nettoyage chambre, inspection et passation.' },
+            ],
+            'hotel-housekeeping-supervisor-checklist': [
+              { href: '/hotel-housekeeping-checklist', labelEn: 'Housekeeping Checklists', labelFr: 'Checklists housekeeping', descEn: 'Room attendant, supervisor, inspection and quality scoring checklists.', descFr: 'Checklists Room Attendant, gouvernante, inspection et score qualité.' },
+              { href: '/blog/housekeeping-room-inspection', labelEn: 'Room Inspection Checklist', labelFr: 'Checklist inspection chambre', descEn: 'A deeper room inspection framework for quality control.', descFr: 'Un cadre d’inspection chambre plus détaillé pour le contrôle qualité.' },
+            ],
+            'hotel-bathroom-cleaning-sop': [
+              { href: '/blog/hotel-room-cleaning-checklist', labelEn: 'Hotel Room Cleaning Checklist', labelFr: 'Checklist nettoyage chambre hôtel', descEn: 'The complete room cleaning sequence around the bathroom SOP.', descFr: 'La séquence chambre complète autour de la SOP salle de bain.' },
+              { href: '/housekeeping-sop', labelEn: 'Housekeeping SOP', labelFr: 'SOP Housekeeping', descEn: 'The procedure library behind consistent housekeeping operations.', descFr: 'La bibliothèque de procédures derrière un housekeeping constant.' },
             ],
             'hotel-front-desk-checklist': [
               { href: '/front-office-sop', labelEn: 'Front Office SOP', labelFr: 'SOP Réception Hôtel', descEn: 'Reception, check-in, billing, handover and night audit procedures.', descFr: 'Accueil, check-in, facturation, passation et audit de nuit.' },

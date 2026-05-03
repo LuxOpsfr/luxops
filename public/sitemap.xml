@@ -818,6 +818,72 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Blog: Hotel Room Cleaning Checklist EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/blog/hotel-room-cleaning-checklist</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-room-cleaning-checklist"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-room-cleaning-checklist"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/hotel-room-cleaning-checklist"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-03</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: Hotel Room Cleaning Checklist FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/blog/hotel-room-cleaning-checklist</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-room-cleaning-checklist"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-room-cleaning-checklist"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/hotel-room-cleaning-checklist"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-03</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: Hotel Housekeeping Supervisor Checklist EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/blog/hotel-housekeeping-supervisor-checklist</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-housekeeping-supervisor-checklist"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-housekeeping-supervisor-checklist"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/hotel-housekeeping-supervisor-checklist"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-03</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: Hotel Housekeeping Supervisor Checklist FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/blog/hotel-housekeeping-supervisor-checklist</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-housekeeping-supervisor-checklist"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-housekeeping-supervisor-checklist"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/hotel-housekeeping-supervisor-checklist"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-03</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: Hotel Bathroom Cleaning SOP EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/blog/hotel-bathroom-cleaning-sop</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-bathroom-cleaning-sop"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-bathroom-cleaning-sop"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/hotel-bathroom-cleaning-sop"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-03</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: Hotel Bathroom Cleaning SOP FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/blog/hotel-bathroom-cleaning-sop</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-bathroom-cleaning-sop"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-bathroom-cleaning-sop"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/hotel-bathroom-cleaning-sop"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-03</lastmod>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Free Hotel Procedures — Lead Magnet EN -->
   <url>
     <loc>https://www.luxops.fr/en/free-hotel-procedures</loc>

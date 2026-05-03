@@ -6,14 +6,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const isEN = locale === 'en'
   return {
     title: isEN
-      ? 'Hotel Housekeeping Checklist: Room Inspection & SOP Template | LuxOps'
-      : 'Checklist Housekeeping Hôtel Gratuite (PDF Imprimable) | LuxOps',
+      ? 'Hotel Housekeeping Checklist: Room Cleaning, Inspection & HSK SOP | LuxOps'
+      : 'Checklist Housekeeping Hôtel : chambre à blanc, inspection & SOP HSK | LuxOps',
     description: isEN
-      ? 'Hotel housekeeping checklist adapted from the LuxOps Housekeeping Playbook. Room attendant sequence, departure inspection, supervisor controls, linen and amenities standards.'
-      : 'Téléchargez une checklist inspection chambre 30 points, un modèle de tournée superviseur et une grille audit LQA. Gratuite et prête à imprimer.',
+      ? 'Hotel housekeeping checklist adapted from the LuxOps Housekeeping Playbook: room attendant sequence, departure room cleaning, supervisor inspection, Clean vs Inspected status and 100-point HSK quality grid.'
+      : 'Checklist housekeeping hôtel issue du Playbook LuxOps : chambre à blanc, recouche, chariot, inspection gouvernante, statut Clean/Inspected, grille qualité 100 points.',
     keywords: isEN
-      ? 'hotel housekeeping checklist, hotel room inspection checklist, hotel quality assurance checklist, hotel quality control checklist, housekeeping SOP checklist, housekeeping audit, hotel inspection'
-      : 'checklist housekeeping hôtel, checklist inspection chambre hôtel, audit qualité housekeeping, gouvernante étage checklist, SOP housekeeping hôtel, contrôle qualité housekeeping',
+      ? 'hotel housekeeping checklist, hotel room cleaning checklist, hotel room inspection checklist, room attendant checklist, housekeeping supervisor checklist, housekeeping SOP checklist, hotel cleaning SOP'
+      : 'checklist housekeeping hôtel, checklist chambre à blanc hôtel, checklist inspection chambre hôtel, checklist gouvernante hôtel, checklist femme de chambre hôtel, SOP housekeeping hôtel, contrôle qualité housekeeping',
     alternates: {
       canonical: `https://www.luxops.fr/${locale}/hotel-housekeeping-checklist`,
       languages: {
@@ -286,15 +286,15 @@ const AUDIT_ROWS_FR: AuditRow[] = [
 const FAQ_FR: FAQItem[] = [
   {
     q: "Que doit contenir une checklist d'inspection de chambre d'hôtel ?",
-    a: "Une checklist d'inspection complète couvre quatre domaines : la propreté et la présentation de la chambre, l'hygiène et les dotations de la salle de bain, les vérifications techniques (éclairage, climatisation, TV) et la remontée des pannes maintenance. Le standard LuxOps applique 30 points de contrôle pour la femme de chambre et une validation en 15 points pour la gouvernante d'étage.",
+    a: "Une checklist d'inspection complète couvre la première impression, le lit, les surfaces, la salle de bain, les amenities, le minibar, la maintenance et le statut PMS. Le standard LuxOps applique un modèle 100 points : salle de bain 35, chambre 35, présentation 20 et maintenance 10.",
   },
   {
     q: "Qu'est-ce qu'une SOP housekeeping ?",
-    a: "Une SOP (Standard Operating Procedure) housekeeping définit la séquence exacte des tâches, le temps alloué et le niveau de qualité attendu pour chaque étape du nettoyage. Elle garantit que chaque client bénéficie du même niveau de service, quel que soit l'agent qui assure la prestation.",
+    a: "Une SOP housekeeping définit la méthode : qui intervient, dans quel ordre, avec quels produits, quel timing et quel standard de sortie. Pour une chambre à blanc, la SOP LuxOps suit 7 phases : évaluation initiale, salle de bain, chambre, lit, penderie, minibar et présentation finale.",
   },
   {
     q: 'Comment les hôtels assurent-ils le contrôle qualité en housekeeping ?',
-    a: "Les hôtels fonctionnent avec un système de contrôle qualité à deux niveaux : la femme de chambre valide elle-même sa checklist avant de passer la chambre en BSH, puis la gouvernante d'étage effectue une inspection sur un pourcentage minimum de chambres, généralement 20% par jour et 100% sur les chambres VIP et les entrées du jour.",
+    a: "Un système qualité solide fonctionne à trois niveaux : auto-contrôle du Room Attendant sur chaque chambre, inspection gouvernante sur 100% des chambres départ avant libération, et contrôles aléatoires de 20 à 30% des recouches chaque jour.",
   },
   {
     q: "Qu'est-ce qu'un audit LQA dans un hôtel ?",
@@ -325,20 +325,20 @@ const SOP_STEPS_EN = [
 
 const SOP_STEPS_FR = [
   {
-    title: 'Définir les catégories de chambres et les niveaux de service',
-    body: 'Départ, recouche, suite, chambre VIP : chaque type de prestation a ses propres exigences et son propre temps de passage. Commencez par cartographier vos catégories avant de rédiger votre SOP.',
+    title: 'Séparer chambre à blanc, recouche, suite et deep cleaning',
+    body: 'Le Playbook LuxOps distingue les temps et standards : 45-60 minutes pour une chambre à blanc standard, 25-35 minutes pour une recouche, 75-90 minutes pour une suite en départ et 90-120 minutes pour un deep cleaning.',
   },
   {
-    title: 'Fixer des temps de passage par type de chambre',
-    body: 'Un département housekeeping performant sait exactement combien de temps prend chaque prestation. Repères sectoriels : 20 à 30 minutes pour une recouche, 35 à 45 minutes pour un départ, 60 à 90 minutes pour une suite.',
+    title: 'Protéger le workflow Clean vers Inspected',
+    body: 'Une chambre passée en Clean par le Room Attendant n’est pas vendable. Seule une chambre contrôlée et passée en Inspected par la gouvernante ou le manager peut être attribuée par la réception.',
   },
   {
-    title: 'Former sur la checklist, pas de mémoire',
-    body: "Une femme de chambre formée uniquement par observation reproduira les habitudes, bonnes ou mauvaises, de celle qui l'a formée. Une SOP écrite brise ce cycle et établit un niveau de référence uniforme pour toute l'équipe.",
+    title: 'Utiliser la checklist comme outil de coaching',
+    body: 'Les scores d’inspection doivent révéler les tendances : cheveux en salle de bain, traces d’eau, poussière, lit irrégulier, amenities incomplets ou défauts maintenance. Le but est de coacher précisément, pas de sanctionner.',
   },
   {
-    title: "Utiliser les scores d'inspection comme outil de coaching, pas de sanction",
-    body: "Le contrôle qualité ne fonctionne que dans un climat de confiance. Partagez les scores d'inspection lors d'un brief hebdomadaire. Travaillez sur les tendances, pas sur les individus. Une équipe qui progresse ensemble reste ensemble.",
+    title: 'Relier checklist, chariot, stock et timing',
+    body: 'Une checklist échoue si le chariot manque de linge, amenities, microfibres ou produits. Définissez les par levels des offices et chariots, puis comparez chaque jour les consommations à l’occupation et aux feuilles de route.',
   },
 ]
 
@@ -376,12 +376,12 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
               {isEN
                 ? 'Hotel Housekeeping Checklist: Room Attendant, Supervisor Inspection & HSK SOP'
-                : 'La Checklist Housekeeping Hôtelière Complète'}
+                : 'Checklist Housekeeping Hôtel : chambre à blanc, recouche et inspection gouvernante'}
             </h1>
             <p className="text-lg text-blue-100 max-w-2xl mx-auto mb-8">
               {isEN
                 ? 'A playbook-based hotel housekeeping checklist covering departure rooms, stayovers, Clean vs Inspected room status, supervisor inspection and the 100-point HSK quality grid.'
-                : "Inspection de chambre, tournée gouvernante d'étage et audit qualité au même endroit. Checklist 30 points femme de chambre, inspection superviseur et grille de notation prête pour l'audit LQA."}
+                : 'Une checklist issue du Playbook Housekeeping LuxOps : séquence chambre à blanc, recouche, chariot, auto-contrôle, inspection gouvernante, statut Clean/Inspected et grille qualité 100 points.'}
             </p>
             <Link
               href={`/${locale}/playbooks/hsk`}
@@ -408,13 +408,12 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
             </p>
           ) : (
             <p className="text-gray-600 leading-relaxed">
-              Une checklist housekeeping, c&apos;est la colonne vertébrale d&apos;une qualité de chambre constante.
-              Que vous soyez gouvernante générale en train de structurer les SOP de votre équipe, gouvernante
-              d&apos;étage qui effectue ses tournées d&apos;inspection, ou directeur d&apos;hôtel qui prépare un audit
-              qualité, la bonne checklist transforme l&apos;excellence invisible en standard reproductible. Cette page
-              met à votre disposition des checklists gratuites et imprimables pour chaque poste : femmes de chambre,
-              valets de chambre, gouvernantes d&apos;étage et auditeurs qualité. Chaque checklist respecte les
-              standards de contrôle qualité des établissements certifiés LQA et Forbes.
+              Une checklist housekeeping utile ne se limite pas à une liste de tâches de ménage. Dans un vrai playbook
+              HSK, elle relie la feuille de route, le chariot, le protocole d&apos;entrée, la chambre à blanc, la
+              recouche, les objets trouvés, le DND, l&apos;inspection gouvernante et le statut PMS. La règle est simple :
+              une chambre peut être propre après le passage du Room Attendant, mais elle n&apos;est pas attribuable tant
+              qu&apos;elle n&apos;est pas inspectée. Cette page reprend les extraits opérationnels du Playbook
+              Housekeeping LuxOps pour transformer la qualité chambre en routine mesurable.
             </p>
           )}
         </section>
@@ -611,6 +610,20 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
                 desc: isEN
                   ? 'Standard operating procedures for housekeeping teams'
                   : 'Procédures opérationnelles standard pour les équipes housekeeping',
+              },
+              {
+                href: `/${locale}/blog/hotel-room-cleaning-checklist`,
+                title: isEN ? 'Hotel Room Cleaning Checklist' : 'Checklist nettoyage chambre hôtel',
+                desc: isEN
+                  ? 'Departure room, stayover, trolley setup and final self-check'
+                  : 'Chambre à blanc, recouche, chariot et auto-contrôle final',
+              },
+              {
+                href: `/${locale}/blog/hotel-housekeeping-supervisor-checklist`,
+                title: isEN ? 'Housekeeping Supervisor Checklist' : 'Checklist gouvernante hôtel',
+                desc: isEN
+                  ? 'Supervisor inspection workflow and room release rules'
+                  : 'Inspection gouvernante et règles de libération chambre',
               },
               {
                 href: `/${locale}/hotel-audit-checklist`,
