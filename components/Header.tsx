@@ -21,7 +21,6 @@ export default function Header({ locale }: HeaderProps) {
 
   const navLinks = [
     { href: `/${locale}/playbooks`, label: t('playbooks') },
-    { href: `/${locale}/hotel-sop`, label: locale === 'en' ? 'Hotel SOP' : 'SOP Hôtel' },
     { href: locale === 'en' ? '/en/training' : '/fr/formation', label: t('training') },
     { href: locale === 'en' ? '/en/quality-audit' : '/fr/audit-qualite', label: t('audit') },
     { href: locale === 'en' ? '/en/bespoke-process' : '/fr/process-sur-mesure', label: t('process') },
