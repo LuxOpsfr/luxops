@@ -426,9 +426,6 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
         {/* Hero */}
         <section className="bg-[#1A2E44] text-white py-16 px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="inline-block bg-white/10 text-white text-xs font-semibold px-3 py-1 rounded-full mb-6 tracking-widest uppercase">
-              {isEN ? 'Hotel Quality Standard' : 'Standard qualité hôtel'}
-            </span>
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
               {isEN
                 ? 'Hotel Housekeeping Checklist: Room Attendant, Supervisor Inspection & HSK SOP'
@@ -494,7 +491,7 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
               </div>
             ))}
           </div>
-          <div className="mt-6 flex flex-col sm:flex-row gap-3">
+          <div className="mt-6 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3">
             <a
               href={packDownload}
               download
