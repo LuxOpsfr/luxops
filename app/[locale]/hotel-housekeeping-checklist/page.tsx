@@ -451,9 +451,6 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
                 {isEN ? 'View Housekeeping Playbook' : 'Voir le Playbook Housekeeping'}
               </Link>
             </div>
-            <p className="text-xs text-blue-100 mt-4">
-              {isEN ? 'No email required. Direct download.' : 'Sans email requis. Téléchargement direct.'}
-            </p>
           </div>
         </section>
 
