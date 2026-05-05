@@ -6,11 +6,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const isEN = locale === 'en'
   return {
     title: isEN
-      ? 'Hotel Housekeeping Checklist: Room Cleaning, Inspection & HSK SOP | LuxOps'
-      : 'Checklist Housekeeping Hôtel : chambre à blanc, inspection & SOP HSK | LuxOps',
+      ? 'Hotel Housekeeping Checklist PDF: Room Attendant & Supervisor | LuxOps'
+      : 'Checklist Housekeeping Hôtel PDF : chambre à blanc & inspection | LuxOps',
     description: isEN
-      ? 'Hotel housekeeping checklist adapted from the LuxOps Housekeeping Playbook: room attendant sequence, departure room cleaning, supervisor inspection, Clean vs Inspected status and 100-point HSK quality grid.'
-      : 'Checklist housekeeping hôtel issue du Playbook LuxOps : chambre à blanc, recouche, chariot, inspection gouvernante, statut Clean/Inspected, grille qualité 100 points.',
+      ? 'Download printable hotel housekeeping checklist PDFs adapted from the LuxOps Housekeeping Playbook: public area attendant, room attendant and housekeeping supervisor checklists.'
+      : 'Téléchargez les PDF imprimables issus du Playbook Housekeeping LuxOps : checklist équipier lieux publics, femme/valet de chambre et gouvernante d’étage.',
     keywords: isEN
       ? 'hotel housekeeping checklist, hotel room cleaning checklist, hotel room inspection checklist, room attendant checklist, housekeeping supervisor checklist, housekeeping SOP checklist, hotel cleaning SOP'
       : 'checklist pour service de housekeeping hôtel, checklist chambre à blanc hôtel, checklist inspection chambre hôtel, checklist pour gouvernante hôtel, checklist femme de chambre hôtel, SOP de housekeeping hôtel, contrôle qualité en housekeeping',
@@ -41,6 +41,13 @@ type AuditRow = {
 type FAQItem = {
   q: string
   a: string
+}
+
+type DownloadItem = {
+  title: string
+  role: string
+  body: string
+  href: string
 }
 
 // ─── EN Data ──────────────────────────────────────────────────────────────────
@@ -302,6 +309,53 @@ const FAQ_FR: FAQItem[] = [
   },
 ]
 
+// ─── Printable PDF Downloads ─────────────────────────────────────────────────
+
+const PACK_DOWNLOAD_EN = '/downloads/housekeeping-checklists/en/hotel-housekeeping-checklist-pack-en.zip'
+const PACK_DOWNLOAD_FR = '/downloads/housekeeping-checklists/fr/pack-checklists-housekeeping-fr.zip'
+
+const DOWNLOADS_EN: DownloadItem[] = [
+  {
+    title: 'Public Area Attendant Checklist',
+    role: 'Houseperson / public areas',
+    body: 'A printable PDF for lobby, corridors, elevators, public restrooms, pantries, guest requests and shift handover.',
+    href: '/downloads/housekeeping-checklists/en/public-area-attendant-checklist.pdf',
+  },
+  {
+    title: 'Room Attendant Checklist',
+    role: 'Departure rooms and stayovers',
+    body: 'A printable PDF for trolley setup, room entry, departure room sequence, bathroom checks, stayover service and final self-inspection.',
+    href: '/downloads/housekeeping-checklists/en/room-attendant-checklist.pdf',
+  },
+  {
+    title: 'Housekeeping Supervisor Checklist',
+    role: 'Floor supervisor / inspection',
+    body: 'A printable PDF for room assignments, departure inspections, VIP checks, Clean vs Inspected release and quality coaching.',
+    href: '/downloads/housekeeping-checklists/en/floor-housekeeping-supervisor-checklist.pdf',
+  },
+]
+
+const DOWNLOADS_FR: DownloadItem[] = [
+  {
+    title: 'Checklist Équipier Lieux Publics',
+    role: 'Équipier / zones communes',
+    body: 'PDF imprimable pour le hall, les couloirs, les ascenseurs, les sanitaires publics, les offices, les demandes clients et la passation.',
+    href: '/downloads/housekeeping-checklists/fr/checklist-equipier-lieux-publics.pdf',
+  },
+  {
+    title: 'Checklist Femme / Valet de Chambre',
+    role: 'Chambre à blanc et recouche',
+    body: 'PDF imprimable pour le chariot, le protocole d’entrée, la chambre à blanc, la salle de bain, la recouche et l’auto-contrôle final.',
+    href: '/downloads/housekeeping-checklists/fr/checklist-femme-valet-de-chambre.pdf',
+  },
+  {
+    title: 'Checklist Gouvernante d’Étage',
+    role: 'Supervision / inspection',
+    body: 'PDF imprimable pour les feuilles de route, l’inspection chambre départ, les chambres VIP, la libération PMS et le coaching qualité.',
+    href: '/downloads/housekeeping-checklists/fr/checklist-gouvernante-etage-superviseur.pdf',
+  },
+]
+
 // ─── SOP Steps ────────────────────────────────────────────────────────────────
 
 const SOP_STEPS_EN = [
@@ -351,6 +405,8 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
   const auditRows = isEN ? AUDIT_ROWS_EN : AUDIT_ROWS_FR
   const faq = isEN ? FAQ_EN : FAQ_FR
   const sopSteps = isEN ? SOP_STEPS_EN : SOP_STEPS_FR
+  const downloads = isEN ? DOWNLOADS_EN : DOWNLOADS_FR
+  const packDownload = isEN ? PACK_DOWNLOAD_EN : PACK_DOWNLOAD_FR
 
   const faqSchema = {
     '@context': 'https://schema.org',
@@ -383,11 +439,74 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
                 ? 'A playbook-based hotel housekeeping checklist covering departure rooms, stayovers, Clean vs Inspected room status, supervisor inspection and the 100-point HSK quality grid.'
                 : 'Une checklist issue du Playbook Housekeeping LuxOps : séquence chambre à blanc, recouche, chariot, auto-contrôle, inspection gouvernante, statut Clean/Inspected et grille qualité 100 points.'}
             </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <a
+                href={packDownload}
+                download
+                className="inline-block bg-white text-[#1A2E44] px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
+              >
+                {isEN ? 'Download Printable PDF Pack' : 'Télécharger les PDF imprimables'}
+              </a>
+              <Link
+                href={`/${locale}/playbooks/hsk`}
+                className="inline-block bg-[#244763] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#2c5575] transition-colors"
+              >
+                {isEN ? 'View Housekeeping Playbook' : 'Voir le Playbook Housekeeping'}
+              </Link>
+            </div>
+            <p className="text-xs text-blue-100 mt-4">
+              {isEN ? 'No email required. Direct download.' : 'Sans email requis. Téléchargement direct.'}
+            </p>
+          </div>
+        </section>
+
+        {/* Printable PDF downloads */}
+        <section className="max-w-5xl mx-auto px-6 py-12">
+          <div className="max-w-3xl mb-8">
+            <p className="text-xs font-bold uppercase tracking-widest text-[#0056D2] mb-3">
+              {isEN ? 'Printable PDF checklist pack' : 'Pack PDF imprimable'}
+            </p>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#1A2E44] mb-3">
+              {isEN ? 'Download the housekeeping checklists by role' : 'Télécharger les checklists housekeeping par poste'}
+            </h2>
+            <p className="text-gray-600 leading-relaxed">
+              {isEN
+                ? 'These free PDFs are adapted from the LuxOps Housekeeping Playbook and split by team role so each collaborator can use the checklist that matches their shift.'
+                : 'Ces PDF gratuits sont issus du Playbook Housekeeping LuxOps et séparés par poste pour que chaque collaborateur utilise la checklist correspondant à sa vacation.'}
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-4">
+            {downloads.map((item) => (
+              <div key={item.href} className="border border-gray-200 rounded-lg p-5 flex flex-col">
+                <p className="text-xs font-semibold uppercase tracking-wide text-[#0056D2] mb-2">
+                  {isEN ? 'Printable PDF' : 'PDF imprimable'}
+                </p>
+                <h3 className="text-lg font-bold text-[#1A2E44] mb-2">{item.title}</h3>
+                <p className="text-sm font-medium text-gray-500 mb-3">{item.role}</p>
+                <p className="text-sm text-gray-600 leading-relaxed mb-5 flex-1">{item.body}</p>
+                <a
+                  href={item.href}
+                  download
+                  className="inline-flex justify-center bg-[#1A2E44] text-white px-5 py-3 rounded-lg text-sm font-semibold hover:bg-[#243d57] transition-colors"
+                >
+                  {isEN ? 'Download PDF' : 'Télécharger le PDF'}
+                </a>
+              </div>
+            ))}
+          </div>
+          <div className="mt-6 flex flex-col sm:flex-row gap-3">
+            <a
+              href={packDownload}
+              download
+              className="inline-flex justify-center bg-[#0056D2] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#0047ad] transition-colors"
+            >
+              {isEN ? 'Download the full ZIP pack' : 'Télécharger le pack ZIP complet'}
+            </a>
             <Link
               href={`/${locale}/playbooks/hsk`}
-              className="inline-block bg-white text-[#1A2E44] px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 transition-colors"
+              className="inline-flex justify-center border border-[#1A2E44] text-[#1A2E44] px-6 py-3 rounded-lg font-semibold hover:bg-[#F5F7FA] transition-colors"
             >
-              {isEN ? 'View Housekeeping Playbook' : 'Voir le Playbook Housekeeping'}
+              {isEN ? 'Get the full Housekeeping Playbook' : 'Accéder au Playbook Housekeeping complet'}
             </Link>
           </div>
         </section>
@@ -524,19 +643,28 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
         <section className="bg-[#F5F7FA] py-12 px-6">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-2xl font-bold text-[#1A2E44] mb-3">
-              {isEN ? 'Download the Full Checklist Pack' : 'Téléchargez le Pack Complet de Checklists'}
+              {isEN ? 'Use the PDFs on the floor, then standardize the full SOP' : 'Utilisez les PDF sur le terrain, puis standardisez toute la procédure'}
             </h2>
             <p className="text-gray-600 mb-6 leading-relaxed">
               {isEN
-                ? 'These checklists are an extract from the LuxOps Housekeeping Operations Playbook, a complete 10-chapter SOP manual. The full pack includes gouvernante morning and evening checklists, equipier shift checklists, linen room inspection, VIP room and turndown service checklist, and monthly deep cleaning checklist.'
-                : "Ces checklists sont extraites du Playbook Housekeeping LuxOps, un manuel SOP complet en 10 chapitres. Le pack complet comprend les checklists gouvernante d'étage matin et soir, les checklists équipier par vacation, la checklist lingère et office de linge, la checklist chambre VIP et service de couverture, et la checklist grand nettoyage mensuel."}
+                ? 'The PDF checklists are free extracts. The full LuxOps Housekeeping Playbook gives your team the complete SOP structure behind the checklist: room cleaning sequence, supervisor inspection, linen and stock control, safety, sustainability and team management.'
+                : 'Les checklists PDF sont des extraits gratuits. Le Playbook Housekeeping LuxOps complet donne à vos équipes toute la structure SOP derrière la checklist : chambre à blanc, recouche, inspection gouvernante, linge, stocks, sécurité, développement durable et management.'}
             </p>
-            <Link
-              href={`/${locale}/free-hotel-procedures`}
-              className="inline-block bg-[#1A2E44] text-white px-8 py-4 rounded-xl font-semibold hover:bg-[#243d57] transition-colors"
-            >
-              {isEN ? 'Download Free Checklist Pack' : 'Télécharger le Pack Gratuit'}
-            </Link>
+            <div className="flex flex-col sm:flex-row justify-center gap-3">
+              <a
+                href={packDownload}
+                download
+                className="inline-block bg-[#1A2E44] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#243d57] transition-colors"
+              >
+                {isEN ? 'Download Free PDF Pack' : 'Télécharger les PDF gratuits'}
+              </a>
+              <Link
+                href={`/${locale}/playbooks/hsk`}
+                className="inline-block bg-white text-[#1A2E44] border border-[#1A2E44] px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
+              >
+                {isEN ? 'View Full Playbook' : 'Voir le Playbook complet'}
+              </Link>
+            </div>
           </div>
         </section>
 

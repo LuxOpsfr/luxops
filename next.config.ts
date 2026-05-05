@@ -19,10 +19,21 @@ const nextConfig: NextConfig = {
         value: 'public, s-maxage=86400, stale-while-revalidate=604800',
       },
     ]
+    const downloadableAssetHeaders = [
+      {
+        key: 'Cache-Control',
+        value: 'public, max-age=31536000, immutable',
+      },
+      {
+        key: 'X-Robots-Tag',
+        value: 'noindex',
+      },
+    ]
 
     return [
       { source: '/robots.txt', headers: marketingCache },
       { source: '/sitemap.xml', headers: marketingCache },
+      { source: '/downloads/housekeeping-checklists/:path*', headers: downloadableAssetHeaders },
       { source: '/:locale(en|fr)', headers: marketingCache },
       { source: '/:locale(en|fr)/blog', headers: marketingCache },
       { source: '/:locale(en|fr)/blog/:slug*', headers: marketingCache },
