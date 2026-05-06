@@ -4,36 +4,29 @@ import { useEffect, useRef, useState } from 'react'
 import { loadStripe } from '@stripe/stripe-js'
 import { X, ShoppingCart, Trash2, ArrowRight, Lock } from 'lucide-react'
 import { useCart } from '@/context/CartContext'
-import { Currency, formatPrice } from '@/lib/pricing'
 
-const stripePromise = loadStripe(
-  process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!,
-)
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!)
 
 interface CartDrawerProps {
   locale: string
 }
 
 export default function CartDrawer({ locale }: CartDrawerProps) {
-  const { items, removeItem, isOpen, closeCart, currency, setCurrency } =
-    useCart()
+  const { items, removeItem, isOpen, closeCart } = useCart()
   const [view, setView] = useState<'cart' | 'checkout'>('cart')
   const [loading, setLoading] = useState(false)
   const checkoutRef = useRef<{ destroy: () => void } | null>(null)
   const isEn = locale === 'en'
 
   const total = items.reduce((sum, item) => sum + item.price, 0)
-  const currencyOptions: Currency[] = ['eur', 'usd']
 
   // Reset to cart view when drawer closes
   useEffect(() => {
     if (!isOpen) {
       checkoutRef.current?.destroy()
       checkoutRef.current = null
-      queueMicrotask(() => {
-        setView('cart')
-        setLoading(false)
-      })
+      setView('cart')
+      setLoading(false)
     }
   }, [isOpen])
 
@@ -53,9 +46,8 @@ export default function CartDrawer({ locale }: CartDrawerProps) {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-              items: items.map((i) => ({ priceId: i.priceId })),
+              items: items.map(i => ({ priceId: i.priceId })),
               locale,
-              currency,
             }),
           })
           const { clientSecret } = await res.json()
@@ -73,7 +65,7 @@ export default function CartDrawer({ locale }: CartDrawerProps) {
       setLoading(false)
     }
 
-    mountCheckout().catch((err) => {
+    mountCheckout().catch(err => {
       console.error(err)
       setLoading(false)
     })
@@ -81,7 +73,7 @@ export default function CartDrawer({ locale }: CartDrawerProps) {
     return () => {
       cancelled = true
     }
-  }, [view, items, locale, currency])
+  }, [view])
 
   if (!isOpen) return null
 
@@ -122,34 +114,21 @@ export default function CartDrawer({ locale }: CartDrawerProps) {
             <div className="flex-1 overflow-y-auto px-6 py-4">
               {items.length === 0 ? (
                 <div className="flex flex-col items-center justify-center h-full text-center py-20">
-                  <ShoppingCart
-                    size={44}
-                    className="text-gray-200 mb-4"
-                    strokeWidth={1.5}
-                  />
+                  <ShoppingCart size={44} className="text-gray-200 mb-4" strokeWidth={1.5} />
                   <p className="text-gray-400 text-sm">
                     {isEn ? 'Your cart is empty' : 'Votre panier est vide'}
                   </p>
                   <p className="text-gray-300 text-xs mt-1">
-                    {isEn
-                      ? 'Add a playbook to get started'
-                      : 'Ajoutez un playbook pour commencer'}
+                    {isEn ? 'Add a playbook to get started' : 'Ajoutez un playbook pour commencer'}
                   </p>
                 </div>
               ) : (
                 <ul className="divide-y divide-gray-50">
-                  {items.map((item) => (
-                    <li
-                      key={item.priceId}
-                      className="flex items-center justify-between py-4"
-                    >
+                  {items.map(item => (
+                    <li key={item.priceId} className="flex items-center justify-between py-4">
                       <div>
-                        <p className="text-sm font-medium text-[#111111]">
-                          {item.title}
-                        </p>
-                        <p className="text-sm text-gray-400 mt-0.5">
-                          {formatPrice(item.price, currency, locale)}
-                        </p>
+                        <p className="text-sm font-medium text-[#111111]">{item.title}</p>
+                        <p className="text-sm text-gray-400 mt-0.5">€{item.price}</p>
                       </div>
                       <button
                         onClick={() => removeItem(item.priceId)}
@@ -166,34 +145,9 @@ export default function CartDrawer({ locale }: CartDrawerProps) {
             {/* Footer */}
             {items.length > 0 && (
               <div className="px-6 py-5 border-t border-gray-100 bg-white">
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-sm text-gray-500">
-                    {isEn ? 'Currency' : 'Devise'}
-                  </span>
-                  <div className="flex rounded-lg border border-gray-200 overflow-hidden">
-                    {currencyOptions.map((option) => (
-                      <button
-                        key={option}
-                        type="button"
-                        onClick={() => setCurrency(option)}
-                        className={`px-3 py-1.5 text-xs font-semibold uppercase transition-colors ${
-                          currency === option
-                            ? 'bg-[#111111] text-white'
-                            : 'bg-white text-gray-500 hover:bg-gray-50'
-                        }`}
-                      >
-                        {option}
-                      </button>
-                    ))}
-                  </div>
-                </div>
                 <div className="flex items-center justify-between mb-5">
-                  <span className="text-sm text-gray-500">
-                    {isEn ? 'Total' : 'Total'}
-                  </span>
-                  <span className="text-2xl font-bold text-[#111111]">
-                    {formatPrice(total, currency, locale)}
-                  </span>
+                  <span className="text-sm text-gray-500">{isEn ? 'Total' : 'Total'}</span>
+                  <span className="text-2xl font-bold text-[#111111]">€{total}</span>
                 </div>
                 <button
                   onClick={() => {
@@ -204,20 +158,14 @@ export default function CartDrawer({ locale }: CartDrawerProps) {
                   className="w-full py-3.5 bg-[#111111] text-white font-semibold rounded-xl hover:bg-[#333333] transition-colors flex items-center justify-center gap-2 disabled:opacity-60"
                 >
                   {loading
-                    ? isEn
-                      ? 'Loading...'
-                      : 'Chargement...'
-                    : isEn
-                      ? 'Proceed to Payment'
-                      : 'Passer au Paiement'}
+                    ? isEn ? 'Loading...' : 'Chargement...'
+                    : isEn ? 'Proceed to Payment' : 'Passer au Paiement'}
                   {!loading && <ArrowRight size={16} />}
                 </button>
                 <div className="flex items-center justify-center gap-1.5 mt-3">
                   <Lock size={11} className="text-gray-300" />
                   <p className="text-center text-xs text-gray-300">
-                    {isEn
-                      ? 'Secure payment via Stripe'
-                      : 'Paiement sécurisé via Stripe'}
+                    {isEn ? 'Secure payment via Stripe' : 'Paiement sécurisé via Stripe'}
                   </p>
                 </div>
               </div>
