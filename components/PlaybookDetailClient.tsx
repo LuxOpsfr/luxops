@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { ArrowLeft, Check, ChevronDown, ShoppingCart } from 'lucide-react'
 import { PlaybookEntry } from '@/content/playbooks/data'
 import { useCart } from '@/context/CartContext'
+import { formatPrice } from '@/lib/pricing'
 
 interface Stat {
   value: string
@@ -23,11 +24,17 @@ interface Props {
   locale: string
 }
 
-export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale }: Props) {
+export default function PlaybookDetailClient({
+  playbook: pb,
+  stats,
+  faq,
+  locale,
+}: Props) {
   const isEn = locale === 'en'
   const lang = locale as 'en' | 'fr'
   const [openFaq, setOpenFaq] = useState<number | null>(null)
-  const { addItem, items } = useCart()
+  const { addItem, items, currency } = useCart()
+  const price = formatPrice(67, currency, locale)
 
   const inCart = items.some((i) => i.priceId === pb.priceId)
 
@@ -45,7 +52,6 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
 
   return (
     <div className="pt-16 bg-white min-h-screen">
-
       {/* Back link */}
       <div className="max-w-screen-xl mx-auto px-6 pt-8">
         <Link
@@ -77,9 +83,7 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
               {pb.dept[lang]}
             </div>
 
-            <h1
-              className="font-display text-6xl lg:text-7xl font-extrabold tracking-tighter leading-none text-[#0a1d2e]"
-            >
+            <h1 className="font-display text-6xl lg:text-7xl font-extrabold tracking-tighter leading-none text-[#0a1d2e]">
               {pb.title[lang].split(' ').slice(0, -1).join(' ')}{' '}
               <span style={{ color: '#003d9b' }}>
                 {pb.title[lang].split(' ').slice(-1)[0]}
@@ -102,15 +106,21 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
               >
                 <ShoppingCart size={16} />
                 {inCart
-                  ? (isEn ? 'In Cart' : 'Ajouté')
-                  : (isEn ? 'Buy Playbook — €67' : 'Acheter — 67 €')}
+                  ? isEn
+                    ? 'In Cart'
+                    : 'Ajouté'
+                  : isEn
+                    ? `Buy Playbook · ${price}`
+                    : `Acheter · ${price}`}
               </button>
               <Link
                 href={`/${locale}/free-hotel-procedures`}
                 className="px-8 py-4 font-bold text-[#0a1d2e] hover:bg-[#dae9ff] transition-colors"
                 style={{ backgroundColor: '#eef4ff', borderRadius: '0.125rem' }}
               >
-                {isEn ? 'Download a Free Chapter' : 'Télécharger un chapitre gratuit'}
+                {isEn
+                  ? 'Download a Free Chapter'
+                  : 'Télécharger un chapitre gratuit'}
               </Link>
             </div>
 
@@ -125,7 +135,11 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
           <div className="flex-1 relative w-full max-w-md lg:max-w-none">
             <div
               className="absolute -top-4 -right-4 w-full h-full"
-              style={{ backgroundColor: 'rgba(0,61,155,0.08)', transform: 'rotate(2deg)', borderRadius: '0.125rem' }}
+              style={{
+                backgroundColor: 'rgba(0,61,155,0.08)',
+                transform: 'rotate(2deg)',
+                borderRadius: '0.125rem',
+              }}
             />
             <div
               className="relative bg-white p-8"
@@ -136,9 +150,15 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
               }}
             >
               {/* SOP Preview mockup */}
-              <div className="border-b pb-4 mb-5" style={{ borderColor: 'rgba(195,198,214,0.3)' }}>
+              <div
+                className="border-b pb-4 mb-5"
+                style={{ borderColor: 'rgba(195,198,214,0.3)' }}
+              >
                 <p className="text-[10px] text-[#003d9b] font-bold uppercase tracking-widest mb-1">
-                  {isEn ? 'Standard Operating Procedure' : 'Procédure Opérationnelle Standard'} · {pb.dept[lang]}
+                  {isEn
+                    ? 'Standard Operating Procedure'
+                    : 'Procédure Opérationnelle Standard'}{' '}
+                  · {pb.dept[lang]}
                 </p>
                 <h4 className="font-display font-bold text-lg uppercase text-[#0a1d2e]">
                   {pb.chapters[lang][0]}
@@ -149,7 +169,10 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
                   <div key={n} className="flex gap-3 items-start">
                     <span
                       className="text-white text-[10px] font-bold w-6 h-6 flex items-center justify-center flex-shrink-0"
-                      style={{ backgroundColor: '#003d9b', borderRadius: '0.125rem' }}
+                      style={{
+                        backgroundColor: '#003d9b',
+                        borderRadius: '0.125rem',
+                      }}
                     >
                       {String(n).padStart(2, '0')}
                     </span>
@@ -157,26 +180,45 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
                       <p className="font-bold text-xs uppercase tracking-tight text-[#0a1d2e] mb-0.5">
                         {pb.highlights[lang][n - 1]}
                       </p>
-                      <div className="h-2 rounded-full" style={{ backgroundColor: '#eef4ff', width: `${80 - n * 10}%` }} />
+                      <div
+                        className="h-2 rounded-full"
+                        style={{
+                          backgroundColor: '#eef4ff',
+                          width: `${80 - n * 10}%`,
+                        }}
+                      />
                     </div>
                   </div>
                 ))}
                 <div className="flex gap-3 items-start opacity-30">
                   <span
                     className="text-white text-[10px] font-bold w-6 h-6 flex items-center justify-center flex-shrink-0"
-                    style={{ backgroundColor: '#003d9b', borderRadius: '0.125rem' }}
+                    style={{
+                      backgroundColor: '#003d9b',
+                      borderRadius: '0.125rem',
+                    }}
                   >
                     04
                   </span>
-                  <div className="w-full h-4 rounded" style={{ backgroundColor: '#eef4ff' }} />
+                  <div
+                    className="w-full h-4 rounded"
+                    style={{ backgroundColor: '#eef4ff' }}
+                  />
                 </div>
               </div>
               <div
                 className="absolute bottom-6 right-6 p-3 text-right"
-                style={{ backgroundColor: 'rgba(255,255,255,0.9)', border: '1px solid rgba(195,198,214,0.3)' }}
+                style={{
+                  backgroundColor: 'rgba(255,255,255,0.9)',
+                  border: '1px solid rgba(195,198,214,0.3)',
+                }}
               >
-                <p className="font-display font-bold text-[10px] text-[#0a1d2e] uppercase">EDITION 2025</p>
-                <p className="text-[9px] text-[#737685] uppercase tracking-widest">LuxOps Certified</p>
+                <p className="font-display font-bold text-[10px] text-[#0a1d2e] uppercase">
+                  EDITION 2025
+                </p>
+                <p className="text-[9px] text-[#737685] uppercase tracking-widest">
+                  LuxOps Certified
+                </p>
               </div>
             </div>
           </div>
@@ -190,7 +232,10 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
           style={{ backgroundColor: 'rgba(195,198,214,0.2)' }}
         >
           {stats.map((s, i) => (
-            <div key={i} className="bg-white p-10 flex flex-col items-center text-center">
+            <div
+              key={i}
+              className="bg-white p-10 flex flex-col items-center text-center"
+            >
               <span className="font-display text-4xl font-extrabold text-[#003d9b] mb-2">
                 {s.value}
               </span>
@@ -218,10 +263,21 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
                 style={{ backgroundColor: '#eef4ff', borderRadius: '0.125rem' }}
               >
                 <div className="flex justify-between items-start mb-10">
-                  <span className="font-display font-bold text-4xl" style={{ color: 'rgba(0,61,155,0.2)' }}>01</span>
+                  <span
+                    className="font-display font-bold text-4xl"
+                    style={{ color: 'rgba(0,61,155,0.2)' }}
+                  >
+                    01
+                  </span>
                 </div>
-                <h3 className="font-display font-bold text-xl text-[#0a1d2e] mb-2">{ch}</h3>
-                <p className="text-sm text-[#4f6074]">{isEn ? 'Core standards and foundational procedures.' : 'Standards fondamentaux et procédures de base.'}</p>
+                <h3 className="font-display font-bold text-xl text-[#0a1d2e] mb-2">
+                  {ch}
+                </h3>
+                <p className="text-sm text-[#4f6074]">
+                  {isEn
+                    ? 'Core standards and foundational procedures.'
+                    : 'Standards fondamentaux et procédures de base.'}
+                </p>
               </div>
             ))}
 
@@ -230,13 +286,26 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
               <div
                 key={i + 1}
                 className="p-8"
-                style={{ backgroundColor: '#ffffff', border: '1px solid rgba(195,198,214,0.25)', borderRadius: '0.125rem' }}
+                style={{
+                  backgroundColor: '#ffffff',
+                  border: '1px solid rgba(195,198,214,0.25)',
+                  borderRadius: '0.125rem',
+                }}
               >
-                <span className="font-display font-bold text-2xl" style={{ color: 'rgba(0,61,155,0.2)' }}>
+                <span
+                  className="font-display font-bold text-2xl"
+                  style={{ color: 'rgba(0,61,155,0.2)' }}
+                >
                   {String(i + 2).padStart(2, '0')}
                 </span>
-                <h3 className="font-display font-bold text-base text-[#0a1d2e] mt-4 mb-2">{ch}</h3>
-                <p className="text-xs text-[#4f6074]">{isEn ? 'Detailed protocols and operational templates.' : 'Protocoles détaillés et templates opérationnels.'}</p>
+                <h3 className="font-display font-bold text-base text-[#0a1d2e] mt-4 mb-2">
+                  {ch}
+                </h3>
+                <p className="text-xs text-[#4f6074]">
+                  {isEn
+                    ? 'Detailed protocols and operational templates.'
+                    : 'Protocoles détaillés et templates opérationnels.'}
+                </p>
               </div>
             ))}
 
@@ -247,10 +316,15 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
                 className="p-8"
                 style={{ backgroundColor: '#f8f9ff', borderRadius: '0.125rem' }}
               >
-                <span className="font-display font-bold text-2xl" style={{ color: 'rgba(0,61,155,0.2)' }}>
+                <span
+                  className="font-display font-bold text-2xl"
+                  style={{ color: 'rgba(0,61,155,0.2)' }}
+                >
                   {String(i + 4).padStart(2, '0')}
                 </span>
-                <h3 className="font-display font-bold text-base text-[#0a1d2e] mt-4 mb-2">{ch}</h3>
+                <h3 className="font-display font-bold text-base text-[#0a1d2e] mt-4 mb-2">
+                  {ch}
+                </h3>
               </div>
             ))}
 
@@ -263,21 +337,33 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
                 +
               </div>
               <div className="relative z-10">
-                <span className="font-display font-bold text-4xl" style={{ color: 'rgba(255,255,255,0.3)' }}>
-                  {String(mainChapters.length + 1).padStart(2, '0')}–{String(chapters.length).padStart(2, '0')}
+                <span
+                  className="font-display font-bold text-4xl"
+                  style={{ color: 'rgba(255,255,255,0.3)' }}
+                >
+                  {String(mainChapters.length + 1).padStart(2, '0')}–
+                  {String(chapters.length).padStart(2, '0')}
                 </span>
                 <h3 className="font-display font-bold text-2xl mt-4 mb-3 text-white">
                   {featuredChapters[0]}
                 </h3>
-                <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.75)' }}>
+                <p
+                  className="text-sm leading-relaxed"
+                  style={{ color: 'rgba(255,255,255,0.75)' }}
+                >
                   {isEn
                     ? 'Advanced modules covering the final operational standards, quality control and continuous improvement.'
                     : "Modules avancés couvrant les standards opérationnels finaux, le contrôle qualité et l'amélioration continue."}
                 </p>
                 <div className="mt-6 space-y-1">
                   {featuredChapters.slice(1).map((ch, i) => (
-                    <p key={i} className="text-xs flex items-center gap-2" style={{ color: 'rgba(255,255,255,0.6)' }}>
-                      <span style={{ color: 'rgba(255,255,255,0.4)' }}>→</span> {ch}
+                    <p
+                      key={i}
+                      className="text-xs flex items-center gap-2"
+                      style={{ color: 'rgba(255,255,255,0.6)' }}
+                    >
+                      <span style={{ color: 'rgba(255,255,255,0.4)' }}>→</span>{' '}
+                      {ch}
                     </p>
                   ))}
                 </div>
@@ -302,9 +388,15 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
             <ul className="space-y-5">
               {pb.highlights[lang].map((h, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <Check size={16} className="flex-shrink-0 mt-0.5" style={{ color: '#003d9b' }} />
+                  <Check
+                    size={16}
+                    className="flex-shrink-0 mt-0.5"
+                    style={{ color: '#003d9b' }}
+                  />
                   <div>
-                    <span className="font-bold text-sm text-[#0a1d2e] block">{h}</span>
+                    <span className="font-bold text-sm text-[#0a1d2e] block">
+                      {h}
+                    </span>
                   </div>
                 </li>
               ))}
@@ -317,32 +409,47 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
               {
                 icon: '📄',
                 title: isEn ? 'Interactive PDF' : 'PDF Interactif',
-                desc: isEn ? 'High-resolution, print-ready, with clickable table of contents.' : 'Haute résolution, prêt à imprimer, avec sommaire cliquable.',
+                desc: isEn
+                  ? 'High-resolution, print-ready, with clickable table of contents.'
+                  : 'Haute résolution, prêt à imprimer, avec sommaire cliquable.',
               },
               {
                 icon: '📊',
                 title: 'PowerPoint',
-                desc: isEn ? 'Fully editable slides. Adapt to your brand and property standards.' : 'Slides entièrement modifiables. Adaptez à votre établissement.',
+                desc: isEn
+                  ? 'Fully editable slides. Adapt to your brand and property standards.'
+                  : 'Slides entièrement modifiables. Adaptez à votre établissement.',
               },
               {
                 icon: '🌍',
                 title: isEn ? 'FR & EN Versions' : 'Versions FR & EN',
-                desc: isEn ? 'Both languages included. Switch seamlessly for international teams.' : 'Les deux langues incluses. Idéal pour les équipes internationales.',
+                desc: isEn
+                  ? 'Both languages included. Switch seamlessly for international teams.'
+                  : 'Les deux langues incluses. Idéal pour les équipes internationales.',
               },
               {
                 icon: '🔄',
                 title: isEn ? 'Lifetime Updates' : 'Mises à jour à vie',
-                desc: isEn ? 'All future revisions included at no extra cost.' : 'Toutes les révisions futures incluses sans coût supplémentaire.',
+                desc: isEn
+                  ? 'All future revisions included at no extra cost.'
+                  : 'Toutes les révisions futures incluses sans coût supplémentaire.',
               },
             ].map((item, i) => (
               <div
                 key={i}
                 className="bg-white p-6"
-                style={{ borderRadius: '0.125rem', boxShadow: '0 2px 8px rgba(10,29,46,0.05)' }}
+                style={{
+                  borderRadius: '0.125rem',
+                  boxShadow: '0 2px 8px rgba(10,29,46,0.05)',
+                }}
               >
                 <div className="text-2xl mb-3">{item.icon}</div>
-                <h4 className="font-display font-bold text-[#0a1d2e] mb-1">{item.title}</h4>
-                <p className="text-xs text-[#4f6074] leading-relaxed">{item.desc}</p>
+                <h4 className="font-display font-bold text-[#0a1d2e] mb-1">
+                  {item.title}
+                </h4>
+                <p className="text-xs text-[#4f6074] leading-relaxed">
+                  {item.desc}
+                </p>
               </div>
             ))}
           </div>
@@ -374,13 +481,16 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
                     className="flex-shrink-0 ml-4 transition-transform"
                     style={{
                       color: '#737685',
-                      transform: openFaq === i ? 'rotate(180deg)' : 'rotate(0deg)',
+                      transform:
+                        openFaq === i ? 'rotate(180deg)' : 'rotate(0deg)',
                     }}
                   />
                 </button>
                 {openFaq === i && (
                   <div className="px-6 pb-6">
-                    <p className="text-sm text-[#4f6074] leading-loose">{item.a[lang]}</p>
+                    <p className="text-sm text-[#4f6074] leading-loose">
+                      {item.a[lang]}
+                    </p>
                   </div>
                 )}
               </div>
@@ -393,9 +503,14 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
       <section className="py-20 px-6 bg-[#003d9b] text-white text-center">
         <div className="max-w-2xl mx-auto">
           <h2 className="font-display text-4xl font-extrabold tracking-tight mb-4">
-            {isEn ? 'Ready to elevate your operations?' : 'Prêt à élever vos opérations ?'}
+            {isEn
+              ? 'Ready to elevate your operations?'
+              : 'Prêt à élever vos opérations ?'}
           </h2>
-          <p className="text-lg mb-8" style={{ color: 'rgba(255,255,255,0.75)' }}>
+          <p
+            className="text-lg mb-8"
+            style={{ color: 'rgba(255,255,255,0.75)' }}
+          >
             {isEn
               ? `${pb.pages} of field-tested procedures, ready to deploy.`
               : `${pb.pages} de procédures testées sur le terrain, prêtes à déployer.`}
@@ -407,8 +522,12 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
               style={{ borderRadius: '0.125rem' }}
             >
               {inCart
-                ? (isEn ? '✓ In Cart' : '✓ Ajouté')
-                : (isEn ? 'Buy Playbook — €67' : 'Acheter le Playbook — 67 €')}
+                ? isEn
+                  ? '✓ In Cart'
+                  : '✓ Ajouté'
+                : isEn
+                  ? `Buy Playbook · ${price}`
+                  : `Acheter le Playbook · ${price}`}
             </button>
             <Link
               href={`/${locale}/playbooks`}
@@ -424,7 +543,6 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
           </div>
         </div>
       </section>
-
     </div>
   )
 }

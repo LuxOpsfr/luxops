@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { X, Check, FileText, Globe, ChevronDown, ChevronUp } from 'lucide-react'
 import { useCart } from '@/context/CartContext'
 import type { PlaybookEntry } from '@/content/playbooks/data'
+import { formatPrice } from '@/lib/pricing'
 
 interface PlaybookModalProps {
   isOpen: boolean
@@ -12,17 +13,26 @@ interface PlaybookModalProps {
   playbook: PlaybookEntry | null
 }
 
-export default function PlaybookModal({ isOpen, onClose, locale, playbook }: PlaybookModalProps) {
-  const [selectedLang, setSelectedLang] = useState<'en' | 'fr'>(locale as 'en' | 'fr')
+export default function PlaybookModal({
+  isOpen,
+  onClose,
+  locale,
+  playbook,
+}: PlaybookModalProps) {
+  const [selectedLang, setSelectedLang] = useState<'en' | 'fr'>(
+    locale as 'en' | 'fr',
+  )
   const [chaptersExpanded, setChaptersExpanded] = useState(false)
-  const { addItem, items, openCart } = useCart()
+  const { addItem, items, openCart, currency } = useCart()
   const isEn = locale === 'en'
   const PREVIEW_COUNT = 5
 
   // Reset state when playbook changes
   useEffect(() => {
-    setSelectedLang(locale as 'en' | 'fr')
-    setChaptersExpanded(false)
+    queueMicrotask(() => {
+      setSelectedLang(locale as 'en' | 'fr')
+      setChaptersExpanded(false)
+    })
   }, [playbook, locale])
 
   // Lock body scroll
@@ -39,10 +49,11 @@ export default function PlaybookModal({ isOpen, onClose, locale, playbook }: Pla
 
   if (!isOpen || !playbook) return null
 
-  const inCart = items.some(i => i.priceId === playbook.priceId)
+  const inCart = items.some((i) => i.priceId === playbook.priceId)
   const title = playbook.title[selectedLang]
   const chapters = playbook.chapters[selectedLang]
   const desc = playbook.desc[selectedLang]
+  const price = formatPrice(67, currency, locale)
 
   function handleAddToCart() {
     if (inCart) {
@@ -68,7 +79,6 @@ export default function PlaybookModal({ isOpen, onClose, locale, playbook }: Pla
 
       {/* Modal panel */}
       <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto">
-
         {/* Close button */}
         <button
           onClick={onClose}
@@ -102,16 +112,19 @@ export default function PlaybookModal({ isOpen, onClose, locale, playbook }: Pla
         </div>
 
         <div className="p-6">
-
           {/* Header */}
           <div className="mb-5">
             <span className="text-xs font-semibold text-[#111111] uppercase tracking-wider bg-[#111111]/8 px-3 py-1 rounded-full">
               {playbook.dept[locale as 'en' | 'fr']}
             </span>
             <div className="flex items-start justify-between mt-3">
-              <h2 className="text-xl font-bold text-[#111111] pr-4 leading-tight">{title}</h2>
+              <h2 className="text-xl font-bold text-[#111111] pr-4 leading-tight">
+                {title}
+              </h2>
               <div className="flex-shrink-0 text-right">
-                <span className="text-2xl font-bold text-[#111111]">€67</span>
+                <span className="text-2xl font-bold text-[#111111]">
+                  {price}
+                </span>
                 <div className="text-xs text-gray-400">{playbook.pages}</div>
               </div>
             </div>
@@ -125,9 +138,14 @@ export default function PlaybookModal({ isOpen, onClose, locale, playbook }: Pla
             </p>
             <div className="space-y-2.5">
               <div className="flex items-start gap-3 text-sm text-gray-700">
-                <FileText size={15} className="text-[#111111] flex-shrink-0 mt-0.5" />
+                <FileText
+                  size={15}
+                  className="text-[#111111] flex-shrink-0 mt-0.5"
+                />
                 <span>
-                  <span className="font-semibold">{isEn ? 'PDF Version' : 'Version PDF'}</span>
+                  <span className="font-semibold">
+                    {isEn ? 'PDF Version' : 'Version PDF'}
+                  </span>
                   <span className="text-gray-500">
                     {isEn
                       ? ' — Print-ready, immediately applicable at your property'
@@ -214,8 +232,14 @@ export default function PlaybookModal({ isOpen, onClose, locale, playbook }: Pla
             </button>
 
             <div className="space-y-2">
-              {(chaptersExpanded ? chapters : chapters.slice(0, PREVIEW_COUNT)).map((ch, i) => (
-                <div key={i} className="flex items-start gap-2.5 text-sm text-gray-600">
+              {(chaptersExpanded
+                ? chapters
+                : chapters.slice(0, PREVIEW_COUNT)
+              ).map((ch, i) => (
+                <div
+                  key={i}
+                  className="flex items-start gap-2.5 text-sm text-gray-600"
+                >
                   <span className="text-[10px] font-bold text-gray-300 mt-0.5 w-5 flex-shrink-0 text-right">
                     {String(i + 1).padStart(2, '0')}
                   </span>
@@ -243,12 +267,12 @@ export default function PlaybookModal({ isOpen, onClose, locale, playbook }: Pla
             {inCart ? (
               <>
                 <Check size={15} />
-                {isEn ? 'In Cart — View Cart' : 'Ajouté — Voir le Panier'}
+                {isEn ? 'In Cart · View Cart' : 'Ajouté · Voir le Panier'}
               </>
             ) : isEn ? (
-              `Add to Cart — €67 · ${selectedLang === 'en' ? 'English' : 'Français'}`
+              `Add to Cart · ${price} · ${selectedLang === 'en' ? 'English' : 'Français'}`
             ) : (
-              `Ajouter au Panier — 67€ · ${selectedLang === 'en' ? 'English' : 'Français'}`
+              `Ajouter au Panier · ${price} · ${selectedLang === 'en' ? 'English' : 'Français'}`
             )}
           </button>
 

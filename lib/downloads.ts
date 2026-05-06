@@ -55,6 +55,16 @@ export const DOWNLOADS: Record<string, PlaybookDownload> = {
   },
 
   // Spa & Wellness — €67
+  price_1TBZ9vDVLJTOFkjUT1FHhqUi: {
+    titleEn: 'Spa & Wellness Playbook',
+    titleFr: 'Playbook Spa & Wellness',
+    pdfEn: 'PLACEHOLDER_SPA_PDF_EN',
+    pptEn: 'PLACEHOLDER_SPA_PPT_EN',
+    pdfFr: 'PLACEHOLDER_SPA_PDF_FR',
+    pptFr: 'PLACEHOLDER_SPA_PPT_FR',
+  },
+
+  // Legacy Spa & Wellness price id kept as an alias
   price_1TBZ9vDVLJTOFkjUT1FHhqUiY: {
     titleEn: 'Spa & Wellness Playbook',
     titleFr: 'Playbook Spa & Wellness',
@@ -82,5 +92,5 @@ export const ALL_PLAYBOOK_PRICE_IDS = [
   'price_1TBZ94DVLJTOFkjUsH59B7x7',
   'price_1TBZ9TDVLJTOFkjUwWnoKaGk',
   'price_1TBZ9iDVLJTOFkjU3Os9VLRc',
-  'price_1TBZ9vDVLJTOFkjUT1FHhqUiY',
+  'price_1TBZ9vDVLJTOFkjUT1FHhqUi',
 ]

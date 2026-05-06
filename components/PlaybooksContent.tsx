@@ -15,6 +15,8 @@ import {
 import Link from 'next/link'
 import AddToCartButton from '@/components/AddToCartButton'
 import { PLAYBOOKS, BUNDLE_PRICE_ID } from '@/content/playbooks/data'
+import { useCart } from '@/context/CartContext'
+import { Currency, formatPrice } from '@/lib/pricing'
 
 const DEPT_ICONS = {
   fo: Building2,
@@ -27,8 +29,10 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
   const t = useTranslations('playbooks_page')
   const isEn = locale === 'en'
   const lang = locale as 'en' | 'fr'
+  const { currency, setCurrency } = useCart()
 
   const [activeFilter, setActiveFilter] = useState<string>('all')
+  const currencyOptions: Currency[] = ['eur', 'usd']
 
   const categories = [
     { key: 'all', label: isEn ? 'All Playbooks' : 'Tous les Playbooks' },
@@ -39,11 +43,17 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
   ]
 
   const filteredPlaybooks =
-    activeFilter === 'all' ? PLAYBOOKS : PLAYBOOKS.filter((pb) => pb.id === activeFilter)
+    activeFilter === 'all'
+      ? PLAYBOOKS
+      : PLAYBOOKS.filter((pb) => pb.id === activeFilter)
 
   const departmentCopy = isEn
     ? ['Instant delivery', 'PDF + PowerPoint', 'FR & EN included']
     : ['Livraison instantanée', 'PDF + PowerPoint', 'FR & EN inclus']
+  const individualPrice = formatPrice(67, currency, locale)
+  const bundlePrice = formatPrice(199, currency, locale)
+  const bundleFullPrice = formatPrice(268, currency, locale)
+  const bundleSaving = formatPrice(69, currency, locale)
 
   return (
     <div className="pt-16 bg-white">
@@ -64,7 +74,9 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                   className="inline-flex justify-center items-center gap-2 px-7 py-4 bg-[#003d9b] text-white font-bold text-sm hover:bg-[#002d7a] transition-colors"
                   style={{ borderRadius: '0.125rem' }}
                 >
-                  {isEn ? 'View playbooks at €67' : 'Voir les playbooks à 67€'}
+                  {isEn
+                    ? `View playbooks at ${individualPrice}`
+                    : `Voir les playbooks à ${individualPrice}`}
                   <ArrowRight size={16} />
                 </a>
                 <a
@@ -72,29 +84,69 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                   className="inline-flex justify-center items-center gap-2 px-7 py-4 border border-[#c3c6d6] text-[#0a1d2e] font-bold text-sm hover:border-[#003d9b] hover:text-[#003d9b] transition-colors"
                   style={{ borderRadius: '0.125rem' }}
                 >
-                  {isEn ? 'Download free chapter' : 'Télécharger un chapitre gratuit'}
+                  {isEn
+                    ? 'Download free chapter'
+                    : 'Télécharger un chapitre gratuit'}
                 </a>
               </div>
             </div>
 
-            <div className="bg-[#f8f9ff] p-8" style={{ borderRadius: '0.125rem' }}>
-              <div className="bg-white p-7 shadow-sm" style={{ borderRadius: '0.125rem' }}>
+            <div
+              className="bg-[#f8f9ff] p-8"
+              style={{ borderRadius: '0.125rem' }}
+            >
+              <div
+                className="bg-white p-7 shadow-sm"
+                style={{ borderRadius: '0.125rem' }}
+              >
                 <p className="text-xs font-bold uppercase tracking-widest text-[#737685] mb-5">
                   {isEn ? 'Individual playbook' : 'Playbook individuel'}
                 </p>
                 <div className="flex items-end gap-3 mb-6">
-                  <span className="font-display text-6xl font-extrabold text-[#0a1d2e]">€67</span>
+                  <span className="font-display text-6xl font-extrabold text-[#0a1d2e]">
+                    {individualPrice}
+                  </span>
                   <span className="text-sm text-[#4f6074] pb-3">
                     {isEn ? 'per playbook' : 'par playbook'}
                   </span>
                 </div>
                 <div className="space-y-3">
                   {departmentCopy.map((item) => (
-                    <div key={item} className="flex gap-3 text-sm text-[#4f6074]">
-                      <CheckCircle2 size={18} className="text-[#003d9b] flex-shrink-0 mt-0.5" />
+                    <div
+                      key={item}
+                      className="flex gap-3 text-sm text-[#4f6074]"
+                    >
+                      <CheckCircle2
+                        size={18}
+                        className="text-[#003d9b] flex-shrink-0 mt-0.5"
+                      />
                       <span>{item}</span>
                     </div>
                   ))}
+                </div>
+                <div className="mt-7 pt-5 border-t border-gray-100">
+                  <p className="text-xs font-bold uppercase tracking-widest text-[#737685] mb-3">
+                    {isEn ? 'Currency' : 'Devise'}
+                  </p>
+                  <div
+                    className="inline-flex border border-[#c3c6d6] overflow-hidden"
+                    style={{ borderRadius: '0.125rem' }}
+                  >
+                    {currencyOptions.map((option) => (
+                      <button
+                        key={option}
+                        type="button"
+                        onClick={() => setCurrency(option)}
+                        className={`px-4 py-2 text-xs font-bold uppercase transition-colors ${
+                          currency === option
+                            ? 'bg-[#003d9b] text-white'
+                            : 'bg-white text-[#4f6074] hover:bg-[#f8f9ff]'
+                        }`}
+                      >
+                        {option}
+                      </button>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
@@ -106,7 +158,11 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
       <section className="px-6 pb-10">
         <div
           className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 px-7 py-5"
-          style={{ backgroundColor: '#eef4ff', borderLeft: '3px solid #003d9b', borderRadius: '0.125rem' }}
+          style={{
+            backgroundColor: '#eef4ff',
+            borderLeft: '3px solid #003d9b',
+            borderRadius: '0.125rem',
+          }}
         >
           <p className="text-sm text-[#0a1d2e] font-medium">
             {isEn
@@ -132,7 +188,9 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
             <h2 className="font-display text-4xl md:text-5xl font-extrabold text-[#0a1d2e] mb-4 tracking-tight">
               {isEn ? 'All Playbooks' : 'Tous les Playbooks'}
             </h2>
-            <p className="text-[#4f6074] leading-relaxed">{t('product_intro')}</p>
+            <p className="text-[#4f6074] leading-relaxed">
+              {t('product_intro')}
+            </p>
           </div>
 
           <div className="flex flex-wrap gap-2">
@@ -143,8 +201,12 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                 className="px-4 py-2 text-sm font-bold transition-all"
                 style={{
                   color: activeFilter === cat.key ? '#ffffff' : '#4f6074',
-                  backgroundColor: activeFilter === cat.key ? '#003d9b' : '#f8f9ff',
-                  border: activeFilter === cat.key ? '1px solid #003d9b' : '1px solid rgba(195,198,214,0.55)',
+                  backgroundColor:
+                    activeFilter === cat.key ? '#003d9b' : '#f8f9ff',
+                  border:
+                    activeFilter === cat.key
+                      ? '1px solid #003d9b'
+                      : '1px solid rgba(195,198,214,0.55)',
                   borderRadius: '0.125rem',
                 }}
               >
@@ -162,9 +224,15 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
               <article
                 key={pb.id}
                 className="bg-white flex flex-col transition-all duration-300 hover:shadow-2xl"
-                style={{ boxShadow: '0 2px 12px rgba(10,29,46,0.06)', borderRadius: '0.125rem' }}
+                style={{
+                  boxShadow: '0 2px 12px rgba(10,29,46,0.06)',
+                  borderRadius: '0.125rem',
+                }}
               >
-                <Link href={`/${locale}/playbooks/${pb.id}`} className="block group">
+                <Link
+                  href={`/${locale}/playbooks/${pb.id}`}
+                  className="block group"
+                >
                   <div
                     className="relative overflow-hidden"
                     style={{ aspectRatio: '16/10', backgroundColor: '#dae9ff' }}
@@ -172,7 +240,8 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                     <div
                       className="absolute inset-0 opacity-25 group-hover:opacity-40 transition-opacity duration-300"
                       style={{
-                        backgroundImage: 'radial-gradient(#003d9b 0.5px, transparent 0.5px)',
+                        backgroundImage:
+                          'radial-gradient(#003d9b 0.5px, transparent 0.5px)',
                         backgroundSize: '20px 20px',
                       }}
                     />
@@ -180,10 +249,18 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                       className="absolute inset-7 flex flex-col items-center justify-center"
                       style={{ border: '1px solid rgba(0,61,155,0.15)' }}
                     >
-                      <Icon size={46} className="mb-3" style={{ color: '#003d9b', opacity: 0.28 }} />
+                      <Icon
+                        size={46}
+                        className="mb-3"
+                        style={{ color: '#003d9b', opacity: 0.28 }}
+                      />
                       <div
                         className="text-[10px] uppercase font-bold"
-                        style={{ letterSpacing: '0.2em', color: '#003d9b', opacity: 0.45 }}
+                        style={{
+                          letterSpacing: '0.2em',
+                          color: '#003d9b',
+                          opacity: 0.45,
+                        }}
                       >
                         {pb.dept[lang]}
                       </div>
@@ -195,24 +272,35 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                   <div className="flex items-center justify-between mb-4">
                     <span
                       className="text-[10px] font-bold uppercase tracking-widest px-2 py-1 text-[#003d9b]"
-                      style={{ backgroundColor: '#eef4ff', borderRadius: '0.125rem' }}
+                      style={{
+                        backgroundColor: '#eef4ff',
+                        borderRadius: '0.125rem',
+                      }}
                     >
                       {pb.dept[lang]}
                     </span>
                     <span className="font-display text-2xl font-extrabold text-[#0a1d2e]">
-                      {isEn ? '€67' : '67€'}
+                      {individualPrice}
                     </span>
                   </div>
 
                   <h3 className="font-display text-xl font-bold text-[#0a1d2e] mb-2">
                     {pb.title[lang]}
                   </h3>
-                  <p className="text-sm text-[#4f6074] leading-relaxed mb-5 flex-1">{pb.desc[lang]}</p>
+                  <p className="text-sm text-[#4f6074] leading-relaxed mb-5 flex-1">
+                    {pb.desc[lang]}
+                  </p>
 
                   <ul className="space-y-2 mb-6">
                     {pb.highlights[lang].slice(0, 3).map((highlight) => (
-                      <li key={highlight} className="flex gap-2 text-xs text-[#4f6074]">
-                        <CheckCircle2 size={14} className="text-[#003d9b] flex-shrink-0 mt-0.5" />
+                      <li
+                        key={highlight}
+                        className="flex gap-2 text-xs text-[#4f6074]"
+                      >
+                        <CheckCircle2
+                          size={14}
+                          className="text-[#003d9b] flex-shrink-0 mt-0.5"
+                        />
                         <span>{highlight}</span>
                       </li>
                     ))}
@@ -228,12 +316,17 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                       addedLabel={isEn ? 'In Cart' : 'Ajouté'}
                       className="w-full flex items-center justify-center gap-2 py-3 bg-[#003d9b] text-white font-bold text-xs uppercase tracking-widest hover:bg-[#002d7a] transition-colors rounded-[2px]"
                     >
-                      {isEn ? 'Add to cart · €67' : 'Ajouter au panier · 67€'}
+                      {isEn
+                        ? `Add to cart · ${individualPrice}`
+                        : `Ajouter au panier · ${individualPrice}`}
                     </AddToCartButton>
                     <Link
                       href={`/${locale}/playbooks/${pb.id}`}
                       className="w-full flex items-center justify-center gap-2 py-3 text-[#003d9b] font-bold text-xs uppercase tracking-widest hover:bg-[#eef4ff] transition-colors"
-                      style={{ border: '1px solid #003d9b', borderRadius: '0.125rem' }}
+                      style={{
+                        border: '1px solid #003d9b',
+                        borderRadius: '0.125rem',
+                      }}
                     >
                       <span>{isEn ? 'View details' : 'Voir les détails'}</span>
                       <ChevronRight size={14} />
@@ -251,10 +344,15 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
         <div className="max-w-7xl mx-auto">
           <div
             className="grid lg:grid-cols-[1fr_0.72fr] gap-10 bg-white p-8 md:p-10"
-            style={{ borderRadius: '0.125rem', boxShadow: '0 2px 12px rgba(10,29,46,0.06)' }}
+            style={{
+              borderRadius: '0.125rem',
+              boxShadow: '0 2px 12px rgba(10,29,46,0.06)',
+            }}
           >
             <div>
-              <p className="text-xs font-bold uppercase tracking-widest text-[#003d9b] mb-4">{t('bundle_label')}</p>
+              <p className="text-xs font-bold uppercase tracking-widest text-[#003d9b] mb-4">
+                {t('bundle_label')}
+              </p>
               <h2 className="font-display text-3xl md:text-4xl font-extrabold text-[#0a1d2e] mb-4">
                 {t('bundle_desc')}
               </h2>
@@ -268,36 +366,54 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                   isEn ? 'FR & EN included' : 'FR & EN inclus',
                 ].map((item) => (
                   <div key={item} className="flex gap-2 text-sm text-[#4f6074]">
-                    <PackageCheck size={17} className="text-[#003d9b] flex-shrink-0 mt-0.5" />
+                    <PackageCheck
+                      size={17}
+                      className="text-[#003d9b] flex-shrink-0 mt-0.5"
+                    />
                     <span>{item}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="bg-[#003d9b] text-white p-7 flex flex-col justify-between" style={{ borderRadius: '0.125rem' }}>
+            <div
+              className="bg-[#003d9b] text-white p-7 flex flex-col justify-between"
+              style={{ borderRadius: '0.125rem' }}
+            >
               <div>
                 <p className="text-xs font-bold uppercase tracking-widest opacity-70 mb-3">
                   {isEn ? 'Bundle price' : 'Prix bundle'}
                 </p>
                 <div className="flex items-end gap-3 mb-3">
-                  <span className="font-display text-5xl font-extrabold">{isEn ? '€199' : '199€'}</span>
-                  <span className="text-sm opacity-75 pb-2">{isEn ? 'instead of €268' : 'au lieu de 268€'}</span>
+                  <span className="font-display text-5xl font-extrabold">
+                    {bundlePrice}
+                  </span>
+                  <span className="text-sm opacity-75 pb-2">
+                    {isEn
+                      ? `instead of ${bundleFullPrice}`
+                      : `au lieu de ${bundleFullPrice}`}
+                  </span>
                 </div>
                 <p className="text-sm opacity-75 mb-7">
-                  {isEn ? 'Save €69 when you need the full set.' : 'Économisez 69€ si vous avez besoin de l’ensemble.'}
+                  {isEn
+                    ? `Save ${bundleSaving} when you need the full set.`
+                    : `Économisez ${bundleSaving} si vous avez besoin de l’ensemble.`}
                 </p>
               </div>
               <AddToCartButton
                 item={{
                   priceId: BUNDLE_PRICE_ID,
-                  title: isEn ? 'Complete Bundle · All 4 Playbooks' : 'Bundle Complet · 4 Playbooks',
+                  title: isEn
+                    ? 'Complete Bundle · All 4 Playbooks'
+                    : 'Bundle Complet · 4 Playbooks',
                   price: 199,
                 }}
                 addedLabel={isEn ? 'In Cart' : 'Ajouté'}
                 className="w-full px-5 py-3 bg-white text-[#003d9b] text-sm font-bold hover:bg-[#f8f9ff] transition-colors rounded-[2px]"
               >
-                {t('buy_bundle')}
+                {isEn
+                  ? `Get the Bundle · ${bundlePrice}`
+                  : `Acheter le Bundle · ${bundlePrice}`}
               </AddToCartButton>
             </div>
           </div>
@@ -313,7 +429,9 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
           >
             <div className="text-white max-w-2xl">
               <p className="font-display font-bold text-2xl mb-3">
-                {isEn ? 'Need something more specific?' : 'Besoin de quelque chose de plus spécifique ?'}
+                {isEn
+                  ? 'Need something more specific?'
+                  : 'Besoin de quelque chose de plus spécifique ?'}
               </p>
               <p className="text-sm opacity-80 leading-relaxed">
                 {isEn
@@ -334,10 +452,15 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 px-6 bg-white" style={{ borderTop: '1px solid rgba(195,198,214,0.2)' }}>
+      <section
+        className="py-20 px-6 bg-white"
+        style={{ borderTop: '1px solid rgba(195,198,214,0.2)' }}
+      >
         <div className="max-w-7xl mx-auto">
           <p className="text-xs font-bold uppercase tracking-widest text-[#4f6074] mb-10">
-            {isEn ? 'What professionals say' : 'Ce que disent les professionnels'}
+            {isEn
+              ? 'What professionals say'
+              : 'Ce que disent les professionnels'}
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
@@ -345,7 +468,9 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                 quote: isEn
                   ? 'The procedures clearly reflect real hotel experience. You can tell it was built from the floor up.'
                   : 'Les procédures reflètent une vraie expérience du terrain. Ça se sent immédiatement.',
-                role: isEn ? 'Operations Manager' : 'Responsable des opérations',
+                role: isEn
+                  ? 'Operations Manager'
+                  : 'Responsable des opérations',
               },
               {
                 quote: isEn
@@ -357,7 +482,9 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                 quote: isEn
                   ? 'We used it across two very different properties. It worked for both.'
                   : "Nous l'avons utilisé dans deux établissements très différents. Ça a fonctionné dans les deux cas.",
-                role: isEn ? 'Hotel Group Manager' : 'Directeur de groupe hôtelier',
+                role: isEn
+                  ? 'Hotel Group Manager'
+                  : 'Directeur de groupe hôtelier',
               },
               {
                 quote: isEn
@@ -371,8 +498,12 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                 className="flex flex-col justify-between p-6"
                 style={{ backgroundColor: '#f8f9ff', borderRadius: '0.125rem' }}
               >
-                <p className="text-sm text-[#0a1d2e] leading-relaxed mb-6">&quot;{item.quote}&quot;</p>
-                <p className="text-xs font-bold text-[#4f6074] uppercase tracking-widest">{item.role}</p>
+                <p className="text-sm text-[#0a1d2e] leading-relaxed mb-6">
+                  &quot;{item.quote}&quot;
+                </p>
+                <p className="text-xs font-bold text-[#4f6074] uppercase tracking-widest">
+                  {item.role}
+                </p>
               </div>
             ))}
           </div>
@@ -384,7 +515,11 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
         <div className="max-w-7xl mx-auto">
           <div
             className="flex flex-col lg:flex-row items-center gap-10 p-10"
-            style={{ backgroundColor: '#eef4ff', borderRadius: '0.125rem', borderLeft: '4px solid #003d9b' }}
+            style={{
+              backgroundColor: '#eef4ff',
+              borderRadius: '0.125rem',
+              borderLeft: '4px solid #003d9b',
+            }}
           >
             <div className="flex-1">
               <div className="text-xs font-bold uppercase tracking-widest text-[#003d9b] mb-4">
@@ -406,7 +541,9 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
               className="flex-shrink-0 inline-flex items-center gap-2 px-8 py-4 bg-[#003d9b] text-white font-bold text-sm hover:bg-[#002d7a] transition-colors"
               style={{ borderRadius: '0.125rem' }}
             >
-              {isEn ? 'Discover on-site training' : 'Découvrir la formation sur site'}
+              {isEn
+                ? 'Discover on-site training'
+                : 'Découvrir la formation sur site'}
               <ArrowRight size={16} />
             </Link>
           </div>
