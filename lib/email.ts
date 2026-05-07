@@ -19,6 +19,8 @@ const ALL_INDIVIDUAL_PRICE_IDS = [
 ]
 
 const PLAYBOOK_NAMES: Record<string, { en: string; fr: string }> = {
+  'price_1TUONHDVLJTOFkjUjE391FrX': { en: 'Front Office Starter Pack', fr: 'Starter Pack Front Office' },
+  'price_1TUONXDVLJTOFkjUYvR8PUiS': { en: 'Housekeeping Inspection Kit', fr: 'Kit Inspection Housekeeping' },
   'price_1TBZ94DVLJTOFkjUsH59B7x7': { en: 'Front Office Playbook', fr: 'Playbook Front Office' },
   'price_1TBZ9TDVLJTOFkjUwWnoKaGk': { en: 'Housekeeping Playbook', fr: 'Playbook Housekeeping' },
   'price_1TBZ9iDVLJTOFkjU3Os9VLRc': { en: 'F&B Playbook', fr: 'Playbook F&B' },
@@ -48,8 +50,8 @@ function buildEmailHtml(
 
   const greeting     = isEn ? `Hi ${name},` : `Bonjour ${name},`
   const thankYou     = isEn
-    ? 'Your purchase is confirmed. Access your playbook(s) anytime from your personal portal.'
-    : 'Votre achat est confirmé. Accédez à vos playbooks à tout moment depuis votre espace personnel.'
+    ? 'Your purchase is confirmed. Access your LuxOps resources anytime from your personal portal.'
+    : 'Votre achat est confirmé. Accédez à vos ressources LuxOps à tout moment depuis votre espace personnel.'
   const purchasedLabel = isEn ? 'Order summary' : 'Récapitulatif de commande'
   const step1Title   = isEn ? 'Create your account' : 'Créez votre compte'
   const step1Body    = isEn
@@ -57,8 +59,8 @@ function buildEmailHtml(
     : `Rendez-vous sur <a href="${registerUrl}" style="color:#003d9b;font-weight:600;text-decoration:none;">luxops.fr/portal/register</a> et créez votre compte avec l'adresse utilisée lors du paiement : <strong style="color:#0a1d2e;">${recipientEmail}</strong>`
   const step2Title   = isEn ? 'Access your playbooks' : 'Accédez à vos playbooks'
   const step2Body    = isEn
-    ? 'Your purchases will appear directly in your dashboard, ready to download in PDF format at any time.'
-    : 'Vos achats apparaissent directement dans votre tableau de bord, téléchargeables en PDF à tout moment.'
+    ? 'Your purchases will appear directly in your dashboard, ready to download in PDF and PPTX format at any time.'
+    : 'Vos achats apparaissent directement dans votre tableau de bord, téléchargeables en PDF et PPTX à tout moment.'
   const ctaLabel     = isEn ? 'Create my account' : 'Créer mon compte'
   const alreadyHave  = isEn
     ? `Already have an account? <a href="${loginUrl}" style="color:#003d9b;font-weight:600;text-decoration:none;">Sign in</a>`
@@ -196,8 +198,8 @@ export async function sendPlaybookEmail({
 
   const count = playbookNames.length
   const subject = isEn
-    ? `Your LuxOps Playbook${count > 1 ? 's are' : ' is'} ready`
-    : `Votre${count > 1 ? 's' : ''} Playbook${count > 1 ? 's LuxOps sont' : ' LuxOps est'} disponible${count > 1 ? 's' : ''}`
+    ? `Your LuxOps file${count > 1 ? 's are' : ' is'} ready`
+    : `Votre${count > 1 ? 's' : ''} fichier${count > 1 ? 's LuxOps sont' : ' LuxOps est'} disponible${count > 1 ? 's' : ''}`
 
   const html = buildEmailHtml(name, playbookNames, lang, to)
 

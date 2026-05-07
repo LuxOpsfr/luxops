@@ -30,6 +30,12 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
   const { addItem, items } = useCart()
 
   const inCart = items.some((i) => i.priceId === pb.priceId)
+  const starterPackHref =
+    pb.id === 'fo'
+      ? `/${locale}/playbooks/fo-starter-pack`
+      : pb.id === 'hsk'
+        ? `/${locale}/playbooks/hsk-starter-pack`
+        : null
 
   const handleAddToCart = () => {
     if (!inCart) {
@@ -103,8 +109,17 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
                 <ShoppingCart size={16} />
                 {inCart
                   ? (isEn ? 'In Cart' : 'Ajouté')
-                  : (isEn ? 'Buy Playbook — €67' : 'Acheter — 67 €')}
+                  : (isEn ? 'Buy Playbook · €67' : 'Acheter · 67 €')}
               </button>
+              {starterPackHref && (
+                <Link
+                  href={starterPackHref}
+                  className="px-8 py-4 font-bold text-[#003d9b] border border-[#003d9b] hover:bg-[#eef4ff] transition-colors"
+                  style={{ borderRadius: '0.125rem' }}
+                >
+                  {isEn ? 'View Starter Pack · €29' : 'Voir le Starter Pack · 29 €'}
+                </Link>
+              )}
               <Link
                 href={`/${locale}/free-hotel-procedures`}
                 className="px-8 py-4 font-bold text-[#0a1d2e] hover:bg-[#dae9ff] transition-colors"
@@ -408,7 +423,7 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
             >
               {inCart
                 ? (isEn ? '✓ In Cart' : '✓ Ajouté')
-                : (isEn ? 'Buy Playbook — €67' : 'Acheter le Playbook — 67 €')}
+                : (isEn ? 'Buy Playbook · €67' : 'Acheter le Playbook · 67 €')}
             </button>
             <Link
               href={`/${locale}/playbooks`}

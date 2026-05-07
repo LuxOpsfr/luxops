@@ -15,12 +15,18 @@ import {
 import Link from 'next/link'
 import AddToCartButton from '@/components/AddToCartButton'
 import { PLAYBOOKS, BUNDLE_PRICE_ID } from '@/content/playbooks/data'
+import { STARTER_PACKS } from '@/content/starter-packs/data'
 
 const DEPT_ICONS = {
   fo: Building2,
   hsk: Sparkles,
   fb: UtensilsCrossed,
   spa: Waves,
+}
+
+const STARTER_PACK_ICONS = {
+  'fo-starter-pack': Building2,
+  'hsk-starter-pack': Sparkles,
 }
 
 export default function PlaybooksContent({ locale }: { locale: string }) {
@@ -41,9 +47,13 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
   const filteredPlaybooks =
     activeFilter === 'all' ? PLAYBOOKS : PLAYBOOKS.filter((pb) => pb.id === activeFilter)
 
-  const departmentCopy = isEn
-    ? ['Instant delivery', 'PDF + PowerPoint', 'FR & EN included']
-    : ['Livraison instantanée', 'PDF + PowerPoint', 'FR & EN inclus']
+  const starterCopy = isEn
+    ? ['Practical templates', 'PDF + PPTX', 'FR & EN included']
+    : ['Templates pratiques', 'PDF + PPTX', 'FR & EN inclus']
+
+  const playbookCopy = isEn
+    ? ['Complete SOP reference', 'PDF + PowerPoint', 'FR & EN included']
+    : ['Référence SOP complète', 'PDF + PowerPoint', 'FR & EN inclus']
 
   return (
     <div className="pt-16 bg-white">
@@ -58,14 +68,21 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
               <p className="text-lg text-[#4f6074] leading-relaxed max-w-2xl mb-8">
                 {t('subtitle')}
               </p>
-              <div className="flex flex-col sm:flex-row gap-3">
+              <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3">
                 <a
-                  href="#department-playbooks"
+                  href="#starter-packs"
                   className="inline-flex justify-center items-center gap-2 px-7 py-4 bg-[#003d9b] text-white font-bold text-sm hover:bg-[#002d7a] transition-colors"
                   style={{ borderRadius: '0.125rem' }}
                 >
-                  {isEn ? 'View playbooks at €67' : 'Voir les playbooks à 67€'}
+                  {isEn ? 'View starter packs at €29' : 'Voir les starter packs à 29€'}
                   <ArrowRight size={16} />
+                </a>
+                <a
+                  href="#department-playbooks"
+                  className="inline-flex justify-center items-center gap-2 px-7 py-4 border border-[#c3c6d6] text-[#0a1d2e] font-bold text-sm hover:border-[#003d9b] hover:text-[#003d9b] transition-colors"
+                  style={{ borderRadius: '0.125rem' }}
+                >
+                  {isEn ? 'View playbooks at €67' : 'Voir les playbooks à 67€'}
                 </a>
                 <a
                   href={`/${locale}/free-hotel-procedures`}
@@ -78,23 +95,47 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
             </div>
 
             <div className="bg-[#f8f9ff] p-8" style={{ borderRadius: '0.125rem' }}>
-              <div className="bg-white p-7 shadow-sm" style={{ borderRadius: '0.125rem' }}>
-                <p className="text-xs font-bold uppercase tracking-widest text-[#737685] mb-5">
-                  {isEn ? 'Individual playbook' : 'Playbook individuel'}
-                </p>
-                <div className="flex items-end gap-3 mb-6">
-                  <span className="font-display text-6xl font-extrabold text-[#0a1d2e]">€67</span>
-                  <span className="text-sm text-[#4f6074] pb-3">
-                    {isEn ? 'per playbook' : 'par playbook'}
-                  </span>
+              <div className="grid gap-4">
+                <div className="bg-white p-7 shadow-sm" style={{ borderRadius: '0.125rem' }}>
+                  <div className="mb-5">
+                    <p className="text-xs font-bold uppercase tracking-widest text-[#003d9b]">
+                      {isEn ? 'New · Starter Pack' : 'Nouveau · Starter Pack'}
+                    </p>
+                  </div>
+                  <div className="flex items-end gap-3 mb-6">
+                    <span className="font-display text-6xl font-extrabold text-[#0a1d2e]">€29</span>
+                    <span className="text-sm text-[#4f6074] pb-3">
+                      {isEn ? 'practical tools' : 'outils pratiques'}
+                    </span>
+                  </div>
+                  <div className="space-y-3">
+                    {starterCopy.map((item) => (
+                      <div key={item} className="flex gap-3 text-sm text-[#4f6074]">
+                        <CheckCircle2 size={18} className="text-[#003d9b] flex-shrink-0 mt-0.5" />
+                        <span>{item}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <div className="space-y-3">
-                  {departmentCopy.map((item) => (
-                    <div key={item} className="flex gap-3 text-sm text-[#4f6074]">
-                      <CheckCircle2 size={18} className="text-[#003d9b] flex-shrink-0 mt-0.5" />
-                      <span>{item}</span>
-                    </div>
-                  ))}
+
+                <div className="bg-white/70 p-6 border border-[#e3e8f4]" style={{ borderRadius: '0.125rem' }}>
+                  <p className="text-xs font-bold uppercase tracking-widest text-[#737685] mb-4">
+                    {isEn ? 'Full Playbook' : 'Playbook complet'}
+                  </p>
+                  <div className="flex items-end gap-3 mb-5">
+                    <span className="font-display text-4xl font-extrabold text-[#0a1d2e]">€67</span>
+                    <span className="text-sm text-[#4f6074] pb-2">
+                      {isEn ? 'per playbook' : 'par playbook'}
+                    </span>
+                  </div>
+                  <div className="space-y-2">
+                    {playbookCopy.map((item) => (
+                      <div key={item} className="flex gap-3 text-sm text-[#4f6074]">
+                        <CheckCircle2 size={16} className="text-[#003d9b] flex-shrink-0 mt-0.5" />
+                        <span>{item}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
@@ -123,8 +164,11 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
       </section>
 
       {/* Department playbooks */}
-      <main id="department-playbooks" className="max-w-7xl mx-auto px-6 py-16">
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-10">
+      <main className="max-w-7xl mx-auto px-6 py-16 flex flex-col">
+        <div
+          id="department-playbooks"
+          className="scroll-mt-28 flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-10"
+        >
           <div className="max-w-2xl">
             <p className="text-xs font-bold uppercase tracking-widest text-[#003d9b] mb-4">
               {filteredPlaybooks.length} {isEn ? 'Playbooks' : 'Playbooks'}
@@ -244,6 +288,122 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
             )
           })}
         </div>
+
+        <section id="starter-packs" className="pb-20" style={{ order: -1 }}>
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-10">
+            <div className="max-w-2xl">
+              <p className="inline-flex items-center px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-[#003d9b] bg-[#eef4ff] mb-4">
+                {isEn ? 'New' : 'Nouveau'}
+              </p>
+              <h2 className="font-display text-4xl md:text-5xl font-extrabold text-[#0a1d2e] mb-4 tracking-tight">
+                {isEn ? 'Starter Packs' : 'Starter Packs'}
+              </h2>
+              <p className="text-[#4f6074] leading-relaxed">
+                {isEn
+                  ? 'Practical checklists, templates and scripts designed for immediate operational use.'
+                  : 'Checklists, templates et scripts pratiques conçus pour un usage opérationnel immédiat.'}
+              </p>
+            </div>
+            <a
+              href="#bundle"
+              className="inline-flex items-center gap-2 text-xs font-bold text-[#003d9b] underline underline-offset-4 hover:text-[#002d7a] transition-colors"
+            >
+              {isEn ? 'Need the full set?' : 'Besoin du set complet ?'}
+              <ArrowRight size={14} />
+            </a>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {STARTER_PACKS.map((pack) => {
+              const Icon = STARTER_PACK_ICONS[pack.id]
+
+              return (
+                <article
+                  key={pack.id}
+                  className="bg-white flex flex-col transition-all duration-300 hover:shadow-2xl"
+                  style={{ boxShadow: '0 2px 12px rgba(10,29,46,0.06)', borderRadius: '0.125rem' }}
+                >
+                  <Link href={`/${locale}/playbooks/${pack.id}`} className="block group">
+                    <div
+                      className="relative overflow-hidden"
+                      style={{ aspectRatio: '16/7', backgroundColor: '#dae9ff' }}
+                    >
+                      <div
+                        className="absolute inset-0 opacity-25 group-hover:opacity-40 transition-opacity duration-300"
+                        style={{
+                          backgroundImage: 'radial-gradient(#003d9b 0.5px, transparent 0.5px)',
+                          backgroundSize: '20px 20px',
+                        }}
+                      />
+                      <div
+                        className="absolute inset-7 flex flex-col items-center justify-center"
+                        style={{ border: '1px solid rgba(0,61,155,0.15)' }}
+                      >
+                        <Icon size={44} className="mb-3" style={{ color: '#003d9b', opacity: 0.3 }} />
+                        <div
+                          className="text-[10px] uppercase font-bold"
+                          style={{ letterSpacing: '0.2em', color: '#003d9b', opacity: 0.48 }}
+                        >
+                          {pack.category[lang]}
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+
+                  <div className="p-6 flex flex-col flex-1">
+                    <div className="flex items-center justify-between mb-4">
+                      <span
+                        className="text-[10px] font-bold uppercase tracking-widest px-2 py-1 text-[#003d9b]"
+                        style={{ backgroundColor: '#eef4ff', borderRadius: '0.125rem' }}
+                      >
+                        {pack.category[lang]}
+                      </span>
+                      <span className="font-display text-2xl font-extrabold text-[#0a1d2e]">
+                        {isEn ? '€29' : '29€'}
+                      </span>
+                    </div>
+
+                    <h3 className="font-display text-xl font-bold text-[#0a1d2e] mb-2">
+                      {pack.shortTitle[lang]}
+                    </h3>
+                    <p className="text-sm text-[#4f6074] leading-relaxed mb-5 flex-1">{pack.description[lang]}</p>
+
+                    <ul className="space-y-2 mb-6">
+                      {pack.bullets[lang].map((bullet) => (
+                        <li key={bullet} className="flex gap-2 text-xs text-[#4f6074]">
+                          <CheckCircle2 size={14} className="text-[#003d9b] flex-shrink-0 mt-0.5" />
+                          <span>{bullet}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="space-y-3">
+                      <AddToCartButton
+                        item={{
+                          priceId: pack.priceId,
+                          title: pack.shortTitle[lang],
+                          price: 29,
+                        }}
+                        addedLabel={isEn ? 'In Cart' : 'Ajouté'}
+                        className="w-full flex items-center justify-center gap-2 py-3 bg-[#003d9b] text-white font-bold text-xs uppercase tracking-widest hover:bg-[#002d7a] transition-colors rounded-[2px]"
+                      >
+                        {isEn ? 'Add to cart · €29' : 'Ajouter au panier · 29€'}
+                      </AddToCartButton>
+                      <Link
+                        href={`/${locale}/playbooks/${pack.id}`}
+                        className="w-full flex items-center justify-center gap-2 py-3 text-[#003d9b] font-bold text-xs uppercase tracking-widest hover:bg-[#eef4ff] transition-colors"
+                        style={{ border: '1px solid #003d9b', borderRadius: '0.125rem' }}
+                      >
+                        <span>{isEn ? 'View details' : 'Voir les détails'}</span>
+                        <ChevronRight size={14} />
+                      </Link>
+                    </div>
+                  </div>
+                </article>
+              )
+            })}
+          </div>
+        </section>
       </main>
 
       {/* Bundle upgrade */}

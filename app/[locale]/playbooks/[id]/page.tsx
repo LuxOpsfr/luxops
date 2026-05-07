@@ -1,8 +1,9 @@
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
-import Link from 'next/link'
 import { PLAYBOOKS } from '@/content/playbooks/data'
+import { getStarterPack } from '@/content/starter-packs/data'
 import PlaybookDetailClient from '@/components/PlaybookDetailClient'
+import StarterPackDetailClient from '@/components/StarterPackDetailClient'
 
 const STATS: Record<string, { value: string; label: { en: string; fr: string } }[]> = {
   fo: [
@@ -153,11 +154,26 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { id, locale } = await params
   const pb = PLAYBOOKS.find((p) => p.id === id)
-  if (!pb) return {}
-  const isEn = locale === 'en'
+  const starterPack = getStarterPack(id)
+  if (!pb && !starterPack) return {}
   const lang = locale as 'en' | 'fr'
+  if (starterPack) {
+    return {
+      title: starterPack.seo.title,
+      description: starterPack.seo.description,
+      alternates: {
+        canonical: `https://www.luxops.fr/${locale}/playbooks/${id}`,
+        languages: {
+          en: `https://www.luxops.fr/en/playbooks/${id}`,
+          fr: `https://www.luxops.fr/fr/playbooks/${id}`,
+          'x-default': `https://www.luxops.fr/en/playbooks/${id}`,
+        },
+      },
+    }
+  }
+  if (!pb) return {}
   return {
-    title: `${pb.title[lang]} — LuxOps`,
+    title: `${pb.title[lang]} | LuxOps`,
     description: pb.desc[lang],
     alternates: {
       canonical: `https://www.luxops.fr/${locale}/playbooks/${id}`,
@@ -172,6 +188,10 @@ export default async function PlaybookDetailPage({
 }) {
   const { id, locale } = await params
   const pb = PLAYBOOKS.find((p) => p.id === id)
+  const starterPack = getStarterPack(id)
+  if (starterPack) {
+    return <StarterPackDetailClient pack={starterPack} locale={locale} />
+  }
   if (!pb) notFound()
 
   const stats = STATS[id] || []

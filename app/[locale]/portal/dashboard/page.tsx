@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { supabase } from '@/lib/supabase'
 import PortalShell from '@/components/portal/PortalShell'
 import { Download, BookOpen, Package, ChevronDown, ChevronUp, FileText } from 'lucide-react'
-import { PLAYBOOKS, PRICE_TO_PLAYBOOK, getPlaybookIds, type Playbook, type Chapter } from '@/lib/chapters'
+import { PLAYBOOKS, getPlaybookIds, type Playbook, type Chapter } from '@/lib/chapters'
 
 interface Purchase {
   id: string
@@ -92,13 +92,13 @@ export default function DashboardPage() {
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
           <div className="bg-white rounded-xl border border-gray-100 p-5">
             <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">
-              {isFr ? 'Playbooks achetés' : 'Purchased playbooks'}
+              {isFr ? 'Produits achetés' : 'Purchased products'}
             </p>
             <p className="text-3xl font-bold text-[#1A2E44]">{unlockedPlaybooks.length}</p>
           </div>
           <div className="bg-white rounded-xl border border-gray-100 p-5">
             <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">
-              {isFr ? 'Chapitres disponibles' : 'Available chapters'}
+              {isFr ? 'Fichiers disponibles' : 'Available files'}
             </p>
             <p className="text-3xl font-bold text-[#2E7D32]">
               {unlockedPlaybooks.reduce((acc, p) => acc + p.chapters.length, 0)}
@@ -108,7 +108,7 @@ export default function DashboardPage() {
             <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">
               {isFr ? 'Formats disponibles' : 'Available formats'}
             </p>
-            <p className="text-3xl font-bold text-[#1A2E44]">PDF + PPT</p>
+            <p className="text-3xl font-bold text-[#1A2E44]">PDF + PPTX</p>
           </div>
         </div>
       )}
@@ -137,7 +137,7 @@ export default function DashboardPage() {
       ) : (
         <div className="grid gap-5">
           {unlockedPlaybooks.map(playbook => (
-            <PlaybookCard key={playbook.id} playbook={playbook} isFr={isFr} locale={locale} />
+            <PlaybookCard key={playbook.id} playbook={playbook} isFr={isFr} />
           ))}
         </div>
       )}
@@ -155,7 +155,7 @@ export default function DashboardPage() {
   )
 }
 
-function PlaybookCard({ playbook, isFr, locale }: { playbook: Playbook; isFr: boolean; locale: string }) {
+function PlaybookCard({ playbook, isFr }: { playbook: Playbook; isFr: boolean }) {
   const [open, setOpen] = useState(true)
 
   return (
@@ -177,7 +177,7 @@ function PlaybookCard({ playbook, isFr, locale }: { playbook: Playbook; isFr: bo
               {isFr ? playbook.titleFr : playbook.titleEn}
             </h2>
             <p className="text-xs text-gray-400 mt-0.5">
-              {playbook.chapters.length} {isFr ? 'chapitres' : 'chapters'} · PDF + PPT
+              {playbook.chapters.length} {isFr ? 'fichiers' : 'files'} · PDF + PPTX
             </p>
           </div>
         </div>
@@ -204,7 +204,6 @@ function PlaybookCard({ playbook, isFr, locale }: { playbook: Playbook; isFr: bo
               key={chapter.number}
               chapter={chapter}
               isFr={isFr}
-              locale={locale}
               color={playbook.color}
               isLast={idx === playbook.chapters.length - 1}
             />
@@ -218,13 +217,11 @@ function PlaybookCard({ playbook, isFr, locale }: { playbook: Playbook; isFr: bo
 function ChapterRow({
   chapter,
   isFr,
-  locale,
   color,
   isLast,
 }: {
   chapter: Chapter
   isFr: boolean
-  locale: string
   color: string
   isLast: boolean
 }) {
@@ -284,7 +281,7 @@ function ChapterRow({
           }}
         >
           <Download size={12} />
-          PPT
+          PPTX
         </a>
       </div>
     </div>

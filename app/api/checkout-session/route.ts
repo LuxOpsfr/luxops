@@ -11,6 +11,8 @@ const VALID_PRICE_IDS = new Set([
   'price_1TBZ9TDVLJTOFkjUwWnoKaGk', // Housekeeping
   'price_1TBZ9iDVLJTOFkjU3Os9VLRc', // F&B
   'price_1TBZ9vDVLJTOFkjUT1FHhqUi', // Spa & Wellness
+  'price_1TUONHDVLJTOFkjUjE391FrX', // Front Office Starter Pack
+  'price_1TUONXDVLJTOFkjUYvR8PUiS', // Housekeeping Inspection Kit
 ])
 
 export async function POST(request: NextRequest) {
@@ -45,6 +47,9 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ clientSecret: session.client_secret })
   } catch (error) {
     console.error('[LuxOps Checkout Session Error]', error)
-    return NextResponse.json({ error: 'Failed to create checkout session' }, { status: 500 })
+    return NextResponse.json(
+      { error: 'Failed to create checkout session' },
+      { status: 500 },
+    )
   }
 }

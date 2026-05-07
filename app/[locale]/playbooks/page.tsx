@@ -14,8 +14,8 @@ export async function generateMetadata({
       ? 'Hotel SOP Playbooks for 5-Star Operations | LuxOps'
       : 'Playbooks SOP pour Hôtels 5 Étoiles | LuxOps',
     description: isEn
-      ? 'Professionally written SOP playbooks for luxury hotel teams — Front Office, Housekeeping, F&B and Spa. Download in PDF and PowerPoint. From €67.'
-      : 'Playbooks SOP rédigés pour les équipes hôtelières haut de gamme — Front Office, Housekeeping, F&B et Spa. Téléchargement PDF et PowerPoint. À partir de 67 €.',
+      ? 'Professionally written hotel operations products for luxury hotel teams: starter packs from €29 and full SOP playbooks from €67.'
+      : 'Produits opérationnels pour équipes hôtelières haut de gamme : starter packs à partir de 29 € et playbooks SOP complets à partir de 67 €.',
     alternates: {
       canonical: `https://www.luxops.fr/${locale}/playbooks`,
       languages: {

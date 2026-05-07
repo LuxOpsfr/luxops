@@ -32,11 +32,49 @@ export const PRICE_TO_PLAYBOOK: Record<string, string> = {
   price_1TBdcNDVLJTOFkjURLNAORmJ: 'spa', // test 0€
   price_1TBZ9vDVLJTOFkjUT1FHhqUi: 'spa',
   price_1TBZB5DVLJTOFkjUwmgvTPRW: 'bundle', // bundle = all 4
+  price_1TUONHDVLJTOFkjUjE391FrX: 'fo-starter-pack',
+  price_1TUONXDVLJTOFkjUYvR8PUiS: 'hsk-starter-pack',
 }
 
 export const BUNDLE_PRICE_ID = 'price_1TBZB5DVLJTOFkjUwmgvTPRW'
 
 export const PLAYBOOKS: Record<string, Playbook> = {
+  'fo-starter-pack': {
+    id: 'fo-starter-pack',
+    titleFr: 'Starter Pack Front Office',
+    titleEn: 'Front Office Starter Pack',
+    color: '#0056D2',
+    chapters: [
+      {
+        number: 1,
+        titleFr: 'Starter Pack Front Office',
+        titleEn: 'Front Office Starter Pack',
+        pdfFr: 'starter-packs/front-office/pdf/fr/starter-pack-front-office.pdf',
+        pdfEn: 'starter-packs/front-office/pdf/en/front-office-starter-pack.pdf',
+        pptxFr: 'starter-packs/front-office/pptx/fr/starter-pack-front-office.pptx',
+        pptxEn: 'starter-packs/front-office/pptx/en/front-office-starter-pack.pptx',
+      },
+    ],
+  },
+
+  'hsk-starter-pack': {
+    id: 'hsk-starter-pack',
+    titleFr: 'Kit Inspection Housekeeping',
+    titleEn: 'Housekeeping Inspection Kit',
+    color: '#2E7D32',
+    chapters: [
+      {
+        number: 1,
+        titleFr: 'Kit Inspection Housekeeping',
+        titleEn: 'Housekeeping Inspection Kit',
+        pdfFr: 'starter-packs/housekeeping-inspection-kit/pdf/fr/kit-inspection-housekeeping.pdf',
+        pdfEn: 'starter-packs/housekeeping-inspection-kit/pdf/en/housekeeping-inspection-kit.pdf',
+        pptxFr: 'starter-packs/housekeeping-inspection-kit/pptx/fr/kit-inspection-housekeeping.pptx',
+        pptxEn: 'starter-packs/housekeeping-inspection-kit/pptx/en/housekeeping-inspection-kit.pptx',
+      },
+    ],
+  },
+
   'front-office': {
     id: 'front-office',
     titleFr: 'Playbook Front Office',
