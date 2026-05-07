@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import LeadMagnetForm from '@/components/LeadMagnetForm'
 
 export async function generateMetadata({
@@ -10,8 +11,8 @@ export async function generateMetadata({
   const isEn = locale === 'en'
   return {
     title: isEn
-      ? 'Free Hotel Procedures — Download an Introduction Chapter | LuxOps'
-      : "Procédures hôtelières gratuites — Télécharger un chapitre d'introduction | LuxOps",
+      ? 'Free Hotel Procedures | Download an Introduction Chapter | LuxOps'
+      : "Procédures hôtelières gratuites | Télécharger un chapitre d'introduction | LuxOps",
     description: isEn
       ? 'Download a free introduction chapter from the LuxOps hotel operations playbooks. Choose your department: Front Office, Housekeeping, Food & Beverage or Spa. Available in English and French.'
       : "Téléchargez gratuitement un chapitre d'introduction des playbooks opérationnels LuxOps. Choisissez votre département : Front Office, Housekeeping, F&B ou Spa. Disponible en français et en anglais.",
@@ -113,6 +114,76 @@ export default async function FreeHotelProceduresPage({
             </p>
           </div>
           <LeadMagnetForm locale={locale} />
+        </div>
+      </section>
+
+      {/* Product paths */}
+      <section className="pb-24 px-6 bg-white">
+        <div className="max-w-screen-xl mx-auto">
+          <div
+            className="max-w-4xl mx-auto border border-gray-100 p-8 md:p-10"
+            style={{ borderRadius: '0.125rem', backgroundColor: '#f8f9ff' }}
+          >
+            <div className="max-w-2xl mb-8">
+              <p className="text-[10px] font-bold uppercase tracking-widest text-[#003d9b] mb-3">
+                {isEn ? 'Next step' : 'Étape suivante'}
+              </p>
+              <h2 className="font-display text-3xl font-extrabold text-[#0a1d2e] tracking-tight mb-3">
+                {isEn
+                  ? 'Need practical tools after the free chapter?'
+                  : 'Besoin d’outils pratiques après le chapitre gratuit ?'}
+              </h2>
+              <p className="text-[#4f6074] leading-relaxed">
+                {isEn
+                  ? 'Continue with focused starter packs for immediate daily use, or browse the full department playbooks when you need the complete SOP reference.'
+                  : 'Continuez avec des starter packs ciblés pour une utilisation immédiate, ou consultez les playbooks complets par département lorsque vous avez besoin de la référence SOP complète.'}
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-4">
+              <Link
+                href={`/${locale}/playbooks#starter-packs`}
+                className="group bg-white border border-gray-100 p-6 hover:shadow-md transition-all"
+                style={{ borderRadius: '0.125rem' }}
+              >
+                <p className="text-[10px] font-bold uppercase tracking-widest text-[#003d9b] mb-3">
+                  {isEn ? 'Starter Packs' : 'Starter Packs'}
+                </p>
+                <h3 className="font-display text-xl font-extrabold text-[#0a1d2e] mb-3">
+                  {isEn ? 'Focused operational kits' : 'Kits opérationnels ciblés'}
+                </h3>
+                <p className="text-sm text-[#4f6074] leading-relaxed mb-5">
+                  {isEn
+                    ? 'Checklists, templates and scripts designed for fast implementation by front office and housekeeping teams.'
+                    : 'Checklists, modèles et scripts conçus pour une mise en place rapide par les équipes réception et housekeeping.'}
+                </p>
+                <span className="text-sm font-bold text-[#003d9b] group-hover:underline">
+                  {isEn ? 'Explore starter packs' : 'Voir les starter packs'}
+                </span>
+              </Link>
+
+              <Link
+                href={`/${locale}/playbooks#department-playbooks`}
+                className="group bg-white border border-gray-100 p-6 hover:shadow-md transition-all"
+                style={{ borderRadius: '0.125rem' }}
+              >
+                <p className="text-[10px] font-bold uppercase tracking-widest text-[#003d9b] mb-3">
+                  {isEn ? 'Full Playbooks' : 'Playbooks complets'}
+                </p>
+                <h3 className="font-display text-xl font-extrabold text-[#0a1d2e] mb-3">
+                  {isEn ? 'Complete SOP references' : 'Références SOP complètes'}
+                </h3>
+                <p className="text-sm text-[#4f6074] leading-relaxed mb-5">
+                  {isEn
+                    ? 'Department-level SOP systems for Front Office, Housekeeping, Food & Beverage and Spa operations.'
+                    : 'Systèmes SOP par département pour la réception, le housekeeping, le Food & Beverage et les opérations spa.'}
+                </p>
+                <span className="text-sm font-bold text-[#003d9b] group-hover:underline">
+                  {isEn ? 'View full playbooks' : 'Voir les playbooks complets'}
+                </span>
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
