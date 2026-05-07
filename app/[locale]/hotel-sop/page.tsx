@@ -8,8 +8,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const isEN = locale === 'en'
   return {
     title: isEN
-      ? 'Hotel SOP Templates — Complete Standard Operating Procedures | LuxOps'
-      : 'Procédures opérationnelles hôtelières — complètes et prêtes à l\'emploi | LuxOps',
+      ? 'Hotel SOP Templates and Starter Packs | LuxOps'
+      : 'Procédures opérationnelles hôtelières et starter packs | LuxOps',
     description: isEN
       ? 'Complete hotel SOP system covering front office, housekeeping, F&B and spa. Built by hospitality professionals. Practical, structured and ready to use on day one.'
       : 'Procédures opérationnelles complètes couvrant la réception, le housekeeping, le F&B et le spa. Conçues par des professionnels de l\'hôtellerie. Pratiques, structurées et prêtes à l\'emploi.',
@@ -47,12 +47,14 @@ const DEPARTMENTS_EN = [
     color: '#B45309',
     chapters: 10,
     desc: 'Service opening sequences, table service standards, bar procedures, complaint handling, allergen management, closing and handover',
+    href: '/en/playbooks/fb',
   },
   {
     name: 'Spa & Wellness',
     color: '#7C3AED',
     chapters: 9,
     desc: 'Treatment reception, therapist protocols, hygiene standards, booking management, guest journey, retail and upsell',
+    href: '/en/playbooks/spa',
   },
 ]
 
@@ -76,12 +78,52 @@ const DEPARTMENTS_FR = [
     color: '#B45309',
     chapters: 10,
     desc: 'Séquences d\'ouverture de service, standards de service en salle, procédures bar, gestion des plaintes, gestion des allergènes, fermeture et passation',
+    href: '/fr/playbooks/fb',
   },
   {
     name: 'Spa & Wellness',
     color: '#7C3AED',
     chapters: 9,
     desc: 'Accueil en spa, protocoles thérapeute, standards d\'hygiène, gestion des réservations, parcours client, retail et upsell',
+    href: '/fr/playbooks/spa',
+  },
+]
+
+const STARTER_PACKS_EN = [
+  {
+    label: 'Front Office',
+    title: 'Front Office Starter Pack',
+    price: '€29',
+    href: '/en/playbooks/fo-starter-pack',
+    desc: 'Front desk checklists, handover template and guest communication scripts for daily reception operations.',
+    points: ['Check-in and check-out basics', 'Shift handover template', 'Complaint scripts'],
+  },
+  {
+    label: 'Housekeeping',
+    title: 'Housekeeping Inspection Kit',
+    price: '€29',
+    href: '/en/playbooks/hsk-starter-pack',
+    desc: 'Room inspection checklists, supervisor control sheets and defect tracking tools for housekeeping consistency.',
+    points: ['Room inspection checklists', 'Supervisor control sheet', 'Defect tracking'],
+  },
+]
+
+const STARTER_PACKS_FR = [
+  {
+    label: 'Réception',
+    title: 'Starter Pack Front Office',
+    price: '29 €',
+    href: '/fr/playbooks/fo-starter-pack',
+    desc: 'Checklists réception, modèle de passation et scripts de communication client pour structurer les bases du service.',
+    points: ['Bases check-in et check-out', 'Modèle de passation', 'Scripts réclamation'],
+  },
+  {
+    label: 'Housekeeping',
+    title: 'Kit Inspection Housekeeping',
+    price: '29 €',
+    href: '/fr/playbooks/hsk-starter-pack',
+    desc: 'Checklists inspection chambre, feuilles de contrôle gouvernante et suivi des défauts pour renforcer la régularité.',
+    points: ['Checklists inspection chambre', 'Feuille de contrôle gouvernante', 'Suivi des défauts'],
   },
 ]
 
@@ -135,6 +177,7 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
   const { locale } = await params
   const isEN = locale === 'en'
   const departments = isEN ? DEPARTMENTS_EN : DEPARTMENTS_FR
+  const starterPacks = isEN ? STARTER_PACKS_EN : STARTER_PACKS_FR
   const faqs = isEN ? FAQS_EN : FAQS_FR
 
   const schema = {
@@ -190,22 +233,84 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
           </h1>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-10">
             {isEN
-              ? 'A complete SOP system for four hotel departments. Each playbook covers the full procedure set for its area: standard interactions, shift structure, exceptions and quality controls.'
-              : 'Des procédures opérationnelles complètes pour quatre départements hôteliers. Chaque playbook couvre l\'ensemble des procédures de son domaine : interactions standards, structure de service, cas d\'exception et contrôles qualité.'}
+              ? 'Practical hotel SOP documents by department. Start with a focused starter pack for daily tools, or move to a complete department playbook when you need the full procedure reference.'
+              : 'Des documents SOP hôteliers pratiques par département. Commencez par un starter pack ciblé pour les outils du quotidien, ou passez au playbook complet lorsque vous avez besoin de toute la référence procédure.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href={`/${locale}/playbooks`}
+              href="#starter-packs"
               className="inline-block bg-white text-[#1A2E44] font-semibold px-8 py-4 rounded-lg transition-colors hover:bg-gray-100"
             >
-              {isEN ? 'View All Playbooks' : 'Voir tous les Playbooks'}
+              {isEN ? 'Start with Starter Packs' : 'Commencer avec les starter packs'}
             </Link>
             <Link
-              href={`/${locale}/playbooks`}
+              href="#department-playbooks"
               className="inline-block border border-white/40 text-white font-semibold px-8 py-4 rounded-lg transition-colors hover:bg-white/10"
             >
-              {isEN ? 'Get the Bundle — €199' : 'Obtenir le Bundle — 199€'}
+              {isEN ? 'View Department Playbooks' : 'Voir les playbooks'}
             </Link>
+            <Link
+              href={`/${locale}/free-hotel-procedures`}
+              className="inline-block border border-white/20 text-white font-semibold px-8 py-4 rounded-lg transition-colors hover:bg-white/10"
+            >
+              {isEN ? 'Download Free Chapter' : 'Télécharger un chapitre gratuit'}
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Starter packs */}
+      <section id="starter-packs" className="py-16 px-6 bg-white border-b border-gray-100">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-10">
+            <div>
+              <p className="text-[10px] font-bold uppercase tracking-widest text-[#003d9b] mb-2">
+                {isEN ? 'New' : 'Nouveau'}
+              </p>
+              <h2 className="text-2xl font-bold text-[#1A2E44] mb-3">
+                {isEN ? 'Start with practical SOP tools' : 'Commencer avec des outils SOP pratiques'}
+              </h2>
+              <p className="text-gray-600 max-w-2xl">
+                {isEN
+                  ? 'For teams that want a simple entry point: focused checklists, templates and scripts your team can use immediately.'
+                  : 'Pour commencer simplement : des checklists, modèles et scripts ciblés que vos équipes peuvent utiliser immédiatement.'}
+              </p>
+            </div>
+            <p className="text-sm font-semibold text-[#1A2E44]">
+              {isEN ? 'From €29' : 'À partir de 29 €'}
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {starterPacks.map((pack) => (
+              <article key={pack.href} className="border border-gray-100 rounded-xl p-6 hover:shadow-md transition-shadow">
+                <div className="flex items-start justify-between gap-4 mb-4">
+                  <div>
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-[#003d9b] mb-2">
+                      {pack.label}
+                    </p>
+                    <h3 className="text-xl font-bold text-[#1A2E44]">{pack.title}</h3>
+                  </div>
+                  <span className="text-xl font-bold text-[#1A2E44]">{pack.price}</span>
+                </div>
+                <p className="text-sm text-gray-600 leading-relaxed mb-5">{pack.desc}</p>
+                <ul className="space-y-2 mb-6">
+                  {pack.points.map((point) => (
+                    <li key={point} className="text-sm text-gray-700 flex gap-2">
+                      <span className="text-[#003d9b]">✓</span>
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  href={pack.href}
+                  className="inline-flex items-center justify-center w-full px-6 py-3 text-white font-bold text-sm hover:opacity-90 transition-opacity"
+                  style={{ background: 'linear-gradient(135deg, #003d9b, #0052cc)', borderRadius: '0.125rem' }}
+                >
+                  {isEN ? 'View Starter Pack' : 'Voir le starter pack'}
+                </Link>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -227,8 +332,8 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
             </p>
             <p className="text-sm text-[#4f6074]">
               {isEN
-                ? 'Front Office, Housekeeping, F&B or Spa — see what structured hotel SOPs look like in practice.'
-                : 'Réception, Housekeeping, F&B ou Spa — découvrez à quoi ressemblent des procédures hôtelières structurées.'}
+                ? 'Front Office, Housekeeping, F&B or Spa. See what structured hotel SOPs look like in practice.'
+                : 'Réception, Housekeeping, F&B ou Spa. Découvrez à quoi ressemblent des procédures hôtelières structurées.'}
             </p>
           </div>
           <Link
@@ -276,7 +381,7 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
       </section>
 
       {/* Department cards */}
-      <section className="py-16 px-6">
+      <section id="department-playbooks" className="py-16 px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-[#1A2E44] mb-2 text-center">
             {isEN ? '4 Department SOP Playbooks' : '4 playbooks par département'}
@@ -354,7 +459,7 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
                 Each playbook is a standalone SOP system for its department. A front office team can deploy the front office playbook without needing the others. The same is true for housekeeping, F&B and spa.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Where properties run multiple departments under the same management, the bundle provides a consistent framework across the operation. Procedures, inspection standards and handover formats are aligned across departments, which reduces the friction that comes from teams using incompatible formats.
+                Where properties run multiple departments under the same management, using the same playbook structure creates a consistent framework across the operation. Procedures, inspection standards and handover formats are aligned across departments, which reduces the friction that comes from teams using incompatible formats.
               </p>
             </>
           ) : (
@@ -363,7 +468,7 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
                 Chaque playbook est un système de procédures autonome pour son département. Une équipe réception peut déployer le playbook réception sans avoir besoin des autres. Il en va de même pour le housekeeping, le F&B et le spa.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                {"Pour les établissements qui gèrent plusieurs départements sous la même direction, le bundle fournit un cadre cohérent pour l'ensemble de l'opération. Les procédures, les standards d'inspection et les formats de passation sont alignés entre les départements, ce qui réduit les frictions liées à l'utilisation de formats incompatibles."}
+                {"Pour les établissements qui gèrent plusieurs départements sous la même direction, utiliser la même structure de playbook crée un cadre cohérent pour l'ensemble de l'opération. Les procédures, les standards d'inspection et les formats de passation sont alignés entre les départements, ce qui réduit les frictions liées à l'utilisation de formats incompatibles."}
               </p>
             </>
           )}
@@ -423,26 +528,34 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
         </div>
       </section>
 
-      {/* Bundle CTA */}
+      {/* Final CTA */}
       <section className="bg-[#1A2E44] py-16 px-6 text-center text-white">
         <div className="max-w-2xl mx-auto">
           <div className="inline-block bg-white/10 text-white text-xs font-semibold px-3 py-1 rounded-full mb-6 tracking-widest uppercase">
-            {isEN ? 'Best Value' : 'Meilleur rapport qualité/prix'}
+            {isEN ? 'Choose your entry point' : 'Choisir votre point d\'entrée'}
           </div>
           <h2 className="text-2xl font-bold mb-4">
-            {isEN ? 'All four departments, one system' : 'Les quatre départements, un seul système'}
+            {isEN ? 'Start with a focused SOP pack' : 'Commencer avec un pack SOP ciblé'}
           </h2>
           <p className="text-gray-300 mb-8">
             {isEN
-              ? 'Front Office, Housekeeping, F&B and Spa. All four playbooks at once. Aligned formats, consistent standards, ready to deploy across the whole operation.'
-              : 'Réception, Housekeeping, F&B et Spa. Les quatre playbooks en une seule fois. Formats alignés, standards cohérents, prêts à déployer sur l\'ensemble de l\'opération.'}
+              ? 'If you need practical hotel SOP tools quickly, start with a €29 starter pack. If you need the full procedure reference, choose the department playbook at €67.'
+              : 'Si vous avez besoin rapidement d\'outils SOP pratiques, commencez par un starter pack à 29 €. Si vous cherchez la référence procédure complète, choisissez le playbook département à 67 €.'}
           </p>
-          <Link
-            href={`/${locale}/playbooks`}
-            className="inline-block bg-white text-[#1A2E44] font-semibold px-8 py-4 rounded-lg transition-colors hover:bg-gray-100"
-          >
-            {isEN ? 'Get the Complete Bundle' : 'Obtenir le bundle complet'}
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="#starter-packs"
+              className="inline-block bg-white text-[#1A2E44] font-semibold px-8 py-4 rounded-lg transition-colors hover:bg-gray-100"
+            >
+              {isEN ? 'View Starter Packs' : 'Voir les starter packs'}
+            </Link>
+            <Link
+              href="#department-playbooks"
+              className="inline-block border border-white/40 text-white font-semibold px-8 py-4 rounded-lg transition-colors hover:bg-white/10"
+            >
+              {isEN ? 'View Playbooks' : 'Voir les playbooks'}
+            </Link>
+          </div>
         </div>
       </section>
 
