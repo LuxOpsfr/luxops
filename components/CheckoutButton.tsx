@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import posthog from 'posthog-js'
 
 interface CheckoutButtonProps {
   priceId: string
@@ -14,6 +15,10 @@ export default function CheckoutButton({ priceId, locale, className, children }:
 
   async function handleCheckout() {
     setLoading(true)
+    posthog.capture('checkout_initiated', {
+      price_id: priceId,
+      locale,
+    })
     try {
       const res = await fetch('/api/checkout', {
         method: 'POST',

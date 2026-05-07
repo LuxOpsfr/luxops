@@ -1,12 +1,12 @@
 'use client'
 
 import { useState } from 'react'
-import { useRouter, useParams } from 'next/navigation'
+import { useParams } from 'next/navigation'
 import Link from 'next/link'
 import { supabase } from '@/lib/supabase'
+import posthog from 'posthog-js'
 
 export default function RegisterPage() {
-  const router = useRouter()
   const params = useParams()
   const locale = params.locale as string
 
@@ -43,6 +43,8 @@ export default function RegisterPage() {
       return
     }
 
+    posthog.identify(email, { email })
+    posthog.capture('user_signed_up', { locale })
     setSuccess(true)
     setLoading(false)
   }

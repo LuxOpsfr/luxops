@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useTranslations } from 'next-intl'
+import posthog from 'posthog-js'
 
 interface FormData {
   name: string
@@ -34,6 +35,10 @@ export default function ContactForm() {
       if (res.ok) {
         setStatus('success')
         reset()
+        posthog.capture('contact_form_submitted', {
+          need_type: data.need_type || null,
+          has_company: Boolean(data.company),
+        })
       } else {
         setStatus('error')
       }

@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { Download, ChevronRight, Check } from 'lucide-react'
+import posthog from 'posthog-js'
 
 const DEPARTMENTS = [
   {
@@ -61,6 +62,10 @@ export default function LeadMagnetForm({ locale }: { locale: string }) {
       if (!res.ok) throw new Error()
       setDownloadDept(selected)
       setStatus('success')
+      posthog.capture('lead_magnet_submitted', {
+        department: selected,
+        locale,
+      })
     } catch {
       setStatus('error')
     }

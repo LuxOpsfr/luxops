@@ -1,9 +1,10 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { loadStripe } from '@stripe/stripe-js'
 import { X, ShoppingCart, Trash2, ArrowRight, Lock } from 'lucide-react'
 import { useCart } from '@/context/CartContext'
+import posthog from 'posthog-js'
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!)
 
@@ -20,13 +21,22 @@ export default function CartDrawer({ locale }: CartDrawerProps) {
 
   const total = items.reduce((sum, item) => sum + item.price, 0)
 
-  // Reset to cart view when drawer closes
+  const resetCheckout = useCallback(() => {
+    checkoutRef.current?.destroy()
+    checkoutRef.current = null
+    setView('cart')
+    setLoading(false)
+  }, [])
+
+  const handleClose = () => {
+    resetCheckout()
+    closeCart()
+  }
+
   useEffect(() => {
     if (!isOpen) {
       checkoutRef.current?.destroy()
       checkoutRef.current = null
-      setView('cart')
-      setLoading(false)
     }
   }, [isOpen])
 
@@ -73,7 +83,7 @@ export default function CartDrawer({ locale }: CartDrawerProps) {
     return () => {
       cancelled = true
     }
-  }, [view])
+  }, [items, locale, view])
 
   if (!isOpen) return null
 
@@ -82,7 +92,7 @@ export default function CartDrawer({ locale }: CartDrawerProps) {
       {/* Backdrop */}
       <div
         className="fixed inset-0 bg-black/50 z-40 backdrop-blur-sm"
-        onClick={closeCart}
+        onClick={handleClose}
       />
 
       {/* Drawer */}
@@ -101,7 +111,7 @@ export default function CartDrawer({ locale }: CartDrawerProps) {
             )}
           </div>
           <button
-            onClick={closeCart}
+            onClick={handleClose}
             className="p-1.5 text-gray-400 hover:text-[#111111] transition-colors"
           >
             <X size={20} />
@@ -153,6 +163,11 @@ export default function CartDrawer({ locale }: CartDrawerProps) {
                   onClick={() => {
                     setLoading(true)
                     setView('checkout')
+                    posthog.capture('cart_checkout_started', {
+                      item_count: items.length,
+                      total,
+                      items: items.map(i => ({ price_id: i.priceId, title: i.title, price: i.price })),
+                    })
                   }}
                   disabled={loading}
                   className="w-full py-3.5 bg-[#111111] text-white font-semibold rounded-xl hover:bg-[#333333] transition-colors flex items-center justify-center gap-2 disabled:opacity-60"

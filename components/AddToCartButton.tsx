@@ -2,6 +2,7 @@
 
 import { Check } from 'lucide-react'
 import { useCart, CartItem } from '@/context/CartContext'
+import posthog from 'posthog-js'
 
 interface Props {
   item: CartItem
@@ -19,6 +20,11 @@ export default function AddToCartButton({ item, className, children, addedLabel 
       openCart()
     } else {
       addItem(item)
+      posthog.capture('playbook_added_to_cart', {
+        price_id: item.priceId,
+        title: item.title,
+        price: item.price,
+      })
     }
   }
 

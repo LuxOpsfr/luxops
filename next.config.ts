@@ -58,6 +58,23 @@ const nextConfig: NextConfig = {
       { source: '/:locale(en|fr)/resources', headers: marketingCache },
     ]
   },
+  async rewrites() {
+    return [
+      {
+        source: '/ingest/static/:path*',
+        destination: 'https://eu-assets.i.posthog.com/static/:path*',
+      },
+      {
+        source: '/ingest/array/:path*',
+        destination: 'https://eu-assets.i.posthog.com/array/:path*',
+      },
+      {
+        source: '/ingest/:path*',
+        destination: 'https://eu.i.posthog.com/:path*',
+      },
+    ]
+  },
+  skipTrailingSlashRedirect: true,
   async redirects() {
     return [
       // Root URL without locale — explicit 301 so Google stops looping on the middleware redirect

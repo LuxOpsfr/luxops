@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useRouter, useParams } from 'next/navigation'
 import Link from 'next/link'
 import { supabase } from '@/lib/supabase'
+import posthog from 'posthog-js'
 
 export default function LoginPage() {
   const router = useRouter()
@@ -30,6 +31,8 @@ export default function LoginPage() {
       return
     }
 
+    posthog.identify(email, { email })
+    posthog.capture('user_logged_in', { locale })
     router.push(`/${locale}/portal/dashboard`)
   }
 

@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { ArrowLeft, Check, ChevronDown, ShoppingCart } from 'lucide-react'
 import { PlaybookEntry } from '@/content/playbooks/data'
 import { useCart } from '@/context/CartContext'
+import posthog from 'posthog-js'
 
 interface Stat {
   value: string
@@ -40,6 +41,12 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
   const handleAddToCart = () => {
     if (!inCart) {
       addItem({ priceId: pb.priceId, title: pb.title[lang], price: 67 })
+      posthog.capture('playbook_added_to_cart', {
+        price_id: pb.priceId,
+        title: pb.title[lang],
+        price: 67,
+        locale,
+      })
     }
   }
 

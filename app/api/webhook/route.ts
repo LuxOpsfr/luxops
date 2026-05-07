@@ -3,6 +3,7 @@ import Stripe from 'stripe'
 import { createClient } from '@supabase/supabase-js'
 import { sendPlaybookEmail } from '@/lib/email'
 import { DOWNLOADS, BUNDLE_PRICE_ID, ALL_PLAYBOOK_PRICE_IDS } from '@/lib/downloads'
+import { getPostHogClient } from '@/lib/posthog-server'
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   apiVersion: '2026-02-25.clover',
@@ -94,6 +95,24 @@ export async function POST(request: NextRequest) {
       } else {
         console.log(`[Webhook] Purchase saved to Supabase: ${productName} → ${customerEmail}`)
       }
+    }
+
+    // Track purchase in PostHog
+    const posthog = getPostHogClient()
+    const totalAmount = lineItems.data.reduce((sum, item) => sum + (item.price?.unit_amount ?? 0) * (item.quantity ?? 1), 0)
+    if (posthog) {
+      posthog.capture({
+        distinctId: customerEmail,
+        event: 'purchase_completed',
+        properties: {
+          stripe_session_id: session.id,
+          price_ids: priceIds,
+          total_amount_cents: totalAmount,
+          currency: session.currency ?? 'eur',
+          locale,
+        },
+      })
+      await posthog.flush()
     }
 
     // Send confirmation email
