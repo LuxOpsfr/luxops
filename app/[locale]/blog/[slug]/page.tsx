@@ -158,6 +158,8 @@ const PLAYBOOK_EXCERPTS: Record<string, {
     rows: { term: string; detail: string }[]
     ctaText: string
     ctaHref: string
+    secondaryCtaText?: string
+    secondaryCtaHref?: string
   }
   fr: {
     label: string
@@ -166,6 +168,8 @@ const PLAYBOOK_EXCERPTS: Record<string, {
     rows: { term: string; detail: string }[]
     ctaText: string
     ctaHref: string
+    secondaryCtaText?: string
+    secondaryCtaHref?: string
   }
 }> = {
   'housekeeping-room-inspection': {
@@ -341,8 +345,10 @@ const PLAYBOOK_EXCERPTS: Record<string, {
         { term: 'Dispute recovery', detail: 'The desk listens, reviews documentation, explains clearly, escalates where needed and records the outcome in the guest profile.' },
         { term: 'Night audit handover', detail: 'Open folios, discrepancies, high balances and next-day arrivals are prepared before the morning team starts.' },
       ],
-      ctaText: 'View the Front Office Playbook',
-      ctaHref: '/en/playbooks/fo',
+      ctaText: 'View the Front Office Starter Pack',
+      ctaHref: '/en/playbooks/fo-starter-pack',
+      secondaryCtaText: 'View the Front Office Playbook',
+      secondaryCtaHref: '/en/playbooks/fo',
     },
     fr: {
       label: 'Extrait gratuit du Playbook Front Office LuxOps',
@@ -356,8 +362,10 @@ const PLAYBOOK_EXCERPTS: Record<string, {
         { term: 'Litige client', detail: 'La réception écoute, vérifie les preuves, explique clairement, escalade si nécessaire et trace la résolution dans le profil client.' },
         { term: 'Passation audit de nuit', detail: 'Folios ouverts, écarts, soldes élevés et arrivées du lendemain sont préparés avant l’arrivée de l’équipe matin.' },
       ],
-      ctaText: 'Voir le Playbook Front Office',
-      ctaHref: '/fr/playbooks/fo',
+      ctaText: 'Voir le Starter Pack Front Office',
+      ctaHref: '/fr/playbooks/fo-starter-pack',
+      secondaryCtaText: 'Voir le Playbook Front Office',
+      secondaryCtaHref: '/fr/playbooks/fo',
     },
   },
   'hotel-fb-service-standards': {
@@ -760,6 +768,48 @@ const PLAYBOOK_EXCERPTS: Record<string, {
   },
 }
 
+const ARTICLE_PRODUCT_CTAS: Record<string, {
+  en: {
+    label: string
+    title: string
+    text: string
+    primaryText: string
+    primaryHref: string
+    secondaryText: string
+    secondaryHref: string
+  }
+  fr: {
+    label: string
+    title: string
+    text: string
+    primaryText: string
+    primaryHref: string
+    secondaryText: string
+    secondaryHref: string
+  }
+}> = {
+  'hotel-front-desk-procedures': {
+    en: {
+      label: 'Front Office tools',
+      title: 'Need ready-to-use front desk procedures?',
+      text: 'Start with practical templates for daily reception work, or go deeper with the complete Front Office Playbook.',
+      primaryText: 'View the Front Office Starter Pack',
+      primaryHref: '/en/playbooks/fo-starter-pack',
+      secondaryText: 'View the Front Office Playbook',
+      secondaryHref: '/en/playbooks/fo',
+    },
+    fr: {
+      label: 'Outils Front Office',
+      title: 'Besoin de procédures réception prêtes à utiliser ?',
+      text: 'Commencez avec des modèles pratiques pour le quotidien de la réception, ou allez plus loin avec le Playbook Front Office complet.',
+      primaryText: 'Voir le Starter Pack Front Office',
+      primaryHref: '/fr/playbooks/fo-starter-pack',
+      secondaryText: 'Voir le Playbook Front Office',
+      secondaryHref: '/fr/playbooks/fo',
+    },
+  },
+}
+
 export async function generateStaticParams() {
   const locales = ['en', 'fr']
   return articles.flatMap((article) =>
@@ -843,6 +893,7 @@ export default async function BlogArticlePage({
   ])
   const upgrade = CONTENT_UPGRADES[slug]?.[isEn ? 'en' : 'fr']
   const playbookExcerpt = PLAYBOOK_EXCERPTS[slug]?.[isEn ? 'en' : 'fr']
+  const productCta = ARTICLE_PRODUCT_CTAS[slug]?.[isEn ? 'en' : 'fr']
 
   return (
     <>
@@ -886,6 +937,34 @@ export default async function BlogArticlePage({
           </div>
         </section>
 
+        {productCta && (
+          <section className="py-10 bg-white border-b border-gray-100">
+            <div className="max-w-3xl mx-auto px-6 text-center">
+              <p className="text-[10px] font-bold uppercase tracking-widest text-[#003d9b] mb-3">
+                {productCta.label}
+              </p>
+              <h2 className="text-2xl font-bold text-[#111111] mb-3">{productCta.title}</h2>
+              <p className="text-sm text-gray-500 leading-relaxed max-w-2xl mx-auto mb-6">
+                {productCta.text}
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                <Link
+                  href={productCta.primaryHref}
+                  className="inline-flex min-w-[240px] items-center justify-center gap-2 rounded-lg bg-[#003d9b] px-5 py-3 text-sm font-semibold text-white hover:bg-[#002d7a] transition-colors"
+                >
+                  {productCta.primaryText} <ArrowRight size={16} />
+                </Link>
+                <Link
+                  href={productCta.secondaryHref}
+                  className="inline-flex min-w-[240px] items-center justify-center gap-2 rounded-lg border border-[#003d9b] px-5 py-3 text-sm font-semibold text-[#003d9b] hover:bg-[#eef4ff] transition-colors"
+                >
+                  {productCta.secondaryText} <ArrowRight size={16} />
+                </Link>
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Lead magnet — right after intro, before any H2 */}
         {(() => {
           const DEPT_MAP: Record<string, { titleEn: string; titleFr: string }> = {
@@ -918,6 +997,10 @@ export default async function BlogArticlePage({
               titleFr: 'Téléchargez un chapitre gratuit du Playbook Réception',
             },
             'hotel-front-office-procedures': {
+              titleEn: 'Download a free chapter of the Front Office Playbook',
+              titleFr: 'Téléchargez un chapitre gratuit du Playbook Réception',
+            },
+            'hotel-front-desk-procedures': {
               titleEn: 'Download a free chapter of the Front Office Playbook',
               titleFr: 'Téléchargez un chapitre gratuit du Playbook Réception',
             },
@@ -975,12 +1058,24 @@ export default async function BlogArticlePage({
                     </div>
                   ))}
                 </div>
-                <Link
-                  href={playbookExcerpt.ctaHref}
-                  className="inline-flex items-center gap-2 rounded-lg bg-[#003d9b] px-5 py-3 text-sm font-semibold text-white hover:bg-[#002d7a] transition-colors"
-                >
-                  {playbookExcerpt.ctaText} <ArrowRight size={16} />
-                </Link>
+                {!productCta && (
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <Link
+                      href={playbookExcerpt.ctaHref}
+                      className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#003d9b] px-5 py-3 text-sm font-semibold text-white hover:bg-[#002d7a] transition-colors"
+                    >
+                      {playbookExcerpt.ctaText} <ArrowRight size={16} />
+                    </Link>
+                    {playbookExcerpt.secondaryCtaText && playbookExcerpt.secondaryCtaHref && (
+                      <Link
+                        href={playbookExcerpt.secondaryCtaHref}
+                        className="inline-flex items-center justify-center gap-2 rounded-lg border border-[#003d9b] px-5 py-3 text-sm font-semibold text-[#003d9b] hover:bg-white transition-colors"
+                      >
+                        {playbookExcerpt.secondaryCtaText} <ArrowRight size={16} />
+                      </Link>
+                    )}
+                  </div>
+                )}
               </div>
             </div>
           </section>
