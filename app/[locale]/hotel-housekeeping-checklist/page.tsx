@@ -424,7 +424,7 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
       <main className="min-h-screen bg-white">
 
         {/* Hero */}
-        <section className="bg-[#1A2E44] text-white py-16 px-6">
+        <section className="bg-[#1A2E44] text-white px-6 pt-32 pb-20">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
               {isEN
@@ -445,12 +445,62 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
                 {isEN ? 'Download Printable PDF Pack' : 'Télécharger les PDF imprimables'}
               </a>
               <Link
+                href={`/${locale}/playbooks/hsk-starter-pack`}
+                className="inline-block bg-[#0056D2] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#0047ad] transition-colors"
+              >
+                {isEN ? 'View Housekeeping Inspection Kit' : 'Voir le Kit Inspection Housekeeping'}
+              </Link>
+              <Link
                 href={`/${locale}/playbooks/hsk`}
                 className="inline-block bg-[#244763] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#2c5575] transition-colors"
               >
                 {isEN ? 'View Housekeeping Playbook' : 'Voir le Playbook Housekeeping'}
               </Link>
             </div>
+          </div>
+        </section>
+
+        {/* Product paths */}
+        <section className="max-w-5xl mx-auto px-6 pt-12">
+          <div className="grid md:grid-cols-3 gap-4">
+            {[
+              {
+                title: isEN ? 'Free PDF checklists' : 'PDF gratuits',
+                body: isEN
+                  ? 'Use the printable role-based checklists on the floor: public areas, room attendant and supervisor inspection.'
+                  : 'Utilisez les checklists imprimables par poste : lieux publics, chambre et inspection gouvernante.',
+                href: packDownload,
+                label: isEN ? 'Download PDFs' : 'Télécharger les PDF',
+                download: true,
+              },
+              {
+                title: isEN ? 'Housekeeping Inspection Kit' : 'Kit Inspection Housekeeping',
+                body: isEN
+                  ? 'Use the inspection kit when you need ready-to-use control sheets, room inspection tools and defect tracking.'
+                  : 'Utilisez le kit quand vous avez besoin de feuilles de contrôle, outils d’inspection chambre et suivi des défauts.',
+                href: `/${locale}/playbooks/hsk-starter-pack`,
+                label: isEN ? 'View Inspection Kit' : 'Voir le kit inspection',
+              },
+              {
+                title: isEN ? 'Full Housekeeping Playbook' : 'Playbook Housekeeping complet',
+                body: isEN
+                  ? 'Use the full playbook when you need the complete department SOP structure, standards and management routines.'
+                  : 'Utilisez le playbook complet pour toute la structure SOP, les standards et routines de management du département.',
+                href: `/${locale}/playbooks/hsk`,
+                label: isEN ? 'View Playbook' : 'Voir le playbook',
+              },
+            ].map((item) => (
+              <Link
+                key={item.title}
+                href={item.href}
+                {...(item.download ? { download: true } : {})}
+                className="block border border-gray-200 rounded-xl p-5 hover:border-[#1A2E44] hover:shadow-sm transition-all"
+              >
+                <h2 className="text-lg font-bold text-[#1A2E44] mb-2">{item.title}</h2>
+                <p className="text-sm text-gray-600 leading-relaxed mb-4">{item.body}</p>
+                <span className="text-sm font-semibold text-[#0056D2]">{item.label}</span>
+              </Link>
+            ))}
           </div>
         </section>
 

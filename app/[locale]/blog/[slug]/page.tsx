@@ -788,6 +788,46 @@ const ARTICLE_PRODUCT_CTAS: Record<string, {
     secondaryHref: string
   }
 }> = {
+  'housekeeping-room-inspection': {
+    en: {
+      label: 'Housekeeping tools',
+      title: 'Need a practical room inspection toolkit?',
+      text: 'Use the inspection kit for ready-to-use control sheets, or the full playbook for the complete housekeeping SOP system.',
+      primaryText: 'View the Housekeeping Inspection Kit',
+      primaryHref: '/en/playbooks/hsk-starter-pack',
+      secondaryText: 'View the Housekeeping Playbook',
+      secondaryHref: '/en/playbooks/hsk',
+    },
+    fr: {
+      label: 'Outils housekeeping',
+      title: 'Besoin d’un kit pratique pour contrôler les chambres ?',
+      text: 'Utilisez le kit inspection pour les feuilles de contrôle prêtes à l’emploi, ou le playbook complet pour toute la structure SOP du département.',
+      primaryText: 'Voir le Kit Inspection Housekeeping',
+      primaryHref: '/fr/playbooks/hsk-starter-pack',
+      secondaryText: 'Voir le Playbook Housekeeping',
+      secondaryHref: '/fr/playbooks/hsk',
+    },
+  },
+  'hotel-standard-operating-procedures': {
+    en: {
+      label: 'Hotel SOP tools',
+      title: 'Need SOP templates your team can actually use?',
+      text: 'Start with focused starter packs for daily tools, or browse the full department playbooks for the complete SOP structure.',
+      primaryText: 'View Starter Packs',
+      primaryHref: '/en/playbooks#starter-packs',
+      secondaryText: 'View SOP Playbooks',
+      secondaryHref: '/en/playbooks#department-playbooks',
+    },
+    fr: {
+      label: 'Outils SOP hôtel',
+      title: 'Besoin de modèles SOP vraiment utilisables par vos équipes ?',
+      text: 'Commencez avec des starter packs ciblés pour les outils du quotidien, ou consultez les playbooks complets par département.',
+      primaryText: 'Voir les starter packs',
+      primaryHref: '/fr/playbooks#starter-packs',
+      secondaryText: 'Voir les playbooks SOP',
+      secondaryHref: '/fr/playbooks#department-playbooks',
+    },
+  },
   'hotel-front-desk-procedures': {
     en: {
       label: 'Front Office tools',
@@ -806,6 +846,26 @@ const ARTICLE_PRODUCT_CTAS: Record<string, {
       primaryHref: '/fr/playbooks/fo-starter-pack',
       secondaryText: 'Voir le Playbook Front Office',
       secondaryHref: '/fr/playbooks/fo',
+    },
+  },
+  'hotel-room-cleaning-checklist': {
+    en: {
+      label: 'Housekeeping tools',
+      title: 'Need printable room cleaning tools?',
+      text: 'Download the role-based housekeeping checklists, or use the inspection kit to standardise supervisor controls.',
+      primaryText: 'Download printable checklists',
+      primaryHref: '/en/hotel-housekeeping-checklist',
+      secondaryText: 'View the Housekeeping Inspection Kit',
+      secondaryHref: '/en/playbooks/hsk-starter-pack',
+    },
+    fr: {
+      label: 'Outils housekeeping',
+      title: 'Besoin de checklists de nettoyage de chambre imprimables ?',
+      text: 'Téléchargez les checklists housekeeping par poste, ou utilisez le kit inspection pour standardiser les contrôles gouvernante.',
+      primaryText: 'Télécharger les checklists',
+      primaryHref: '/fr/hotel-housekeeping-checklist',
+      secondaryText: 'Voir le Kit Inspection Housekeeping',
+      secondaryHref: '/fr/playbooks/hsk-starter-pack',
     },
   },
 }

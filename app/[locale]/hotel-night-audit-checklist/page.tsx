@@ -7,8 +7,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const isEN = locale === 'en'
   return {
     title: isEN
-      ? 'Hotel Night Audit Checklist — Step-by-Step Night Audit Procedure | LuxOps'
-      : 'Checklist Night Audit Hôtel — Clôture PMS, VCC, caisse et passation | LuxOps',
+      ? 'Hotel Night Audit Checklist | Step-by-Step Night Audit Procedure | LuxOps'
+      : 'Checklist Night Audit Hôtel | Clôture PMS, VCC, caisse et passation | LuxOps',
     description: isEN
       ? 'Free hotel night audit checklist: pre-closing checks, system reconciliation, no-show management, report generation and morning handover. Built for hotel night auditors.'
       : 'Checklist Night Audit hôtel : clôture PMS, contrôle crédit, Pre-Authorizations, VCC, caisse, no-shows, rapports et Shift Handover matin.',
@@ -234,10 +234,10 @@ export default async function HotelNightAuditChecklistPage({ params }: { params:
       <main className="min-h-screen bg-white">
 
         {/* Hero */}
-        <section className="bg-[#1A2E44] text-white py-16 px-6">
+        <section className="bg-[#1A2E44] text-white px-6 pt-32 pb-20">
           <div className="max-w-3xl mx-auto text-center">
             <span className="inline-block bg-[#0056D2] text-white text-xs font-semibold px-3 py-1 rounded-full mb-6 tracking-widest uppercase">
-              {isEN ? 'Front Office — Night Operations' : 'Réception — Service de nuit'}
+              {isEN ? 'Front Office Night Operations' : 'Réception Service de nuit'}
             </span>
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
               {isEN
@@ -255,6 +255,37 @@ export default async function HotelNightAuditChecklistPage({ params }: { params:
             >
               {isEN ? 'View Front Office SOP Guide' : 'Voir le guide SOP réception'}
             </Link>
+          </div>
+        </section>
+
+        {/* Product paths */}
+        <section className="py-10 px-6 bg-white border-b border-gray-100">
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-[10px] font-bold uppercase tracking-widest text-[#003d9b] mb-3">
+              {isEN ? 'Front Office tools' : 'Outils réception'}
+            </p>
+            <h2 className="text-2xl font-bold text-[#1A2E44] mb-3">
+              {isEN ? 'Need practical night audit tools?' : 'Besoin d’outils pratiques pour le Night Audit ?'}
+            </h2>
+            <p className="text-sm text-gray-500 leading-relaxed max-w-2xl mx-auto mb-7">
+              {isEN
+                ? 'Start with the Front Office Starter Pack for daily checklists and handovers, or use the full Front Office Playbook for the complete SOP reference.'
+                : 'Commencez avec le Starter Pack Front Office pour les checklists et passations du quotidien, ou utilisez le Playbook Front Office complet pour toute la référence SOP.'}
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <Link
+                href={`/${locale}/playbooks/fo-starter-pack`}
+                className="inline-flex min-w-[240px] items-center justify-center gap-2 rounded-lg bg-[#003d9b] px-5 py-3 text-sm font-semibold text-white hover:bg-[#002d7a] transition-colors"
+              >
+                {isEN ? 'View the Front Office Starter Pack' : 'Voir le Starter Pack Front Office'} <ArrowRight size={16} />
+              </Link>
+              <Link
+                href={`/${locale}/playbooks/fo`}
+                className="inline-flex min-w-[240px] items-center justify-center gap-2 rounded-lg border border-[#003d9b] px-5 py-3 text-sm font-semibold text-[#003d9b] hover:bg-[#eef4ff] transition-colors"
+              >
+                {isEN ? 'View the Front Office Playbook' : 'Voir le Playbook Front Office'} <ArrowRight size={16} />
+              </Link>
+            </div>
           </div>
         </section>
 
@@ -458,7 +489,7 @@ export default async function HotelNightAuditChecklistPage({ params }: { params:
                 : 'Le Playbook Réception LuxOps couvre chaque shift : ouverture, opérations de jour, Night Audit, contrôle crédit, VCC, caisse et passation. 12 chapitres, PDF et PowerPoint, EN et FR.'}
             </p>
             <Link
-              href={`/${locale}/playbooks`}
+              href={`/${locale}/playbooks/fo`}
               className="inline-block bg-white text-[#1A2E44] px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 transition-colors"
             >
               {isEN ? 'View Front Office Playbook' : 'Voir le Playbook Réception'}

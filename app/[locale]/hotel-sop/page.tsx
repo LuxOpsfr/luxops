@@ -11,8 +11,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       ? 'Hotel SOP Templates and Starter Packs | LuxOps'
       : 'Procédures opérationnelles hôtelières et starter packs | LuxOps',
     description: isEN
-      ? 'Complete hotel SOP system covering front office, housekeeping, F&B and spa. Built by hospitality professionals. Practical, structured and ready to use on day one.'
-      : 'Procédures opérationnelles complètes couvrant la réception, le housekeeping, le F&B et le spa. Conçues par des professionnels de l\'hôtellerie. Pratiques, structurées et prêtes à l\'emploi.',
+      ? 'Hotel SOP templates, starter packs and department playbooks for front office, housekeeping, F&B and spa. Practical hotel procedures, checklists and SOP examples ready to adapt.'
+      : 'Modèles de SOP hôtel, starter packs et playbooks par département pour la réception, le housekeeping, le F&B et le spa. Procédures, checklists et exemples prêts à adapter.',
     keywords: isEN
       ? 'hotel sop, hotel sop template, hotel standard operating procedures, hotel sop sample, hotel operations manual template, luxury hotel sop'
       : 'sop hôtel, modèle sop hôtel, procédures opérationnelles hôtel, manuel opérations hôtel, procédures hôtelières',
@@ -196,15 +196,30 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
         hasOfferCatalog: {
           '@type': 'OfferCatalog',
           name: isEN ? 'Hotel SOP playbooks by department' : 'Playbooks SOP par département',
-          itemListElement: departments.map((department) => ({
-            '@type': 'Offer',
-            itemOffered: {
-              '@type': 'CreativeWork',
-              name: `${department.name} SOP Playbook`,
-              description: department.desc,
-              url: `${localizedPath(locale)}${department.href ? department.href.replace(`/${locale}`, '') : '/playbooks'}`,
-            },
-          })),
+          itemListElement: [
+            ...starterPacks.map((pack) => ({
+              '@type': 'Offer',
+              price: isEN ? '29' : '29',
+              priceCurrency: 'EUR',
+              itemOffered: {
+                '@type': 'CreativeWork',
+                name: pack.title,
+                description: pack.desc,
+                url: `${localizedPath(locale)}${pack.href.replace(`/${locale}`, '')}`,
+              },
+            })),
+            ...departments.map((department) => ({
+              '@type': 'Offer',
+              price: isEN ? '67' : '67',
+              priceCurrency: 'EUR',
+              itemOffered: {
+                '@type': 'CreativeWork',
+                name: `${department.name} SOP Playbook`,
+                description: department.desc,
+                url: `${localizedPath(locale)}${department.href ? department.href.replace(`/${locale}`, '') : '/playbooks'}`,
+              },
+            })),
+          ],
         },
       },
       breadcrumbSchema([
@@ -221,7 +236,7 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
     <main className="bg-white">
 
       {/* Hero */}
-      <section className="bg-[#1A2E44] text-white py-20 px-6">
+      <section className="bg-[#1A2E44] text-white px-6 pt-32 pb-20">
         <div className="max-w-4xl mx-auto text-center">
           <span className="inline-block bg-white/10 text-white text-xs font-semibold px-3 py-1 rounded-full mb-6 tracking-widest uppercase">
             {isEN ? 'Hotel SOP Templates' : 'Procédures opérationnelles hôtelières'}
@@ -272,8 +287,8 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
               </h2>
               <p className="text-gray-600 max-w-2xl">
                 {isEN
-                  ? 'For teams that want a simple entry point: focused checklists, templates and scripts your team can use immediately.'
-                  : 'Pour commencer simplement : des checklists, modèles et scripts ciblés que vos équipes peuvent utiliser immédiatement.'}
+                  ? 'Focused checklists, templates and scripts your team can use immediately.'
+                  : 'Des checklists, modèles et scripts ciblés que vos équipes peuvent utiliser immédiatement.'}
               </p>
             </div>
             <p className="text-sm font-semibold text-[#1A2E44]">
@@ -503,6 +518,16 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
                 title: isEN ? 'Spa & Wellness SOP' : 'SOP spa & wellness',
                 body: isEN ? 'Treatment room setup, guest journey, therapist conduct and quality checks.' : 'Préparation cabine, parcours client, conduite thérapeute et contrôles qualité.',
               },
+              {
+                href: `/${locale}/blog/hotel-front-desk-procedures`,
+                title: isEN ? 'Front Desk Procedures' : 'Procédures réception',
+                body: isEN ? 'Daily front desk routines, handover, guest requests, check-in and check-out control.' : 'Routines réception, passation, demandes client, contrôle check-in et check-out.',
+              },
+              {
+                href: `/${locale}/hotel-housekeeping-checklist`,
+                title: isEN ? 'Housekeeping Checklist' : 'Checklist housekeeping',
+                body: isEN ? 'Printable role-based checklists for room attendants, public areas and floor supervisors.' : 'Checklists imprimables par poste pour femme de chambre, équipier lieux publics et gouvernante.',
+              },
             ].map((item) => (
               <Link key={item.href} href={item.href} className="border border-gray-100 rounded-lg p-6 hover:border-[#1A2E44] hover:shadow-sm transition-all">
                 <h3 className="font-semibold text-[#1A2E44] mb-2">{item.title}</h3>
@@ -532,7 +557,7 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
       <section className="bg-[#1A2E44] py-16 px-6 text-center text-white">
         <div className="max-w-2xl mx-auto">
           <div className="inline-block bg-white/10 text-white text-xs font-semibold px-3 py-1 rounded-full mb-6 tracking-widest uppercase">
-            {isEN ? 'Choose your entry point' : 'Choisir votre point d\'entrée'}
+            {isEN ? 'Choose your SOP format' : 'Choisir votre format SOP'}
           </div>
           <h2 className="text-2xl font-bold mb-4">
             {isEN ? 'Start with a focused SOP pack' : 'Commencer avec un pack SOP ciblé'}
