@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { ArrowLeft, Check, ChevronDown, ShoppingCart } from 'lucide-react'
 import { PlaybookEntry } from '@/content/playbooks/data'
 import { useCart } from '@/context/CartContext'
+import TrackedLink from '@/components/TrackedLink'
 import posthog from 'posthog-js'
 
 interface Stat {
@@ -40,12 +41,20 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
 
   const handleAddToCart = () => {
     if (!inCart) {
-      addItem({ priceId: pb.priceId, title: pb.title[lang], price: 67 })
+      addItem({ priceId: pb.priceId, title: pb.title[lang], price: 67, productType: 'playbook' })
+      posthog.capture('product_added_to_cart', {
+        price_id: pb.priceId,
+        title: pb.title[lang],
+        price: 67,
+        locale,
+        product_type: 'playbook',
+      })
       posthog.capture('playbook_added_to_cart', {
         price_id: pb.priceId,
         title: pb.title[lang],
         price: 67,
         locale,
+        product_type: 'playbook',
       })
     }
   }
@@ -119,21 +128,34 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
                   : (isEn ? 'Buy Playbook · €67' : 'Acheter · 67 €')}
               </button>
               {starterPackHref && (
-                <Link
+                <TrackedLink
                   href={starterPackHref}
+                  eventName="starter_pack_cta_clicked"
+                  eventProperties={{
+                    source_page: `/${locale}/playbooks/${pb.id}`,
+                    placement: 'playbook_hero',
+                    product: pb.id === 'fo' ? 'front_office_starter_pack' : 'housekeeping_inspection_kit',
+                    cta_label: isEn ? 'View Starter Pack · €29' : 'Voir le Starter Pack · 29 €',
+                  }}
                   className="px-8 py-4 font-bold text-[#003d9b] border border-[#003d9b] hover:bg-[#eef4ff] transition-colors"
                   style={{ borderRadius: '0.125rem' }}
                 >
                   {isEn ? 'View Starter Pack · €29' : 'Voir le Starter Pack · 29 €'}
-                </Link>
+                </TrackedLink>
               )}
-              <Link
+              <TrackedLink
                 href={`/${locale}/free-hotel-procedures`}
+                eventName="free_chapter_cta_clicked"
+                eventProperties={{
+                  source_page: `/${locale}/playbooks/${pb.id}`,
+                  placement: 'playbook_hero',
+                  cta_label: isEn ? 'Download a Free Chapter' : 'Télécharger un chapitre gratuit',
+                }}
                 className="px-8 py-4 font-bold text-[#0a1d2e] hover:bg-[#dae9ff] transition-colors"
                 style={{ backgroundColor: '#eef4ff', borderRadius: '0.125rem' }}
               >
                 {isEn ? 'Download a Free Chapter' : 'Télécharger un chapitre gratuit'}
-              </Link>
+              </TrackedLink>
             </div>
 
             <p className="text-xs text-[#737685]">

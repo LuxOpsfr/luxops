@@ -20,10 +20,18 @@ export default function AddToCartButton({ item, className, children, addedLabel 
       openCart()
     } else {
       addItem(item)
-      posthog.capture('playbook_added_to_cart', {
+      const productType = item.productType ?? (item.price === 29 ? 'starter_pack' : item.price === 199 ? 'bundle' : 'playbook')
+      posthog.capture('product_added_to_cart', {
         price_id: item.priceId,
         title: item.title,
         price: item.price,
+        product_type: productType,
+      })
+      posthog.capture(productType === 'starter_pack' ? 'starter_pack_added_to_cart' : 'playbook_added_to_cart', {
+        price_id: item.priceId,
+        title: item.title,
+        price: item.price,
+        product_type: productType,
       })
     }
   }

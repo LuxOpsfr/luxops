@@ -268,6 +268,7 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                         priceId: pb.priceId,
                         title: pb.title[lang],
                         price: 67,
+                        productType: 'playbook',
                       }}
                       addedLabel={isEn ? 'In Cart' : 'Ajouté'}
                       className="w-full flex items-center justify-center gap-2 py-3 bg-[#003d9b] text-white font-bold text-xs uppercase tracking-widest hover:bg-[#002d7a] transition-colors rounded-[2px]"
@@ -383,6 +384,7 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                           priceId: pack.priceId,
                           title: pack.shortTitle[lang],
                           price: 29,
+                          productType: 'starter_pack',
                         }}
                         addedLabel={isEn ? 'In Cart' : 'Ajouté'}
                         className="w-full flex items-center justify-center gap-2 py-3 bg-[#003d9b] text-white font-bold text-xs uppercase tracking-widest hover:bg-[#002d7a] transition-colors rounded-[2px]"
@@ -453,6 +455,7 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                   priceId: BUNDLE_PRICE_ID,
                   title: isEn ? 'Complete Bundle · All 4 Playbooks' : 'Bundle Complet · 4 Playbooks',
                   price: 199,
+                  productType: 'bundle',
                 }}
                 addedLabel={isEn ? 'In Cart' : 'Ajouté'}
                 className="w-full px-5 py-3 bg-white text-[#003d9b] text-sm font-bold hover:bg-[#f8f9ff] transition-colors rounded-[2px]"

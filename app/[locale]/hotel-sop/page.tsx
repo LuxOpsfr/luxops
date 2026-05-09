@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { breadcrumbSchema, faqSchema, localizedPath } from '@/lib/seo'
+import TrackedLink from '@/components/TrackedLink'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
@@ -252,24 +253,44 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
               : 'Des documents SOP hôteliers pratiques par département. Commencez par un starter pack ciblé pour les outils du quotidien, ou passez au playbook complet lorsque vous avez besoin de toute la référence procédure.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
+            <TrackedLink
               href="#starter-packs"
+              eventName="starter_pack_cta_clicked"
+              eventProperties={{
+                source_page: `/${locale}/hotel-sop`,
+                placement: 'hero',
+                product: 'starter_packs_section',
+                cta_label: isEN ? 'Start with Starter Packs' : 'Commencer avec les starter packs',
+              }}
               className="inline-block bg-white text-[#1A2E44] font-semibold px-8 py-4 rounded-lg transition-colors hover:bg-gray-100"
             >
               {isEN ? 'Start with Starter Packs' : 'Commencer avec les starter packs'}
-            </Link>
-            <Link
+            </TrackedLink>
+            <TrackedLink
               href="#department-playbooks"
+              eventName="playbook_cta_clicked"
+              eventProperties={{
+                source_page: `/${locale}/hotel-sop`,
+                placement: 'hero',
+                product: 'department_playbooks_section',
+                cta_label: isEN ? 'View Department Playbooks' : 'Voir les playbooks',
+              }}
               className="inline-block border border-white/40 text-white font-semibold px-8 py-4 rounded-lg transition-colors hover:bg-white/10"
             >
               {isEN ? 'View Department Playbooks' : 'Voir les playbooks'}
-            </Link>
-            <Link
+            </TrackedLink>
+            <TrackedLink
               href={`/${locale}/free-hotel-procedures`}
+              eventName="free_chapter_cta_clicked"
+              eventProperties={{
+                source_page: `/${locale}/hotel-sop`,
+                placement: 'hero',
+                cta_label: isEN ? 'Download Free Chapter' : 'Télécharger un chapitre gratuit',
+              }}
               className="inline-block border border-white/20 text-white font-semibold px-8 py-4 rounded-lg transition-colors hover:bg-white/10"
             >
               {isEN ? 'Download Free Chapter' : 'Télécharger un chapitre gratuit'}
-            </Link>
+            </TrackedLink>
           </div>
         </div>
       </section>
@@ -317,13 +338,20 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
                     </li>
                   ))}
                 </ul>
-                <Link
+                <TrackedLink
                   href={pack.href}
+                  eventName="starter_pack_cta_clicked"
+                  eventProperties={{
+                    source_page: `/${locale}/hotel-sop`,
+                    placement: 'starter_pack_card',
+                    product: pack.title,
+                    cta_label: isEN ? 'View Starter Pack' : 'Voir le starter pack',
+                  }}
                   className="inline-flex items-center justify-center w-full px-6 py-3 text-white font-bold text-sm hover:opacity-90 transition-opacity"
                   style={{ background: 'linear-gradient(135deg, #003d9b, #0052cc)', borderRadius: '0.125rem' }}
                 >
                   {isEN ? 'View Starter Pack' : 'Voir le starter pack'}
-                </Link>
+                </TrackedLink>
               </article>
             ))}
           </div>
@@ -351,13 +379,19 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
                 : 'Réception, Housekeeping, F&B ou Spa. Découvrez à quoi ressemblent des procédures hôtelières structurées.'}
             </p>
           </div>
-          <Link
+          <TrackedLink
             href={`/${locale}/free-hotel-procedures`}
+            eventName="free_chapter_cta_clicked"
+            eventProperties={{
+              source_page: `/${locale}/hotel-sop`,
+              placement: 'lead_magnet_band',
+              cta_label: isEN ? 'Download free' : 'Télécharger gratuitement',
+            }}
             className="inline-flex items-center gap-2 px-6 py-3 text-white font-bold text-sm flex-shrink-0 hover:opacity-90 transition-opacity"
             style={{ background: 'linear-gradient(135deg, #003d9b, #0052cc)', borderRadius: '0.125rem' }}
           >
             {isEN ? 'Download free' : 'Télécharger gratuitement'} <ArrowRight size={18} />
-          </Link>
+          </TrackedLink>
         </div>
       </section>
 
@@ -417,13 +451,20 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
                   </span>
                 </div>
                 <p className="text-sm text-gray-600 mb-4">{dept.desc}</p>
-                <Link
+                <TrackedLink
                   href={dept.href ?? `/${locale}/playbooks`}
+                  eventName="playbook_cta_clicked"
+                  eventProperties={{
+                    source_page: `/${locale}/hotel-sop`,
+                    placement: 'department_playbook_card',
+                    product: `${dept.name} SOP Playbook`,
+                    cta_label: isEN ? 'View playbook' : 'Voir le playbook',
+                  }}
                   className="text-sm font-semibold hover:underline"
                   style={{ color: dept.color }}
                 >
                   {isEN ? 'View playbook →' : 'Voir le playbook →'}
-                </Link>
+                </TrackedLink>
               </div>
             ))}
           </div>
@@ -568,18 +609,32 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
               : 'Si vous avez besoin rapidement d\'outils SOP pratiques, commencez par un starter pack à 29 €. Si vous cherchez la référence procédure complète, choisissez le playbook département à 67 €.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
+            <TrackedLink
               href="#starter-packs"
+              eventName="starter_pack_cta_clicked"
+              eventProperties={{
+                source_page: `/${locale}/hotel-sop`,
+                placement: 'final_cta',
+                product: 'starter_packs_section',
+                cta_label: isEN ? 'View Starter Packs' : 'Voir les starter packs',
+              }}
               className="inline-block bg-white text-[#1A2E44] font-semibold px-8 py-4 rounded-lg transition-colors hover:bg-gray-100"
             >
               {isEN ? 'View Starter Packs' : 'Voir les starter packs'}
-            </Link>
-            <Link
+            </TrackedLink>
+            <TrackedLink
               href="#department-playbooks"
+              eventName="playbook_cta_clicked"
+              eventProperties={{
+                source_page: `/${locale}/hotel-sop`,
+                placement: 'final_cta',
+                product: 'department_playbooks_section',
+                cta_label: isEN ? 'View Playbooks' : 'Voir les playbooks',
+              }}
               className="inline-block border border-white/40 text-white font-semibold px-8 py-4 rounded-lg transition-colors hover:bg-white/10"
             >
               {isEN ? 'View Playbooks' : 'Voir les playbooks'}
-            </Link>
+            </TrackedLink>
           </div>
         </div>
       </section>

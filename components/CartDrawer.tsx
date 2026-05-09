@@ -166,7 +166,12 @@ export default function CartDrawer({ locale }: CartDrawerProps) {
                     posthog.capture('cart_checkout_started', {
                       item_count: items.length,
                       total,
-                      items: items.map(i => ({ price_id: i.priceId, title: i.title, price: i.price })),
+                      items: items.map(i => ({
+                        price_id: i.priceId,
+                        title: i.title,
+                        price: i.price,
+                        product_type: i.productType ?? (i.price === 29 ? 'starter_pack' : i.price === 199 ? 'bundle' : 'playbook'),
+                      })),
                     })
                   }}
                   disabled={loading}

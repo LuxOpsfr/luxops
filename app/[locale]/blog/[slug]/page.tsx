@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { ArrowRight, ArrowLeft, Clock, CheckCircle2 } from 'lucide-react'
 import { articles } from '@/content/blog/articles'
 import { breadcrumbSchema, faqSchema as buildFaqSchema, localizedPath } from '@/lib/seo'
+import TrackedLink from '@/components/TrackedLink'
 
 // Keywords per article — improves indexation signals for Google
 const KEYWORDS_EN: Record<string, string> = {
@@ -870,6 +871,14 @@ const ARTICLE_PRODUCT_CTAS: Record<string, {
   },
 }
 
+function productCtaEventName(href: string) {
+  if (href.includes('starter-pack')) return 'starter_pack_cta_clicked'
+  if (href.includes('hotel-housekeeping-checklist')) return 'pdf_pack_cta_clicked'
+  if (href.includes('free-hotel-procedures')) return 'free_chapter_cta_clicked'
+  if (href.includes('playbooks')) return 'playbook_cta_clicked'
+  return 'seo_cta_clicked'
+}
+
 export async function generateStaticParams() {
   const locales = ['en', 'fr']
   return articles.flatMap((article) =>
@@ -1008,18 +1017,34 @@ export default async function BlogArticlePage({
                 {productCta.text}
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                <Link
+                <TrackedLink
                   href={productCta.primaryHref}
+                  eventName={productCtaEventName(productCta.primaryHref)}
+                  eventProperties={{
+                    source_page: `/${locale}/blog/${slug}`,
+                    placement: 'article_intro_cta',
+                    cta_label: productCta.primaryText,
+                    cta_position: 'primary',
+                    article_slug: slug,
+                  }}
                   className="inline-flex min-w-[240px] items-center justify-center gap-2 rounded-lg bg-[#003d9b] px-5 py-3 text-sm font-semibold text-white hover:bg-[#002d7a] transition-colors"
                 >
                   {productCta.primaryText} <ArrowRight size={16} />
-                </Link>
-                <Link
+                </TrackedLink>
+                <TrackedLink
                   href={productCta.secondaryHref}
+                  eventName={productCtaEventName(productCta.secondaryHref)}
+                  eventProperties={{
+                    source_page: `/${locale}/blog/${slug}`,
+                    placement: 'article_intro_cta',
+                    cta_label: productCta.secondaryText,
+                    cta_position: 'secondary',
+                    article_slug: slug,
+                  }}
                   className="inline-flex min-w-[240px] items-center justify-center gap-2 rounded-lg border border-[#003d9b] px-5 py-3 text-sm font-semibold text-[#003d9b] hover:bg-[#eef4ff] transition-colors"
                 >
                   {productCta.secondaryText} <ArrowRight size={16} />
-                </Link>
+                </TrackedLink>
               </div>
             </div>
           </section>

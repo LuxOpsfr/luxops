@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import TrackedLink from '@/components/TrackedLink'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
@@ -437,25 +438,46 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
                 : 'Une checklist issue du Playbook Housekeeping LuxOps : séquence chambre à blanc, recouche, chariot, auto-contrôle, inspection gouvernante, statut Clean/Inspected et grille qualité 100 points.'}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <a
+              <TrackedLink
                 href={packDownload}
                 download
+                eventName="pdf_pack_downloaded"
+                eventProperties={{
+                  source_page: `/${locale}/hotel-housekeeping-checklist`,
+                  placement: 'hero',
+                  cta_label: isEN ? 'Download Printable PDF Pack' : 'Télécharger les PDF imprimables',
+                  product_area: 'housekeeping',
+                }}
                 className="inline-block bg-white text-[#1A2E44] px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
               >
                 {isEN ? 'Download Printable PDF Pack' : 'Télécharger les PDF imprimables'}
-              </a>
-              <Link
+              </TrackedLink>
+              <TrackedLink
                 href={`/${locale}/playbooks/hsk-starter-pack`}
+                eventName="starter_pack_cta_clicked"
+                eventProperties={{
+                  source_page: `/${locale}/hotel-housekeeping-checklist`,
+                  placement: 'hero',
+                  product: 'housekeeping_inspection_kit',
+                  cta_label: isEN ? 'View Housekeeping Inspection Kit' : 'Voir le Kit Inspection Housekeeping',
+                }}
                 className="inline-block bg-[#0056D2] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#0047ad] transition-colors"
               >
                 {isEN ? 'View Housekeeping Inspection Kit' : 'Voir le Kit Inspection Housekeeping'}
-              </Link>
-              <Link
+              </TrackedLink>
+              <TrackedLink
                 href={`/${locale}/playbooks/hsk`}
+                eventName="playbook_cta_clicked"
+                eventProperties={{
+                  source_page: `/${locale}/hotel-housekeeping-checklist`,
+                  placement: 'hero',
+                  product: 'housekeeping_playbook',
+                  cta_label: isEN ? 'View Housekeeping Playbook' : 'Voir le Playbook Housekeeping',
+                }}
                 className="inline-block bg-[#244763] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#2c5575] transition-colors"
               >
                 {isEN ? 'View Housekeeping Playbook' : 'Voir le Playbook Housekeeping'}
-              </Link>
+              </TrackedLink>
             </div>
           </div>
         </section>
@@ -472,6 +494,8 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
                 href: packDownload,
                 label: isEN ? 'Download PDFs' : 'Télécharger les PDF',
                 download: true,
+                eventName: 'pdf_pack_downloaded',
+                product: 'housekeeping_pdf_pack',
               },
               {
                 title: isEN ? 'Housekeeping Inspection Kit' : 'Kit Inspection Housekeeping',
@@ -480,6 +504,8 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
                   : 'Utilisez le kit quand vous avez besoin de feuilles de contrôle, outils d’inspection chambre et suivi des défauts.',
                 href: `/${locale}/playbooks/hsk-starter-pack`,
                 label: isEN ? 'View Inspection Kit' : 'Voir le kit inspection',
+                eventName: 'starter_pack_cta_clicked',
+                product: 'housekeeping_inspection_kit',
               },
               {
                 title: isEN ? 'Full Housekeeping Playbook' : 'Playbook Housekeeping complet',
@@ -488,18 +514,27 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
                   : 'Utilisez le playbook complet pour toute la structure SOP, les standards et routines de management du département.',
                 href: `/${locale}/playbooks/hsk`,
                 label: isEN ? 'View Playbook' : 'Voir le playbook',
+                eventName: 'playbook_cta_clicked',
+                product: 'housekeeping_playbook',
               },
             ].map((item) => (
-              <Link
+              <TrackedLink
                 key={item.title}
                 href={item.href}
                 {...(item.download ? { download: true } : {})}
+                eventName={item.eventName}
+                eventProperties={{
+                  source_page: `/${locale}/hotel-housekeeping-checklist`,
+                  placement: 'product_paths',
+                  product: item.product,
+                  cta_label: item.label,
+                }}
                 className="block border border-gray-200 rounded-xl p-5 hover:border-[#1A2E44] hover:shadow-sm transition-all"
               >
                 <h2 className="text-lg font-bold text-[#1A2E44] mb-2">{item.title}</h2>
                 <p className="text-sm text-gray-600 leading-relaxed mb-4">{item.body}</p>
                 <span className="text-sm font-semibold text-[#0056D2]">{item.label}</span>
-              </Link>
+              </TrackedLink>
             ))}
           </div>
         </section>
@@ -695,19 +730,33 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
                 : 'Les checklists PDF sont des extraits gratuits. Le Playbook Housekeeping LuxOps complet donne à vos équipes toute la structure SOP derrière la checklist : chambre à blanc, recouche, inspection gouvernante, linge, stocks, sécurité, développement durable et management.'}
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-3">
-              <a
+              <TrackedLink
                 href={packDownload}
                 download
+                eventName="pdf_pack_downloaded"
+                eventProperties={{
+                  source_page: `/${locale}/hotel-housekeeping-checklist`,
+                  placement: 'mid_page_cta',
+                  product_area: 'housekeeping',
+                  cta_label: isEN ? 'Download Free PDF Pack' : 'Télécharger les PDF gratuits',
+                }}
                 className="inline-block bg-[#1A2E44] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#243d57] transition-colors"
               >
                 {isEN ? 'Download Free PDF Pack' : 'Télécharger les PDF gratuits'}
-              </a>
-              <Link
+              </TrackedLink>
+              <TrackedLink
                 href={`/${locale}/playbooks/hsk`}
+                eventName="playbook_cta_clicked"
+                eventProperties={{
+                  source_page: `/${locale}/hotel-housekeeping-checklist`,
+                  placement: 'mid_page_cta',
+                  product: 'housekeeping_playbook',
+                  cta_label: isEN ? 'View Full Playbook' : 'Voir le Playbook complet',
+                }}
                 className="inline-block bg-white text-[#1A2E44] border border-[#1A2E44] px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
               >
                 {isEN ? 'View Full Playbook' : 'Voir le Playbook complet'}
-              </Link>
+              </TrackedLink>
             </div>
           </div>
         </section>
@@ -760,12 +809,19 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
                 ? 'The LuxOps Housekeeping Playbook includes the full SOP documentation, inspection frameworks, training guides and control tools used by housekeeping teams across luxury and boutique properties. 10 chapters, ready to use.'
                 : "Le Playbook Housekeeping LuxOps comprend l'ensemble de la documentation SOP, les grilles d'inspection, les guides de formation et les outils de contrôle utilisés par les équipes housekeeping des établissements de luxe et boutique. 10 chapitres, prêts à l'emploi."}
             </p>
-            <Link
+            <TrackedLink
               href={`/${locale}/playbooks/hsk`}
+              eventName="playbook_cta_clicked"
+              eventProperties={{
+                source_page: `/${locale}/hotel-housekeeping-checklist`,
+                placement: 'final_cta',
+                product: 'housekeeping_playbook',
+                cta_label: isEN ? 'View Housekeeping Playbook' : 'Voir le Playbook Housekeeping',
+              }}
               className="inline-block bg-white text-[#1A2E44] px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 transition-colors"
             >
               {isEN ? 'View Housekeeping Playbook' : 'Voir le Playbook Housekeeping'}
-            </Link>
+            </TrackedLink>
           </div>
         </section>
 

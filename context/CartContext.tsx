@@ -6,6 +6,7 @@ export type CartItem = {
   priceId: string
   title: string
   price: number
+  productType?: 'playbook' | 'starter_pack' | 'bundle'
 }
 
 type CartContextType = {

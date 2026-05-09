@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import posthog from 'posthog-js'
 import {
   ArrowLeft,
   ArrowRight,
@@ -16,6 +17,7 @@ import {
 } from 'lucide-react'
 import { StarterPackEntry } from '@/content/starter-packs/data'
 import { useCart } from '@/context/CartContext'
+import TrackedLink from '@/components/TrackedLink'
 
 const benefitIcons = [
   ClipboardCheck,
@@ -46,6 +48,21 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
         priceId: pack.priceId,
         title: pack.shortTitle[lang],
         price: pack.price,
+        productType: 'starter_pack',
+      })
+      posthog.capture('product_added_to_cart', {
+        price_id: pack.priceId,
+        title: pack.shortTitle[lang],
+        price: pack.price,
+        locale,
+        product_type: 'starter_pack',
+      })
+      posthog.capture('starter_pack_added_to_cart', {
+        price_id: pack.priceId,
+        title: pack.shortTitle[lang],
+        price: pack.price,
+        locale,
+        product_type: 'starter_pack',
       })
     }
   }
@@ -104,15 +121,22 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
                     ? 'Add to cart · €29'
                     : 'Ajouter au panier · 29€'}
               </button>
-              <Link
+              <TrackedLink
                 href={fullPlaybookHref}
+                eventName="playbook_cta_clicked"
+                eventProperties={{
+                  source_page: `/${locale}/playbooks/${pack.id}`,
+                  placement: 'starter_pack_hero',
+                  product: pack.fullPlaybookTitle.en,
+                  cta_label: isEn ? `See ${pack.fullPlaybookTitle.en}` : `Voir le ${pack.fullPlaybookTitle.fr}`,
+                }}
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-[#c3c6d6] text-[#0a1d2e] font-bold text-sm hover:border-[#003d9b] hover:text-[#003d9b] transition-colors"
                 style={{ borderRadius: '0.125rem' }}
               >
                 {isEn
                   ? `See ${pack.fullPlaybookTitle.en}`
                   : `Voir le ${pack.fullPlaybookTitle.fr}`}
-              </Link>
+              </TrackedLink>
             </div>
 
             <p className="text-xs text-[#737685]">
@@ -330,15 +354,24 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
               >
                 {pack.fullComparison[lang]}
               </p>
-              <Link
+              <TrackedLink
                 href={fullPlaybookHref}
+                eventName="playbook_cta_clicked"
+                eventProperties={{
+                  source_page: `/${locale}/playbooks/${pack.id}`,
+                  placement: 'comparison_block',
+                  product: pack.fullPlaybookTitle.en,
+                  cta_label: isEn
+                    ? `Need the complete reference? View the ${pack.fullPlaybookTitle.en}`
+                    : `Besoin de la référence complète ? Voir le ${pack.fullPlaybookTitle.fr}`,
+                }}
                 className="inline-flex items-center gap-2 text-sm font-bold text-white underline underline-offset-4"
               >
                 {isEn
                   ? `Need the complete reference? View the ${pack.fullPlaybookTitle.en}`
                   : `Besoin de la référence complète ? Voir le ${pack.fullPlaybookTitle.fr}`}
                 <ArrowRight size={15} />
-              </Link>
+              </TrackedLink>
             </div>
           </div>
         </div>

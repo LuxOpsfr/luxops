@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
+import TrackedLink from '@/components/TrackedLink'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
@@ -273,18 +274,32 @@ export default async function HotelNightAuditChecklistPage({ params }: { params:
                 : 'Commencez avec le Starter Pack Front Office pour les checklists et passations du quotidien, ou utilisez le Playbook Front Office complet pour toute la référence SOP.'}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <Link
+              <TrackedLink
                 href={`/${locale}/playbooks/fo-starter-pack`}
+                eventName="starter_pack_cta_clicked"
+                eventProperties={{
+                  source_page: `/${locale}/hotel-night-audit-checklist`,
+                  placement: 'product_paths',
+                  product: 'front_office_starter_pack',
+                  cta_label: isEN ? 'View the Front Office Starter Pack' : 'Voir le Starter Pack Front Office',
+                }}
                 className="inline-flex min-w-[240px] items-center justify-center gap-2 rounded-lg bg-[#003d9b] px-5 py-3 text-sm font-semibold text-white hover:bg-[#002d7a] transition-colors"
               >
                 {isEN ? 'View the Front Office Starter Pack' : 'Voir le Starter Pack Front Office'} <ArrowRight size={16} />
-              </Link>
-              <Link
+              </TrackedLink>
+              <TrackedLink
                 href={`/${locale}/playbooks/fo`}
+                eventName="playbook_cta_clicked"
+                eventProperties={{
+                  source_page: `/${locale}/hotel-night-audit-checklist`,
+                  placement: 'product_paths',
+                  product: 'front_office_playbook',
+                  cta_label: isEN ? 'View the Front Office Playbook' : 'Voir le Playbook Front Office',
+                }}
                 className="inline-flex min-w-[240px] items-center justify-center gap-2 rounded-lg border border-[#003d9b] px-5 py-3 text-sm font-semibold text-[#003d9b] hover:bg-[#eef4ff] transition-colors"
               >
                 {isEN ? 'View the Front Office Playbook' : 'Voir le Playbook Front Office'} <ArrowRight size={16} />
-              </Link>
+              </TrackedLink>
             </div>
           </div>
         </section>
@@ -488,12 +503,19 @@ export default async function HotelNightAuditChecklistPage({ params }: { params:
                 ? 'The LuxOps Front Office Playbook covers every shift: opening, day operations, night audit and handover. 12 chapters, PDF and PowerPoint, EN and FR.'
                 : 'Le Playbook Réception LuxOps couvre chaque shift : ouverture, opérations de jour, Night Audit, contrôle crédit, VCC, caisse et passation. 12 chapitres, PDF et PowerPoint, EN et FR.'}
             </p>
-            <Link
+            <TrackedLink
               href={`/${locale}/playbooks/fo`}
+              eventName="playbook_cta_clicked"
+              eventProperties={{
+                source_page: `/${locale}/hotel-night-audit-checklist`,
+                placement: 'final_cta',
+                product: 'front_office_playbook',
+                cta_label: isEN ? 'View Front Office Playbook' : 'Voir le Playbook Réception',
+              }}
               className="inline-block bg-white text-[#1A2E44] px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 transition-colors"
             >
               {isEN ? 'View Front Office Playbook' : 'Voir le Playbook Réception'}
-            </Link>
+            </TrackedLink>
           </div>
         </section>
 
