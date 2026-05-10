@@ -30,19 +30,19 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Invalid department' }, { status: 400 })
     }
 
-    // 1. Sauvegarde Supabase — priorité absolue
+    // 1. Sauvegarde Supabase - priorité absolue
     await supabaseAdmin.from('leads').insert({ email, department, locale })
 
-    // 2. Notification Resend — non-bloquante
+    // 2. Notification Resend - non-bloquante
     try {
       await resend.emails.send({
         from: 'LuxOps <delivery@luxops.fr>',
         to: 'contact@luxops.fr',
         replyTo: email,
-        subject: `Nouveau lead : ${dept.fr} (${(locale as string)?.toUpperCase()}) — ${email}`,
+        subject: `Nouveau lead : ${dept.fr} (${(locale as string)?.toUpperCase()}) : ${email}`,
         html: `
           <div style="font-family: sans-serif; max-width: 600px;">
-            <h2 style="color: #003d9b;">Nouveau téléchargement gratuit — LuxOps</h2>
+            <h2 style="color: #003d9b;">Nouveau téléchargement gratuit : LuxOps</h2>
             <p><strong>Email :</strong> ${email}</p>
             <p><strong>Département :</strong> ${dept.fr} / ${dept.en}</p>
             <p><strong>Langue :</strong> ${(locale as string)?.toUpperCase()}</p>
@@ -51,7 +51,7 @@ export async function POST(request: NextRequest) {
         `,
       })
     } catch (emailError) {
-      console.error('[LuxOps Resend Error — lead sauvegardé en Supabase]', emailError)
+      console.error('[LuxOps Resend Error: lead sauvegardé en Supabase]', emailError)
     }
 
     // 3. Toujours retourner succès

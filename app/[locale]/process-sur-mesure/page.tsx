@@ -108,7 +108,7 @@ export function ProcessContent({ locale }: { locale: string }) {
   return (
     <div className="pt-16 bg-white">
 
-      {/* Hero — asymmetric */}
+      {/* Hero - asymmetric */}
       <section
         className="relative py-24 px-6 overflow-hidden border-b"
         style={{
@@ -148,7 +148,7 @@ export function ProcessContent({ locale }: { locale: string }) {
             </div>
           </div>
 
-          {/* Right 1/3 — pull-quote */}
+          {/* Right 1/3 - pull-quote */}
           <div
             className="lg:w-80 pb-2 text-lg text-[#4f6074] leading-relaxed"
             style={{ borderLeft: '4px solid #003d9b', paddingLeft: '1.5rem' }}
@@ -159,7 +159,7 @@ export function ProcessContent({ locale }: { locale: string }) {
         </div>
       </section>
 
-      {/* 3 numbered phases — How it works */}
+      {/* 3 numbered phases - How it works */}
       <section className="py-24 px-6 bg-white">
         <div className="max-w-screen-xl mx-auto">
           <h2 className="font-display text-3xl font-extrabold text-[#0a1d2e] tracking-tight mb-16">

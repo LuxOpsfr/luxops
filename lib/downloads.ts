@@ -14,7 +14,7 @@ export interface PlaybookDownload {
 }
 
 export const DOWNLOADS: Record<string, PlaybookDownload> = {
-  // Front Office Starter Pack — €29
+  // Front Office Starter Pack - €29
   price_1TUONHDVLJTOFkjUjE391FrX: {
     titleEn: 'Front Office Starter Pack',
     titleFr: 'Starter Pack Front Office',
@@ -24,7 +24,7 @@ export const DOWNLOADS: Record<string, PlaybookDownload> = {
     pptFr: 'BUNDLE',
   },
 
-  // Housekeeping Inspection Kit — €29
+  // Housekeeping Inspection Kit - €29
   price_1TUONXDVLJTOFkjUYvR8PUiS: {
     titleEn: 'Housekeeping Inspection Kit',
     titleFr: 'Kit Inspection Housekeeping',
@@ -34,7 +34,7 @@ export const DOWNLOADS: Record<string, PlaybookDownload> = {
     pptFr: 'BUNDLE',
   },
 
-  // Front Office — €67
+  // Front Office - €67
   price_1TBZ94DVLJTOFkjUsH59B7x7: {
     titleEn: 'Front Office Playbook',
     titleFr: 'Playbook Front Office',
@@ -44,7 +44,7 @@ export const DOWNLOADS: Record<string, PlaybookDownload> = {
     pptFr: 'PLACEHOLDER_FO_PPT_FR',
   },
 
-  // Housekeeping — €67
+  // Housekeeping - €67
   price_1TBZ9TDVLJTOFkjUwWnoKaGk: {
     titleEn: 'Housekeeping Playbook',
     titleFr: 'Playbook Housekeeping',
@@ -54,7 +54,7 @@ export const DOWNLOADS: Record<string, PlaybookDownload> = {
     pptFr: 'PLACEHOLDER_HSK_PPT_FR',
   },
 
-  // F&B — €67
+  // F&B - €67
   price_1TBZ9iDVLJTOFkjU3Os9VLRc: {
     titleEn: 'F&B Playbook',
     titleFr: 'Playbook F&B',
@@ -74,7 +74,7 @@ export const DOWNLOADS: Record<string, PlaybookDownload> = {
     pptFr: 'PLACEHOLDER_SPA_PPT_FR',
   },
 
-  // Spa & Wellness — €67
+  // Spa & Wellness - €67
   price_1TBZ9vDVLJTOFkjUT1FHhqUiY: {
     titleEn: 'Spa & Wellness Playbook',
     titleFr: 'Playbook Spa & Wellness',
@@ -84,11 +84,11 @@ export const DOWNLOADS: Record<string, PlaybookDownload> = {
     pptFr: 'PLACEHOLDER_SPA_PPT_FR',
   },
 
-  // Bundle — €199 (all 4 playbooks)
+  // Bundle - €199 (all 4 playbooks)
   price_1TBZB5DVLJTOFkjUwmgvTPRW: {
-    titleEn: 'Complete Bundle — All 4 Playbooks',
-    titleFr: 'Bundle Complet — 4 Playbooks',
-    // Bundle uses same links as individual playbooks — handled separately in email
+    titleEn: 'Complete Bundle: All 4 Playbooks',
+    titleFr: 'Bundle Complet : 4 Playbooks',
+    // Bundle uses same links as individual playbooks, handled separately in email
     pdfEn: 'BUNDLE',
     pptEn: 'BUNDLE',
     pdfFr: 'BUNDLE',

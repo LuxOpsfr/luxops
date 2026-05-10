@@ -450,7 +450,7 @@ export default async function HotelChecklistPage({ params }: { params: Promise<{
               href={`/${locale}/playbooks`}
               className="inline-block border border-white/40 text-white font-semibold px-8 py-4 rounded-lg transition-colors hover:bg-white/10"
             >
-              {isEN ? 'Get the Bundle — €199' : 'Obtenir le Bundle — 199€'}
+              {isEN ? 'Get the Bundle · €199' : 'Obtenir le Bundle · 199€'}
             </Link>
           </div>
         </div>

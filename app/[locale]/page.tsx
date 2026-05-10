@@ -125,7 +125,7 @@ function HomeContent({ locale }: { locale: string }) {
             </div>
           </div>
 
-          {/* Right — 3 pillars card */}
+          {/* Right - 3 pillars card */}
           <div className="flex-1 w-full max-w-sm lg:max-w-none">
             <div
               className="bg-white p-10 flex flex-col gap-8"
@@ -337,7 +337,7 @@ function HomeContent({ locale }: { locale: string }) {
         </div>
       </section>
 
-      {/* Expertise — humanisation */}
+      {/* Expertise - humanisation */}
       <ExpertiseSection locale={locale} />
 
       {/* Final CTA */}

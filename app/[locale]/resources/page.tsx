@@ -212,8 +212,8 @@ export default async function ResourcesPage({
               </h2>
               <p className="text-sm text-[#4f6074]">
                 {isEn
-                  ? 'Choose your department — Front Office, Housekeeping, F&B or Spa — and download the introduction chapter of the corresponding playbook. Free, in English and French.'
-                  : 'Choisissez votre département — Réception, Housekeeping, F&B ou Spa — et téléchargez le chapitre d\'introduction du playbook correspondant. Gratuit, en français et en anglais.'}
+                  ? 'Choose your department: Front Office, Housekeeping, F&B or Spa, and download the introduction chapter of the corresponding playbook. Free, in English and French.'
+                  : 'Choisissez votre département : Réception, Housekeeping, F&B ou Spa, et téléchargez le chapitre d\'introduction du playbook correspondant. Gratuit, en français et en anglais.'}
               </p>
             </div>
             <Link

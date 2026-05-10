@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Mentions Légales | Legal Notices — LuxOps',
+  title: 'Mentions Légales | Legal Notices | LuxOps',
   robots: {
     index: false,
     follow: false,
@@ -27,7 +27,7 @@ export default function LegalPage() {
           <div>
             <h3 className="font-semibold text-[#0a1d2e] mb-2">Éditeur du site</h3>
             <p>LuxOps</p>
-            <p>Entrepreneur Individuel — Belkheir Bekhedda</p>
+            <p>Entrepreneur Individuel : Belkheir Bekhedda</p>
             <p>Rue de Ponthieu, 75008 Paris, France</p>
             <p>Email : <a href="mailto:contact@luxops.fr" className="text-[#0a1d2e] underline">contact@luxops.fr</a></p>
             <p>SIREN : en cours d'attribution</p>
@@ -88,7 +88,7 @@ export default function LegalPage() {
           <div>
             <h3 className="font-semibold text-[#0a1d2e] mb-2">Publisher</h3>
             <p>LuxOps</p>
-            <p>Sole Trader — Belkheir Bekhedda</p>
+            <p>Sole Trader: Belkheir Bekhedda</p>
             <p>Rue de Ponthieu, 75008 Paris, France</p>
             <p>Email: <a href="mailto:contact@luxops.fr" className="text-[#0a1d2e] underline">contact@luxops.fr</a></p>
             <p>SIREN: pending attribution</p>

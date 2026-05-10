@@ -16,7 +16,7 @@ export default function ExpertiseSection({ locale }: Props) {
     >
       <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-        {/* Left — portrait + signature */}
+        {/* Left - portrait + signature */}
         <div className="flex flex-col items-center lg:items-start gap-10">
 
           {/* Photo placeholder */}
@@ -79,7 +79,7 @@ export default function ExpertiseSection({ locale }: Props) {
           </div>
         </div>
 
-        {/* Right — bio */}
+        {/* Right - bio */}
         <div className="space-y-6">
           <div
             className="inline-flex items-center gap-2 px-3 py-1 text-[#003d9b] font-bold text-[10px] uppercase tracking-widest"

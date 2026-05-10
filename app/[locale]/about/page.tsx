@@ -135,7 +135,7 @@ function AboutContent({ locale }: { locale: string }) {
         </div>
       </section>
 
-      {/* Expertise — humanisation */}
+      {/* Expertise - humanisation */}
       <ExpertiseSection locale={locale} />
     </div>
   )

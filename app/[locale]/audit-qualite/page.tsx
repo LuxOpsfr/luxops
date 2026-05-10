@@ -86,7 +86,7 @@ export function AuditContent({ locale }: { locale: string }) {
             </div>
           </div>
 
-          {/* Right — what this produces */}
+          {/* Right - what this produces */}
           <div className="lg:w-80 flex-shrink-0">
             <div
               className="p-8 bg-white"

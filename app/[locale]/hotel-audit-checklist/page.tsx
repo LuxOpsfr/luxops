@@ -7,8 +7,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const isEN = locale === 'en'
   return {
     title: isEN
-      ? 'Hotel Audit Checklist — Complete Quality Audit for Luxury Hotels | LuxOps'
-      : 'Checklist Audit Hôtel — Audit qualité complet pour hôtels de luxe | LuxOps',
+      ? 'Hotel Audit Checklist: Complete Quality Audit for Luxury Hotels | LuxOps'
+      : 'Checklist Audit Hôtel : Audit qualité complet pour hôtels de luxe | LuxOps',
     description: isEN
       ? 'Free hotel audit checklist covering front office, housekeeping, F&B and guest experience. Scoring grid, inspection criteria and action framework for luxury and boutique properties.'
       : 'Checklist d\'audit hôtelier gratuite couvrant la réception, le housekeeping, le F&B et l\'expérience client. Grille de notation, critères d\'inspection et plan d\'action pour établissements de luxe.',
@@ -110,7 +110,7 @@ const FAQ_EN = [
   },
   {
     q: 'How often should a hotel conduct a quality audit?',
-    a: 'Internal audits should be conducted at a minimum monthly, with spot checks weekly. External audits — whether from an independent firm like LQA or Forbes or from a brand QA team — typically happen once or twice a year. The most effective approach combines frequent internal checks with periodic external benchmarking.',
+    a: 'Internal audits should be conducted at a minimum monthly, with spot checks weekly. External audits, whether from an independent firm like LQA or Forbes or from a brand QA team, typically happen once or twice a year. The most effective approach combines frequent internal checks with periodic external benchmarking.',
   },
   {
     q: 'What is the difference between an internal hotel audit and an LQA audit?',
@@ -129,7 +129,7 @@ const FAQ_FR = [
   },
   {
     q: 'À quelle fréquence un hôtel doit-il réaliser un audit qualité ?',
-    a: 'Les audits internes doivent être réalisés au minimum chaque mois, avec des contrôles ponctuels chaque semaine. Les audits externes — qu\'ils proviennent d\'un cabinet indépendant comme LQA ou Forbes, ou d\'une équipe QA de marque — ont lieu généralement une à deux fois par an. L\'approche la plus efficace combine des contrôles internes fréquents et un benchmarking externe périodique.',
+    a: 'Les audits internes doivent être réalisés au minimum chaque mois, avec des contrôles ponctuels chaque semaine. Les audits externes, qu\'ils proviennent d\'un cabinet indépendant comme LQA ou Forbes, ou d\'une équipe QA de marque, ont lieu généralement une à deux fois par an. L\'approche la plus efficace combine des contrôles internes fréquents et un benchmarking externe périodique.',
   },
   {
     q: 'Quelle est la différence entre un audit interne et un audit LQA ?',
@@ -244,7 +244,7 @@ export default async function HotelAuditPage({ params }: { params: Promise<{ loc
             {isEN ? (
               <>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  Score each criterion from 0 to 2: 0 for not met, 1 for partially met, 2 for fully met. Each department scores out of 16. The overall hotel score is out of 56. Audit benchmark: 50 to 56 — ready for external audit; 40 to 49 — monitor and coach; below 40 — immediate action required.
+                  Score each criterion from 0 to 2: 0 for not met, 1 for partially met, 2 for fully met. Each department scores out of 16. The overall hotel score is out of 56. Audit benchmark: 50 to 56: ready for external audit; 40 to 49: monitor and coach; below 40: immediate action required.
                 </p>
                 <p className="text-gray-600 leading-relaxed">
                   Run this audit at least monthly. Use results in a department-level debrief within 48 hours of the audit. Attach specific SOP or checklist references to each gap so the team knows exactly where to find the standard.
@@ -253,7 +253,7 @@ export default async function HotelAuditPage({ params }: { params: Promise<{ loc
             ) : (
               <>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  Notez chaque critère de 0 à 2 : 0 si non atteint, 1 si partiellement atteint, 2 si pleinement atteint. Chaque département est noté sur 16. Le score global de l'hôtel est sur 56. Référentiel : 50 à 56 — prêt pour un audit externe ; 40 à 49 — surveiller et coacher ; en dessous de 40 — action immédiate requise.
+                  Notez chaque critère de 0 à 2 : 0 si non atteint, 1 si partiellement atteint, 2 si pleinement atteint. Chaque département est noté sur 16. Le score global de l'hôtel est sur 56. Référentiel : 50 à 56 : prêt pour un audit externe ; 40 à 49 : surveiller et coacher ; en dessous de 40 : action immédiate requise.
                 </p>
                 <p className="text-gray-600 leading-relaxed">
                   Réalisez cet audit au minimum une fois par mois. Utilisez les résultats dans un débrief par département dans les 48 heures suivant l'audit. Associez à chaque écart la référence SOP ou checklist correspondante pour que l'équipe sache précisément où trouver le standard.
@@ -267,7 +267,7 @@ export default async function HotelAuditPage({ params }: { params: Promise<{ loc
         <section className="py-16 px-6">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-2xl font-bold text-[#1A2E44] mb-2 text-center">
-              {isEN ? 'Hotel Quality Audit Scoring Grid' : 'Grille de notation — Audit qualité hôtel'}
+              {isEN ? 'Hotel Quality Audit Scoring Grid' : 'Grille de notation : audit qualité hôtel'}
             </h2>
             <p className="text-gray-500 text-center text-sm mb-10">
               {isEN ? 'Score 0–2 per criterion. 28 criteria total across 4 departments.' : 'Notation 0 à 2 par critère. 28 critères au total sur 4 départements.'}
@@ -339,12 +339,12 @@ export default async function HotelAuditPage({ params }: { params: Promise<{ loc
             <div className="space-y-6">
               {(isEN ? [
                 { step: '01', title: 'Prepare the audit scope', body: 'Define which departments will be audited and on what date. For a full property audit, block 2 to 4 hours. For a single department spot check, 45 to 60 minutes is sufficient. Confirm the audit is unannounced or semi-announced depending on whether you are assessing actual performance or training readiness.' },
-                { step: '02', title: 'Conduct the audit as a guest would experience it', body: 'Walk the full guest journey: arrival, check-in, room inspection, public areas, F&B if applicable, check-out. Score each criterion immediately. Do not complete the form from memory after the audit — the details that matter most are the ones observed in the moment.' },
+                { step: '02', title: 'Conduct the audit as a guest would experience it', body: 'Walk the full guest journey: arrival, check-in, room inspection, public areas, F&B if applicable, check-out. Score each criterion immediately. Do not complete the form from memory after the audit. The details that matter most are the ones observed in the moment.' },
                 { step: '03', title: 'Debrief within 48 hours', body: 'Share scores at department level, not individual level. Focus on patterns and trends, not isolated incidents. Attach the specific SOP, checklist or standard that applies to each gap so the team has a clear reference, not just a score.' },
                 { step: '04', title: 'Track scores over time', body: 'A single audit score is a snapshot. Monthly tracking reveals whether standards are improving, declining, or plateauing. Review the trend at least quarterly and adjust training priorities accordingly.' },
               ] : [
                 { step: '01', title: 'Préparer le périmètre d\'audit', body: 'Définissez les départements à auditer et la date. Pour un audit complet de l\'établissement, prévoyez 2 à 4 heures. Pour un contrôle ponctuel sur un seul département, 45 à 60 minutes suffisent. Précisez si l\'audit est réalisé à l\'improviste ou semi-annoncé selon que vous évaluez les performances réelles ou le niveau de préparation de l\'équipe.' },
-                { step: '02', title: 'Conduire l\'audit comme le vivrait un client', body: 'Parcourez l\'intégralité du parcours client : arrivée, check-in, inspection de chambre, espaces communs, F&B le cas échéant, check-out. Notez chaque critère immédiatement. Ne complétez pas la grille de mémoire après l\'audit — les détails les plus importants sont ceux observés sur le moment.' },
+                { step: '02', title: 'Conduire l\'audit comme le vivrait un client', body: 'Parcourez l\'intégralité du parcours client : arrivée, check-in, inspection de chambre, espaces communs, F&B le cas échéant, check-out. Notez chaque critère immédiatement. Ne complétez pas la grille de mémoire après l\'audit. Les détails les plus importants sont ceux observés sur le moment.' },
                 { step: '03', title: 'Débriefer sous 48 heures', body: 'Partagez les scores au niveau du département, pas de l\'individu. Concentrez-vous sur les tendances et les récurrences, pas sur les incidents isolés. Associez à chaque écart la procédure, la checklist ou le standard applicable pour que l\'équipe ait une référence claire, pas seulement un score.' },
                 { step: '04', title: 'Suivre les scores dans le temps', body: 'Un score d\'audit unique est un instantané. Un suivi mensuel révèle si les standards progressent, régressent ou stagnent. Analysez la tendance au moins chaque trimestre et ajustez les priorités de formation en conséquence.' },
               ]).map((item) => (

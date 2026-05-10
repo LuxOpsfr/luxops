@@ -6,8 +6,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const isEN = locale === 'en'
   return {
     title: isEN
-      ? 'Hotel Reception Training — Standards, Procedures and Service Reflexes for Front Office Teams | LuxOps'
-      : 'Formation Réception Hôtel — Standards, Procédures et Réflexes de Service | LuxOps',
+      ? 'Hotel Reception Training: Standards, Procedures and Service Reflexes for Front Office Teams | LuxOps'
+      : 'Formation Réception Hôtel : Standards, Procédures et Réflexes de Service | LuxOps',
     description: isEN
       ? 'Hotel reception training built around check-in and check-out procedures, PMS operation, guest communication, upselling and complaint handling. Practical methods for front office teams.'
       : "Formation réception hôtel pour les équipes de front office. Procédures check-in et check-out, utilisation du PMS, standards de communication, techniques d'upsell et gestion des réclamations.",

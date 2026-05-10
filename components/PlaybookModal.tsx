@@ -130,8 +130,8 @@ export default function PlaybookModal({ isOpen, onClose, locale, playbook }: Pla
                   <span className="font-semibold">{isEn ? 'PDF Version' : 'Version PDF'}</span>
                   <span className="text-gray-500">
                     {isEn
-                      ? ' — Print-ready, immediately applicable at your property'
-                      : ' — Prêt à imprimer, applicable immédiatement dans votre hôtel'}
+                      ? ' · Print-ready, immediately applicable at your property'
+                      : ' · Prêt à imprimer, applicable immédiatement dans votre hôtel'}
                   </span>
                 </span>
               </div>
@@ -155,8 +155,8 @@ export default function PlaybookModal({ isOpen, onClose, locale, playbook }: Pla
                   <span className="font-semibold">PowerPoint (PPT)</span>
                   <span className="text-gray-500">
                     {isEn
-                      ? ' — Fully editable, customise every slide for your brand'
-                      : ' — Entièrement modifiable, adaptez chaque slide à votre image'}
+                      ? ' · Fully editable, customise every slide for your brand'
+                      : ' · Entièrement modifiable, adaptez chaque slide à votre image'}
                   </span>
                 </span>
               </div>
@@ -243,12 +243,12 @@ export default function PlaybookModal({ isOpen, onClose, locale, playbook }: Pla
             {inCart ? (
               <>
                 <Check size={15} />
-                {isEn ? 'In Cart — View Cart' : 'Ajouté — Voir le Panier'}
+                {isEn ? 'In Cart · View Cart' : 'Ajouté · Voir le Panier'}
               </>
             ) : isEn ? (
-              `Add to Cart — €67 · ${selectedLang === 'en' ? 'English' : 'Français'}`
+              `Add to Cart · €67 · ${selectedLang === 'en' ? 'English' : 'Français'}`
             ) : (
-              `Ajouter au Panier — 67€ · ${selectedLang === 'en' ? 'English' : 'Français'}`
+              `Ajouter au Panier · 67€ · ${selectedLang === 'en' ? 'English' : 'Français'}`
             )}
           </button>
 

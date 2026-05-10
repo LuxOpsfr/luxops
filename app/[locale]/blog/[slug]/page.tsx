@@ -6,7 +6,7 @@ import { articles } from '@/content/blog/articles'
 import { breadcrumbSchema, faqSchema as buildFaqSchema, localizedPath } from '@/lib/seo'
 import TrackedLink from '@/components/TrackedLink'
 
-// Keywords per article — improves indexation signals for Google
+// Keywords per article - improves indexation signals for Google
 const KEYWORDS_EN: Record<string, string> = {
   'hotel-operations-playbook': 'hotel operations playbook, hotel SOP, hotel procedures manual, hotel operations guide, luxury hotel management',
   'how-to-write-hotel-sops': 'how to write hotel SOPs, hotel standard operating procedures, hotel SOP template, hotel procedure writing',
@@ -1050,7 +1050,7 @@ export default async function BlogArticlePage({
           </section>
         )}
 
-        {/* Lead magnet — right after intro, before any H2 */}
+        {/* Lead magnet - right after intro, before any H2 */}
         {(() => {
           const DEPT_MAP: Record<string, { titleEn: string; titleFr: string }> = {
             'housekeeping-room-inspection': {
@@ -1125,7 +1125,7 @@ export default async function BlogArticlePage({
           )
         })()}
 
-        {/* Playbook excerpt — proof and CTA early in the read */}
+        {/* Playbook excerpt - proof and CTA early in the read */}
         {playbookExcerpt && (
           <section className="py-12 bg-white border-b border-gray-100">
             <div className="max-w-3xl mx-auto px-6">
@@ -1166,7 +1166,7 @@ export default async function BlogArticlePage({
           </section>
         )}
 
-        {/* Article body — all sections */}
+        {/* Article body - all sections */}
         <section className="py-12 bg-white">
           <div className="max-w-3xl mx-auto px-6">
             <div className="prose-style">

@@ -7,8 +7,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const isEN = locale === 'en'
   return {
     title: isEN
-      ? 'Hotel Front Office SOP Templates — Download & Deploy Immediately | LuxOps'
-      : 'Procédures de réception hôtelière — Modèles opérationnels | LuxOps',
+      ? 'Hotel Front Office SOP Templates: Download & Deploy Immediately | LuxOps'
+      : 'Procédures de réception hôtelière : modèles opérationnels | LuxOps',
     description: isEN
       ? 'Front office SOP system for luxury hotels. Built around shift structure, guest journey, exception handling and handover. Not a list of topics. A working operational framework.'
       : 'Procédures de réception pour hôtels de luxe. Check-in, check-out, gestion des réclamations, passation de service et audit de nuit. Un cadre opérationnel concret, applicable immédiatement.',
@@ -64,7 +64,7 @@ const SOP_AREAS_FR = [
   },
   {
     title: 'Check-out et facturation',
-    body: 'Les contestations de facture au départ sont parmi les réclamations les plus fréquentes. Une procédure de check-out structurée — relecture de la facture la veille, conduite à tenir en cas de litige, gestion des reçus — permet de réduire sensiblement ces situations.',
+    body: 'Les contestations de facture au départ sont parmi les réclamations les plus fréquentes. Une procédure de check-out structurée, avec relecture de la facture la veille, conduite à tenir en cas de litige et gestion des reçus, permet de réduire sensiblement ces situations.',
   },
   {
     title: 'Gestion des réservations et des modifications',

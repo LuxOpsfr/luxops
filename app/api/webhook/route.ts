@@ -121,7 +121,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Send confirmation email
-    console.log(`[Webhook] Sending email to ${customerEmail} — priceIds: ${priceIds.join(', ')}`)
+    console.log(`[Webhook] Sending email to ${customerEmail}: priceIds: ${priceIds.join(', ')}`)
 
     try {
       await sendPlaybookEmail({

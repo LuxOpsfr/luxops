@@ -124,7 +124,7 @@ export function FormationContent({ locale }: { locale: string }) {
             <p className="text-sm text-[#737685] max-w-xl leading-relaxed">{t('training_context')}</p>
           </div>
 
-          {/* Right — stat card */}
+          {/* Right - stat card */}
           <div className="lg:w-72 flex-shrink-0">
             <div
               className="bg-white p-8"
@@ -155,7 +155,7 @@ export function FormationContent({ locale }: { locale: string }) {
         </div>
       </section>
 
-      {/* Bento — what we cover */}
+      {/* Bento - what we cover */}
       <section className="py-24 px-6" style={{ backgroundColor: '#f8f9ff' }}>
         <div className="max-w-screen-xl mx-auto">
           <div className="max-w-2xl mb-16">
@@ -171,7 +171,7 @@ export function FormationContent({ locale }: { locale: string }) {
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
 
-            {/* Wide card — SOP Rollout */}
+            {/* Wide card - SOP Rollout */}
             <div
               className="md:col-span-8 bg-white p-10 flex flex-col justify-between"
               style={{ borderRadius: '0.125rem', borderLeft: '4px solid #003d9b', minHeight: '320px' }}
@@ -379,7 +379,7 @@ export function FormationContent({ locale }: { locale: string }) {
         </div>
       </section>
 
-      {/* Closing statement — dark */}
+      {/* Closing statement - dark */}
       <section className="py-24 px-6" style={{ backgroundColor: '#0a1d2e' }}>
         <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center gap-16">
 
@@ -449,7 +449,7 @@ export function FormationContent({ locale }: { locale: string }) {
               },
               {
                 q: 'Are materials included in the training?',
-                a: 'Yes. Every participant receives the relevant LuxOps operational playbook at the end of the session — a reference document they can consult, apply, and pass on independently after the training.',
+                a: 'Yes. Every participant receives the relevant LuxOps operational playbook at the end of the session. It is a reference document they can consult, apply, and pass on independently after the training.',
               },
               {
                 q: 'What is the difference between the half-day and full-day format?',
@@ -474,7 +474,7 @@ export function FormationContent({ locale }: { locale: string }) {
               },
               {
                 q: 'Les supports sont-ils inclus dans la formation ?',
-                a: "Oui. Chaque participant repart avec le playbook opérationnel LuxOps correspondant à son département — un document de référence qu'il peut consulter, appliquer et transmettre en autonomie après la session.",
+                a: "Oui. Chaque participant repart avec le playbook opérationnel LuxOps correspondant à son département. C'est un document de référence qu'il peut consulter, appliquer et transmettre en autonomie après la session.",
               },
               {
                 q: 'Quelle est la différence entre la demi-journée et la journée complète ?',

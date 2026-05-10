@@ -155,7 +155,7 @@ function NotionContent({ locale }: { locale: string }) {
             </div>
           </div>
 
-          {/* Right — Notion UI Mockup */}
+          {/* Right - Notion UI Mockup */}
           <div className="lg:col-span-7 relative">
             <div
               className="bg-white overflow-hidden flex flex-col font-sans"
@@ -305,7 +305,7 @@ function NotionContent({ locale }: { locale: string }) {
         </div>
       </section>
 
-      {/* Bento — What's Inside */}
+      {/* Bento - What's Inside */}
       <section className="py-24 px-6" style={{ backgroundColor: '#f8f9ff' }}>
         <div className="max-w-screen-xl mx-auto">
           <div className="mb-16">
@@ -320,7 +320,7 @@ function NotionContent({ locale }: { locale: string }) {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
-            {/* Kanban — Wide */}
+            {/* Kanban - Wide */}
             <div
               className="md:col-span-7 p-8 bg-white"
               style={{ borderRadius: '0.125rem', boxShadow: '0 2px 8px rgba(10,29,46,0.04)' }}
@@ -372,7 +372,7 @@ function NotionContent({ locale }: { locale: string }) {
               </div>
             </div>
 
-            {/* SOP Toggles — Navy */}
+            {/* SOP Toggles - Navy */}
             <div
               className="md:col-span-5 p-8 text-white flex flex-col justify-between"
               style={{ backgroundColor: '#003d9b', borderRadius: '0.125rem' }}
@@ -492,7 +492,7 @@ function NotionContent({ locale }: { locale: string }) {
         </div>
       </section>
 
-      {/* Why Notion — Comparison */}
+      {/* Why Notion - Comparison */}
       <section className="py-24 px-6 bg-white">
         <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <div>

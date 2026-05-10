@@ -165,7 +165,7 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
             </p>
           </div>
 
-          {/* Right — blueprint card */}
+          {/* Right - blueprint card */}
           <div className="flex-1 relative w-full max-w-md lg:max-w-none">
             <div
               className="absolute -top-4 -right-4 w-full h-full"
@@ -254,7 +254,7 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            {/* First chapter — wide */}
+            {/* First chapter - wide */}
             {mainChapters.slice(0, 1).map((ch, i) => (
               <div
                 key={i}
@@ -298,7 +298,7 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
               </div>
             ))}
 
-            {/* Featured last module — navy */}
+            {/* Featured last module - navy */}
             <div
               className="md:col-span-2 p-8 text-white relative overflow-hidden"
               style={{ backgroundColor: '#003d9b', borderRadius: '0.125rem' }}

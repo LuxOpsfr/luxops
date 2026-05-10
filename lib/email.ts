@@ -25,7 +25,7 @@ const PLAYBOOK_NAMES: Record<string, { en: string; fr: string }> = {
   'price_1TBZ9TDVLJTOFkjUwWnoKaGk': { en: 'Housekeeping Playbook', fr: 'Playbook Housekeeping' },
   'price_1TBZ9iDVLJTOFkjU3Os9VLRc': { en: 'F&B Playbook', fr: 'Playbook F&B' },
   'price_1TBZ9vDVLJTOFkjUT1FHhqUi': { en: 'Spa & Wellness Playbook', fr: 'Playbook Spa & Wellness' },
-  'price_1TBZB5DVLJTOFkjUwmgvTPRW': { en: 'Complete Bundle — 4 Playbooks', fr: 'Bundle Complet — 4 Playbooks' },
+  'price_1TBZB5DVLJTOFkjUwmgvTPRW': { en: 'Complete Bundle: 4 Playbooks', fr: 'Bundle Complet : 4 Playbooks' },
 }
 
 function buildEmailHtml(

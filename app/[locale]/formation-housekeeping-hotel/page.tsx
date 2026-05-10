@@ -6,8 +6,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const isEN = locale === 'en'
   return {
     title: isEN
-      ? 'Housekeeping Team Training — What to Really Pass On and How to Structure It | LuxOps'
-      : "Formation Housekeeping Hôtel — Ce qu'il Faut Vraiment Transmettre à une Équipe | LuxOps",
+      ? 'Housekeeping Team Training: What to Really Pass On and How to Structure It | LuxOps'
+      : "Formation Housekeeping Hôtel : Ce qu'il Faut Vraiment Transmettre à une Équipe | LuxOps",
     description: isEN
       ? 'Structured housekeeping team training built around service sequences, written standards and floor supervision. Practical methods to build consistency that holds over time.'
       : "Formation housekeeping hôtel structurée autour des séquences de service, des standards écrits et de l'encadrement terrain. Méthodes concrètes pour installer un niveau qui tient dans le temps.",

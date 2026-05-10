@@ -7,8 +7,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const isEN = locale === 'en'
   return {
     title: isEN
-      ? 'How to Improve Hotel Operations — Front Office, Housekeeping & Service Quality | LuxOps'
-      : 'Comment améliorer les opérations hôtelières — Réception, Housekeeping et Qualité de Service | LuxOps',
+      ? 'How to Improve Hotel Operations: Front Office, Housekeeping & Service Quality | LuxOps'
+      : 'Comment améliorer les opérations hôtelières : réception, Housekeeping et qualité de service | LuxOps',
     description: isEN
       ? 'Practical guide to improving hotel operations: written SOPs, role-specific checklists, shift structure, quality control and staff training. Built for hotel managers and department heads.'
       : 'Guide pratique pour améliorer les opérations hôtelières : procédures écrites, checklists par rôle, structure des services, contrôle qualité et formation. Conçu pour les directeurs d\'hôtel.',

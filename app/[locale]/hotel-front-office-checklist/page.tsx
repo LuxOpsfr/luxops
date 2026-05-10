@@ -7,8 +7,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const isEN = locale === 'en'
   return {
     title: isEN
-      ? 'Hotel Front Office Checklist — Shift Opening, Check-in & Handover | LuxOps'
-      : 'Checklist Réception Hôtel — Ouverture, Check-in et Passation de Service | LuxOps',
+      ? 'Hotel Front Office Checklist: Shift Opening, Check-in & Handover | LuxOps'
+      : 'Checklist Réception Hôtel : ouverture, check-in et passation de service | LuxOps',
     description: isEN
       ? 'Free hotel front office checklist: shift opening sequence, check-in and check-out procedure, billing verification and shift handover. Printable and ready to use.'
       : 'Checklist réception hôtel gratuite : ouverture de service, séquence check-in, vérification facturation et passation. Prête à imprimer et à utiliser.',

@@ -6,7 +6,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const isEN = locale === 'en'
   return {
     title: isEN
-      ? 'Hotel Team Training — Structuring Working Methods for More Consistent Teams | LuxOps'
+      ? 'Hotel Team Training: Structuring Working Methods for More Consistent Teams | LuxOps'
       : "Formation équipe hôtelière : structurer les méthodes de travail pour des équipes plus régulières | LuxOps",
     description: isEN
       ? 'Hotel team training that builds real operational consistency. Department-specific procedures, structured onboarding, supervisor training and methods that hold despite turnover.'
