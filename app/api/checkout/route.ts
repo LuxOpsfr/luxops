@@ -15,9 +15,13 @@ const VALID_PRICE_IDS = new Set([
   'price_1TUONXDVLJTOFkjUYvR8PUiS', // Housekeeping Inspection Kit
 ])
 
+function cleanMetadataValue(value: unknown) {
+  return typeof value === 'string' && value.length <= 500 ? value : undefined
+}
+
 export async function POST(request: NextRequest) {
   try {
-    const { priceId, locale } = await request.json()
+    const { priceId, locale, posthogDistinctId, posthogSessionId } = await request.json()
 
     if (!priceId || !VALID_PRICE_IDS.has(priceId)) {
       return NextResponse.json({ error: 'Invalid price ID' }, { status: 400 })
@@ -32,7 +36,12 @@ export async function POST(request: NextRequest) {
       success_url: `${origin}/${lang}/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${origin}/${lang}/playbooks`,
       locale: lang === 'fr' ? 'fr' : 'en',
-      metadata: { locale: lang },
+      metadata: {
+        locale: lang,
+        ...(cleanMetadataValue(posthogDistinctId) && { posthog_distinct_id: cleanMetadataValue(posthogDistinctId) }),
+        ...(cleanMetadataValue(posthogSessionId) && { posthog_session_id: cleanMetadataValue(posthogSessionId) }),
+        price_ids: priceId,
+      },
     })
 
     return NextResponse.json({ url: session.url })

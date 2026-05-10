@@ -58,6 +58,8 @@ export default function CartDrawer({ locale }: CartDrawerProps) {
             body: JSON.stringify({
               items: items.map(i => ({ priceId: i.priceId })),
               locale,
+              posthogDistinctId: posthog.get_distinct_id(),
+              posthogSessionId: posthog.get_session_id?.(),
             }),
           })
           const { clientSecret } = await res.json()

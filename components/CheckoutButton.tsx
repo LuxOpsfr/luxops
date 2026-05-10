@@ -23,7 +23,12 @@ export default function CheckoutButton({ priceId, locale, className, children }:
       const res = await fetch('/api/checkout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ priceId, locale }),
+        body: JSON.stringify({
+          priceId,
+          locale,
+          posthogDistinctId: posthog.get_distinct_id(),
+          posthogSessionId: posthog.get_session_id?.(),
+        }),
       })
       const data = await res.json()
       if (data.url) {

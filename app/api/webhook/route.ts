@@ -60,6 +60,8 @@ export async function POST(request: NextRequest) {
       .filter(Boolean) as string[]
 
     const locale = (session.metadata?.locale as string) || 'en'
+    const posthogDistinctId = session.metadata?.posthog_distinct_id
+    const posthogSessionId = session.metadata?.posthog_session_id
 
     // Determine which playbooks to record in Supabase
     const playbookPriceIds = priceIds.includes(BUNDLE_PRICE_ID)
@@ -102,14 +104,17 @@ export async function POST(request: NextRequest) {
     const totalAmount = lineItems.data.reduce((sum, item) => sum + (item.price?.unit_amount ?? 0) * (item.quantity ?? 1), 0)
     if (posthog) {
       posthog.capture({
-        distinctId: customerEmail,
+        distinctId: posthogDistinctId || customerEmail,
         event: 'purchase_completed',
         properties: {
           stripe_session_id: session.id,
+          posthog_session_id: posthogSessionId,
           price_ids: priceIds,
           total_amount_cents: totalAmount,
           currency: session.currency ?? 'eur',
           locale,
+          payment_status: session.payment_status,
+          customer_email: customerEmail,
         },
       })
       await posthog.flush()

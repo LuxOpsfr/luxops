@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Script from 'next/script'
 import { CheckCircle } from 'lucide-react'
+import CheckoutSuccessTracker from '@/components/CheckoutSuccessTracker'
 
 export const metadata: Metadata = {
   title: 'Order Confirmed | LuxOps',
@@ -18,6 +19,7 @@ export default async function SuccessPage({
 
   return (
     <>
+    <CheckoutSuccessTracker locale={locale} />
     <Script id="google-ads-purchase" strategy="afterInteractive">
       {`gtag('event', 'conversion_event_purchase', {});`}
     </Script>

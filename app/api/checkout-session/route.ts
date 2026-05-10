@@ -15,9 +15,13 @@ const VALID_PRICE_IDS = new Set([
   'price_1TUONXDVLJTOFkjUYvR8PUiS', // Housekeeping Inspection Kit
 ])
 
+function cleanMetadataValue(value: unknown) {
+  return typeof value === 'string' && value.length <= 500 ? value : undefined
+}
+
 export async function POST(request: NextRequest) {
   try {
-    const { items, locale } = await request.json()
+    const { items, locale, posthogDistinctId, posthogSessionId } = await request.json()
 
     if (!Array.isArray(items) || items.length === 0) {
       return NextResponse.json({ error: 'No items' }, { status: 400 })
@@ -41,7 +45,12 @@ export async function POST(request: NextRequest) {
       })),
       return_url: `${origin}/${lang}/success?session_id={CHECKOUT_SESSION_ID}`,
       locale: lang === 'fr' ? 'fr' : 'en',
-      metadata: { locale: lang },
+      metadata: {
+        locale: lang,
+        ...(cleanMetadataValue(posthogDistinctId) && { posthog_distinct_id: cleanMetadataValue(posthogDistinctId) }),
+        ...(cleanMetadataValue(posthogSessionId) && { posthog_session_id: cleanMetadataValue(posthogSessionId) }),
+        price_ids: items.map((item: { priceId: string }) => item.priceId).join(','),
+      },
     })
 
     return NextResponse.json({ clientSecret: session.client_secret })
