@@ -40,7 +40,9 @@ function sanitizeEvent(event: CaptureResult | null) {
   return event
 }
 
-if (process.env.NEXT_PUBLIC_POSTHOG_KEY) {
+const isLocalHost = ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname)
+
+if (process.env.NEXT_PUBLIC_POSTHOG_KEY && !isLocalHost) {
   posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY, {
     api_host: `${window.location.origin}/ingest`,
     ui_host: 'https://eu.posthog.com',
