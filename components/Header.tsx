@@ -24,7 +24,6 @@ export default function Header({ locale }: HeaderProps) {
     { href: locale === 'en' ? '/en/training' : '/fr/formation', label: t('training') },
     { href: locale === 'en' ? '/en/quality-audit' : '/fr/audit-qualite', label: t('audit') },
     { href: locale === 'en' ? '/en/bespoke-process' : '/fr/process-sur-mesure', label: t('process') },
-    { href: `/${locale}/blog`, label: 'Guides' },
   ]
 
   return (
@@ -63,7 +62,7 @@ export default function Header({ locale }: HeaderProps) {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-7">
+        <nav className="hidden lg:flex items-center justify-center gap-8 flex-1">
           {navLinks.map((link) => (
             <Link
               key={link.href}
