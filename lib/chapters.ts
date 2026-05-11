@@ -34,6 +34,7 @@ export const PRICE_TO_PLAYBOOK: Record<string, string> = {
   price_1TBZB5DVLJTOFkjUwmgvTPRW: 'bundle', // bundle = all 4
   price_1TUONHDVLJTOFkjUjE391FrX: 'fo-starter-pack',
   price_1TUONXDVLJTOFkjUYvR8PUiS: 'hsk-starter-pack',
+  price_1TVugvDVLJTOFkjUXI0cngur: 'fb-starter-pack',
 }
 
 export const BUNDLE_PRICE_ID = 'price_1TBZB5DVLJTOFkjUwmgvTPRW'
@@ -71,6 +72,24 @@ export const PLAYBOOKS: Record<string, Playbook> = {
         pdfEn: 'starter-packs/housekeeping-inspection-kit/pdf/en/housekeeping-inspection-kit.pdf',
         pptxFr: 'starter-packs/housekeeping-inspection-kit/pptx/fr/kit-inspection-housekeeping.pptx',
         pptxEn: 'starter-packs/housekeeping-inspection-kit/pptx/en/housekeeping-inspection-kit.pptx',
+      },
+    ],
+  },
+
+  'fb-starter-pack': {
+    id: 'fb-starter-pack',
+    titleFr: 'Starter Pack F&B',
+    titleEn: 'F&B Service Starter Pack',
+    color: '#8A5A00',
+    chapters: [
+      {
+        number: 1,
+        titleFr: 'Starter Pack F&B',
+        titleEn: 'F&B Service Starter Pack',
+        pdfFr: 'starter-packs/food-beverage-starter-pack/PDF/fr/fb-starter-pack-fr.pdf',
+        pdfEn: 'starter-packs/food-beverage-starter-pack/PDF/en/fb-starter-pack-en.pdf',
+        pptxFr: 'starter-packs/food-beverage-starter-pack/PPTX/fr/fb-starter-pack-fr.pptx',
+        pptxEn: 'starter-packs/food-beverage-starter-pack/PPTX/en/fb-starter-pack-en.pptx',
       },
     ],
   },

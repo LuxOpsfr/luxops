@@ -1,4 +1,4 @@
-export type StarterPackId = 'fo-starter-pack' | 'hsk-starter-pack'
+export type StarterPackId = 'fo-starter-pack' | 'hsk-starter-pack' | 'fb-starter-pack'
 
 export interface StarterPackEntry {
   id: StarterPackId
@@ -17,7 +17,7 @@ export interface StarterPackEntry {
   formats: { en: string[]; fr: string[] }
   starterComparison: { en: string; fr: string }
   fullComparison: { en: string; fr: string }
-  fullPlaybookId: 'fo' | 'hsk'
+  fullPlaybookId: 'fo' | 'hsk' | 'fb'
   fullPlaybookTitle: { en: string; fr: string }
   faq: {
     question: { en: string; fr: string }
@@ -34,6 +34,10 @@ export const FO_STARTER_PACK_PRICE_ID =
 export const HSK_STARTER_PACK_PRICE_ID =
   process.env.NEXT_PUBLIC_STRIPE_HSK_STARTER_PACK_PRICE_ID ||
   'price_1TUONXDVLJTOFkjUYvR8PUiS'
+
+export const FB_STARTER_PACK_PRICE_ID =
+  process.env.NEXT_PUBLIC_STRIPE_FB_STARTER_PACK_PRICE_ID ||
+  'price_1TVugvDVLJTOFkjUXI0cngur'
 
 export const STARTER_PACKS: StarterPackEntry[] = [
   {
@@ -371,6 +375,176 @@ export const STARTER_PACKS: StarterPackEntry[] = [
       title: 'Hotel Housekeeping Inspection Kit | LuxOps',
       description:
         'Ready-to-use room inspection checklists, supervisor control sheets and housekeeping tools for hotel teams.',
+    },
+  },
+  {
+    id: 'fb-starter-pack',
+    priceId: FB_STARTER_PACK_PRICE_ID,
+    price: 29,
+    category: { en: 'Food & Beverage', fr: 'Food & Beverage' },
+    title: {
+      en: 'Hotel F&B Service Starter Pack',
+      fr: 'Starter Pack F&B',
+    },
+    shortTitle: {
+      en: 'F&B Service Starter Pack',
+      fr: 'Starter Pack F&B',
+    },
+    description: {
+      en: 'Ready-to-use restaurant, bar and room service tools designed to structure daily F&B service basics with practical checklists, scripts and control points.',
+      fr: 'Outils restaurant, bar et room service prêts à utiliser pour structurer les bases quotidiennes du service F&B avec checklists, scripts et points de contrôle concrets.',
+    },
+    subtitle: {
+      en: 'Ready-to-use restaurant, bar and room service checklists, scripts and control tools.',
+      fr: 'Checklists, scripts et outils de contrôle prêts à utiliser pour le restaurant, le bar et le room service.',
+    },
+    supportLine: {
+      en: 'For F&B Managers, Restaurant Managers, Outlet Supervisors and Hotel Managers who want practical tools their teams can use immediately.',
+      fr: 'Pour les F&B Managers, responsables restaurant, superviseurs de point de vente et directeurs d’hôtel qui veulent des outils utilisables immédiatement par les équipes.',
+    },
+    toolsIntro: {
+      en: '12 practical F&B tools designed for immediate operational use.',
+      fr: '12 outils F&B pratiques conçus pour une utilisation opérationnelle immédiate.',
+    },
+    tools: {
+      en: [
+        'F&B Daily Service Checklist',
+        'Restaurant Opening Checklist',
+        'Restaurant Closing Checklist',
+        'Service Sequence SOP',
+        'F&B Briefing Template',
+        'Table Inspection Checklist',
+        'Guest Complaint Recovery Scripts',
+        'Allergen and Dietary Request Tracker',
+        'Room Service Checklist',
+        'Upselling Cheat Sheet',
+        'F&B Onboarding Checklist',
+        'Service Standards Quick Reference',
+      ],
+      fr: [
+        'F&B Daily Service Checklist',
+        'Checklist ouverture restaurant',
+        'Checklist fermeture restaurant',
+        'SOP séquence de service',
+        'Template briefing F&B',
+        'Checklist inspection table',
+        'Scripts de gestion des réclamations',
+        'Tracker allergies et demandes alimentaires',
+        'Checklist room service',
+        'Fiche mémo upselling',
+        'Checklist onboarding F&B',
+        'Référence rapide standards de service',
+      ],
+    },
+    bullets: {
+      en: [
+        'Daily service, opening and closing checklists',
+        'Room service and table inspection tools',
+        'Guest recovery, allergen and upselling scripts',
+      ],
+      fr: [
+        'Checklists service quotidien, ouverture et fermeture',
+        'Outils room service et inspection table',
+        'Scripts recovery client, allergènes et upselling',
+      ],
+    },
+    benefits: {
+      en: [
+        'Standardise pre-service preparation',
+        'Improve restaurant shift briefings',
+        'Keep service sequence consistent',
+        'Reduce room service mistakes',
+        'Support allergen communication',
+        'Improve closing handovers',
+      ],
+      fr: [
+        'Standardiser la préparation avant service',
+        'Améliorer les briefings restaurant',
+        'Stabiliser la séquence de service',
+        'Réduire les erreurs room service',
+        'Soutenir la communication allergènes',
+        'Améliorer les passations de clôture',
+      ],
+    },
+    formats: {
+      en: [
+        'Printable PDF',
+        'Editable PPTX files',
+        'English and French versions included',
+      ],
+      fr: [
+        'PDF imprimable',
+        'Fichiers PPTX modifiables',
+        'Versions française et anglaise incluses',
+      ],
+    },
+    starterComparison: {
+      en: 'Daily F&B tools, checklists, scripts and control sheets for restaurant, bar and room service operations.',
+      fr: 'Outils F&B quotidiens, checklists, scripts et feuilles de contrôle pour le restaurant, le bar et le room service.',
+    },
+    fullComparison: {
+      en: 'Complete F&B SOP reference with detailed service standards, restaurant sequence, bar operations, wine service, room service, recovery methods and team management guidance.',
+      fr: 'Référence SOP F&B complète avec standards de service détaillés, séquence restaurant, opérations bar, service du vin, room service, recovery et guidance de management.',
+    },
+    fullPlaybookId: 'fb',
+    fullPlaybookTitle: {
+      en: 'Full F&B Playbook',
+      fr: 'Playbook F&B complet',
+    },
+    faq: [
+      {
+        question: { en: 'Who is this pack for?', fr: 'Pour qui est ce pack ?' },
+        answer: {
+          en: 'It is built for F&B Managers, restaurant managers, outlet supervisors and hotel managers who need practical tools for daily service execution.',
+          fr: 'Il est conçu pour les F&B Managers, responsables restaurant, superviseurs de point de vente et directeurs d’hôtel qui ont besoin d’outils pratiques pour l’exécution quotidienne du service.',
+        },
+      },
+      {
+        question: { en: 'Is this editable?', fr: 'Est-ce modifiable ?' },
+        answer: {
+          en: 'Yes. The pack includes editable PPTX files so you can adapt wording, station checks and scripts to your restaurant, bar or room service operation.',
+          fr: 'Oui. Le pack inclut des fichiers PPTX modifiables pour adapter les formulations, contrôles de poste et scripts à votre restaurant, bar ou room service.',
+        },
+      },
+      {
+        question: {
+          en: 'Does it cover room service?',
+          fr: 'Le room service est-il couvert ?',
+        },
+        answer: {
+          en: 'Yes. The pack includes room service order taking, tray and trolley setup, delivery control points and handover logic.',
+          fr: 'Oui. Le pack inclut la prise de commande room service, le dressage plateau et trolley, les points de contrôle de livraison et la logique de passation.',
+        },
+      },
+      {
+        question: {
+          en: 'Is it suitable for independent hotels?',
+          fr: 'Est-ce adapté aux hôtels indépendants ?',
+        },
+        answer: {
+          en: 'Yes. The tools are designed for independent hotels, boutique properties and small hotel groups that need a clear F&B operating baseline.',
+          fr: 'Oui. Les outils sont pensés pour les hôtels indépendants, boutique hôtels et petits groupes qui ont besoin d’une base opérationnelle F&B claire.',
+        },
+      },
+      {
+        question: {
+          en: 'What is the difference with the full playbook?',
+          fr: 'Quelle différence avec le playbook complet ?',
+        },
+        answer: {
+          en: 'The Starter Pack gives you practical daily tools. The full playbook gives you the complete F&B SOP structure, detailed standards and broader department guidance.',
+          fr: 'Le Starter Pack donne des outils quotidiens pratiques. Le playbook complet apporte la structure SOP F&B complète, les standards détaillés et la guidance globale du département.',
+        },
+      },
+    ],
+    finalText: {
+      en: 'A practical toolkit to structure restaurant, bar and room service basics.',
+      fr: 'Une boîte à outils pratique pour structurer les bases restaurant, bar et room service.',
+    },
+    seo: {
+      title: 'Hotel F&B Service Starter Pack | LuxOps',
+      description:
+        'Ready-to-use restaurant, bar and room service checklists, scripts and control tools for hotel F&B teams.',
     },
   },
 ]

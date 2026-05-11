@@ -34,6 +34,16 @@ export const DOWNLOADS: Record<string, PlaybookDownload> = {
     pptFr: 'BUNDLE',
   },
 
+  // F&B Starter Pack - €29
+  price_1TVugvDVLJTOFkjUXI0cngur: {
+    titleEn: 'F&B Service Starter Pack',
+    titleFr: 'Starter Pack F&B',
+    pdfEn: 'BUNDLE',
+    pptEn: 'BUNDLE',
+    pdfFr: 'BUNDLE',
+    pptFr: 'BUNDLE',
+  },
+
   // Front Office - €67
   price_1TBZ94DVLJTOFkjUsH59B7x7: {
     titleEn: 'Front Office Playbook',

@@ -21,6 +21,7 @@ const ALL_INDIVIDUAL_PRICE_IDS = [
 const PLAYBOOK_NAMES: Record<string, { en: string; fr: string }> = {
   'price_1TUONHDVLJTOFkjUjE391FrX': { en: 'Front Office Starter Pack', fr: 'Starter Pack Front Office' },
   'price_1TUONXDVLJTOFkjUYvR8PUiS': { en: 'Housekeeping Inspection Kit', fr: 'Kit Inspection Housekeeping' },
+  'price_1TVugvDVLJTOFkjUXI0cngur': { en: 'F&B Service Starter Pack', fr: 'Starter Pack F&B' },
   'price_1TBZ94DVLJTOFkjUsH59B7x7': { en: 'Front Office Playbook', fr: 'Playbook Front Office' },
   'price_1TBZ9TDVLJTOFkjUwWnoKaGk': { en: 'Housekeeping Playbook', fr: 'Playbook Housekeeping' },
   'price_1TBZ9iDVLJTOFkjU3Os9VLRc': { en: 'F&B Playbook', fr: 'Playbook F&B' },

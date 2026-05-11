@@ -27,6 +27,7 @@ const DEPT_ICONS = {
 const STARTER_PACK_ICONS = {
   'fo-starter-pack': Building2,
   'hsk-starter-pack': Sparkles,
+  'fb-starter-pack': UtensilsCrossed,
 }
 
 export default function PlaybooksContent({ locale }: { locale: string }) {
@@ -314,9 +315,10 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
             </a>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {STARTER_PACKS.map((pack) => {
               const Icon = STARTER_PACK_ICONS[pack.id]
+              const isPurchasable = Boolean(pack.priceId)
 
               return (
                 <article
@@ -379,18 +381,28 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                     </ul>
 
                     <div className="space-y-3">
-                      <AddToCartButton
-                        item={{
-                          priceId: pack.priceId,
-                          title: pack.shortTitle[lang],
-                          price: 29,
-                          productType: 'starter_pack',
-                        }}
-                        addedLabel={isEn ? 'In Cart' : 'Ajouté'}
-                        className="w-full flex items-center justify-center gap-2 py-3 bg-[#003d9b] text-white font-bold text-xs uppercase tracking-widest hover:bg-[#002d7a] transition-colors rounded-[2px]"
-                      >
-                        {isEn ? 'Add to cart · €29' : 'Ajouter au panier · 29€'}
-                      </AddToCartButton>
+                      {isPurchasable ? (
+                        <AddToCartButton
+                          item={{
+                            priceId: pack.priceId,
+                            title: pack.shortTitle[lang],
+                            price: 29,
+                            productType: 'starter_pack',
+                          }}
+                          addedLabel={isEn ? 'In Cart' : 'Ajouté'}
+                          className="w-full flex items-center justify-center gap-2 py-3 bg-[#003d9b] text-white font-bold text-xs uppercase tracking-widest hover:bg-[#002d7a] transition-colors rounded-[2px]"
+                        >
+                          {isEn ? 'Add to cart · €29' : 'Ajouter au panier · 29€'}
+                        </AddToCartButton>
+                      ) : (
+                        <button
+                          type="button"
+                          disabled
+                          className="w-full flex items-center justify-center gap-2 py-3 bg-[#c3c6d6] text-white font-bold text-xs uppercase tracking-widest cursor-not-allowed rounded-[2px]"
+                        >
+                          {isEn ? 'Price ID needed' : 'Price ID requis'}
+                        </button>
+                      )}
                       <Link
                         href={`/${locale}/playbooks/${pack.id}`}
                         className="w-full flex items-center justify-center gap-2 py-3 text-[#003d9b] font-bold text-xs uppercase tracking-widest hover:bg-[#eef4ff] transition-colors"

@@ -46,6 +46,72 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- Front Office Starter Pack EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/playbooks/fo-starter-pack</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/playbooks/fo-starter-pack"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/playbooks/fo-starter-pack"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/playbooks/fo-starter-pack"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Front Office Starter Pack FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/playbooks/fo-starter-pack</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/playbooks/fo-starter-pack"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/playbooks/fo-starter-pack"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/playbooks/fo-starter-pack"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Housekeeping Inspection Kit EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/playbooks/hsk-starter-pack</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/playbooks/hsk-starter-pack"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/playbooks/hsk-starter-pack"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/playbooks/hsk-starter-pack"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Housekeeping Inspection Kit FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/playbooks/hsk-starter-pack</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/playbooks/hsk-starter-pack"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/playbooks/hsk-starter-pack"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/playbooks/hsk-starter-pack"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- F&B Starter Pack EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/playbooks/fb-starter-pack</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/playbooks/fb-starter-pack"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/playbooks/fb-starter-pack"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/playbooks/fb-starter-pack"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- F&B Starter Pack FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/playbooks/fb-starter-pack</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/playbooks/fb-starter-pack"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/playbooks/fb-starter-pack"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/playbooks/fb-starter-pack"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Notion Templates EN -->
   <url>
     <loc>https://www.luxops.fr/en/notion-templates</loc>
@@ -288,7 +354,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog: Hotel Housekeeping Checklist — redirected 301 to /en/hotel-housekeeping-checklist (standalone canonical page) -->
+  <!-- Blog: Hotel Housekeeping Checklist - redirected 301 to /en/hotel-housekeeping-checklist (standalone canonical page) -->
 
   <!-- Blog: Hotel F&B Service Standards EN -->
   <url>
@@ -312,7 +378,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog: Hotel Front Office Procedures — redirected to hotel-front-office-sop (301) -->
+  <!-- Blog: Hotel Front Office Procedures - redirected to hotel-front-office-sop (301) -->
 
   <!-- SEO: Hotel Checklist EN -->
   <url>
@@ -884,7 +950,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Free Hotel Procedures — Lead Magnet EN -->
+  <!-- Free Hotel Procedures - Lead Magnet EN -->
   <url>
     <loc>https://www.luxops.fr/en/free-hotel-procedures</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/free-hotel-procedures"/>
@@ -895,7 +961,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Free Hotel Procedures — Lead Magnet FR -->
+  <!-- Free Hotel Procedures - Lead Magnet FR -->
   <url>
     <loc>https://www.luxops.fr/fr/free-hotel-procedures</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/free-hotel-procedures"/>
