@@ -900,208 +900,260 @@ export const articles: BilingualArticle[] = [
   {
     slug: 'hotel-fb-service-standards',
     en: {
-      title: 'Hotel F&B Service Standards: A Practical Guide for Restaurant and Bar Teams',
+      title: 'Hotel F&B Service Standards: Restaurant, Bar, Room Service and Recovery',
       description:
-        'Practical guide to hotel F&B service standards, covering restaurant service sequence, bar mise en place, room service procedures and banquet protocols for high-end food and beverage teams.',
+        'Hotel F&B service standards adapted from the LuxOps F&B Playbook: 21-step restaurant sequence, bar standards, room service timing, allergen handling and service recovery.',
       date: '2026-03-16',
-      readTime: '7 min read',
+      readTime: '10 min read',
       intro:
-        'Food and beverage is the second most reviewed aspect of a hotel stay, after the room. The gap between a strong F&B operation and a weak one is rarely about the food itself. It is almost always about the service. The sequence running at a different pace than expected. A team member uncertain about the procedure at the table. Drinks arriving before the food is cleared. Service standards are what close that gap, and they need to be documented to be consistent across every cover and every shift.',
+        'This guide is adapted from the LuxOps F&B Playbook and the F&B Service Starter Pack. In a hotel, F&B service standards need to connect the restaurant, bar, breakfast, room service, guest recovery and quality control into one operating language. The point is not to make every interaction sound the same. The point is to make sure every team member knows what to prepare, what to check, what to say, when to escalate and how to close the service properly.',
       sections: [
         {
-          h2: 'Restaurant Service: The Core Sequence',
+          h2: 'The F&B standard starts before the guest arrives',
           content:
-            'The service sequence is what holds the restaurant operation together. Every team member needs to know it, execute it consistently, and understand where their role begins and ends within it. When the sequence is unclear, the guest experience varies from table to table.',
+            'The LuxOps F&B Playbook treats pre-service preparation as part of the guest experience. If the briefing is vague, the station is half-stocked or the team does not know the allergies and VIP notes, the service is already fragile before the first table is seated.',
           h3Items: [
             {
-              heading: 'Pre-service preparation (mise en place)',
-              text: 'Table setting to exact placement standards. Linen inspection and fold standard. Glassware polishing procedure. Sideboard stock levels confirmed. Menu knowledge briefing before each service, not just at the start of the season. Daily specials communicated. Wine and beverage briefing covering any new additions.',
+              heading: 'Personal readiness',
+              text: 'The daily service checklist starts with uniform, grooming, hygiene and service tools: wine key, pen, crumber and notepad. This sounds basic, but it prevents the first visible breakdowns in service. A team member who starts the shift without tools will improvise later.',
             },
             {
-              heading: 'Guest reception and seating',
-              text: 'Greeting within 30 seconds of arrival. Name used if reservation is known. Coat check offered where applicable. Seating sequence followed (in formal environments, ladies first). Table pull-out procedure. Napkin presented. Menus handed in the correct order.',
+              heading: 'Pre-service briefing',
+              text: 'The starter pack briefing template covers reservation count, VIP arrivals, special occasions, menu changes, 86’d items, wine features, pairings, management notes and station assignments. This is the moment where the team receives the same service picture before the doors open.',
             },
             {
-              heading: 'Order taking',
-              text: 'Approach timing: allow three to four minutes after menus are presented. Order sequence followed by cover. Dietary requirements and allergies handled specifically, not generically. Suggestive selling language used naturally, not pushed. Order confirmed back to the guest. Kitchen communication standards followed.',
-            },
-            {
-              heading: 'Service sequence',
-              text: 'Food arrival timing. Plating presentation checked before the plate reaches the table. Correct placement by cover. Synchronised service for parties of four or more. Clearing only after all guests have finished a course, not when the first cover is done. Crumbing procedure. Dessert presented and offered clearly.',
-            },
-            {
-              heading: 'Billing and departure',
-              text: 'Bill presented when requested, not placed preemptively on the table. Multiple payment methods handled without fuss. Farewell by name where possible. Guest preferences logged in the system for future visits.',
+              heading: 'Final inspection',
+              text: 'Twenty minutes before service, the manager checks environment, lighting, music, temperature, smell, table alignment, glassware, silverware, station stock and staff presentation. This is not decoration. It is quality control before the guest becomes the inspector.',
             },
           ],
         },
         {
-          h2: 'Bar Operations Standards',
+          h2: 'Restaurant service should follow a controlled sequence',
           content:
-            'A hotel bar operates to the same level of precision as the restaurant, or it should. Inconsistency in pours, presentation, or how the team engages with waiting guests is immediately noticeable. The bar is often the first or last service interaction of an evening, which gives it more weight than its footprint suggests.',
+            'Chapter 2 of the F&B Playbook uses a 21-step restaurant service sequence. The value of the sequence is that it gives the team a shared rhythm. The server can remain warm and natural because the operational order is already clear.',
           h3Items: [
             {
-              heading: 'Mise en place',
-              text: 'Opening checklist complete before service: garnishes prepared, glassware polished and positioned by type, spirits aligned, cocktail ingredients in place, bar counter clean and clear. Required stock levels confirmed. Refrigeration temperatures checked.',
+              heading: 'Arrival and seating',
+              text: 'The sequence begins with welcome within 10 seconds, immediate escort to table, chair assistance, menu presentation within 30 seconds of seating and napkin service as guests settle. The playbook is explicit: never point, always escort.',
             },
             {
-              heading: 'Service standards',
-              text: 'Waiting guests acknowledged within 30 seconds of approaching the bar. Drink preparation consistent across the team: measures, build method, correct glassware by drink type. Garnish standard met. Napkin placed with every drink. Glasses replaced for long-stay guests without waiting to be asked.',
+              heading: 'Water, drinks and order taking',
+              text: 'Water and drink order should happen within 2 minutes, drinks within 5 minutes, specials presented with the drinks, and food order taken only when guests are ready. The order is repeated back, with allergies and dietary requirements flagged clearly to the kitchen.',
             },
             {
-              heading: 'Wine service',
-              text: 'Bottle presented to the guest before opening. Cork removal procedure followed. Guest pours for tasting. Correct pour volume. Temperature guidelines followed. Decanting procedure applied where appropriate, and explained briefly.',
+              heading: 'Course service and table maintenance',
+              text: 'Appetizers are served within 10 minutes of order, main courses within 10 minutes of clearing appetizers, and satisfaction is checked 2 minutes after the main course is served. Clearing happens only when all guests have finished. No stacking and no scraping at the table.',
+            },
+            {
+              heading: 'Dessert, check and farewell',
+              text: 'Dessert is offered within 2 minutes of clearing, dessert or coffee served within 10 minutes, the check presented only when requested or clearly appropriate, and the farewell remains warm and by name where possible.',
             },
           ],
         },
         {
-          h2: 'Room Service SOPs',
+          h2: 'Bar standards are part of the hotel experience',
           content:
-            'Room service is the restaurant experience delivered in a completely different context. There is no ambient atmosphere, no background noise, no neighbouring tables to normalise the wait. Every element of the delivery carries more weight. The tray that arrives dishevelled, the order that is wrong, the knock that goes unanswered for too long: these details are amplified in a guest room in a way they are not in a restaurant.',
+            'The bar chapter frames the bar as craft, hosting and atmosphere at the same time. It is often the first or last service interaction of the evening, so consistency in gestures, timing and presentation carries real weight.',
           h3Items: [
             {
-              heading: 'Order taking',
-              text: 'Scripted telephone greeting. Complete order confirmed back to the guest, including the delivery time estimate. Dietary requirements and allergies checked on every call. A natural upselling moment: wine, dessert, something additional.',
+              heading: 'Bar mise en place',
+              text: 'Before service, ice bins are full and clean, juices are fresh, garnishes are cut, glassware is polished, bottles are organized, tools are accessible, coasters and napkins are stocked, POS is ready and menus are clean.',
             },
             {
-              heading: 'Tray and trolley preparation',
-              text: 'Correct linen. Cover placement to the same standard as the restaurant. Glassware matched to the order type. Condiments included without the guest having to ask. Branded collateral in place. Food presentation matching restaurant standards. Room service is not an exception.',
+              heading: 'Drink timing',
+              text: 'The playbook gives practical timing standards: draft beer in 30 to 45 seconds, wine by the glass around 1 minute, a simple mixed drink in 1 to 2 minutes, a standard cocktail in 2 to 3 minutes, and a complex craft cocktail in 3 to 5 minutes.',
             },
             {
-              heading: 'Delivery procedure',
-              text: 'Knock and announce sequence. Tray set up inside the room, not handed at the door for a high-end property. Each item explained briefly. Bill presented. Departure clean and quiet.',
-            },
-            {
-              heading: 'Tray collection',
-              text: 'Proactive collection protocol: a call after 30 minutes, or physical collection rounds on each floor. Clear procedure for rooms with DND showing. Trays left in corridors should not exist as a default; the procedure should address why they appear and how to prevent it.',
+              heading: 'Beverage consistency',
+              text: 'Consistency comes from calibrated pours, jigger use when precision matters, clear shake versus stir rules, correct glassware and garnish standards. A drink should not depend on who happens to be behind the bar.',
             },
           ],
         },
         {
-          h2: 'Banquet and Events Service',
+          h2: 'Room service standards are restaurant standards in private',
           content:
-            'Banquet service runs on tighter logistics and larger teams than restaurant service. The standards need to account for that scale, and they require more preparation, not less.',
+            'Chapter 6 of the playbook defines room service as an elevated private dining experience, not a reduced restaurant service. The guest receives the standard in their personal space, with only one interaction to get it right.',
           h3Items: [
             {
-              heading: 'Event setup standards',
-              text: 'Table plan set up per event type. Linen folded and placed to standard. Cover laid to the correct menu type. Centrepieces and decoration placed to the event brief. Everything checked before doors open.',
+              heading: 'Timing standards',
+              text: 'Reference targets are concrete: continental breakfast 20 to 25 minutes, full breakfast 25 to 30 minutes, lunch 30 to 35 minutes, dinner 35 to 45 minutes, beverages only 15 to 20 minutes. A rush request is expedited by around 10 minutes where possible.',
             },
             {
-              heading: 'Service briefing',
-              text: 'Every banquet service starts with a full team briefing: menu details, allergen information, service sequence, station assignments, communication signals between team members. This briefing is not optional. On a large event, it is the difference between a smooth service and a chaotic one.',
+              heading: 'Complete delivery',
+              text: 'Every delivery should include hot food hot, cold food cold, complete place settings, all condiments, beverages at the correct temperature, clean pressed linen, a check presenter with pen and enough knowledge to answer questions.',
             },
             {
-              heading: 'Synchronised service',
-              text: 'For formal banquets, synchronised service, all plates placed or cleared at the same time, requires clear team signals and defined section assignments. It needs to be rehearsed, not improvised on the night.',
+              heading: 'Delay recovery',
+              text: 'If the order is 5 to 10 minutes behind, the guest is called, apologized to and given a new ETA. If the delay is 10 minutes or more, the manager is notified and compensation can be considered. Silence is what turns a delay into a complaint.',
+            },
+          ],
+        },
+        {
+          h2: 'Recovery and allergen handling need written rules',
+          content:
+            'The guest interaction chapter uses the LEARN framework: Listen, Empathize, Apologize, React, Notify. The goal is to avoid the common F&B mistake of fixing the technical problem before the guest feels heard.',
+          h3Items: [
+            {
+              heading: 'Service recovery',
+              text: 'For wrong orders, long waits, quality issues or billing disputes, the playbook gives a step-by-step response: acknowledge, own the issue, give a clear action, follow up and document. The server does not disappear after escalating.',
+            },
+            {
+              heading: 'Allergen protocol',
+              text: 'When a guest mentions an allergy, the team takes it seriously, verifies menu items with kitchen, flags the order visibly, separates preparation if required, confirms safety at delivery and follows up with the guest.',
+            },
+            {
+              heading: 'Documentation',
+              text: 'Incidents, complaints, unusual events, temperature logs and cleaning records are not admin decoration. They are how recurring service failures become visible and coachable.',
+            },
+          ],
+        },
+        {
+          h2: 'Starter Pack vs. full F&B Playbook',
+          content:
+            'The F&B Starter Pack is designed for immediate use: daily service checklist, restaurant opening checklist, restaurant closing checklist, service sequence SOP, briefing template, table inspection checklist, recovery scripts, allergen tracker, room service checklist, upselling cheat sheet and onboarding checklist. The full playbook goes wider and deeper across restaurant, breakfast, bar, wine, room service, guest interaction, mise en place, team management and quality standards.',
+          h3Items: [
+            {
+              heading: 'Use the starter pack for daily execution',
+              text: 'Use it when managers need printable checklists and scripts that can be placed in the service binder, used during briefing, or included in onboarding.',
+            },
+            {
+              heading: 'Use the playbook for the full SOP structure',
+              text: 'Use it when the department needs a complete operating reference, including standards, procedures, troubleshooting, quality controls and management structure.',
             },
           ],
         },
       ],
       conclusion:
-        'F&B service standards are what turn good food into a memorable experience. Guests leave talking about how the service felt, whether the team was attentive or absent, confident or uncertain. Structured SOPs create the conditions for the team to deliver consistently across every cover and every shift, not just when the most experienced member is on the floor.',
-      cta: { text: 'View the F&B Playbook', href: '/en/playbooks' },
+        'Hotel F&B standards are useful only when they are operational. The standard has to appear in the briefing, the station, the table, the bar, the tray, the recovery script and the closing handover. When those pieces are documented together, consistency becomes easier to coach and easier to repeat.',
+      cta: { text: 'View the F&B Starter Pack', href: '/en/playbooks/fb-starter-pack' },
     },
     fr: {
-      title: 'Standards de Service F&B Hôtelier : Guide Pratique pour les Équipes Restaurant et Bar',
+      title: 'Standards de service F&B en hôtellerie : restaurant, bar, room service et recovery',
       description:
-        "Guide pratique des standards de service F&B, séquence de service restaurant, mise en place bar, procédures room service et protocoles banquet pour les équipes haut de gamme.",
+        "Standards de service F&B hôtelier adaptés du Playbook F&B LuxOps : séquence restaurant en 21 étapes, bar, room service, allergènes et recovery client.",
       date: '2026-03-16',
-      readTime: '7 min de lecture',
+      readTime: '10 min de lecture',
       intro:
-        "Le food and beverage est le deuxième aspect d\'un séjour hôtelier le plus commenté dans les avis, après la chambre. L\'écart entre une opération F&B solide et une qui ne l\'est pas tient rarement à la qualité de la nourriture, il tient presque toujours au service. Une séquence qui avance à un rythme différent de celui attendu. Un collaborateur incertain sur la procédure à table. Des boissons qui arrivent avant que les couverts soient débarrassés. Les standards de service sont ce qui comble cet écart, et ils doivent être documentés pour être tenus sur chaque couvert et chaque service.",
+        "Ce guide est adapté du Playbook F&B LuxOps et du Starter Pack F&B. Dans un hôtel, les standards de service F&B doivent relier le restaurant, le bar, le petit-déjeuner, le room service, le recovery client et le contrôle qualité autour d’un même langage opérationnel. L’objectif n’est pas de rendre chaque interaction identique, mais de faire en sorte que chaque collaborateur sache quoi préparer, quoi contrôler, quoi dire, quand escalader et comment clôturer le service correctement.",
       sections: [
         {
-          h2: 'Service restaurant : la séquence centrale',
+          h2: 'Le standard F&B commence avant l’arrivée du client',
           content:
-            "La séquence de service est ce qui maintient l\'opération restaurant. Chaque membre de l\'équipe doit la connaître, l\'exécuter de façon constante, et comprendre où son rôle commence et se termine dans cette séquence. Quand la séquence est floue, l\'expérience varie d\'une table à l\'autre.",
+            "Dans le Playbook F&B LuxOps, la préparation pré-service fait déjà partie de l’expérience client. Si le briefing reste vague, si le poste est incomplet ou si l’équipe ne connaît pas les allergies et les notes VIP, le service est fragilisé avant même l’installation de la première table.",
           h3Items: [
             {
-              heading: 'Mise en place',
-              text: "Mise en place de table aux standards de placement exact. Inspection du linge et pliage à la norme. Procédure de lustrage de la verrerie. Niveaux de stock du buffet de service confirmés. Briefing connaissance menu avant chaque service, pas seulement en début de saison. Plats du jour communiqués. Briefing boissons couvrant les nouvelles références.",
+              heading: 'Préparation personnelle',
+              text: "La checklist quotidienne commence par l’uniforme, la présentation, l’hygiène et les outils de service : limonadier, stylo, ramasse-miettes et carnet. Cela paraît basique, mais ce sont les premiers écarts visibles en service. Un collaborateur qui démarre sans outils improvisera plus tard.",
             },
             {
-              heading: 'Accueil',
-              text: "Accueil dans les 30 secondes suivant l\'arrivée. Nom utilisé si la réservation est connue. Vestiaire proposé selon le contexte. Séquence de placement respectée (dans les environnements formels, les dames en premier). Procédure de retrait de la chaise. Présentation de la serviette. Menus remis dans le bon ordre.",
+              heading: 'Briefing pré-service',
+              text: "Le template de briefing du Starter Pack couvre le nombre de réservations, les VIP, les occasions spéciales, les changements de carte, les articles indisponibles, les suggestions de vins, les accords mets et vins, les notes de direction et les affectations de rangs. C’est à ce moment-là que toute l’équipe reçoit la même lecture du service à venir.",
             },
             {
-              heading: 'Prise de commande',
-              text: "Timing d\'approche : laisser trois à quatre minutes après la remise des menus. Séquence de prise de commande par couvert respectée. Régimes alimentaires et allergies traités de façon spécifique, pas générique. Formulations de vente suggestive utilisées naturellement, sans pression. Commande confirmée au client. Standards de communication avec la cuisine respectés.",
-            },
-            {
-              heading: 'Séquence de service',
-              text: "Timing d\'arrivée des plats. Présentation du dressage vérifiée avant que l\'assiette n\'atteigne la table. Placement correct par couvert. Service synchronisé pour les tablées de quatre ou plus. Débarrassage uniquement lorsque tous les convives ont terminé un plat, pas dès que le premier couvert est fini. Procédure de ramassage des miettes. Dessert présenté et proposé clairement.",
-            },
-            {
-              heading: 'Facturation et départ',
-              text: "Addition présentée à la demande, pas posée préventivement sur la table. Plusieurs modes de paiement gérés sans friction. Au revoir par le nom dans la mesure du possible. Préférences du client notées dans le système pour les prochains passages.",
+              heading: 'Inspection finale',
+              text: "Vingt minutes avant l’ouverture, le manager contrôle l’environnement, l’éclairage, la musique, la température, l’odeur, l’alignement des tables, la verrerie, l’argenterie, le stock des stations et la présentation de l’équipe. Ce n’est pas de la décoration. C’est du contrôle qualité avant que le client devienne l’inspecteur.",
             },
           ],
         },
         {
-          h2: 'Standards des opérations bar',
+          h2: 'Le service restaurant doit suivre une séquence contrôlée',
           content:
-            "Un bar fonctionne au même niveau de précision que le restaurant, ou il devrait. L\'incohérence dans les doses, la présentation ou la façon d\'engager les clients en attente se remarque immédiatement. Le bar est souvent le premier ou le dernier contact de service d\'une soirée, ce qui lui donne plus de poids que sa surface ne le laisse penser.",
+            "Le chapitre consacré au service restaurant dans le Playbook F&B s’appuie sur une séquence de service en 21 étapes. Sa valeur est de donner à l’équipe un rythme partagé. Le serveur peut rester chaleureux et naturel, justement parce que l’ordre opérationnel est déjà clair.",
+          h3Items: [
+            {
+              heading: 'Accueil et placement',
+              text: "La séquence commence par l’accueil dans les 10 secondes, l’accompagnement immédiat à table, l’aide à l’installation, la présentation des cartes dans les 30 secondes suivant l’installation, puis le service des serviettes pendant que les clients prennent place. Le principe du playbook est clair : ne jamais pointer, toujours accompagner.",
+            },
+            {
+              heading: 'Eau, boissons et prise de commande',
+              text: "L’eau et la commande des boissons interviennent dans les 2 minutes, les boissons dans les 5 minutes, les suggestions sont présentées avec les boissons, puis la commande des plats est prise lorsque les clients sont prêts. La commande est répétée, avec allergies et régimes clairement signalés à la cuisine.",
+            },
+            {
+              heading: 'Service des plats et suivi de table',
+              text: "Les entrées sont servies dans les 10 minutes suivant la commande, les plats dans les 10 minutes après débarrassage des entrées, et la satisfaction est vérifiée 2 minutes après le service du plat principal. Le débarrassage se fait seulement quand tous les clients ont terminé. Pas d’empilage et pas de raclage à table.",
+            },
+            {
+              heading: 'Dessert, addition et départ',
+              text: "La carte des desserts est proposée dans les 2 minutes après débarrassage, le dessert ou le café est servi dans les 10 minutes, l’addition est présentée seulement à la demande ou quand la table a clairement terminé, et l’au revoir reste chaleureux, idéalement par le nom.",
+            },
+          ],
+        },
+        {
+          h2: 'Le bar fait partie de l’expérience hôtel',
+          content:
+            "Le chapitre bar présente le bar comme un mélange de geste technique, d’accueil et d’atmosphère. C’est souvent le premier ou le dernier contact de service de la soirée, donc la régularité des gestes, du timing et de la présentation pèse lourd.",
           h3Items: [
             {
               heading: 'Mise en place bar',
-              text: "Checklist d\'ouverture complète avant le service : garnitures préparées, verrerie lustrée et positionnée par type, spiritueux alignés, ingrédients cocktails en place, comptoir propre et dégagé. Niveaux de stock requis confirmés. Températures de réfrigération vérifiées.",
+              text: "Avant service, les bacs à glace sont pleins et propres, les jus sont frais, les garnitures sont préparées, la verrerie est polie, les bouteilles sont organisées, les outils sont accessibles, les dessous de verre et serviettes sont approvisionnés, le POS est prêt et les cartes sont propres.",
             },
             {
-              heading: 'Standards',
-              text: "Clients en attente pris en charge dans les 30 secondes suivant leur approche du bar. Préparation des boissons cohérente au sein de l\'équipe : doses, méthode de construction, verrerie correcte par type de boisson. Standard de garniture respecté. Serviette déposée avec chaque boisson. Verres remplacés pour les clients de longue durée sans attendre qu\'ils le demandent.",
+              heading: 'Timing boissons',
+              text: "Le playbook donne des repères concrets : bière pression en 30 à 45 secondes, vin au verre autour d’une minute, boisson mélangée simple en 1 à 2 minutes, cocktail standard en 2 à 3 minutes, cocktail signature complexe en 3 à 5 minutes.",
             },
             {
-              heading: 'Service du vin',
-              text: "Bouteille présentée au client avant ouverture. Procédure de débouchage respectée. Service de dégustation pour le client. Volume de service correct. Directives de température de service respectées. Décantation appliquée si appropriée, et brièvement expliquée.",
-            },
-          ],
-        },
-        {
-          h2: 'SOPs Room Service',
-          content:
-            "Le room service est l\'expérience restaurant délivrée dans un contexte entièrement différent. Il n\'y a pas d\'atmosphère ambiante, pas de bruit de fond, pas de tables voisines pour normaliser l\'attente. Chaque élément de la livraison prend plus de poids. Le plateau qui arrive en désordre, la commande erronée, le coup frappé qui reste sans réponse trop longtemps : ces détails sont amplifiés dans une chambre d\'une façon qu\'ils ne sont pas au restaurant.",
-          h3Items: [
-            {
-              heading: 'Prise de commande',
-              text: "Accueil téléphonique scripté. Commande complète confirmée au client, délai de livraison inclus. Régimes alimentaires et allergies vérifiés à chaque appel. Moment naturel d\'upselling : vin, dessert, accompagnement.",
-            },
-            {
-              heading: 'Préparation',
-              text: "Linge correct. Placement des couverts au même standard que le restaurant. Verrerie correspondant au type de commande. Condiments inclus sans que le client ait à les demander. Collateral de marque en place. Présentation des plats correspondant aux standards restaurant : le room service n\'est pas une exception.",
-            },
-            {
-              heading: 'Livraison',
-              text: "Séquence de frappe et d\'annonce. Plateau installé dans la chambre, pas remis à la porte pour un établissement haut de gamme. Chaque article brièvement expliqué. Addition présentée. Départ discret.",
-            },
-            {
-              heading: 'Collecte',
-              text: "Protocole de collecte proactive : appel après 30 minutes ou rondes physiques sur chaque étage. Procédure claire pour les chambres en DND. Les plateaux laissés dans les couloirs ne devraient pas exister par défaut ; la procédure doit expliquer pourquoi ils apparaissent et comment l\'éviter.",
+              heading: 'Régularité des boissons',
+              text: "La régularité vient des dosages calibrés, de l’usage du jigger quand la précision compte, des règles claires entre shaker et verre à mélange, de la verrerie correcte et des standards de garniture. Une boisson ne doit pas dépendre de la personne derrière le bar.",
             },
           ],
         },
         {
-          h2: 'Service banquet et événements',
+          h2: 'Le room service est le restaurant dans l’espace privé du client',
           content:
-            "Le service banquet fonctionne sur une logistique plus serrée et des équipes plus importantes que le restaurant. Les standards doivent tenir compte de cette échelle, ce qui demande plus de préparation, pas moins.",
+            "Le chapitre room service définit la restauration en chambre comme une véritable expérience de restauration privée, et non comme une version diminuée du service restaurant. Le client reçoit le standard dans son espace personnel, avec une seule interaction pour bien faire.",
           h3Items: [
             {
-              heading: 'Mise en place événement',
-              text: "Plan de table installé selon le type d\'événement. Linge plié et mis en place selon le standard. Couvert dressé selon le type de menu. Centres de table et décoration positionnés selon le brief événement. Tout vérifié avant l\'ouverture des portes.",
+              heading: 'Standards de timing',
+              text: "Les délais de référence sont concrets : petit-déjeuner continental 20 à 25 minutes, petit-déjeuner complet 25 à 30 minutes, déjeuner 30 à 35 minutes, dîner 35 à 45 minutes, boissons seules 15 à 20 minutes. Une demande urgente est accélérée d’environ 10 minutes si possible.",
             },
             {
-              heading: 'Briefing',
-              text: "Chaque service banquet commence par un briefing complet de l\'équipe : détails du menu, informations allergènes, séquence de service, assignations de rangs, signaux de communication entre collaborateurs. Ce briefing n\'est pas optionnel. Sur un grand événement, il fait la différence entre un service maîtrisé et un service chaotique.",
+              heading: 'Livraison complète',
+              text: "Chaque livraison doit inclure des plats chauds servis à bonne température, des plats froids qui restent froids, les couverts complets, les condiments, les boissons à la bonne température, du linge propre et repassé, une pochette addition avec stylo et assez de connaissance produit pour répondre aux questions.",
             },
             {
-              heading: 'Service synchronisé',
-              text: "Pour les banquets formels, le service synchronisé, toutes les assiettes posées ou débarrassées en même temps, demande des signaux d\'équipe clairs et des sections bien définies. Cela se répète, ça ne s\'improvise pas le soir même.",
+              heading: 'Recovery en cas de retard',
+              text: "Si la commande a 5 à 10 minutes de retard, le client est appelé, l’équipe s’excuse et donne un nouveau délai. À partir de 10 minutes, le responsable est informé et une compensation peut être envisagée. Le silence transforme un retard en réclamation.",
+            },
+          ],
+        },
+        {
+          h2: 'Recovery et allergènes doivent être écrits',
+          content:
+            "Le chapitre dédié à l’interaction client utilise le cadre LEARN : écouter, faire preuve d’empathie, s’excuser, réagir, notifier. L’objectif est d’éviter l’erreur F&B classique : vouloir corriger le problème technique avant que le client se sente réellement entendu.",
+          h3Items: [
+            {
+              heading: 'Service recovery',
+              text: "Pour erreur de commande, attente longue, problème de qualité ou litige de facturation, le playbook donne une réponse séquencée : reconnaître, porter le sujet, donner une action claire, faire le suivi et documenter. Le serveur ne disparaît pas après l’escalade.",
+            },
+            {
+              heading: 'Protocole allergènes',
+              text: "Quand un client mentionne une allergie, l’équipe la prend au sérieux, vérifie les plats avec la cuisine, signale la commande de façon visible, sépare la préparation si nécessaire, confirme la sécurité à la livraison et fait un suivi avec le client.",
+            },
+            {
+              heading: 'Documentation',
+              text: "Incidents, réclamations, événements inhabituels, relevés de température et registres de nettoyage ne sont pas de l’administratif décoratif. C’est ce qui rend les défauts récurrents visibles et coachables.",
+            },
+          ],
+        },
+        {
+          h2: 'Starter Pack ou Playbook F&B complet ?',
+          content:
+            "Le Starter Pack F&B est conçu pour une utilisation immédiate : checklist de service quotidien, checklist d’ouverture restaurant, checklist de fermeture, SOP de séquence de service, template de briefing, checklist d’inspection de table, scripts de recovery, tracker allergènes, checklist room service, fiche upselling et checklist onboarding. Le playbook complet va plus loin sur le restaurant, le petit-déjeuner, le bar, le vin, le room service, l’interaction client, la mise en place, le management et la qualité.",
+          h3Items: [
+            {
+              heading: 'Utiliser le starter pack pour l’exécution quotidienne',
+              text: "Il est utile lorsque les managers ont besoin de checklists et scripts imprimables à placer dans le classeur de service, à utiliser en briefing ou à intégrer dans l’onboarding.",
+            },
+            {
+              heading: 'Utiliser le playbook pour la structure SOP complète',
+              text: "Il est utile lorsque le département a besoin d’une référence complète : standards, procédures, gestion des situations sensibles, contrôles qualité et structure de management.",
             },
           ],
         },
       ],
       conclusion:
-        "Les standards de service F&B sont ce qui transforme une bonne cuisine en une expérience mémorable. Les clients repartent en parlant de ce que le service leur a fait ressentir : si l\'équipe était présente ou absente, assurée ou hésitante. Des SOPs structurés créent les conditions pour que l\'équipe délivre de façon constante sur chaque couvert et chaque service, pas seulement quand le collaborateur le plus expérimenté est en salle.",
-      cta: { text: 'Voir le Playbook F&B', href: '/fr/playbooks' },
+        "Les standards F&B ne sont utiles que lorsqu’ils deviennent opérationnels. Ils doivent se voir dans le briefing, le poste, la table, le bar, le plateau, le script de recovery et la passation de clôture. Lorsque ces éléments sont documentés ensemble, la régularité devient plus facile à coacher et à répéter.",
+      cta: { text: 'Voir le Starter Pack F&B', href: '/fr/playbooks/fb-starter-pack' },
     },
   },
   {
@@ -1735,214 +1787,214 @@ export const articles: BilingualArticle[] = [
   {
     slug: 'hotel-fb-restaurant-procedures',
     en: {
-      title: 'Hotel Restaurant Service Procedures: A Practical Guide for F&B Teams',
+      title: 'Hotel Restaurant SOP: 21-Step Service Sequence, Opening and Closing',
       description:
-        'The standard operating procedures that define consistent restaurant service in luxury hotels. Covers the sequence of service, table management, complaint handling, and shift close.',
+        'Hotel restaurant SOP guide adapted from the LuxOps F&B Playbook: opening checklist, 21-step service sequence, table inspection, order taking, recovery and closing handover.',
       date: '2026-03-29',
-      readTime: '8 min read',
+      readTime: '10 min read',
       intro:
-        'Restaurant service in a hotel is not the same as in a standalone restaurant. The guest has a room upstairs. They arrived on a flight this morning. Their expectations were set at check-in. When the restaurant experience does not match what the rest of the property delivered, the gap is noticed, and it tends to appear in reviews as a problem with the hotel rather than the restaurant. Consistent F&B service procedures are what close that gap. Not by scripting every interaction, but by giving the team a defined sequence, clear handover points, and a shared standard to work toward.',
+        'This restaurant SOP guide is adapted from the LuxOps F&B Playbook and the F&B Starter Pack. It focuses on the operating rhythm that makes hotel restaurant service consistent: opening preparation, briefing, table inspection, the 21-step service sequence, recovery rules and closing handover. The point is not to make service mechanical. It is to remove operational doubt so the team can focus on the guest.',
       sections: [
         {
-          h2: 'The Sequence of Service: Why It Matters',
+          h2: 'Opening procedure: T-90 to doors open',
           content:
-            'A defined sequence of service is not a constraint on hospitality. It is the structure that makes genuine hospitality possible. When a server knows exactly what happens at each step, they are free to focus on the guest rather than on what comes next. Without a sequence, service becomes reactive: responding to requests rather than anticipating them, catching up rather than leading.',
+            'The starter pack opening checklist starts 90 minutes before service. This matters because the restaurant cannot recover fully from a weak opening: missing mise en place becomes slow service, slow service becomes stress, and stress becomes visible to the guest.',
           h3Items: [
             {
-              heading: 'Before the guest sits down',
-              text: 'Mise en place must be completed before service begins: covers set, glassware polished, menus ready, side station stocked. The maître d\' or floor supervisor should verify the plan de salle against the reservation list. A table that is not ready when the guest arrives is a failure that the rest of the meal will not fully recover from.',
+              heading: 'T-90: personal and product readiness',
+              text: 'Uniform, grooming, hygiene and tools are checked first. The team reviews menu changes, specials, 86’d items, VIP arrivals, notable reservations, allergies and special requests before moving into physical setup.',
             },
             {
-              heading: 'Greeting and seating',
-              text: 'The greeting is the first impression the restaurant makes. It should happen within thirty seconds of arrival, regardless of how busy the floor is. The guest is escorted, not directed. Menus are presented before the team walks away. Water service begins immediately.',
+              heading: 'T-60: room, terrace and station setup',
+              text: 'Tables are set to standard, chairs aligned, floor dry, lighting appropriate, music set, temperature comfortable and no unwanted odor present. Stations are stocked with linen, silverware, glassware, service tools, condiments and backup stock.',
             },
             {
-              heading: 'The aperitif offer',
-              text: 'The aperitif offer serves two purposes: it generates revenue and it gives the guest something while they orient themselves. It should happen within two minutes of seating and before the food menu is discussed. The offer should be made with a recommendation, not a question.',
+              heading: 'T-40 and T-20: briefing and final inspection',
+              text: 'The briefing covers reservations, VIPs, menu changes, wine pairings and station assignments. The final inspection checks every table, station, uniform, ambiance and service position before doors open.',
             },
           ],
         },
         {
-          h2: 'Order Taking and Menu Knowledge',
+          h2: 'The 21-step restaurant service sequence',
           content:
-            'Order taking is not transcription. A server who knows the menu can steer the guest toward what they will enjoy, flag allergens before they become problems, and manage kitchen timing through the sequencing of their tables. None of that is possible without genuine product knowledge.',
+            'The F&B Playbook gives the restaurant team a complete 21-step sequence. It is not a script. It is the operating order that keeps the guest experience flowing from entrance to farewell.',
           h3Items: [
             {
-              heading: 'Allergen protocol',
-              text: 'Before taking any food order, confirm whether the guest has any dietary requirements or allergies. This is not optional and is not a formality. The kitchen must be informed on the ticket, not verbally during service. The fourteen major allergens should be known by all service staff.',
+              heading: 'Arrival and first contact',
+              text: 'Welcome within 10 seconds, escort immediately, seat guests with chair assistance, present menus within 30 seconds, unfold napkins as guests settle, then offer water and take the drink order within 2 minutes.',
             },
             {
-              heading: 'Upselling without pressure',
-              text: 'A recommendation is not a sales pitch. When a server says "the duck is particularly good tonight" based on knowledge of the dish and the briefing, it reads as hospitality. When it reads as a scripted upsell, it creates friction. The distinction is whether the recommendation is specific and contextual.',
+              heading: 'Beverage and order flow',
+              text: 'Drinks are served within 5 minutes, specials are presented with the drinks, food order is taken when guests are ready, and bread or amuse-bouche follows once the order is sent.',
             },
             {
-              heading: 'Table timing',
-              text: 'The server is responsible for pacing each table: ensuring courses arrive at the right interval, flagging to the kitchen when a table needs to be held, and communicating to the guest if there is a wait. A table that finishes a starter and then waits fifteen minutes is a service failure regardless of food quality.',
+              heading: 'Courses, checkback and close',
+              text: 'Appetizers and mains follow clear timing standards, satisfaction is checked 2 minutes after main courses, tables are cleared only when all guests have finished, dessert is offered promptly, the check is presented appropriately, and farewell is warm, ideally by name.',
             },
           ],
         },
         {
-          h2: 'Food and Beverage Service Standards',
+          h2: 'Order taking is a control point, not transcription',
           content:
-            'Service standards at the plate and glass level define the physical execution of the sequence. They need to be specific enough that every team member serves in the same way, not individual enough to vary by server.',
+            'The playbook is clear on order taking: the server listens completely, asks clarifying questions, notes allergies prominently, repeats the order and communicates kitchen requirements properly. This is where many service failures are prevented before they exist.',
           h3Items: [
             {
-              heading: 'Service direction',
-              text: 'Plates are served from the left, cleared from the right. Beverages are served and cleared from the right. These conventions exist to create a predictable and unobtrusive service flow. Reaching across guests or serving from the wrong side creates friction even when the guest does not consciously identify the cause.',
+              heading: 'Allergy capture',
+              text: 'Allergies are not handled as a casual note. They are confirmed with the guest, flagged to the kitchen, visible on the order and followed through until delivery. If the guest raises a concern, it becomes a manager-level priority.',
             },
             {
-              heading: 'Wine service',
-              text: 'The bottle is presented to the guest who ordered before opening. After opening, a small pour is offered for approval. Service goes to guests in order, with the host last. The bottle is placed within reach or in a wine cooler. Refills are offered proactively, not reactively.',
+              heading: 'Specific recommendations',
+              text: 'Upselling works when it is contextual. The starter pack upselling cheat sheet encourages specific suggestions: wine with steak, fresh juice with breakfast, coffee or digestif with dessert, not generic pressure.',
             },
             {
-              heading: 'Clearing protocol',
-              text: 'Tables are cleared only when all guests have finished a course, never while one guest is still eating. Clearing should be done in a single organised pass, not piecemeal. Crumbing between courses is part of the standard in a formal service context.',
+              heading: 'Pacing ownership',
+              text: 'The server owns table rhythm: drinks, starters, mains, clearing, dessert and check. If the kitchen is delayed or a table needs to be held, the guest should receive a clear update before frustration becomes visible.',
             },
           ],
         },
         {
-          h2: 'Handling Complaints During Service',
+          h2: 'Table inspection and mise en place',
           content:
-            'A complaint during service is an opportunity that most properties handle badly. The instinct is to apologise and fix the technical problem. The guest\'s actual need is to feel heard before the fix happens. A team that is trained to listen first resolves complaints in less time and with better outcomes than one that jumps immediately to a solution.',
+            'Chapter 8 of the playbook defines mise en place as physical, mental and organizational readiness. The starter pack turns that into a table inspection checklist the team can actually use before service.',
           h3Items: [
             {
-              heading: 'The LEARN protocol',
-              text: 'Listen without interrupting. Empathise with the experience, not the outcome. Acknowledge the specific issue. Resolve with a concrete action and timeline. Next steps: follow up before the end of the meal, not at the end. The server who took the complaint should be the one to follow up.',
+              heading: 'Physical table standard',
+              text: 'The playbook gives exact placement references: show plate 1 inch or 2.5 cm from the edge, fork 1 inch from the plate, glasses above the knife tip, and minimum 24 inches or 60 cm between covers.',
             },
             {
-              heading: 'When to escalate',
-              text: 'Any complaint that cannot be resolved within two minutes at table level should involve the maître d\' or floor supervisor. Not as a handover, but as a reinforcement: the server stays present. Escalation signals that the property takes the complaint seriously, not that the server failed.',
+              heading: 'Station readiness',
+              text: 'Stations are stocked to par with napkins, silverware, glassware, crumbers, wine keys, check presenters and pens. Most used items stay at the front, heavy items at the bottom, clean items separated from used items.',
             },
             {
-              heading: 'Documentation',
-              text: 'Complaints should be logged at the end of service: table number, nature of the issue, resolution, guest reaction. Over time this log identifies recurring patterns: dishes that consistently generate comments, service timing problems at peak covers, individual team members who need additional support.',
+              heading: 'Sidework discipline',
+              text: 'Opening sidework includes polishing glassware and silverware, setting tables and stocking stations. Running sidework includes pre-bussing and restocking. Closing sidework resets the restaurant for the next team.',
             },
           ],
         },
         {
-          h2: 'Shift Close and Handover',
+          h2: 'Closing procedure and handover',
           content:
-            'The close of service is not the end of the shift. It is the preparation for the next one. A properly closed restaurant reduces the opening time for the next service, ensures nothing is left for the following team to discover, and gives the supervisor the information they need for the next briefing.',
+            'A clean closing procedure protects the next service. The F&B Starter Pack includes a restaurant closing checklist so the end of shift is not handled from memory.',
           h3Items: [
             {
               heading: 'Closing tasks',
-              text: 'Reset all covers to the standard layout. Return side stations to the defined par level. Complete the end-of-service cash reconciliation and close the POS. Log any maintenance issues, missing items, or guest feedback that affects the next service.',
+              text: 'Tables are broken down or reset, dirty linen is collected, stations are wiped and reorganized, remaining glassware and silverware are polished and stored, condiments are checked, menus are counted and POS closure is completed.',
             },
             {
-              heading: 'The end-of-service report',
-              text: 'A brief written summary of the service: covers, average spend, any notable incidents, kitchen observations, team performance. This is the information the maître d\' needs to run the briefing for the following shift. A service that is not documented is a service that cannot improve.',
+              heading: 'Handover content',
+              text: 'The handover should include open guest issues, stock problems, maintenance needs, 86’d items, team notes, guest comments and preparation needs for the next service. If it is not written, it is unlikely to be followed consistently.',
             },
           ],
         },
       ],
       conclusion:
-        'Consistent restaurant service in a hotel does not happen because the team is talented. It happens because the team has a shared sequence, a defined standard, and the operational tools to maintain it under pressure. Procedure gives the structure; the team delivers the hospitality within it. The two are not in tension. One makes the other possible.',
-      cta: { text: 'View the F&B Playbook', href: '/en/playbooks' },
+        'A hotel restaurant SOP is useful when it follows the real shift: opening, briefing, service sequence, order control, table maintenance, recovery and closing. The LuxOps F&B Starter Pack gives the daily checklists and scripts. The full F&B Playbook gives the complete department reference.',
+      cta: { text: 'View the F&B Starter Pack', href: '/en/playbooks/fb-starter-pack' },
     },
     fr: {
-      title: "Le service en salle : procédures pratiques pour les équipes de restaurant",
+      title: "SOP restaurant hôtelier : ouverture, séquence de service et fermeture",
       description:
-        "Les procédures qui permettent à une équipe de salle de délivrer un service cohérent, du premier couvert au dernier. Séquence de service, gestion des tables, traitement des plaintes et clôture de shift.",
+        "Guide SOP restaurant hôtelier adapté du Playbook F&B LuxOps : checklist d’ouverture, séquence de service en 21 étapes, inspection de table, prise de commande, recovery et clôture.",
       date: '2026-03-29',
-      readTime: '8 min de lecture',
+      readTime: '10 min de lecture',
       intro:
-        "Un service en salle cohérent ne s'improvise pas. Il repose sur une séquence définie, des standards partagés, et des points de passation clairs entre chaque étape. Sans ce cadre, le service devient réactif : on répond aux demandes plutôt qu'on les anticipe, et c'est le client qui finit par mesurer l'écart. Ces procédures donnent à l'équipe les outils pour travailler au même niveau à chaque service, que ce soit en restaurant gastronomique, en brasserie ou en salle d'hôtel.",
+        "Ce guide SOP restaurant est adapté du Playbook F&B LuxOps et du Starter Pack F&B. Il se concentre sur le rythme opérationnel qui rend le service restaurant régulier : préparation d’ouverture, briefing, inspection de table, séquence de service en 21 étapes, règles de recovery et passation de clôture. L’objectif n’est pas de rendre le service mécanique, mais de retirer le doute opérationnel pour que l’équipe puisse se concentrer sur le client.",
       sections: [
         {
-          h2: 'La séquence de service : pourquoi elle compte',
+          h2: 'Procédure d’ouverture : de T-90 à l’ouverture des portes',
           content:
-            "Une séquence de service définie n'est pas une contrainte. C'est la structure qui rend l'hospitalité véritablement possible. Quand un serveur sait exactement ce qui se passe à chaque étape, il est libre de se concentrer sur le client plutôt que sur la suite. Sans séquence, le service devient réactif : on répond aux demandes plutôt qu'on les anticipe, on rattrape plutôt qu'on pilote.",
+            "La checklist d’ouverture du Starter Pack démarre 90 minutes avant le service. C’est important, car le restaurant se remet rarement complètement d’une mauvaise ouverture : une mise en place incomplète devient un service lent, un service lent devient du stress, et le stress devient visible pour le client.",
           h3Items: [
             {
-              heading: 'Avant que le client s\'assoie',
-              text: "La mise en place doit être complète avant le début du service : couverts dressés, verrerie polie, menus prêts, office approvisionné. Le maître d'hôtel ou le superviseur de salle doit vérifier le plan de salle en regard du carnet de réservations. Une table non prête à l'arrivée du client est un échec dont le reste du repas ne se remettra pas complètement.",
+              heading: 'T-90 : préparation personnelle et connaissance du jour',
+              text: "L’uniforme, la présentation, l’hygiène et les outils sont contrôlés en premier. L’équipe vérifie ensuite les changements de carte, les suggestions, les articles indisponibles, les VIP, les réservations notables, les allergies et les demandes spéciales avant de passer à la mise en place physique.",
             },
             {
-              heading: 'Accueil et placement',
-              text: "L'accueil est la première impression que donne le restaurant. Il doit se produire dans les trente secondes suivant l'arrivée, quelle que soit l'affluence. Le client est accompagné, pas orienté. Les menus sont remis avant que l'équipe s'éloigne. Le service de l'eau commence immédiatement.",
+              heading: 'T-60 : salle, terrasse et stations',
+              text: "Les tables sont dressées selon le standard, les chaises alignées, le sol sec, l’éclairage approprié, la musique réglée, la température confortable et aucune odeur parasite ne doit être perceptible. Les stations sont approvisionnées en linge, couverts, verrerie, matériel de service, condiments et stock de secours.",
             },
             {
-              heading: "L'offre d'apéritif",
-              text: "L'offre d'apéritif remplit deux fonctions : elle génère du chiffre d'affaires et donne au client quelque chose pendant qu'il s'installe. Elle doit se produire dans les deux minutes suivant le placement et avant que le menu soit discuté. L'offre doit être faite avec une recommandation, pas une question.",
+              heading: 'T-40 et T-20 : briefing et inspection finale',
+              text: "Le briefing couvre réservations, VIP, changements de carte, accords mets et vins et affectations de rangs. L’inspection finale vérifie chaque table, station, uniforme, ambiance et position de service avant l’ouverture.",
             },
           ],
         },
         {
-          h2: 'Prise de commande et connaissance de la carte',
+          h2: 'La séquence restaurant en 21 étapes',
           content:
-            "La prise de commande n'est pas de la transcription. Un serveur qui connaît la carte peut orienter le client vers ce qu'il appréciera, signaler les allergènes avant qu'ils deviennent des problèmes, et gérer le timing de la cuisine en séquençant ses tables. Rien de cela n'est possible sans une vraie connaissance produit.",
+            "Le Playbook F&B donne à l’équipe restaurant une séquence complète en 21 étapes. Ce n’est pas un script. C’est l’ordre opérationnel qui garde l’expérience fluide, de l’entrée du client jusqu’à l’au revoir.",
           h3Items: [
             {
-              heading: 'Protocole allergènes',
-              text: "Avant toute prise de commande alimentaire, confirmer si le client a des régimes ou allergies. Ce n'est pas facultatif, ce n'est pas une formalité. La cuisine doit être informée sur le bon, pas verbalement pendant le service. Les quatorze allergènes majeurs doivent être connus de tout le personnel de salle.",
+              heading: 'Arrivée et premier contact',
+              text: "Accueil dans les 10 secondes, accompagnement immédiat, installation avec aide à la chaise, cartes présentées dans les 30 secondes, serviettes dépliées pendant que les clients s’installent, puis eau et commande des boissons dans les 2 minutes.",
             },
             {
-              heading: 'Vente additionnelle sans pression',
-              text: "Une recommandation n'est pas un argumentaire commercial. Quand un serveur dit \"le canard est particulièrement bon ce soir\" en s'appuyant sur sa connaissance du plat et le briefing, cela passe comme de l'hospitalité. Quand cela sonne comme une vente scriptée, cela crée une friction. La distinction tient à la spécificité et au contexte de la recommandation.",
+              heading: 'Boissons et prise de commande',
+              text: "Les boissons sont servies dans les 5 minutes, les suggestions sont présentées avec les boissons, la commande des plats est prise quand les clients sont prêts, puis le pain ou l’amuse-bouche suit après l’envoi de la commande.",
             },
             {
-              heading: 'Timing des tables',
-              text: "Le serveur est responsable du rythme de chaque table : s'assurer que les plats arrivent à intervalles adéquats, signaler à la cuisine quand une table doit être retenue, communiquer au client en cas d'attente. Une table qui finit une entrée et attend ensuite quinze minutes est un échec de service quelle que soit la qualité de la cuisine.",
+              heading: 'Plats, suivi et clôture',
+              text: "Les entrées et plats suivent des délais définis, la satisfaction est vérifiée 2 minutes après le plat principal, le débarrassage attend que tous les clients aient terminé, le dessert est proposé rapidement, l’addition est présentée au bon moment et le départ reste chaleureux, idéalement par le nom.",
             },
           ],
         },
         {
-          h2: 'Standards de service à table',
+          h2: 'La prise de commande est un point de contrôle',
           content:
-            "Les standards de service au niveau de l'assiette et du verre définissent l'exécution physique de la séquence. Ils doivent être suffisamment précis pour que chaque membre de l'équipe serve de la même façon.",
+            "Le playbook est clair sur la prise de commande : le serveur écoute entièrement, pose les questions de clarification, signale les allergies, répète la commande et transmet correctement les informations à la cuisine. C’est là que beaucoup d’incidents sont évités avant d’exister.",
           h3Items: [
             {
-              heading: 'Sens du service',
-              text: "Les assiettes sont servies par la gauche, débarrassées par la droite. Les boissons sont servies et débarrassées par la droite. Ces conventions créent un flux de service prévisible et discret. Passer devant un client ou servir du mauvais côté crée une friction, même quand le client n'en identifie pas consciemment la cause.",
+              heading: 'Capture des allergies',
+              text: "Les allergies ne sont pas une note informelle. Elles sont confirmées avec le client, signalées à la cuisine, visibles sur la commande et suivies jusqu’à la livraison. Si le client exprime une inquiétude, le sujet devient prioritaire au niveau manager.",
             },
             {
-              heading: 'Service du vin',
-              text: "La bouteille est présentée au client qui a commandé avant ouverture. Après ouverture, une petite quantité est proposée pour validation. Le service s'effectue dans l'ordre, l'hôte en dernier. La bouteille est placée à portée ou dans un seau à glace. Le remplissage se fait de manière proactive, pas réactive.",
+              heading: 'Recommandations précises',
+              text: "L’upselling fonctionne quand il est contextuel. La fiche upselling du Starter Pack encourage des suggestions précises : vin avec un steak, jus frais au petit-déjeuner, café ou digestif avec dessert, pas une pression générique.",
             },
             {
-              heading: 'Protocole de débarrassage',
-              text: "Les tables sont débarrassées uniquement quand tous les convives ont terminé un plat, jamais pendant qu'un client mange encore. Le débarrassage s'effectue en un passage organisé, pas de façon fragmentée. Le miettage entre les plats fait partie du standard dans un service formel.",
+              heading: 'Responsabilité du rythme',
+              text: "Le serveur porte le rythme de la table : boissons, entrées, plats, débarrassage, dessert et addition. Si la cuisine prend du retard ou si une table doit être retenue, le client doit recevoir une information claire avant que la frustration devienne visible.",
             },
           ],
         },
         {
-          h2: 'Gestion des plaintes pendant le service',
+          h2: 'Inspection de table et mise en place',
           content:
-            "Une plainte pendant le service est une opportunité que la plupart des établissements gèrent mal. Le réflexe est de s'excuser et de corriger le problème technique. Le besoin réel du client est d'être entendu avant que la correction arrive. Une équipe formée à écouter d'abord résout les plaintes en moins de temps et avec de meilleurs résultats qu'une équipe qui saute directement à la solution.",
+            "Le chapitre mise en place présente la préparation comme une disponibilité physique, mentale et organisationnelle. Le Starter Pack transforme cette logique en checklist d’inspection de table, directement utilisable par l’équipe avant le service.",
           h3Items: [
             {
-              heading: 'Le protocole LEARN',
-              text: "Écouter sans interrompre. Exprimer de l'empathie pour l'expérience, pas pour le résultat. Reconnaître le problème spécifique. Résoudre avec une action concrète et un délai. Suite : faire un suivi avant la fin du repas, pas en fin de repas. Le serveur qui a pris la plainte doit être celui qui assure le suivi.",
+              heading: 'Standard physique de la table',
+              text: "Le playbook donne des repères précis : assiette de présentation à 2,5 cm du bord, fourchette à 2,5 cm de l’assiette, verres au-dessus de la pointe du couteau et 60 cm minimum entre deux couverts.",
             },
             {
-              heading: 'Quand escalader',
-              text: "Toute plainte qui ne peut pas être résolue en deux minutes au niveau de la table doit impliquer le maître d'hôtel ou le superviseur de salle. Pas en passation, mais en renfort : le serveur reste présent. Faire appel à son responsable signale que l'établissement prend la plainte au sérieux, pas que le serveur a échoué.",
+              heading: 'Stations prêtes',
+              text: "Les stations sont approvisionnées selon le par stock : serviettes, couverts, verrerie, ramasse-miettes, limonadiers, pochettes addition et stylos. Les éléments les plus utilisés restent à portée de main, les éléments lourds en bas, et le propre reste séparé de l’utilisé.",
             },
             {
-              heading: 'Documentation',
-              text: "Les plaintes doivent être consignées en fin de service : numéro de table, nature du problème, résolution, réaction du client. Sur la durée, ce journal fait apparaître des tendances : plats qui génèrent régulièrement des remarques, problèmes de cadence à fort couverts, membres d'équipe nécessitant un accompagnement.",
+              heading: 'Discipline des tâches de service',
+              text: "Les tâches d’ouverture couvrent le polissage de la verrerie et de l’argenterie, le dressage des tables et le réassort des stations. Pendant le service, l’équipe gère le pré-débarrassage et le réassort. La clôture remet le restaurant en état pour l’équipe suivante.",
             },
           ],
         },
         {
           h2: 'Clôture de service et passation',
           content:
-            "La clôture de service n'est pas la fin du shift. C'est la préparation du suivant. Un restaurant correctement fermé réduit le temps d'ouverture du prochain service, garantit que rien n'est laissé à découvrir par l'équipe suivante, et donne au superviseur les informations nécessaires pour le prochain briefing.",
+            "Une bonne clôture protège le service suivant. Le Starter Pack F&B inclut une checklist de fermeture restaurant afin que la fin de shift ne soit pas gérée de mémoire.",
           h3Items: [
             {
               heading: 'Tâches de clôture',
-              text: "Remettre tous les couverts selon la disposition standard. Remettre les offices au niveau de par stock défini. Effectuer la réconciliation de caisse de fin de service et clôturer le logiciel de caisse. Consigner tout problème technique, article manquant ou retour client affectant le prochain service.",
+              text: "Tables démontées ou remises en place, linge sale collecté, stations essuyées et réorganisées, verrerie et argenterie restantes polies et rangées, condiments contrôlés, cartes comptées et caisse clôturée.",
             },
             {
-              heading: 'Le rapport de fin de service',
-              text: "Un bref résumé écrit du service : couverts, ticket moyen, incidents notables, observations cuisine, performance équipe. C'est l'information dont le maître d'hôtel a besoin pour animer le briefing du shift suivant. Un service non documenté est un service qui ne peut pas s'améliorer.",
+              heading: 'Contenu de passation',
+              text: "La passation doit inclure les sujets client encore ouverts, les problèmes de stock, les besoins maintenance, les articles indisponibles, les notes d’équipe, les commentaires client et les préparations à prévoir pour le prochain service. Si ce n’est pas écrit, ce sera rarement suivi de façon régulière.",
             },
           ],
         },
       ],
       conclusion:
-        "La cohérence du service en salle ne vient pas du talent de l'équipe. Elle vient d'une séquence commune, d'un standard défini, et des outils pour le tenir sous pression. La procédure donne la structure ; l'équipe y apporte l'hospitalité. Les deux ne s'opposent pas : l'une rend l'autre possible.",
-      cta: { text: 'Voir le Playbook F&B', href: '/fr/playbooks' },
+        "Une SOP restaurant hôtelier utile suit le vrai déroulé d’un shift : ouverture, briefing, séquence de service, prise de commande, suivi de table, recovery et clôture. Le Starter Pack F&B donne les checklists et scripts du quotidien. Le Playbook F&B complet apporte toute la référence du département.",
+      cta: { text: 'Voir le Starter Pack F&B', href: '/fr/playbooks/fb-starter-pack' },
     },
   },
   {
@@ -2161,176 +2213,222 @@ export const articles: BilingualArticle[] = [
   {
     slug: 'hotel-room-service-sops',
     en: {
-      title: 'Hotel Room Service SOPs: Procedures for Consistent In-Room Dining',
+      title: 'Hotel Room Service SOP: Order Taking, Tray Setup and Delivery Standards',
       description:
-        'Standard operating procedures for hotel room service operations. Order taking, tray setup, delivery timing, in-room presentation, and billing protocol for in-room dining.',
+        'Hotel room service SOP adapted from the LuxOps F&B Playbook: order taking, delivery timing, tray and trolley setup, in-room protocol, delay recovery and tray collection.',
       date: '2026-03-31',
-      readTime: '7 min read',
+      readTime: '9 min read',
       intro:
-        'Room service is the hospitality department with the least margin for error and the least opportunity to recover. The interaction happens in private, with no ambient environment to soften a presentation problem, no floor manager passing to notice a delay, and no table of neighbouring guests to contextualise the experience. A guest who orders room service at eleven at night has often had a long day. What arrives at their door is not just food. It is the property\'s standard of care delivered to the most personal space the guest occupies. Getting that right, consistently, requires more than a good kitchen. It requires a defined operational procedure from call to door.',
+        'This room service SOP is adapted from the LuxOps F&B Playbook and the F&B Starter Pack. The playbook defines in-room dining as the restaurant standard delivered into the guest’s private space. There is no dining room atmosphere, no floor manager passing by and no second interaction to correct the impression. The order, timing, tray, delivery and collection must therefore be controlled as one flow.',
       sections: [
         {
-          h2: 'Order Taking',
+          h2: 'Room service is not reduced restaurant service',
           content:
-            'The room service call is the first operational step and the one that sets every expectation that follows. The way the order is taken determines the accuracy of what gets delivered, the timing the guest expects, and whether any allergens or preferences were properly captured.',
+            'Chapter 6 of the playbook frames room service as a complete private dining experience. The setting changes from the restaurant to the guest room, but the standard should not drop. The service becomes more concentrated because one interaction has to carry the whole experience.',
+          h3Items: [
+            {
+              heading: 'What every delivery must include',
+              text: 'Hot food hot, cold food cold, complete place settings, all condiments, beverages at the correct temperature, clean pressed linens, a check presenter with pen and enough product knowledge to answer questions.',
+            },
+            {
+              heading: 'Why guests choose room service',
+              text: 'The playbook lists privacy, convenience, comfort, work, celebration, illness, late or early hours and children as common reasons. Each reason changes the tone of service. Some guests want full setup, others want minimal interaction.',
+            },
+            {
+              heading: 'Restaurant quality, private context',
+              text: 'Room service is not an exception to restaurant standards. It is restaurant quality translated into a tray or trolley that must travel, arrive intact and be served graciously.',
+            },
+          ],
+        },
+        {
+          h2: 'Order taking is the first quality control',
+          content:
+            'The room service call sets the guest’s expectation for accuracy, timing and personalization. The starter pack turns this into a checklist because small omissions at order taking become visible errors at the door.',
           h3Items: [
             {
               heading: 'Answering standard',
-              text: 'The phone is answered before the third ring. The greeting includes the department name, the staff member\'s name, and the room number once it is confirmed. Calls that ring more than three times and go unanswered are an immediate service failure: the guest has already noticed.',
+              text: 'The phone is answered within 3 rings: "Good morning/afternoon/evening, In-Room Dining, this is [Name]. How may I assist you?" The tone should already feel calm, available and professional.',
+            },
+            {
+              heading: 'Information to capture',
+              text: 'The order taker confirms room number, guest name, number of guests, complete food and beverage order, cooking temperatures, allergies or dietary requirements, special requests and preferred timing if the order is not immediate.',
             },
             {
               heading: 'Order confirmation',
-              text: 'Every order is read back to the guest before closing the call: each item, any modifications, and the timing. This is not a courtesy. It is a quality control step. An order that is confirmed incorrectly is discovered at the door, which is the worst possible moment.',
-            },
-            {
-              heading: 'Timing communication',
-              text: 'Delivery time is communicated as a range, not a promise: "between 25 and 35 minutes" rather than "30 minutes". If the actual delivery will fall outside the range given, the guest is called before the range expires, not when the order is already late. Standard delivery ranges: continental breakfast 20–25 minutes, full breakfast 25–30 minutes, lunch 30–35 minutes, dinner 35–45 minutes.',
+              text: 'The complete order is repeated back with all details and the expected delivery time. This is not a courtesy line. It is the final control before the kitchen starts production.',
             },
           ],
         },
         {
-          h2: 'Tray and Trolley Setup',
+          h2: 'Timing standards and delay protocol',
           content:
-            'The tray or trolley setup is the physical presentation of the property\'s standard. Everything the guest sees when the door opens was set by the room service team. There is no maître d\' to intervene, no adjustment possible once the door is opened. The setup must be right before it leaves the kitchen.',
+            'The playbook gives clear target times because room service timing is promised directly to the guest. A missed promise is not just a kitchen delay. It is a trust issue.',
           h3Items: [
             {
-              heading: 'Checklist before departure',
-              text: 'Correct items in the correct quantity. Hot items in the correct cover, cold items appropriately chilled. Condiments specific to the order. Napkin folded to standard. Cutlery correct for the courses ordered. Glassware clean and correctly placed. Any special items such as birthday amenities or allergy alternatives, confirmed and included.',
+              heading: 'Reference timing',
+              text: 'Continental breakfast: 20 to 25 minutes. Full breakfast: 25 to 30 minutes. Lunch: 30 to 35 minutes. Dinner: 35 to 45 minutes. Beverages only: 15 to 20 minutes. VIP orders receive priority handling.',
             },
             {
-              heading: 'Temperature management',
-              text: 'Food must leave the kitchen at the correct temperature. Hot food under a cloche, cold food with an ice pack or from a chilled section. Delivery time is part of temperature management: a dish that leaves at the correct temperature but arrives cold because of a slow delivery is a kitchen-to-door failure that will be attributed to food quality by the guest.',
+              heading: 'Kitchen-to-door control',
+              text: 'Before departure, items are inspected, tray or trolley setup is completed in 2 to 3 minutes, hot items are temperature checked and delivery starts immediately. A perfect pass can still fail if the handover to delivery is slow.',
             },
             {
-              heading: 'Presentation standard',
-              text: 'The tray or trolley is presented as it would be at a restaurant table. Plate placement consistent. Logo on napkin or packaging facing forward. Nothing slid or stacked in a way that would be acceptable in a service corridor but not at a guest\'s door.',
+              heading: 'Delay response',
+              text: 'A 5 to 10 minute delay triggers a guest call with apology and updated ETA. A delay of 10 minutes or more triggers manager notification, a guest call and possible compensation. The guest should never discover the delay only after the promised time has passed.',
             },
           ],
         },
         {
-          h2: 'Delivery to the Room',
+          h2: 'Tray and trolley setup standards',
           content:
-            'The delivery sequence has a defined protocol that balances speed, discretion, and service quality. A guest who ordered dinner at 8pm does not want a lengthy in-room presentation. They also do not want the order dropped at the door. The delivery should be efficient and complete.',
+            'The tray or trolley is the physical expression of the room service standard. The guest sees the setup before tasting the food, so presentation and completeness matter.',
           h3Items: [
             {
-              heading: 'Door approach',
-              text: 'Three firm knocks, followed by "Room service". Wait. If no response within thirty seconds, knock again and announce once more. Do not use the phone from the corridor to announce arrival unless the guest has specifically requested it.',
+              heading: 'When to use tray or trolley',
+              text: 'The playbook uses a tray for 1 to 2 guests, simple orders and beverages. It uses a trolley for 2 or more guests, multiple courses and hot items. A trolley with hotbox is used for full meals or orders that need temperature hold.',
             },
             {
-              heading: 'In-room placement',
-              text: 'Ask the guest where they would like the tray or trolley placed. Do not assume a default location. If the guest requests table setup, covers laid and dishes uncovered, complete the setup quickly and without unnecessary commentary. Confirm each item against the order while setting up, so any missing item is identified before the door closes.',
+              heading: 'Tray setup checklist',
+              text: 'Tray cloth clean and pressed, napkin placed correctly, correct silverware, polished glassware, cloches for hot items, appropriate condiments, beverages with correct glassware, working pen, check presenter and balanced tray.',
             },
             {
-              heading: 'Billing at delivery',
-              text: 'If the property posts charges to the room, inform the guest of the total and present the slip for signature. If the guest wishes to pay by card at delivery, the payment terminal must be brought with the order. Returning for it after delivery is not acceptable. Include the standard service charge information as per property policy.',
+              heading: 'Trolley setup checklist',
+              text: 'Trolley clean, wheels functioning, brake working, surface sanitized, tablecloth centered, settings aligned for each guest and all hot items protected until in-room setup.',
             },
           ],
         },
         {
-          h2: 'Tray Collection',
+          h2: 'In-room delivery protocol',
           content:
-            'Tray collection is the most frequently neglected part of the room service operation. A tray left in the corridor creates a hygiene and presentation problem that is immediately visible to any guest on the floor. A tray left inside a room at a guest\'s request must still be collected within a defined window.',
+            'Delivery needs to be efficient, discreet and complete. The team member should arrive composed, not rushed, and should never enter without permission.',
           h3Items: [
             {
-              heading: 'Collection timing',
-              text: 'Trays left in the corridor should be collected within thirty minutes. For in-room trays, the guest is offered a collection call at the time of delivery: "Just call us when you\'re done and we\'ll come to collect." If no call is received, a collection check should be made with a courtesy knock after ninety minutes.',
+              heading: 'Approaching the room',
+              text: 'Walk at a professional pace, keep the tray or trolley quiet and controlled, knock and announce room service, wait for response and never enter without permission.',
             },
             {
-              heading: 'Corridor management',
-              text: 'Any tray spotted in a corridor by any team member, not just room service, should be reported immediately. A corridor tray is a visible standard failure and should be treated with the same urgency as a guest complaint.',
+              heading: 'Inside the room',
+              text: 'Greet by name if known, ask where the guest would like the setup, present each item clearly, offer to pour beverages and keep the interaction efficient unless the guest invites more conversation.',
+            },
+            {
+              heading: 'Exit and pickup',
+              text: 'Confirm satisfaction, ask if anything else is needed, explain tray or trolley pickup and exit quietly. Pickup is planned through guest call, hallway placement or scheduled collection rounds.',
             },
           ],
         },
       ],
       conclusion:
-        'Room service is the in-room extension of the property\'s dining standard. Everything that makes a restaurant experience consistent, sequenced service, accurate ordering, temperature control, correct presentation, applies in miniature to every room service delivery. The difference is that in room service, there is no floor to manage, no second chances, and no one between the procedure and the guest. The standard either holds or it does not.',
-      cta: { text: 'View the F&B Playbook', href: '/en/playbooks' },
+        'Room service works when order capture, timing, setup, delivery and pickup are managed as one controlled flow. The F&B Starter Pack includes a practical room service checklist for daily use. The full F&B Playbook gives the complete procedure, timing standards, VIP logic, troubleshooting and quality control.',
+      cta: { text: 'View the F&B Starter Pack', href: '/en/playbooks/fb-starter-pack' },
     },
     fr: {
-      title: "Room service : comment délivrer chaque commande au bon niveau",
+      title: "SOP room service en hôtel : prise de commande, plateau et livraison",
       description:
-        "Les procédures qui font la différence entre un room service irréprochable et un qui laisse un mauvais souvenir. Prise de commande, dressage du plateau, livraison et récupération.",
+        "SOP room service en hôtel adaptée du Playbook F&B LuxOps : prise de commande, timing, dressage du plateau et du chariot, protocole en chambre, retard et débarrassage.",
       date: '2026-03-31',
-      readTime: '7 min de lecture',
+      readTime: '9 min de lecture',
       intro:
-        "Le room service est le service qui laisse le moins de place à l'erreur et le moins d'occasion de se rattraper. L'interaction se déroule en privé, sans ambiance pour atténuer un problème de présentation, sans responsable de salle pour repérer un retard, et sans voisins de table pour contextualiser l'expérience. Un client qui commande à vingt-trois heures a souvent eu une longue journée. Ce qui arrive à sa porte n'est pas seulement un repas. C'est le niveau de soin de l'établissement, livré dans l'espace le plus intime qu'il occupe. Tenir ce niveau, de façon constante, demande plus qu'une bonne cuisine. Cela demande une procédure claire du coup de téléphone à la porte.",
+        "Cette SOP room service est adaptée du Playbook F&B LuxOps et du Starter Pack F&B. Le playbook définit le room service comme le standard restaurant porté dans l’espace privé du client. Il n’y a pas d’ambiance de salle, pas de manager qui passe pour repérer un retard et pas de deuxième interaction pour corriger l’impression. La commande, le timing, le plateau, la livraison et le débarrassage doivent donc être pensés comme un seul flux contrôlé.",
       sections: [
         {
-          h2: 'Prise de commande',
+          h2: 'Le room service n’est pas un service restaurant diminué',
           content:
-            "L'appel room service est la première étape opérationnelle et celle qui définit toutes les attentes qui suivent. La façon dont la commande est prise détermine l'exactitude de ce qui est livré, le timing que le client attend, et si les allergènes ou préférences ont été correctement notés.",
+            "Le chapitre 6 du playbook présente le room service comme une expérience gastronomique privée complète. Le cadre change, du restaurant à la chambre, mais le standard ne doit pas baisser. Le service devient plus concentré, car une seule interaction porte toute l’expérience.",
+          h3Items: [
+            {
+              heading: 'Ce que chaque livraison doit inclure',
+              text: "Des plats chauds réellement chauds, des plats froids bien froids, des couverts complets, les condiments, les boissons à la bonne température, du linge propre et repassé, une pochette addition avec stylo et assez de connaissance produit pour répondre aux questions.",
+            },
+            {
+              heading: 'Pourquoi les clients commandent en chambre',
+              text: "Le playbook liste confidentialité, confort, travail, célébration, maladie, horaires tardifs ou matinaux et enfants comme raisons fréquentes. Chaque raison change le ton de service. Certains clients veulent une installation complète, d’autres une interaction minimale.",
+            },
+            {
+              heading: 'Qualité restaurant, contexte privé',
+              text: "Le room service n’est pas une exception aux standards restaurant. C’est la qualité restaurant traduite dans un plateau ou un chariot qui doit voyager, arriver intact et être servi avec élégance.",
+            },
+          ],
+        },
+        {
+          h2: 'La prise de commande est le premier contrôle qualité',
+          content:
+            "L’appel room service définit les attentes du client en matière d’exactitude, de délai et de personnalisation. Le Starter Pack en fait une checklist, car les petites omissions à la prise de commande deviennent des erreurs visibles à la porte.",
           h3Items: [
             {
               heading: 'Standard de réponse',
-              text: "Le téléphone décroche avant la troisième sonnerie. La formule d'accueil inclut le nom du service, le prénom du collaborateur et le numéro de chambre une fois confirmé. Un appel qui sonne plus de trois fois sans réponse est déjà un premier manquement : le client l'a remarqué.",
+              text: 'Le téléphone est décroché avant la troisième sonnerie : « Bonjour / Bonsoir, room service, [Nom] à l’appareil. Comment puis-je vous aider ? » Le ton doit déjà être calme, disponible et professionnel.',
+            },
+            {
+              heading: 'Informations à capter',
+              text: "Le collaborateur confirme le numéro de chambre, le nom du client, le nombre de couverts, la commande complète, les températures de cuisson, les allergies ou régimes, les demandes spéciales et le timing souhaité si la commande n’est pas immédiate.",
             },
             {
               heading: 'Confirmation de commande',
-              text: "Chaque commande est relue au client avant de raccrocher : chaque article, toute modification, et le délai annoncé. Ce n'est pas une formalité. C'est une étape de contrôle qualité. Une commande confirmée incorrectement, c'est une erreur découverte à la porte du client, au pire moment.",
-            },
-            {
-              heading: 'Communication du timing',
-              text: "Le délai est annoncé comme une fourchette, pas une promesse : \"entre 25 et 35 minutes\" plutôt que \"30 minutes\". Si la livraison va dépasser cette fourchette, le client est rappelé avant qu'elle soit écoulée, pas après. Délais de référence : petit-déjeuner continental 20-25 min, petit-déjeuner complet 25-30 min, déjeuner 30-35 min, dîner 35-45 min.",
+              text: "La commande complète est relue avec tous les détails et le délai annoncé. Ce n’est pas une formule de politesse. C’est le dernier contrôle avant que la cuisine démarre la production.",
             },
           ],
         },
         {
-          h2: 'Dressage du plateau ou du chariot',
+          h2: 'Standards de timing et protocole de retard',
           content:
-            "Le dressage du plateau ou du chariot est la présentation physique du standard de l'établissement. Tout ce que le client voit quand la porte s'ouvre a été préparé par l'équipe room service. Il n'y a pas de maître d'hôtel pour intervenir, aucun ajustement possible une fois la porte ouverte. Le dressage doit être correct avant de quitter la cuisine.",
+            "Le playbook donne des délais cibles clairs, car le timing room service est promis directement au client. Une promesse manquée n’est pas seulement un retard cuisine. C’est un sujet de confiance.",
           h3Items: [
             {
-              heading: 'Checklist avant départ',
-              text: "Articles corrects, en bonne quantité. Plats chauds sous cloche, plats froids maintenus au froid. Condiments adaptés à la commande. Serviette pliée selon le standard. Couverts correspondant aux plats. Verrerie propre et bien positionnée. Tout article particulier, amenités anniversaire ou alternative pour allergie, confirmé et inclus.",
+              heading: 'Délais de référence',
+              text: "Petit-déjeuner continental : 20 à 25 minutes. Petit-déjeuner complet : 25 à 30 minutes. Déjeuner : 30 à 35 minutes. Dîner : 35 à 45 minutes. Boissons seules : 15 à 20 minutes. Les commandes VIP sont traitées en priorité.",
             },
             {
-              heading: 'Gestion de la température',
-              text: "Les plats doivent quitter la cuisine à la bonne température. Plats chauds sous cloche, plats froids avec accumulateur de froid ou issus d'une zone réfrigérée. Le délai de livraison fait partie de la gestion de la température : un plat qui part à la bonne température mais arrive froid en raison d'une livraison lente est un échec cuisine-à-porte qui sera attribué à la qualité alimentaire par le client.",
+              heading: 'Contrôle cuisine à porte',
+              text: "Avant le départ, tous les articles sont inspectés, la mise en place du plateau ou du chariot est complétée en 2 à 3 minutes, les plats chauds sont contrôlés en température et la livraison démarre immédiatement. Un plat parfait au passe peut échouer si la livraison est lente.",
             },
             {
-              heading: 'Standard de présentation',
-              text: "Le plateau ou chariot est présenté comme il le serait à une table de restaurant. Placement des assiettes cohérent. Logo sur serviette ou packaging orienté vers l'avant. Rien de glissé ou empilé d'une façon acceptable dans un couloir de service mais pas à la porte d'un client.",
+              heading: 'Réponse en cas de retard',
+              text: "Un retard de 5 à 10 minutes déclenche un appel client avec excuses et nouveau délai. À partir de 10 minutes, le responsable est informé, le client est appelé et une compensation peut être envisagée. Le client ne doit jamais découvrir le retard après le délai annoncé.",
             },
           ],
         },
         {
-          h2: 'Livraison en chambre',
+          h2: 'Standards de dressage plateau et chariot',
           content:
-            "La séquence de livraison a un protocole défini qui équilibre rapidité, discrétion et qualité de service. Un client qui a commandé un dîner à 20h ne veut pas une présentation élaborée en chambre. Mais il ne veut pas non plus que sa commande soit déposée à la porte. La livraison doit être efficace et complète.",
+            "Le plateau ou le chariot est l’expression physique du standard room service. Le client voit le dressage avant de goûter le plat. La présentation, l’équilibre et la complétude comptent donc autant que le contenu de la commande.",
           h3Items: [
             {
-              heading: 'Approche de la porte',
-              text: 'Trois coups fermes, suivis de "Service en chambre". Attendre. Sans réponse dans les trente secondes, frapper à nouveau et annoncer une fois encore. Ne pas utiliser le téléphone depuis le couloir pour annoncer l\'arrivée sauf si le client l\'a spécifiquement demandé.',
+              heading: 'Quand utiliser plateau ou chariot',
+              text: "Le playbook recommande le plateau pour 1 à 2 couverts, les commandes simples et les boissons. Le chariot est privilégié à partir de 2 couverts, pour plusieurs plats ou pour les préparations chaudes. Le chariot avec boîte chauffante sert aux repas complets ou aux commandes nécessitant un maintien en température.",
             },
             {
-              heading: 'Placement en chambre',
-              text: "Demander au client où il souhaite que le plateau ou le chariot soit installé. Ne pas supposer un emplacement. Si le client demande un dressage, couverts disposés et plats découverts, l'effectuer rapidement et sans commentaire inutile. Vérifier chaque article pendant la mise en place pour identifier tout oubli avant que la porte se referme.",
+              heading: 'Checklist plateau',
+              text: "Nappe de plateau propre et repassée, serviette bien placée, couverts adaptés, verrerie polie, cloches pour les plats chauds, condiments appropriés, boisson avec verrerie correcte, stylo fonctionnel, pochette addition et plateau stable.",
             },
             {
-              heading: 'Facturation à la livraison',
-              text: "Si les charges sont portées sur la chambre, informer le client du total et présenter le reçu à signer. Si le client souhaite payer par carte à la livraison, le terminal doit être apporté avec la commande. Repartir le chercher après n'est pas acceptable. Appliquer la politique de l'établissement concernant les frais de service.",
+              heading: 'Checklist chariot',
+              text: "Chariot propre, roues fonctionnelles, frein opérationnel, surface désinfectée, nappe centrée, couverts alignés pour chaque client et toutes les préparations chaudes protégées jusqu’à l’installation en chambre.",
             },
           ],
         },
         {
-          h2: 'Récupération du plateau',
+          h2: 'Protocole de livraison en chambre',
           content:
-            "La récupération du plateau est la partie la plus souvent négligée de l'opération room service. Un plateau laissé dans le couloir crée un problème d'hygiène et de présentation immédiatement visible par tout client circulant dans le couloir. Un plateau laissé en chambre à la demande du client doit quand même être récupéré dans un délai défini.",
+            "La livraison doit être efficace, discrète et complète. Le collaborateur arrive posé, sans paraître précipité, et n’entre jamais sans autorisation.",
           h3Items: [
             {
-              heading: 'Timing de récupération',
-              text: "Les plateaux dans le couloir doivent être récupérés dans les trente minutes. Pour les plateaux en chambre, le client est informé d'un appel de récupération au moment de la livraison : \"Appelez-nous simplement quand vous aurez terminé.\" Sans appel reçu, un passage de contrôle avec frappe courtoise doit être effectué après quatre-vingt-dix minutes.",
+              heading: 'Approche de la chambre',
+              text: "Marcher à une allure professionnelle, garder le plateau ou chariot maîtrisé et silencieux, frapper, annoncer room service, attendre la réponse et ne jamais entrer sans permission.",
             },
             {
-              heading: 'Gestion des couloirs',
-              text: "Tout plateau repéré dans un couloir par un membre de l'équipe, quel que soit son département, doit être signalé immédiatement. Un plateau qui traîne dans un couloir est un manquement visible. Il doit être traité avec la même réactivité qu'une réclamation client.",
+              heading: 'Dans la chambre',
+              text: "Saluer par le nom si connu, demander où le client souhaite l’installation, présenter chaque élément clairement, proposer de servir les boissons et garder l’interaction efficace, sauf si le client invite à échanger davantage.",
+            },
+            {
+              heading: 'Sortie et débarrassage',
+              text: "Confirmer la satisfaction, demander si le client a besoin d’autre chose, expliquer le ramassage du plateau ou chariot et sortir discrètement. La récupération est organisée par appel client, dépôt dans le couloir ou rondes planifiées.",
             },
           ],
         },
       ],
       conclusion:
-        "Le room service est le prolongement en chambre de la table de l'établissement. Tout ce qui rend un service en salle cohérent, séquence de service, prise de commande précise, gestion de la température, présentation soignée, s'applique en miniature à chaque livraison. La différence est qu'en room service, il n'y a pas de salle à gérer, pas de seconde chance, et personne entre la procédure et le client. Le standard tient ou ne tient pas.",
-      cta: { text: 'Voir le Playbook F&B', href: '/fr/playbooks' },
+        "Le room service fonctionne lorsque la prise de commande, le timing, le dressage, la livraison et le débarrassage sont gérés comme un seul flux contrôlé. Le Starter Pack F&B inclut une checklist room service pratique pour le quotidien. Le Playbook F&B complet apporte la procédure complète, les standards de timing, la logique VIP, la gestion des situations sensibles et le contrôle qualité.",
+      cta: { text: 'Voir le Starter Pack F&B', href: '/fr/playbooks/fb-starter-pack' },
     },
   },
   {
