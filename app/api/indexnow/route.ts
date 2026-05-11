@@ -30,6 +30,8 @@ const URLS = [
   `${SITE_URL}/fr/hotel-housekeeping-checklist`,
   `${SITE_URL}/en/housekeeping-sop`,
   `${SITE_URL}/fr/housekeeping-sop`,
+  `${SITE_URL}/en/hotel-fb-sop`,
+  `${SITE_URL}/fr/hotel-fb-sop`,
   `${SITE_URL}/en/blog/housekeeping-room-inspection`,
   `${SITE_URL}/fr/blog/housekeeping-room-inspection`,
   `${SITE_URL}/en/blog/hotel-room-cleaning-checklist`,

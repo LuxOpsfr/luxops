@@ -1259,8 +1259,16 @@ export default async function BlogArticlePage({
               { href: '/housekeeping-sop', labelEn: 'Housekeeping SOP', labelFr: 'SOP Housekeeping', descEn: 'The procedures behind every housekeeping checklist.', descFr: 'Les procédures derrière chaque checklist housekeeping.' },
             ],
             'hotel-fb-service-standards': [
-              { href: '/hotel-sop', labelEn: 'Hotel SOP Templates', labelFr: 'Modèles SOP Hôtel', descEn: 'Complete standard operating procedures for every hotel department.', descFr: 'Procédures opérationnelles complètes pour chaque département hôtelier.' },
-              { href: '/hotel-checklist', labelEn: 'Hotel Operational Checklists', labelFr: 'Checklists Opérationnelles Hôtel', descEn: 'What makes a hotel checklist actually useful in practice.', descFr: 'Ce qui rend une checklist hôtelière vraiment utile en pratique.' },
+              { href: '/hotel-fb-sop', labelEn: 'Hotel F&B SOP', labelFr: 'SOP F&B hôtel', descEn: 'The pillar guide for restaurant, bar, room service and service recovery procedures.', descFr: 'Le guide pilier pour procédures restaurant, bar, room service et recovery client.' },
+              { href: '/playbooks/fb-starter-pack', labelEn: 'F&B Starter Pack', labelFr: 'Starter Pack F&B', descEn: 'Practical checklists, scripts and control tools for daily F&B service.', descFr: 'Checklists, scripts et outils de contrôle pour le service F&B quotidien.' },
+            ],
+            'hotel-fb-restaurant-procedures': [
+              { href: '/hotel-fb-sop', labelEn: 'Hotel F&B SOP', labelFr: 'SOP F&B hôtel', descEn: 'The complete F&B SOP structure around service sequence, mise en place and controls.', descFr: 'La structure SOP F&B complète autour de la séquence de service, mise en place et contrôles.' },
+              { href: '/playbooks/fb-starter-pack', labelEn: 'F&B Starter Pack', labelFr: 'Starter Pack F&B', descEn: 'Opening checklist, closing checklist, briefing template and recovery scripts.', descFr: 'Checklist ouverture, checklist fermeture, briefing et scripts recovery.' },
+            ],
+            'hotel-room-service-sops': [
+              { href: '/hotel-fb-sop', labelEn: 'Hotel F&B SOP', labelFr: 'SOP F&B hôtel', descEn: 'Room service connected to the wider restaurant, bar and F&B control system.', descFr: 'Room service relié au système de contrôle restaurant, bar et F&B.' },
+              { href: '/playbooks/fb-starter-pack', labelEn: 'F&B Starter Pack', labelFr: 'Starter Pack F&B', descEn: 'Room service checklist, guest recovery scripts and service control tools.', descFr: 'Checklist room service, scripts recovery et outils de contrôle de service.' },
             ],
             'hotel-front-office-procedures': [
               { href: '/front-office-sop', labelEn: 'Front Office SOP', labelFr: 'SOP Réception Hôtel', descEn: 'Procedures built around how the front desk actually works.', descFr: 'Procédures construites autour du fonctionnement réel de la réception.' },

@@ -48,7 +48,7 @@ const DEPARTMENTS_EN = [
     color: '#B45309',
     chapters: 10,
     desc: 'Service opening sequences, table service standards, bar procedures, complaint handling, allergen management, closing and handover',
-    href: '/en/playbooks/fb',
+    href: '/en/hotel-fb-sop',
   },
   {
     name: 'Spa & Wellness',
@@ -79,7 +79,7 @@ const DEPARTMENTS_FR = [
     color: '#B45309',
     chapters: 10,
     desc: 'Séquences d\'ouverture de service, standards de service en salle, procédures bar, gestion des plaintes, gestion des allergènes, fermeture et passation',
-    href: '/fr/playbooks/fb',
+    href: '/fr/hotel-fb-sop',
   },
   {
     name: 'Spa & Wellness',
@@ -107,6 +107,14 @@ const STARTER_PACKS_EN = [
     desc: 'Room inspection checklists, supervisor control sheets and defect tracking tools for housekeeping consistency.',
     points: ['Room inspection checklists', 'Supervisor control sheet', 'Defect tracking'],
   },
+  {
+    label: 'Food & Beverage',
+    title: 'F&B Service Starter Pack',
+    price: '€29',
+    href: '/en/playbooks/fb-starter-pack',
+    desc: 'Restaurant, bar and room service checklists, scripts and control tools for daily F&B execution.',
+    points: ['Service checklists', 'Room service flow', 'Recovery scripts'],
+  },
 ]
 
 const STARTER_PACKS_FR = [
@@ -125,6 +133,14 @@ const STARTER_PACKS_FR = [
     href: '/fr/playbooks/hsk-starter-pack',
     desc: 'Checklists inspection chambre, feuilles de contrôle gouvernante et suivi des défauts pour renforcer la régularité.',
     points: ['Checklists inspection chambre', 'Feuille de contrôle gouvernante', 'Suivi des défauts'],
+  },
+  {
+    label: 'Food & Beverage',
+    title: 'Starter Pack F&B',
+    price: '29 €',
+    href: '/fr/playbooks/fb-starter-pack',
+    desc: 'Checklists restaurant, bar et room service, scripts et outils de contrôle pour l’exécution quotidienne.',
+    points: ['Checklists service', 'Flux room service', 'Scripts recovery'],
   },
 ]
 
