@@ -29,6 +29,10 @@ const URLS = [
   `${SITE_URL}/fr/hotel-housekeeping-checklist`,
   `${SITE_URL}/en/blog/hotel-fb-service-standards`,
   `${SITE_URL}/fr/blog/hotel-fb-service-standards`,
+  `${SITE_URL}/en/food-and-beverage-service-sequence`,
+  `${SITE_URL}/fr/sequence-service-restaurant-hotel`,
+  `${SITE_URL}/en/hotel-room-service-checklist`,
+  `${SITE_URL}/fr/checklist-room-service-hotel`,
   `${SITE_URL}/en/blog/housekeeping-room-inspection`,
   `${SITE_URL}/fr/blog/housekeeping-room-inspection`,
   `${SITE_URL}/en/blog/hotel-fb-restaurant-procedures`,
@@ -41,7 +45,7 @@ const URLS = [
 
 async function pingIndexNow() {
   if (process.env.VERCEL_ENV !== 'production') {
-    console.log('[IndexNow] Skipping — not production build')
+    console.log('[IndexNow] Skipping: not production build')
     return
   }
 
@@ -56,7 +60,7 @@ async function pingIndexNow() {
         urlList: URLS,
       }),
     })
-    console.log(`[IndexNow] ✅ Pinged ${URLS.length} URLs — status: ${response.status}`)
+    console.log(`[IndexNow] ✅ Pinged ${URLS.length} URLs, status: ${response.status}`)
   } catch (error) {
     console.error('[IndexNow] ❌ Error:', error)
   }

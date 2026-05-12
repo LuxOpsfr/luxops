@@ -214,6 +214,20 @@ const FAQS_FR: FaqItem[] = [
 
 const ARTICLE_LINKS = [
   {
+    href: '/food-and-beverage-service-sequence',
+    titleEn: 'Food and Beverage Service Sequence',
+    titleFr: 'Séquence de service restaurant hôtel',
+    bodyEn: 'The 21-step service flow from greeting to farewell.',
+    bodyFr: 'Le déroulé en 21 étapes, de l’accueil au départ client.',
+  },
+  {
+    href: '/hotel-room-service-checklist',
+    titleEn: 'Hotel Room Service Checklist',
+    titleFr: 'Checklist room service hôtel',
+    bodyEn: 'Order taking, tray setup, delivery timing and recovery.',
+    bodyFr: 'Prise de commande, dressage plateau, timing et recovery.',
+  },
+  {
     href: '/blog/hotel-fb-service-standards',
     titleEn: 'Hotel F&B Service Standards',
     titleFr: 'Standards de service F&B hôtelier',
@@ -237,7 +251,13 @@ const ARTICLE_LINKS = [
 ]
 
 function localizeHref(locale: string, href: string) {
-  return `/${locale}${href}`
+  const localizedSlugs: Record<string, string> = {
+    '/food-and-beverage-service-sequence': locale === 'fr' ? '/sequence-service-restaurant-hotel' : '/food-and-beverage-service-sequence',
+    '/hotel-room-service-checklist': locale === 'fr' ? '/checklist-room-service-hotel' : '/hotel-room-service-checklist',
+  }
+
+  const localizedHref = localizedSlugs[href] ?? href
+  return `/${locale}${localizedHref}`
 }
 
 export default async function HotelFbSopPage({ params }: { params: Promise<{ locale: string }> }) {

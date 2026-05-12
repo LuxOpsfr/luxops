@@ -134,6 +134,50 @@
     <priority>0.85</priority>
   </url>
 
+  <!-- Food and Beverage Service Sequence EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/food-and-beverage-service-sequence</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/food-and-beverage-service-sequence"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/sequence-service-restaurant-hotel"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/food-and-beverage-service-sequence"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Sequence Service Restaurant Hotel FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/sequence-service-restaurant-hotel</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/sequence-service-restaurant-hotel"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/food-and-beverage-service-sequence"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/food-and-beverage-service-sequence"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Hotel Room Service Checklist EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/hotel-room-service-checklist</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/hotel-room-service-checklist"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/checklist-room-service-hotel"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/hotel-room-service-checklist"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Checklist Room Service Hotel FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/checklist-room-service-hotel</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/checklist-room-service-hotel"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/hotel-room-service-checklist"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/hotel-room-service-checklist"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Notion Templates EN -->
   <url>
     <loc>https://www.luxops.fr/en/notion-templates</loc>
