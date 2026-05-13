@@ -16,7 +16,7 @@ import TrackedLink from '@/components/TrackedLink'
 import { breadcrumbSchema, faqSchema, localizedPath } from '@/lib/seo'
 
 type Locale = 'en' | 'fr'
-type ResourceKind = 'sequence' | 'roomService'
+type ResourceKind = 'sequence' | 'roomService' | 'restaurantOpening'
 
 type Faq = {
   question: string
@@ -581,9 +581,256 @@ const ROOM_SERVICE_FR: ResourceContent = {
     'Commencez avec la checklist du Starter Pack F&B, puis utilisez le Playbook complet lorsque vous avez besoin de toute la procédure room service et du contrôle qualité.',
 }
 
+const RESTAURANT_OPENING_EN: ResourceContent = {
+  slug: '/restaurant-opening-checklist',
+  alternateSlug: '/checklist-ouverture-restaurant',
+  title: 'Restaurant Opening Checklist',
+  metaTitle: 'Restaurant Opening Checklist | LuxOps',
+  metaDescription:
+    'A restaurant opening checklist adapted from LuxOps F&B tools: personal readiness, room setup, table inspection, terrace checks, POS, briefing and final inspection.',
+  keywords:
+    'restaurant opening checklist, restaurant pre service checklist, restaurant setup checklist, F&B opening checklist, coffee shop opening checklist',
+  eyebrow: 'Restaurant opening checklist',
+  h1: 'Restaurant Opening Checklist',
+  subtitle:
+    'A practical pre-service checklist for preparing the dining room, terrace, team, POS and final inspection before opening.',
+  sourceNote:
+    'This page summarizes one operational method used inside the LuxOps F&B products. The complete checklists and editable tools are available in the paid versions.',
+  extractedFrom:
+    'Based on the restaurant opening checklist, table inspection checklist, service briefing and mise en place standards from LuxOps F&B resources.',
+  primaryCta: 'View F&B Starter Pack',
+  secondaryCta: 'View Full F&B Playbook',
+  freeChapterCta: 'Download a Free Chapter',
+  sectionLabel: 'Pre-service flow',
+  sectionTitle: 'What to check before opening the restaurant',
+  sectionIntro:
+    'A strong restaurant opening sequence prevents service problems before the guest arrives. The checklist should move from personal readiness to room setup, table inspection, briefing and final positioning.',
+  blocks: [
+    {
+      title: '1. Personal readiness, T-90',
+      intro: 'The team should be ready before the room is inspected.',
+      items: [
+        'Uniform clean, pressed and complete with all required accessories',
+        'Hair neat, nails clean, discreet fragrance and fresh breath',
+        'Hands clean before handling menus, glassware, silverware or napkins',
+        'Service tools ready: wine key, pen, crumber and notepad',
+        'Menu, specials, unavailable items, VIP arrivals and allergies reviewed',
+      ],
+    },
+    {
+      title: '2. Dining room and terrace, T-60',
+      intro: 'The room should feel ready before the team begins detailed table checks.',
+      items: [
+        'Tables set according to the property standard',
+        'Chairs aligned, clean and stable',
+        'Floor clean and dry, lighting appropriate and music set',
+        'Temperature comfortable and no unwanted odor present',
+        'Terrace checked if applicable: shade, wind, candles, heaters and weather plan',
+      ],
+    },
+    {
+      title: '3. Table setup and polishing',
+      intro: 'Table quality is checked before service, not corrected after the first guest sits down.',
+      items: [
+        'Show plate centered, 2.5 cm from the edge of the table',
+        'Fork positioned 2.5 cm from the plate and knife blade facing the plate',
+        'Glasses placed above the knife tip and checked for chips',
+        'Silverware polished, aligned and handled away from the contact surface',
+        'Minimum 60 cm between covers when the setup allows it',
+      ],
+    },
+    {
+      title: '4. Reservations and station stock',
+      intro: 'Operational pressure is easier to manage when reservations and stations are clear before briefing.',
+      items: [
+        'Floor plan printed or visible to the team',
+        'Reservations checked in the system with special requests noted',
+        'VIP tables identified and prepared',
+        'Server sections assigned before doors open',
+        'Menus, condiments, service napkins, bar tools and backup stock ready',
+      ],
+    },
+    {
+      title: '5. POS, briefing and final inspection',
+      intro: 'The last checks align the team before the host welcomes the first guest.',
+      items: [
+        'POS tested, printers working and payment terminals ready',
+        'Cash float checked and signed where applicable',
+        'Briefing held on time, with covers, VIPs, menu changes, wine focus and sections',
+        'Final inspection completed at T-20: tables, stations, uniforms, ambiance and positions',
+        'Host in position at the entrance before opening',
+      ],
+    },
+  ],
+  extractTitle: 'The opening sequence protects the service',
+  extractText:
+    'Most restaurant issues begin before the guest arrives: incomplete mise en place, unclear sections, missing tools, unavailable items not briefed or tables inspected too late.',
+  extractItems: [
+    'T-90: team readiness and knowledge of the day',
+    'T-60: dining room, terrace and stations ready',
+    'T-40: briefing with reservations, VIPs and menu changes',
+    'T-20: final inspection before the doors open',
+  ],
+  productTitle: 'F&B Starter Pack',
+  productText:
+    'Includes restaurant opening checklist, closing checklist, daily service checklist, briefing template, table inspection checklist, service sequence SOP and recovery scripts.',
+  playbookTitle: 'Full F&B Playbook',
+  playbookText:
+    'The complete reference for restaurant service, breakfast, bar, wine, room service, guest interaction, mise en place, team management and quality standards.',
+  relatedTitle: 'Need the full service sequence?',
+  relatedText:
+    'Use the 21-step service sequence to connect the opening checklist with the actual guest journey.',
+  relatedHref: '/food-and-beverage-service-sequence',
+  relatedCta: 'View F&B Service Sequence',
+  faqs: [
+    {
+      question: 'What should a restaurant opening checklist include?',
+      answer:
+        'It should include team readiness, menu knowledge, unavailable items, room setup, terrace checks, table setup, glassware and silverware polishing, reservation review, VIP notes, station stock, POS checks, briefing and final inspection.',
+    },
+    {
+      question: 'When should a restaurant opening checklist start?',
+      answer:
+        'The LuxOps F&B format starts around 90 minutes before opening, then moves through room setup at T-60, briefing at T-40 and final inspection around T-20.',
+    },
+    {
+      question: 'Is this checklist only for large F&B teams?',
+      answer:
+        'It is built from LuxOps F&B standards, and the structure works for resorts, independent restaurants, coffee shops and any venue that needs a clearer pre-service routine.',
+    },
+  ],
+  finalTitle: 'Prepare the restaurant before pressure starts',
+  finalText:
+    'Use the starter pack for ready-to-use restaurant opening tools and the full playbook when you need the complete F&B operating reference.',
+}
+
+const RESTAURANT_OPENING_FR: ResourceContent = {
+  slug: '/checklist-ouverture-restaurant',
+  alternateSlug: '/restaurant-opening-checklist',
+  title: 'Checklist ouverture restaurant',
+  metaTitle: 'Checklist ouverture restaurant | LuxOps',
+  metaDescription:
+    'Checklist ouverture restaurant adaptée des outils F&B LuxOps : préparation équipe, salle, terrasse, dressage, polissage, POS, briefing et inspection finale.',
+  keywords:
+    'checklist ouverture restaurant, checklist avant service restaurant, checklist mise en place restaurant, ouverture restaurant F&B, checklist coffee shop',
+  eyebrow: 'Checklist ouverture restaurant',
+  h1: 'Checklist d’ouverture restaurant',
+  subtitle:
+    'Une checklist pré-service pour préparer la salle, la terrasse, l’équipe, le POS et le dernier tour de contrôle avant l’arrivée des premiers clients.',
+  sourceNote:
+    'Cette page reprend une méthode opérationnelle utilisée dans les produits F&B LuxOps. Les checklists complètes et les supports modifiables sont disponibles dans les versions payantes.',
+  extractedFrom:
+    'Adapté de la checklist d’ouverture restaurant, de la checklist inspection de table, du briefing pré-service et des standards de mise en place des ressources F&B LuxOps.',
+  primaryCta: 'Voir le Starter Pack F&B',
+  secondaryCta: 'Voir le Playbook F&B complet',
+  freeChapterCta: 'Télécharger un chapitre gratuit',
+  sectionLabel: 'Flux pré-service',
+  sectionTitle: 'Ce qu’il faut contrôler avant d’ouvrir le restaurant',
+  sectionIntro:
+    'Une ouverture bien tenue évite beaucoup de corrections pendant le service. L’idée n’est pas de cocher mécaniquement une liste, mais de vérifier que l’équipe, la salle, les stations et les informations du jour sont alignées avant que le rythme commence.',
+  blocks: [
+    {
+      title: '1. Préparation personnelle, T-90',
+      intro: 'Avant de regarder la salle, il faut d’abord vérifier que l’équipe est prête à entrer en service.',
+      items: [
+        'Uniforme propre, repassé, complet avec tous les accessoires nécessaires',
+        'Cheveux soignés, ongles propres, parfum discret et haleine fraîche',
+        'Mains propres avant de manipuler cartes, verrerie, argenterie ou serviettes',
+        'Outils de service prêts : limonadier, stylo, ramasse-miettes et bloc-notes',
+        'Carte, suggestions, articles indisponibles, réservations importantes et allergies revus avec l’équipe',
+      ],
+    },
+    {
+      title: '2. Salle et terrasse, T-60',
+      intro: 'À ce stade, la salle doit déjà donner une impression de maîtrise, avant même les contrôles de détail.',
+      items: [
+        'Tables dressées selon le standard de l’établissement',
+        'Chaises alignées, propres et stables',
+        'Sol propre et sec, éclairage approprié et musique réglée',
+        'Température confortable et absence d’odeur parasite',
+        'Terrasse contrôlée si applicable : ombre, vent, bougies, chauffages, météo et solution de repli',
+      ],
+    },
+    {
+      title: '3. Dressage et polissage',
+      intro: 'Le dressage se corrige avant l’ouverture. Une fois le client installé, il est déjà trop tard pour reprendre les bases sans perdre en fluidité.',
+      items: [
+        'Assiette de présentation centrée, à 2,5 cm du bord de table',
+        'Fourchette positionnée à 2,5 cm de l’assiette et couteau avec lame vers l’assiette',
+        'Verres placés au-dessus de la pointe du couteau et vérifiés sans éclat',
+        'Argenterie polie, alignée et manipulée sans toucher la partie de consommation',
+        '60 cm minimum entre deux couverts lorsque la configuration le permet',
+      ],
+    },
+    {
+      title: '4. Réservations et stock des stations',
+      intro: 'Le service démarre plus sereinement lorsque le plan, les rangs et les stations sont clairs avant le briefing.',
+      items: [
+        'Plan de salle imprimé ou visible par l’équipe',
+        'Réservations vérifiées dans le système avec demandes spéciales notées',
+        'Tables importantes identifiées et préparées',
+        'Rangs attribués aux serveurs avant l’ouverture',
+        'Cartes, condiments, serviettes de service, outils bar, consommables et stock de secours prêts',
+      ],
+    },
+    {
+      title: '5. POS, briefing et inspection finale',
+      intro: 'Les derniers contrôles servent à aligner tout le monde avant que l’hôte, l’hôtesse ou le responsable accueille le premier client.',
+      items: [
+        'POS testé, imprimantes fonctionnelles et terminaux de paiement prêts',
+        'Fonds de caisse vérifié et signé si applicable',
+        'Briefing tenu à l’heure, avec couverts attendus, réservations sensibles, changements de carte, focus vin et rangs',
+        'Inspection finale réalisée à T-20 : tables, stations, uniformes, ambiance et positions',
+        'Accueil en position avant ouverture, avec le plan de salle et les informations du jour',
+      ],
+    },
+  ],
+  extractTitle: 'L’ouverture protège le service',
+  extractText:
+    'La plupart des difficultés en salle commencent avant l’arrivée du client : mise en place incomplète, rangs mal définis, outils manquants, articles indisponibles non annoncés ou tables contrôlées trop tard.',
+  extractItems: [
+    'T-90 : équipe prête et connaissance du jour validée',
+    'T-60 : salle, terrasse et stations en place',
+    'T-40 : briefing avec réservations, VIP et changements de carte',
+    'T-20 : inspection finale avant ouverture',
+  ],
+  productTitle: 'Starter Pack F&B',
+  productText:
+    'Inclut checklist d’ouverture restaurant, checklist de fermeture, checklist service quotidien, template de briefing, checklist inspection de table, SOP séquence de service et scripts recovery.',
+  playbookTitle: 'Playbook F&B complet',
+  playbookText:
+    'La référence complète pour service restaurant, petit-déjeuner, bar, vin, room service, interaction client, mise en place, management d’équipe et standards qualité.',
+  relatedTitle: 'Besoin de la séquence de service complète ?',
+  relatedText:
+    'Utilisez la séquence de service en 21 étapes pour relier l’ouverture du restaurant au parcours client réel.',
+  relatedHref: '/sequence-service-restaurant-hotel',
+  relatedCta: 'Voir la séquence de service F&B',
+  faqs: [
+    {
+      question: 'Que doit contenir une checklist d’ouverture restaurant ?',
+      answer:
+        'Elle doit couvrir la préparation de l’équipe, la connaissance de la carte, les articles indisponibles, la salle, la terrasse, le dressage de table, le polissage, les réservations, les points sensibles du jour, le stock des stations, le POS, le briefing et l’inspection finale.',
+    },
+    {
+      question: 'Quand commencer la checklist d’ouverture restaurant ?',
+      answer:
+        'Le format F&B LuxOps démarre environ 90 minutes avant l’ouverture, puis avance vers la préparation salle à T-60, le briefing à T-40 et l’inspection finale autour de T-20.',
+    },
+    {
+      question: 'Cette checklist est-elle réservée aux grandes équipes F&B ?',
+      answer:
+        'Non. Elle part des standards F&B LuxOps, mais la structure fonctionne aussi pour un resort, un restaurant indépendant, un coffee shop ou tout point de vente qui veut clarifier sa routine pré-service.',
+    },
+  ],
+  finalTitle: 'Préparer le restaurant avant que la pression commence',
+  finalText:
+    'Utilisez le Starter Pack pour des outils d’ouverture prêts à l’emploi, puis le Playbook complet lorsque vous avez besoin de toute la référence opérationnelle F&B.',
+}
+
 const CONTENT: Record<ResourceKind, Record<Locale, ResourceContent>> = {
   sequence: { en: SEQUENCE_EN, fr: SEQUENCE_FR },
   roomService: { en: ROOM_SERVICE_EN, fr: ROOM_SERVICE_FR },
+  restaurantOpening: { en: RESTAURANT_OPENING_EN, fr: RESTAURANT_OPENING_FR },
 }
 
 export function getFbSeoMetadata(kind: ResourceKind, locale: Locale): Metadata {

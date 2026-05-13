@@ -214,6 +214,13 @@ const FAQS_FR: FaqItem[] = [
 
 const ARTICLE_LINKS = [
   {
+    href: '/restaurant-opening-checklist',
+    titleEn: 'Restaurant Opening Checklist',
+    titleFr: 'Checklist ouverture restaurant',
+    bodyEn: 'Pre-service controls for room setup, table inspection, briefing and final checks.',
+    bodyFr: 'Contrôles pré-service pour salle, dressage, briefing et inspection finale.',
+  },
+  {
     href: '/food-and-beverage-service-sequence',
     titleEn: 'Food and Beverage Service Sequence',
     titleFr: 'Séquence de service restaurant hôtel',
@@ -252,6 +259,7 @@ const ARTICLE_LINKS = [
 
 function localizeHref(locale: string, href: string) {
   const localizedSlugs: Record<string, string> = {
+    '/restaurant-opening-checklist': locale === 'fr' ? '/checklist-ouverture-restaurant' : '/restaurant-opening-checklist',
     '/food-and-beverage-service-sequence': locale === 'fr' ? '/sequence-service-restaurant-hotel' : '/food-and-beverage-service-sequence',
     '/hotel-room-service-checklist': locale === 'fr' ? '/checklist-room-service-hotel' : '/hotel-room-service-checklist',
   }

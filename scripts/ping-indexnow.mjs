@@ -33,6 +33,8 @@ const URLS = [
   `${SITE_URL}/fr/sequence-service-restaurant-hotel`,
   `${SITE_URL}/en/hotel-room-service-checklist`,
   `${SITE_URL}/fr/checklist-room-service-hotel`,
+  `${SITE_URL}/en/restaurant-opening-checklist`,
+  `${SITE_URL}/fr/checklist-ouverture-restaurant`,
   `${SITE_URL}/en/blog/housekeeping-room-inspection`,
   `${SITE_URL}/fr/blog/housekeeping-room-inspection`,
   `${SITE_URL}/en/blog/hotel-fb-restaurant-procedures`,
