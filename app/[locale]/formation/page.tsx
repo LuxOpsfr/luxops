@@ -1,23 +1,32 @@
 import type { Metadata } from 'next'
-import { useTranslations } from 'next-intl'
 import Link from 'next/link'
-import { ArrowRight, Clock, Users, Check, BookOpen, Users2, Award, Library } from 'lucide-react'
+import {
+  ArrowRight,
+  BriefcaseBusiness,
+  CheckCircle2,
+  ClipboardCheck,
+  GraduationCap,
+  Hotel,
+  Users2,
+} from 'lucide-react'
+import TrainingQuoteForm from '@/components/TrainingQuoteForm'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
   const isEn = locale === 'en'
+
   return {
     title: isEn
-      ? 'Hotel Staff Training | On-Property SOP & Service Standards | LuxOps'
-      : 'Formation du Personnel Hôtelier | Standards de Service et SOPs sur Site | LuxOps',
+      ? 'Service Standards Training | LuxOps'
+      : 'Formation standards de service | LuxOps',
     description: isEn
-      ? 'On-site hotel staff training covering SOPs, service standards, guest journey and team leadership. Half-day (€997) or full-day (€1,497) sessions for up to 15 participants. Built around your property, your team, and your operational standards.'
-      : "Formation sur site pour le personnel hôtelier : procédures, standards de service, parcours client et leadership d'équipe. Sessions demi-journée (997€) ou journée complète (1 497€) jusqu'à 15 participants. Adaptée à votre établissement et à vos standards.",
+      ? 'On-property service standards training for hotel teams, pre-openings, seasonal reopenings, process rollout and department leadership.'
+      : 'Formation sur site aux standards de service pour équipes hôtelières, pré-ouverture, réouverture saisonnière, mise en place des process et leadership des chefs de service.',
     alternates: {
       canonical: isEn ? 'https://www.luxops.fr/en/training' : 'https://www.luxops.fr/fr/formation',
       languages: {
-        'en': 'https://www.luxops.fr/en/training',
-        'fr': 'https://www.luxops.fr/fr/formation',
+        en: 'https://www.luxops.fr/en/training',
+        fr: 'https://www.luxops.fr/fr/formation',
         'x-default': 'https://www.luxops.fr/en/training',
       },
     },
@@ -30,532 +39,382 @@ export default async function FormationPage({ params }: { params: Promise<{ loca
 }
 
 export function FormationContent({ locale }: { locale: string }) {
-  const t = useTranslations('training_page')
   const isEn = locale === 'en'
 
-  const topics = [t('t1'), t('t2'), t('t3'), t('t4'), t('t5'), t('t6')]
-
-  const modules = isEn ? [
-    {
-      icon: <BookOpen size={28} style={{ color: '#003d9b' }} />,
-      title: 'Procedures & SOP Rollout',
-      desc: "The most common gap in operational training is not knowledge; it is application. This session takes the team through the actual procedures: how they are structured, why each step matters, and how to apply them from the first shift onward. Not a presentation. A working session.",
-      tags: ['SOPs', 'Procedures', 'Checklists'],
-      wide: true,
-    },
-    {
-      icon: null,
-      stat: '1 in 3',
-      statLabel: "guests won't return after one bad experience",
-      navy: true,
-      wide: false,
-    },
-    {
-      icon: <Users2 size={24} style={{ color: '#003d9b' }} />,
-      title: 'Service Standards',
-      desc: 'How to greet, respond, recover, and close interactions at every guest touchpoint. Service sequences and communication standards built around your department and team context. Teams leave knowing what is expected and why, not just what the script says.',
-      tags: ['Guest contact', 'Service sequences', 'Communication'],
-      wide: false,
-    },
-    {
-      icon: <Award size={24} style={{ color: '#003d9b' }} />,
-      title: 'Supervision & Team Leadership',
-      desc: "For heads of department and supervisors: how to run effective briefings, monitor standard delivery across shifts, identify gaps early, and give feedback that raises performance rather than creating friction.",
-      tags: ['Briefings', 'Quality monitoring', 'Post-audit'],
-      wide: false,
-    },
-  ] : [
-    {
-      icon: <BookOpen size={28} style={{ color: '#003d9b' }} />,
-      title: "Déploiement des Procédures et SOPs",
-      desc: "Le principal écart dans la formation opérationnelle n'est pas le manque de connaissance, c'est le manque d'application. Cette session fait parcourir à l'équipe les procédures en détail : leur structure, la logique de chaque étape, et la façon de les appliquer dès le premier service. Pas une présentation. Une session de travail.",
-      tags: ['SOPs', 'Procédures', 'Checklists'],
-      wide: true,
-    },
-    {
-      icon: null,
-      stat: '1 sur 3',
-      statLabel: 'clients ne revient pas après une mauvaise expérience',
-      navy: true,
-      wide: false,
-    },
-    {
-      icon: <Users2 size={24} style={{ color: '#003d9b' }} />,
-      title: 'Standards de Service',
-      desc: "Comment accueillir, répondre, gérer une situation et conclure chaque interaction client. Des séquences de service et des standards de communication construits autour du contexte de votre département. L'équipe repart avec une compréhension claire de ce qui est attendu, et pourquoi, pas seulement de ce que dit le script.",
-      tags: ['Contact client', 'Séquences de service', 'Communication'],
-      wide: false,
-    },
-    {
-      icon: <Award size={24} style={{ color: '#003d9b' }} />,
-      title: 'Encadrement et Leadership',
-      desc: "Pour les chefs de service et superviseurs : animer des briefings efficaces, suivre l'application des standards sur chaque service, identifier les écarts en amont, et formuler des retours qui font progresser l'équipe sans créer de tensions.",
-      tags: ['Briefings', 'Suivi qualité', 'Post-audit'],
-      wide: false,
-    },
-  ]
+  const page = isEn ? englishContent : frenchContent
 
   return (
     <div className="pt-16 bg-white">
-
-      {/* Hero */}
       <section
-        className="relative py-24 px-6 overflow-hidden border-b"
+        className="px-6 py-20 lg:py-24 border-b border-[#e8edf5]"
         style={{
           backgroundImage: 'radial-gradient(#c3c6d6 0.5px, transparent 0.5px)',
           backgroundSize: '24px 24px',
-          borderColor: 'rgba(195,198,214,0.2)',
         }}
       >
-        <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row items-end gap-10">
-          {/* Left */}
-          <div className="flex-1">
-            <div
-              className="inline-flex items-center gap-2 px-3 py-1 text-[#003d9b] font-bold text-[10px] uppercase tracking-widest mb-8"
-              style={{ backgroundColor: '#eef4ff', borderRadius: '0.125rem' }}
-            >
-              <span className="w-2 h-2 bg-[#003d9b] rounded-full" />
-              {isEn ? 'On-Property Training' : 'Formation sur Site'}
+        <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-12 items-center">
+          <div>
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#eef4ff] text-[#003d9b] font-bold text-[10px] uppercase tracking-widest mb-7">
+              <span className="w-2 h-2 rounded-full bg-[#003d9b]" />
+              {page.badge}
             </div>
-            <h1 className="font-display text-5xl md:text-7xl font-extrabold tracking-tighter leading-none text-[#0a1d2e] mb-6">
-              {t('title')}
+            <h1 className="font-display text-4xl md:text-6xl font-extrabold tracking-tight leading-[0.98] text-[#0a1d2e] mb-6">
+              {page.title}
             </h1>
-            <p className="text-xl text-[#4f6074] max-w-2xl leading-relaxed mb-4">{t('subtitle')}</p>
-            <p className="text-sm text-[#737685] max-w-xl leading-relaxed">{t('training_context')}</p>
-          </div>
-
-          {/* Right - stat card */}
-          <div className="lg:w-72 flex-shrink-0">
-            <div
-              className="bg-white p-8"
-              style={{
-                borderRadius: '0.125rem',
-                boxShadow: '0 20px 60px rgba(10,29,46,0.10)',
-                border: '1px solid rgba(195,198,214,0.2)',
-              }}
-            >
-              <div className="font-display text-5xl font-extrabold text-[#003d9b] mb-1">15</div>
-              <div className="text-xs font-bold uppercase tracking-widest text-[#737685] mb-6">
-                {isEn ? 'Max participants per session' : 'Participants max par session'}
-              </div>
-              <div className="space-y-3">
-                {[
-                  { icon: <Clock size={13} />, label: isEn ? '4h or 8h formats' : 'Formats 4h ou 8h' },
-                  { icon: <Users size={13} />, label: isEn ? 'Delivered on your property' : 'Menée dans votre établissement' },
-                  { icon: <Library size={13} />, label: isEn ? 'Playbooks included per participant' : 'Playbooks remis à chaque participant' },
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-2 text-xs text-[#4f6074]">
-                    <span style={{ color: '#003d9b' }}>{item.icon}</span>
-                    {item.label}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Bento - what we cover */}
-      <section className="py-24 px-6" style={{ backgroundColor: '#f8f9ff' }}>
-        <div className="max-w-screen-xl mx-auto">
-          <div className="max-w-2xl mb-16">
-            <h2 className="font-display text-3xl font-extrabold text-[#0a1d2e] tracking-tight mb-4">
-              {isEn ? 'What the training covers' : 'Ce que la formation couvre'}
-            </h2>
-            <p className="text-[#4f6074] leading-relaxed">
-              {isEn
-                ? "This is not just about presenting procedures. It is about making sure teams understand them, can apply them in real service conditions, and carry that into their daily work."
-                : "Il ne s'agit pas seulement de présenter des procédures. Il s'agit de s'assurer que les équipes les comprennent, peuvent les appliquer dans des conditions de service réelles, et les intègrent dans leur fonctionnement quotidien."}
+            <p className="text-lg md:text-xl text-[#4f6074] leading-relaxed max-w-2xl mb-6">
+              {page.subtitle}
             </p>
+            <p className="text-sm text-[#737685] leading-relaxed max-w-2xl mb-8">
+              {page.context}
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a
+                href="#training-quote"
+                className="inline-flex items-center justify-center gap-2 px-6 py-4 bg-[#003d9b] text-white font-bold text-sm hover:bg-[#0a1d2e] transition-colors"
+              >
+                {page.primaryCta}
+                <ArrowRight size={16} />
+              </a>
+              <a
+                href="#training-situations"
+                className="inline-flex items-center justify-center gap-2 px-6 py-4 bg-white text-[#0a1d2e] border border-[#d8deea] font-bold text-sm hover:border-[#003d9b] transition-colors"
+              >
+                {page.secondaryCta}
+              </a>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
-
-            {/* Wide card - SOP Rollout */}
-            <div
-              className="md:col-span-8 bg-white p-10 flex flex-col justify-between"
-              style={{ borderRadius: '0.125rem', borderLeft: '4px solid #003d9b', minHeight: '320px' }}
-            >
+          <div id="training-quote" className="bg-white border border-[#d8deea] shadow-[0_24px_70px_rgba(10,29,46,0.10)] p-8 lg:p-10 scroll-mt-28">
+            <div className="flex items-start gap-4 mb-8">
+              <div className="w-12 h-12 bg-[#eef4ff] flex items-center justify-center flex-shrink-0">
+                <GraduationCap size={24} className="text-[#003d9b]" />
+              </div>
               <div>
-                <div
-                  className="w-12 h-12 flex items-center justify-center mb-8"
-                  style={{ backgroundColor: '#eef4ff', borderRadius: '0.125rem' }}
-                >
-                  {modules[0].icon}
-                </div>
-                <h3 className="font-display font-bold text-[#0a1d2e] text-2xl mb-4">{modules[0].title}</h3>
-                <p className="text-[#4f6074] leading-relaxed max-w-xl">{modules[0].desc}</p>
-              </div>
-              <div className="flex gap-2 mt-8 flex-wrap">
-                {modules[0].tags?.map((tag, i) => (
-                  <span
-                    key={i}
-                    className="px-3 py-1 text-xs font-bold text-[#003d9b] uppercase tracking-wider"
-                    style={{ backgroundColor: '#eef4ff', borderRadius: '0.125rem' }}
-                  >
-                    {tag}
-                  </span>
-                ))}
+                <h2 className="font-display text-2xl font-extrabold text-[#0a1d2e] tracking-tight mb-2">
+                  {page.formTitle}
+                </h2>
+                <p className="text-sm text-[#4f6074] leading-relaxed">{page.formIntro}</p>
               </div>
             </div>
-
-            {/* Navy stat card */}
-            <div
-              className="md:col-span-4 p-10 flex flex-col items-center justify-center text-center text-white"
-              style={{ backgroundColor: '#003d9b', borderRadius: '0.125rem' }}
-            >
-              <div className="font-display text-6xl font-extrabold text-white mb-2">{modules[1].stat}</div>
-              <div className="text-xs font-bold uppercase tracking-widest mb-6" style={{ color: 'rgba(255,255,255,0.6)' }}>
-                {modules[1].statLabel}
-              </div>
-              <div className="h-px w-12 mb-6" style={{ backgroundColor: 'rgba(255,255,255,0.2)' }} />
-              <p className="text-sm" style={{ color: 'rgba(255,255,255,0.8)', lineHeight: '1.6' }}>
-                {isEn
-                  ? 'A manual on a shelf changes nothing. What changes things is a team that understands why the procedure exists.'
-                  : "Un manuel sur une étagère ne change rien. Ce qui change les choses, c'est une équipe qui comprend pourquoi la procédure existe."}
-              </p>
-            </div>
-
-            {/* Service Standards */}
-            <div
-              className="md:col-span-6 p-10 bg-white flex flex-col justify-between"
-              style={{ borderRadius: '0.125rem' }}
-            >
-              <div>
-                <div
-                  className="w-10 h-10 flex items-center justify-center mb-8"
-                  style={{ backgroundColor: '#eef4ff', borderRadius: '0.125rem' }}
-                >
-                  {modules[2].icon}
-                </div>
-                <h3 className="font-display font-bold text-[#0a1d2e] text-xl mb-3">{modules[2].title}</h3>
-                <p className="text-[#4f6074] text-sm leading-relaxed">{modules[2].desc}</p>
-              </div>
-              <div className="flex gap-2 mt-6 flex-wrap">
-                {modules[2].tags?.map((tag, i) => (
-                  <span
-                    key={i}
-                    className="px-3 py-1 text-xs font-bold text-[#737685] uppercase tracking-wider"
-                    style={{ backgroundColor: '#f8f9ff', borderRadius: '0.125rem' }}
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Supervision & Leadership */}
-            <div
-              className="md:col-span-6 p-10 flex flex-col justify-between"
-              style={{ backgroundColor: '#dae9ff', borderRadius: '0.125rem' }}
-            >
-              <div>
-                <div
-                  className="w-10 h-10 flex items-center justify-center mb-8 bg-white"
-                  style={{ borderRadius: '0.125rem' }}
-                >
-                  {modules[3].icon}
-                </div>
-                <h3 className="font-display font-bold text-[#0a1d2e] text-xl mb-3">{modules[3].title}</h3>
-                <p className="text-[#4f6074] text-sm leading-relaxed">{modules[3].desc}</p>
-              </div>
-              <div className="grid grid-cols-2 gap-3 mt-6">
-                {modules[3].tags?.slice(0, 2).map((tag, i) => (
-                  <div
-                    key={i}
-                    className="p-3"
-                    style={{ backgroundColor: 'rgba(255,255,255,0.6)', borderRadius: '0.125rem' }}
-                  >
-                    <div className="text-xs font-bold text-[#003d9b]">{tag}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
+            <TrainingQuoteForm locale={locale} />
           </div>
         </div>
       </section>
 
-      {/* Formats */}
-      <section className="py-24 px-6 bg-white">
+      <section id="training-situations" className="px-6 py-20 bg-white">
         <div className="max-w-screen-xl mx-auto">
-          <h2 className="font-display text-3xl font-extrabold text-[#0a1d2e] tracking-tight mb-12">
-            {isEn ? 'Training Formats' : 'Formats de Formation'}
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-20">
-
-            {/* Half day */}
-            <div className="p-10 flex flex-col justify-between" style={{ backgroundColor: '#f8f9ff', borderRadius: '0.125rem' }}>
-              <div>
-                <div className="flex items-center gap-2 mb-6">
-                  <Clock size={14} style={{ color: '#003d9b' }} />
-                  <span className="text-xs font-bold uppercase tracking-widest text-[#003d9b]">{t('duration_half')}</span>
-                </div>
-                <h3 className="font-display text-2xl font-extrabold text-[#0a1d2e] mb-3">{t('half_day')}</h3>
-                <div className="font-display text-4xl font-extrabold text-[#003d9b] mb-4">{t('half_price')}</div>
-                <div className="flex items-center gap-2 text-sm text-[#4f6074] mb-6">
-                  <Users size={13} />
-                  {t('max_participants')}
-                </div>
-                <p className="text-sm text-[#4f6074] leading-relaxed">{t('half_desc')}</p>
-              </div>
-            </div>
-
-            {/* Full day */}
-            <div
-              className="p-10 flex flex-col justify-between text-white"
-              style={{ backgroundColor: '#003d9b', borderRadius: '0.125rem' }}
-            >
-              <div>
-                <div className="flex items-center gap-2 mb-6">
-                  <Clock size={14} style={{ color: 'rgba(255,255,255,0.7)' }} />
-                  <span
-                    className="text-xs font-bold uppercase tracking-widest"
-                    style={{ color: 'rgba(255,255,255,0.7)' }}
-                  >
-                    {t('duration_full')}
-                  </span>
-                </div>
-                <h3 className="font-display text-2xl font-extrabold text-white mb-3">{t('full_day')}</h3>
-                <div className="font-display text-4xl font-extrabold text-white mb-4">{t('full_price')}</div>
-                <div className="flex items-center gap-2 text-sm mb-6" style={{ color: 'rgba(255,255,255,0.7)' }}>
-                  <Users size={13} />
-                  {t('max_participants')}
-                </div>
-                <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.75)' }}>{t('full_desc')}</p>
-              </div>
-            </div>
-
+          <div className="max-w-2xl mb-12">
+            <p className="text-xs font-bold uppercase tracking-widest text-[#003d9b] mb-3">
+              {page.situationsLabel}
+            </p>
+            <h2 className="font-display text-3xl md:text-4xl font-extrabold text-[#0a1d2e] tracking-tight mb-4">
+              {page.situationsTitle}
+            </h2>
+            <p className="text-[#4f6074] leading-relaxed">{page.situationsIntro}</p>
           </div>
 
-          {/* Playbooks inclus */}
-          <div
-            className="flex flex-col lg:flex-row items-center gap-8 p-8 mb-20"
-            style={{ backgroundColor: '#eef4ff', borderRadius: '0.125rem', borderLeft: '4px solid #003d9b' }}
-          >
-            <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-white" style={{ borderRadius: '0.125rem' }}>
-              <Library size={24} style={{ color: '#003d9b' }} />
-            </div>
-            <div className="flex-1">
-              <h3 className="font-display font-bold text-[#0a1d2e] text-lg mb-2">
-                {isEn ? 'Playbooks included in every session' : 'Les playbooks sont inclus dans chaque session'}
-              </h3>
-              <p className="text-sm text-[#4f6074] leading-relaxed">
-                {isEn
-                  ? 'Every participant leaves the session with the relevant playbook. The procedures covered during training become a reference they can consult, apply and pass on to their team independently.'
-                  : "Chaque participant repart avec le playbook du département concerné. Les procédures abordées pendant la formation deviennent une référence qu'ils peuvent consulter, appliquer et transmettre à leur équipe en toute autonomie."}
-              </p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {page.situations.map((item, index) => (
+              <div key={index} className="border border-[#e8edf5] bg-[#f8f9ff] p-6">
+                <div className="w-10 h-10 bg-white flex items-center justify-center mb-5">
+                  {item.icon}
+                </div>
+                <h3 className="font-display text-lg font-bold text-[#0a1d2e] mb-3">{item.title}</h3>
+                <p className="text-sm text-[#4f6074] leading-relaxed">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6 py-20 bg-[#f8f9ff]">
+        <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-14 items-start">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-widest text-[#003d9b] mb-3">
+              {page.methodLabel}
+            </p>
+            <h2 className="font-display text-3xl md:text-4xl font-extrabold text-[#0a1d2e] tracking-tight mb-5">
+              {page.methodTitle}
+            </h2>
+            <p className="text-[#4f6074] leading-relaxed mb-6">{page.methodIntro}</p>
             <Link
               href={`/${locale}/playbooks`}
-              className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3 text-[#003d9b] font-bold text-sm border border-[#003d9b] hover:bg-[#003d9b] hover:text-white transition-colors"
-              style={{ borderRadius: '0.125rem' }}
+              className="inline-flex items-center gap-2 text-[#003d9b] font-bold text-sm hover:text-[#0a1d2e] transition-colors"
             >
-              {isEn ? 'View playbooks' : 'Voir les playbooks'}
-              <ArrowRight size={14} />
+              {page.playbooksLink}
+              <ArrowRight size={15} />
             </Link>
           </div>
 
-          {/* Topics */}
-          <div className="max-w-2xl mb-8">
-            <h2 className="font-display text-3xl font-extrabold text-[#0a1d2e] tracking-tight mb-4">
-              {t('topics_title')}
-            </h2>
-            <p className="text-[#4f6074] leading-relaxed text-sm">{t('topics_intro')}</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-            {topics.map((topic, i) => (
-              <div
-                key={i}
-                className="flex items-center gap-3 p-4 text-sm text-[#0a1d2e] font-medium"
-                style={{ backgroundColor: '#eef4ff', borderRadius: '0.125rem' }}
-              >
-                <Check size={14} style={{ color: '#003d9b' }} className="flex-shrink-0" />
-                {topic}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {page.methodPoints.map((item, index) => (
+              <div key={index} className="bg-white border border-[#e8edf5] p-6">
+                <CheckCircle2 size={20} className="text-[#003d9b] mb-4" />
+                <h3 className="font-display font-bold text-[#0a1d2e] mb-2">{item.title}</h3>
+                <p className="text-sm text-[#4f6074] leading-relaxed">{item.text}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Closing statement - dark */}
-      <section className="py-24 px-6" style={{ backgroundColor: '#0a1d2e' }}>
-        <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center gap-16">
-
-          {/* Stats sidebar */}
-          <div className="w-full md:w-1/3 flex-shrink-0">
-            <div
-              className="p-8 flex flex-col gap-6"
-              style={{ backgroundColor: 'rgba(255,255,255,0.05)', borderRadius: '0.125rem' }}
-            >
-              {[
-                { v: '15', l: isEn ? 'Max per session' : 'Max par session' },
-                { v: isEn ? '½ or 1d' : '½ ou 1j', l: isEn ? 'Format' : 'Format' },
-                { v: '100%', l: isEn ? 'On your property' : 'Dans votre établissement' },
-              ].map((s, i) => (
-                <div key={i} className="flex items-center gap-4">
-                  <div className="font-display text-2xl font-extrabold text-[#003d9b]">{s.v}</div>
-                  <div
-                    className="text-xs font-bold uppercase tracking-widest"
-                    style={{ color: 'rgba(255,255,255,0.5)' }}
-                  >
-                    {s.l}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Closing statement */}
-          <div className="flex-1">
-            <h3 className="font-display text-2xl lg:text-3xl font-extrabold text-white leading-snug mb-8">
-              {isEn
-                ? "A training session without follow-through stays theoretical. The goal is not to present standards; it is to help teams understand them well enough to apply them consistently, without being reminded every shift."
-                : "Une session de formation sans mise en application reste théorique. L'objectif n'est pas de présenter des standards, c'est d'aider les équipes à les comprendre assez bien pour les appliquer de façon constante, sans qu'on ait besoin de le redemander à chaque service."}
-            </h3>
-            <div className="flex items-center gap-4">
-              <div className="w-10 h-px" style={{ backgroundColor: '#003d9b' }} />
-              <div>
-                <div className="text-sm font-bold text-white">LuxOps</div>
-                <div className="text-xs font-bold uppercase tracking-widest" style={{ color: 'rgba(255,255,255,0.4)' }}>
-                  {isEn ? 'On-Property Training' : 'Formation sur Site'}
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="py-24 px-6 bg-white">
+      <section className="px-6 py-20 bg-white">
         <div className="max-w-screen-xl mx-auto">
           <div className="max-w-2xl mb-12">
-            <p style={{ color: '#003d9b' }} className="text-xs font-bold uppercase tracking-widest mb-3">FAQ</p>
-            <h2 className="font-display text-3xl font-extrabold text-[#0a1d2e] tracking-tight">
-              {isEn ? 'Frequently asked questions' : 'Questions fréquentes'}
+            <p className="text-xs font-bold uppercase tracking-widest text-[#003d9b] mb-3">
+              {page.departmentsLabel}
+            </p>
+            <h2 className="font-display text-3xl md:text-4xl font-extrabold text-[#0a1d2e] tracking-tight mb-4">
+              {page.departmentsTitle}
             </h2>
+            <p className="text-[#4f6074] leading-relaxed">{page.departmentsIntro}</p>
           </div>
-          <div className="max-w-3xl space-y-px">
-            {(isEn ? [
-              {
-                q: 'What departments does the hotel staff training cover?',
-                a: 'The training is adapted to any hotel department: Front Office, Housekeeping, Food & Beverage, Spa & Wellness, and supervisory roles. Topics are always built around the team and operational context of your property.',
-              },
-              {
-                q: 'How many participants can attend a session?',
-                a: 'Each session accommodates a maximum of 15 participants. This ensures the training remains hands-on and adapted to the real context of your team, rather than a generic presentation.',
-              },
-              {
-                q: 'Are materials included in the training?',
-                a: 'Yes. Every participant receives the relevant LuxOps operational playbook at the end of the session. It is a reference document they can consult, apply, and pass on independently after the training.',
-              },
-              {
-                q: 'What is the difference between the half-day and full-day format?',
-                a: 'The half-day (4h, €997) is best for a targeted rollout or one specific operational priority. The full-day (8h, €1,497) covers broader alignment across multiple topics and departments, with more time for guided practice.',
-              },
-              {
-                q: 'Is the training available in French and English?',
-                a: 'Yes. Sessions are delivered in French or English depending on your team\'s language. All materials are available in both languages.',
-              },
-              {
-                q: 'Does the training cover luxury hotel standards specifically?',
-                a: 'Yes. LuxOps training is designed for 4- and 5-star hotel environments. The standards, vocabulary, and level of detail reflect the expectations of high-end hospitality, not generic customer service training.',
-              },
-            ] : [
-              {
-                q: 'Quels départements la formation hôtelière couvre-t-elle ?',
-                a: 'La formation est adaptée à tous les départements : Front Office, Housekeeping, Food & Beverage, Spa & Wellness et encadrement. Les thèmes sont toujours construits autour du contexte opérationnel et du niveau de votre équipe.',
-              },
-              {
-                q: "Combien de participants peuvent assister à une session ?",
-                a: "Chaque session accueille 15 participants maximum. Ce format garantit que la formation reste opérationnelle et adaptée à la réalité de votre équipe, et non une présentation générique.",
-              },
-              {
-                q: 'Les supports sont-ils inclus dans la formation ?',
-                a: "Oui. Chaque participant repart avec le playbook opérationnel LuxOps correspondant à son département. C'est un document de référence qu'il peut consulter, appliquer et transmettre en autonomie après la session.",
-              },
-              {
-                q: 'Quelle est la différence entre la demi-journée et la journée complète ?',
-                a: "La demi-journée (4h, 997€) est idéale pour un déploiement ciblé ou une priorité opérationnelle précise. La journée complète (8h, 1 497€) permet un alignement plus large sur plusieurs thèmes et départements, avec plus de temps pour la mise en pratique.",
-              },
-              {
-                q: 'La formation est-elle disponible en français et en anglais ?',
-                a: "Oui. Les sessions sont animées en français ou en anglais selon la langue de vos équipes. Tous les supports sont disponibles dans les deux langues.",
-              },
-              {
-                q: 'La formation est-elle spécifique aux hôtels de luxe ?',
-                a: "Oui. La formation LuxOps est conçue pour les établissements 4 et 5 étoiles. Les standards, le vocabulaire et le niveau de détail reflètent les exigences de l'hôtellerie haut de gamme, pas une formation générique au service client.",
-              },
-            ]).map((item, i) => (
-              <details
-                key={i}
-                className="group border border-[#e8edf5] bg-white"
-                style={{ borderRadius: '0.125rem' }}
-              >
-                <summary
-                  className="flex items-center justify-between px-6 py-5 cursor-pointer list-none font-display font-bold text-[#0a1d2e] text-sm"
-                  style={{ userSelect: 'none' }}
-                >
-                  {item.q}
-                  <span className="ml-4 flex-shrink-0 text-[#003d9b] font-bold text-lg leading-none group-open:rotate-45 transition-transform">+</span>
-                </summary>
-                <div className="px-6 pb-5 text-sm text-[#4f6074] leading-relaxed border-t border-[#e8edf5] pt-4">
-                  {item.a}
-                </div>
-              </details>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {page.departments.map((department) => (
+              <div key={department.title} className="border border-[#e8edf5] p-7">
+                <h3 className="font-display text-xl font-bold text-[#0a1d2e] mb-4">{department.title}</h3>
+                <ul className="space-y-3">
+                  {department.items.map((item) => (
+                    <li key={item} className="flex gap-3 text-sm text-[#4f6074] leading-relaxed">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#003d9b] mt-2 flex-shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* FAQ JSON-LD */}
+      <section className="px-6 py-20 bg-[#0a1d2e]">
+        <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-12 items-center">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-widest text-[#8fb7ff] mb-3">
+              {page.flexLabel}
+            </p>
+            <h2 className="font-display text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-5">
+              {page.flexTitle}
+            </h2>
+            <p className="text-[#cbd5e1] leading-relaxed">{page.flexText}</p>
+          </div>
+          <div className="bg-white/5 border border-white/10 p-7 lg:p-8">
+            <h3 className="font-display text-2xl font-extrabold text-white tracking-tight mb-4">
+              {page.contactTitle}
+            </h3>
+            <p className="text-sm text-[#cbd5e1] leading-relaxed mb-6">{page.contactText}</p>
+            <Link
+              href={`/${locale}/contact`}
+              className="inline-flex items-center justify-center gap-2 px-6 py-4 bg-white text-[#0a1d2e] font-bold text-sm hover:bg-[#eef4ff] transition-colors"
+            >
+              {page.contactCta}
+              <ArrowRight size={16} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
-            '@type': 'FAQPage',
-            mainEntity: (isEn ? [
-              { q: 'What departments does the hotel staff training cover?', a: 'The training is adapted to any hotel department: Front Office, Housekeeping, Food & Beverage, Spa & Wellness, and supervisory roles.' },
-              { q: 'How many participants can attend a session?', a: 'Each session accommodates a maximum of 15 participants.' },
-              { q: 'Are materials included in the training?', a: 'Yes. Every participant receives the relevant LuxOps operational playbook.' },
-              { q: 'What is the difference between the half-day and full-day format?', a: 'The half-day (4h, €997) is best for targeted rollout. The full-day (8h, €1,497) covers broader alignment across multiple topics.' },
-              { q: 'Is the training available in French and English?', a: 'Yes. Sessions are delivered in French or English depending on your team\'s language.' },
-              { q: 'Does the training cover luxury hotel standards specifically?', a: 'Yes. LuxOps training is designed for 4- and 5-star hotel environments.' },
-            ] : [
-              { q: 'Quels départements la formation hôtelière couvre-t-elle ?', a: 'La formation est adaptée à tous les départements : Front Office, Housekeeping, Food & Beverage, Spa & Wellness et encadrement.' },
-              { q: 'Combien de participants peuvent assister à une session ?', a: 'Chaque session accueille 15 participants maximum.' },
-              { q: 'Les supports sont-ils inclus dans la formation ?', a: 'Oui. Chaque participant repart avec le playbook opérationnel LuxOps correspondant.' },
-              { q: 'Quelle est la différence entre la demi-journée et la journée complète ?', a: 'La demi-journée (4h, 997€) est idéale pour un déploiement ciblé. La journée complète (8h, 1 497€) permet un alignement plus large.' },
-              { q: 'La formation est-elle disponible en français et en anglais ?', a: 'Oui. Les sessions sont animées en français ou en anglais selon la langue de vos équipes.' },
-              { q: 'La formation est-elle spécifique aux hôtels de luxe ?', a: 'Oui. La formation LuxOps est conçue pour les établissements 4 et 5 étoiles.' },
-            ]).map(item => ({
-              '@type': 'Question',
-              name: item.q,
-              acceptedAnswer: { '@type': 'Answer', text: item.a },
-            })),
+            '@type': 'Service',
+            name: page.schemaName,
+            provider: {
+              '@type': 'Organization',
+              name: 'LuxOps',
+              url: 'https://www.luxops.fr',
+            },
+            serviceType: page.schemaServiceType,
+            areaServed: ['France', 'Belgium', 'Switzerland', 'Luxembourg', 'Monaco'],
+            availableLanguage: ['French', 'English'],
           }),
         }}
       />
-
-      {/* CTA */}
-      <section className="py-20 px-6 bg-[#003d9b] text-center">
-        <div className="max-w-2xl mx-auto">
-          <h2 className="font-display text-4xl font-extrabold text-white tracking-tight mb-8">
-            {t('cta_title')}
-          </h2>
-          <Link
-            href={`/${locale}/contact`}
-            className="inline-flex items-center gap-2 px-10 py-4 bg-white text-[#003d9b] font-bold hover:bg-[#f8f9ff] transition-colors"
-            style={{ borderRadius: '0.125rem' }}
-          >
-            {t('cta')} <ArrowRight size={18} />
-          </Link>
-        </div>
-      </section>
-
     </div>
   )
+}
+
+const frenchContent = {
+  badge: 'Formation sur site',
+  title: 'Formation standards de service',
+  subtitle:
+    'Des sessions terrain pour aider vos collaborateurs à comprendre, appliquer et maintenir des standards de service clairs.',
+  context:
+    'LuxOps accompagne les établissements dans la mise en place des process LuxOps ou de leurs propres standards internes : procédures, valeurs de marque, séquences de service, posture managériale et réflexes opérationnels.',
+  primaryCta: 'Demander un devis formation',
+  secondaryCta: 'Voir les situations adaptées',
+  formTitle: 'Parlez-nous de votre besoin formation',
+  formIntro:
+    'Quelques informations suffisent pour comprendre le contexte et revenir vers vous avec un format adapté.',
+  situationsLabel: 'Quand former',
+  situationsTitle: 'Une formation utile quand les standards doivent tenir sur le terrain',
+  situationsIntro:
+    'La formation n’est pas pensée comme un cours générique. Elle sert à installer des méthodes visibles pendant le service, à clarifier les attentes et à aider les managers à faire vivre les standards dans la durée.',
+  situations: [
+    {
+      icon: <Hotel size={20} className="text-[#003d9b]" />,
+      title: 'Pré-ouverture',
+      text: 'Structurer les réflexes avant l’arrivée des premiers clients : accueil, parcours client, coordination entre services, standards et valeurs de l’établissement.',
+    },
+    {
+      icon: <BriefcaseBusiness size={20} className="text-[#003d9b]" />,
+      title: 'Réouverture saisonnière',
+      text: 'Remettre les équipes en rythme avant la saison, harmoniser les méthodes et sécuriser les points sensibles dès les premiers jours.',
+    },
+    {
+      icon: <ClipboardCheck size={20} className="text-[#003d9b]" />,
+      title: 'Validation des acquis',
+      text: 'Revoir les fondamentaux en cours d’année, contrôler la compréhension des standards et corriger les écarts avant qu’ils deviennent des habitudes.',
+    },
+    {
+      icon: <Users2 size={20} className="text-[#003d9b]" />,
+      title: 'Chefs de service',
+      text: 'Former les responsables à mieux briefer, accompagner, contrôler et faire progresser les équipes sans transformer le management en simple rappel à l’ordre.',
+    },
+  ],
+  methodLabel: 'Méthode',
+  methodTitle: 'Des standards expliqués, pratiqués puis transmis',
+  methodIntro:
+    'La session part toujours du réel : vos équipes, vos points de contact client, vos procédures existantes et les écarts observés. Les supports LuxOps servent de base structurée, mais la formation peut aussi s’appuyer sur vos propres process et valeurs internes.',
+  playbooksLink: 'Voir les playbooks opérationnels',
+  methodPoints: [
+    {
+      title: 'Compréhension',
+      text: 'Les collaborateurs comprennent pourquoi le standard existe, pas seulement ce qu’il faut faire.',
+    },
+    {
+      title: 'Mise en pratique',
+      text: 'Les séquences sont travaillées à partir de situations vécues : accueil, demande client, réclamation, passation, inspection ou service.',
+    },
+    {
+      title: 'Transmission',
+      text: 'Les chefs de service repartent avec une logique claire pour maintenir le niveau après la formation.',
+    },
+    {
+      title: 'Adaptation',
+      text: 'Les exemples sont adaptés à votre établissement, à votre positionnement et au niveau de maturité de vos équipes.',
+    },
+  ],
+  departmentsLabel: 'Périmètre',
+  departmentsTitle: 'Des modules construits autour des vrais moments de service',
+  departmentsIntro:
+    'Le contenu est défini selon vos priorités. Une session peut cibler un département précis ou travailler les points de liaison entre plusieurs services.',
+  departments: [
+    {
+      title: 'Réception et relation client',
+      items: ['Accueil et première impression', 'Gestion des demandes et réclamations', 'Passations et communication inter-services'],
+    },
+    {
+      title: 'Housekeeping et qualité chambre',
+      items: ['Standards de chambre', 'Inspection et auto-contrôle', 'Coordination avec la réception et la maintenance'],
+    },
+    {
+      title: 'F&B et service',
+      items: ['Séquence de service', 'Posture en salle et communication client', 'Briefings, mise en place et gestion des imprévus'],
+    },
+  ],
+  flexLabel: 'Accompagnement flexible',
+  flexTitle: 'Un format adapté à votre réalité terrain',
+  flexText:
+    'La formation peut être centrée sur les standards de service, la mise en place de process, l’accompagnement des chefs de service, l’intégration des collaborateurs ou un besoin plus spécifique lié à votre établissement.',
+  contactTitle: 'Un besoin différent ?',
+  contactText:
+    'Pour un audit, une création de process, un accompagnement plus large ou une demande sur-mesure, vous pouvez nous contacter directement.',
+  contactCta: 'Nous contacter',
+  schemaName: 'Formation standards de service',
+  schemaServiceType: 'Formation sur site aux standards de service',
+}
+
+const englishContent = {
+  badge: 'On-property training',
+  title: 'Service standards training',
+  subtitle:
+    'Hands-on sessions that help your teams understand, apply and maintain clear service standards.',
+  context:
+    'LuxOps supports properties with the rollout of LuxOps processes or their own internal standards: procedures, brand values, service sequences, management posture and operational habits.',
+  primaryCta: 'Request a training quote',
+  secondaryCta: 'See when it helps',
+  formTitle: 'Tell us about your training need',
+  formIntro:
+    'A few details are enough to understand the context and suggest the right training format.',
+  situationsLabel: 'When to train',
+  situationsTitle: 'Useful when standards need to hold on the floor',
+  situationsIntro:
+    'The training is not a generic classroom session. It is designed to install working methods, clarify expectations and help managers keep standards alive over time.',
+  situations: [
+    {
+      icon: <Hotel size={20} className="text-[#003d9b]" />,
+      title: 'Pre-opening',
+      text: 'Structure team habits before the first guests arrive: welcome, guest journey, interdepartment coordination, standards and property values.',
+    },
+    {
+      icon: <BriefcaseBusiness size={20} className="text-[#003d9b]" />,
+      title: 'Seasonal reopening',
+      text: 'Bring teams back into rhythm before the season, align methods and secure sensitive service points from day one.',
+    },
+    {
+      icon: <ClipboardCheck size={20} className="text-[#003d9b]" />,
+      title: 'Skills validation',
+      text: 'Review core standards during the year, confirm understanding and correct gaps before they become habits.',
+    },
+    {
+      icon: <Users2 size={20} className="text-[#003d9b]" />,
+      title: 'Department leadership',
+      text: 'Help managers brief, coach, control and support their teams without reducing management to repeated reminders.',
+    },
+  ],
+  methodLabel: 'Method',
+  methodTitle: 'Standards explained, practised and passed on',
+  methodIntro:
+    'The session starts from reality: your teams, your guest touchpoints, your existing procedures and the gaps you see on the floor. LuxOps materials provide structure, but training can also be built around your own internal processes and values.',
+  playbooksLink: 'View operational playbooks',
+  methodPoints: [
+    {
+      title: 'Understanding',
+      text: 'Team members understand why the standard exists, not only what they are expected to do.',
+    },
+    {
+      title: 'Practice',
+      text: 'Sequences are worked through using real situations: welcome, guest request, complaint, handover, inspection or service.',
+    },
+    {
+      title: 'Transmission',
+      text: 'Department heads leave with a clear logic to maintain the level after the session.',
+    },
+    {
+      title: 'Adaptation',
+      text: 'Examples are adapted to your property, positioning and team maturity.',
+    },
+  ],
+  departmentsLabel: 'Scope',
+  departmentsTitle: 'Modules built around real service moments',
+  departmentsIntro:
+    'Content is defined according to your priorities. A session can target one department or focus on the handovers between departments.',
+  departments: [
+    {
+      title: 'Front Office and guest relations',
+      items: ['Welcome and first impression', 'Requests and complaint handling', 'Handovers and interdepartment communication'],
+    },
+    {
+      title: 'Housekeeping and room quality',
+      items: ['Room standards', 'Inspection and self-control', 'Coordination with reception and maintenance'],
+    },
+    {
+      title: 'F&B and service',
+      items: ['Service sequence', 'Floor posture and guest communication', 'Briefings, setup and service recovery'],
+    },
+  ],
+  flexLabel: 'Flexible support',
+  flexTitle: 'A format adapted to your operational reality',
+  flexText:
+    'Training can focus on service standards, process rollout, department leadership, team onboarding or a more specific need linked to your property.',
+  contactTitle: 'Need something different?',
+  contactText:
+    'For an audit, custom process work, broader support or a bespoke request, you can contact us directly.',
+  contactCta: 'Contact us',
+  schemaName: 'Service standards training',
+  schemaServiceType: 'On-property service standards training',
 }

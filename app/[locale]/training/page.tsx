@@ -7,11 +7,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const isEn = locale === 'en'
   return {
     title: isEn
-      ? 'On-Property Hotel Training | Operational Standards Implementation | LuxOps'
-      : 'Formation sur Site pour Équipes Hôtelières | Déploiement de Standards Opérationnels | LuxOps',
+      ? 'Service Standards Training | LuxOps'
+      : 'Formation standards de service | LuxOps',
     description: isEn
-      ? 'On-site training for hotel teams. Procedures, service standards and SOP implementation. Half-day or full-day sessions for up to 15 participants, built around your property.'
-      : "Formation opérationnelle en établissement pour équipes hôtelières. Procédures, standards de service et mise en place des SOPs. Demi-journée ou journée complète, jusqu'à 15 participants.",
+      ? 'On-property service standards training for hotel teams, pre-openings, seasonal reopenings, process rollout and department leadership.'
+      : 'Formation sur site aux standards de service pour équipes hôtelières, pré-ouverture, réouverture saisonnière, mise en place des process et leadership des chefs de service.',
     alternates: {
       canonical: isEn ? 'https://www.luxops.fr/en/training' : 'https://www.luxops.fr/fr/formation',
       languages: {
