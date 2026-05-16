@@ -19,6 +19,8 @@ const URLS = [
   `${SITE_URL}/fr/about`,
   `${SITE_URL}/en/blog`,
   `${SITE_URL}/fr/blog`,
+  `${SITE_URL}/en/free-hotel-checklists`,
+  `${SITE_URL}/fr/checklists-hotel-gratuites`,
   `${SITE_URL}/en/blog/hotel-operations-playbook`,
   `${SITE_URL}/fr/blog/hotel-operations-playbook`,
   `${SITE_URL}/en/blog/how-to-write-hotel-sops`,
