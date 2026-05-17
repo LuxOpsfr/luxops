@@ -1,15 +1,14 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { supabase } from '@/lib/supabase'
+import { identifyPostHogUser, resetPostHogUser } from '@/lib/posthogIdentity'
 import {
-  LayoutDashboard,
   User,
   LogOut,
   Menu,
-  X,
   BookOpen,
 } from 'lucide-react'
 
@@ -24,6 +23,10 @@ export default function PortalShell({ locale, email, children }: PortalShellProp
   const router = useRouter()
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const isFr = locale === 'fr'
+
+  useEffect(() => {
+    identifyPostHogUser(email, { locale, source: 'portal_shell' })
+  }, [email, locale])
 
   const navItems = [
     {
@@ -40,10 +43,11 @@ export default function PortalShell({ locale, email, children }: PortalShellProp
 
   const handleSignOut = async () => {
     await supabase.auth.signOut()
+    resetPostHogUser()
     router.push(`/${locale}/portal/login`)
   }
 
-  const Sidebar = () => (
+  const renderSidebar = () => (
     <aside className="w-64 flex-shrink-0 flex flex-col bg-[#1A2E44] text-white min-h-screen">
       {/* Logo */}
       <div className="px-6 py-6 border-b border-white/10">
@@ -108,14 +112,14 @@ export default function PortalShell({ locale, email, children }: PortalShellProp
     <div className="flex min-h-screen bg-[#F5F7FA]">
       {/* Desktop sidebar */}
       <div className="hidden lg:flex">
-        <Sidebar />
+        {renderSidebar()}
       </div>
 
       {/* Mobile sidebar overlay */}
       {sidebarOpen && (
         <div className="lg:hidden fixed inset-0 z-50 flex">
           <div className="flex">
-            <Sidebar />
+            {renderSidebar()}
           </div>
           <div
             className="flex-1 bg-black/40"

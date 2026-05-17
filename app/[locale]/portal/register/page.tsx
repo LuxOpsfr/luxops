@@ -5,6 +5,7 @@ import { useParams } from 'next/navigation'
 import Link from 'next/link'
 import { supabase } from '@/lib/supabase'
 import posthog from 'posthog-js'
+import { identifyPostHogUser } from '@/lib/posthogIdentity'
 
 export default function RegisterPage() {
   const params = useParams()
@@ -43,7 +44,7 @@ export default function RegisterPage() {
       return
     }
 
-    posthog.identify(email, { email })
+    identifyPostHogUser(email, { locale, source: 'portal_register' })
     posthog.capture('user_signed_up', { locale })
     setSuccess(true)
     setLoading(false)
