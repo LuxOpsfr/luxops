@@ -32,21 +32,21 @@ const KEYWORDS_EN: Record<string, string> = {
 }
 
 const KEYWORDS_FR: Record<string, string> = {
-  'hotel-operations-playbook': 'playbook opérations hôtel, SOP hôtel, procédures hôtelières, guide opérations hôtel, gestion hôtel luxe',
-  'how-to-write-hotel-sops': 'rédiger SOP hôtel, procédures opérationnelles hôtel, modèle SOP hôtelier, écrire procédures hôtel',
+  'hotel-operations-playbook': 'playbook opérationnel, SOP hôtel, procédures opérationnelles, guide opérations, standards de service',
+  'how-to-write-hotel-sops': 'rédiger SOP, procédures opérationnelles, modèle SOP, écrire procédures, playbook SOP',
   'hotel-front-office-sop': 'SOP réception hôtel, procédures front office hôtel, standard opérationnel réception hôtel',
   'hotel-housekeeping-checklist': 'checklist housekeeping hôtel, SOP housekeeping, checklist femme de chambre, procédures ménage hôtel',
-  'hotel-fb-service-standards': 'standards service F&B hôtel, procédures restaurant hôtel, SOP restauration hôtel',
+  'hotel-fb-service-standards': 'standards service F&B, procédures restaurant, SOP restauration, room service, recovery client',
   'hotel-front-office-procedures': 'procédures réception hôtel, SOP front office, procédures check-in check-out hôtel',
   'housekeeping-room-inspection': 'inspection chambre hôtel, checklist inspection superviseur, checklist inspection housekeeping, procédure inspection chambre hôtel, gouvernante étage inspection, contrôle qualité housekeeping',
-  'hotel-fb-restaurant-procedures': 'procédures service restaurant hôtel, SOP restauration hôtel, séquence service restaurant hôtel',
+  'hotel-fb-restaurant-procedures': 'procédures service restaurant, SOP restaurant, séquence service restaurant, ouverture restaurant',
   'hotel-spa-wellness-sops': 'SOP spa hôtel, procédures bien-être hôtel, standard opérationnel spa hôtel, protocole soin spa hôtel',
-  'hotel-room-service-sops': 'SOP room service hôtel, procédures service en chambre, standards room service hôtel',
-  'hotel-standard-operating-procedures': 'procédures opérationnelles hôtelières, SOP hôtel, modèle SOP hôtelières, procédures opérations hôtel',
+  'hotel-room-service-sops': 'SOP room service, procédures service en chambre, standards room service, checklist room service',
+  'hotel-standard-operating-procedures': 'procédures opérationnelles, SOP hôtel, modèle SOP, bibliothèque SOP, procédures opérations',
   'hotel-front-desk-procedures': 'procédures réception hôtel, SOP réception hôtelière, procédures check-in hôtel, SOP check-out hôtel, checklist réception hôtel',
-  'hotel-staff-training-service-standards': 'formation équipes hôtelières, formation standards de service hôtel, former collaborateurs hôteliers, formation sur site hôtel, programme formation hôtelière, formation hôtel luxe',
-  'hotel-staff-turnover-training': 'turn-over hôtelier, réduire turn-over hôtel, fidélisation équipes hôtelières, formation hôtelière rétention, formation sur site hôtel, stabilité équipes hôtel, turn-over hôtellerie restauration',
-  'hotel-new-hire-onboarding': 'onboarding hôtelier, intégration nouvelles recrues hôtel, programme onboarding hôtel, intégration collaborateurs hôtellerie, fidélisation nouvelles recrues hôtel, 90 premiers jours hôtel, onboarding structuré hôtel',
+  'hotel-staff-training-service-standards': 'formation standards de service, formation sur site, former les équipes, programme formation, standards client',
+  'hotel-staff-turnover-training': 'réduire turn-over, fidélisation équipes, formation rétention, formation sur site, stabilité équipes',
+  'hotel-new-hire-onboarding': 'onboarding, intégration nouvelles recrues, programme onboarding, intégration collaborateurs, 90 premiers jours',
   'hotel-room-attendant-checklist': 'checklist équipier étage hôtel, checklist femme de chambre hôtel, chambre à blanc checklist, recouche housekeeping, SOP housekeeping hôtel',
   'hotel-front-desk-checklist': 'checklist réception hôtel, checklist check-in hôtel, checklist check-out hôtel, passation réception hôtel, main courante réception hôtel',
   'hotel-dnd-procedure': 'procédure DND hôtel, procédure ne pas déranger hôtel, SOP housekeeping DND, chambre DND hôtel, contrôle sécurité DND hôtel',
@@ -223,7 +223,7 @@ const PLAYBOOK_EXCERPTS: Record<string, {
     },
     fr: {
       label: 'Exemple SOP issu du playbook',
-      title: 'À quoi ressemble une SOP hôtelière assez précise',
+      title: 'À quoi ressemble une SOP assez précise',
       intro:
         'Une vraie SOP ne dit pas “bien nettoyer la chambre”. Elle définit le timing, le responsable, la séquence, les exceptions et le statut qui permet au département suivant d’agir.',
       rows: [
@@ -233,7 +233,7 @@ const PLAYBOOK_EXCERPTS: Record<string, {
         { term: 'Exception', detail: 'Objet client trouvé pendant l’évaluation initiale : arrêt du nettoyage et procédure objets trouvés.' },
         { term: 'Passation', detail: 'La chambre passe en propre, puis la gouvernante inspecte et libère en inspectée pour la réception.' },
       ],
-      ctaText: 'Voir les Playbooks SOP',
+      ctaText: 'Voir les playbooks SOP',
       ctaHref: '/fr/playbooks',
     },
   },
@@ -255,7 +255,7 @@ const PLAYBOOK_EXCERPTS: Record<string, {
     },
     fr: {
       label: 'Structure SOP gratuite issue de LuxOps',
-      title: 'Les cinq champs que chaque SOP hôtelière doit contenir',
+      title: 'Les cinq champs que chaque SOP doit contenir',
       intro:
         'Les playbooks LuxOps traitent les SOP comme des outils opérationnels. Chaque procédure doit permettre à un nouveau collaborateur de comprendre ce qui se passe avant, pendant et après la tâche.',
       rows: [
@@ -399,9 +399,9 @@ const PLAYBOOK_EXCERPTS: Record<string, {
         { term: 'Rythme du service', detail: 'Boissons, entrées, plats, débarrassage et dessert sont coordonnés pour éviter attente excessive ou précipitation.' },
         { term: 'Recovery', detail: 'Erreur plat, délai ou allergène sont reconnus immédiatement, portés par une personne et escaladés avant que le client ne répète.' },
       ],
-      ctaText: 'Voir le Starter Pack F&B',
+      ctaText: 'Voir le starter pack F&B',
       ctaHref: '/fr/playbooks/fb-starter-pack',
-      secondaryCtaText: 'Voir le Playbook F&B',
+      secondaryCtaText: 'Voir le playbook F&B',
       secondaryCtaHref: '/fr/playbooks/fb',
     },
   },
@@ -410,7 +410,7 @@ const PLAYBOOK_EXCERPTS: Record<string, {
       label: 'Free excerpt from the LuxOps F&B Playbook',
       title: 'The restaurant SOP sequence from briefing to close',
       intro:
-        'Hotel restaurant procedures need a full operating rhythm. The playbook links briefing, setup, sequence of service, issue recovery and closing handover so the next service inherits a clean operation.',
+        'Restaurant procedures need a full operating rhythm. The playbook links briefing, setup, sequence of service, issue recovery and closing handover so the next service inherits a clean operation.',
       rows: [
         { term: 'Opening briefing', detail: 'The shift starts with covers, VIPs, special requests, menu knowledge, allergies and service roles aligned.' },
         { term: 'Station readiness', detail: 'Each station is checked for cleanliness, complete setup, backup mise en place and operational POS access.' },
@@ -427,7 +427,7 @@ const PLAYBOOK_EXCERPTS: Record<string, {
       label: 'Extrait gratuit du Playbook F&B LuxOps',
       title: 'La séquence SOP restaurant, du briefing à la clôture',
       intro:
-        'Les procédures restaurant hôtel doivent suivre un vrai rythme opérationnel. Le playbook relie briefing, mise en place, séquence de service, recovery et passation pour que le service suivant reparte proprement.',
+        'Les procédures restaurant doivent suivre un vrai rythme opérationnel. Le playbook relie briefing, mise en place, séquence de service, recovery et passation pour que le service suivant reparte proprement.',
       rows: [
         { term: 'Briefing ouverture', detail: 'Couverts, VIP, demandes spéciales, connaissance menu, allergies et rôles de service sont alignés.' },
         { term: 'Poste prêt', detail: 'Chaque rang est contrôlé : propreté, mise en place complète, stock de secours et accès POS opérationnel.' },
@@ -435,9 +435,9 @@ const PLAYBOOK_EXCERPTS: Record<string, {
         { term: 'Incident client', detail: 'Le serveur porte la première réponse, informe le superviseur et boucle avec le client après résolution.' },
         { term: 'Passation clôture', detail: 'Notes ouvertes, commentaires clients, problèmes stock, besoins maintenance et préparation du service suivant sont transmis.' },
       ],
-      ctaText: 'Voir le Starter Pack F&B',
+      ctaText: 'Voir le starter pack F&B',
       ctaHref: '/fr/playbooks/fb-starter-pack',
-      secondaryCtaText: 'Voir le Playbook F&B',
+      secondaryCtaText: 'Voir le playbook F&B',
       secondaryCtaHref: '/fr/playbooks/fb',
     },
   },
@@ -471,9 +471,9 @@ const PLAYBOOK_EXCERPTS: Record<string, {
         { term: 'Livraison chambre', detail: 'Frapper, annoncer, confirmer l’emplacement, présenter les items, expliquer addition ou signature et sortir proprement.' },
         { term: 'Débarrassage', detail: 'La collecte est planifiée, pas abandonnée aux couloirs. Les plateaux ouverts sont suivis en ronde et en passation.' },
       ],
-      ctaText: 'Voir le Starter Pack F&B',
+      ctaText: 'Voir le starter pack F&B',
       ctaHref: '/fr/playbooks/fb-starter-pack',
-      secondaryCtaText: 'Voir le Playbook F&B',
+      secondaryCtaText: 'Voir le playbook F&B',
       secondaryCtaHref: '/fr/playbooks/fb',
     },
   },
@@ -529,7 +529,7 @@ const PLAYBOOK_EXCERPTS: Record<string, {
       label: 'Extrait formation basé sur les playbooks',
       title: 'Former les équipes sur des procédures, pas sur des slogans',
       intro:
-        'Les meilleures formations hôtelières utilisent les procédures documentées comme colonne vertébrale. Les équipes pratiquent les moments exacts vécus en service : accueil, inspection, recovery, passation et escalade.',
+        'Les meilleures formations utilisent les procédures documentées comme colonne vertébrale. Les équipes pratiquent les moments exacts vécus en service : accueil, inspection, recovery, passation et escalade.',
       rows: [
         { term: 'Déroulé procédure', detail: 'Le formateur explique le déclencheur, la séquence attendue et ce que le client doit percevoir.' },
         { term: 'Mise en situation', detail: 'Les équipes répètent des cas réels : chambre tardive, litige facturation, commande retardée ou réclamation.' },
@@ -537,7 +537,7 @@ const PLAYBOOK_EXCERPTS: Record<string, {
         { term: 'Feedback', detail: 'Le retour est précis, immédiat et relié au standard pour savoir quoi répéter ou ajuster.' },
         { term: 'Renforcement briefing', detail: 'Le même standard revient en briefing, revue checklist et suivi manager jusqu’à devenir un réflexe.' },
       ],
-      ctaText: 'Voir la formation hôtelière sur site',
+      ctaText: 'Voir la formation sur site',
       ctaHref: '/fr/formation',
     },
   },
@@ -569,7 +569,7 @@ const PLAYBOOK_EXCERPTS: Record<string, {
         { term: 'Progression visible', detail: 'Les managers voient quelles procédures sont comprises, observées et prêtes à être réalisées en autonomie.' },
         { term: 'Signal rétention', detail: 'Quand les attentes sont claires, le stress initial baisse et la recrue ressent une progression plutôt qu’une confusion.' },
       ],
-      ctaText: 'Voir la formation hôtelière sur site',
+      ctaText: 'Voir la formation sur site',
       ctaHref: '/fr/formation',
     },
   },
@@ -578,7 +578,7 @@ const PLAYBOOK_EXCERPTS: Record<string, {
       label: 'Playbook-based onboarding excerpt',
       title: 'A 30/60/90 onboarding system needs documented standards',
       intro:
-        'Hotel onboarding works when the first months are mapped to real operating standards. The playbooks give new hires a reference they can revisit after the first training session.',
+        'Onboarding works when the first months are mapped to real operating standards. The playbooks give new hires a reference they can revisit after the first training session.',
       rows: [
         { term: 'Day 1', detail: 'Role expectations, grooming, guest language, safety rules, reporting lines and the department’s most important quality standards.' },
         { term: 'Week 1', detail: 'Shadowing around core procedures: opening, guest interaction, task sequence, checklist use and handover.' },
@@ -593,7 +593,7 @@ const PLAYBOOK_EXCERPTS: Record<string, {
       label: 'Extrait onboarding basé sur les playbooks',
       title: 'Un onboarding 30/60/90 jours a besoin de standards documentés',
       intro:
-        'L’onboarding hôtelier fonctionne quand les premiers mois sont reliés aux vrais standards opérationnels. Les playbooks donnent aux recrues une référence à reprendre après la première formation.',
+        'L’onboarding fonctionne quand les premiers mois sont reliés aux vrais standards opérationnels. Les playbooks donnent aux recrues une référence à reprendre après la première formation.',
       rows: [
         { term: 'Jour 1', detail: 'Attentes du rôle, grooming, langage client, sécurité, lignes hiérarchiques et standards qualité essentiels du département.' },
         { term: 'Semaine 1', detail: 'Observation des procédures clés : ouverture, interaction client, séquence tâche, checklist et passation.' },
@@ -601,7 +601,7 @@ const PLAYBOOK_EXCERPTS: Record<string, {
         { term: 'Jour 30', detail: 'Point manager sur confiance, écarts, connaissance des procédures et frictions avec outils ou rythme équipe.' },
         { term: 'Jour 90', detail: 'Revue autonomie : standards acquis, points à coacher et responsabilités pouvant être élargies.' },
       ],
-      ctaText: 'Voir la formation hôtelière sur site',
+      ctaText: 'Voir la formation sur site',
       ctaHref: '/fr/formation',
     },
   },
@@ -832,7 +832,7 @@ const ARTICLE_PRODUCT_CTAS: Record<string, {
       secondaryHref: '/en/playbooks#department-playbooks',
     },
     fr: {
-      label: 'Outils SOP hôtel',
+      label: 'Outils SOP',
       title: 'Besoin de modèles SOP vraiment utilisables par vos équipes ?',
       text: 'Commencez avec des starter packs ciblés pour les outils du quotidien, ou consultez les playbooks complets par département.',
       primaryText: 'Voir les starter packs',
@@ -874,10 +874,10 @@ const ARTICLE_PRODUCT_CTAS: Record<string, {
     fr: {
       label: 'Outils F&B',
       title: 'Vous voulez des outils F&B prêts à utiliser sur le terrain ?',
-      text: 'Le Starter Pack rassemble des checklists pratiques pour le restaurant, le bar et le room service. Le Playbook F&B complet va plus loin avec toute la structure SOP du département.',
-      primaryText: 'Voir le Starter Pack F&B',
+      text: 'Le starter pack rassemble des checklists pratiques pour le restaurant, le bar et le room service. Le playbook F&B complet va plus loin avec toute la structure SOP du département.',
+      primaryText: 'Voir le starter pack F&B',
       primaryHref: '/fr/playbooks/fb-starter-pack',
-      secondaryText: 'Voir le Playbook F&B',
+      secondaryText: 'Voir le playbook F&B',
       secondaryHref: '/fr/playbooks/fb',
     },
   },
@@ -894,10 +894,10 @@ const ARTICLE_PRODUCT_CTAS: Record<string, {
     fr: {
       label: 'Outils restaurant',
       title: 'Pour structurer le service restaurant sans repartir de zéro',
-      text: 'Le Starter Pack F&B regroupe les outils d’ouverture, de fermeture, de briefing et de recovery. Le Playbook complet apporte ensuite toute la structure SOP du service restaurant.',
-      primaryText: 'Voir le Starter Pack F&B',
+      text: 'Le starter pack F&B regroupe les outils d’ouverture, de fermeture, de briefing et de recovery. Le playbook complet apporte ensuite toute la structure SOP du service restaurant.',
+      primaryText: 'Voir le starter pack F&B',
       primaryHref: '/fr/playbooks/fb-starter-pack',
-      secondaryText: 'Voir le Playbook F&B',
+      secondaryText: 'Voir le playbook F&B',
       secondaryHref: '/fr/playbooks/fb',
     },
   },
@@ -914,10 +914,10 @@ const ARTICLE_PRODUCT_CTAS: Record<string, {
     fr: {
       label: 'Outils room service',
       title: 'Pour fiabiliser le room service dès le prochain shift',
-      text: 'Le Starter Pack F&B couvre les contrôles room service, la prise de commande, le dressage du plateau et les scripts de recovery. Le Playbook complet apporte la structure SOP F&B dans son ensemble.',
-      primaryText: 'Voir le Starter Pack F&B',
+      text: 'Le starter pack F&B couvre les contrôles room service, la prise de commande, le dressage du plateau et les scripts de recovery. Le playbook complet apporte la structure SOP F&B dans son ensemble.',
+      primaryText: 'Voir le starter pack F&B',
       primaryHref: '/fr/playbooks/fb-starter-pack',
-      secondaryText: 'Voir le Playbook F&B',
+      secondaryText: 'Voir le playbook F&B',
       secondaryHref: '/fr/playbooks/fb',
     },
   },
@@ -1245,7 +1245,7 @@ export default async function BlogArticlePage({
                   <p className="text-sm text-[#4f6074]">
                     {isEn
                       ? 'See what structured hotel procedures look like in practice.'
-                      : 'Découvrez à quoi ressemblent des procédures hôtelières structurées.'}
+                      : 'Découvrez à quoi ressemblent des procédures opérationnelles structurées.'}
                   </p>
                 </div>
                 <Link
@@ -1378,11 +1378,11 @@ export default async function BlogArticlePage({
         {(() => {
           const RELATED: Record<string, { href: string; labelEn: string; labelFr: string; descEn: string; descFr: string }[]> = {
             'hotel-operations-playbook': [
-              { href: '/hotel-sop', labelEn: 'Hotel SOP Templates', labelFr: 'Modèles SOP', descEn: 'Complete standard operating procedures for every hotel department.', descFr: 'Procédures opérationnelles complètes pour chaque département hôtelier.' },
-              { href: '/hotel-checklist', labelEn: 'Hotel Operational Checklists', labelFr: 'Checklists opérationnelles', descEn: 'What makes a hotel checklist actually useful in practice.', descFr: 'Ce qui rend une checklist hôtelière vraiment utile en pratique.' },
+              { href: '/hotel-sop', labelEn: 'Hotel SOP Templates', labelFr: 'Modèles SOP', descEn: 'Complete standard operating procedures for every hotel department.', descFr: 'Procédures opérationnelles complètes par département.' },
+              { href: '/free-hotel-checklists', labelEn: 'Free printable checklists', labelFr: 'Checklists gratuites à imprimer', descEn: 'Printable PDFs for housekeeping, front office and F&B teams.', descFr: 'PDF imprimables pour housekeeping, réception et F&B.' },
             ],
             'how-to-write-hotel-sops': [
-              { href: '/hotel-sop', labelEn: 'Hotel SOP Templates', labelFr: 'Modèles SOP', descEn: 'Complete standard operating procedures for every hotel department.', descFr: 'Procédures opérationnelles complètes pour chaque département hôtelier.' },
+              { href: '/hotel-sop', labelEn: 'Hotel SOP Templates', labelFr: 'Modèles SOP', descEn: 'Complete standard operating procedures for every hotel department.', descFr: 'Procédures opérationnelles complètes par département.' },
               { href: '/front-office-sop', labelEn: 'Front Office SOP', labelFr: 'SOP réception', descEn: 'Procedures built around how the front desk actually works.', descFr: 'Procédures construites autour du fonctionnement réel de la réception.' },
             ],
             'hotel-front-office-sop': [
@@ -1394,16 +1394,16 @@ export default async function BlogArticlePage({
               { href: '/housekeeping-sop', labelEn: 'Housekeeping SOP', labelFr: 'SOP Housekeeping', descEn: 'The procedures behind every housekeeping checklist.', descFr: 'Les procédures derrière chaque checklist housekeeping.' },
             ],
             'hotel-fb-service-standards': [
-              { href: '/hotel-fb-sop', labelEn: 'Hotel F&B SOP', labelFr: 'SOP F&B hôtel', descEn: 'The pillar guide for restaurant, bar, room service and service recovery procedures.', descFr: 'Le guide pilier pour procédures restaurant, bar, room service et recovery client.' },
-              { href: '/playbooks/fb-starter-pack', labelEn: 'F&B Starter Pack', labelFr: 'Starter Pack F&B', descEn: 'Practical checklists, scripts and control tools for daily F&B service.', descFr: 'Checklists, scripts et outils de contrôle pour le service F&B quotidien.' },
+              { href: '/hotel-fb-sop', labelEn: 'F&B SOP', labelFr: 'SOP F&B', descEn: 'The pillar guide for restaurant, bar, room service and service recovery procedures.', descFr: 'Le guide pilier pour procédures restaurant, bar, room service et recovery client.' },
+              { href: '/playbooks/fb-starter-pack', labelEn: 'F&B Starter Pack', labelFr: 'Starter pack F&B', descEn: 'Practical checklists, scripts and control tools for daily F&B service.', descFr: 'Checklists, scripts et outils de contrôle pour le service F&B quotidien.' },
             ],
             'hotel-fb-restaurant-procedures': [
-              { href: '/hotel-fb-sop', labelEn: 'Hotel F&B SOP', labelFr: 'SOP F&B hôtel', descEn: 'The complete F&B SOP structure around service sequence, mise en place and controls.', descFr: 'La structure SOP F&B complète autour de la séquence de service, mise en place et contrôles.' },
-              { href: '/playbooks/fb-starter-pack', labelEn: 'F&B Starter Pack', labelFr: 'Starter Pack F&B', descEn: 'Opening checklist, closing checklist, briefing template and recovery scripts.', descFr: 'Checklist ouverture, checklist fermeture, briefing et scripts recovery.' },
+              { href: '/hotel-fb-sop', labelEn: 'F&B SOP', labelFr: 'SOP F&B', descEn: 'The complete F&B SOP structure around service sequence, mise en place and controls.', descFr: 'La structure SOP F&B complète autour de la séquence de service, mise en place et contrôles.' },
+              { href: '/playbooks/fb-starter-pack', labelEn: 'F&B Starter Pack', labelFr: 'Starter pack F&B', descEn: 'Opening checklist, closing checklist, briefing template and recovery scripts.', descFr: 'Checklist ouverture, checklist fermeture, briefing et scripts recovery.' },
             ],
             'hotel-room-service-sops': [
-              { href: '/hotel-fb-sop', labelEn: 'Hotel F&B SOP', labelFr: 'SOP F&B hôtel', descEn: 'Room service connected to the wider restaurant, bar and F&B control system.', descFr: 'Room service relié au système de contrôle restaurant, bar et F&B.' },
-              { href: '/playbooks/fb-starter-pack', labelEn: 'F&B Starter Pack', labelFr: 'Starter Pack F&B', descEn: 'Room service checklist, guest recovery scripts and service control tools.', descFr: 'Checklist room service, scripts recovery et outils de contrôle de service.' },
+              { href: '/hotel-fb-sop', labelEn: 'F&B SOP', labelFr: 'SOP F&B', descEn: 'Room service connected to the wider restaurant, bar and F&B control system.', descFr: 'Room service relié au système de contrôle restaurant, bar et F&B.' },
+              { href: '/playbooks/fb-starter-pack', labelEn: 'F&B Starter Pack', labelFr: 'Starter pack F&B', descEn: 'Room service checklist, guest recovery scripts and service control tools.', descFr: 'Checklist room service, scripts recovery et outils de contrôle de service.' },
             ],
             'hotel-front-office-procedures': [
               { href: '/front-office-sop', labelEn: 'Front Office SOP', labelFr: 'SOP réception', descEn: 'Procedures built around how the front desk actually works.', descFr: 'Procédures construites autour du fonctionnement réel de la réception.' },
@@ -1437,13 +1437,17 @@ export default async function BlogArticlePage({
               { href: '/hotel-housekeeping-checklist', labelEn: 'Housekeeping Checklist', labelFr: 'Checklist housekeeping', descEn: 'The full housekeeping checklist and room release flow.', descFr: 'La checklist housekeeping complète et le flux de libération chambre.' },
               { href: '/housekeeping-sop', labelEn: 'Housekeeping SOP', labelFr: 'SOP Housekeeping', descEn: 'Operational procedures for room attendants and supervisors.', descFr: 'Procédures opérationnelles pour équipiers et gouvernantes.' },
             ],
+            'hotel-staff-training-service-standards': [
+              { href: '/formation', labelEn: 'On-site training', labelFr: 'Formation sur site', descEn: 'Training around service standards, procedures and management routines.', descFr: 'Formation autour des standards de service, procédures et routines terrain.' },
+              { href: '/formation-chefs-de-service', labelEn: 'Department head training', labelFr: 'Formation chefs de service', descEn: 'Leadership and operational coaching for department heads.', descFr: 'Leadership, management et coaching opérationnel pour chefs de service.' },
+            ],
             'hotel-staff-turnover-training': [
-              { href: '/training', labelEn: 'On-property training', labelFr: 'Formation sur site', descEn: 'Structured training formats built around your actual procedures and service standards.', descFr: 'Formats de formation structurés autour de vos propres procédures et standards de service.' },
-              { href: '/hotel-sop', labelEn: 'Hotel SOP templates', labelFr: 'Modèles SOP hôtel', descEn: 'The documented procedures that give your team a consistent standard to work from.', descFr: 'Les procédures documentées qui donnent à vos équipes un référentiel commun.' },
+              { href: '/formation', labelEn: 'On-site training', labelFr: 'Formation sur site', descEn: 'Structured training formats built around your actual procedures and service standards.', descFr: 'Formats de formation structurés autour de vos propres procédures et standards de service.' },
+              { href: '/formation-equipe-hoteliere', labelEn: 'Team training', labelFr: 'Formation des équipes', descEn: 'Training designed to align teams around service standards and procedures.', descFr: 'Une formation pour aligner les équipes autour des standards et procédures.' },
             ],
             'hotel-new-hire-onboarding': [
-              { href: '/training', labelEn: 'On-property training', labelFr: 'Formation sur site', descEn: 'Build the structured onboarding system your new hires need to stay past 90 days.', descFr: "Construisez le système d'onboarding structuré dont vos nouvelles recrues ont besoin pour rester au-delà de 90 jours." },
-              { href: '/hotel-sop', labelEn: 'Hotel SOP templates', labelFr: 'Modèles SOP hôtel', descEn: 'The written procedures library every new hire should have access to from day one.', descFr: 'La bibliothèque de procédures écrites que chaque nouvelle recrue devrait pouvoir consulter dès le premier jour.' },
+              { href: '/formation', labelEn: 'On-site training', labelFr: 'Formation sur site', descEn: 'Build the structured onboarding system your new hires need to stay past 90 days.', descFr: "Construisez le système d'onboarding structuré dont vos nouvelles recrues ont besoin pour rester au-delà de 90 jours." },
+              { href: '/formation-pre-ouverture', labelEn: 'Pre-opening training', labelFr: 'Formation pré-ouverture', descEn: 'Prepare teams before opening, reopening or seasonal restart.', descFr: 'Préparer les équipes avant une ouverture, une réouverture ou une reprise saisonnière.' },
             ],
           }
           const links = RELATED[slug]

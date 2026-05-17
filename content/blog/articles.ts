@@ -133,21 +133,21 @@ export const articles: BilingualArticle[] = [
       cta: { text: 'View Our Playbooks', href: '/en/playbooks' },
     },
     fr: {
-      title: "Qu'est-ce qu'un Playbook Opérationnel Hôtelier ? (Et pourquoi chaque établissement en a besoin)",
+      title: "Playbook opérationnel : structurer les SOP, standards et routines par département",
       description:
-        "Un playbook opérationnel hôtelier est un recueil structuré de SOPs, standards de service et procédures pour chaque département. Découvrez ce qu'il contient, pourquoi il est indispensable et comment le mettre en place.",
+        "Un playbook opérationnel regroupe les SOPs, standards de service, checklists et routines de passation dont les équipes ont besoin pour travailler avec constance.",
       date: '2026-03-10',
       readTime: '7 min de lecture',
       intro:
-        "La plupart des problèmes opérationnels dans les hôtels ne sont pas complexes. Ils résultent de procédures qui n\'ont jamais été écrites. Le check-in qui se déroule différemment selon qui est à la réception. L\'inspection de chambre qui varie d\'un valet à l\'autre. La réclamation traitée de façon incohérente parce qu\'il n\'existe pas de standard établi. Un playbook opérationnel hôtelier, c\'est la façon dont les établissements règlent ça, pas d\'un coup, mais département par département, service par service.",
+        "La plupart des problèmes opérationnels ne sont pas complexes. Ils viennent souvent de procédures qui n’ont jamais été écrites clairement. Le check-in qui se déroule différemment selon qui est à la réception. L’inspection de chambre qui varie d’un valet à l’autre. La réclamation traitée de façon incohérente parce qu’il n’existe pas de standard établi. Un playbook opérationnel règle ce sujet département par département, shift par shift.",
       sections: [
         {
-          h2: "Qu'est-ce qu'un playbook opérationnel hôtelier ?",
+          h2: "Qu’est-ce qu’un playbook opérationnel ?",
           content:
-            "Un playbook opérationnel hôtelier est un document de référence structuré, département par département, qui documente les procédures, standards de service et protocoles dont les équipes ont besoin pour travailler de façon constante. C\'est la mémoire institutionnelle de l\'établissement : ce que le personnel expérimenté porte dans sa tête, mis par écrit et rendu accessible à tous. Quand il fonctionne bien, un nouveau collaborateur arrivé le lundi peut travailler au même standard que quelqu\'un présent depuis trois ans.",
+            "Un playbook opérationnel est un document de référence structuré, département par département, qui documente les procédures, standards de service et protocoles dont les équipes ont besoin pour travailler de façon constante. C’est la mémoire opérationnelle de l’établissement : ce que les collaborateurs expérimentés portent dans leur tête, mis par écrit et rendu accessible à tous. Quand il fonctionne bien, un nouveau collaborateur arrivé le lundi peut travailler au même standard que quelqu’un présent depuis trois ans.",
           h3Items: [
             {
-              heading: 'SOPs (Procédures Opérationnelles Standard)',
+              heading: 'SOPs (procédures opérationnelles standard)',
               text: "Instructions pas-à-pas pour les tâches récurrentes : check-in, service de couverture, gestion des réclamations, mise en place, préparation des soins. Chacune rédigée pour ne laisser aucune place à l\'interprétation en plein service.",
             },
             {
@@ -160,14 +160,14 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: 'Parcours client',
-              text: "Une vue cartographiée de l\'expérience complète, de la pré-arrivée au départ, avec les actions du personnel correspondantes à chaque étape. Utile pour l\'intégration et pour identifier les angles morts dans la couverture de service.",
+              text: "Une vue cartographiée de l’expérience complète, de la pré-arrivée au départ, avec les actions des équipes à chaque étape. Utile pour l’intégration et pour identifier les angles morts dans la couverture de service.",
             },
           ],
         },
         {
-          h2: "Pourquoi les hôtels sans playbook peinent à performer",
+          h2: "Pourquoi les établissements sans playbook peinent à performer",
           content:
-            "La plupart des problèmes opérationnels hôteliers ont la même cause : des savoirs qui vivent dans les têtes plutôt que sur le papier. Quand ces personnes partent, et dans l\'hôtellerie le turnover est élevé, ces savoirs partent avec elles. Un nouveau collaborateur repart de zéro. L\'équipe fonctionne un peu différemment à chaque service. Les clients le sentent, même s\'ils ne savent pas l\'expliquer.",
+            "La plupart des problèmes opérationnels ont la même cause : des savoirs qui vivent dans les têtes plutôt que sur un support clair. Quand ces personnes partent, ces savoirs partent avec elles. Un nouveau collaborateur repart de zéro. L’équipe fonctionne un peu différemment à chaque service. Les clients le sentent, même s’ils ne savent pas toujours l’expliquer.",
           h3Items: [
             {
               heading: 'Expérience client incohérente',
@@ -184,9 +184,9 @@ export const articles: BilingualArticle[] = [
           ],
         },
         {
-          h2: 'Ce que couvre un playbook opérationnel hôtelier',
+          h2: 'Ce que couvre un playbook opérationnel',
           content:
-            "Un playbook utile reflète le fonctionnement réel de l\'hôtel, département par département. Les playbooks LuxOps sont structurés autour de quatre domaines opérationnels centraux, chacun avec des procédures et standards de service issus du terrain.",
+            "Un playbook utile reflète le fonctionnement réel de l’établissement, département par département. Les playbooks LuxOps sont structurés autour de quatre domaines opérationnels centraux, chacun avec des procédures et standards de service issus du terrain.",
           h3Items: [
             {
               heading: 'Front Office',
@@ -197,7 +197,7 @@ export const articles: BilingualArticle[] = [
               text: "Checklists d'inspection des chambres (50+ critères par type de chambre), gestion du linge, protocoles de service de couverture, plannings de nettoyage approfondi.",
             },
             {
-              heading: 'Food & Beverage',
+              heading: 'F&B',
               text: "Séquence de service restaurant, mise en place bar, procédures room service, standards buffet, protocoles banquet, communication sur les allergènes.",
             },
             {
@@ -230,14 +230,14 @@ export const articles: BilingualArticle[] = [
           ],
         },
         {
-          h2: 'Playbooks prêts à l\'emploi vs. construction from scratch',
+          h2: 'Playbooks prêts à l’emploi ou construction depuis zéro',
           content:
-            "Construire un playbook opérationnel complet depuis zéro prend des mois et requiert une expertise opérationnelle que la plupart des établissements ne peuvent pas dédier en interne. Les playbooks prêts à l\'emploi construits à partir de l\'expérience terrain donnent une base professionnellement structurée à adapter à l\'établissement, plutôt que de partir d\'une page blanche. Les playbooks LuxOps couvrent le Front Office, le Housekeeping, le F&B et le Spa, chacun représentant entre 200 et 280 pages de procédures et standards documentés.",
+            "Construire un playbook opérationnel complet depuis zéro prend des mois et requiert une expertise opérationnelle que la plupart des établissements ne peuvent pas dédier en interne. Les playbooks prêts à l’emploi construits à partir de l’expérience terrain donnent une base structurée à adapter à l’établissement, plutôt que de partir d’une page blanche. Les playbooks LuxOps couvrent le Front Office, le housekeeping, le F&B et le spa, chacun représentant entre 200 et 280 pages de procédures et standards documentés.",
         },
       ],
       conclusion:
-        "Un playbook opérationnel hôtelier n\'est pas un document bureaucratique. C\'est ce qui permet aux équipes de délivrer un service fiable et constant quel que soit le collaborateur en poste. Construit de zéro ou adapté à partir d\'un modèle structuré, la valeur se concrétise rapidement : temps d\'intégration raccourci, moins d\'erreurs, et clients qui retrouvent le même niveau à chaque séjour.",
-      cta: { text: 'Voir nos Playbooks', href: '/fr/playbooks' },
+        "Un playbook opérationnel n’est pas un document bureaucratique. C’est ce qui permet aux équipes de délivrer un service fiable et constant, quel que soit le collaborateur en poste. Construit depuis zéro ou adapté à partir d’un modèle structuré, la valeur se concrétise rapidement : intégration plus rapide, moins d’erreurs et clients qui retrouvent le même niveau de service à chaque passage.",
+      cta: { text: 'Voir les playbooks et starter packs', href: '/fr/playbooks' },
     },
   },
   {
@@ -370,16 +370,16 @@ export const articles: BilingualArticle[] = [
       cta: { text: 'Explore Our SOP Playbooks', href: '/en/playbooks' },
     },
     fr: {
-      title: 'Comment rédiger des SOPs : guide pas-à-pas',
+      title: 'Comment rédiger une SOP vraiment utile pour les équipes terrain',
       description:
-        "Apprenez à rédiger des procédures opérationnelles standard (SOPs) hôtelières efficaces que vos équipes suivront vraiment. Structure, format, et processus étape par étape.",
+        "Méthode LuxOps pour rédiger des SOPs utilisables en service : déclencheur, responsable, séquence, standard, exception, escalade et preuve de passation.",
       date: '2026-03-12',
       readTime: '8 min de lecture',
       intro:
-        "Rédiger des SOPs hôteliers semble simple, jusqu\'à ce qu\'on s\'y attelle. La plupart des tentatives produisent des documents trop longs pour être consultés en plein service, trop vagues pour être suivis sans demander au superviseur, ou suffisamment incohérents d\'un département à l\'autre pour créer plus de confusion qu\'ils n\'en résolvent. Le problème n\'est généralement pas un manque de connaissance, c\'est un manque de structure. Ce guide présente une approche pratique pour rédiger des SOPs que les équipes utiliseront vraiment.",
+        "Rédiger une SOP semble simple, jusqu’au moment où l’équipe doit l’utiliser en plein service. Beaucoup de documents sont trop longs pour être consultés rapidement, trop vagues pour être suivis sans demander au superviseur, ou incohérents d’un département à l’autre. Le problème n’est généralement pas un manque de connaissance, c’est un manque de structure. Ce guide présente une méthode pratique pour rédiger des SOPs que les équipes utiliseront vraiment.",
       sections: [
         {
-          h2: "Qu'est-ce qui fait un bon SOP hôtelier ?",
+          h2: "Qu’est-ce qui fait une bonne SOP ?",
           content:
             "La différence entre un SOP utilisé et un SOP ignoré tient rarement au contenu, elle tient au format et au niveau de précision. Voici les quatre éléments qui comptent vraiment.",
           h3Items: [
@@ -402,9 +402,9 @@ export const articles: BilingualArticle[] = [
           ],
         },
         {
-          h2: 'La structure d\'un SOP hôtelier',
+          h2: 'La structure d’une SOP utilisable',
           content:
-            "Chaque SOP doit contenir les mêmes éléments dans le même ordre. C\'est la structure qui fonctionne dans les départements hôteliers et qui reste facile à mettre à jour quand les procédures évoluent.",
+            "Chaque SOP doit contenir les mêmes éléments dans le même ordre. C’est cette structure qui permet aux équipes de la lire vite, de l’appliquer pendant le shift et de la mettre à jour sans repartir de zéro.",
           h3Items: [
             {
               heading: 'En-tête',
@@ -433,9 +433,9 @@ export const articles: BilingualArticle[] = [
           ],
         },
         {
-          h2: 'Étape par étape : rédiger votre premier SOP hôtelier',
+          h2: 'Étape par étape : rédiger votre première SOP',
           content:
-            "Voici un processus pratique pour rédiger un SOP, issu de méthodes appliquées dans des opérations hôtelières réelles.",
+            "Voici un processus pratique pour rédiger une SOP à partir du terrain, sans transformer le document en texte administratif.",
           h3Items: [
             {
               heading: 'Étape 1 : Choisir le bon point de départ',
@@ -487,14 +487,14 @@ export const articles: BilingualArticle[] = [
           ],
         },
         {
-          h2: 'Utiliser un template vs. rédiger from scratch',
+          h2: 'Utiliser un template ou partir d’une page blanche',
           content:
-            "Rédiger une bibliothèque de SOPs complète depuis zéro est un chantier important. Un établissement bien structuré a besoin de plusieurs centaines de procédures individuelles sur l\'ensemble de ses départements. La plupart des hôtels qui tentent de tout construire en interne sous-estiment ce que cela demande. Des frameworks SOP prêts à l\'emploi construits à partir d\'une expérience opérationnelle réelle donnent à l\'équipe une base de départ structurée : procédures déjà séquencées, standards déjà définis, format déjà cohérent. Le travail devient de la personnalisation pour l\'établissement, pas de la construction depuis rien.",
+            "Rédiger une bibliothèque de SOPs complète depuis zéro est un chantier important. Un établissement bien structuré a besoin de nombreuses procédures individuelles sur l’ensemble de ses départements. Beaucoup d’équipes sous-estiment ce que cela demande. Des frameworks SOP prêts à l’emploi, construits à partir d’une expérience opérationnelle réelle, donnent une base de départ structurée : procédures déjà séquencées, standards déjà définis, format déjà cohérent. Le travail devient de la personnalisation pour l’établissement, pas de la construction depuis rien.",
         },
       ],
       conclusion:
-        "Les SOPs hôteliers ne valent que ce que vaut le soin apporté à leur rédaction. L\'observation, le langage simple, le test avec un nouveau collaborateur, la mise en place d\'une cadence de révision : c\'est ce qui distingue une documentation qui façonne les opérations quotidiennes d\'une documentation rangée dans un tiroir. L\'investissement est modeste. La différence opérationnelle ne l\'est pas.",
-      cta: { text: 'Explorer nos Playbooks SOP', href: '/fr/playbooks' },
+        "Une SOP ne vaut que par son usage réel. L’observation, le langage simple, le test avec un nouveau collaborateur et la cadence de révision distinguent une documentation qui aide le terrain d’un document rangé dans un dossier. L’investissement est modeste. La différence opérationnelle ne l’est pas.",
+      cta: { text: 'Voir les playbooks SOP', href: '/fr/playbooks' },
     },
   },
   {
@@ -900,13 +900,13 @@ export const articles: BilingualArticle[] = [
   {
     slug: 'hotel-fb-service-standards',
     en: {
-      title: 'Hotel F&B Service Standards: Restaurant, Bar, Room Service and Recovery',
+      title: 'F&B Service Standards: Restaurant, Bar, Room Service and Recovery',
       description:
-        'Hotel F&B service standards adapted from the LuxOps F&B Playbook: 21-step restaurant sequence, bar standards, room service timing, allergen handling and service recovery.',
+        'F&B service standards adapted from the LuxOps F&B Playbook: 21-step restaurant sequence, bar standards, room service timing, allergen handling and service recovery.',
       date: '2026-03-16',
       readTime: '10 min read',
       intro:
-        'This guide is adapted from the LuxOps F&B Playbook and the F&B Service Starter Pack. In a hotel, F&B service standards need to connect the restaurant, bar, breakfast, room service, guest recovery and quality control into one operating language. The point is not to make every interaction sound the same. The point is to make sure every team member knows what to prepare, what to check, what to say, when to escalate and how to close the service properly.',
+        'This guide is adapted from the LuxOps F&B Playbook and the F&B Service Starter Pack. In any operation with a restaurant, bar, breakfast or room service, F&B standards need to connect service preparation, guest interaction, recovery and quality control into one operating language. The point is not to make every interaction sound the same. The point is to make sure every team member knows what to prepare, what to check, what to say, when to escalate and how to close the service properly.',
       sections: [
         {
           h2: 'The F&B standard starts before the guest arrives',
@@ -951,7 +951,7 @@ export const articles: BilingualArticle[] = [
           ],
         },
         {
-          h2: 'Bar standards are part of the hotel experience',
+          h2: 'Bar standards are part of the service experience',
           content:
             'The bar chapter frames the bar as craft, hosting and atmosphere at the same time. It is often the first or last service interaction of the evening, so consistency in gestures, timing and presentation carries real weight.',
           h3Items: [
@@ -1024,17 +1024,17 @@ export const articles: BilingualArticle[] = [
         },
       ],
       conclusion:
-        'Hotel F&B standards are useful only when they are operational. The standard has to appear in the briefing, the station, the table, the bar, the tray, the recovery script and the closing handover. When those pieces are documented together, consistency becomes easier to coach and easier to repeat.',
+        'F&B standards are useful only when they are operational. The standard has to appear in the briefing, the station, the table, the bar, the tray, the recovery script and the closing handover. When those pieces are documented together, consistency becomes easier to coach and easier to repeat.',
       cta: { text: 'View the F&B Starter Pack', href: '/en/playbooks/fb-starter-pack' },
     },
     fr: {
-      title: 'Standards de service F&B en hôtellerie : restaurant, bar, room service et recovery',
+      title: 'Standards de service F&B : restaurant, bar, room service et recovery',
       description:
-        "Standards de service F&B hôtelier adaptés du Playbook F&B LuxOps : séquence restaurant en 21 étapes, bar, room service, allergènes et recovery client.",
+        "Standards de service F&B adaptés du Playbook F&B LuxOps : séquence restaurant en 21 étapes, bar, room service, allergènes et recovery client.",
       date: '2026-03-16',
       readTime: '10 min de lecture',
       intro:
-        "Ce guide est adapté du Playbook F&B LuxOps et du Starter Pack F&B. Dans un hôtel, les standards de service F&B doivent relier le restaurant, le bar, le petit-déjeuner, le room service, le recovery client et le contrôle qualité autour d’un même langage opérationnel. L’objectif n’est pas de rendre chaque interaction identique, mais de faire en sorte que chaque collaborateur sache quoi préparer, quoi contrôler, quoi dire, quand escalader et comment clôturer le service correctement.",
+        "Ce guide est adapté du playbook F&B LuxOps et du starter pack F&B. Dans un établissement avec restaurant, bar, petit-déjeuner ou room service, les standards F&B doivent relier la préparation, l’interaction client, le recovery et le contrôle qualité autour d’un même langage opérationnel. L’objectif n’est pas de rendre chaque interaction identique, mais de faire en sorte que chaque collaborateur sache quoi préparer, quoi contrôler, quoi dire, quand escalader et comment clôturer le service correctement.",
       sections: [
         {
           h2: 'Le standard F&B commence avant l’arrivée du client',
@@ -1042,12 +1042,12 @@ export const articles: BilingualArticle[] = [
             "Dans le Playbook F&B LuxOps, la préparation pré-service fait déjà partie de l’expérience client. Si le briefing reste vague, si le poste est incomplet ou si l’équipe ne connaît pas les allergies et les notes VIP, le service est fragilisé avant même l’installation de la première table.",
           h3Items: [
             {
-              heading: 'Préparation personnelle',
+              heading: 'Préparation individuelle',
               text: "La checklist quotidienne commence par l’uniforme, la présentation, l’hygiène et les outils de service : limonadier, stylo, ramasse-miettes et carnet. Cela paraît basique, mais ce sont les premiers écarts visibles en service. Un collaborateur qui démarre sans outils improvisera plus tard.",
             },
             {
               heading: 'Briefing pré-service',
-              text: "Le template de briefing du Starter Pack couvre le nombre de réservations, les VIP, les occasions spéciales, les changements de carte, les articles indisponibles, les suggestions de vins, les accords mets et vins, les notes de direction et les affectations de rangs. C’est à ce moment-là que toute l’équipe reçoit la même lecture du service à venir.",
+              text: "Le template de briefing du starter pack couvre le nombre de réservations, les VIP, les occasions spéciales, les changements de carte, les articles indisponibles, les suggestions de vins, les accords mets et vins, les notes de direction et les affectations de rangs. C’est à ce moment-là que toute l’équipe reçoit la même lecture du service à venir.",
             },
             {
               heading: 'Inspection finale',
@@ -1079,7 +1079,7 @@ export const articles: BilingualArticle[] = [
           ],
         },
         {
-          h2: 'Le bar fait partie de l’expérience hôtel',
+          h2: 'Le bar fait partie de l’expérience de service',
           content:
             "Le chapitre bar présente le bar comme un mélange de geste technique, d’accueil et d’atmosphère. C’est souvent le premier ou le dernier contact de service de la soirée, donc la régularité des gestes, du timing et de la présentation pèse lourd.",
           h3Items: [
@@ -1136,9 +1136,9 @@ export const articles: BilingualArticle[] = [
           ],
         },
         {
-          h2: 'Starter Pack ou Playbook F&B complet ?',
+          h2: 'Starter pack ou playbook F&B complet ?',
           content:
-            "Le Starter Pack F&B est conçu pour une utilisation immédiate : checklist de service quotidien, checklist d’ouverture restaurant, checklist de fermeture, SOP de séquence de service, template de briefing, checklist d’inspection de table, scripts de recovery, tracker allergènes, checklist room service, fiche upselling et checklist onboarding. Le playbook complet va plus loin sur le restaurant, le petit-déjeuner, le bar, le vin, le room service, l’interaction client, la mise en place, le management et la qualité.",
+            "Le starter pack F&B est conçu pour une utilisation immédiate : checklist de service quotidien, checklist d’ouverture restaurant, checklist de fermeture, SOP de séquence de service, template de briefing, checklist d’inspection de table, scripts de recovery, tracker allergènes, checklist room service, fiche upselling et checklist onboarding. Le playbook complet va plus loin sur le restaurant, le petit-déjeuner, le bar, le vin, le room service, l’interaction client, la mise en place, le management et la qualité.",
           h3Items: [
             {
               heading: 'Utiliser le starter pack pour l’exécution quotidienne',
@@ -1153,7 +1153,7 @@ export const articles: BilingualArticle[] = [
       ],
       conclusion:
         "Les standards F&B ne sont utiles que lorsqu’ils deviennent opérationnels. Ils doivent se voir dans le briefing, le poste, la table, le bar, le plateau, le script de recovery et la passation de clôture. Lorsque ces éléments sont documentés ensemble, la régularité devient plus facile à coacher et à répéter.",
-      cta: { text: 'Voir le Starter Pack F&B', href: '/fr/playbooks/fb-starter-pack' },
+      cta: { text: 'Voir le starter pack F&B', href: '/fr/playbooks/fb-starter-pack' },
     },
   },
   {
@@ -1787,13 +1787,13 @@ export const articles: BilingualArticle[] = [
   {
     slug: 'hotel-fb-restaurant-procedures',
     en: {
-      title: 'Hotel Restaurant SOP: 21-Step Service Sequence, Opening and Closing',
+      title: 'Restaurant SOP: 21-Step Service Sequence, Opening and Closing',
       description:
-        'Hotel restaurant SOP guide adapted from the LuxOps F&B Playbook: opening checklist, 21-step service sequence, table inspection, order taking, recovery and closing handover.',
+        'Restaurant SOP guide adapted from the LuxOps F&B Playbook: opening checklist, 21-step service sequence, table inspection, order taking, recovery and closing handover.',
       date: '2026-03-29',
       readTime: '10 min read',
       intro:
-        'This restaurant SOP guide is adapted from the LuxOps F&B Playbook and the F&B Starter Pack. It focuses on the operating rhythm that makes hotel restaurant service consistent: opening preparation, briefing, table inspection, the 21-step service sequence, recovery rules and closing handover. The point is not to make service mechanical. It is to remove operational doubt so the team can focus on the guest.',
+        'This restaurant SOP guide is adapted from the LuxOps F&B Playbook and the F&B Starter Pack. It focuses on the operating rhythm that makes restaurant service consistent: opening preparation, briefing, table inspection, the 21-step service sequence, recovery rules and closing handover. The point is not to make service mechanical. It is to remove operational doubt so the team can focus on the guest.',
       sections: [
         {
           h2: 'Opening procedure: T-90 to doors open',
@@ -1888,25 +1888,25 @@ export const articles: BilingualArticle[] = [
         },
       ],
       conclusion:
-        'A hotel restaurant SOP is useful when it follows the real shift: opening, briefing, service sequence, order control, table maintenance, recovery and closing. The LuxOps F&B Starter Pack gives the daily checklists and scripts. The full F&B Playbook gives the complete department reference.',
+        'A restaurant SOP is useful when it follows the real shift: opening, briefing, service sequence, order control, table maintenance, recovery and closing. The LuxOps F&B Starter Pack gives the daily checklists and scripts. The full F&B Playbook gives the complete department reference.',
       cta: { text: 'View the F&B Starter Pack', href: '/en/playbooks/fb-starter-pack' },
     },
     fr: {
-      title: "SOP restaurant hôtelier : ouverture, séquence de service et fermeture",
+      title: "SOP restaurant : ouverture, séquence de service et fermeture",
       description:
-        "Guide SOP restaurant hôtelier adapté du Playbook F&B LuxOps : checklist d’ouverture, séquence de service en 21 étapes, inspection de table, prise de commande, recovery et clôture.",
+        "Guide SOP restaurant adapté du Playbook F&B LuxOps : checklist d’ouverture, séquence de service en 21 étapes, inspection de table, prise de commande, recovery et clôture.",
       date: '2026-03-29',
       readTime: '10 min de lecture',
       intro:
-        "Ce guide SOP restaurant est adapté du Playbook F&B LuxOps et du Starter Pack F&B. Il se concentre sur le rythme opérationnel qui rend le service restaurant régulier : préparation d’ouverture, briefing, inspection de table, séquence de service en 21 étapes, règles de recovery et passation de clôture. L’objectif n’est pas de rendre le service mécanique, mais de retirer le doute opérationnel pour que l’équipe puisse se concentrer sur le client.",
+        "Ce guide SOP restaurant est adapté du playbook F&B LuxOps et du starter pack F&B. Il s’applique aussi bien à un restaurant d’établissement, un resort, un coffee shop, un point de vente indépendant ou une salle de petit-déjeuner. Le sujet reste le même : préparation d’ouverture, briefing, inspection de table, séquence de service, règles de recovery et passation de clôture. L’objectif n’est pas de rendre le service mécanique, mais de retirer le doute opérationnel pour que l’équipe puisse se concentrer sur le client.",
       sections: [
         {
           h2: 'Procédure d’ouverture : de T-90 à l’ouverture des portes',
           content:
-            "La checklist d’ouverture du Starter Pack démarre 90 minutes avant le service. C’est important, car le restaurant se remet rarement complètement d’une mauvaise ouverture : une mise en place incomplète devient un service lent, un service lent devient du stress, et le stress devient visible pour le client.",
+            "La checklist d’ouverture du starter pack démarre 90 minutes avant le service. C’est important, car le restaurant se remet rarement complètement d’une mauvaise ouverture : une mise en place incomplète devient un service lent, un service lent devient du stress, et le stress devient visible pour le client.",
           h3Items: [
             {
-              heading: 'T-90 : préparation personnelle et connaissance du jour',
+              heading: 'T-90 : préparation individuelle et connaissance du jour',
               text: "L’uniforme, la présentation, l’hygiène et les outils sont contrôlés en premier. L’équipe vérifie ensuite les changements de carte, les suggestions, les articles indisponibles, les VIP, les réservations notables, les allergies et les demandes spéciales avant de passer à la mise en place physique.",
             },
             {
@@ -1922,7 +1922,7 @@ export const articles: BilingualArticle[] = [
         {
           h2: 'La séquence restaurant en 21 étapes',
           content:
-            "Le Playbook F&B donne à l’équipe restaurant une séquence complète en 21 étapes. Ce n’est pas un script. C’est l’ordre opérationnel qui garde l’expérience fluide, de l’entrée du client jusqu’à l’au revoir.",
+            "Le playbook F&B donne à l’équipe restaurant une séquence complète en 21 étapes. Ce n’est pas un script. C’est l’ordre opérationnel qui garde l’expérience fluide, de l’entrée du client jusqu’à l’au revoir.",
           h3Items: [
             {
               heading: 'Arrivée et premier contact',
@@ -1949,7 +1949,7 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: 'Recommandations précises',
-              text: "L’upselling fonctionne quand il est contextuel. La fiche upselling du Starter Pack encourage des suggestions précises : vin avec un steak, jus frais au petit-déjeuner, café ou digestif avec dessert, pas une pression générique.",
+              text: "L’upselling fonctionne quand il est contextuel. La fiche upselling du starter pack encourage des suggestions précises : vin avec un steak, jus frais au petit-déjeuner, café ou digestif avec dessert, pas une pression générique.",
             },
             {
               heading: 'Responsabilité du rythme',
@@ -1960,7 +1960,7 @@ export const articles: BilingualArticle[] = [
         {
           h2: 'Inspection de table et mise en place',
           content:
-            "Le chapitre mise en place présente la préparation comme une disponibilité physique, mentale et organisationnelle. Le Starter Pack transforme cette logique en checklist d’inspection de table, directement utilisable par l’équipe avant le service.",
+            "Le chapitre mise en place présente la préparation comme une disponibilité physique, mentale et organisationnelle. Le starter pack transforme cette logique en checklist d’inspection de table, directement utilisable par l’équipe avant le service.",
           h3Items: [
             {
               heading: 'Standard physique de la table',
@@ -1979,7 +1979,7 @@ export const articles: BilingualArticle[] = [
         {
           h2: 'Clôture de service et passation',
           content:
-            "Une bonne clôture protège le service suivant. Le Starter Pack F&B inclut une checklist de fermeture restaurant afin que la fin de shift ne soit pas gérée de mémoire.",
+            "Une bonne clôture protège le service suivant. Le starter pack F&B inclut une checklist de fermeture restaurant afin que la fin de shift ne soit pas gérée de mémoire.",
           h3Items: [
             {
               heading: 'Tâches de clôture',
@@ -1993,8 +1993,8 @@ export const articles: BilingualArticle[] = [
         },
       ],
       conclusion:
-        "Une SOP restaurant hôtelier utile suit le vrai déroulé d’un shift : ouverture, briefing, séquence de service, prise de commande, suivi de table, recovery et clôture. Le Starter Pack F&B donne les checklists et scripts du quotidien. Le Playbook F&B complet apporte toute la référence du département.",
-      cta: { text: 'Voir le Starter Pack F&B', href: '/fr/playbooks/fb-starter-pack' },
+        "Une SOP restaurant utile suit le vrai déroulé d’un shift : ouverture, briefing, séquence de service, prise de commande, suivi de table, recovery et clôture. Le starter pack F&B donne les checklists et scripts du quotidien. Le playbook F&B complet apporte toute la référence du département.",
+      cta: { text: 'Voir le starter pack F&B', href: '/fr/playbooks/fb-starter-pack' },
     },
   },
   {
@@ -2213,9 +2213,9 @@ export const articles: BilingualArticle[] = [
   {
     slug: 'hotel-room-service-sops',
     en: {
-      title: 'Hotel Room Service SOP: Order Taking, Tray Setup and Delivery Standards',
+      title: 'Room Service SOP: Order Taking, Tray Setup and Delivery Standards',
       description:
-        'Hotel room service SOP adapted from the LuxOps F&B Playbook: order taking, delivery timing, tray and trolley setup, in-room protocol, delay recovery and tray collection.',
+        'Room service SOP adapted from the LuxOps F&B Playbook: order taking, delivery timing, tray and trolley setup, in-room protocol, delay recovery and tray collection.',
       date: '2026-03-31',
       readTime: '9 min read',
       intro:
@@ -2322,13 +2322,13 @@ export const articles: BilingualArticle[] = [
       cta: { text: 'View the F&B Starter Pack', href: '/en/playbooks/fb-starter-pack' },
     },
     fr: {
-      title: "SOP room service en hôtel : prise de commande, plateau et livraison",
+      title: "SOP room service : prise de commande, plateau et livraison",
       description:
-        "SOP room service en hôtel adaptée du Playbook F&B LuxOps : prise de commande, timing, dressage du plateau et du chariot, protocole en chambre, retard et débarrassage.",
+        "SOP room service adaptée du Playbook F&B LuxOps : prise de commande, timing, dressage du plateau et du chariot, protocole en chambre, retard et débarrassage.",
       date: '2026-03-31',
       readTime: '9 min de lecture',
       intro:
-        "Cette SOP room service est adaptée du Playbook F&B LuxOps et du Starter Pack F&B. Le playbook définit le room service comme le standard restaurant porté dans l’espace privé du client. Il n’y a pas d’ambiance de salle, pas de manager qui passe pour repérer un retard et pas de deuxième interaction pour corriger l’impression. La commande, le timing, le plateau, la livraison et le débarrassage doivent donc être pensés comme un seul flux contrôlé.",
+        "Cette SOP room service est adaptée du playbook F&B LuxOps et du starter pack F&B. Le playbook définit le room service comme le standard restaurant porté dans l’espace privé du client. Il n’y a pas d’ambiance de salle, pas de manager qui passe pour repérer un retard et pas de deuxième interaction pour corriger l’impression. La commande, le timing, le plateau, la livraison et le débarrassage doivent donc être pensés comme un seul flux contrôlé.",
       sections: [
         {
           h2: 'Le room service n’est pas un service restaurant diminué',
@@ -2352,7 +2352,7 @@ export const articles: BilingualArticle[] = [
         {
           h2: 'La prise de commande est le premier contrôle qualité',
           content:
-            "L’appel room service définit les attentes du client en matière d’exactitude, de délai et de personnalisation. Le Starter Pack en fait une checklist, car les petites omissions à la prise de commande deviennent des erreurs visibles à la porte.",
+            "L’appel room service définit les attentes du client en matière d’exactitude, de délai et de personnalisation. Le starter pack en fait une checklist, car les petites omissions à la prise de commande deviennent des erreurs visibles à la porte.",
           h3Items: [
             {
               heading: 'Standard de réponse',
@@ -2427,8 +2427,8 @@ export const articles: BilingualArticle[] = [
         },
       ],
       conclusion:
-        "Le room service fonctionne lorsque la prise de commande, le timing, le dressage, la livraison et le débarrassage sont gérés comme un seul flux contrôlé. Le Starter Pack F&B inclut une checklist room service pratique pour le quotidien. Le Playbook F&B complet apporte la procédure complète, les standards de timing, la logique VIP, la gestion des situations sensibles et le contrôle qualité.",
-      cta: { text: 'Voir le Starter Pack F&B', href: '/fr/playbooks/fb-starter-pack' },
+        "Le room service fonctionne lorsque la prise de commande, le timing, le dressage, la livraison et le débarrassage sont gérés comme un seul flux contrôlé. Le starter pack F&B inclut une checklist room service pratique pour le quotidien. Le playbook F&B complet apporte la procédure complète, les standards de timing, la logique VIP, la gestion des situations sensibles et le contrôle qualité.",
+      cta: { text: 'Voir le starter pack F&B', href: '/fr/playbooks/fb-starter-pack' },
     },
   },
   {
@@ -2580,16 +2580,16 @@ export const articles: BilingualArticle[] = [
       ],
     },
     fr: {
-      title: 'Procédures Opérationnelles Hôtelières (SOP) : Le Guide Complet pour les Managers',
+      title: 'SOP et procédures opérationnelles : construire un référentiel vraiment utilisable',
       description:
-        'Ce que doivent couvrir les SOP hôtelières, comment les rédiger pour que les équipes les appliquent, et ce qui distingue une bibliothèque SOP efficace d\'un document que personne ne lit.',
+        'Ce que doivent couvrir les SOPs, comment les rédiger pour que les équipes les appliquent, et ce qui distingue une bibliothèque utile d’un document que personne ne lit.',
       date: '2026-04-28',
       readTime: '9 min de lecture',
       intro:
-        'La plupart des hôtels disposent d\'une version de procédures opérationnelles standard. La plupart de ces documents sont obsolètes, stockés dans un endroit introuvable et rédigés d\'une manière qui ne reflète pas le travail réel. Une SOP hôtelière efficace n\'est pas un document de conformité. C\'est à la fois un outil de formation, un référentiel qualité et un accélérateur d\'intégration. Ce guide couvre ce que les SOP hôtelières doivent contenir, comment les rédiger pour qu\'elles soient utilisées et comment les maintenir à jour.',
+        'La plupart des établissements disposent d’une version de procédures opérationnelles standard. Beaucoup de ces documents sont obsolètes, stockés dans un endroit introuvable ou rédigés d’une manière qui ne reflète pas le travail réel. Une SOP efficace n’est pas un document de conformité. C’est à la fois un outil de formation, un référentiel qualité et un accélérateur d’intégration. Ce guide couvre ce que les SOPs doivent contenir, comment les rédiger pour qu’elles soient utilisées et comment les maintenir à jour.',
       sections: [
         {
-          h2: 'Ce que sont réellement les procédures opérationnelles hôtelières',
+          h2: 'Ce que sont réellement les procédures opérationnelles',
           content:
             'Une procédure opérationnelle standard est une description écrite de la façon dont une tâche spécifique doit être réalisée à chaque fois, par n\'importe quel membre qualifié de l\'équipe, pour le même résultat. Cette définition est importante car elle fixe le niveau d\'exigence. Une SOP n\'est pas une déclaration de politique générale. Ce n\'est pas un script de vidéo de formation. C\'est une séquence étape par étape qu\'un collaborateur peut suivre sans demander à son superviseur et aboutir au résultat correct.',
           h3Items: [
@@ -2599,12 +2599,12 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: 'Ce qui rend une SOP vraiment utilisable',
-              text: 'Une SOP que le personnel suit présente quatre caractéristiques. Elle est suffisamment courte pour être lue en moins de deux minutes. Elle utilise le vocabulaire que le personnel emploie réellement. Elle a été rédigée par ou relue avec les personnes qui font le travail. Et elle se trouve quelque part d\'accessible pendant le service, pas dans un dossier partagé nécessitant trois clics et une connexion.',
+              text: 'Une SOP que les équipes suivent présente quatre caractéristiques. Elle est suffisamment courte pour être lue en moins de deux minutes. Elle utilise le vocabulaire du terrain. Elle a été rédigée par ou relue avec les personnes qui font le travail. Et elle se trouve quelque part d’accessible pendant le service, pas dans un dossier partagé nécessitant trois clics et une connexion.',
             },
           ],
         },
         {
-          h2: 'Pourquoi la plupart des SOP hôtelières échouent en pratique',
+          h2: 'Pourquoi la plupart des SOPs échouent en pratique',
           content:
             'L\'échec le plus courant n\'est pas le contenu de la SOP. C\'est la diffusion et la maintenance. Les SOP rédigées lors d\'une phase de pré-ouverture et jamais mises à jour sont un frein, pas un atout. Une procédure qui décrit comment les choses fonctionnaient avant le changement de PMS ou la restructuration du département crée de la confusion plutôt que de la cohérence.',
           h3Items: [
@@ -2623,9 +2623,9 @@ export const articles: BilingualArticle[] = [
           ],
         },
         {
-          h2: 'Comment structurer une SOP hôtelière',
+          h2: 'Comment structurer une SOP',
           content:
-            'La forme compte autant que le contenu. Une SOP bien structurée peut être lue rapidement, utilisée comme référence pendant une tâche et mise à jour sans réécrire l\'intégralité du document. La structure suivante fonctionne pour la plupart des départements hôteliers.',
+            'La forme compte autant que le contenu. Une SOP bien structurée peut être lue rapidement, utilisée comme référence pendant une tâche et mise à jour sans réécrire l’intégralité du document. La structure suivante fonctionne pour la plupart des départements opérationnels.',
           h3Items: [
             {
               heading: 'Informations d\'en-tête',
@@ -2648,10 +2648,10 @@ export const articles: BilingualArticle[] = [
         {
           h2: 'Catégories de SOP principales par département',
           content:
-            'Les opérations hôtelières se divisent en quatre départements principaux, chacun avec des exigences SOP distinctes. Les procédures qui génèrent le plus de risques côté client, réception, housekeeping, restauration et spa, sont celles où les standards documentés ont le meilleur retour sur investissement.',
+            'Les opérations se divisent en départements avec des exigences SOP distinctes. Les procédures qui génèrent le plus de risques côté client, réception, housekeeping, restauration et spa, sont celles où les standards documentés ont le meilleur retour sur investissement.',
           h3Items: [
             {
-              heading: 'Réception (Front Office)',
+              heading: 'Réception (front office)',
               text: 'SOP prioritaires : séquence check-in, séquence check-out, gestion des late check-out, résolution des réclamations, protocole d\'arrivée VIP, standards téléphoniques et procédure no-show. Le check-in et le check-out sont les deux extrémités de chaque séjour client. Si la séquence est incohérente, l\'expérience client l\'est par définition.',
             },
             {
@@ -2688,7 +2688,7 @@ export const articles: BilingualArticle[] = [
           ],
         },
         {
-          h2: 'Ce que de bonnes SOP hôtelières permettent',
+          h2: 'Ce que de bonnes SOPs permettent',
           content:
             'Le bénéfice opérationnel d\'une bibliothèque SOP fonctionnelle est la cohérence à grande échelle : la même chambre, le même accueil, la même présentation d\'assiette qu\'il soit mardi matin avec une équipe complète ou samedi soir avec un mélange de saisonniers. L\'avantage moins visible est que les procédures documentées accélèrent tout le reste. Former de nouveaux collaborateurs est plus rapide. Auditer la qualité est plus rapide. Identifier la source d\'une réclamation récurrente est plus rapide.',
           h3Items: [
@@ -2698,25 +2698,25 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: 'Réduction de la dépendance aux connaissances institutionnelles',
-              text: 'Dans la plupart des hôtels, les collaborateurs les plus expérimentés portent la connaissance opérationnelle dans leur tête. Quand ils partent, la connaissance part avec eux. Une bibliothèque SOP mature externalise cette connaissance. Le départ d\'un chef de service de longue date ne crée pas de lacune qualité si les procédures qu\'il a perfectionnées sur des années sont documentées et formées.',
+              text: 'Dans beaucoup d’établissements, les collaborateurs les plus expérimentés portent la connaissance opérationnelle dans leur tête. Quand ils partent, la connaissance part avec eux. Une bibliothèque SOP mature externalise cette connaissance. Le départ d’un chef de service de longue date ne crée pas de lacune qualité si les procédures qu’il a perfectionnées sur des années sont documentées et formées.',
             },
           ],
         },
       ],
       conclusion:
-        'Une procédure opérationnelle hôtelière n\'est aussi utile que son adoption. Rédiger le document est le point de départ. Le travail consiste à construire une culture où les procédures sont la norme, où le personnel sait où les trouver, où les managers les appliquent lors des inspections et des briefings, et où la bibliothèque est maintenue à jour au fil de l\'évolution de l\'établissement. C\'est une discipline managériale, pas un projet documentaire.',
-      cta: { text: 'Voir nos Playbooks SOP', href: '/fr/playbooks' },
+        'Une procédure opérationnelle n’est utile que si elle est adoptée. Rédiger le document est le point de départ. Le travail consiste à construire une culture où les procédures deviennent la norme, où les équipes savent où les trouver, où les managers les utilisent lors des inspections et des briefings, et où la bibliothèque reste à jour au fil de l’évolution de l’établissement. C’est une discipline managériale, pas un projet documentaire.',
+      cta: { text: 'Voir les playbooks SOP', href: '/fr/playbooks' },
       faqs: [
         {
-          question: 'Combien de SOP un hôtel a-t-il généralement besoin ?',
-          answer: 'Un hôtel de taille moyenne avec quatre à cinq départements maintient généralement entre 40 et 80 SOP actives couvrant la réception, le housekeeping, la restauration et le spa. Le nombre importe moins que la couverture des procédures à haute fréquence et à haut risque. Commencez par 8 à 10 par département et développez à partir de là.',
+          question: 'Combien de SOPs faut-il généralement prévoir ?',
+          answer: 'Un établissement de taille moyenne avec quatre à cinq départements maintient généralement entre 40 et 80 SOPs actives couvrant la réception, le housekeeping, la restauration et le spa. Le nombre importe moins que la couverture des procédures à haute fréquence et à haut risque. Commencez par 8 à 10 par département et développez à partir de là.',
         },
         {
-          question: 'À quelle fréquence les SOP hôtelières doivent-elles être révisées ?',
+          question: 'À quelle fréquence les SOPs doivent-elles être révisées ?',
           answer: 'Les procédures à haute fréquence comme le check-in, le check-out et le nettoyage des chambres doivent être révisées au minimum annuellement, ou chaque fois que le système ou le standard sous-jacent change. Les procédures moins fréquentes peuvent être révisées tous les un à deux ans. Chaque SOP doit porter une date de révision.',
         },
         {
-          question: 'Quelle est la différence entre une SOP hôtelière et un standard de marque ?',
+          question: 'Quelle est la différence entre une SOP et un standard de marque ?',
           answer: 'Un standard de marque définit à quoi doit ressembler le résultat : le placement des amenités, le script d\'accueil, la présentation du service de nuit. Une SOP définit comment y parvenir : la séquence, le timing, les matériaux utilisés. Les standards de marque fixent le repère. Les SOP sont la notice pour l\'atteindre.',
         },
       ],
@@ -3011,7 +3011,7 @@ export const articles: BilingualArticle[] = [
           answer: 'Une passation complète inclut l\'occupation actuelle, les arrivées et départs prévus, les réclamations ouvertes ou demandes de service en attente, les VIP en séjour ou arrivant, les chambres bloquées, les problèmes de maintenance affectant les zones côté client et toutes les décisions ayant dévié de la procédure standard. Les journaux écrits sont plus fiables que la passation verbale seule.',
         },
         {
-          question: 'Comment former le personnel de réception aux procédures ?',
+          question: 'Comment former les équipes de réception aux procédures ?',
           answer: 'Parcourir la SOP étape par étape, puis faire jouer la procédure en jeu de rôle avec un superviseur. Évaluer par rapport au standard écrit, pas à l\'impression générale. Valider uniquement quand le résultat correspond à la SOP. Faire un suivi avec des revues de performance observées pendant les 30 premiers jours et des contrôles ponctuels périodiques ensuite.',
         },
       ],
@@ -3020,16 +3020,16 @@ export const articles: BilingualArticle[] = [
   {
     slug: 'hotel-staff-training-service-standards',
     en: {
-      title: 'How to Train Hotel Staff on Service Standards Without Disrupting Operations',
+      title: 'Service Standards Training: How to Train Hotel Teams Without Disrupting Operations',
       description:
-        'Most hotels have service standards. Few have a reliable way to teach them. Learn how to run on-property hotel staff training that changes how teams work, without shutting down operations.',
+        'Most properties have service standards. Few have a reliable way to teach them. Learn how to run on-site service standards training that changes how teams work, without shutting down operations.',
       date: '2026-04-30',
       readTime: '6 min read',
       intro:
-        'Most hotels have service standards. Few have a reliable way to teach them. The result is a team where every member applies procedures slightly differently: not out of negligence, but because no one taught the standard clearly enough for it to stick.',
+        'Most properties have service standards. Few have a reliable way to teach them. The result is a team where every member applies procedures slightly differently: not out of negligence, but because no one taught the standard clearly enough for it to stick.',
       sections: [
         {
-          h2: 'Why Service Standards Training Fails in Most Hotels',
+          h2: 'Why service standards training fails in most properties',
           content: 'The problem is rarely the standard itself. It is how, or whether, it gets taught.',
           h3Items: [
             {
@@ -3047,12 +3047,12 @@ export const articles: BilingualArticle[] = [
           ],
         },
         {
-          h2: 'What Good Hotel Staff Training Looks Like',
-          content: 'Effective hotel staff training shares three characteristics that separate it from a standard briefing or onboarding session.',
+          h2: 'What good service standards training looks like',
+          content: 'Effective service standards training shares three characteristics that separate it from a standard briefing or onboarding session.',
           h3Items: [
             {
               heading: 'It is built around your actual procedures',
-              text: 'Generic customer service training does not work in hotel operations. A session that does not reference your check-in sequence, your service standards, your complaint handling protocol is a session your team will forget by the following Monday.',
+              text: 'Generic customer service training does not work in hospitality operations. A session that does not reference your check-in sequence, your service standards or your complaint handling protocol is a session your team will forget by the following Monday.',
             },
             {
               heading: 'It involves the whole department, not just new hires',
@@ -3078,7 +3078,7 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: 'Train one department at a time',
-              text: 'Front Office first, then Housekeeping, then Food and Beverage. Each session is focused, faster to schedule, and easier to follow up on. Trying to train the whole hotel at once creates logistical problems and dilutes the content.',
+              text: 'Front Office first, then Housekeeping, then Food and Beverage. Each session is focused, faster to schedule, and easier to follow up on. Trying to train every department at once creates logistical problems and dilutes the content.',
             },
           ],
         },
@@ -3091,38 +3091,38 @@ export const articles: BilingualArticle[] = [
       conclusion:
         'Service standards do not enforce themselves. They require a team that understands them well enough to apply them consistently, adapt when the situation requires it, and pass the standard on to the next person who joins. That is what on-property training is designed to do.',
       cta: {
-        text: 'View on-property training formats',
+        text: 'View on-site training formats',
         href: '/training',
       },
       faqs: [
         {
-          question: 'How long should a hotel staff training session last?',
+          question: 'How long should a service standards training session last?',
           answer:
             'For most departments, a half-day (4 hours) covers one operational priority thoroughly. A full day (8 hours) allows for broader alignment across multiple topics and more time for guided practice with the team.',
         },
         {
-          question: 'Can hotel staff training be adapted to our specific procedures?',
+          question: 'Can training be adapted to our specific procedures?',
           answer:
             'Yes. On-property training should always be built around your actual SOPs, service standards, and operational context, not a generic curriculum. That is what makes the difference between a session teams remember and one they forget.',
         },
         {
-          question: 'What is the difference between hotel staff training and onboarding?',
+          question: 'What is the difference between service training and onboarding?',
           answer:
             'Onboarding introduces a new hire to the property and its basic expectations. Training aligns an existing team, including experienced staff, around a consistent standard. Both are necessary and serve different purposes.',
         },
       ],
     },
     fr: {
-      title: 'Comment Former le Personnel Hôtelier aux Standards de Service Sans Perturber l\'Exploitation',
+      title: 'Formation standards de service : transmettre les bons réflexes sans désorganiser l’exploitation',
       description:
-        'La plupart des hôtels ont des standards de service. Peu disposent d\'un processus fiable pour les transmettre. Découvrez comment organiser une formation sur site qui change réellement les pratiques des équipes, sans désorganiser l\'exploitation.',
+        'La plupart des établissements ont des standards de service. Peu disposent d’un processus fiable pour les transmettre. Découvrez comment organiser une formation sur site qui change réellement les pratiques des équipes, sans désorganiser l’exploitation.',
       date: '2026-04-30',
       readTime: '6 min de lecture',
       intro:
-        'La plupart des hôtels ont des standards de service. Peu disposent d\'un processus fiable pour les transmettre. Il en résulte des équipes où chaque collaborateur applique les procédures légèrement différemment : non par négligence, mais parce que le standard n\'a jamais été enseigné avec suffisamment de rigueur pour être vraiment intégré.',
+        'La plupart des établissements ont des standards de service. Peu disposent d’un processus fiable pour les transmettre. Il en résulte des équipes où chaque collaborateur applique les procédures légèrement différemment : non par négligence, mais parce que le standard n’a jamais été transmis avec assez de clarté pour être vraiment intégré.',
       sections: [
         {
-          h2: 'Pourquoi la formation aux standards de service échoue dans la plupart des hôtels',
+          h2: 'Pourquoi la formation aux standards de service échoue souvent',
           content: 'Le problème vient rarement du standard lui-même. Il vient de la façon dont il est transmis, ou du fait qu\'il ne l\'est pas.',
           h3Items: [
             {
@@ -3131,21 +3131,21 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: 'Les procédures existent sur papier mais ne sont jamais enseignées',
-              text: 'Beaucoup d\'hôtels disposent de SOPs rédigées. Bien moins nombreux sont ceux qui ont mis en place un processus pour s\'assurer que ces procédures sont comprises et appliquées par l\'ensemble des équipes. Un document dans un dossier partagé ne forme personne.',
+              text: 'Beaucoup d’établissements disposent de SOPs rédigées. Bien moins nombreux sont ceux qui ont mis en place un processus pour s’assurer que ces procédures sont comprises et appliquées par l’ensemble des équipes. Un document dans un dossier partagé ne forme personne.',
             },
             {
               heading: 'Les nouvelles recrues apprennent par observation, sans comprendre le sens',
-              text: 'La transmission informelle est rapide mais fragile. Elle transmet des habitudes, pas du raisonnement. Un collaborateur qui sait quoi faire mais pas pourquoi déviera dès que la situation sort de l\'ordinaire, ce qui en hôtellerie arrive en permanence.',
+              text: 'La transmission informelle est rapide mais fragile. Elle transmet des habitudes, pas du raisonnement. Un collaborateur qui sait quoi faire mais pas pourquoi déviera dès que la situation sort de l’ordinaire, ce qui arrive en permanence dans l’exploitation.',
             },
           ],
         },
         {
-          h2: 'À quoi ressemble une bonne formation du personnel hôtelier',
-          content: 'Une formation efficace du personnel hôtelier partage trois caractéristiques qui la distinguent d\'un briefing ou d\'une session d\'intégration classique.',
+          h2: 'À quoi ressemble une bonne formation aux standards',
+          content: 'Une formation efficace aux standards de service partage trois caractéristiques qui la distinguent d’un briefing ou d’une session d’intégration classique.',
           h3Items: [
             {
               heading: 'Elle est construite autour de vos propres procédures',
-              text: 'Une formation générique au service client ne fonctionne pas en exploitation hôtelière. Une session qui ne fait pas référence à votre séquence de check-in, à vos standards de service, à votre procédure de gestion des réclamations est une session que vos équipes auront oubliée dès le lundi suivant.',
+              text: 'Une formation générique au service client ne fonctionne pas en exploitation. Une session qui ne fait pas référence à votre séquence de check-in, à vos standards de service ou à votre procédure de gestion des réclamations est une session que vos équipes auront oubliée dès le lundi suivant.',
             },
             {
               heading: 'Elle implique tout le département, pas uniquement les nouvelles recrues',
@@ -3171,7 +3171,7 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: 'Former un département à la fois',
-              text: 'La réception d\'abord, puis le Housekeeping, puis le Food and Beverage. Chaque session est ciblée, plus facile à planifier et plus simple à suivre dans la durée. Vouloir former l\'ensemble de l\'hôtel simultanément crée des problèmes logistiques et dilue le contenu.',
+              text: 'La réception d’abord, puis le housekeeping, puis le F&B. Chaque session est ciblée, plus facile à planifier et plus simple à suivre dans la durée. Vouloir former tous les départements en même temps crée des problèmes logistiques et dilue le contenu.',
             },
           ],
         },
@@ -3189,7 +3189,7 @@ export const articles: BilingualArticle[] = [
       },
       faqs: [
         {
-          question: 'Quelle doit être la durée d\'une session de formation du personnel hôtelier ?',
+          question: 'Quelle doit être la durée d’une session de formation aux standards ?',
           answer:
             'Pour la plupart des départements, une demi-journée (4 heures) permet de traiter une priorité opérationnelle en profondeur. Une journée complète (8 heures) permet un alignement plus large sur plusieurs thèmes, avec davantage de temps consacré à la mise en pratique.',
         },
@@ -3209,16 +3209,16 @@ export const articles: BilingualArticle[] = [
   {
     slug: 'hotel-staff-turnover-training',
     en: {
-      title: 'How on-property training reduces hotel staff turnover',
+      title: 'How on-site training reduces team turnover',
       description:
-        'High turnover in hotels is rarely a pay problem. Learn how structured on-property training reduces staff attrition by giving teams the clarity, confidence and standards they need to stay.',
+        'High turnover is rarely only a pay problem. Learn how structured on-site training reduces attrition by giving teams the clarity, confidence and standards they need to stay.',
       date: '2026-04-30',
       readTime: '6 min read',
       intro:
-        'The hospitality industry has one of the highest staff turnover rates of any sector. Most hotels treat this as a hiring problem. The more accurate diagnosis, in the majority of cases, is a training problem. Staff who leave in the first three months rarely cite salary first. They cite feeling lost, unsupported, and unclear on what was expected of them.',
+        'Hospitality has one of the highest turnover rates of any sector. Many properties treat this as a hiring problem. The more accurate diagnosis, in the majority of cases, is a training problem. Team members who leave in the first three months rarely cite salary first. They cite feeling lost, unsupported, and unclear on what was expected of them.',
       sections: [
         {
-          h2: 'Why hotel staff leave: the training root cause',
+          h2: 'Why team members leave: the training root cause',
           content:
             'The reasons staff give for leaving and the reasons they actually leave are rarely the same.',
           h3Items: [
@@ -3305,16 +3305,16 @@ export const articles: BilingualArticle[] = [
       ],
     },
     fr: {
-      title: 'Comment la formation sur site réduit le turn-over dans les hôtels',
+      title: 'Comment la formation sur site réduit le turn-over des équipes',
       description:
-        'Le turn-over élevé en hôtellerie est rarement une question de rémunération. Découvrez comment une formation structurée sur site stabilise les équipes en leur donnant les repères, la confiance et les standards dont elles ont besoin pour rester.',
+        'Le turn-over élevé est rarement une simple question de rémunération. Découvrez comment une formation structurée sur site stabilise les équipes en leur donnant les repères, la confiance et les standards dont elles ont besoin pour rester.',
       date: '2026-04-30',
       readTime: '6 min de lecture',
       intro:
-        "Le secteur hôtelier affiche l'un des taux de turn-over les plus élevés de toutes les industries. La plupart des établissements traitent cela comme un problème de recrutement. Le diagnostic le plus juste, dans la majorité des cas, est un problème de formation. Les collaborateurs qui quittent l'établissement dans les trois premiers mois citent rarement la rémunération en premier. Ils évoquent le sentiment d'être livrés à eux-mêmes, sans cadre clair, sans accompagnement.",
+        "L’hôtellerie affiche l’un des taux de turn-over les plus élevés. La plupart des établissements traitent cela comme un problème de recrutement. Le diagnostic le plus juste, dans la majorité des cas, est un problème de formation. Les collaborateurs qui quittent l’établissement dans les trois premiers mois citent rarement la rémunération en premier. Ils évoquent surtout le sentiment d’être livrés à eux-mêmes, sans cadre clair et sans accompagnement.",
       sections: [
         {
-          h2: 'Pourquoi les collaborateurs quittent un hôtel : la cause liée à la formation',
+          h2: 'Pourquoi les collaborateurs partent : la cause liée à la formation',
           content:
             "Les raisons exprimées lors d'un départ et les raisons réelles sont rarement les mêmes.",
           h3Items: [
@@ -3343,7 +3343,7 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: "La formation montre que l'établissement investit dans ses équipes",
-              text: "Un hôtel qui organise une formation structurée au niveau du département envoie un signal fort à chaque participant : vous méritez d'être accompagnés. Ce signal compte bien plus que la plupart des directions ne le mesurent, en particulier pour les collaborateurs dans leurs six premiers mois.",
+              text: "Un établissement qui organise une formation structurée au niveau du département envoie un signal fort à chaque participant : vous méritez d’être accompagnés. Ce signal compte bien plus que la plupart des directions ne le mesurent, en particulier pour les collaborateurs dans leurs six premiers mois.",
             },
             {
               heading: "Tout le département se recale, pas seulement les nouvelles recrues",
@@ -3366,7 +3366,7 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: "Des standards cohérents réduisent la fatigue qui use les équipes",
-              text: "L'épuisement professionnel en hôtellerie est rarement causé par le volume d'activité seul. Il vient du volume combiné à l'incohérence : pallier les pratiques différentes d'un collègue, gérer des réclamations clients dues à des standards variables, absorber les conséquences d'une équipe qui ne travaille pas sur le même référentiel. La formation traite cette cause à la racine.",
+              text: "L’épuisement professionnel est rarement causé par le volume d’activité seul. Il vient du volume combiné à l’incohérence : compenser les pratiques différentes d’un collègue, gérer des réclamations dues à des standards variables, absorber les conséquences d’une équipe qui ne travaille pas sur le même référentiel. La formation traite cette cause à la racine.",
             },
           ],
         },
@@ -3380,7 +3380,7 @@ export const articles: BilingualArticle[] = [
         "Le turn-over ne se résout pas par de meilleures offres d'emploi. Il se résout en créant un environnement de travail où les équipes disposent des repères, des outils et de l'accompagnement nécessaires pour bien faire leur métier dès le premier service. La formation sur site est l'investissement le plus direct qu'un établissement puisse faire pour y parvenir.",
       cta: {
         text: 'Voir les formats de formation sur site',
-        href: '/training',
+        href: '/formation',
       },
       faqs: [
         {
@@ -3391,7 +3391,7 @@ export const articles: BilingualArticle[] = [
         {
           question: "La formation structurée est-elle pertinente pour les petites équipes hôtelières ?",
           answer:
-            "Oui. Dans les petites équipes, l'impact est souvent plus rapide car tout le département peut être formé en une seule session. L'absence de procédures écrites y est généralement plus marquée, ce qui rend le retour sur investissement d'une intervention de formation proportionnellement plus élevé.",
+            "Oui. Dans les petites équipes, l'impact est souvent plus rapide car tout le département peut être formé en une seule session. L'absence de procédures écrites y est généralement plus marquée, ce qui rend le retour sur investissement d'une intervention sur site proportionnellement plus élevé.",
         },
         {
           question: "La formation sur site remplace-t-elle l'intégration des nouvelles recrues ?",
@@ -3404,13 +3404,13 @@ export const articles: BilingualArticle[] = [
   {
     slug: 'hotel-new-hire-onboarding',
     en: {
-      title: 'Why hotel new hires leave in the first 90 days (and what structured onboarding does differently)',
+      title: 'Why new hires leave in the first 90 days, and what structured onboarding does differently',
       description:
-        'Most hotel new hires who quit do so within 90 days. Discover why unstructured onboarding drives early departures and what a proper hotel onboarding program actually looks like.',
+        'Most hospitality new hires who quit do so within 90 days. Discover why unstructured onboarding drives early departures and what a proper onboarding program actually looks like.',
       date: '2026-04-30',
       readTime: '8 min read',
       intro:
-        'The first 90 days are the highest-risk window in any hotel hire. Industry data consistently shows that more than half of hospitality departures happen before an employee reaches their fourth month. That is not a hiring problem. It is an onboarding problem. New hires leave not because the job does not match expectations, but because no one structured those expectations clearly from day one.',
+        'The first 90 days are the highest-risk window in any hospitality hire. Industry data consistently shows that more than half of departures happen before an employee reaches their fourth month. That is not only a hiring problem. It is an onboarding problem. New hires leave not because the job does not match expectations, but because no one structured those expectations clearly from day one.',
       sections: [
         {
           h2: 'The real reason new hires leave before 90 days',
@@ -3424,7 +3424,7 @@ export const articles: BilingualArticle[] = [
           ],
         },
         {
-          h2: 'What structured hotel onboarding actually means',
+          h2: 'What structured onboarding actually means',
           content:
             'Structured onboarding is not a two-day welcome program. It is a documented, repeatable system that takes a new hire from their first day to full operational autonomy in a defined timeframe.\n\nFor a hotel, this means three things running in parallel: a written procedures library the new hire can consult independently, a phased learning path that progresses from observation to supervised practice to autonomous execution, and a feedback cadence that catches performance gaps early before they become habits.',
           h3Items: [
@@ -3479,18 +3479,18 @@ export const articles: BilingualArticle[] = [
       ],
     },
     fr: {
-      title: 'Pourquoi les nouvelles recrues quittent un hôtel dans les 90 premiers jours',
+      title: 'Pourquoi les nouvelles recrues décrochent dans les 90 premiers jours',
       description:
-        "Plus de la moitié des départs hôteliers surviennent avant le quatrième mois. Ce n'est pas un problème de recrutement, c'est un problème d'intégration. Voici ce qu'un vrai programme d'onboarding change concrètement.",
+        "Plus de la moitié des départs surviennent avant le quatrième mois. Ce n’est pas seulement un problème de recrutement, c’est souvent un problème d’intégration. Voici ce qu’un vrai programme d’onboarding change concrètement.",
       date: '2026-04-30',
       readTime: '8 min de lecture',
       intro:
-        "Les 90 premiers jours sont la période la plus critique dans le parcours d'un nouveau collaborateur. Les données sectorielles montrent régulièrement que plus de la moitié des départs en hôtellerie surviennent avant le quatrième mois. Ce n'est pas un problème de recrutement. C'est un problème d'intégration. Les nouvelles recrues ne partent pas parce que le poste ne correspond pas à leurs attentes, mais parce que personne n'a structuré ces attentes dès le premier jour.",
+        "Les 90 premiers jours sont la période la plus critique dans le parcours d’un nouveau collaborateur. Les données sectorielles montrent régulièrement que plus de la moitié des départs surviennent avant le quatrième mois. Ce n’est pas seulement un problème de recrutement. C’est souvent un problème d’intégration. Les nouvelles recrues ne partent pas toujours parce que le poste ne correspond pas à leurs attentes, mais parce que personne n’a structuré ces attentes dès le premier jour.",
       sections: [
         {
           h2: 'La vraie raison des départs avant 90 jours',
           content:
-            "La plupart des directions hôtelières interprètent les départs précoces comme un problème de recrutement. Le profil n'était pas le bon, le salaire trop bas, le trajet trop long. Ces explications protègent l'établissement de toute remise en question opérationnelle, mais passent à côté de la cause réelle.\n\nLes départs précoces sont presque toujours provoqués par la confusion, pas par l'insatisfaction. Un nouveau collaborateur en réception qui passe ses deux premières semaines à observer des collègues faire les choses différemment à chaque shift, sans procédure écrite à consulter et sans référentiel clair, commence à chercher une sortie en quelques semaines.\n\nL'absence de structure envoie un signal précis à un nouveau collaborateur : cet établissement ne fonctionne pas avec rigueur. Si l'équipe qu'il rejoint est incapable d'expliquer ses propres procédures, pourquoi s'y investir sur le long terme ?",
+            "Beaucoup de directions interprètent les départs précoces comme un problème de recrutement. Le profil n’était pas le bon, le salaire trop bas, le trajet trop long. Ces explications protègent l’établissement de toute remise en question opérationnelle, mais passent à côté de la cause réelle.\n\nLes départs précoces sont presque toujours provoqués par la confusion, pas par l’insatisfaction. Un nouveau collaborateur en réception qui passe ses deux premières semaines à observer des collègues faire les choses différemment à chaque shift, sans procédure écrite à consulter et sans référentiel clair, commence à chercher une sortie en quelques semaines.\n\nL’absence de structure envoie un signal précis à un nouveau collaborateur : cet établissement ne fonctionne pas avec rigueur. Si l’équipe qu’il rejoint est incapable d’expliquer ses propres procédures, pourquoi s’y investir sur le long terme ?",
           h3Items: [
             {
               heading: 'Les trois signaux qui accélèrent les départs précoces',
@@ -3499,9 +3499,9 @@ export const articles: BilingualArticle[] = [
           ],
         },
         {
-          h2: "Ce que signifie réellement un onboarding structuré en hôtellerie",
+          h2: "Ce que signifie réellement un onboarding structuré",
           content:
-            "Un onboarding structuré n'est pas un programme d'accueil de deux jours. C'est un système documenté et reproductible qui accompagne un nouveau collaborateur de son premier jour jusqu'à l'autonomie opérationnelle complète, dans un délai défini.\n\nPour un hôtel, cela repose sur trois éléments qui progressent en parallèle : une bibliothèque de procédures écrites que le collaborateur peut consulter de façon autonome, un parcours d'apprentissage progressif allant de l'observation à l'exécution supervisée puis autonome, et une structure de feedback qui détecte les écarts tôt, avant qu'ils ne deviennent des habitudes.",
+            "Un onboarding structuré n’est pas un programme d’accueil de deux jours. C’est un système documenté et reproductible qui accompagne un nouveau collaborateur de son premier jour jusqu’à l’autonomie opérationnelle complète, dans un délai défini.\n\nCela repose sur trois éléments qui avancent ensemble : une bibliothèque de procédures écrites que le collaborateur peut consulter de façon autonome, un parcours d’apprentissage progressif allant de l’observation à l’exécution supervisée puis autonome, et une structure de feedback qui détecte les écarts tôt, avant qu’ils ne deviennent des habitudes.",
           h3Items: [
             {
               heading: 'Le cadre 30-60-90 jours',
@@ -3534,7 +3534,7 @@ export const articles: BilingualArticle[] = [
       ],
       conclusion:
         "Les départs précoces sont prévisibles et évitables. Les établissements qui fidélisent leurs nouvelles recrues au-delà de 90 jours ne sont pas ceux qui paient mieux ou recrutent mieux. Ce sont ceux qui ont construit un environnement structuré dans lequel une nouvelle recrue sait ce qu'on attend d'elle, dispose d'une référence écrite à consulter et reçoit un retour clair basé sur un standard défini. Cette structure est le résultat d'un vrai système d'onboarding, et il commence par les équipes déjà en poste.",
-      cta: { text: 'Découvrir la formation sur site pour votre établissement', href: '/training' },
+      cta: { text: 'Découvrir la formation sur site', href: '/formation' },
       faqs: [
         {
           question: "Combien de temps faut-il pour mettre en place un onboarding structuré dans un hôtel ?",
