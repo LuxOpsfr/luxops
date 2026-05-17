@@ -46,6 +46,12 @@ const nextConfig: NextConfig = {
       { source: '/:locale(en|fr)/hotel-front-office-checklist', headers: marketingCache },
       { source: '/:locale(en|fr)/hotel-housekeeping-checklist', headers: marketingCache },
       { source: '/:locale(en|fr)/hotel-staff-training', headers: marketingCache },
+      { source: '/:locale(en|fr)/formation-equipe-hoteliere', headers: marketingCache },
+      { source: '/:locale(en|fr)/formation-reception-hotel', headers: marketingCache },
+      { source: '/:locale(en|fr)/formation-housekeeping-hotel', headers: marketingCache },
+      { source: '/:locale(en|fr)/formation-fb-restaurant', headers: marketingCache },
+      { source: '/:locale(en|fr)/formation-pre-ouverture', headers: marketingCache },
+      { source: '/:locale(en|fr)/formation-chefs-de-service', headers: marketingCache },
       { source: '/:locale(en|fr)/training', headers: marketingCache },
       { source: '/:locale(en|fr)/formation', headers: marketingCache },
       { source: '/:locale(en|fr)/quality-audit', headers: marketingCache },
@@ -77,7 +83,7 @@ const nextConfig: NextConfig = {
   skipTrailingSlashRedirect: true,
   async redirects() {
     return [
-      // Root URL without locale — explicit 301 so Google stops looping on the middleware redirect
+      // Root URL without locale: explicit 301 so Google stops looping on the middleware redirect
       {
         source: '/',
         destination: '/en',
@@ -108,6 +114,16 @@ const nextConfig: NextConfig = {
         destination: '/fr/audit-qualite',
         permanent: true,
       },
+      {
+        source: '/en/hotel-staff-training',
+        destination: '/en/formation-equipe-hoteliere',
+        permanent: true,
+      },
+      {
+        source: '/fr/hotel-staff-training',
+        destination: '/fr/formation-equipe-hoteliere',
+        permanent: true,
+      },
       // Duplicate content: Google chose hotel-front-office-sop as canonical
       {
         source: '/en/blog/hotel-front-office-procedures',
@@ -130,7 +146,7 @@ const nextConfig: NextConfig = {
         destination: '/fr/hotel-housekeeping-checklist',
         permanent: true,
       },
-      // No-locale URLs found by Googlebot — make redirect explicit and permanent
+      // No-locale URLs found by Googlebot: make redirect explicit and permanent
       {
         source: '/blog/hotel-room-service-sops',
         destination: '/en/blog/hotel-room-service-sops',

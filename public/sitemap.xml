@@ -688,28 +688,6 @@
     <priority>0.75</priority>
   </url>
 
-  <!-- SEO: Hotel Staff Training EN -->
-  <url>
-    <loc>https://www.luxops.fr/en/hotel-staff-training</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/hotel-staff-training"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/hotel-staff-training"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/hotel-staff-training"/>
-    <changefreq>monthly</changefreq>
-    <lastmod>2026-03-18</lastmod>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- SEO: Hotel Staff Training FR -->
-  <url>
-    <loc>https://www.luxops.fr/fr/hotel-staff-training</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/hotel-staff-training"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/hotel-staff-training"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/hotel-staff-training"/>
-    <changefreq>monthly</changefreq>
-    <lastmod>2026-03-18</lastmod>
-    <priority>0.7</priority>
-  </url>
-
   <!-- SEO: Formation Housekeeping Hôtel EN/FR -->
   <url>
     <loc>https://www.luxops.fr/en/formation-housekeeping-hotel</loc>
@@ -717,7 +695,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/formation-housekeeping-hotel"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/formation-housekeeping-hotel"/>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-05-17</lastmod>
     <priority>0.7</priority>
   </url>
 
@@ -727,7 +705,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/formation-housekeeping-hotel"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/formation-housekeeping-hotel"/>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-05-17</lastmod>
     <priority>0.7</priority>
   </url>
 
@@ -738,7 +716,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/formation-reception-hotel"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/formation-reception-hotel"/>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-05-17</lastmod>
     <priority>0.7</priority>
   </url>
 
@@ -748,7 +726,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/formation-reception-hotel"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/formation-reception-hotel"/>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-05-17</lastmod>
     <priority>0.7</priority>
   </url>
 
@@ -759,7 +737,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/formation-equipe-hoteliere"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/formation-equipe-hoteliere"/>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-05-17</lastmod>
     <priority>0.7</priority>
   </url>
 
@@ -769,7 +747,70 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/formation-equipe-hoteliere"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/formation-equipe-hoteliere"/>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-05-17</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- SEO: Formation F&B Restaurant EN/FR -->
+  <url>
+    <loc>https://www.luxops.fr/en/formation-fb-restaurant</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/formation-fb-restaurant"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/formation-fb-restaurant"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/formation-fb-restaurant"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-17</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.luxops.fr/fr/formation-fb-restaurant</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/formation-fb-restaurant"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/formation-fb-restaurant"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/formation-fb-restaurant"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-17</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- SEO: Formation Pré-Ouverture EN/FR -->
+  <url>
+    <loc>https://www.luxops.fr/en/formation-pre-ouverture</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/formation-pre-ouverture"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/formation-pre-ouverture"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/formation-pre-ouverture"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-17</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.luxops.fr/fr/formation-pre-ouverture</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/formation-pre-ouverture"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/formation-pre-ouverture"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/formation-pre-ouverture"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-17</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- SEO: Formation Chefs de Service EN/FR -->
+  <url>
+    <loc>https://www.luxops.fr/en/formation-chefs-de-service</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/formation-chefs-de-service"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/formation-chefs-de-service"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/formation-chefs-de-service"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-17</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.luxops.fr/fr/formation-chefs-de-service</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/formation-chefs-de-service"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/formation-chefs-de-service"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/formation-chefs-de-service"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-17</lastmod>
     <priority>0.7</priority>
   </url>
 
