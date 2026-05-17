@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
+import TrackedLink from '@/components/TrackedLink'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
@@ -8,7 +9,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: isEN
       ? 'Hotel Front Office Checklist: Shift Opening, Check-in & Handover | LuxOps'
-      : 'Checklist Réception Hôtel : ouverture, check-in et passation de service | LuxOps',
+      : 'Checklist réception : ouverture, check-in et passation de service | LuxOps',
     description: isEN
       ? 'Free hotel front office checklist: shift opening sequence, check-in and check-out procedure, billing verification and shift handover. Printable and ready to use.'
       : 'Checklist réception hôtel gratuite : ouverture de service, séquence check-in, vérification facturation et passation. Prête à imprimer et à utiliser.',
@@ -45,125 +46,75 @@ type FAQItem = { q: string; a: string }
 
 const ROLES_EN: ChecklistRole[] = [
   {
-    role: 'Front Desk Agent: Shift Opening Checklist',
+    role: 'Front Desk Daily Checklist',
     intro:
-      'Complete this checklist before taking the desk. Every item must be verified before the first guest interaction of the shift.',
+      'Adapted from the LuxOps Front Office Playbook and aligned with the printable Front Desk Daily Checklist. Use it to structure the shift before service starts, during live operations and before handover.',
     sections: [
       {
-        title: 'Handover and arrivals',
+        title: 'Before the shift starts',
         items: [
-          'Read the handover report from the outgoing agent in full before approaching the desk',
-          'Check arrivals list: total count, room assignments, VIP flags, pre-arrival requests',
-          'Verify all pre-assigned rooms are clean and available in PMS',
-          'Cross-check VIP arrivals against housekeeping and concierge confirmations',
-          'Confirm any special setups (amenities, welcome letters, flowers) are actioned or in progress',
+          'Arrive 10 minutes before the scheduled shift start',
+          'Review the shift handover from the previous team before taking the desk',
+          'Check grooming, name badge, uniform, pen, notepad and access keys',
+          'Log in to PMS, email, phone system, key encoder and payment terminal',
+          'Confirm cash float and document any discrepancy before the first transaction',
         ],
       },
       {
-        title: 'Desk and systems',
+        title: 'Shift opening controls',
         items: [
-          'Log in to PMS, telephone system and any upsell or messaging tool',
-          'Confirm cash float is at the correct amount and counted before first transaction',
-          'Check printer, key encoder and card terminal are operational',
-          'Review any open maintenance or follow-up tickets from previous shift',
-          'Note any ongoing complaints or service recovery cases from handover',
+          'Review the Night Audit Daily Report or previous shift report',
+          'Check today’s arrivals, departures, in-house guests, VIPs and special requests',
+          'Confirm PMS working date, room status and expected availability with housekeeping',
+          'Review early check-ins, late check-outs, room moves and pending traces',
+          'Identify billing issues, high balances, declined payments and missing guarantees',
         ],
       },
       {
-        title: 'First-hour priorities',
+        title: 'During the shift',
         items: [
-          'Contact housekeeping to confirm first departures and early check-in priority rooms',
-          'Flag any no-shows from the previous night to the duty manager',
-          'Review departure list: identify early checkouts or express checkout requests',
-          'Confirm restaurant and breakfast service times, note any F&B holds for guests',
-          'Brief any other agents coming on shift on VIP movements and sensitive guest cases',
-        ],
-      },
-    ],
-  },
-  {
-    role: 'Front Desk Agent: Check-in Sequence',
-    intro:
-      'Follow this sequence for every arrival: standard, VIP, walk-in and late arrival. The sequence is fixed. Adapt the tone, not the steps.',
-    sections: [
-      {
-        title: 'Before the guest reaches the desk',
-        items: [
-          'Room assigned in PMS, status confirmed clean and available',
-          'Pre-arrival requests noted on reservation and communicated to the relevant department',
-          'VIP flag: welcome letter prepared, room personally inspected if applicable',
+          'Greet each guest promptly and use the guest name when available',
+          'Keep the desk clear, calm and ready for the next interaction',
+          'Log guest requests with owner, time and follow-up status',
+          'Update PMS immediately after check-in, check-out, room move or payment action',
+          'Escalate complaints using the property recovery process before the guest has to repeat the issue',
         ],
       },
       {
-        title: 'At the desk',
+        title: 'VIP and special arrivals',
         items: [
-          'Greet guest by name within 30 seconds of arrival',
-          'Verify identity document per property policy',
-          'Confirm room type, rate and length of stay verbally before proceeding',
-          'Present upsell option naturally, once, without pressure',
-          'Collect payment method and pre-authorise card per property policy',
-          'Explain key amenities: Wi-Fi, restaurant times, any current promotions',
-          'Hand keys with both hands, confirm room number without announcing it aloud',
-          'Offer assistance with luggage and directions to the room',
+          'Verify room assignment, arrival time and preference notes',
+          'Confirm the room is inspected before the VIP is expected',
+          'Check welcome amenities, letter, key preparation and any special setup',
+          'Inform housekeeping, concierge and F&B of relevant arrival details',
         ],
       },
       {
-        title: 'After check-in',
+        title: 'Mid-shift operational check',
         items: [
-          'Update PMS: reservation to Checked In, room status to Occupied',
-          'Log any special requests confirmed during check-in for follow-up',
-          'Notify housekeeping or concierge immediately for any special requests not yet actioned',
-        ],
-      },
-    ],
-  },
-  {
-    role: 'Front Desk Agent: Billing Verification and Check-out',
-    intro:
-      'Billing errors at departure are among the most common sources of guest complaints. This checklist runs the evening before and at the desk on departure day.',
-    sections: [
-      {
-        title: 'Evening before departure',
-        items: [
-          'Print preview folio for each departure and check against the reservation',
-          'Flag any discrepancies: rate, extras, F&B charges, incidental holds',
-          'Contact guest the evening before for VIP or long-stay departures to confirm departure time',
+          'Recheck arrivals not yet checked in and departures not yet completed',
+          'Review room status discrepancies with housekeeping',
+          'Follow up pending guest requests and open complaints',
+          'Verify billing, deposits, pre-authorizations and payment issues',
+          'Prepare notes for the next shift before the desk becomes busy again',
         ],
       },
       {
-        title: 'At check-out',
+        title: 'Shift transition',
         items: [
-          'Present folio proactively before the guest asks',
-          'Walk through charges if the guest requests, stay composed on disputed items',
-          'Follow dispute protocol: guest signs folio with a note if unresolved, escalate to duty manager',
-          'Confirm post-stay contact details if not already in PMS',
-          'Release room in PMS immediately after key return',
-          'Log any issues or complaints for the incoming shift handover',
-        ],
-      },
-    ],
-  },
-  {
-    role: 'Duty Manager: Shift Handover Checklist',
-    intro:
-      'Complete this before the end of every shift. Both outgoing and incoming managers sign off. Verbal handovers are not sufficient.',
-    sections: [
-      {
-        title: 'Reservations and rooms',
-        items: [
-          'All open reservations and room assignments reviewed and up to date in PMS',
-          'VIP arrivals for next shift: room confirmed, setup in progress or complete',
-          'Room status reconciliation: PMS count matches physical availability',
-          'No-shows and late cancellations logged per revenue policy',
+          'Prepare written handover with pending arrivals, departures, room moves and guest issues',
+          'List unresolved complaints, maintenance issues and billing follow-ups',
+          'Hand over VIP movements, wake-up calls, transport requests and special arrangements',
+          'Confirm cash float, payments and any discrepancy before leaving the desk',
         ],
       },
       {
-        title: 'Operations and follow-up',
+        title: 'End of shift',
         items: [
-          'Outstanding complaints: status, last action taken, expected resolution noted',
-          'Pending maintenance tickets: status noted, urgent items escalated to engineering',
-          'Cash float counted and reconciled, any discrepancy noted with explanation',
-          'Handover signed off between outgoing and incoming duty manager',
+          'Sign off the handover with the incoming agent or supervisor',
+          'Close systems only after the next shift has accepted the handover',
+          'Leave the desk clean, stocked and ready for the next team',
+          'Escalate any unresolved sensitive case to the duty manager before leaving',
         ],
       },
     ],
@@ -174,125 +125,75 @@ const ROLES_EN: ChecklistRole[] = [
 
 const ROLES_FR: ChecklistRole[] = [
   {
-    role: 'Réceptionniste : Checklist d\'ouverture de service',
+    role: 'Checklist quotidienne réception',
     intro:
-      'Complétez cette checklist avant de prendre le poste. Chaque point doit être vérifié avant la première interaction client du service.',
+      'Adaptée du Playbook Front Office LuxOps et alignée avec la checklist PDF imprimable. Elle structure la prise de poste, le suivi du shift, les arrivées sensibles et la passation.',
     sections: [
       {
-        title: 'Passation et arrivées',
+        title: 'Avant la prise de poste',
         items: [
-          'Lire la fiche de passation du réceptionniste sortant en intégralité avant de prendre le poste',
-          'Vérifier la liste des arrivées : nombre total, attributions de chambres, signalements VIP, demandes pré-arrivée',
-          'Confirmer que toutes les chambres pré-attribuées sont propres et disponibles dans le PMS',
-          'Croiser les arrivées VIP avec les confirmations housekeeping et conciergerie',
-          'Confirmer que les mises en place spéciales (amenities, lettres d\'accueil, fleurs) sont actées ou en cours',
+          'Arriver 10 minutes avant le début du shift',
+          'Lire la passation de l’équipe précédente avant de prendre le desk',
+          'Contrôler tenue, badge, stylo, carnet, clés et accès nécessaires',
+          'Se connecter au PMS, aux emails, au téléphone, à l’encodeur de clés et au terminal de paiement',
+          'Compter le fonds de caisse et documenter tout écart avant la première transaction',
         ],
       },
       {
-        title: 'Poste et systèmes',
+        title: 'Contrôles d’ouverture du shift',
         items: [
-          'Se connecter au PMS, au système téléphonique et à tout outil d\'upsell ou de messagerie',
-          'Vérifier que le fond de caisse est au montant correct et le compter avant la première transaction',
-          'Contrôler l\'imprimante, l\'encodeur de clés et le terminal de paiement',
-          'Consulter les tickets de maintenance ou de suivi ouverts du service précédent',
-          'Noter les réclamations en cours ou les cas de service recovery transmis en passation',
+          'Relire le Daily Report du Night Audit ou le rapport du shift précédent',
+          'Contrôler les arrivées, départs, clients in-house, VIP et demandes spéciales du jour',
+          'Vérifier la date PMS, les statuts chambres et les disponibilités prévues avec le housekeeping',
+          'Identifier les early check-ins, late check-outs, room moves et traces en attente',
+          'Repérer les litiges de facturation, soldes élevés, paiements refusés et garanties manquantes',
         ],
       },
       {
-        title: 'Priorités de la première heure',
+        title: 'Pendant le shift',
         items: [
-          'Contacter le housekeeping pour confirmer les premiers départs et les chambres prioritaires pour early check-in',
-          'Signaler au directeur de service les no-shows de la nuit précédente',
-          'Parcourir la liste des départs : identifier les départs anticipés ou les demandes de check-out express',
-          'Confirmer les horaires de restaurant et petit-déjeuner, noter les retenues F&B pour les clients',
-          'Briefer les autres réceptionnistes prenant le service sur les mouvements VIP et les cas sensibles',
-        ],
-      },
-    ],
-  },
-  {
-    role: 'Réceptionniste : Séquence de check-in',
-    intro:
-      'Appliquez cette séquence pour chaque arrivée : standard, VIP, walk-in et arrivée tardive. La séquence est fixe. Adaptez le ton, pas les étapes.',
-    sections: [
-      {
-        title: 'Avant que le client arrive au comptoir',
-        items: [
-          'Chambre attribuée dans le PMS, statut confirmé propre et disponible',
-          'Demandes pré-arrivée notées sur la réservation et transmises au département concerné',
-          'Signalement VIP : lettre d\'accueil préparée, chambre inspectée personnellement si applicable',
+          'Accueillir chaque client rapidement et utiliser son nom quand il est disponible',
+          'Garder le desk propre, calme et prêt pour l’interaction suivante',
+          'Tracer les demandes clients avec responsable, heure et statut de suivi',
+          'Mettre à jour le PMS immédiatement après chaque check-in, check-out, room move ou action de paiement',
+          'Escalader les réclamations avec la méthode de recovery de l’établissement avant que le client ait à répéter le problème',
         ],
       },
       {
-        title: 'Au comptoir',
+        title: 'Arrivées VIP et demandes spéciales',
         items: [
-          'Accueillir le client par son nom dans les 30 secondes suivant son arrivée',
-          'Vérifier le document d\'identité selon la politique de l\'établissement',
-          'Confirmer verbalement le type de chambre, le tarif et la durée du séjour avant de procéder',
-          'Proposer un upsell naturellement, une seule fois, sans insistance',
-          'Encaisser le moyen de paiement et effectuer la pré-autorisation selon la politique de l\'établissement',
-          'Présenter les équipements clés : Wi-Fi, horaires restaurant, promotions en cours',
-          'Remettre les clés à deux mains, confirmer le numéro de chambre sans l\'annoncer à voix haute',
-          'Proposer l\'aide aux bagages et indiquer le chemin vers la chambre',
+          'Vérifier l’attribution chambre, l’heure d’arrivée et les préférences client',
+          'Confirmer que la chambre est inspectée avant l’arrivée prévue',
+          'Contrôler amenities, lettre d’accueil, préparation des clés et mise en place spécifique',
+          'Informer housekeeping, conciergerie et F&B des détails utiles pour l’arrivée',
         ],
       },
       {
-        title: 'Après le check-in',
+        title: 'Contrôle opérationnel en milieu de shift',
         items: [
-          'Mettre à jour le PMS : réservation en Arrivé, statut chambre en Occupé',
-          'Consigner les demandes particulières confirmées pendant le check-in pour suivi',
-          'Notifier immédiatement le housekeeping ou la conciergerie pour toute demande non encore traitée',
-        ],
-      },
-    ],
-  },
-  {
-    role: 'Réceptionniste : Vérification de facturation et check-out',
-    intro:
-      'Les erreurs de facturation au départ figurent parmi les réclamations les plus fréquentes. Cette checklist s\'applique la veille au soir et au comptoir le jour du départ.',
-    sections: [
-      {
-        title: 'La veille au soir',
-        items: [
-          'Imprimer la facture prévisionnelle de chaque départ et la vérifier par rapport à la réservation',
-          'Signaler les écarts : tarif, extras, charges F&B, retenues d\'incidentals',
-          'Contacter le client la veille pour les départs VIP ou longue durée afin de confirmer l\'heure de départ',
+          'Recontrôler les arrivées non effectuées et les départs encore ouverts',
+          'Revoir les écarts de statut chambre avec le housekeeping',
+          'Suivre les demandes clients en attente et les réclamations ouvertes',
+          'Vérifier facturation, dépôts, Pre-Authorizations et incidents de paiement',
+          'Préparer les notes pour le shift suivant avant que le desk ne redevienne chargé',
         ],
       },
       {
-        title: 'Au check-out',
+        title: 'Transition de shift',
         items: [
-          'Présenter la facture de façon proactive avant que le client la demande',
-          'Détailler les charges si le client le demande, rester calme en cas de litige',
-          'Appliquer le protocole de contestation : le client signe la facture avec mention si non résolu, escalade au directeur de service',
-          'Confirmer les coordonnées post-séjour si elles ne sont pas déjà dans le PMS',
-          'Libérer la chambre dans le PMS immédiatement après la remise des clés',
-          'Consigner les problèmes ou réclamations pour la passation au service suivant',
-        ],
-      },
-    ],
-  },
-  {
-    role: 'Directeur de service : Checklist de passation',
-    intro:
-      'À compléter avant la fin de chaque service. Le directeur sortant et le directeur entrant signent tous les deux. Une passation verbale ne suffit pas.',
-    sections: [
-      {
-        title: 'Réservations et chambres',
-        items: [
-          'Toutes les réservations ouvertes et attributions de chambres vérifiées et à jour dans le PMS',
-          'Arrivées VIP pour le service suivant : chambre confirmée, mise en place en cours ou terminée',
-          'Réconciliation des statuts chambres : comptage PMS conforme à la disponibilité physique',
-          'No-shows et annulations tardives consignés selon la politique revenue',
+          'Préparer une passation écrite avec arrivées, départs, room moves et points clients en attente',
+          'Lister réclamations non résolues, problèmes de maintenance et suivis de facturation',
+          'Transmettre mouvements VIP, Wake-up calls, demandes transport et arrangements particuliers',
+          'Confirmer fonds de caisse, paiements et éventuels écarts avant de quitter le desk',
         ],
       },
       {
-        title: 'Opérations et suivi',
+        title: 'Fin de shift',
         items: [
-          'Réclamations en cours : statut, dernière action, résolution attendue notés',
-          'Tickets de maintenance en attente : statut noté, urgences transmises aux services techniques',
-          'Fond de caisse compté et réconcilié, tout écart noté avec explication',
-          'Passation signée par le directeur sortant et le directeur entrant',
+          'Valider la passation avec le réceptionniste ou superviseur entrant',
+          'Fermer les systèmes seulement après acceptation de la passation par le shift suivant',
+          'Laisser le desk propre, approvisionné et prêt pour l’équipe suivante',
+          'Escalader tout dossier sensible non résolu au manager de duty avant de partir',
         ],
       },
     ],
@@ -433,58 +334,98 @@ export default async function HotelFrontOfficeChecklistPage({ params }: { params
       <main className="min-h-screen bg-white">
 
         {/* Hero */}
-        <section className="bg-[#1A2E44] text-white py-16 px-6">
+        <section className="bg-[#1A2E44] text-white px-6 pt-36 md:pt-40 pb-20">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="inline-block bg-[#0056D2] text-white text-xs font-semibold px-3 py-1 rounded-full mb-6 tracking-widest uppercase">
-              {isEN ? 'Front Office Standard' : 'Standard réception'}
+            <span className="inline-block bg-white/10 text-white text-xs font-semibold px-4 py-2 rounded-full mb-6 tracking-widest uppercase">
+              {isEN ? 'Front Office checklist' : 'Checklist réception'}
             </span>
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
               {isEN
-                ? 'The Complete Hotel Front Office Checklist'
-                : 'La Checklist Réception Hôtelière Complète'}
+                ? 'Front Desk Daily Checklist for Hotels'
+                : 'Checklist quotidienne réception'}
             </h1>
             <p className="text-lg text-blue-100 max-w-2xl mx-auto mb-8">
               {isEN
-                ? 'Shift opening, check-in sequence, billing verification and shift handover. Role-specific checklists for front desk agents and duty managers.'
-                : 'Ouverture de service, séquence check-in, vérification facturation et passation. Checklists par rôle pour réceptionnistes et directeurs de service.'}
+                ? 'A printable checklist for shift opening, live desk control, VIP arrivals, billing follow-up and shift handover. Adapted from the LuxOps Front Office Playbook.'
+                : 'Une checklist imprimable pour la prise de poste, le suivi du desk, les arrivées VIP, la facturation et la passation. Adaptée du Playbook Front Office LuxOps.'}
             </p>
-            <Link
-              href={`/${locale}/front-office-sop`}
+            <TrackedLink
+              href={isEN ? '/downloads/checklists/en/front-desk-daily-checklist.pdf' : '/downloads/checklists/fr/checklist-quotidienne-reception.pdf'}
+              download
+              eventName="free_checklist_download_clicked"
+              eventProperties={{
+                source_page: "/" + locale + "/hotel-front-office-checklist",
+                checklist_name: isEN ? 'front_desk_daily_checklist' : 'checklist_quotidienne_reception',
+                department: 'front_office',
+                locale,
+                placement: 'hero',
+              }}
               className="inline-block bg-white text-[#1A2E44] px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 transition-colors"
             >
-              {isEN ? 'View Front Office SOP Guide' : 'Voir le guide SOP réception'}
-            </Link>
+              {isEN ? 'Download a free printable PDF copy' : 'Télécharger le PDF gratuit à imprimer'}
+            </TrackedLink>
           </div>
         </section>
 
-        {/* Lead magnet */}
+        {/* Product paths */}
+        <section className="py-10 px-6 bg-white border-b border-gray-100">
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-[10px] font-bold uppercase tracking-widest text-[#003d9b] mb-3">
+              {isEN ? 'Front Office tools' : 'Outils réception'}
+            </p>
+            <h2 className="text-2xl font-bold text-[#1A2E44] mb-3">
+              {isEN ? 'Need practical front office tools?' : 'Besoin d’outils pratiques pour la réception ?'}
+            </h2>
+            <p className="text-sm text-gray-500 leading-relaxed max-w-2xl mx-auto mb-7">
+              {isEN
+                ? 'Start with the Front Office Starter Pack for daily checklists and handovers, or use the full Front Office Playbook for the complete SOP reference.'
+                : 'Commencez avec le Starter Pack Front Office pour les checklists et passations du quotidien, ou utilisez le Playbook Front Office complet pour toute la référence SOP.'}
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <TrackedLink
+                href={`/${locale}/playbooks/fo-starter-pack`}
+                eventName="starter_pack_cta_clicked"
+                eventProperties={{
+                  source_page: `/${locale}/hotel-front-office-checklist`,
+                  placement: 'product_paths',
+                  product: 'front_office_starter_pack',
+                  cta_label: isEN ? 'View the Front Office Starter Pack' : 'Voir le Starter Pack Front Office',
+                }}
+                className="inline-flex min-w-[240px] items-center justify-center gap-2 rounded-lg bg-[#003d9b] px-5 py-3 text-sm font-semibold text-white hover:bg-[#002d7a] transition-colors"
+              >
+                {isEN ? 'View the Front Office Starter Pack' : 'Voir le Starter Pack Front Office'} <ArrowRight size={16} />
+              </TrackedLink>
+              <TrackedLink
+                href={`/${locale}/playbooks/fo`}
+                eventName="playbook_cta_clicked"
+                eventProperties={{
+                  source_page: `/${locale}/hotel-front-office-checklist`,
+                  placement: 'product_paths',
+                  product: 'front_office_playbook',
+                  cta_label: isEN ? 'View the Front Office Playbook' : 'Voir le Playbook Front Office',
+                }}
+                className="inline-flex min-w-[240px] items-center justify-center gap-2 rounded-lg border border-[#003d9b] px-5 py-3 text-sm font-semibold text-[#003d9b] hover:bg-[#eef4ff] transition-colors"
+              >
+                {isEN ? 'View the Front Office Playbook' : 'Voir le Playbook Front Office'} <ArrowRight size={16} />
+              </TrackedLink>
+            </div>
+          </div>
+        </section>
+
+        {/* Checklist hub link */}
         <section
-          className="py-10 border-b"
+          className="py-8 border-b"
           style={{ backgroundColor: '#eef4ff', borderColor: 'rgba(195,198,214,0.3)' }}
         >
-          <div className="max-w-screen-xl mx-auto px-6 flex flex-col sm:flex-row items-start sm:items-center gap-6">
-            <div className="flex-1">
-              <p className="text-[10px] font-bold uppercase tracking-widest text-[#003d9b] mb-2">
-                {isEN ? 'Free resource' : 'Ressource gratuite'}
-              </p>
-              <p className="font-bold text-[#0a1d2e] text-lg mb-1">
-                {isEN
-                  ? 'Download a free chapter of the Front Office Playbook'
-                  : 'Téléchargez un chapitre gratuit du Playbook Réception'}
-              </p>
-              <p className="text-sm text-[#4f6074]">
-                {isEN
-                  ? 'See what structured front office procedures look like in practice.'
-                  : 'Découvrez à quoi ressemblent des procédures de réception structurées.'}
-              </p>
-            </div>
-            <Link
-              href={`/${locale}/free-hotel-procedures`}
-              className="inline-flex items-center gap-2 px-6 py-3 text-white font-bold text-sm flex-shrink-0 hover:opacity-90 transition-opacity"
-              style={{ background: 'linear-gradient(135deg, #003d9b, #0052cc)', borderRadius: '0.125rem' }}
-            >
-              {isEN ? 'Download free' : 'Télécharger gratuitement'} <ArrowRight size={18} />
-            </Link>
+          <div className="max-w-3xl mx-auto px-6 text-center">
+            <p className="text-sm text-[#4f6074] leading-relaxed">
+              {isEN
+                ? 'Need more printable resources? View the full checklist hub for housekeeping, front office, Night Audit, restaurant opening and room service.'
+                : 'Besoin d’autres ressources prêtes à imprimer ? Consultez le hub complet des checklists : housekeeping, réception, Night Audit, ouverture restaurant et room service.'}{' '}
+              <Link href={isEN ? '/en/free-hotel-checklists' : '/fr/checklists-hotel-gratuites'} className="font-semibold text-[#003d9b] hover:underline">
+                {isEN ? 'View all free checklists' : 'Voir toutes les checklists gratuites'}
+              </Link>
+            </p>
           </div>
         </section>
 
@@ -495,20 +436,11 @@ export default async function HotelFrontOfficeChecklistPage({ params }: { params
           </h2>
           {isEN ? (
             <p className="text-gray-600 leading-relaxed">
-              A hotel front office checklist is only useful when it belongs to a specific moment. A shift opening
-              checklist is not a check-in checklist. A billing verification is not a handover document. This page gives
-              you free, printable checklists for each critical control point in a front office day: opening the desk,
-              running a check-in, verifying a billing before checkout and closing the shift. Each checklist follows the
-              operational standards used by front office teams in LQA and Forbes-rated properties.
+              This free checklist is built for the front desk shift itself: before taking the desk, at opening, during live operations, around VIP arrivals, through mid-shift controls and into the written handover. The goal is not to add paperwork. It is to make sure the next person on the desk receives clean information, clear follow-up items and a reception area ready for the next guest.
             </p>
           ) : (
             <p className="text-gray-600 leading-relaxed">
-              Une checklist réception hôtel n&apos;est utile que lorsqu&apos;elle appartient à un moment précis. La
-              checklist d&apos;ouverture n&apos;est pas la checklist de check-in. La vérification de facturation
-              n&apos;est pas la fiche de passation. Cette page met à votre disposition des checklists gratuites et
-              imprimables pour chaque point de contrôle critique de la journée à la réception : ouverture du service,
-              check-in, vérification de facturation avant départ et passation de service. Chaque checklist respecte les
-              standards opérationnels des établissements certifiés LQA et Forbes.
+              Cette checklist est pensée pour le shift réception lui-même : avant la prise de poste, à l’ouverture, pendant les opérations, autour des arrivées VIP, lors du contrôle de milieu de shift et jusqu’à la passation écrite. L’objectif n’est pas d’ajouter de l’administratif. Il s’agit de transmettre une information propre, des suivis clairs et un desk prêt pour le prochain client.
             </p>
           )}
         </section>
@@ -633,17 +565,17 @@ export default async function HotelFrontOfficeChecklistPage({ params }: { params
               },
               {
                 href: `/${locale}/hotel-night-audit-checklist`,
-                title: isEN ? 'Night Audit Checklist' : 'Checklist Audit de Nuit',
-                desc: isEN ? 'Step-by-step night audit procedure and morning handover' : 'Séquence complète d\'audit de nuit et passation matin',
+                title: isEN ? 'Night Audit Checklist' : 'Checklist Night Audit',
+                desc: isEN ? 'Step-by-step night audit procedure and morning handover' : 'Clôture PMS, VCC, caisse et passation du matin',
               },
               {
                 href: `/${locale}/hotel-housekeeping-checklist`,
-                title: isEN ? 'Hotel Housekeeping Checklist' : 'Checklist Housekeeping Hôtel',
+                title: isEN ? 'Hotel Housekeeping Checklist' : 'Checklist housekeeping',
                 desc: isEN ? '30-point room inspection, supervisor rounds and LQA scoring grid' : 'Inspection chambre 30 points, tournée superviseur et grille LQA',
               },
               {
                 href: `/${locale}/hotel-sop`,
-                title: isEN ? 'Hotel SOP Templates' : 'Modèles de SOP Hôtel',
+                title: isEN ? 'Hotel SOP Templates' : 'Modèles de SOP',
                 desc: isEN ? 'Complete standard operating procedures for all departments' : 'Procédures opérationnelles complètes pour tous les départements',
               },
             ].map((link) => (
@@ -671,7 +603,7 @@ export default async function HotelFrontOfficeChecklistPage({ params }: { params
                 : "Le Playbook Réception LuxOps comprend l'ensemble de la documentation SOP, les grilles d'inspection, les guides de formation et les outils de gestion des services. 12 chapitres, PDF et PowerPoint, EN et FR."}
             </p>
             <Link
-              href={`/${locale}/playbooks`}
+              href={`/${locale}/playbooks/fo`}
               className="inline-block bg-white text-[#1A2E44] px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 transition-colors"
             >
               {isEN ? 'View Front Office Playbook' : 'Voir le Playbook Réception'}

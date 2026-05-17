@@ -867,6 +867,12 @@ export function FbSeoResourcePage({ kind, locale }: { kind: ResourceKind; locale
   const content = CONTENT[kind][locale]
   const isEN = locale === 'en'
   const sourcePage = `/${locale}${content.slug}`
+  const checklistHref = kind === 'roomService'
+    ? isEN ? '/downloads/checklists/en/room-service-checklist.pdf' : '/downloads/checklists/fr/checklist-room-service.pdf'
+    : kind === 'restaurantOpening'
+      ? isEN ? '/downloads/checklists/en/restaurant-opening-checklist.pdf' : '/downloads/checklists/fr/checklist-ouverture-restaurant.pdf'
+      : null
+  const checklistCta = isEN ? 'Download a free printable PDF copy' : 'Télécharger le PDF gratuit à imprimer'
 
   const schema = {
     '@context': 'https://schema.org',
@@ -923,12 +929,19 @@ export function FbSeoResourcePage({ kind, locale }: { kind: ResourceKind; locale
                 {content.secondaryCta}
               </TrackedLink>
               <TrackedLink
-                href={`/${locale}/free-hotel-procedures`}
-                eventName="free_chapter_cta_clicked"
-                eventProperties={{ source_page: sourcePage, position: 'hero' }}
+                href={checklistHref ?? `/${locale}/free-hotel-procedures`}
+                {...(checklistHref ? { download: true } : {})}
+                eventName={checklistHref ? 'free_checklist_download_clicked' : 'free_chapter_cta_clicked'}
+                eventProperties={checklistHref ? {
+                  source_page: sourcePage,
+                  checklist_name: kind,
+                  department: 'fb',
+                  locale,
+                  placement: 'hero',
+                } : { source_page: sourcePage, position: 'hero' }}
                 className="inline-flex items-center justify-center gap-2 border border-white/30 text-white px-7 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors"
               >
-                {content.freeChapterCta}
+                {checklistHref ? checklistCta : content.freeChapterCta}
               </TrackedLink>
             </div>
           </div>
@@ -944,6 +957,19 @@ export function FbSeoResourcePage({ kind, locale }: { kind: ResourceKind; locale
                 {isEN ? 'Source note' : 'Note source'}
               </p>
               <p className="text-gray-700 leading-relaxed">{content.extractedFrom}</p>
+              {checklistHref ? (
+                <p className="text-sm text-[#4f6074] leading-relaxed mt-3">
+                  {isEN
+                    ? 'You can also browse every printable checklist in one place.'
+                    : 'Vous pouvez aussi retrouver toutes les checklists prêtes à imprimer au même endroit.'}{' '}
+                  <Link
+                    href={isEN ? '/en/free-hotel-checklists' : '/fr/checklists-hotel-gratuites'}
+                    className="font-semibold text-[#003d9b] hover:underline"
+                  >
+                    {isEN ? 'View the free checklist hub' : 'Voir le hub des checklists gratuites'}
+                  </Link>
+                </p>
+              ) : null}
             </div>
           </div>
         </section>
@@ -1124,12 +1150,19 @@ export function FbSeoResourcePage({ kind, locale }: { kind: ResourceKind; locale
                 <ArrowRight size={18} />
               </TrackedLink>
               <TrackedLink
-                href={`/${locale}/free-hotel-procedures`}
-                eventName="free_chapter_cta_clicked"
-                eventProperties={{ source_page: sourcePage, position: 'final' }}
+                href={checklistHref ?? `/${locale}/free-hotel-procedures`}
+                {...(checklistHref ? { download: true } : {})}
+                eventName={checklistHref ? 'free_checklist_download_clicked' : 'free_chapter_cta_clicked'}
+                eventProperties={checklistHref ? {
+                  source_page: sourcePage,
+                  checklist_name: kind,
+                  department: 'fb',
+                  locale,
+                  placement: 'final',
+                } : { source_page: sourcePage, position: 'final' }}
                 className="inline-flex items-center justify-center gap-2 border border-white/30 text-white px-7 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors"
               >
-                {content.freeChapterCta}
+                {checklistHref ? checklistCta : content.freeChapterCta}
               </TrackedLink>
             </div>
           </div>

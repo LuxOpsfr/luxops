@@ -994,6 +994,28 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Blog: Hotel Room Attendant Checklist EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/blog/hotel-room-attendant-checklist</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-room-attendant-checklist"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-room-attendant-checklist"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/hotel-room-attendant-checklist"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-17</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: Hotel Room Attendant Checklist FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/blog/hotel-room-attendant-checklist</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-room-attendant-checklist"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-room-attendant-checklist"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/hotel-room-attendant-checklist"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-17</lastmod>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Blog: Hotel Room Cleaning Checklist EN -->
   <url>
     <loc>https://www.luxops.fr/en/blog/hotel-room-cleaning-checklist</loc>

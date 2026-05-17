@@ -8,7 +8,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: isEN
       ? 'Hotel Housekeeping Checklist PDF: Room Attendant & Supervisor | LuxOps'
-      : 'Checklist Housekeeping Hôtel PDF : chambre à blanc & inspection | LuxOps',
+      : 'Checklist housekeeping PDF : chambre à blanc et inspection | LuxOps',
     description: isEN
       ? 'Download printable hotel housekeeping checklist PDFs adapted from the LuxOps Housekeeping Playbook: public area attendant, room attendant and housekeeping supervisor checklists.'
       : 'Téléchargez les PDF imprimables issus du Playbook Housekeeping LuxOps : checklist équipier lieux publics, femme/valet de chambre et gouvernante d’étage.',
@@ -293,7 +293,7 @@ const AUDIT_ROWS_FR: AuditRow[] = [
 
 const FAQ_FR: FAQItem[] = [
   {
-    q: "Que doit contenir une checklist d'inspection de chambre d'hôtel ?",
+    q: "Que doit contenir une checklist d'inspection de chambre ?",
     a: "Une checklist d'inspection complète couvre la première impression, le lit, les surfaces, la salle de bain, les amenities, le minibar, la maintenance et le statut PMS. Le standard LuxOps applique un modèle 100 points : salle de bain 35, chambre 35, présentation 20 et maintenance 10.",
   },
   {
@@ -306,14 +306,11 @@ const FAQ_FR: FAQItem[] = [
   },
   {
     q: "Qu'est-ce qu'un audit LQA dans un hôtel ?",
-    a: "LQA (Leading Quality Assurance) est une société d'audit indépendante utilisée par les hôtels de luxe pour évaluer leurs standards de service. Leur inspection housekeeping couvre plus de 60 critères : propreté, présentation, dotations et interaction du personnel. Les checklists LuxOps sont conçues pour atteindre ou dépasser les exigences LQA.",
+    a: "LQA (Leading Quality Assurance) est une société d'audit indépendante utilisée par les hôtels de luxe pour évaluer leurs standards de service. Leur inspection housekeeping couvre plus de 60 critères : propreté, présentation, dotations et interaction avec les collaborateurs. Les checklists LuxOps sont conçues pour atteindre ou dépasser les exigences LQA.",
   },
 ]
 
 // ─── Printable PDF Downloads ─────────────────────────────────────────────────
-
-const PACK_DOWNLOAD_EN = '/downloads/housekeeping-checklists/en/hotel-housekeeping-checklist-pack-en.zip'
-const PACK_DOWNLOAD_FR = '/downloads/housekeeping-checklists/fr/pack-checklists-housekeeping-fr.zip'
 
 const DOWNLOADS_EN: DownloadItem[] = [
   {
@@ -333,6 +330,18 @@ const DOWNLOADS_EN: DownloadItem[] = [
     role: 'Floor supervisor / inspection',
     body: 'A printable PDF for room assignments, departure inspections, VIP checks, Clean vs Inspected release and quality coaching.',
     href: '/downloads/housekeeping-checklists/en/floor-housekeeping-supervisor-checklist.pdf',
+  },
+  {
+    title: 'Bathroom Cleaning Checklist',
+    role: 'Bathroom cleaning sequence',
+    body: 'A printable PDF for mirrors, vanity, shower or bath, toilet, floor, amenities and final bathroom verification.',
+    href: '/downloads/checklists/en/hotel-bathroom-cleaning-checklist.pdf',
+  },
+  {
+    title: 'Departure Room Cleaning Checklist',
+    role: 'Departure room / room cleaning',
+    body: 'A printable PDF for the full departure room flow: first scan, strip-out, bathroom, bedroom, bed, minibar and final room status.',
+    href: '/downloads/checklists/en/departure-room-cleaning-checklist.pdf',
   },
 ]
 
@@ -354,6 +363,18 @@ const DOWNLOADS_FR: DownloadItem[] = [
     role: 'Supervision / inspection',
     body: 'PDF imprimable pour les feuilles de route, l’inspection chambre départ, les chambres VIP, la libération PMS et le coaching qualité.',
     href: '/downloads/housekeeping-checklists/fr/checklist-gouvernante-etage-superviseur.pdf',
+  },
+  {
+    title: 'Checklist Nettoyage Salle de Bain',
+    role: 'Séquence salle de bain',
+    body: 'PDF imprimable pour les miroirs, le plan vasque, la douche ou baignoire, les toilettes, le sol, les amenities et le contrôle final.',
+    href: '/downloads/checklists/fr/checklist-nettoyage-salle-de-bain-hotel.pdf',
+  },
+  {
+    title: 'Checklist Chambre à Blanc',
+    role: 'Chambre départ / nettoyage complet',
+    body: 'PDF imprimable pour la chambre départ : premier contrôle, retrait, salle de bain, chambre, lit, minibar et statut final.',
+    href: '/downloads/checklists/fr/checklist-chambre-a-blanc.pdf',
   },
 ]
 
@@ -407,7 +428,6 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
   const faq = isEN ? FAQ_EN : FAQ_FR
   const sopSteps = isEN ? SOP_STEPS_EN : SOP_STEPS_FR
   const downloads = isEN ? DOWNLOADS_EN : DOWNLOADS_FR
-  const packDownload = isEN ? PACK_DOWNLOAD_EN : PACK_DOWNLOAD_FR
 
   const faqSchema = {
     '@context': 'https://schema.org',
@@ -429,8 +449,8 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
               {isEN
-                ? 'Hotel Housekeeping Checklist: Room Attendant, Supervisor Inspection & HSK SOP'
-                : 'Checklist Housekeeping Hôtel : chambre à blanc, recouche et inspection gouvernante'}
+                ? 'Housekeeping Checklist: Room Attendant, Supervisor Inspection & HSK SOP'
+                : 'Checklist housekeeping : chambre à blanc, recouche et inspection gouvernante'}
             </h1>
             <p className="text-lg text-blue-100 max-w-2xl mx-auto mb-8">
               {isEN
@@ -438,20 +458,12 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
                 : 'Une checklist issue du Playbook Housekeeping LuxOps : séquence chambre à blanc, recouche, chariot, auto-contrôle, inspection gouvernante, statut Clean/Inspected et grille qualité 100 points.'}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <TrackedLink
-                href={packDownload}
-                download
-                eventName="pdf_pack_downloaded"
-                eventProperties={{
-                  source_page: `/${locale}/hotel-housekeeping-checklist`,
-                  placement: 'hero',
-                  cta_label: isEN ? 'Download Printable PDF Pack' : 'Télécharger les PDF imprimables',
-                  product_area: 'housekeeping',
-                }}
+              <Link
+                href="#housekeeping-pdfs"
                 className="inline-block bg-white text-[#1A2E44] px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
               >
-                {isEN ? 'Download Printable PDF Pack' : 'Télécharger les PDF imprimables'}
-              </TrackedLink>
+                {isEN ? 'View the free printable PDFs' : 'Voir les PDF gratuits à imprimer'}
+              </Link>
               <TrackedLink
                 href={`/${locale}/playbooks/hsk-starter-pack`}
                 eventName="starter_pack_cta_clicked"
@@ -487,15 +499,14 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
           <div className="grid md:grid-cols-3 gap-4">
             {[
               {
-                title: isEN ? 'Free PDF checklists' : 'PDF gratuits',
+                title: isEN ? 'Free printable checklists' : 'Checklists gratuites à imprimer',
                 body: isEN
-                  ? 'Use the printable role-based checklists on the floor: public areas, room attendant and supervisor inspection.'
-                  : 'Utilisez les checklists imprimables par poste : lieux publics, chambre et inspection gouvernante.',
-                href: packDownload,
-                label: isEN ? 'Download PDFs' : 'Télécharger les PDF',
-                download: true,
-                eventName: 'pdf_pack_downloaded',
-                product: 'housekeeping_pdf_pack',
+                  ? 'Choose the PDF you need: public areas, room attendant, supervisor inspection, bathroom cleaning or departure room cleaning.'
+                  : 'Choisissez le PDF utile : lieux publics, chambre, inspection gouvernante, nettoyage salle de bain ou chambre à blanc.',
+                href: '#housekeeping-pdfs',
+                label: isEN ? 'View free PDFs' : 'Voir les PDF gratuits',
+                eventName: 'seo_cta_clicked',
+                product: 'housekeeping_free_pdfs',
               },
               {
                 title: isEN ? 'Housekeeping Inspection Kit' : 'Kit Inspection Housekeeping',
@@ -521,7 +532,6 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
               <TrackedLink
                 key={item.title}
                 href={item.href}
-                {...(item.download ? { download: true } : {})}
                 eventName={item.eventName}
                 eventProperties={{
                   source_page: `/${locale}/hotel-housekeeping-checklist`,
@@ -540,47 +550,48 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
         </section>
 
         {/* Printable PDF downloads */}
-        <section className="max-w-5xl mx-auto px-6 py-12">
+        <section id="housekeeping-pdfs" className="max-w-6xl mx-auto px-6 py-12">
           <div className="max-w-3xl mb-8">
             <p className="text-xs font-bold uppercase tracking-widest text-[#0056D2] mb-3">
-              {isEN ? 'Printable PDF checklist pack' : 'Pack PDF imprimable'}
+              {isEN ? 'Printable PDF checklists' : 'Checklists PDF à imprimer'}
             </p>
             <h2 className="text-2xl md:text-3xl font-bold text-[#1A2E44] mb-3">
-              {isEN ? 'Download the housekeeping checklists by role' : 'Télécharger les checklists housekeeping par poste'}
+              {isEN ? 'Download the housekeeping checklists by role and room task' : 'Télécharger les checklists housekeeping par poste et par tâche'}
             </h2>
             <p className="text-gray-600 leading-relaxed">
               {isEN
-                ? 'These free PDFs are adapted from the LuxOps Housekeeping Playbook and split by team role so each collaborator can use the checklist that matches their shift.'
-                : 'Ces PDF gratuits sont issus du Playbook Housekeeping LuxOps et séparés par poste pour que chaque collaborateur utilise la checklist correspondant à sa vacation.'}
+                ? 'These free PDFs are adapted from the LuxOps Housekeeping Playbook and split by role or room task so each collaborator can use the checklist that matches the shift.'
+                : 'Ces PDF gratuits sont issus du Playbook Housekeeping LuxOps. Ils sont séparés par poste ou par tâche pour que chaque collaborateur utilise la checklist adaptée à sa vacation.'}
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-4">
+          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
             {downloads.map((item) => (
-              <div key={item.href} className="border border-gray-200 rounded-lg p-5 flex flex-col">
+              <div key={item.href} className="border border-gray-200 rounded-lg p-6 flex flex-col min-h-[320px]">
                 <p className="text-xs font-semibold uppercase tracking-wide text-[#0056D2] mb-2">
                   {isEN ? 'Printable PDF' : 'PDF imprimable'}
                 </p>
-                <h3 className="text-lg font-bold text-[#1A2E44] mb-2">{item.title}</h3>
+                <h3 className="text-xl font-bold text-[#1A2E44] mb-2 leading-tight">{item.title}</h3>
                 <p className="text-sm font-medium text-gray-500 mb-3">{item.role}</p>
-                <p className="text-sm text-gray-600 leading-relaxed mb-5 flex-1">{item.body}</p>
-                <a
+                <p className="text-sm text-gray-600 leading-relaxed mb-6 flex-1">{item.body}</p>
+                <TrackedLink
                   href={item.href}
                   download
+                  eventName="free_checklist_download_clicked"
+                  eventProperties={{
+                    source_page: `/${locale}/hotel-housekeeping-checklist`,
+                    checklist_name: item.title,
+                    department: 'housekeeping',
+                    locale,
+                    placement: 'download_grid',
+                  }}
                   className="inline-flex justify-center bg-[#1A2E44] text-white px-5 py-3 rounded-lg text-sm font-semibold hover:bg-[#243d57] transition-colors"
                 >
-                  {isEN ? 'Download PDF' : 'Télécharger le PDF'}
-                </a>
+                  {isEN ? 'Download PDF copy' : 'Télécharger le PDF'}
+                </TrackedLink>
               </div>
             ))}
           </div>
           <div className="mt-6 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3">
-            <a
-              href={packDownload}
-              download
-              className="inline-flex justify-center bg-[#0056D2] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#0047ad] transition-colors"
-            >
-              {isEN ? 'Download the full ZIP pack' : 'Télécharger le pack ZIP complet'}
-            </a>
             <Link
               href={`/${locale}/playbooks/hsk`}
               className="inline-flex justify-center border border-[#1A2E44] text-[#1A2E44] px-6 py-3 rounded-lg font-semibold hover:bg-[#F5F7FA] transition-colors"
@@ -730,20 +741,12 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
                 : 'Les checklists PDF sont des extraits gratuits. Le Playbook Housekeeping LuxOps complet donne à vos équipes toute la structure SOP derrière la checklist : chambre à blanc, recouche, inspection gouvernante, linge, stocks, sécurité, développement durable et management.'}
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-3">
-              <TrackedLink
-                href={packDownload}
-                download
-                eventName="pdf_pack_downloaded"
-                eventProperties={{
-                  source_page: `/${locale}/hotel-housekeeping-checklist`,
-                  placement: 'mid_page_cta',
-                  product_area: 'housekeeping',
-                  cta_label: isEN ? 'Download Free PDF Pack' : 'Télécharger les PDF gratuits',
-                }}
+              <Link
+                href="#housekeeping-pdfs"
                 className="inline-block bg-[#1A2E44] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#243d57] transition-colors"
               >
-                {isEN ? 'Download Free PDF Pack' : 'Télécharger les PDF gratuits'}
-              </TrackedLink>
+                {isEN ? 'View the free PDFs' : 'Voir les PDF gratuits'}
+              </Link>
               <TrackedLink
                 href={`/${locale}/playbooks/hsk`}
                 eventName="playbook_cta_clicked"
@@ -841,35 +844,35 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
               },
               {
                 href: `/${locale}/blog/hotel-room-cleaning-checklist`,
-                title: isEN ? 'Hotel Room Cleaning Checklist' : 'Checklist de nettoyage de chambre d’hôtel',
+                title: isEN ? 'Hotel Room Cleaning Checklist' : 'Checklist de nettoyage de chambre',
                 desc: isEN
                   ? 'Departure room, stayover, trolley setup and final self-check'
                   : 'Chambre à blanc, recouche, chariot et auto-contrôle final',
               },
               {
                 href: `/${locale}/blog/hotel-housekeeping-supervisor-checklist`,
-                title: isEN ? 'Housekeeping Supervisor Checklist' : 'Checklist pour gouvernante d’hôtel',
+                title: isEN ? 'Housekeeping Supervisor Checklist' : 'Checklist gouvernante d’étage',
                 desc: isEN
                   ? 'Supervisor inspection workflow and room release rules'
                   : 'Inspection gouvernante et règles de libération chambre',
               },
               {
                 href: `/${locale}/hotel-audit-checklist`,
-                title: isEN ? 'Hotel Audit Checklist' : 'Checklist Audit Hôtel',
+                title: isEN ? 'Hotel Audit Checklist' : 'Checklist audit qualité',
                 desc: isEN
                   ? 'Full quality audit framework for luxury properties'
                   : "Grille d'audit qualité complète pour les établissements de luxe",
               },
               {
                 href: `/${locale}/hotel-checklist`,
-                title: isEN ? 'Hotel Operational Checklists' : 'Checklists Opérationnelles Hôtel',
+                title: isEN ? 'Hotel Operational Checklists' : 'Checklists opérationnelles',
                 desc: isEN
                   ? 'What makes hotel checklists actually useful in practice'
                   : 'Ce qui rend les checklists hôtelières réellement utiles en pratique',
               },
               {
                 href: `/${locale}/hotel-staff-training`,
-                title: isEN ? 'Hotel Staff Training' : 'Formation du Personnel Hôtelier',
+                title: isEN ? 'Hotel Staff Training' : 'Formation standards de service',
                 desc: isEN
                   ? 'Training programs for luxury hotel teams'
                   : 'Programmes de formation pour les équipes hôtelières de luxe',

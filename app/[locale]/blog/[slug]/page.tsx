@@ -44,7 +44,7 @@ const KEYWORDS_FR: Record<string, string> = {
   'hotel-room-service-sops': 'SOP room service hôtel, procédures service en chambre, standards room service hôtel',
   'hotel-standard-operating-procedures': 'procédures opérationnelles hôtelières, SOP hôtel, modèle SOP hôtelières, procédures opérations hôtel',
   'hotel-front-desk-procedures': 'procédures réception hôtel, SOP réception hôtelière, procédures check-in hôtel, SOP check-out hôtel, checklist réception hôtel',
-  'hotel-staff-training-service-standards': 'formation personnel hôtelier, formation standards de service hôtel, former équipes hôtelières, formation sur site hôtel, programme formation hôtelière, formation hôtel luxe',
+  'hotel-staff-training-service-standards': 'formation équipes hôtelières, formation standards de service hôtel, former collaborateurs hôteliers, formation sur site hôtel, programme formation hôtelière, formation hôtel luxe',
   'hotel-staff-turnover-training': 'turn-over hôtelier, réduire turn-over hôtel, fidélisation équipes hôtelières, formation hôtelière rétention, formation sur site hôtel, stabilité équipes hôtel, turn-over hôtellerie restauration',
   'hotel-new-hire-onboarding': 'onboarding hôtelier, intégration nouvelles recrues hôtel, programme onboarding hôtel, intégration collaborateurs hôtellerie, fidélisation nouvelles recrues hôtel, 90 premiers jours hôtel, onboarding structuré hôtel',
   'hotel-room-attendant-checklist': 'checklist équipier étage hôtel, checklist femme de chambre hôtel, chambre à blanc checklist, recouche housekeeping, SOP housekeeping hôtel',
@@ -100,7 +100,7 @@ const CONTENT_UPGRADES: Record<string, {
         "Chambre non prête à l'arrivée",
         'Client qui conteste une facturation au départ',
         'Demande VIP absente de la passation',
-        "Arrivée tardive pendant l'audit de nuit",
+        "Arrivée tardive pendant le Night Audit",
         "Walk-in lorsque l'hôtel est presque complet",
       ],
     },
@@ -361,7 +361,7 @@ const PLAYBOOK_EXCERPTS: Record<string, {
         { term: 'Revue facturation', detail: 'Chambre, F&B, minibar, spa, acomptes et ajustements sont contrôlés avant encaissement au départ.' },
         { term: 'Late check-out', detail: 'La décision tient compte de l’occupation, du statut client, de la capacité housekeeping et de la demande avant confirmation.' },
         { term: 'Litige client', detail: 'La réception écoute, vérifie les preuves, explique clairement, escalade si nécessaire et trace la résolution dans le profil client.' },
-        { term: 'Passation audit de nuit', detail: 'Folios ouverts, écarts, soldes élevés et arrivées du lendemain sont préparés avant l’arrivée de l’équipe matin.' },
+        { term: 'Passation Night Audit', detail: 'Folios ouverts, écarts, soldes élevés et arrivées du lendemain sont préparés avant l’arrivée de l’équipe matin.' },
       ],
       ctaText: 'Voir le Starter Pack Front Office',
       ctaHref: '/fr/playbooks/fo-starter-pack',
@@ -925,18 +925,78 @@ const ARTICLE_PRODUCT_CTAS: Record<string, {
     en: {
       label: 'Housekeeping tools',
       title: 'Need printable room cleaning tools?',
-      text: 'Download the role-based housekeeping checklists, or use the inspection kit to standardise supervisor controls.',
-      primaryText: 'Download printable checklists',
-      primaryHref: '/en/hotel-housekeeping-checklist',
+      text: 'Download the departure room cleaning checklist, then use the full checklist hub for every housekeeping PDF.',
+      primaryText: 'Download the room cleaning PDF',
+      primaryHref: '/downloads/checklists/en/departure-room-cleaning-checklist.pdf',
       secondaryText: 'View the Housekeeping Inspection Kit',
       secondaryHref: '/en/playbooks/hsk-starter-pack',
     },
     fr: {
       label: 'Outils housekeeping',
       title: 'Besoin de checklists de nettoyage de chambre imprimables ?',
-      text: 'Téléchargez les checklists housekeeping par poste, ou utilisez le kit inspection pour standardiser les contrôles gouvernante.',
-      primaryText: 'Télécharger les checklists',
-      primaryHref: '/fr/hotel-housekeeping-checklist',
+      text: 'Téléchargez la checklist chambre à blanc, puis utilisez le hub complet pour retrouver tous les PDF housekeeping.',
+      primaryText: 'Télécharger le PDF chambre à blanc',
+      primaryHref: '/downloads/checklists/fr/checklist-chambre-a-blanc.pdf',
+      secondaryText: 'Voir le Kit Inspection Housekeeping',
+      secondaryHref: '/fr/playbooks/hsk-starter-pack',
+    },
+  },
+  'hotel-bathroom-cleaning-sop': {
+    en: {
+      label: 'Housekeeping tools',
+      title: 'Need the printable bathroom cleaning checklist?',
+      text: 'Download the bathroom cleaning PDF aligned with this SOP, or use the inspection kit to standardise room controls.',
+      primaryText: 'Download the bathroom PDF',
+      primaryHref: '/downloads/checklists/en/hotel-bathroom-cleaning-checklist.pdf',
+      secondaryText: 'View the Housekeeping Inspection Kit',
+      secondaryHref: '/en/playbooks/hsk-starter-pack',
+    },
+    fr: {
+      label: 'Outils housekeeping',
+      title: 'Besoin de la checklist salle de bain à imprimer ?',
+      text: 'Téléchargez le PDF salle de bain aligné avec cette SOP, ou utilisez le kit inspection pour standardiser les contrôles chambre.',
+      primaryText: 'Télécharger le PDF salle de bain',
+      primaryHref: '/downloads/checklists/fr/checklist-nettoyage-salle-de-bain-hotel.pdf',
+      secondaryText: 'Voir le Kit Inspection Housekeeping',
+      secondaryHref: '/fr/playbooks/hsk-starter-pack',
+    },
+  },
+  'hotel-room-attendant-checklist': {
+    en: {
+      label: 'Housekeeping tools',
+      title: 'Need the printable room attendant checklist?',
+      text: 'Download the room attendant PDF for trolley setup, room entry, departure rooms, stayovers and final self-inspection.',
+      primaryText: 'Download the room attendant PDF',
+      primaryHref: '/downloads/housekeeping-checklists/en/room-attendant-checklist.pdf',
+      secondaryText: 'View all free checklists',
+      secondaryHref: '/en/free-hotel-checklists',
+    },
+    fr: {
+      label: 'Outils housekeeping',
+      title: 'Besoin de la checklist femme ou valet de chambre ?',
+      text: 'Téléchargez le PDF pour le chariot, l’entrée en chambre, la chambre à blanc, la recouche et l’auto-contrôle final.',
+      primaryText: 'Télécharger le PDF femme / valet de chambre',
+      primaryHref: '/downloads/housekeeping-checklists/fr/checklist-femme-valet-de-chambre.pdf',
+      secondaryText: 'Voir toutes les checklists gratuites',
+      secondaryHref: '/fr/checklists-hotel-gratuites',
+    },
+  },
+  'hotel-housekeeping-supervisor-checklist': {
+    en: {
+      label: 'Housekeeping tools',
+      title: 'Need the printable supervisor checklist?',
+      text: 'Download the supervisor PDF for assignments, departure inspections, VIP checks and Clean vs Inspected release.',
+      primaryText: 'Download the supervisor PDF',
+      primaryHref: '/downloads/housekeeping-checklists/en/floor-housekeeping-supervisor-checklist.pdf',
+      secondaryText: 'View the Housekeeping Inspection Kit',
+      secondaryHref: '/en/playbooks/hsk-starter-pack',
+    },
+    fr: {
+      label: 'Outils housekeeping',
+      title: 'Besoin de la checklist gouvernante d’étage ?',
+      text: 'Téléchargez le PDF pour les feuilles de route, l’inspection chambre départ, les VIP, la libération PMS et le coaching qualité.',
+      primaryText: 'Télécharger le PDF gouvernante',
+      primaryHref: '/downloads/housekeeping-checklists/fr/checklist-gouvernante-etage-superviseur.pdf',
       secondaryText: 'Voir le Kit Inspection Housekeeping',
       secondaryHref: '/fr/playbooks/hsk-starter-pack',
     },
@@ -944,6 +1004,7 @@ const ARTICLE_PRODUCT_CTAS: Record<string, {
 }
 
 function productCtaEventName(href: string) {
+  if (href.includes('/downloads/')) return 'free_checklist_download_clicked'
   if (href.includes('starter-pack')) return 'starter_pack_cta_clicked'
   if (href.includes('hotel-housekeeping-checklist')) return 'pdf_pack_cta_clicked'
   if (href.includes('free-hotel-procedures')) return 'free_chapter_cta_clicked'
@@ -1091,6 +1152,7 @@ export default async function BlogArticlePage({
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                 <TrackedLink
                   href={productCta.primaryHref}
+                  {...(productCta.primaryHref.includes('/downloads/') ? { download: true } : {})}
                   eventName={productCtaEventName(productCta.primaryHref)}
                   eventProperties={{
                     source_page: `/${locale}/blog/${slug}`,
@@ -1105,6 +1167,7 @@ export default async function BlogArticlePage({
                 </TrackedLink>
                 <TrackedLink
                   href={productCta.secondaryHref}
+                  {...(productCta.secondaryHref.includes('/downloads/') ? { download: true } : {})}
                   eventName={productCtaEventName(productCta.secondaryHref)}
                   eventProperties={{
                     source_page: `/${locale}/blog/${slug}`,
@@ -1123,7 +1186,7 @@ export default async function BlogArticlePage({
         )}
 
         {/* Lead magnet - right after intro, before any H2 */}
-        {(() => {
+        {!productCta?.primaryHref.includes('/downloads/') && (() => {
           const DEPT_MAP: Record<string, { titleEn: string; titleFr: string }> = {
             'housekeeping-room-inspection': {
               titleEn: 'Download a free chapter of the Housekeeping Playbook',
@@ -1315,16 +1378,16 @@ export default async function BlogArticlePage({
         {(() => {
           const RELATED: Record<string, { href: string; labelEn: string; labelFr: string; descEn: string; descFr: string }[]> = {
             'hotel-operations-playbook': [
-              { href: '/hotel-sop', labelEn: 'Hotel SOP Templates', labelFr: 'Modèles SOP Hôtel', descEn: 'Complete standard operating procedures for every hotel department.', descFr: 'Procédures opérationnelles complètes pour chaque département hôtelier.' },
-              { href: '/hotel-checklist', labelEn: 'Hotel Operational Checklists', labelFr: 'Checklists Opérationnelles Hôtel', descEn: 'What makes a hotel checklist actually useful in practice.', descFr: 'Ce qui rend une checklist hôtelière vraiment utile en pratique.' },
+              { href: '/hotel-sop', labelEn: 'Hotel SOP Templates', labelFr: 'Modèles SOP', descEn: 'Complete standard operating procedures for every hotel department.', descFr: 'Procédures opérationnelles complètes pour chaque département hôtelier.' },
+              { href: '/hotel-checklist', labelEn: 'Hotel Operational Checklists', labelFr: 'Checklists opérationnelles', descEn: 'What makes a hotel checklist actually useful in practice.', descFr: 'Ce qui rend une checklist hôtelière vraiment utile en pratique.' },
             ],
             'how-to-write-hotel-sops': [
-              { href: '/hotel-sop', labelEn: 'Hotel SOP Templates', labelFr: 'Modèles SOP Hôtel', descEn: 'Complete standard operating procedures for every hotel department.', descFr: 'Procédures opérationnelles complètes pour chaque département hôtelier.' },
-              { href: '/front-office-sop', labelEn: 'Front Office SOP', labelFr: 'SOP Réception Hôtel', descEn: 'Procedures built around how the front desk actually works.', descFr: 'Procédures construites autour du fonctionnement réel de la réception.' },
+              { href: '/hotel-sop', labelEn: 'Hotel SOP Templates', labelFr: 'Modèles SOP', descEn: 'Complete standard operating procedures for every hotel department.', descFr: 'Procédures opérationnelles complètes pour chaque département hôtelier.' },
+              { href: '/front-office-sop', labelEn: 'Front Office SOP', labelFr: 'SOP réception', descEn: 'Procedures built around how the front desk actually works.', descFr: 'Procédures construites autour du fonctionnement réel de la réception.' },
             ],
             'hotel-front-office-sop': [
-              { href: '/front-office-sop', labelEn: 'Front Office SOP', labelFr: 'SOP Réception Hôtel', descEn: 'Procedures built around how the front desk actually works.', descFr: 'Procédures construites autour du fonctionnement réel de la réception.' },
-              { href: '/hotel-checklist', labelEn: 'Hotel Operational Checklists', labelFr: 'Checklists Opérationnelles Hôtel', descEn: 'What makes a hotel checklist actually useful in practice.', descFr: 'Ce qui rend une checklist hôtelière vraiment utile en pratique.' },
+              { href: '/front-office-sop', labelEn: 'Front Office SOP', labelFr: 'SOP réception', descEn: 'Procedures built around how the front desk actually works.', descFr: 'Procédures construites autour du fonctionnement réel de la réception.' },
+              { href: '/hotel-checklist', labelEn: 'Hotel Operational Checklists', labelFr: 'Checklists opérationnelles', descEn: 'What makes a hotel checklist actually useful in practice.', descFr: 'Ce qui rend une checklist hôtelière vraiment utile en pratique.' },
             ],
             'hotel-housekeeping-checklist': [
               { href: '/hotel-housekeeping-checklist', labelEn: 'Housekeeping Checklists', labelFr: 'Checklists Housekeeping', descEn: 'Checklists by role and shift: trolley setup, room sequence, supervisor inspection, handover.', descFr: 'Checklists par rôle et service : chariot, remise en état, inspection superviseur, passation.' },
@@ -1343,8 +1406,8 @@ export default async function BlogArticlePage({
               { href: '/playbooks/fb-starter-pack', labelEn: 'F&B Starter Pack', labelFr: 'Starter Pack F&B', descEn: 'Room service checklist, guest recovery scripts and service control tools.', descFr: 'Checklist room service, scripts recovery et outils de contrôle de service.' },
             ],
             'hotel-front-office-procedures': [
-              { href: '/front-office-sop', labelEn: 'Front Office SOP', labelFr: 'SOP Réception Hôtel', descEn: 'Procedures built around how the front desk actually works.', descFr: 'Procédures construites autour du fonctionnement réel de la réception.' },
-              { href: '/hotel-checklist', labelEn: 'Hotel Operational Checklists', labelFr: 'Checklists Opérationnelles Hôtel', descEn: 'What makes a hotel checklist actually useful in practice.', descFr: 'Ce qui rend une checklist hôtelière vraiment utile en pratique.' },
+              { href: '/front-office-sop', labelEn: 'Front Office SOP', labelFr: 'SOP réception', descEn: 'Procedures built around how the front desk actually works.', descFr: 'Procédures construites autour du fonctionnement réel de la réception.' },
+              { href: '/hotel-checklist', labelEn: 'Hotel Operational Checklists', labelFr: 'Checklists opérationnelles', descEn: 'What makes a hotel checklist actually useful in practice.', descFr: 'Ce qui rend une checklist hôtelière vraiment utile en pratique.' },
             ],
             'housekeeping-room-inspection': [
               { href: '/housekeeping-sop', labelEn: 'Housekeeping SOP Templates', labelFr: 'Procédures housekeeping', descEn: 'The procedures behind every room inspection, from trolley setup to supervisor sign-off.', descFr: 'Les procédures derrière chaque inspection de chambre, du chariot à la validation superviseur.' },
@@ -1363,12 +1426,12 @@ export default async function BlogArticlePage({
               { href: '/blog/housekeeping-room-inspection', labelEn: 'Room Inspection Checklist', labelFr: 'Checklist inspection chambre', descEn: 'A deeper room inspection framework for quality control.', descFr: 'Un cadre d’inspection chambre plus détaillé pour le contrôle qualité.' },
             ],
             'hotel-bathroom-cleaning-sop': [
-              { href: '/blog/hotel-room-cleaning-checklist', labelEn: 'Hotel Room Cleaning Checklist', labelFr: 'Checklist de nettoyage de chambre d’hôtel', descEn: 'The complete room cleaning sequence around the bathroom SOP.', descFr: 'La séquence chambre complète autour de la SOP salle de bain.' },
+              { href: '/blog/hotel-room-cleaning-checklist', labelEn: 'Hotel Room Cleaning Checklist', labelFr: 'Checklist de nettoyage de chambre', descEn: 'The complete room cleaning sequence around the bathroom SOP.', descFr: 'La séquence chambre complète autour de la SOP salle de bain.' },
               { href: '/housekeeping-sop', labelEn: 'Housekeeping SOP', labelFr: 'SOP Housekeeping', descEn: 'The procedure library behind consistent housekeeping operations.', descFr: 'La bibliothèque de procédures derrière un housekeeping constant.' },
             ],
             'hotel-front-desk-checklist': [
-              { href: '/front-office-sop', labelEn: 'Front Office SOP', labelFr: 'SOP Réception Hôtel', descEn: 'Reception, check-in, billing, handover and night audit procedures.', descFr: 'Accueil, check-in, facturation, passation et audit de nuit.' },
-              { href: '/hotel-front-office-checklist', labelEn: 'Front Office Checklist', labelFr: 'Checklist Réception Hôtel', descEn: 'Shift opening, check-in, handover and quality scoring.', descFr: 'Prise de poste, check-in, passation et contrôle qualité.' },
+              { href: '/front-office-sop', labelEn: 'Front Office SOP', labelFr: 'SOP réception', descEn: 'Reception, check-in, billing, handover and night audit procedures.', descFr: 'Accueil, check-in, facturation, passation et Night Audit.' },
+              { href: '/hotel-front-office-checklist', labelEn: 'Front Office Checklist', labelFr: 'Checklist réception', descEn: 'Shift opening, check-in, handover and quality scoring.', descFr: 'Prise de poste, check-in, passation et contrôle qualité.' },
             ],
             'hotel-dnd-procedure': [
               { href: '/hotel-housekeeping-checklist', labelEn: 'Housekeeping Checklist', labelFr: 'Checklist housekeeping', descEn: 'The full housekeeping checklist and room release flow.', descFr: 'La checklist housekeeping complète et le flux de libération chambre.' },

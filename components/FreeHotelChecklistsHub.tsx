@@ -5,7 +5,6 @@ import {
   ClipboardCheck,
   Download,
   FileText,
-  PackageCheck,
   Sparkles,
 } from 'lucide-react'
 import TrackedLink from '@/components/TrackedLink'
@@ -50,11 +49,6 @@ const CONTENT = {
     downloadLabel: 'Download PDF',
     availableLabel: 'Available now',
     preparingLabel: 'PDF being prepared',
-    zipTitle: 'Download the complete Housekeeping PDF pack',
-    zipText:
-      'The role-based Housekeeping PDFs are already available as one ZIP file for quick internal sharing.',
-    zipHref: '/downloads/housekeeping-checklists/en/hotel-housekeeping-checklist-pack-en.zip',
-    zipLabel: 'Download ZIP pack',
     starterPrefix: 'Need editable tools?',
     playbookPrefix: 'Need the full SOP reference?',
     sourceLabel: 'View related guide',
@@ -110,7 +104,7 @@ const CONTENT = {
             title: 'Departure Room Cleaning Checklist',
             role: 'Departure room reset',
             body:
-              'Chamber reset sequence from first scan to final presentation, with lost property, linen, minibar and PMS status controls.',
+              'Departure room reset sequence from first scan to final presentation, with lost property, linen, minibar and PMS status controls.',
             href: '/downloads/checklists/en/departure-room-cleaning-checklist.pdf',
             available: true,
             sourceHref: '/en/blog/hotel-room-cleaning-checklist',
@@ -211,9 +205,9 @@ const CONTENT = {
   fr: {
     slug: '/checklists-hotel-gratuites',
     alternateSlug: '/free-hotel-checklists',
-    metaTitle: 'Checklists hôtel gratuites PDF | LuxOps',
+    metaTitle: 'Checklists gratuites PDF | LuxOps',
     metaDescription:
-      'Téléchargez des checklists hôtel gratuites à imprimer pour housekeeping, réception, night audit, ouverture restaurant et room service.',
+      'Téléchargez des checklists gratuites à imprimer pour housekeeping, réception, night audit, ouverture restaurant et room service.',
     eyebrow: 'Ressources PDF gratuites',
     h1: 'Checklists prêtes à imprimer',
     subtitle:
@@ -223,11 +217,6 @@ const CONTENT = {
     downloadLabel: 'Télécharger le PDF',
     availableLabel: 'Disponible',
     preparingLabel: 'PDF en préparation',
-    zipTitle: 'Télécharger le pack PDF Housekeeping complet',
-    zipText:
-      'Les PDF Housekeeping par poste sont déjà disponibles dans un fichier ZIP pour un partage interne rapide.',
-    zipHref: '/downloads/housekeeping-checklists/fr/pack-checklists-housekeeping-fr.zip',
-    zipLabel: 'Télécharger le ZIP',
     starterPrefix: 'Besoin d’outils modifiables ?',
     playbookPrefix: 'Besoin de la référence SOP complète ?',
     sourceLabel: 'Voir le guide lié',
@@ -370,9 +359,9 @@ const CONTENT = {
           'Les PDF gratuits sont des outils simples pour le terrain. Les Starter Packs incluent des fichiers modifiables, scripts, trackers et templates opérationnels plus complets.',
       },
       {
-        question: 'Est-ce adapté aux hôtels indépendants ?',
+        question: 'Est-ce adapté aux établissements indépendants ?',
         answer:
-          'Oui. Les checklists sont conçues pour les hôtels indépendants, boutique hôtels, resorts et petits groupes hôteliers.',
+          'Oui. Les checklists sont conçues pour les établissements indépendants, boutique hôtels, resorts, restaurants et petits groupes hôteliers.',
       },
       {
         question: 'Peut-on les utiliser pour former les équipes ?',
@@ -393,10 +382,6 @@ const CONTENT = {
   downloadLabel: string
   availableLabel: string
   preparingLabel: string
-  zipTitle: string
-  zipText: string
-  zipHref: string
-  zipLabel: string
   starterPrefix: string
   playbookPrefix: string
   sourceLabel: string
@@ -485,34 +470,6 @@ export default function FreeHotelChecklistsHub({ locale }: { locale: Locale }) {
               <Stat value={String(totalItems)} label={isEN ? 'Checklist cards' : 'Checklists'} />
               <Stat value={String(availableItems)} label={isEN ? 'Ready PDFs' : 'PDF prêts'} />
               <Stat value="EN + FR" label={isEN ? 'Languages' : 'Langues'} />
-            </div>
-          </div>
-        </section>
-
-        <section className="py-14 px-6 bg-[#F6F8FB] border-b border-gray-100">
-          <div className="max-w-6xl mx-auto grid lg:grid-cols-[1fr_0.7fr] gap-8 items-center">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-[#0056D2] mb-3">
-                {isEN ? 'Immediate downloads' : 'Téléchargements immédiats'}
-              </p>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#111111] mb-4">{content.zipTitle}</h2>
-              <p className="text-gray-600 leading-relaxed">{content.zipText}</p>
-            </div>
-            <div className="lg:text-right">
-              <TrackedLink
-                href={content.zipHref}
-                eventName="free_checklist_download_clicked"
-                eventProperties={{
-                  source_page: sourcePage,
-                  checklist: 'housekeeping_zip_pack',
-                  status: 'available',
-                }}
-                className="inline-flex items-center justify-center gap-2 bg-[#0056D2] text-white px-7 py-4 rounded-lg font-semibold hover:bg-[#0046B8] transition-colors"
-                download
-              >
-                <PackageCheck size={18} />
-                {content.zipLabel}
-              </TrackedLink>
             </div>
           </div>
         </section>

@@ -9,7 +9,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: isEN
       ? 'Hotel Night Audit Checklist | Step-by-Step Night Audit Procedure | LuxOps'
-      : 'Checklist Night Audit Hôtel | Clôture PMS, VCC, caisse et passation | LuxOps',
+      : 'Checklist Night Audit | Clôture PMS, VCC, caisse et passation | LuxOps',
     description: isEN
       ? 'Free hotel night audit checklist: pre-closing checks, system reconciliation, no-show management, report generation and morning handover. Built for hotel night auditors.'
       : 'Checklist Night Audit hôtel : clôture PMS, contrôle crédit, Pre-Authorizations, VCC, caisse, no-shows, rapports et Shift Handover matin.',
@@ -41,62 +41,73 @@ type FAQItem = { q: string; a: string }
 
 const PHASES_EN: ChecklistSection[] = [
   {
-    phase: 'Phase 1: Pre-closing checks (before system run)',
-    intro: 'Complete all pre-closing tasks before initiating the PMS night audit run. The system run is a one-way action: errors not caught before it require manual corrections the following day.',
+    phase: '1. Shift takeover, 22:45 to 23:15',
+    intro: 'The Night Auditor takes control of the desk before the property closes the day. The first priority is to understand what is still open, sensitive or financially exposed.',
     items: [
-      'Confirm all departures are checked out in PMS: no occupied rooms with a departure date of today',
-      'Review late checkouts still in the building and confirm billing hold is active on each',
-      'Post any room charges not yet applied: minibar reports, room service, telephone, parking',
-      'Verify all F&B outlet closings: confirm outlet charges transferred and posted to guest folios',
-      'Review disputed charges flagged during the day and note their status for the morning manager',
-      'Pull no-show list from PMS: reservations not checked in and not cancelled',
-      'Apply no-show charge per rate plan policy for each confirmed no-show',
-      'Send no-show confirmation to guest email where required by rate plan',
-      'Log each no-show: reservation number, charge applied, rate plan reference',
-      'Compare PMS room status report against the last housekeeping supervisor floor report',
-      'Flag any discrepancies: PMS shows vacant-clean, housekeeping shows occupied or dirty',
-      'Confirm VIP arrivals for next day have correct room assignments and show clean in PMS',
+      'Receive a verbal and written handover from the PM shift',
+      'Review arrivals still expected, late departures, room moves and guest complaints',
+      'Check the cashier float and document any variance before taking responsibility',
+      'Log in to PMS, payment terminal, email, phone system and night reporting tools',
+      'Review the in-house guest list, VIPs, wake-up calls and special requests',
+      'Confirm emergency contacts, duty manager contact and security procedure for the night',
     ],
   },
   {
-    phase: 'Phase 2: System run and daily closing',
-    intro: 'Run the night audit only after all pre-closing checks are complete and all outlets are closed. Confirm the sequence with your PMS provider if this is your first time running on a new system.',
+    phase: '2. Early-night service controls',
+    intro: 'Before the PMS close, the Night Auditor continues normal reception service while preparing the operational day for closing.',
     items: [
-      'Confirm all outlet reports are closed before initiating the audit run',
-      'Run the night audit (system close) in PMS per the property-specific sequence',
-      'Confirm system date has rolled to the new operational date',
-      'Print or save the night audit report summary: verify total revenue, room revenue and occupancy figures',
-      'Run the daily report package: arrivals list for today, departures list for today, VIP list, high-balance report',
-      'Generate and file the night revenue report for accounting',
-      'Confirm backup or export completed if required by property IT policy',
-      'Log audit run time and any system errors encountered during the run',
+      'Process late check-ins with ID, payment guarantee and PMS update completed immediately',
+      'Handle walk-ins only after confirming availability, rate and payment conditions',
+      'Review remaining departures and verify that checked-out rooms are correctly closed in PMS',
+      'Log guest requests, incidents, room moves and recovery actions in the night report',
+      'Coordinate with security or duty manager for unusual noise, safety or guest welfare situations',
     ],
   },
   {
-    phase: 'Phase 3: Active night duties',
-    intro: 'These tasks run in parallel with the night shift. Log all activities and guest interactions in the duty manager night report.',
+    phase: '3. Credit control and VCC processing',
+    intro: 'The financial exposure of the property should be controlled before the system rolls to the next business date.',
     items: [
-      'Monitor front entrance and respond to late arrivals per the late check-in protocol',
-      'Process any remaining late check-ins from the arrivals list',
-      'Run hourly security rounds per property protocol and log time and findings each time',
-      'Respond to in-room requests: log in PMS, action within 15 minutes or escalate to relevant department',
-      'Monitor fire panel, CCTV and any security alerts per the emergency protocol',
-      'Flag any maintenance issues discovered during rounds for the morning engineering briefing',
-      'Review high-balance alerts: contact guests with balance above threshold per property policy',
-      'Log all incidents and guest interactions in the duty manager night report',
+      'Run the high-balance or credit limit report and identify accounts above threshold',
+      'Verify that pre-authorizations cover room, tax and expected extras',
+      'Flag expired cards, insufficient guarantees and missing payment methods for the AM shift',
+      'Identify prepaid OTA reservations requiring VCC processing after check-in',
+      'Charge VCCs for the exact amount required and record the transaction reference in PMS',
+      'Document declined VCCs with reason, amount and action required for follow-up',
     ],
   },
   {
-    phase: 'Phase 4: Morning pack and handover',
-    intro: 'The morning team runs entirely on what the night auditor prepared. Complete this phase before the first morning agent arrives, not after.',
+    phase: '4. PMS audit run and daily close, 01:00 to 04:00',
+    intro: 'The Night Audit run should only begin once outlets are closed, charges are posted and room status issues are understood.',
     items: [
-      'Print arrivals list for today and highlight VIPs, early check-ins and pre-assigned rooms',
-      'Print departure list with folio preview for each checked-in guest',
-      'Prepare room availability summary for the morning front desk team',
-      'Write duty manager night report: incidents, unusual events, follow-up items, occupancy summary',
-      'Confirm breakfast count for F&B and pass to kitchen if applicable',
-      'Brief the incoming morning agent in person: do not leave without a verbal handover',
-      'Log handover completed in the duty manager logbook with time and signature',
+      'Confirm restaurant, bar, spa, parking and room service charges are posted to the correct folios',
+      'Review no-shows and apply charges according to the rate plan and property policy',
+      'Compare PMS room status with the latest housekeeping report and flag discrepancies',
+      'Run the PMS Night Audit according to the property sequence',
+      'Confirm that the PMS date has rolled to the new operational day',
+      'Save or print the Daily Report, revenue reports, occupancy report and payment reconciliation',
+      'Log audit run time, system warnings and any manual corrections required',
+    ],
+  },
+  {
+    phase: '5. Next-day preparation',
+    intro: 'The morning team should arrive to clear lists, clean folios and a readable operating picture.',
+    items: [
+      'Prepare arrivals list with VIPs, early check-ins, pre-assigned rooms and special requests highlighted',
+      'Prepare departures list with folio preview, payment status and sensitive cases identified',
+      'Summarize room availability, out-of-order rooms and room status discrepancies',
+      'Prepare breakfast count, wake-up calls, transport requests and guest follow-ups',
+      'Write the night report with incidents, complaints, financial issues and operational notes',
+    ],
+  },
+  {
+    phase: '6. Shift transition, 06:00 to 07:00',
+    intro: 'The Night Audit is complete only when the AM team has received a usable handover, not when the reports have been printed.',
+    items: [
+      'Brief the AM agent or supervisor verbally before leaving the desk',
+      'Hand over VIPs, early arrivals, unresolved complaints, high balances and VCC issues',
+      'Confirm wake-up calls, transport, breakfast notes and room moves still pending',
+      'Sign the handover or complete the logbook according to property procedure',
+      'Leave the desk clean, reports filed and systems ready for the AM shift',
     ],
   },
 ]
@@ -105,62 +116,73 @@ const PHASES_EN: ChecklistSection[] = [
 
 const PHASES_FR: ChecklistSection[] = [
   {
-    phase: 'Phase 1 : Contrôles avant clôture PMS',
-    intro: 'Le Night Audit commence avant le lancement de la clôture. Le Night Auditor doit sécuriser les départs, les folios, les points de vente, les no-shows, les statuts chambres et les comptes clients avant de basculer la date PMS.',
+    phase: '1. Prise de shift, 22h45 à 23h15',
+    intro: 'Le Night Auditor prend le contrôle du desk avant la clôture de la journée. La priorité est de comprendre ce qui reste ouvert, sensible ou exposé financièrement.',
     items: [
-      'Vérifier que tous les départs du jour sont bien passés en Check-out dans le PMS',
-      'Contrôler les Late Check-out encore présents et vérifier que la garantie de paiement couvre les extras',
-      'Vérifier que toutes les charges sont postées sur les bons folios : F&B, minibar, spa, parking, téléphone, Room Service',
-      'S’assurer que les points de vente F&B sont clôturés et que les additions ont bien été transférées vers les folios clients',
-      'Relire les litiges de facturation ou ajustements du jour et préparer une note claire pour le Shift AM',
-      'Sortir la liste des no-shows : réservations non arrivées et non annulées',
-      'Appliquer les frais de no-show selon la politique tarifaire et documenter réservation, montant et règle appliquée',
-      'Comparer les statuts chambres PMS avec le dernier état housekeeping : sale, propre, inspectée, occupée',
-      'Identifier les écarts de statut chambre et les mettre en passation pour la réception et la gouvernante',
-      'Contrôler les arrivées VIP du lendemain : attribution chambre, demandes spéciales, fiche d’enregistrement et Pre-Authorization',
+      'Recevoir une passation écrite et verbale du shift PM',
+      'Revoir les arrivées encore attendues, late departures, room moves et réclamations clients',
+      'Compter le fonds de caisse et documenter tout écart avant de prendre la responsabilité du desk',
+      'Se connecter au PMS, au TPE, aux emails, au téléphone et aux outils de reporting nuit',
+      'Contrôler la liste des clients in-house, les VIP, les Wake-up calls et les demandes spéciales',
+      'Confirmer les contacts d’urgence, le manager de duty et la procédure sécurité de nuit',
     ],
   },
   {
-    phase: 'Phase 2 : Lancement du Night Audit et clôture journalière',
-    intro: 'La clôture PMS ne se lance qu’une fois les contrôles terminés. Selon le PMS, cette étape bascule la date opérationnelle, poste les nuitées, ferme la journée comptable et génère les rapports nécessaires au management.',
+    phase: '2. Contrôles de début de nuit',
+    intro: 'Avant la clôture PMS, le Night Auditor continue le service réception tout en préparant la journée opérationnelle à fermer proprement.',
     items: [
-      'Confirmer que les outlets et terminaux de paiement concernés sont clôturés avant lancement',
-      'Lancer le Night Audit dans le PMS selon la procédure propre à l’établissement',
+      'Traiter les late check-ins avec document d’identité, garantie de paiement et mise à jour PMS immédiate',
+      'Accepter les walk-ins seulement après confirmation de la disponibilité, du tarif et des conditions de paiement',
+      'Revoir les départs restants et vérifier que les chambres check-out sont bien clôturées dans le PMS',
+      'Consigner demandes clients, incidents, room moves et actions de recovery dans le Night Report',
+      'Coordonner avec la sécurité ou le manager de duty en cas de bruit, situation sensible ou vigilance client',
+    ],
+  },
+  {
+    phase: '3. Contrôle crédit et traitement des VCC',
+    intro: 'L’exposition financière de l’établissement doit être contrôlée avant le basculement de la date PMS.',
+    items: [
+      'Sortir le rapport soldes élevés ou credit limit et identifier les comptes au-dessus du seuil',
+      'Vérifier que les Pre-Authorizations couvrent chambre, taxes et extras prévisibles',
+      'Signaler au shift AM les cartes expirées, garanties insuffisantes et moyens de paiement manquants',
+      'Identifier les réservations OTA prepaid qui nécessitent un traitement VCC après check-in',
+      'Débiter les VCC au montant exact requis et enregistrer la référence de transaction dans le PMS',
+      'Documenter les VCC refusées avec raison, montant et action attendue pour le suivi',
+    ],
+  },
+  {
+    phase: '4. Lancement du Night Audit et clôture PMS, 01h00 à 04h00',
+    intro: 'Le lancement du Night Audit commence seulement lorsque les points de vente sont clôturés, les charges postées et les écarts de statut chambre identifiés.',
+    items: [
+      'Confirmer que restaurant, bar, spa, parking et room service ont posté les charges sur les bons folios',
+      'Revoir les no-shows et appliquer les frais selon le plan tarifaire et la politique de l’établissement',
+      'Comparer les statuts chambres PMS avec le dernier rapport housekeeping et signaler les écarts',
+      'Lancer le Night Audit dans le PMS selon la séquence propre à l’établissement',
       'Vérifier que la date PMS a bien basculé sur la nouvelle journée opérationnelle',
-      'Sauvegarder ou imprimer le Daily Report : chiffre d’affaires total, room revenue, occupation, ADR, RevPAR',
-      'Préparer le Night Report avec les incidents, écarts, demandes clients et points de suivi',
-      'Générer le Pick-up Report et les listes du jour : arrivées, départs, VIP, soldes élevés',
-      'Consigner l’heure de clôture, les éventuels messages PMS et toute anomalie système',
-      'Classer les rapports selon la procédure comptabilité et direction de l’établissement',
+      'Sauvegarder ou imprimer Daily Report, rapports revenu, occupation et réconciliation paiement',
+      'Consigner l’heure de clôture, les alertes système et les corrections manuelles nécessaires',
     ],
   },
   {
-    phase: 'Phase 3 : Contrôle crédit, VCC, caisse et opérations de nuit',
-    intro: 'Le Night Shift ne se limite pas à la clôture PMS. Le Night Auditor protège aussi l’exposition financière de l’hôtel, traite les VCC, contrôle les espèces et assure la continuité de service pendant la nuit.',
+    phase: '5. Préparation de la journée suivante',
+    intro: 'L’équipe du matin doit retrouver des listes propres, des folios lisibles et une vision claire des priorités opérationnelles.',
     items: [
-      'Lancer le rapport de limite de crédit et identifier les comptes en vert, orange ou rouge selon le seuil de l’établissement',
-      'Vérifier que les Pre-Authorizations couvrent le séjour restant et les extras prévisibles',
-      'Signaler au Shift AM les cartes expirant pendant le séjour ou les autorisations insuffisantes',
-      'Identifier les réservations OTA prepaid avec VCC à traiter après Check-in',
-      'Débiter les VCC au montant exact indiqué par l’OTA et enregistrer la référence de transaction dans le PMS',
-      'Documenter les VCC refusées : montant incorrect, activation trop tôt, carte déjà débitée, carte expirée ou incident technique',
-      'Comparer les reçus TPE/POS avec le rapport de paiements PMS et corriger les modes de paiement mal saisis',
-      'Vérifier le fonds de caisse avec le réceptionniste PM ; tout écart doit être documenté',
-      'Gérer les arrivées tardives, Walk-ins, Wake-up calls, demandes clients et rondes de sécurité selon la main courante',
+      'Préparer la liste des arrivées avec VIP, early check-ins, chambres pré-attribuées et demandes spéciales en évidence',
+      'Préparer la liste des départs avec folio pré-vérifié, statut paiement et dossiers sensibles identifiés',
+      'Résumer disponibilité chambres, chambres hors service et écarts de statut chambre',
+      'Préparer prévisions petit-déjeuner, Wake-up calls, demandes transport et suivis clients',
+      'Rédiger le Night Report avec incidents, réclamations, points financiers et notes opérationnelles',
     ],
   },
   {
-    phase: 'Phase 4 : Préparation AM et Shift Handover',
-    intro: 'Le travail du Night Auditor prépare directement la réussite du Shift AM. Le réceptionniste du matin doit retrouver des départs préparés, des arrivées lisibles, des folios propres et une passation exploitable.',
+    phase: '6. Transition de shift, 06h00 à 07h00',
+    intro: 'Le Night Audit est terminé seulement lorsque l’équipe AM reçoit une passation exploitable, pas uniquement lorsque les rapports sont imprimés.',
     items: [
-      'Préparer les départs : ETD, folios pré-vérifiés, charges en attente, facturation directe et split bills',
-      'Identifier les départs sensibles : litige tarifaire, solde élevé, paiement manquant, client avec réclamation active',
-      'Imprimer ou préparer les fiches d’enregistrement des arrivées du jour avec montant de Pre-Authorization',
-      'Organiser les arrivées par heure prévue, avec early check-ins et VIP en priorité',
-      'Préparer la liste VIP et les demandes spéciales pour Guest Relations, Housekeeping et F&B',
-      'Transmettre les prévisions petit-déjeuner ou informations F&B utiles au service concerné',
-      'Rédiger le Night Report : occupation, incidents, sécurité, paiements, VCC, no-shows et points à suivre',
-      'Faire un Shift Handover verbal avec l’équipe AM et compléter la main courante avec heure et signature',
+      'Faire une passation verbale au réceptionniste ou superviseur AM avant de quitter le desk',
+      'Transmettre VIP, early arrivals, réclamations ouvertes, soldes élevés et incidents VCC',
+      'Confirmer Wake-up calls, transports, informations petit-déjeuner et room moves encore en attente',
+      'Signer la passation ou compléter la main courante selon la procédure de l’établissement',
+      'Laisser le desk propre, les rapports classés et les systèmes prêts pour le shift AM',
     ],
   },
 ]
@@ -235,7 +257,7 @@ export default async function HotelNightAuditChecklistPage({ params }: { params:
       <main className="min-h-screen bg-white">
 
         {/* Hero */}
-        <section className="bg-[#1A2E44] text-white px-6 pt-32 pb-20">
+        <section className="bg-[#1A2E44] text-white px-6 pt-36 md:pt-40 pb-20">
           <div className="max-w-3xl mx-auto text-center">
             <span className="inline-block bg-[#0056D2] text-white text-xs font-semibold px-3 py-1 rounded-full mb-6 tracking-widest uppercase">
               {isEN ? 'Front Office Night Operations' : 'Réception Service de nuit'}
@@ -243,19 +265,28 @@ export default async function HotelNightAuditChecklistPage({ params }: { params:
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
               {isEN
                 ? 'Hotel Night Audit Checklist: What to Close, Reconcile and Hand Over'
-                : 'Checklist Night Audit Hôtel : clôture PMS, VCC, caisse et passation'}
+                : 'Checklist Night Audit : clôture PMS, VCC, caisse et passation'}
             </h1>
             <p className="text-lg text-blue-100 max-w-2xl mx-auto mb-8">
               {isEN
-                ? 'A complete step-by-step night audit procedure. Pre-closing checks, system run, active night duties and morning pack. Free to download.'
-                : 'Une checklist terrain pour réceptionniste de nuit et Night Auditor : contrôles avant clôture, Pre-Authorizations, VCC, caisse, rapports et Shift Handover.'}
+                ? 'A printable Night Audit checklist for shift takeover, credit control, VCC processing, PMS close, next-day preparation and AM handover. Adapted from the LuxOps Front Office Playbook.'
+                : 'Une checklist Night Audit imprimable pour la prise de shift, le contrôle crédit, les VCC, la clôture PMS, la préparation AM et la passation. Adaptée du Playbook Front Office LuxOps.'}
             </p>
-            <Link
-              href={`/${locale}/front-office-sop`}
+            <TrackedLink
+              href={isEN ? '/downloads/checklists/en/night-audit-checklist.pdf' : '/downloads/checklists/fr/checklist-night-audit.pdf'}
+              download
+              eventName="free_checklist_download_clicked"
+              eventProperties={{
+                source_page: "/" + locale + "/hotel-night-audit-checklist",
+                checklist_name: isEN ? 'night_audit_checklist' : 'checklist_night_audit',
+                department: 'front_office',
+                locale,
+                placement: 'hero',
+              }}
               className="inline-block bg-white text-[#1A2E44] px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 transition-colors"
             >
-              {isEN ? 'View Front Office SOP Guide' : 'Voir le guide SOP réception'}
-            </Link>
+              {isEN ? 'Download a free printable PDF copy' : 'Télécharger le PDF gratuit à imprimer'}
+            </TrackedLink>
           </div>
         </section>
 
@@ -304,34 +335,20 @@ export default async function HotelNightAuditChecklistPage({ params }: { params:
           </div>
         </section>
 
-        {/* Lead magnet */}
+        {/* Checklist hub link */}
         <section
-          className="py-10 border-b"
+          className="py-8 border-b"
           style={{ backgroundColor: '#eef4ff', borderColor: 'rgba(195,198,214,0.3)' }}
         >
-          <div className="max-w-screen-xl mx-auto px-6 flex flex-col sm:flex-row items-start sm:items-center gap-6">
-            <div className="flex-1">
-              <p className="text-[10px] font-bold uppercase tracking-widest text-[#003d9b] mb-2">
-                {isEN ? 'Free resource' : 'Ressource gratuite'}
-              </p>
-              <p className="font-bold text-[#0a1d2e] text-lg mb-1">
-                {isEN
-                  ? 'Download a free chapter of the Front Office Playbook'
-                  : 'Téléchargez un chapitre gratuit du Playbook Réception'}
-              </p>
-              <p className="text-sm text-[#4f6074]">
-                {isEN
-                  ? 'The full playbook includes the complete night audit SOP and all shift management procedures.'
-                  : 'Le playbook complet inclut la SOP Night Audit, la gestion des shifts, les check-ins tardifs, les départs, les VCC et les passations.'}
-              </p>
-            </div>
-            <Link
-              href={`/${locale}/free-hotel-procedures`}
-              className="inline-flex items-center gap-2 px-6 py-3 text-white font-bold text-sm flex-shrink-0 hover:opacity-90 transition-opacity"
-              style={{ background: 'linear-gradient(135deg, #003d9b, #0052cc)', borderRadius: '0.125rem' }}
-            >
-              {isEN ? 'Download free' : 'Télécharger gratuitement'} <ArrowRight size={18} />
-            </Link>
+          <div className="max-w-3xl mx-auto px-6 text-center">
+            <p className="text-sm text-[#4f6074] leading-relaxed">
+              {isEN
+                ? 'Need more printable resources? View the full checklist hub for front office, housekeeping, restaurant opening and room service.'
+                : 'Besoin d’autres ressources prêtes à imprimer ? Consultez le hub complet des checklists : réception, housekeeping, ouverture restaurant et room service.'}{' '}
+              <Link href={isEN ? '/en/free-hotel-checklists' : '/fr/checklists-hotel-gratuites'} className="font-semibold text-[#003d9b] hover:underline">
+                {isEN ? 'View all free checklists' : 'Voir toutes les checklists gratuites'}
+              </Link>
+            </p>
           </div>
         </section>
 
@@ -461,7 +478,7 @@ export default async function HotelNightAuditChecklistPage({ params }: { params:
             {[
               {
                 href: `/${locale}/hotel-front-office-checklist`,
-                title: isEN ? 'Hotel Front Office Checklist' : 'Checklist Réception Hôtel',
+                title: isEN ? 'Hotel Front Office Checklist' : 'Checklist réception',
                 desc: isEN ? 'Shift opening, check-in, billing and handover checklists' : 'Ouverture, check-in, facturation et passation de service',
               },
               {
@@ -471,12 +488,12 @@ export default async function HotelNightAuditChecklistPage({ params }: { params:
               },
               {
                 href: `/${locale}/hotel-sop`,
-                title: isEN ? 'Hotel SOP Templates' : 'Modèles de SOP Hôtel',
+                title: isEN ? 'Hotel SOP Templates' : 'Modèles de SOP',
                 desc: isEN ? 'SOP system for all four hotel departments' : 'Système de procédures pour les quatre départements hôteliers',
               },
               {
                 href: `/${locale}/hotel-audit-checklist`,
-                title: isEN ? 'Hotel Quality Audit Checklist' : 'Checklist Audit Qualité Hôtel',
+                title: isEN ? 'Hotel Quality Audit Checklist' : 'Checklist audit qualité',
                 desc: isEN ? '28-criteria scoring grid across all departments' : 'Grille de notation 28 critères sur tous les départements',
               },
             ].map((link) => (
