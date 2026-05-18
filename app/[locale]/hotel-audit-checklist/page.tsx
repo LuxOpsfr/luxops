@@ -196,7 +196,7 @@ export default async function HotelAuditPage({ params }: { params: Promise<{ loc
                 : 'Un cadre d\'audit qualité hôtelier complet couvrant la réception, le housekeeping, le F&B et l\'expérience client. Gratuit. Conçu selon les standards LQA et Forbes.'}
             </p>
             <Link
-              href={`/${locale}/quality-audit`}
+              href={isEN ? '/en/quality-audit' : '/fr/audit-qualite'}
               className="inline-block bg-white text-[#1A2E44] font-semibold px-8 py-4 rounded-lg transition-colors hover:bg-gray-100 text-base"
             >
               {isEN ? 'Discover Our Audit Service' : 'Découvrir notre service d\'audit'}
@@ -253,10 +253,10 @@ export default async function HotelAuditPage({ params }: { params: Promise<{ loc
             ) : (
               <>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  Notez chaque critère de 0 à 2 : 0 si non atteint, 1 si partiellement atteint, 2 si pleinement atteint. Chaque département est noté sur 16. Le score global de l'hôtel est sur 56. Référentiel : 50 à 56 : prêt pour un audit externe ; 40 à 49 : surveiller et coacher ; en dessous de 40 : action immédiate requise.
+                  {"Notez chaque critère de 0 à 2 : 0 si non atteint, 1 si partiellement atteint, 2 si pleinement atteint. Chaque département est noté sur 16. Le score global de l'hôtel est sur 56. Référentiel : 50 à 56 : prêt pour un audit externe ; 40 à 49 : surveiller et coacher ; en dessous de 40 : action immédiate requise."}
                 </p>
                 <p className="text-gray-600 leading-relaxed">
-                  Réalisez cet audit au minimum une fois par mois. Utilisez les résultats dans un débrief par département dans les 48 heures suivant l'audit. Associez à chaque écart la référence SOP ou checklist correspondante pour que l'équipe sache précisément où trouver le standard.
+                  {"Réalisez cet audit au minimum une fois par mois. Utilisez les résultats dans un débrief par département dans les 48 heures suivant l'audit. Associez à chaque écart la référence SOP ou checklist correspondante pour que l'équipe sache précisément où trouver le standard."}
                 </p>
               </>
             )}
@@ -429,7 +429,7 @@ export default async function HotelAuditPage({ params }: { params: Promise<{ loc
                 : 'Un audit qualité LuxOps vous donne une vision claire de votre exploitation : ce qui fonctionne, ce qui ne fonctionne pas et exactement quoi corriger en premier.'}
             </p>
             <Link
-              href={`/${locale}/quality-audit`}
+              href={isEN ? '/en/quality-audit' : '/fr/audit-qualite'}
               className="inline-block bg-white text-[#1A2E44] font-semibold px-8 py-4 rounded-lg transition-colors hover:bg-gray-100"
             >
               {isEN ? 'Request an Audit' : 'Demander un audit'}

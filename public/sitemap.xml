@@ -814,29 +814,6 @@
     <priority>0.7</priority>
   </url>
 
-
-  <!-- Blog: Hotel Front Office Procedures EN -->
-  <url>
-    <loc>https://www.luxops.fr/en/blog/hotel-front-office-procedures</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-front-office-procedures"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-front-office-procedures"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/hotel-front-office-procedures"/>
-    <changefreq>monthly</changefreq>
-    <lastmod>2026-03-28</lastmod>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Blog: Hotel Front Office Procedures FR -->
-  <url>
-    <loc>https://www.luxops.fr/fr/blog/hotel-front-office-procedures</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-front-office-procedures"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-front-office-procedures"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/hotel-front-office-procedures"/>
-    <changefreq>monthly</changefreq>
-    <lastmod>2026-03-28</lastmod>
-    <priority>0.7</priority>
-  </url>
-
   <!-- Blog: Hotel Staff Training Service Standards EN -->
   <url>
     <loc>https://www.luxops.fr/en/blog/hotel-staff-training-service-standards</loc>
@@ -1052,6 +1029,49 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-room-attendant-checklist"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-room-attendant-checklist"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/hotel-room-attendant-checklist"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-17</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <!-- Blog: Hotel Front Desk Checklist EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/blog/hotel-front-desk-checklist</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-front-desk-checklist"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-front-desk-checklist"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/hotel-front-desk-checklist"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-17</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: Hotel Front Desk Checklist FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/blog/hotel-front-desk-checklist</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-front-desk-checklist"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-front-desk-checklist"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/hotel-front-desk-checklist"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-17</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: Hotel DND Procedure EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/blog/hotel-dnd-procedure</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-dnd-procedure"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-dnd-procedure"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/hotel-dnd-procedure"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-17</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: Hotel DND Procedure FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/blog/hotel-dnd-procedure</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-dnd-procedure"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-dnd-procedure"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/hotel-dnd-procedure"/>
     <changefreq>monthly</changefreq>
     <lastmod>2026-05-17</lastmod>
     <priority>0.7</priority>

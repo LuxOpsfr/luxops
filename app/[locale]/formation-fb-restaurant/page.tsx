@@ -92,7 +92,7 @@ const frenchData = (locale: string): TrainingSeoPageData => ({
       text: 'Page pilier pour les procédures F&B, standards de service, restaurant, bar et room service.',
     },
     {
-      href: `/${locale}/food-and-beverage-service-sequence`,
+      href: `/${locale}/sequence-service-restaurant-hotel`,
       title: 'Séquence de service',
       text: 'Page dédiée aux étapes de service restaurant, de la préparation à la clôture.',
     },

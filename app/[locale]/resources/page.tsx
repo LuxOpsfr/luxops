@@ -161,6 +161,15 @@ export default async function ResourcesPage({
   const { locale } = await params
   const isEn = locale === 'en'
   const faqs = isEn ? enFaqs : frFaqs
+  const localizedLink = (href: string) => {
+    const canonicalByLocale: Record<string, string> = {
+      '/audit-qualite': isEn ? '/en/quality-audit' : '/fr/audit-qualite',
+      '/formation': isEn ? '/en/training' : '/fr/formation',
+      '/process-sur-mesure': isEn ? '/en/bespoke-process' : '/fr/process-sur-mesure',
+      '/free-hotel-checklists': isEn ? '/en/free-hotel-checklists' : '/fr/checklists-hotel-gratuites',
+    }
+    return canonicalByLocale[href] ?? `/${locale}${href}`
+  }
 
   const schema = {
     '@context': 'https://schema.org',
@@ -241,7 +250,7 @@ export default async function ResourcesPage({
                 <p className="text-gray-500 leading-relaxed text-base mb-4">{faq.a}</p>
                 {faq.link && faq.linkLabel && (
                   <Link
-                    href={`/${locale}${faq.link}`}
+                    href={localizedLink(faq.link)}
                     className="inline-flex items-center gap-1.5 text-sm font-medium text-[#111111] hover:gap-3 transition-all"
                   >
                     {faq.linkLabel} <ArrowRight size={14} />

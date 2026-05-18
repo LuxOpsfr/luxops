@@ -1055,6 +1055,17 @@ export default async function BlogArticlePage({
 
   const isEn = locale === 'en'
   const content = isEn ? article.en : article.fr
+  const localizedLink = (href: string) => {
+    if (href.startsWith('/en/') || href.startsWith('/fr/')) return href
+    const canonicalByLocale: Record<string, string> = {
+      '/formation': isEn ? '/en/training' : '/fr/formation',
+      '/free-hotel-checklists': isEn ? '/en/free-hotel-checklists' : '/fr/checklists-hotel-gratuites',
+      '/food-and-beverage-service-sequence': isEn ? '/en/food-and-beverage-service-sequence' : '/fr/sequence-service-restaurant-hotel',
+      '/hotel-room-service-checklist': isEn ? '/en/hotel-room-service-checklist' : '/fr/checklist-room-service-hotel',
+      '/restaurant-opening-checklist': isEn ? '/en/restaurant-opening-checklist' : '/fr/checklist-ouverture-restaurant',
+    }
+    return canonicalByLocale[href] ?? `/${locale}${href}`
+  }
 
   const articleSchema = {
     '@context': 'https://schema.org',
@@ -1462,7 +1473,7 @@ export default async function BlogArticlePage({
                   {links.map((item) => (
                     <Link
                       key={item.href}
-                      href={`/${locale}${item.href}`}
+                      href={localizedLink(item.href)}
                       className="group block border border-gray-200 rounded-xl p-5 bg-white hover:border-[#1A2E44] hover:shadow-sm transition-all"
                     >
                       <p className="font-semibold text-[#111111] group-hover:underline text-sm mb-1">

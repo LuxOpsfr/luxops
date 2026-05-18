@@ -16,7 +16,23 @@ export default function Header({ locale }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false)
   const otherLocale = locale === 'en' ? 'fr' : 'en'
   const pathname = usePathname()
-  const switchLocalePath = pathname.replace(`/${locale}`, `/${otherLocale}`)
+  const localizedPathPairs: Record<string, string> = {
+    '/en/training': '/fr/formation',
+    '/en/quality-audit': '/fr/audit-qualite',
+    '/en/bespoke-process': '/fr/process-sur-mesure',
+    '/en/free-hotel-checklists': '/fr/checklists-hotel-gratuites',
+    '/en/food-and-beverage-service-sequence': '/fr/sequence-service-restaurant-hotel',
+    '/en/hotel-room-service-checklist': '/fr/checklist-room-service-hotel',
+    '/en/restaurant-opening-checklist': '/fr/checklist-ouverture-restaurant',
+    '/fr/formation': '/en/training',
+    '/fr/audit-qualite': '/en/quality-audit',
+    '/fr/process-sur-mesure': '/en/bespoke-process',
+    '/fr/checklists-hotel-gratuites': '/en/free-hotel-checklists',
+    '/fr/sequence-service-restaurant-hotel': '/en/food-and-beverage-service-sequence',
+    '/fr/checklist-room-service-hotel': '/en/hotel-room-service-checklist',
+    '/fr/checklist-ouverture-restaurant': '/en/restaurant-opening-checklist',
+  }
+  const switchLocalePath = localizedPathPairs[pathname] ?? pathname.replace(`/${locale}`, `/${otherLocale}`)
   const { items, openCart } = useCart()
 
   const navLinks = [

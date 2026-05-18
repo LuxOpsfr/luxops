@@ -73,7 +73,7 @@ export default function Footer({ locale }: FooterProps) {
               </li>
               <li>
                 <Link
-                  href={`/${locale}/process-sur-mesure`}
+                  href={locale === 'en' ? '/en/bespoke-process' : '/fr/process-sur-mesure'}
                   className="text-gray-400 hover:text-white text-sm transition-colors"
                 >
                   {tNav('process')}

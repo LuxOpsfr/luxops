@@ -41,6 +41,8 @@ export default function TrainingSeoPage({
   locale: string
   data: TrainingSeoPageData
 }) {
+  const trainingHref = locale === 'en' ? '/en/training' : '/fr/formation'
+
   return (
     <main className="bg-white pt-16">
       <section
@@ -67,7 +69,7 @@ export default function TrainingSeoPage({
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
-                href={`/${locale}/formation`}
+                href={trainingHref}
                 className="inline-flex items-center justify-center gap-2 px-6 py-4 bg-[#003d9b] text-white font-bold text-sm hover:bg-[#0a1d2e] transition-colors"
               >
                 {data.primaryCta}
@@ -186,7 +188,7 @@ export default function TrainingSeoPage({
             <p className="text-[#cbd5e1] leading-relaxed max-w-2xl">{data.finalText}</p>
           </div>
           <Link
-            href={`/${locale}/formation`}
+            href={trainingHref}
             className="inline-flex items-center justify-center gap-2 px-6 py-4 bg-white text-[#0a1d2e] font-bold text-sm hover:bg-[#eef4ff] transition-colors"
           >
             {data.finalCta}

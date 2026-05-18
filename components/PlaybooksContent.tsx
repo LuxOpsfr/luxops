@@ -497,7 +497,7 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
               </p>
             </div>
             <Link
-              href={`/${locale}/process-sur-mesure`}
+              href={isEn ? '/en/bespoke-process' : '/fr/process-sur-mesure'}
               className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-white text-[#0a1d2e] font-bold text-sm hover:bg-[#f8f9ff] transition-colors"
               style={{ borderRadius: '0.125rem' }}
             >

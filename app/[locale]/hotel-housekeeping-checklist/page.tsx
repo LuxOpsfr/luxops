@@ -871,7 +871,7 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
                   : 'Ce qui rend les checklists hôtelières réellement utiles en pratique',
               },
               {
-                href: `/${locale}/hotel-staff-training`,
+                href: isEN ? '/en/formation-equipe-hoteliere' : '/fr/formation-equipe-hoteliere',
                 title: isEN ? 'Hotel Staff Training' : 'Formation standards de service',
                 desc: isEN
                   ? 'Training programs for luxury hotel teams'

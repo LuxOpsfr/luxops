@@ -34,6 +34,25 @@ const nextConfig: NextConfig = {
       { source: '/robots.txt', headers: marketingCache },
       { source: '/sitemap.xml', headers: marketingCache },
       { source: '/downloads/housekeeping-checklists/:path*', headers: downloadableAssetHeaders },
+      { source: '/downloads/checklists/:path*', headers: downloadableAssetHeaders },
+      {
+        source: '/:locale(en|fr)/portal',
+        headers: [
+          {
+            key: 'X-Robots-Tag',
+            value: 'noindex, nofollow',
+          },
+        ],
+      },
+      {
+        source: '/:locale(en|fr)/portal/:path*',
+        headers: [
+          {
+            key: 'X-Robots-Tag',
+            value: 'noindex, nofollow',
+          },
+        ],
+      },
       { source: '/:locale(en|fr)', headers: marketingCache },
       { source: '/:locale(en|fr)/blog', headers: marketingCache },
       { source: '/:locale(en|fr)/blog/:slug*', headers: marketingCache },
