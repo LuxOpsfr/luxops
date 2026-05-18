@@ -7,11 +7,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const isEn = locale === 'en'
   return {
     title: isEn
-      ? 'Hotel Quality Audit | Operational Gap Analysis & Improvement Roadmap | LuxOps'
-      : 'Audit Qualité Hôtelier | Analyse des Écarts Opérationnels et Feuille de Route | LuxOps',
+      ? 'On-Site Hotel Quality Audit | LuxOps'
+      : 'Audit qualité hôtelier sur site | LuxOps',
     description: isEn
-      ? 'On-site hotel audit covering 100+ operational criteria. Clear gap analysis by department and a prioritised improvement roadmap for management. Available on-property.'
-      : "Audit hôtelier sur site. Plus de 100 critères évalués, analyse des écarts par département et feuille de route priorisée pour la direction. Demandez un devis.",
+      ? 'On-site operational quality audit to identify standards gaps, service friction points and practical improvement priorities across hotel departments.'
+      : 'Audit qualité opérationnel sur site pour identifier les écarts de standards, les points de friction entre services et les priorités d’action à corriger.',
     alternates: {
       canonical: isEn ? 'https://www.luxops.fr/en/quality-audit' : 'https://www.luxops.fr/fr/audit-qualite',
       languages: {
