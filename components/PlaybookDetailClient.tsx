@@ -219,7 +219,7 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
                 className="absolute bottom-6 right-6 p-3 text-right"
                 style={{ backgroundColor: 'rgba(255,255,255,0.9)', border: '1px solid rgba(195,198,214,0.3)' }}
               >
-                <p className="font-display font-bold text-[10px] text-[#0a1d2e] uppercase">EDITION 2025</p>
+                <p className="font-display font-bold text-[10px] text-[#0a1d2e] uppercase">EDITION 2026</p>
                 <p className="text-[9px] text-[#737685] uppercase tracking-widest">LuxOps Certified</p>
               </div>
             </div>
