@@ -28,9 +28,9 @@ export default function LegalPage() {
             <h3 className="font-semibold text-[#0a1d2e] mb-2">Éditeur du site</h3>
             <p>LuxOps</p>
             <p>Entrepreneur Individuel : Belkheir Bekhedda</p>
-            <p>Rue de Ponthieu, 75008 Paris, France</p>
+            <p>Bureau 326, 59 rue de Ponthieu, 75008 Paris, France</p>
             <p>Email : <a href="mailto:contact@luxops.fr" className="text-[#0a1d2e] underline">contact@luxops.fr</a></p>
-            <p>SIREN : en cours d'attribution</p>
+            <p>SIREN : 809 307 986 R.C.S Paris</p>
             <p>Code APE : 7490B</p>
           </div>
 
@@ -49,28 +49,28 @@ export default function LegalPage() {
           <div>
             <h3 className="font-semibold text-[#0a1d2e] mb-2">Propriété intellectuelle</h3>
             <p>
-              L'ensemble des contenus présents sur ce site (textes, images, ressources téléchargeables) est la propriété exclusive de LuxOps, sauf mention contraire. Toute reproduction, représentation ou diffusion, totale ou partielle, sans autorisation écrite préalable est interdite.
+              L’ensemble des contenus présents sur ce site (textes, images, ressources téléchargeables) est la propriété exclusive de LuxOps, sauf mention contraire. Toute reproduction, représentation ou diffusion, totale ou partielle, sans autorisation écrite préalable est interdite.
             </p>
           </div>
 
           <div>
             <h3 className="font-semibold text-[#0a1d2e] mb-2">Données personnelles</h3>
             <p>
-              Les données collectées via les formulaires de contact sont utilisées uniquement pour répondre aux demandes des utilisateurs. Elles ne sont ni revendues ni transmises à des tiers. Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données en nous contactant à <a href="mailto:contact@luxops.fr" className="text-[#0a1d2e] underline">contact@luxops.fr</a>.
+              Les données collectées via les formulaires de contact sont utilisées uniquement pour répondre aux demandes des utilisateurs. Elles ne sont ni revendues ni transmises à des tiers. Conformément au RGPD, vous disposez d’un droit d’accès, de rectification et de suppression de vos données en nous contactant à <a href="mailto:contact@luxops.fr" className="text-[#0a1d2e] underline">contact@luxops.fr</a>.
             </p>
           </div>
 
           <div>
             <h3 className="font-semibold text-[#0a1d2e] mb-2">Produits numériques</h3>
             <p>
-              Les playbooks et ressources numériques vendus sur ce site sont des biens immatériels. Conformément à l'article L221-28 du Code de la consommation, le droit de rétractation ne s'applique pas aux contenus numériques fournis immédiatement après l'achat et pour lesquels le consommateur a renoncé expressément à son droit de rétractation.
+              Les playbooks et ressources numériques vendus sur ce site sont des biens immatériels. Conformément à l’article L221-28 du Code de la consommation, le droit de rétractation ne s’applique pas aux contenus numériques fournis immédiatement après l’achat et pour lesquels le consommateur a renoncé expressément à son droit de rétractation.
             </p>
           </div>
 
           <div>
             <h3 className="font-semibold text-[#0a1d2e] mb-2">Cookies</h3>
             <p>
-              Ce site utilise des cookies analytiques (Vercel Analytics) pour mesurer l'audience de manière anonyme. Aucun cookie publicitaire n'est utilisé.
+              Ce site utilise des cookies analytiques (Vercel Analytics) pour mesurer l’audience de manière anonyme. Aucun cookie publicitaire n’est utilisé.
             </p>
           </div>
 
@@ -89,9 +89,9 @@ export default function LegalPage() {
             <h3 className="font-semibold text-[#0a1d2e] mb-2">Publisher</h3>
             <p>LuxOps</p>
             <p>Sole Trader: Belkheir Bekhedda</p>
-            <p>Rue de Ponthieu, 75008 Paris, France</p>
+            <p>Office 326, 59 rue de Ponthieu, 75008 Paris, France</p>
             <p>Email: <a href="mailto:contact@luxops.fr" className="text-[#0a1d2e] underline">contact@luxops.fr</a></p>
-            <p>SIREN: pending attribution</p>
+            <p>SIREN: 809 307 986 R.C.S Paris</p>
             <p>APE Code: 7490B</p>
           </div>
 
