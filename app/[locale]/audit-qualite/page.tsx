@@ -51,7 +51,7 @@ export function AuditContent({ locale }: { locale: string }) {
           backgroundSize: '24px 24px',
         }}
       >
-        <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-12 items-center">
+        <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-12 items-start">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#eef4ff] text-[#003d9b] font-bold text-[10px] uppercase tracking-widest mb-7">
               <span className="w-2 h-2 rounded-full bg-[#003d9b]" />

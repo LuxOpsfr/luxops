@@ -1,23 +1,33 @@
 import type { Metadata } from 'next'
-import { useTranslations } from 'next-intl'
 import Link from 'next/link'
-import { Check, ArrowRight } from 'lucide-react'
+import {
+  ArrowRight,
+  CheckCircle2,
+  ClipboardCheck,
+  FileText,
+  Layers3,
+  PencilRuler,
+  Settings2,
+  Users2,
+} from 'lucide-react'
+import ProcessQuoteForm from '@/components/ProcessQuoteForm'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
   const isEn = locale === 'en'
+
   return {
     title: isEn
-      ? 'Custom Hotel SOP Creation | Property-Specific Operational Procedures | LuxOps'
-      : 'Création de Process Hôteliers Sur-Mesure | Procédures Opérationnelles Spécifiques | LuxOps',
+      ? 'Bespoke Operational Process Creation | LuxOps'
+      : 'Création de process sur-mesure | LuxOps',
     description: isEn
-      ? 'Custom operational procedures for any hotel department. Property-specific SOPs written around your standards, team structure, and daily operations. PDF and Notion formats.'
-      : "Procédures opérationnelles sur-mesure pour tout département hôtelier. SOPs construits autour de vos standards, de votre structure d'équipe et de votre fonctionnement quotidien.",
+      ? 'Bespoke operational process creation for hospitality teams: SOPs, checklists, service sequences, handovers, controls and internal standards.'
+      : 'Création de process opérationnels sur-mesure : SOP, checklists, séquences de service, passations, contrôles et standards internes.',
     alternates: {
-      canonical: `https://www.luxops.fr/fr/process-sur-mesure`,
+      canonical: isEn ? 'https://www.luxops.fr/en/bespoke-process' : 'https://www.luxops.fr/fr/process-sur-mesure',
       languages: {
-        'en': 'https://www.luxops.fr/en/bespoke-process',
-        'fr': 'https://www.luxops.fr/fr/process-sur-mesure',
+        en: 'https://www.luxops.fr/en/bespoke-process',
+        fr: 'https://www.luxops.fr/fr/process-sur-mesure',
         'x-default': 'https://www.luxops.fr/en/bespoke-process',
       },
     },
@@ -30,352 +40,442 @@ export default async function ProcessPage({ params }: { params: Promise<{ locale
 }
 
 export function ProcessContent({ locale }: { locale: string }) {
-  const t = useTranslations('process_page')
   const isEn = locale === 'en'
-
-  const departments = [t('d1'), t('d2'), t('d3'), t('d4'), t('d5'), t('d6'), t('d7'), t('d8')]
-
-  const phases = isEn ? [
-    {
-      n: '01',
-      title: 'Existing Audit',
-      desc: "We review what already exists: how teams currently work, what is documented, and where the real gaps are. Before writing anything.",
-    },
-    {
-      n: '02',
-      title: 'Custom Drafting',
-      desc: "Procedures are written around your standards, service sequences, team structure, and daily operating reality. Not adapted from a generic template.",
-    },
-    {
-      n: '03',
-      title: 'Review & Delivery',
-      desc: "Everything is reviewed with your team before final delivery, so the output is accurate, practical, and ready to use from day one.",
-    },
-  ] : [
-    {
-      n: '01',
-      title: "Analyse de l'Existant",
-      desc: "Revue de ce qui existe déjà : comment les équipes travaillent actuellement, ce qui est documenté et où se trouvent les vrais écarts. Avant d'écrire quoi que ce soit.",
-    },
-    {
-      n: '02',
-      title: 'Rédaction Sur-Mesure',
-      desc: "Les procédures sont rédigées autour de vos standards, de vos séquences de service, de votre structure d'équipe et de votre fonctionnement réel. Pas adaptées d'un modèle générique.",
-    },
-    {
-      n: '03',
-      title: 'Validation & Livraison',
-      desc: "Tout est revu avec votre équipe avant la livraison finale, pour que le résultat soit précis, utilisable et prêt à être mis en place dès le premier jour.",
-    },
-  ]
-
-  const steps = isEn ? [
-    {
-      title: 'Audit',
-      desc: "Review the current state: existing documents, how teams work day to day, and where inconsistencies exist.",
-    },
-    {
-      title: 'Analysis',
-      desc: "Identify what needs to be standardised, clarified, or built from the ground up before drafting begins.",
-    },
-    {
-      title: 'Drafting',
-      desc: "Full procedures written around the property, with review points at each stage so nothing is finalised without your team's input.",
-    },
-    {
-      title: 'Delivery',
-      desc: "Final PDF and/or Notion workspace delivered with a structured handover and guidance on how to roll it out.",
-    },
-  ] : [
-    {
-      title: 'Cadrage',
-      desc: "Revue de l'état actuel : documents existants, façon de travailler des équipes au quotidien et points d'incohérence.",
-    },
-    {
-      title: 'Analyse',
-      desc: "Identification de ce qui doit être standardisé, clarifié ou construit depuis le départ avant de commencer la rédaction.",
-    },
-    {
-      title: 'Rédaction',
-      desc: "Procédures complètes rédigées autour de l'établissement, avec des points de validation à chaque étape pour que rien ne soit finalisé sans l'accord de votre équipe.",
-    },
-    {
-      title: 'Livraison',
-      desc: "PDF final et/ou espace Notion livré avec une remise structurée et des repères pour faciliter le déploiement.",
-    },
-  ]
+  const page = isEn ? englishContent : frenchContent
 
   return (
     <div className="pt-16 bg-white">
-
-      {/* Hero - asymmetric */}
       <section
-        className="relative py-24 px-6 overflow-hidden border-b"
+        className="px-6 py-20 lg:py-24 border-b border-[#e8edf5]"
         style={{
           backgroundImage: 'radial-gradient(#c3c6d6 0.5px, transparent 0.5px)',
           backgroundSize: '24px 24px',
-          borderColor: 'rgba(195,198,214,0.2)',
         }}
       >
-        <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row items-end gap-10">
-
-          {/* Left 2/3 */}
-          <div className="flex-1">
-            <div
-              className="inline-flex items-center gap-2 px-3 py-1 text-[#003d9b] font-bold text-[10px] uppercase tracking-widest mb-8"
-              style={{ backgroundColor: '#eef4ff', borderRadius: '0.125rem' }}
-            >
-              <span className="w-2 h-2 bg-[#003d9b] rounded-full" />
-              {isEn ? 'Bespoke Service' : 'Prestation sur-mesure'}
+        <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-12 items-start">
+          <div>
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#eef4ff] text-[#003d9b] font-bold text-[10px] uppercase tracking-widest mb-7">
+              <span className="w-2 h-2 rounded-full bg-[#003d9b]" />
+              {page.badge}
             </div>
-            <h1 className="font-display text-5xl md:text-7xl font-extrabold tracking-tighter leading-none text-[#0a1d2e] mb-6">
-              {t('title')}
+            <h1 className="font-display text-4xl md:text-6xl font-extrabold tracking-tight leading-[0.98] text-[#0a1d2e] mb-6">
+              {page.title}
             </h1>
-            <p className="text-sm text-[#737685] max-w-lg leading-relaxed mb-8">{t('subtitle_context')}</p>
-            <div className="flex flex-wrap items-center gap-6">
-              <div className="font-display text-4xl font-extrabold text-[#003d9b]">{t('price')}</div>
-              <Link
-                href={`/${locale}/contact`}
-                className="inline-flex items-center gap-2 px-8 py-4 text-white font-bold transition-all hover:opacity-90"
-                style={{
-                  background: 'linear-gradient(135deg, #003d9b, #0052cc)',
-                  borderRadius: '0.125rem',
-                  boxShadow: '0 8px 24px rgba(0,61,155,0.2)',
-                }}
+            <p className="text-lg md:text-xl text-[#4f6074] leading-relaxed max-w-2xl mb-6">
+              {page.subtitle}
+            </p>
+            <p className="text-sm text-[#737685] leading-relaxed max-w-2xl mb-8">
+              {page.context}
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a
+                href="#process-quote"
+                className="inline-flex items-center justify-center gap-2 px-6 py-4 bg-[#003d9b] text-white font-bold text-sm hover:bg-[#0a1d2e] transition-colors"
               >
-                {t('cta')} <ArrowRight size={18} />
-              </Link>
+                {page.primaryCta}
+                <ArrowRight size={16} />
+              </a>
+              <a
+                href="#process-situations"
+                className="inline-flex items-center justify-center gap-2 px-6 py-4 bg-white text-[#0a1d2e] border border-[#d8deea] font-bold text-sm hover:border-[#003d9b] transition-colors"
+              >
+                {page.secondaryCta}
+              </a>
             </div>
           </div>
 
-          {/* Right 1/3 - pull-quote */}
-          <div
-            className="lg:w-80 pb-2 text-lg text-[#4f6074] leading-relaxed"
-            style={{ borderLeft: '4px solid #003d9b', paddingLeft: '1.5rem' }}
-          >
-            {t('subtitle')}
+          <div id="process-quote" className="bg-white border border-[#d8deea] shadow-[0_24px_70px_rgba(10,29,46,0.10)] p-8 lg:p-10 scroll-mt-28">
+            <div className="flex items-start gap-4 mb-8">
+              <div className="w-12 h-12 bg-[#eef4ff] flex items-center justify-center flex-shrink-0">
+                <PencilRuler size={24} className="text-[#003d9b]" />
+              </div>
+              <div>
+                <h2 className="font-display text-2xl font-extrabold text-[#0a1d2e] tracking-tight mb-2">
+                  {page.formTitle}
+                </h2>
+                <p className="text-sm text-[#4f6074] leading-relaxed">{page.formIntro}</p>
+              </div>
+            </div>
+            <ProcessQuoteForm locale={locale} />
           </div>
-
         </div>
       </section>
 
-      {/* 3 numbered phases - How it works */}
-      <section className="py-24 px-6 bg-white">
+      <section id="process-situations" className="px-6 py-20 bg-white">
         <div className="max-w-screen-xl mx-auto">
-          <h2 className="font-display text-3xl font-extrabold text-[#0a1d2e] tracking-tight mb-16">
-            {isEn ? 'How it works' : 'Comment ça se passe'}
-          </h2>
-          <div
-            className="grid grid-cols-1 md:grid-cols-3 gap-px"
-            style={{ backgroundColor: 'rgba(195,198,214,0.15)' }}
-          >
-            {phases.map((p, i) => (
-              <div
-                key={i}
-                className="bg-white p-10 hover:bg-[#f8f9ff] transition-colors duration-300"
-              >
-                <div
-                  className="font-display font-extrabold text-6xl mb-6"
-                  style={{ color: '#003d9b', opacity: 0.12 }}
-                >
-                  {p.n}
+          <div className="max-w-2xl mb-12">
+            <p className="text-xs font-bold uppercase tracking-widest text-[#003d9b] mb-3">
+              {page.situationsLabel}
+            </p>
+            <h2 className="font-display text-3xl md:text-4xl font-extrabold text-[#0a1d2e] tracking-tight mb-4">
+              {page.situationsTitle}
+            </h2>
+            <p className="text-[#4f6074] leading-relaxed">{page.situationsIntro}</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {page.situations.map((item, index) => (
+              <div key={index} className="border border-[#e8edf5] bg-[#f8f9ff] p-6">
+                <div className="w-10 h-10 bg-white flex items-center justify-center mb-5">
+                  {item.icon}
                 </div>
-                <h3 className="font-display font-bold text-[#0a1d2e] text-xl mb-4">{p.title}</h3>
-                <p className="text-[#4f6074] text-sm leading-relaxed">{p.desc}</p>
+                <h3 className="font-display text-lg font-bold text-[#0a1d2e] mb-3">{item.title}</h3>
+                <p className="text-sm text-[#4f6074] leading-relaxed">{item.text}</p>
               </div>
             ))}
           </div>
-
-          {/* Impact statement */}
-          <div
-            className="mt-1 p-12 lg:p-16 relative overflow-hidden"
-            style={{ backgroundColor: '#003d9b' }}
-          >
-            <div className="relative z-10 max-w-2xl">
-              <h3 className="font-display text-3xl lg:text-4xl font-extrabold text-white tracking-tight mb-4">
-                {isEn
-                  ? 'The goal is not to produce documentation for its own sake.'
-                  : "L'objectif n'est pas de produire de la documentation pour elle-même."}
-              </h3>
-              <p className="text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.75)' }}>
-                {isEn
-                  ? "The goal is to give teams procedures they can actually follow, apply in their daily work, and maintain over time."
-                  : "L'objectif est de donner à vos équipes des procédures qu'elles peuvent réellement suivre, appliquer dans leur travail quotidien et maintenir dans le temps."}
-              </p>
-            </div>
-            <div
-              className="absolute -bottom-8 -right-4 font-display font-extrabold text-[200px] leading-none select-none pointer-events-none"
-              style={{ color: 'rgba(255,255,255,0.06)' }}
-            >
-              SOP
-            </div>
-          </div>
         </div>
       </section>
 
-      {/* Creation process timeline + sticky CTA */}
-      <section className="py-24 px-6" style={{ backgroundColor: '#f8f9ff' }}>
-        <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-
-          {/* Timeline */}
-          <div className="lg:col-span-7">
-            <h2 className="font-display text-3xl font-extrabold text-[#0a1d2e] tracking-tight mb-16">
-              {isEn ? 'The creation process' : 'Le déroulé de création'}
+      <section className="px-6 py-20 bg-[#f8f9ff]">
+        <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-14 items-start">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-widest text-[#003d9b] mb-3">
+              {page.scopeLabel}
+            </p>
+            <h2 className="font-display text-3xl md:text-4xl font-extrabold text-[#0a1d2e] tracking-tight mb-5">
+              {page.scopeTitle}
             </h2>
-            <div
-              className="relative pl-14 border-l-2"
-              style={{ borderColor: 'rgba(195,198,214,0.4)' }}
+            <p className="text-[#4f6074] leading-relaxed mb-6">{page.scopeIntro}</p>
+            <Link
+              href={isEn ? '/en/playbooks' : '/fr/playbooks'}
+              className="inline-flex items-center gap-2 text-[#003d9b] font-bold text-sm hover:text-[#0a1d2e] transition-colors"
             >
-              {steps.map((step, i) => (
-                <div key={i} className="mb-14 relative last:mb-0">
-                  <div
-                    className="absolute -left-[57px] top-0 w-10 h-10 flex items-center justify-center text-white text-xs font-bold font-display"
-                    style={{ backgroundColor: '#003d9b', borderRadius: '0.125rem' }}
-                  >
-                    {String(i + 1).padStart(2, '0')}
-                  </div>
-                  <h4 className="font-display font-bold text-[#0a1d2e] text-lg mb-2">{step.title}</h4>
-                  <p className="text-[#4f6074] text-sm leading-relaxed">{step.desc}</p>
-                </div>
-              ))}
-            </div>
+              {page.playbooksLink}
+              <ArrowRight size={15} />
+            </Link>
           </div>
 
-          {/* Sticky CTA sidebar */}
-          <div className="lg:col-span-5 lg:sticky lg:top-28">
-            <div
-              className="p-10 bg-white"
-              style={{ borderRadius: '0.125rem', boxShadow: '0 8px 32px rgba(10,29,46,0.08)' }}
-            >
-              <div className="font-display text-xs font-bold uppercase tracking-widest text-[#737685] mb-2">
-                {isEn ? 'Ready to start?' : 'Prêt à commencer ?'}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {page.scopePoints.map((item, index) => (
+              <div key={index} className="bg-white border border-[#e8edf5] p-6">
+                <CheckCircle2 size={20} className="text-[#003d9b] mb-4" />
+                <h3 className="font-display font-bold text-[#0a1d2e] mb-2">{item.title}</h3>
+                <p className="text-sm text-[#4f6074] leading-relaxed">{item.text}</p>
               </div>
-              <div className="font-display text-3xl font-extrabold text-[#003d9b] mb-6">{t('price')}</div>
-              <p className="text-sm text-[#4f6074] leading-relaxed mb-8">
-                {isEn
-                  ? "One department, fully documented and built around the way your property operates, not adapted from a generic template."
-                  : "Un département, entièrement documenté et construit autour du fonctionnement réel de votre établissement, pas adapté d'un modèle générique."}
-              </p>
-              <ul className="space-y-3 mb-8">
-                {[
-                  isEn ? 'Full department SOP coverage' : 'Couverture SOP complète du département',
-                  isEn ? 'PDF and/or Notion format' : 'Format PDF et/ou Notion',
-                  isEn ? 'Review included at each stage' : 'Validation incluse à chaque étape',
-                ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-sm text-[#0a1d2e]">
-                    <Check size={13} style={{ color: '#003d9b' }} className="flex-shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <Link
-                href={`/${locale}/contact`}
-                className="inline-flex items-center justify-center gap-2 w-full px-6 py-4 text-white font-bold transition-all hover:opacity-90"
-                style={{
-                  background: 'linear-gradient(135deg, #003d9b, #0052cc)',
-                  borderRadius: '0.125rem',
-                }}
-              >
-                {t('cta')} <ArrowRight size={16} />
-              </Link>
-              <p className="text-center text-[10px] uppercase tracking-widest text-[#737685] mt-4">
-                {isEn ? 'Response within one business day' : 'Réponse sous un jour ouvré'}
-              </p>
-            </div>
+            ))}
           </div>
-
         </div>
       </section>
 
-      {/* When useful + What we build */}
-      <section className="py-24 px-6 bg-white">
-        <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-
-          {/* When useful */}
-          <div>
-            <h2 className="font-display text-2xl font-extrabold text-[#0a1d2e] tracking-tight mb-8">
-              {t('when_useful_title')}
+      <section className="px-6 py-20 bg-white">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="max-w-2xl mb-12">
+            <p className="text-xs font-bold uppercase tracking-widest text-[#003d9b] mb-3">
+              {page.methodLabel}
+            </p>
+            <h2 className="font-display text-3xl md:text-4xl font-extrabold text-[#0a1d2e] tracking-tight mb-4">
+              {page.methodTitle}
             </h2>
-            <div className="space-y-3">
-              {[t('wu1'), t('wu2'), t('wu3'), t('wu4')].map((item, i) => (
-                <div
-                  key={i}
-                  className="flex items-start gap-4 p-5"
-                  style={{ backgroundColor: '#f8f9ff', borderRadius: '0.125rem' }}
-                >
-                  <div
-                    className="w-6 h-6 flex items-center justify-center text-white text-[10px] font-bold font-display flex-shrink-0 mt-0.5"
-                    style={{ backgroundColor: '#003d9b', borderRadius: '0.125rem' }}
-                  >
-                    {String(i + 1).padStart(2, '0')}
-                  </div>
-                  <span className="text-sm text-[#0a1d2e] leading-relaxed">{item}</span>
-                </div>
-              ))}
-            </div>
+            <p className="text-[#4f6074] leading-relaxed">{page.methodIntro}</p>
           </div>
 
-          {/* What we build */}
-          <div>
-            <h2 className="font-display text-2xl font-extrabold text-[#0a1d2e] tracking-tight mb-3">
-              {t('what_we_build_title')}
-            </h2>
-            <p className="text-sm text-[#4f6074] leading-relaxed mb-8">{t('what_we_build_intro')}</p>
-            <div className="space-y-2">
-              {[t('wb1'), t('wb2'), t('wb3'), t('wb4'), t('wb5')].map((item, i) => (
-                <div
-                  key={i}
-                  className="flex items-center gap-3 px-4 py-3 text-sm font-medium text-[#003d9b]"
-                  style={{ backgroundColor: '#eef4ff', borderRadius: '0.125rem' }}
-                >
-                  <span
-                    className="w-1.5 h-1.5 flex-shrink-0 bg-[#003d9b]"
-                    style={{ borderRadius: '0.125rem' }}
-                  />
-                  {item}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {page.methodSteps.map((step, index) => (
+              <div key={index} className="border border-[#e8edf5] p-7">
+                <div className="w-9 h-9 bg-[#003d9b] text-white flex items-center justify-center font-bold text-xs mb-5">
+                  {String(index + 1).padStart(2, '0')}
                 </div>
-              ))}
-            </div>
+                <h3 className="font-display text-lg font-bold text-[#0a1d2e] mb-3">{step.title}</h3>
+                <p className="text-sm text-[#4f6074] leading-relaxed">{step.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            {/* Departments */}
-            <h3 className="font-display font-bold text-[#0a1d2e] text-xs uppercase tracking-widest mt-10 mb-4">
-              {t('depts_title')}
+      <section className="px-6 py-20 bg-[#f8f9ff]">
+        <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-14 items-start">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-widest text-[#003d9b] mb-3">
+              {page.deliverablesLabel}
+            </p>
+            <h2 className="font-display text-3xl md:text-4xl font-extrabold text-[#0a1d2e] tracking-tight mb-5">
+              {page.deliverablesTitle}
+            </h2>
+            <p className="text-[#4f6074] leading-relaxed">{page.deliverablesIntro}</p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {page.deliverables.map((item) => (
+              <div key={item} className="bg-white border border-[#e8edf5] p-5 flex gap-3">
+                <ClipboardCheck size={18} className="text-[#003d9b] flex-shrink-0 mt-0.5" />
+                <span className="text-sm text-[#0a1d2e] leading-relaxed">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6 py-20 bg-[#0a1d2e]">
+        <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-12 items-center">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-widest text-[#8fb7ff] mb-3">
+              {page.afterLabel}
+            </p>
+            <h2 className="font-display text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-5">
+              {page.afterTitle}
+            </h2>
+            <p className="text-[#cbd5e1] leading-relaxed">{page.afterText}</p>
+          </div>
+          <div className="bg-white/5 border border-white/10 p-7 lg:p-8">
+            <h3 className="font-display text-2xl font-extrabold text-white tracking-tight mb-4">
+              {page.contactTitle}
             </h3>
-            <div className="grid grid-cols-2 gap-2">
-              {departments.map((d, i) => (
-                <div
-                  key={i}
-                  className="px-4 py-3 text-sm font-medium text-[#737685]"
-                  style={{ backgroundColor: '#f8f9ff', borderRadius: '0.125rem' }}
-                >
-                  {d}
-                </div>
-              ))}
+            <p className="text-sm text-[#cbd5e1] leading-relaxed mb-6">{page.contactText}</p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a
+                href="#process-quote"
+                className="inline-flex items-center justify-center gap-2 px-5 py-4 bg-white text-[#0a1d2e] font-bold text-sm hover:bg-[#eef4ff] transition-colors"
+              >
+                {page.finalCta}
+                <ArrowRight size={15} />
+              </a>
+              <Link
+                href={isEn ? '/en/quality-audit' : '/fr/audit-qualite'}
+                className="inline-flex items-center justify-center gap-2 px-5 py-4 border border-white/20 text-white font-bold text-sm hover:bg-white/10 transition-colors"
+              >
+                {page.auditCta}
+              </Link>
             </div>
           </div>
-
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-20 px-6 bg-[#003d9b] text-center">
-        <div className="max-w-2xl mx-auto">
-          <h2 className="font-display text-4xl font-extrabold text-white tracking-tight mb-4">
-            {t('cta_title')}
-          </h2>
-          <p className="text-lg mb-8" style={{ color: 'rgba(255,255,255,0.7)' }}>
-            {isEn ? 'PDF · Notion · Both formats available' : 'PDF · Notion · Les deux formats disponibles'}
-          </p>
-          <Link
-            href={`/${locale}/contact`}
-            className="inline-flex items-center gap-2 px-10 py-4 bg-white text-[#003d9b] font-bold hover:bg-[#f8f9ff] transition-colors"
-            style={{ borderRadius: '0.125rem' }}
-          >
-            {t('cta')} <ArrowRight size={18} />
-          </Link>
-        </div>
-      </section>
-
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Service',
+            name: page.schemaName,
+            provider: {
+              '@type': 'Organization',
+              name: 'LuxOps',
+              url: 'https://www.luxops.fr',
+            },
+            serviceType: page.schemaServiceType,
+            areaServed: ['France', 'Belgium', 'Switzerland', 'Luxembourg', 'Monaco'],
+            availableLanguage: ['French', 'English'],
+          }),
+        }}
+      />
     </div>
   )
+}
+
+const frenchContent = {
+  badge: 'Process sur-mesure',
+  title: 'Création de process sur-mesure',
+  subtitle:
+    'Des SOP, checklists et supports opérationnels construits autour de votre établissement, de vos standards et de vos équipes.',
+  context:
+    'La prestation sert à clarifier ce qui doit être fait, dans quel ordre, par qui et avec quel niveau d’exigence. Elle peut partir de vos documents existants, d’un besoin précis ou d’un département à structurer entièrement.',
+  primaryCta: 'Demander un devis process',
+  secondaryCta: 'Voir les cas adaptés',
+  formTitle: 'Parlez-nous du process à créer',
+  formIntro:
+    'Quelques informations suffisent pour comprendre le périmètre, le département concerné et le type de support attendu.',
+  situationsLabel: 'Quand créer un process',
+  situationsTitle: 'Utile quand les méthodes existent, mais ne sont pas assez claires ou pas assez transmises',
+  situationsIntro:
+    'Un process sur-mesure permet de transformer une façon de travailler en support utilisable : pour former, contrôler, transmettre et maintenir un standard dans la durée.',
+  situations: [
+    {
+      icon: <FileText size={20} className="text-[#003d9b]" />,
+      title: 'Procédures absentes',
+      text: 'Les pratiques existent sur le terrain, mais elles ne sont pas encore documentées de manière claire et exploitable.',
+    },
+    {
+      icon: <Users2 size={20} className="text-[#003d9b]" />,
+      title: 'Méthodes différentes selon les équipes',
+      text: 'Chaque shift ou chaque manager fonctionne avec ses propres habitudes, ce qui crée des écarts dans l’expérience client.',
+    },
+    {
+      icon: <Layers3 size={20} className="text-[#003d9b]" />,
+      title: 'Ouverture ou repositionnement',
+      text: 'L’établissement doit formaliser ses standards avant une ouverture, une réouverture, une montée en gamme ou un changement d’organisation.',
+    },
+    {
+      icon: <Settings2 size={20} className="text-[#003d9b]" />,
+      title: 'Process existants à reprendre',
+      text: 'Les documents existent déjà, mais ils sont trop longs, trop théoriques ou peu utilisés par les équipes au quotidien.',
+    },
+  ],
+  scopeLabel: 'Périmètre',
+  scopeTitle: 'Ce qui peut être construit',
+  scopeIntro:
+    'Le livrable dépend du besoin réel : procédure complète, checklist terrain, trame de briefing, support de contrôle, guide manager ou parcours client. L’objectif n’est pas de produire plus de documents, mais de produire les bons supports.',
+  playbooksLink: 'Voir les playbooks opérationnels',
+  scopePoints: [
+    {
+      title: 'SOP opérationnelles',
+      text: 'Procédures étape par étape pour cadrer une séquence, un poste, une situation client ou un standard départemental.',
+    },
+    {
+      title: 'Checklists et contrôles',
+      text: 'Supports simples pour vérifier l’exécution, sécuriser les passations, suivre les écarts et faciliter les inspections.',
+    },
+    {
+      title: 'Supports de formation',
+      text: 'Documents utilisables pour expliquer les attentes, accompagner l’intégration et aider les managers à transmettre le standard.',
+    },
+    {
+      title: 'Standards internes',
+      text: 'Mise en forme de vos valeurs, de votre parcours client, de vos exigences qualité et de vos règles de fonctionnement.',
+    },
+  ],
+  methodLabel: 'Méthode',
+  methodTitle: 'Une rédaction à partir du terrain, pas d’un modèle générique',
+  methodIntro:
+    'Le travail commence par votre réalité opérationnelle. On clarifie le besoin, on analyse les supports existants, puis on rédige des documents utilisables par les équipes et validés avec vous.',
+  methodSteps: [
+    {
+      title: 'Cadrage',
+      text: 'Définition du département, des situations à couvrir, du format attendu et du niveau de détail nécessaire.',
+    },
+    {
+      title: 'Analyse',
+      text: 'Relecture des documents existants, compréhension des méthodes actuelles et identification des points à clarifier.',
+    },
+    {
+      title: 'Rédaction',
+      text: 'Création des procédures, checklists ou supports avec un vocabulaire adapté à vos équipes et à votre positionnement.',
+    },
+    {
+      title: 'Validation',
+      text: 'Revue avec vous avant livraison finale afin que les supports soient justes, cohérents et prêts à être déployés.',
+    },
+  ],
+  deliverablesLabel: 'Livrables',
+  deliverablesTitle: 'Des supports prêts à utiliser',
+  deliverablesIntro:
+    'Les formats sont définis selon l’usage : lecture manager, formation, affichage opérationnel, contrôle quotidien ou support de passation.',
+  deliverables: [
+    'SOP complètes par séquence ou par département',
+    'Checklists imprimables pour les équipes terrain',
+    'Trames de briefing et supports de passation',
+    'Guides managers pour contrôler et accompagner',
+    'Formats PDF et PowerPoint selon le besoin',
+    'Versions française et anglaise possibles',
+  ],
+  afterLabel: 'Suite possible',
+  afterTitle: 'Un process peut aussi devenir une formation ou un audit',
+  afterText:
+    'Une fois les supports créés, ils peuvent servir de base à une formation sur site, à une reprise des standards avec les chefs de service ou à un audit qualité pour vérifier l’application réelle.',
+  contactTitle: 'Vous avez un besoin précis à structurer ?',
+  contactText:
+    'Décrivez le département, la situation ou le support attendu. Nous revenons vers vous avec une approche adaptée.',
+  finalCta: 'Demander un devis process',
+  auditCta: 'Voir l’audit qualité',
+  schemaName: 'Création de process sur-mesure',
+  schemaServiceType: 'Création de procédures opérationnelles sur-mesure',
+}
+
+const englishContent = {
+  badge: 'Bespoke process',
+  title: 'Bespoke operational process creation',
+  subtitle:
+    'SOPs, checklists and operational documents built around your property, your standards and the way your teams work.',
+  context:
+    'The goal is to clarify what should happen, in which order, by whom and to what standard. The work can start from existing documents, a specific operational gap or a department that needs to be structured from the ground up.',
+  primaryCta: 'Request a process quote',
+  secondaryCta: 'See when it helps',
+  formTitle: 'Tell us what needs to be created',
+  formIntro:
+    'A few details are enough to understand the scope, department involved and expected format.',
+  situationsLabel: 'When to create a process',
+  situationsTitle: 'Useful when methods exist, but are not clear enough or not consistently transferred',
+  situationsIntro:
+    'A bespoke process turns the way work should be done into a usable operating reference: for training, control, handovers and long-term consistency.',
+  situations: [
+    {
+      icon: <FileText size={20} className="text-[#003d9b]" />,
+      title: 'Missing procedures',
+      text: 'The practices exist on the floor, but they are not yet documented in a clear and usable way.',
+    },
+    {
+      icon: <Users2 size={20} className="text-[#003d9b]" />,
+      title: 'Different methods across teams',
+      text: 'Each shift or manager works with their own habits, creating gaps in the guest experience.',
+    },
+    {
+      icon: <Layers3 size={20} className="text-[#003d9b]" />,
+      title: 'Opening or repositioning',
+      text: 'The property needs to formalise standards before an opening, reopening, repositioning or organisational change.',
+    },
+    {
+      icon: <Settings2 size={20} className="text-[#003d9b]" />,
+      title: 'Existing process cleanup',
+      text: 'Documents already exist, but they are too long, too theoretical or rarely used by teams day to day.',
+    },
+  ],
+  scopeLabel: 'Scope',
+  scopeTitle: 'What can be built',
+  scopeIntro:
+    'The deliverable depends on the real need: full procedure, floor checklist, briefing template, control sheet, manager guide or guest journey standard. The point is not to create more documents, but the right ones.',
+  playbooksLink: 'View operational playbooks',
+  scopePoints: [
+    {
+      title: 'Operational SOPs',
+      text: 'Step-by-step procedures for a sequence, role, guest situation or departmental standard.',
+    },
+    {
+      title: 'Checklists and controls',
+      text: 'Simple tools to verify execution, secure handovers, track gaps and support inspections.',
+    },
+    {
+      title: 'Training supports',
+      text: 'Documents that explain expectations, support onboarding and help managers transfer the standard.',
+    },
+    {
+      title: 'Internal standards',
+      text: 'Formalisation of brand values, guest journey, quality expectations and operating rules.',
+    },
+  ],
+  methodLabel: 'Method',
+  methodTitle: 'Written from the operation, not from a generic template',
+  methodIntro:
+    'The work starts from your operational reality. We clarify the need, review existing material and write documents that teams can actually use.',
+  methodSteps: [
+    {
+      title: 'Scope',
+      text: 'Define the department, situations to cover, expected format and level of detail required.',
+    },
+    {
+      title: 'Review',
+      text: 'Review existing documents, understand current practices and identify what needs to be clarified.',
+    },
+    {
+      title: 'Drafting',
+      text: 'Create the procedures, checklists or supports with language adapted to your teams and positioning.',
+    },
+    {
+      title: 'Validation',
+      text: 'Review with you before final delivery so the material is accurate, coherent and ready to roll out.',
+    },
+  ],
+  deliverablesLabel: 'Deliverables',
+  deliverablesTitle: 'Documents ready to use',
+  deliverablesIntro:
+    'Formats are defined according to the use case: manager reference, training, operational display, daily control or handover support.',
+  deliverables: [
+    'Full SOPs by sequence or department',
+    'Printable checklists for operational teams',
+    'Briefing and handover templates',
+    'Manager guides for control and follow-up',
+    'PDF and PowerPoint formats depending on the need',
+    'English and French versions available',
+  ],
+  afterLabel: 'Possible next step',
+  afterTitle: 'A process can also become training or an audit base',
+  afterText:
+    'Once the documents are created, they can support on-property training, department head coaching or a quality audit to verify real application.',
+  contactTitle: 'Need to structure a specific process?',
+  contactText:
+    'Share the department, situation or expected support. We will come back with an adapted approach.',
+  finalCta: 'Request a process quote',
+  auditCta: 'View quality audit',
+  schemaName: 'Bespoke operational process creation',
+  schemaServiceType: 'Bespoke operational procedure creation',
 }

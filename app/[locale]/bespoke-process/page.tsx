@@ -7,11 +7,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const isEn = locale === 'en'
   return {
     title: isEn
-      ? 'Custom Hotel SOP Creation | Property-Specific Operational Procedures | LuxOps'
-      : 'Création de Process Hôteliers Sur-Mesure | Procédures Opérationnelles Spécifiques | LuxOps',
+      ? 'Bespoke Operational Process Creation | LuxOps'
+      : 'Création de process sur-mesure | LuxOps',
     description: isEn
-      ? 'Custom operational procedures for any hotel department. Property-specific SOPs written around your standards, team structure, and daily operations. PDF and Notion formats.'
-      : "Procédures opérationnelles sur-mesure pour tout département hôtelier. SOPs construits autour de vos standards, de votre structure d'équipe et de votre fonctionnement quotidien.",
+      ? 'Bespoke operational process creation for hospitality teams: SOPs, checklists, service sequences, handovers, controls and internal standards.'
+      : 'Création de process opérationnels sur-mesure : SOP, checklists, séquences de service, passations, contrôles et standards internes.',
     alternates: {
       canonical: 'https://www.luxops.fr/en/bespoke-process',
       languages: {
