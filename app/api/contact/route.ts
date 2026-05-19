@@ -1,12 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
+import { getPostHogClient } from '@/lib/posthog-server'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
-    const { name, email, company, subject, message } = body
+    const { name, email, company, subject, message, need_type } = body
 
     if (!name || !email || !subject || !message) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
@@ -30,6 +31,32 @@ export async function POST(request: NextRequest) {
         </div>
       `,
     })
+
+    try {
+      const posthog = getPostHogClient()
+      if (posthog) {
+        posthog.capture({
+          distinctId: email,
+          event: 'contact_form_submitted',
+          properties: {
+            name,
+            email,
+            company,
+            subject,
+            need_type,
+            source: 'server',
+            $set: {
+              email,
+              name,
+              company,
+            },
+          },
+        })
+        await posthog.flush()
+      }
+    } catch (posthogError) {
+      console.error('[LuxOps PostHog Error: contact envoyé]', posthogError)
+    }
 
     return NextResponse.json({ success: true })
   } catch (error) {

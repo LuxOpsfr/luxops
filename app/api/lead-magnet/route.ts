@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 import { createClient } from '@supabase/supabase-js'
+import { getPostHogClient } from '@/lib/posthog-server'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
@@ -19,7 +20,7 @@ const DEPT_LABELS: Record<string, { en: string; fr: string }> = {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
-    const { email, department, locale } = body
+    const { email, department, locale, currentUrl, pathname, posthogDistinctId, posthogSessionId } = body
 
     if (!email || !department) {
       return NextResponse.json({ error: 'Missing fields' }, { status: 400 })
@@ -33,7 +34,35 @@ export async function POST(request: NextRequest) {
     // 1. Sauvegarde Supabase - priorité absolue
     await supabaseAdmin.from('leads').insert({ email, department, locale })
 
-    // 2. Notification Resend - non-bloquante
+    // 2. Tracking serveur PostHog - non-bloquant
+    try {
+      const posthog = getPostHogClient()
+      if (posthog) {
+        posthog.capture({
+          distinctId: posthogDistinctId || email,
+          event: 'lead_magnet_submitted',
+          properties: {
+            email,
+            department,
+            department_label: dept.en,
+            locale,
+            current_url: currentUrl,
+            pathname,
+            posthog_session_id: posthogSessionId,
+            source: 'server',
+            $set: {
+              email,
+              lead_email: email,
+            },
+          },
+        })
+        await posthog.flush()
+      }
+    } catch (posthogError) {
+      console.error('[LuxOps PostHog Error: lead sauvegardé en Supabase]', posthogError)
+    }
+
+    // 3. Notification Resend - non-bloquante
     try {
       await resend.emails.send({
         from: 'LuxOps <delivery@luxops.fr>',
@@ -54,7 +83,7 @@ export async function POST(request: NextRequest) {
       console.error('[LuxOps Resend Error: lead sauvegardé en Supabase]', emailError)
     }
 
-    // 3. Toujours retourner succès
+    // 4. Toujours retourner succès
     return NextResponse.json({ success: true })
 
   } catch (error) {

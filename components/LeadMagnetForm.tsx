@@ -57,7 +57,15 @@ export default function LeadMagnetForm({ locale }: { locale: string }) {
       const res = await fetch('/api/lead-magnet', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, department: selected, locale }),
+        body: JSON.stringify({
+          email,
+          department: selected,
+          locale,
+          currentUrl: window.location.href,
+          pathname: window.location.pathname,
+          posthogDistinctId: posthog.get_distinct_id?.(),
+          posthogSessionId: posthog.get_session_id?.(),
+        }),
       })
       if (!res.ok) throw new Error()
       setDownloadDept(selected)
