@@ -1,147 +1,155 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
+import {
+  ArrowRight,
+  ClipboardCheck,
+  FileCheck2,
+  ListChecks,
+  SearchCheck,
+  Target,
+} from 'lucide-react'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
   const isEN = locale === 'en'
+
   return {
     title: isEN
-      ? 'Hotel Audit Checklist: Complete Quality Audit for Luxury Hotels | LuxOps'
-      : 'Checklist Audit Hôtel : Audit qualité complet pour hôtels de luxe | LuxOps',
+      ? 'Hotel Audit Checklist: Quality Control Grid | LuxOps'
+      : 'Checklist audit hôtel : grille de contrôle qualité | LuxOps',
     description: isEN
-      ? 'Free hotel audit checklist covering front office, housekeeping, F&B and guest experience. Scoring grid, inspection criteria and action framework for luxury and boutique properties.'
-      : 'Checklist d\'audit hôtelier gratuite couvrant la réception, le housekeeping, le F&B et l\'expérience client. Grille de notation, critères d\'inspection et plan d\'action pour établissements de luxe.',
+      ? 'Free hotel audit checklist for front office, housekeeping, F&B and guest experience. Use a practical scoring grid to identify quality gaps and action priorities.'
+      : 'Checklist d’audit hôtelier gratuite pour la réception, le housekeeping, le F&B et l’expérience client. Utilisez une grille de contrôle claire pour identifier les écarts qualité.',
     keywords: isEN
-      ? 'hotel audit checklist, hotel quality audit, hotel inspection checklist, luxury hotel audit, hotel operations audit, hotel quality control checklist, hotel quality assurance checklist'
+      ? 'hotel audit checklist, hotel quality audit, hotel inspection checklist, hotel operations audit, hotel quality control checklist, hotel quality assurance checklist'
       : 'audit hôtel, checklist audit hôtelier, audit qualité hôtel, inspection hôtel, grille audit hôtellerie, contrôle qualité hôtel',
     alternates: {
       canonical: `https://www.luxops.fr/${locale}/hotel-audit-checklist`,
       languages: {
-        'en': 'https://www.luxops.fr/en/hotel-audit-checklist',
-        'fr': 'https://www.luxops.fr/fr/hotel-audit-checklist',
+        en: 'https://www.luxops.fr/en/hotel-audit-checklist',
+        fr: 'https://www.luxops.fr/fr/hotel-audit-checklist',
         'x-default': 'https://www.luxops.fr/en/hotel-audit-checklist',
       },
     },
   }
 }
 
-// ─── Audit scoring data ───────────────────────────────────────────────────────
-
 type AuditItem = { area: string; criterion: string }
 
 const AUDIT_ITEMS_EN: AuditItem[] = [
-  // Front Office
   { area: 'Front Office', criterion: 'Greeting delivered within 30 seconds of guest arrival' },
   { area: 'Front Office', criterion: 'Agent uses guest name at least once during check-in' },
   { area: 'Front Office', criterion: 'Room type and rate confirmed verbally before key handover' },
-  { area: 'Front Office', criterion: 'Pre-arrival requests confirmed and actioned in PMS' },
-  { area: 'Front Office', criterion: 'Upsell attempt made without pressure during check-in' },
+  { area: 'Front Office', criterion: 'Pre-arrival requests confirmed and actioned in the PMS' },
+  { area: 'Front Office', criterion: 'Upsell attempt made naturally during check-in, without pressure' },
   { area: 'Front Office', criterion: 'Billing reviewed and discrepancies flagged before check-out' },
-  { area: 'Front Office', criterion: 'Complaint logged, escalated and follow-up confirmed within shift' },
+  { area: 'Front Office', criterion: 'Complaint logged, escalated and followed up before end of shift' },
   { area: 'Front Office', criterion: 'Shift handover document completed before departure' },
-  // Housekeeping
-  { area: 'Housekeeping', criterion: 'No trace of previous guest: hair, item, odor' },
-  { area: 'Housekeeping', criterion: 'Bed: linen spotless, pressed, even overhang both sides' },
-  { area: 'Housekeeping', criterion: 'Bathroom: toilet, grout and shower glass inspected with torch' },
-  { area: 'Housekeeping', criterion: 'Amenities: correct type, full quantity, correctly positioned' },
-  { area: 'Housekeeping', criterion: 'Surfaces: no dust on top of wardrobe, behind TV, along skirting' },
-  { area: 'Housekeeping', criterion: 'Minibar: restocked, consumption logged on room report' },
-  { area: 'Housekeeping', criterion: 'Room temperature set to property standard on arrival' },
-  { area: 'Housekeeping', criterion: 'Maintenance faults: none unreported in room' },
-  // Food & Beverage
-  { area: 'Food & Beverage', criterion: 'Table mise en place complete and to brand standard before service' },
-  { area: 'Food & Beverage', criterion: 'Staff briefed on menu, specials and allergens before service opens' },
-  { area: 'Food & Beverage', criterion: 'Greeting delivered within 60 seconds of guest being seated' },
-  { area: 'Food & Beverage', criterion: 'Allergen procedure followed for all orders flagged by guest' },
-  { area: 'Food & Beverage', criterion: 'Service sequence maintained: no courses skipped or reversed' },
-  { area: 'Food & Beverage', criterion: 'Complaint handled at table level, manager notified within 5 min' },
+  { area: 'Housekeeping', criterion: 'No trace of previous guest: hair, item, odor or visible mark' },
+  { area: 'Housekeeping', criterion: 'Bed linen spotless, pressed and aligned with even overhang' },
+  { area: 'Housekeeping', criterion: 'Bathroom inspected: toilet, grout, glass, drain, mirror and floor' },
+  { area: 'Housekeeping', criterion: 'Amenities complete, correctly positioned and matching room standard' },
+  { area: 'Housekeeping', criterion: 'High and low dust points checked: wardrobe, TV, skirting, corners' },
+  { area: 'Housekeeping', criterion: 'Minibar restocked and consumption logged on the room report' },
+  { area: 'Housekeeping', criterion: 'Room temperature and lighting set to arrival standard' },
+  { area: 'Housekeeping', criterion: 'Maintenance faults identified and reported before room release' },
+  { area: 'Food & Beverage', criterion: 'Table mise en place complete before service starts' },
+  { area: 'Food & Beverage', criterion: 'Team briefed on menu, specials, allergens and unavailable items' },
+  { area: 'Food & Beverage', criterion: 'Guest welcomed within 60 seconds of being seated' },
+  { area: 'Food & Beverage', criterion: 'Allergen procedure followed whenever the guest flags a need' },
+  { area: 'Food & Beverage', criterion: 'Service sequence maintained without skipped or reversed steps' },
+  { area: 'Food & Beverage', criterion: 'Complaint handled at table level, with manager informed quickly' },
   { area: 'Food & Beverage', criterion: 'Closing checklist completed and signed off before departure' },
-  // Guest Experience
-  { area: 'Guest Experience', criterion: 'Response to in-room request within 10 minutes' },
-  { area: 'Guest Experience', criterion: 'Guest name used in at least two interactions during stay' },
-  { area: 'Guest Experience', criterion: 'Complaint acknowledged and first response given within 15 min' },
-  { area: 'Guest Experience', criterion: 'Departure experience: bill ready, farewell personalised' },
-  { area: 'Guest Experience', criterion: 'Post-stay review platform monitored and responded to within 48h' },
+  { area: 'Guest Experience', criterion: 'In-room request acknowledged and actioned within expected timing' },
+  { area: 'Guest Experience', criterion: 'Guest name used naturally in key interactions during the stay' },
+  { area: 'Guest Experience', criterion: 'Complaint acknowledged and first response given within 15 minutes' },
+  { area: 'Guest Experience', criterion: 'Departure experience prepared: bill ready, farewell personalised' },
+  { area: 'Guest Experience', criterion: 'Post-stay reviews monitored and answered within 48 hours' },
 ]
 
 const AUDIT_ITEMS_FR: AuditItem[] = [
-  // Réception
-  { area: 'Réception', criterion: 'Accueil délivré dans les 30 secondes suivant l\'arrivée du client' },
+  { area: 'Réception', criterion: 'Accueil délivré dans les 30 secondes suivant l’arrivée du client' },
   { area: 'Réception', criterion: 'Nom du client utilisé au moins une fois pendant le check-in' },
   { area: 'Réception', criterion: 'Type de chambre et tarif confirmés verbalement avant remise de la clé' },
   { area: 'Réception', criterion: 'Demandes pré-arrivée confirmées et actées dans le PMS' },
-  { area: 'Réception', criterion: 'Tentative d\'upsell effectuée sans pression lors du check-in' },
-  { area: 'Réception', criterion: 'Facture relue, écarts signalés avant le check-out' },
-  { area: 'Réception', criterion: 'Réclamation consignée, transmise et suivi confirmé dans le shift' },
+  { area: 'Réception', criterion: 'Proposition d’upsell effectuée naturellement, sans pression' },
+  { area: 'Réception', criterion: 'Facture relue et écarts signalés avant le check-out' },
+  { area: 'Réception', criterion: 'Réclamation consignée, transmise et suivie avant la fin du shift' },
   { area: 'Réception', criterion: 'Fiche de passation complétée avant fin de service' },
-  // Housekeeping
-  { area: 'Housekeeping', criterion: 'Aucune trace du client précédent : cheveu, objet, odeur' },
-  { area: 'Housekeeping', criterion: 'Lit : linge impeccable, repassé, tombé identique des deux côtés' },
-  { area: 'Housekeeping', criterion: 'Salle de bain : WC, joints et paroi de douche inspectés à la lampe' },
-  { area: 'Housekeeping', criterion: 'Dotations : type correct, quantité complète, positionnement conforme' },
-  { area: 'Housekeeping', criterion: 'Surfaces : aucune poussière au-dessus de l\'armoire, derrière la TV, le long des plinthes' },
-  { area: 'Housekeeping', criterion: 'Minibar : réapprovisionné, consommation notée sur la feuille de route' },
-  { area: 'Housekeeping', criterion: 'Température chambre réglée selon le standard de l\'établissement' },
-  { area: 'Housekeeping', criterion: 'Pannes maintenance : aucune non signalée dans la chambre' },
-  // Food & Beverage
-  { area: 'Food & Beverage', criterion: 'Mise en place complète et conforme au standard avant l\'ouverture du service' },
-  { area: 'Food & Beverage', criterion: 'Brief équipe : carte, suggestions du jour, allergènes avant service' },
-  { area: 'Food & Beverage', criterion: 'Accueil délivré dans les 60 secondes suivant l\'installation du client' },
-  { area: 'Food & Beverage', criterion: 'Procédure allergènes appliquée pour toute commande signalée' },
-  { area: 'Food & Beverage', criterion: 'Séquence de service maintenue : aucun plat sauté ou inversé' },
-  { area: 'Food & Beverage', criterion: 'Réclamation gérée en salle, manager prévenu en moins de 5 min' },
-  { area: 'Food & Beverage', criterion: 'Checklist de fermeture complétée et validée avant départ de l\'équipe' },
-  // Expérience Client
-  { area: 'Expérience Client', criterion: 'Délai de réponse à une demande chambre : moins de 10 minutes' },
-  { area: 'Expérience Client', criterion: 'Nom du client utilisé dans au moins deux interactions pendant le séjour' },
-  { area: 'Expérience Client', criterion: 'Réclamation prise en charge et première réponse sous 15 minutes' },
-  { area: 'Expérience Client', criterion: 'Départ : facture prête, au revoir personnalisé' },
-  { area: 'Expérience Client', criterion: 'Avis post-séjour : plateforme suivie et réponse dans les 48h' },
+  { area: 'Housekeeping', criterion: 'Aucune trace du client précédent : cheveu, objet, odeur ou marque visible' },
+  { area: 'Housekeeping', criterion: 'Linge de lit impeccable, repassé et aligné avec un tombé régulier' },
+  { area: 'Housekeeping', criterion: 'Salle de bain contrôlée : WC, joints, paroi, siphon, miroir et sol' },
+  { area: 'Housekeeping', criterion: 'Dotations complètes, bien positionnées et conformes au standard chambre' },
+  { area: 'Housekeeping', criterion: 'Points hauts et bas vérifiés : armoire, TV, plinthes, angles' },
+  { area: 'Housekeeping', criterion: 'Minibar réapprovisionné et consommation notée sur la feuille de route' },
+  { area: 'Housekeeping', criterion: 'Température et éclairage réglés selon le standard d’arrivée' },
+  { area: 'Housekeeping', criterion: 'Pannes maintenance identifiées et signalées avant libération chambre' },
+  { area: 'Food & Beverage', criterion: 'Mise en place complète avant le début du service' },
+  { area: 'Food & Beverage', criterion: 'Brief équipe réalisé sur la carte, les suggestions, les allergènes et les indisponibilités' },
+  { area: 'Food & Beverage', criterion: 'Client accueilli dans les 60 secondes suivant son installation' },
+  { area: 'Food & Beverage', criterion: 'Procédure allergènes appliquée dès qu’un client signale un besoin' },
+  { area: 'Food & Beverage', criterion: 'Séquence de service respectée, sans étape sautée ou inversée' },
+  { area: 'Food & Beverage', criterion: 'Réclamation traitée en salle, avec information rapide du manager' },
+  { area: 'Food & Beverage', criterion: 'Checklist de fermeture complétée et validée avant départ de l’équipe' },
+  { area: 'Expérience client', criterion: 'Demande en chambre prise en charge dans le délai attendu' },
+  { area: 'Expérience client', criterion: 'Nom du client utilisé naturellement lors des interactions clés du séjour' },
+  { area: 'Expérience client', criterion: 'Réclamation reconnue et première réponse donnée sous 15 minutes' },
+  { area: 'Expérience client', criterion: 'Départ préparé : facture prête et au revoir personnalisé' },
+  { area: 'Expérience client', criterion: 'Avis post-séjour suivis et répondus sous 48 heures' },
 ]
 
 const AREAS_EN = ['Front Office', 'Housekeeping', 'Food & Beverage', 'Guest Experience']
-const AREAS_FR = ['Réception', 'Housekeeping', 'Food & Beverage', 'Expérience Client']
+const AREAS_FR = ['Réception', 'Housekeeping', 'Food & Beverage', 'Expérience client']
 
 const FAQ_EN = [
   {
     q: 'What should a hotel audit checklist cover?',
-    a: 'A complete hotel audit checklist should evaluate every guest-facing department: front office (greeting, check-in, billing, complaint handling), housekeeping (room cleanliness, linen, amenities, maintenance), food and beverage (service standards, hygiene, allergen compliance) and overall guest experience (response times, personalisation, review management). Each area should be scored consistently so results can be tracked over time.',
+    a: 'A hotel audit checklist should cover the main guest-facing areas: front office, housekeeping, food and beverage and guest experience. The value comes from using the same scoring logic every time so management can see whether standards are improving or slipping.',
   },
   {
-    q: 'How often should a hotel conduct a quality audit?',
-    a: 'Internal audits should be conducted at a minimum monthly, with spot checks weekly. External audits, whether from an independent firm like LQA or Forbes or from a brand QA team, typically happen once or twice a year. The most effective approach combines frequent internal checks with periodic external benchmarking.',
+    q: 'How often should a hotel run a quality audit?',
+    a: 'A practical rhythm is one full internal audit per month, supported by smaller weekly spot checks. The important point is to review results quickly and turn every recurring gap into a training, process or checklist action.',
   },
   {
-    q: 'What is the difference between an internal hotel audit and an LQA audit?',
-    a: 'An internal hotel audit is conducted by management or an in-house quality team using the property\'s own standards. An LQA (Leading Quality Assurance) audit is conducted by an independent third party using a standardised luxury benchmark of 600+ criteria. LQA auditors stay as anonymous guests and evaluate the full experience from pre-arrival to departure. The two are complementary: internal audits maintain daily standards, LQA audits provide external validation.',
+    q: 'What is the difference between an internal audit and an external quality audit?',
+    a: 'An internal audit is run by the property using its own standards. An external audit brings a neutral view and benchmarks execution against a broader hospitality standard. Both are useful, but they serve different purposes.',
   },
   {
-    q: 'Who conducts a hotel quality audit?',
-    a: 'Internal audits are typically run by department heads or a dedicated quality manager. Cross-department audits are often led by the General Manager or an operations director. External audits are conducted by specialist firms such as LQA, Forbes Travel Guide or brand QA teams. A third option is an independent consultancy audit, which provides external perspective without the constraints of a fixed benchmark.',
+    q: 'Who should use this audit checklist?',
+    a: 'This checklist can be used by general managers, operations managers, quality managers and department heads who need a simple way to review standards across departments.',
   },
 ]
 
 const FAQ_FR = [
   {
-    q: 'Que doit couvrir une checklist d\'audit hôtelier ?',
-    a: 'Une checklist d\'audit hôtelier complète doit évaluer chaque département en contact avec le client : réception (accueil, check-in, facturation, gestion des réclamations), housekeeping (propreté des chambres, linge, dotations, maintenance), food & beverage (standards de service, hygiène, gestion des allergènes) et l\'expérience client globale (délais de réponse, personnalisation, gestion des avis). Chaque domaine doit être noté de façon cohérente pour suivre les résultats dans le temps.',
+    q: 'Que doit couvrir une checklist d’audit hôtelier ?',
+    a: 'Une checklist d’audit hôtelier doit couvrir les principaux points de contact client : réception, housekeeping, food & beverage et expérience client. Sa valeur vient surtout d’une notation régulière, toujours avec la même logique, pour voir si les standards progressent ou se dégradent.',
   },
   {
-    q: 'À quelle fréquence un hôtel doit-il réaliser un audit qualité ?',
-    a: 'Les audits internes doivent être réalisés au minimum chaque mois, avec des contrôles ponctuels chaque semaine. Les audits externes, qu\'ils proviennent d\'un cabinet indépendant comme LQA ou Forbes, ou d\'une équipe QA de marque, ont lieu généralement une à deux fois par an. L\'approche la plus efficace combine des contrôles internes fréquents et un benchmarking externe périodique.',
+    q: 'À quelle fréquence réaliser un audit qualité ?',
+    a: 'Un bon rythme consiste à réaliser un audit interne complet chaque mois, complété par des contrôles ponctuels chaque semaine. L’essentiel est de relire rapidement les résultats et de transformer chaque écart récurrent en action de formation, de process ou de checklist.',
   },
   {
-    q: 'Quelle est la différence entre un audit interne et un audit LQA ?',
-    a: 'Un audit interne est réalisé par la direction ou une équipe qualité maison en utilisant les standards de l\'établissement. Un audit LQA (Leading Quality Assurance) est conduit par un tiers indépendant selon un référentiel luxe standardisé de plus de 600 critères. Les auditeurs LQA séjournent en clients anonymes et évaluent l\'expérience complète de la pré-arrivée au départ. Les deux sont complémentaires : les audits internes maintiennent les standards au quotidien, les audits LQA apportent une validation externe.',
+    q: 'Quelle différence entre audit interne et audit qualité externe ?',
+    a: 'Un audit interne est réalisé par l’établissement avec ses propres standards. Un audit externe apporte un regard neutre et compare l’exécution à un référentiel plus large. Les deux approches sont utiles, mais elles ne répondent pas au même besoin.',
   },
   {
-    q: 'Qui réalise un audit qualité hôtelier ?',
-    a: 'Les audits internes sont généralement menés par les chefs de département ou un responsable qualité dédié. Les audits inter-départements sont souvent pilotés par le Directeur Général ou un directeur des opérations. Les audits externes sont conduits par des cabinets spécialisés comme LQA, Forbes Travel Guide ou les équipes QA des groupes hôteliers. Une troisième option est l\'audit par un cabinet de conseil indépendant, qui apporte un regard externe sans les contraintes d\'un référentiel figé.',
+    q: 'Qui peut utiliser cette checklist ?',
+    a: 'Cette checklist peut être utilisée par une direction générale, une direction des opérations, un responsable qualité ou des chefs de service qui souhaitent contrôler les standards avec une méthode simple.',
   },
 ]
 
-// ─── Page ─────────────────────────────────────────────────────────────────────
+const scoreCards = [
+  { score: '50 to 56', scoreFr: '50 à 56', tone: 'green', labelEn: 'Ready for external audit', labelFr: 'Prêt pour un audit externe' },
+  { score: '40 to 49', scoreFr: '40 à 49', tone: 'amber', labelEn: 'Monitor and coach', labelFr: 'Surveiller et accompagner' },
+  { score: 'Below 40', scoreFr: 'Moins de 40', tone: 'red', labelEn: 'Immediate action required', labelFr: 'Action immédiate requise' },
+]
+
+function toneClasses(tone: string) {
+  if (tone === 'green') return 'border-emerald-200 bg-emerald-50 text-emerald-800'
+  if (tone === 'amber') return 'border-amber-200 bg-amber-50 text-amber-800'
+  return 'border-red-200 bg-red-50 text-red-800'
+}
 
 export default async function HotelAuditPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
@@ -149,6 +157,8 @@ export default async function HotelAuditPage({ params }: { params: Promise<{ loc
   const auditItems = isEN ? AUDIT_ITEMS_EN : AUDIT_ITEMS_FR
   const areas = isEN ? AREAS_EN : AREAS_FR
   const faq = isEN ? FAQ_EN : FAQ_FR
+  const qualityAuditHref = isEN ? '/en/quality-audit' : '/fr/audit-qualite'
+  const checklistsHref = isEN ? '/en/free-hotel-checklists' : '/fr/checklists-hotel-gratuites'
 
   const faqSchema = {
     '@context': 'https://schema.org',
@@ -160,283 +170,323 @@ export default async function HotelAuditPage({ params }: { params: Promise<{ loc
     })),
   }
 
-  const serviceSchema = {
+  const articleSchema = {
     '@context': 'https://schema.org',
-    '@type': 'Service',
-    name: isEN ? 'Hotel Audit Checklist' : 'Checklist Audit Hôtel',
+    '@type': 'Article',
+    headline: isEN ? 'Hotel Audit Checklist' : 'Checklist audit hôtel',
     description: isEN
-      ? 'Professional hotel audit checklist for luxury and boutique properties. Evaluate operations, guest experience, cleanliness and service standards.'
-      : 'Checklist d\'audit hôtelier professionnel pour établissements de luxe et boutique. Évaluez les opérations, l\'expérience client et les standards de service.',
-    provider: { '@type': 'Organization', name: 'LuxOps', url: 'https://www.luxops.fr' },
-    serviceType: 'Hotel Quality Audit',
-    areaServed: 'Worldwide',
+      ? 'A practical hotel quality audit checklist for operations teams.'
+      : 'Une checklist d’audit qualité pratique pour les équipes opérationnelles.',
+    author: { '@type': 'Organization', name: 'LuxOps', url: 'https://www.luxops.fr' },
+    publisher: { '@type': 'Organization', name: 'LuxOps', url: 'https://www.luxops.fr' },
+    inLanguage: locale,
     url: `https://www.luxops.fr/${locale}/hotel-audit-checklist`,
   }
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-      <main className="bg-white">
-
-        {/* Hero */}
-        <section className="bg-[#1A2E44] text-white py-20 px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <span className="inline-block bg-white/10 text-white text-xs font-semibold px-3 py-1 rounded-full mb-6 tracking-widest uppercase">
-              {isEN ? 'Hotel Quality Audit' : 'Audit qualité hôtel'}
-            </span>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              {isEN
-                ? 'Hotel Audit Checklist: 28 Criteria Across All Departments'
-                : 'Checklist Audit Hôtel : 28 critères sur tous les départements'}
-            </h1>
-            <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-10">
-              {isEN
-                ? 'A complete hotel quality audit framework covering Front Office, Housekeeping, F&B and Guest Experience. Free to use. Built to LQA and Forbes standards.'
-                : 'Un cadre d\'audit qualité hôtelier complet couvrant la réception, le housekeeping, le F&B et l\'expérience client. Gratuit. Conçu selon les standards LQA et Forbes.'}
-            </p>
-            <Link
-              href={isEN ? '/en/quality-audit' : '/fr/audit-qualite'}
-              className="inline-block bg-white text-[#1A2E44] font-semibold px-8 py-4 rounded-lg transition-colors hover:bg-gray-100 text-base"
-            >
-              {isEN ? 'Discover Our Audit Service' : 'Découvrir notre service d\'audit'}
-            </Link>
-          </div>
-        </section>
-
-        {/* Lead magnet */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <main className="pt-16 bg-white">
         <section
-          className="py-10 border-b"
-          style={{ backgroundColor: '#eef4ff', borderColor: 'rgba(195,198,214,0.3)' }}
+          className="px-6 py-20 lg:py-24 border-b border-[#e8edf5]"
+          style={{
+            backgroundImage: 'radial-gradient(#c3c6d6 0.5px, transparent 0.5px)',
+            backgroundSize: '24px 24px',
+          }}
         >
-          <div className="max-w-screen-xl mx-auto px-6 flex flex-col sm:flex-row items-start sm:items-center gap-6">
-            <div className="flex-1">
-              <p className="text-[10px] font-bold uppercase tracking-widest text-[#003d9b] mb-2">
-                {isEN ? 'Free resource' : 'Ressource gratuite'}
-              </p>
-              <p className="font-bold text-[#0a1d2e] text-lg mb-1">
+          <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-12 items-start">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#eef4ff] text-[#003d9b] font-bold text-[10px] uppercase tracking-widest mb-7">
+                <span className="w-2 h-2 rounded-full bg-[#003d9b]" />
+                {isEN ? 'Quality audit checklist' : 'Checklist audit qualité'}
+              </div>
+              <h1 className="font-display text-4xl md:text-6xl font-extrabold tracking-tight leading-[0.98] text-[#0a1d2e] mb-6">
+                {isEN ? 'Hotel audit checklist' : 'Checklist audit hôtel'}
+              </h1>
+              <p className="text-lg md:text-xl text-[#4f6074] leading-relaxed max-w-2xl mb-6">
                 {isEN
-                  ? 'Download a free chapter from any department playbook'
-                  : "Téléchargez un chapitre gratuit d'un playbook de votre choix"}
+                  ? 'A practical scoring grid to review front office, housekeeping, F&B and guest experience standards.'
+                  : 'Une grille de contrôle simple pour évaluer la réception, le housekeeping, le F&B et l’expérience client.'}
               </p>
-              <p className="text-sm text-[#4f6074]">
+              <p className="text-sm text-[#737685] leading-relaxed max-w-2xl mb-8">
                 {isEN
-                  ? 'See the full SOP and inspection framework behind these audit criteria.'
-                  : 'Découvrez les procédures et grilles d\'inspection complètes derrière ces critères d\'audit.'}
+                  ? 'Use it as a monthly internal audit, a department review tool or a preparation step before an external quality visit.'
+                  : 'À utiliser comme audit interne mensuel, support de revue par département ou préparation avant un contrôle qualité externe.'}
               </p>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <a
+                  href="#audit-grid"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-4 bg-[#003d9b] text-white font-bold text-sm hover:bg-[#0a1d2e] transition-colors"
+                >
+                  {isEN ? 'Use the checklist' : 'Voir la checklist'}
+                  <ArrowRight size={16} />
+                </a>
+                <Link
+                  href={qualityAuditHref}
+                  className="inline-flex items-center justify-center gap-2 px-6 py-4 bg-white text-[#0a1d2e] border border-[#d8deea] font-bold text-sm hover:border-[#003d9b] transition-colors"
+                >
+                  {isEN ? 'Request a quality audit' : 'Demander un audit qualité'}
+                </Link>
+              </div>
             </div>
-            <Link
-              href={`/${locale}/free-hotel-procedures`}
-              className="inline-flex items-center gap-2 px-6 py-3 text-white font-bold text-sm flex-shrink-0 hover:opacity-90 transition-opacity"
-              style={{ background: 'linear-gradient(135deg, #003d9b, #0052cc)', borderRadius: '0.125rem' }}
-            >
-              {isEN ? 'Download free' : 'Télécharger gratuitement'} <ArrowRight size={18} />
-            </Link>
-          </div>
-        </section>
 
-        {/* Intro */}
-        <section className="py-14 px-6 bg-gray-50 border-b border-gray-100">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl font-bold text-[#1A2E44] mb-4">
-              {isEN ? 'How to use this audit checklist' : 'Comment utiliser cette grille d\'audit'}
-            </h2>
-            {isEN ? (
-              <>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  Score each criterion from 0 to 2: 0 for not met, 1 for partially met, 2 for fully met. Each department scores out of 16. The overall hotel score is out of 56. Audit benchmark: 50 to 56: ready for external audit; 40 to 49: monitor and coach; below 40: immediate action required.
-                </p>
-                <p className="text-gray-600 leading-relaxed">
-                  Run this audit at least monthly. Use results in a department-level debrief within 48 hours of the audit. Attach specific SOP or checklist references to each gap so the team knows exactly where to find the standard.
-                </p>
-              </>
-            ) : (
-              <>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  {"Notez chaque critère de 0 à 2 : 0 si non atteint, 1 si partiellement atteint, 2 si pleinement atteint. Chaque département est noté sur 16. Le score global de l'hôtel est sur 56. Référentiel : 50 à 56 : prêt pour un audit externe ; 40 à 49 : surveiller et coacher ; en dessous de 40 : action immédiate requise."}
-                </p>
-                <p className="text-gray-600 leading-relaxed">
-                  {"Réalisez cet audit au minimum une fois par mois. Utilisez les résultats dans un débrief par département dans les 48 heures suivant l'audit. Associez à chaque écart la référence SOP ou checklist correspondante pour que l'équipe sache précisément où trouver le standard."}
-                </p>
-              </>
-            )}
-          </div>
-        </section>
-
-        {/* Audit scoring grid */}
-        <section className="py-16 px-6">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold text-[#1A2E44] mb-2 text-center">
-              {isEN ? 'Hotel Quality Audit Scoring Grid' : 'Grille de notation : audit qualité hôtel'}
-            </h2>
-            <p className="text-gray-500 text-center text-sm mb-10">
-              {isEN ? 'Score 0–2 per criterion. 28 criteria total across 4 departments.' : 'Notation 0 à 2 par critère. 28 critères au total sur 4 départements.'}
-            </p>
-            {areas.map((area) => {
-              const items = auditItems.filter((i) => i.area === area)
-              return (
-                <div key={area} className="mb-8">
-                  <div className="border border-gray-200 rounded-xl overflow-hidden">
-                    <table className="w-full text-sm">
-                      <thead>
-                        <tr className="bg-[#1A2E44] text-white">
-                          <th className="text-left px-4 py-3 font-semibold">{area}</th>
-                          <th className="text-center px-4 py-3 font-semibold w-24">
-                            {isEN ? 'Score /2' : 'Note /2'}
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {items.map((item, i) => (
-                          <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-[#F5F7FA]'}>
-                            <td className="px-4 py-3 text-gray-700">{item.criterion}</td>
-                            <td className="px-4 py-3 text-center text-gray-400 font-mono">/2</td>
-                          </tr>
-                        ))}
-                        <tr className="bg-[#1A2E44] text-white font-bold">
-                          <td className="px-4 py-3">{isEN ? `${area} subtotal` : `Sous-total ${area}`}</td>
-                          <td className="px-4 py-3 text-center font-mono">/16</td>
-                        </tr>
-                      </tbody>
-                    </table>
+            <div className="bg-white border border-[#d8deea] shadow-[0_24px_70px_rgba(10,29,46,0.10)] p-8 lg:p-10">
+              <div className="flex items-start gap-4 mb-7">
+                <div className="w-12 h-12 bg-[#eef4ff] flex items-center justify-center flex-shrink-0">
+                  <SearchCheck size={24} className="text-[#003d9b]" />
+                </div>
+                <div>
+                  <h2 className="font-display text-2xl font-extrabold text-[#0a1d2e] tracking-tight mb-2">
+                    {isEN ? 'What this checklist is for' : 'À quoi sert cette checklist'}
+                  </h2>
+                  <p className="text-sm text-[#4f6074] leading-relaxed">
+                    {isEN
+                      ? 'It gives management a quick but structured way to identify visible quality gaps, recurring service friction and standards that need follow-up.'
+                      : 'Elle donne à la direction une lecture rapide mais structurée des écarts visibles, des points de friction récurrents et des standards à reprendre.'}
+                  </p>
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-3">
+                {[
+                  isEN ? '28 criteria' : '28 critères',
+                  isEN ? '4 areas' : '4 périmètres',
+                  isEN ? '0 to 2 scoring' : 'Notation 0 à 2',
+                  isEN ? 'Action priorities' : 'Priorités d’action',
+                ].map((item) => (
+                  <div key={item} className="border border-[#e8edf5] bg-[#f8f9ff] p-4">
+                    <p className="text-sm font-bold text-[#0a1d2e]">{item}</p>
                   </div>
-                </div>
-              )
-            })}
-            <div className="border border-[#1A2E44] rounded-xl overflow-hidden">
-              <table className="w-full text-sm">
-                <tbody>
-                  <tr className="bg-[#1A2E44] text-white font-bold text-base">
-                    <td className="px-4 py-4">{isEN ? 'Overall hotel score' : 'Score global hôtel'}</td>
-                    <td className="px-4 py-4 text-center font-mono">/56</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div className="mt-6 grid sm:grid-cols-3 gap-4 text-sm text-center">
-              <div className="border border-green-200 rounded-xl p-4 bg-green-50">
-                <p className="font-bold text-green-700 text-lg">50–56</p>
-                <p className="text-green-700">{isEN ? 'Ready for external audit' : 'Prêt pour audit externe'}</p>
-              </div>
-              <div className="border border-yellow-200 rounded-xl p-4 bg-yellow-50">
-                <p className="font-bold text-yellow-700 text-lg">40–49</p>
-                <p className="text-yellow-700">{isEN ? 'Monitor and coach' : 'Surveiller et coacher'}</p>
-              </div>
-              <div className="border border-red-200 rounded-xl p-4 bg-red-50">
-                <p className="font-bold text-red-700 text-lg">&lt;40</p>
-                <p className="text-red-700">{isEN ? 'Immediate action required' : 'Action immédiate requise'}</p>
+                ))}
               </div>
             </div>
           </div>
         </section>
 
-        {/* Process */}
-        <section className="py-16 px-6 bg-gray-50">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl font-bold text-[#1A2E44] mb-8 text-center">
-              {isEN ? 'How to run a hotel quality audit' : 'Comment conduire un audit qualité hôtel'}
-            </h2>
-            <div className="space-y-6">
-              {(isEN ? [
-                { step: '01', title: 'Prepare the audit scope', body: 'Define which departments will be audited and on what date. For a full property audit, block 2 to 4 hours. For a single department spot check, 45 to 60 minutes is sufficient. Confirm the audit is unannounced or semi-announced depending on whether you are assessing actual performance or training readiness.' },
-                { step: '02', title: 'Conduct the audit as a guest would experience it', body: 'Walk the full guest journey: arrival, check-in, room inspection, public areas, F&B if applicable, check-out. Score each criterion immediately. Do not complete the form from memory after the audit. The details that matter most are the ones observed in the moment.' },
-                { step: '03', title: 'Debrief within 48 hours', body: 'Share scores at department level, not individual level. Focus on patterns and trends, not isolated incidents. Attach the specific SOP, checklist or standard that applies to each gap so the team has a clear reference, not just a score.' },
-                { step: '04', title: 'Track scores over time', body: 'A single audit score is a snapshot. Monthly tracking reveals whether standards are improving, declining, or plateauing. Review the trend at least quarterly and adjust training priorities accordingly.' },
-              ] : [
-                { step: '01', title: 'Préparer le périmètre d\'audit', body: 'Définissez les départements à auditer et la date. Pour un audit complet de l\'établissement, prévoyez 2 à 4 heures. Pour un contrôle ponctuel sur un seul département, 45 à 60 minutes suffisent. Précisez si l\'audit est réalisé à l\'improviste ou semi-annoncé selon que vous évaluez les performances réelles ou le niveau de préparation de l\'équipe.' },
-                { step: '02', title: 'Conduire l\'audit comme le vivrait un client', body: 'Parcourez l\'intégralité du parcours client : arrivée, check-in, inspection de chambre, espaces communs, F&B le cas échéant, check-out. Notez chaque critère immédiatement. Ne complétez pas la grille de mémoire après l\'audit. Les détails les plus importants sont ceux observés sur le moment.' },
-                { step: '03', title: 'Débriefer sous 48 heures', body: 'Partagez les scores au niveau du département, pas de l\'individu. Concentrez-vous sur les tendances et les récurrences, pas sur les incidents isolés. Associez à chaque écart la procédure, la checklist ou le standard applicable pour que l\'équipe ait une référence claire, pas seulement un score.' },
-                { step: '04', title: 'Suivre les scores dans le temps', body: 'Un score d\'audit unique est un instantané. Un suivi mensuel révèle si les standards progressent, régressent ou stagnent. Analysez la tendance au moins chaque trimestre et ajustez les priorités de formation en conséquence.' },
-              ]).map((item) => (
-                <div key={item.step} className="flex gap-5">
-                  <div className="text-3xl font-bold text-gray-100 flex-shrink-0 w-10 pt-1">{item.step}</div>
-                  <div>
-                    <h3 className="font-semibold text-[#1A2E44] mb-1">{item.title}</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">{item.body}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ */}
-        <section className="py-16 px-6">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl font-bold text-[#1A2E44] mb-8">
-              {isEN ? 'Frequently Asked Questions' : 'Questions fréquentes'}
-            </h2>
-            <div className="space-y-6">
-              {faq.map(({ q, a }, i) => (
-                <div key={i} className="border-b border-gray-100 pb-6 last:border-0 last:pb-0">
-                  <h3 className="font-semibold text-[#1A2E44] mb-2">{q}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{a}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Related resources */}
-        <section className="max-w-4xl mx-auto px-6 py-12 border-t border-gray-100">
-          <h2 className="text-xl font-bold text-[#1A2E44] mb-6">
-            {isEN ? 'Related resources' : 'Ressources associées'}
-          </h2>
-          <div className="grid sm:grid-cols-2 gap-4">
+        <section className="px-6 py-16 bg-white">
+          <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
               {
-                href: `/${locale}/hotel-housekeeping-checklist`,
-                title: isEN ? 'Hotel Housekeeping Checklist' : 'Checklist Housekeeping Hôtel',
-                desc: isEN ? '30-point room inspection, supervisor rounds and LQA scoring grid' : 'Inspection chambre 30 points, tournée superviseur et grille LQA',
+                icon: <ClipboardCheck size={20} className="text-[#003d9b]" />,
+                title: isEN ? 'Score each point' : 'Noter chaque point',
+                text: isEN
+                  ? 'Use 0 when the standard is not met, 1 when partially met and 2 when fully met.'
+                  : 'Utilisez 0 si le standard n’est pas atteint, 1 s’il est partiel et 2 s’il est pleinement atteint.',
               },
               {
-                href: `/${locale}/hotel-sop`,
-                title: isEN ? 'Hotel SOP Templates' : 'Modèles de SOP Hôtel',
-                desc: isEN ? 'Complete standard operating procedures for all departments' : 'Procédures opérationnelles complètes pour tous les départements',
+                icon: <Target size={20} className="text-[#003d9b]" />,
+                title: isEN ? 'Read patterns, not incidents' : 'Lire les tendances',
+                text: isEN
+                  ? 'One isolated miss matters less than a repeated gap across shifts, rooms or service moments.'
+                  : 'Un incident isolé compte moins qu’un écart répété sur plusieurs shifts, chambres ou moments de service.',
               },
               {
-                href: `/${locale}/hotel-checklist`,
-                title: isEN ? 'Hotel Operational Checklists' : 'Checklists Opérationnelles Hôtel',
-                desc: isEN ? 'What makes hotel checklists useful in practice' : 'Ce qui rend les checklists hôtelières utiles en pratique',
+                icon: <FileCheck2 size={20} className="text-[#003d9b]" />,
+                title: isEN ? 'Turn gaps into actions' : 'Transformer les écarts en actions',
+                text: isEN
+                  ? 'Each gap should lead to a process, checklist, training or management follow-up action.'
+                  : 'Chaque écart doit déboucher sur un process, une checklist, une formation ou un suivi managérial.',
               },
-              {
-                href: `/${locale}/housekeeping-sop`,
-                title: isEN ? 'Housekeeping SOP Guide' : 'Guide SOP Housekeeping',
-                desc: isEN ? 'Standard operating procedures for housekeeping teams' : 'Procédures opérationnelles pour les équipes housekeeping',
-              },
-            ].map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="border border-gray-200 rounded-xl p-5 hover:border-[#1A2E44] transition-colors group"
-              >
-                <p className="font-semibold text-[#1A2E44] group-hover:underline">{link.title}</p>
-                <p className="text-sm text-gray-500 mt-1">{link.desc}</p>
-              </Link>
+            ].map((item) => (
+              <div key={item.title} className="border border-[#e8edf5] bg-[#f8f9ff] p-7">
+                <div className="w-10 h-10 bg-white flex items-center justify-center mb-5">{item.icon}</div>
+                <h2 className="font-display text-xl font-bold text-[#0a1d2e] mb-3">{item.title}</h2>
+                <p className="text-sm text-[#4f6074] leading-relaxed">{item.text}</p>
+              </div>
             ))}
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="bg-[#1A2E44] py-16 px-6 text-center text-white">
-          <div className="max-w-2xl mx-auto">
-            <h2 className="text-2xl font-bold mb-4">
-              {isEN ? 'Know Exactly Where Your Hotel Stands.' : 'Sachez exactement où en est votre hôtel.'}
-            </h2>
-            <p className="text-gray-300 mb-8">
-              {isEN
-                ? 'A LuxOps quality audit gives you a clear picture of your operation: what is working, what is not, and exactly what to fix first.'
-                : 'Un audit qualité LuxOps vous donne une vision claire de votre exploitation : ce qui fonctionne, ce qui ne fonctionne pas et exactement quoi corriger en premier.'}
-            </p>
-            <Link
-              href={isEN ? '/en/quality-audit' : '/fr/audit-qualite'}
-              className="inline-block bg-white text-[#1A2E44] font-semibold px-8 py-4 rounded-lg transition-colors hover:bg-gray-100"
-            >
-              {isEN ? 'Request an Audit' : 'Demander un audit'}
-            </Link>
+        <section id="audit-grid" className="px-6 py-20 bg-[#f8f9ff] scroll-mt-28">
+          <div className="max-w-screen-xl mx-auto">
+            <div className="max-w-2xl mb-12">
+              <p className="text-xs font-bold uppercase tracking-widest text-[#003d9b] mb-3">
+                {isEN ? 'Scoring grid' : 'Grille de notation'}
+              </p>
+              <h2 className="font-display text-3xl md:text-4xl font-extrabold text-[#0a1d2e] tracking-tight mb-4">
+                {isEN ? '28 criteria across the main guest-facing areas' : '28 critères sur les principaux points de contact client'}
+              </h2>
+              <p className="text-[#4f6074] leading-relaxed">
+                {isEN
+                  ? 'The goal is not to replace a full audit report. It is to create a consistent first read of where standards are holding and where follow-up is needed.'
+                  : 'L’objectif n’est pas de remplacer un rapport d’audit complet. Il s’agit d’obtenir une première lecture cohérente des standards qui tiennent et des points à reprendre.'}
+              </p>
+            </div>
+
+            <div className="space-y-6">
+              {areas.map((area) => {
+                const items = auditItems.filter((item) => item.area === area)
+                return (
+                  <div key={area} className="bg-white border border-[#d8deea]">
+                    <div className="flex items-center justify-between gap-4 bg-[#0a1d2e] text-white px-5 py-4">
+                      <h3 className="font-display font-bold text-lg">{area}</h3>
+                      <span className="text-xs font-bold uppercase tracking-widest text-white/70">
+                        {isEN ? 'Subtotal /16' : 'Sous-total /16'}
+                      </span>
+                    </div>
+                    <div className="divide-y divide-[#e8edf5]">
+                      {items.map((item, index) => (
+                        <div key={item.criterion} className="grid grid-cols-[1fr_90px] gap-4 px-5 py-4">
+                          <div className="flex gap-3">
+                            <span className="text-xs font-bold text-[#003d9b] mt-1">
+                              {String(index + 1).padStart(2, '0')}
+                            </span>
+                            <p className="text-sm text-[#4f6074] leading-relaxed">{item.criterion}</p>
+                          </div>
+                          <div className="text-center text-sm font-mono text-[#737685] border border-[#e8edf5] py-2">
+                            /2
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
+              {scoreCards.map((card) => (
+                <div key={card.score} className={`border p-5 ${toneClasses(card.tone)}`}>
+                  <p className="font-display text-2xl font-extrabold mb-1">
+                    {isEN ? card.score : card.scoreFr}
+                  </p>
+                  <p className="text-sm font-semibold">{isEN ? card.labelEn : card.labelFr}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
+        <section className="px-6 py-20 bg-white">
+          <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-14 items-start">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-widest text-[#003d9b] mb-3">
+                {isEN ? 'Audit method' : 'Méthode d’audit'}
+              </p>
+              <h2 className="font-display text-3xl md:text-4xl font-extrabold text-[#0a1d2e] tracking-tight mb-5">
+                {isEN ? 'Use the score to decide what happens next' : 'Utiliser le score pour décider de la suite'}
+              </h2>
+              <p className="text-[#4f6074] leading-relaxed">
+                {isEN
+                  ? 'The score is useful only if it leads to follow-up. Review the results within 48 hours, assign each recurring gap to an owner and connect it to a procedure, checklist or training action.'
+                  : 'Le score n’a de valeur que s’il déclenche une suite. Relisez les résultats sous 48 heures, attribuez chaque écart récurrent à un responsable et reliez-le à une procédure, une checklist ou une action de formation.'}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {(isEN ? [
+                { title: 'Prepare the scope', text: 'Define the departments, date, expected standard and whether the audit is announced or unannounced.' },
+                { title: 'Observe the guest journey', text: 'Follow the experience as a guest would see it: arrival, room, service moments, requests and departure.' },
+                { title: 'Debrief quickly', text: 'Review scores by department and focus on repeated gaps instead of isolated mistakes.' },
+                { title: 'Track monthly', text: 'Use the same grid over time to see whether standards improve, slip or remain unstable.' },
+              ] : [
+                { title: 'Préparer le périmètre', text: 'Définir les départements, la date, le standard attendu et le niveau d’annonce de l’audit.' },
+                { title: 'Observer le parcours client', text: 'Suivre l’expérience telle qu’un client la vit : arrivée, chambre, service, demandes et départ.' },
+                { title: 'Débriefer rapidement', text: 'Relire les scores par département et se concentrer sur les écarts récurrents, pas sur les erreurs isolées.' },
+                { title: 'Suivre chaque mois', text: 'Utiliser la même grille dans le temps pour voir si les standards progressent, baissent ou restent instables.' },
+              ]).map((item) => (
+                <div key={item.title} className="border border-[#e8edf5] bg-[#f8f9ff] p-6">
+                  <ListChecks size={20} className="text-[#003d9b] mb-4" />
+                  <h3 className="font-display font-bold text-[#0a1d2e] mb-2">{item.title}</h3>
+                  <p className="text-sm text-[#4f6074] leading-relaxed">{item.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="px-6 py-20 bg-[#f8f9ff]">
+          <div className="max-w-screen-xl mx-auto">
+            <div className="max-w-2xl mb-10">
+              <p className="text-xs font-bold uppercase tracking-widest text-[#003d9b] mb-3">
+                {isEN ? 'Related tools' : 'Outils liés'}
+              </p>
+              <h2 className="font-display text-3xl md:text-4xl font-extrabold text-[#0a1d2e] tracking-tight mb-4">
+                {isEN ? 'When the audit reveals a gap, use the right operational support' : 'Quand l’audit révèle un écart, utilisez le bon support opérationnel'}
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {[
+                {
+                  href: checklistsHref,
+                  title: isEN ? 'Free checklists' : 'Checklists gratuites',
+                  desc: isEN ? 'Printable PDF checklists for housekeeping, front office and F&B.' : 'PDF à imprimer pour le housekeeping, la réception et le F&B.',
+                },
+                {
+                  href: `/${locale}/hotel-housekeeping-checklist`,
+                  title: isEN ? 'Housekeeping checklist' : 'Checklist housekeeping',
+                  desc: isEN ? 'Room checks, supervisor control and housekeeping quality standards.' : 'Contrôles chambre, inspection gouvernante et standards housekeeping.',
+                },
+                {
+                  href: `/${locale}/hotel-sop`,
+                  title: isEN ? 'Hotel SOP hub' : 'Hub SOP hôtel',
+                  desc: isEN ? 'Department procedures and playbook structure for recurring gaps.' : 'Procédures par département et structure playbook pour les écarts récurrents.',
+                },
+                {
+                  href: qualityAuditHref,
+                  title: isEN ? 'Quality audit service' : 'Audit qualité sur site',
+                  desc: isEN ? 'A full on-site review when you need an external operational view.' : 'Une revue terrain complète lorsque vous avez besoin d’un regard externe.',
+                },
+              ].map((link) => (
+                <Link key={link.href} href={link.href} className="bg-white border border-[#e8edf5] p-6 hover:border-[#003d9b] transition-colors">
+                  <p className="font-display text-lg font-bold text-[#0a1d2e] mb-3">{link.title}</p>
+                  <p className="text-sm text-[#4f6074] leading-relaxed">{link.desc}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="px-6 py-20 bg-white">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="font-display text-3xl font-extrabold text-[#0a1d2e] tracking-tight mb-8">
+              {isEN ? 'Frequently asked questions' : 'Questions fréquentes'}
+            </h2>
+            <div className="space-y-5">
+              {faq.map(({ q, a }) => (
+                <div key={q} className="border border-[#e8edf5] p-6">
+                  <h3 className="font-display font-bold text-[#0a1d2e] mb-3">{q}</h3>
+                  <p className="text-sm text-[#4f6074] leading-relaxed">{a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="px-6 py-20 bg-[#0a1d2e]">
+          <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-12 items-center">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-widest text-[#8fb7ff] mb-3">
+                {isEN ? 'Need a deeper review?' : 'Besoin d’une analyse plus complète ?'}
+              </p>
+              <h2 className="font-display text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-5">
+                {isEN ? 'A checklist gives a first read. An audit gives the roadmap.' : 'Une checklist donne une première lecture. Un audit donne la feuille de route.'}
+              </h2>
+              <p className="text-[#cbd5e1] leading-relaxed">
+                {isEN
+                  ? 'When the issue is not one checklist item but recurring inconsistency across departments, the on-site quality audit gives you priorities, root causes and practical next steps.'
+                  : 'Quand le sujet ne se limite pas à un point de checklist mais à des écarts récurrents entre services, l’audit qualité sur site permet d’identifier les priorités, les causes et les prochaines actions.'}
+              </p>
+            </div>
+            <div className="bg-white/5 border border-white/10 p-7 lg:p-8">
+              <h3 className="font-display text-2xl font-extrabold text-white tracking-tight mb-4">
+                {isEN ? 'Request a quality audit' : 'Demander un audit qualité'}
+              </h3>
+              <p className="text-sm text-[#cbd5e1] leading-relaxed mb-6">
+                {isEN
+                  ? 'Share a few details about your property and the departments you want to review.'
+                  : 'Partagez quelques informations sur votre établissement et les départements à auditer.'}
+              </p>
+              <Link
+                href={qualityAuditHref}
+                className="inline-flex items-center justify-center gap-2 px-6 py-4 bg-white text-[#0a1d2e] font-bold text-sm hover:bg-[#eef4ff] transition-colors"
+              >
+                {isEN ? 'View quality audit' : 'Voir l’audit qualité'}
+                <ArrowRight size={16} />
+              </Link>
+            </div>
+          </div>
+        </section>
       </main>
     </>
   )
