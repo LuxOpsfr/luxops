@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { useTranslations } from 'next-intl'
 import Link from 'next/link'
-import { ArrowRight, BookOpen, Settings, Users, Star, Clock } from 'lucide-react'
+import { ArrowRight, BookOpen, ClipboardCheck, Clock, Settings, Star, Users } from 'lucide-react'
 import ExpertiseSection from '@/components/ExpertiseSection'
 
 export async function generateMetadata({
@@ -74,14 +74,14 @@ function HomeContent({ locale }: { locale: string }) {
 
       {/* Hero */}
       <section
-        className="relative py-24 md:py-32 px-6 overflow-hidden border-b"
+        className="relative px-6 pt-10 pb-16 md:pt-14 md:pb-20 overflow-hidden border-b"
         style={{
           backgroundImage: 'radial-gradient(#c3c6d6 0.5px, transparent 0.5px)',
           backgroundSize: '24px 24px',
           borderColor: 'rgba(195,198,214,0.2)',
         }}
       >
-        <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row gap-16 items-center">
+        <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row gap-12 items-center">
           <div className="flex-1 space-y-8">
             <div
               className="inline-flex items-center gap-2 px-3 py-1 text-[#003d9b] font-bold text-[10px] uppercase tracking-widest"
@@ -91,7 +91,7 @@ function HomeContent({ locale }: { locale: string }) {
               {tHero('badge')}
             </div>
 
-            <h1 className="font-display text-5xl md:text-7xl font-extrabold tracking-tighter leading-none text-[#0a1d2e]">
+            <h1 className="font-display text-5xl md:text-6xl font-extrabold tracking-tighter leading-[0.96] text-[#0a1d2e]">
               {tHero('title')}
             </h1>
 
@@ -102,7 +102,7 @@ function HomeContent({ locale }: { locale: string }) {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href={`/${locale}/playbooks`}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-white font-bold transition-all hover:opacity-90"
+                className="inline-flex flex-shrink-0 items-center justify-center gap-2 px-8 py-4 text-white font-bold transition-all hover:opacity-90 sm:whitespace-nowrap"
                 style={{
                   background: 'linear-gradient(135deg, #003d9b, #0052cc)',
                   borderRadius: '0.125rem',
@@ -113,7 +113,7 @@ function HomeContent({ locale }: { locale: string }) {
               </Link>
               <Link
                 href={`/${locale}/contact`}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 font-bold transition-all hover:bg-[#eef4ff]"
+                className="inline-flex flex-shrink-0 items-center justify-center gap-2 px-8 py-4 font-bold transition-all hover:bg-[#eef4ff] sm:whitespace-nowrap"
                 style={{
                   border: '1px solid #003d9b',
                   color: '#003d9b',
@@ -125,52 +125,87 @@ function HomeContent({ locale }: { locale: string }) {
             </div>
           </div>
 
-          {/* Right - 3 pillars card */}
+          {/* Right - commercial offer overview */}
           <div className="flex-1 w-full max-w-sm lg:max-w-none">
             <div
-              className="bg-white p-10 flex flex-col gap-8"
+              className="bg-white p-8 md:p-9"
               style={{
                 borderRadius: '0.125rem',
                 boxShadow: '0 20px 60px rgba(10,29,46,0.08)',
                 border: '1px solid rgba(195,198,214,0.2)',
               }}
             >
+              <div className="flex items-start justify-between gap-6 mb-7">
+                <div>
+                  <p className="text-[#003d9b] text-[10px] font-bold uppercase tracking-widest mb-2">
+                    {isEn ? 'What you can use now' : 'Ce que vous pouvez utiliser'}
+                  </p>
+                  <h2 className="font-display font-extrabold text-[#0a1d2e] text-2xl leading-tight">
+                    {isEn ? 'Choose the right format for your need' : 'Choisir le bon format selon votre besoin'}
+                  </h2>
+                </div>
+                <div className="hidden sm:flex items-center justify-center w-11 h-11 bg-[#eef4ff] text-[#003d9b] flex-shrink-0" style={{ borderRadius: '0.125rem' }}>
+                  <BookOpen size={22} strokeWidth={1.5} />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
                 {
-                  icon: <Star size={18} strokeWidth={1.25} />,
-                  title: isEn ? 'Service Excellence' : 'Excellence du Service',
+                  icon: <ClipboardCheck size={18} strokeWidth={1.5} />,
+                  title: isEn ? 'Starter Packs' : 'Starter Packs',
                   desc: isEn
-                    ? 'A consistent, flawless guest experience at every interaction.'
-                    : 'Des standards plus clairs pour offrir une expérience client plus régulière à chaque étape du séjour.',
+                    ? 'Practical checklists, scripts and control tools for immediate use.'
+                    : 'Checklists, scripts et outils de contrôle pour un usage immédiat.',
+                  href: `/${locale}/playbooks#starter-packs`,
                 },
                 {
-                  icon: <Users size={18} strokeWidth={1.25} />,
-                  title: isEn ? 'Team Stability' : 'Stabilit\u00e9 des \u00c9quipes',
+                  icon: <BookOpen size={18} strokeWidth={1.5} />,
+                  title: isEn ? 'Playbooks' : 'Playbooks',
                   desc: isEn
-                    ? 'Structured onboarding that reduces turnover and builds confidence.'
-                    : "Des méthodes écrites pour faciliter l'intégration, réduire la dépendance aux individus et limiter les effets du turnover.",
+                    ? 'Full SOP references for Front Office, Housekeeping, F&B and Spa.'
+                    : 'Références SOP complètes pour Front Office, Housekeeping, F&B et Spa.',
+                  href: `/${locale}/playbooks#department-playbooks`,
                 },
                 {
-                  icon: <Clock size={18} strokeWidth={1.25} />,
-                  title: isEn ? 'Operational Efficiency' : 'Efficacit\u00e9 Op\u00e9rationnelle',
+                  icon: <Users size={18} strokeWidth={1.5} />,
+                  title: isEn ? 'Training' : 'Formation',
                   desc: isEn
-                    ? 'Know-how documented, transferable, and always available.'
-                    : 'Un cadre de travail structuré, accessible et transmissible, pour que les équipes puissent s\'appuyer sur autre chose que les habitudes.',
+                    ? 'On-property sessions to help teams apply service standards.'
+                    : 'Sessions sur site pour aider les équipes à appliquer les standards.',
+                  href: isEn ? '/en/training' : '/fr/formation',
                 },
-              ].map((item, i) => (
-                <div key={i} className="flex items-start gap-4">
+                {
+                  icon: <Settings size={18} strokeWidth={1.5} />,
+                  title: isEn ? 'Audit' : 'Audit',
+                  desc: isEn
+                    ? 'A structured review of standards, execution and operating gaps.'
+                    : 'Une revue structurée des standards, de l’exécution et des écarts.',
+                  href: isEn ? '/en/quality-audit' : '/fr/audit-qualite',
+                },
+              ].map((item) => (
+                <Link
+                  key={item.title}
+                  href={item.href}
+                  className="group flex flex-col gap-4 p-5 bg-[#f8f9ff] hover:bg-[#eef4ff] transition-colors"
+                  style={{ borderRadius: '0.125rem', border: '1px solid rgba(195,198,214,0.24)' }}
+                >
                   <div
-                    className="flex-shrink-0 w-9 h-9 flex items-center justify-center text-[#003d9b]"
+                    className="w-9 h-9 flex items-center justify-center text-[#003d9b] bg-white"
                     style={{ border: '1px solid rgba(0,61,155,0.15)', borderRadius: '50%' }}
                   >
                     {item.icon}
                   </div>
                   <div>
                     <p className="font-display font-bold text-[#0a1d2e] text-sm mb-1">{item.title}</p>
-                    <p className="text-[#4f6074] text-xs leading-relaxed">{item.desc}</p>
+                    <p className="text-[#4f6074] text-xs leading-relaxed mb-3">{item.desc}</p>
+                    <span className="inline-flex items-center gap-1 text-[#003d9b] text-xs font-bold">
+                      {isEn ? 'View' : 'Voir'} <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform" />
+                    </span>
                   </div>
-                </div>
+                </Link>
               ))}
+              </div>
             </div>
           </div>
         </div>

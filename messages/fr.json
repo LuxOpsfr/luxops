@@ -12,11 +12,11 @@
     "blog": "Blog"
   },
   "hero": {
-    "badge": "Méthodes construites dans l'exploitation hôtelière. Structurées. Utilisables.",
-    "title": "Des opérations hôtelières sans improvisation",
-    "subtitle": "Des procédures claires, des standards documentés et des outils concrets conçus pour aider les équipes à travailler avec plus de constance, à mieux transmettre les méthodes, et à réduire ce qui repose encore trop sur l'oral.",
-    "cta_primary": "Découvrir les Ressources",
-    "cta_secondary": "Réserver une Consultation"
+    "badge": "Playbooks, checklists, formation et audit",
+    "title": "Des outils concrets pour structurer vos opérations",
+    "subtitle": "Playbooks, starter packs, checklists imprimables, formations sur site et audit qualité pour aider les équipes à appliquer les standards avec plus de régularité.",
+    "cta_primary": "Voir Playbooks et Starter Packs",
+    "cta_secondary": "Demander un devis"
   },
   "problem": {
     "title": "Pourquoi les Opérations Hôtelières Déraillent",
@@ -29,7 +29,7 @@
     "point3_text": "Sans support structuré, chaque nouvelle recrue repart presque de zéro. Des procédures claires raccourcissent l'intégration et sécurisent l'exécution dès les premiers jours."
   },
   "solution": {
-    "title": "SOPs & Playbooks Structurés pour Équipes Hôtelières",
+    "title": "SOPs et playbooks prêts à utiliser",
     "text": "LuxOps rassemble des méthodes de travail construites dans l'exploitation hôtelière, puis les transforme en outils utilisables par les équipes, service après service, étape après étape."
   },
   "offers": {

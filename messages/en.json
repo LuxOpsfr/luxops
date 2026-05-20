@@ -12,11 +12,11 @@
     "blog": "Blog"
   },
   "hero": {
-    "badge": "Developed from day-to-day hotel operations · Structured · Ready to use",
-    "title": "Operational Clarity for High-End Hospitality",
-    "subtitle": "Documented standards, clear procedures, and practical tools developed from how hotel teams work day to day. Designed to be used immediately, across departments.",
-    "cta_primary": "Explore Playbooks",
-    "cta_secondary": "Book a Consultation"
+    "badge": "Playbooks, checklists, training and audit",
+    "title": "Playbooks and tools for hotel operations",
+    "subtitle": "Playbooks, starter packs, printable checklists, on-property training and quality audit support to help teams apply standards more consistently.",
+    "cta_primary": "View Playbooks and Starter Packs",
+    "cta_secondary": "Request a Quote"
   },
   "problem": {
     "title": "Why Hotel Operations Break Down",
@@ -29,7 +29,7 @@
     "point3_text": "Without structured guides, every new hire starts from scratch. Clear documentation cuts integration time and reduces errors from day one."
   },
   "solution": {
-    "title": "Structured SOPs & Playbooks for Hotel Teams",
+    "title": "Ready-to-use SOPs and playbooks",
     "text": "We take operational knowledge built from years of running hotel departments and structure it into practical tools your teams can use daily, at every stage of the guest experience."
   },
   "offers": {
