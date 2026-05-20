@@ -1364,7 +1364,11 @@ export function FbSeoResourcePage({ kind, locale }: { kind: ResourceKind; locale
     ? isEN ? '/downloads/checklists/en/room-service-checklist.pdf' : '/downloads/checklists/fr/checklist-room-service.pdf'
     : kind === 'restaurantOpening'
       ? isEN ? '/downloads/checklists/en/restaurant-opening-checklist.pdf' : '/downloads/checklists/fr/checklist-ouverture-restaurant.pdf'
-      : null
+      : kind === 'barOpening'
+        ? isEN ? '/downloads/checklists/en/bar-opening-checklist.pdf' : '/downloads/checklists/fr/checklist-ouverture-bar.pdf'
+        : kind === 'restaurantClosing'
+          ? isEN ? '/downloads/checklists/en/restaurant-closing-checklist.pdf' : '/downloads/checklists/fr/checklist-fermeture-restaurant.pdf'
+          : null
   const checklistCta = isEN ? 'Download a free printable PDF copy' : 'Télécharger le PDF gratuit à imprimer'
 
   const schema = {

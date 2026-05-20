@@ -147,7 +147,7 @@ const CONTENT = {
         label: 'Food and Beverage',
         title: 'F&B checklists',
         intro:
-          'Restaurant opening and room service checklists for service readiness, timing, setup and handover.',
+          'Restaurant, bar and room service checklists for service readiness, timing, setup, closing and handover.',
         starterHref: '/en/playbooks/fb-starter-pack',
         playbookHref: '/en/playbooks/fb',
         starterLabel: 'View F&B Starter Pack',
@@ -161,6 +161,24 @@ const CONTENT = {
             href: '/downloads/checklists/en/restaurant-opening-checklist.pdf',
             available: true,
             sourceHref: '/en/restaurant-opening-checklist',
+          },
+          {
+            title: 'Bar Opening Checklist',
+            role: 'Pre-service bar setup',
+            body:
+              'Bar station setup, ice, garnishes, glassware, par levels, POS, cash float and final walk-through.',
+            href: '/downloads/checklists/en/bar-opening-checklist.pdf',
+            available: true,
+            sourceHref: '/en/bar-opening-checklist',
+          },
+          {
+            title: 'Restaurant Closing Checklist',
+            role: 'End-of-service closing',
+            body:
+              'Dining room reset, cleaning, POS and cash closing, stock control, kitchen and bar handover.',
+            href: '/downloads/checklists/en/restaurant-closing-checklist.pdf',
+            available: true,
+            sourceHref: '/en/restaurant-closing-checklist',
           },
           {
             title: 'Room Service Checklist',
@@ -315,7 +333,7 @@ const CONTENT = {
         label: 'Food and Beverage',
         title: 'Checklists F&B',
         intro:
-          'Checklists ouverture restaurant et room service pour préparer le service, contrôler le timing et sécuriser la passation.',
+          'Checklists restaurant, bar et room service pour préparer le service, contrôler le timing, fermer proprement et sécuriser la passation.',
         starterHref: '/fr/playbooks/fb-starter-pack',
         playbookHref: '/fr/playbooks/fb',
         starterLabel: 'Voir le Starter Pack F&B',
@@ -329,6 +347,24 @@ const CONTENT = {
             href: '/downloads/checklists/fr/checklist-ouverture-restaurant.pdf',
             available: true,
             sourceHref: '/fr/checklist-ouverture-restaurant',
+          },
+          {
+            title: 'Checklist Ouverture Bar',
+            role: 'Mise en place pré-service',
+            body:
+              'Poste bar, glace, garnitures, verrerie, niveaux de par, POS, fonds de caisse et dernier tour de contrôle.',
+            href: '/downloads/checklists/fr/checklist-ouverture-bar.pdf',
+            available: true,
+            sourceHref: '/fr/checklist-ouverture-bar',
+          },
+          {
+            title: 'Checklist Fermeture Restaurant',
+            role: 'Fermeture de service',
+            body:
+              'Remise en ordre de la salle, nettoyage, clôture POS et caisse, contrôle stock, passation cuisine et bar.',
+            href: '/downloads/checklists/fr/checklist-fermeture-restaurant.pdf',
+            available: true,
+            sourceHref: '/fr/checklist-fermeture-restaurant',
           },
           {
             title: 'Checklist Room Service',
