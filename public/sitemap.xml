@@ -222,6 +222,50 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Bar Opening Checklist EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/bar-opening-checklist</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/bar-opening-checklist"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/checklist-ouverture-bar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/bar-opening-checklist"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-19</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Checklist Ouverture Bar FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/checklist-ouverture-bar</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/checklist-ouverture-bar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/bar-opening-checklist"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/bar-opening-checklist"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-19</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Restaurant Closing Checklist EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/restaurant-closing-checklist</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/restaurant-closing-checklist"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/checklist-fermeture-restaurant"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/restaurant-closing-checklist"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-19</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Checklist Fermeture Restaurant FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/checklist-fermeture-restaurant</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/checklist-fermeture-restaurant"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/restaurant-closing-checklist"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/restaurant-closing-checklist"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-19</lastmod>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Notion Templates EN -->
   <url>
     <loc>https://www.luxops.fr/en/notion-templates</loc>

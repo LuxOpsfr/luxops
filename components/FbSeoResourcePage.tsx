@@ -16,7 +16,7 @@ import TrackedLink from '@/components/TrackedLink'
 import { breadcrumbSchema, faqSchema, localizedPath } from '@/lib/seo'
 
 type Locale = 'en' | 'fr'
-type ResourceKind = 'sequence' | 'roomService' | 'restaurantOpening'
+type ResourceKind = 'sequence' | 'roomService' | 'restaurantOpening' | 'barOpening' | 'restaurantClosing'
 
 type Faq = {
   question: string
@@ -827,15 +827,508 @@ const RESTAURANT_OPENING_FR: ResourceContent = {
     'Utilisez le Starter Pack pour des outils d’ouverture prêts à l’emploi, puis le Playbook complet lorsque vous avez besoin de toute la référence opérationnelle F&B.',
 }
 
+const BAR_OPENING_EN: ResourceContent = {
+  slug: '/bar-opening-checklist',
+  alternateSlug: '/checklist-ouverture-bar',
+  title: 'Bar Opening Checklist',
+  metaTitle: 'Bar Opening Checklist | LuxOps',
+  metaDescription:
+    'A practical bar opening checklist for station setup, glassware, garnish prep, stock control, POS checks, briefing and final pre-service inspection.',
+  keywords:
+    'bar opening checklist, bar setup checklist, bar mise en place checklist, bar opening procedure, bar SOP checklist',
+  eyebrow: 'Bar opening checklist',
+  h1: 'Bar Opening Checklist',
+  subtitle:
+    'A practical pre-service checklist for preparing the bar station, glassware, garnishes, stock, POS and team before service.',
+  sourceNote:
+    'This page summarizes one operational method used inside the LuxOps F&B products. The complete checklists and editable PPTX tools are available in the paid versions.',
+  extractedFrom:
+    'Adapted from the bar operations, mise en place, responsible service, stock control and quality chapters of the LuxOps F&B Playbook.',
+  primaryCta: 'View F&B Starter Pack',
+  secondaryCta: 'View Full F&B Playbook',
+  freeChapterCta: 'Download a Free Chapter',
+  sectionLabel: 'Pre-service bar setup',
+  sectionTitle: 'What to check before opening the bar',
+  sectionIntro:
+    'A bar opening checklist protects speed, presentation and consistency before the first guest orders. The station should be ready enough for the bartender to work cleanly, serve with presence and avoid leaving the bar during pressure.',
+  blocks: [
+    {
+      title: '1. Briefing, grooming and service focus',
+      intro: 'The bar opens with information first, not only with bottles on the station.',
+      items: [
+        'Uniform, grooming, hygiene and service tools checked before handling glassware or garnishes',
+        'Daily specials, unavailable items, reservations, VIPs, events and service notes reviewed',
+        'Responsible service expectations, signs of intoxication and escalation points confirmed',
+        'Shift handover reviewed, including open issues, guest preferences and maintenance points',
+      ],
+    },
+    {
+      title: '2. Bar station and mise en place',
+      intro: 'The station should be complete, fresh and organized before production starts.',
+      items: [
+        'Shakers, strainers, jiggers, muddlers, bar spoons, knives and peelers clean and accessible',
+        'Ice wells clean, filled and protected, with service ice separated from any cleaning task',
+        'Speed rail organized by house standard, with bottles clean, full enough and facing correctly',
+        'Cutting board, bar towels, sanitizer, waste bins and service napkins positioned correctly',
+        'Menus clean, current and available at the bar, lounge tables and service points',
+      ],
+    },
+    {
+      title: '3. Glassware, garnishes and fresh preparations',
+      intro: 'The drink presentation starts before the first order is taken.',
+      items: [
+        'Glassware polished, chip-free, checked against light and stocked by drink type',
+        'Fresh juices, syrups, bitters and mixers checked for quality, shelf life and par level',
+        'Citrus, herbs, olives, cherries, cocktail onions and picks prepared to expected par',
+        'Garnishes covered, labelled when required and stored at the correct temperature',
+        'Coasters, napkins and stirrers stocked at each guest-facing and service point',
+      ],
+    },
+    {
+      title: '4. Stock, par levels and backups',
+      intro: 'Running out of basic stock during service creates avoidable pressure.',
+      items: [
+        'House spirits, premium spirits, wines by the glass, draft beer and bottled beer checked against par',
+        'Non-alcoholic options prepared with the same presentation standard as alcoholic drinks',
+        'Backup stock identified and accessible without leaving the bar unattended',
+        'Low stock, breakage, flat draft beer, missing items and 86’d items logged before opening',
+      ],
+    },
+    {
+      title: '5. POS, cash and final inspection',
+      intro: 'The final walk-through confirms the bar can open without operational friction.',
+      items: [
+        'POS, printers, payment terminals and tab procedures tested before the first order',
+        'Cash float checked, reset to opening level and signed if used',
+        'Bar counter, back bar, shelves, floor, guest stools and visible surfaces inspected',
+        'Lighting, music, temperature, smell and overall atmosphere checked',
+        'Bartender in position before opening, with station complete and manager walk-through done',
+      ],
+    },
+  ],
+  extractTitle: 'The bar opening sequence protects service speed',
+  extractText:
+    'The bar is often the first or last F&B contact of the day. When mise en place is incomplete, service slows down, drinks become inconsistent and the bartender loses guest presence.',
+  extractItems: [
+    'Station ready, fresh and organized before service starts',
+    'Glassware polished, chip-free and organized by drink type',
+    'Garnishes, juices and mixers prepared to par and protected',
+    'POS, cash float, payment tools and tab procedures tested before the first order',
+  ],
+  productTitle: 'F&B Starter Pack',
+  productText:
+    'Includes restaurant and bar service tools, daily service checklist, opening and closing checklists, briefing template, service sequence SOP, recovery scripts and allergen tracker.',
+  playbookTitle: 'Full F&B Playbook',
+  playbookText:
+    'The complete reference for restaurant, breakfast, bar, wine, room service, guest interaction, mise en place, team management and quality standards.',
+  relatedTitle: 'Need the restaurant opening checklist?',
+  relatedText:
+    'Use the restaurant opening checklist to align the room, terrace, table setup, POS and briefing before the first guest arrives.',
+  relatedHref: '/restaurant-opening-checklist',
+  relatedCta: 'View Restaurant Opening Checklist',
+  faqs: [
+    {
+      question: 'What should a bar opening checklist include?',
+      answer:
+        'It should include briefing notes, bartender readiness, station tools, ice, glassware, garnishes, juices, mixers, menus, stock par levels, backup stock, responsible service checks, POS, cash, payment terminals and a final guest-facing inspection.',
+    },
+    {
+      question: 'Is a bar opening checklist useful for small venues?',
+      answer:
+        'Yes. The smaller the team, the more important it is to have the station ready before pressure starts. The checklist can be adapted to a hotel bar, restaurant bar, coffee shop or cocktail outlet.',
+    },
+    {
+      question: 'What is the difference between bar opening and bar closing?',
+      answer:
+        'Opening prepares the station for speed and guest service. Closing protects hygiene, stock control, cash control, cleaning, handover and readiness for the next shift.',
+    },
+  ],
+  finalTitle: 'Prepare the bar before service pressure starts',
+  finalText:
+    'Use the starter pack for ready-to-use F&B tools and the full playbook when you need the complete bar and service operating reference.',
+}
+
+const BAR_OPENING_FR: ResourceContent = {
+  slug: '/checklist-ouverture-bar',
+  alternateSlug: '/bar-opening-checklist',
+  title: 'Checklist ouverture bar',
+  metaTitle: 'Checklist ouverture bar | LuxOps',
+  metaDescription:
+    'Checklist ouverture bar : mise en place du poste, verrerie, garnitures, stock, POS, service responsable, briefing et dernier contrôle avant service.',
+  keywords:
+    'checklist ouverture bar, checklist mise en place bar, procédure ouverture bar, SOP bar, checklist bar',
+  eyebrow: 'Checklist ouverture bar',
+  h1: 'Checklist d’ouverture bar',
+  subtitle:
+    'Une checklist pré-service pour préparer le poste bar, la verrerie, les garnitures, le stock, le POS et l’équipe avant l’arrivée des premiers clients.',
+  sourceNote:
+    'Cette page reprend une méthode opérationnelle utilisée dans les produits F&B LuxOps. Les checklists complètes et supports PPTX modifiables sont disponibles dans les versions payantes.',
+  extractedFrom:
+    'Adapté des chapitres bar, mise en place, service responsable, contrôle stock et qualité du Playbook F&B LuxOps.',
+  primaryCta: 'Voir le Starter Pack F&B',
+  secondaryCta: 'Voir le Playbook F&B complet',
+  freeChapterCta: 'Télécharger un chapitre gratuit',
+  sectionLabel: 'Mise en place pré-service',
+  sectionTitle: 'Ce qu’il faut contrôler avant d’ouvrir le bar',
+  sectionIntro:
+    'Une ouverture de bar bien tenue protège la vitesse, la présentation et la régularité avant la première commande. Le poste doit être suffisamment prêt pour que l’équipe bar travaille proprement, garde sa présence client et n’ait pas à quitter le comptoir au mauvais moment.',
+  blocks: [
+    {
+      title: '1. Briefing, présentation et posture de service',
+      intro: 'L’ouverture du bar commence par les informations du jour, pas seulement par les bouteilles sur le poste.',
+      items: [
+        'Tenue, présentation, hygiène et outils de service contrôlés avant de manipuler verrerie ou garnitures',
+        'Suggestions, articles indisponibles, réservations, VIP, événements et consignes du jour revus',
+        'Règles de service responsable, signes d’ivresse et points d’escalade confirmés avec le manager',
+        'Passation du service précédent relue : préférences client, incidents, maintenance et points de vigilance',
+      ],
+    },
+    {
+      title: '2. Poste bar et mise en place',
+      intro: 'Le poste doit être complet, frais et organisé avant le début de la production.',
+      items: [
+        'Shakers, passoires, jiggers, pilons, cuillères à bar, couteaux et économes propres et accessibles',
+        'Bacs à glace propres, remplis et protégés, avec une glace de service séparée de toute tâche de nettoyage',
+        'Speed rail organisé selon le standard, avec bouteilles propres, suffisamment remplies et bien orientées',
+        'Planche, torchons, désinfectant, poubelles et serviettes de service placés au bon endroit',
+        'Cartes propres, à jour et disponibles au bar, en lounge et aux points de service',
+      ],
+    },
+    {
+      title: '3. Verrerie, garnitures et préparations fraîches',
+      intro: 'La présentation d’une boisson commence avant même la première commande.',
+      items: [
+        'Verrerie polie, sans éclat, vérifiée à contre-jour et rangée par type de boisson',
+        'Jus frais, sirops, bitters et mixers contrôlés sur la qualité, la conservation et le niveau de par',
+        'Agrumes, herbes, olives, cerises, oignons cocktail et pics préparés au niveau attendu',
+        'Garnitures couvertes, étiquetées si nécessaire et conservées à la bonne température',
+        'Sous-verres, serviettes et mélangeurs disponibles à chaque point client et point de service',
+      ],
+    },
+    {
+      title: '4. Stock, par et réserves',
+      intro: 'Manquer d’un basique pendant le service crée une pression évitable.',
+      items: [
+        'Spiritueux maison, premium, vins au verre, bière pression et bières bouteille contrôlés selon les niveaux de par',
+        'Options sans alcool préparées avec le même soin de présentation que les boissons alcoolisées',
+        'Stock de secours identifié et accessible sans laisser les clients sans présence au bar',
+        'Articles bas, casse, bière pression plate, manquants et items 86’d notés avant l’ouverture',
+      ],
+    },
+    {
+      title: '5. POS, caisse et inspection finale',
+      intro: 'Le dernier tour confirme que le bar peut ouvrir sans friction opérationnelle.',
+      items: [
+        'POS, imprimantes, terminaux de paiement et procédure d’ouverture des notes testés',
+        'Fonds de caisse vérifié, remis au niveau de départ et signé si utilisé',
+        'Comptoir, back bar, étagères, sol, tabourets et surfaces visibles par le client inspectés',
+        'Éclairage, musique, température, odeur et ambiance générale contrôlés',
+        'Équipe bar en position avant l’ouverture, avec poste complet et dernier tour manager réalisé',
+      ],
+    },
+  ],
+  extractTitle: 'L’ouverture bar protège la vitesse du service',
+  extractText:
+    'Le bar est souvent le premier ou le dernier contact F&B de la journée. Lorsque la mise en place est incomplète, le service ralentit, les boissons deviennent irrégulières et l’équipe perd en présence client.',
+  extractItems: [
+    'Poste prêt, frais et organisé avant le début du service',
+    'Verrerie polie, sans éclat et organisée par type de boisson',
+    'Garnitures, jus et mixers préparés au niveau de par et protégés',
+    'POS, fonds de caisse, terminaux et procédure d’ouverture des notes testés avant la première commande',
+  ],
+  productTitle: 'Starter Pack F&B',
+  productText:
+    'Inclut outils restaurant et bar, checklist service quotidien, checklists ouverture et fermeture, template de briefing, SOP séquence de service, scripts recovery et tracker allergènes.',
+  playbookTitle: 'Playbook F&B complet',
+  playbookText:
+    'La référence complète pour restaurant, petit-déjeuner, bar, vin, room service, interaction client, mise en place, management équipe et standards qualité.',
+  relatedTitle: 'Besoin de la checklist ouverture restaurant ?',
+  relatedText:
+    'Utilisez la checklist ouverture restaurant pour aligner salle, terrasse, dressage, POS et briefing avant l’arrivée des premiers clients.',
+  relatedHref: '/checklist-ouverture-restaurant',
+  relatedCta: 'Voir la checklist ouverture restaurant',
+  faqs: [
+    {
+      question: 'Que doit contenir une checklist d’ouverture bar ?',
+      answer:
+        'Elle doit couvrir le briefing, la présentation de l’équipe, les outils de poste, la glace, la verrerie, les garnitures, les jus, les mixers, les cartes, les niveaux de stock, les réserves, le service responsable, le POS, la caisse, les terminaux de paiement et le dernier contrôle côté client.',
+    },
+    {
+      question: 'Cette checklist est-elle utile pour un petit point de vente ?',
+      answer:
+        'Oui. Plus l’équipe est réduite, plus le poste doit être prêt avant la pression du service. La checklist peut s’adapter à un bar d’hôtel, un bar de restaurant, un coffee shop ou un point de vente cocktail.',
+    },
+    {
+      question: 'Quelle différence entre ouverture et fermeture bar ?',
+      answer:
+        'L’ouverture prépare le poste pour la vitesse et le service client. La fermeture protège l’hygiène, le stock, la caisse, le nettoyage, la passation et la préparation du prochain shift.',
+    },
+  ],
+  finalTitle: 'Préparer le bar avant la pression du service',
+  finalText:
+    'Utilisez le Starter Pack pour des outils F&B prêts à l’emploi, puis le Playbook complet lorsque vous avez besoin de toute la référence opérationnelle bar et service.',
+}
+
+const RESTAURANT_CLOSING_EN: ResourceContent = {
+  slug: '/restaurant-closing-checklist',
+  alternateSlug: '/checklist-fermeture-restaurant',
+  title: 'Restaurant Closing Checklist',
+  metaTitle: 'Restaurant Closing Checklist | LuxOps',
+  metaDescription:
+    'A restaurant closing checklist for end-of-service reset, POS and cash controls, cleaning, stock, handover and next-shift readiness.',
+  keywords:
+    'restaurant closing checklist, restaurant closing procedure, closing checklist restaurant, F&B closing checklist, restaurant end of service checklist',
+  eyebrow: 'Restaurant closing checklist',
+  h1: 'Restaurant Closing Checklist',
+  subtitle:
+    'A practical end-of-service checklist for resetting the dining room, closing POS and cash, controlling stock, cleaning stations and preparing the next shift.',
+  sourceNote:
+    'This page summarizes one operational method used inside the LuxOps F&B products. The complete checklists and editable PPTX tools are available in the paid versions.',
+  extractedFrom:
+    'Adapted from the Restaurant Closing Checklist, service handover, mise en place, stock control and quality chapters of the LuxOps F&B Playbook.',
+  primaryCta: 'View F&B Starter Pack',
+  secondaryCta: 'View Full F&B Playbook',
+  freeChapterCta: 'Download a Free Chapter',
+  sectionLabel: 'End-of-service flow',
+  sectionTitle: 'What to check before closing the restaurant',
+  sectionIntro:
+    'Closing is not only cleaning. A good restaurant closing checklist protects revenue, stock, hygiene, guest recovery follow-up and the next service. The room should be left as deliberately as it was prepared before opening.',
+  blocks: [
+    {
+      title: '1. End of dining room service',
+      intro: 'The room should be reset for the next shift, not simply cleared at the end of the night.',
+      items: [
+        'Tables broken down and reset for the next service when applicable',
+        'Soiled linen collected and placed in the designated bin',
+        'Stations wiped, reorganized and returned to standard position',
+        'Remaining glassware and silverware polished, counted where needed and stored',
+        'Condiments checked, emptied or topped up according to protocol, with FIFO rotation applied',
+        'Clean menus stored, counted and removed from guest-facing areas',
+      ],
+    },
+    {
+      title: '2. Cleaning and guest-facing areas',
+      intro: 'Cleaning should leave the restaurant ready for inspection, not only acceptable from a distance.',
+      items: [
+        'Floor swept and washed, with corners and baseboards checked',
+        'Tables, service counters and work surfaces sanitized',
+        'Guest restrooms checked and left clean if they belong to the outlet closing scope',
+        'Bar area cleaned and sanitized, including visible guest-facing surfaces',
+        'Bins emptied, liners replaced and entrance steps or terrace checked before departure',
+      ],
+    },
+    {
+      title: '3. POS, cash drawer and financial closing',
+      intro: 'Financial closing should be completed while the details of the service are still clear.',
+      items: [
+        'Cash drawer counted and reconciled against POS totals',
+        'Cash float reset to opening level and signed according to property process',
+        'All sales, room charges, card payments, voids and discounts closed in the POS',
+        'Tips handled according to property policy',
+        'Billing disputes, discrepancies or pending approvals documented and handed to the manager',
+      ],
+    },
+    {
+      title: '4. Stock, kitchen and bar coordination',
+      intro: 'The next team should not discover missing products or unclear 86’d items during opening.',
+      items: [
+        'Quick inventory completed for sensitive stock, wines by the glass, draft beer and high-rotation items',
+        'Reorder thresholds checked and next-day order placed if required',
+        'FIFO rotation applied to condiments, perishable items and prepared products',
+        'Final communication with kitchen on 86’d items to carry over',
+        'Bar cleared, ice discarded if required, garnishes, juices and fresh preparations checked for next day',
+      ],
+    },
+    {
+      title: '5. Security, incidents and handover',
+      intro: 'The last walk-through validates that the outlet is secure and that the next manager has the right information.',
+      items: [
+        'Heat sources off, electrical equipment secured and HVAC set to night mode',
+        'Exterior lighting, terrace, doors, windows and alarm checked according to property process',
+        'Guest complaints, technical incidents, losses, breakage and allergy traceability documented',
+        'Shift notes written in the communication log with reservations, VIPs, events and expected deliveries',
+        'Base mise en place, light polishing and clean linen prepared for opening when timing allows',
+        'Closing checklist signed by the responsible supervisor or manager after final walk-through',
+      ],
+    },
+  ],
+  extractTitle: 'Closing protects tomorrow’s service',
+  extractText:
+    'A weak closing creates the next day’s problems: missing stock, unclear cash discrepancies, forgotten guest follow-ups, dirty stations, unresolved 86’d items and opening teams forced to repair the previous shift.',
+  extractItems: [
+    'Cash drawer counted, reconciled and reset to opening level',
+    'Condiments, perishable products and prepared items controlled with FIFO rotation',
+    'Kitchen and bar aligned on 86’d items, ice, garnishes and next-day preparation',
+    'Communication log completed before the manager signs off',
+  ],
+  productTitle: 'F&B Starter Pack',
+  productText:
+    'Includes restaurant opening and closing checklists, daily service checklist, briefing template, service sequence SOP, table inspection checklist, recovery scripts and allergen tracker.',
+  playbookTitle: 'Full F&B Playbook',
+  playbookText:
+    'The complete reference for restaurant service, breakfast, bar, wine, room service, guest interaction, mise en place, team management and quality standards.',
+  relatedTitle: 'Need the opening version?',
+  relatedText:
+    'Use the restaurant opening checklist to prepare the room, stations, POS and team before service starts.',
+  relatedHref: '/restaurant-opening-checklist',
+  relatedCta: 'View Restaurant Opening Checklist',
+  faqs: [
+    {
+      question: 'What should a restaurant closing checklist include?',
+      answer:
+        'It should include dining room reset, linen collection, station reset, condiment control, cleaning, guest restrooms, bar area, POS closing, cash reconciliation, tips, stock checks, kitchen and bar coordination, safety checks, incident reporting, handover notes and final manager sign-off.',
+    },
+    {
+      question: 'Who should sign the restaurant closing checklist?',
+      answer:
+        'The responsible supervisor, assistant manager or manager should sign it after the final walk-through. The point is not paperwork. It confirms the next shift will not inherit unresolved issues.',
+    },
+    {
+      question: 'Is closing part of the restaurant SOP?',
+      answer:
+        'Yes. Closing should be treated as part of the restaurant SOP because it protects revenue control, hygiene, stock accuracy, guest recovery and readiness for the next service.',
+    },
+  ],
+  finalTitle: 'Close the restaurant with the next service in mind',
+  finalText:
+    'Use the starter pack for ready-to-use F&B closing tools and the full playbook when you need the complete restaurant operating reference.',
+}
+
+const RESTAURANT_CLOSING_FR: ResourceContent = {
+  slug: '/checklist-fermeture-restaurant',
+  alternateSlug: '/restaurant-closing-checklist',
+  title: 'Checklist fermeture restaurant',
+  metaTitle: 'Checklist fermeture restaurant | LuxOps',
+  metaDescription:
+    'Checklist fermeture restaurant : remise en ordre, clôture POS et caisse, nettoyage, stock, passation et préparation du prochain service.',
+  keywords:
+    'checklist fermeture restaurant, procédure fermeture restaurant, checklist clôture restaurant, checklist fin de service restaurant, SOP restaurant',
+  eyebrow: 'Checklist fermeture restaurant',
+  h1: 'Checklist de fermeture restaurant',
+  subtitle:
+    'Une checklist de fin de service pour remettre la salle en ordre, clôturer le POS et la caisse, contrôler le stock, nettoyer les stations et préparer le shift suivant.',
+  sourceNote:
+    'Cette page reprend une méthode opérationnelle utilisée dans les produits F&B LuxOps. Les checklists complètes et supports PPTX modifiables sont disponibles dans les versions payantes.',
+  extractedFrom:
+    'Adapté de la checklist fermeture restaurant, des sections passation, mise en place, contrôle stock et qualité du Playbook F&B LuxOps.',
+  primaryCta: 'Voir le Starter Pack F&B',
+  secondaryCta: 'Voir le Playbook F&B complet',
+  freeChapterCta: 'Télécharger un chapitre gratuit',
+  sectionLabel: 'Flux de fin de service',
+  sectionTitle: 'Ce qu’il faut contrôler avant de fermer le restaurant',
+  sectionIntro:
+    'La fermeture ne se résume pas au nettoyage. Une bonne checklist protège le revenu, le stock, l’hygiène, les suivis client et le service suivant. La salle doit être laissée avec autant de rigueur qu’elle a été préparée avant l’ouverture.',
+  blocks: [
+    {
+      title: '1. Fin de service salle',
+      intro: 'La salle doit être remise en état pour le shift suivant, pas simplement débarrassée en fin de soirée.',
+      items: [
+        'Tables démontées et remises en place pour le service suivant si applicable',
+        'Linge sale collecté et déposé dans le bac désigné',
+        'Stations essuyées, réorganisées et remises en position standard',
+        'Verrerie et argenterie restantes polies, rangées et comptées si nécessaire',
+        'Condiments contrôlés, vidés ou complétés selon le protocole, avec rotation FIFO appliquée',
+        'Cartes propres rangées, comptées et retirées des zones visibles par le client',
+      ],
+    },
+    {
+      title: '2. Nettoyage et zones visibles',
+      intro: 'Le nettoyage doit laisser le restaurant prêt pour un contrôle, pas seulement correct de loin.',
+      items: [
+        'Sol balayé puis lavé, avec coins et plinthes vérifiés',
+        'Tables, consoles, guéridons et plans de travail désinfectés',
+        'Toilettes clients vérifiées et laissées propres si elles relèvent du périmètre de fermeture',
+        'Zone bar nettoyée et désinfectée, y compris les surfaces visibles par le client',
+        'Poubelles vidées, sacs remplacés, marches d’entrée et terrasse vérifiées avant départ',
+      ],
+    },
+    {
+      title: '3. POS, caisse et clôture financière',
+      intro: 'La clôture financière doit être faite tant que les détails du service sont encore clairs.',
+      items: [
+        'Caisse comptée et rapprochée avec les totaux du POS',
+        'Fonds de caisse remis au niveau de départ et signé selon le process de l’établissement',
+        'Encaissements, notes chambre, paiements carte, annulations et remises clôturés dans le POS',
+        'Pourboires répartis selon la politique de l’établissement',
+        'Litiges de facturation, écarts ou validations en attente documentés et transmis au manager',
+      ],
+    },
+    {
+      title: '4. Stock, cuisine et bar',
+      intro: 'L’équipe suivante ne doit pas découvrir les manques ou les items 86’d au moment de l’ouverture.',
+      items: [
+        'Inventaire rapide des produits sensibles, vins au verre, bière pression et articles à forte rotation',
+        'Seuils de réapprovisionnement vérifiés et commande passée si nécessaire pour le lendemain',
+        'Rotation FIFO appliquée aux condiments, produits périssables et préparations',
+        'Communication finale avec la cuisine sur les items 86’d à reconduire',
+        'Bar débarrassé, glaces évacuées si nécessaire, garnitures, jus et préparations fraîches contrôlés pour le lendemain',
+      ],
+    },
+    {
+      title: '5. Sécurité, incidents et passation',
+      intro: 'Le dernier tour valide que le point de vente est sécurisé et que le manager suivant a les bonnes informations.',
+      items: [
+        'Sources de chaleur éteintes, équipements électriques sécurisés et climatisation ou chauffage réglé en mode nuit',
+        'Éclairage extérieur, terrasse, portes, fenêtres et alarme contrôlés selon le process de l’établissement',
+        'Réclamations clients, incidents techniques, pertes, casses et traçabilité allergènes documentés',
+        'Notes du shift rédigées dans le journal de communication avec réservations, VIP, événements et livraisons attendues',
+        'Mise en place de base, polissage léger et linge propre préparés pour l’ouverture si l’horaire le permet',
+        'Checklist signée par le superviseur ou le manager responsable après le dernier tour',
+      ],
+    },
+  ],
+  extractTitle: 'La fermeture protège le service du lendemain',
+  extractText:
+    'Une fermeture faible crée les problèmes du lendemain : stock manquant, écarts caisse flous, suivis client oubliés, stations sales, items 86’d non transmis et équipe d’ouverture obligée de réparer le shift précédent.',
+  extractItems: [
+    'Caisse comptée, rapprochée et fonds de caisse remis au niveau de départ',
+    'Condiments, produits périssables et préparations contrôlés avec rotation FIFO',
+    'Cuisine et bar alignés sur les items 86’d, la glace, les garnitures et la préparation du lendemain',
+    'Journal de communication complété avant signature manager',
+  ],
+  productTitle: 'Starter Pack F&B',
+  productText:
+    'Inclut checklists ouverture et fermeture restaurant, checklist service quotidien, template de briefing, SOP séquence de service, checklist inspection de table, scripts recovery et tracker allergènes.',
+  playbookTitle: 'Playbook F&B complet',
+  playbookText:
+    'La référence complète pour service restaurant, petit-déjeuner, bar, vin, room service, interaction client, mise en place, management équipe et standards qualité.',
+  relatedTitle: 'Besoin de la version ouverture ?',
+  relatedText:
+    'Utilisez la checklist ouverture restaurant pour préparer salle, stations, POS et équipe avant le début du service.',
+  relatedHref: '/checklist-ouverture-restaurant',
+  relatedCta: 'Voir la checklist ouverture restaurant',
+  faqs: [
+    {
+      question: 'Que doit contenir une checklist de fermeture restaurant ?',
+      answer:
+        'Elle doit couvrir la remise en ordre de la salle, le linge, les stations, les condiments, le nettoyage, les toilettes clients, la zone bar, la clôture POS, la caisse, les pourboires, le stock, la coordination cuisine et bar, la sécurité, les incidents, la passation et la signature manager.',
+    },
+    {
+      question: 'Qui doit signer la checklist de fermeture ?',
+      answer:
+        'Le superviseur, l’assistant manager ou le manager responsable doit la signer après le dernier tour. Le but n’est pas administratif : il s’agit de confirmer que le prochain shift ne récupère pas des problèmes non traités.',
+    },
+    {
+      question: 'La fermeture fait-elle partie de la SOP restaurant ?',
+      answer:
+        'Oui. La fermeture doit faire partie de la SOP restaurant, car elle protège le contrôle revenu, l’hygiène, l’exactitude du stock, le recovery client et la préparation du prochain service.',
+    },
+  ],
+  finalTitle: 'Fermer le restaurant en pensant au prochain service',
+  finalText:
+    'Utilisez le Starter Pack pour des outils F&B prêts à l’emploi, puis le Playbook complet lorsque vous avez besoin de toute la référence opérationnelle restaurant.',
+}
+
 const CONTENT: Record<ResourceKind, Record<Locale, ResourceContent>> = {
   sequence: { en: SEQUENCE_EN, fr: SEQUENCE_FR },
   roomService: { en: ROOM_SERVICE_EN, fr: ROOM_SERVICE_FR },
   restaurantOpening: { en: RESTAURANT_OPENING_EN, fr: RESTAURANT_OPENING_FR },
+  barOpening: { en: BAR_OPENING_EN, fr: BAR_OPENING_FR },
+  restaurantClosing: { en: RESTAURANT_CLOSING_EN, fr: RESTAURANT_CLOSING_FR },
 }
 
 export function getFbSeoMetadata(kind: ResourceKind, locale: Locale): Metadata {
   const content = CONTENT[kind][locale]
-  const alternate = CONTENT[kind][locale === 'en' ? 'fr' : 'en']
 
   return {
     title: content.metaTitle,

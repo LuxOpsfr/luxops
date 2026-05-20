@@ -47,6 +47,11 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
 
   const filteredPlaybooks =
     activeFilter === 'all' ? PLAYBOOKS : PLAYBOOKS.filter((pb) => pb.id === activeFilter)
+  const starterPacksForDisplay = [...STARTER_PACKS].sort((a, b) => {
+    if (a.id === 'fb-starter-pack') return -1
+    if (b.id === 'fb-starter-pack') return 1
+    return 0
+  })
 
   const starterCopy = isEn
     ? ['Practical templates', 'PDF + PPTX', 'FR & EN included']
@@ -316,7 +321,7 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {STARTER_PACKS.map((pack) => {
+            {starterPacksForDisplay.map((pack) => {
               const Icon = STARTER_PACK_ICONS[pack.id]
               const isPurchasable = Boolean(pack.priceId)
 

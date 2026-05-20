@@ -214,11 +214,25 @@ const FAQS_FR: FaqItem[] = [
 
 const ARTICLE_LINKS = [
   {
+    href: '/bar-opening-checklist',
+    titleEn: 'Bar Opening Checklist',
+    titleFr: 'Checklist ouverture bar',
+    bodyEn: 'Bar station, glassware, garnishes, stock, POS and final pre-service controls.',
+    bodyFr: 'Poste bar, verrerie, garnitures, stock, POS et dernier contrôle avant service.',
+  },
+  {
     href: '/restaurant-opening-checklist',
     titleEn: 'Restaurant Opening Checklist',
     titleFr: 'Checklist ouverture restaurant',
     bodyEn: 'Pre-service controls for room setup, table inspection, briefing and final checks.',
     bodyFr: 'Contrôles pré-service pour salle, dressage, briefing et inspection finale.',
+  },
+  {
+    href: '/restaurant-closing-checklist',
+    titleEn: 'Restaurant Closing Checklist',
+    titleFr: 'Checklist fermeture restaurant',
+    bodyEn: 'End-of-service reset, POS controls, cleaning, stock, handover and next-shift readiness.',
+    bodyFr: 'Remise en ordre, clôture POS, nettoyage, stock, passation et préparation du prochain shift.',
   },
   {
     href: '/food-and-beverage-service-sequence',
@@ -259,7 +273,9 @@ const ARTICLE_LINKS = [
 
 function localizeHref(locale: string, href: string) {
   const localizedSlugs: Record<string, string> = {
+    '/bar-opening-checklist': locale === 'fr' ? '/checklist-ouverture-bar' : '/bar-opening-checklist',
     '/restaurant-opening-checklist': locale === 'fr' ? '/checklist-ouverture-restaurant' : '/restaurant-opening-checklist',
+    '/restaurant-closing-checklist': locale === 'fr' ? '/checklist-fermeture-restaurant' : '/restaurant-closing-checklist',
     '/food-and-beverage-service-sequence': locale === 'fr' ? '/sequence-service-restaurant-hotel' : '/food-and-beverage-service-sequence',
     '/hotel-room-service-checklist': locale === 'fr' ? '/checklist-room-service-hotel' : '/hotel-room-service-checklist',
   }
