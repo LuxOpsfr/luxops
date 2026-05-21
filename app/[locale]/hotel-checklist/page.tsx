@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
+import PriceDisplay from '@/components/PriceDisplay'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
@@ -450,7 +451,8 @@ export default async function HotelChecklistPage({ params }: { params: Promise<{
               href={`/${locale}/playbooks`}
               className="inline-block border border-white/40 text-white font-semibold px-8 py-4 rounded-lg transition-colors hover:bg-white/10"
             >
-              {isEN ? 'Get the Bundle · €199' : 'Obtenir le Bundle · 199€'}
+              {isEN ? 'Get the Bundle · ' : 'Obtenir le Bundle · '}
+              <PriceDisplay productType="bundle" />
             </Link>
           </div>
         </div>

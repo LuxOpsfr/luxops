@@ -1,15 +1,20 @@
 import { NextRequest, NextResponse } from 'next/server'
 import Stripe from 'stripe'
+import { isSupportedCurrency, stripeCurrency } from '@/lib/pricing'
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   apiVersion: '2026-02-25.clover',
 })
 
 const VALID_PRICE_IDS = new Set([
+  'price_1TZRWjDVLJTOFkjUjIKWDnyi', // Bundle
   'price_1TBZB5DVLJTOFkjUwmgvTPRW', // Bundle
+  'price_1TZRZZDVLJTOFkjUd3B9x44e', // Front Office
   'price_1TBZ94DVLJTOFkjUsH59B7x7', // Front Office
   'price_1TBZ9TDVLJTOFkjUwWnoKaGk', // Housekeeping
+  'price_1TZRYvDVLJTOFkjUNuiqbADG', // F&B
   'price_1TBZ9iDVLJTOFkjU3Os9VLRc', // F&B
+  'price_1TZRY9DVLJTOFkjUfkYQJAsW', // Spa & Wellness
   'price_1TBZ9vDVLJTOFkjUT1FHhqUi', // Spa & Wellness
   'price_1TUONHDVLJTOFkjUjE391FrX', // Front Office Starter Pack
   'price_1TUONXDVLJTOFkjUYvR8PUiS', // Housekeeping Inspection Kit
@@ -22,7 +27,7 @@ function cleanMetadataValue(value: unknown) {
 
 export async function POST(request: NextRequest) {
   try {
-    const { items, locale, posthogDistinctId, posthogSessionId } = await request.json()
+    const { items, locale, currency, posthogDistinctId, posthogSessionId } = await request.json()
 
     if (!Array.isArray(items) || items.length === 0) {
       return NextResponse.json({ error: 'No items' }, { status: 400 })
@@ -36,10 +41,12 @@ export async function POST(request: NextRequest) {
 
     const origin = request.headers.get('origin') || 'https://www.luxops.fr'
     const lang = locale === 'fr' ? 'fr' : 'en'
+    const checkoutCurrency = isSupportedCurrency(currency) ? currency : 'EUR'
 
     const session = await stripe.checkout.sessions.create({
       ui_mode: 'embedded',
       mode: 'payment',
+      currency: stripeCurrency(checkoutCurrency),
       line_items: items.map((item: { priceId: string }) => ({
         price: item.priceId,
         quantity: 1,
@@ -50,6 +57,7 @@ export async function POST(request: NextRequest) {
         locale: lang,
         ...(cleanMetadataValue(posthogDistinctId) && { posthog_distinct_id: cleanMetadataValue(posthogDistinctId) }),
         ...(cleanMetadataValue(posthogSessionId) && { posthog_session_id: cleanMetadataValue(posthogSessionId) }),
+        currency: checkoutCurrency,
         price_ids: items.map((item: { priceId: string }) => item.priceId).join(','),
       },
     })

@@ -5,6 +5,8 @@ import { loadStripe } from '@stripe/stripe-js'
 import { X, ShoppingCart, Trash2, ArrowRight, Lock } from 'lucide-react'
 import { useCart } from '@/context/CartContext'
 import posthog from 'posthog-js'
+import { useCurrency } from '@/context/CurrencyContext'
+import { formatCurrencyAmount, PricedProductType } from '@/lib/pricing'
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!)
 
@@ -18,8 +20,15 @@ export default function CartDrawer({ locale }: CartDrawerProps) {
   const [loading, setLoading] = useState(false)
   const checkoutRef = useRef<{ destroy: () => void } | null>(null)
   const isEn = locale === 'en'
+  const { currency, priceFor } = useCurrency()
 
-  const total = items.reduce((sum, item) => sum + item.price, 0)
+  const getItemProductType = (item: { price: number; productType?: PricedProductType }) =>
+    item.productType ?? (item.price === 29 ? 'starter_pack' : item.price === 199 ? 'bundle' : 'playbook')
+
+  const itemPrice = (item: { price: number; productType?: PricedProductType }) =>
+    priceFor(getItemProductType(item))
+
+  const total = items.reduce((sum, item) => sum + itemPrice(item), 0)
 
   const resetCheckout = useCallback(() => {
     checkoutRef.current?.destroy()
@@ -58,6 +67,7 @@ export default function CartDrawer({ locale }: CartDrawerProps) {
             body: JSON.stringify({
               items: items.map(i => ({ priceId: i.priceId })),
               locale,
+              currency,
               posthogDistinctId: posthog.get_distinct_id(),
               posthogSessionId: posthog.get_session_id?.(),
             }),
@@ -140,7 +150,9 @@ export default function CartDrawer({ locale }: CartDrawerProps) {
                     <li key={item.priceId} className="flex items-center justify-between py-4">
                       <div>
                         <p className="text-sm font-medium text-[#111111]">{item.title}</p>
-                        <p className="text-sm text-gray-400 mt-0.5">€{item.price}</p>
+                        <p className="text-sm text-gray-400 mt-0.5">
+                          {formatCurrencyAmount(itemPrice(item), currency, locale)}
+                        </p>
                       </div>
                       <button
                         onClick={() => removeItem(item.priceId)}
@@ -159,7 +171,9 @@ export default function CartDrawer({ locale }: CartDrawerProps) {
               <div className="px-6 py-5 border-t border-gray-100 bg-white">
                 <div className="flex items-center justify-between mb-5">
                   <span className="text-sm text-gray-500">{isEn ? 'Total' : 'Total'}</span>
-                  <span className="text-2xl font-bold text-[#111111]">€{total}</span>
+                  <span className="text-2xl font-bold text-[#111111]">
+                    {formatCurrencyAmount(total, currency, locale)}
+                  </span>
                 </div>
                 <button
                   onClick={() => {
@@ -168,11 +182,13 @@ export default function CartDrawer({ locale }: CartDrawerProps) {
                     posthog.capture('cart_checkout_started', {
                       item_count: items.length,
                       total,
+                      currency,
                       items: items.map(i => ({
                         price_id: i.priceId,
                         title: i.title,
-                        price: i.price,
-                        product_type: i.productType ?? (i.price === 29 ? 'starter_pack' : i.price === 199 ? 'bundle' : 'playbook'),
+                        price: itemPrice(i),
+                        currency,
+                        product_type: getItemProductType(i),
                       })),
                     })
                   }}

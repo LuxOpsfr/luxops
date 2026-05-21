@@ -25,12 +25,14 @@ export default function AddToCartButton({ item, className, children, addedLabel 
         price_id: item.priceId,
         title: item.title,
         price: item.price,
+        currency: item.currency,
         product_type: productType,
       })
       posthog.capture(productType === 'starter_pack' ? 'starter_pack_added_to_cart' : 'playbook_added_to_cart', {
         price_id: item.priceId,
         title: item.title,
         price: item.price,
+        currency: item.currency,
         product_type: productType,
       })
     }

@@ -6,6 +6,7 @@ import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import SiteShell from '@/components/SiteShell'
 import { CartProvider } from '@/context/CartContext'
+import { CurrencyProvider } from '@/context/CurrencyContext'
 import { Analytics } from '@vercel/analytics/next'
 import { organizationSchema } from '@/lib/seo'
 
@@ -114,11 +115,13 @@ export default async function LocaleLayout({
         />
 
         <NextIntlClientProvider messages={messages}>
-          <CartProvider>
-            <SiteShell locale={locale}>
-              {children}
-            </SiteShell>
-          </CartProvider>
+          <CurrencyProvider locale={locale}>
+            <CartProvider>
+              <SiteShell locale={locale}>
+                {children}
+              </SiteShell>
+            </CartProvider>
+          </CurrencyProvider>
         </NextIntlClientProvider>
         <Analytics />
       </body>

@@ -9,23 +9,27 @@ interface SendPlaybookEmailParams {
   locale?: string
 }
 
-const BUNDLE_PRICE_ID = 'price_1TBZB5DVLJTOFkjUwmgvTPRW'
+const BUNDLE_PRICE_ID = 'price_1TZRWjDVLJTOFkjUjIKWDnyi'
 
 const ALL_INDIVIDUAL_PRICE_IDS = [
-  'price_1TBZ94DVLJTOFkjUsH59B7x7',
+  'price_1TZRZZDVLJTOFkjUd3B9x44e',
   'price_1TBZ9TDVLJTOFkjUwWnoKaGk',
-  'price_1TBZ9iDVLJTOFkjU3Os9VLRc',
-  'price_1TBZ9vDVLJTOFkjUT1FHhqUi',
+  'price_1TZRYvDVLJTOFkjUNuiqbADG',
+  'price_1TZRY9DVLJTOFkjUfkYQJAsW',
 ]
 
 const PLAYBOOK_NAMES: Record<string, { en: string; fr: string }> = {
   'price_1TUONHDVLJTOFkjUjE391FrX': { en: 'Front Office Starter Pack', fr: 'Starter Pack Front Office' },
   'price_1TUONXDVLJTOFkjUYvR8PUiS': { en: 'Housekeeping Inspection Kit', fr: 'Kit Inspection Housekeeping' },
   'price_1TVugvDVLJTOFkjUXI0cngur': { en: 'F&B Service Starter Pack', fr: 'Starter Pack F&B' },
+  'price_1TZRZZDVLJTOFkjUd3B9x44e': { en: 'Front Office Playbook', fr: 'Playbook Front Office' },
   'price_1TBZ94DVLJTOFkjUsH59B7x7': { en: 'Front Office Playbook', fr: 'Playbook Front Office' },
   'price_1TBZ9TDVLJTOFkjUwWnoKaGk': { en: 'Housekeeping Playbook', fr: 'Playbook Housekeeping' },
+  'price_1TZRYvDVLJTOFkjUNuiqbADG': { en: 'F&B Playbook', fr: 'Playbook F&B' },
   'price_1TBZ9iDVLJTOFkjU3Os9VLRc': { en: 'F&B Playbook', fr: 'Playbook F&B' },
+  'price_1TZRY9DVLJTOFkjUfkYQJAsW': { en: 'Spa & Wellness Playbook', fr: 'Playbook Spa & Wellness' },
   'price_1TBZ9vDVLJTOFkjUT1FHhqUi': { en: 'Spa & Wellness Playbook', fr: 'Playbook Spa & Wellness' },
+  'price_1TZRWjDVLJTOFkjUjIKWDnyi': { en: 'Complete Bundle: 4 Playbooks', fr: 'Bundle Complet : 4 Playbooks' },
   'price_1TBZB5DVLJTOFkjUwmgvTPRW': { en: 'Complete Bundle: 4 Playbooks', fr: 'Bundle Complet : 4 Playbooks' },
 }
 

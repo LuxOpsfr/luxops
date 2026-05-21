@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 import { Mail } from 'lucide-react'
+import CurrencySelector from '@/components/CurrencySelector'
 
 interface FooterProps {
   locale: string
@@ -143,12 +144,15 @@ export default function Footer({ locale }: FooterProps) {
 
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-gray-500 text-sm">{t('copyright')}</p>
-          <Link
-            href={`/${locale}/legal`}
-            className="text-gray-500 hover:text-gray-300 text-sm transition-colors"
-          >
-            {t('legal')}
-          </Link>
+          <div className="flex flex-col sm:flex-row items-center gap-5">
+            <CurrencySelector locale={locale} />
+            <Link
+              href={`/${locale}/legal`}
+              className="text-gray-500 hover:text-gray-300 text-sm transition-colors"
+            >
+              {t('legal')}
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

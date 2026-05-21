@@ -15,7 +15,7 @@ export interface PlaybookEntry {
 export const PLAYBOOKS: PlaybookEntry[] = [
   {
     id: 'fo',
-    priceId: 'price_1TBZ94DVLJTOFkjUsH59B7x7',
+    priceId: 'price_1TZRZZDVLJTOFkjUd3B9x44e',
     previewImage: '/Previews/fo-preview.jpg.png',
     title: { en: 'Front Office Playbook', fr: 'Playbook Front Office' },
     dept: { en: 'Front Office', fr: 'Front Office' },
@@ -131,7 +131,7 @@ export const PLAYBOOKS: PlaybookEntry[] = [
   },
   {
     id: 'fb',
-    priceId: 'price_1TBZ9iDVLJTOFkjU3Os9VLRc',
+    priceId: 'price_1TZRYvDVLJTOFkjUNuiqbADG',
     previewImage: '/Previews/fb-preview.jpg.png',
     title: { en: 'F&B Playbook', fr: 'Playbook F&B' },
     dept: { en: 'Food & Beverage', fr: 'Food & Beverage' },
@@ -188,7 +188,7 @@ export const PLAYBOOKS: PlaybookEntry[] = [
   {
     previewImage: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&h=500&fit=crop&q=80',
     id: 'spa',
-    priceId: 'price_1TBZ9vDVLJTOFkjUT1FHhqUi',
+    priceId: 'price_1TZRY9DVLJTOFkjUfkYQJAsW',
     title: { en: 'Spa & Wellness Playbook', fr: 'Playbook Spa & Wellness' },
     dept: { en: 'Spa & Wellness', fr: 'Spa & Wellness' },
     desc: {
@@ -241,4 +241,4 @@ export const PLAYBOOKS: PlaybookEntry[] = [
   },
 ]
 
-export const BUNDLE_PRICE_ID = 'price_1TBZB5DVLJTOFkjUwmgvTPRW'
+export const BUNDLE_PRICE_ID = 'price_1TZRWjDVLJTOFkjUjIKWDnyi'

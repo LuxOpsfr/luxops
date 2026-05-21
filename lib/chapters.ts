@@ -26,18 +26,22 @@ export interface Playbook {
 
 /** Map Stripe price_id → playbook id */
 export const PRICE_TO_PLAYBOOK: Record<string, string> = {
+  price_1TZRZZDVLJTOFkjUd3B9x44e: 'front-office',
   price_1TBZ94DVLJTOFkjUsH59B7x7: 'front-office',
   price_1TBZ9TDVLJTOFkjUwWnoKaGk: 'housekeeping',
+  price_1TZRYvDVLJTOFkjUNuiqbADG: 'fb',
   price_1TBZ9iDVLJTOFkjU3Os9VLRc: 'fb',
   price_1TBdcNDVLJTOFkjURLNAORmJ: 'spa', // test 0€
+  price_1TZRY9DVLJTOFkjUfkYQJAsW: 'spa',
   price_1TBZ9vDVLJTOFkjUT1FHhqUi: 'spa',
+  price_1TZRWjDVLJTOFkjUjIKWDnyi: 'bundle',
   price_1TBZB5DVLJTOFkjUwmgvTPRW: 'bundle', // bundle = all 4
   price_1TUONHDVLJTOFkjUjE391FrX: 'fo-starter-pack',
   price_1TUONXDVLJTOFkjUYvR8PUiS: 'hsk-starter-pack',
   price_1TVugvDVLJTOFkjUXI0cngur: 'fb-starter-pack',
 }
 
-export const BUNDLE_PRICE_ID = 'price_1TBZB5DVLJTOFkjUwmgvTPRW'
+export const BUNDLE_PRICE_ID = 'price_1TZRWjDVLJTOFkjUjIKWDnyi'
 
 export const PLAYBOOKS: Record<string, Playbook> = {
   'fo-starter-pack': {

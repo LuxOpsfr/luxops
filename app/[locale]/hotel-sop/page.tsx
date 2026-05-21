@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { breadcrumbSchema, faqSchema, localizedPath } from '@/lib/seo'
 import TrackedLink from '@/components/TrackedLink'
+import PriceDisplay from '@/components/PriceDisplay'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
@@ -94,7 +95,6 @@ const STARTER_PACKS_EN = [
   {
     label: 'Front Office',
     title: 'Front Office Starter Pack',
-    price: '€29',
     href: '/en/playbooks/fo-starter-pack',
     desc: 'Front desk checklists, handover template and guest communication scripts for daily reception operations.',
     points: ['Check-in and check-out basics', 'Shift handover template', 'Complaint scripts'],
@@ -102,7 +102,6 @@ const STARTER_PACKS_EN = [
   {
     label: 'Housekeeping',
     title: 'Housekeeping Inspection Kit',
-    price: '€29',
     href: '/en/playbooks/hsk-starter-pack',
     desc: 'Room inspection checklists, supervisor control sheets and defect tracking tools for housekeeping consistency.',
     points: ['Room inspection checklists', 'Supervisor control sheet', 'Defect tracking'],
@@ -110,7 +109,6 @@ const STARTER_PACKS_EN = [
   {
     label: 'Food & Beverage',
     title: 'F&B Service Starter Pack',
-    price: '€29',
     href: '/en/playbooks/fb-starter-pack',
     desc: 'Restaurant, bar and room service checklists, scripts and control tools for daily F&B execution.',
     points: ['Service checklists', 'Room service flow', 'Recovery scripts'],
@@ -121,7 +119,6 @@ const STARTER_PACKS_FR = [
   {
     label: 'Réception',
     title: 'Starter Pack Front Office',
-    price: '29 €',
     href: '/fr/playbooks/fo-starter-pack',
     desc: 'Checklists réception, modèle de passation et scripts de communication client pour structurer les bases du service.',
     points: ['Bases check-in et check-out', 'Modèle de passation', 'Scripts réclamation'],
@@ -129,7 +126,6 @@ const STARTER_PACKS_FR = [
   {
     label: 'Housekeeping',
     title: 'Kit Inspection Housekeeping',
-    price: '29 €',
     href: '/fr/playbooks/hsk-starter-pack',
     desc: 'Checklists inspection chambre, feuilles de contrôle gouvernante et suivi des défauts pour renforcer la régularité.',
     points: ['Checklists inspection chambre', 'Feuille de contrôle gouvernante', 'Suivi des défauts'],
@@ -137,7 +133,6 @@ const STARTER_PACKS_FR = [
   {
     label: 'Food & Beverage',
     title: 'Starter Pack F&B',
-    price: '29 €',
     href: '/fr/playbooks/fb-starter-pack',
     desc: 'Checklists restaurant, bar et room service, scripts et outils de contrôle pour l’exécution quotidienne.',
     points: ['Checklists service', 'Flux room service', 'Scripts recovery'],
@@ -329,7 +324,8 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
               </p>
             </div>
             <p className="text-sm font-semibold text-[#1A2E44]">
-              {isEN ? 'From €29' : 'À partir de 29 €'}
+              {isEN ? 'From ' : 'À partir de '}
+              <PriceDisplay productType="starter_pack" />
             </p>
           </div>
 
@@ -343,7 +339,7 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
                     </p>
                     <h3 className="text-xl font-bold text-[#1A2E44]">{pack.title}</h3>
                   </div>
-                  <span className="text-xl font-bold text-[#1A2E44]">{pack.price}</span>
+                  <PriceDisplay productType="starter_pack" className="text-xl font-bold text-[#1A2E44]" />
                 </div>
                 <p className="text-sm text-gray-600 leading-relaxed mb-5">{pack.desc}</p>
                 <ul className="space-y-2 mb-6">
@@ -621,8 +617,8 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
           </h2>
           <p className="text-gray-300 mb-8">
             {isEN
-              ? 'If you need practical hotel SOP tools quickly, start with a €29 starter pack. If you need the full procedure reference, choose the department playbook at €67.'
-              : 'Si vous avez besoin rapidement d\'outils SOP pratiques, commencez par un starter pack à 29 €. Si vous cherchez la référence procédure complète, choisissez le playbook département à 67 €.'}
+              ? 'If you need practical hotel SOP tools quickly, start with a starter pack. If you need the full procedure reference, choose the department playbook.'
+              : 'Si vous avez besoin rapidement d\'outils SOP pratiques, commencez par un starter pack. Si vous cherchez la référence procédure complète, choisissez le playbook département.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <TrackedLink

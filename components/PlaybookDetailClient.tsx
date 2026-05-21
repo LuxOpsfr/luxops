@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { ArrowLeft, Check, ChevronDown, ShoppingCart } from 'lucide-react'
 import { PlaybookEntry } from '@/content/playbooks/data'
 import { useCart } from '@/context/CartContext'
+import { useCurrency } from '@/context/CurrencyContext'
 import TrackedLink from '@/components/TrackedLink'
 import posthog from 'posthog-js'
 
@@ -30,6 +31,7 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
   const lang = locale as 'en' | 'fr'
   const [openFaq, setOpenFaq] = useState<number | null>(null)
   const { addItem, items } = useCart()
+  const { currency, priceFor, formatProductPrice } = useCurrency()
 
   const inCart = items.some((i) => i.priceId === pb.priceId)
   const starterPackHref =
@@ -41,18 +43,26 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
 
   const handleAddToCart = () => {
     if (!inCart) {
-      addItem({ priceId: pb.priceId, title: pb.title[lang], price: 67, productType: 'playbook' })
+      addItem({
+        priceId: pb.priceId,
+        title: pb.title[lang],
+        price: priceFor('playbook'),
+        currency,
+        productType: 'playbook',
+      })
       posthog.capture('product_added_to_cart', {
         price_id: pb.priceId,
         title: pb.title[lang],
-        price: 67,
+        price: priceFor('playbook'),
+        currency,
         locale,
         product_type: 'playbook',
       })
       posthog.capture('playbook_added_to_cart', {
         price_id: pb.priceId,
         title: pb.title[lang],
-        price: 67,
+        price: priceFor('playbook'),
+        currency,
         locale,
         product_type: 'playbook',
       })
@@ -125,7 +135,9 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
                 <ShoppingCart size={16} />
                 {inCart
                   ? (isEn ? 'In Cart' : 'Ajouté')
-                  : (isEn ? 'Buy Playbook · €67' : 'Acheter · 67 €')}
+                  : (isEn
+                    ? `Buy Playbook · ${formatProductPrice('playbook')}`
+                    : `Acheter · ${formatProductPrice('playbook')}`)}
               </button>
               {starterPackHref && (
                 <TrackedLink
@@ -135,12 +147,16 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
                     source_page: `/${locale}/playbooks/${pb.id}`,
                     placement: 'playbook_hero',
                     product: pb.id === 'fo' ? 'front_office_starter_pack' : 'housekeeping_inspection_kit',
-                    cta_label: isEn ? 'View Starter Pack · €29' : 'Voir le Starter Pack · 29 €',
+                    cta_label: isEn
+                      ? `View Starter Pack · ${formatProductPrice('starter_pack')}`
+                      : `Voir le Starter Pack · ${formatProductPrice('starter_pack')}`,
                   }}
                   className="px-8 py-4 font-bold text-[#003d9b] border border-[#003d9b] hover:bg-[#eef4ff] transition-colors"
                   style={{ borderRadius: '0.125rem' }}
                 >
-                  {isEn ? 'View Starter Pack · €29' : 'Voir le Starter Pack · 29 €'}
+                  {isEn
+                    ? `View Starter Pack · ${formatProductPrice('starter_pack')}`
+                    : `Voir le Starter Pack · ${formatProductPrice('starter_pack')}`}
                 </TrackedLink>
               )}
               <TrackedLink
@@ -452,7 +468,9 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
             >
               {inCart
                 ? (isEn ? '✓ In Cart' : '✓ Ajouté')
-                : (isEn ? 'Buy Playbook · €67' : 'Acheter le Playbook · 67 €')}
+                : (isEn
+                  ? `Buy Playbook · ${formatProductPrice('playbook')}`
+                  : `Acheter le Playbook · ${formatProductPrice('playbook')}`)}
             </button>
             <Link
               href={`/${locale}/playbooks`}

@@ -45,6 +45,16 @@ export const DOWNLOADS: Record<string, PlaybookDownload> = {
   },
 
   // Front Office - €67
+  price_1TZRZZDVLJTOFkjUd3B9x44e: {
+    titleEn: 'Front Office Playbook',
+    titleFr: 'Playbook Front Office',
+    pdfEn: 'PLACEHOLDER_FO_PDF_EN',
+    pptEn: 'PLACEHOLDER_FO_PPT_EN',
+    pdfFr: 'PLACEHOLDER_FO_PDF_FR',
+    pptFr: 'PLACEHOLDER_FO_PPT_FR',
+  },
+
+  // Front Office - legacy €67
   price_1TBZ94DVLJTOFkjUsH59B7x7: {
     titleEn: 'Front Office Playbook',
     titleFr: 'Playbook Front Office',
@@ -65,6 +75,16 @@ export const DOWNLOADS: Record<string, PlaybookDownload> = {
   },
 
   // F&B - €67
+  price_1TZRYvDVLJTOFkjUNuiqbADG: {
+    titleEn: 'F&B Playbook',
+    titleFr: 'Playbook F&B',
+    pdfEn: 'PLACEHOLDER_FB_PDF_EN',
+    pptEn: 'PLACEHOLDER_FB_PPT_EN',
+    pdfFr: 'PLACEHOLDER_FB_PDF_FR',
+    pptFr: 'PLACEHOLDER_FB_PPT_FR',
+  },
+
+  // F&B - legacy €67
   price_1TBZ9iDVLJTOFkjU3Os9VLRc: {
     titleEn: 'F&B Playbook',
     titleFr: 'Playbook F&B',
@@ -85,6 +105,16 @@ export const DOWNLOADS: Record<string, PlaybookDownload> = {
   },
 
   // Spa & Wellness - €67
+  price_1TZRY9DVLJTOFkjUfkYQJAsW: {
+    titleEn: 'Spa & Wellness Playbook',
+    titleFr: 'Playbook Spa & Wellness',
+    pdfEn: 'PLACEHOLDER_SPA_PDF_EN',
+    pptEn: 'PLACEHOLDER_SPA_PPT_EN',
+    pdfFr: 'PLACEHOLDER_SPA_PDF_FR',
+    pptFr: 'PLACEHOLDER_SPA_PPT_FR',
+  },
+
+  // Spa & Wellness - legacy €67
   price_1TBZ9vDVLJTOFkjUT1FHhqUiY: {
     titleEn: 'Spa & Wellness Playbook',
     titleFr: 'Playbook Spa & Wellness',
@@ -95,6 +125,17 @@ export const DOWNLOADS: Record<string, PlaybookDownload> = {
   },
 
   // Bundle - €199 (all 4 playbooks)
+  price_1TZRWjDVLJTOFkjUjIKWDnyi: {
+    titleEn: 'Complete Bundle: All 4 Playbooks',
+    titleFr: 'Bundle Complet : 4 Playbooks',
+    // Bundle uses same links as individual playbooks, handled separately in email
+    pdfEn: 'BUNDLE',
+    pptEn: 'BUNDLE',
+    pdfFr: 'BUNDLE',
+    pptFr: 'BUNDLE',
+  },
+
+  // Bundle - legacy €199 (all 4 playbooks)
   price_1TBZB5DVLJTOFkjUwmgvTPRW: {
     titleEn: 'Complete Bundle: All 4 Playbooks',
     titleFr: 'Bundle Complet : 4 Playbooks',
@@ -106,11 +147,11 @@ export const DOWNLOADS: Record<string, PlaybookDownload> = {
   },
 }
 
-export const BUNDLE_PRICE_ID = 'price_1TBZB5DVLJTOFkjUwmgvTPRW'
+export const BUNDLE_PRICE_ID = 'price_1TZRWjDVLJTOFkjUjIKWDnyi'
 
 export const ALL_PLAYBOOK_PRICE_IDS = [
-  'price_1TBZ94DVLJTOFkjUsH59B7x7',
+  'price_1TZRZZDVLJTOFkjUd3B9x44e',
   'price_1TBZ9TDVLJTOFkjUwWnoKaGk',
-  'price_1TBZ9iDVLJTOFkjU3Os9VLRc',
-  'price_1TBZ9vDVLJTOFkjUT1FHhqUiY',
+  'price_1TZRYvDVLJTOFkjUNuiqbADG',
+  'price_1TZRY9DVLJTOFkjUfkYQJAsW',
 ]

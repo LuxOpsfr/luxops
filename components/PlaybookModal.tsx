@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { X, Check, FileText, Globe, ChevronDown, ChevronUp } from 'lucide-react'
 import { useCart } from '@/context/CartContext'
 import type { PlaybookEntry } from '@/content/playbooks/data'
+import { useCurrency } from '@/context/CurrencyContext'
 
 interface PlaybookModalProps {
   isOpen: boolean
@@ -16,6 +17,7 @@ export default function PlaybookModal({ isOpen, onClose, locale, playbook }: Pla
   const [selectedLang, setSelectedLang] = useState<'en' | 'fr'>(locale as 'en' | 'fr')
   const [chaptersExpanded, setChaptersExpanded] = useState(false)
   const { addItem, items, openCart } = useCart()
+  const { currency, priceFor, formatProductPrice } = useCurrency()
   const isEn = locale === 'en'
   const PREVIEW_COUNT = 5
 
@@ -52,7 +54,9 @@ export default function PlaybookModal({ isOpen, onClose, locale, playbook }: Pla
       addItem({
         priceId: playbook!.priceId,
         title: `${title} (${selectedLang.toUpperCase()})`,
-        price: 67,
+        price: priceFor('playbook'),
+        currency,
+        productType: 'playbook',
       })
       onClose()
     }
@@ -111,7 +115,9 @@ export default function PlaybookModal({ isOpen, onClose, locale, playbook }: Pla
             <div className="flex items-start justify-between mt-3">
               <h2 className="text-xl font-bold text-[#111111] pr-4 leading-tight">{title}</h2>
               <div className="flex-shrink-0 text-right">
-                <span className="text-2xl font-bold text-[#111111]">€67</span>
+                <span className="text-2xl font-bold text-[#111111]">
+                  {formatProductPrice('playbook')}
+                </span>
                 <div className="text-xs text-gray-400">{playbook.pages}</div>
               </div>
             </div>
@@ -246,9 +252,9 @@ export default function PlaybookModal({ isOpen, onClose, locale, playbook }: Pla
                 {isEn ? 'In Cart · View Cart' : 'Ajouté · Voir le Panier'}
               </>
             ) : isEn ? (
-              `Add to Cart · €67 · ${selectedLang === 'en' ? 'English' : 'Français'}`
+              `Add to Cart · ${formatProductPrice('playbook')} · ${selectedLang === 'en' ? 'English' : 'Français'}`
             ) : (
-              `Ajouter au Panier · 67€ · ${selectedLang === 'en' ? 'English' : 'Français'}`
+              `Ajouter au Panier · ${formatProductPrice('playbook')} · ${selectedLang === 'en' ? 'English' : 'Français'}`
             )}
           </button>
 

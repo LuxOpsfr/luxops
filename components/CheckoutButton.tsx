@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import posthog from 'posthog-js'
+import { useCurrency } from '@/context/CurrencyContext'
 
 interface CheckoutButtonProps {
   priceId: string
@@ -12,6 +13,7 @@ interface CheckoutButtonProps {
 
 export default function CheckoutButton({ priceId, locale, className, children }: CheckoutButtonProps) {
   const [loading, setLoading] = useState(false)
+  const { currency } = useCurrency()
 
   async function handleCheckout() {
     setLoading(true)
@@ -26,6 +28,7 @@ export default function CheckoutButton({ priceId, locale, className, children }:
         body: JSON.stringify({
           priceId,
           locale,
+          currency,
           posthogDistinctId: posthog.get_distinct_id(),
           posthogSessionId: posthog.get_session_id?.(),
         }),

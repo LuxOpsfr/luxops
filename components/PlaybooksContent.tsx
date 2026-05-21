@@ -16,6 +16,7 @@ import Link from 'next/link'
 import AddToCartButton from '@/components/AddToCartButton'
 import { PLAYBOOKS, BUNDLE_PRICE_ID } from '@/content/playbooks/data'
 import { STARTER_PACKS } from '@/content/starter-packs/data'
+import { useCurrency } from '@/context/CurrencyContext'
 
 const DEPT_ICONS = {
   fo: Building2,
@@ -34,6 +35,7 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
   const t = useTranslations('playbooks_page')
   const isEn = locale === 'en'
   const lang = locale as 'en' | 'fr'
+  const { currency, priceFor, formatProductPrice } = useCurrency()
 
   const [activeFilter, setActiveFilter] = useState<string>('all')
 
@@ -80,7 +82,9 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                   className="inline-flex justify-center items-center gap-2 px-7 py-4 bg-[#003d9b] text-white font-bold text-sm hover:bg-[#002d7a] transition-colors"
                   style={{ borderRadius: '0.125rem' }}
                 >
-                  {isEn ? 'View starter packs at €29' : 'Voir les starter packs à 29€'}
+                  {isEn
+                    ? `View starter packs at ${formatProductPrice('starter_pack')}`
+                    : `Voir les starter packs à ${formatProductPrice('starter_pack')}`}
                   <ArrowRight size={16} />
                 </a>
                 <a
@@ -88,7 +92,9 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                   className="inline-flex justify-center items-center gap-2 px-7 py-4 border border-[#c3c6d6] text-[#0a1d2e] font-bold text-sm hover:border-[#003d9b] hover:text-[#003d9b] transition-colors"
                   style={{ borderRadius: '0.125rem' }}
                 >
-                  {isEn ? 'View playbooks at €67' : 'Voir les playbooks à 67€'}
+                  {isEn
+                    ? `View playbooks at ${formatProductPrice('playbook')}`
+                    : `Voir les playbooks à ${formatProductPrice('playbook')}`}
                 </a>
                 <a
                   href={`/${locale}/free-hotel-procedures`}
@@ -109,7 +115,9 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                     </p>
                   </div>
                   <div className="flex items-end gap-3 mb-6">
-                    <span className="font-display text-6xl font-extrabold text-[#0a1d2e]">€29</span>
+                    <span className="font-display text-6xl font-extrabold text-[#0a1d2e]">
+                      {formatProductPrice('starter_pack')}
+                    </span>
                     <span className="text-sm text-[#4f6074] pb-3">
                       {isEn ? 'practical tools' : 'outils pratiques'}
                     </span>
@@ -129,7 +137,9 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                     {isEn ? 'Full Playbook' : 'Playbook complet'}
                   </p>
                   <div className="flex items-end gap-3 mb-5">
-                    <span className="font-display text-4xl font-extrabold text-[#0a1d2e]">€67</span>
+                    <span className="font-display text-4xl font-extrabold text-[#0a1d2e]">
+                      {formatProductPrice('playbook')}
+                    </span>
                     <span className="text-sm text-[#4f6074] pb-2">
                       {isEn ? 'per playbook' : 'par playbook'}
                     </span>
@@ -250,7 +260,7 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                       {pb.dept[lang]}
                     </span>
                     <span className="font-display text-2xl font-extrabold text-[#0a1d2e]">
-                      {isEn ? '€67' : '67€'}
+                      {formatProductPrice('playbook')}
                     </span>
                   </div>
 
@@ -273,13 +283,16 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                       item={{
                         priceId: pb.priceId,
                         title: pb.title[lang],
-                        price: 67,
+                        price: priceFor('playbook'),
+                        currency,
                         productType: 'playbook',
                       }}
                       addedLabel={isEn ? 'In Cart' : 'Ajouté'}
                       className="w-full flex items-center justify-center gap-2 py-3 bg-[#003d9b] text-white font-bold text-xs uppercase tracking-widest hover:bg-[#002d7a] transition-colors rounded-[2px]"
                     >
-                      {isEn ? 'Add to cart · €67' : 'Ajouter au panier · 67€'}
+                      {isEn
+                        ? `Add to cart · ${formatProductPrice('playbook')}`
+                        : `Ajouter au panier · ${formatProductPrice('playbook')}`}
                     </AddToCartButton>
                     <Link
                       href={`/${locale}/playbooks/${pb.id}`}
@@ -367,7 +380,7 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                         {pack.category[lang]}
                       </span>
                       <span className="font-display text-2xl font-extrabold text-[#0a1d2e]">
-                        {isEn ? '€29' : '29€'}
+                        {formatProductPrice('starter_pack')}
                       </span>
                     </div>
 
@@ -391,13 +404,16 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                           item={{
                             priceId: pack.priceId,
                             title: pack.shortTitle[lang],
-                            price: 29,
+                            price: priceFor('starter_pack'),
+                            currency,
                             productType: 'starter_pack',
                           }}
                           addedLabel={isEn ? 'In Cart' : 'Ajouté'}
                           className="w-full flex items-center justify-center gap-2 py-3 bg-[#003d9b] text-white font-bold text-xs uppercase tracking-widest hover:bg-[#002d7a] transition-colors rounded-[2px]"
                         >
-                          {isEn ? 'Add to cart · €29' : 'Ajouter au panier · 29€'}
+                          {isEn
+                            ? `Add to cart · ${formatProductPrice('starter_pack')}`
+                            : `Ajouter au panier · ${formatProductPrice('starter_pack')}`}
                         </AddToCartButton>
                       ) : (
                         <button
@@ -460,24 +476,33 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                   {isEn ? 'Bundle price' : 'Prix bundle'}
                 </p>
                 <div className="flex items-end gap-3 mb-3">
-                  <span className="font-display text-5xl font-extrabold">{isEn ? '€199' : '199€'}</span>
-                  <span className="text-sm opacity-75 pb-2">{isEn ? 'instead of €268' : 'au lieu de 268€'}</span>
+                  <span className="font-display text-5xl font-extrabold">{formatProductPrice('bundle')}</span>
+                  <span className="text-sm opacity-75 pb-2">
+                    {isEn
+                      ? `instead of ${formatProductPrice('playbook')} x 4`
+                      : `au lieu de ${formatProductPrice('playbook')} x 4`}
+                  </span>
                 </div>
                 <p className="text-sm opacity-75 mb-7">
-                  {isEn ? 'Save €69 when you need the full set.' : 'Économisez 69€ si vous avez besoin de l’ensemble.'}
+                  {isEn
+                    ? 'Save when you need the full set.'
+                    : 'Économisez si vous avez besoin de l’ensemble.'}
                 </p>
               </div>
               <AddToCartButton
                 item={{
                   priceId: BUNDLE_PRICE_ID,
                   title: isEn ? 'Complete Bundle · All 4 Playbooks' : 'Bundle Complet · 4 Playbooks',
-                  price: 199,
+                  price: priceFor('bundle'),
+                  currency,
                   productType: 'bundle',
                 }}
                 addedLabel={isEn ? 'In Cart' : 'Ajouté'}
                 className="w-full px-5 py-3 bg-white text-[#003d9b] text-sm font-bold hover:bg-[#f8f9ff] transition-colors rounded-[2px]"
               >
-                {t('buy_bundle')}
+                {isEn
+                  ? `Get the Bundle · ${formatProductPrice('bundle')}`
+                  : `Acheter le Bundle · ${formatProductPrice('bundle')}`}
               </AddToCartButton>
             </div>
           </div>

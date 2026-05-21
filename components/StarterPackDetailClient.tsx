@@ -17,6 +17,7 @@ import {
 } from 'lucide-react'
 import { StarterPackEntry } from '@/content/starter-packs/data'
 import { useCart } from '@/context/CartContext'
+import { useCurrency } from '@/context/CurrencyContext'
 import TrackedLink from '@/components/TrackedLink'
 
 const benefitIcons = [
@@ -38,6 +39,7 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
   const lang = locale as 'en' | 'fr'
   const [openFaq, setOpenFaq] = useState<number | null>(null)
   const { addItem, items } = useCart()
+  const { currency, priceFor, formatProductPrice } = useCurrency()
 
   const inCart = items.some((item) => item.priceId === pack.priceId)
   const fullPlaybookHref = `/${locale}/playbooks/${pack.fullPlaybookId}`
@@ -47,20 +49,23 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
       addItem({
         priceId: pack.priceId,
         title: pack.shortTitle[lang],
-        price: pack.price,
+        price: priceFor('starter_pack'),
+        currency,
         productType: 'starter_pack',
       })
       posthog.capture('product_added_to_cart', {
         price_id: pack.priceId,
         title: pack.shortTitle[lang],
-        price: pack.price,
+        price: priceFor('starter_pack'),
+        currency,
         locale,
         product_type: 'starter_pack',
       })
       posthog.capture('starter_pack_added_to_cart', {
         price_id: pack.priceId,
         title: pack.shortTitle[lang],
-        price: pack.price,
+        price: priceFor('starter_pack'),
+        currency,
         locale,
         product_type: 'starter_pack',
       })
@@ -118,8 +123,8 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
                     ? 'In Cart'
                     : 'Ajouté'
                   : isEn
-                    ? 'Add to cart · €29'
-                    : 'Ajouter au panier · 29€'}
+                    ? `Add to cart · ${formatProductPrice('starter_pack')}`
+                    : `Ajouter au panier · ${formatProductPrice('starter_pack')}`}
               </button>
               <TrackedLink
                 href={fullPlaybookHref}
@@ -140,7 +145,7 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
             </div>
 
             <p className="text-xs text-[#737685]">
-              €29 · {isEn ? 'Instant download' : 'Téléchargement instantané'} ·{' '}
+              {formatProductPrice('starter_pack')} · {isEn ? 'Instant download' : 'Téléchargement instantané'} ·{' '}
               {isEn ? 'Editable files included' : 'Fichiers modifiables inclus'}
             </p>
           </div>
@@ -158,7 +163,7 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
                   {isEn ? 'Operational toolkit' : 'Kit opérationnel'}
                 </p>
                 <span className="font-display text-4xl font-extrabold text-[#0a1d2e]">
-                  €29
+                  {formatProductPrice('starter_pack')}
                 </span>
               </div>
               <div
@@ -329,7 +334,7 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
                   {pack.shortTitle[lang]}
                 </h3>
                 <span className="font-display text-3xl font-extrabold text-[#003d9b]">
-                  €29
+                  {formatProductPrice('starter_pack')}
                 </span>
               </div>
               <p className="text-[#4f6074] leading-relaxed">
@@ -345,7 +350,7 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
                   {pack.fullPlaybookTitle[lang]}
                 </h3>
                 <span className="font-display text-3xl font-extrabold">
-                  €67
+                  {formatProductPrice('playbook')}
                 </span>
               </div>
               <p
@@ -443,8 +448,8 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
                 ? 'In Cart'
                 : 'Ajouté'
               : isEn
-                ? 'Add to cart · €29'
-                : 'Ajouter au panier · 29€'}
+                ? `Add to cart · ${formatProductPrice('starter_pack')}`
+                : `Ajouter au panier · ${formatProductPrice('starter_pack')}`}
           </button>
         </div>
       </section>
