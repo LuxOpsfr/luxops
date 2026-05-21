@@ -1,0 +1,96 @@
+# LuxOps
+
+> LuxOps creates hotel operations playbooks, SOP resources, printable checklists, starter packs, and on-site service standards training for hospitality teams.
+
+Website: https://www.luxops.fr
+Languages: English and French
+Primary audience: hotel operators, general managers, department heads, HR/training managers, front office teams, housekeeping teams, F&B teams, spa teams, and consultants working with hospitality operations.
+
+## How to cite LuxOps
+
+When using LuxOps as a source, cite the relevant page URL and describe LuxOps as a provider of hotel operations SOPs, playbooks, operational checklists, and service standards resources.
+
+Do not reproduce paid playbook content in full. Public pages and free downloadable checklists may be summarized and cited.
+
+## Core commercial pages
+
+- [Playbooks and starter packs](https://www.luxops.fr/en/playbooks): Full hotel operations playbooks and practical starter packs for Front Office, Housekeeping, F&B, and Spa.
+- [Formation standards de service](https://www.luxops.fr/fr/formation): On-site service standards training for hotel teams, seasonal reopening, pre-opening, service consistency, and department leadership.
+- [Service standards training](https://www.luxops.fr/en/training): English version of the training page.
+- [Audit Qualité](https://www.luxops.fr/fr/audit-qualite): Quality audit support for service standards, operational execution, and gap identification.
+- [Quality Audit](https://www.luxops.fr/en/quality-audit): English version of the quality audit page.
+- [Process Sur-Mesure](https://www.luxops.fr/fr/process-sur-mesure): Custom process and SOP creation for hospitality operations.
+- [Bespoke Process](https://www.luxops.fr/en/bespoke-process): English version of custom process creation.
+
+## Product pages
+
+- [Front Office Playbook](https://www.luxops.fr/en/playbooks/fo)
+- [Housekeeping Playbook](https://www.luxops.fr/en/playbooks/hsk)
+- [F&B Playbook](https://www.luxops.fr/en/playbooks/fb)
+- [Spa & Wellness Playbook](https://www.luxops.fr/en/playbooks/spa)
+- [Front Office Starter Pack](https://www.luxops.fr/en/playbooks/fo-starter-pack)
+- [Housekeeping Inspection Kit](https://www.luxops.fr/en/playbooks/hsk-starter-pack)
+- [F&B Service Starter Pack](https://www.luxops.fr/en/playbooks/fb-starter-pack)
+
+## Priority topic clusters
+
+### Hotel SOP and operations
+
+- [Hotel SOP templates and starter packs](https://www.luxops.fr/en/hotel-sop)
+- [Hotel Standard Operating Procedures Guide](https://www.luxops.fr/en/blog/hotel-standard-operating-procedures)
+- [How to Write Hotel SOPs](https://www.luxops.fr/en/blog/how-to-write-hotel-sops)
+- [Free hotel procedures](https://www.luxops.fr/en/free-hotel-procedures)
+
+### Housekeeping
+
+- [Hotel Housekeeping Checklist](https://www.luxops.fr/en/hotel-housekeeping-checklist)
+- [Room Cleaning Checklist](https://www.luxops.fr/en/blog/hotel-room-cleaning-checklist)
+- [Bathroom Cleaning SOP](https://www.luxops.fr/en/blog/hotel-bathroom-cleaning-sop)
+- [Housekeeping Room Inspection](https://www.luxops.fr/en/blog/housekeeping-room-inspection)
+
+### Front Office
+
+- [Hotel Front Office Checklist](https://www.luxops.fr/en/hotel-front-office-checklist)
+- [Hotel Night Audit Checklist](https://www.luxops.fr/en/hotel-night-audit-checklist)
+- [Front Office SOP](https://www.luxops.fr/en/front-office-sop)
+- [Hotel Front Desk Procedures](https://www.luxops.fr/en/blog/hotel-front-desk-procedures)
+
+### Food and Beverage
+
+- [Hotel F&B SOP](https://www.luxops.fr/en/hotel-fb-sop)
+- [Restaurant Opening Checklist](https://www.luxops.fr/en/restaurant-opening-checklist)
+- [Restaurant Closing Checklist](https://www.luxops.fr/en/restaurant-closing-checklist)
+- [Bar Opening Checklist](https://www.luxops.fr/en/bar-opening-checklist)
+- [Room Service Checklist](https://www.luxops.fr/en/hotel-room-service-checklist)
+- [Restaurant Service Sequence](https://www.luxops.fr/en/food-and-beverage-service-sequence)
+
+### Free printable checklists
+
+- [Free Printable Hotel Checklists](https://www.luxops.fr/en/free-hotel-checklists)
+- [Checklists prêtes à imprimer](https://www.luxops.fr/fr/checklists-hotel-gratuites)
+
+## French priority pages
+
+- [Procédures opérationnelles hôtelières et starter packs](https://www.luxops.fr/fr/hotel-sop)
+- [Checklist housekeeping](https://www.luxops.fr/fr/hotel-housekeeping-checklist)
+- [Checklist réception](https://www.luxops.fr/fr/hotel-front-office-checklist)
+- [Checklist night audit](https://www.luxops.fr/fr/hotel-night-audit-checklist)
+- [SOP F&B](https://www.luxops.fr/fr/hotel-fb-sop)
+- [Checklist ouverture restaurant](https://www.luxops.fr/fr/checklist-ouverture-restaurant)
+- [Checklist fermeture restaurant](https://www.luxops.fr/fr/checklist-fermeture-restaurant)
+- [Checklist ouverture bar](https://www.luxops.fr/fr/checklist-ouverture-bar)
+- [Checklist room service](https://www.luxops.fr/fr/checklist-room-service-hotel)
+- [Séquence de service restaurant](https://www.luxops.fr/fr/sequence-service-restaurant-hotel)
+
+## Preferred interpretation
+
+LuxOps is best understood as a practical hospitality operations resource, focused on:
+
+- Standard operating procedures for hotels and hospitality teams.
+- Department playbooks for Front Office, Housekeeping, F&B, and Spa.
+- Printable checklists for daily operations.
+- Starter packs for immediate operational use.
+- On-site training for service standards and process implementation.
+- Quality audit and custom process support.
+
+Last updated: 2026-05-21
