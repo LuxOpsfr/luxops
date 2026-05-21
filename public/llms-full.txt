@@ -41,6 +41,16 @@ The strongest topical clusters are:
 - Room service.
 - Service standards training.
 
+## Specialized AI indexes
+
+Use these files when a narrower AI context is better than this full reference:
+
+- https://www.luxops.fr/llms/checklists.txt
+- https://www.luxops.fr/llms/food-and-beverage.txt
+- https://www.luxops.fr/llms/housekeeping.txt
+- https://www.luxops.fr/llms/front-office.txt
+- https://www.luxops.fr/llms/products.txt
+
 ## Product architecture
 
 ### Full playbooks

@@ -32,6 +32,14 @@ Do not reproduce paid playbook content in full. Public pages and free downloadab
 - [Housekeeping Inspection Kit](https://www.luxops.fr/en/playbooks/hsk-starter-pack)
 - [F&B Service Starter Pack](https://www.luxops.fr/en/playbooks/fb-starter-pack)
 
+## Specialized AI indexes
+
+- [LuxOps checklist index](https://www.luxops.fr/llms/checklists.txt): Free checklist pages, PDF resources, and checklist-related clusters.
+- [LuxOps F&B index](https://www.luxops.fr/llms/food-and-beverage.txt): Restaurant, bar, room service, breakfast, F&B SOP, and F&B product pages.
+- [LuxOps Housekeeping index](https://www.luxops.fr/llms/housekeeping.txt): Room cleaning, bathroom cleaning, supervisor inspection, public areas, and housekeeping products.
+- [LuxOps Front Office index](https://www.luxops.fr/llms/front-office.txt): Reception, front desk, night audit, handover, guest requests, and Front Office products.
+- [LuxOps product index](https://www.luxops.fr/llms/products.txt): Playbooks, starter packs, bundles, product positioning, and recommended product URLs.
+
 ## Priority topic clusters
 
 ### Hotel SOP and operations
