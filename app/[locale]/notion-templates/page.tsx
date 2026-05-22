@@ -129,7 +129,17 @@ function NotionContent({ locale }: { locale: string }) {
               {isEn ? 'Notion Hub' : 'Hub Notion'}
             </div>
             <h1 className="font-display text-5xl md:text-6xl font-extrabold tracking-tighter leading-none text-[#0a1d2e] mb-6">
-              {t('title')}
+              {isEn ? (
+                <>
+                  <span className="block sm:inline">Notion</span>
+                  <span className="block sm:inline"> Templates</span>
+                </>
+              ) : (
+                <>
+                  <span className="block sm:inline">Templates</span>
+                  <span className="block sm:inline"> Notion</span>
+                </>
+              )}
             </h1>
             <p className="text-xl text-[#4f6074] max-w-lg leading-relaxed mb-10">
               {t('subtitle')}
@@ -158,7 +168,7 @@ function NotionContent({ locale }: { locale: string }) {
           {/* Right - Notion UI Mockup */}
           <div className="lg:col-span-7 relative">
             <div
-              className="bg-white overflow-hidden flex flex-col font-sans"
+              className="hidden lg:flex bg-white overflow-hidden flex-col font-sans"
               style={{
                 borderRadius: '0.25rem',
                 boxShadow: '0 20px 60px rgba(10,29,46,0.12), 0 0 0 1px rgba(195,198,214,0.4)',
@@ -271,6 +281,75 @@ function NotionContent({ locale }: { locale: string }) {
                 </div>
               </div>
             </div>
+
+            <div
+              className="lg:hidden bg-white overflow-hidden font-sans"
+              style={{
+                borderRadius: '0.25rem',
+                boxShadow: '0 16px 40px rgba(10,29,46,0.12), 0 0 0 1px rgba(195,198,214,0.4)',
+              }}
+            >
+              <div className="flex items-center gap-2 px-4 py-3 border-b" style={{ borderColor: 'rgba(195,198,214,0.3)', backgroundColor: '#f7f6f3' }}>
+                <div className="w-3 h-3 rounded-full bg-red-400" />
+                <div className="w-3 h-3 rounded-full bg-yellow-400" />
+                <div className="w-3 h-3 rounded-full bg-green-400" />
+                <div className="flex-1 min-w-0">
+                  <div className="h-6 rounded flex items-center justify-center px-3" style={{ backgroundColor: 'rgba(195,198,214,0.3)' }}>
+                    <span className="text-[10px] text-[#737685] truncate">notion.so / grand-hotel-ops</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-5">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-9 h-9 rounded-lg bg-white shadow-sm flex items-center justify-center text-xl" style={{ border: '1px solid rgba(195,198,214,0.4)' }}>
+                    🏨
+                  </div>
+                  <div className="min-w-0">
+                    <h2 className="text-base font-bold text-[#0a1d2e] truncate">
+                      {isEn ? 'Grand Hotel Operations' : 'Grand Hôtel Opérations'}
+                    </h2>
+                    <p className="text-[10px] text-[#737685]">
+                      {isEn ? 'Operational workspace' : 'Espace opérationnel'}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="space-y-3">
+                  {[
+                    {
+                      icon: '📋',
+                      title: isEn ? 'SOP Library' : 'Bibliothèque SOP',
+                      desc: isEn ? 'Procedures grouped by department' : 'Procédures regroupées par département',
+                    },
+                    {
+                      icon: '✅',
+                      title: isEn ? 'Task tracking' : 'Suivi des tâches',
+                      desc: isEn ? 'Daily actions, status and owners' : 'Actions du jour, statuts et responsables',
+                    },
+                    {
+                      icon: '📊',
+                      title: isEn ? 'Reporting' : 'Reporting',
+                      desc: isEn ? 'Simple views for managers' : 'Vues simples pour les managers',
+                    },
+                  ].map((item, i) => (
+                    <div
+                      key={i}
+                      className="flex items-start gap-3 p-3"
+                      style={{ border: '1px solid rgba(195,198,214,0.35)', backgroundColor: '#f8f9ff', borderRadius: '0.125rem' }}
+                    >
+                      <div className="w-9 h-9 flex items-center justify-center bg-white text-lg flex-shrink-0" style={{ borderRadius: '0.125rem' }}>
+                        {item.icon}
+                      </div>
+                      <div className="min-w-0">
+                        <div className="text-sm font-bold text-[#0a1d2e]">{item.title}</div>
+                        <div className="text-xs text-[#4f6074] leading-relaxed">{item.desc}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -329,7 +408,7 @@ function NotionContent({ locale }: { locale: string }) {
                 <h3 className="font-display font-bold text-[#0a1d2e] mb-1">{isEn ? 'Maintenance Pipeline' : 'Pipeline de Maintenance'}</h3>
                 <p className="text-xs text-[#737685] uppercase tracking-wider font-bold">{isEn ? 'Board View by Status' : 'Vue Board par Statut'}</p>
               </div>
-              <div className="flex gap-4 overflow-x-auto pb-2">
+              <div className="grid grid-cols-1 gap-4 sm:flex sm:overflow-x-auto sm:pb-2">
                 {[
                   {
                     label: isEn ? 'Urgent' : 'Urgent',
@@ -354,7 +433,7 @@ function NotionContent({ locale }: { locale: string }) {
                     ],
                   },
                 ].map((col, ci) => (
-                  <div key={ci} className="min-w-[180px] flex-1">
+                  <div key={ci} className="min-w-0 sm:min-w-[180px] flex-1">
                     <div className="flex items-center gap-2 mb-3">
                       <span className="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider rounded" style={{ backgroundColor: col.color, color: col.textColor }}>{col.label}</span>
                       <span className="text-[10px] text-[#737685]">{col.items.length}</span>
