@@ -76,7 +76,7 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
   const mainChapters = chapters.slice(0, -3)
 
   return (
-    <div className="pt-16 bg-white min-h-screen">
+    <div className="pt-16 bg-white min-h-screen overflow-x-hidden">
 
       {/* Back link */}
       <div className="max-w-screen-xl mx-auto px-6 pt-8">
@@ -91,7 +91,7 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
 
       {/* Hero */}
       <section
-        className="relative py-24 px-6 overflow-hidden border-b"
+        className="relative py-14 md:py-24 px-5 md:px-6 overflow-hidden border-b"
         style={{
           backgroundImage: 'radial-gradient(#c3c6d6 0.5px, transparent 0.5px)',
           backgroundSize: '24px 24px',
@@ -100,7 +100,7 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
       >
         <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row gap-16 items-start">
           {/* Left */}
-          <div className="flex-1 space-y-8 mt-4">
+          <div className="flex-1 min-w-0 space-y-6 md:space-y-8 mt-4">
             <div
               className="inline-flex items-center gap-2 px-3 py-1 text-[#003d9b] font-bold text-[10px] uppercase tracking-widest"
               style={{ backgroundColor: '#eef4ff', borderRadius: '0.125rem' }}
@@ -110,7 +110,7 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
             </div>
 
             <h1
-              className="font-display text-6xl lg:text-7xl font-extrabold tracking-tighter leading-none text-[#0a1d2e]"
+              className="font-display text-[clamp(2.65rem,11vw,4.5rem)] lg:text-7xl font-extrabold tracking-tight md:tracking-tighter leading-[0.96] text-[#0a1d2e] max-w-full"
             >
               {pb.title[lang].split(' ').slice(0, -1).join(' ')}{' '}
               <span style={{ color: '#003d9b' }}>
