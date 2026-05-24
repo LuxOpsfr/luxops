@@ -8,6 +8,7 @@ import {
   SearchCheck,
   Target,
 } from 'lucide-react'
+import SamePageAnchor from '@/components/SamePageAnchor'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
@@ -215,13 +216,13 @@ export default async function HotelAuditPage({ params }: { params: Promise<{ loc
                   : 'À utiliser comme audit interne mensuel, support de revue par département ou préparation avant un contrôle qualité externe.'}
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
-                <a
+                <SamePageAnchor
                   href="#audit-grid"
                   className="inline-flex items-center justify-center gap-2 px-6 py-4 bg-[#003d9b] text-white font-bold text-sm hover:bg-[#0a1d2e] transition-colors"
                 >
                   {isEN ? 'Use the checklist' : 'Voir la checklist'}
                   <ArrowRight size={16} />
-                </a>
+                </SamePageAnchor>
                 <Link
                   href={qualityAuditHref}
                   className="inline-flex items-center justify-center gap-2 px-6 py-4 bg-white text-[#0a1d2e] border border-[#d8deea] font-bold text-sm hover:border-[#003d9b] transition-colors"

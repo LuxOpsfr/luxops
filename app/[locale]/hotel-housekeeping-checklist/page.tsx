@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import TrackedLink from '@/components/TrackedLink'
+import SamePageAnchor from '@/components/SamePageAnchor'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
@@ -458,12 +459,12 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
                 : 'Une checklist issue du Playbook Housekeeping LuxOps : séquence chambre à blanc, recouche, chariot, auto-contrôle, inspection gouvernante, statut Clean/Inspected et grille qualité 100 points.'}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <Link
+              <SamePageAnchor
                 href="#housekeeping-pdfs"
                 className="inline-block bg-white text-[#1A2E44] px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
               >
                 {isEN ? 'View the free printable PDFs' : 'Voir les PDF gratuits à imprimer'}
-              </Link>
+              </SamePageAnchor>
               <TrackedLink
                 href={`/${locale}/playbooks/hsk-starter-pack`}
                 eventName="starter_pack_cta_clicked"
@@ -741,12 +742,12 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
                 : 'Les checklists PDF sont des extraits gratuits. Le Playbook Housekeeping LuxOps complet donne à vos équipes toute la structure SOP derrière la checklist : chambre à blanc, recouche, inspection gouvernante, linge, stocks, sécurité, développement durable et management.'}
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-3">
-              <Link
+              <SamePageAnchor
                 href="#housekeeping-pdfs"
                 className="inline-block bg-[#1A2E44] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#243d57] transition-colors"
               >
                 {isEN ? 'View the free PDFs' : 'Voir les PDF gratuits'}
-              </Link>
+              </SamePageAnchor>
               <TrackedLink
                 href={`/${locale}/playbooks/hsk`}
                 eventName="playbook_cta_clicked"

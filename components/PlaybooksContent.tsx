@@ -14,9 +14,11 @@ import {
 } from 'lucide-react'
 import Link from 'next/link'
 import AddToCartButton from '@/components/AddToCartButton'
+import SamePageAnchor from '@/components/SamePageAnchor'
 import { PLAYBOOKS, BUNDLE_PRICE_ID } from '@/content/playbooks/data'
 import { STARTER_PACKS } from '@/content/starter-packs/data'
 import { useCurrency } from '@/context/CurrencyContext'
+import { formatCurrencyAmount } from '@/lib/pricing'
 
 const DEPT_ICONS = {
   fo: Building2,
@@ -38,6 +40,7 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
   const { currency, priceFor, formatProductPrice } = useCurrency()
 
   const [activeFilter, setActiveFilter] = useState<string>('all')
+  const bundleReferencePrice = formatCurrencyAmount(priceFor('playbook') * 4, currency, locale)
 
   const categories = [
     { key: 'all', label: isEn ? 'All Playbooks' : 'Tous les Playbooks' },
@@ -77,7 +80,7 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                 {t('subtitle')}
               </p>
               <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3">
-                <a
+                <SamePageAnchor
                   href="#starter-packs"
                   className="inline-flex justify-center items-center gap-2 px-7 py-4 bg-[#003d9b] text-white font-bold text-sm hover:bg-[#002d7a] transition-colors"
                   style={{ borderRadius: '0.125rem' }}
@@ -86,8 +89,8 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                     ? `View starter packs at ${formatProductPrice('starter_pack')}`
                     : `Voir les starter packs à ${formatProductPrice('starter_pack')}`}
                   <ArrowRight size={16} />
-                </a>
-                <a
+                </SamePageAnchor>
+                <SamePageAnchor
                   href="#department-playbooks"
                   className="inline-flex justify-center items-center gap-2 px-7 py-4 border border-[#c3c6d6] text-[#0a1d2e] font-bold text-sm hover:border-[#003d9b] hover:text-[#003d9b] transition-colors"
                   style={{ borderRadius: '0.125rem' }}
@@ -95,7 +98,7 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                   {isEn
                     ? `View playbooks at ${formatProductPrice('playbook')}`
                     : `Voir les playbooks à ${formatProductPrice('playbook')}`}
-                </a>
+                </SamePageAnchor>
                 <a
                   href={`/${locale}/free-hotel-procedures`}
                   className="inline-flex justify-center items-center gap-2 px-7 py-4 border border-[#c3c6d6] text-[#0a1d2e] font-bold text-sm hover:border-[#003d9b] hover:text-[#003d9b] transition-colors"
@@ -324,13 +327,13 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                   : 'Checklists, templates et scripts pratiques conçus pour un usage opérationnel immédiat.'}
               </p>
             </div>
-            <a
+            <SamePageAnchor
               href="#bundle"
               className="inline-flex items-center gap-2 text-xs font-bold text-[#003d9b] underline underline-offset-4 hover:text-[#002d7a] transition-colors"
             >
               {isEn ? 'Need the full set?' : 'Besoin du set complet ?'}
               <ArrowRight size={14} />
-            </a>
+            </SamePageAnchor>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -479,8 +482,8 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                   <span className="font-display text-5xl font-extrabold">{formatProductPrice('bundle')}</span>
                   <span className="text-sm opacity-75 pb-2">
                     {isEn
-                      ? `instead of ${formatProductPrice('playbook')} x 4`
-                      : `au lieu de ${formatProductPrice('playbook')} x 4`}
+                      ? `instead of ${bundleReferencePrice}`
+                      : `au lieu de ${bundleReferencePrice}`}
                   </span>
                 </div>
                 <p className="text-sm opacity-75 mb-7">

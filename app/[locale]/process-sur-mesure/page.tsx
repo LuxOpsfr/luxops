@@ -11,6 +11,7 @@ import {
   Users2,
 } from 'lucide-react'
 import ProcessQuoteForm from '@/components/ProcessQuoteForm'
+import SamePageAnchor from '@/components/SamePageAnchor'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
@@ -68,19 +69,19 @@ export function ProcessContent({ locale }: { locale: string }) {
               {page.context}
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
-              <a
+              <SamePageAnchor
                 href="#process-quote"
                 className="inline-flex items-center justify-center gap-2 px-6 py-4 bg-[#003d9b] text-white font-bold text-sm hover:bg-[#0a1d2e] transition-colors"
               >
                 {page.primaryCta}
                 <ArrowRight size={16} />
-              </a>
-              <a
+              </SamePageAnchor>
+              <SamePageAnchor
                 href="#process-situations"
                 className="inline-flex items-center justify-center gap-2 px-6 py-4 bg-white text-[#0a1d2e] border border-[#d8deea] font-bold text-sm hover:border-[#003d9b] transition-colors"
               >
                 {page.secondaryCta}
-              </a>
+              </SamePageAnchor>
             </div>
           </div>
 
@@ -224,13 +225,13 @@ export function ProcessContent({ locale }: { locale: string }) {
             </h3>
             <p className="text-sm text-[#cbd5e1] leading-relaxed mb-6">{page.contactText}</p>
             <div className="flex flex-col sm:flex-row gap-3">
-              <a
+              <SamePageAnchor
                 href="#process-quote"
                 className="inline-flex items-center justify-center gap-2 px-5 py-4 bg-white text-[#0a1d2e] font-bold text-sm hover:bg-[#eef4ff] transition-colors"
               >
                 {page.finalCta}
                 <ArrowRight size={15} />
-              </a>
+              </SamePageAnchor>
               <Link
                 href={isEn ? '/en/quality-audit' : '/fr/audit-qualite'}
                 className="inline-flex items-center justify-center gap-2 px-5 py-4 border border-white/20 text-white font-bold text-sm hover:bg-white/10 transition-colors"

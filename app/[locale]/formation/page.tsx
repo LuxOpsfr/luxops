@@ -10,6 +10,7 @@ import {
   Users2,
 } from 'lucide-react'
 import TrainingQuoteForm from '@/components/TrainingQuoteForm'
+import SamePageAnchor from '@/components/SamePageAnchor'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
@@ -68,19 +69,19 @@ export function FormationContent({ locale }: { locale: string }) {
               {page.context}
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
-              <a
+              <SamePageAnchor
                 href="#training-quote"
                 className="inline-flex items-center justify-center gap-2 px-6 py-4 bg-[#003d9b] text-white font-bold text-sm hover:bg-[#0a1d2e] transition-colors"
               >
                 {page.primaryCta}
                 <ArrowRight size={16} />
-              </a>
-              <a
+              </SamePageAnchor>
+              <SamePageAnchor
                 href="#training-situations"
                 className="inline-flex items-center justify-center gap-2 px-6 py-4 bg-white text-[#0a1d2e] border border-[#d8deea] font-bold text-sm hover:border-[#003d9b] transition-colors"
               >
                 {page.secondaryCta}
-              </a>
+              </SamePageAnchor>
             </div>
           </div>
 
