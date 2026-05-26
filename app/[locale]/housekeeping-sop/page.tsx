@@ -240,6 +240,55 @@ export default async function HousekeepingSopPage({ params }: { params: Promise<
           </div>
         </section>
 
+        {/* Printable checklists */}
+        <section className="py-12 px-6 bg-white border-b border-gray-100">
+          <div className="max-w-4xl mx-auto">
+            <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-8 items-center">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-widest text-[#0056D2] mb-3">
+                  {isEN ? 'Printable controls' : 'Contrôles imprimables'}
+                </p>
+                <h2 className="text-2xl font-bold text-[#1A2E44] mb-3">
+                  {isEN ? 'Need the matching housekeeping checklists?' : 'Besoin des checklists housekeeping associées ?'}
+                </h2>
+                <p className="text-gray-600 leading-relaxed">
+                  {isEN
+                    ? 'This page explains the SOP structure. The checklist page gives the operational PDFs used on the floor: room attendant, public areas, supervisor inspection, bathroom cleaning and departure room reset.'
+                    : 'Cette page explique la structure SOP. La page checklist regroupe les PDF opérationnels utilisés sur le terrain : chambre, lieux publics, inspection gouvernante, salle de bain et chambre à blanc.'}
+                </p>
+              </div>
+              <div className="grid sm:grid-cols-2 gap-3">
+                <Link
+                  href={`/${locale}/hotel-housekeeping-checklist`}
+                  className="rounded-lg border border-[#1A2E44] bg-[#1A2E44] p-5 text-white hover:bg-[#243d57] transition-colors"
+                >
+                  <h3 className="font-semibold mb-2">
+                    {isEN ? 'Housekeeping checklist hub' : 'Hub checklists housekeeping'}
+                  </h3>
+                  <p className="text-sm text-blue-100 leading-relaxed">
+                    {isEN
+                      ? 'Download the role-based PDF checklists.'
+                      : 'Télécharger les checklists PDF par poste.'}
+                  </p>
+                </Link>
+                <Link
+                  href={`/${locale}/playbooks/hsk-starter-pack`}
+                  className="rounded-lg border border-gray-200 bg-[#f7f9fc] p-5 hover:border-[#1A2E44] transition-colors"
+                >
+                  <h3 className="font-semibold text-[#1A2E44] mb-2">
+                    {isEN ? 'Inspection kit' : 'Kit inspection'}
+                  </h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    {isEN
+                      ? 'Editable inspection tools and control sheets.'
+                      : 'Outils d’inspection modifiables et feuilles de contrôle.'}
+                  </p>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Playbook excerpt */}
         <section className="py-16 px-6 bg-white">
           <div className="max-w-3xl mx-auto rounded-xl border border-[#d8e6f7] bg-[#f4f8ff] p-8">
@@ -416,21 +465,21 @@ export default async function HousekeepingSopPage({ params }: { params: Promise<
                 },
                 {
                   href: `/${locale}/blog/hotel-room-cleaning-checklist`,
-                  title: isEN ? 'Hotel Room Cleaning Checklist' : 'Checklist de nettoyage de chambre d’hôtel',
+                  title: isEN ? 'Hotel Room Cleaning Checklist' : 'Checklist de nettoyage de chambre',
                   desc: isEN
                     ? 'The departure room and stayover sequence from the playbook.'
                     : 'La séquence chambre à blanc et recouche issue du playbook.',
                 },
                 {
                   href: `/${locale}/blog/hotel-housekeeping-supervisor-checklist`,
-                  title: isEN ? 'Housekeeping Supervisor Checklist' : 'Checklist pour gouvernante d’hôtel',
+                  title: isEN ? 'Housekeeping Supervisor Checklist' : 'Checklist gouvernante d’étage',
                   desc: isEN
                     ? 'Room release, inspection scores and coaching workflow.'
                     : 'Libération chambre, scores inspection et coaching.',
                 },
                 {
                   href: `/${locale}/blog/hotel-bathroom-cleaning-sop`,
-                  title: isEN ? 'Hotel Bathroom Cleaning SOP' : 'SOP de nettoyage de salle de bain d’hôtel',
+                  title: isEN ? 'Hotel Bathroom Cleaning SOP' : 'SOP de nettoyage de salle de bain',
                   desc: isEN
                     ? 'Bathroom sequence: clean to dirty, top to bottom.'
                     : 'Séquence salle de bain : du propre vers le sale, du haut vers le bas.',

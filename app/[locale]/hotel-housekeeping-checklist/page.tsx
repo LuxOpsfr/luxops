@@ -592,6 +592,53 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
               </div>
             ))}
           </div>
+          <div className="mt-8 rounded-xl border border-[#d8e6f7] bg-[#f4f8ff] p-6 md:p-8">
+            <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-6 items-center">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-widest text-[#0056D2] mb-3">
+                  {isEN ? 'Supervisor inspection focus' : 'Focus inspection gouvernante'}
+                </p>
+                <h3 className="text-2xl font-bold text-[#1A2E44] mb-3">
+                  {isEN ? 'Use the supervisor checklist before releasing the room' : 'Contrôler la chambre avant libération'}
+                </h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  {isEN
+                    ? 'The supervisor checklist is the control step between a room marked Clean and a room that Front Office can assign. It covers departure inspections, VIP rooms, recurring defects, PMS release and coaching notes.'
+                    : 'La checklist gouvernante est le contrôle entre une chambre passée en propre et une chambre réellement attribuable par la réception. Elle couvre les inspections départ, les chambres importantes, les défauts récurrents, la libération PMS et les notes de coaching.'}
+                </p>
+              </div>
+              <div className="grid gap-3">
+                <TrackedLink
+                  href={isEN ? '/downloads/housekeeping-checklists/en/floor-housekeeping-supervisor-checklist.pdf' : '/downloads/housekeeping-checklists/fr/checklist-gouvernante-etage-superviseur.pdf'}
+                  download
+                  eventName="free_checklist_download_clicked"
+                  eventProperties={{
+                    source_page: `/${locale}/hotel-housekeeping-checklist`,
+                    checklist_name: isEN ? 'Housekeeping Supervisor Checklist' : 'Checklist Gouvernante d’Étage',
+                    department: 'housekeeping',
+                    locale,
+                    placement: 'supervisor_focus',
+                  }}
+                  className="inline-flex justify-center bg-[#1A2E44] text-white px-5 py-3 rounded-lg text-sm font-semibold hover:bg-[#243d57] transition-colors"
+                >
+                  {isEN ? 'Download the supervisor PDF' : 'Télécharger la checklist gouvernante'}
+                </TrackedLink>
+                <TrackedLink
+                  href={`/${locale}/playbooks/hsk-starter-pack`}
+                  eventName="starter_pack_cta_clicked"
+                  eventProperties={{
+                    source_page: `/${locale}/hotel-housekeeping-checklist`,
+                    placement: 'supervisor_focus',
+                    product: 'housekeeping_inspection_kit',
+                    cta_label: isEN ? 'View Housekeeping Inspection Kit' : 'Voir le Kit Inspection Housekeeping',
+                  }}
+                  className="inline-flex justify-center border border-[#1A2E44] bg-white text-[#1A2E44] px-5 py-3 rounded-lg text-sm font-semibold hover:bg-[#F5F7FA] transition-colors"
+                >
+                  {isEN ? 'View the inspection kit' : 'Voir le kit inspection'}
+                </TrackedLink>
+              </div>
+            </div>
+          </div>
           <div className="mt-6 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3">
             <Link
               href={`/${locale}/playbooks/hsk`}
