@@ -71,6 +71,13 @@ type ResourceContent = {
   finalText: string
 }
 
+type ClusterLink = {
+  kind?: ResourceKind
+  href: string
+  label: string
+  text: string
+}
+
 const SEQUENCE_EN: ResourceContent = {
   slug: '/food-and-beverage-service-sequence',
   alternateSlug: '/sequence-service-restaurant-hotel',
@@ -1327,6 +1334,87 @@ const CONTENT: Record<ResourceKind, Record<Locale, ResourceContent>> = {
   restaurantClosing: { en: RESTAURANT_CLOSING_EN, fr: RESTAURANT_CLOSING_FR },
 }
 
+function getFbClusterLinks(locale: Locale, currentKind: ResourceKind): ClusterLink[] {
+  const links: Record<Locale, ClusterLink[]> = {
+    en: [
+      {
+        href: '/en/hotel-fb-sop',
+        label: 'F&B SOP hub',
+        text: 'Central page for F&B SOPs, starter pack and playbook links.',
+      },
+      {
+        kind: 'restaurantOpening',
+        href: '/en/restaurant-opening-checklist',
+        label: 'Restaurant opening',
+        text: 'Pre-service setup, room inspection, POS and briefing.',
+      },
+      {
+        kind: 'restaurantClosing',
+        href: '/en/restaurant-closing-checklist',
+        label: 'Restaurant closing',
+        text: 'End-of-service reset, cash, stock, cleaning and handover.',
+      },
+      {
+        kind: 'barOpening',
+        href: '/en/bar-opening-checklist',
+        label: 'Bar opening',
+        text: 'Bar station, glassware, garnishes, stock, POS and final walk-through.',
+      },
+      {
+        kind: 'sequence',
+        href: '/en/food-and-beverage-service-sequence',
+        label: 'Service sequence',
+        text: 'The service flow from guest arrival to farewell.',
+      },
+      {
+        kind: 'roomService',
+        href: '/en/hotel-room-service-checklist',
+        label: 'Room service',
+        text: 'Order taking, tray setup, delivery timing and pickup.',
+      },
+    ],
+    fr: [
+      {
+        href: '/fr/hotel-fb-sop',
+        label: 'Hub SOP F&B',
+        text: 'Page centrale pour les SOP F&B, le starter pack et le playbook.',
+      },
+      {
+        kind: 'restaurantOpening',
+        href: '/fr/checklist-ouverture-restaurant',
+        label: 'Ouverture restaurant',
+        text: 'Mise en place, inspection salle, POS et briefing avant service.',
+      },
+      {
+        kind: 'restaurantClosing',
+        href: '/fr/checklist-fermeture-restaurant',
+        label: 'Fermeture restaurant',
+        text: 'Remise en ordre, caisse, stock, nettoyage et passation.',
+      },
+      {
+        kind: 'barOpening',
+        href: '/fr/checklist-ouverture-bar',
+        label: 'Ouverture bar',
+        text: 'Poste bar, verrerie, garnitures, stock, POS et dernier tour.',
+      },
+      {
+        kind: 'sequence',
+        href: '/fr/sequence-service-restaurant-hotel',
+        label: 'Séquence de service',
+        text: 'Le déroulé du service, de l’arrivée client au départ.',
+      },
+      {
+        kind: 'roomService',
+        href: '/fr/checklist-room-service-hotel',
+        label: 'Room service',
+        text: 'Prise de commande, dressage plateau, timing et débarrassage.',
+      },
+    ],
+  }
+
+  return links[locale].filter((link) => link.kind !== currentKind)
+}
+
 export function getFbSeoMetadata(kind: ResourceKind, locale: Locale): Metadata {
   const content = CONTENT[kind][locale]
 
@@ -1370,6 +1458,7 @@ export function FbSeoResourcePage({ kind, locale }: { kind: ResourceKind; locale
           ? isEN ? '/downloads/checklists/en/restaurant-closing-checklist.pdf' : '/downloads/checklists/fr/checklist-fermeture-restaurant.pdf'
           : null
   const checklistCta = isEN ? 'Download a free printable PDF copy' : 'Télécharger le PDF gratuit à imprimer'
+  const clusterLinks = getFbClusterLinks(locale, kind)
 
   const schema = {
     '@context': 'https://schema.org',
@@ -1602,6 +1691,43 @@ export function FbSeoResourcePage({ kind, locale }: { kind: ResourceKind; locale
               {content.relatedCta}
               <ArrowRight size={17} />
             </Link>
+          </div>
+        </section>
+
+        <section className="py-16 px-6 bg-[#F6F8FB] border-y border-gray-100">
+          <div className="max-w-6xl mx-auto">
+            <div className="max-w-3xl mb-8">
+              <p className="text-xs font-semibold uppercase tracking-widest text-[#0056D2] mb-3">
+                {isEN ? 'F&B resources' : 'Ressources F&B'}
+              </p>
+              <h2 className="text-3xl font-bold text-[#111111] mb-3">
+                {isEN ? 'Continue with the right F&B checklist' : 'Continuer avec la bonne checklist F&B'}
+              </h2>
+              <p className="text-gray-600 leading-relaxed">
+                {isEN
+                  ? 'Use these linked pages to move between opening, closing, bar, room service and service sequence procedures.'
+                  : 'Ces pages relient les procédures ouverture, fermeture, bar, room service et séquence de service pour garder un parcours clair.'}
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {clusterLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="group border border-gray-200 bg-white rounded-xl p-5 hover:border-[#0056D2] hover:shadow-sm transition-all"
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <h3 className="font-bold text-[#111111] mb-2 group-hover:text-[#0056D2] transition-colors">
+                        {link.label}
+                      </h3>
+                      <p className="text-sm text-gray-600 leading-relaxed">{link.text}</p>
+                    </div>
+                    <ArrowRight size={17} className="text-[#0056D2] flex-shrink-0 mt-1" />
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
         </section>
 

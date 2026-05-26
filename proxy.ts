@@ -5,6 +5,7 @@ const intlMiddleware = createMiddleware({
   locales: ['en', 'fr'],
   defaultLocale: 'en',
   localePrefix: 'always',
+  alternateLinks: false,
 })
 
 function getCrawlerType(userAgent: string) {

@@ -78,6 +78,13 @@ const nextConfig: NextConfig = {
       { source: '/:locale(en|fr)/bespoke-process', headers: marketingCache },
       { source: '/:locale(en|fr)/process-sur-mesure', headers: marketingCache },
       { source: '/:locale(en|fr)/free-hotel-procedures', headers: marketingCache },
+      { source: '/:locale(en|fr)/hotel-fb-sop', headers: marketingCache },
+      { source: '/:locale(en|fr)/food-and-beverage-service-sequence', headers: marketingCache },
+      { source: '/:locale(en|fr)/sequence-service-restaurant-hotel', headers: marketingCache },
+      { source: '/:locale(en|fr)/hotel-room-service-checklist', headers: marketingCache },
+      { source: '/:locale(en|fr)/checklist-room-service-hotel', headers: marketingCache },
+      { source: '/:locale(en|fr)/restaurant-opening-checklist', headers: marketingCache },
+      { source: '/:locale(en|fr)/checklist-ouverture-restaurant', headers: marketingCache },
       { source: '/:locale(en|fr)/bar-opening-checklist', headers: marketingCache },
       { source: '/:locale(en|fr)/checklist-ouverture-bar', headers: marketingCache },
       { source: '/:locale(en|fr)/restaurant-closing-checklist', headers: marketingCache },
@@ -178,6 +185,77 @@ const nextConfig: NextConfig = {
       {
         source: '/blog/hotel-fb-restaurant-procedures',
         destination: '/en/blog/hotel-fb-restaurant-procedures',
+        permanent: true,
+      },
+      // F&B SEO cluster: consolidate language variants and older checklist URLs
+      {
+        source: '/en/checklist-ouverture-restaurant',
+        destination: '/en/restaurant-opening-checklist',
+        permanent: true,
+      },
+      {
+        source: '/fr/restaurant-opening-checklist',
+        destination: '/fr/checklist-ouverture-restaurant',
+        permanent: true,
+      },
+      {
+        source: '/en/hotel-restaurant-opening-checklist',
+        destination: '/en/restaurant-opening-checklist',
+        permanent: true,
+      },
+      {
+        source: '/fr/hotel-restaurant-opening-checklist',
+        destination: '/fr/checklist-ouverture-restaurant',
+        permanent: true,
+      },
+      {
+        source: '/en/checklist-ouverture-restaurant-hotel',
+        destination: '/en/restaurant-opening-checklist',
+        permanent: true,
+      },
+      {
+        source: '/fr/checklist-ouverture-restaurant-hotel',
+        destination: '/fr/checklist-ouverture-restaurant',
+        permanent: true,
+      },
+      {
+        source: '/en/checklist-ouverture-bar',
+        destination: '/en/bar-opening-checklist',
+        permanent: true,
+      },
+      {
+        source: '/fr/bar-opening-checklist',
+        destination: '/fr/checklist-ouverture-bar',
+        permanent: true,
+      },
+      {
+        source: '/en/checklist-fermeture-restaurant',
+        destination: '/en/restaurant-closing-checklist',
+        permanent: true,
+      },
+      {
+        source: '/fr/restaurant-closing-checklist',
+        destination: '/fr/checklist-fermeture-restaurant',
+        permanent: true,
+      },
+      {
+        source: '/en/sequence-service-restaurant-hotel',
+        destination: '/en/food-and-beverage-service-sequence',
+        permanent: true,
+      },
+      {
+        source: '/fr/food-and-beverage-service-sequence',
+        destination: '/fr/sequence-service-restaurant-hotel',
+        permanent: true,
+      },
+      {
+        source: '/en/checklist-room-service-hotel',
+        destination: '/en/hotel-room-service-checklist',
+        permanent: true,
+      },
+      {
+        source: '/fr/hotel-room-service-checklist',
+        destination: '/fr/checklist-room-service-hotel',
         permanent: true,
       },
     ]
