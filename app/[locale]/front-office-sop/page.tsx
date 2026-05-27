@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       : 'Procédures de réception hôtelière : modèles opérationnels | LuxOps',
     description: isEN
       ? 'Front office SOP system for luxury hotels. Built around shift structure, guest journey, exception handling and handover. Not a list of topics. A working operational framework.'
-      : 'Procédures de réception pour hôtels de luxe. Check-in, check-out, gestion des réclamations, passation de service et audit de nuit. Un cadre opérationnel concret, applicable immédiatement.',
+      : 'Procédures de réception pour hôtels de luxe. Check-in, check-out, gestion des réclamations, passation de service et Night Audit. Un cadre opérationnel concret, applicable immédiatement.',
     keywords: isEN
       ? 'front office sop, hotel front desk procedures, front office hotel training, hotel reception sop, front desk standard operating procedures'
       : 'procédures réception hôtel, guide réception hôtel, procédures accueil hôtel, formation réception hôtel',
@@ -79,7 +79,7 @@ const SOP_AREAS_FR = [
     body: 'La procédure pour recueillir, consigner, transmettre et résoudre une réclamation à la réception. Ce que le réceptionniste peut gérer seul, ce qui remonte au responsable, et comment la résolution est tracée.',
   },
   {
-    title: 'Audit de nuit',
+    title: 'Night Audit',
     body: 'La séquence nocturne qui clôture la journée opérationnelle, équilibre les comptes, génère les rapports et prépare la réception pour la prise de poste du matin. Souvent le process le moins documenté dans un hôtel.',
   },
   {
@@ -99,7 +99,7 @@ export default async function FrontOfficeSopPage({ params }: { params: Promise<{
     name: isEN ? 'Hotel Front Office SOP' : 'Procédures de réception hôtelière',
     description: isEN
       ? 'Front office SOP system for luxury hotels. Built around shift structure, guest journey, exception handling and handover.'
-      : 'Procédures de réception pour hôtels de luxe. Check-in, check-out, gestion des réclamations, passation de service et audit de nuit.',
+      : 'Procédures de réception pour hôtels de luxe. Check-in, check-out, gestion des réclamations, passation de service et Night Audit.',
     provider: { '@type': 'Organization', name: 'LuxOps', url: 'https://www.luxops.fr' },
     serviceType: 'Hotel Operations Consulting',
     areaServed: 'Worldwide',
@@ -128,11 +128,42 @@ export default async function FrontOfficeSopPage({ params }: { params: Promise<{
               : 'Un guide de procédures pour la réception, ce n\'est pas une liste de bonnes intentions. C\'est un ensemble de protocoles structurés qui couvre le parcours client, prépare l\'équipe aux situations difficiles et donne à chaque service un cadre clair sur lequel s\'appuyer.'}
           </p>
           <Link
-            href={`/${locale}/playbooks`}
+            href={`/${locale}/playbooks/fo`}
             className="inline-block bg-[#0056D2] hover:bg-[#0041A3] text-white font-semibold px-8 py-4 rounded-lg transition-colors text-base"
           >
             {isEN ? 'View Front Office Playbook' : 'Voir le Playbook réception'}
           </Link>
+        </div>
+      </section>
+
+      {/* Product paths */}
+      <section className="py-10 px-6 bg-white border-b border-gray-100">
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-[10px] font-bold uppercase tracking-widest text-[#003d9b] mb-3">
+            {isEN ? 'Front Office resources' : 'Ressources réception'}
+          </p>
+          <h2 className="text-2xl font-bold text-[#1A2E44] mb-3">
+            {isEN ? 'Choose the right front desk resource' : 'Choisir le bon support pour la réception'}
+          </h2>
+          <p className="text-sm text-gray-500 leading-relaxed max-w-2xl mx-auto mb-7">
+            {isEN
+              ? 'Use the Starter Pack for practical checklists, handovers and scripts. Use the full Front Office Playbook when you need the complete SOP reference for the department.'
+              : 'Utilisez le Starter Pack pour les checklists, passations et scripts du quotidien. Utilisez le Playbook Front Office complet si vous avez besoin de toute la référence SOP du service.'}
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <Link
+              href={`/${locale}/playbooks/fo-starter-pack`}
+              className="inline-flex min-w-[240px] items-center justify-center gap-2 rounded-lg bg-[#003d9b] px-5 py-3 text-sm font-semibold text-white hover:bg-[#002d7a] transition-colors"
+            >
+              {isEN ? 'View the Front Office Starter Pack' : 'Voir le Starter Pack Front Office'} <ArrowRight size={16} />
+            </Link>
+            <Link
+              href={`/${locale}/playbooks/fo`}
+              className="inline-flex min-w-[240px] items-center justify-center gap-2 rounded-lg border border-[#003d9b] px-5 py-3 text-sm font-semibold text-[#003d9b] hover:bg-[#eef4ff] transition-colors"
+            >
+              {isEN ? 'View the Front Office Playbook' : 'Voir le Playbook Front Office'} <ArrowRight size={16} />
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -167,6 +198,46 @@ export default async function FrontOfficeSopPage({ params }: { params: Promise<{
         </div>
       </section>
 
+      {/* Front office cluster */}
+      <section className="py-12 px-6 border-b border-gray-100">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-[10px] font-bold uppercase tracking-widest text-[#003d9b] mb-3">
+            {isEN ? 'Related front office pages' : 'Pages liées à la réception'}
+          </p>
+          <h2 className="text-2xl font-bold text-[#1A2E44] mb-6">
+            {isEN ? 'Build the full front desk operating system' : 'Structurer tout le fonctionnement de la réception'}
+          </h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            {[
+              {
+                href: `/${locale}/hotel-front-office-checklist`,
+                title: isEN ? 'Front Office Checklist' : 'Checklist réception',
+                desc: isEN ? 'Daily front desk checks, handovers and shift controls.' : 'Contrôles quotidiens, passations et routines de shift.',
+              },
+              {
+                href: `/${locale}/hotel-night-audit-checklist`,
+                title: isEN ? 'Night Audit Checklist' : 'Checklist Night Audit',
+                desc: isEN ? 'PMS close, VCCs, reports and AM handover.' : 'Clôture PMS, VCC, rapports et passation AM.',
+              },
+              {
+                href: `/${locale}/blog/hotel-front-desk-procedures`,
+                title: isEN ? 'Front Desk Procedures' : 'Procédures front desk',
+                desc: isEN ? 'Check-in, check-out, guest requests and desk consistency.' : 'Check-in, check-out, demandes clients et régularité du desk.',
+              },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="rounded-xl border border-gray-200 bg-white p-5 transition-colors hover:border-[#003d9b]"
+              >
+                <p className="font-semibold text-[#1A2E44] mb-2">{item.title}</p>
+                <p className="text-sm text-gray-500 leading-relaxed">{item.desc}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* What a front office SOP system actually covers */}
       <section className="py-16 px-6">
         <div className="max-w-3xl mx-auto">
@@ -187,7 +258,7 @@ export default async function FrontOfficeSopPage({ params }: { params: Promise<{
           ) : (
             <>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Les procédures de réception se structurent à trois niveaux. Les situations courantes : check-in, check-out, gestion des réservations, standards téléphoniques. Le cadre opérationnel du service : ouverture de poste, passation entre équipes, audit de nuit, reportings. La gestion des situations hors standard : réclamations clients, litiges de facturation, protocoles VIP, arrivées tardives, no-shows, incidents de sécurité.
+                Les procédures de réception se structurent à trois niveaux. Les situations courantes : check-in, check-out, gestion des réservations, standards téléphoniques. Le cadre opérationnel du service : ouverture de poste, passation entre équipes, Night Audit, reportings. La gestion des situations hors standard : réclamations clients, litiges de facturation, protocoles VIP, arrivées tardives, no-shows, incidents de sécurité.
               </p>
               <p className="text-gray-600 leading-relaxed">
                 Les guides génériques couvrent souvent correctement le premier niveau. Les deux suivants sont là où la plupart des équipes de réception fonctionnent encore à l&apos;instinct, sans procédure écrite. C&apos;est là que naissent les incohérences de service.
@@ -253,10 +324,10 @@ export default async function FrontOfficeSopPage({ params }: { params: Promise<{
           <p className="text-gray-300 mb-8">
             {isEN
               ? 'The LuxOps Front Office Playbook covers the full procedure set for a luxury hotel reception: guest interactions, shift structure, exception handling, night audit and reporting. 12 chapters, PDF and PowerPoint, EN and FR.'
-              : 'Le Playbook Réception LuxOps couvre l\'ensemble des procédures pour une réception hôtelière haut de gamme : accueil client, organisation des services, gestion des situations difficiles, audit de nuit et reportings. 12 chapitres, PDF et PowerPoint, en français et en anglais.'}
+              : 'Le Playbook Réception LuxOps couvre l\'ensemble des procédures pour une réception hôtelière haut de gamme : accueil client, organisation des services, gestion des situations difficiles, Night Audit et reportings. 12 chapitres, PDF et PowerPoint, en français et en anglais.'}
           </p>
           <Link
-            href={`/${locale}/playbooks`}
+            href={`/${locale}/playbooks/fo`}
             className="inline-block bg-[#0056D2] hover:bg-[#0041A3] text-white font-semibold px-8 py-4 rounded-lg transition-colors"
           >
             {isEN ? 'View Front Office Playbook' : 'Voir le Playbook réception'}

@@ -64,6 +64,7 @@ const nextConfig: NextConfig = {
       { source: '/:locale(en|fr)/hotel-checklist', headers: marketingCache },
       { source: '/:locale(en|fr)/hotel-front-office-checklist', headers: marketingCache },
       { source: '/:locale(en|fr)/hotel-housekeeping-checklist', headers: marketingCache },
+      { source: '/:locale(en|fr)/hotel-night-audit-checklist', headers: marketingCache },
       { source: '/:locale(en|fr)/hotel-staff-training', headers: marketingCache },
       { source: '/:locale(en|fr)/formation-equipe-hoteliere', headers: marketingCache },
       { source: '/:locale(en|fr)/formation-reception-hotel', headers: marketingCache },

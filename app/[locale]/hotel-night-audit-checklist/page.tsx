@@ -290,6 +290,51 @@ export default async function HotelNightAuditChecklistPage({ params }: { params:
           </div>
         </section>
 
+        {/* Step-by-step checklist */}
+        <section className="max-w-4xl mx-auto px-6 py-12">
+          <div className="border border-gray-200 rounded-2xl p-6 md:p-8 bg-white shadow-sm">
+            <p className="text-[10px] font-bold uppercase tracking-widest text-[#003d9b] mb-3">
+              {isEN ? 'Step-by-step procedure' : 'Séquence opérationnelle'}
+            </p>
+            <h2 className="text-2xl font-bold text-[#1A2E44] mb-4">
+              {isEN
+                ? 'Night Audit checklist: the 6 steps to close the day correctly'
+                : 'Checklist Night Audit : les 6 étapes pour clôturer la journée correctement'}
+            </h2>
+            <p className="text-sm text-gray-600 leading-relaxed mb-6">
+              {isEN
+                ? 'Use this sequence before running the PMS close. It keeps the shift focused on the key Night Audit actions: pre-closing checks, credit control, VCC processing, PMS reconciliation, report generation and AM handover.'
+                : 'Utilisez cette séquence avant de lancer la clôture PMS. Elle garde le shift concentré sur les actions essentielles du Night Audit : contrôles avant clôture, contrôle crédit, traitement des VCC, réconciliation PMS, édition des rapports et passation AM.'}
+            </p>
+            <div className="grid md:grid-cols-3 gap-3">
+              {(isEN
+                ? [
+                    'Shift takeover and open items',
+                    'Pre-closing front desk checks',
+                    'Credit control and VCCs',
+                    'PMS close and reconciliation',
+                    'Reports and next-day preparation',
+                    'AM handover and logbook',
+                  ]
+                : [
+                    'Prise de shift et points ouverts',
+                    'Contrôles réception avant clôture',
+                    'Contrôle crédit et VCC',
+                    'Clôture PMS et réconciliation',
+                    'Rapports et préparation AM',
+                    'Passation AM et main courante',
+                  ]).map((item, index) => (
+                <div key={item} className="flex items-start gap-3 rounded-lg border border-gray-100 bg-gray-50 p-4">
+                  <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-[#003d9b] text-xs font-bold text-white">
+                    {index + 1}
+                  </span>
+                  <span className="text-sm font-semibold text-[#1A2E44] leading-snug">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Product paths */}
         <section className="py-10 px-6 bg-white border-b border-gray-100">
           <div className="max-w-4xl mx-auto text-center">
