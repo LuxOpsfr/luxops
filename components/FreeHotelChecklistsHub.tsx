@@ -8,7 +8,7 @@ import {
   Sparkles,
 } from 'lucide-react'
 import TrackedLink from '@/components/TrackedLink'
-import { breadcrumbSchema, faqSchema, localizedPath } from '@/lib/seo'
+import { SITE_URL, breadcrumbSchema, faqSchema, localizedPath } from '@/lib/seo'
 
 type Locale = 'en' | 'fr'
 
@@ -470,7 +470,7 @@ export default function FreeHotelChecklistsHub({ locale }: { locale: Locale }) {
             '@type': 'DigitalDocument',
             name: item.title,
             description: item.body,
-            url: localizedPath(locale, item.href),
+            url: `${SITE_URL}${item.href}`,
           }))
         ),
       },

@@ -121,6 +121,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/:locale(en|fr)/downloads/:path*',
+        destination: '/downloads/:path*',
+        permanent: true,
+      },
+      {
         source: '/en/process-sur-mesure',
         destination: '/en/bespoke-process',
         permanent: true,
