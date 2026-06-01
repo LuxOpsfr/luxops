@@ -33,6 +33,7 @@ const nextConfig: NextConfig = {
     return [
       { source: '/robots.txt', headers: marketingCache },
       { source: '/sitemap.xml', headers: marketingCache },
+      { source: '/downloads/:path*', headers: downloadableAssetHeaders },
       { source: '/downloads/housekeeping-checklists/:path*', headers: downloadableAssetHeaders },
       { source: '/downloads/checklists/:path*', headers: downloadableAssetHeaders },
       {
