@@ -57,6 +57,17 @@ export default function TrackedLink({
       return
     }
 
+    if (eventName === 'free_checklist_download_clicked') {
+      window.setTimeout(() => {
+        window.dispatchEvent(new CustomEvent('luxops:download-follow-up', {
+          detail: {
+            target_url: href,
+            ...eventProperties,
+          },
+        }))
+      }, 350)
+    }
+
     const samePageHash = getSamePageHash()
     if (samePageHash) {
       event.preventDefault()

@@ -20,6 +20,7 @@ import { useCart } from '@/context/CartContext'
 import { useCurrency } from '@/context/CurrencyContext'
 import TrackedLink from '@/components/TrackedLink'
 import ProductPreviewCarousel from '@/components/ProductPreviewCarousel'
+import ProductTrustSection from '@/components/ProductTrustSection'
 
 const benefitIcons = [
   ClipboardCheck,
@@ -224,6 +225,8 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
           </div>
         </div>
       </section>
+
+      <ProductTrustSection locale={locale} />
 
       <section className="py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-[0.8fr_1.2fr] gap-10 items-start">

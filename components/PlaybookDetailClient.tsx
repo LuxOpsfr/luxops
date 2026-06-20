@@ -8,6 +8,8 @@ import { useCart } from '@/context/CartContext'
 import { useCurrency } from '@/context/CurrencyContext'
 import TrackedLink from '@/components/TrackedLink'
 import ProductPreviewCarousel from '@/components/ProductPreviewCarousel'
+import HousekeepingProductProof from '@/components/HousekeepingProductProof'
+import ProductTrustSection from '@/components/ProductTrustSection'
 import posthog from 'posthog-js'
 
 interface Stat {
@@ -208,6 +210,8 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
         </div>
       </section>
 
+      {pb.id === 'hsk' ? <HousekeepingProductProof locale={locale} /> : null}
+
       {/* Bento Architecture */}
       <section className="py-24 px-6 bg-white">
         <div className="max-w-screen-xl mx-auto">
@@ -354,6 +358,8 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
           </div>
         </div>
       </section>
+
+      <ProductTrustSection locale={locale} />
 
       {/* FAQ */}
       <section className="py-24 px-6 bg-white">

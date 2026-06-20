@@ -5,6 +5,7 @@ import Header from './Header'
 import Footer from './Footer'
 import CartDrawer from './CartDrawer'
 import CookieBanner from './CookieBanner'
+import DownloadFollowUp from './DownloadFollowUp'
 
 interface SiteShellProps {
   locale: string
@@ -25,6 +26,7 @@ export default function SiteShell({ locale, children }: SiteShellProps) {
       <main>{children}</main>
       <Footer locale={locale} />
       <CartDrawer locale={locale} />
+      <DownloadFollowUp locale={locale} />
       <CookieBanner locale={locale} />
     </>
   )
