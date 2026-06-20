@@ -19,6 +19,7 @@ import { StarterPackEntry } from '@/content/starter-packs/data'
 import { useCart } from '@/context/CartContext'
 import { useCurrency } from '@/context/CurrencyContext'
 import TrackedLink from '@/components/TrackedLink'
+import ProductPreviewCarousel from '@/components/ProductPreviewCarousel'
 
 const benefitIcons = [
   ClipboardCheck,
@@ -150,67 +151,8 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
             </p>
           </div>
 
-          <div
-            className="bg-[#f8f9ff] p-6 md:p-8"
-            style={{ borderRadius: '0.125rem' }}
-          >
-            <div
-              className="bg-white p-7 shadow-sm"
-              style={{ borderRadius: '0.125rem' }}
-            >
-              <div className="flex items-center justify-between mb-8">
-                <p className="text-xs font-bold uppercase tracking-widest text-[#003d9b]">
-                  {isEn ? 'Operational toolkit' : 'Kit opérationnel'}
-                </p>
-                <span className="font-display text-4xl font-extrabold text-[#0a1d2e]">
-                  {formatProductPrice('starter_pack')}
-                </span>
-              </div>
-              <div
-                className="relative overflow-hidden p-6 mb-7"
-                style={{ backgroundColor: '#dae9ff', borderRadius: '0.125rem' }}
-              >
-                <div
-                  className="absolute inset-0 opacity-25"
-                  style={{
-                    backgroundImage:
-                      'radial-gradient(#003d9b 0.5px, transparent 0.5px)',
-                    backgroundSize: '18px 18px',
-                  }}
-                />
-                <div className="relative border border-[rgba(0,61,155,0.18)] bg-white/45 p-5">
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-[#003d9b] mb-4">
-                    {pack.category[lang]}
-                  </p>
-                  <div className="grid sm:grid-cols-2 gap-2">
-                    {pack.tools[lang].map((tool, index) => (
-                      <div key={tool} className="flex items-center gap-3">
-                        <span className="w-5 h-5 bg-[#003d9b] text-white text-[9px] font-bold flex items-center justify-center flex-shrink-0">
-                          {String(index + 1).padStart(2, '0')}
-                        </span>
-                        <span className="text-[10px] font-bold text-[#0a1d2e] uppercase leading-snug">
-                          {tool}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-              <ul className="space-y-3">
-                {pack.formats[lang].map((format) => (
-                  <li
-                    key={format}
-                    className="flex gap-3 text-sm text-[#4f6074]"
-                  >
-                    <CheckCircle2
-                      size={18}
-                      className="text-[#003d9b] flex-shrink-0 mt-0.5"
-                    />
-                    <span>{format}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div className="w-full">
+            <ProductPreviewCarousel productId={pack.id} locale={locale} />
           </div>
         </div>
       </section>

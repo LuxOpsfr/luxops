@@ -7,6 +7,7 @@ import { PlaybookEntry } from '@/content/playbooks/data'
 import { useCart } from '@/context/CartContext'
 import { useCurrency } from '@/context/CurrencyContext'
 import TrackedLink from '@/components/TrackedLink'
+import ProductPreviewCarousel from '@/components/ProductPreviewCarousel'
 import posthog from 'posthog-js'
 
 interface Stat {
@@ -181,64 +182,9 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
             </p>
           </div>
 
-          {/* Right - blueprint card */}
-          <div className="flex-1 relative w-full max-w-md lg:max-w-none">
-            <div
-              className="absolute -top-4 -right-4 w-full h-full"
-              style={{ backgroundColor: 'rgba(0,61,155,0.08)', transform: 'rotate(2deg)', borderRadius: '0.125rem' }}
-            />
-            <div
-              className="relative bg-white p-8"
-              style={{
-                borderRadius: '0.125rem',
-                boxShadow: '0 20px 60px rgba(10,29,46,0.12)',
-                border: '1px solid rgba(195,198,214,0.3)',
-              }}
-            >
-              {/* SOP Preview mockup */}
-              <div className="border-b pb-4 mb-5" style={{ borderColor: 'rgba(195,198,214,0.3)' }}>
-                <p className="text-[10px] text-[#003d9b] font-bold uppercase tracking-widest mb-1">
-                  {isEn ? 'Standard Operating Procedure' : 'Procédure Opérationnelle Standard'} · {pb.dept[lang]}
-                </p>
-                <h4 className="font-display font-bold text-lg uppercase text-[#0a1d2e]">
-                  {pb.chapters[lang][0]}
-                </h4>
-              </div>
-              <div className="space-y-4">
-                {[1, 2, 3].map((n) => (
-                  <div key={n} className="flex gap-3 items-start">
-                    <span
-                      className="text-white text-[10px] font-bold w-6 h-6 flex items-center justify-center flex-shrink-0"
-                      style={{ backgroundColor: '#003d9b', borderRadius: '0.125rem' }}
-                    >
-                      {String(n).padStart(2, '0')}
-                    </span>
-                    <div>
-                      <p className="font-bold text-xs uppercase tracking-tight text-[#0a1d2e] mb-0.5">
-                        {pb.highlights[lang][n - 1]}
-                      </p>
-                      <div className="h-2 rounded-full" style={{ backgroundColor: '#eef4ff', width: `${80 - n * 10}%` }} />
-                    </div>
-                  </div>
-                ))}
-                <div className="flex gap-3 items-start opacity-30">
-                  <span
-                    className="text-white text-[10px] font-bold w-6 h-6 flex items-center justify-center flex-shrink-0"
-                    style={{ backgroundColor: '#003d9b', borderRadius: '0.125rem' }}
-                  >
-                    04
-                  </span>
-                  <div className="w-full h-4 rounded" style={{ backgroundColor: '#eef4ff' }} />
-                </div>
-              </div>
-              <div
-                className="absolute bottom-6 right-6 p-3 text-right"
-                style={{ backgroundColor: 'rgba(255,255,255,0.9)', border: '1px solid rgba(195,198,214,0.3)' }}
-              >
-                <p className="font-display font-bold text-[10px] text-[#0a1d2e] uppercase">EDITION 2026</p>
-                <p className="text-[9px] text-[#737685] uppercase tracking-widest">LuxOps Certified</p>
-              </div>
-            </div>
+          {/* Right - product preview */}
+          <div className="flex-1 relative w-full">
+            <ProductPreviewCarousel productId={pb.id} locale={locale} />
           </div>
         </div>
       </section>

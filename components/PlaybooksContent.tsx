@@ -4,13 +4,9 @@ import { useState } from 'react'
 import { useTranslations } from 'next-intl'
 import {
   ArrowRight,
-  Building2,
   CheckCircle2,
   ChevronRight,
   PackageCheck,
-  Sparkles,
-  UtensilsCrossed,
-  Waves,
 } from 'lucide-react'
 import Link from 'next/link'
 import AddToCartButton from '@/components/AddToCartButton'
@@ -19,19 +15,7 @@ import { PLAYBOOKS, BUNDLE_PRICE_ID } from '@/content/playbooks/data'
 import { STARTER_PACKS } from '@/content/starter-packs/data'
 import { useCurrency } from '@/context/CurrencyContext'
 import { formatCurrencyAmount } from '@/lib/pricing'
-
-const DEPT_ICONS = {
-  fo: Building2,
-  hsk: Sparkles,
-  fb: UtensilsCrossed,
-  spa: Waves,
-}
-
-const STARTER_PACK_ICONS = {
-  'fo-starter-pack': Building2,
-  'hsk-starter-pack': Sparkles,
-  'fb-starter-pack': UtensilsCrossed,
-}
+import ProductPreviewCarousel from '@/components/ProductPreviewCarousel'
 
 export default function PlaybooksContent({ locale }: { locale: string }) {
   const t = useTranslations('playbooks_page')
@@ -72,7 +56,7 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-12 items-center">
-            <div>
+            <div className="min-w-0">
               <h1 className="font-display text-5xl md:text-6xl font-extrabold text-[#0a1d2e] mb-5 leading-tight tracking-tight">
                 {t('title')}
               </h1>
@@ -109,15 +93,15 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
               </div>
             </div>
 
-            <div className="bg-[#f8f9ff] p-8" style={{ borderRadius: '0.125rem' }}>
+            <div className="min-w-0 bg-[#f8f9ff] p-6 sm:p-8" style={{ borderRadius: '0.125rem' }}>
               <div className="grid gap-4">
-                <div className="bg-white p-7 shadow-sm" style={{ borderRadius: '0.125rem' }}>
+                <div className="min-w-0 bg-white p-6 sm:p-7 shadow-sm" style={{ borderRadius: '0.125rem' }}>
                   <div className="mb-5">
                     <p className="text-xs font-bold uppercase tracking-widest text-[#003d9b]">
                       {isEn ? 'New · Starter Pack' : 'Nouveau · Starter Pack'}
                     </p>
                   </div>
-                  <div className="flex items-end gap-3 mb-6">
+                  <div className="flex flex-wrap items-end gap-3 mb-6">
                     <span className="font-display text-6xl font-extrabold text-[#0a1d2e]">
                       {formatProductPrice('starter_pack')}
                     </span>
@@ -135,11 +119,11 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                   </div>
                 </div>
 
-                <div className="bg-white/70 p-6 border border-[#e3e8f4]" style={{ borderRadius: '0.125rem' }}>
+                <div className="min-w-0 bg-white/70 p-6 border border-[#e3e8f4]" style={{ borderRadius: '0.125rem' }}>
                   <p className="text-xs font-bold uppercase tracking-widest text-[#737685] mb-4">
                     {isEn ? 'Full Playbook' : 'Playbook complet'}
                   </p>
-                  <div className="flex items-end gap-3 mb-5">
+                  <div className="flex flex-wrap items-end gap-3 mb-5">
                     <span className="font-display text-4xl font-extrabold text-[#0a1d2e]">
                       {formatProductPrice('playbook')}
                     </span>
@@ -219,8 +203,6 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
           {filteredPlaybooks.map((pb) => {
-            const Icon = DEPT_ICONS[pb.id]
-
             return (
               <article
                 key={pb.id}
@@ -232,25 +214,7 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                     className="relative overflow-hidden"
                     style={{ aspectRatio: '16/10', backgroundColor: '#dae9ff' }}
                   >
-                    <div
-                      className="absolute inset-0 opacity-25 group-hover:opacity-40 transition-opacity duration-300"
-                      style={{
-                        backgroundImage: 'radial-gradient(#003d9b 0.5px, transparent 0.5px)',
-                        backgroundSize: '20px 20px',
-                      }}
-                    />
-                    <div
-                      className="absolute inset-7 flex flex-col items-center justify-center"
-                      style={{ border: '1px solid rgba(0,61,155,0.15)' }}
-                    >
-                      <Icon size={46} className="mb-3" style={{ color: '#003d9b', opacity: 0.28 }} />
-                      <div
-                        className="text-[10px] uppercase font-bold"
-                        style={{ letterSpacing: '0.2em', color: '#003d9b', opacity: 0.45 }}
-                      >
-                        {pb.dept[lang]}
-                      </div>
-                    </div>
+                    <ProductPreviewCarousel productId={pb.id} locale={locale} variant="card" />
                   </div>
                 </Link>
 
@@ -338,7 +302,6 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {starterPacksForDisplay.map((pack) => {
-              const Icon = STARTER_PACK_ICONS[pack.id]
               const isPurchasable = Boolean(pack.priceId)
 
               return (
@@ -352,25 +315,7 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                       className="relative overflow-hidden"
                       style={{ aspectRatio: '16/7', backgroundColor: '#dae9ff' }}
                     >
-                      <div
-                        className="absolute inset-0 opacity-25 group-hover:opacity-40 transition-opacity duration-300"
-                        style={{
-                          backgroundImage: 'radial-gradient(#003d9b 0.5px, transparent 0.5px)',
-                          backgroundSize: '20px 20px',
-                        }}
-                      />
-                      <div
-                        className="absolute inset-7 flex flex-col items-center justify-center"
-                        style={{ border: '1px solid rgba(0,61,155,0.15)' }}
-                      >
-                        <Icon size={44} className="mb-3" style={{ color: '#003d9b', opacity: 0.3 }} />
-                        <div
-                          className="text-[10px] uppercase font-bold"
-                          style={{ letterSpacing: '0.2em', color: '#003d9b', opacity: 0.48 }}
-                        >
-                          {pack.category[lang]}
-                        </div>
-                      </div>
+                      <ProductPreviewCarousel productId={pack.id} locale={locale} variant="card" />
                     </div>
                   </Link>
 
