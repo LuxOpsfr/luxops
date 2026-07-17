@@ -1319,4 +1319,26 @@
     <priority>0.78</priority>
   </url>
 
+  <!-- Hotel Operations Playbook EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/hotel-operations-playbook</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/hotel-operations-playbook"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/manuel-procedure-hotellerie"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/hotel-operations-playbook"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.84</priority>
+  </url>
+
+  <!-- Manuel Procedure Hotellerie FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/manuel-procedure-hotellerie</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/manuel-procedure-hotellerie"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/hotel-operations-playbook"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/hotel-operations-playbook"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.84</priority>
+  </url>
+
 </urlset>

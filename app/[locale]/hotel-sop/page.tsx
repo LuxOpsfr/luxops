@@ -552,6 +552,11 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
           <div className="grid md:grid-cols-2 gap-4">
             {[
               {
+                href: isEN ? '/en/hotel-operations-playbook' : '/fr/manuel-procedure-hotellerie',
+                title: isEN ? 'Hotel Operations Playbook' : 'Manuel de procédures hôtelières',
+                body: isEN ? 'Understand how SOPs, checklists, training and standards work together in a complete playbook.' : 'Comprendre comment SOP, checklists, formation et standards fonctionnent ensemble dans un manuel complet.',
+              },
+              {
                 href: `/${locale}/front-office-sop`,
                 title: isEN ? 'Front Office SOP' : 'SOP réception',
                 body: isEN ? 'Check-in, check-out, guest recovery, night audit and shift handover.' : 'Check-in, check-out, réclamations, audit de nuit et passation.',

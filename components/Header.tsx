@@ -29,6 +29,7 @@ export default function Header({ locale }: HeaderProps) {
     '/en/housekeeping-deep-cleaning-checklist': '/fr/deep-cleaning-chambre',
     '/en/breakfast-service-checklist': '/fr/checklist-service-petit-dejeuner',
     '/en/room-status-discrepancy-report': '/fr/rapport-ecart-statut-chambre',
+    '/en/hotel-operations-playbook': '/fr/manuel-procedure-hotellerie',
     '/fr/formation': '/en/training',
     '/fr/audit-qualite': '/en/quality-audit',
     '/fr/process-sur-mesure': '/en/bespoke-process',
@@ -41,6 +42,7 @@ export default function Header({ locale }: HeaderProps) {
     '/fr/deep-cleaning-chambre': '/en/housekeeping-deep-cleaning-checklist',
     '/fr/checklist-service-petit-dejeuner': '/en/breakfast-service-checklist',
     '/fr/rapport-ecart-statut-chambre': '/en/room-status-discrepancy-report',
+    '/fr/manuel-procedure-hotellerie': '/en/hotel-operations-playbook',
   }
   const switchLocalePath = localizedPathPairs[pathname] ?? pathname.replace(`/${locale}`, `/${otherLocale}`)
   const { items, openCart } = useCart()
