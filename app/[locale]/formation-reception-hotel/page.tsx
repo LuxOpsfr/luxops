@@ -87,6 +87,11 @@ const frenchData = (locale: string): TrainingSeoPageData => ({
   relatedTitle: 'Compléter le travail réception',
   related: [
     {
+      href: `/${locale}/methode-formation-luxops`,
+      title: 'Méthode de formation LuxOps',
+      text: 'Voir comment les situations de réception sont transformées en cas pratiques, standards et routines de suivi.',
+    },
+    {
       href: `/${locale}/formation-equipe-hoteliere`,
       title: 'Formation équipes hôtelières',
       text: 'Page large pour les standards de service, l’intégration, les passations et la coordination entre services.',
@@ -165,6 +170,11 @@ const englishData = (locale: string): TrainingSeoPageData => ({
   relatedLabel: 'Related pages',
   relatedTitle: 'Continue the front desk work',
   related: [
+    {
+      href: `/${locale}/luxops-training-method`,
+      title: 'LuxOps training method',
+      text: 'See how front desk situations become practical scenarios, standards and follow-up routines.',
+    },
     {
       href: `/${locale}/formation-equipe-hoteliere`,
       title: 'Hotel team training',

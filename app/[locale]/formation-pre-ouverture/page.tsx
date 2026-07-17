@@ -87,6 +87,11 @@ const frenchData = (locale: string): TrainingSeoPageData => ({
   relatedTitle: 'Préparer les départements',
   related: [
     {
+      href: `/${locale}/methode-formation-luxops`,
+      title: 'Méthode de formation LuxOps',
+      text: 'Comprendre comment la formation est construite à partir du terrain, des standards et des situations réelles.',
+    },
+    {
       href: `/${locale}/formation-reception-hotel`,
       title: 'Formation réception',
       text: 'Préparer l’accueil, le check-in, les passations, la communication client et les situations sensibles au desk.',
@@ -165,6 +170,11 @@ const englishData = (locale: string): TrainingSeoPageData => ({
   relatedLabel: 'Related pages',
   relatedTitle: 'Prepare each department',
   related: [
+    {
+      href: `/${locale}/luxops-training-method`,
+      title: 'LuxOps training method',
+      text: 'Understand how training is built from field operations, standards and real service situations.',
+    },
     {
       href: `/${locale}/formation-reception-hotel`,
       title: 'Front desk training',

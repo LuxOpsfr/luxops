@@ -87,6 +87,11 @@ const frenchData = (locale: string): TrainingSeoPageData => ({
   relatedTitle: 'Pages métier à consulter',
   related: [
     {
+      href: `/${locale}/methode-formation-luxops`,
+      title: 'Méthode de formation LuxOps',
+      text: 'Comprendre comment une formation est préparée à partir du terrain, des standards et des situations réelles.',
+    },
+    {
       href: `/${locale}/formation-reception-hotel`,
       title: 'Formation réception',
       text: 'Accueil, check-in, check-out, PMS, passations, réclamations et réflexes de service au desk.',
@@ -165,6 +170,11 @@ const englishData = (locale: string): TrainingSeoPageData => ({
   relatedLabel: 'Training cluster',
   relatedTitle: 'Related department pages',
   related: [
+    {
+      href: `/${locale}/luxops-training-method`,
+      title: 'LuxOps training method',
+      text: 'Understand how training is prepared from field operations, standards and real service situations.',
+    },
     {
       href: `/${locale}/formation-reception-hotel`,
       title: 'Front desk training',

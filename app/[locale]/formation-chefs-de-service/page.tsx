@@ -87,6 +87,11 @@ const frenchData = (locale: string): TrainingSeoPageData => ({
   relatedTitle: 'Relier le management aux opérations',
   related: [
     {
+      href: `/${locale}/methode-formation-luxops`,
+      title: 'Méthode de formation LuxOps',
+      text: 'Voir comment la formation relie standards, cas terrain, briefings et suivi manager après la session.',
+    },
+    {
       href: `/${locale}/formation-equipe-hoteliere`,
       title: 'Formation équipes hôtelières',
       text: 'Page large pour aligner les équipes autour des standards, passations et méthodes communes.',
@@ -170,6 +175,11 @@ const englishData = (locale: string): TrainingSeoPageData => ({
   relatedLabel: 'Related pages',
   relatedTitle: 'Connect leadership to operations',
   related: [
+    {
+      href: `/${locale}/luxops-training-method`,
+      title: 'LuxOps training method',
+      text: 'See how training connects standards, field cases, briefings and manager follow-up after the session.',
+    },
     {
       href: `/${locale}/formation-equipe-hoteliere`,
       title: 'Hotel team training',

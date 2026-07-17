@@ -87,6 +87,11 @@ const frenchData = (locale: string): TrainingSeoPageData => ({
   relatedTitle: 'Compléter le travail F&B',
   related: [
     {
+      href: `/${locale}/audit-formation-fb`,
+      title: 'Audit et formation F&B',
+      text: 'Observer le service restaurant, bar ou room service, puis former les équipes sur les écarts prioritaires.',
+    },
+    {
       href: `/${locale}/hotel-fb-sop`,
       title: 'SOP F&B',
       text: 'Page pilier pour les procédures F&B, standards de service, restaurant, bar et room service.',
@@ -165,6 +170,11 @@ const englishData = (locale: string): TrainingSeoPageData => ({
   relatedLabel: 'Related pages',
   relatedTitle: 'Continue the F&B work',
   related: [
+    {
+      href: `/${locale}/fb-audit-training`,
+      title: 'F&B audit and training',
+      text: 'Observe restaurant, bar or room service, then train teams on the priority gaps.',
+    },
     {
       href: `/${locale}/hotel-fb-sop`,
       title: 'F&B SOP',
