@@ -145,6 +145,13 @@ export function FormationContent({ locale }: { locale: string }) {
               {page.playbooksLink}
               <ArrowRight size={15} />
             </Link>
+            <Link
+              href={isEn ? '/en/luxops-training-method' : '/fr/methode-formation-luxops'}
+              className="mt-4 inline-flex items-center gap-2 text-[#003d9b] font-bold text-sm hover:text-[#0a1d2e] transition-colors"
+            >
+              {page.methodPageLink}
+              <ArrowRight size={15} />
+            </Link>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -275,12 +282,18 @@ const frenchContent = {
       title: 'Chefs de service',
       text: 'Former les responsables à mieux briefer, accompagner, contrôler et faire progresser les équipes sans transformer le management en simple rappel à l’ordre.',
     },
+    {
+      icon: <ClipboardCheck size={20} className="text-[#003d9b]" />,
+      title: 'Audit et formation F&B',
+      text: 'Observer restaurant, bar ou room service, puis former les équipes sur les écarts qui impactent directement l’expérience client.',
+    },
   ],
   methodLabel: 'Méthode',
   methodTitle: 'Des standards expliqués, pratiqués puis transmis',
   methodIntro:
     'La session part toujours du réel : vos équipes, vos points de contact client, vos procédures existantes et les écarts observés. Les supports LuxOps servent de base structurée, mais la formation peut aussi s’appuyer sur vos propres process et valeurs internes.',
   playbooksLink: 'Voir les playbooks opérationnels',
+  methodPageLink: 'Voir la méthode de formation LuxOps',
   methodPoints: [
     {
       title: 'Compréhension',
@@ -366,12 +379,18 @@ const englishContent = {
       title: 'Department leadership',
       text: 'Help managers brief, coach, control and support their teams without reducing management to repeated reminders.',
     },
+    {
+      icon: <ClipboardCheck size={20} className="text-[#003d9b]" />,
+      title: 'F&B audit and training',
+      text: 'Observe restaurant, bar or room service, then train teams on the gaps that directly affect the guest experience.',
+    },
   ],
   methodLabel: 'Method',
   methodTitle: 'Standards explained, practised and passed on',
   methodIntro:
     'The session starts from reality: your teams, your guest touchpoints, your existing procedures and the gaps you see on the floor. LuxOps materials provide structure, but training can also be built around your own internal processes and values.',
   playbooksLink: 'View operational playbooks',
+  methodPageLink: 'View the LuxOps training method',
   methodPoints: [
     {
       title: 'Understanding',

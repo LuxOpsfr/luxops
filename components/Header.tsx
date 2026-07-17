@@ -31,6 +31,8 @@ export default function Header({ locale }: HeaderProps) {
     '/en/room-status-discrepancy-report': '/fr/rapport-ecart-statut-chambre',
     '/en/hotel-operations-playbook': '/fr/manuel-procedure-hotellerie',
     '/en/hotel-management-routines': '/fr/rituels-management-hotelier',
+    '/en/fb-audit-training': '/fr/audit-formation-fb',
+    '/en/luxops-training-method': '/fr/methode-formation-luxops',
     '/fr/formation': '/en/training',
     '/fr/audit-qualite': '/en/quality-audit',
     '/fr/process-sur-mesure': '/en/bespoke-process',
@@ -45,6 +47,8 @@ export default function Header({ locale }: HeaderProps) {
     '/fr/rapport-ecart-statut-chambre': '/en/room-status-discrepancy-report',
     '/fr/manuel-procedure-hotellerie': '/en/hotel-operations-playbook',
     '/fr/rituels-management-hotelier': '/en/hotel-management-routines',
+    '/fr/audit-formation-fb': '/en/fb-audit-training',
+    '/fr/methode-formation-luxops': '/en/luxops-training-method',
   }
   const switchLocalePath = localizedPathPairs[pathname] ?? pathname.replace(`/${locale}`, `/${otherLocale}`)
   const { items, openCart } = useCart()

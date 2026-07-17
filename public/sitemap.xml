@@ -858,6 +858,48 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- SEO: F&B Audit and Training EN/FR -->
+  <url>
+    <loc>https://www.luxops.fr/en/fb-audit-training</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/fb-audit-training"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/audit-formation-fb"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/fb-audit-training"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.72</priority>
+  </url>
+
+  <url>
+    <loc>https://www.luxops.fr/fr/audit-formation-fb</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/audit-formation-fb"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/fb-audit-training"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/fb-audit-training"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.72</priority>
+  </url>
+
+  <!-- SEO: LuxOps Training Method EN/FR -->
+  <url>
+    <loc>https://www.luxops.fr/en/luxops-training-method</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/luxops-training-method"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/methode-formation-luxops"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/luxops-training-method"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.72</priority>
+  </url>
+
+  <url>
+    <loc>https://www.luxops.fr/fr/methode-formation-luxops</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/methode-formation-luxops"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/luxops-training-method"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/luxops-training-method"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.72</priority>
+  </url>
+
   <!-- Blog: Hotel Staff Training Service Standards EN -->
   <url>
     <loc>https://www.luxops.fr/en/blog/hotel-staff-training-service-standards</loc>
