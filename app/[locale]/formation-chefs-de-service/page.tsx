@@ -101,6 +101,11 @@ const frenchData = (locale: string): TrainingSeoPageData => ({
       title: 'Formation housekeeping',
       text: 'Application côté étages : inspection, briefings, contrôle qualité et accompagnement des équipes.',
     },
+    {
+      href: `/${locale}/rituels-management-hotelier`,
+      title: 'Rituels de management hôtelier',
+      text: 'Page inspiration sur briefing, présence terrain, feedback, passation manager et maintien des standards.',
+    },
   ],
   finalTitle: 'Besoin d’accompagner vos chefs de service ?',
   finalText:
@@ -179,6 +184,11 @@ const englishData = (locale: string): TrainingSeoPageData => ({
       href: `/${locale}/formation-housekeeping-hotel`,
       title: 'Housekeeping training',
       text: 'Floor application: inspection, briefings, quality control and team support.',
+    },
+    {
+      href: `/${locale}/hotel-management-routines`,
+      title: 'Hotel management routines',
+      text: 'Inspiration page on briefings, floor presence, feedback, manager handovers and standards follow-up.',
     },
   ],
   finalTitle: 'Need to support your department heads?',

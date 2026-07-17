@@ -30,6 +30,7 @@ export default function Header({ locale }: HeaderProps) {
     '/en/breakfast-service-checklist': '/fr/checklist-service-petit-dejeuner',
     '/en/room-status-discrepancy-report': '/fr/rapport-ecart-statut-chambre',
     '/en/hotel-operations-playbook': '/fr/manuel-procedure-hotellerie',
+    '/en/hotel-management-routines': '/fr/rituels-management-hotelier',
     '/fr/formation': '/en/training',
     '/fr/audit-qualite': '/en/quality-audit',
     '/fr/process-sur-mesure': '/en/bespoke-process',
@@ -43,6 +44,7 @@ export default function Header({ locale }: HeaderProps) {
     '/fr/checklist-service-petit-dejeuner': '/en/breakfast-service-checklist',
     '/fr/rapport-ecart-statut-chambre': '/en/room-status-discrepancy-report',
     '/fr/manuel-procedure-hotellerie': '/en/hotel-operations-playbook',
+    '/fr/rituels-management-hotelier': '/en/hotel-management-routines',
   }
   const switchLocalePath = localizedPathPairs[pathname] ?? pathname.replace(`/${locale}`, `/${otherLocale}`)
   const { items, openCart } = useCart()

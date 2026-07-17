@@ -425,6 +425,13 @@ export default async function HowToImproveHotelOperationsPage({ params }: { para
                 title: isEN ? 'Front Office SOP Guide' : 'Guide SOP Réception',
                 desc: isEN ? 'Standard operating procedures for hotel reception' : 'Procédures opérationnelles pour la réception hôtelière',
               },
+              {
+                href: isEN ? '/en/hotel-management-routines' : '/fr/rituels-management-hotelier',
+                title: isEN ? 'Hotel Management Routines' : 'Rituels de management hôtelier',
+                desc: isEN
+                  ? 'Briefings, floor presence, feedback and standards follow-up'
+                  : 'Briefings, présence terrain, feedback et maintien des standards',
+              },
             ].map((link) => (
               <Link
                 key={link.href}

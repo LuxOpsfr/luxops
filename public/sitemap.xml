@@ -1341,4 +1341,26 @@
     <priority>0.84</priority>
   </url>
 
+  <!-- Hotel Management Routines EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/hotel-management-routines</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/hotel-management-routines"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/rituels-management-hotelier"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/hotel-management-routines"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.82</priority>
+  </url>
+
+  <!-- Rituels Management Hotelier FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/rituels-management-hotelier</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/rituels-management-hotelier"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/hotel-management-routines"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/hotel-management-routines"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.82</priority>
+  </url>
+
 </urlset>
