@@ -24,6 +24,11 @@ export default function Header({ locale }: HeaderProps) {
     '/en/food-and-beverage-service-sequence': '/fr/sequence-service-restaurant-hotel',
     '/en/hotel-room-service-checklist': '/fr/checklist-room-service-hotel',
     '/en/restaurant-opening-checklist': '/fr/checklist-ouverture-restaurant',
+    '/en/front-desk-shift-handover-template': '/fr/modele-passation-reception',
+    '/en/guest-complaint-handling-sop': '/fr/procedure-reclamation-client',
+    '/en/housekeeping-deep-cleaning-checklist': '/fr/deep-cleaning-chambre',
+    '/en/breakfast-service-checklist': '/fr/checklist-service-petit-dejeuner',
+    '/en/room-status-discrepancy-report': '/fr/rapport-ecart-statut-chambre',
     '/fr/formation': '/en/training',
     '/fr/audit-qualite': '/en/quality-audit',
     '/fr/process-sur-mesure': '/en/bespoke-process',
@@ -31,6 +36,11 @@ export default function Header({ locale }: HeaderProps) {
     '/fr/sequence-service-restaurant-hotel': '/en/food-and-beverage-service-sequence',
     '/fr/checklist-room-service-hotel': '/en/hotel-room-service-checklist',
     '/fr/checklist-ouverture-restaurant': '/en/restaurant-opening-checklist',
+    '/fr/modele-passation-reception': '/en/front-desk-shift-handover-template',
+    '/fr/procedure-reclamation-client': '/en/guest-complaint-handling-sop',
+    '/fr/deep-cleaning-chambre': '/en/housekeeping-deep-cleaning-checklist',
+    '/fr/checklist-service-petit-dejeuner': '/en/breakfast-service-checklist',
+    '/fr/rapport-ecart-statut-chambre': '/en/room-status-discrepancy-report',
   }
   const switchLocalePath = localizedPathPairs[pathname] ?? pathname.replace(`/${locale}`, `/${otherLocale}`)
   const { items, openCart } = useCart()

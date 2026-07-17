@@ -1209,4 +1209,114 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Front Desk Shift Handover Template EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/front-desk-shift-handover-template</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/front-desk-shift-handover-template"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/modele-passation-reception"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/front-desk-shift-handover-template"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.78</priority>
+  </url>
+
+  <!-- Modele Passation Reception FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/modele-passation-reception</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/modele-passation-reception"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/front-desk-shift-handover-template"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/front-desk-shift-handover-template"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.78</priority>
+  </url>
+
+  <!-- Guest Complaint Handling SOP EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/guest-complaint-handling-sop</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/guest-complaint-handling-sop"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/procedure-reclamation-client"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/guest-complaint-handling-sop"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.78</priority>
+  </url>
+
+  <!-- Procedure Reclamation Client FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/procedure-reclamation-client</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/procedure-reclamation-client"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/guest-complaint-handling-sop"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/guest-complaint-handling-sop"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.78</priority>
+  </url>
+
+  <!-- Housekeeping Deep Cleaning Checklist EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/housekeeping-deep-cleaning-checklist</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/housekeeping-deep-cleaning-checklist"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/deep-cleaning-chambre"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/housekeeping-deep-cleaning-checklist"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.78</priority>
+  </url>
+
+  <!-- Deep Cleaning Chambre FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/deep-cleaning-chambre</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/deep-cleaning-chambre"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/housekeeping-deep-cleaning-checklist"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/housekeeping-deep-cleaning-checklist"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.78</priority>
+  </url>
+
+  <!-- Breakfast Service Checklist EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/breakfast-service-checklist</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/breakfast-service-checklist"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/checklist-service-petit-dejeuner"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/breakfast-service-checklist"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.78</priority>
+  </url>
+
+  <!-- Checklist Service Petit Dejeuner FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/checklist-service-petit-dejeuner</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/checklist-service-petit-dejeuner"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/breakfast-service-checklist"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/breakfast-service-checklist"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.78</priority>
+  </url>
+
+  <!-- Room Status Discrepancy Report EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/room-status-discrepancy-report</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/room-status-discrepancy-report"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/rapport-ecart-statut-chambre"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/room-status-discrepancy-report"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.78</priority>
+  </url>
+
+  <!-- Rapport Ecart Statut Chambre FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/rapport-ecart-statut-chambre</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/rapport-ecart-statut-chambre"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/room-status-discrepancy-report"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/room-status-discrepancy-report"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.78</priority>
+  </url>
+
 </urlset>
