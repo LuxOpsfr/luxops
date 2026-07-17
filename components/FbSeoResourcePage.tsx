@@ -1372,6 +1372,11 @@ function getFbClusterLinks(locale: Locale, currentKind: ResourceKind): ClusterLi
         label: 'Room service',
         text: 'Order taking, tray setup, delivery timing and pickup.',
       },
+      {
+        href: '/en/breakfast-service-checklist',
+        label: 'Breakfast service',
+        text: 'Buffet setup, replenishment, allergen notes and closing handover.',
+      },
     ],
     fr: [
       {
@@ -1408,6 +1413,11 @@ function getFbClusterLinks(locale: Locale, currentKind: ResourceKind): ClusterLi
         href: '/fr/checklist-room-service-hotel',
         label: 'Room service',
         text: 'Prise de commande, dressage plateau, timing et débarrassage.',
+      },
+      {
+        href: '/fr/checklist-service-petit-dejeuner',
+        label: 'Service petit déjeuner',
+        text: 'Mise en place buffet, réassort, allergènes et passation de clôture.',
       },
     ],
   }

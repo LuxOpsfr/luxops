@@ -484,6 +484,20 @@ export default async function HousekeepingSopPage({ params }: { params: Promise<
                     ? 'Bathroom sequence: clean to dirty, top to bottom.'
                     : 'Séquence salle de bain : du propre vers le sale, du haut vers le bas.',
                 },
+                {
+                  href: isEN ? '/en/housekeeping-deep-cleaning-checklist' : '/fr/deep-cleaning-chambre',
+                  title: isEN ? 'Housekeeping Deep Cleaning Checklist' : 'Checklist deep cleaning chambre',
+                  desc: isEN
+                    ? 'Periodic deep cleaning controls for rooms, corners and recurring details.'
+                    : 'Contrôles de deep cleaning pour chambre, recoins et points souvent oubliés.',
+                },
+                {
+                  href: isEN ? '/en/room-status-discrepancy-report' : '/fr/rapport-ecart-statut-chambre',
+                  title: isEN ? 'Room Status Discrepancy Report' : 'Rapport écart statut chambre',
+                  desc: isEN
+                    ? 'A shared Front Office and Housekeeping report for PMS status gaps.'
+                    : 'Un report partagé réception et housekeeping pour les écarts de statut PMS.',
+                },
               ].map((item) => (
                 <Link
                   key={item.href}

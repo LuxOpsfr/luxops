@@ -249,6 +249,13 @@ const ARTICLE_LINKS = [
     bodyFr: 'Prise de commande, dressage plateau, timing et recovery.',
   },
   {
+    href: '/breakfast-service-checklist',
+    titleEn: 'Breakfast Service Checklist',
+    titleFr: 'Checklist service petit déjeuner',
+    bodyEn: 'Buffet setup, replenishment, allergen notes and closing handover.',
+    bodyFr: 'Mise en place buffet, réassort, allergènes et passation de clôture.',
+  },
+  {
     href: '/blog/hotel-fb-service-standards',
     titleEn: 'Hotel F&B Service Standards',
     titleFr: 'Standards de service F&B hôtelier',
@@ -278,6 +285,7 @@ function localizeHref(locale: string, href: string) {
     '/restaurant-closing-checklist': locale === 'fr' ? '/checklist-fermeture-restaurant' : '/restaurant-closing-checklist',
     '/food-and-beverage-service-sequence': locale === 'fr' ? '/sequence-service-restaurant-hotel' : '/food-and-beverage-service-sequence',
     '/hotel-room-service-checklist': locale === 'fr' ? '/checklist-room-service-hotel' : '/hotel-room-service-checklist',
+    '/breakfast-service-checklist': locale === 'fr' ? '/checklist-service-petit-dejeuner' : '/breakfast-service-checklist',
   }
 
   const localizedHref = localizedSlugs[href] ?? href

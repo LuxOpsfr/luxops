@@ -412,6 +412,44 @@ export default async function HotelFrontOfficeChecklistPage({ params }: { params
           </div>
         </section>
 
+        {/* Related operating procedures */}
+        <section className="max-w-4xl mx-auto px-6 py-10 border-b border-gray-100">
+          <p className="text-[10px] font-bold uppercase tracking-widest text-[#003d9b] mb-3">
+            {isEN ? 'Related front desk procedures' : 'Procédures réception associées'}
+          </p>
+          <h2 className="text-2xl font-bold text-[#1A2E44] mb-6">
+            {isEN ? 'Turn the checklist into a complete shift routine' : 'Transformer la checklist en vraie routine de shift'}
+          </h2>
+          <div className="grid sm:grid-cols-3 gap-4">
+            {[
+              {
+                href: isEN ? '/en/front-desk-shift-handover-template' : '/fr/modele-passation-reception',
+                title: isEN ? 'Shift handover template' : 'Modèle de passation',
+                desc: isEN ? 'Keep pending items, VIP notes and next-shift priorities clear.' : 'Clarifier les suivis, notes VIP et priorités du service suivant.',
+              },
+              {
+                href: isEN ? '/en/guest-complaint-handling-sop' : '/fr/procedure-reclamation-client',
+                title: isEN ? 'Guest complaint SOP' : 'Réclamation client',
+                desc: isEN ? 'A practical sequence for listening, recovery and follow-up.' : 'Une séquence pratique pour écouter, corriger et assurer le suivi.',
+              },
+              {
+                href: isEN ? '/en/room-status-discrepancy-report' : '/fr/rapport-ecart-statut-chambre',
+                title: isEN ? 'Room status report' : 'Écart statut chambre',
+                desc: isEN ? 'Align Front Office and Housekeeping when the PMS status is wrong.' : 'Aligner réception et housekeeping quand le statut PMS est incohérent.',
+              },
+            ].map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="rounded-xl border border-gray-200 bg-white p-5 transition-colors hover:border-[#003d9b]"
+              >
+                <h3 className="font-semibold text-[#1A2E44] mb-2">{link.title}</h3>
+                <p className="text-sm text-gray-500 leading-relaxed">{link.desc}</p>
+              </Link>
+            ))}
+          </div>
+        </section>
+
         {/* Checklist hub link */}
         <section
           className="py-8 border-b"

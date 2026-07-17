@@ -207,7 +207,7 @@ export default async function FrontOfficeSopPage({ params }: { params: Promise<{
           <h2 className="text-2xl font-bold text-[#1A2E44] mb-6">
             {isEN ? 'Build the full front desk operating system' : 'Structurer tout le fonctionnement de la réception'}
           </h2>
-          <div className="grid md:grid-cols-3 gap-4">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
               {
                 href: `/${locale}/hotel-front-office-checklist`,
@@ -223,6 +223,21 @@ export default async function FrontOfficeSopPage({ params }: { params: Promise<{
                 href: `/${locale}/blog/hotel-front-desk-procedures`,
                 title: isEN ? 'Front Desk Procedures' : 'Procédures front desk',
                 desc: isEN ? 'Check-in, check-out, guest requests and desk consistency.' : 'Check-in, check-out, demandes clients et régularité du desk.',
+              },
+              {
+                href: isEN ? '/en/front-desk-shift-handover-template' : '/fr/modele-passation-reception',
+                title: isEN ? 'Shift Handover Template' : 'Modèle de passation réception',
+                desc: isEN ? 'Shift recap, pending items, VIP notes and next-shift priorities.' : 'Récapitulatif de shift, suivis en attente, notes VIP et priorités du service suivant.',
+              },
+              {
+                href: isEN ? '/en/guest-complaint-handling-sop' : '/fr/procedure-reclamation-client',
+                title: isEN ? 'Guest Complaint SOP' : 'Procédure réclamation client',
+                desc: isEN ? 'Listen, classify, recover, document and follow up with consistency.' : 'Écouter, qualifier, corriger, tracer et assurer le suivi avec régularité.',
+              },
+              {
+                href: isEN ? '/en/room-status-discrepancy-report' : '/fr/rapport-ecart-statut-chambre',
+                title: isEN ? 'Room Status Discrepancy Report' : 'Rapport écart statut chambre',
+                desc: isEN ? 'Connect Front Office and Housekeeping when PMS and floor status do not match.' : 'Aligner réception et housekeeping quand le statut PMS ne correspond pas au terrain.',
               },
             ].map((item) => (
               <Link

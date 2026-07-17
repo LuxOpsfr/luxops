@@ -919,6 +919,20 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
                   : 'Ce qui rend les checklists hôtelières réellement utiles en pratique',
               },
               {
+                href: isEN ? '/en/housekeeping-deep-cleaning-checklist' : '/fr/deep-cleaning-chambre',
+                title: isEN ? 'Housekeeping Deep Cleaning Checklist' : 'Checklist deep cleaning chambre',
+                desc: isEN
+                  ? 'Periodic room deep cleaning controls and supervisor checks'
+                  : 'Contrôles de deep cleaning chambre et vérifications gouvernante',
+              },
+              {
+                href: isEN ? '/en/room-status-discrepancy-report' : '/fr/rapport-ecart-statut-chambre',
+                title: isEN ? 'Room Status Discrepancy Report' : 'Rapport écart statut chambre',
+                desc: isEN
+                  ? 'PMS status gaps between Housekeeping and Front Office'
+                  : 'Écarts de statut PMS entre housekeeping et réception',
+              },
+              {
                 href: isEN ? '/en/formation-equipe-hoteliere' : '/fr/formation-equipe-hoteliere',
                 title: isEN ? 'Hotel Staff Training' : 'Formation standards de service',
                 desc: isEN
