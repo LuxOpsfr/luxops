@@ -124,6 +124,12 @@ const links = {
       title: 'F&B audit and training',
       text: 'Observe restaurant, bar or room service, then train on the gaps that matter.',
     },
+    {
+      href: '/downloads/training/service-standards-training-programme-luxops-en.pdf',
+      label: 'PDF',
+      title: 'Training programme',
+      text: 'A short programme overview to understand formats, modules and the LuxOps method.',
+    },
   ],
   fr: [
     {
@@ -143,6 +149,12 @@ const links = {
       label: 'F&B',
       title: 'Audit et formation F&B',
       text: 'Observer restaurant, bar ou room service, puis former sur les écarts qui comptent.',
+    },
+    {
+      href: '/downloads/training/programme-formation-standards-service-luxops-fr.pdf',
+      label: 'PDF',
+      title: 'Programme formation',
+      text: 'Une présentation courte des formats, modules et de la méthode LuxOps.',
     },
   ],
 }
@@ -241,7 +253,7 @@ export default function LuxOpsTrainingMethodPage({ locale }: { locale: Locale })
               {content.sectionsTitle}
             </h2>
           </div>
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {pillars[locale].map((pillar) => {
               const Icon = pillar.icon
               return (

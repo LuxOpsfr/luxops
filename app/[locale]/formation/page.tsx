@@ -5,12 +5,14 @@ import {
   BriefcaseBusiness,
   CheckCircle2,
   ClipboardCheck,
+  Download,
   GraduationCap,
   Hotel,
   Users2,
 } from 'lucide-react'
 import TrainingQuoteForm from '@/components/TrainingQuoteForm'
 import SamePageAnchor from '@/components/SamePageAnchor'
+import TrackedLink from '@/components/TrackedLink'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
@@ -152,6 +154,21 @@ export function FormationContent({ locale }: { locale: string }) {
               {page.methodPageLink}
               <ArrowRight size={15} />
             </Link>
+            <TrackedLink
+              href={page.programmeHref}
+              eventName="training_programme_download_clicked"
+              eventProperties={{
+                source_page: `/${locale}/${isEn ? 'training' : 'formation'}`,
+                placement: 'method_section',
+                cta_label: page.programmeLink,
+              }}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex items-center gap-2 text-[#003d9b] font-bold text-sm hover:text-[#0a1d2e] transition-colors"
+            >
+              {page.programmeLink}
+              <Download size={15} />
+            </TrackedLink>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -294,6 +311,8 @@ const frenchContent = {
     'La session part toujours du réel : vos équipes, vos points de contact client, vos procédures existantes et les écarts observés. Les supports LuxOps servent de base structurée, mais la formation peut aussi s’appuyer sur vos propres process et valeurs internes.',
   playbooksLink: 'Voir les playbooks opérationnels',
   methodPageLink: 'Voir la méthode de formation LuxOps',
+  programmeLink: 'Télécharger le programme PDF',
+  programmeHref: '/downloads/training/programme-formation-standards-service-luxops-fr.pdf',
   methodPoints: [
     {
       title: 'Compréhension',
@@ -391,6 +410,8 @@ const englishContent = {
     'The session starts from reality: your teams, your guest touchpoints, your existing procedures and the gaps you see on the floor. LuxOps materials provide structure, but training can also be built around your own internal processes and values.',
   playbooksLink: 'View operational playbooks',
   methodPageLink: 'View the LuxOps training method',
+  programmeLink: 'Download the PDF programme',
+  programmeHref: '/downloads/training/service-standards-training-programme-luxops-en.pdf',
   methodPoints: [
     {
       title: 'Understanding',
