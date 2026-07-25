@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { redirect } from 'next/navigation'
 import {
   ArrowRight,
   BriefcaseBusiness,
@@ -13,38 +14,52 @@ import {
 import TrainingQuoteForm from '@/components/TrainingQuoteForm'
 import SamePageAnchor from '@/components/SamePageAnchor'
 import TrackedLink from '@/components/TrackedLink'
+import { toActiveLocale } from '@/lib/i18n'
+import type { Locale } from '@/lib/i18n'
+import { alternatesForRoute, localizedRoutePath, localizedRouteUrl } from '@/lib/localized-routes'
+
+const trainingMetadata = {
+  en: {
+    title: 'Service Standards Training | LuxOps',
+    description:
+      'On-property service standards training for hotel teams, pre-openings, seasonal reopenings, process rollout and department leadership.',
+  },
+  fr: {
+    title: 'Formation standards de service | LuxOps',
+    description:
+      'Formation sur site aux standards de service pour équipes hôtelières, pré-ouverture, réouverture saisonnière, mise en place des process et leadership des chefs de service.',
+  },
+  es: {
+    title: 'Formación en estándares de servicio | LuxOps',
+    description:
+      'Formación en el hotel para equipos hoteleros: preaperturas, reaperturas estacionales, despliegue de procesos, estándares de servicio y liderazgo de departamento.',
+  },
+} satisfies Partial<Record<Locale, { title: string; description: string }>>
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
-  const isEn = locale === 'en'
+  const activeLocale = toActiveLocale(locale)
+  const metadata = trainingMetadata[activeLocale as keyof typeof trainingMetadata] ?? trainingMetadata.en
 
   return {
-    title: isEn
-      ? 'Service Standards Training | LuxOps'
-      : 'Formation standards de service | LuxOps',
-    description: isEn
-      ? 'On-property service standards training for hotel teams, pre-openings, seasonal reopenings, process rollout and department leadership.'
-      : 'Formation sur site aux standards de service pour équipes hôtelières, pré-ouverture, réouverture saisonnière, mise en place des process et leadership des chefs de service.',
+    title: metadata.title,
+    description: metadata.description,
     alternates: {
-      canonical: isEn ? 'https://www.luxops.fr/en/training' : 'https://www.luxops.fr/fr/formation',
-      languages: {
-        en: 'https://www.luxops.fr/en/training',
-        fr: 'https://www.luxops.fr/fr/formation',
-        'x-default': 'https://www.luxops.fr/en/training',
-      },
+      canonical: localizedRouteUrl('training', activeLocale),
+      languages: alternatesForRoute('training'),
     },
   }
 }
 
 export default async function FormationPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
+  if (locale !== 'fr') redirect(localizedRoutePath('training', locale))
   return <FormationContent locale={locale} />
 }
 
 export function FormationContent({ locale }: { locale: string }) {
-  const isEn = locale === 'en'
-
-  const page = isEn ? englishContent : frenchContent
+  const activeLocale = toActiveLocale(locale)
+  const page = trainingContent[activeLocale as keyof typeof trainingContent] ?? trainingContent.en
 
   return (
     <div className="pt-16 bg-white">
@@ -141,14 +156,14 @@ export function FormationContent({ locale }: { locale: string }) {
             </h2>
             <p className="text-[#4f6074] leading-relaxed mb-6">{page.methodIntro}</p>
             <Link
-              href={`/${locale}/playbooks`}
+              href={localizedRoutePath('playbooks', activeLocale)}
               className="inline-flex items-center gap-2 text-[#003d9b] font-bold text-sm hover:text-[#0a1d2e] transition-colors"
             >
               {page.playbooksLink}
               <ArrowRight size={15} />
             </Link>
             <Link
-              href={isEn ? '/en/luxops-training-method' : '/fr/methode-formation-luxops'}
+              href={activeLocale === 'fr' ? '/fr/methode-formation-luxops' : '/en/luxops-training-method'}
               className="mt-4 inline-flex items-center gap-2 text-[#003d9b] font-bold text-sm hover:text-[#0a1d2e] transition-colors"
             >
               {page.methodPageLink}
@@ -158,7 +173,7 @@ export function FormationContent({ locale }: { locale: string }) {
               href={page.programmeHref}
               eventName="training_programme_download_clicked"
               eventProperties={{
-                source_page: `/${locale}/${isEn ? 'training' : 'formation'}`,
+                source_page: localizedRoutePath('training', activeLocale),
                 placement: 'method_section',
                 cta_label: page.programmeLink,
               }}
@@ -230,7 +245,7 @@ export function FormationContent({ locale }: { locale: string }) {
             </h3>
             <p className="text-sm text-[#cbd5e1] leading-relaxed mb-6">{page.contactText}</p>
             <Link
-              href={`/${locale}/contact`}
+              href={localizedRoutePath('contact', activeLocale)}
               className="inline-flex items-center justify-center gap-2 px-6 py-4 bg-white text-[#0a1d2e] font-bold text-sm hover:bg-[#eef4ff] transition-colors"
             >
               {page.contactCta}
@@ -254,7 +269,7 @@ export function FormationContent({ locale }: { locale: string }) {
             },
             serviceType: page.schemaServiceType,
             areaServed: ['France', 'Belgium', 'Switzerland', 'Luxembourg', 'Monaco'],
-            availableLanguage: ['French', 'English'],
+            availableLanguage: ['French', 'English', 'Spanish'],
           }),
         }}
       />
@@ -361,6 +376,105 @@ const frenchContent = {
   schemaServiceType: 'Formation sur site aux standards de service',
 }
 
+const spanishContent = {
+  badge: 'Formación en el hotel',
+  title: 'Formación en estándares de servicio',
+  subtitle:
+    'Sesiones prácticas para ayudar a tus equipos a entender, aplicar y mantener estándares de servicio claros.',
+  context:
+    'LuxOps acompaña a las propiedades en el despliegue de procesos LuxOps o de sus propios estándares internos: procedimientos, valores de marca, secuencias de servicio, postura de gestión y hábitos operativos.',
+  primaryCta: 'Solicitar presupuesto de formación',
+  secondaryCta: 'Ver cuándo ayuda',
+  formTitle: 'Cuéntanos tu necesidad de formación',
+  formIntro:
+    'Unos pocos datos bastan para entender el contexto y proponerte el formato adecuado.',
+  situationsLabel: 'Cuándo formar',
+  situationsTitle: 'Útil cuando los estándares deben mantenerse en la operación real',
+  situationsIntro:
+    'La formación no es una sesión genérica de aula. Está diseñada para instalar métodos visibles durante el servicio, aclarar expectativas y ayudar a los managers a mantener los estándares en el tiempo.',
+  situations: [
+    {
+      icon: <Hotel size={20} className="text-[#003d9b]" />,
+      title: 'Preapertura',
+      text: 'Estructurar hábitos del equipo antes de la llegada de los primeros huéspedes: bienvenida, recorrido del huésped, coordinación entre departamentos, estándares y valores de la propiedad.',
+    },
+    {
+      icon: <BriefcaseBusiness size={20} className="text-[#003d9b]" />,
+      title: 'Reapertura estacional',
+      text: 'Volver a poner al equipo en ritmo antes de la temporada, alinear métodos y asegurar los puntos sensibles del servicio desde el primer día.',
+    },
+    {
+      icon: <ClipboardCheck size={20} className="text-[#003d9b]" />,
+      title: 'Validación de competencias',
+      text: 'Revisar los estándares clave durante el año, confirmar la comprensión y corregir brechas antes de que se conviertan en hábitos.',
+    },
+    {
+      icon: <Users2 size={20} className="text-[#003d9b]" />,
+      title: 'Liderazgo de departamento',
+      text: 'Ayudar a los responsables a briefing, acompañar, controlar y hacer progresar a sus equipos sin reducir la gestión a recordatorios repetidos.',
+    },
+    {
+      icon: <ClipboardCheck size={20} className="text-[#003d9b]" />,
+      title: 'Auditoría y formación F&B',
+      text: 'Observar restaurante, bar o room service, y después formar al equipo sobre las brechas que impactan directamente en la experiencia del huésped.',
+    },
+  ],
+  methodLabel: 'Método',
+  methodTitle: 'Estándares explicados, practicados y transmitidos',
+  methodIntro:
+    'La sesión parte siempre de la realidad: tus equipos, tus puntos de contacto con el huésped, tus procedimientos existentes y las brechas observadas. Los materiales LuxOps aportan estructura, pero la formación también puede construirse alrededor de tus procesos y valores internos.',
+  playbooksLink: 'Ver playbooks operativos',
+  methodPageLink: 'Ver el método de formación LuxOps',
+  programmeLink: 'Descargar programa PDF (EN)',
+  programmeHref: '/downloads/training/service-standards-training-programme-luxops-en.pdf',
+  methodPoints: [
+    {
+      title: 'Comprensión',
+      text: 'Los colaboradores entienden por qué existe el estándar, no solo qué se espera que hagan.',
+    },
+    {
+      title: 'Práctica',
+      text: 'Las secuencias se trabajan con situaciones reales: bienvenida, solicitud del huésped, queja, handover, inspección o servicio.',
+    },
+    {
+      title: 'Transmisión',
+      text: 'Los jefes de departamento salen con una lógica clara para mantener el nivel después de la sesión.',
+    },
+    {
+      title: 'Adaptación',
+      text: 'Los ejemplos se adaptan a tu propiedad, posicionamiento y madurez del equipo.',
+    },
+  ],
+  departmentsLabel: 'Alcance',
+  departmentsTitle: 'Módulos construidos alrededor de momentos reales de servicio',
+  departmentsIntro:
+    'El contenido se define según tus prioridades. Una sesión puede centrarse en un departamento o trabajar los handovers entre varios equipos.',
+  departments: [
+    {
+      title: 'Front Office y relación con huéspedes',
+      items: ['Bienvenida y primera impresión', 'Gestión de solicitudes y quejas', 'Handovers y comunicación entre departamentos'],
+    },
+    {
+      title: 'Housekeeping y calidad de habitación',
+      items: ['Estándares de habitación', 'Inspección y autocontrol', 'Coordinación con recepción y mantenimiento'],
+    },
+    {
+      title: 'F&B y servicio',
+      items: ['Secuencia de servicio', 'Postura en sala y comunicación con huéspedes', 'Briefings, mise en place y recuperación del servicio'],
+    },
+  ],
+  flexLabel: 'Acompañamiento flexible',
+  flexTitle: 'Un formato adaptado a tu realidad operativa',
+  flexText:
+    'La formación puede centrarse en estándares de servicio, despliegue de procesos, liderazgo de departamento, onboarding del equipo o una necesidad más específica vinculada a tu propiedad.',
+  contactTitle: '¿Necesitas algo diferente?',
+  contactText:
+    'Para una auditoría, creación de procesos, acompañamiento más amplio o una solicitud a medida, puedes contactarnos directamente.',
+  contactCta: 'Contactar',
+  schemaName: 'Formación en estándares de servicio',
+  schemaServiceType: 'Formación en sitio sobre estándares de servicio',
+}
+
 const englishContent = {
   badge: 'On-property training',
   title: 'Service standards training',
@@ -458,4 +572,10 @@ const englishContent = {
   contactCta: 'Contact us',
   schemaName: 'Service standards training',
   schemaServiceType: 'On-property service standards training',
+}
+
+const trainingContent = {
+  en: englishContent,
+  fr: frenchContent,
+  es: spanishContent,
 }

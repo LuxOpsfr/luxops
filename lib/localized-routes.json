@@ -13,7 +13,8 @@
   "playbooks": {
     "paths": {
       "en": "/playbooks",
-      "fr": "/playbooks"
+      "fr": "/playbooks",
+      "es": "/playbooks"
     },
     "sitemap": true,
     "changeFrequency": "monthly",
@@ -133,7 +134,8 @@
   "qualityAudit": {
     "paths": {
       "en": "/quality-audit",
-      "fr": "/audit-qualite"
+      "fr": "/audit-qualite",
+      "es": "/quality-audit"
     },
     "sitemap": true,
     "changeFrequency": "monthly",
@@ -143,7 +145,8 @@
   "bespokeProcess": {
     "paths": {
       "en": "/bespoke-process",
-      "fr": "/process-sur-mesure"
+      "fr": "/process-sur-mesure",
+      "es": "/bespoke-process"
     },
     "sitemap": true,
     "changeFrequency": "monthly",
@@ -153,7 +156,8 @@
   "training": {
     "paths": {
       "en": "/training",
-      "fr": "/formation"
+      "fr": "/formation",
+      "es": "/training"
     },
     "sitemap": true,
     "changeFrequency": "monthly",

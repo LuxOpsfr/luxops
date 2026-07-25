@@ -24,6 +24,8 @@ export function organizationSchema(locale: string) {
     description:
       safeLocale === 'fr'
         ? "Playbooks, SOPs, audits et formations pour structurer les opérations des hôtels haut de gamme."
+        : safeLocale === 'es'
+          ? 'Playbooks, SOPs, auditorías de calidad y formación en el hotel para estructurar las operaciones de equipos hoteleros high-end.'
         : 'Hotel operations playbooks, SOPs, quality audits and on-property training for high-end hospitality teams.',
     sameAs: [],
     areaServed: [

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { redirect } from 'next/navigation'
 import {
   ArrowRight,
   CheckCircle2,
@@ -12,37 +13,52 @@ import {
 } from 'lucide-react'
 import ProcessQuoteForm from '@/components/ProcessQuoteForm'
 import SamePageAnchor from '@/components/SamePageAnchor'
+import { toActiveLocale } from '@/lib/i18n'
+import type { Locale } from '@/lib/i18n'
+import { alternatesForRoute, localizedRoutePath, localizedRouteUrl } from '@/lib/localized-routes'
+
+const processMetadata = {
+  en: {
+    title: 'Bespoke Operational Process Creation | LuxOps',
+    description:
+      'Bespoke operational process creation for hospitality teams: SOPs, checklists, service sequences, handovers, controls and internal standards.',
+  },
+  fr: {
+    title: 'Création de process sur-mesure | LuxOps',
+    description:
+      'Création de process opérationnels sur-mesure : SOP, checklists, séquences de service, passations, contrôles et standards internes.',
+  },
+  es: {
+    title: 'Creación de procesos operativos a medida | LuxOps',
+    description:
+      'Creación de procesos operativos a medida para equipos hoteleros: SOPs, checklists, secuencias de servicio, handovers, controles y estándares internos.',
+  },
+} satisfies Partial<Record<Locale, { title: string; description: string }>>
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
-  const isEn = locale === 'en'
+  const activeLocale = toActiveLocale(locale)
+  const metadata = processMetadata[activeLocale as keyof typeof processMetadata] ?? processMetadata.en
 
   return {
-    title: isEn
-      ? 'Bespoke Operational Process Creation | LuxOps'
-      : 'Création de process sur-mesure | LuxOps',
-    description: isEn
-      ? 'Bespoke operational process creation for hospitality teams: SOPs, checklists, service sequences, handovers, controls and internal standards.'
-      : 'Création de process opérationnels sur-mesure : SOP, checklists, séquences de service, passations, contrôles et standards internes.',
+    title: metadata.title,
+    description: metadata.description,
     alternates: {
-      canonical: isEn ? 'https://www.luxops.fr/en/bespoke-process' : 'https://www.luxops.fr/fr/process-sur-mesure',
-      languages: {
-        en: 'https://www.luxops.fr/en/bespoke-process',
-        fr: 'https://www.luxops.fr/fr/process-sur-mesure',
-        'x-default': 'https://www.luxops.fr/en/bespoke-process',
-      },
+      canonical: localizedRouteUrl('bespokeProcess', activeLocale),
+      languages: alternatesForRoute('bespokeProcess'),
     },
   }
 }
 
 export default async function ProcessPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
+  if (locale !== 'fr') redirect(localizedRoutePath('bespokeProcess', locale))
   return <ProcessContent locale={locale} />
 }
 
 export function ProcessContent({ locale }: { locale: string }) {
-  const isEn = locale === 'en'
-  const page = isEn ? englishContent : frenchContent
+  const activeLocale = toActiveLocale(locale)
+  const page = processContent[activeLocale as keyof typeof processContent] ?? processContent.en
 
   return (
     <div className="pt-16 bg-white">
@@ -139,7 +155,7 @@ export function ProcessContent({ locale }: { locale: string }) {
             </h2>
             <p className="text-[#4f6074] leading-relaxed mb-6">{page.scopeIntro}</p>
             <Link
-              href={isEn ? '/en/playbooks' : '/fr/playbooks'}
+              href={localizedRoutePath('playbooks', activeLocale)}
               className="inline-flex items-center gap-2 text-[#003d9b] font-bold text-sm hover:text-[#0a1d2e] transition-colors"
             >
               {page.playbooksLink}
@@ -233,7 +249,7 @@ export function ProcessContent({ locale }: { locale: string }) {
                 <ArrowRight size={15} />
               </SamePageAnchor>
               <Link
-                href={isEn ? '/en/quality-audit' : '/fr/audit-qualite'}
+                href={localizedRoutePath('qualityAudit', activeLocale)}
                 className="inline-flex items-center justify-center gap-2 px-5 py-4 border border-white/20 text-white font-bold text-sm hover:bg-white/10 transition-colors"
               >
                 {page.auditCta}
@@ -257,7 +273,7 @@ export function ProcessContent({ locale }: { locale: string }) {
             },
             serviceType: page.schemaServiceType,
             areaServed: ['France', 'Belgium', 'Switzerland', 'Luxembourg', 'Monaco'],
-            availableLanguage: ['French', 'English'],
+            availableLanguage: ['French', 'English', 'Spanish'],
           }),
         }}
       />
@@ -373,6 +389,114 @@ const frenchContent = {
   schemaServiceType: 'Création de procédures opérationnelles sur-mesure',
 }
 
+const spanishContent = {
+  badge: 'Proceso a medida',
+  title: 'Creación de procesos operativos a medida',
+  subtitle:
+    'SOPs, checklists y documentos operativos construidos alrededor de tu propiedad, tus estándares y la forma de trabajar de tus equipos.',
+  context:
+    'El objetivo es aclarar qué debe hacerse, en qué orden, por quién y con qué nivel de exigencia. El trabajo puede partir de documentos existentes, de una brecha operativa concreta o de un departamento que necesita estructurarse desde cero.',
+  primaryCta: 'Solicitar presupuesto de proceso',
+  secondaryCta: 'Ver cuándo ayuda',
+  formTitle: 'Cuéntanos qué proceso hay que crear',
+  formIntro:
+    'Unos pocos datos bastan para entender el alcance, el departamento implicado y el formato esperado.',
+  situationsLabel: 'Cuándo crear un proceso',
+  situationsTitle: 'Útil cuando los métodos existen, pero no son suficientemente claros o transferibles',
+  situationsIntro:
+    'Un proceso a medida convierte la forma correcta de trabajar en una referencia operativa utilizable: para formar, controlar, hacer handovers y mantener la consistencia a largo plazo.',
+  situations: [
+    {
+      icon: <FileText size={20} className="text-[#003d9b]" />,
+      title: 'Procedimientos ausentes',
+      text: 'Las prácticas existen en la operación, pero aún no están documentadas de forma clara y utilizable.',
+    },
+    {
+      icon: <Users2 size={20} className="text-[#003d9b]" />,
+      title: 'Métodos distintos entre equipos',
+      text: 'Cada turno o manager trabaja con sus propios hábitos, creando diferencias en la experiencia del huésped.',
+    },
+    {
+      icon: <Layers3 size={20} className="text-[#003d9b]" />,
+      title: 'Apertura o reposicionamiento',
+      text: 'La propiedad necesita formalizar sus estándares antes de una apertura, reapertura, reposicionamiento o cambio de organización.',
+    },
+    {
+      icon: <Settings2 size={20} className="text-[#003d9b]" />,
+      title: 'Limpieza de procesos existentes',
+      text: 'Los documentos ya existen, pero son demasiado largos, demasiado teóricos o apenas se usan en el día a día.',
+    },
+  ],
+  scopeLabel: 'Alcance',
+  scopeTitle: 'Qué se puede construir',
+  scopeIntro:
+    'El entregable depende de la necesidad real: procedimiento completo, checklist de operación, plantilla de briefing, hoja de control, guía manager o estándar del recorrido del huésped. No se trata de crear más documentos, sino los documentos correctos.',
+  playbooksLink: 'Ver playbooks operativos',
+  scopePoints: [
+    {
+      title: 'SOPs operativos',
+      text: 'Procedimientos paso a paso para una secuencia, puesto, situación con huésped o estándar departamental.',
+    },
+    {
+      title: 'Checklists y controles',
+      text: 'Herramientas simples para verificar la ejecución, asegurar handovers, seguir brechas y apoyar inspecciones.',
+    },
+    {
+      title: 'Soportes de formación',
+      text: 'Documentos que explican expectativas, apoyan el onboarding y ayudan a los managers a transmitir el estándar.',
+    },
+    {
+      title: 'Estándares internos',
+      text: 'Formalización de valores de marca, recorrido del huésped, expectativas de calidad y reglas operativas.',
+    },
+  ],
+  methodLabel: 'Método',
+  methodTitle: 'Escrito desde la operación, no desde una plantilla genérica',
+  methodIntro:
+    'El trabajo empieza desde tu realidad operativa. Aclaramos la necesidad, revisamos el material existente y redactamos documentos que los equipos puedan usar de verdad.',
+  methodSteps: [
+    {
+      title: 'Alcance',
+      text: 'Definición del departamento, situaciones a cubrir, formato esperado y nivel de detalle necesario.',
+    },
+    {
+      title: 'Revisión',
+      text: 'Revisión de documentos existentes, comprensión de métodos actuales e identificación de lo que debe aclararse.',
+    },
+    {
+      title: 'Redacción',
+      text: 'Creación de procedimientos, checklists o soportes con un lenguaje adaptado a tus equipos y posicionamiento.',
+    },
+    {
+      title: 'Validación',
+      text: 'Revisión contigo antes de la entrega final para que el material sea preciso, coherente y listo para desplegar.',
+    },
+  ],
+  deliverablesLabel: 'Entregables',
+  deliverablesTitle: 'Documentos listos para usar',
+  deliverablesIntro:
+    'Los formatos se definen según el uso: referencia manager, formación, soporte operativo, control diario o handover.',
+  deliverables: [
+    'SOPs completos por secuencia o departamento',
+    'Checklists imprimibles para equipos operativos',
+    'Plantillas de briefing y handover',
+    'Guías manager para control y seguimiento',
+    'Formatos PDF y PowerPoint según la necesidad',
+    'Versiones en inglés y francés disponibles',
+  ],
+  afterLabel: 'Siguiente paso posible',
+  afterTitle: 'Un proceso también puede convertirse en formación o base de auditoría',
+  afterText:
+    'Una vez creados los documentos, pueden servir de base para formación en el hotel, acompañamiento de jefes de departamento o una auditoría de calidad para verificar su aplicación real.',
+  contactTitle: '¿Necesitas estructurar un proceso concreto?',
+  contactText:
+    'Comparte el departamento, la situación o el soporte esperado. Te responderemos con un enfoque adaptado.',
+  finalCta: 'Solicitar presupuesto de proceso',
+  auditCta: 'Ver auditoría de calidad',
+  schemaName: 'Creación de procesos operativos a medida',
+  schemaServiceType: 'Creación de procedimientos operativos a medida',
+}
+
 const englishContent = {
   badge: 'Bespoke process',
   title: 'Bespoke operational process creation',
@@ -479,4 +603,10 @@ const englishContent = {
   auditCta: 'View quality audit',
   schemaName: 'Bespoke operational process creation',
   schemaServiceType: 'Bespoke operational procedure creation',
+}
+
+const processContent = {
+  en: englishContent,
+  fr: frenchContent,
+  es: spanishContent,
 }

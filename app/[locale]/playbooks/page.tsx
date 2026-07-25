@@ -1,6 +1,27 @@
 import type { Metadata } from 'next'
 import PlaybooksContent from '@/components/PlaybooksContent'
 import { breadcrumbSchema, localizedPath } from '@/lib/seo'
+import { toActiveLocale } from '@/lib/i18n'
+import type { Locale } from '@/lib/i18n'
+import { alternatesForRoute, localizedRouteUrl } from '@/lib/localized-routes'
+
+const playbooksMetadata = {
+  en: {
+    title: 'Hotel SOP Playbooks for 5-Star Operations | LuxOps',
+    description:
+      'Professionally written hotel operations products for luxury hotel teams: starter packs from €29 and full SOP playbooks from €67.',
+  },
+  fr: {
+    title: 'Playbooks SOP pour Hôtels 5 Étoiles | LuxOps',
+    description:
+      'Produits opérationnels pour équipes hôtelières haut de gamme : starter packs à partir de 29 € et playbooks SOP complets à partir de 67 €.',
+  },
+  es: {
+    title: 'Playbooks SOP para operaciones hoteleras 5 estrellas | LuxOps',
+    description:
+      'Productos operativos para equipos hoteleros high-end: starter packs desde 29 € y playbooks SOP completos desde 67 €.',
+  },
+} satisfies Partial<Record<Locale, { title: string; description: string }>>
 
 export async function generateMetadata({
   params,
@@ -8,21 +29,14 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>
 }): Promise<Metadata> {
   const { locale } = await params
-  const isEn = locale === 'en'
+  const activeLocale = toActiveLocale(locale)
+  const metadata = playbooksMetadata[activeLocale as keyof typeof playbooksMetadata] ?? playbooksMetadata.en
   return {
-    title: isEn
-      ? 'Hotel SOP Playbooks for 5-Star Operations | LuxOps'
-      : 'Playbooks SOP pour Hôtels 5 Étoiles | LuxOps',
-    description: isEn
-      ? 'Professionally written hotel operations products for luxury hotel teams: starter packs from €29 and full SOP playbooks from €67.'
-      : 'Produits opérationnels pour équipes hôtelières haut de gamme : starter packs à partir de 29 € et playbooks SOP complets à partir de 67 €.',
+    title: metadata.title,
+    description: metadata.description,
     alternates: {
-      canonical: `https://www.luxops.fr/${locale}/playbooks`,
-      languages: {
-        'en': 'https://www.luxops.fr/en/playbooks',
-        'fr': 'https://www.luxops.fr/fr/playbooks',
-        'x-default': 'https://www.luxops.fr/en/playbooks',
-      },
+      canonical: localizedRouteUrl('playbooks', activeLocale),
+      languages: alternatesForRoute('playbooks'),
     },
   }
 }
@@ -61,17 +75,25 @@ const sharedBrand = { '@type': 'Brand', name: 'LuxOps' }
 const sharedImage = 'https://www.luxops.fr/og-image.png'
 
 function playbooksSchema(locale: string) {
-  const isEn = locale === 'en'
+  const activeLocale = toActiveLocale(locale)
+  const isFr = activeLocale === 'fr'
+  const isEs = activeLocale === 'es'
   return {
     '@context': 'https://schema.org',
     '@graph': [
       {
         '@type': 'ItemList',
-        name: isEn ? 'Hotel Operations Playbooks' : 'Playbooks Opérationnels Hôteliers',
-        description: isEn
-          ? 'Complete operational playbooks for high-end hotels. Documented procedures, service standards and SOPs for Front Office, Housekeeping, F&B and Spa departments.'
-          : 'Playbooks opérationnels complets pour hôtels haut de gamme. Procédures, standards de service et SOPs pour la réception, le housekeeping, le F&B et le spa.',
-        url: localizedPath(locale, '/playbooks'),
+        name: isFr
+          ? 'Playbooks Opérationnels Hôteliers'
+          : isEs
+            ? 'Playbooks operativos hoteleros'
+            : 'Hotel Operations Playbooks',
+        description: isFr
+          ? 'Playbooks opérationnels complets pour hôtels haut de gamme. Procédures, standards de service et SOPs pour la réception, le housekeeping, le F&B et le spa.'
+          : isEs
+            ? 'Playbooks operativos completos para hoteles high-end. Procedimientos, estándares de servicio y SOPs para Front Office, Housekeeping, F&B y Spa.'
+            : 'Complete operational playbooks for high-end hotels. Documented procedures, service standards and SOPs for Front Office, Housekeeping, F&B and Spa departments.',
+        url: localizedRouteUrl('playbooks', activeLocale),
         itemListElement: [
     {
       '@type': 'ListItem',
@@ -129,21 +151,27 @@ function playbooksSchema(locale: string) {
       },
       {
         '@type': 'Product',
-        name: isEn ? 'Complete Hotel SOP Bundle' : 'Bundle complet SOP Hôtel',
-        description: isEn
-          ? 'All four LuxOps hotel operations playbooks: Front Office, Housekeeping, F&B and Spa. PDF and PowerPoint formats.'
-          : 'Les quatre playbooks opérationnels LuxOps : Front Office, Housekeeping, F&B et Spa. Formats PDF et PowerPoint.',
+        name: isFr
+          ? 'Bundle complet SOP Hôtel'
+          : isEs
+            ? 'Pack completo SOP Hotel'
+            : 'Complete Hotel SOP Bundle',
+        description: isFr
+          ? 'Les quatre playbooks opérationnels LuxOps : Front Office, Housekeeping, F&B et Spa. Formats PDF et PowerPoint.'
+          : isEs
+            ? 'Los cuatro playbooks operativos LuxOps: Front Office, Housekeeping, F&B y Spa. Formatos PDF y PowerPoint.'
+            : 'All four LuxOps hotel operations playbooks: Front Office, Housekeeping, F&B and Spa. PDF and PowerPoint formats.',
         image: sharedImage,
         brand: sharedBrand,
         offers: {
           ...sharedOfferFields,
           price: '199',
-          url: localizedPath(locale, '/playbooks'),
+          url: localizedRouteUrl('playbooks', activeLocale),
         },
       },
       breadcrumbSchema([
-        { name: 'LuxOps', url: localizedPath(locale) },
-        { name: isEn ? 'Playbooks' : 'Playbooks', url: localizedPath(locale, '/playbooks') },
+        { name: 'LuxOps', url: localizedPath(activeLocale) },
+        { name: 'Playbooks', url: localizedRouteUrl('playbooks', activeLocale) },
       ]),
     ],
   }

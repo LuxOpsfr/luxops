@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { redirect } from 'next/navigation'
 import {
   ArrowRight,
   ClipboardCheck,
@@ -11,37 +12,52 @@ import {
 } from 'lucide-react'
 import AuditQuoteForm from '@/components/AuditQuoteForm'
 import SamePageAnchor from '@/components/SamePageAnchor'
+import { toActiveLocale } from '@/lib/i18n'
+import type { Locale } from '@/lib/i18n'
+import { alternatesForRoute, localizedRoutePath, localizedRouteUrl } from '@/lib/localized-routes'
+
+const auditMetadata = {
+  en: {
+    title: 'On-Site Hotel Quality Audit | LuxOps',
+    description:
+      'On-site operational quality audit to identify standards gaps, service friction points and practical improvement priorities across hotel departments.',
+  },
+  fr: {
+    title: 'Audit qualité hôtelier sur site | LuxOps',
+    description:
+      'Audit qualité opérationnel sur site pour identifier les écarts de standards, les points de friction entre services et les priorités d’action à corriger.',
+  },
+  es: {
+    title: 'Auditoría de calidad hotelera en sitio | LuxOps',
+    description:
+      'Auditoría operativa en sitio para identificar brechas de estándares, fricciones de servicio y prioridades de mejora prácticas entre departamentos hoteleros.',
+  },
+} satisfies Partial<Record<Locale, { title: string; description: string }>>
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
-  const isEn = locale === 'en'
+  const activeLocale = toActiveLocale(locale)
+  const metadata = auditMetadata[activeLocale as keyof typeof auditMetadata] ?? auditMetadata.en
 
   return {
-    title: isEn
-      ? 'On-Site Hotel Quality Audit | LuxOps'
-      : 'Audit qualité hôtelier sur site | LuxOps',
-    description: isEn
-      ? 'On-site operational quality audit to identify standards gaps, service friction points and practical improvement priorities across hotel departments.'
-      : 'Audit qualité opérationnel sur site pour identifier les écarts de standards, les points de friction entre services et les priorités d’action à corriger.',
+    title: metadata.title,
+    description: metadata.description,
     alternates: {
-      canonical: isEn ? 'https://www.luxops.fr/en/quality-audit' : 'https://www.luxops.fr/fr/audit-qualite',
-      languages: {
-        en: 'https://www.luxops.fr/en/quality-audit',
-        fr: 'https://www.luxops.fr/fr/audit-qualite',
-        'x-default': 'https://www.luxops.fr/en/quality-audit',
-      },
+      canonical: localizedRouteUrl('qualityAudit', activeLocale),
+      languages: alternatesForRoute('qualityAudit'),
     },
   }
 }
 
 export default async function AuditPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
+  if (locale !== 'fr') redirect(localizedRoutePath('qualityAudit', locale))
   return <AuditContent locale={locale} />
 }
 
 export function AuditContent({ locale }: { locale: string }) {
-  const isEn = locale === 'en'
-  const page = isEn ? englishContent : frenchContent
+  const activeLocale = toActiveLocale(locale)
+  const page = auditContent[activeLocale as keyof typeof auditContent] ?? auditContent.en
 
   return (
     <div className="pt-16 bg-white">
@@ -138,7 +154,7 @@ export function AuditContent({ locale }: { locale: string }) {
             </h2>
             <p className="text-[#4f6074] leading-relaxed mb-6">{page.reviewIntro}</p>
             <Link
-              href={isEn ? '/en/playbooks' : '/fr/playbooks'}
+              href={localizedRoutePath('playbooks', activeLocale)}
               className="inline-flex items-center gap-2 text-[#003d9b] font-bold text-sm hover:text-[#0a1d2e] transition-colors"
             >
               {page.playbooksLink}
@@ -225,14 +241,14 @@ export function AuditContent({ locale }: { locale: string }) {
             <p className="text-sm text-[#cbd5e1] leading-relaxed mb-6">{page.contactText}</p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
-                href={isEn ? '/en/training' : '/fr/formation'}
+                href={localizedRoutePath('training', activeLocale)}
                 className="inline-flex items-center justify-center gap-2 px-5 py-4 bg-white text-[#0a1d2e] font-bold text-sm hover:bg-[#eef4ff] transition-colors"
               >
                 {page.trainingCta}
                 <ArrowRight size={15} />
               </Link>
               <Link
-                href={isEn ? '/en/bespoke-process' : '/fr/process-sur-mesure'}
+                href={localizedRoutePath('bespokeProcess', activeLocale)}
                 className="inline-flex items-center justify-center gap-2 px-5 py-4 border border-white/20 text-white font-bold text-sm hover:bg-white/10 transition-colors"
               >
                 {page.processCta}
@@ -256,7 +272,7 @@ export function AuditContent({ locale }: { locale: string }) {
             },
             serviceType: page.schemaServiceType,
             areaServed: ['France', 'Belgium', 'Switzerland', 'Luxembourg', 'Monaco'],
-            availableLanguage: ['French', 'English'],
+            availableLanguage: ['French', 'English', 'Spanish'],
           }),
         }}
       />
@@ -376,6 +392,114 @@ const frenchContent = {
   schemaServiceType: 'Audit qualité opérationnel',
 }
 
+const spanishContent = {
+  badge: 'Auditoría en sitio',
+  title: 'Auditoría de calidad operativa',
+  subtitle:
+    'Una evaluación en el hotel para identificar brechas de estándares, fricciones de servicio y las prioridades de mejora que deben tratarse primero.',
+  context:
+    'La auditoría parte de lo que ocurre realmente en la propiedad: ejecución del servicio, controles, handovers, documentación existente y consistencia de estándares. El objetivo es dar a la dirección una lectura clara, utilizable y priorizada.',
+  primaryCta: 'Solicitar presupuesto de auditoría',
+  secondaryCta: 'Ver cuándo auditar',
+  formTitle: 'Cuéntanos tu necesidad de auditoría',
+  formIntro:
+    'Unos pocos datos bastan para entender el contexto y proponerte el formato adecuado.',
+  situationsLabel: 'Cuándo auditar',
+  situationsTitle: 'Útil cuando la calidad necesita evidencias, no solo impresiones',
+  situationsIntro:
+    'Una auditoría de calidad saca la conversación de las impresiones generales. Muestra qué se mantiene, qué varía según el turno y qué necesita una acción estructurada.',
+  situations: [
+    {
+      icon: <Hotel size={20} className="text-[#003d9b]" />,
+      title: 'Preapertura o reinicio',
+      text: 'Comprobar que estándares, herramientas y hábitos operativos están listos antes de que aumente el volumen.',
+    },
+    {
+      icon: <ClipboardCheck size={20} className="text-[#003d9b]" />,
+      title: 'Ejecución inconsistente',
+      text: 'Identificar por qué la experiencia varía según el día, el equipo, la planta o el punto de contacto con el huésped.',
+    },
+    {
+      icon: <Users2 size={20} className="text-[#003d9b]" />,
+      title: 'Alineación de management',
+      text: 'Dar a los jefes de departamento una base común para decidir, controlar y corregir sin depender de impresiones.',
+    },
+    {
+      icon: <Map size={20} className="text-[#003d9b]" />,
+      title: 'Plan de acción',
+      text: 'Priorizar qué debe corregirse ahora, qué necesita formación y qué debe documentarse como proceso.',
+    },
+  ],
+  reviewLabel: 'Alcance',
+  reviewTitle: 'Qué observamos en sitio',
+  reviewIntro:
+    'El alcance se adapta a la propiedad. La auditoría puede cubrir un departamento o varios equipos cuando las brechas de calidad vienen sobre todo de handovers y coordinación.',
+  playbooksLink: 'Ver playbooks operativos',
+  reviewPoints: [
+    {
+      title: 'Estándares físicos',
+      text: 'Habitaciones, zonas públicas, mise en place, detalles visibles, criterios de liberación y métodos de autocontrol.',
+    },
+    {
+      title: 'Secuencias de servicio',
+      text: 'Bienvenida, solicitudes de huéspedes, quejas, servicio de restaurante, handovers y momentos sensibles del recorrido del huésped.',
+    },
+    {
+      title: 'Controles y seguimiento',
+      text: 'Briefings, inspecciones, reporting, escalado de incidencias, decisiones de management y seguimiento tras la corrección.',
+    },
+    {
+      title: 'Uso real de la documentación',
+      text: 'Procedimientos existentes, checklists, soportes de formación y cómo los equipos los usan realmente durante la operación.',
+    },
+  ],
+  methodLabel: 'Método',
+  methodTitle: 'Una lectura de campo, estructurada para actuar',
+  methodIntro:
+    'La auditoría no consiste en buscar defectos aislados. Está pensada para entender por qué aparecen las brechas, dónde se repiten y qué acciones tendrán más impacto.',
+  methodSteps: [
+    {
+      title: 'Preparación',
+      text: 'Revisión del contexto, materiales existentes, departamentos implicados y prioridades de la dirección.',
+    },
+    {
+      title: 'Observación',
+      text: 'Presencia en sitio durante momentos reales de operación: inicio de turno, servicio, inspección, handover y control.',
+    },
+    {
+      title: 'Análisis',
+      text: 'Clasificación de brechas por departamento, nivel de impacto, causa probable y prioridad de acción.',
+    },
+    {
+      title: 'Debrief',
+      text: 'Debrief claro con la dirección, roadmap priorizado y recomendaciones prácticas.',
+    },
+  ],
+  deliverablesLabel: 'Entregables',
+  deliverablesTitle: 'Qué recibe la dirección',
+  deliverablesIntro:
+    'Los entregables están diseñados como herramientas de decisión. Deben ayudar a actuar rápido, no solo documentar lo observado.',
+  deliverables: [
+    'Informe de auditoría estructurado',
+    'Hallazgos por departamento',
+    'Análisis de brechas de estándares',
+    'Plan de acción priorizado',
+    'Lista de quick wins',
+    'Debrief con la dirección',
+  ],
+  afterLabel: 'Después de la auditoría',
+  afterTitle: 'Convertir hallazgos en acciones concretas',
+  afterText:
+    'Según las brechas observadas, el siguiente paso puede ser creación de procesos, formación en sitio, acompañamiento de jefes de departamento o herramientas de control más simples.',
+  contactTitle: '¿Necesitas apoyo después de la auditoría?',
+  contactText:
+    'La auditoría puede ser una intervención puntual o el punto de partida de un trabajo más amplio sobre estándares, procedimientos y transmisión al equipo.',
+  trainingCta: 'Ver formación',
+  processCta: 'Ver procesos a medida',
+  schemaName: 'Auditoría de calidad operativa en sitio',
+  schemaServiceType: 'Auditoría de calidad operativa',
+}
+
 const englishContent = {
   badge: 'On-site audit',
   title: 'Operational quality audit',
@@ -482,4 +606,10 @@ const englishContent = {
   processCta: 'View bespoke process',
   schemaName: 'On-site operational quality audit',
   schemaServiceType: 'Operational quality audit',
+}
+
+const auditContent = {
+  en: englishContent,
+  fr: frenchContent,
+  es: spanishContent,
 }

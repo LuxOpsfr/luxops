@@ -1,24 +1,38 @@
 import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 import { ProcessContent } from '../process-sur-mesure/page'
+import { toActiveLocale } from '@/lib/i18n'
+import type { Locale } from '@/lib/i18n'
+import { alternatesForRoute, localizedRouteUrl } from '@/lib/localized-routes'
+
+const processMetadata = {
+  en: {
+    title: 'Bespoke Operational Process Creation | LuxOps',
+    description:
+      'Bespoke operational process creation for hospitality teams: SOPs, checklists, service sequences, handovers, controls and internal standards.',
+  },
+  fr: {
+    title: 'Création de process sur-mesure | LuxOps',
+    description:
+      'Création de process opérationnels sur-mesure : SOP, checklists, séquences de service, passations, contrôles et standards internes.',
+  },
+  es: {
+    title: 'Creación de procesos operativos a medida | LuxOps',
+    description:
+      'Creación de procesos operativos a medida para equipos hoteleros: SOPs, checklists, secuencias de servicio, handovers, controles y estándares internos.',
+  },
+} satisfies Partial<Record<Locale, { title: string; description: string }>>
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
-  const isEn = locale === 'en'
+  const activeLocale = toActiveLocale(locale)
+  const metadata = processMetadata[activeLocale as keyof typeof processMetadata] ?? processMetadata.en
   return {
-    title: isEn
-      ? 'Bespoke Operational Process Creation | LuxOps'
-      : 'Création de process sur-mesure | LuxOps',
-    description: isEn
-      ? 'Bespoke operational process creation for hospitality teams: SOPs, checklists, service sequences, handovers, controls and internal standards.'
-      : 'Création de process opérationnels sur-mesure : SOP, checklists, séquences de service, passations, contrôles et standards internes.',
+    title: metadata.title,
+    description: metadata.description,
     alternates: {
-      canonical: 'https://www.luxops.fr/en/bespoke-process',
-      languages: {
-        'en': 'https://www.luxops.fr/en/bespoke-process',
-        'fr': 'https://www.luxops.fr/fr/process-sur-mesure',
-        'x-default': 'https://www.luxops.fr/en/bespoke-process',
-      },
+      canonical: localizedRouteUrl('bespokeProcess', activeLocale),
+      languages: alternatesForRoute('bespokeProcess'),
     },
   }
 }

@@ -7,8 +7,43 @@ import { useCart } from '@/context/CartContext'
 import posthog from 'posthog-js'
 import { useCurrency } from '@/context/CurrencyContext'
 import { formatCurrencyAmount, PricedProductType } from '@/lib/pricing'
+import { toActiveLocale } from '@/lib/i18n'
+import type { Locale } from '@/lib/i18n'
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!)
+
+const cartCopy = {
+  en: {
+    title: 'Your Cart',
+    emptyTitle: 'Your cart is empty',
+    emptyText: 'Add a playbook to get started',
+    total: 'Total',
+    loading: 'Loading...',
+    checkout: 'Proceed to Payment',
+    securePayment: 'Secure payment via Stripe',
+    back: 'Back to cart',
+  },
+  fr: {
+    title: 'Votre Panier',
+    emptyTitle: 'Votre panier est vide',
+    emptyText: 'Ajoutez un playbook pour commencer',
+    total: 'Total',
+    loading: 'Chargement...',
+    checkout: 'Passer au Paiement',
+    securePayment: 'Paiement sécurisé via Stripe',
+    back: 'Retour au panier',
+  },
+  es: {
+    title: 'Tu carrito',
+    emptyTitle: 'Tu carrito está vacío',
+    emptyText: 'Añade un playbook para empezar',
+    total: 'Total',
+    loading: 'Cargando...',
+    checkout: 'Proceder al pago',
+    securePayment: 'Pago seguro con Stripe',
+    back: 'Volver al carrito',
+  },
+} satisfies Partial<Record<Locale, Record<string, string>>>
 
 interface CartDrawerProps {
   locale: string
@@ -19,7 +54,8 @@ export default function CartDrawer({ locale }: CartDrawerProps) {
   const [view, setView] = useState<'cart' | 'checkout'>('cart')
   const [loading, setLoading] = useState(false)
   const checkoutRef = useRef<{ destroy: () => void } | null>(null)
-  const isEn = locale === 'en'
+  const activeLocale = toActiveLocale(locale)
+  const copy = cartCopy[activeLocale as keyof typeof cartCopy] ?? cartCopy.en
   const { currency, priceFor } = useCurrency()
 
   const getItemProductType = (item: { price: number; productType?: PricedProductType }) =>
@@ -95,7 +131,7 @@ export default function CartDrawer({ locale }: CartDrawerProps) {
     return () => {
       cancelled = true
     }
-  }, [items, locale, view])
+  }, [currency, items, locale, view])
 
   if (!isOpen) return null
 
@@ -114,7 +150,7 @@ export default function CartDrawer({ locale }: CartDrawerProps) {
           <div className="flex items-center gap-2.5">
             <ShoppingCart size={18} className="text-[#111111]" />
             <span className="font-semibold text-[#111111]">
-              {isEn ? 'Your Cart' : 'Votre Panier'}
+              {copy.title}
             </span>
             {items.length > 0 && (
               <span className="px-2 py-0.5 bg-[#111111] text-white text-xs rounded-full font-medium">
@@ -138,10 +174,10 @@ export default function CartDrawer({ locale }: CartDrawerProps) {
                 <div className="flex flex-col items-center justify-center h-full text-center py-20">
                   <ShoppingCart size={44} className="text-gray-200 mb-4" strokeWidth={1.5} />
                   <p className="text-gray-400 text-sm">
-                    {isEn ? 'Your cart is empty' : 'Votre panier est vide'}
+                    {copy.emptyTitle}
                   </p>
                   <p className="text-gray-300 text-xs mt-1">
-                    {isEn ? 'Add a playbook to get started' : 'Ajoutez un playbook pour commencer'}
+                    {copy.emptyText}
                   </p>
                 </div>
               ) : (
@@ -170,7 +206,7 @@ export default function CartDrawer({ locale }: CartDrawerProps) {
             {items.length > 0 && (
               <div className="px-6 py-5 border-t border-gray-100 bg-white">
                 <div className="flex items-center justify-between mb-5">
-                  <span className="text-sm text-gray-500">{isEn ? 'Total' : 'Total'}</span>
+                  <span className="text-sm text-gray-500">{copy.total}</span>
                   <span className="text-2xl font-bold text-[#111111]">
                     {formatCurrencyAmount(total, currency, locale)}
                   </span>
@@ -195,15 +231,13 @@ export default function CartDrawer({ locale }: CartDrawerProps) {
                   disabled={loading}
                   className="w-full py-3.5 bg-[#111111] text-white font-semibold rounded-xl hover:bg-[#333333] transition-colors flex items-center justify-center gap-2 disabled:opacity-60"
                 >
-                  {loading
-                    ? isEn ? 'Loading...' : 'Chargement...'
-                    : isEn ? 'Proceed to Payment' : 'Passer au Paiement'}
+                  {loading ? copy.loading : copy.checkout}
                   {!loading && <ArrowRight size={16} />}
                 </button>
                 <div className="flex items-center justify-center gap-1.5 mt-3">
                   <Lock size={11} className="text-gray-300" />
                   <p className="text-center text-xs text-gray-300">
-                    {isEn ? 'Secure payment via Stripe' : 'Paiement sécurisé via Stripe'}
+                    {copy.securePayment}
                   </p>
                 </div>
               </div>
@@ -221,7 +255,7 @@ export default function CartDrawer({ locale }: CartDrawerProps) {
                 }}
                 className="text-sm text-gray-400 hover:text-[#111111] transition-colors flex items-center gap-1.5"
               >
-                ← {isEn ? 'Back to cart' : 'Retour au panier'}
+                ← {copy.back}
               </button>
             </div>
 
