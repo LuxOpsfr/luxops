@@ -23,8 +23,12 @@ export default function PlaybookModal({ isOpen, onClose, locale, playbook }: Pla
 
   // Reset state when playbook changes
   useEffect(() => {
-    setSelectedLang(locale as 'en' | 'fr')
-    setChaptersExpanded(false)
+    const timer = window.setTimeout(() => {
+      setSelectedLang(locale as 'en' | 'fr')
+      setChaptersExpanded(false)
+    }, 0)
+
+    return () => window.clearTimeout(timer)
   }, [playbook, locale])
 
   // Lock body scroll

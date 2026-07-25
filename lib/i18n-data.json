@@ -1,0 +1,62 @@
+{
+  "siteUrl": "https://www.luxops.fr",
+  "defaultLocale": "en",
+  "activeLocales": ["en", "fr", "es"],
+  "plannedLocales": ["it", "de", "ru"],
+  "locales": {
+    "en": {
+      "label": "English",
+      "nativeLabel": "English",
+      "shortLabel": "EN",
+      "htmlLang": "en",
+      "intlLocale": "en-US",
+      "defaultCurrency": "USD",
+      "textDirection": "ltr"
+    },
+    "fr": {
+      "label": "French",
+      "nativeLabel": "Francais",
+      "shortLabel": "FR",
+      "htmlLang": "fr",
+      "intlLocale": "fr-FR",
+      "defaultCurrency": "EUR",
+      "textDirection": "ltr"
+    },
+    "es": {
+      "label": "Spanish",
+      "nativeLabel": "Espanol",
+      "shortLabel": "ES",
+      "htmlLang": "es",
+      "intlLocale": "es-ES",
+      "defaultCurrency": "EUR",
+      "textDirection": "ltr"
+    },
+    "it": {
+      "label": "Italian",
+      "nativeLabel": "Italiano",
+      "shortLabel": "IT",
+      "htmlLang": "it",
+      "intlLocale": "it-IT",
+      "defaultCurrency": "EUR",
+      "textDirection": "ltr"
+    },
+    "de": {
+      "label": "German",
+      "nativeLabel": "Deutsch",
+      "shortLabel": "DE",
+      "htmlLang": "de",
+      "intlLocale": "de-DE",
+      "defaultCurrency": "EUR",
+      "textDirection": "ltr"
+    },
+    "ru": {
+      "label": "Russian",
+      "nativeLabel": "Russkiy",
+      "shortLabel": "RU",
+      "htmlLang": "ru",
+      "intlLocale": "ru-RU",
+      "defaultCurrency": "EUR",
+      "textDirection": "ltr"
+    }
+  }
+}

@@ -1,14 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { Resend } from 'resend'
-import { createClient } from '@supabase/supabase-js'
 import { getPostHogClient } from '@/lib/posthog-server'
-
-const resend = new Resend(process.env.RESEND_API_KEY)
-
-const supabaseAdmin = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-)
+import { getResendClient } from '@/lib/resend'
+import { getSupabaseAdmin } from '@/lib/supabase-admin'
 
 const DEPT_LABELS: Record<string, { en: string; fr: string }> = {
   fo: { en: 'Front Office', fr: 'Front Office' },
@@ -32,7 +25,7 @@ export async function POST(request: NextRequest) {
     }
 
     // 1. Sauvegarde Supabase - priorité absolue
-    await supabaseAdmin.from('leads').insert({ email, department, locale })
+    await getSupabaseAdmin().from('leads').insert({ email, department, locale })
 
     // 2. Tracking serveur PostHog - non-bloquant
     try {
@@ -64,7 +57,7 @@ export async function POST(request: NextRequest) {
 
     // 3. Notification Resend - non-bloquante
     try {
-      await resend.emails.send({
+      await getResendClient().emails.send({
         from: 'LuxOps <delivery@luxops.fr>',
         to: 'contact@luxops.fr',
         replyTo: email,

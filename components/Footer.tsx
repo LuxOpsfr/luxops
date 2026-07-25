@@ -2,6 +2,8 @@ import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 import { Mail } from 'lucide-react'
 import CurrencySelector from '@/components/CurrencySelector'
+import { toActiveLocale } from '@/lib/i18n'
+import { localizedPath, localizedRoutePath } from '@/lib/localized-routes'
 
 interface FooterProps {
   locale: string
@@ -10,6 +12,8 @@ interface FooterProps {
 export default function Footer({ locale }: FooterProps) {
   const t = useTranslations('footer')
   const tNav = useTranslations('nav')
+  const currentLocale = toActiveLocale(locale)
+  const legalHref = currentLocale === 'fr' ? localizedPath('fr', '/legal') : localizedPath('en', '/legal')
 
   return (
     <footer className="bg-[#111111] text-white">
@@ -41,7 +45,7 @@ export default function Footer({ locale }: FooterProps) {
             <ul className="space-y-2.5">
               <li>
                 <Link
-                  href={`/${locale}/playbooks`}
+                  href={localizedRoutePath('playbooks', currentLocale)}
                   className="text-gray-400 hover:text-white text-sm transition-colors"
                 >
                   {tNav('playbooks')}
@@ -49,7 +53,7 @@ export default function Footer({ locale }: FooterProps) {
               </li>
               <li>
                 <Link
-                  href={`/${locale}/notion-templates`}
+                  href={localizedRoutePath('notionTemplates', currentLocale)}
                   className="text-gray-400 hover:text-white text-sm transition-colors"
                 >
                   {tNav('notion')}
@@ -66,7 +70,7 @@ export default function Footer({ locale }: FooterProps) {
             <ul className="space-y-2.5">
               <li>
                 <Link
-                  href={locale === 'en' ? '/en/quality-audit' : '/fr/audit-qualite'}
+                  href={localizedRoutePath('qualityAudit', currentLocale)}
                   className="text-gray-400 hover:text-white text-sm transition-colors"
                 >
                   {tNav('audit')}
@@ -74,7 +78,7 @@ export default function Footer({ locale }: FooterProps) {
               </li>
               <li>
                 <Link
-                  href={locale === 'en' ? '/en/bespoke-process' : '/fr/process-sur-mesure'}
+                  href={localizedRoutePath('bespokeProcess', currentLocale)}
                   className="text-gray-400 hover:text-white text-sm transition-colors"
                 >
                   {tNav('process')}
@@ -82,7 +86,7 @@ export default function Footer({ locale }: FooterProps) {
               </li>
               <li>
                 <Link
-                  href={locale === 'en' ? '/en/training' : '/fr/formation'}
+                  href={localizedRoutePath('training', currentLocale)}
                   className="text-gray-400 hover:text-white text-sm transition-colors"
                 >
                   {tNav('training')}
@@ -90,7 +94,7 @@ export default function Footer({ locale }: FooterProps) {
               </li>
               <li>
                 <Link
-                  href={`/${locale}/resources`}
+                  href={localizedRoutePath('resources', currentLocale)}
                   className="text-gray-400 hover:text-white text-sm transition-colors"
                 >
                   {tNav('resources')}
@@ -98,7 +102,7 @@ export default function Footer({ locale }: FooterProps) {
               </li>
               <li>
                 <Link
-                  href={`/${locale}/blog`}
+                  href={localizedRoutePath('blog', currentLocale)}
                   className="text-gray-400 hover:text-white text-sm transition-colors"
                 >
                   {tNav('blog')}
@@ -115,7 +119,7 @@ export default function Footer({ locale }: FooterProps) {
             <ul className="space-y-2.5">
               <li>
                 <Link
-                  href={`/${locale}/about`}
+                  href={localizedRoutePath('about', currentLocale)}
                   className="text-gray-400 hover:text-white text-sm transition-colors"
                 >
                   {tNav('about')}
@@ -123,7 +127,7 @@ export default function Footer({ locale }: FooterProps) {
               </li>
               <li>
                 <Link
-                  href={`/${locale}/contact`}
+                  href={localizedRoutePath('contact', currentLocale)}
                   className="text-gray-400 hover:text-white text-sm transition-colors"
                 >
                   {tNav('contact')}
@@ -145,9 +149,9 @@ export default function Footer({ locale }: FooterProps) {
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-gray-500 text-sm">{t('copyright')}</p>
           <div className="flex flex-col sm:flex-row items-center gap-5">
-            <CurrencySelector locale={locale} />
+            <CurrencySelector locale={currentLocale} />
             <Link
-              href={`/${locale}/legal`}
+              href={legalHref}
               className="text-gray-500 hover:text-gray-300 text-sm transition-colors"
             >
               {t('legal')}

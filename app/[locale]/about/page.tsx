@@ -1,6 +1,27 @@
 import type { Metadata } from 'next'
 import { useTranslations } from 'next-intl'
 import ExpertiseSection from '@/components/ExpertiseSection'
+import { toActiveLocale } from '@/lib/i18n'
+import type { Locale } from '@/lib/i18n'
+import { alternatesForRoute, localizedRouteUrl } from '@/lib/localized-routes'
+
+const aboutMetadata = {
+  en: {
+    title: 'About LuxOps | Hotel Operations Specialists',
+    description:
+      'LuxOps provides structured operational methods for high-end hotels. Playbooks, SOPs, audits and training built from years of real hotel operations experience.',
+  },
+  fr: {
+    title: 'À Propos de LuxOps | Spécialistes des Opérations Hôtelières',
+    description:
+      "LuxOps propose des méthodes opérationnelles structurées pour hôtels haut de gamme. Playbooks, SOPs, audits et formations issus de l'exploitation hôtelière réelle.",
+  },
+  es: {
+    title: 'Sobre LuxOps | Especialistas en operaciones hoteleras',
+    description:
+      'LuxOps ofrece métodos operativos estructurados para hoteles high-end: playbooks, SOPs, auditorías y formación creados desde años de experiencia real en operaciones hoteleras.',
+  },
+} satisfies Partial<Record<Locale, { title: string; description: string }>>
 
 export async function generateMetadata({
   params,
@@ -8,21 +29,14 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>
 }): Promise<Metadata> {
   const { locale } = await params
-  const isEn = locale === 'en'
+  const activeLocale = toActiveLocale(locale)
+  const metadata = aboutMetadata[activeLocale as keyof typeof aboutMetadata] ?? aboutMetadata.en
   return {
-    title: isEn
-      ? 'About LuxOps | Hotel Operations Specialists'
-      : 'À Propos de LuxOps | Spécialistes des Opérations Hôtelières',
-    description: isEn
-      ? 'LuxOps provides structured operational methods for high-end hotels. Playbooks, SOPs, audits and training built from years of real hotel operations experience.'
-      : "LuxOps propose des méthodes opérationnelles structurées pour hôtels haut de gamme. Playbooks, SOPs, audits et formations issus de l'exploitation hôtelière réelle.",
+    title: metadata.title,
+    description: metadata.description,
     alternates: {
-      canonical: `https://www.luxops.fr/${locale}/about`,
-      languages: {
-        'en': 'https://www.luxops.fr/en/about',
-        'fr': 'https://www.luxops.fr/fr/about',
-        'x-default': 'https://www.luxops.fr/en/about',
-      },
+      canonical: localizedRouteUrl('about', activeLocale),
+      languages: alternatesForRoute('about'),
     },
   }
 }

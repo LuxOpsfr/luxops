@@ -1,6 +1,4 @@
-import { Resend } from 'resend'
-
-const resend = new Resend(process.env.RESEND_API_KEY)
+import { getResendClient } from './resend'
 
 interface SendPlaybookEmailParams {
   to: string
@@ -208,7 +206,7 @@ export async function sendPlaybookEmail({
 
   const html = buildEmailHtml(name, playbookNames, lang, to)
 
-  await resend.emails.send({
+  await getResendClient().emails.send({
     from: 'LuxOps <delivery@luxops.fr>',
     to,
     subject,

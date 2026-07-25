@@ -2,6 +2,27 @@ import type { Metadata } from 'next'
 import { useTranslations } from 'next-intl'
 import ContactForm from '@/components/ContactForm'
 import { Mail, Clock } from 'lucide-react'
+import { toActiveLocale } from '@/lib/i18n'
+import type { Locale } from '@/lib/i18n'
+import { alternatesForRoute, localizedRouteUrl } from '@/lib/localized-routes'
+
+const contactMetadata = {
+  en: {
+    title: 'Contact LuxOps | Hotel Operations Enquiries',
+    description:
+      'Get in touch with the LuxOps team. Questions about hotel playbooks, SOPs, audits, custom processes or on-property training. We usually respond within one business day.',
+  },
+  fr: {
+    title: 'Contacter LuxOps | Renseignements Opérations Hôtelières',
+    description:
+      "Contactez l'équipe LuxOps pour vos questions sur les playbooks, SOPs, audits, process sur-mesure ou formation hôtelière. Réponse habituellement sous un jour ouvré.",
+  },
+  es: {
+    title: 'Contactar LuxOps | Consultas de operaciones hoteleras',
+    description:
+      'Contacta con LuxOps para consultas sobre playbooks hoteleros, SOPs, auditorías, procesos a medida o formación en el hotel. Normalmente respondemos en un día laborable.',
+  },
+} satisfies Partial<Record<Locale, { title: string; description: string }>>
 
 export async function generateMetadata({
   params,
@@ -9,32 +30,25 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>
 }): Promise<Metadata> {
   const { locale } = await params
-  const isEn = locale === 'en'
+  const activeLocale = toActiveLocale(locale)
+  const metadata = contactMetadata[activeLocale as keyof typeof contactMetadata] ?? contactMetadata.en
   return {
-    title: isEn
-      ? 'Contact LuxOps | Hotel Operations Enquiries'
-      : 'Contacter LuxOps | Renseignements Opérations Hôtelières',
-    description: isEn
-      ? 'Get in touch with the LuxOps team. Questions about hotel playbooks, SOPs, audits, custom processes or on-property training. We usually respond within one business day.'
-      : "Contactez l'équipe LuxOps pour vos questions sur les playbooks, SOPs, audits, process sur-mesure ou formation hôtelière. Réponse habituellement sous un jour ouvré.",
+    title: metadata.title,
+    description: metadata.description,
     alternates: {
-      canonical: `https://www.luxops.fr/${locale}/contact`,
-      languages: {
-        'en': 'https://www.luxops.fr/en/contact',
-        'fr': 'https://www.luxops.fr/fr/contact',
-        'x-default': 'https://www.luxops.fr/en/contact',
-      },
+      canonical: localizedRouteUrl('contact', activeLocale),
+      languages: alternatesForRoute('contact'),
     },
   }
 }
 
-export default async function ContactPage({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = await params
-  return <ContactContent locale={locale} />
+export default function ContactPage() {
+  return <ContactContent />
 }
 
-function ContactContent({ locale }: { locale: string }) {
+function ContactContent() {
   const t = useTranslations('contact_page')
+  const tNav = useTranslations('nav')
 
   return (
     <div className="pt-16 bg-white">
@@ -53,7 +67,7 @@ function ContactContent({ locale }: { locale: string }) {
             style={{ backgroundColor: '#eef4ff', borderRadius: '0.125rem' }}
           >
             <span className="w-2 h-2 bg-[#003d9b] rounded-full" />
-            {locale === 'en' ? 'Contact' : 'Contact'}
+            {tNav('contact')}
           </div>
           <h1 className="font-display text-5xl md:text-7xl font-extrabold tracking-tighter leading-none text-[#0a1d2e] mb-6">
             {t('title')}

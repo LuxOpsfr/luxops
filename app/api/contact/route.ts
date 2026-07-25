@@ -1,8 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { Resend } from 'resend'
 import { getPostHogClient } from '@/lib/posthog-server'
-
-const resend = new Resend(process.env.RESEND_API_KEY)
+import { getResendClient } from '@/lib/resend'
 
 export async function POST(request: NextRequest) {
   try {
@@ -13,7 +11,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
     }
 
-    await resend.emails.send({
+    await getResendClient().emails.send({
       from: 'LuxOps <contact@luxops.fr>',
       to: 'contact@luxops.fr',
       replyTo: email,

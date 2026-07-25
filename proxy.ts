@@ -1,9 +1,11 @@
 import createMiddleware from 'next-intl/middleware'
 import { NextFetchEvent, NextRequest, NextResponse } from 'next/server'
+import { ACTIVE_LOCALES, DEFAULT_LOCALE, isActiveLocale } from './lib/i18n'
+import { localizedRoutePath, routeIdFromPathname, routeSupportsLocale } from './lib/localized-routes'
 
 const intlMiddleware = createMiddleware({
-  locales: ['en', 'fr'],
-  defaultLocale: 'en',
+  locales: [...ACTIVE_LOCALES],
+  defaultLocale: DEFAULT_LOCALE,
   localePrefix: 'always',
   alternateLinks: false,
 })
@@ -71,6 +73,14 @@ export default function proxy(request: NextRequest, event: NextFetchEvent) {
   if (pathname === '/llms.txt' || pathname === '/llms-full.txt' || pathname.startsWith('/llms/')) {
     trackLlmsFileView(request, event)
     return NextResponse.next()
+  }
+
+  const [, maybeLocale] = pathname.split('/')
+  if (isActiveLocale(maybeLocale)) {
+    const routeId = routeIdFromPathname(pathname)
+    if (maybeLocale !== 'en' && maybeLocale !== 'fr' && (!routeId || !routeSupportsLocale(routeId, maybeLocale))) {
+      return NextResponse.redirect(new URL(localizedRoutePath('home', maybeLocale), request.url))
+    }
   }
 
   return intlMiddleware(request)

@@ -1,19 +1,19 @@
-export const SITE_URL = 'https://www.luxops.fr'
+import { SITE_URL, toActiveLocale } from './i18n'
+import { alternatesForPath, localizedUrl } from './localized-routes'
+
+export { SITE_URL }
 
 export function localizedPath(locale: string, path = '') {
-  const normalizedPath = path.startsWith('/') ? path : `/${path}`
-  return `${SITE_URL}/${locale}${normalizedPath === '/' ? '' : normalizedPath}`
+  return localizedUrl(locale, path || '/')
 }
 
 export function alternatesFor(path: string, xDefaultLocale = 'en') {
-  return {
-    en: localizedPath('en', path),
-    fr: localizedPath('fr', path),
-    'x-default': localizedPath(xDefaultLocale, path),
-  }
+  return alternatesForPath(path, toActiveLocale(xDefaultLocale))
 }
 
 export function organizationSchema(locale: string) {
+  const safeLocale = toActiveLocale(locale)
+
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
@@ -22,7 +22,7 @@ export function organizationSchema(locale: string) {
     url: SITE_URL,
     logo: `${SITE_URL}/og-image.png`,
     description:
-      locale === 'fr'
+      safeLocale === 'fr'
         ? "Playbooks, SOPs, audits et formations pour structurer les opérations des hôtels haut de gamme."
         : 'Hotel operations playbooks, SOPs, quality audits and on-property training for high-end hospitality teams.',
     sameAs: [],

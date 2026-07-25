@@ -1,3 +1,5 @@
+import { LOCALE_META, toLocale } from './i18n'
+
 export type SupportedCurrency = 'EUR' | 'USD' | 'GBP' | 'CAD' | 'AUD'
 
 export type PricedProductType = 'starter_pack' | 'playbook' | 'bundle'
@@ -86,7 +88,7 @@ export function formatCurrencyAmount(
   currency: SupportedCurrency,
   locale: string,
 ) {
-  const formatterLocale = locale === 'fr' ? 'fr-FR' : 'en-US'
+  const formatterLocale = LOCALE_META[toLocale(locale)].intlLocale
 
   return new Intl.NumberFormat(formatterLocale, {
     style: 'currency',

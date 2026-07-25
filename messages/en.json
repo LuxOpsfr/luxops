@@ -256,7 +256,14 @@
     "error": "Something went wrong. Please try again.",
     "email_label": "Email",
     "response_time_label": "Response time",
-    "response_time": "We usually respond within one business day."
+    "response_time": "We usually respond within one business day.",
+    "name_placeholder": "John Smith",
+    "email_placeholder": "john@hotel.com",
+    "company_placeholder": "The Grand Hotel",
+    "subject_placeholder": "Front Office, Housekeeping...",
+    "message_placeholder": "Describe your project...",
+    "required": "Required",
+    "valid_email_required": "Valid email required"
   },
   "footer": {
     "tagline": "Operational structure for hotel teams",
@@ -265,5 +272,12 @@
     "company": "Company",
     "legal": "Legal Notices",
     "copyright": "© 2026 LuxOps. All rights reserved."
+  },
+  "cookie_banner": {
+    "title": "This site uses cookies",
+    "body": "We use cookies to improve your experience and analyze traffic (Google Analytics). ",
+    "learn_more": "Learn more",
+    "decline": "Decline",
+    "accept": "Accept"
   }
 }

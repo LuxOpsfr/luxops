@@ -1,13 +1,53 @@
+import { toActiveLocale } from '@/lib/i18n'
+import type { Locale } from '@/lib/i18n'
+
 interface Props {
   locale: string
 }
 
-export default function ExpertiseSection({ locale }: Props) {
-  const isEn = locale === 'en'
+const expertiseCopy = {
+  en: {
+    tags: ['Front Office Operations', 'Multi-Department Management', 'SOP Design', 'Team Training & Briefings'],
+    founder: 'Founder, LuxOps',
+    badge: 'The Expertise Behind LuxOps',
+    title: 'Built through day-to-day hotel operations.',
+    intro:
+      'LuxOps comes from years spent managing departments, supporting teams, and building structure where operations could not rely on improvisation. The procedures and tools presented here were developed in working hotels, under real service pressure, with the aim of making standards clearer, execution steadier, and onboarding easier.',
+    proof:
+      'They exist because they solved real operational needs, and they remain useful because they were built to be used by teams, not just reviewed by management.',
+  },
+  fr: {
+    tags: ['Opérations Front Office', 'Management Multi-Départements', 'Conception de SOPs', 'Formation & Briefings Équipes'],
+    founder: 'Fondateur, LuxOps',
+    badge: 'L’Expertise Derrière LuxOps',
+    title: 'Construit au fil des opérations hôtelières quotidiennes.',
+    intro:
+      'LuxOps vient d’années passées à gérer des départements, accompagner des équipes et construire des structures là où l’exploitation ne pouvait pas reposer sur l’improvisation. Les procédures et outils présentés ici ont été développés dans des hôtels en activité, sous une vraie pression de service, avec pour objectif de rendre les standards plus clairs, l’exécution plus stable et l’intégration plus simple.',
+    proof:
+      'Ils existent parce qu’ils répondaient à de vrais besoins opérationnels, et ils restent utiles parce qu’ils ont été conçus pour être utilisés par les équipes, pas seulement consultés par le management.',
+  },
+  es: {
+    tags: ['Operaciones Front Office', 'Gestión multi-departamento', 'Diseño de SOPs', 'Formación y briefings de equipo'],
+    founder: 'Fundador, LuxOps',
+    badge: 'La experiencia detrás de LuxOps',
+    title: 'Construido desde la operación hotelera diaria.',
+    intro:
+      'LuxOps nace de años gestionando departamentos, acompañando equipos y creando estructura donde la operación no podía depender de la improvisación. Los procedimientos y herramientas presentados aquí se desarrollaron en hoteles en funcionamiento, bajo presión real de servicio, con el objetivo de hacer los estándares más claros, la ejecución más estable y el onboarding más sencillo.',
+    proof:
+      'Existen porque resolvieron necesidades operativas reales, y siguen siendo útiles porque fueron diseñados para ser usados por los equipos, no solo revisados por la dirección.',
+  },
+} satisfies Partial<Record<Locale, {
+  tags: string[]
+  founder: string
+  badge: string
+  title: string
+  intro: string
+  proof: string
+}>>
 
-  const tags = isEn
-    ? ['Front Office Operations', 'Multi-Department Management', 'SOP Design', 'Team Training & Briefings']
-    : ['Opérations Front Office', 'Management Multi-Départements', 'Conception de SOPs', 'Formation & Briefings Équipes']
+export default function ExpertiseSection({ locale }: Props) {
+  const activeLocale = toActiveLocale(locale)
+  const copy = expertiseCopy[activeLocale as keyof typeof expertiseCopy] ?? expertiseCopy.en
 
   return (
     <section
@@ -74,7 +114,7 @@ export default function ExpertiseSection({ locale }: Props) {
               />
             </svg>
             <p className="text-[10px] font-bold uppercase tracking-widest text-[#737685]">
-              {isEn ? 'Founder, LuxOps' : 'Fondateur, LuxOps'}
+              {copy.founder}
             </p>
           </div>
         </div>
@@ -86,34 +126,26 @@ export default function ExpertiseSection({ locale }: Props) {
             style={{ backgroundColor: '#eef4ff', borderRadius: '0.125rem' }}
           >
             <span className="w-2 h-2 bg-[#003d9b] rounded-full" />
-            {isEn ? 'The Expertise Behind LuxOps' : "L\u2019Expertise Derrière LuxOps"}
+            {copy.badge}
           </div>
 
           <h2 className="font-display text-3xl lg:text-4xl font-extrabold tracking-tighter leading-tight text-[#0a1d2e]">
-            {isEn
-              ? 'Built through day-to-day hotel operations.'
-              : "Construit au fil des opérations hôtelières quotidiennes."}
+            {copy.title}
           </h2>
 
           <div className="space-y-4 text-[#4f6074] leading-relaxed">
-            <p>
-              {isEn
-                ? "LuxOps comes from years spent managing departments, supporting teams, and building structure where operations could not rely on improvisation. The procedures and tools presented here were developed in working hotels, under real service pressure, with the aim of making standards clearer, execution steadier, and onboarding easier."
-                : "LuxOps vient d\u2019années passées à gérer des départements, accompagner des équipes et construire des structures là où l\u2019exploitation ne pouvait pas reposer sur l\u2019improvisation. Les procédures et outils présentés ici ont été développés dans des hôtels en activité, sous une vraie pression de service, avec pour objectif de rendre les standards plus clairs, l\u2019exécution plus stable et l\u2019intégration plus simple."}
-            </p>
+            <p>{copy.intro}</p>
             <p
               className="font-display font-bold text-[#0a1d2e] text-base leading-snug"
               style={{ borderLeft: '3px solid #003d9b', paddingLeft: '1.25rem' }}
             >
-              {isEn
-                ? "They exist because they solved real operational needs, and they remain useful because they were built to be used by teams, not just reviewed by management."
-                : "Ils existent parce qu\u2019ils répondaient à de vrais besoins opérationnels, et ils restent utiles parce qu\u2019ils ont été conçus pour être utilisés par les équipes, pas seulement consultés par le management."}
+              {copy.proof}
             </p>
           </div>
 
           {/* Credential tags */}
           <div className="flex flex-wrap gap-2 pt-2">
-            {tags.map((tag, i) => (
+            {copy.tags.map((tag, i) => (
               <span
                 key={i}
                 className="px-3 py-1.5 text-xs font-bold text-[#003d9b]"

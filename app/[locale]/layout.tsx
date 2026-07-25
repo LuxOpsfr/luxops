@@ -9,11 +9,12 @@ import { CartProvider } from '@/context/CartContext'
 import { CurrencyProvider } from '@/context/CurrencyContext'
 import { Analytics } from '@vercel/analytics/next'
 import { organizationSchema } from '@/lib/seo'
+import { LOCALE_META, toActiveLocale } from '@/lib/i18n'
 
 const GA_ID = 'G-0CDGZY9FPZ'
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
-const manrope = Manrope({ subsets: ['latin'], variable: '--font-display', weight: ['400', '600', '700', '800'] })
+const inter = Inter({ subsets: ['latin', 'cyrillic'], variable: '--font-sans' })
+const manrope = Manrope({ subsets: ['latin', 'cyrillic'], variable: '--font-display', weight: ['400', '600', '700', '800'] })
 
 export const metadata: Metadata = {
   title: 'LuxOps | Standardizing Excellence in High-End Hospitality',
@@ -80,11 +81,12 @@ export default async function LocaleLayout({
   params: Promise<{ locale: string }>
 }) {
   const { locale } = await params
+  const activeLocale = toActiveLocale(locale)
   const messages = await getMessages()
-  const orgSchema = organizationSchema(locale)
+  const orgSchema = organizationSchema(activeLocale)
 
   return (
-    <html lang={locale}>
+    <html lang={LOCALE_META[activeLocale].htmlLang} dir={LOCALE_META[activeLocale].textDirection}>
       <body className={`${inter.variable} ${manrope.variable} font-sans`}>
         {/* Google Analytics */}
         <Script
@@ -115,9 +117,9 @@ export default async function LocaleLayout({
         />
 
         <NextIntlClientProvider messages={messages}>
-          <CurrencyProvider locale={locale}>
+          <CurrencyProvider locale={activeLocale}>
             <CartProvider>
-              <SiteShell locale={locale}>
+              <SiteShell locale={activeLocale}>
                 {children}
               </SiteShell>
             </CartProvider>

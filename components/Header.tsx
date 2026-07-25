@@ -6,58 +6,50 @@ import { usePathname } from 'next/navigation'
 import { useTranslations } from 'next-intl'
 import { Menu, X, Globe, ShoppingCart, User } from 'lucide-react'
 import { useCart } from '@/context/CartContext'
+import { ACTIVE_LOCALES, LOCALE_META, toActiveLocale } from '@/lib/i18n'
+import { localizePathname, localizedPath, localizedRoutePath } from '@/lib/localized-routes'
+import type { Locale } from '@/lib/i18n'
 
 interface HeaderProps {
   locale: string
 }
 
+const headerCopy = {
+  en: {
+    tagline: 'Standardizing Excellence in High-End Hospitality',
+    portal: 'My account',
+    cart: 'Cart',
+    toggleMenu: 'Toggle menu',
+  },
+  fr: {
+    tagline: 'L’Excellence Opérationnelle en Hôtellerie de Luxe',
+    portal: 'Mon espace',
+    cart: 'Panier',
+    toggleMenu: 'Ouvrir le menu',
+  },
+  es: {
+    tagline: 'Excelencia operativa para hotelería high-end',
+    portal: 'Mi espacio',
+    cart: 'Carrito',
+    toggleMenu: 'Abrir menú',
+  },
+} satisfies Partial<Record<Locale, { tagline: string; portal: string; cart: string; toggleMenu: string }>>
+
 export default function Header({ locale }: HeaderProps) {
   const t = useTranslations('nav')
   const [menuOpen, setMenuOpen] = useState(false)
-  const otherLocale = locale === 'en' ? 'fr' : 'en'
+  const currentLocale = toActiveLocale(locale)
+  const copy = headerCopy[currentLocale as keyof typeof headerCopy] ?? headerCopy.en
+  const portalHref = currentLocale === 'fr' ? localizedPath('fr', '/portal') : localizedPath('en', '/portal')
+  const switchLocales = ACTIVE_LOCALES.filter((candidate) => candidate !== currentLocale)
   const pathname = usePathname()
-  const localizedPathPairs: Record<string, string> = {
-    '/en/training': '/fr/formation',
-    '/en/quality-audit': '/fr/audit-qualite',
-    '/en/bespoke-process': '/fr/process-sur-mesure',
-    '/en/free-hotel-checklists': '/fr/checklists-hotel-gratuites',
-    '/en/food-and-beverage-service-sequence': '/fr/sequence-service-restaurant-hotel',
-    '/en/hotel-room-service-checklist': '/fr/checklist-room-service-hotel',
-    '/en/restaurant-opening-checklist': '/fr/checklist-ouverture-restaurant',
-    '/en/front-desk-shift-handover-template': '/fr/modele-passation-reception',
-    '/en/guest-complaint-handling-sop': '/fr/procedure-reclamation-client',
-    '/en/housekeeping-deep-cleaning-checklist': '/fr/deep-cleaning-chambre',
-    '/en/breakfast-service-checklist': '/fr/checklist-service-petit-dejeuner',
-    '/en/room-status-discrepancy-report': '/fr/rapport-ecart-statut-chambre',
-    '/en/hotel-operations-playbook': '/fr/manuel-procedure-hotellerie',
-    '/en/hotel-management-routines': '/fr/rituels-management-hotelier',
-    '/en/fb-audit-training': '/fr/audit-formation-fb',
-    '/en/luxops-training-method': '/fr/methode-formation-luxops',
-    '/fr/formation': '/en/training',
-    '/fr/audit-qualite': '/en/quality-audit',
-    '/fr/process-sur-mesure': '/en/bespoke-process',
-    '/fr/checklists-hotel-gratuites': '/en/free-hotel-checklists',
-    '/fr/sequence-service-restaurant-hotel': '/en/food-and-beverage-service-sequence',
-    '/fr/checklist-room-service-hotel': '/en/hotel-room-service-checklist',
-    '/fr/checklist-ouverture-restaurant': '/en/restaurant-opening-checklist',
-    '/fr/modele-passation-reception': '/en/front-desk-shift-handover-template',
-    '/fr/procedure-reclamation-client': '/en/guest-complaint-handling-sop',
-    '/fr/deep-cleaning-chambre': '/en/housekeeping-deep-cleaning-checklist',
-    '/fr/checklist-service-petit-dejeuner': '/en/breakfast-service-checklist',
-    '/fr/rapport-ecart-statut-chambre': '/en/room-status-discrepancy-report',
-    '/fr/manuel-procedure-hotellerie': '/en/hotel-operations-playbook',
-    '/fr/rituels-management-hotelier': '/en/hotel-management-routines',
-    '/fr/audit-formation-fb': '/en/fb-audit-training',
-    '/fr/methode-formation-luxops': '/en/luxops-training-method',
-  }
-  const switchLocalePath = localizedPathPairs[pathname] ?? pathname.replace(`/${locale}`, `/${otherLocale}`)
   const { items, openCart } = useCart()
 
   const navLinks = [
-    { href: `/${locale}/playbooks`, label: t('playbooks') },
-    { href: locale === 'en' ? '/en/training' : '/fr/formation', label: t('training') },
-    { href: locale === 'en' ? '/en/quality-audit' : '/fr/audit-qualite', label: t('audit') },
-    { href: locale === 'en' ? '/en/bespoke-process' : '/fr/process-sur-mesure', label: t('process') },
+    { href: localizedRoutePath('playbooks', currentLocale), label: t('playbooks') },
+    { href: localizedRoutePath('training', currentLocale), label: t('training') },
+    { href: localizedRoutePath('qualityAudit', currentLocale), label: t('audit') },
+    { href: localizedRoutePath('bespokeProcess', currentLocale), label: t('process') },
   ]
 
   return (
@@ -65,7 +57,7 @@ export default function Header({ locale }: HeaderProps) {
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <Link
-          href={`/${locale}`}
+          href={localizedRoutePath('home', currentLocale)}
           className="flex flex-col gap-[3px] no-underline"
         >
           <span
@@ -89,9 +81,7 @@ export default function Header({ locale }: HeaderProps) {
               opacity: 0.75,
             }}
           >
-            {locale === 'en'
-              ? 'Standardizing Excellence in High-End Hospitality'
-              : "L\u2019Excellence Op\u00e9rationnelle en H\u00f4tellerie de Luxe"}
+            {copy.tagline}
           </span>
         </Link>
 
@@ -111,19 +101,24 @@ export default function Header({ locale }: HeaderProps) {
         {/* Right actions */}
         <div className="flex items-center gap-4">
           {/* Language switcher */}
-          <Link
-            href={switchLocalePath}
-            className="flex items-center gap-1.5 text-sm text-gray-400 hover:text-[#111111] transition-colors"
-          >
+          <div className="flex items-center gap-2 text-sm text-gray-400">
             <Globe size={14} />
-            <span className="font-semibold uppercase">{otherLocale}</span>
-          </Link>
+            {switchLocales.map((targetLocale) => (
+              <Link
+                key={targetLocale}
+                href={localizePathname(pathname, targetLocale)}
+                className="font-semibold uppercase hover:text-[#111111] transition-colors"
+              >
+                {LOCALE_META[targetLocale].shortLabel}
+              </Link>
+            ))}
+          </div>
 
           {/* Mon espace */}
           <Link
-            href={`/${locale}/portal`}
+            href={portalHref}
             className="p-1.5 text-gray-600 hover:text-[#111111] transition-colors"
-            aria-label="Mon espace"
+            aria-label={copy.portal}
           >
             <User size={20} />
           </Link>
@@ -132,7 +127,7 @@ export default function Header({ locale }: HeaderProps) {
           <button
             onClick={openCart}
             className="relative p-1.5 text-gray-600 hover:text-[#111111] transition-colors"
-            aria-label="Cart"
+            aria-label={copy.cart}
           >
             <ShoppingCart size={20} />
             {items.length > 0 && (
@@ -144,7 +139,7 @@ export default function Header({ locale }: HeaderProps) {
 
           {/* CTA */}
           <Link
-            href={`/${locale}/contact`}
+            href={localizedRoutePath('contact', currentLocale)}
             className="hidden lg:inline-flex items-center px-4 py-2 bg-[#111111] text-white text-sm font-medium rounded-lg hover:bg-[#333333] transition-colors"
           >
             {t('get_in_touch')}
@@ -154,7 +149,7 @@ export default function Header({ locale }: HeaderProps) {
           <button
             className="lg:hidden p-1.5 text-gray-600"
             onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
+            aria-label={copy.toggleMenu}
           >
             {menuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
@@ -175,14 +170,14 @@ export default function Header({ locale }: HeaderProps) {
             </Link>
           ))}
           <Link
-            href={`/${locale}/portal`}
+            href={portalHref}
             onClick={() => setMenuOpen(false)}
             className="text-gray-700 hover:text-[#111111] py-1 font-medium text-sm"
           >
-            Mon espace
+            {copy.portal}
           </Link>
           <Link
-            href={`/${locale}/contact`}
+            href={localizedRoutePath('contact', currentLocale)}
             onClick={() => setMenuOpen(false)}
             className="inline-flex items-center justify-center px-4 py-2.5 bg-[#111111] text-white text-sm font-medium rounded-lg mt-2"
           >

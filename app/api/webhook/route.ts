@@ -1,18 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server'
 import Stripe from 'stripe'
-import { createClient } from '@supabase/supabase-js'
 import { sendPlaybookEmail } from '@/lib/email'
 import { DOWNLOADS, BUNDLE_PRICE_ID, ALL_PLAYBOOK_PRICE_IDS } from '@/lib/downloads'
 import { getPostHogClient } from '@/lib/posthog-server'
-
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: '2026-02-25.clover',
-})
-
-const supabaseAdmin = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-)
+import { getStripeClient, getStripeWebhookSecret } from '@/lib/stripe'
+import { getSupabaseAdmin } from '@/lib/supabase-admin'
 
 export async function POST(request: NextRequest) {
   const body = await request.text()
@@ -23,12 +15,13 @@ export async function POST(request: NextRequest) {
   }
 
   let event: Stripe.Event
+  const stripe = getStripeClient()
 
   try {
     event = stripe.webhooks.constructEvent(
       body,
       signature,
-      process.env.STRIPE_WEBHOOK_SECRET!
+      getStripeWebhookSecret()
     )
   } catch (err) {
     console.error('[Webhook] Signature verification failed:', err)
@@ -78,7 +71,7 @@ export async function POST(request: NextRequest) {
         item => (item.price as Stripe.Price)?.id === priceId
       )?.price?.unit_amount ?? 0
 
-      const { error } = await supabaseAdmin.from('purchases').upsert(
+      const { error } = await getSupabaseAdmin().from('purchases').upsert(
         {
           email: customerEmail,
           stripe_session_id: `${session.id}_${priceId}`,

@@ -5,6 +5,8 @@ import { ArrowRight, ArrowLeft, Clock, CheckCircle2 } from 'lucide-react'
 import { articles } from '@/content/blog/articles'
 import { breadcrumbSchema, faqSchema as buildFaqSchema, localizedPath } from '@/lib/seo'
 import TrackedLink from '@/components/TrackedLink'
+import { ACTIVE_LOCALES, toActiveLocale } from '@/lib/i18n'
+import { localizePathname } from '@/lib/localized-routes'
 
 // Keywords per article - improves indexation signals for Google
 const KEYWORDS_EN: Record<string, string> = {
@@ -1013,9 +1015,8 @@ function productCtaEventName(href: string) {
 }
 
 export async function generateStaticParams() {
-  const locales = ['en', 'fr']
   return articles.flatMap((article) =>
-    locales.map((locale) => ({ locale, slug: article.slug }))
+    ACTIVE_LOCALES.map((locale) => ({ locale, slug: article.slug }))
   )
 }
 
@@ -1025,16 +1026,17 @@ export async function generateMetadata({
   params: Promise<{ locale: string; slug: string }>
 }): Promise<Metadata> {
   const { locale, slug } = await params
+  const activeLocale = toActiveLocale(locale)
   const article = articles.find((a) => a.slug === slug)
   if (!article) return {}
-  const content = locale === 'en' ? article.en : article.fr
-  const keywords = locale === 'en' ? KEYWORDS_EN[slug] : KEYWORDS_FR[slug]
+  const content = activeLocale === 'en' ? article.en : article.fr
+  const keywords = activeLocale === 'en' ? KEYWORDS_EN[slug] : KEYWORDS_FR[slug]
   return {
     title: content.title + ' | LuxOps',
     description: content.description,
     ...(keywords && { keywords }),
     alternates: {
-      canonical: `https://www.luxops.fr/${locale}/blog/${slug}`,
+      canonical: `https://www.luxops.fr/${activeLocale}/blog/${slug}`,
       languages: {
         'en': `https://www.luxops.fr/en/blog/${slug}`,
         'fr': `https://www.luxops.fr/fr/blog/${slug}`,
@@ -1050,21 +1052,16 @@ export default async function BlogArticlePage({
   params: Promise<{ locale: string; slug: string }>
 }) {
   const { locale, slug } = await params
+  const activeLocale = toActiveLocale(locale)
   const article = articles.find((a) => a.slug === slug)
   if (!article) notFound()
 
-  const isEn = locale === 'en'
+  const isEn = activeLocale === 'en'
   const content = isEn ? article.en : article.fr
   const localizedLink = (href: string) => {
     if (href.startsWith('/en/') || href.startsWith('/fr/')) return href
-    const canonicalByLocale: Record<string, string> = {
-      '/formation': isEn ? '/en/training' : '/fr/formation',
-      '/free-hotel-checklists': isEn ? '/en/free-hotel-checklists' : '/fr/checklists-hotel-gratuites',
-      '/food-and-beverage-service-sequence': isEn ? '/en/food-and-beverage-service-sequence' : '/fr/sequence-service-restaurant-hotel',
-      '/hotel-room-service-checklist': isEn ? '/en/hotel-room-service-checklist' : '/fr/checklist-room-service-hotel',
-      '/restaurant-opening-checklist': isEn ? '/en/restaurant-opening-checklist' : '/fr/checklist-ouverture-restaurant',
-    }
-    return canonicalByLocale[href] ?? `/${locale}${href}`
+    if (href.startsWith('/')) return localizePathname(href, activeLocale)
+    return href
   }
 
   const articleSchema = {
@@ -1074,10 +1071,10 @@ export default async function BlogArticlePage({
     description: content.description,
     datePublished: content.date,
     dateModified: content.date,
-    url: `https://www.luxops.fr/${locale}/blog/${slug}`,
+    url: `https://www.luxops.fr/${activeLocale}/blog/${slug}`,
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://www.luxops.fr/${locale}/blog/${slug}`,
+      '@id': `https://www.luxops.fr/${activeLocale}/blog/${slug}`,
     },
     author: {
       '@type': 'Organization',
@@ -1093,16 +1090,16 @@ export default async function BlogArticlePage({
         url: 'https://www.luxops.fr/og-image.png',
       },
     },
-    inLanguage: locale,
+    inLanguage: activeLocale,
   }
 
   const faqJsonLd = content.faqs && content.faqs.length > 0
     ? buildFaqSchema(content.faqs)
     : null
   const breadcrumbs = breadcrumbSchema([
-    { name: 'LuxOps', url: localizedPath(locale) },
-    { name: isEn ? 'Blog' : 'Guides', url: localizedPath(locale, '/blog') },
-    { name: content.title, url: localizedPath(locale, `/blog/${slug}`) },
+    { name: 'LuxOps', url: localizedPath(activeLocale) },
+    { name: isEn ? 'Blog' : 'Guides', url: localizedPath(activeLocale, '/blog') },
+    { name: content.title, url: localizedPath(activeLocale, `/blog/${slug}`) },
   ])
   const upgrade = CONTENT_UPGRADES[slug]?.[isEn ? 'en' : 'fr']
   const playbookExcerpt = PLAYBOOK_EXCERPTS[slug]?.[isEn ? 'en' : 'fr']

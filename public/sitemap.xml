@@ -2,29 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-  <!-- Homepage EN -->
+  <!-- home EN -->
   <url>
     <loc>https://www.luxops.fr/en</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.luxops.fr/es"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en"/>
     <changefreq>weekly</changefreq>
     <lastmod>2026-03-18</lastmod>
-    <priority>1.0</priority>
+    <priority>1</priority>
   </url>
 
-  <!-- Homepage FR -->
+  <!-- home FR -->
   <url>
     <loc>https://www.luxops.fr/fr</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.luxops.fr/es"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en"/>
     <changefreq>weekly</changefreq>
     <lastmod>2026-03-18</lastmod>
-    <priority>1.0</priority>
+    <priority>1</priority>
   </url>
 
-  <!-- Playbooks EN -->
+  <!-- home ES -->
+  <url>
+    <loc>https://www.luxops.fr/es</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.luxops.fr/es"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en"/>
+    <changefreq>weekly</changefreq>
+    <lastmod>2026-03-18</lastmod>
+    <priority>1</priority>
+  </url>
+
+  <!-- playbooks EN -->
   <url>
     <loc>https://www.luxops.fr/en/playbooks</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/playbooks"/>
@@ -35,7 +49,7 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- Playbooks FR -->
+  <!-- playbooks FR -->
   <url>
     <loc>https://www.luxops.fr/fr/playbooks</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/playbooks"/>
@@ -46,7 +60,7 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- Free Hotel Checklists EN -->
+  <!-- freeHotelChecklists EN -->
   <url>
     <loc>https://www.luxops.fr/en/free-hotel-checklists</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/free-hotel-checklists"/>
@@ -57,7 +71,7 @@
     <priority>0.85</priority>
   </url>
 
-  <!-- Free Hotel Checklists FR -->
+  <!-- freeHotelChecklists FR -->
   <url>
     <loc>https://www.luxops.fr/fr/checklists-hotel-gratuites</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/checklists-hotel-gratuites"/>
@@ -68,7 +82,7 @@
     <priority>0.85</priority>
   </url>
 
-  <!-- Front Office Starter Pack EN -->
+  <!-- playbooksFoStarterPack EN -->
   <url>
     <loc>https://www.luxops.fr/en/playbooks/fo-starter-pack</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/playbooks/fo-starter-pack"/>
@@ -79,7 +93,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Front Office Starter Pack FR -->
+  <!-- playbooksFoStarterPack FR -->
   <url>
     <loc>https://www.luxops.fr/fr/playbooks/fo-starter-pack</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/playbooks/fo-starter-pack"/>
@@ -90,7 +104,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Housekeeping Inspection Kit EN -->
+  <!-- playbooksHskStarterPack EN -->
   <url>
     <loc>https://www.luxops.fr/en/playbooks/hsk-starter-pack</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/playbooks/hsk-starter-pack"/>
@@ -101,7 +115,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Housekeeping Inspection Kit FR -->
+  <!-- playbooksHskStarterPack FR -->
   <url>
     <loc>https://www.luxops.fr/fr/playbooks/hsk-starter-pack</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/playbooks/hsk-starter-pack"/>
@@ -112,7 +126,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- F&B Starter Pack EN -->
+  <!-- playbooksFbStarterPack EN -->
   <url>
     <loc>https://www.luxops.fr/en/playbooks/fb-starter-pack</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/playbooks/fb-starter-pack"/>
@@ -123,7 +137,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- F&B Starter Pack FR -->
+  <!-- playbooksFbStarterPack FR -->
   <url>
     <loc>https://www.luxops.fr/fr/playbooks/fb-starter-pack</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/playbooks/fb-starter-pack"/>
@@ -134,7 +148,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Hotel F&B SOP EN -->
+  <!-- hotelFbSop EN -->
   <url>
     <loc>https://www.luxops.fr/en/hotel-fb-sop</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/hotel-fb-sop"/>
@@ -145,7 +159,7 @@
     <priority>0.85</priority>
   </url>
 
-  <!-- Hotel F&B SOP FR -->
+  <!-- hotelFbSop FR -->
   <url>
     <loc>https://www.luxops.fr/fr/hotel-fb-sop</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/hotel-fb-sop"/>
@@ -156,7 +170,7 @@
     <priority>0.85</priority>
   </url>
 
-  <!-- Food and Beverage Service Sequence EN -->
+  <!-- foodAndBeverageServiceSequence EN -->
   <url>
     <loc>https://www.luxops.fr/en/food-and-beverage-service-sequence</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/food-and-beverage-service-sequence"/>
@@ -167,7 +181,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Sequence Service Restaurant Hotel FR -->
+  <!-- foodAndBeverageServiceSequence FR -->
   <url>
     <loc>https://www.luxops.fr/fr/sequence-service-restaurant-hotel</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/sequence-service-restaurant-hotel"/>
@@ -178,7 +192,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Hotel Room Service Checklist EN -->
+  <!-- hotelRoomServiceChecklist EN -->
   <url>
     <loc>https://www.luxops.fr/en/hotel-room-service-checklist</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/hotel-room-service-checklist"/>
@@ -189,7 +203,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Checklist Room Service Hotel FR -->
+  <!-- hotelRoomServiceChecklist FR -->
   <url>
     <loc>https://www.luxops.fr/fr/checklist-room-service-hotel</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/checklist-room-service-hotel"/>
@@ -200,7 +214,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Restaurant Opening Checklist EN -->
+  <!-- restaurantOpeningChecklist EN -->
   <url>
     <loc>https://www.luxops.fr/en/restaurant-opening-checklist</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/restaurant-opening-checklist"/>
@@ -211,7 +225,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Checklist Ouverture Restaurant FR -->
+  <!-- restaurantOpeningChecklist FR -->
   <url>
     <loc>https://www.luxops.fr/fr/checklist-ouverture-restaurant</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/checklist-ouverture-restaurant"/>
@@ -222,7 +236,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Bar Opening Checklist EN -->
+  <!-- barOpeningChecklist EN -->
   <url>
     <loc>https://www.luxops.fr/en/bar-opening-checklist</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/bar-opening-checklist"/>
@@ -233,7 +247,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Checklist Ouverture Bar FR -->
+  <!-- barOpeningChecklist FR -->
   <url>
     <loc>https://www.luxops.fr/fr/checklist-ouverture-bar</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/checklist-ouverture-bar"/>
@@ -244,7 +258,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Restaurant Closing Checklist EN -->
+  <!-- restaurantClosingChecklist EN -->
   <url>
     <loc>https://www.luxops.fr/en/restaurant-closing-checklist</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/restaurant-closing-checklist"/>
@@ -255,7 +269,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Checklist Fermeture Restaurant FR -->
+  <!-- restaurantClosingChecklist FR -->
   <url>
     <loc>https://www.luxops.fr/fr/checklist-fermeture-restaurant</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/checklist-fermeture-restaurant"/>
@@ -266,7 +280,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Notion Templates EN -->
+  <!-- notionTemplates EN -->
   <url>
     <loc>https://www.luxops.fr/en/notion-templates</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/notion-templates"/>
@@ -277,7 +291,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Notion Templates FR -->
+  <!-- notionTemplates FR -->
   <url>
     <loc>https://www.luxops.fr/fr/notion-templates</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/notion-templates"/>
@@ -288,7 +302,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Quality Audit EN (canonical EN URL) -->
+  <!-- qualityAudit EN -->
   <url>
     <loc>https://www.luxops.fr/en/quality-audit</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/quality-audit"/>
@@ -299,7 +313,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Audit Qualite FR (canonical FR URL) -->
+  <!-- qualityAudit FR -->
   <url>
     <loc>https://www.luxops.fr/fr/audit-qualite</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/audit-qualite"/>
@@ -310,7 +324,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Bespoke Process EN (canonical EN URL) -->
+  <!-- bespokeProcess EN -->
   <url>
     <loc>https://www.luxops.fr/en/bespoke-process</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/bespoke-process"/>
@@ -321,7 +335,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Process Sur Mesure FR (canonical FR URL) -->
+  <!-- bespokeProcess FR -->
   <url>
     <loc>https://www.luxops.fr/fr/process-sur-mesure</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/process-sur-mesure"/>
@@ -332,7 +346,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Training EN (canonical EN URL) -->
+  <!-- training EN -->
   <url>
     <loc>https://www.luxops.fr/en/training</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/training"/>
@@ -343,7 +357,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Formation FR (canonical FR URL) -->
+  <!-- training FR -->
   <url>
     <loc>https://www.luxops.fr/fr/formation</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/formation"/>
@@ -354,7 +368,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Resources EN -->
+  <!-- resources EN -->
   <url>
     <loc>https://www.luxops.fr/en/resources</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/resources"/>
@@ -365,7 +379,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Resources FR -->
+  <!-- resources FR -->
   <url>
     <loc>https://www.luxops.fr/fr/resources</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/resources"/>
@@ -376,51 +390,79 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- About EN -->
+  <!-- about EN -->
   <url>
     <loc>https://www.luxops.fr/en/about</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/about"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/about"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.luxops.fr/es/about"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/about"/>
     <changefreq>monthly</changefreq>
     <lastmod>2026-03-18</lastmod>
     <priority>0.6</priority>
   </url>
 
-  <!-- About FR -->
+  <!-- about FR -->
   <url>
     <loc>https://www.luxops.fr/fr/about</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/about"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/about"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.luxops.fr/es/about"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/about"/>
     <changefreq>monthly</changefreq>
     <lastmod>2026-03-18</lastmod>
     <priority>0.6</priority>
   </url>
 
-  <!-- Contact EN -->
+  <!-- about ES -->
+  <url>
+    <loc>https://www.luxops.fr/es/about</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.luxops.fr/es/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/about"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/about"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-03-18</lastmod>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- contact EN -->
   <url>
     <loc>https://www.luxops.fr/en/contact</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/contact"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/contact"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.luxops.fr/es/contact"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/contact"/>
     <changefreq>monthly</changefreq>
     <lastmod>2026-03-18</lastmod>
     <priority>0.6</priority>
   </url>
 
-  <!-- Contact FR -->
+  <!-- contact FR -->
   <url>
     <loc>https://www.luxops.fr/fr/contact</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/contact"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.luxops.fr/es/contact"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/contact"/>
     <changefreq>monthly</changefreq>
     <lastmod>2026-03-18</lastmod>
     <priority>0.6</priority>
   </url>
 
-  <!-- Blog Index EN -->
+  <!-- contact ES -->
+  <url>
+    <loc>https://www.luxops.fr/es/contact</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.luxops.fr/es/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/contact"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-03-18</lastmod>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- blog EN -->
   <url>
     <loc>https://www.luxops.fr/en/blog</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog"/>
@@ -431,7 +473,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Blog Index FR -->
+  <!-- blog FR -->
   <url>
     <loc>https://www.luxops.fr/fr/blog</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog"/>
@@ -442,7 +484,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Blog: Hotel Operations Playbook EN -->
+  <!-- blogHotelOperationsPlaybook EN -->
   <url>
     <loc>https://www.luxops.fr/en/blog/hotel-operations-playbook</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-operations-playbook"/>
@@ -453,7 +495,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog: Hotel Operations Playbook FR -->
+  <!-- blogHotelOperationsPlaybook FR -->
   <url>
     <loc>https://www.luxops.fr/fr/blog/hotel-operations-playbook</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-operations-playbook"/>
@@ -464,7 +506,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog: How to Write Hotel SOPs EN -->
+  <!-- blogHowToWriteHotelSops EN -->
   <url>
     <loc>https://www.luxops.fr/en/blog/how-to-write-hotel-sops</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/how-to-write-hotel-sops"/>
@@ -475,7 +517,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog: How to Write Hotel SOPs FR -->
+  <!-- blogHowToWriteHotelSops FR -->
   <url>
     <loc>https://www.luxops.fr/fr/blog/how-to-write-hotel-sops</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/how-to-write-hotel-sops"/>
@@ -486,7 +528,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog: Hotel Front Office SOP EN -->
+  <!-- blogHotelFrontOfficeSop EN -->
   <url>
     <loc>https://www.luxops.fr/en/blog/hotel-front-office-sop</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-front-office-sop"/>
@@ -497,7 +539,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog: Hotel Front Office SOP FR -->
+  <!-- blogHotelFrontOfficeSop FR -->
   <url>
     <loc>https://www.luxops.fr/fr/blog/hotel-front-office-sop</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-front-office-sop"/>
@@ -508,9 +550,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog: Hotel Housekeeping Checklist - redirected 301 to /en/hotel-housekeeping-checklist (standalone canonical page) -->
-
-  <!-- Blog: Hotel F&B Service Standards EN -->
+  <!-- blogHotelFbServiceStandards EN -->
   <url>
     <loc>https://www.luxops.fr/en/blog/hotel-fb-service-standards</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-fb-service-standards"/>
@@ -521,7 +561,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog: Hotel F&B Service Standards FR -->
+  <!-- blogHotelFbServiceStandards FR -->
   <url>
     <loc>https://www.luxops.fr/fr/blog/hotel-fb-service-standards</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-fb-service-standards"/>
@@ -532,9 +572,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog: Hotel Front Office Procedures - redirected to hotel-front-office-sop (301) -->
-
-  <!-- SEO: Hotel Checklist EN -->
+  <!-- hotelChecklist EN -->
   <url>
     <loc>https://www.luxops.fr/en/hotel-checklist</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/hotel-checklist"/>
@@ -545,7 +583,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- SEO: Hotel Checklist FR -->
+  <!-- hotelChecklist FR -->
   <url>
     <loc>https://www.luxops.fr/fr/hotel-checklist</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/hotel-checklist"/>
@@ -556,7 +594,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- SEO: Hotel Housekeeping Checklist EN -->
+  <!-- hotelHousekeepingChecklist EN -->
   <url>
     <loc>https://www.luxops.fr/en/hotel-housekeeping-checklist</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/hotel-housekeeping-checklist"/>
@@ -567,7 +605,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- SEO: Hotel Housekeeping Checklist FR -->
+  <!-- hotelHousekeepingChecklist FR -->
   <url>
     <loc>https://www.luxops.fr/fr/hotel-housekeeping-checklist</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/hotel-housekeeping-checklist"/>
@@ -578,7 +616,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- SEO: Front Office SOP EN -->
+  <!-- frontOfficeSop EN -->
   <url>
     <loc>https://www.luxops.fr/en/front-office-sop</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/front-office-sop"/>
@@ -589,7 +627,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- SEO: Front Office SOP FR -->
+  <!-- frontOfficeSop FR -->
   <url>
     <loc>https://www.luxops.fr/fr/front-office-sop</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/front-office-sop"/>
@@ -600,7 +638,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- SEO: Housekeeping SOP EN -->
+  <!-- housekeepingSop EN -->
   <url>
     <loc>https://www.luxops.fr/en/housekeeping-sop</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/housekeeping-sop"/>
@@ -611,7 +649,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- SEO: Housekeeping SOP FR -->
+  <!-- housekeepingSop FR -->
   <url>
     <loc>https://www.luxops.fr/fr/housekeeping-sop</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/housekeeping-sop"/>
@@ -622,7 +660,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- SEO: Hotel SOP EN -->
+  <!-- hotelSop EN -->
   <url>
     <loc>https://www.luxops.fr/en/hotel-sop</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/hotel-sop"/>
@@ -633,7 +671,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- SEO: Hotel SOP FR -->
+  <!-- hotelSop FR -->
   <url>
     <loc>https://www.luxops.fr/fr/hotel-sop</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/hotel-sop"/>
@@ -644,7 +682,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- SEO: Hotel Audit Checklist EN -->
+  <!-- hotelAuditChecklist EN -->
   <url>
     <loc>https://www.luxops.fr/en/hotel-audit-checklist</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/hotel-audit-checklist"/>
@@ -655,7 +693,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- SEO: Hotel Audit Checklist FR -->
+  <!-- hotelAuditChecklist FR -->
   <url>
     <loc>https://www.luxops.fr/fr/hotel-audit-checklist</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/hotel-audit-checklist"/>
@@ -666,7 +704,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- SEO: How to Improve Hotel Operations EN -->
+  <!-- howToImproveHotelOperations EN -->
   <url>
     <loc>https://www.luxops.fr/en/how-to-improve-hotel-operations</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/how-to-improve-hotel-operations"/>
@@ -677,7 +715,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- SEO: How to Improve Hotel Operations FR -->
+  <!-- howToImproveHotelOperations FR -->
   <url>
     <loc>https://www.luxops.fr/fr/how-to-improve-hotel-operations</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/how-to-improve-hotel-operations"/>
@@ -688,7 +726,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- SEO: Hotel Night Audit Checklist EN -->
+  <!-- hotelNightAuditChecklist EN -->
   <url>
     <loc>https://www.luxops.fr/en/hotel-night-audit-checklist</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/hotel-night-audit-checklist"/>
@@ -699,7 +737,7 @@
     <priority>0.75</priority>
   </url>
 
-  <!-- SEO: Hotel Night Audit Checklist FR -->
+  <!-- hotelNightAuditChecklist FR -->
   <url>
     <loc>https://www.luxops.fr/fr/hotel-night-audit-checklist</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/hotel-night-audit-checklist"/>
@@ -710,7 +748,7 @@
     <priority>0.75</priority>
   </url>
 
-  <!-- SEO: Hotel Front Office Checklist EN -->
+  <!-- hotelFrontOfficeChecklist EN -->
   <url>
     <loc>https://www.luxops.fr/en/hotel-front-office-checklist</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/hotel-front-office-checklist"/>
@@ -721,7 +759,7 @@
     <priority>0.75</priority>
   </url>
 
-  <!-- SEO: Hotel Front Office Checklist FR -->
+  <!-- hotelFrontOfficeChecklist FR -->
   <url>
     <loc>https://www.luxops.fr/fr/hotel-front-office-checklist</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/hotel-front-office-checklist"/>
@@ -732,7 +770,7 @@
     <priority>0.75</priority>
   </url>
 
-  <!-- SEO: Formation Housekeeping Hôtel EN/FR -->
+  <!-- formationHousekeepingHotel EN -->
   <url>
     <loc>https://www.luxops.fr/en/formation-housekeeping-hotel</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/formation-housekeeping-hotel"/>
@@ -743,6 +781,7 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- formationHousekeepingHotel FR -->
   <url>
     <loc>https://www.luxops.fr/fr/formation-housekeeping-hotel</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/formation-housekeeping-hotel"/>
@@ -753,7 +792,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- SEO: Formation Réception Hôtel EN/FR -->
+  <!-- formationReceptionHotel EN -->
   <url>
     <loc>https://www.luxops.fr/en/formation-reception-hotel</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/formation-reception-hotel"/>
@@ -764,6 +803,7 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- formationReceptionHotel FR -->
   <url>
     <loc>https://www.luxops.fr/fr/formation-reception-hotel</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/formation-reception-hotel"/>
@@ -774,7 +814,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- SEO: Formation Équipe Hôtelière EN/FR -->
+  <!-- formationEquipeHoteliere EN -->
   <url>
     <loc>https://www.luxops.fr/en/formation-equipe-hoteliere</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/formation-equipe-hoteliere"/>
@@ -785,6 +825,7 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- formationEquipeHoteliere FR -->
   <url>
     <loc>https://www.luxops.fr/fr/formation-equipe-hoteliere</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/formation-equipe-hoteliere"/>
@@ -795,7 +836,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- SEO: Formation F&B Restaurant EN/FR -->
+  <!-- formationFbRestaurant EN -->
   <url>
     <loc>https://www.luxops.fr/en/formation-fb-restaurant</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/formation-fb-restaurant"/>
@@ -806,6 +847,7 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- formationFbRestaurant FR -->
   <url>
     <loc>https://www.luxops.fr/fr/formation-fb-restaurant</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/formation-fb-restaurant"/>
@@ -816,7 +858,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- SEO: Formation Pré-Ouverture EN/FR -->
+  <!-- formationPreOuverture EN -->
   <url>
     <loc>https://www.luxops.fr/en/formation-pre-ouverture</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/formation-pre-ouverture"/>
@@ -827,6 +869,7 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- formationPreOuverture FR -->
   <url>
     <loc>https://www.luxops.fr/fr/formation-pre-ouverture</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/formation-pre-ouverture"/>
@@ -837,7 +880,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- SEO: Formation Chefs de Service EN/FR -->
+  <!-- formationChefsDeService EN -->
   <url>
     <loc>https://www.luxops.fr/en/formation-chefs-de-service</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/formation-chefs-de-service"/>
@@ -848,6 +891,7 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- formationChefsDeService FR -->
   <url>
     <loc>https://www.luxops.fr/fr/formation-chefs-de-service</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/formation-chefs-de-service"/>
@@ -858,7 +902,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- SEO: F&B Audit and Training EN/FR -->
+  <!-- fbAuditTraining EN -->
   <url>
     <loc>https://www.luxops.fr/en/fb-audit-training</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/fb-audit-training"/>
@@ -869,6 +913,7 @@
     <priority>0.72</priority>
   </url>
 
+  <!-- fbAuditTraining FR -->
   <url>
     <loc>https://www.luxops.fr/fr/audit-formation-fb</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/audit-formation-fb"/>
@@ -879,7 +924,7 @@
     <priority>0.72</priority>
   </url>
 
-  <!-- SEO: LuxOps Training Method EN/FR -->
+  <!-- luxopsTrainingMethod EN -->
   <url>
     <loc>https://www.luxops.fr/en/luxops-training-method</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/luxops-training-method"/>
@@ -890,6 +935,7 @@
     <priority>0.72</priority>
   </url>
 
+  <!-- luxopsTrainingMethod FR -->
   <url>
     <loc>https://www.luxops.fr/fr/methode-formation-luxops</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/methode-formation-luxops"/>
@@ -900,7 +946,7 @@
     <priority>0.72</priority>
   </url>
 
-  <!-- Blog: Hotel Staff Training Service Standards EN -->
+  <!-- blogHotelStaffTrainingServiceStandards EN -->
   <url>
     <loc>https://www.luxops.fr/en/blog/hotel-staff-training-service-standards</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-staff-training-service-standards"/>
@@ -911,7 +957,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog: Hotel Staff Training Service Standards FR -->
+  <!-- blogHotelStaffTrainingServiceStandards FR -->
   <url>
     <loc>https://www.luxops.fr/fr/blog/hotel-staff-training-service-standards</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-staff-training-service-standards"/>
@@ -922,7 +968,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog: Housekeeping Room Inspection EN -->
+  <!-- blogHousekeepingRoomInspection EN -->
   <url>
     <loc>https://www.luxops.fr/en/blog/housekeeping-room-inspection</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/housekeeping-room-inspection"/>
@@ -933,7 +979,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog: Housekeeping Room Inspection FR -->
+  <!-- blogHousekeepingRoomInspection FR -->
   <url>
     <loc>https://www.luxops.fr/fr/blog/housekeeping-room-inspection</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/housekeeping-room-inspection"/>
@@ -944,7 +990,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog: Hotel F&B Restaurant Procedures EN -->
+  <!-- blogHotelFbRestaurantProcedures EN -->
   <url>
     <loc>https://www.luxops.fr/en/blog/hotel-fb-restaurant-procedures</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-fb-restaurant-procedures"/>
@@ -955,7 +1001,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog: Hotel F&B Restaurant Procedures FR -->
+  <!-- blogHotelFbRestaurantProcedures FR -->
   <url>
     <loc>https://www.luxops.fr/fr/blog/hotel-fb-restaurant-procedures</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-fb-restaurant-procedures"/>
@@ -966,7 +1012,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog: Hotel Spa & Wellness SOPs EN -->
+  <!-- blogHotelSpaWellnessSops EN -->
   <url>
     <loc>https://www.luxops.fr/en/blog/hotel-spa-wellness-sops</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-spa-wellness-sops"/>
@@ -977,7 +1023,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog: Hotel Spa & Wellness SOPs FR -->
+  <!-- blogHotelSpaWellnessSops FR -->
   <url>
     <loc>https://www.luxops.fr/fr/blog/hotel-spa-wellness-sops</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-spa-wellness-sops"/>
@@ -988,7 +1034,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog: Hotel Room Service SOPs EN -->
+  <!-- blogHotelRoomServiceSops EN -->
   <url>
     <loc>https://www.luxops.fr/en/blog/hotel-room-service-sops</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-room-service-sops"/>
@@ -999,7 +1045,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog: Hotel Room Service SOPs FR -->
+  <!-- blogHotelRoomServiceSops FR -->
   <url>
     <loc>https://www.luxops.fr/fr/blog/hotel-room-service-sops</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-room-service-sops"/>
@@ -1010,7 +1056,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog: Hotel Standard Operating Procedures EN -->
+  <!-- blogHotelStandardOperatingProcedures EN -->
   <url>
     <loc>https://www.luxops.fr/en/blog/hotel-standard-operating-procedures</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-standard-operating-procedures"/>
@@ -1021,7 +1067,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog: Hotel Standard Operating Procedures FR -->
+  <!-- blogHotelStandardOperatingProcedures FR -->
   <url>
     <loc>https://www.luxops.fr/fr/blog/hotel-standard-operating-procedures</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-standard-operating-procedures"/>
@@ -1032,7 +1078,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog: Hotel Front Desk Procedures EN -->
+  <!-- blogHotelFrontDeskProcedures EN -->
   <url>
     <loc>https://www.luxops.fr/en/blog/hotel-front-desk-procedures</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-front-desk-procedures"/>
@@ -1043,7 +1089,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog: Hotel Front Desk Procedures FR -->
+  <!-- blogHotelFrontDeskProcedures FR -->
   <url>
     <loc>https://www.luxops.fr/fr/blog/hotel-front-desk-procedures</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-front-desk-procedures"/>
@@ -1054,7 +1100,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog: hotel-staff-turnover-training EN -->
+  <!-- blogHotelStaffTurnoverTraining EN -->
   <url>
     <loc>https://www.luxops.fr/en/blog/hotel-staff-turnover-training</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-staff-turnover-training"/>
@@ -1065,7 +1111,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog: hotel-staff-turnover-training FR -->
+  <!-- blogHotelStaffTurnoverTraining FR -->
   <url>
     <loc>https://www.luxops.fr/fr/blog/hotel-staff-turnover-training</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-staff-turnover-training"/>
@@ -1076,7 +1122,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog: Hotel New Hire Onboarding EN -->
+  <!-- blogHotelNewHireOnboarding EN -->
   <url>
     <loc>https://www.luxops.fr/en/blog/hotel-new-hire-onboarding</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-new-hire-onboarding"/>
@@ -1087,7 +1133,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog: Hotel New Hire Onboarding FR -->
+  <!-- blogHotelNewHireOnboarding FR -->
   <url>
     <loc>https://www.luxops.fr/fr/blog/hotel-new-hire-onboarding</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-new-hire-onboarding"/>
@@ -1098,7 +1144,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog: Hotel Room Attendant Checklist EN -->
+  <!-- blogHotelRoomAttendantChecklist EN -->
   <url>
     <loc>https://www.luxops.fr/en/blog/hotel-room-attendant-checklist</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-room-attendant-checklist"/>
@@ -1109,7 +1155,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog: Hotel Room Attendant Checklist FR -->
+  <!-- blogHotelRoomAttendantChecklist FR -->
   <url>
     <loc>https://www.luxops.fr/fr/blog/hotel-room-attendant-checklist</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-room-attendant-checklist"/>
@@ -1119,7 +1165,8 @@
     <lastmod>2026-05-17</lastmod>
     <priority>0.7</priority>
   </url>
-  <!-- Blog: Hotel Front Desk Checklist EN -->
+
+  <!-- blogHotelFrontDeskChecklist EN -->
   <url>
     <loc>https://www.luxops.fr/en/blog/hotel-front-desk-checklist</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-front-desk-checklist"/>
@@ -1130,7 +1177,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog: Hotel Front Desk Checklist FR -->
+  <!-- blogHotelFrontDeskChecklist FR -->
   <url>
     <loc>https://www.luxops.fr/fr/blog/hotel-front-desk-checklist</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-front-desk-checklist"/>
@@ -1141,7 +1188,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog: Hotel DND Procedure EN -->
+  <!-- blogHotelDndProcedure EN -->
   <url>
     <loc>https://www.luxops.fr/en/blog/hotel-dnd-procedure</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-dnd-procedure"/>
@@ -1152,7 +1199,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog: Hotel DND Procedure FR -->
+  <!-- blogHotelDndProcedure FR -->
   <url>
     <loc>https://www.luxops.fr/fr/blog/hotel-dnd-procedure</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-dnd-procedure"/>
@@ -1163,7 +1210,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog: Hotel Room Cleaning Checklist EN -->
+  <!-- blogHotelRoomCleaningChecklist EN -->
   <url>
     <loc>https://www.luxops.fr/en/blog/hotel-room-cleaning-checklist</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-room-cleaning-checklist"/>
@@ -1174,7 +1221,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog: Hotel Room Cleaning Checklist FR -->
+  <!-- blogHotelRoomCleaningChecklist FR -->
   <url>
     <loc>https://www.luxops.fr/fr/blog/hotel-room-cleaning-checklist</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-room-cleaning-checklist"/>
@@ -1185,7 +1232,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog: Hotel Housekeeping Supervisor Checklist EN -->
+  <!-- blogHotelHousekeepingSupervisorChecklist EN -->
   <url>
     <loc>https://www.luxops.fr/en/blog/hotel-housekeeping-supervisor-checklist</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-housekeeping-supervisor-checklist"/>
@@ -1196,7 +1243,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog: Hotel Housekeeping Supervisor Checklist FR -->
+  <!-- blogHotelHousekeepingSupervisorChecklist FR -->
   <url>
     <loc>https://www.luxops.fr/fr/blog/hotel-housekeeping-supervisor-checklist</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-housekeeping-supervisor-checklist"/>
@@ -1207,7 +1254,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog: Hotel Bathroom Cleaning SOP EN -->
+  <!-- blogHotelBathroomCleaningSop EN -->
   <url>
     <loc>https://www.luxops.fr/en/blog/hotel-bathroom-cleaning-sop</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/hotel-bathroom-cleaning-sop"/>
@@ -1218,7 +1265,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog: Hotel Bathroom Cleaning SOP FR -->
+  <!-- blogHotelBathroomCleaningSop FR -->
   <url>
     <loc>https://www.luxops.fr/fr/blog/hotel-bathroom-cleaning-sop</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/hotel-bathroom-cleaning-sop"/>
@@ -1229,7 +1276,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Free Hotel Procedures - Lead Magnet EN -->
+  <!-- freeHotelProcedures EN -->
   <url>
     <loc>https://www.luxops.fr/en/free-hotel-procedures</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/free-hotel-procedures"/>
@@ -1240,7 +1287,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Free Hotel Procedures - Lead Magnet FR -->
+  <!-- freeHotelProcedures FR -->
   <url>
     <loc>https://www.luxops.fr/fr/free-hotel-procedures</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/free-hotel-procedures"/>
@@ -1251,7 +1298,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Front Desk Shift Handover Template EN -->
+  <!-- frontDeskShiftHandoverTemplate EN -->
   <url>
     <loc>https://www.luxops.fr/en/front-desk-shift-handover-template</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/front-desk-shift-handover-template"/>
@@ -1262,7 +1309,7 @@
     <priority>0.78</priority>
   </url>
 
-  <!-- Modele Passation Reception FR -->
+  <!-- frontDeskShiftHandoverTemplate FR -->
   <url>
     <loc>https://www.luxops.fr/fr/modele-passation-reception</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/modele-passation-reception"/>
@@ -1273,7 +1320,7 @@
     <priority>0.78</priority>
   </url>
 
-  <!-- Guest Complaint Handling SOP EN -->
+  <!-- guestComplaintHandlingSop EN -->
   <url>
     <loc>https://www.luxops.fr/en/guest-complaint-handling-sop</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/guest-complaint-handling-sop"/>
@@ -1284,7 +1331,7 @@
     <priority>0.78</priority>
   </url>
 
-  <!-- Procedure Reclamation Client FR -->
+  <!-- guestComplaintHandlingSop FR -->
   <url>
     <loc>https://www.luxops.fr/fr/procedure-reclamation-client</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/procedure-reclamation-client"/>
@@ -1295,7 +1342,7 @@
     <priority>0.78</priority>
   </url>
 
-  <!-- Housekeeping Deep Cleaning Checklist EN -->
+  <!-- housekeepingDeepCleaningChecklist EN -->
   <url>
     <loc>https://www.luxops.fr/en/housekeeping-deep-cleaning-checklist</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/housekeeping-deep-cleaning-checklist"/>
@@ -1306,7 +1353,7 @@
     <priority>0.78</priority>
   </url>
 
-  <!-- Deep Cleaning Chambre FR -->
+  <!-- housekeepingDeepCleaningChecklist FR -->
   <url>
     <loc>https://www.luxops.fr/fr/deep-cleaning-chambre</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/deep-cleaning-chambre"/>
@@ -1317,7 +1364,7 @@
     <priority>0.78</priority>
   </url>
 
-  <!-- Breakfast Service Checklist EN -->
+  <!-- breakfastServiceChecklist EN -->
   <url>
     <loc>https://www.luxops.fr/en/breakfast-service-checklist</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/breakfast-service-checklist"/>
@@ -1328,7 +1375,7 @@
     <priority>0.78</priority>
   </url>
 
-  <!-- Checklist Service Petit Dejeuner FR -->
+  <!-- breakfastServiceChecklist FR -->
   <url>
     <loc>https://www.luxops.fr/fr/checklist-service-petit-dejeuner</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/checklist-service-petit-dejeuner"/>
@@ -1339,7 +1386,7 @@
     <priority>0.78</priority>
   </url>
 
-  <!-- Room Status Discrepancy Report EN -->
+  <!-- roomStatusDiscrepancyReport EN -->
   <url>
     <loc>https://www.luxops.fr/en/room-status-discrepancy-report</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/room-status-discrepancy-report"/>
@@ -1350,7 +1397,7 @@
     <priority>0.78</priority>
   </url>
 
-  <!-- Rapport Ecart Statut Chambre FR -->
+  <!-- roomStatusDiscrepancyReport FR -->
   <url>
     <loc>https://www.luxops.fr/fr/rapport-ecart-statut-chambre</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/rapport-ecart-statut-chambre"/>
@@ -1361,7 +1408,7 @@
     <priority>0.78</priority>
   </url>
 
-  <!-- Hotel Operations Playbook EN -->
+  <!-- hotelOperationsPlaybook EN -->
   <url>
     <loc>https://www.luxops.fr/en/hotel-operations-playbook</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/hotel-operations-playbook"/>
@@ -1372,7 +1419,7 @@
     <priority>0.84</priority>
   </url>
 
-  <!-- Manuel Procedure Hotellerie FR -->
+  <!-- hotelOperationsPlaybook FR -->
   <url>
     <loc>https://www.luxops.fr/fr/manuel-procedure-hotellerie</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/manuel-procedure-hotellerie"/>
@@ -1383,7 +1430,7 @@
     <priority>0.84</priority>
   </url>
 
-  <!-- Hotel Management Routines EN -->
+  <!-- hotelManagementRoutines EN -->
   <url>
     <loc>https://www.luxops.fr/en/hotel-management-routines</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/hotel-management-routines"/>
@@ -1394,7 +1441,7 @@
     <priority>0.82</priority>
   </url>
 
-  <!-- Rituels Management Hotelier FR -->
+  <!-- hotelManagementRoutines FR -->
   <url>
     <loc>https://www.luxops.fr/fr/rituels-management-hotelier</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/rituels-management-hotelier"/>
@@ -1404,5 +1451,4 @@
     <lastmod>2026-07-17</lastmod>
     <priority>0.82</priority>
   </url>
-
 </urlset>

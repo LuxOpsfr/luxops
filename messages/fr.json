@@ -256,7 +256,14 @@
     "error": "Une erreur s'est produite. Veuillez réessayer.",
     "email_label": "Email",
     "response_time_label": "Délai de réponse",
-    "response_time": "Réponse habituelle sous un jour ouvré."
+    "response_time": "Réponse habituelle sous un jour ouvré.",
+    "name_placeholder": "Jean Dupont",
+    "email_placeholder": "jean@hotel.com",
+    "company_placeholder": "Hôtel de Paris",
+    "subject_placeholder": "Front Office, Housekeeping...",
+    "message_placeholder": "Décrivez votre projet...",
+    "required": "Requis",
+    "valid_email_required": "Email valide requis"
   },
   "footer": {
     "tagline": "Structure op\u00e9rationnelle pour les \u00e9quipes h\u00f4teli\u00e8res",
@@ -265,5 +272,12 @@
     "company": "Entreprise",
     "legal": "Mentions Légales",
     "copyright": "© 2026 LuxOps. Tous droits réservés."
+  },
+  "cookie_banner": {
+    "title": "Ce site utilise des cookies",
+    "body": "Nous utilisons des cookies pour améliorer votre expérience et analyser le trafic (Google Analytics). ",
+    "learn_more": "En savoir plus",
+    "decline": "Refuser",
+    "accept": "Accepter"
   }
 }

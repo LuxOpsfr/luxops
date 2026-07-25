@@ -9,6 +9,7 @@ import {
   PricedProductType,
   SupportedCurrency,
 } from '@/lib/pricing'
+import { LOCALE_META, toLocale } from '@/lib/i18n'
 
 const STORAGE_KEY = 'luxops_currency'
 
@@ -28,26 +29,41 @@ export function CurrencyProvider({
   children: ReactNode
   locale: string
 }) {
-  const defaultCurrency = locale === 'fr' ? 'EUR' : 'USD'
-  const [currency, setCurrencyState] = useState<SupportedCurrency>(defaultCurrency)
+  const localeDefaultCurrency = LOCALE_META[toLocale(locale)].defaultCurrency
+  const defaultCurrency: SupportedCurrency = isSupportedCurrency(localeDefaultCurrency)
+    ? localeDefaultCurrency
+    : 'USD'
+  const [currency, setCurrencyState] = useState<SupportedCurrency>(() => {
+    if (typeof window === 'undefined') return defaultCurrency
+
+    const storedCurrency = window.localStorage.getItem(STORAGE_KEY)
+    return isSupportedCurrency(storedCurrency) ? storedCurrency : defaultCurrency
+  })
 
   useEffect(() => {
     const storedCurrency = window.localStorage.getItem(STORAGE_KEY)
 
     if (isSupportedCurrency(storedCurrency)) {
-      setCurrencyState(storedCurrency)
       return
     }
+
+    let cancelled = false
 
     fetch('/api/geo')
       .then((response) => (response.ok ? response.json() : null))
       .then((data: { country?: string } | null) => {
+        if (cancelled) return
         const detectedCurrency = currencyForCountry(data?.country)
         setCurrencyState(detectedCurrency)
       })
       .catch(() => {
+        if (cancelled) return
         setCurrencyState(defaultCurrency)
       })
+
+    return () => {
+      cancelled = true
+    }
   }, [defaultCurrency])
 
   function setCurrency(nextCurrency: SupportedCurrency) {

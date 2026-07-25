@@ -62,10 +62,10 @@ export default function ContactForm() {
               {...register('name', { required: true })}
               className={inputClass}
               style={{ borderRadius: '0.125rem' }}
-              placeholder="Jean Dupont"
+              placeholder={t('name_placeholder')}
             />
           </div>
-          {errors.name && <p className="text-red-500 text-xs mt-1">Requis</p>}
+          {errors.name && <p className="text-red-500 text-xs mt-1">{t('required')}</p>}
         </div>
         <div>
           <label className={labelClass}>{t('email')}</label>
@@ -75,10 +75,10 @@ export default function ContactForm() {
               type="email"
               className={inputClass}
               style={{ borderRadius: '0.125rem' }}
-              placeholder="jean@hotel.com"
+              placeholder={t('email_placeholder')}
             />
           </div>
-          {errors.email && <p className="text-red-500 text-xs mt-1">Email valide requis</p>}
+          {errors.email && <p className="text-red-500 text-xs mt-1">{t('valid_email_required')}</p>}
         </div>
       </div>
 
@@ -89,7 +89,7 @@ export default function ContactForm() {
             {...register('company')}
             className={inputClass}
             style={{ borderRadius: '0.125rem' }}
-            placeholder="Hôtel de Paris"
+            placeholder={t('company_placeholder')}
           />
         </div>
       </div>
@@ -102,7 +102,7 @@ export default function ContactForm() {
               {...register('subject')}
               className={inputClass}
               style={{ borderRadius: '0.125rem' }}
-              placeholder="Front Office, Housekeeping..."
+              placeholder={t('subject_placeholder')}
             />
           </div>
         </div>
@@ -134,10 +134,10 @@ export default function ContactForm() {
             rows={6}
             className={`${inputClass} resize-none`}
             style={{ borderRadius: '0.125rem' }}
-            placeholder="Décrivez votre projet..."
+            placeholder={t('message_placeholder')}
           />
         </div>
-        {errors.message && <p className="text-red-500 text-xs mt-1">Requis</p>}
+        {errors.message && <p className="text-red-500 text-xs mt-1">{t('required')}</p>}
       </div>
 
       {status === 'success' && (

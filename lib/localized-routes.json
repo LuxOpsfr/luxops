@@ -1,0 +1,645 @@
+{
+  "home": {
+    "paths": {
+      "en": "/",
+      "fr": "/",
+      "es": "/"
+    },
+    "sitemap": true,
+    "changeFrequency": "weekly",
+    "lastModified": "2026-03-18",
+    "priority": 1
+  },
+  "playbooks": {
+    "paths": {
+      "en": "/playbooks",
+      "fr": "/playbooks"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-03-18",
+    "priority": 0.9
+  },
+  "freeHotelChecklists": {
+    "paths": {
+      "en": "/free-hotel-checklists",
+      "fr": "/checklists-hotel-gratuites"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-05-16",
+    "priority": 0.85
+  },
+  "playbooksFoStarterPack": {
+    "paths": {
+      "en": "/playbooks/fo-starter-pack",
+      "fr": "/playbooks/fo-starter-pack"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-05-11",
+    "priority": 0.8
+  },
+  "playbooksHskStarterPack": {
+    "paths": {
+      "en": "/playbooks/hsk-starter-pack",
+      "fr": "/playbooks/hsk-starter-pack"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-05-11",
+    "priority": 0.8
+  },
+  "playbooksFbStarterPack": {
+    "paths": {
+      "en": "/playbooks/fb-starter-pack",
+      "fr": "/playbooks/fb-starter-pack"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-05-11",
+    "priority": 0.8
+  },
+  "hotelFbSop": {
+    "paths": {
+      "en": "/hotel-fb-sop",
+      "fr": "/hotel-fb-sop"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-05-11",
+    "priority": 0.85
+  },
+  "foodAndBeverageServiceSequence": {
+    "paths": {
+      "en": "/food-and-beverage-service-sequence",
+      "fr": "/sequence-service-restaurant-hotel"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-05-12",
+    "priority": 0.8
+  },
+  "hotelRoomServiceChecklist": {
+    "paths": {
+      "en": "/hotel-room-service-checklist",
+      "fr": "/checklist-room-service-hotel"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-05-12",
+    "priority": 0.8
+  },
+  "restaurantOpeningChecklist": {
+    "paths": {
+      "en": "/restaurant-opening-checklist",
+      "fr": "/checklist-ouverture-restaurant"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-05-12",
+    "priority": 0.8
+  },
+  "barOpeningChecklist": {
+    "paths": {
+      "en": "/bar-opening-checklist",
+      "fr": "/checklist-ouverture-bar"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-05-19",
+    "priority": 0.8
+  },
+  "restaurantClosingChecklist": {
+    "paths": {
+      "en": "/restaurant-closing-checklist",
+      "fr": "/checklist-fermeture-restaurant"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-05-19",
+    "priority": 0.8
+  },
+  "notionTemplates": {
+    "paths": {
+      "en": "/notion-templates",
+      "fr": "/notion-templates"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-03-18",
+    "priority": 0.8
+  },
+  "qualityAudit": {
+    "paths": {
+      "en": "/quality-audit",
+      "fr": "/audit-qualite"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-03-18",
+    "priority": 0.8
+  },
+  "bespokeProcess": {
+    "paths": {
+      "en": "/bespoke-process",
+      "fr": "/process-sur-mesure"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-03-18",
+    "priority": 0.8
+  },
+  "training": {
+    "paths": {
+      "en": "/training",
+      "fr": "/formation"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-03-18",
+    "priority": 0.8
+  },
+  "resources": {
+    "paths": {
+      "en": "/resources",
+      "fr": "/resources"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-03-18",
+    "priority": 0.7
+  },
+  "about": {
+    "paths": {
+      "en": "/about",
+      "fr": "/about",
+      "es": "/about"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-03-18",
+    "priority": 0.6
+  },
+  "contact": {
+    "paths": {
+      "en": "/contact",
+      "fr": "/contact",
+      "es": "/contact"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-03-18",
+    "priority": 0.6
+  },
+  "blog": {
+    "paths": {
+      "en": "/blog",
+      "fr": "/blog"
+    },
+    "sitemap": true,
+    "changeFrequency": "weekly",
+    "lastModified": "2026-03-28",
+    "priority": 0.8
+  },
+  "blogHotelOperationsPlaybook": {
+    "paths": {
+      "en": "/blog/hotel-operations-playbook",
+      "fr": "/blog/hotel-operations-playbook"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-03-18",
+    "priority": 0.7
+  },
+  "blogHowToWriteHotelSops": {
+    "paths": {
+      "en": "/blog/how-to-write-hotel-sops",
+      "fr": "/blog/how-to-write-hotel-sops"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-03-18",
+    "priority": 0.7
+  },
+  "blogHotelFrontOfficeSop": {
+    "paths": {
+      "en": "/blog/hotel-front-office-sop",
+      "fr": "/blog/hotel-front-office-sop"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-03-18",
+    "priority": 0.7
+  },
+  "blogHotelFbServiceStandards": {
+    "paths": {
+      "en": "/blog/hotel-fb-service-standards",
+      "fr": "/blog/hotel-fb-service-standards"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-03-18",
+    "priority": 0.7
+  },
+  "hotelChecklist": {
+    "paths": {
+      "en": "/hotel-checklist",
+      "fr": "/hotel-checklist"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-03-18",
+    "priority": 0.7
+  },
+  "hotelHousekeepingChecklist": {
+    "paths": {
+      "en": "/hotel-housekeeping-checklist",
+      "fr": "/hotel-housekeeping-checklist"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-05-27",
+    "priority": 0.7
+  },
+  "frontOfficeSop": {
+    "paths": {
+      "en": "/front-office-sop",
+      "fr": "/front-office-sop"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-05-27",
+    "priority": 0.7
+  },
+  "housekeepingSop": {
+    "paths": {
+      "en": "/housekeeping-sop",
+      "fr": "/housekeeping-sop"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-03-18",
+    "priority": 0.7
+  },
+  "hotelSop": {
+    "paths": {
+      "en": "/hotel-sop",
+      "fr": "/hotel-sop"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-03-18",
+    "priority": 0.7
+  },
+  "hotelAuditChecklist": {
+    "paths": {
+      "en": "/hotel-audit-checklist",
+      "fr": "/hotel-audit-checklist"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-03-18",
+    "priority": 0.7
+  },
+  "howToImproveHotelOperations": {
+    "paths": {
+      "en": "/how-to-improve-hotel-operations",
+      "fr": "/how-to-improve-hotel-operations"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-04-01",
+    "priority": 0.8
+  },
+  "hotelNightAuditChecklist": {
+    "paths": {
+      "en": "/hotel-night-audit-checklist",
+      "fr": "/hotel-night-audit-checklist"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-05-27",
+    "priority": 0.75
+  },
+  "hotelFrontOfficeChecklist": {
+    "paths": {
+      "en": "/hotel-front-office-checklist",
+      "fr": "/hotel-front-office-checklist"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-04-01",
+    "priority": 0.75
+  },
+  "formationHousekeepingHotel": {
+    "paths": {
+      "en": "/formation-housekeeping-hotel",
+      "fr": "/formation-housekeeping-hotel"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-05-17",
+    "priority": 0.7
+  },
+  "formationReceptionHotel": {
+    "paths": {
+      "en": "/formation-reception-hotel",
+      "fr": "/formation-reception-hotel"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-05-17",
+    "priority": 0.7
+  },
+  "formationEquipeHoteliere": {
+    "paths": {
+      "en": "/formation-equipe-hoteliere",
+      "fr": "/formation-equipe-hoteliere"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-05-17",
+    "priority": 0.7
+  },
+  "formationFbRestaurant": {
+    "paths": {
+      "en": "/formation-fb-restaurant",
+      "fr": "/formation-fb-restaurant"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-05-17",
+    "priority": 0.7
+  },
+  "formationPreOuverture": {
+    "paths": {
+      "en": "/formation-pre-ouverture",
+      "fr": "/formation-pre-ouverture"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-05-17",
+    "priority": 0.7
+  },
+  "formationChefsDeService": {
+    "paths": {
+      "en": "/formation-chefs-de-service",
+      "fr": "/formation-chefs-de-service"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-05-17",
+    "priority": 0.7
+  },
+  "fbAuditTraining": {
+    "paths": {
+      "en": "/fb-audit-training",
+      "fr": "/audit-formation-fb"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-07-17",
+    "priority": 0.72
+  },
+  "luxopsTrainingMethod": {
+    "paths": {
+      "en": "/luxops-training-method",
+      "fr": "/methode-formation-luxops"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-07-17",
+    "priority": 0.72
+  },
+  "blogHotelStaffTrainingServiceStandards": {
+    "paths": {
+      "en": "/blog/hotel-staff-training-service-standards",
+      "fr": "/blog/hotel-staff-training-service-standards"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-04-28",
+    "priority": 0.7
+  },
+  "blogHousekeepingRoomInspection": {
+    "paths": {
+      "en": "/blog/housekeeping-room-inspection",
+      "fr": "/blog/housekeeping-room-inspection"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-05-27",
+    "priority": 0.7
+  },
+  "blogHotelFbRestaurantProcedures": {
+    "paths": {
+      "en": "/blog/hotel-fb-restaurant-procedures",
+      "fr": "/blog/hotel-fb-restaurant-procedures"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-03-29",
+    "priority": 0.7
+  },
+  "blogHotelSpaWellnessSops": {
+    "paths": {
+      "en": "/blog/hotel-spa-wellness-sops",
+      "fr": "/blog/hotel-spa-wellness-sops"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-03-30",
+    "priority": 0.7
+  },
+  "blogHotelRoomServiceSops": {
+    "paths": {
+      "en": "/blog/hotel-room-service-sops",
+      "fr": "/blog/hotel-room-service-sops"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-03-31",
+    "priority": 0.7
+  },
+  "blogHotelStandardOperatingProcedures": {
+    "paths": {
+      "en": "/blog/hotel-standard-operating-procedures",
+      "fr": "/blog/hotel-standard-operating-procedures"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-04-28",
+    "priority": 0.7
+  },
+  "blogHotelFrontDeskProcedures": {
+    "paths": {
+      "en": "/blog/hotel-front-desk-procedures",
+      "fr": "/blog/hotel-front-desk-procedures"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-04-28",
+    "priority": 0.7
+  },
+  "blogHotelStaffTurnoverTraining": {
+    "paths": {
+      "en": "/blog/hotel-staff-turnover-training",
+      "fr": "/blog/hotel-staff-turnover-training"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-04-30",
+    "priority": 0.7
+  },
+  "blogHotelNewHireOnboarding": {
+    "paths": {
+      "en": "/blog/hotel-new-hire-onboarding",
+      "fr": "/blog/hotel-new-hire-onboarding"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-04-30",
+    "priority": 0.7
+  },
+  "blogHotelRoomAttendantChecklist": {
+    "paths": {
+      "en": "/blog/hotel-room-attendant-checklist",
+      "fr": "/blog/hotel-room-attendant-checklist"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-05-17",
+    "priority": 0.7
+  },
+  "blogHotelFrontDeskChecklist": {
+    "paths": {
+      "en": "/blog/hotel-front-desk-checklist",
+      "fr": "/blog/hotel-front-desk-checklist"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-05-17",
+    "priority": 0.7
+  },
+  "blogHotelDndProcedure": {
+    "paths": {
+      "en": "/blog/hotel-dnd-procedure",
+      "fr": "/blog/hotel-dnd-procedure"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-05-17",
+    "priority": 0.7
+  },
+  "blogHotelRoomCleaningChecklist": {
+    "paths": {
+      "en": "/blog/hotel-room-cleaning-checklist",
+      "fr": "/blog/hotel-room-cleaning-checklist"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-05-03",
+    "priority": 0.7
+  },
+  "blogHotelHousekeepingSupervisorChecklist": {
+    "paths": {
+      "en": "/blog/hotel-housekeeping-supervisor-checklist",
+      "fr": "/blog/hotel-housekeeping-supervisor-checklist"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-05-03",
+    "priority": 0.7
+  },
+  "blogHotelBathroomCleaningSop": {
+    "paths": {
+      "en": "/blog/hotel-bathroom-cleaning-sop",
+      "fr": "/blog/hotel-bathroom-cleaning-sop"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-05-03",
+    "priority": 0.7
+  },
+  "freeHotelProcedures": {
+    "paths": {
+      "en": "/free-hotel-procedures",
+      "fr": "/free-hotel-procedures"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-03-28",
+    "priority": 0.8
+  },
+  "frontDeskShiftHandoverTemplate": {
+    "paths": {
+      "en": "/front-desk-shift-handover-template",
+      "fr": "/modele-passation-reception"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-07-17",
+    "priority": 0.78
+  },
+  "guestComplaintHandlingSop": {
+    "paths": {
+      "en": "/guest-complaint-handling-sop",
+      "fr": "/procedure-reclamation-client"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-07-17",
+    "priority": 0.78
+  },
+  "housekeepingDeepCleaningChecklist": {
+    "paths": {
+      "en": "/housekeeping-deep-cleaning-checklist",
+      "fr": "/deep-cleaning-chambre"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-07-17",
+    "priority": 0.78
+  },
+  "breakfastServiceChecklist": {
+    "paths": {
+      "en": "/breakfast-service-checklist",
+      "fr": "/checklist-service-petit-dejeuner"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-07-17",
+    "priority": 0.78
+  },
+  "roomStatusDiscrepancyReport": {
+    "paths": {
+      "en": "/room-status-discrepancy-report",
+      "fr": "/rapport-ecart-statut-chambre"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-07-17",
+    "priority": 0.78
+  },
+  "hotelOperationsPlaybook": {
+    "paths": {
+      "en": "/hotel-operations-playbook",
+      "fr": "/manuel-procedure-hotellerie"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-07-17",
+    "priority": 0.84
+  },
+  "hotelManagementRoutines": {
+    "paths": {
+      "en": "/hotel-management-routines",
+      "fr": "/rituels-management-hotelier"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-07-17",
+    "priority": 0.82
+  }
+}

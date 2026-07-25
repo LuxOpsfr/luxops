@@ -2,14 +2,22 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
+import { toActiveLocale } from '@/lib/i18n'
+import { localizedPath } from '@/lib/localized-routes'
 
 export default function CookieBanner({ locale }: { locale: string }) {
+  const t = useTranslations('cookie_banner')
   const [visible, setVisible] = useState(false)
-  const isFr = locale === 'fr'
+  const activeLocale = toActiveLocale(locale)
+  const legalHref = activeLocale === 'fr' ? localizedPath('fr', '/legal') : localizedPath('en', '/legal')
 
   useEffect(() => {
     const consent = localStorage.getItem('luxops_cookie_consent')
-    if (!consent) setVisible(true)
+    if (consent) return
+
+    const timer = window.setTimeout(() => setVisible(true), 0)
+    return () => window.clearTimeout(timer)
   }, [])
 
   const accept = () => {
@@ -29,17 +37,15 @@ export default function CookieBanner({ locale }: { locale: string }) {
       <div className="max-w-3xl mx-auto bg-[#1A2E44] text-white rounded-2xl shadow-2xl px-6 py-5 flex flex-col sm:flex-row items-start sm:items-center gap-4">
         <div className="flex-1 min-w-0">
           <p className="text-sm font-semibold mb-0.5">
-            {isFr ? 'Ce site utilise des cookies' : 'This site uses cookies'}
+            {t('title')}
           </p>
           <p className="text-xs text-white/60 leading-relaxed">
-            {isFr
-              ? "Nous utilisons des cookies pour améliorer votre expérience et analyser le trafic (Google Analytics). "
-              : "We use cookies to improve your experience and analyze traffic (Google Analytics). "}
+            {t('body')}
             <Link
-              href={`/${locale}/legal`}
+              href={legalHref}
               className="underline text-white/80 hover:text-white"
             >
-              {isFr ? 'En savoir plus' : 'Learn more'}
+              {t('learn_more')}
             </Link>
           </p>
         </div>
@@ -48,13 +54,13 @@ export default function CookieBanner({ locale }: { locale: string }) {
             onClick={decline}
             className="text-sm text-white/60 hover:text-white transition-colors font-medium"
           >
-            {isFr ? 'Refuser' : 'Decline'}
+            {t('decline')}
           </button>
           <button
             onClick={accept}
             className="px-5 py-2 bg-white text-[#1A2E44] text-sm font-bold rounded-lg hover:bg-gray-100 transition-colors"
           >
-            {isFr ? 'Accepter' : 'Accept'}
+            {t('accept')}
           </button>
         </div>
       </div>

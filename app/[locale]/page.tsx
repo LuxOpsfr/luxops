@@ -3,6 +3,155 @@ import { useTranslations } from 'next-intl'
 import Link from 'next/link'
 import { ArrowRight, BookOpen, ClipboardCheck, Clock, Settings, Star, Users } from 'lucide-react'
 import ExpertiseSection from '@/components/ExpertiseSection'
+import { ACTIVE_LOCALES, toActiveLocale } from '@/lib/i18n'
+import type { Locale } from '@/lib/i18n'
+import { alternatesForRoute, localizedRoutePath, localizedRouteUrl } from '@/lib/localized-routes'
+
+const homeMetadata = {
+  en: {
+    title: 'LuxOps | Hotel Operations Playbooks, SOPs & Training',
+    description:
+      'Operational playbooks, SOP frameworks and on-property training for high-end hotels. Front Office, Housekeeping, F&B, Spa. Built from real hotel operations.',
+  },
+  fr: {
+    title: 'LuxOps | Playbooks, SOPs et Formation Hôtelière',
+    description:
+      "Playbooks opérationnels, procédures et formation pour les hôtels haut de gamme. Front Office, Housekeeping, F&B, Spa. Issus de l'exploitation réelle.",
+  },
+  es: {
+    title: 'LuxOps | Playbooks, SOPs y formación hotelera',
+    description:
+      'Playbooks operativos, marcos SOP y formación en el hotel para propiedades high-end. Front Office, Housekeeping, F&B y Spa. Construidos desde operaciones hoteleras reales.',
+  },
+} satisfies Partial<Record<Locale, { title: string; description: string }>>
+
+const homeContent = {
+  en: {
+    offerOverviewEyebrow: 'What you can use now',
+    offerOverviewTitle: 'Choose the right format for your need',
+    viewLabel: 'View',
+    cards: {
+      starterPacks: {
+        title: 'Starter Packs',
+        desc: 'Practical checklists, scripts and control tools for immediate use.',
+      },
+      playbooks: {
+        title: 'Playbooks',
+        desc: 'Full SOP references for Front Office, Housekeeping, F&B and Spa.',
+      },
+      training: {
+        title: 'Training',
+        desc: 'On-property sessions to help teams apply service standards.',
+      },
+      audit: {
+        title: 'Audit',
+        desc: 'A structured review of standards, execution and operating gaps.',
+      },
+    },
+    goalsEyebrow: 'Our Goals',
+    goalsTitle: 'Three outcomes.\nEvery engagement.',
+    goals: [
+      {
+        title: 'Service Excellence',
+        desc: 'Ensuring a consistent, flawless guest experience at every interaction, regardless of who is on shift.',
+      },
+      {
+        title: 'Team Stability',
+        desc: 'Streamlining onboarding to reduce turnover and help your people grow with confidence.',
+      },
+      {
+        title: 'Operational Efficiency',
+        desc: 'Freeing up management time by making know-how transferable, documented, and always available.',
+      },
+    ],
+  },
+  fr: {
+    offerOverviewEyebrow: 'Ce que vous pouvez utiliser',
+    offerOverviewTitle: 'Choisir le bon format selon votre besoin',
+    viewLabel: 'Voir',
+    cards: {
+      starterPacks: {
+        title: 'Starter Packs',
+        desc: 'Checklists, scripts et outils de contrôle pour un usage immédiat.',
+      },
+      playbooks: {
+        title: 'Playbooks',
+        desc: 'Références SOP complètes pour Front Office, Housekeeping, F&B et Spa.',
+      },
+      training: {
+        title: 'Formation',
+        desc: 'Sessions sur site pour aider les équipes à appliquer les standards.',
+      },
+      audit: {
+        title: 'Audit',
+        desc: 'Une revue structurée des standards, de l’exécution et des écarts.',
+      },
+    },
+    goalsEyebrow: 'Notre Engagement',
+    goalsTitle: 'Trois engagements.\nSur chaque mission.',
+    goals: [
+      {
+        title: 'Excellence du Service',
+        desc: "Créer les conditions d'une exécution plus régulière, plus lisible, et plus fiable pour le client.",
+      },
+      {
+        title: 'Stabilité des Équipes',
+        desc: 'Donner aux équipes une base de travail claire, plus simple à transmettre, à expliquer et à reprendre.',
+      },
+      {
+        title: 'Efficacité Opérationnelle',
+        desc: 'Mettre en place des supports qui rendent les méthodes plus accessibles, plus durables et plus faciles à piloter.',
+      },
+    ],
+  },
+  es: {
+    offerOverviewEyebrow: 'Lo que puedes usar ahora',
+    offerOverviewTitle: 'Elige el formato adecuado para tu necesidad',
+    viewLabel: 'Ver',
+    cards: {
+      starterPacks: {
+        title: 'Starter Packs',
+        desc: 'Checklists, scripts y herramientas de control para uso inmediato.',
+      },
+      playbooks: {
+        title: 'Playbooks',
+        desc: 'Referencias SOP completas para Front Office, Housekeeping, F&B y Spa.',
+      },
+      training: {
+        title: 'Formación',
+        desc: 'Sesiones en el hotel para ayudar a los equipos a aplicar los estándares de servicio.',
+      },
+      audit: {
+        title: 'Auditoría',
+        desc: 'Una revisión estructurada de estándares, ejecución y brechas operativas.',
+      },
+    },
+    goalsEyebrow: 'Nuestros objetivos',
+    goalsTitle: 'Tres resultados.\nEn cada proyecto.',
+    goals: [
+      {
+        title: 'Excelencia de servicio',
+        desc: 'Asegurar una experiencia de huésped consistente y cuidada en cada interacción, sin depender de quién esté de turno.',
+      },
+      {
+        title: 'Estabilidad del equipo',
+        desc: 'Simplificar el onboarding para reducir la rotación y ayudar a las personas a crecer con confianza.',
+      },
+      {
+        title: 'Eficiencia operativa',
+        desc: 'Liberar tiempo de gestión haciendo que el know-how sea transferible, documentado y siempre disponible.',
+      },
+    ],
+  },
+} satisfies Partial<Record<Locale, {
+  offerOverviewEyebrow: string
+  offerOverviewTitle: string
+  viewLabel: string
+  cards: Record<'starterPacks' | 'playbooks' | 'training' | 'audit', { title: string; desc: string }>
+  goalsEyebrow: string
+  goalsTitle: string
+  goals: { title: string; desc: string }[]
+}>>
 
 export async function generateMetadata({
   params,
@@ -10,21 +159,14 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>
 }): Promise<Metadata> {
   const { locale } = await params
-  const isEn = locale === 'en'
+  const activeLocale = toActiveLocale(locale)
+  const metadata = homeMetadata[activeLocale as keyof typeof homeMetadata] ?? homeMetadata.en
   return {
-    title: isEn
-      ? 'LuxOps | Hotel Operations Playbooks, SOPs & Training'
-      : 'LuxOps | Playbooks, SOPs et Formation Hôtelière',
-    description: isEn
-      ? 'Operational playbooks, SOP frameworks and on-property training for high-end hotels. Front Office, Housekeeping, F&B, Spa. Built from real hotel operations.'
-      : "Playbooks opérationnels, procédures et formation pour les hôtels haut de gamme. Front Office, Housekeeping, F&B, Spa. Issus de l'exploitation réelle.",
+    title: metadata.title,
+    description: metadata.description,
     alternates: {
-      canonical: `https://www.luxops.fr/${locale}`,
-      languages: {
-        'en': 'https://www.luxops.fr/en',
-        'fr': 'https://www.luxops.fr/fr',
-        'x-default': 'https://www.luxops.fr/en',
-      },
+      canonical: localizedRouteUrl('home', activeLocale),
+      languages: alternatesForRoute('home'),
     },
   }
 }
@@ -46,7 +188,7 @@ const orgSchema = {
       name: 'LuxOps',
       url: 'https://www.luxops.fr',
       publisher: { '@id': 'https://www.luxops.fr/#organization' },
-      inLanguage: ['en', 'fr'],
+      inLanguage: [...ACTIVE_LOCALES],
     },
   ],
 }
@@ -67,7 +209,8 @@ function HomeContent({ locale }: { locale: string }) {
   const tSolution = useTranslations('solution')
   const tOffers = useTranslations('offers')
   const tCta = useTranslations('cta_section')
-  const isEn = locale === 'en'
+  const activeLocale = toActiveLocale(locale)
+  const copy = homeContent[activeLocale as keyof typeof homeContent] ?? homeContent.en
 
   return (
     <div className="pt-16">
@@ -101,7 +244,7 @@ function HomeContent({ locale }: { locale: string }) {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
-                href={`/${locale}/playbooks`}
+                href={localizedRoutePath('playbooks', activeLocale)}
                 className="inline-flex flex-shrink-0 items-center justify-center gap-2 px-8 py-4 text-white font-bold transition-all hover:opacity-90 sm:whitespace-nowrap"
                 style={{
                   background: 'linear-gradient(135deg, #003d9b, #0052cc)',
@@ -112,7 +255,7 @@ function HomeContent({ locale }: { locale: string }) {
                 {tHero('cta_primary')} <ArrowRight size={18} />
               </Link>
               <Link
-                href={`/${locale}/contact`}
+                href={localizedRoutePath('contact', activeLocale)}
                 className="inline-flex flex-shrink-0 items-center justify-center gap-2 px-8 py-4 font-bold transition-all hover:bg-[#eef4ff] sm:whitespace-nowrap"
                 style={{
                   border: '1px solid #003d9b',
@@ -138,10 +281,10 @@ function HomeContent({ locale }: { locale: string }) {
               <div className="flex items-start justify-between gap-6 mb-7">
                 <div>
                   <p className="text-[#003d9b] text-[10px] font-bold uppercase tracking-widest mb-2">
-                    {isEn ? 'What you can use now' : 'Ce que vous pouvez utiliser'}
+                    {copy.offerOverviewEyebrow}
                   </p>
                   <h2 className="font-display font-extrabold text-[#0a1d2e] text-2xl leading-tight">
-                    {isEn ? 'Choose the right format for your need' : 'Choisir le bon format selon votre besoin'}
+                    {copy.offerOverviewTitle}
                   </h2>
                 </div>
                 <div className="hidden sm:flex items-center justify-center w-11 h-11 bg-[#eef4ff] text-[#003d9b] flex-shrink-0" style={{ borderRadius: '0.125rem' }}>
@@ -153,35 +296,27 @@ function HomeContent({ locale }: { locale: string }) {
               {[
                 {
                   icon: <ClipboardCheck size={18} strokeWidth={1.5} />,
-                  title: isEn ? 'Starter Packs' : 'Starter Packs',
-                  desc: isEn
-                    ? 'Practical checklists, scripts and control tools for immediate use.'
-                    : 'Checklists, scripts et outils de contrôle pour un usage immédiat.',
-                  href: `/${locale}/playbooks#starter-packs`,
+                  title: copy.cards.starterPacks.title,
+                  desc: copy.cards.starterPacks.desc,
+                  href: `${localizedRoutePath('playbooks', activeLocale)}#starter-packs`,
                 },
                 {
                   icon: <BookOpen size={18} strokeWidth={1.5} />,
-                  title: isEn ? 'Playbooks' : 'Playbooks',
-                  desc: isEn
-                    ? 'Full SOP references for Front Office, Housekeeping, F&B and Spa.'
-                    : 'Références SOP complètes pour Front Office, Housekeeping, F&B et Spa.',
-                  href: `/${locale}/playbooks#department-playbooks`,
+                  title: copy.cards.playbooks.title,
+                  desc: copy.cards.playbooks.desc,
+                  href: `${localizedRoutePath('playbooks', activeLocale)}#department-playbooks`,
                 },
                 {
                   icon: <Users size={18} strokeWidth={1.5} />,
-                  title: isEn ? 'Training' : 'Formation',
-                  desc: isEn
-                    ? 'On-property sessions to help teams apply service standards.'
-                    : 'Sessions sur site pour aider les équipes à appliquer les standards.',
-                  href: isEn ? '/en/training' : '/fr/formation',
+                  title: copy.cards.training.title,
+                  desc: copy.cards.training.desc,
+                  href: localizedRoutePath('training', activeLocale),
                 },
                 {
                   icon: <Settings size={18} strokeWidth={1.5} />,
-                  title: isEn ? 'Audit' : 'Audit',
-                  desc: isEn
-                    ? 'A structured review of standards, execution and operating gaps.'
-                    : 'Une revue structurée des standards, de l’exécution et des écarts.',
-                  href: isEn ? '/en/quality-audit' : '/fr/audit-qualite',
+                  title: copy.cards.audit.title,
+                  desc: copy.cards.audit.desc,
+                  href: localizedRoutePath('qualityAudit', activeLocale),
                 },
               ].map((item) => (
                 <Link
@@ -200,7 +335,7 @@ function HomeContent({ locale }: { locale: string }) {
                     <p className="font-display font-bold text-[#0a1d2e] text-sm mb-1">{item.title}</p>
                     <p className="text-[#4f6074] text-xs leading-relaxed mb-3">{item.desc}</p>
                     <span className="inline-flex items-center gap-1 text-[#003d9b] text-xs font-bold">
-                      {isEn ? 'View' : 'Voir'} <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform" />
+                      {copy.viewLabel} <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform" />
                     </span>
                   </div>
                 </Link>
@@ -260,9 +395,9 @@ function HomeContent({ locale }: { locale: string }) {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
-              { icon: <BookOpen size={20} style={{ color: '#003d9b' }} />, title: tOffers('digital_title'), desc: tOffers('digital_desc'), cta: tOffers('digital_cta'), href: `/${locale}/playbooks` },
-              { icon: <Settings size={20} style={{ color: '#003d9b' }} />, title: tOffers('audit_title'), desc: tOffers('audit_desc'), cta: tOffers('audit_cta'), href: isEn ? '/en/quality-audit' : '/fr/audit-qualite' },
-              { icon: <Users size={20} style={{ color: '#003d9b' }} />, title: tOffers('training_title'), desc: tOffers('training_desc'), cta: tOffers('training_cta'), href: isEn ? '/en/training' : '/fr/formation' },
+              { icon: <BookOpen size={20} style={{ color: '#003d9b' }} />, title: tOffers('digital_title'), desc: tOffers('digital_desc'), cta: tOffers('digital_cta'), href: localizedRoutePath('playbooks', activeLocale) },
+              { icon: <Settings size={20} style={{ color: '#003d9b' }} />, title: tOffers('audit_title'), desc: tOffers('audit_desc'), cta: tOffers('audit_cta'), href: localizedRoutePath('qualityAudit', activeLocale) },
+              { icon: <Users size={20} style={{ color: '#003d9b' }} />, title: tOffers('training_title'), desc: tOffers('training_desc'), cta: tOffers('training_cta'), href: localizedRoutePath('training', activeLocale) },
             ].map((card, i) => (
               <div key={i} className="p-8 group transition-all hover:shadow-lg" style={{ backgroundColor: '#f8f9ff', borderRadius: '0.125rem' }}>
                 <div className="w-10 h-10 flex items-center justify-center mb-6" style={{ backgroundColor: '#eef4ff', borderRadius: '0.125rem' }}>
@@ -289,12 +424,10 @@ function HomeContent({ locale }: { locale: string }) {
           {/* Header */}
           <div className="max-w-2xl mb-24">
             <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#003d9b] mb-6">
-              {isEn ? 'Our Goals' : 'Notre Engagement'}
+              {copy.goalsEyebrow}
             </p>
             <h2 className="font-display text-4xl md:text-5xl font-extrabold text-[#0a1d2e] tracking-tight leading-tight">
-              {isEn
-                ? 'Three outcomes.\nEvery engagement.'
-                : 'Trois engagements.\nSur chaque mission.'}
+              {copy.goalsTitle}
             </h2>
           </div>
 
@@ -304,26 +437,20 @@ function HomeContent({ locale }: { locale: string }) {
               {
                 ordinal: '01',
                 icon: <Star size={22} strokeWidth={1.25} />,
-                title: isEn ? 'Service Excellence' : 'Excellence du Service',
-                desc: isEn
-                  ? 'Ensuring a consistent, flawless guest experience at every interaction, regardless of who is on shift.'
-                  : "Créer les conditions d'une exécution plus régulière, plus lisible, et plus fiable pour le client.",
+                title: copy.goals[0].title,
+                desc: copy.goals[0].desc,
               },
               {
                 ordinal: '02',
                 icon: <Users size={22} strokeWidth={1.25} />,
-                title: isEn ? 'Team Stability' : 'Stabilit\u00e9 des \u00c9quipes',
-                desc: isEn
-                  ? 'Streamlining onboarding to reduce turnover and help your people grow with confidence.'
-                  : "Donner aux équipes une base de travail claire, plus simple à transmettre, à expliquer et à reprendre.",
+                title: copy.goals[1].title,
+                desc: copy.goals[1].desc,
               },
               {
                 ordinal: '03',
                 icon: <Clock size={22} strokeWidth={1.25} />,
-                title: isEn ? 'Operational Efficiency' : 'Efficacit\u00e9 Op\u00e9rationnelle',
-                desc: isEn
-                  ? 'Freeing up management time by making know-how transferable, documented, and always available.'
-                  : "Mettre en place des supports qui rendent les méthodes plus accessibles, plus durables et plus faciles à piloter.",
+                title: copy.goals[2].title,
+                desc: copy.goals[2].desc,
               },
             ].map((item, i) => (
               <div
@@ -373,7 +500,7 @@ function HomeContent({ locale }: { locale: string }) {
       </section>
 
       {/* Expertise - humanisation */}
-      <ExpertiseSection locale={locale} />
+      <ExpertiseSection locale={activeLocale} />
 
       {/* Final CTA */}
       <section className="py-24 bg-[#003d9b] text-white text-center px-6">
@@ -381,7 +508,7 @@ function HomeContent({ locale }: { locale: string }) {
           <h2 className="font-display text-4xl font-extrabold tracking-tight mb-4">{tCta('title')}</h2>
           <p className="text-xl mb-10" style={{ color: 'rgba(255,255,255,0.75)' }}>{tCta('text')}</p>
           <Link
-            href={`/${locale}/contact`}
+            href={localizedRoutePath('contact', activeLocale)}
             className="inline-flex items-center gap-2 px-10 py-4 bg-white text-[#003d9b] font-bold hover:bg-[#f8f9ff] transition-colors"
             style={{ borderRadius: '0.125rem' }}
           >

@@ -1,10 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
-import Stripe from 'stripe'
 import { isSupportedCurrency, stripeCurrency } from '@/lib/pricing'
-
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: '2026-02-25.clover',
-})
+import { getStripeClient } from '@/lib/stripe'
 
 const VALID_PRICE_IDS = new Set([
   'price_1TZRWjDVLJTOFkjUjIKWDnyi', // Bundle
@@ -38,7 +34,7 @@ export async function POST(request: NextRequest) {
     const origin = request.headers.get('origin') || 'https://www.luxops.fr'
     const lang = locale === 'fr' ? 'fr' : 'en'
 
-    const session = await stripe.checkout.sessions.create({
+    const session = await getStripeClient().checkout.sessions.create({
       mode: 'payment',
       currency: stripeCurrency(checkoutCurrency),
       line_items: [{ price: priceId, quantity: 1 }],
