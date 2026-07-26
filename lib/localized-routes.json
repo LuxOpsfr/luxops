@@ -126,7 +126,7 @@
       "en": "/notion-templates",
       "fr": "/notion-templates"
     },
-    "sitemap": true,
+    "sitemap": false,
     "changeFrequency": "monthly",
     "lastModified": "2026-03-18",
     "priority": 0.8

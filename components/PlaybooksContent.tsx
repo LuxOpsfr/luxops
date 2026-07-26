@@ -39,7 +39,7 @@ const playbooksCopy = {
     allPlaybooksTitle: 'All Playbooks',
     newLabel: 'New',
     starterPacksTitle: 'Starter Packs',
-    starterPacksIntro: 'Practical checklists, templates and scripts designed for immediate operational use.',
+    starterPacksIntro: 'Practical checklists, templates and scripts designed for quick local adaptation and daily operational use.',
     needFullSet: 'Need the full set?',
     addedLabel: 'In Cart',
     addPlaybook: (price: string) => `Add to cart · ${price}`,
@@ -56,29 +56,29 @@ const playbooksCopy = {
     customText:
       'We can build department-specific SOPs around your property, your standards, and the way your teams operate.',
     customCta: 'Learn more',
-    testimonialsTitle: 'What professionals say',
+    testimonialsTitle: 'Where the playbooks fit best',
     testimonials: [
       {
-        quote: 'The procedures clearly reflect real hotel experience. You can tell it was built from the floor up.',
-        role: 'Operations Manager',
+        quote: 'A new or seasonal team needs one shared operating sequence before the first busy service.',
+        role: 'Independent 4-star hotel · Front Office / Housekeeping',
       },
       {
-        quote: 'Applicable from day one, regardless of property type or size.',
-        role: 'Executive Housekeeper',
+        quote: 'A department has useful habits, but handovers, inspection criteria and escalation rules are still too oral.',
+        role: 'Boutique hotel · Rooms Division',
       },
       {
-        quote: 'We used it across two very different properties. It worked for both.',
-        role: 'Hotel Group Manager',
+        quote: 'Management wants a structured SOP base before adapting PMS wording, roles and brand standards.',
+        role: 'Small hotel group · Multi-property operations',
       },
       {
-        quote: 'Solid procedures you can actually adapt to your own standards without rewriting everything.',
-        role: 'General Manager',
+        quote: 'A property wants to stop rebuilding procedures from a blank page whenever a manager changes.',
+        role: 'General management · Independent hotel',
       },
     ],
     goFurther: 'Go further',
     trainingTitle: 'Deploy your playbooks with a trainer on site',
     trainingText:
-      'Buying the playbooks is a strong first step. To make sure your teams understand them, apply them from day one and build lasting habits, our on-site training sessions go through each procedure with the team. Playbooks included and handed to every participant at the end of the session.',
+      'Buying the playbooks is a strong first step. To make sure your teams understand the structure, adapt it to your property and build lasting habits, our on-site training sessions go through the procedures with the team. Playbooks are included and handed to every participant at the end of the session.',
     trainingCta: 'Discover on-site training',
   },
   fr: {
@@ -99,7 +99,7 @@ const playbooksCopy = {
     allPlaybooksTitle: 'Tous les Playbooks',
     newLabel: 'Nouveau',
     starterPacksTitle: 'Starter Packs',
-    starterPacksIntro: 'Checklists, templates et scripts pratiques conçus pour un usage opérationnel immédiat.',
+    starterPacksIntro: 'Checklists, templates et scripts pratiques conçus pour une adaptation locale rapide et un usage opérationnel quotidien.',
     needFullSet: 'Besoin du set complet ?',
     addedLabel: 'Ajouté',
     addPlaybook: (price: string) => `Ajouter au panier · ${price}`,
@@ -116,29 +116,29 @@ const playbooksCopy = {
     customText:
       'Nous pouvons construire des procédures sur-mesure autour de votre établissement, de vos standards et du fonctionnement de vos équipes.',
     customCta: 'En savoir plus',
-    testimonialsTitle: 'Ce que disent les professionnels',
+    testimonialsTitle: 'Où les playbooks sont les plus utiles',
     testimonials: [
       {
-        quote: 'Les procédures reflètent une vraie expérience du terrain. Ça se sent immédiatement.',
-        role: 'Responsable des opérations',
+        quote: 'Une équipe nouvelle ou saisonnière a besoin d’une séquence commune avant le premier service chargé.',
+        role: 'Hôtel indépendant 4 étoiles · Réception / Housekeeping',
       },
       {
-        quote: "Applicable dès le premier jour, quel que soit le type ou la taille de l'établissement.",
-        role: 'Gouvernante Générale',
+        quote: 'Un département possède de bonnes habitudes, mais les passations, critères d’inspection et règles d’escalade restent trop oraux.',
+        role: 'Boutique hotel · Division Chambres',
       },
       {
-        quote: "Nous l'avons utilisé dans deux établissements très différents. Ça a fonctionné dans les deux cas.",
-        role: 'Directeur de groupe hôtelier',
+        quote: 'La direction veut une base SOP structurée avant d’adapter les termes PMS, les rôles et les standards de marque.',
+        role: 'Petit groupe hôtelier · Opérations multi-sites',
       },
       {
-        quote: "Des procédures solides que l'on peut adapter à ses propres standards sans tout réécrire.",
-        role: 'Directeur Général',
+        quote: 'Un établissement veut éviter de reconstruire ses procédures depuis zéro à chaque changement de manager.',
+        role: 'Direction générale · Hôtel indépendant',
       },
     ],
     goFurther: 'Aller plus loin',
     trainingTitle: 'Déployez vos playbooks avec un formateur sur site',
     trainingText:
-      "Acquérir les playbooks est une excellente première étape. Pour s'assurer que vos équipes les comprennent vraiment, les appliquent dès le premier service et construisent des habitudes durables, nos formations sur site parcourent chaque procédure avec l'équipe. Les playbooks sont remis à chaque participant en fin de session.",
+      "Acquérir les playbooks est une excellente première étape. Pour que vos équipes comprennent la structure, l’adaptent à votre établissement et construisent des habitudes durables, nos formations sur site parcourent les procédures avec l’équipe. Les playbooks sont remis à chaque participant en fin de session.",
     trainingCta: 'Découvrir la formation sur site',
   },
   es: {
@@ -159,7 +159,7 @@ const playbooksCopy = {
     allPlaybooksTitle: 'Todos los Playbooks',
     newLabel: 'Nuevo',
     starterPacksTitle: 'Starter Packs',
-    starterPacksIntro: 'Checklists, plantillas y scripts prácticos diseñados para uso operativo inmediato.',
+    starterPacksIntro: 'Checklists, plantillas y scripts prácticos diseñados para una adaptación local rápida y uso operativo diario.',
     needFullSet: '¿Necesitas el set completo?',
     addedLabel: 'Añadido',
     addPlaybook: (price: string) => `Añadir al carrito · ${price}`,
@@ -176,29 +176,29 @@ const playbooksCopy = {
     customText:
       'Podemos crear SOPs específicos por departamento alrededor de tu propiedad, tus estándares y la forma de trabajar de tus equipos.',
     customCta: 'Más información',
-    testimonialsTitle: 'Qué dicen los profesionales',
+    testimonialsTitle: 'Dónde encajan mejor los playbooks',
     testimonials: [
       {
-        quote: 'Los procedimientos reflejan claramente experiencia hotelera real. Se nota que están construidos desde la operación.',
-        role: 'Operations Manager',
+        quote: 'Un equipo nuevo o temporal necesita una secuencia común antes del primer servicio exigente.',
+        role: 'Hotel independiente 4 estrellas · Front Office / Housekeeping',
       },
       {
-        quote: 'Aplicable desde el primer día, sea cual sea el tipo o tamaño de la propiedad.',
-        role: 'Executive Housekeeper',
+        quote: 'Un departamento tiene buenos hábitos, pero los handovers, criterios de inspección y reglas de escalación siguen siendo demasiado orales.',
+        role: 'Hotel boutique · Rooms Division',
       },
       {
-        quote: 'Lo usamos en dos propiedades muy diferentes. Funcionó en ambas.',
-        role: 'Hotel Group Manager',
+        quote: 'La dirección quiere una base SOP estructurada antes de adaptar PMS, roles y estándares de marca.',
+        role: 'Grupo hotelero pequeño · Operaciones multi-propiedad',
       },
       {
-        quote: 'Procedimientos sólidos que puedes adaptar a tus propios estándares sin reescribirlo todo.',
-        role: 'General Manager',
+        quote: 'Una propiedad quiere dejar de reconstruir procedimientos desde cero cada vez que cambia un manager.',
+        role: 'Dirección general · Hotel independiente',
       },
     ],
     goFurther: 'Ir más lejos',
     trainingTitle: 'Despliega tus playbooks con un formador en sitio',
     trainingText:
-      'Comprar los playbooks es un primer paso sólido. Para que tus equipos los entiendan, los apliquen desde el primer día y creen hábitos duraderos, nuestras formaciones en sitio recorren cada procedimiento con el equipo. Los playbooks se entregan a cada participante al final de la sesión.',
+      'Comprar los playbooks es un primer paso sólido. Para que tus equipos entiendan la estructura, la adapten a la propiedad y creen hábitos duraderos, nuestras formaciones en sitio recorren los procedimientos con el equipo. Los playbooks se entregan a cada participante al final de la sesión.',
     trainingCta: 'Descubrir la formación en sitio',
   },
 } satisfies Partial<Record<Locale, {
@@ -803,7 +803,7 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                 className="flex flex-col justify-between p-6"
                 style={{ backgroundColor: '#f8f9ff', borderRadius: '0.125rem' }}
               >
-                <p className="text-sm text-[#0a1d2e] leading-relaxed mb-6">&quot;{item.quote}&quot;</p>
+                <p className="text-sm text-[#0a1d2e] leading-relaxed mb-6">{item.quote}</p>
                 <p className="text-xs font-bold text-[#4f6074] uppercase tracking-widest">{item.role}</p>
               </div>
             ))}

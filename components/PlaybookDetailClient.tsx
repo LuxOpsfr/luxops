@@ -179,8 +179,8 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
 
             <p className="text-xs text-[#737685]">
               {isEn
-                ? `Instant delivery · ${pb.pages} · PDF + PowerPoint · FR & EN included · Lifetime updates`
-                : `Livraison instantanée · ${pb.pages} · PDF + PowerPoint · FR & EN inclus · Mises à jour à vie`}
+                ? `Instant delivery · ${pb.pages} · PDF + PowerPoint · FR & EN included · Product revisions included while maintained`
+                : `Livraison instantanée · ${pb.pages} · PDF + PowerPoint · FR & EN inclus · Révisions incluses tant que le produit est maintenu`}
             </p>
           </div>
 
@@ -306,8 +306,8 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
             </h2>
             <p className="text-[#4f6074] mb-8 leading-relaxed">
               {isEn
-                ? 'Every procedure is documented and ready to deploy immediately in your operations.'
-                : 'Chaque procédure est documentée et prête à déployer immédiatement dans vos opérations.'}
+                ? 'Every procedure is documented as an editable operating base. Adapt terminology, systems, roles, approval rules and brand standards before team rollout.'
+                : 'Chaque procédure est documentée comme une base opérationnelle modifiable. Adaptez les termes, systèmes, rôles, règles de validation et standards de marque avant déploiement équipe.'}
             </p>
             <ul className="space-y-5">
               {pb.highlights[lang].map((h, i) => (
@@ -341,8 +341,8 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
               },
               {
                 icon: '🔄',
-                title: isEn ? 'Lifetime Updates' : 'Mises à jour à vie',
-                desc: isEn ? 'All future revisions included at no extra cost.' : 'Toutes les révisions futures incluses sans coût supplémentaire.',
+                title: isEn ? 'Product Revisions' : 'Révisions produit',
+                desc: isEn ? 'Future revisions included while this product is actively maintained.' : 'Révisions futures incluses tant que ce produit est activement maintenu.',
               },
             ].map((item, i) => (
               <div
@@ -409,8 +409,8 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
           </h2>
           <p className="text-lg mb-8" style={{ color: 'rgba(255,255,255,0.75)' }}>
             {isEn
-              ? `${pb.pages} of field-tested procedures, ready to deploy.`
-              : `${pb.pages} de procédures testées sur le terrain, prêtes à déployer.`}
+              ? `${pb.pages} of field-tested procedures, ready to adapt to your property.`
+              : `${pb.pages} de procédures testées sur le terrain, prêtes à adapter à votre établissement.`}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button

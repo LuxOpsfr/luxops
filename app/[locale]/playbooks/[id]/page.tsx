@@ -14,19 +14,19 @@ const STATS: Record<string, { value: string; label: { en: string; fr: string } }
   ],
   hsk: [
     { value: '10', label: { en: 'Chapters', fr: 'Chapitres' } },
-    { value: '~200', label: { en: 'Pages', fr: 'Pages' } },
+    { value: '~220', label: { en: 'Pages', fr: 'Pages' } },
     { value: 'EN+FR', label: { en: 'Languages', fr: 'Langues' } },
     { value: 'PDF+PPT', label: { en: 'Formats', fr: 'Formats' } },
   ],
   fb: [
     { value: '10', label: { en: 'Chapters', fr: 'Chapitres' } },
-    { value: '~200', label: { en: 'Pages', fr: 'Pages' } },
+    { value: '~280', label: { en: 'Pages', fr: 'Pages' } },
     { value: 'EN+FR', label: { en: 'Languages', fr: 'Langues' } },
     { value: 'PDF+PPT', label: { en: 'Formats', fr: 'Formats' } },
   ],
   spa: [
     { value: '9', label: { en: 'Chapters', fr: 'Chapitres' } },
-    { value: '~180', label: { en: 'Pages', fr: 'Pages' } },
+    { value: '~200', label: { en: 'Pages', fr: 'Pages' } },
     { value: 'EN+FR', label: { en: 'Languages', fr: 'Langues' } },
     { value: 'PDF+PPT', label: { en: 'Formats', fr: 'Formats' } },
   ],
@@ -48,7 +48,7 @@ const FAQ: Record<string, { q: { en: string; fr: string }; a: { en: string; fr: 
     },
     {
       q: { en: 'Do these procedures follow international hotel standards?', fr: 'Ces procédures respectent-elles les standards hôteliers internationaux ?' },
-      a: { en: 'Yes. The procedures are built from real operational practice across high-end independent properties and are aligned with the service standards expected in 4- and 5-star hospitality environments internationally.', fr: "Oui. Les procédures sont issues de la pratique opérationnelle réelle dans des établissements haut de gamme et sont alignées avec les standards de service attendus dans l'hôtellerie 4 et 5 étoiles à l'international." },
+      a: { en: 'They are built from real operational practice in high-end hotel environments and designed around common 4- and 5-star service principles. They remain editable operating references, not a certification or a replacement for your own brand standards.', fr: "Elles sont issues de la pratique opérationnelle réelle dans des environnements hôteliers haut de gamme et construites autour des principes de service courants en 4 et 5 étoiles. Elles restent des références opérationnelles modifiables, pas une certification ni un remplacement de vos standards de marque." },
     },
     {
       q: { en: 'Is the playbook available in French and English?', fr: 'Le playbook est-il disponible en français et en anglais ?' },
@@ -56,7 +56,7 @@ const FAQ: Record<string, { q: { en: string; fr: string }; a: { en: string; fr: 
     },
     {
       q: { en: 'Are updates included?', fr: 'Les mises à jour sont-elles incluses ?' },
-      a: { en: 'Yes. All future updates to this playbook are included at no additional cost.', fr: 'Oui. Toutes les mises à jour futures de ce playbook sont incluses sans frais supplémentaires.' },
+      a: { en: 'Product revisions are included while this playbook is actively maintained. Any material change to delivery, access or update policy should be checked in the commercial terms before purchase.', fr: "Les révisions du produit sont incluses tant que ce playbook est activement maintenu. Toute modification importante concernant la livraison, l’accès ou les mises à jour doit être vérifiée dans les conditions commerciales avant achat." },
     },
   ],
   hsk: [
@@ -74,7 +74,7 @@ const FAQ: Record<string, { q: { en: string; fr: string }; a: { en: string; fr: 
     },
     {
       q: { en: 'Do these procedures follow international hotel standards?', fr: 'Ces procédures respectent-elles les standards hôteliers internationaux ?' },
-      a: { en: 'Yes. The procedures are built from real operational practice across high-end independent properties and are aligned with the service standards expected in 4- and 5-star hospitality environments internationally.', fr: "Oui. Les procédures sont issues de la pratique opérationnelle réelle dans des établissements haut de gamme et sont alignées avec les standards de service attendus dans l'hôtellerie 4 et 5 étoiles à l'international." },
+      a: { en: 'They are built from real operational practice in high-end hotel environments and designed around common 4- and 5-star service principles. They remain editable operating references, not a certification or a replacement for your own brand standards.', fr: "Elles sont issues de la pratique opérationnelle réelle dans des environnements hôteliers haut de gamme et construites autour des principes de service courants en 4 et 5 étoiles. Elles restent des références opérationnelles modifiables, pas une certification ni un remplacement de vos standards de marque." },
     },
     {
       q: { en: 'Is the playbook available in French and English?', fr: 'Le playbook est-il disponible en français et en anglais ?' },
@@ -82,7 +82,7 @@ const FAQ: Record<string, { q: { en: string; fr: string }; a: { en: string; fr: 
     },
     {
       q: { en: 'Are updates included?', fr: 'Les mises à jour sont-elles incluses ?' },
-      a: { en: 'Yes. All future updates to this playbook are included at no additional cost.', fr: 'Oui. Toutes les mises à jour futures de ce playbook sont incluses sans frais supplémentaires.' },
+      a: { en: 'Product revisions are included while this playbook is actively maintained. Any material change to delivery, access or update policy should be checked in the commercial terms before purchase.', fr: "Les révisions du produit sont incluses tant que ce playbook est activement maintenu. Toute modification importante concernant la livraison, l’accès ou les mises à jour doit être vérifiée dans les conditions commerciales avant achat." },
     },
   ],
   fb: [
@@ -104,7 +104,7 @@ const FAQ: Record<string, { q: { en: string; fr: string }; a: { en: string; fr: 
     },
     {
       q: { en: 'Do these procedures follow international hotel standards?', fr: 'Ces procédures respectent-elles les standards hôteliers internationaux ?' },
-      a: { en: 'Yes. The procedures are built from real operational practice across high-end independent properties and are aligned with the service standards expected in 4- and 5-star hospitality environments internationally.', fr: "Oui. Les procédures sont issues de la pratique opérationnelle réelle dans des établissements haut de gamme et sont alignées avec les standards de service attendus dans l'hôtellerie 4 et 5 étoiles à l'international." },
+      a: { en: 'They are built from real operational practice in high-end hotel environments and designed around common 4- and 5-star service principles. They remain editable operating references, not a certification or a replacement for your own brand standards.', fr: "Elles sont issues de la pratique opérationnelle réelle dans des environnements hôteliers haut de gamme et construites autour des principes de service courants en 4 et 5 étoiles. Elles restent des références opérationnelles modifiables, pas une certification ni un remplacement de vos standards de marque." },
     },
     {
       q: { en: 'Is the playbook available in French and English?', fr: 'Le playbook est-il disponible en français et en anglais ?' },
@@ -112,7 +112,7 @@ const FAQ: Record<string, { q: { en: string; fr: string }; a: { en: string; fr: 
     },
     {
       q: { en: 'Are updates included?', fr: 'Les mises à jour sont-elles incluses ?' },
-      a: { en: 'Yes. All future updates to this playbook are included at no additional cost.', fr: 'Oui. Toutes les mises à jour futures de ce playbook sont incluses sans frais supplémentaires.' },
+      a: { en: 'Product revisions are included while this playbook is actively maintained. Any material change to delivery, access or update policy should be checked in the commercial terms before purchase.', fr: "Les révisions du produit sont incluses tant que ce playbook est activement maintenu. Toute modification importante concernant la livraison, l’accès ou les mises à jour doit être vérifiée dans les conditions commerciales avant achat." },
     },
   ],
   spa: [
@@ -134,7 +134,7 @@ const FAQ: Record<string, { q: { en: string; fr: string }; a: { en: string; fr: 
     },
     {
       q: { en: 'Do these procedures follow international hotel standards?', fr: 'Ces procédures respectent-elles les standards hôteliers internationaux ?' },
-      a: { en: 'Yes. The procedures are built from real operational practice across high-end independent properties and are aligned with the service standards expected in 4- and 5-star hospitality environments internationally.', fr: "Oui. Les procédures sont issues de la pratique opérationnelle réelle dans des établissements haut de gamme et sont alignées avec les standards de service attendus dans l'hôtellerie 4 et 5 étoiles à l'international." },
+      a: { en: 'They are built from real operational practice in high-end hotel environments and designed around common 4- and 5-star service principles. They remain editable operating references, not a certification or a replacement for your own brand standards.', fr: "Elles sont issues de la pratique opérationnelle réelle dans des environnements hôteliers haut de gamme et construites autour des principes de service courants en 4 et 5 étoiles. Elles restent des références opérationnelles modifiables, pas une certification ni un remplacement de vos standards de marque." },
     },
     {
       q: { en: 'Is the playbook available in French and English?', fr: 'Le playbook est-il disponible en français et en anglais ?' },
@@ -142,7 +142,7 @@ const FAQ: Record<string, { q: { en: string; fr: string }; a: { en: string; fr: 
     },
     {
       q: { en: 'Are updates included?', fr: 'Les mises à jour sont-elles incluses ?' },
-      a: { en: 'Yes. All future updates to this playbook are included at no additional cost.', fr: 'Oui. Toutes les mises à jour futures de ce playbook sont incluses sans frais supplémentaires.' },
+      a: { en: 'Product revisions are included while this playbook is actively maintained. Any material change to delivery, access or update policy should be checked in the commercial terms before purchase.', fr: "Les révisions du produit sont incluses tant que ce playbook est activement maintenu. Toute modification importante concernant la livraison, l’accès ou les mises à jour doit être vérifiée dans les conditions commerciales avant achat." },
     },
   ],
 }

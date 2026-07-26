@@ -149,16 +149,16 @@ const ROLES_EN: ChecklistRole[] = [
 ]
 
 const AUDIT_ROWS_EN: AuditRow[] = [
-  { category: 'Bathroom /35', checkpoint: 'No hair anywhere: floor, corners, shower, behind toilet and bath mat area' },
-  { category: 'Bathroom /35', checkpoint: 'Toilet bowl, under rim, exterior, base and behind toilet fully clean' },
-  { category: 'Bathroom /35', checkpoint: 'Faucets, mirror and shower fixtures polished with no water spots' },
-  { category: 'Bathroom /35', checkpoint: 'Amenities complete, aligned, labels forward and packaging intact' },
-  { category: 'Bedroom /35', checkpoint: 'Bed crisp, wrinkle-free, symmetrical and professionally finished' },
-  { category: 'Bedroom /35', checkpoint: 'All surfaces dust-free: lamps, headboard, TV unit, desk, skirting and frames' },
-  { category: 'Bedroom /35', checkpoint: 'Wardrobe empty, hangers uniform, safe open, drawers clean' },
-  { category: 'Presentation /20', checkpoint: 'Pleasant temperature around 21-22°C and neutral scent with no chemical smell' },
-  { category: 'Presentation /20', checkpoint: 'Stationery, remote, minibar and guest directory positioned to standard' },
-  { category: 'Maintenance /10', checkpoint: 'No unreported faults: lights, HVAC, remote, phone, leaks, hinges or stains' },
+  { category: 'Bathroom', checkpoint: 'No hair anywhere: floor, corners, shower, behind toilet and bath mat area' },
+  { category: 'Bathroom', checkpoint: 'Toilet bowl, under rim, exterior, base and behind toilet fully clean' },
+  { category: 'Bathroom', checkpoint: 'Faucets, mirror and shower fixtures polished with no water spots' },
+  { category: 'Bathroom', checkpoint: 'Amenities complete, aligned, labels forward and packaging intact' },
+  { category: 'Bedroom', checkpoint: 'Bed crisp, wrinkle-free, symmetrical and professionally finished' },
+  { category: 'Bedroom', checkpoint: 'All surfaces dust-free: lamps, headboard, TV unit, desk, skirting and frames' },
+  { category: 'Bedroom', checkpoint: 'Wardrobe empty, hangers uniform, safe open, drawers clean' },
+  { category: 'Presentation', checkpoint: 'Pleasant temperature around 21-22°C and neutral scent with no chemical smell' },
+  { category: 'Presentation', checkpoint: 'Stationery, remote, minibar and guest directory positioned to standard' },
+  { category: 'Maintenance', checkpoint: 'No unreported faults: lights, HVAC, remote, phone, leaks, hinges or stains' },
 ]
 
 const FAQ_EN: FAQItem[] = [
@@ -176,7 +176,7 @@ const FAQ_EN: FAQItem[] = [
   },
   {
     q: 'What is an LQA hotel inspection?',
-    a: 'LQA (Leading Quality Assurance) is an independent hospitality auditing company used by luxury hotels to measure service standards. Their housekeeping inspection covers 60+ criteria including cleanliness, presentation, amenities and staff interaction. LuxOps checklists are designed to meet or exceed LQA standards.',
+    a: 'LQA (Leading Quality Assurance) is an independent hospitality auditing company used by luxury hotels to measure service standards. LuxOps checklists are designed around common luxury-hotel inspection principles and can support internal preparation work. LuxOps is not affiliated with LQA or Forbes Travel Guide, and the checklist is not a certification tool.',
   },
 ]
 
@@ -307,7 +307,7 @@ const FAQ_FR: FAQItem[] = [
   },
   {
     q: "Qu'est-ce qu'un audit LQA dans un hôtel ?",
-    a: "LQA (Leading Quality Assurance) est une société d'audit indépendante utilisée par les hôtels de luxe pour évaluer leurs standards de service. Leur inspection housekeeping couvre plus de 60 critères : propreté, présentation, dotations et interaction avec les collaborateurs. Les checklists LuxOps sont conçues pour atteindre ou dépasser les exigences LQA.",
+    a: "LQA (Leading Quality Assurance) est une société d'audit indépendante utilisée par les hôtels de luxe pour évaluer leurs standards de service. Les checklists LuxOps sont construites autour de principes d'inspection courants dans l'hôtellerie haut de gamme et peuvent aider une préparation interne. LuxOps n'est pas affilié à LQA ni à Forbes Travel Guide, et la checklist n'est pas un outil de certification.",
   },
 ]
 
@@ -384,7 +384,7 @@ const DOWNLOADS_FR: DownloadItem[] = [
 const SOP_STEPS_EN = [
   {
     title: 'Separate departure, stayover, suite and deep clean standards',
-    body: 'The LuxOps Housekeeping Playbook uses different time and inspection expectations: 45-60 minutes for a standard departure, 25-35 minutes for a standard stayover and 90-120 minutes for a deep clean.',
+    body: 'The LuxOps Housekeeping Playbook uses indicative time ranges for high-end properties: 45-60 minutes for a standard departure, 25-35 minutes for a standard stayover and 90-120 minutes for a deep clean. These ranges must be adapted to room size, layout, linen setup, equipment, staffing and brand standard.',
   },
   {
     title: 'Protect the Clean to Inspected workflow',
@@ -403,7 +403,7 @@ const SOP_STEPS_EN = [
 const SOP_STEPS_FR = [
   {
     title: 'Séparer chambre à blanc, recouche, suite et deep cleaning',
-    body: 'Le Playbook LuxOps distingue les temps et standards : 45-60 minutes pour une chambre à blanc standard, 25-35 minutes pour une recouche, 75-90 minutes pour une suite en départ et 90-120 minutes pour un deep cleaning.',
+    body: 'Le Playbook LuxOps distingue des repères de temps indicatifs pour les établissements haut de gamme : 45-60 minutes pour une chambre à blanc standard, 25-35 minutes pour une recouche, 75-90 minutes pour une suite en départ et 90-120 minutes pour un deep cleaning. Ces repères doivent être adaptés à la surface, la configuration, le linge, les équipements, les effectifs et le standard de marque.',
   },
   {
     title: 'Protéger le workflow Clean vers Inspected',
@@ -512,8 +512,8 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
               {
                 title: isEN ? 'Housekeeping Inspection Kit' : 'Kit Inspection Housekeeping',
                 body: isEN
-                  ? 'Use the inspection kit when you need ready-to-use control sheets, room inspection tools and defect tracking.'
-                  : 'Utilisez le kit quand vous avez besoin de feuilles de contrôle, outils d’inspection chambre et suivi des défauts.',
+                  ? 'Use the inspection kit when you need editable control sheets, room inspection tools and defect tracking.'
+                  : 'Utilisez le kit quand vous avez besoin de feuilles de contrôle modifiables, outils d’inspection chambre et suivi des défauts.',
                 href: `/${locale}/playbooks/hsk-starter-pack`,
                 label: isEN ? 'View Inspection Kit' : 'Voir le kit inspection',
                 eventName: 'starter_pack_cta_clicked',
@@ -738,12 +738,12 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
         {/* Audit scoring grid */}
         <section className="max-w-3xl mx-auto px-6 pb-12">
           <h2 className="text-2xl font-bold text-[#1A2E44] mb-2">
-            {isEN ? 'Quality Audit Scoring Grid' : 'Grille de Notation Audit Qualité'}
+            {isEN ? 'Short Quality Audit Scoring Grid' : 'Grille courte de notation qualité'}
           </h2>
           <p className="text-gray-500 text-sm mb-6 leading-relaxed">
             {isEN
-              ? 'Score each point 0 to 2. Total out of 20. Use this to prepare for LQA, Forbes or internal brand audits. 18 to 20: ready for audit. 14 to 17: monitor. Below 14: immediate action required.'
-              : "Notez chaque point de 0 à 2. Total sur 20. Utilisez cette grille pour préparer un audit LQA, Forbes ou un audit interne. 18 à 20 : prêt pour l'audit. 14 à 17 : à surveiller. En dessous de 14 : action immédiate requise."}
+              ? 'Score each point 0 to 2. This visible extract is a short grid out of 20 for internal checks. The complete playbook uses a separate 100-point model with weighted categories. LuxOps is not affiliated with LQA or Forbes Travel Guide.'
+              : "Notez chaque point de 0 à 2. Cet extrait visible est une grille courte sur 20 pour les contrôles internes. Le playbook complet utilise un modèle séparé sur 100 points avec catégories pondérées. LuxOps n'est pas affilié à LQA ni à Forbes Travel Guide."}
           </p>
           <div className="border border-gray-200 rounded-xl overflow-hidden">
             <table className="w-full text-sm">
@@ -857,8 +857,8 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
             </h2>
             <p className="text-blue-100 mb-8">
               {isEN
-                ? 'The LuxOps Housekeeping Playbook includes the full SOP documentation, inspection frameworks, training guides and control tools used by housekeeping teams across luxury and boutique properties. 10 chapters, ready to use.'
-                : "Le Playbook Housekeeping LuxOps comprend l'ensemble de la documentation SOP, les grilles d'inspection, les guides de formation et les outils de contrôle utilisés par les équipes housekeeping des établissements de luxe et boutique. 10 chapitres, prêts à l'emploi."}
+                ? 'The LuxOps Housekeeping Playbook includes the full SOP documentation, inspection frameworks, training guides and control tools used by housekeeping teams across luxury and boutique properties. 10 chapters, ready to adapt to your property.'
+                : "Le Playbook Housekeeping LuxOps comprend l'ensemble de la documentation SOP, les grilles d'inspection, les guides de formation et les outils de contrôle utilisés par les équipes housekeeping des établissements de luxe et boutique. 10 chapitres, prêts à adapter à votre établissement."}
             </p>
             <TrackedLink
               href={`/${locale}/playbooks/hsk`}

@@ -581,7 +581,7 @@ const englishContent = {
     },
   ],
   deliverablesLabel: 'Deliverables',
-  deliverablesTitle: 'Documents ready to use',
+  deliverablesTitle: 'Documents ready to adapt and implement',
   deliverablesIntro:
     'Formats are defined according to the use case: manager reference, training, operational display, daily control or handover support.',
   deliverables: [

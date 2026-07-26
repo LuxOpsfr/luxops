@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       ? 'Hotel Front Office Checklist: Shift Opening, Check-in & Handover | LuxOps'
       : 'Checklist réception : ouverture, check-in et passation de service | LuxOps',
     description: isEN
-      ? 'Free hotel front office checklist: shift opening sequence, check-in and check-out procedure, billing verification and shift handover. Printable and ready to use.'
+      ? 'Free hotel front office checklist: shift opening sequence, check-in and check-out procedure, billing verification and shift handover. Printable and editable.'
       : 'Checklist réception hôtel gratuite : ouverture de service, séquence check-in, vérification facturation et passation. Prête à imprimer et à utiliser.',
     keywords: isEN
       ? 'hotel front office checklist, front desk checklist hotel, hotel reception checklist, front office daily checklist hotel, hotel front desk daily checklist, front desk standard operating procedure'
@@ -517,8 +517,8 @@ export default async function HotelFrontOfficeChecklistPage({ params }: { params
           </h2>
           <p className="text-gray-500 text-sm mb-6 leading-relaxed">
             {isEN
-              ? 'Score each point 0 to 2. Total out of 20. Use this to prepare for LQA, Forbes or internal brand audits. 18 to 20: ready for audit. 14 to 17: monitor. Below 14: immediate action required.'
-              : "Notez chaque point de 0 à 2. Total sur 20. Utilisez cette grille pour préparer un audit LQA, Forbes ou un audit interne. 18 à 20 : prêt pour l'audit. 14 à 17 : à surveiller. En dessous de 14 : action immédiate requise."}
+              ? 'Score each point 0 to 2. Total out of 20. Use this for internal brand checks and preparation work. 18 to 20: strong execution. 14 to 17: monitor. Below 14: immediate action required. LuxOps is not affiliated with LQA or Forbes Travel Guide.'
+              : "Notez chaque point de 0 à 2. Total sur 20. Utilisez cette grille pour les contrôles internes et la préparation qualité. 18 à 20 : exécution solide. 14 à 17 : à surveiller. En dessous de 14 : action immédiate requise. LuxOps n'est pas affilié à LQA ni à Forbes Travel Guide."}
           </p>
           <div className="border border-gray-200 rounded-xl overflow-hidden">
             <table className="w-full text-sm">
@@ -609,7 +609,7 @@ export default async function HotelFrontOfficeChecklistPage({ params }: { params
               {
                 href: `/${locale}/hotel-housekeeping-checklist`,
                 title: isEN ? 'Hotel Housekeeping Checklist' : 'Checklist housekeeping',
-                desc: isEN ? '30-point room inspection, supervisor rounds and LQA scoring grid' : 'Inspection chambre 30 points, tournée superviseur et grille LQA',
+                desc: isEN ? 'Room inspection, supervisor rounds and internal quality scoring grid' : 'Inspection chambre, tournée superviseur et grille qualité interne',
               },
               {
                 href: `/${locale}/hotel-sop`,

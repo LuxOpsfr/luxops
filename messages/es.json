@@ -29,13 +29,13 @@
     "point3_text": "Sin guías estructuradas, cada nueva incorporación empieza casi desde cero. Una documentación clara reduce el tiempo de integración y los errores desde el primer día."
   },
   "solution": {
-    "title": "SOPs y playbooks listos para usar",
-    "text": "Convertimos el conocimiento operativo acumulado en departamentos hoteleros reales en herramientas prácticas que los equipos pueden usar a diario, en cada etapa de la experiencia del huésped."
+    "title": "SOPs y playbooks listos para adaptar",
+    "text": "Convertimos el conocimiento operativo acumulado en departamentos hoteleros reales en herramientas prácticas que los equipos pueden adaptar y usar a diario, en cada etapa de la experiencia del huésped."
   },
   "offers": {
     "title": "Plantillas SOP, formación y auditoría de calidad",
     "digital_title": "Recursos operativos",
-    "digital_desc": "Playbooks y plantillas Notion que tu equipo puede empezar a usar el mismo día. Sin configuración pesada.",
+    "digital_desc": "Playbooks y plantillas operativas editables que tu equipo puede adaptar antes de usarlas en el servicio diario.",
     "digital_cta": "Ver recursos",
     "audit_title": "Auditoría y procesos",
     "audit_desc": "Una auditoría de calidad en profundidad y diseño de procesos a medida, construidos alrededor de cómo funciona realmente tu hotel.",
@@ -49,7 +49,7 @@
     "subtitle": "",
     "stat1": "Procedimientos específicos por departamento",
     "stat2": "Estándares de servicio y checklists",
-    "stat3": "Formato listo para equipos",
+    "stat3": "Formato editable para equipos",
     "stat4": "Versiones FR + EN incluidas"
   },
   "cta_section": {
@@ -108,7 +108,7 @@
     "subtitle": "Espacios de trabajo operativos estructurados alrededor de la forma en que los equipos hoteleros trabajan día a día. Procedimientos, seguimiento de tareas, reporting y coordinación en un solo lugar.",
     "base_title": "Plantilla base de operaciones",
     "base_price": "497€",
-    "base_desc": "Una base de gestión operativa que cubre las funciones diarias que los hoteles suelen seguir en demasiados sistemas separados. Estructurada para uso inmediato, fácil de mantener y construida alrededor de cómo operan realmente los equipos hoteleros.",
+    "base_desc": "Una base de gestión operativa que cubre las funciones diarias que los hoteles suelen seguir en demasiados sistemas separados. Para adaptar antes del despliegue, fácil de mantener y construida alrededor de cómo operan realmente los equipos hoteleros.",
     "base_f1": "Dashboards multi-departamento",
     "base_f2": "Checklists de operaciones diarias",
     "base_f3": "Sistema de seguimiento de incidencias",

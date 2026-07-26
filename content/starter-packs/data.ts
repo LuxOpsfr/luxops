@@ -54,12 +54,12 @@ export const STARTER_PACKS: StarterPackEntry[] = [
       fr: 'Starter Pack Front Office',
     },
     description: {
-      en: 'Ready-to-use front desk checklists, handover templates and guest communication tools designed to structure the daily basics of reception operations.',
-      fr: 'Checklists réception, templates de passation et outils de communication client prêts à utiliser pour structurer les bases quotidiennes des opérations Front Office.',
+      en: 'Editable front desk checklists, handover templates and guest communication tools designed to structure the daily basics of reception operations.',
+      fr: 'Checklists réception, templates de passation et outils de communication client modifiables pour structurer les bases quotidiennes des opérations Front Office.',
     },
     subtitle: {
-      en: 'Ready-to-use front desk checklists, handover templates and guest communication tools.',
-      fr: 'Checklists réception, templates de passation et outils de communication client prêts à utiliser.',
+      en: 'Editable front desk checklists, handover templates and guest communication tools.',
+      fr: 'Checklists réception, templates de passation et outils de communication client modifiables.',
     },
     supportLine: {
       en: 'For Front Office Managers, Reception Supervisors and Hotel Managers who want practical tools their team can use immediately.',
@@ -116,7 +116,7 @@ export const STARTER_PACKS: StarterPackEntry[] = [
         'Standardise front desk basics',
         'Improve shift handovers',
         'Handle guest requests more consistently',
-        'Give teams ready-to-use scripts',
+        'Give teams editable scripts',
         'Speed up onboarding',
         'Support upselling and service standards',
       ],
@@ -124,7 +124,7 @@ export const STARTER_PACKS: StarterPackEntry[] = [
         'Standardiser les bases de la réception',
         'Améliorer les passations de shift',
         'Traiter les demandes clients plus régulièrement',
-        'Donner des scripts prêts à utiliser aux équipes',
+        'Donner des scripts modifiables aux équipes',
         'Accélérer l’onboarding',
         'Soutenir l’upselling et les standards de service',
       ],
@@ -195,8 +195,8 @@ export const STARTER_PACKS: StarterPackEntry[] = [
           fr: 'Quelle différence avec le playbook complet ?',
         },
         answer: {
-          en: 'The Starter Pack gives you ready-to-use daily tools. The full playbook gives you the complete SOP reference and operational structure behind the department.',
-          fr: 'Le Starter Pack donne des outils quotidiens prêts à utiliser. Le playbook complet apporte la référence SOP complète et la structure opérationnelle du département.',
+          en: 'The Starter Pack gives you editable daily tools. The full playbook gives you the complete SOP reference and operational structure behind the department.',
+          fr: 'Le Starter Pack donne des outils quotidiens modifiables. Le playbook complet apporte la référence SOP complète et la structure opérationnelle du département.',
         },
       },
     ],
@@ -207,7 +207,7 @@ export const STARTER_PACKS: StarterPackEntry[] = [
     seo: {
       title: 'Hotel Front Office Starter Pack | LuxOps',
       description:
-        'Ready-to-use front desk checklists, handover templates and guest communication tools for hotel reception teams.',
+        'Editable front desk checklists, handover templates and guest communication tools for hotel reception teams.',
     },
   },
   {
@@ -224,12 +224,12 @@ export const STARTER_PACKS: StarterPackEntry[] = [
       fr: 'Kit Inspection Housekeeping',
     },
     description: {
-      en: 'Ready-to-use room inspection checklists, control sheets and defect tracking tools for housekeeping teams looking to improve daily consistency.',
-      fr: 'Checklists d’inspection chambre, feuilles de contrôle et outils de suivi des défauts prêts à utiliser pour améliorer la régularité quotidienne en housekeeping.',
+      en: 'Editable room inspection checklists, control sheets and defect tracking tools for housekeeping teams looking to improve daily consistency.',
+      fr: 'Checklists d’inspection chambre, feuilles de contrôle et outils de suivi des défauts modifiables pour améliorer la régularité quotidienne en housekeeping.',
     },
     subtitle: {
-      en: 'Ready-to-use room inspection checklists and control tools for housekeeping teams.',
-      fr: 'Checklists d’inspection chambre et outils de contrôle prêts à utiliser pour les équipes housekeeping.',
+      en: 'Editable room inspection checklists and control tools for housekeeping teams.',
+      fr: 'Checklists d’inspection chambre et outils de contrôle modifiables pour les équipes housekeeping.',
     },
     supportLine: {
       en: 'For Housekeeping Managers, Executive Housekeepers and Floor Supervisors who want practical tools to improve inspection consistency and reduce missed details.',
@@ -374,7 +374,7 @@ export const STARTER_PACKS: StarterPackEntry[] = [
     seo: {
       title: 'Hotel Housekeeping Inspection Kit | LuxOps',
       description:
-        'Ready-to-use room inspection checklists, supervisor control sheets and housekeeping tools for hotel teams.',
+        'Editable room inspection checklists, supervisor control sheets and housekeeping tools for hotel teams.',
     },
   },
   {
@@ -391,12 +391,12 @@ export const STARTER_PACKS: StarterPackEntry[] = [
       fr: 'Starter Pack F&B',
     },
     description: {
-      en: 'Ready-to-use restaurant, bar and room service tools designed to structure daily F&B service basics with practical checklists, scripts and control points.',
-      fr: 'Outils restaurant, bar et room service prêts à utiliser pour structurer les bases quotidiennes du service F&B avec checklists, scripts et points de contrôle concrets.',
+      en: 'Editable restaurant, bar and room service tools designed to structure daily F&B service basics with practical checklists, scripts and control points.',
+      fr: 'Outils restaurant, bar et room service modifiables pour structurer les bases quotidiennes du service F&B avec checklists, scripts et points de contrôle concrets.',
     },
     subtitle: {
-      en: 'Ready-to-use restaurant, bar and room service checklists, scripts and control tools.',
-      fr: 'Checklists, scripts et outils de contrôle prêts à utiliser pour le restaurant, le bar et le room service.',
+      en: 'Editable restaurant, bar and room service checklists, scripts and control tools.',
+      fr: 'Checklists, scripts et outils de contrôle modifiables pour le restaurant, le bar et le room service.',
     },
     supportLine: {
       en: 'For F&B Managers, Restaurant Managers, Outlet Supervisors and Hotel Managers who want practical tools their teams can use immediately.',
@@ -544,7 +544,7 @@ export const STARTER_PACKS: StarterPackEntry[] = [
     seo: {
       title: 'Hotel F&B Service Starter Pack | LuxOps',
       description:
-        'Ready-to-use restaurant, bar and room service checklists, scripts and control tools for hotel F&B teams.',
+        'Editable restaurant, bar and room service checklists, scripts and control tools for hotel F&B teams.',
     },
   },
 ]

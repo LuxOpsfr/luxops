@@ -206,7 +206,7 @@ const SEQUENCE_EN: ResourceContent = {
   ],
   finalTitle: 'Turn the sequence into daily service tools',
   finalText:
-    'Use the starter pack for ready-to-use checklists and the full playbook when you need the complete F&B department reference.',
+    'Use the starter pack for editable checklists and the full playbook when you need the complete F&B department reference.',
 }
 
 const SEQUENCE_FR: ResourceContent = {
@@ -708,7 +708,7 @@ const RESTAURANT_OPENING_EN: ResourceContent = {
   ],
   finalTitle: 'Prepare the restaurant before pressure starts',
   finalText:
-    'Use the starter pack for ready-to-use restaurant opening tools and the full playbook when you need the complete F&B operating reference.',
+    'Use the starter pack for editable restaurant opening tools and the full playbook when you need the complete F&B operating reference.',
 }
 
 const RESTAURANT_OPENING_FR: ResourceContent = {
@@ -952,7 +952,7 @@ const BAR_OPENING_EN: ResourceContent = {
   ],
   finalTitle: 'Prepare the bar before service pressure starts',
   finalText:
-    'Use the starter pack for ready-to-use F&B tools and the full playbook when you need the complete bar and service operating reference.',
+    'Use the starter pack for editable F&B tools and the full playbook when you need the complete bar and service operating reference.',
 }
 
 const BAR_OPENING_FR: ResourceContent = {
@@ -1198,7 +1198,7 @@ const RESTAURANT_CLOSING_EN: ResourceContent = {
   ],
   finalTitle: 'Close the restaurant with the next service in mind',
   finalText:
-    'Use the starter pack for ready-to-use F&B closing tools and the full playbook when you need the complete restaurant operating reference.',
+    'Use the starter pack for editable F&B closing tools and the full playbook when you need the complete restaurant operating reference.',
 }
 
 const RESTAURANT_CLOSING_FR: ResourceContent = {

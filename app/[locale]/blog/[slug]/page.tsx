@@ -215,7 +215,7 @@ const PLAYBOOK_EXCERPTS: Record<string, {
         'A real SOP does not say “clean the room well.” It defines timing, ownership, sequence, exceptions and the status update that allows the next department to act.',
       rows: [
         { term: 'Trigger', detail: 'Departure room after guest checkout.' },
-        { term: 'Timing', detail: '45-60 minutes for a standard room, 75-90 minutes for a suite, full inspection required before release.' },
+        { term: 'Timing', detail: 'Indicative 45-60 minutes for a standard high-end room, 75-90 minutes for a suite, then full inspection before release.' },
         { term: 'Sequence', detail: 'Initial assessment, bathroom deep clean, bedroom cleaning, bed making, closet/storage, minibar, final presentation.' },
         { term: 'Exception', detail: 'Guest belongings found during initial assessment: stop cleaning and follow Lost & Found immediately.' },
         { term: 'Handover', detail: 'Attendant sets Clean; supervisor inspects and sets Inspected; Front Office may now assign the room.' },
@@ -230,7 +230,7 @@ const PLAYBOOK_EXCERPTS: Record<string, {
         'Une vraie SOP ne dit pas “bien nettoyer la chambre”. Elle définit le timing, le responsable, la séquence, les exceptions et le statut qui permet au département suivant d’agir.',
       rows: [
         { term: 'Déclencheur', detail: 'Chambre départ après check-out client.' },
-        { term: 'Timing', detail: '45-60 minutes pour une chambre standard, 75-90 minutes pour une suite, inspection obligatoire avant libération.' },
+        { term: 'Timing', detail: 'Repère indicatif de 45-60 minutes pour une chambre standard haut de gamme, 75-90 minutes pour une suite, puis inspection obligatoire avant libération.' },
         { term: 'Séquence', detail: 'Évaluation initiale, salle de bain, chambre, lit, penderie, minibar, présentation finale.' },
         { term: 'Exception', detail: 'Objet client trouvé pendant l’évaluation initiale : arrêt du nettoyage et procédure objets trouvés.' },
         { term: 'Passation', detail: 'La chambre passe en propre, puis la gouvernante inspecte et libère en inspectée pour la réception.' },
@@ -613,8 +613,8 @@ const PLAYBOOK_EXCERPTS: Record<string, {
       title: 'Room attendant checklist: the LuxOps daily sequence',
       intro: 'This extract is adapted from the room cleaning standards chapter. It links trolley setup, room entry, departure cleaning, stayover service and final self-inspection.',
       rows: [
-        { term: 'Departure room', detail: '45-60 minutes for a standard room, following the 7-phase sequence before supervisor inspection.' },
-        { term: 'Stayover', detail: '25-35 minutes, refresh without disturbing guest belongings or preferences.' },
+        { term: 'Departure room', detail: 'Indicative 45-60 minutes for a standard high-end room, following the 7-phase sequence before supervisor inspection.' },
+        { term: 'Stayover', detail: 'Indicative 25-35 minutes, refreshing without disturbing guest belongings or preferences.' },
         { term: 'DND', detail: 'Do not knock, do not enter, document and follow the property contact protocol.' },
         { term: 'Release rule', detail: 'Room attendant marks Clean; supervisor releases as Inspected.' },
       ],
@@ -626,8 +626,8 @@ const PLAYBOOK_EXCERPTS: Record<string, {
       title: 'Checklist équipier d’étage : la séquence quotidienne LuxOps',
       intro: 'Cet extrait est adapté du chapitre Standards & procédures de nettoyage des chambres. Il relie chariot, entrée en chambre, chambre à blanc, recouche et auto-contrôle final.',
       rows: [
-        { term: 'Chambre à blanc', detail: '45-60 minutes pour une chambre standard, avec séquence en 7 phases avant inspection gouvernante.' },
-        { term: 'Recouche', detail: '25-35 minutes, rafraîchir la chambre sans déranger les affaires ni les préférences client.' },
+        { term: 'Chambre à blanc', detail: 'Repère indicatif de 45-60 minutes pour une chambre standard haut de gamme, avec séquence en 7 phases avant inspection gouvernante.' },
+        { term: 'Recouche', detail: 'Repère indicatif de 25-35 minutes, en rafraîchissant la chambre sans déranger les affaires ni les préférences client.' },
         { term: 'DND', detail: 'Ne pas frapper, ne pas entrer, documenter et suivre le protocole de contact de l’établissement.' },
         { term: 'Libération', detail: 'L’équipier passe en Propre ; la gouvernante libère en Inspectée.' },
       ],
@@ -643,8 +643,8 @@ const PLAYBOOK_EXCERPTS: Record<string, {
       rows: [
         { term: 'Trolley first', detail: 'Stock linen, amenities, chemicals and colour-coded microfibres before leaving the pantry.' },
         { term: 'Entry protocol', detail: 'Knock, announce, wait, repeat, open partially and announce again before entering.' },
-        { term: 'Departure room', detail: '45-60 minutes for a standard room, using the 7-phase sequence from assessment to final presentation.' },
-        { term: 'Stayover', detail: '25-35 minutes, refresh the room without disturbing guest belongings or preferences.' },
+        { term: 'Departure room', detail: 'Indicative 45-60 minutes for a standard high-end room, using the 7-phase sequence from assessment to final presentation.' },
+        { term: 'Stayover', detail: 'Indicative 25-35 minutes, refreshing the room without disturbing guest belongings or preferences.' },
         { term: 'Self-check', detail: 'The attendant stands at the doorway and inspects the room as the next guest would.' },
       ],
       ctaText: 'View the Housekeeping Playbook',
@@ -657,8 +657,8 @@ const PLAYBOOK_EXCERPTS: Record<string, {
       rows: [
         { term: 'Chariot d’abord', detail: 'Préparer linge, amenities, produits et microfibres code couleur avant de quitter l’office.' },
         { term: 'Entrée chambre', detail: 'Frapper, annoncer, attendre, répéter, ouvrir partiellement puis annoncer à nouveau avant d’entrer.' },
-        { term: 'Chambre à blanc', detail: '45-60 minutes pour une chambre standard, avec séquence en 7 phases jusqu’à la présentation finale.' },
-        { term: 'Recouche', detail: '25-35 minutes, rafraîchir la chambre sans déranger les affaires ni préférences client.' },
+        { term: 'Chambre à blanc', detail: 'Repère indicatif de 45-60 minutes pour une chambre standard haut de gamme, avec séquence en 7 phases jusqu’à la présentation finale.' },
+        { term: 'Recouche', detail: 'Repère indicatif de 25-35 minutes, en rafraîchissant la chambre sans déranger les affaires ni préférences client.' },
         { term: 'Auto-contrôle', detail: 'Le Room Attendant se place à la porte et inspecte la chambre comme le prochain client.' },
       ],
       ctaText: 'Voir le Playbook Housekeeping',
@@ -807,7 +807,7 @@ const ARTICLE_PRODUCT_CTAS: Record<string, {
     en: {
       label: 'Housekeeping tools',
       title: 'Need a practical room inspection toolkit?',
-      text: 'Use the inspection kit for ready-to-use control sheets, or the full playbook for the complete housekeeping SOP system.',
+      text: 'Use the inspection kit for editable control sheets, or the full playbook for the complete housekeeping SOP system.',
       primaryText: 'View the Housekeeping Inspection Kit',
       primaryHref: '/en/playbooks/hsk-starter-pack',
       secondaryText: 'View the Housekeeping Playbook',
@@ -816,7 +816,7 @@ const ARTICLE_PRODUCT_CTAS: Record<string, {
     fr: {
       label: 'Outils housekeeping',
       title: 'Besoin d’un kit pratique pour contrôler les chambres ?',
-      text: 'Utilisez le kit inspection pour les feuilles de contrôle prêtes à l’emploi, ou le playbook complet pour toute la structure SOP du département.',
+      text: 'Utilisez le kit inspection pour les feuilles de contrôle modifiables, ou le playbook complet pour toute la structure SOP du département.',
       primaryText: 'Voir le Kit Inspection Housekeeping',
       primaryHref: '/fr/playbooks/hsk-starter-pack',
       secondaryText: 'Voir le Playbook Housekeeping',
@@ -846,7 +846,7 @@ const ARTICLE_PRODUCT_CTAS: Record<string, {
   'hotel-front-desk-procedures': {
     en: {
       label: 'Front Office tools',
-      title: 'Need ready-to-use front desk procedures?',
+      title: 'Need editable front desk procedures?',
       text: 'Start with practical templates for daily reception work, or go deeper with the complete Front Office Playbook.',
       primaryText: 'View the Front Office Starter Pack',
       primaryHref: '/en/playbooks/fo-starter-pack',
@@ -855,7 +855,7 @@ const ARTICLE_PRODUCT_CTAS: Record<string, {
     },
     fr: {
       label: 'Outils Front Office',
-      title: 'Besoin de procédures réception prêtes à utiliser ?',
+      title: 'Besoin de procédures réception prêtes à adapter ?',
       text: 'Commencez avec des modèles pratiques pour le quotidien de la réception, ou allez plus loin avec le Playbook Front Office complet.',
       primaryText: 'Voir le Starter Pack Front Office',
       primaryHref: '/fr/playbooks/fo-starter-pack',
@@ -866,7 +866,7 @@ const ARTICLE_PRODUCT_CTAS: Record<string, {
   'hotel-fb-service-standards': {
     en: {
       label: 'F&B tools',
-      title: 'Need ready-to-use F&B service tools?',
+      title: 'Need editable F&B service tools?',
       text: 'Start with practical restaurant, bar and room service checklists, or go deeper with the complete F&B Playbook.',
       primaryText: 'View the F&B Starter Pack',
       primaryHref: '/en/playbooks/fb-starter-pack',
@@ -875,7 +875,7 @@ const ARTICLE_PRODUCT_CTAS: Record<string, {
     },
     fr: {
       label: 'Outils F&B',
-      title: 'Vous voulez des outils F&B prêts à utiliser sur le terrain ?',
+      title: 'Vous voulez des outils F&B prêts à adapter sur le terrain ?',
       text: 'Le starter pack rassemble des checklists pratiques pour le restaurant, le bar et le room service. Le playbook F&B complet va plus loin avec toute la structure SOP du département.',
       primaryText: 'Voir le starter pack F&B',
       primaryHref: '/fr/playbooks/fb-starter-pack',

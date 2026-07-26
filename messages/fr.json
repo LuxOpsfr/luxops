@@ -29,13 +29,13 @@
     "point3_text": "Sans support structuré, chaque nouvelle recrue repart presque de zéro. Des procédures claires raccourcissent l'intégration et sécurisent l'exécution dès les premiers jours."
   },
   "solution": {
-    "title": "SOPs et playbooks prêts à utiliser",
-    "text": "LuxOps rassemble des méthodes de travail construites dans l'exploitation hôtelière, puis les transforme en outils utilisables par les équipes, service après service, étape après étape."
+    "title": "SOPs et playbooks prêts à adapter",
+    "text": "LuxOps rassemble des méthodes de travail construites dans l'exploitation hôtelière, puis les transforme en outils modifiables par les équipes, service après service, étape après étape."
   },
   "offers": {
     "title": "Modèles SOP, Formation & Audit Qualité",
     "digital_title": "Ressources Opérationnelles",
-    "digital_desc": "Des playbooks et espaces Notion conçus pour être utilisés immédiatement par les équipes et les managers, sans déploiement lourd ni adaptation complexe.",
+    "digital_desc": "Des playbooks et templates opérationnels modifiables, conçus pour être adaptés avant l’usage quotidien par les équipes.",
     "digital_cta": "Voir les Ressources",
     "audit_title": "Audit & Process",
     "audit_desc": "Un audit opérationnel pour identifier les points de fragilité, puis un travail de structuration pour remettre de la cohérence là où elle manque.",
@@ -49,12 +49,12 @@
     "subtitle": "",
     "stat1": "Procédures par département",
     "stat2": "Standards de service et checklists",
-    "stat3": "Format prêt pour les équipes",
+    "stat3": "Format modifiable pour les équipes",
     "stat4": "Versions FR + EN incluses"
   },
   "cta_section": {
     "title": "Vous cherchez à mieux structurer vos opérations ?",
-    "text": "Qu'il s'agisse d'un outil prêt à l'emploi, d'un audit ou d'un travail plus approfondi sur vos procédures, LuxOps peut vous accompagner.",
+    "text": "Qu'il s'agisse d'un outil opérationnel, d'un audit ou d'un travail plus approfondi sur vos procédures, LuxOps peut vous accompagner.",
     "cta": "Nous Contacter"
   },
   "playbooks_page": {
@@ -108,7 +108,7 @@
     "subtitle": "Des espaces de travail opérationnels structurés autour du fonctionnement réel des équipes hôtelières. Procédures, suivi des tâches, reporting et coordination réunis en un seul endroit.",
     "base_title": "Template Base Opérations",
     "base_price": "497€",
-    "base_desc": "Une base de gestion opérationnelle qui couvre les fonctions quotidiennes que les hôtels gèrent habituellement dans trop de systèmes séparés. Prête à l'emploi, facile à maintenir, et conçue autour du fonctionnement réel des équipes.",
+    "base_desc": "Une base de gestion opérationnelle qui couvre les fonctions quotidiennes que les hôtels gèrent habituellement dans trop de systèmes séparés. À adapter avant déploiement, facile à maintenir, et conçue autour du fonctionnement réel des équipes.",
     "base_f1": "Tableaux de bord multi-départements",
     "base_f2": "Checklists opérations journalières",
     "base_f3": "Suivi des incidents",

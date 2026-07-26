@@ -293,7 +293,7 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: 'Measurable standard',
-              text: 'Attach the quality target to the procedure. A housekeeping SOP can include 45-60 minutes for a standard departure, 25-35 minutes for a stayover, no hair anywhere in the bathroom, and a 90/100 room inspection pass threshold.',
+              text: 'Attach the quality target to the procedure. A housekeeping SOP can include indicative high-end timing ranges, no hair anywhere in the bathroom, and a 90/100 room inspection pass threshold, then adapt the timing to room size, layout and staffing.',
             },
             {
               heading: 'Exceptions and escalation',
@@ -2445,7 +2445,7 @@ export const articles: BilingualArticle[] = [
         {
           h2: 'What Hotel Standard Operating Procedures Actually Are',
           content:
-            'A hotel SOP is a written operating sequence for one task, owned by one role, performed to one standard and verified by one quality control point. That definition matters. "Keep rooms clean" is not an SOP. "Clean a standard departure room in 45-60 minutes, follow the 7-phase sequence, mark it Clean, then wait for supervisor inspection before release" is an SOP.',
+            'A hotel SOP is a written operating sequence for one task, owned by one role, performed to one standard and verified by one quality control point. That definition matters. "Keep rooms clean" is not an SOP. "Clean a standard high-end departure room against an adapted timing target, follow the 7-phase sequence, mark it Clean, then wait for supervisor inspection before release" is an SOP.',
           h3Items: [
             {
               heading: 'SOPs vs. policies vs. training documents',
@@ -3715,7 +3715,7 @@ export const articles: BilingualArticle[] = [
         {
           h2: 'Chambre à blanc : SOP en 7 phases',
           content:
-            "La chambre à blanc est la prestation la plus complète, car la chambre doit sembler intacte pour le prochain client. Le repère LuxOps est de 45 à 60 minutes pour une chambre standard, sans jamais sacrifier la qualité à la rapidité.",
+            "La chambre à blanc est la prestation la plus complète, car la chambre doit sembler intacte pour le prochain client. Le repère LuxOps est indicatif : 45 à 60 minutes pour une chambre standard haut de gamme, à adapter à la surface, aux équipements et au standard de l'établissement.",
           h3Items: [
             {
               heading: 'Phase 1 : évaluation initiale',
@@ -3778,7 +3778,7 @@ export const articles: BilingualArticle[] = [
         {
           question: "Combien de temps faut-il pour remettre une chambre d'hôtel ?",
           answer:
-            "Dans le Playbook Housekeeping LuxOps, le repère est de 45 à 60 minutes pour une chambre à blanc standard, 25 à 35 minutes pour une recouche et 90 à 120 minutes pour un grand nettoyage.",
+            "Dans le Playbook Housekeeping LuxOps, les repères indicatifs sont de 45 à 60 minutes pour une chambre à blanc standard haut de gamme, 25 à 35 minutes pour une recouche et 90 à 120 minutes pour un grand nettoyage. Ils doivent être adaptés à la surface, aux équipements, au niveau de service et à l'organisation de l'équipe.",
         },
       ],
     },
@@ -4247,7 +4247,7 @@ export const articles: BilingualArticle[] = [
         {
           h2: 'Departure room cleaning: the 7-phase sequence',
           content:
-            'A departure room is the full reset of the guest room. The LuxOps standard uses a 45-60 minute target for a standard room and a fixed seven-phase sequence. The sequence matters because it prevents rework and keeps quality consistent from one attendant to another.',
+            'A departure room is the full reset of the guest room. The LuxOps model uses an indicative 45-60 minute target for a standard high-end room and a fixed seven-phase sequence. The sequence matters because it prevents rework and keeps quality consistent from one attendant to another.',
           h3Items: [
             {
               heading: '1. Initial assessment',
@@ -4282,7 +4282,7 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: 'Timing standard',
-              text: 'A standard stayover usually targets 25-35 minutes. Suites and complex rooms require more time, especially when the guest has settled in for a long stay.',
+              text: 'A standard stayover often uses an indicative 25-35 minute range. Suites and complex rooms require more time, especially when the guest has settled in for a long stay.',
             },
           ],
         },
@@ -4309,7 +4309,7 @@ export const articles: BilingualArticle[] = [
         {
           question: 'How long should it take to clean a hotel room?',
           answer:
-            'The LuxOps benchmark is 45-60 minutes for a standard departure room, 25-35 minutes for a standard stayover and 90-120 minutes for a deep clean. Suites require more time depending on size and setup.',
+            'LuxOps uses indicative high-end ranges: 45-60 minutes for a standard departure room, 25-35 minutes for a standard stayover and 90-120 minutes for a deep clean. Adapt them to room size, setup, equipment, staffing and brand standard.',
         },
         {
           question: 'What is the difference between a departure room and a stayover?',
@@ -4360,7 +4360,7 @@ export const articles: BilingualArticle[] = [
         {
           h2: 'Chambre à blanc : la séquence en 7 phases',
           content:
-            'Une chambre à blanc est une remise en état complète pour le prochain client. Le standard LuxOps prévoit 45 à 60 minutes pour une chambre standard, avec une séquence fixe en sept phases. Cet ordre évite les retours arrière, limite les oublis et rend la qualité plus constante d’un Room Attendant à l’autre.',
+            'Une chambre à blanc est une remise en état complète pour le prochain client. Le modèle LuxOps utilise un repère indicatif de 45 à 60 minutes pour une chambre standard haut de gamme, avec une séquence fixe en sept phases. Cet ordre évite les retours arrière, limite les oublis et rend la qualité plus constante d’un Room Attendant à l’autre.',
           h3Items: [
             {
               heading: '1. Évaluation initiale',
@@ -4395,7 +4395,7 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: 'Temps cible',
-              text: 'Une recouche standard vise généralement 25 à 35 minutes. Les suites et longs séjours nécessitent plus de temps, surtout lorsque le client s’est installé dans la chambre.',
+              text: 'Une recouche standard utilise souvent un repère indicatif de 25 à 35 minutes. Les suites et longs séjours nécessitent plus de temps, surtout lorsque le client s’est installé dans la chambre.',
             },
           ],
         },
@@ -4422,7 +4422,7 @@ export const articles: BilingualArticle[] = [
         {
           question: 'Combien de temps faut-il pour nettoyer une chambre d’hôtel ?',
           answer:
-            'Le repère LuxOps est de 45 à 60 minutes pour une chambre à blanc standard, 25 à 35 minutes pour une recouche et 90 à 120 minutes pour un deep cleaning. Les suites demandent plus de temps selon leur taille.',
+            'LuxOps utilise des repères indicatifs pour l’hôtellerie haut de gamme : 45 à 60 minutes pour une chambre à blanc standard, 25 à 35 minutes pour une recouche et 90 à 120 minutes pour un deep cleaning. Ils doivent être adaptés à la surface, aux équipements, aux effectifs et au standard de marque.',
         },
         {
           question: 'Quelle différence entre chambre à blanc et recouche ?',
@@ -4527,12 +4527,12 @@ export const articles: BilingualArticle[] = [
         {
           question: 'Should every hotel departure room be inspected?',
           answer:
-            'For luxury and high-standard properties, yes. The LuxOps standard is 100% supervisor inspection of departure rooms before they are released as Inspected.',
+            'For luxury and high-standard properties, yes. The LuxOps model recommends 100% supervisor inspection of departure rooms before they are released as Inspected.',
         },
         {
           question: 'What percentage of stayover rooms should supervisors check?',
           answer:
-            'The LuxOps benchmark is 20-30% of stayover rooms daily, prioritising new attendants, VIP rooms, long stays and rooms linked to prior complaints.',
+            'LuxOps uses an indicative 20-30% daily stayover spot-check range, prioritising new attendants, VIP rooms, long stays and rooms linked to prior complaints.',
         },
       ],
     },
@@ -4629,12 +4629,12 @@ export const articles: BilingualArticle[] = [
         {
           question: 'Faut-il inspecter toutes les chambres départ ?',
           answer:
-            'Pour un établissement haut de gamme, oui. Le standard LuxOps prévoit 100% d’inspection par la gouvernante sur les chambres départ avant passage en Inspected.',
+            'Pour un établissement haut de gamme, oui. Le modèle LuxOps recommande 100% d’inspection par la gouvernante sur les chambres départ avant passage en Inspected.',
         },
         {
           question: 'Quel pourcentage de recouches contrôler ?',
           answer:
-            'Le repère LuxOps est de contrôler 20 à 30% des recouches chaque jour, avec priorité aux nouveaux Room Attendants, VIP, longs séjours et chambres liées à une réclamation.',
+            'LuxOps utilise un repère indicatif de 20 à 30% des recouches chaque jour, avec priorité aux nouveaux Room Attendants, VIP, longs séjours et chambres liées à une réclamation.',
         },
       ],
     },

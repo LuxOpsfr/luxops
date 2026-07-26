@@ -43,7 +43,7 @@ const CONTENT = {
     eyebrow: 'Free PDF resources',
     h1: 'Free Printable Hotel Checklists',
     subtitle:
-      'Practical PDF checklists adapted from LuxOps operational resources, organized by department and ready to use on the floor.',
+      'Practical PDF checklists adapted from LuxOps operational resources and organized by department for quick local adaptation on the floor.',
     intro:
       'Start with the free printable checklist when you need a simple floor tool. Use the Starter Pack when you need editable files, templates and scripts, and the full Playbook when you need the complete SOP reference.',
     downloadLabel: 'Download PDF',

@@ -17,6 +17,10 @@ export async function generateMetadata({
     description: isEn
       ? 'Notion-based operational management workspaces for hotels. Customisable SOP library, procedures and standards structured for hotel teams. Available now.'
       : 'Espaces Notion de gestion opérationnelle pour hôtels. SOPs, procédures et standards structurés pour équipes hôtelières. Disponibles immédiatement.',
+    robots: {
+      index: false,
+      follow: true,
+    },
     alternates: {
       canonical: `https://www.luxops.fr/${locale}/notion-templates`,
       languages: {

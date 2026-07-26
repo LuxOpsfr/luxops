@@ -1,8 +1,7 @@
 'use client'
 
-import { createContext, ReactNode, useContext, useEffect, useMemo, useState } from 'react'
+import { createContext, ReactNode, useContext, useMemo, useState } from 'react'
 import {
-  currencyForCountry,
   formatPrice,
   getProductPrice,
   isSupportedCurrency,
@@ -39,32 +38,6 @@ export function CurrencyProvider({
     const storedCurrency = window.localStorage.getItem(STORAGE_KEY)
     return isSupportedCurrency(storedCurrency) ? storedCurrency : defaultCurrency
   })
-
-  useEffect(() => {
-    const storedCurrency = window.localStorage.getItem(STORAGE_KEY)
-
-    if (isSupportedCurrency(storedCurrency)) {
-      return
-    }
-
-    let cancelled = false
-
-    fetch('/api/geo')
-      .then((response) => (response.ok ? response.json() : null))
-      .then((data: { country?: string } | null) => {
-        if (cancelled) return
-        const detectedCurrency = currencyForCountry(data?.country)
-        setCurrencyState(detectedCurrency)
-      })
-      .catch(() => {
-        if (cancelled) return
-        setCurrencyState(defaultCurrency)
-      })
-
-    return () => {
-      cancelled = true
-    }
-  }, [defaultCurrency])
 
   function setCurrency(nextCurrency: SupportedCurrency) {
     setCurrencyState(nextCurrency)

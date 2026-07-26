@@ -300,8 +300,8 @@ export default async function HousekeepingSopPage({ params }: { params: Promise<
             </h2>
             <p className="text-gray-600 leading-relaxed mb-6">
               {isEN
-                ? 'The departure room SOP in the LuxOps playbook is built around a 7-phase sequence, a 45-60 minute standard for a 25m² room, and a hard rule: a room marked Clean by the attendant is not sellable until a supervisor marks it Inspected.'
-                : "La SOP chambre départ du playbook LuxOps repose sur une séquence en 7 phases, un standard de 45 à 60 minutes pour une chambre de 25m², et une règle ferme : une chambre passée en propre par l'équipier n'est pas vendable tant qu'une gouvernante ne l'a pas passée en inspectée."}
+                ? 'The departure room SOP in the LuxOps playbook is built around a 7-phase sequence, an indicative 45-60 minute target for a standard high-end room, and a hard rule: a room marked Clean by the attendant is not sellable until a supervisor marks it Inspected. The timing must be adapted to room size, layout, amenities and staffing.'
+                : "La SOP chambre départ du playbook LuxOps repose sur une séquence en 7 phases, un repère indicatif de 45 à 60 minutes pour une chambre standard haut de gamme, et une règle ferme : une chambre passée en propre par l'équipier n'est pas vendable tant qu'une gouvernante ne l'a pas passée en inspectée. Le timing doit être adapté à la surface, la configuration, les équipements et les effectifs."}
             </p>
             <div className="grid sm:grid-cols-2 gap-4">
               {(isEN ? [

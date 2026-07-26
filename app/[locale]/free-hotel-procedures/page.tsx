@@ -40,14 +40,14 @@ export default async function FreeHotelProceduresPage({
         'The 5 core operating principles of the department',
         'How to use the playbook with your team',
         'Adaptation guide by property type and size',
-        'Quality standards and regulatory framework (LQA, Forbes)',
+        'Internal quality standards and audit preparation framework',
         'Quick-start guide by role: new staff, experienced staff, trainers',
       ]
     : [
         'Les 5 principes fondamentaux du département',
         "Comment utiliser le playbook avec votre équipe",
         "Guide d'adaptation par type et taille d'établissement",
-        'Référentiel qualité et cadre réglementaire (LQA, Forbes)',
+        'Référentiel qualité interne et cadre de préparation audit',
         'Guide de démarrage rapide par rôle : nouveau collaborateur, expérimenté, formateur',
       ]
 
