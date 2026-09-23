@@ -40,6 +40,9 @@ type PlaybooksPageCopy = {
   playbooksText: string
   allFilter: string
   playbookValueProps: string[]
+  credibilityLabel: string
+  credibilityTitle: string
+  credibilityText: string[]
   addedLabel: string
   addStarterPack: (price: string) => string
   addPlaybook: (price: string) => string
@@ -86,6 +89,12 @@ const pageCopy = {
       'Each full playbook gives the department a structured reference: service sequences, SOPs, scripts, manager checkpoints and training material.',
     allFilter: 'All',
     playbookValueProps: ['Complete SOP reference', 'PDF + PowerPoint', 'FR & EN included'],
+    credibilityLabel: 'Built from operational experience',
+    credibilityTitle: 'A practical starting point shaped by 15 years on the floor.',
+    credibilityText: [
+      'LuxOps manuals are independently authored from experience designing, implementing, training and refining procedures in luxury hotel operations. That experience includes working with demanding quality frameworks such as LQA, Forbes Travel Guide and American Express Fine Hotels + Resorts program expectations.',
+      'Each manual is deliberately structured as a neutral, editable base that can be adapted to your property, brand standards, systems and local requirements.',
+    ],
     addedLabel: 'In Cart',
     addStarterPack: (price: string) => `Add to cart · ${price}`,
     addPlaybook: (price: string) => `Add to cart · ${price}`,
@@ -149,6 +158,12 @@ const pageCopy = {
       'Chaque playbook complet donne au département une référence structurée : séquences de service, SOPs, scripts, points de contrôle manager et supports de formation.',
     allFilter: 'Tous',
     playbookValueProps: ['Référence SOP complète', 'PDF + PowerPoint', 'FR & EN inclus'],
+    credibilityLabel: 'Issu de l’expérience terrain',
+    credibilityTitle: 'Une base opérationnelle façonnée par 15 années de terrain.',
+    credibilityText: [
+      'Les manuels LuxOps sont rédigés de manière indépendante à partir de l’expérience acquise dans la conception, le déploiement, la formation et l’amélioration de procédures en hôtellerie haut de gamme. Cette expérience comprend le travail avec des référentiels de qualité exigeants tels que LQA, Forbes Travel Guide et les attentes du programme American Express Fine Hotels + Resorts.',
+      'Chaque manuel constitue volontairement une base neutre et modifiable, conçue pour être adaptée à votre établissement, à vos standards de marque, à vos outils et à vos contraintes locales.',
+    ],
     addedLabel: 'Ajouté',
     addStarterPack: (price: string) => `Ajouter au panier · ${price}`,
     addPlaybook: (price: string) => `Ajouter au panier · ${price}`,
@@ -358,7 +373,7 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
         </div>
       </section>
 
-      <section id="starter-packs" className="order-3 scroll-mt-24 border-t border-[rgba(32,35,31,0.14)] px-6 py-12 md:px-16 md:py-14">
+      <section id="starter-packs" className="order-4 scroll-mt-24 border-t border-[rgba(32,35,31,0.14)] px-6 py-12 md:px-16 md:py-14">
         <div className="mx-auto max-w-[1680px]">
           <div className="mb-10 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-3xl">
@@ -561,7 +576,23 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
         </div>
       </section>
 
-      <section id="bundle" className="order-2 scroll-mt-24 px-6 py-16 md:px-16 md:py-20">
+      <section className="order-2 border-b border-[rgba(32,35,31,0.14)] bg-[#fcfbf8] px-6 py-11 md:px-16 md:py-12">
+        <div className="mx-auto grid max-w-[1380px] gap-7 md:grid-cols-[0.72fr_1.28fr] md:gap-12 lg:grid-cols-[0.6fr_1.4fr] lg:items-start">
+          <div>
+            <p className="text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#a58658]">
+              {copy.credibilityLabel}
+            </p>
+            <h2 className="mt-4 max-w-lg font-display text-[1.8rem] font-medium leading-[1.12] text-[#0f211a] md:text-[2.1rem]">
+              {copy.credibilityTitle}
+            </h2>
+          </div>
+          <div className="max-w-3xl space-y-3 text-sm leading-7 text-[#5d665f] md:text-base">
+            {copy.credibilityText.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+          </div>
+        </div>
+      </section>
+
+      <section id="bundle" className="order-3 scroll-mt-24 px-6 py-16 md:px-16 md:py-20">
         <div className="mx-auto grid max-w-[1380px] border border-[rgba(32,35,31,0.14)] bg-[#fcfbf8] lg:grid-cols-[1.08fr_0.92fr]">
           <div className="p-8 md:p-12">
             <p className="mb-5 text-xs font-semibold uppercase tracking-[0.16em] text-[#a58658]">
@@ -613,7 +644,7 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
         </div>
       </section>
 
-      <section className="order-4 border-y border-[rgba(32,35,31,0.14)] bg-[#fcfbf8] px-6 py-16 md:px-16 md:py-20">
+      <section className="order-5 border-y border-[rgba(32,35,31,0.14)] bg-[#fcfbf8] px-6 py-16 md:px-16 md:py-20">
         <div className="mx-auto max-w-[1680px]">
           <div className="mb-10 max-w-4xl">
             <p className="mb-5 text-xs font-semibold uppercase tracking-[0.16em] text-[#a58658]">
@@ -641,7 +672,7 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
         </div>
       </section>
 
-      <section className="order-5 bg-[#0f211a] px-6 py-16 text-[#f5f1e9] md:px-16 md:py-20">
+      <section className="order-6 bg-[#0f211a] px-6 py-16 text-[#f5f1e9] md:px-16 md:py-20">
           <div className="mx-auto max-w-4xl">
             <p className="mb-5 text-xs font-semibold uppercase tracking-[0.16em] text-[#a58658]">
               {copy.trainingLabel}

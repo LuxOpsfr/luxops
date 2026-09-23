@@ -87,6 +87,12 @@ type TrainingPageContent = {
   methodTitle: string
   methodIntro: string
   methodPoints: { title: string; text: string }[]
+  trainerLabel: string
+  trainerTitle: string
+  trainerText: string[]
+  trainerProof: string[]
+  trainerPrimary: string
+  trainerSecondary: string
   engagementLabel: string
   engagementTitle: string
   engagementSteps: { title: string; text: string }[]
@@ -325,6 +331,50 @@ export function FormationContent({ locale }: { locale: string }) {
         </div>
       </section>
 
+      <section className="border-b border-[rgba(32,35,31,0.14)] bg-[#fcfbf8] px-6 py-16 md:px-16 md:py-20">
+        <div className="mx-auto grid max-w-[1500px] gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:gap-20">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#a58658]">
+              {page.trainerLabel}
+            </p>
+            <h2 className="mt-5 max-w-3xl font-display text-[2.35rem] font-medium leading-[1.08] text-[#0f211a] md:text-[3.25rem]">
+              {page.trainerTitle}
+            </h2>
+            <div className="mt-7 max-w-3xl space-y-5 text-base leading-8 text-[#5d665f] md:text-lg">
+              {page.trainerText.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+            </div>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <TrackedLink
+                href={calendlyUrl}
+                eventName="training_consultation_clicked"
+                eventProperties={{ locale: activeLocale, placement: 'trainer_section' }}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-[#0f211a] px-6 py-4 text-sm font-semibold text-[#f5f1e9] transition-colors hover:bg-[#24362f]"
+              >
+                <CalendarDays size={16} strokeWidth={1.5} />
+                {page.trainerPrimary}
+              </TrackedLink>
+              <SamePageAnchor
+                href="#training-quote"
+                className="inline-flex items-center justify-center gap-2 border border-[#24362f] px-6 py-4 text-sm font-semibold text-[#24362f] transition-colors hover:bg-[#e7e0d5]"
+              >
+                {page.trainerSecondary}
+                <ArrowRight size={16} strokeWidth={1.5} />
+              </SamePageAnchor>
+            </div>
+          </div>
+          <div className="border-y border-[rgba(32,35,31,0.14)]">
+            {page.trainerProof.map((item, index) => (
+              <div key={item} className="grid grid-cols-[3.2rem_1fr] border-b border-[rgba(32,35,31,0.14)] py-5 last:border-b-0 md:py-6">
+                <span className="font-display text-xl italic text-[#a58658]">{String(index + 1).padStart(2, '0')}.</span>
+                <p className="text-sm font-semibold leading-6 text-[#24362f] md:text-base">{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="px-6 py-16 md:px-16 md:py-20">
         <div className="mx-auto max-w-[1680px]">
           <div className="mb-10 max-w-4xl">
@@ -513,6 +563,16 @@ const frenchContent: TrainingPageContent = {
       text: 'Les chefs de service repartent avec des repères concrets pour maintenir le niveau après la session.',
     },
   ],
+  trainerLabel: 'Votre formateur',
+  trainerTitle: 'Une expérience du management hôtelier derrière chaque formation.',
+  trainerText: [
+    'Chaque formation LuxOps est délivrée personnellement par le fondateur de LuxOps, avec 15 années d’expérience dans les opérations et le management hôtelier haut de gamme, notamment chez Four Seasons et La Réserve.',
+    'Son parcours comprend le management d’équipes multidisciplinaires de plus de 100 collaborateurs, le développement des managers, l’intégration et l’accompagnement des équipes, le déploiement de SOP ainsi que la formation des collaborateurs autour de référentiels exigeants du service haut de gamme, notamment les critères LQA, Forbes Travel Guide et les attentes du programme American Express Fine Hotels + Resorts.',
+    'L’objectif n’est pas de dispenser une formation hôtelière théorique et générique. Les sessions portent sur la manière dont les standards sont compris, pratiqués, observés et maintenus dans les opérations quotidiennes, tout en donnant aux managers des méthodes concrètes pour les faire vivre après la formation.',
+  ],
+  trainerProof: ['15 ans d’opérations hôtelières', 'Équipes de plus de 100 collaborateurs', 'Management multi-départements', 'Déploiement SOP & développement des équipes'],
+  trainerPrimary: 'Réserver un échange de 20 minutes',
+  trainerSecondary: 'Demander un devis formation',
   engagementLabel: 'Déroulé',
   engagementTitle: 'Une formation construite autour de vos priorités.',
   engagementSteps: [
@@ -642,6 +702,16 @@ const englishContent: TrainingPageContent = {
       text: 'Department heads leave with clear ways to maintain standards after the session.',
     },
   ],
+  trainerLabel: 'Your trainer',
+  trainerTitle: 'Hotel management experience behind every session.',
+  trainerText: [
+    'Every LuxOps training session is delivered personally by the founder of LuxOps, drawing on 15 years of luxury hotel operations and management experience, including Four Seasons and La Réserve.',
+    'His experience includes managing multidisciplinary teams of more than 100 employees, developing managers, onboarding and coaching teams, implementing SOPs and training employees around demanding luxury-service frameworks including LQA, Forbes Travel Guide and American Express Fine Hotels + Resorts program expectations.',
+    'The objective is not to deliver generic hospitality theory. Sessions focus on how standards are understood, practised, observed and reinforced in day-to-day hotel operations, while giving managers practical methods to maintain them after the training.',
+  ],
+  trainerProof: ['15 years in hotel operations', 'Teams of 100+ employees', 'Multi-department management', 'SOP implementation & team development'],
+  trainerPrimary: 'Book a 20-minute consultation',
+  trainerSecondary: 'Request a training quote',
   engagementLabel: 'How it works',
   engagementTitle: 'Training shaped around your priorities.',
   engagementSteps: [

@@ -20,7 +20,6 @@ import { useCart } from '@/context/CartContext'
 import { useCurrency } from '@/context/CurrencyContext'
 import TrackedLink from '@/components/TrackedLink'
 import ProductPreviewCarousel from '@/components/ProductPreviewCarousel'
-import ProductTrustSection from '@/components/ProductTrustSection'
 
 const benefitIcons = [
   ClipboardCheck,
@@ -226,7 +225,18 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
         </div>
       </section>
 
-      <ProductTrustSection locale={locale} />
+      <section className="border-y border-[rgba(32,35,31,0.14)] bg-[#fcfbf8] px-6 py-9">
+        <div className="mx-auto grid max-w-7xl gap-3 md:grid-cols-[0.42fr_1.58fr] md:items-center md:gap-10">
+          <p className="text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#a58658]">
+            {isEn ? 'Built from the same operational experience' : 'Issu de la même expérience opérationnelle'}
+          </p>
+          <p className="max-w-4xl text-sm leading-7 text-[#5d665f]">
+            {isEn
+              ? 'LuxOps Starter Packs draw on the same 15 years of luxury hotel operations and SOP implementation experience as the full manuals, distilled into the tools managers are most likely to need immediately.'
+              : 'Les Starter Packs LuxOps s’appuient sur les mêmes 15 années d’expérience en opérations hôtelières et déploiement de SOP que les manuels complets, concentrées dans les outils dont les managers ont le plus souvent besoin immédiatement.'}
+          </p>
+        </div>
+      </section>
 
       <section className="bg-[#fcfbf8] px-6 py-20">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-[0.8fr_1.2fr] gap-10 items-start">

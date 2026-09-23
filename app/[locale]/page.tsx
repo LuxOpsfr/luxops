@@ -74,11 +74,9 @@ type HomeCopy = {
   }
   expertise: {
     eyebrow: string
-    quote: string
+    title: string
     text: string[]
-    founder: string
-    years: string
-    tags: string[]
+    proof: string[]
   }
   cta: {
     title: string
@@ -183,16 +181,14 @@ const homeCopy = {
       cta: 'Discuss Your Training Needs',
     },
     expertise: {
-      eyebrow: 'Built from hotel operations',
-      quote:
-        'Standards only matter when teams understand them, managers reinforce them and guests can feel the difference.',
+      eyebrow: 'The experience behind LuxOps',
+      title: 'Built in hotels, not in theory.',
       text: [
-        'LuxOps draws on 15 years at the heart of hotel operations: department leadership, pre-openings, team briefings, inspections, training and the daily responsibility of delivering a consistent guest experience.',
-        'The methodology comes from the operating floor, the pressure of service and the need to make expectations clearer, easier to communicate and simpler to apply.',
+        'LuxOps draws on 15 years of experience in luxury hotel operations and management, including Four Seasons and La Réserve.',
+        'Over those years, procedures were written, tested, implemented and refined with teams in real operating conditions, while managers and employees were trained around demanding service frameworks including LQA, Forbes Travel Guide and American Express Fine Hotels + Resorts program expectations.',
+        'LuxOps turns that experience into independently authored, structured operational resources designed to be adapted to each property.',
       ],
-      founder: 'Founder-led · Built for operational teams',
-      years: 'years of high-end hotel operations',
-      tags: ['Front Office', 'Housekeeping', 'F&B', 'Spa', 'Pre-opening', 'Training'],
+      proof: ['15 years in luxury hospitality', '100+ team environments', 'Multi-department operations', 'Luxury service frameworks & SOP implementation'],
     },
     cta: {
       title: 'What does your hotel need to standardise?',
@@ -295,16 +291,14 @@ const homeCopy = {
       cta: 'Parler de mon besoin de formation',
     },
     expertise: {
-      eyebrow: 'Une méthode issue de l’exploitation',
-      quote:
-        'Un standard n’a de valeur que lorsqu’il est compris par l’équipe, renforcé par les managers et perceptible dans l’expérience client.',
+      eyebrow: 'L’expérience derrière LuxOps',
+      title: 'Conçu sur le terrain, pas dans la théorie.',
       text: [
-        'LuxOps s’appuie sur 15 ans d’expérience au cœur des opérations hôtelières : management de département, pré-ouvertures, briefings, inspections, formation des équipes et pilotage quotidien de l’expérience client.',
-        'La méthode vient du terrain, de la pression du service et de la nécessité de rendre les attentes plus claires, plus faciles à transmettre et plus simples à appliquer.',
+        'LuxOps s’appuie sur 15 années d’expérience dans les opérations et le management hôtelier haut de gamme, notamment chez Four Seasons et La Réserve.',
+        'Au fil de ces années, des procédures ont été rédigées, testées, déployées et améliorées avec les équipes en conditions réelles, tandis que managers et collaborateurs étaient formés autour de référentiels de service exigeants, notamment les critères LQA, Forbes Travel Guide et les attentes du programme American Express Fine Hotels + Resorts.',
+        'LuxOps transforme cette expérience en ressources opérationnelles rédigées de manière indépendante, structurées et conçues pour être adaptées à chaque établissement.',
       ],
-      founder: 'Conçu par un opérateur hôtelier, pour les équipes opérationnelles',
-      years: 'ans d’opérations hôtelières haut de gamme',
-      tags: ['Front Office', 'Housekeeping', 'F&B', 'Spa', 'Pré-ouverture', 'Formation'],
+      proof: ['15 ans dans l’hôtellerie haut de gamme', 'Management d’équipes de 100+ collaborateurs', 'Opérations multi-départements', 'Standards de service & déploiement SOP'],
     },
     cta: {
       title: 'Que souhaitez-vous mieux structurer dans votre établissement ?',
@@ -408,16 +402,14 @@ const homeCopy = {
       cta: 'Hablar de formación',
     },
     expertise: {
-      eyebrow: 'Método construido desde la operación',
-      quote:
-        'Un estándar solo tiene valor cuando el equipo lo comprende, lo observa y lo reproduce con constancia.',
+      eyebrow: 'La experiencia detrás de LuxOps',
+      title: 'Creado en hoteles, no en la teoría.',
       text: [
-        'LuxOps se apoya en 15 años en operaciones hoteleras: liderazgo de departamentos, pre-aperturas, briefings, inspecciones, formación de equipos y gestión diaria de la experiencia del huésped.',
-        'La metodología viene del terreno, de la presión del servicio y de la necesidad de hacer las expectativas más claras, más fáciles de comunicar y más simples de aplicar.',
+        'LuxOps se apoya en 15 años de experiencia en operaciones y gestión hotelera de lujo, incluyendo Four Seasons y La Réserve.',
+        'Durante esos años, los procedimientos se redactaron, probaron, implantaron y mejoraron con los equipos en condiciones operativas reales, mientras managers y colaboradores trabajaban con marcos de servicio exigentes.',
+        'LuxOps convierte esa experiencia en recursos operativos de autoría independiente, estructurados y diseñados para adaptarse a cada establecimiento.',
       ],
-      founder: 'Fundador operador · Construido para equipos operativos',
-      years: 'años de operaciones hoteleras high-end',
-      tags: ['Front Office', 'Housekeeping', 'F&B', 'Spa', 'Pre-apertura', 'Formación'],
+      proof: ['15 años en hotelería de lujo', 'Entornos de más de 100 colaboradores', 'Operaciones multi-departamento', 'Estándares de servicio e implantación de SOP'],
     },
     cta: {
       title: '¿Qué estándares necesita estructurar o reforzar en su propiedad?',
@@ -712,39 +704,32 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </div>
         </section>
 
-        <section className="px-6 py-20 md:px-16 md:py-28">
-          <div className="mx-auto grid max-w-[1320px] gap-12 lg:grid-cols-[0.78fr_1.22fr] lg:items-center">
-            <div className="border-y border-[rgba(32,35,31,0.14)] py-10">
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#a58658]">
-                {copy.expertise.eyebrow}
-              </p>
-              <p className="mt-10 font-display text-[5rem] italic leading-none text-[rgba(15,33,26,0.12)] md:text-[8rem]">
-                15
-              </p>
-              <p className="mt-4 text-sm font-semibold uppercase tracking-[0.14em] text-[#687169]">
-                {copy.expertise.years}
-              </p>
-            </div>
-            <div>
-              <blockquote className="font-display text-[2.15rem] italic leading-[1.14] text-[#0f211a] md:text-[3rem]">
-                “{copy.expertise.quote}”
-              </blockquote>
-              <div className="mt-8 max-w-3xl space-y-5 text-lg leading-8 text-[#5d665f]">
+        <section className="px-6 py-20 md:px-16 md:py-24">
+          <div className="mx-auto max-w-[1320px]">
+            <div className="grid gap-10 border-y border-[rgba(32,35,31,0.14)] py-12 lg:grid-cols-[0.76fr_1.24fr] lg:gap-20 lg:py-16">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#a58658]">
+                  {copy.expertise.eyebrow}
+                </p>
+                <h2 className="mt-6 max-w-xl font-display text-[2.4rem] font-medium leading-[1.08] text-[#0f211a] md:text-[3.35rem]">
+                  {copy.expertise.title}
+                </h2>
+              </div>
+              <div>
+                <div className="max-w-3xl space-y-5 text-base leading-8 text-[#5d665f] md:text-lg">
                 {copy.expertise.text.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
                 ))}
+                </div>
               </div>
-              <div className="mt-8 h-px w-40 bg-[rgba(32,35,31,0.18)]" />
-              <p className="mt-7 text-sm font-semibold uppercase tracking-[0.12em] text-[#24362f]">
-                {copy.expertise.founder}
-              </p>
-              <div className="mt-7 flex flex-wrap gap-2">
-                {copy.expertise.tags.map((tag) => (
-                  <span key={tag} className="border border-[rgba(36,54,47,0.22)] px-3 py-2 text-xs font-semibold text-[#4f5a52]">
-                    {tag}
-                  </span>
-                ))}
-              </div>
+            </div>
+            <div className="grid gap-px bg-[rgba(32,35,31,0.14)] sm:grid-cols-2 lg:grid-cols-4">
+              {copy.expertise.proof.map((item, index) => (
+                <div key={item} className="bg-[#f5f1e9] px-5 py-6">
+                  <span className="text-[0.68rem] font-semibold text-[#a58658]">{String(index + 1).padStart(2, '0')}</span>
+                  <p className="mt-3 text-sm font-semibold leading-6 text-[#24362f]">{item}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>

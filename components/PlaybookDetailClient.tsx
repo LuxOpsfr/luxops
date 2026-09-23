@@ -9,7 +9,7 @@ import { useCurrency } from '@/context/CurrencyContext'
 import TrackedLink from '@/components/TrackedLink'
 import ProductPreviewCarousel from '@/components/ProductPreviewCarousel'
 import HousekeepingProductProof from '@/components/HousekeepingProductProof'
-import ProductTrustSection from '@/components/ProductTrustSection'
+import ProductCredibility from '@/components/ProductCredibility'
 import posthog from 'posthog-js'
 
 interface Stat {
@@ -293,7 +293,7 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
         </div>
       </section>
 
-      <ProductTrustSection locale={locale} />
+      <ProductCredibility locale={locale} />
 
       {/* FAQ */}
       <section className="bg-[#fcfbf8] px-6 py-14 md:py-16">
