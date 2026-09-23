@@ -1,0 +1,104 @@
+.seo-theme {
+  background: #f5f1e9;
+  color: #0f211a;
+}
+
+.seo-theme :is(.rounded-lg, .rounded-xl, .rounded-2xl) {
+  border-radius: 2px;
+}
+
+.seo-theme [class*="shadow-"] {
+  box-shadow: none;
+}
+
+.seo-theme :is(.bg-gray-50, .bg-slate-50),
+.seo-theme [class~="bg-[#eef4ff]"],
+.seo-theme [class~="bg-[#f4f8ff]"],
+.seo-theme [class~="bg-[#F4F8FF]"],
+.seo-theme [class~="bg-[#f8f9ff]"],
+.seo-theme [class~="bg-[#F6F8FB]"],
+.seo-theme [class~="bg-[#F5F7FA]"],
+.seo-theme [style*="#eef4ff"],
+.seo-theme [style*="#EEF4FF"],
+.seo-theme [style*="#f8f9ff"] {
+  background: #e7e0d5 !important;
+}
+
+.seo-theme .bg-white,
+.seo-theme [class*="bg-[#ffffff]"] {
+  background: #fcfbf8;
+}
+
+.seo-theme [class*="bg-gradient-to"] {
+  background-image: none;
+  background-color: #f5f1e9;
+}
+
+.seo-theme [class*="bg-gradient-to"][class*="from-[#111111]"] {
+  background-color: #0f211a;
+}
+
+.seo-theme [class~="bg-[#1A2E44]"],
+.seo-theme [class~="bg-[#0a1d2e]"],
+.seo-theme [class~="bg-[#003d9b]"],
+.seo-theme [class~="bg-[#0056D2]"],
+.seo-theme [class~="bg-[#0052cc]"],
+.seo-theme [class~="bg-[#0041A3]"],
+.seo-theme [class~="bg-blue-600"],
+.seo-theme [class~="bg-[#2E7D32]"],
+.seo-theme [class~="bg-[#111111]"],
+.seo-theme [style*="linear-gradient(135deg, #003d9b"] {
+  background: #0f211a !important;
+}
+
+.seo-theme [class*="text-[#003d9b]"],
+.seo-theme [class*="text-[#0056D2]"],
+.seo-theme [class~="text-blue-600"],
+.seo-theme [class~="text-blue-700"],
+.seo-theme [class~="text-[#0052cc]"],
+.seo-theme [class*="text-[#2E7D32]"] {
+  color: #24362f;
+}
+
+.seo-theme [class*="text-[#0a1d2e]"],
+.seo-theme [class*="text-[#111111]"],
+.seo-theme [class*="text-[#1A2E44]"] {
+  color: #0f211a;
+}
+
+.seo-theme [class~="text-[#4f6074]"],
+.seo-theme [class~="text-[#737685]"],
+.seo-theme :is(.text-gray-400, .text-gray-500, .text-gray-600) {
+  color: #3d4a41;
+}
+
+.seo-theme [class~="text-[#687169]"] {
+  color: #3d4a41;
+}
+
+.seo-theme [class*="border-[#d8deea]"],
+.seo-theme [class*="border-[#d8e6f7]"],
+.seo-theme [class*="border-[#e8edf5]"],
+.seo-theme [class*="border-[#dbe8ff]"] {
+  border-color: rgba(32, 35, 31, 0.14);
+}
+
+.seo-theme [class~="bg-[#eef4ff]"],
+.seo-theme [class~="bg-[#eef6ff]"],
+.seo-theme [class~="bg-blue-50"],
+.seo-theme [class~="bg-blue-100"] {
+  background: #e7e0d5 !important;
+}
+
+.seo-theme [class~="bg-[#003d9b]"],
+.seo-theme [class~="bg-[#0056D2]"],
+.seo-theme [class~="bg-[#0052cc]"],
+.seo-theme [class~="bg-[#0041A3]"],
+.seo-theme [class~="bg-blue-600"] {
+  color: #f5f1e9;
+}
+
+.seo-theme [class~="bg-[#003d9b]"] [class~="text-white"],
+.seo-theme [class~="bg-[#0056D2]"] [class~="text-white"] {
+  color: #f5f1e9;
+}

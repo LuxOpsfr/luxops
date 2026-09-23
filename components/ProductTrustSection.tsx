@@ -1,4 +1,4 @@
-import { CreditCard, FileCheck2, Hotel, LockKeyhole } from 'lucide-react'
+import { ClipboardList, FileCheck2, Hotel, LockKeyhole } from 'lucide-react'
 
 interface Props {
   locale: string
@@ -24,9 +24,9 @@ export default function ProductTrustSection({ locale }: Props) {
           text: 'Your documents remain available from your LuxOps customer portal after purchase.',
         },
         {
-          icon: CreditCard,
-          title: 'Secure payment',
-          text: 'Payment is processed securely by Stripe, followed by immediate access to the purchased files.',
+          icon: ClipboardList,
+          title: 'Built for managers',
+          text: 'Structured for briefings, onboarding, refreshers and day-to-day operational reference.',
         },
       ]
     : [
@@ -46,17 +46,17 @@ export default function ProductTrustSection({ locale }: Props) {
           text: 'Après l’achat, vos documents restent disponibles depuis votre espace client LuxOps.',
         },
         {
-          icon: CreditCard,
-          title: 'Paiement sécurisé',
-          text: 'Le paiement est traité par Stripe, puis les fichiers achetés sont accessibles immédiatement.',
+          icon: ClipboardList,
+          title: 'Conçu pour les managers',
+          text: 'Structuré pour les briefings, l’intégration, les remises à niveau et la consultation au quotidien.',
         },
       ]
 
   return (
-    <section className="bg-[#0a1d2e] px-5 py-20 text-white md:px-6 md:py-24">
+    <section className="bg-[#0f211a] px-5 py-20 text-white md:px-6 md:py-24">
       <div className="mx-auto max-w-screen-xl">
         <div className="mb-12 max-w-3xl">
-          <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[#8eb8ff]">
+          <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[#d8c4a5]">
             {isEn ? 'Why LuxOps' : 'Pourquoi LuxOps'}
           </p>
           <h2 className="mb-5 font-display text-4xl font-extrabold tracking-tight md:text-5xl">
@@ -74,7 +74,7 @@ export default function ProductTrustSection({ locale }: Props) {
             const Icon = item.icon
             return (
               <div key={item.title}>
-                <Icon size={22} className="mb-5 text-[#8eb8ff]" />
+                <Icon size={22} className="mb-5 text-[#d8c4a5]" />
                 <h3 className="mb-3 font-display text-lg font-bold">{item.title}</h3>
                 <p className="text-sm leading-relaxed text-white/65">{item.text}</p>
               </div>

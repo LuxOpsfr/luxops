@@ -13,6 +13,7 @@ import {
   UtensilsCrossed,
 } from 'lucide-react'
 import TrackedLink from '@/components/TrackedLink'
+import EditorialRouteImage from '@/components/EditorialRouteImage'
 import { breadcrumbSchema, faqSchema, localizedPath } from '@/lib/seo'
 
 type Locale = 'en' | 'fr'
@@ -1542,6 +1543,8 @@ export function FbSeoResourcePage({ kind, locale }: { kind: ResourceKind; locale
             </div>
           </div>
         </section>
+
+        {kind === 'sequence' && <EditorialRouteImage route="sequence-service-restaurant-hotel" alt={content.title} />}
 
         <section className="py-10 px-6 bg-[#F6F8FB] border-b border-gray-100">
           <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-5 md:items-center">

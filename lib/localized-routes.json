@@ -7,7 +7,7 @@
     },
     "sitemap": true,
     "changeFrequency": "weekly",
-    "lastModified": "2026-03-18",
+    "lastModified": "2026-08-12",
     "priority": 1
   },
   "playbooks": {
@@ -18,7 +18,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-03-18",
+    "lastModified": "2026-08-12",
     "priority": 0.9
   },
   "freeHotelChecklists": {
@@ -38,8 +38,8 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-05-11",
-    "priority": 0.8
+    "lastModified": "2026-08-12",
+    "priority": 0.78
   },
   "playbooksHskStarterPack": {
     "paths": {
@@ -48,8 +48,8 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-05-11",
-    "priority": 0.8
+    "lastModified": "2026-08-12",
+    "priority": 0.78
   },
   "playbooksFbStarterPack": {
     "paths": {
@@ -58,8 +58,8 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-05-11",
-    "priority": 0.8
+    "lastModified": "2026-08-12",
+    "priority": 0.78
   },
   "hotelFbSop": {
     "paths": {
@@ -137,7 +137,7 @@
       "fr": "/audit-qualite",
       "es": "/quality-audit"
     },
-    "sitemap": true,
+    "sitemap": false,
     "changeFrequency": "monthly",
     "lastModified": "2026-03-18",
     "priority": 0.8
@@ -148,7 +148,7 @@
       "fr": "/process-sur-mesure",
       "es": "/bespoke-process"
     },
-    "sitemap": true,
+    "sitemap": false,
     "changeFrequency": "monthly",
     "lastModified": "2026-03-18",
     "priority": 0.8
@@ -161,8 +161,8 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-03-18",
-    "priority": 0.8
+    "lastModified": "2026-08-12",
+    "priority": 0.86
   },
   "resources": {
     "paths": {
@@ -401,7 +401,7 @@
       "en": "/fb-audit-training",
       "fr": "/audit-formation-fb"
     },
-    "sitemap": true,
+    "sitemap": false,
     "changeFrequency": "monthly",
     "lastModified": "2026-07-17",
     "priority": 0.72
@@ -645,5 +645,75 @@
     "changeFrequency": "monthly",
     "lastModified": "2026-07-17",
     "priority": 0.82
+  },
+  "playbooksFo": {
+    "paths": {
+      "en": "/playbooks/fo",
+      "fr": "/playbooks/fo"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-09-23",
+    "priority": 0.82
+  },
+  "playbooksHsk": {
+    "paths": {
+      "en": "/playbooks/hsk",
+      "fr": "/playbooks/hsk"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-09-23",
+    "priority": 0.84
+  },
+  "playbooksFb": {
+    "paths": {
+      "en": "/playbooks/fb",
+      "fr": "/playbooks/fb"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-09-23",
+    "priority": 0.82
+  },
+  "playbooksSpa": {
+    "paths": {
+      "en": "/playbooks/spa",
+      "fr": "/playbooks/spa"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-09-23",
+    "priority": 0.82
+  },
+  "blogHotelAutumnRecruitmentTraining": {
+    "paths": {
+      "en": "/blog/preparer-rentree-hotel-recrutement-formation",
+      "fr": "/blog/preparer-rentree-hotel-recrutement-formation"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-09-23",
+    "priority": 0.72
+  },
+  "blogHotelWinterSeasonTraining": {
+    "paths": {
+      "en": "/blog/preparer-saison-hiver-hotel-formation-equipes",
+      "fr": "/blog/preparer-saison-hiver-hotel-formation-equipes"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-09-23",
+    "priority": 0.72
+  },
+  "blogHotelAiTraining": {
+    "paths": {
+      "en": "/blog/intelligence-artificielle-hotellerie-formation-equipes",
+      "fr": "/blog/intelligence-artificielle-hotellerie-formation-equipes"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-09-23",
+    "priority": 0.72
   }
 }

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import './portal-theme.css'
 
 export const metadata: Metadata = {
   robots: {
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function PortalLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen bg-[#F5F7FA]">
+    <div className="portal-theme min-h-screen bg-[#F5F7FA]">
       {children}
     </div>
   )

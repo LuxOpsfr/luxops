@@ -1,0 +1,196 @@
+.preview {
+  background: #f5f1e9;
+  color: #0f211a;
+}
+
+.preview .hero {
+  background: #f5f1e9;
+  border-bottom: 1px solid rgba(32, 35, 31, 0.14);
+  padding-block: clamp(4rem, 7vw, 7rem);
+}
+
+.preview .hero > div,
+.preview .productCta > div,
+.preview .leadMagnet > div,
+.preview .excerpt > div,
+.preview .body > div,
+.preview .related > div,
+.preview .finalCta > div {
+  max-width: 900px;
+}
+
+.preview .hero :global(h1),
+.preview .productCta :global(h2),
+.preview .excerpt :global(h2),
+.preview .body :global(h2),
+.preview .finalCta :global(h2) {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: 0;
+  color: #0f211a;
+}
+
+.preview .hero :global(h1) {
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  line-height: 1.08;
+  max-width: 850px;
+}
+
+.preview .hero :global(p),
+.preview .body :global(p),
+.preview .excerpt :global(p),
+.preview .related :global(p) {
+  color: #3d4a41;
+}
+
+.preview .hero :global(p:last-child) {
+  font-size: 1.125rem;
+  line-height: 1.8;
+}
+
+.preview .editorialFigure {
+  max-width: 900px;
+  margin: 2.5rem auto 3rem;
+  padding-inline: 1.5rem;
+}
+
+.preview .editorialImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+  object-position: center 56%;
+}
+
+.preview .editorialFigure :global(figcaption) {
+  margin-top: 0.75rem;
+  color: #3d4a41;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.preview .productCta,
+.preview .body,
+.preview .excerpt {
+  background: #fcfbf8;
+  border-color: rgba(32, 35, 31, 0.14);
+}
+
+.preview .productCta :global(p:first-child),
+.preview .excerpt :global(p:first-child),
+.preview .leadMagnet :global(p:first-child),
+.preview .body :global(nav > p),
+.preview .related :global(p:first-child) {
+  color: #705431;
+}
+
+.preview .primaryButton,
+.preview .leadMagnet :global(a),
+.preview .excerpt :global(a:first-child) {
+  background: #0f211a;
+  border-color: #0f211a;
+  color: #f5f1e9;
+  border-radius: 0;
+}
+
+.preview .secondaryButton,
+.preview .excerpt :global(a:nth-child(2)) {
+  background: transparent;
+  border-color: #0f211a;
+  color: #0f211a;
+  border-radius: 0;
+}
+
+.preview .leadMagnet {
+  background: #e7e0d5;
+  border-color: rgba(32, 35, 31, 0.14);
+}
+
+.preview .leadMagnet :global(p:nth-child(2)) {
+  font-family: var(--font-display);
+  color: #0f211a;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.preview .excerpt > div > div,
+.preview .body :global(nav),
+.preview .body :global(.rounded-xl),
+.preview .body :global(.rounded-2xl) {
+  border-radius: 0;
+  border-color: rgba(32, 35, 31, 0.14);
+  background: #f5f1e9;
+}
+
+.preview .excerpt :global(.divide-y) {
+  border-radius: 0;
+  border-color: rgba(32, 35, 31, 0.14);
+}
+
+.preview .body :global(nav) {
+  padding: 1.75rem;
+}
+
+.preview .body :global(h2) {
+  font-size: 1.9rem;
+  line-height: 1.2;
+}
+
+.preview .body :global(h3) {
+  color: #0f211a;
+}
+
+.preview .body :global(svg) {
+  color: #705431;
+}
+
+.preview .related {
+  background: #e7e0d5;
+  border-color: rgba(32, 35, 31, 0.14);
+}
+
+.preview .related :global(a) {
+  border-radius: 0;
+  border-color: rgba(32, 35, 31, 0.14);
+  background: #fcfbf8;
+}
+
+.preview .finalCta {
+  background: #0f211a;
+}
+
+.preview .finalCta :global(h2) {
+  color: #f5f1e9;
+  font-size: 2.25rem;
+}
+
+.preview .finalCta :global(a) {
+  border-radius: 0;
+  color: #0f211a;
+  background: #f5f1e9;
+}
+
+@media (max-width: 640px) {
+  .preview .hero {
+    padding-block: 3.5rem;
+  }
+
+  .preview .hero :global(h1) {
+    font-size: 2.35rem;
+  }
+
+  .preview .editorialFigure {
+    margin-block: 1.5rem 2rem;
+  }
+
+  .preview .editorialImage {
+    max-height: 300px;
+    object-position: center 42%;
+  }
+
+  .preview .leadMagnet :global(a) {
+    width: 100%;
+    justify-content: center;
+  }
+}

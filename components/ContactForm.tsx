@@ -48,9 +48,9 @@ export default function ContactForm() {
   }
 
   const inputClass =
-    'w-full px-4 py-3 text-sm text-[#0a1d2e] bg-white focus:outline-none focus:ring-2 focus:ring-[#003d9b]/20 transition-colors'
-  const labelClass = 'block text-xs font-bold uppercase tracking-widest text-[#737685] mb-2'
-  const wrapClass = 'border border-[rgba(195,198,214,0.5)]'
+    'w-full px-4 py-3 text-sm text-[#0f211a] bg-white focus:outline-none focus:ring-2 focus:ring-[#a58658]/30 transition-colors'
+  const labelClass = 'block text-xs font-semibold uppercase tracking-[0.14em] text-[#4f5a52] mb-2'
+  const wrapClass = 'border border-[rgba(32,35,31,0.2)]'
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
@@ -116,10 +116,7 @@ export default function ContactForm() {
             >
               <option value="">{t('need_placeholder')}</option>
               <option value="playbooks">{t('need_playbooks')}</option>
-              <option value="audit">{t('need_audit')}</option>
-              <option value="process">{t('need_process')}</option>
               <option value="training">{t('need_training')}</option>
-              <option value="notion">{t('need_notion')}</option>
               <option value="other">{t('need_other')}</option>
             </select>
           </div>
@@ -142,8 +139,7 @@ export default function ContactForm() {
 
       {status === 'success' && (
         <div
-          className="p-4 text-sm text-[#003d9b]"
-          style={{ backgroundColor: '#eef4ff', borderRadius: '0.125rem' }}
+          className="bg-[#e7e0d5] p-4 text-sm text-[#0f211a]"
         >
           {t('success')}
         </div>
@@ -160,11 +156,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === 'loading'}
-        className="w-full px-6 py-4 text-white font-bold transition-all hover:opacity-90 disabled:opacity-60 text-sm"
-        style={{
-          background: 'linear-gradient(135deg, #003d9b, #0052cc)',
-          borderRadius: '0.125rem',
-        }}
+        className="w-full bg-[#0f211a] px-6 py-4 text-sm font-semibold text-[#f5f1e9] transition-colors hover:bg-[#24362f] disabled:opacity-60"
       >
         {status === 'loading' ? t('sending') : t('send')}
       </button>

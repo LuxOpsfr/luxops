@@ -17,7 +17,7 @@ export const PLAYBOOKS: PlaybookEntry[] = [
     id: 'fo',
     priceId: 'price_1TZRZZDVLJTOFkjUd3B9x44e',
     previewImage: '/Previews/fo-preview.jpg.png',
-    title: { en: 'Front Office Playbook', fr: 'Playbook Front Office' },
+    title: { en: 'Front Office SOP Manual', fr: 'Manuel SOP Front Office' },
     dept: { en: 'Front Office', fr: 'Front Office' },
     desc: {
       en: 'Service sequences, guest communication, complaint handling, upselling, night audit, and the procedural structure that keeps a front desk consistent across every shift.',
@@ -77,7 +77,7 @@ export const PLAYBOOKS: PlaybookEntry[] = [
     previewImage: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&h=500&fit=crop&q=80',
     id: 'hsk',
     priceId: 'price_1TBZ9TDVLJTOFkjUwWnoKaGk',
-    title: { en: 'Housekeeping Playbook', fr: 'Playbook Housekeeping' },
+    title: { en: 'Housekeeping SOP Manual', fr: 'Manuel SOP Housekeeping' },
     dept: { en: 'Housekeeping', fr: 'Housekeeping' },
     desc: {
       en: 'Room inspection checklists, linen and product management, cleaning protocols, and quality control standards, structured to maintain the same operational level from the first room to the last.',
@@ -133,7 +133,7 @@ export const PLAYBOOKS: PlaybookEntry[] = [
     id: 'fb',
     priceId: 'price_1TZRYvDVLJTOFkjUNuiqbADG',
     previewImage: '/Previews/fb-preview.jpg.png',
-    title: { en: 'F&B Playbook', fr: 'Playbook F&B' },
+    title: { en: 'F&B SOP Manual', fr: 'Manuel SOP F&B' },
     dept: { en: 'Food & Beverage', fr: 'Food & Beverage' },
     desc: {
       en: 'Service sequences and standards for restaurant, bar, breakfast, and room service, a procedural framework that gives teams clarity on every guest interaction, every cover, and every service.',
@@ -189,7 +189,7 @@ export const PLAYBOOKS: PlaybookEntry[] = [
     previewImage: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&h=500&fit=crop&q=80',
     id: 'spa',
     priceId: 'price_1TZRY9DVLJTOFkjUfkYQJAsW',
-    title: { en: 'Spa & Wellness Playbook', fr: 'Playbook Spa & Wellness' },
+    title: { en: 'Spa & Wellness SOP Manual', fr: 'Manuel SOP Spa & Wellness' },
     dept: { en: 'Spa & Wellness', fr: 'Spa & Wellness' },
     desc: {
       en: 'Treatment protocols, guest journey standards, therapist conduct, retail procedures, and booking management, built for a spa where consistency and guest experience drive performance.',

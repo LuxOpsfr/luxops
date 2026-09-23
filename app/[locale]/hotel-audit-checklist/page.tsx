@@ -158,7 +158,7 @@ export default async function HotelAuditPage({ params }: { params: Promise<{ loc
   const auditItems = isEN ? AUDIT_ITEMS_EN : AUDIT_ITEMS_FR
   const areas = isEN ? AREAS_EN : AREAS_FR
   const faq = isEN ? FAQ_EN : FAQ_FR
-  const qualityAuditHref = isEN ? '/en/quality-audit' : '/fr/audit-qualite'
+  const trainingHref = isEN ? '/en/training' : '/fr/formation'
   const checklistsHref = isEN ? '/en/free-hotel-checklists' : '/fr/checklists-hotel-gratuites'
 
   const faqSchema = {
@@ -224,10 +224,10 @@ export default async function HotelAuditPage({ params }: { params: Promise<{ loc
                   <ArrowRight size={16} />
                 </SamePageAnchor>
                 <Link
-                  href={qualityAuditHref}
+                  href={trainingHref}
                   className="inline-flex items-center justify-center gap-2 px-6 py-4 bg-white text-[#0a1d2e] border border-[#d8deea] font-bold text-sm hover:border-[#003d9b] transition-colors"
                 >
-                  {isEN ? 'Request a quality audit' : 'Demander un audit qualité'}
+                  {isEN ? 'Explore team training' : 'Découvrir la formation des équipes'}
                 </Link>
               </div>
             </div>
@@ -424,9 +424,9 @@ export default async function HotelAuditPage({ params }: { params: Promise<{ loc
                   desc: isEN ? 'Department procedures and playbook structure for recurring gaps.' : 'Procédures par département et structure playbook pour les écarts récurrents.',
                 },
                 {
-                  href: qualityAuditHref,
-                  title: isEN ? 'Quality audit service' : 'Audit qualité sur site',
-                  desc: isEN ? 'A full on-site review when you need an external operational view.' : 'Une revue terrain complète lorsque vous avez besoin d’un regard externe.',
+                  href: trainingHref,
+                  title: isEN ? 'Team training' : 'Formation des équipes',
+                  desc: isEN ? 'Turn these checkpoints into daily team habits.' : 'Transformer ces points de contrôle en habitudes quotidiennes.',
                 },
               ].map((link) => (
                 <Link key={link.href} href={link.href} className="bg-white border border-[#e8edf5] p-6 hover:border-[#003d9b] transition-colors">
@@ -471,18 +471,18 @@ export default async function HotelAuditPage({ params }: { params: Promise<{ loc
             </div>
             <div className="bg-white/5 border border-white/10 p-7 lg:p-8">
               <h3 className="font-display text-2xl font-extrabold text-white tracking-tight mb-4">
-                {isEN ? 'Request a quality audit' : 'Demander un audit qualité'}
+                {isEN ? 'Train your teams' : 'Former vos équipes'}
               </h3>
               <p className="text-sm text-[#cbd5e1] leading-relaxed mb-6">
                 {isEN
-                  ? 'Share a few details about your property and the departments you want to review.'
-                  : 'Partagez quelques informations sur votre établissement et les départements à auditer.'}
+                  ? 'Tell us which standards your teams need to put into practice.'
+                  : 'Précisez les standards que vos équipes souhaitent mettre en pratique.'}
               </p>
               <Link
-                href={qualityAuditHref}
+                href={trainingHref}
                 className="inline-flex items-center justify-center gap-2 px-6 py-4 bg-white text-[#0a1d2e] font-bold text-sm hover:bg-[#eef4ff] transition-colors"
               >
-                {isEN ? 'View quality audit' : 'Voir l’audit qualité'}
+                {isEN ? 'Explore training' : 'Découvrir la formation'}
                 <ArrowRight size={16} />
               </Link>
             </div>

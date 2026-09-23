@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
+import EditorialRouteImage from '@/components/EditorialRouteImage'
 
 export async function generateMetadata({
   params,
@@ -54,9 +55,9 @@ const enFaqs = [
   },
   {
     q: 'How do hotels maintain operational consistency?',
-    a: 'Most inconsistency in hotel operations traces back to the same source: knowledge that lives in people\'s heads rather than in written procedures. When a long-serving team member leaves, a shift supervisor is absent, or a new hire joins mid-season, the standard reverts to what each individual knows. Documented procedures give the team a clear reference. Structured training embeds those procedures into daily habits. Regular quality reviews catch drift before it shows up in guest feedback. Properties that rely on informal knowledge transfer will see their service quality track their staffing. LuxOps offers quality audits and custom process creation for properties building this structure.',
-    link: '/audit-qualite',
-    linkLabel: 'Learn about our quality audit',
+    a: 'Most inconsistency in hotel operations traces back to knowledge that lives in people\'s heads rather than in written procedures. Documented SOP manuals give teams a clear reference, while structured training turns those procedures into daily habits. Regular quality reviews catch drift before it shows up in guest feedback.',
+    link: '/formation',
+    linkLabel: 'Explore operational training',
   },
   {
     q: 'What is a hotel playbook?',
@@ -66,9 +67,9 @@ const enFaqs = [
   },
   {
     q: 'How are hotel procedures documented?',
-    a: 'Procedures can live in different formats: printed binders, PDF guides, shared drives, or digital workspaces like Notion or SharePoint. The format matters less than whether the procedures are findable, readable, and current. A well-structured manual that is two years out of date is less useful than a simpler document the team actually references. Digital systems have real advantages for maintenance: version control, easier updates, and access from the floor during a shift. Notion-based workspaces work well for multi-department operations because they allow different views and access levels by team. LuxOps delivers procedures in PDF and Notion formats, and can build custom Notion workspaces adapted to a property\'s structure.',
-    link: '/notion-templates',
-    linkLabel: 'Explore Notion templates for hotels',
+    a: 'Procedures can live in different formats: printed binders, PDF guides or shared workspaces. What matters is that they remain easy to find, read and update. LuxOps SOP manuals provide a structured starting point in PDF and editable PowerPoint for managers to adapt to their property.',
+    link: '/playbooks',
+    linkLabel: 'Explore SOP manuals',
   },
   {
     q: 'What makes an effective housekeeping SOP?',
@@ -117,9 +118,9 @@ const frFaqs = [
   },
   {
     q: 'Comment les hôtels maintiennent-ils la constance opérationnelle ?',
-    a: 'La réponse honnête est que la plupart des incohérences dans les opérations hôtelières remontent à la même source : des savoirs qui vivent dans les têtes plutôt que dans des procédures écrites. Quand un collaborateur expérimenté part, qu\'un superviseur est absent ou qu\'un nouveau rejoint l\'équipe en pleine saison, le standard revient à ce que chaque individu connaît. Des procédures documentées donnent à l\'équipe un référentiel clair. Une formation structurée ancre ces procédures dans les habitudes quotidiennes. Des revues qualité régulières détectent les dérives avant qu\'elles n\'apparaissent dans les avis clients. Les établissements qui s\'appuient sur la transmission informelle verront leur qualité de service suivre l\'état de leurs effectifs. LuxOps propose des audits qualité et de la création de process pour les établissements qui construisent cette structure.',
-    link: '/audit-qualite',
-    linkLabel: 'En savoir plus sur notre audit qualité',
+    a: 'Une grande partie des écarts opérationnels vient de savoirs transmis oralement plutôt que documentés. Des manuels SOP donnent aux équipes un référentiel commun ; une formation structurée permet ensuite d\'ancrer ces procédures dans les habitudes quotidiennes. Les revues qualité internes aident à repérer les écarts avant qu\'ils ne se retrouvent dans les avis clients.',
+    link: '/formation',
+    linkLabel: 'Découvrir la formation opérationnelle',
   },
   {
     q: 'Qu\'est-ce qu\'un playbook hôtelier ?',
@@ -129,9 +130,9 @@ const frFaqs = [
   },
   {
     q: 'Comment documenter les procédures hôtelières ?',
-    a: 'Les procédures peuvent prendre différentes formes : classeurs imprimés, guides PDF, drives partagés ou espaces de travail numériques comme Notion ou SharePoint. Le format importe moins que le fait que les procédures soient trouvables, lisibles et à jour. Un manuel parfaitement structuré mais vieux de deux ans est moins utile qu\'un document simple que l\'équipe consulte vraiment. Les systèmes numériques ont des avantages réels pour la maintenance : contrôle des versions, mises à jour facilitées et accès depuis le terrain. Les espaces Notion fonctionnent bien pour les opérations multi-départements parce qu\'ils permettent différentes vues et niveaux d\'accès selon le rôle. LuxOps livre les procédures en format PDF et Notion, et peut construire des espaces Notion adaptés à la structure d\'un établissement.',
-    link: '/notion-templates',
-    linkLabel: 'Découvrir les templates Notion pour hôtels',
+    a: 'Les procédures peuvent prendre différentes formes : classeurs imprimés, guides PDF ou espaces partagés. Le format importe moins que le fait qu\'elles soient faciles à trouver, à lire et à mettre à jour. Les manuels SOP LuxOps fournissent une base structurée en PDF et PowerPoint modifiable, à adapter aux standards de votre établissement.',
+    link: '/playbooks',
+    linkLabel: 'Découvrir les manuels SOP',
   },
   {
     q: 'Qu\'est-ce qui fait une bonne procédure housekeeping ?',
@@ -163,9 +164,7 @@ export default async function ResourcesPage({
   const faqs = isEn ? enFaqs : frFaqs
   const localizedLink = (href: string) => {
     const canonicalByLocale: Record<string, string> = {
-      '/audit-qualite': isEn ? '/en/quality-audit' : '/fr/audit-qualite',
       '/formation': isEn ? '/en/training' : '/fr/formation',
-      '/process-sur-mesure': isEn ? '/en/bespoke-process' : '/fr/process-sur-mesure',
       '/free-hotel-checklists': isEn ? '/en/free-hotel-checklists' : '/fr/checklists-hotel-gratuites',
     }
     return canonicalByLocale[href] ?? `/${locale}${href}`
@@ -194,7 +193,7 @@ export default async function ResourcesPage({
       {/* Hero */}
       <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h1 className="text-5xl font-bold text-[#111111] mb-4">
+          <h1 className="text-4xl sm:text-5xl font-bold text-[#111111] mb-4">
             {isEn ? 'Hotel Operations Resources' : 'Ressources Opérationnelles Hôtelières'}
           </h1>
           <p className="text-xl text-gray-400 leading-relaxed">
@@ -204,6 +203,8 @@ export default async function ResourcesPage({
           </p>
         </div>
       </section>
+
+      <EditorialRouteImage route="resources" locale={locale} alt={isEn ? 'Hotel operating documents' : 'Documents opérationnels hôteliers'} />
 
       {/* Free chapter lead magnet */}
       <section className="py-12 px-6 bg-white border-b border-gray-100">
@@ -272,8 +273,8 @@ export default async function ResourcesPage({
           </h2>
           <p className="text-gray-300 mb-10 text-lg font-light">
             {isEn
-              ? 'If these are the operational questions your property is working through, LuxOps provides the tools to act on them. Playbooks, custom process creation, and on-property training built for real hotel teams.'
-              : 'Si ce sont les questions op\u00e9rationnelles que votre \u00e9tablissement cherche \u00e0 r\u00e9soudre, LuxOps propose les outils pour y r\u00e9pondre concr\u00e8tement. Playbooks, cr\u00e9ation de process sur-mesure et formation en \u00e9tablissement con\u00e7us pour les \u00e9quipes h\u00f4teli\u00e8res r\u00e9elles.'}
+              ? 'If these are the operational questions your property is working through, LuxOps provides SOP manuals, starter packs and on-property training built for real hotel teams.'
+              : 'Si votre établissement cherche à structurer ses opérations, LuxOps propose des manuels SOP, des Starter Packs et des formations en établissement pour les équipes hôtelières.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

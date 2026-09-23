@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function FormationPreOuverturePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
   const isEn = locale === 'en'
-  return <TrainingSeoPage locale={locale} data={isEn ? englishData(locale) : frenchData(locale)} />
+  return <TrainingSeoPage locale={locale} data={isEn ? englishData(locale) : frenchData(locale)} editorialRoute="formation-pre-ouverture" />
 }
 
 const frenchData = (locale: string): TrainingSeoPageData => ({

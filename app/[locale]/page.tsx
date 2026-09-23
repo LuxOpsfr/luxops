@@ -1,175 +1,432 @@
 import type { Metadata } from 'next'
-import { useTranslations } from 'next-intl'
+import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, BookOpen, ClipboardCheck, Clock, Settings, Star, Users } from 'lucide-react'
-import ExpertiseSection from '@/components/ExpertiseSection'
+import { ArrowRight } from 'lucide-react'
+import HomeManuals from '@/components/HomeManuals'
 import { ACTIVE_LOCALES, toActiveLocale } from '@/lib/i18n'
 import type { Locale } from '@/lib/i18n'
 import { alternatesForRoute, localizedRoutePath, localizedRouteUrl } from '@/lib/localized-routes'
 
+const imageBase = '/images/editorial-hospitality'
+
 const homeMetadata = {
   en: {
-    title: 'LuxOps | Hotel Operations Playbooks, SOPs & Training',
+    title: 'LuxOps | Hotel Operations Playbooks & Training',
     description:
-      'Operational playbooks, SOP frameworks and on-property training for high-end hotels. Front Office, Housekeeping, F&B, Spa. Built from real hotel operations.',
+      'Operational playbooks and on-site or remote training to help high-end hotels structure, communicate and apply their standards across Front Office, Housekeeping, F&B and Spa teams.',
   },
   fr: {
-    title: 'LuxOps | Playbooks, SOPs et Formation Hôtelière',
+    title: 'LuxOps | Playbooks opérationnels et formation hôtelière',
     description:
-      "Playbooks opérationnels, procédures et formation pour les hôtels haut de gamme. Front Office, Housekeeping, F&B, Spa. Issus de l'exploitation réelle.",
+      'Playbooks opérationnels et formations sur site ou à distance pour aider les hôtels haut de gamme à structurer, transmettre et appliquer leurs standards en Front Office, Housekeeping, F&B et Spa.',
   },
   es: {
-    title: 'LuxOps | Playbooks, SOPs y formación hotelera',
+    title: 'LuxOps | Playbooks operativos y formación hotelera',
     description:
-      'Playbooks operativos, marcos SOP y formación en el hotel para propiedades high-end. Front Office, Housekeeping, F&B y Spa. Construidos desde operaciones hoteleras reales.',
+      'Playbooks operativos y formación presencial o remota para ayudar a hoteles high-end a estructurar, comunicar y aplicar sus estándares en Front Office, Housekeeping, F&B y Spa.',
   },
 } satisfies Partial<Record<Locale, { title: string; description: string }>>
 
-const homeContent = {
-  en: {
-    offerOverviewEyebrow: 'What you can use now',
-    offerOverviewTitle: 'Choose the right format for your need',
-    viewLabel: 'View',
-    cards: {
-      starterPacks: {
-        title: 'Starter Packs',
-        desc: 'Practical checklists, scripts and control tools for immediate use.',
-      },
-      playbooks: {
-        title: 'Playbooks',
-        desc: 'Full SOP references for Front Office, Housekeeping, F&B and Spa.',
-      },
-      training: {
-        title: 'Training',
-        desc: 'On-property sessions to help teams apply service standards.',
-      },
-      audit: {
-        title: 'Audit',
-        desc: 'A structured review of standards, execution and operating gaps.',
-      },
-    },
-    goalsEyebrow: 'Our Goals',
-    goalsTitle: 'Three outcomes.\nEvery engagement.',
-    goals: [
-      {
-        title: 'Service Excellence',
-        desc: 'Ensuring a consistent, flawless guest experience at every interaction, regardless of who is on shift.',
-      },
-      {
-        title: 'Team Stability',
-        desc: 'Streamlining onboarding to reduce turnover and help your people grow with confidence.',
-      },
-      {
-        title: 'Operational Efficiency',
-        desc: 'Freeing up management time by making know-how transferable, documented, and always available.',
-      },
-    ],
-  },
-  fr: {
-    offerOverviewEyebrow: 'Ce que vous pouvez utiliser',
-    offerOverviewTitle: 'Choisir le bon format selon votre besoin',
-    viewLabel: 'Voir',
-    cards: {
-      starterPacks: {
-        title: 'Starter Packs',
-        desc: 'Checklists, scripts et outils de contrôle pour un usage immédiat.',
-      },
-      playbooks: {
-        title: 'Playbooks',
-        desc: 'Références SOP complètes pour Front Office, Housekeeping, F&B et Spa.',
-      },
-      training: {
-        title: 'Formation',
-        desc: 'Sessions sur site pour aider les équipes à appliquer les standards.',
-      },
-      audit: {
-        title: 'Audit',
-        desc: 'Une revue structurée des standards, de l’exécution et des écarts.',
-      },
-    },
-    goalsEyebrow: 'Notre Engagement',
-    goalsTitle: 'Trois engagements.\nSur chaque mission.',
-    goals: [
-      {
-        title: 'Excellence du Service',
-        desc: "Créer les conditions d'une exécution plus régulière, plus lisible, et plus fiable pour le client.",
-      },
-      {
-        title: 'Stabilité des Équipes',
-        desc: 'Donner aux équipes une base de travail claire, plus simple à transmettre, à expliquer et à reprendre.',
-      },
-      {
-        title: 'Efficacité Opérationnelle',
-        desc: 'Mettre en place des supports qui rendent les méthodes plus accessibles, plus durables et plus faciles à piloter.',
-      },
-    ],
-  },
-  es: {
-    offerOverviewEyebrow: 'Lo que puedes usar ahora',
-    offerOverviewTitle: 'Elige el formato adecuado para tu necesidad',
-    viewLabel: 'Ver',
-    cards: {
-      starterPacks: {
-        title: 'Starter Packs',
-        desc: 'Checklists, scripts y herramientas de control para uso inmediato.',
-      },
-      playbooks: {
-        title: 'Playbooks',
-        desc: 'Referencias SOP completas para Front Office, Housekeeping, F&B y Spa.',
-      },
-      training: {
-        title: 'Formación',
-        desc: 'Sesiones en el hotel para ayudar a los equipos a aplicar los estándares de servicio.',
-      },
-      audit: {
-        title: 'Auditoría',
-        desc: 'Una revisión estructurada de estándares, ejecución y brechas operativas.',
-      },
-    },
-    goalsEyebrow: 'Nuestros objetivos',
-    goalsTitle: 'Tres resultados.\nEn cada proyecto.',
-    goals: [
-      {
-        title: 'Excelencia de servicio',
-        desc: 'Asegurar una experiencia de huésped consistente y cuidada en cada interacción, sin depender de quién esté de turno.',
-      },
-      {
-        title: 'Estabilidad del equipo',
-        desc: 'Simplificar el onboarding para reducir la rotación y ayudar a las personas a crecer con confianza.',
-      },
-      {
-        title: 'Eficiencia operativa',
-        desc: 'Liberar tiempo de gestión haciendo que el know-how sea transferible, documentado y siempre disponible.',
-      },
-    ],
-  },
-} satisfies Partial<Record<Locale, {
-  offerOverviewEyebrow: string
-  offerOverviewTitle: string
-  viewLabel: string
-  cards: Record<'starterPacks' | 'playbooks' | 'training' | 'audit', { title: string; desc: string }>
-  goalsEyebrow: string
-  goalsTitle: string
-  goals: { title: string; desc: string }[]
-}>>
-
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>
-}): Promise<Metadata> {
-  const { locale } = await params
-  const activeLocale = toActiveLocale(locale)
-  const metadata = homeMetadata[activeLocale as keyof typeof homeMetadata] ?? homeMetadata.en
-  return {
-    title: metadata.title,
-    description: metadata.description,
-    alternates: {
-      canonical: localizedRouteUrl('home', activeLocale),
-      languages: alternatesForRoute('home'),
-    },
+type HomeCopy = {
+  hero: {
+    eyebrow: string
+    title: string
+    subtitle: string
+    primary: string
+    secondary: string
+  }
+  paths: {
+    title: string
+    text: string
+    cta: string
+  }[]
+  departments: {
+    eyebrow: string
+    title: string
+    text: string
+    items: {
+      title: string
+      text: string
+    }[]
+  }
+  problem: {
+    eyebrow: string
+    title: string
+    points: {
+      title: string
+      text: string
+    }[]
+  }
+  products: {
+    eyebrow: string
+    title: string
+    cta: string
+  }
+  services: {
+    eyebrow: string
+    title: string
+    text: string[]
+    items: {
+      title: string
+      text: string
+    }[]
+    cta: string
+  }
+  expertise: {
+    eyebrow: string
+    quote: string
+    text: string[]
+    founder: string
+    years: string
+    tags: string[]
+  }
+  cta: {
+    title: string
+    text: string
+    primary: string
+    secondary: string
   }
 }
+
+const homeCopy = {
+  en: {
+    hero: {
+      eyebrow: 'Hotel SOPs · Operational training',
+      title: 'Clearer standards. Better prepared teams.',
+      subtitle:
+        'Ready-to-adapt operational manuals and practical training for hotel teams. Save time building procedures, strengthen day-to-day execution and give managers a clearer framework to train, coach and maintain service standards.',
+      primary: 'Explore SOP Manuals',
+      secondary: 'Explore Training',
+    },
+    paths: [
+      {
+        title: 'I need ready-to-use operating standards.',
+        text: 'SOP manuals, procedures, checklists and scripts designed to give managers a structured starting point without rebuilding everything from scratch.',
+        cta: 'Explore SOP Manuals',
+      },
+      {
+        title: 'I need my team to apply it consistently.',
+        text: 'On-site or remote training to turn standards into behaviours, strengthen management routines and improve consistency on the floor.',
+        cta: 'Explore Training',
+      },
+    ],
+    departments: {
+      eyebrow: 'Expertise by department',
+      title: 'Operational standards built for each department.',
+      text: 'Front Office standards are not delivered in the same way as Housekeeping, restaurant or Spa standards. Our content reflects the pace, control points and service expectations of each discipline.',
+      items: [
+        {
+          title: 'Front Office',
+          text: 'Arrivals and departures, shift handovers, guest communication, upselling, Night Audit, Guest Relations, Concierge and Porter Services.',
+        },
+        {
+          title: 'Housekeeping',
+          text: 'Room standards, cleaning sequences, inspections, turndown, task allocation and supervisor controls.',
+        },
+        {
+          title: 'F&B',
+          text: 'Mise en place, service sequences, table standards, upselling, team briefings and quality control.',
+        },
+        {
+          title: 'Spa & Wellness',
+          text: 'Guest journey, consultation, treatment room preparation, hygiene, therapist standards and experience follow-up.',
+        },
+      ],
+    },
+    problem: {
+      eyebrow: 'From expectation to execution',
+      title: 'Excellence should not depend on who is on shift.',
+      points: [
+        {
+          title: 'Save management time',
+          text: 'Start from a structured operating base instead of creating procedures, training tools and checklists from scratch.',
+        },
+        {
+          title: 'Align the team',
+          text: 'Give managers and team members one shared reference for expectations, routines and service standards.',
+        },
+        {
+          title: 'Improve consistency',
+          text: 'Reduce variations between shifts, supervisors and individual ways of working.',
+        },
+      ],
+    },
+    products: {
+      eyebrow: 'Operational SOP manuals',
+      title: 'Ready to use. Built to adapt.',
+      cta: 'View all operational resources',
+    },
+    services: {
+      eyebrow: 'On-site or remote training',
+      title: 'Turn standards into daily practice.',
+      text: [
+        'Practical training built around your property, your teams and the realities of hotel operations.',
+      ],
+      items: [
+        {
+          title: 'Service standards training',
+          text: 'Align teams around the expected behaviours, service sequences and control points.',
+        },
+        {
+          title: 'SOP implementation',
+          text: 'Adapt LuxOps content to your organisation, systems, roles and service identity.',
+        },
+        {
+          title: 'Onboarding and refreshers',
+          text: 'Structure new-hire training and bring existing teams back to a shared operating standard.',
+        },
+        {
+          title: 'Manager coaching',
+          text: 'Give department leaders the tools to brief, observe, correct and reinforce standards every day.',
+        },
+      ],
+      cta: 'Discuss Your Training Needs',
+    },
+    expertise: {
+      eyebrow: 'Built from hotel operations',
+      quote:
+        'Standards only matter when teams understand them, managers reinforce them and guests can feel the difference.',
+      text: [
+        'LuxOps draws on 15 years at the heart of hotel operations: department leadership, pre-openings, team briefings, inspections, training and the daily responsibility of delivering a consistent guest experience.',
+        'The methodology comes from the operating floor, the pressure of service and the need to make expectations clearer, easier to communicate and simpler to apply.',
+      ],
+      founder: 'Founder-led · Built for operational teams',
+      years: 'years of high-end hotel operations',
+      tags: ['Front Office', 'Housekeeping', 'F&B', 'Spa', 'Pre-opening', 'Training'],
+    },
+    cta: {
+      title: 'What does your hotel need to standardise?',
+      text: 'Start with a ready-to-adapt SOP manual, or speak with us about training your managers and teams.',
+      primary: 'Explore SOP Manuals',
+      secondary: 'Discuss Training',
+    },
+  },
+  fr: {
+    hero: {
+      eyebrow: 'SOP hôtelières · Formation opérationnelle',
+      title: 'Des standards plus clairs. Des équipes mieux préparées.',
+      subtitle:
+        'Des manuels opérationnels prêts à adapter et des formations conçues pour les équipes hôtelières. Gagnez du temps dans la structuration de vos procédures, renforcez l’exécution au quotidien et donnez aux managers un cadre plus clair pour former et maintenir les standards de service.',
+      primary: 'Découvrir les manuels SOP',
+      secondary: 'Découvrir les formations',
+    },
+    paths: [
+      {
+        title: 'Je veux structurer mes procédures.',
+        text: 'Des manuels SOP, procédures, checklists et scripts pour donner aux managers une base claire sans tout reconstruire à partir d’une page blanche.',
+        cta: 'Découvrir les manuels SOP',
+      },
+      {
+        title: 'Je veux les faire appliquer sur le terrain.',
+        text: 'Des formations sur site ou à distance pour transformer les standards en comportements, renforcer les pratiques managériales et gagner en régularité opérationnelle.',
+        cta: 'Découvrir les formations',
+      },
+    ],
+    departments: {
+      eyebrow: 'Une expertise par département',
+      title: 'Des standards conçus pour la réalité de chaque département.',
+      text: 'Les standards d’un Front Office ne se structurent pas comme ceux du Housekeeping, du restaurant ou du Spa. Nos contenus reprennent les rythmes, les points de contrôle, les responsabilités et les moments de vérité propres à chaque département.',
+      items: [
+        {
+          title: 'Front Office',
+          text: 'Préparation des arrivées, check-in et check-out, passations de consignes, communication client, upselling, Night Audit, Guest Relations, conciergerie et bagagerie.',
+        },
+        {
+          title: 'Housekeeping',
+          text: 'Standards chambre, séquences de nettoyage, inspections, service de couverture, répartition des tâches, statuts de chambre et contrôles superviseur.',
+        },
+        {
+          title: 'F&B',
+          text: 'Mise en place, séquences de service, standards de table, vente additionnelle, briefings, gestion des réclamations et contrôle de la qualité.',
+        },
+        {
+          title: 'Spa & Wellness',
+          text: 'Parcours client, consultation, préparation cabine, hygiène, standards thérapeutes, prise en charge et suivi de l’expérience.',
+        },
+      ],
+    },
+    problem: {
+      eyebrow: 'De la consigne au réflexe',
+      title: 'Le niveau de service ne devrait jamais dépendre de l’équipe en poste.',
+      points: [
+        {
+          title: 'Gagner du temps managérial',
+          text: 'Partez d’une base opérationnelle structurée au lieu de reconstruire procédures, supports et checklists.',
+        },
+        {
+          title: 'Aligner les équipes',
+          text: 'Donnez aux managers et aux collaborateurs un référentiel commun sur les pratiques et les attentes.',
+        },
+        {
+          title: 'Gagner en régularité',
+          text: 'Réduisez les écarts entre shifts, managers et façons individuelles de travailler.',
+        },
+      ],
+    },
+    products: {
+      eyebrow: 'Manuels de procédures opérationnelles',
+      title: 'Prêts à l’emploi. Conçus pour être adaptés.',
+      cta: 'Voir toutes les ressources opérationnelles',
+    },
+    services: {
+      eyebrow: 'Formation sur site ou à distance',
+      title: 'Faire passer les standards du document au terrain.',
+      text: [
+        'Des formations concrètes, adaptées à votre établissement, à vos équipes et à la réalité de votre exploitation.',
+      ],
+      items: [
+        {
+          title: 'Formation aux standards de service',
+          text: 'Aligner les équipes sur les comportements attendus, les séquences de service et les points de contrôle propres à leur département.',
+        },
+        {
+          title: 'Déploiement des procédures',
+          text: 'Adapter les contenus LuxOps à votre organisation, vos systèmes, vos rôles, vos procédures internes et votre identité de service.',
+        },
+        {
+          title: 'Intégration et remise à niveau',
+          text: 'Structurer l’onboarding des nouvelles recrues et remettre les équipes en poste autour d’un référentiel commun.',
+        },
+        {
+          title: 'Accompagnement des managers',
+          text: 'Donner aux chefs de département les outils nécessaires pour briefer, observer, corriger et renforcer les standards au quotidien.',
+        },
+      ],
+      cta: 'Parler de mon besoin de formation',
+    },
+    expertise: {
+      eyebrow: 'Une méthode issue de l’exploitation',
+      quote:
+        'Un standard n’a de valeur que lorsqu’il est compris par l’équipe, renforcé par les managers et perceptible dans l’expérience client.',
+      text: [
+        'LuxOps s’appuie sur 15 ans d’expérience au cœur des opérations hôtelières : management de département, pré-ouvertures, briefings, inspections, formation des équipes et pilotage quotidien de l’expérience client.',
+        'La méthode vient du terrain, de la pression du service et de la nécessité de rendre les attentes plus claires, plus faciles à transmettre et plus simples à appliquer.',
+      ],
+      founder: 'Conçu par un opérateur hôtelier, pour les équipes opérationnelles',
+      years: 'ans d’opérations hôtelières haut de gamme',
+      tags: ['Front Office', 'Housekeeping', 'F&B', 'Spa', 'Pré-ouverture', 'Formation'],
+    },
+    cta: {
+      title: 'Que souhaitez-vous mieux structurer dans votre établissement ?',
+      text: 'Commencez avec un manuel SOP prêt à adapter, ou échangeons sur la formation de vos managers et de vos équipes.',
+      primary: 'Découvrir les manuels SOP',
+      secondary: 'Parler de formation',
+    },
+  },
+  es: {
+    hero: {
+      eyebrow: 'Playbooks operativos · Formación hotelera',
+      title: 'Estándares claros. Equipos alineados. Ejecución constante.',
+      subtitle:
+        'Playbooks listos para adaptar y formación presencial o remota para estructurar prácticas, comunicar exigencias de servicio y fijar los buenos hábitos en cada departamento.',
+      primary: 'Explorar Playbooks',
+      secondary: 'Formar al equipo',
+    },
+    paths: [
+      {
+        title: 'Necesito estructurar mis estándares.',
+        text: 'Playbooks completos para documentar procedimientos, aclarar responsabilidades y dar a los managers una referencia operativa lista para usar.',
+        cta: 'Explorar Playbooks',
+      },
+      {
+        title: 'Necesito que el equipo los aplique.',
+        text: 'Formación presencial o remota para alinear equipos, trabajar comportamientos esperados y convertir estándares en prácticas diarias.',
+        cta: 'Explorar Formación',
+      },
+    ],
+    departments: {
+      eyebrow: 'Expertise por departamento',
+      title: 'Cada disciplina tiene su propia realidad operativa.',
+      text: 'Los estándares de Front Office no se estructuran igual que los de Housekeeping, restaurante o Spa. Nuestro contenido refleja los ritmos, controles y momentos clave de cada departamento.',
+      items: [
+        {
+          title: 'Front Office',
+          text: 'Llegadas y salidas, handovers, comunicación con huéspedes, upselling, Night Audit, Guest Relations, Concierge y Porter Services.',
+        },
+        {
+          title: 'Housekeeping',
+          text: 'Estándares de habitación, secuencias de limpieza, inspecciones, turndown, reparto de tareas y controles de supervisión.',
+        },
+        {
+          title: 'F&B',
+          text: 'Mise en place, secuencias de servicio, estándares de mesa, upselling, briefings y control de calidad.',
+        },
+        {
+          title: 'Spa & Wellness',
+          text: 'Guest journey, consulta, preparación de cabinas, higiene, estándares de terapeutas y seguimiento de la experiencia.',
+        },
+      ],
+    },
+    problem: {
+      eyebrow: 'De la consigna a la ejecución',
+      title: 'El nivel de servicio no debería depender del equipo de turno.',
+      points: [
+        {
+          title: 'Una referencia común',
+          text: 'Dé a cada colaborador una visión clara de lo que se espera en cada etapa del servicio.',
+        },
+        {
+          title: 'Transmisión estructurada',
+          text: 'Use los mismos estándares en onboarding, briefings, refreshers y coaching en la operación.',
+        },
+        {
+          title: 'Ejecución más constante',
+          text: 'Ayude a los managers a observar prácticas, corregir brechas y mantener el nivel en el tiempo.',
+        },
+      ],
+    },
+    products: {
+      eyebrow: 'Playbooks operativos',
+      title: 'Deje de construir estándares desde una página en blanco.',
+      cta: 'Explorar Playbooks',
+    },
+    services: {
+      eyebrow: 'Formación presencial o remota',
+      title: 'Un estándar solo crea valor cuando se convierte en comportamiento.',
+      text: [
+        'Convertimos estándares en sesiones de formación prácticas, adaptadas a su propiedad, sus equipos y la realidad del servicio.',
+        'El objetivo no es solo presentar procedimientos. Es aclarar expectativas, practicar comportamientos y dar a los managers herramientas para mantenerlos en el tiempo.',
+      ],
+      items: [
+        {
+          title: 'Formación en estándares de servicio',
+          text: 'Alinear equipos alrededor de comportamientos, secuencias de servicio y puntos de control.',
+        },
+        {
+          title: 'Implementación de playbooks',
+          text: 'Adaptar los contenidos LuxOps a su organización, sistemas, roles e identidad de servicio.',
+        },
+        {
+          title: 'Onboarding y refreshers',
+          text: 'Estructurar la formación de nuevos perfiles y realinear equipos existentes.',
+        },
+        {
+          title: 'Coaching para managers',
+          text: 'Dar a los responsables herramientas para briefeos, observación, corrección y refuerzo diario.',
+        },
+      ],
+      cta: 'Hablar de formación',
+    },
+    expertise: {
+      eyebrow: 'Método construido desde la operación',
+      quote:
+        'Un estándar solo tiene valor cuando el equipo lo comprende, lo observa y lo reproduce con constancia.',
+      text: [
+        'LuxOps se apoya en 15 años en operaciones hoteleras: liderazgo de departamentos, pre-aperturas, briefings, inspecciones, formación de equipos y gestión diaria de la experiencia del huésped.',
+        'La metodología viene del terreno, de la presión del servicio y de la necesidad de hacer las expectativas más claras, más fáciles de comunicar y más simples de aplicar.',
+      ],
+      founder: 'Fundador operador · Construido para equipos operativos',
+      years: 'años de operaciones hoteleras high-end',
+      tags: ['Front Office', 'Housekeeping', 'F&B', 'Spa', 'Pre-apertura', 'Formación'],
+    },
+    cta: {
+      title: '¿Qué estándares necesita estructurar o reforzar en su propiedad?',
+      text: 'Empiece con un playbook listo para adaptar, o construyamos un recorrido de formación para sus managers y equipos.',
+      primary: 'Explorar Playbooks',
+      secondary: 'Hablar de formación',
+    },
+  },
+} satisfies Partial<Record<Locale, HomeCopy>>
 
 const orgSchema = {
   '@context': 'https://schema.org',
@@ -193,329 +450,331 @@ const orgSchema = {
   ],
 }
 
+const departmentImages = [
+  {
+    src: `${imageBase}/dept-front-office-v2.jpg`,
+    alt: 'Luxury hotel front desk prepared for guest arrivals.',
+  },
+  {
+    src: `${imageBase}/dept-housekeeping-v2.jpg`,
+    alt: 'Prepared luxury guest room with calm housekeeping cues.',
+  },
+  {
+    src: `${imageBase}/dept-food-beverage-v2.jpg`,
+    alt: 'Fine dining restaurant table prepared before service.',
+  },
+  {
+    src: `${imageBase}/dept-spa-wellness-v2.jpg`,
+    alt: 'Luxury spa treatment room prepared before opening.',
+  },
+]
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  const activeLocale = toActiveLocale(locale)
+  const metadata = homeMetadata[activeLocale as keyof typeof homeMetadata] ?? homeMetadata.en
+  return {
+    title: metadata.title,
+    description: metadata.description,
+    alternates: {
+      canonical: localizedRouteUrl('home', activeLocale),
+      languages: alternatesForRoute('home'),
+    },
+  }
+}
+
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
+  const activeLocale = toActiveLocale(locale)
+  const copy = homeCopy[activeLocale as keyof typeof homeCopy] ?? homeCopy.en
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
-      <HomeContent locale={locale} />
-    </>
-  )
-}
-
-function HomeContent({ locale }: { locale: string }) {
-  const tHero = useTranslations('hero')
-  const tProblem = useTranslations('problem')
-  const tSolution = useTranslations('solution')
-  const tOffers = useTranslations('offers')
-  const tCta = useTranslations('cta_section')
-  const activeLocale = toActiveLocale(locale)
-  const copy = homeContent[activeLocale as keyof typeof homeContent] ?? homeContent.en
-
-  return (
-    <div className="pt-16">
-
-      {/* Hero */}
-      <section
-        className="relative px-6 pt-10 pb-16 md:pt-14 md:pb-20 overflow-hidden border-b"
-        style={{
-          backgroundImage: 'radial-gradient(#c3c6d6 0.5px, transparent 0.5px)',
-          backgroundSize: '24px 24px',
-          borderColor: 'rgba(195,198,214,0.2)',
-        }}
-      >
-        <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row gap-12 items-center">
-          <div className="flex-1 space-y-8">
-            <div
-              className="inline-flex items-center gap-2 px-3 py-1 text-[#003d9b] font-bold text-[10px] uppercase tracking-widest"
-              style={{ backgroundColor: '#eef4ff', borderRadius: '0.125rem' }}
-            >
-              <span className="w-2 h-2 bg-[#003d9b] rounded-full" />
-              {tHero('badge')}
-            </div>
-
-            <h1 className="font-display text-5xl md:text-6xl font-extrabold tracking-tighter leading-[0.96] text-[#0a1d2e]">
-              {tHero('title')}
-            </h1>
-
-            <p className="text-lg text-[#4f6074] max-w-xl leading-relaxed">
-              {tHero('subtitle')}
+      <div className="bg-[#f5f1e9] pt-[var(--site-header-height)] text-[#20231f]">
+        <section className="hero-viewport grid border-b border-[rgba(32,35,31,0.14)] lg:grid-cols-[42%_58%]">
+          <div className="flex flex-col justify-center px-6 py-12 md:px-16 lg:py-6 xl:px-16 2xl:px-20">
+            <p className="mb-6 text-xs font-semibold uppercase tracking-[0.16em] text-[#a58658] lg:mb-4 xl:mb-6">
+              {copy.hero.eyebrow}
             </p>
-
-            <div className="flex flex-col sm:flex-row gap-4">
+            <h1 className="max-w-[650px] font-display text-[2.65rem] font-medium leading-[1.04] text-[#0f211a] md:text-[3.15rem] lg:text-[2.55rem] xl:text-[3.15rem] 2xl:text-[4rem]">
+              {copy.hero.title}
+            </h1>
+            <p className="mt-6 max-w-[560px] text-lg leading-8 text-[#5d665f] md:text-xl lg:mt-5 lg:text-base lg:leading-7 xl:mt-6 xl:text-xl xl:leading-8">
+              {copy.hero.subtitle}
+            </p>
+            <div className="mt-8 flex flex-col flex-wrap gap-4 sm:flex-row lg:mt-6 xl:mt-8">
               <Link
                 href={localizedRoutePath('playbooks', activeLocale)}
-                className="inline-flex flex-shrink-0 items-center justify-center gap-2 px-8 py-4 text-white font-bold transition-all hover:opacity-90 sm:whitespace-nowrap"
-                style={{
-                  background: 'linear-gradient(135deg, #003d9b, #0052cc)',
-                  borderRadius: '0.125rem',
-                  boxShadow: '0 8px 24px rgba(0,61,155,0.2)',
-                }}
+                className="inline-flex items-center justify-center gap-2 bg-[#0f211a] px-6 py-4 text-sm font-semibold text-[#f5f1e9] transition-colors hover:bg-[#24362f] sm:whitespace-nowrap"
               >
-                {tHero('cta_primary')} <ArrowRight size={18} />
+                {copy.hero.primary}
+                <ArrowRight size={16} strokeWidth={1.5} />
               </Link>
               <Link
-                href={localizedRoutePath('contact', activeLocale)}
-                className="inline-flex flex-shrink-0 items-center justify-center gap-2 px-8 py-4 font-bold transition-all hover:bg-[#eef4ff] sm:whitespace-nowrap"
-                style={{
-                  border: '1px solid #003d9b',
-                  color: '#003d9b',
-                  borderRadius: '0.125rem',
-                }}
+                href={localizedRoutePath('training', activeLocale)}
+                className="inline-flex items-center justify-center border border-[#24362f] px-6 py-4 text-sm font-semibold text-[#24362f] transition-colors hover:bg-[#e7e0d5] sm:whitespace-nowrap"
               >
-                {tHero('cta_secondary')}
+                {copy.hero.secondary}
               </Link>
             </div>
           </div>
 
-          {/* Right - commercial offer overview */}
-          <div className="flex-1 w-full max-w-sm lg:max-w-none">
-            <div
-              className="bg-white p-8 md:p-9"
-              style={{
-                borderRadius: '0.125rem',
-                boxShadow: '0 20px 60px rgba(10,29,46,0.08)',
-                border: '1px solid rgba(195,198,214,0.2)',
-              }}
-            >
-              <div className="flex items-start justify-between gap-6 mb-7">
-                <div>
-                  <p className="text-[#003d9b] text-[10px] font-bold uppercase tracking-widest mb-2">
-                    {copy.offerOverviewEyebrow}
-                  </p>
-                  <h2 className="font-display font-extrabold text-[#0a1d2e] text-2xl leading-tight">
-                    {copy.offerOverviewTitle}
-                  </h2>
-                </div>
-                <div className="hidden sm:flex items-center justify-center w-11 h-11 bg-[#eef4ff] text-[#003d9b] flex-shrink-0" style={{ borderRadius: '0.125rem' }}>
-                  <BookOpen size={22} strokeWidth={1.5} />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {[
-                {
-                  icon: <ClipboardCheck size={18} strokeWidth={1.5} />,
-                  title: copy.cards.starterPacks.title,
-                  desc: copy.cards.starterPacks.desc,
-                  href: `${localizedRoutePath('playbooks', activeLocale)}#starter-packs`,
-                },
-                {
-                  icon: <BookOpen size={18} strokeWidth={1.5} />,
-                  title: copy.cards.playbooks.title,
-                  desc: copy.cards.playbooks.desc,
-                  href: `${localizedRoutePath('playbooks', activeLocale)}#department-playbooks`,
-                },
-                {
-                  icon: <Users size={18} strokeWidth={1.5} />,
-                  title: copy.cards.training.title,
-                  desc: copy.cards.training.desc,
-                  href: localizedRoutePath('training', activeLocale),
-                },
-                {
-                  icon: <Settings size={18} strokeWidth={1.5} />,
-                  title: copy.cards.audit.title,
-                  desc: copy.cards.audit.desc,
-                  href: localizedRoutePath('qualityAudit', activeLocale),
-                },
-              ].map((item) => (
-                <Link
-                  key={item.title}
-                  href={item.href}
-                  className="group flex flex-col gap-4 p-5 bg-[#f8f9ff] hover:bg-[#eef4ff] transition-colors"
-                  style={{ borderRadius: '0.125rem', border: '1px solid rgba(195,198,214,0.24)' }}
-                >
-                  <div
-                    className="w-9 h-9 flex items-center justify-center text-[#003d9b] bg-white"
-                    style={{ border: '1px solid rgba(0,61,155,0.15)', borderRadius: '50%' }}
-                  >
-                    {item.icon}
-                  </div>
-                  <div>
-                    <p className="font-display font-bold text-[#0a1d2e] text-sm mb-1">{item.title}</p>
-                    <p className="text-[#4f6074] text-xs leading-relaxed mb-3">{item.desc}</p>
-                    <span className="inline-flex items-center gap-1 text-[#003d9b] text-xs font-bold">
-                      {copy.viewLabel} <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform" />
-                    </span>
-                  </div>
-                </Link>
-              ))}
+          <div className="flex items-center justify-center px-6 py-10 md:px-16 lg:px-5 lg:py-6 xl:px-8">
+            <div className="relative w-full max-w-[1120px]">
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0"
+                style={{ backgroundColor: '#e7e0d5', transform: 'translate(10px, 14px)' }}
+              />
+              <div className="relative aspect-[1896/830] overflow-hidden">
+                <Image
+                  src={`${imageBase}/hero-reception-natural-v4.png`}
+                  alt="Hotel operations team discussing service standards in a luxury lobby before service."
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 58vw, 100vw"
+                  className="object-contain"
+                />
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Problem */}
-      <section className="py-24" style={{ backgroundColor: '#f8f9ff' }}>
-        <div className="max-w-screen-xl mx-auto px-6">
-          <div className="max-w-3xl mb-16">
-            <h2 className="font-display text-4xl font-extrabold text-[#0a1d2e] mb-4 tracking-tight">
-              {tProblem('title')}
-            </h2>
-            <p className="text-lg text-[#4f6074] leading-relaxed">{tProblem('text')}</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {[
-              { emoji: '⚠️', title: tProblem('point1_title'), text: tProblem('point1_text') },
-              { emoji: '📋', title: tProblem('point2_title'), text: tProblem('point2_text') },
-              { emoji: '🔄', title: tProblem('point3_title'), text: tProblem('point3_text') },
-            ].map((item, i) => (
-              <div key={i} className="bg-white p-8" style={{ borderRadius: '0.125rem', boxShadow: '0 2px 8px rgba(10,29,46,0.04)' }}>
-                <div className="text-3xl mb-5">{item.emoji}</div>
-                <h3 className="font-display font-bold text-[#0a1d2e] mb-3">{item.title}</h3>
-                <p className="text-[#4f6074] text-sm leading-relaxed">{item.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Solution */}
-      <section className="py-20" style={{ backgroundColor: '#0a1d2e' }}>
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="font-display text-4xl font-extrabold text-white mb-6 tracking-tight">
-            {tSolution('title')}
-          </h2>
-          <p className="text-xl leading-relaxed" style={{ color: 'rgba(255,255,255,0.7)' }}>
-            {tSolution('text')}
-          </p>
-        </div>
-      </section>
-
-      {/* Offers */}
-      <section className="py-24 bg-white">
-        <div className="max-w-screen-xl mx-auto px-6">
-          <div className="max-w-2xl mb-16">
-            <h2 className="font-display text-4xl font-extrabold text-[#0a1d2e] tracking-tight">
-              {tOffers('title')}
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {[
-              { icon: <BookOpen size={20} style={{ color: '#003d9b' }} />, title: tOffers('digital_title'), desc: tOffers('digital_desc'), cta: tOffers('digital_cta'), href: localizedRoutePath('playbooks', activeLocale) },
-              { icon: <Settings size={20} style={{ color: '#003d9b' }} />, title: tOffers('audit_title'), desc: tOffers('audit_desc'), cta: tOffers('audit_cta'), href: localizedRoutePath('qualityAudit', activeLocale) },
-              { icon: <Users size={20} style={{ color: '#003d9b' }} />, title: tOffers('training_title'), desc: tOffers('training_desc'), cta: tOffers('training_cta'), href: localizedRoutePath('training', activeLocale) },
-            ].map((card, i) => (
-              <div key={i} className="p-8 group transition-all hover:shadow-lg" style={{ backgroundColor: '#f8f9ff', borderRadius: '0.125rem' }}>
-                <div className="w-10 h-10 flex items-center justify-center mb-6" style={{ backgroundColor: '#eef4ff', borderRadius: '0.125rem' }}>
-                  {card.icon}
-                </div>
-                <h3 className="font-display font-bold text-[#0a1d2e] mb-3">{card.title}</h3>
-                <p className="text-[#4f6074] text-sm leading-relaxed mb-6">{card.desc}</p>
-                <Link href={card.href} className="inline-flex items-center gap-1.5 text-[#003d9b] font-bold text-sm hover:gap-3 transition-all">
-                  {card.cta} <ArrowRight size={14} />
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Our Goals */}
-      <section
-        className="py-32 bg-white border-t border-b"
-        style={{ borderColor: 'rgba(195,198,214,0.2)' }}
-      >
-        <div className="max-w-screen-xl mx-auto px-6">
-
-          {/* Header */}
-          <div className="max-w-2xl mb-24">
-            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#003d9b] mb-6">
-              {copy.goalsEyebrow}
-            </p>
-            <h2 className="font-display text-4xl md:text-5xl font-extrabold text-[#0a1d2e] tracking-tight leading-tight">
-              {copy.goalsTitle}
-            </h2>
-          </div>
-
-          {/* 3 Pillars */}
-          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-[rgba(195,198,214,0.35)]">
-            {[
-              {
-                ordinal: '01',
-                icon: <Star size={22} strokeWidth={1.25} />,
-                title: copy.goals[0].title,
-                desc: copy.goals[0].desc,
-              },
-              {
-                ordinal: '02',
-                icon: <Users size={22} strokeWidth={1.25} />,
-                title: copy.goals[1].title,
-                desc: copy.goals[1].desc,
-              },
-              {
-                ordinal: '03',
-                icon: <Clock size={22} strokeWidth={1.25} />,
-                title: copy.goals[2].title,
-                desc: copy.goals[2].desc,
-              },
-            ].map((item, i) => (
-              <div
-                key={i}
-                className="flex flex-col gap-8 py-10 md:py-0"
-                style={{ padding: i === 0 ? '0 3rem 0 0' : i === 2 ? '0 0 0 3rem' : '0 3rem' }}
+        <section className="border-b border-[rgba(32,35,31,0.14)]">
+          <div className="grid md:grid-cols-2">
+            {copy.paths.map((path, index) => (
+              <Link
+                key={path.title}
+                href={index === 0 ? localizedRoutePath('playbooks', activeLocale) : localizedRoutePath('training', activeLocale)}
+                className="group relative min-h-[520px] overflow-hidden border-t border-[rgba(32,35,31,0.14)] md:min-h-[600px] md:border-r"
               >
-                {/* Ordinal + icon */}
-                <div className="flex items-center justify-between">
-                  <span
-                    className="font-display font-extrabold text-[#0a1d2e]"
-                    style={{ fontSize: '3rem', lineHeight: 1, opacity: 0.06 }}
-                  >
-                    {item.ordinal}
+                <Image
+                  src={index === 0 ? `${imageBase}/playbooks-flatlay.jpg` : `${imageBase}/training-team-natural-v4.png`}
+                  alt={index === 0 ? 'Hotel operational playbooks and procedure checklists prepared for a team briefing.' : 'Hotel team gathered around a table for an operational training session.'}
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                />
+                <span className="absolute inset-0 bg-[rgba(9,18,14,0.16)] transition-colors duration-500 group-hover:bg-[rgba(9,18,14,0.25)]" />
+                <span className="absolute inset-x-0 bottom-0 h-[78%] bg-gradient-to-t from-[rgba(6,14,10,0.94)] via-[rgba(6,14,10,0.56)] to-transparent" />
+                <span className="absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-[rgba(6,14,10,0.28)] to-transparent" />
+                <span className="image-card-copy absolute inset-x-0 bottom-0 flex min-h-[300px] flex-col justify-end p-8 text-[#fcfbf8] md:p-14 lg:p-16">
+                  <span className="block min-h-[6.4rem] max-w-[700px] font-display text-[2.15rem] font-medium leading-[1.06] md:text-[2.65rem] 2xl:text-[3.05rem]">
+                    {path.title}
                   </span>
-                  <div
-                    className="w-11 h-11 flex items-center justify-center text-[#003d9b]"
-                    style={{
-                      border: '1px solid rgba(0,61,155,0.18)',
-                      borderRadius: '50%',
-                    }}
-                  >
-                    {item.icon}
+                  <span className="mt-4 block min-h-[5.8rem] max-w-[600px] text-sm leading-6 text-[rgba(252,251,248,0.9)] md:text-base md:leading-7">
+                    {path.text}
+                  </span>
+                  <span className="mt-7 inline-flex w-fit items-center gap-2 border-b border-[rgba(252,251,248,0.82)] pb-1 text-sm font-semibold text-[#fcfbf8]">
+                    {path.cta}
+                    <ArrowRight size={15} strokeWidth={1.5} />
+                  </span>
+                </span>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        <section className="viewport-section px-6 py-14 md:px-16 md:py-18 lg:py-16">
+          <div className="mx-auto max-w-[1680px]">
+            <div className="mb-10 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+              <div className="max-w-3xl">
+                <p className="mb-5 text-xs font-semibold uppercase tracking-[0.16em] text-[#a58658]">
+                  {copy.departments.eyebrow}
+                </p>
+                <h2 className="font-display text-[2.35rem] font-medium leading-[1.08] text-[#0f211a] md:text-[3.25rem]">
+                  {copy.departments.title}
+                </h2>
+                <p className="mt-5 max-w-2xl text-lg leading-8 text-[#5d665f]">
+                  {copy.departments.text}
+                </p>
+              </div>
+              <div className="hidden h-px w-72 bg-[rgba(32,35,31,0.14)] lg:block" />
+            </div>
+
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {copy.departments.items.map((department, index) => (
+                <Link
+                  key={department.title}
+                  href={localizedRoutePath('playbooks', activeLocale)}
+                  className={`group block ${index % 2 === 1 ? 'lg:mt-10' : ''}`}
+                >
+                  <div className="relative aspect-[4/5] overflow-hidden bg-[#e7e0d5]">
+                    <Image
+                      src={departmentImages[index].src}
+                      alt={departmentImages[index].alt}
+                      fill
+                      loading="eager"
+                      sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                      className="object-cover transition duration-500 group-hover:scale-[1.03]"
+                    />
+                    <span className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[rgba(15,33,26,0.74)] to-transparent" />
+                    <span className="absolute bottom-5 left-5 right-5 font-display text-2xl font-medium leading-tight text-[#fcfbf8] md:text-3xl">
+                      {department.title}
+                    </span>
                   </div>
-                </div>
+                  <p className="mt-3 text-sm leading-6 text-[#5d665f]">
+                    {department.text}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
 
-                {/* Thin separator */}
-                <div style={{ height: '1px', backgroundColor: 'rgba(195,198,214,0.4)' }} />
-
-                {/* Text */}
-                <div className="flex flex-col gap-3">
-                  <h3
-                    className="font-display font-bold text-[#0a1d2e] tracking-tight"
-                    style={{ fontSize: '1.2rem', lineHeight: 1.3 }}
-                  >
-                    {item.title}
+        <section className="border-y border-[rgba(32,35,31,0.14)] bg-[#e7e0d5] px-6 py-20 md:px-16 md:py-28">
+          <div className="mx-auto max-w-6xl">
+            <p className="mb-5 text-center text-xs font-semibold uppercase tracking-[0.16em] text-[#a58658]">
+              {copy.problem.eyebrow}
+            </p>
+            <h2 className="mx-auto max-w-4xl text-center font-display text-[2.45rem] font-medium leading-[1.1] text-[#0f211a] md:text-[3.55rem]">
+              {copy.problem.title}
+            </h2>
+            <div className="mt-16 grid gap-10 md:grid-cols-3">
+              {copy.problem.points.map((point, index) => (
+                <div key={point.title} className="border-t border-[rgba(32,35,31,0.18)] pt-7">
+                  <span className="font-display text-5xl italic text-[rgba(15,33,26,0.18)]">
+                    {String(index + 1).padStart(2, '0')}.
+                  </span>
+                  <h3 className="mt-6 text-xs font-semibold uppercase tracking-[0.15em] text-[#24362f]">
+                    {point.title}
                   </h3>
-                  <p className="text-[#4f6074] leading-relaxed" style={{ fontSize: '0.9rem' }}>
-                    {item.desc}
+                  <p className="mt-4 text-sm leading-7 text-[#5d665f]">
+                    {point.text}
                   </p>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
+        </section>
 
-        </div>
-      </section>
+        <section id="sop-manuals" className="scroll-mt-24 px-6 py-16 md:px-16 md:py-20">
+          <div className="mx-auto max-w-[1500px]">
+            <div className="max-w-3xl">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#a58658]">
+                {copy.products.eyebrow}
+              </p>
+              <h2 className="mt-6 font-display text-[2.45rem] font-medium leading-[1.1] text-[#0f211a] md:text-[3.25rem]">
+                {copy.products.title}
+              </h2>
+            </div>
+            <HomeManuals locale={activeLocale} allResourcesLabel={copy.products.cta} />
+          </div>
+        </section>
 
-      {/* Expertise - humanisation */}
-      <ExpertiseSection locale={activeLocale} />
+        <section className="border-y border-[rgba(32,35,31,0.14)] bg-[#fcfbf8] px-6 py-14 md:px-16 lg:py-0">
+          <div className="viewport-section mx-auto grid max-w-[1680px] gap-10 lg:grid-cols-[0.96fr_1.04fr] lg:items-center">
+            <div className="relative aspect-[16/10] overflow-hidden bg-[#e7e0d5] lg:aspect-[4/3]">
+              <Image
+                src={`${imageBase}/training-team-natural-v4.png`}
+                alt="Hotel team gathered around a table during an operational training session."
+                fill
+                sizes="(min-width: 1024px) 48vw, 100vw"
+                className="object-cover object-center"
+              />
+            </div>
+            <div className="flex flex-col justify-center lg:py-10">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#a58658]">
+                {copy.services.eyebrow}
+              </p>
+              <h2 className="mt-5 font-display text-[2.25rem] font-medium leading-[1.1] text-[#0f211a] md:text-[3rem]">
+                {copy.services.title}
+              </h2>
+              <div className="mt-5 max-w-2xl space-y-4 text-base leading-7 text-[#5d665f] md:text-lg md:leading-8">
+                {copy.services.text.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
+              <div className="mt-8">
+                {copy.services.items.map((item, index) => (
+                  <div key={item.title} className="grid grid-cols-[4rem_1fr] border-t border-[rgba(32,35,31,0.14)] py-4 last:border-b">
+                    <span className="font-display italic text-[#a58658]">{String(index + 1).padStart(2, '0')}.</span>
+                    <span>
+                      <span className="block font-semibold text-[#24362f]">{item.title}</span>
+                      <span className="mt-1.5 block text-sm leading-6 text-[#5d665f]">{item.text}</span>
+                    </span>
+                  </div>
+                ))}
+              </div>
+              <Link
+                href={localizedRoutePath('training', activeLocale)}
+                className="mt-8 inline-flex w-fit items-center gap-2 border border-[#24362f] px-8 py-4 text-sm font-semibold text-[#24362f] transition-colors hover:bg-[#24362f] hover:text-[#f5f1e9]"
+              >
+                {copy.services.cta}
+                <ArrowRight size={16} strokeWidth={1.5} />
+              </Link>
+            </div>
+          </div>
+        </section>
 
-      {/* Final CTA */}
-      <section className="py-24 bg-[#003d9b] text-white text-center px-6">
-        <div className="max-w-2xl mx-auto">
-          <h2 className="font-display text-4xl font-extrabold tracking-tight mb-4">{tCta('title')}</h2>
-          <p className="text-xl mb-10" style={{ color: 'rgba(255,255,255,0.75)' }}>{tCta('text')}</p>
-          <Link
-            href={localizedRoutePath('contact', activeLocale)}
-            className="inline-flex items-center gap-2 px-10 py-4 bg-white text-[#003d9b] font-bold hover:bg-[#f8f9ff] transition-colors"
-            style={{ borderRadius: '0.125rem' }}
-          >
-            {tCta('cta')} <ArrowRight size={18} />
-          </Link>
-        </div>
-      </section>
-    </div>
+        <section className="px-6 py-20 md:px-16 md:py-28">
+          <div className="mx-auto grid max-w-[1320px] gap-12 lg:grid-cols-[0.78fr_1.22fr] lg:items-center">
+            <div className="border-y border-[rgba(32,35,31,0.14)] py-10">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#a58658]">
+                {copy.expertise.eyebrow}
+              </p>
+              <p className="mt-10 font-display text-[5rem] italic leading-none text-[rgba(15,33,26,0.12)] md:text-[8rem]">
+                15
+              </p>
+              <p className="mt-4 text-sm font-semibold uppercase tracking-[0.14em] text-[#687169]">
+                {copy.expertise.years}
+              </p>
+            </div>
+            <div>
+              <blockquote className="font-display text-[2.15rem] italic leading-[1.14] text-[#0f211a] md:text-[3rem]">
+                “{copy.expertise.quote}”
+              </blockquote>
+              <div className="mt-8 max-w-3xl space-y-5 text-lg leading-8 text-[#5d665f]">
+                {copy.expertise.text.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
+              <div className="mt-8 h-px w-40 bg-[rgba(32,35,31,0.18)]" />
+              <p className="mt-7 text-sm font-semibold uppercase tracking-[0.12em] text-[#24362f]">
+                {copy.expertise.founder}
+              </p>
+              <div className="mt-7 flex flex-wrap gap-2">
+                {copy.expertise.tags.map((tag) => (
+                  <span key={tag} className="border border-[rgba(36,54,47,0.22)] px-3 py-2 text-xs font-semibold text-[#4f5a52]">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-[#0f211a] px-6 py-20 text-center text-[#f5f1e9] md:px-16 md:py-28">
+          <div className="mx-auto max-w-4xl">
+            <h2 className="font-display text-[2.45rem] font-medium leading-[1.08] md:text-[3.7rem]">
+              {copy.cta.title}
+            </h2>
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-[rgba(245,241,233,0.72)]">
+              {copy.cta.text}
+            </p>
+            <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
+              <Link
+                href={localizedRoutePath('playbooks', activeLocale)}
+                className="inline-flex items-center justify-center gap-2 bg-[#f5f1e9] px-8 py-4 text-sm font-semibold text-[#0f211a] transition-colors hover:bg-[#fcfbf8]"
+              >
+                {copy.cta.primary}
+                <ArrowRight size={16} strokeWidth={1.5} />
+              </Link>
+              <Link
+                href={localizedRoutePath('training', activeLocale)}
+                className="inline-flex items-center justify-center border border-[#f5f1e9] px-8 py-4 text-sm font-semibold text-[#f5f1e9] transition-colors hover:bg-[#24362f]"
+              >
+                {copy.cta.secondary}
+              </Link>
+            </div>
+          </div>
+        </section>
+      </div>
+    </>
   )
 }

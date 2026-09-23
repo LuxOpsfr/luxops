@@ -10,17 +10,17 @@ const contactMetadata = {
   en: {
     title: 'Contact LuxOps | Hotel Operations Enquiries',
     description:
-      'Get in touch with the LuxOps team. Questions about hotel playbooks, SOPs, audits, custom processes or on-property training. We usually respond within one business day.',
+      'Get in touch with LuxOps about hotel SOP manuals, resources or on-property training. We usually respond within one business day.',
   },
   fr: {
     title: 'Contacter LuxOps | Renseignements Opérations Hôtelières',
     description:
-      "Contactez l'équipe LuxOps pour vos questions sur les playbooks, SOPs, audits, process sur-mesure ou formation hôtelière. Réponse habituellement sous un jour ouvré.",
+      "Contactez LuxOps pour vos questions sur les manuels SOP, ressources ou formations hôtelières. Réponse habituelle sous un jour ouvré.",
   },
   es: {
     title: 'Contactar LuxOps | Consultas de operaciones hoteleras',
     description:
-      'Contacta con LuxOps para consultas sobre playbooks hoteleros, SOPs, auditorías, procesos a medida o formación en el hotel. Normalmente respondemos en un día laborable.',
+      'Contacta con LuxOps sobre manuales SOP, recursos o formación hotelera. Normalmente respondemos en un día laborable.',
   },
 } satisfies Partial<Record<Locale, { title: string; description: string }>>
 
@@ -51,70 +51,27 @@ function ContactContent() {
   const tNav = useTranslations('nav')
 
   return (
-    <div className="pt-16 bg-white">
-      {/* Hero */}
-      <section
-        className="relative py-24 px-6 overflow-hidden border-b"
-        style={{
-          backgroundImage: 'radial-gradient(#c3c6d6 0.5px, transparent 0.5px)',
-          backgroundSize: '24px 24px',
-          borderColor: 'rgba(195,198,214,0.2)',
-        }}
-      >
-        <div className="max-w-screen-xl mx-auto">
-          <div
-            className="inline-flex items-center gap-2 px-3 py-1 text-[#003d9b] font-bold text-[10px] uppercase tracking-widest mb-8"
-            style={{ backgroundColor: '#eef4ff', borderRadius: '0.125rem' }}
-          >
-            <span className="w-2 h-2 bg-[#003d9b] rounded-full" />
-            {tNav('contact')}
-          </div>
-          <h1 className="font-display text-5xl md:text-7xl font-extrabold tracking-tighter leading-none text-[#0a1d2e] mb-6">
-            {t('title')}
-          </h1>
-          <p className="text-xl text-[#4f6074] max-w-2xl leading-relaxed">{t('subtitle')}</p>
+    <div className="bg-[#f5f1e9] pt-[var(--site-header-height)] text-[#0f211a]">
+      <section className="border-b border-[rgba(32,35,31,0.14)] px-6 py-16 md:px-16 md:py-24">
+        <div className="mx-auto max-w-[1320px]">
+          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.16em] text-[#a58658]">{tNav('contact')}</p>
+          <h1 className="font-display text-5xl font-medium leading-[1.04] md:text-7xl">{t('title')}</h1>
+          <p className="mt-7 max-w-2xl text-lg leading-8 text-[#5d665f]">{t('subtitle')}</p>
         </div>
       </section>
-
-      {/* Form */}
-      <section className="py-24 px-6 bg-white">
-        <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-16">
-          {/* Form */}
-          <div className="lg:col-span-2">
+      <section className="bg-[#fcfbf8] px-6 py-16 md:px-16 md:py-24">
+        <div className="mx-auto grid max-w-[1320px] gap-16 lg:grid-cols-[1.7fr_0.8fr]">
+          <div>
             <ContactForm />
           </div>
-
-          {/* Contact info */}
-          <div className="space-y-4">
-            <div className="p-8" style={{ backgroundColor: '#f8f9ff', borderRadius: '0.125rem' }}>
-              <div className="flex items-center gap-3 mb-3">
-                <div
-                  className="w-8 h-8 flex items-center justify-center"
-                  style={{ backgroundColor: '#eef4ff', borderRadius: '0.125rem' }}
-                >
-                  <Mail size={14} style={{ color: '#003d9b' }} />
-                </div>
-                <span className="font-bold text-[#0a1d2e] text-sm">{t('email_label')}</span>
-              </div>
-              <a
-                href="mailto:contact@luxops.fr"
-                className="text-[#4f6074] hover:text-[#003d9b] text-sm transition-colors"
-              >
-                contact@luxops.fr
-              </a>
+          <div className="space-y-8">
+            <div className="border-t border-[rgba(32,35,31,0.18)] pt-5">
+              <div className="mb-3 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-[#a58658]"><Mail size={15} />{t('email_label')}</div>
+              <a href="mailto:contact@luxops.fr" className="text-base text-[#0f211a] underline underline-offset-4">contact@luxops.fr</a>
             </div>
-
-            <div className="p-8" style={{ backgroundColor: '#f8f9ff', borderRadius: '0.125rem' }}>
-              <div className="flex items-center gap-3 mb-3">
-                <div
-                  className="w-8 h-8 flex items-center justify-center"
-                  style={{ backgroundColor: '#eef4ff', borderRadius: '0.125rem' }}
-                >
-                  <Clock size={14} style={{ color: '#003d9b' }} />
-                </div>
-                <span className="font-bold text-[#0a1d2e] text-sm">{t('response_time_label')}</span>
-              </div>
-              <p className="text-[#4f6074] text-sm">{t('response_time')}</p>
+            <div className="border-t border-[rgba(32,35,31,0.18)] pt-5">
+              <div className="mb-3 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-[#a58658]"><Clock size={15} />{t('response_time_label')}</div>
+              <p className="text-sm leading-7 text-[#5d665f]">{t('response_time')}</p>
             </div>
           </div>
         </div>

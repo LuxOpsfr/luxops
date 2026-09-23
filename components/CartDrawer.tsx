@@ -10,7 +10,8 @@ import { formatCurrencyAmount, PricedProductType } from '@/lib/pricing'
 import { toActiveLocale } from '@/lib/i18n'
 import type { Locale } from '@/lib/i18n'
 
-const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!)
+const stripePublishableKey = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
+const stripePromise = stripePublishableKey ? loadStripe(stripePublishableKey) : Promise.resolve(null)
 
 const cartCopy = {
   en: {
@@ -93,7 +94,10 @@ export default function CartDrawer({ locale }: CartDrawerProps) {
 
     async function mountCheckout() {
       const stripe = await stripePromise
-      if (!stripe || cancelled) return
+      if (!stripe || cancelled) {
+        setLoading(false)
+        return
+      }
 
       const checkout = await stripe.initEmbeddedCheckout({
         fetchClientSecret: async () => {
@@ -139,28 +143,28 @@ export default function CartDrawer({ locale }: CartDrawerProps) {
     <>
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-black/50 z-40 backdrop-blur-sm"
+        className="fixed inset-0 z-40 bg-[#0f211a]/45 backdrop-blur-sm"
         onClick={handleClose}
       />
 
       {/* Drawer */}
-      <div className="fixed right-0 top-0 h-full w-full max-w-md bg-white z-50 shadow-2xl flex flex-col">
+      <div className="fixed right-0 top-0 z-50 flex h-full w-full max-w-md flex-col bg-[#fcfbf8] shadow-2xl">
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-5 border-b border-gray-100">
+        <div className="flex items-center justify-between border-b border-[rgba(32,35,31,0.12)] px-6 py-5">
           <div className="flex items-center gap-2.5">
-            <ShoppingCart size={18} className="text-[#111111]" />
-            <span className="font-semibold text-[#111111]">
+            <ShoppingCart size={18} className="text-[#0f211a]" />
+            <span className="font-semibold text-[#0f211a]">
               {copy.title}
             </span>
             {items.length > 0 && (
-              <span className="px-2 py-0.5 bg-[#111111] text-white text-xs rounded-full font-medium">
+              <span className="bg-[#0f211a] px-2 py-0.5 text-xs font-medium text-white">
                 {items.length}
               </span>
             )}
           </div>
           <button
             onClick={handleClose}
-            className="p-1.5 text-gray-400 hover:text-[#111111] transition-colors"
+            className="p-1.5 text-[#687169] transition-colors hover:text-[#0f211a]"
           >
             <X size={20} />
           </button>
@@ -172,27 +176,27 @@ export default function CartDrawer({ locale }: CartDrawerProps) {
             <div className="flex-1 overflow-y-auto px-6 py-4">
               {items.length === 0 ? (
                 <div className="flex flex-col items-center justify-center h-full text-center py-20">
-                  <ShoppingCart size={44} className="text-gray-200 mb-4" strokeWidth={1.5} />
-                  <p className="text-gray-400 text-sm">
+                  <ShoppingCart size={44} className="mb-4 text-[#a58658]/45" strokeWidth={1.5} />
+                  <p className="text-sm text-[#687169]">
                     {copy.emptyTitle}
                   </p>
-                  <p className="text-gray-300 text-xs mt-1">
+                  <p className="mt-1 text-xs text-[#687169]/65">
                     {copy.emptyText}
                   </p>
                 </div>
               ) : (
-                <ul className="divide-y divide-gray-50">
+                <ul className="divide-y divide-[rgba(32,35,31,0.1)]">
                   {items.map(item => (
                     <li key={item.priceId} className="flex items-center justify-between py-4">
                       <div>
-                        <p className="text-sm font-medium text-[#111111]">{item.title}</p>
-                        <p className="text-sm text-gray-400 mt-0.5">
+                        <p className="text-sm font-medium text-[#0f211a]">{item.title}</p>
+                        <p className="mt-0.5 text-sm text-[#687169]">
                           {formatCurrencyAmount(itemPrice(item), currency, locale)}
                         </p>
                       </div>
                       <button
                         onClick={() => removeItem(item.priceId)}
-                        className="p-1.5 text-gray-300 hover:text-red-400 transition-colors ml-4"
+                        className="ml-4 p-1.5 text-[#687169]/55 transition-colors hover:text-[#a35d3d]"
                       >
                         <Trash2 size={15} />
                       </button>
@@ -204,10 +208,10 @@ export default function CartDrawer({ locale }: CartDrawerProps) {
 
             {/* Footer */}
             {items.length > 0 && (
-              <div className="px-6 py-5 border-t border-gray-100 bg-white">
+              <div className="border-t border-[rgba(32,35,31,0.12)] bg-[#f5f1e9] px-6 py-5">
                 <div className="flex items-center justify-between mb-5">
-                  <span className="text-sm text-gray-500">{copy.total}</span>
-                  <span className="text-2xl font-bold text-[#111111]">
+                  <span className="text-sm text-[#687169]">{copy.total}</span>
+                  <span className="text-2xl font-bold text-[#0f211a]">
                     {formatCurrencyAmount(total, currency, locale)}
                   </span>
                 </div>
@@ -229,14 +233,14 @@ export default function CartDrawer({ locale }: CartDrawerProps) {
                     })
                   }}
                   disabled={loading}
-                  className="w-full py-3.5 bg-[#111111] text-white font-semibold rounded-xl hover:bg-[#333333] transition-colors flex items-center justify-center gap-2 disabled:opacity-60"
+                  className="flex w-full items-center justify-center gap-2 bg-[#0f211a] py-3.5 font-semibold text-white transition-colors hover:bg-[#24362f] disabled:opacity-60"
                 >
                   {loading ? copy.loading : copy.checkout}
                   {!loading && <ArrowRight size={16} />}
                 </button>
                 <div className="flex items-center justify-center gap-1.5 mt-3">
-                  <Lock size={11} className="text-gray-300" />
-                  <p className="text-center text-xs text-gray-300">
+                  <Lock size={11} className="text-[#687169]/55" />
+                  <p className="text-center text-xs text-[#687169]/65">
                     {copy.securePayment}
                   </p>
                 </div>
@@ -246,14 +250,14 @@ export default function CartDrawer({ locale }: CartDrawerProps) {
         ) : (
           <>
             {/* Back */}
-            <div className="px-6 py-3 border-b border-gray-100">
+            <div className="border-b border-[rgba(32,35,31,0.12)] px-6 py-3">
               <button
                 onClick={() => {
                   checkoutRef.current?.destroy()
                   checkoutRef.current = null
                   setView('cart')
                 }}
-                className="text-sm text-gray-400 hover:text-[#111111] transition-colors flex items-center gap-1.5"
+                className="flex items-center gap-1.5 text-sm text-[#687169] transition-colors hover:text-[#0f211a]"
               >
                 ← {copy.back}
               </button>
@@ -263,7 +267,7 @@ export default function CartDrawer({ locale }: CartDrawerProps) {
             <div className="flex-1 overflow-y-auto">
               {loading && (
                 <div className="flex items-center justify-center py-20">
-                  <div className="w-6 h-6 border-2 border-gray-200 border-t-[#111111] rounded-full animate-spin" />
+                  <div className="h-6 w-6 animate-spin rounded-full border-2 border-[#e7e0d5] border-t-[#0f211a]" />
                 </div>
               )}
               <div id="stripe-embedded-checkout" />

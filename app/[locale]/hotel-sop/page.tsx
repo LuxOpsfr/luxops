@@ -101,7 +101,7 @@ const STARTER_PACKS_EN = [
   },
   {
     label: 'Housekeeping',
-    title: 'Housekeeping Inspection Kit',
+    title: 'Housekeeping Starter Pack',
     href: '/en/playbooks/hsk-starter-pack',
     desc: 'Room inspection checklists, supervisor control sheets and defect tracking tools for housekeeping consistency.',
     points: ['Room inspection checklists', 'Supervisor control sheet', 'Defect tracking'],
@@ -125,7 +125,7 @@ const STARTER_PACKS_FR = [
   },
   {
     label: 'Housekeeping',
-    title: 'Kit Inspection Housekeeping',
+    title: 'Starter Pack Housekeeping',
     href: '/fr/playbooks/hsk-starter-pack',
     desc: 'Checklists inspection chambre, feuilles de contrôle gouvernante et suivi des défauts pour renforcer la régularité.',
     points: ['Checklists inspection chambre', 'Feuille de contrôle gouvernante', 'Suivi des défauts'],

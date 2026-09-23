@@ -23,10 +23,10 @@ export function organizationSchema(locale: string) {
     logo: `${SITE_URL}/og-image.png`,
     description:
       safeLocale === 'fr'
-        ? "Playbooks, SOPs, audits et formations pour structurer les opérations des hôtels haut de gamme."
+        ? "Playbooks opérationnels et formations pour structurer, transmettre et appliquer les standards des hôtels haut de gamme."
         : safeLocale === 'es'
-          ? 'Playbooks, SOPs, auditorías de calidad y formación en el hotel para estructurar las operaciones de equipos hoteleros high-end.'
-        : 'Hotel operations playbooks, SOPs, quality audits and on-property training for high-end hospitality teams.',
+          ? 'Playbooks operativos y formación hotelera para estructurar, comunicar y aplicar estándares en hoteles high-end.'
+        : 'Hotel operations playbooks and hotel training for high-end hospitality teams.',
     sameAs: [],
     areaServed: [
       { '@type': 'Country', name: 'France' },
@@ -39,7 +39,7 @@ export function organizationSchema(locale: string) {
       'Housekeeping SOP',
       'Front office procedures',
       'Hotel staff training',
-      'Hotel quality audit',
+      'Hotel training',
     ],
   }
 }

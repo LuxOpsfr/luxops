@@ -209,6 +209,8 @@ export default async function HousekeepingSopPage({ params }: { params: Promise<
           </div>
         </section>
 
+        <EditorialRouteImage route="housekeeping-sop" alt="Housekeeping hotel" />
+
         {/* Lead magnet */}
         <section
           className="py-10 border-b"
@@ -536,3 +538,4 @@ export default async function HousekeepingSopPage({ params }: { params: Promise<
     </>
   )
 }
+import EditorialRouteImage from '@/components/EditorialRouteImage'

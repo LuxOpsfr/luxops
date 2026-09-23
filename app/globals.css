@@ -1,5 +1,22 @@
 @import "tailwindcss";
 
+:root {
+  --color-ivory: #f5f1e9;
+  --color-ivory-bright: #fcfbf8;
+  --color-stone: #e7e0d5;
+  --color-stone-light: #efe9df;
+  --color-green: #24362f;
+  --color-green-deep: #0f211a;
+  --color-charcoal: #20231f;
+  --color-muted: #687169;
+  --color-brass: #a58658;
+  --color-sage: #9da99e;
+  --line-soft: rgba(32, 35, 31, 0.14);
+  --site-header-height: 55px;
+  --font-sans: "Avenir Next", Avenir, "Helvetica Neue", Arial, sans-serif;
+  --font-display: Georgia, "Times New Roman", Times, serif;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -11,12 +28,59 @@ html {
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #ffffff;
-  color: #111111;
+  background: var(--color-ivory);
+  color: var(--color-charcoal);
   font-family: var(--font-sans);
 }
 
 h1, h2, h3 {
   font-family: var(--font-display);
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
+}
+
+::selection {
+  background: rgba(165, 134, 88, 0.24);
+}
+
+a,
+button {
+  text-underline-offset: 0.22em;
+}
+
+img {
+  max-width: 100%;
+}
+
+.image-card-copy {
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 1024px) {
+  .hero-viewport {
+    height: calc(100svh - var(--site-header-height));
+  }
+
+  .viewport-section {
+    min-height: calc(100svh - var(--site-header-height));
+  }
+
+  .subpage-hero-viewport {
+    height: calc(100svh - var(--site-header-height));
+    overflow: hidden;
+  }
+}
+@keyframes hospitality-logo-scroll {
+  to { transform: translateX(-50%); }
+}
+
+.hospitality-logo-track {
+  animation: hospitality-logo-scroll 28s linear infinite;
+}
+
+.hospitality-logo-track:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hospitality-logo-track { animation: none; }
 }

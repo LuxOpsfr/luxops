@@ -1,0 +1,14 @@
+main [class~="text-[#687169]"],
+main [class~="text-[#5d665f]"] {
+  color: #3d4a41;
+}
+
+main [class~="text-[#a58658]"] {
+  color: #705431;
+}
+
+main [class~="bg-[#0f211a]"] [class~="text-[#a58658]"],
+main [class~="bg-[#1A2E44]"] [class~="text-[#a58658]"],
+main [class~="bg-[#111111]"] [class~="text-[#a58658]"] {
+  color: #ceb78e;
+}

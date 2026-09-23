@@ -87,9 +87,9 @@ const frenchData = (locale: string): TrainingSeoPageData => ({
   relatedTitle: 'Compléter le travail F&B',
   related: [
     {
-      href: `/${locale}/audit-formation-fb`,
-      title: 'Audit et formation F&B',
-      text: 'Observer le service restaurant, bar ou room service, puis former les équipes sur les écarts prioritaires.',
+      href: `/${locale}/methode-formation-luxops`,
+      title: 'Méthode de formation LuxOps',
+      text: 'Préparer la formation à partir des standards, des situations réelles du service et des priorités des managers.',
     },
     {
       href: `/${locale}/hotel-fb-sop`,
@@ -171,9 +171,9 @@ const englishData = (locale: string): TrainingSeoPageData => ({
   relatedTitle: 'Continue the F&B work',
   related: [
     {
-      href: `/${locale}/fb-audit-training`,
-      title: 'F&B audit and training',
-      text: 'Observe restaurant, bar or room service, then train teams on the priority gaps.',
+      href: `/${locale}/luxops-training-method`,
+      title: 'LuxOps training method',
+      text: 'Prepare training from service standards, real operating situations and manager priorities.',
     },
     {
       href: `/${locale}/hotel-fb-sop`,

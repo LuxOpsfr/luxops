@@ -53,7 +53,7 @@ const NEXT_STEPS: Record<string, {
     playbook: { slug: 'fo', en: 'Front Office Playbook', fr: 'Playbook Front Office' },
   },
   hsk: {
-    starter: { slug: 'hsk-starter-pack', en: 'Housekeeping Inspection Kit', fr: 'Kit Inspection Housekeeping' },
+    starter: { slug: 'hsk-starter-pack', en: 'Housekeeping Starter Pack', fr: 'Starter Pack Housekeeping' },
     playbook: { slug: 'hsk', en: 'Housekeeping Playbook', fr: 'Playbook Housekeeping' },
   },
   fb: {
@@ -123,15 +123,15 @@ export default function LeadMagnetForm({ locale }: { locale: string }) {
       <div className="mx-auto max-w-4xl">
         <div className="mx-auto max-w-xl text-center">
           <div
-            className="w-12 h-12 bg-[#003d9b] flex items-center justify-center mx-auto mb-6"
+            className="mx-auto mb-6 flex h-12 w-12 items-center justify-center bg-[#0f211a]"
             style={{ borderRadius: '0.125rem' }}
           >
             <Check className="text-white" size={24} />
           </div>
-          <h2 className="font-display text-2xl font-extrabold text-[#0a1d2e] mb-3">
+          <h2 className="mb-3 font-display text-2xl font-medium text-[#0f211a]">
             {isEn ? 'Your chapter is ready' : 'Votre chapitre est prêt'}
           </h2>
-          <p className="text-[#4f6074] mb-8 leading-relaxed">
+          <p className="mb-8 leading-relaxed text-[#5d665f]">
             {isEn
               ? `Download the introduction chapter of the ${dept?.en} Playbook below. Both language versions are included.`
               : `Téléchargez ci-dessous le chapitre d'introduction du Playbook ${dept?.fr}. Les deux versions linguistiques sont incluses.`}
@@ -140,7 +140,7 @@ export default function LeadMagnetForm({ locale }: { locale: string }) {
             <a
               href={urls.en}
               download
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#003d9b] text-white font-bold text-sm"
+              className="inline-flex items-center justify-center gap-2 bg-[#0f211a] px-6 py-3 text-sm font-semibold text-white"
               style={{ borderRadius: '0.125rem' }}
             >
               <Download size={16} /> English PDF
@@ -148,7 +148,7 @@ export default function LeadMagnetForm({ locale }: { locale: string }) {
             <a
               href={urls.fr}
               download
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-[#003d9b] text-[#003d9b] font-bold text-sm"
+              className="inline-flex items-center justify-center gap-2 border border-[#24362f] px-6 py-3 text-sm font-semibold text-[#24362f]"
               style={{ borderRadius: '0.125rem' }}
             >
               <Download size={16} /> PDF Français
@@ -156,15 +156,15 @@ export default function LeadMagnetForm({ locale }: { locale: string }) {
           </div>
         </div>
 
-        <div className="mt-14 border-t border-[#dfe5ef] pt-12 text-left">
+        <div className="mt-14 border-t border-[rgba(32,35,31,0.16)] pt-12 text-left">
           <div className="mb-8 max-w-2xl">
-            <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[#003d9b]">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-[#a58658]">
               {isEn ? 'Continue with the complete tools' : 'Poursuivre avec les outils complets'}
             </p>
-            <h3 className="mb-3 font-display text-3xl font-extrabold text-[#0a1d2e]">
+            <h3 className="mb-3 font-display text-3xl font-medium text-[#0f211a]">
               {isEn ? 'Choose the level of detail you need' : 'Choisissez le niveau de détail dont vous avez besoin'}
             </h3>
-            <p className="leading-relaxed text-[#4f6074]">
+            <p className="leading-relaxed text-[#5d665f]">
               {isEn
                 ? 'The free chapter introduces the method. The Starter Pack provides editable daily tools, while the full Playbook brings together the complete department reference.'
                 : 'Le chapitre gratuit présente la méthode. Le Starter Pack apporte des outils quotidiens modifiables, tandis que le Playbook réunit toute la référence du département.'}
@@ -172,36 +172,36 @@ export default function LeadMagnetForm({ locale }: { locale: string }) {
           </div>
 
           <div className={`grid gap-4 ${nextStep.starter ? 'md:grid-cols-3' : 'md:grid-cols-2'}`}>
-            <div className="border border-[#dfe5ef] bg-white p-6">
-              <div className="mb-5 flex h-9 w-9 items-center justify-center bg-[#eef4ff] text-[#003d9b]">
+            <div className="border border-[rgba(32,35,31,0.16)] bg-[#fcfbf8] p-6">
+              <div className="mb-5 flex h-9 w-9 items-center justify-center bg-[#e7e0d5] text-[#24362f]">
                 <Check size={17} />
               </div>
               <p className="mb-2 text-xs font-bold uppercase tracking-widest text-[#737685]">01</p>
-              <h4 className="mb-2 font-display text-lg font-bold text-[#0a1d2e]">
+              <h4 className="mb-2 font-display text-lg font-medium text-[#0f211a]">
                 {isEn ? 'Free chapter' : 'Chapitre gratuit'}
               </h4>
-              <p className="text-sm leading-relaxed text-[#4f6074]">
+              <p className="text-sm leading-relaxed text-[#5d665f]">
                 {isEn ? 'Method overview and introduction.' : 'Présentation de la méthode et introduction.'}
               </p>
             </div>
 
             {nextStep.starter ? (
-              <div className="border border-[#9fc0f3] bg-[#eef4ff] p-6">
-                <div className="mb-5 flex h-9 w-9 items-center justify-center bg-white text-[#003d9b]">
+              <div className="border border-[#a58658] bg-[#f5f1e9] p-6">
+                <div className="mb-5 flex h-9 w-9 items-center justify-center bg-[#e7e0d5] text-[#24362f]">
                   <FileCheck2 size={17} />
                 </div>
-                <p className="mb-2 text-xs font-bold uppercase tracking-widest text-[#003d9b]">02</p>
-                <h4 className="mb-2 font-display text-lg font-bold text-[#0a1d2e]">
+                <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-[#a58658]">02</p>
+                <h4 className="mb-2 font-display text-lg font-medium text-[#0f211a]">
                   {isEn ? nextStep.starter.en : nextStep.starter.fr}
                 </h4>
-                <p className="mb-5 text-sm leading-relaxed text-[#4f6074]">
+                <p className="mb-5 text-sm leading-relaxed text-[#5d665f]">
                   {isEn ? 'Editable checklists and tools for immediate use.' : 'Checklists et outils modifiables pour un usage immédiat.'}
                 </p>
                 <TrackedLink
                   href={`/${locale}/playbooks/${nextStep.starter.slug}`}
                   eventName="lead_magnet_next_step_clicked"
                   eventProperties={{ department: downloadDept, destination: 'starter_pack', locale }}
-                  className="inline-flex items-center gap-2 text-sm font-bold text-[#003d9b]"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-[#24362f]"
                 >
                   {isEn ? `View at ${formatProductPrice('starter_pack')}` : `Voir à ${formatProductPrice('starter_pack')}`}
                   <ArrowRight size={15} />
@@ -209,24 +209,24 @@ export default function LeadMagnetForm({ locale }: { locale: string }) {
               </div>
             ) : null}
 
-            <div className="border border-[#dfe5ef] bg-white p-6">
-              <div className="mb-5 flex h-9 w-9 items-center justify-center bg-[#eef4ff] text-[#003d9b]">
+            <div className="border border-[rgba(32,35,31,0.16)] bg-[#fcfbf8] p-6">
+              <div className="mb-5 flex h-9 w-9 items-center justify-center bg-[#e7e0d5] text-[#24362f]">
                 <BookOpen size={17} />
               </div>
               <p className="mb-2 text-xs font-bold uppercase tracking-widest text-[#737685]">
                 {nextStep.starter ? '03' : '02'}
               </p>
-              <h4 className="mb-2 font-display text-lg font-bold text-[#0a1d2e]">
+              <h4 className="mb-2 font-display text-lg font-medium text-[#0f211a]">
                 {isEn ? nextStep.playbook.en : nextStep.playbook.fr}
               </h4>
-              <p className="mb-5 text-sm leading-relaxed text-[#4f6074]">
+              <p className="mb-5 text-sm leading-relaxed text-[#5d665f]">
                 {isEn ? 'Complete SOP reference for the department.' : 'Référence SOP complète du département.'}
               </p>
               <TrackedLink
                 href={`/${locale}/playbooks/${nextStep.playbook.slug}`}
                 eventName="lead_magnet_next_step_clicked"
                 eventProperties={{ department: downloadDept, destination: 'playbook', locale }}
-                className="inline-flex items-center gap-2 text-sm font-bold text-[#003d9b]"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-[#24362f]"
               >
                 {isEn ? `View at ${formatProductPrice('playbook')}` : `Voir à ${formatProductPrice('playbook')}`}
                 <ArrowRight size={15} />
@@ -248,18 +248,18 @@ export default function LeadMagnetForm({ locale }: { locale: string }) {
             onClick={() => setSelected(dept.key)}
             className={`text-left p-5 border transition-all ${
               selected === dept.key
-                ? 'border-[#003d9b] bg-[#eef4ff]'
+                ? 'border-[#a58658] bg-[#f5f1e9]'
                 : 'border-gray-200 bg-white hover:border-gray-300'
             }`}
             style={{ borderRadius: '0.125rem' }}
           >
             <div className="flex items-start justify-between mb-2">
-              <span className="font-display font-bold text-[#0a1d2e] text-sm">
+              <span className="font-display text-sm font-medium text-[#0f211a]">
                 {isEn ? dept.en : dept.fr}
               </span>
               {selected === dept.key && (
                 <div
-                  className="w-4 h-4 bg-[#003d9b] flex items-center justify-center flex-shrink-0"
+                  className="flex h-4 w-4 flex-shrink-0 items-center justify-center bg-[#0f211a]"
                   style={{ borderRadius: '0.125rem' }}
                 >
                   <Check className="text-white" size={10} />
@@ -280,13 +280,13 @@ export default function LeadMagnetForm({ locale }: { locale: string }) {
           value={email}
           onChange={e => setEmail(e.target.value)}
           placeholder={isEn ? 'Your email address' : 'Votre adresse email'}
-          className="flex-1 px-4 py-3 border border-gray-200 text-sm text-[#0a1d2e] outline-none focus:border-[#003d9b]"
+          className="flex-1 border border-[rgba(32,35,31,0.2)] px-4 py-3 text-sm text-[#0f211a] outline-none focus:border-[#a58658]"
           style={{ borderRadius: '0.125rem' }}
         />
         <button
           type="submit"
           disabled={!selected || !email || status === 'loading'}
-          className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#003d9b] text-white font-bold text-sm disabled:opacity-40 transition-opacity whitespace-nowrap"
+          className="inline-flex items-center justify-center gap-2 whitespace-nowrap bg-[#0f211a] px-6 py-3 text-sm font-semibold text-white transition-opacity disabled:opacity-40"
           style={{ borderRadius: '0.125rem' }}
         >
           {status === 'loading'

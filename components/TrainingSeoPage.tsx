@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
+import EditorialRouteImage from './EditorialRouteImage'
 
 export type TrainingSeoPageData = {
   badge: string
@@ -37,9 +38,11 @@ export type TrainingSeoPageData = {
 export default function TrainingSeoPage({
   locale,
   data,
+  editorialRoute,
 }: {
   locale: string
   data: TrainingSeoPageData
+  editorialRoute?: string
 }) {
   const trainingHref = locale === 'en' ? '/en/training' : '/fr/formation'
 
@@ -103,6 +106,8 @@ export default function TrainingSeoPage({
           </div>
         </div>
       </section>
+
+      {editorialRoute && <EditorialRouteImage route={editorialRoute} alt={data.title} />}
 
       <section className="px-6 py-20 bg-white">
         <div className="max-w-screen-xl mx-auto">

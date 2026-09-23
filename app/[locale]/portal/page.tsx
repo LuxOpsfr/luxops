@@ -2,7 +2,6 @@
 
 import { useEffect } from 'react'
 import { useRouter, useParams } from 'next/navigation'
-import { supabase } from '@/lib/supabase'
 
 export default function PortalPage() {
   const router = useRouter()
@@ -10,13 +9,17 @@ export default function PortalPage() {
   const locale = params.locale as string
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      if (session) {
-        router.replace(`/${locale}/portal/dashboard`)
-      } else {
+    const routeFromSession = async () => {
+      try {
+        const { supabase } = await import('@/lib/supabase')
+        const { data: { session } } = await supabase.auth.getSession()
+        router.replace(session ? `/${locale}/portal/dashboard` : `/${locale}/portal/login`)
+      } catch {
         router.replace(`/${locale}/portal/login`)
       }
-    })
+    }
+
+    routeFromSession()
   }, [locale, router])
 
   return null

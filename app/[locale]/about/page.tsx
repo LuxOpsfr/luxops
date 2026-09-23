@@ -60,96 +60,45 @@ function AboutContent({ locale }: { locale: string }) {
   ]
 
   return (
-    <div className="pt-16 bg-white">
-
-      {/* Hero */}
-      <section
-        className="relative py-24 px-6 overflow-hidden border-b"
-        style={{
-          backgroundImage: 'radial-gradient(#c3c6d6 0.5px, transparent 0.5px)',
-          backgroundSize: '24px 24px',
-          borderColor: 'rgba(195,198,214,0.2)',
-        }}
-      >
-        <div className="max-w-screen-xl mx-auto">
-          <div
-            className="inline-flex items-center gap-2 px-3 py-1 text-[#003d9b] font-bold text-[10px] uppercase tracking-widest mb-8"
-            style={{ backgroundColor: '#eef4ff', borderRadius: '0.125rem' }}
-          >
-            <span className="w-2 h-2 bg-[#003d9b] rounded-full" />
-            LuxOps
-          </div>
-          <h1 className="font-display text-5xl md:text-7xl font-extrabold tracking-tighter leading-none text-[#0a1d2e] mb-6">
-            {t('title')}
-          </h1>
-          <p className="text-xl text-[#4f6074] max-w-2xl leading-relaxed">{t('subtitle')}</p>
+    <div className="bg-[#f5f1e9] pt-[var(--site-header-height)] text-[#0f211a]">
+      <section className="border-b border-[rgba(32,35,31,0.14)] px-6 py-16 md:px-16 md:py-24">
+        <div className="mx-auto max-w-[1320px]">
+          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.16em] text-[#a58658]">LuxOps</p>
+          <h1 className="max-w-4xl font-display text-5xl font-medium leading-[1.04] md:text-7xl">{t('title')}</h1>
+          <p className="mt-7 max-w-3xl text-lg leading-8 text-[#5d665f]">{t('subtitle')}</p>
         </div>
       </section>
-
-      {/* Story */}
-      <section className="py-24 px-6 bg-white">
-        <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <section className="bg-[#fcfbf8] px-6 py-16 md:px-16 md:py-24">
+        <div className="mx-auto grid max-w-[1320px] gap-12 lg:grid-cols-[1.25fr_0.75fr] lg:gap-20">
           <div>
-            <h2 className="font-display text-3xl font-extrabold text-[#0a1d2e] tracking-tight mb-8">
-              {t('story_title')}
-            </h2>
-            <div className="space-y-6">
-              <p className="text-[#4f6074] leading-relaxed text-lg">{t('story_p1')}</p>
-              <p className="text-[#4f6074] leading-relaxed">{t('story_p2')}</p>
-              <p
-                className="font-display font-bold text-[#0a1d2e] text-lg leading-snug"
-                style={{ borderLeft: '3px solid #003d9b', paddingLeft: '1.25rem' }}
-              >
-                {t('story_p3')}
-              </p>
+            <h2 className="font-display text-4xl font-medium">{t('story_title')}</h2>
+            <div className="mt-8 space-y-6 text-base leading-8 text-[#5d665f]">
+              <p>{t('story_p1')}</p><p>{t('story_p2')}</p>
+              <p className="border-l-2 border-[#a58658] pl-6 font-display text-2xl leading-snug text-[#0f211a]">{t('story_p3')}</p>
             </div>
           </div>
-
-          <div>
-            <div className="p-8" style={{ backgroundColor: '#f8f9ff', borderRadius: '0.125rem' }}>
-              <h3 className="font-display text-xs font-bold uppercase tracking-widest text-[#737685] mb-6">
-                {t('expertise_title')}
-              </h3>
-              <ul className="space-y-3">
-                {expertise.map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-sm text-[#0a1d2e]">
-                    <div
-                      className="w-1.5 h-1.5 flex-shrink-0"
-                      style={{ backgroundColor: '#003d9b', borderRadius: '0.125rem' }}
-                    />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div className="border-t border-[rgba(32,35,31,0.18)] pt-6">
+            <h3 className="mb-6 text-xs font-semibold uppercase tracking-[0.14em] text-[#a58658]">{t('expertise_title')}</h3>
+            <ul className="space-y-0">
+              {expertise.map((item) => <li key={item} className="border-b border-[rgba(32,35,31,0.12)] py-3 text-sm text-[#24362f]">{item}</li>)}
+            </ul>
           </div>
         </div>
       </section>
-
-      {/* Values */}
-      <section className="py-24 px-6" style={{ backgroundColor: '#f8f9ff' }}>
-        <div className="max-w-screen-xl mx-auto">
-          <h2 className="font-display text-3xl font-extrabold text-[#0a1d2e] tracking-tight mb-12">
-            {t('values_title')}
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {values.map((v, i) => (
-              <div key={i} className="p-8 bg-white" style={{ borderRadius: '0.125rem' }}>
-                <div
-                  className="w-8 h-8 flex items-center justify-center text-white text-xs font-bold mb-6"
-                  style={{ backgroundColor: '#003d9b', borderRadius: '0.125rem' }}
-                >
-                  {String(i + 1).padStart(2, '0')}
-                </div>
-                <h3 className="font-display font-bold text-[#0a1d2e] mb-3">{v.title}</h3>
-                <p className="text-[#4f6074] text-sm leading-relaxed">{v.desc}</p>
+      <section className="px-6 py-16 md:px-16 md:py-24">
+        <div className="mx-auto max-w-[1320px]">
+          <h2 className="font-display text-4xl font-medium">{t('values_title')}</h2>
+          <div className="mt-10 grid gap-8 md:grid-cols-3">
+            {values.map((value, index) => (
+              <div key={value.title} className="border-t border-[rgba(32,35,31,0.2)] pt-5">
+                <span className="text-xs font-semibold text-[#a58658]">{String(index + 1).padStart(2, '0')}</span>
+                <h3 className="mt-4 font-display text-2xl">{value.title}</h3>
+                <p className="mt-4 text-sm leading-7 text-[#5d665f]">{value.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
-
-      {/* Expertise - humanisation */}
       <ExpertiseSection locale={locale} />
     </div>
   )

@@ -472,11 +472,11 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
                   source_page: `/${locale}/hotel-housekeeping-checklist`,
                   placement: 'hero',
                   product: 'housekeeping_inspection_kit',
-                  cta_label: isEN ? 'View Housekeeping Inspection Kit' : 'Voir le Kit Inspection Housekeeping',
+                  cta_label: isEN ? 'View Housekeeping Starter Pack' : 'Voir le Starter Pack Housekeeping',
                 }}
                 className="inline-block bg-[#0056D2] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#0047ad] transition-colors"
               >
-                {isEN ? 'View Housekeeping Inspection Kit' : 'Voir le Kit Inspection Housekeeping'}
+                {isEN ? 'View Housekeeping Starter Pack' : 'Voir le Starter Pack Housekeeping'}
               </TrackedLink>
               <TrackedLink
                 href={`/${locale}/playbooks/hsk`}
@@ -510,7 +510,7 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
                 product: 'housekeeping_free_pdfs',
               },
               {
-                title: isEN ? 'Housekeeping Inspection Kit' : 'Kit Inspection Housekeeping',
+                title: isEN ? 'Housekeeping Starter Pack' : 'Starter Pack Housekeeping',
                 body: isEN
                   ? 'Use the inspection kit when you need editable control sheets, room inspection tools and defect tracking.'
                   : 'Utilisez le kit quand vous avez besoin de feuilles de contrôle modifiables, outils d’inspection chambre et suivi des défauts.',
@@ -630,7 +630,7 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
                     source_page: `/${locale}/hotel-housekeeping-checklist`,
                     placement: 'supervisor_focus',
                     product: 'housekeeping_inspection_kit',
-                    cta_label: isEN ? 'View Housekeeping Inspection Kit' : 'Voir le Kit Inspection Housekeeping',
+                    cta_label: isEN ? 'View Housekeeping Starter Pack' : 'Voir le Starter Pack Housekeeping',
                   }}
                   className="inline-flex justify-center border border-[#1A2E44] bg-white text-[#1A2E44] px-5 py-3 rounded-lg text-sm font-semibold hover:bg-[#F5F7FA] transition-colors"
                 >

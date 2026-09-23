@@ -364,6 +364,8 @@ export default async function HotelFbSopPage({ params }: { params: Promise<{ loc
           </div>
         </section>
 
+        <EditorialRouteImage route="hotel-fb-sop" alt="Hotel restaurant service" />
+
         <section className="py-16 px-6 border-b border-gray-100">
           <div className="max-w-5xl mx-auto grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-start">
             <div>
@@ -617,3 +619,4 @@ export default async function HotelFbSopPage({ params }: { params: Promise<{ loc
     </>
   )
 }
+import EditorialRouteImage from '@/components/EditorialRouteImage'

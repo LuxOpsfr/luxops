@@ -3,7 +3,6 @@
 import { useState } from 'react'
 import { useRouter, useParams } from 'next/navigation'
 import Link from 'next/link'
-import { supabase } from '@/lib/supabase'
 import posthog from 'posthog-js'
 import { identifyPostHogUser } from '@/lib/posthogIdentity'
 
@@ -24,29 +23,26 @@ export default function LoginPage() {
     setLoading(true)
     setError('')
 
-    const { error } = await supabase.auth.signInWithPassword({ email, password })
+    try {
+      const { supabase } = await import('@/lib/supabase')
+      const { error } = await supabase.auth.signInWithPassword({ email, password })
+      if (error) throw error
 
-    if (error) {
-      setError(isFr ? 'Email ou mot de passe incorrect.' : 'Incorrect email or password.')
+      identifyPostHogUser(email, { locale, source: 'portal_login' })
+      posthog.capture('user_logged_in', { locale })
+      router.push(`/${locale}/portal/dashboard`)
+    } catch {
+      setError(isFr ? 'Connexion indisponible ou identifiants incorrects.' : 'Sign-in unavailable or incorrect credentials.')
       setLoading(false)
-      return
     }
-
-    identifyPostHogUser(email, { locale, source: 'portal_login' })
-    posthog.capture('user_logged_in', { locale })
-    router.push(`/${locale}/portal/dashboard`)
   }
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-4">
-      {/* Logo */}
-      <Link href={`/${locale}`} className="mb-8 no-underline">
+    <div className="min-h-screen flex flex-col items-center justify-center px-5 py-14">
+      <Link href={`/${locale}`} className="mb-10 no-underline">
         <span
-          className="font-bold uppercase text-[#0a1d2e]"
+          className="font-display text-[2.2rem] text-[#0f211a]"
           style={{
-            fontFamily: 'var(--font-display)',
-            fontSize: '1rem',
-            letterSpacing: '0.22em',
             lineHeight: 1,
           }}
         >
@@ -54,17 +50,20 @@ export default function LoginPage() {
         </span>
       </Link>
 
-      <div className="w-full max-w-md bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
-        <h1 className="text-xl font-bold text-[#1A2E44] mb-1">
+      <div className="w-full max-w-[460px] border border-[rgba(32,35,31,0.14)] bg-[#fcfbf8] px-7 py-9 sm:px-10 sm:py-11">
+        <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#a58658]">
+          {isFr ? 'Espace client' : 'Client portal'}
+        </p>
+        <h1 className="font-display text-[2.25rem] font-medium leading-[1.05] text-[#0f211a] mb-3">
           {isFr ? 'Accéder à mon espace' : 'Access my portal'}
         </h1>
-        <p className="text-sm text-gray-500 mb-6">
+        <p className="text-sm leading-6 text-[#687169] mb-8">
           {isFr ? 'Vos playbooks sont disponibles après connexion.' : 'Your playbooks are available after login.'}
         </p>
 
         <form onSubmit={handleLogin} className="flex flex-col gap-4">
           <div>
-            <label className="block text-xs font-semibold text-[#1A2E44] mb-1.5 uppercase tracking-wide">
+            <label className="block text-xs font-semibold text-[#0f211a] mb-1.5 uppercase tracking-wide">
               {isFr ? 'Email' : 'Email'}
             </label>
             <input
@@ -73,12 +72,12 @@ export default function LoginPage() {
               value={email}
               onChange={e => setEmail(e.target.value)}
               placeholder="vous@exemple.com"
-              className="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-[#1A2E44] transition-colors"
+              className="w-full bg-white px-4 py-3 border border-[rgba(32,35,31,0.18)] text-sm focus:outline-none focus:border-[#0f211a] transition-colors"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-[#1A2E44] mb-1.5 uppercase tracking-wide">
+            <label className="block text-xs font-semibold text-[#0f211a] mb-1.5 uppercase tracking-wide">
               {isFr ? 'Mot de passe' : 'Password'}
             </label>
             <input
@@ -87,7 +86,7 @@ export default function LoginPage() {
               value={password}
               onChange={e => setPassword(e.target.value)}
               placeholder="••••••••"
-              className="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-[#1A2E44] transition-colors"
+              className="w-full bg-white px-4 py-3 border border-[rgba(32,35,31,0.18)] text-sm focus:outline-none focus:border-[#0f211a] transition-colors"
             />
           </div>
 
@@ -100,7 +99,7 @@ export default function LoginPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-2.5 bg-[#1A2E44] text-white text-sm font-semibold rounded-lg hover:bg-[#0f1e2e] transition-colors disabled:opacity-60"
+            className="w-full py-3.5 bg-[#0f211a] text-white text-sm font-semibold hover:bg-[#24362f] transition-colors disabled:opacity-60"
           >
             {loading ? (isFr ? 'Connexion...' : 'Signing in...') : (isFr ? 'Se connecter' : 'Sign in')}
           </button>
@@ -108,7 +107,7 @@ export default function LoginPage() {
 
         <p className="text-center text-sm text-gray-500 mt-6">
           {isFr ? 'Pas encore de compte ?' : "Don't have an account?"}{' '}
-          <Link href={`/${locale}/portal/register`} className="text-[#0056D2] font-medium hover:underline">
+          <Link href={`/${locale}/portal/register`} className="text-[#0f211a] font-semibold underline underline-offset-4">
             {isFr ? 'Créer un compte' : 'Create account'}
           </Link>
         </p>

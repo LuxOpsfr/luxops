@@ -75,11 +75,11 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
   }
 
   return (
-    <div className="pt-16 bg-white min-h-screen">
+    <div className="min-h-screen bg-[#f5f1e9] pt-[var(--site-header-height)]">
       <div className="max-w-7xl mx-auto px-6 pt-8">
         <Link
           href={`/${locale}/playbooks`}
-          className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#737685] hover:text-[#003d9b] transition-colors"
+          className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#687169] hover:text-[#0f211a] transition-colors"
         >
           <ArrowLeft size={14} />
           {isEn ? 'All Playbooks' : 'Tous les produits'}
@@ -89,34 +89,34 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
       <section
         className="relative px-6 py-20 border-b overflow-hidden"
         style={{
-          backgroundImage: 'radial-gradient(#c3c6d6 0.5px, transparent 0.5px)',
+          backgroundImage: 'radial-gradient(rgba(165,134,88,0.22) 0.5px, transparent 0.5px)',
           backgroundSize: '24px 24px',
-          borderColor: 'rgba(195,198,214,0.22)',
+          borderColor: 'rgba(32,35,31,0.14)',
         }}
       >
         <div className="max-w-7xl mx-auto grid lg:grid-cols-[1fr_0.72fr] gap-12 items-center">
           <div>
             <div
-              className="inline-flex items-center gap-2 px-3 py-1 text-[#003d9b] font-bold text-[10px] uppercase tracking-widest mb-6"
-              style={{ backgroundColor: '#eef4ff', borderRadius: '0.125rem' }}
+              className="inline-flex items-center gap-2 px-3 py-1 text-[#0f211a] font-bold text-[10px] uppercase tracking-widest mb-6"
+              style={{ backgroundColor: '#e7e0d5', borderRadius: '0.125rem' }}
             >
-              <span className="w-2 h-2 bg-[#003d9b] rounded-full" />
+              <span className="w-2 h-2 bg-[#0f211a] rounded-full" />
               {pack.category[lang]} · {isEn ? 'Starter Pack' : 'Starter Pack'}
             </div>
-            <h1 className="font-display text-5xl md:text-7xl font-extrabold tracking-tight leading-none text-[#0a1d2e] mb-6">
+            <h1 className="font-display text-5xl md:text-7xl font-extrabold tracking-tight leading-none text-[#0f211a] mb-6">
               {pack.title[lang]}
             </h1>
-            <p className="text-xl text-[#4f6074] leading-relaxed max-w-2xl mb-4">
+            <p className="text-xl text-[#687169] leading-relaxed max-w-2xl mb-4">
               {pack.subtitle[lang]}
             </p>
-            <p className="text-sm text-[#4f6074] leading-relaxed max-w-2xl mb-8">
+            <p className="text-sm text-[#687169] leading-relaxed max-w-2xl mb-8">
               {pack.supportLine[lang]}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-5">
               <button
                 onClick={handleAddToCart}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#003d9b] text-white font-bold text-sm hover:bg-[#002d7a] transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#0f211a] text-white font-bold text-sm hover:bg-[#24362f] transition-colors"
                 style={{ borderRadius: '0.125rem' }}
               >
                 <ShoppingCart size={16} />
@@ -137,7 +137,7 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
                   product: pack.fullPlaybookTitle.en,
                   cta_label: isEn ? `See ${pack.fullPlaybookTitle.en}` : `Voir le ${pack.fullPlaybookTitle.fr}`,
                 }}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-[#c3c6d6] text-[#0a1d2e] font-bold text-sm hover:border-[#003d9b] hover:text-[#003d9b] transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-[#a58658] text-[#0f211a] font-bold text-sm hover:border-[#0f211a] hover:text-[#0f211a] transition-colors"
                 style={{ borderRadius: '0.125rem' }}
               >
                 {isEn
@@ -146,7 +146,7 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
               </TrackedLink>
             </div>
 
-            <p className="text-xs text-[#737685]">
+            <p className="text-xs text-[#687169]">
               {formatProductPrice('starter_pack')} · {isEn ? 'Instant download' : 'Téléchargement instantané'} ·{' '}
               {isEn ? 'Editable files included' : 'Fichiers modifiables inclus'}
             </p>
@@ -158,16 +158,16 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-white">
+      <section className="bg-[#fcfbf8] px-6 py-20">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-2xl mb-10">
-            <p className="text-xs font-bold uppercase tracking-widest text-[#003d9b] mb-4">
+            <p className="text-xs font-bold uppercase tracking-widest text-[#0f211a] mb-4">
               {isEn ? 'Included tools' : 'Outils inclus'}
             </p>
-            <h2 className="font-display text-4xl md:text-5xl font-extrabold text-[#0a1d2e] tracking-tight mb-4">
+            <h2 className="font-display text-4xl md:text-5xl font-extrabold text-[#0f211a] tracking-tight mb-4">
               {isEn ? "What's inside" : 'Ce qui est inclus'}
             </h2>
-            <p className="text-[#4f6074] leading-relaxed">
+            <p className="text-[#687169] leading-relaxed">
               {pack.toolsIntro[lang]}
             </p>
           </div>
@@ -176,13 +176,13 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
             {pack.tools[lang].map((tool, index) => (
               <div
                 key={tool}
-                className="p-5 bg-[#f8f9ff]"
+                className="border border-[rgba(32,35,31,0.12)] bg-white p-5"
                 style={{ borderRadius: '0.125rem' }}
               >
-                <p className="text-[10px] font-bold text-[#003d9b] mb-3">
+                <p className="mb-3 text-[10px] font-bold text-[#a58658]">
                   {String(index + 1).padStart(2, '0')}
                 </p>
-                <h3 className="font-display text-lg font-bold text-[#0a1d2e]">
+                <h3 className="font-display text-lg font-bold text-[#0f211a]">
                   {tool}
                 </h3>
               </div>
@@ -191,13 +191,13 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-[#eef4ff]">
+      <section className="py-20 px-6 bg-[#e7e0d5]">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-2xl mb-10">
-            <p className="text-xs font-bold uppercase tracking-widest text-[#003d9b] mb-4">
+            <p className="text-xs font-bold uppercase tracking-widest text-[#0f211a] mb-4">
               {isEn ? 'Why it helps' : 'Pourquoi ça aide'}
             </p>
-            <h2 className="font-display text-4xl font-extrabold text-[#0a1d2e] tracking-tight">
+            <h2 className="font-display text-4xl font-extrabold text-[#0f211a] tracking-tight">
               {isEn
                 ? 'Built for daily operational use'
                 : 'Conçu pour l’usage opérationnel quotidien'}
@@ -212,11 +212,11 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
                   className="bg-white p-6"
                   style={{
                     borderRadius: '0.125rem',
-                    boxShadow: '0 2px 8px rgba(10,29,46,0.05)',
+                    boxShadow: '0 2px 8px rgba(15,33,26,0.05)',
                   }}
                 >
-                  <Icon size={22} className="text-[#003d9b] mb-5" />
-                  <h3 className="font-display text-lg font-bold text-[#0a1d2e]">
+                  <Icon size={22} className="mb-5 text-[#a58658]" strokeWidth={1.6} />
+                  <h3 className="font-display text-lg font-bold text-[#0f211a]">
                     {benefit}
                   </h3>
                 </div>
@@ -228,13 +228,13 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
 
       <ProductTrustSection locale={locale} />
 
-      <section className="py-20 px-6 bg-white">
+      <section className="bg-[#fcfbf8] px-6 py-20">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-[0.8fr_1.2fr] gap-10 items-start">
           <div>
-            <p className="text-xs font-bold uppercase tracking-widest text-[#003d9b] mb-4">
+            <p className="text-xs font-bold uppercase tracking-widest text-[#0f211a] mb-4">
               {isEn ? 'Formats included' : 'Formats inclus'}
             </p>
-            <h2 className="font-display text-4xl font-extrabold text-[#0a1d2e] tracking-tight mb-5">
+            <h2 className="font-display text-4xl font-extrabold text-[#0f211a] tracking-tight mb-5">
               {isEn
                 ? 'Ready to print, edit and deploy'
                 : 'Prêt à imprimer, modifier et déployer'}
@@ -244,50 +244,50 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
             {pack.formats[lang].map((format) => (
               <div
                 key={format}
-                className="flex gap-3 p-5 bg-[#f8f9ff]"
+                className="flex gap-3 border border-[rgba(32,35,31,0.12)] bg-white p-5"
                 style={{ borderRadius: '0.125rem' }}
               >
                 <CheckCircle2
                   size={18}
-                  className="text-[#003d9b] flex-shrink-0 mt-0.5"
+                  className="mt-0.5 flex-shrink-0 text-[#a58658]"
                 />
-                <p className="text-sm font-bold text-[#0a1d2e]">{format}</p>
+                <p className="text-sm font-bold text-[#0f211a]">{format}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-[#f8f9ff]">
+      <section className="bg-[#f5f1e9] px-6 py-20">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-2xl mb-10">
-            <p className="text-xs font-bold uppercase tracking-widest text-[#003d9b] mb-4">
+            <p className="text-xs font-bold uppercase tracking-widest text-[#0f211a] mb-4">
               {isEn
                 ? 'Starter Pack vs Full Playbook'
                 : 'Starter Pack vs Playbook complet'}
             </p>
-            <h2 className="font-display text-4xl font-extrabold text-[#0a1d2e] tracking-tight">
+            <h2 className="font-display text-4xl font-extrabold text-[#0f211a] tracking-tight">
               {isEn
                 ? 'Choose the right level of structure'
                 : 'Choisir le bon niveau de structure'}
             </h2>
           </div>
           <div className="grid lg:grid-cols-2 gap-6">
-            <div className="bg-white p-7" style={{ borderRadius: '0.125rem' }}>
+            <div className="border border-[rgba(32,35,31,0.12)] bg-[#fcfbf8] p-7" style={{ borderRadius: '0.125rem' }}>
               <div className="flex items-center justify-between mb-5">
-                <h3 className="font-display text-2xl font-bold text-[#0a1d2e]">
+                <h3 className="font-display text-2xl font-bold text-[#0f211a]">
                   {pack.shortTitle[lang]}
                 </h3>
-                <span className="font-display text-3xl font-extrabold text-[#003d9b]">
+                <span className="font-display text-3xl font-extrabold text-[#0f211a]">
                   {formatProductPrice('starter_pack')}
                 </span>
               </div>
-              <p className="text-[#4f6074] leading-relaxed">
+              <p className="text-[#687169] leading-relaxed">
                 {pack.starterComparison[lang]}
               </p>
             </div>
             <div
-              className="bg-[#0a1d2e] text-white p-7"
+              className="bg-[#0f211a] text-white p-7"
               style={{ borderRadius: '0.125rem' }}
             >
               <div className="flex items-center justify-between gap-4 mb-5">
@@ -327,16 +327,16 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-white">
+      <section className="bg-[#fcfbf8] px-6 py-20">
         <div className="max-w-3xl mx-auto">
-          <h2 className="font-display text-4xl font-extrabold text-[#0a1d2e] tracking-tight mb-10 text-center">
+          <h2 className="font-display text-4xl font-extrabold text-[#0f211a] tracking-tight mb-10 text-center">
             FAQ
           </h2>
           <div className="space-y-3">
             {pack.faq.map((item, index) => (
               <div
                 key={item.question.en}
-                className="bg-[#f8f9ff]"
+                className="border border-[rgba(32,35,31,0.12)] bg-white"
                 style={{ borderRadius: '0.125rem' }}
               >
                 <button
@@ -344,12 +344,12 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
                   onClick={() => setOpenFaq(openFaq === index ? null : index)}
                   className="w-full flex items-center justify-between gap-4 p-6 text-left"
                 >
-                  <span className="font-bold text-sm uppercase tracking-tight text-[#0a1d2e]">
+                  <span className="font-bold text-sm uppercase tracking-tight text-[#0f211a]">
                     {item.question[lang]}
                   </span>
                   <ChevronDown
                     size={18}
-                    className="flex-shrink-0 text-[#737685] transition-transform"
+                    className="flex-shrink-0 text-[#687169] transition-transform"
                     style={{
                       transform:
                         openFaq === index ? 'rotate(180deg)' : 'rotate(0deg)',
@@ -358,7 +358,7 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
                 </button>
                 {openFaq === index && (
                   <div className="px-6 pb-6">
-                    <p className="text-sm text-[#4f6074] leading-relaxed">
+                    <p className="text-sm text-[#687169] leading-relaxed">
                       {item.answer[lang]}
                     </p>
                   </div>
@@ -369,7 +369,7 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-[#003d9b] text-white text-center">
+      <section className="bg-[#0f211a] px-6 py-20 text-center text-white">
         <div className="max-w-2xl mx-auto">
           <h2 className="font-display text-4xl font-extrabold tracking-tight mb-4">
             {isEn
@@ -384,7 +384,7 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
           </p>
           <button
             onClick={handleAddToCart}
-            className="inline-flex items-center justify-center gap-2 px-10 py-4 bg-white text-[#003d9b] font-bold hover:bg-[#f8f9ff] transition-colors"
+            className="inline-flex items-center justify-center gap-2 px-10 py-4 bg-white text-[#0f211a] font-bold hover:bg-[#fcfbf8] transition-colors"
             style={{ borderRadius: '0.125rem' }}
           >
             <ShoppingCart size={16} />

@@ -10,7 +10,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://www.luxops.fr/es"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en"/>
     <changefreq>weekly</changefreq>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <priority>1</priority>
   </url>
 
@@ -22,7 +22,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://www.luxops.fr/es"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en"/>
     <changefreq>weekly</changefreq>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <priority>1</priority>
   </url>
 
@@ -34,7 +34,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en"/>
     <changefreq>weekly</changefreq>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <priority>1</priority>
   </url>
 
@@ -46,7 +46,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://www.luxops.fr/es/playbooks"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/playbooks"/>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <priority>0.9</priority>
   </url>
 
@@ -58,7 +58,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://www.luxops.fr/es/playbooks"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/playbooks"/>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <priority>0.9</priority>
   </url>
 
@@ -70,7 +70,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/playbooks"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/playbooks"/>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <priority>0.9</priority>
   </url>
 
@@ -103,8 +103,8 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/playbooks/fo-starter-pack"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/playbooks/fo-starter-pack"/>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-05-11</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-08-12</lastmod>
+    <priority>0.78</priority>
   </url>
 
   <!-- playbooksFoStarterPack FR -->
@@ -114,8 +114,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/playbooks/fo-starter-pack"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/playbooks/fo-starter-pack"/>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-05-11</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-08-12</lastmod>
+    <priority>0.78</priority>
   </url>
 
   <!-- playbooksHskStarterPack EN -->
@@ -125,8 +125,8 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/playbooks/hsk-starter-pack"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/playbooks/hsk-starter-pack"/>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-05-11</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-08-12</lastmod>
+    <priority>0.78</priority>
   </url>
 
   <!-- playbooksHskStarterPack FR -->
@@ -136,8 +136,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/playbooks/hsk-starter-pack"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/playbooks/hsk-starter-pack"/>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-05-11</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-08-12</lastmod>
+    <priority>0.78</priority>
   </url>
 
   <!-- playbooksFbStarterPack EN -->
@@ -147,8 +147,8 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/playbooks/fb-starter-pack"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/playbooks/fb-starter-pack"/>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-05-11</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-08-12</lastmod>
+    <priority>0.78</priority>
   </url>
 
   <!-- playbooksFbStarterPack FR -->
@@ -158,8 +158,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/playbooks/fb-starter-pack"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/playbooks/fb-starter-pack"/>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-05-11</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-08-12</lastmod>
+    <priority>0.78</priority>
   </url>
 
   <!-- hotelFbSop EN -->
@@ -294,78 +294,6 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- qualityAudit EN -->
-  <url>
-    <loc>https://www.luxops.fr/en/quality-audit</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/quality-audit"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/audit-qualite"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.luxops.fr/es/quality-audit"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/quality-audit"/>
-    <changefreq>monthly</changefreq>
-    <lastmod>2026-03-18</lastmod>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- qualityAudit FR -->
-  <url>
-    <loc>https://www.luxops.fr/fr/audit-qualite</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/audit-qualite"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/quality-audit"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.luxops.fr/es/quality-audit"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/quality-audit"/>
-    <changefreq>monthly</changefreq>
-    <lastmod>2026-03-18</lastmod>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- qualityAudit ES -->
-  <url>
-    <loc>https://www.luxops.fr/es/quality-audit</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.luxops.fr/es/quality-audit"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/quality-audit"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/audit-qualite"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/quality-audit"/>
-    <changefreq>monthly</changefreq>
-    <lastmod>2026-03-18</lastmod>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- bespokeProcess EN -->
-  <url>
-    <loc>https://www.luxops.fr/en/bespoke-process</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/bespoke-process"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/process-sur-mesure"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.luxops.fr/es/bespoke-process"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/bespoke-process"/>
-    <changefreq>monthly</changefreq>
-    <lastmod>2026-03-18</lastmod>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- bespokeProcess FR -->
-  <url>
-    <loc>https://www.luxops.fr/fr/process-sur-mesure</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/process-sur-mesure"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/bespoke-process"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.luxops.fr/es/bespoke-process"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/bespoke-process"/>
-    <changefreq>monthly</changefreq>
-    <lastmod>2026-03-18</lastmod>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- bespokeProcess ES -->
-  <url>
-    <loc>https://www.luxops.fr/es/bespoke-process</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.luxops.fr/es/bespoke-process"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/bespoke-process"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/process-sur-mesure"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/bespoke-process"/>
-    <changefreq>monthly</changefreq>
-    <lastmod>2026-03-18</lastmod>
-    <priority>0.8</priority>
-  </url>
-
   <!-- training EN -->
   <url>
     <loc>https://www.luxops.fr/en/training</loc>
@@ -374,8 +302,8 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://www.luxops.fr/es/training"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/training"/>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-03-18</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-08-12</lastmod>
+    <priority>0.86</priority>
   </url>
 
   <!-- training FR -->
@@ -386,8 +314,8 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://www.luxops.fr/es/training"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/training"/>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-03-18</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-08-12</lastmod>
+    <priority>0.86</priority>
   </url>
 
   <!-- training ES -->
@@ -398,8 +326,8 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/formation"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/training"/>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-03-18</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-08-12</lastmod>
+    <priority>0.86</priority>
   </url>
 
   <!-- resources EN -->
@@ -936,28 +864,6 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- fbAuditTraining EN -->
-  <url>
-    <loc>https://www.luxops.fr/en/fb-audit-training</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/fb-audit-training"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/audit-formation-fb"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/fb-audit-training"/>
-    <changefreq>monthly</changefreq>
-    <lastmod>2026-07-17</lastmod>
-    <priority>0.72</priority>
-  </url>
-
-  <!-- fbAuditTraining FR -->
-  <url>
-    <loc>https://www.luxops.fr/fr/audit-formation-fb</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/audit-formation-fb"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/fb-audit-training"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/fb-audit-training"/>
-    <changefreq>monthly</changefreq>
-    <lastmod>2026-07-17</lastmod>
-    <priority>0.72</priority>
-  </url>
-
   <!-- luxopsTrainingMethod EN -->
   <url>
     <loc>https://www.luxops.fr/en/luxops-training-method</loc>
@@ -1484,5 +1390,159 @@
     <changefreq>monthly</changefreq>
     <lastmod>2026-07-17</lastmod>
     <priority>0.82</priority>
+  </url>
+
+  <!-- playbooksFo EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/playbooks/fo</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/playbooks/fo"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/playbooks/fo"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/playbooks/fo"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-09-23</lastmod>
+    <priority>0.82</priority>
+  </url>
+
+  <!-- playbooksFo FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/playbooks/fo</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/playbooks/fo"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/playbooks/fo"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/playbooks/fo"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-09-23</lastmod>
+    <priority>0.82</priority>
+  </url>
+
+  <!-- playbooksHsk EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/playbooks/hsk</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/playbooks/hsk"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/playbooks/hsk"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/playbooks/hsk"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-09-23</lastmod>
+    <priority>0.84</priority>
+  </url>
+
+  <!-- playbooksHsk FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/playbooks/hsk</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/playbooks/hsk"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/playbooks/hsk"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/playbooks/hsk"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-09-23</lastmod>
+    <priority>0.84</priority>
+  </url>
+
+  <!-- playbooksFb EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/playbooks/fb</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/playbooks/fb"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/playbooks/fb"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/playbooks/fb"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-09-23</lastmod>
+    <priority>0.82</priority>
+  </url>
+
+  <!-- playbooksFb FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/playbooks/fb</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/playbooks/fb"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/playbooks/fb"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/playbooks/fb"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-09-23</lastmod>
+    <priority>0.82</priority>
+  </url>
+
+  <!-- playbooksSpa EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/playbooks/spa</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/playbooks/spa"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/playbooks/spa"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/playbooks/spa"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-09-23</lastmod>
+    <priority>0.82</priority>
+  </url>
+
+  <!-- playbooksSpa FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/playbooks/spa</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/playbooks/spa"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/playbooks/spa"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/playbooks/spa"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-09-23</lastmod>
+    <priority>0.82</priority>
+  </url>
+
+  <!-- blogHotelAutumnRecruitmentTraining EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/blog/preparer-rentree-hotel-recrutement-formation</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/preparer-rentree-hotel-recrutement-formation"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/preparer-rentree-hotel-recrutement-formation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/preparer-rentree-hotel-recrutement-formation"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-09-23</lastmod>
+    <priority>0.72</priority>
+  </url>
+
+  <!-- blogHotelAutumnRecruitmentTraining FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/blog/preparer-rentree-hotel-recrutement-formation</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/preparer-rentree-hotel-recrutement-formation"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/preparer-rentree-hotel-recrutement-formation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/preparer-rentree-hotel-recrutement-formation"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-09-23</lastmod>
+    <priority>0.72</priority>
+  </url>
+
+  <!-- blogHotelWinterSeasonTraining EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/blog/preparer-saison-hiver-hotel-formation-equipes</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/preparer-saison-hiver-hotel-formation-equipes"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/preparer-saison-hiver-hotel-formation-equipes"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/preparer-saison-hiver-hotel-formation-equipes"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-09-23</lastmod>
+    <priority>0.72</priority>
+  </url>
+
+  <!-- blogHotelWinterSeasonTraining FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/blog/preparer-saison-hiver-hotel-formation-equipes</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/preparer-saison-hiver-hotel-formation-equipes"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/preparer-saison-hiver-hotel-formation-equipes"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/preparer-saison-hiver-hotel-formation-equipes"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-09-23</lastmod>
+    <priority>0.72</priority>
+  </url>
+
+  <!-- blogHotelAiTraining EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/blog/intelligence-artificielle-hotellerie-formation-equipes</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/intelligence-artificielle-hotellerie-formation-equipes"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/intelligence-artificielle-hotellerie-formation-equipes"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/intelligence-artificielle-hotellerie-formation-equipes"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-09-23</lastmod>
+    <priority>0.72</priority>
+  </url>
+
+  <!-- blogHotelAiTraining FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/blog/intelligence-artificielle-hotellerie-formation-equipes</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/intelligence-artificielle-hotellerie-formation-equipes"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/intelligence-artificielle-hotellerie-formation-equipes"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/intelligence-artificielle-hotellerie-formation-equipes"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-09-23</lastmod>
+    <priority>0.72</priority>
   </url>
 </urlset>

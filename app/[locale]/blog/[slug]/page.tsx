@@ -1,15 +1,21 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight, ArrowLeft, Clock, CheckCircle2 } from 'lucide-react'
 import { articles } from '@/content/blog/articles'
 import { breadcrumbSchema, faqSchema as buildFaqSchema, localizedPath } from '@/lib/seo'
 import TrackedLink from '@/components/TrackedLink'
 import { ACTIVE_LOCALES, toActiveLocale } from '@/lib/i18n'
 import { localizePathname } from '@/lib/localized-routes'
+import styles from './article-preview.module.css'
+import { blogEditorialImages, editorialImageUrl } from '@/lib/editorial-images'
 
 // Keywords per article - improves indexation signals for Google
 const KEYWORDS_EN: Record<string, string> = {
+  'preparer-rentree-hotel-recrutement-formation': 'city hotel autumn season, hotel staff recruitment, hotel team training, hotel onboarding, hotel staffing plan, service standards training',
+  'preparer-saison-hiver-hotel-formation-equipes': 'winter hotel season, seasonal hotel staff training, hotel pre-opening training, winter resort recruitment, seasonal hotel onboarding',
+  'intelligence-artificielle-hotellerie-formation-equipes': 'AI in hotels, hotel AI training, hospitality artificial intelligence, AI hotel operations, hotel staff AI policy',
   'hotel-operations-playbook': 'hotel operations playbook, hotel SOP, hotel procedures manual, hotel operations guide, luxury hotel management',
   'how-to-write-hotel-sops': 'how to write hotel SOPs, hotel standard operating procedures, hotel SOP template, hotel procedure writing',
   'hotel-front-office-sop': 'hotel front office SOP, hotel reception procedures, front desk standard operating procedures, check-in SOP hotel',
@@ -34,6 +40,9 @@ const KEYWORDS_EN: Record<string, string> = {
 }
 
 const KEYWORDS_FR: Record<string, string> = {
+  'preparer-rentree-hotel-recrutement-formation': 'rentrée hôtelière, recrutement hôtel, formation équipes hôtel, intégration personnel hôtel, planning effectifs hôtel, formation standards de service',
+  'preparer-saison-hiver-hotel-formation-equipes': 'saison hiver hôtel, formation saisonniers hôtel, pré-ouverture hôtel, recrutement saisonnier hôtellerie, intégration équipe saisonnière',
+  'intelligence-artificielle-hotellerie-formation-equipes': 'IA hôtellerie, intelligence artificielle hôtel, formation IA équipes hôtelières, IA opérations hôtelières, politique IA hôtel',
   'hotel-operations-playbook': 'playbook opérationnel, SOP hôtel, procédures opérationnelles, guide opérations, standards de service',
   'how-to-write-hotel-sops': 'rédiger SOP, procédures opérationnelles, modèle SOP, écrire procédures, playbook SOP',
   'hotel-front-office-sop': 'SOP réception hôtel, procédures front office hôtel, standard opérationnel réception hôtel',
@@ -808,7 +817,7 @@ const ARTICLE_PRODUCT_CTAS: Record<string, {
       label: 'Housekeeping tools',
       title: 'Need a practical room inspection toolkit?',
       text: 'Use the inspection kit for editable control sheets, or the full playbook for the complete housekeeping SOP system.',
-      primaryText: 'View the Housekeeping Inspection Kit',
+      primaryText: 'View the Housekeeping Starter Pack',
       primaryHref: '/en/playbooks/hsk-starter-pack',
       secondaryText: 'View the Housekeeping Playbook',
       secondaryHref: '/en/playbooks/hsk',
@@ -817,7 +826,7 @@ const ARTICLE_PRODUCT_CTAS: Record<string, {
       label: 'Outils housekeeping',
       title: 'Besoin d’un kit pratique pour contrôler les chambres ?',
       text: 'Utilisez le kit inspection pour les feuilles de contrôle modifiables, ou le playbook complet pour toute la structure SOP du département.',
-      primaryText: 'Voir le Kit Inspection Housekeeping',
+      primaryText: 'Voir le Starter Pack Housekeeping',
       primaryHref: '/fr/playbooks/hsk-starter-pack',
       secondaryText: 'Voir le Playbook Housekeeping',
       secondaryHref: '/fr/playbooks/hsk',
@@ -930,7 +939,7 @@ const ARTICLE_PRODUCT_CTAS: Record<string, {
       text: 'Download the departure room cleaning checklist, then use the full checklist hub for every housekeeping PDF.',
       primaryText: 'Download the room cleaning PDF',
       primaryHref: '/downloads/checklists/en/departure-room-cleaning-checklist.pdf',
-      secondaryText: 'View the Housekeeping Inspection Kit',
+      secondaryText: 'View the Housekeeping Starter Pack',
       secondaryHref: '/en/playbooks/hsk-starter-pack',
     },
     fr: {
@@ -939,7 +948,7 @@ const ARTICLE_PRODUCT_CTAS: Record<string, {
       text: 'Téléchargez la checklist chambre à blanc, puis utilisez le hub complet pour retrouver tous les PDF housekeeping.',
       primaryText: 'Télécharger le PDF chambre à blanc',
       primaryHref: '/downloads/checklists/fr/checklist-chambre-a-blanc.pdf',
-      secondaryText: 'Voir le Kit Inspection Housekeeping',
+      secondaryText: 'Voir le Starter Pack Housekeeping',
       secondaryHref: '/fr/playbooks/hsk-starter-pack',
     },
   },
@@ -950,7 +959,7 @@ const ARTICLE_PRODUCT_CTAS: Record<string, {
       text: 'Download the bathroom cleaning PDF aligned with this SOP, or use the inspection kit to standardise room controls.',
       primaryText: 'Download the bathroom PDF',
       primaryHref: '/downloads/checklists/en/hotel-bathroom-cleaning-checklist.pdf',
-      secondaryText: 'View the Housekeeping Inspection Kit',
+      secondaryText: 'View the Housekeeping Starter Pack',
       secondaryHref: '/en/playbooks/hsk-starter-pack',
     },
     fr: {
@@ -959,7 +968,7 @@ const ARTICLE_PRODUCT_CTAS: Record<string, {
       text: 'Téléchargez le PDF salle de bain aligné avec cette SOP, ou utilisez le kit inspection pour standardiser les contrôles chambre.',
       primaryText: 'Télécharger le PDF salle de bain',
       primaryHref: '/downloads/checklists/fr/checklist-nettoyage-salle-de-bain-hotel.pdf',
-      secondaryText: 'Voir le Kit Inspection Housekeeping',
+      secondaryText: 'Voir le Starter Pack Housekeeping',
       secondaryHref: '/fr/playbooks/hsk-starter-pack',
     },
   },
@@ -990,7 +999,7 @@ const ARTICLE_PRODUCT_CTAS: Record<string, {
       text: 'Download the supervisor PDF for assignments, departure inspections, VIP checks and Clean vs Inspected release.',
       primaryText: 'Download the supervisor PDF',
       primaryHref: '/downloads/housekeeping-checklists/en/floor-housekeeping-supervisor-checklist.pdf',
-      secondaryText: 'View the Housekeeping Inspection Kit',
+      secondaryText: 'View the Housekeeping Starter Pack',
       secondaryHref: '/en/playbooks/hsk-starter-pack',
     },
     fr: {
@@ -999,7 +1008,7 @@ const ARTICLE_PRODUCT_CTAS: Record<string, {
       text: 'Téléchargez le PDF pour les feuilles de route, l’inspection chambre départ, les VIP, la libération PMS et le coaching qualité.',
       primaryText: 'Télécharger le PDF gouvernante',
       primaryHref: '/downloads/housekeeping-checklists/fr/checklist-gouvernante-etage-superviseur.pdf',
-      secondaryText: 'Voir le Kit Inspection Housekeeping',
+      secondaryText: 'Voir le Starter Pack Housekeeping',
       secondaryHref: '/fr/playbooks/hsk-starter-pack',
     },
   },
@@ -1121,9 +1130,9 @@ export default async function BlogArticlePage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
       />
-      <div className="pt-16">
+      <div className={`pt-16 ${styles.preview}`}>
         {/* Hero */}
-        <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+        <section className={`py-20 bg-gradient-to-b from-gray-50 to-white ${styles.hero}`}>
           <div className="max-w-3xl mx-auto px-6">
             <Link
               href={`/${locale}/blog`}
@@ -1147,8 +1156,21 @@ export default async function BlogArticlePage({
           </div>
         </section>
 
+        {blogEditorialImages[slug] && (
+          <figure className={styles.editorialFigure}>
+            <Image
+              src={editorialImageUrl(blogEditorialImages[slug])}
+              alt={isEn ? `Illustration for ${content.title}` : `Illustration pour ${content.title}`}
+              width={1080}
+              height={720}
+              sizes="(max-width: 640px) 100vw, 900px"
+              className={styles.editorialImage}
+            />
+          </figure>
+        )}
+
         {productCta && (
-          <section className="py-10 bg-white border-b border-gray-100">
+          <section className={`py-10 bg-white border-b border-gray-100 ${styles.productCta}`}>
             <div className="max-w-3xl mx-auto px-6 text-center">
               <p className="text-[10px] font-bold uppercase tracking-widest text-[#003d9b] mb-3">
                 {productCta.label}
@@ -1169,7 +1191,7 @@ export default async function BlogArticlePage({
                     cta_position: 'primary',
                     article_slug: slug,
                   }}
-                  className="inline-flex min-w-[240px] items-center justify-center gap-2 rounded-lg bg-[#003d9b] px-5 py-3 text-sm font-semibold text-white hover:bg-[#002d7a] transition-colors"
+                  className={`inline-flex min-w-[240px] items-center justify-center gap-2 rounded-lg bg-[#003d9b] px-5 py-3 text-sm font-semibold text-white hover:bg-[#002d7a] transition-colors ${styles.primaryButton}`}
                 >
                   {productCta.primaryText} <ArrowRight size={16} />
                 </TrackedLink>
@@ -1184,7 +1206,7 @@ export default async function BlogArticlePage({
                     cta_position: 'secondary',
                     article_slug: slug,
                   }}
-                  className="inline-flex min-w-[240px] items-center justify-center gap-2 rounded-lg border border-[#003d9b] px-5 py-3 text-sm font-semibold text-[#003d9b] hover:bg-[#eef4ff] transition-colors"
+                  className={`inline-flex min-w-[240px] items-center justify-center gap-2 rounded-lg border border-[#003d9b] px-5 py-3 text-sm font-semibold text-[#003d9b] hover:bg-[#eef4ff] transition-colors ${styles.secondaryButton}`}
                 >
                   {productCta.secondaryText} <ArrowRight size={16} />
                 </TrackedLink>
@@ -1239,8 +1261,8 @@ export default async function BlogArticlePage({
           }
           return (
             <section
-              className="py-10 border-t border-b"
-              style={{ backgroundColor: '#eef4ff', borderColor: 'rgba(195,198,214,0.3)' }}
+              className={`py-10 border-t border-b ${styles.leadMagnet}`}
+              style={slug === 'housekeeping-room-inspection' ? undefined : { backgroundColor: '#eef4ff', borderColor: 'rgba(195,198,214,0.3)' }}
             >
               <div className="max-w-3xl mx-auto px-6 flex flex-col sm:flex-row items-start sm:items-center gap-6">
                 <div className="flex-1">
@@ -1259,7 +1281,7 @@ export default async function BlogArticlePage({
                 <Link
                   href={`/${locale}/free-hotel-procedures`}
                   className="inline-flex items-center gap-2 px-6 py-3 text-white font-bold text-sm flex-shrink-0 hover:opacity-90 transition-opacity"
-                  style={{ background: 'linear-gradient(135deg, #003d9b, #0052cc)', borderRadius: '0.125rem' }}
+                  style={slug === 'housekeeping-room-inspection' ? undefined : { background: 'linear-gradient(135deg, #003d9b, #0052cc)', borderRadius: '0.125rem' }}
                 >
                   {isEn ? 'Download free' : 'Télécharger gratuitement'} <ArrowRight size={16} />
                 </Link>
@@ -1270,7 +1292,7 @@ export default async function BlogArticlePage({
 
         {/* Playbook excerpt - proof and CTA early in the read */}
         {playbookExcerpt && (
-          <section className="py-12 bg-white border-b border-gray-100">
+          <section className={`py-12 bg-white border-b border-gray-100 ${styles.excerpt}`}>
             <div className="max-w-3xl mx-auto px-6">
               <div className="rounded-xl border border-[#d8e6f7] bg-[#f4f8ff] p-8">
                 <p className="text-xs font-semibold uppercase tracking-widest text-[#003d9b] mb-3">
@@ -1310,7 +1332,7 @@ export default async function BlogArticlePage({
         )}
 
         {/* Article body - all sections */}
-        <section className="py-12 bg-white">
+        <section className={`py-12 bg-white ${styles.body}`}>
           <div className="max-w-3xl mx-auto px-6">
             <div className="prose-style">
               <nav className="mb-12 rounded-xl border border-gray-100 bg-gray-50 p-6">
@@ -1461,7 +1483,7 @@ export default async function BlogArticlePage({
           const links = RELATED[slug]
           if (!links) return null
           return (
-            <section className="py-12 bg-gray-50 border-t border-gray-100">
+            <section className={`py-12 bg-gray-50 border-t border-gray-100 ${styles.related}`}>
               <div className="max-w-3xl mx-auto px-6">
                 <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-5">
                   {isEn ? 'Related resources' : 'Ressources associées'}
@@ -1488,7 +1510,7 @@ export default async function BlogArticlePage({
         })()}
 
         {/* CTA */}
-        <section className="py-16 bg-[#111111]">
+        <section className={`py-16 bg-[#111111] ${styles.finalCta}`}>
           <div className="max-w-3xl mx-auto px-6 text-center">
             <h2 className="text-2xl font-bold text-white mb-6">
               {isEn ? 'Ready to structure your operations?' : 'Prêt à structurer vos opérations ?'}

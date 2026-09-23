@@ -11,7 +11,7 @@ import {
 interface Props {
   productId: PreviewProductId
   locale: string
-  variant?: 'hero' | 'card'
+  variant?: 'hero' | 'compactHero' | 'card'
 }
 
 export default function ProductPreviewCarousel({
@@ -23,18 +23,19 @@ export default function ProductPreviewCarousel({
   const pages = PRODUCT_PREVIEWS[productId][lang]
   const [activePage, setActivePage] = useState(0)
   const touchStartX = useRef<number | null>(null)
+  const isCompactHero = variant === 'compactHero'
 
   if (variant === 'card') {
     return (
-      <div className="relative h-full w-full overflow-hidden bg-[#dae9ff]">
+      <div className="relative h-full w-full overflow-hidden bg-[#e7e0d5]">
         <div
-          className="absolute inset-0 opacity-30 transition-opacity duration-300 group-hover:opacity-45"
+          className="absolute inset-0 opacity-35 transition-opacity duration-300 group-hover:opacity-55"
           style={{
-            backgroundImage: 'radial-gradient(#003d9b 0.5px, transparent 0.5px)',
+            backgroundImage: 'radial-gradient(#a58658 0.5px, transparent 0.5px)',
             backgroundSize: '20px 20px',
           }}
         />
-        <div className="absolute left-[17%] top-[14%] h-[78%] w-[34%] rotate-[-4deg] overflow-hidden border border-white bg-white shadow-[0_10px_24px_rgba(10,29,46,0.18)] transition-transform duration-300 group-hover:rotate-[-6deg] group-hover:-translate-x-1">
+        <div className="absolute left-[17%] top-[14%] h-[78%] w-[34%] rotate-[-4deg] overflow-hidden border border-[#fcfbf8] bg-[#fcfbf8] shadow-[0_10px_24px_rgba(15,33,26,0.16)] transition-transform duration-300 group-hover:rotate-[-6deg] group-hover:-translate-x-1">
           <Image
             src={pages[1].src}
             alt=""
@@ -43,7 +44,7 @@ export default function ProductPreviewCarousel({
             className="object-contain"
           />
         </div>
-        <div className="absolute right-[17%] top-[9%] h-[82%] w-[36%] rotate-[3deg] overflow-hidden border border-white bg-white shadow-[0_14px_30px_rgba(10,29,46,0.22)] transition-transform duration-300 group-hover:rotate-[5deg] group-hover:translate-x-1">
+        <div className="absolute right-[17%] top-[9%] h-[82%] w-[36%] rotate-[3deg] overflow-hidden border border-[#fcfbf8] bg-[#fcfbf8] shadow-[0_14px_30px_rgba(15,33,26,0.22)] transition-transform duration-300 group-hover:rotate-[5deg] group-hover:translate-x-1">
           <Image
             src={pages[0].src}
             alt={pages[0].alt}
@@ -66,7 +67,7 @@ export default function ProductPreviewCarousel({
 
   return (
     <div
-      className="group relative w-full max-w-[460px] mx-auto lg:mr-0"
+      className={`group relative mx-auto w-full lg:mr-0 ${isCompactHero ? 'max-w-[360px]' : 'max-w-[460px]'}`}
       onTouchStart={(event) => {
         touchStartX.current = event.touches[0]?.clientX ?? null
       }}
@@ -81,9 +82,9 @@ export default function ProductPreviewCarousel({
         touchStartX.current = null
       }}
     >
-      <div className="absolute -right-4 -top-4 h-full w-full rotate-2 bg-[#003d9b]/[0.08]" />
-      <div className="relative border border-[#c3c6d6]/40 bg-[#eef4ff] p-4 md:p-6 shadow-[0_20px_60px_rgba(10,29,46,0.12)]">
-        <div className="relative mx-auto aspect-[0.707] max-h-[620px] overflow-hidden bg-white shadow-[0_12px_35px_rgba(10,29,46,0.16)]">
+      <div className="absolute -right-4 -top-4 h-full w-full rotate-2 bg-[#a58658]/[0.12]" />
+      <div className={`relative border border-[rgba(32,35,31,0.14)] bg-[#e7e0d5] shadow-[0_20px_60px_rgba(15,33,26,0.12)] ${isCompactHero ? 'p-3 md:p-4' : 'p-4 md:p-6'}`}>
+        <div className={`relative mx-auto aspect-[0.707] overflow-hidden bg-[#fcfbf8] shadow-[0_12px_35px_rgba(15,33,26,0.16)] ${isCompactHero ? 'max-h-[500px]' : 'max-h-[620px]'}`}>
           {pages.map((page, index) => (
             <Image
               key={page.src}
@@ -103,7 +104,7 @@ export default function ProductPreviewCarousel({
           type="button"
           onClick={previous}
           aria-label={lang === 'en' ? 'Previous preview' : 'Aperçu précédent'}
-          className="absolute left-1 md:left-2 top-1/2 -translate-y-1/2 flex h-11 w-11 items-center justify-center bg-white text-[#0a1d2e] shadow-[0_6px_20px_rgba(10,29,46,0.18)] transition-all hover:bg-[#003d9b] hover:text-white md:opacity-0 md:-translate-x-2 md:group-hover:translate-x-0 md:group-hover:opacity-100"
+          className="absolute left-1 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center bg-[#fcfbf8] text-[#0f211a] shadow-[0_6px_20px_rgba(15,33,26,0.18)] transition-all hover:bg-[#0f211a] hover:text-[#f5f1e9] md:left-2 md:-translate-x-2 md:opacity-0 md:group-hover:translate-x-0 md:group-hover:opacity-100"
         >
           <ChevronLeft size={22} />
         </button>
@@ -111,12 +112,12 @@ export default function ProductPreviewCarousel({
           type="button"
           onClick={next}
           aria-label={lang === 'en' ? 'Next preview' : 'Aperçu suivant'}
-          className="absolute right-1 md:right-2 top-1/2 -translate-y-1/2 flex h-11 w-11 items-center justify-center bg-white text-[#0a1d2e] shadow-[0_6px_20px_rgba(10,29,46,0.18)] transition-all hover:bg-[#003d9b] hover:text-white md:opacity-0 md:translate-x-2 md:group-hover:translate-x-0 md:group-hover:opacity-100"
+          className="absolute right-1 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center bg-[#fcfbf8] text-[#0f211a] shadow-[0_6px_20px_rgba(15,33,26,0.18)] transition-all hover:bg-[#0f211a] hover:text-[#f5f1e9] md:right-2 md:translate-x-2 md:opacity-0 md:group-hover:translate-x-0 md:group-hover:opacity-100"
         >
           <ChevronRight size={22} />
         </button>
 
-        <div className="flex items-center justify-center gap-2 pt-4 md:pt-5">
+        <div className={`flex items-center justify-center gap-2 ${isCompactHero ? 'pt-3' : 'pt-4 md:pt-5'}`}>
           {pages.map((page, index) => (
             <button
               type="button"
@@ -129,8 +130,8 @@ export default function ProductPreviewCarousel({
               }
               className={`h-1.5 transition-all ${
                 index === activePage
-                  ? 'w-7 bg-[#003d9b]'
-                  : 'w-1.5 bg-[#9baac0] hover:bg-[#003d9b]'
+                  ? 'w-7 bg-[#0f211a]'
+                  : 'w-1.5 bg-[#9da99e] hover:bg-[#0f211a]'
               }`}
             />
           ))}

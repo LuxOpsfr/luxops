@@ -103,7 +103,7 @@ const frenchData = (locale: string): TrainingSeoPageData => ({
     },
     {
       href: `/${locale}/playbooks/hsk-starter-pack`,
-      title: 'Housekeeping Inspection Kit',
+      title: 'Housekeeping Starter Pack',
       text: 'Checklists et outils de contrôle pour soutenir le travail d’inspection et de suivi qualité.',
     },
   ],
@@ -187,7 +187,7 @@ const englishData = (locale: string): TrainingSeoPageData => ({
     },
     {
       href: `/${locale}/playbooks/hsk-starter-pack`,
-      title: 'Housekeeping Inspection Kit',
+      title: 'Housekeeping Starter Pack',
       text: 'Checklists and control tools to support inspection and quality follow-up.',
     },
   ],

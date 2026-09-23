@@ -61,7 +61,7 @@ const CONTENT = {
           'Room cleaning, floor supervision, public areas and inspection controls for daily HSK operations.',
         starterHref: '/en/playbooks/hsk-starter-pack',
         playbookHref: '/en/playbooks/hsk',
-        starterLabel: 'View Housekeeping Inspection Kit',
+        starterLabel: 'View Housekeeping Starter Pack',
         playbookLabel: 'View Housekeeping Playbook',
         items: [
           {
@@ -247,7 +247,7 @@ const CONTENT = {
           'Nettoyage chambre, inspection gouvernante, lieux publics et contrôles qualité pour les opérations HSK quotidiennes.',
         starterHref: '/fr/playbooks/hsk-starter-pack',
         playbookHref: '/fr/playbooks/hsk',
-        starterLabel: 'Voir le Kit Inspection Housekeeping',
+        starterLabel: 'Voir le Starter Pack Housekeeping',
         playbookLabel: 'Voir le Playbook Housekeeping',
         items: [
           {
@@ -485,24 +485,24 @@ export default function FreeHotelChecklistsHub({ locale }: { locale: Locale }) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      <main className="bg-white">
-        <section className="bg-[#1A2E44] text-white px-6 pt-36 md:pt-40 pb-16 md:pb-20">
+      <main className="bg-[#fcfbf8] text-[#0f211a]">
+        <section className="border-b border-[rgba(32,35,31,0.14)] bg-[#f5f1e9] px-6 pb-16 pt-[calc(var(--site-header-height)+4rem)] md:pb-20 md:pt-[calc(var(--site-header-height)+5rem)]">
           <div className="max-w-6xl mx-auto">
             <div className="max-w-4xl">
-              <span className="inline-flex items-center gap-2 bg-white/10 text-white text-xs font-semibold px-4 py-2 rounded-full mb-6 tracking-widest uppercase">
+              <span className="mb-6 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-[#a58658]">
                 <Download size={15} />
                 {content.eyebrow}
               </span>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">{content.h1}</h1>
-              <p className="text-lg md:text-xl text-blue-100 max-w-3xl leading-relaxed mb-6">
+              <h1 className="mb-6 max-w-4xl font-display text-4xl font-medium leading-[1.05] md:text-6xl">{content.h1}</h1>
+              <p className="mb-6 max-w-3xl text-lg leading-relaxed text-[#3d4a41] md:text-xl">
                 {content.subtitle}
               </p>
-              <p className="text-sm md:text-base text-white/75 max-w-3xl leading-relaxed">
+              <p className="max-w-3xl text-sm leading-relaxed text-[#5d665f] md:text-base">
                 {content.intro}
               </p>
             </div>
 
-            <div className="grid sm:grid-cols-3 gap-4 mt-10 max-w-3xl">
+            <div className="mt-10 grid max-w-3xl gap-4 sm:grid-cols-3">
               <Stat value={String(totalItems)} label={isEN ? 'Checklist cards' : 'Checklists'} />
               <Stat value={String(availableItems)} label={isEN ? 'Ready PDFs' : 'PDF prêts'} />
               <Stat value="EN + FR" label={isEN ? 'Languages' : 'Langues'} />
@@ -510,33 +510,35 @@ export default function FreeHotelChecklistsHub({ locale }: { locale: Locale }) {
           </div>
         </section>
 
-        {content.departments.map((department) => (
+        {content.departments.map((department, index) => (
           <DepartmentSection
             key={department.id}
             department={department}
+            index={index}
             content={content}
-            locale={locale}
             sourcePage={sourcePage}
           />
         ))}
 
-        <section className="py-16 px-6 bg-[#F6F8FB] border-y border-gray-100">
+        <section className="border-y border-[rgba(32,35,31,0.14)] bg-[#f5f1e9] px-6 py-20">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-[#111111] mb-8">
+            <h2 className="mb-10 text-center font-display text-3xl font-medium text-[#0f211a] md:text-4xl">
               {isEN ? 'Frequently asked questions' : 'Questions fréquentes'}
             </h2>
-            <div className="space-y-5">
+            <div className="border-t border-[rgba(32,35,31,0.2)]">
               {content.faqs.map((faq) => (
-                <div key={faq.question} className="bg-white border border-gray-200 rounded-xl p-6">
-                  <h3 className="text-lg font-bold text-[#111111] mb-2">{faq.question}</h3>
-                  <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
-                </div>
+                <details key={faq.question} className="group border-b border-[rgba(32,35,31,0.2)]">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-5 text-left text-base font-semibold text-[#0f211a] marker:hidden [&::-webkit-details-marker]:hidden">
+                    <span>{faq.question}</span><span aria-hidden="true" className="text-2xl font-light leading-none text-[#a58658] group-open:rotate-45">+</span>
+                  </summary>
+                  <p className="max-w-3xl pb-6 text-sm leading-7 text-[#5d665f]">{faq.answer}</p>
+                </details>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="py-16 px-6 bg-[#111111] text-white">
+        <section className="bg-[#0f211a] px-6 py-16 text-[#fcfbf8]">
           <div className="max-w-4xl mx-auto text-center">
             <div className="flex justify-center gap-3 mb-6">
               <span className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
@@ -549,7 +551,7 @@ export default function FreeHotelChecklistsHub({ locale }: { locale: Locale }) {
                 <Sparkles size={21} />
               </span>
             </div>
-            <h2 className="text-3xl font-bold mb-4">
+            <h2 className="mb-4 font-display text-3xl font-medium">
               {isEN ? 'Turn printable checklists into daily standards' : 'Transformer les checklists imprimables en standards quotidiens'}
             </h2>
             <p className="text-gray-300 leading-relaxed mb-8">
@@ -562,7 +564,7 @@ export default function FreeHotelChecklistsHub({ locale }: { locale: Locale }) {
                 href={`/${locale}/playbooks#starter-packs`}
                 eventName="starter_packs_cta_clicked"
                 eventProperties={{ source_page: sourcePage, position: 'final' }}
-                className="inline-flex items-center justify-center gap-2 bg-white text-[#111111] px-7 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+                className="inline-flex items-center justify-center gap-2 bg-[#fcfbf8] px-7 py-4 font-semibold text-[#0f211a] transition-colors hover:bg-[#e7e0d5]"
               >
                 {isEN ? 'View Starter Packs' : 'Voir les Starter Packs'}
                 <ArrowRight size={18} />
@@ -571,7 +573,7 @@ export default function FreeHotelChecklistsHub({ locale }: { locale: Locale }) {
                 href={`/${locale}/free-hotel-procedures`}
                 eventName="free_chapter_cta_clicked"
                 eventProperties={{ source_page: sourcePage, position: 'final' }}
-                className="inline-flex items-center justify-center gap-2 border border-white/30 text-white px-7 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors"
+                className="inline-flex items-center justify-center gap-2 border border-white/30 px-7 py-4 font-semibold text-white transition-colors hover:bg-white/10"
               >
                 {isEN ? 'Download free chapters' : 'Télécharger les chapitres gratuits'}
               </TrackedLink>
@@ -585,32 +587,32 @@ export default function FreeHotelChecklistsHub({ locale }: { locale: Locale }) {
 
 function Stat({ value, label }: { value: string; label: string }) {
   return (
-    <div className="border border-white/15 bg-white/5 rounded-xl p-5">
-      <p className="text-3xl font-bold mb-1">{value}</p>
-      <p className="text-xs uppercase tracking-widest text-white/65 font-semibold">{label}</p>
+    <div className="border-t border-[rgba(32,35,31,0.2)] pt-4">
+      <p className="mb-1 font-display text-3xl">{value}</p>
+      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#5d665f]">{label}</p>
     </div>
   )
 }
 
 function DepartmentSection({
   department,
+  index,
   content,
-  locale,
   sourcePage,
 }: {
   department: Department
+  index: number
   content: typeof CONTENT[Locale]
-  locale: Locale
   sourcePage: string
 }) {
   return (
-    <section id={department.id} className="py-16 px-6">
+    <section id={department.id} className={`px-6 py-16 ${index % 2 === 0 ? 'bg-[#fcfbf8]' : 'bg-[#f5f1e9]'}`}>
       <div className="max-w-6xl mx-auto">
         <div className="max-w-3xl mb-10">
-          <p className="text-xs font-semibold uppercase tracking-widest text-[#0056D2] mb-4">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-[#a58658]">
             {department.label}
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-[#111111] mb-4">{department.title}</h2>
+          <h2 className="mb-4 font-display text-3xl font-medium text-[#0f211a] md:text-4xl">{department.title}</h2>
           <p className="text-gray-600 leading-relaxed">{department.intro}</p>
         </div>
 
@@ -659,15 +661,15 @@ function ChecklistCard({
   departmentId: string
 }) {
   return (
-    <article className="border border-gray-200 rounded-xl bg-white p-6 flex flex-col min-h-[300px]">
+    <article className="flex min-h-[300px] flex-col border border-[rgba(32,35,31,0.14)] bg-[#fcfbf8] p-6">
       <div className="flex items-start justify-between gap-4 mb-5">
-        <div className="w-12 h-12 rounded-xl bg-[#F4F8FF] flex items-center justify-center flex-shrink-0">
-          <FileText size={23} className="text-[#0056D2]" />
+        <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center bg-[#e7e0d5]">
+          <FileText size={23} className="text-[#24362f]" />
         </div>
         <span
           className={
             item.available
-              ? 'text-[10px] font-bold uppercase tracking-widest text-[#0056D2] bg-[#EAF2FF] px-3 py-1.5 rounded-full'
+              ? 'bg-[#e7e0d5] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#24362f]'
               : 'text-[10px] font-bold uppercase tracking-widest text-gray-500 bg-gray-100 px-3 py-1.5 rounded-full'
           }
         >
@@ -676,7 +678,7 @@ function ChecklistCard({
       </div>
 
       <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">{item.role}</p>
-      <h3 className="text-2xl font-bold text-[#111111] mb-4 leading-tight">{item.title}</h3>
+      <h3 className="mb-4 font-display text-2xl font-medium leading-tight text-[#0f211a]">{item.title}</h3>
       <p className="text-gray-600 leading-relaxed mb-6 flex-1">{item.body}</p>
 
       <div className="space-y-3">
@@ -689,7 +691,7 @@ function ChecklistCard({
             checklist: item.title,
             status: item.available ? 'available' : 'preparing',
           }}
-          className="w-full inline-flex items-center justify-center gap-2 bg-[#1A2E44] text-white px-5 py-3 rounded-lg font-semibold hover:bg-[#0f2235] transition-colors"
+          className="inline-flex w-full items-center justify-center gap-2 bg-[#0f211a] px-5 py-3 font-semibold text-white transition-colors hover:bg-[#24362f]"
           download
         >
           <Download size={17} />
@@ -697,7 +699,7 @@ function ChecklistCard({
         </TrackedLink>
         <Link
           href={item.sourceHref}
-          className="w-full inline-flex items-center justify-center gap-2 text-[#1A2E44] px-5 py-2.5 rounded-lg font-semibold hover:bg-gray-50 transition-colors"
+          className="inline-flex w-full items-center justify-center gap-2 px-5 py-2.5 font-semibold text-[#24362f] transition-colors hover:bg-[#e7e0d5]"
         >
           {content.sourceLabel}
           <ArrowRight size={16} />
@@ -725,17 +727,17 @@ function CommercialCta({
       href={href}
       eventName={eventName}
       eventProperties={{ source_page: sourcePage, position: 'department_cta' }}
-      className="group border border-gray-200 rounded-xl p-6 hover:border-[#0056D2] hover:shadow-sm transition-all"
+      className="group border border-[rgba(32,35,31,0.18)] p-6 transition-colors hover:border-[#a58658]"
     >
       <div className="flex gap-4 items-start">
-        <span className="w-10 h-10 rounded-lg bg-[#F4F8FF] flex items-center justify-center flex-shrink-0">
-          <CheckCircle2 size={20} className="text-[#0056D2]" />
+        <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center bg-[#e7e0d5]">
+          <CheckCircle2 size={20} className="text-[#24362f]" />
         </span>
         <span>
           <span className="block text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2">
             {eyebrow}
           </span>
-          <span className="text-lg font-bold text-[#111111] group-hover:text-[#0056D2] transition-colors">
+          <span className="font-display text-lg text-[#0f211a] transition-colors group-hover:text-[#a58658]">
             {title}
           </span>
         </span>

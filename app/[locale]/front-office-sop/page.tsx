@@ -136,6 +136,8 @@ export default async function FrontOfficeSopPage({ params }: { params: Promise<{
         </div>
       </section>
 
+      <EditorialRouteImage route="front-office-sop" alt="Hotel front office" />
+
       {/* Product paths */}
       <section className="py-10 px-6 bg-white border-b border-gray-100">
         <div className="max-w-4xl mx-auto text-center">
@@ -354,3 +356,4 @@ export default async function FrontOfficeSopPage({ params }: { params: Promise<{
     </>
   )
 }
+import EditorialRouteImage from '@/components/EditorialRouteImage'

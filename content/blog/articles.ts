@@ -1,3 +1,5 @@
+import { trainingSeasonalArticles } from './training-seasonal-articles'
+
 export interface BlogSection {
   h2: string
   content: string
@@ -23,6 +25,7 @@ export interface BilingualArticle {
 }
 
 export const articles: BilingualArticle[] = [
+  ...trainingSeasonalArticles,
   {
     slug: 'hotel-operations-playbook',
     en: {

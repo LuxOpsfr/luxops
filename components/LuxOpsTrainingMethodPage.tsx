@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowRight, BriefcaseBusiness, CheckCircle2, ClipboardCheck, Eye, GraduationCap, Users2 } from 'lucide-react'
+import { ArrowRight, BriefcaseBusiness, ClipboardCheck, Eye, GraduationCap, Users2 } from 'lucide-react'
 import TrackedLink from '@/components/TrackedLink'
 
 type Locale = 'en' | 'fr'
@@ -119,7 +119,7 @@ const links = {
       text: 'Prepare standards, guest journey and team routines before launch or seasonal restart.',
     },
     {
-      href: '/en/fb-audit-training',
+      href: '/en/formation-fb-restaurant',
       label: 'F&B',
       title: 'F&B audit and training',
       text: 'Observe restaurant, bar or room service, then train on the gaps that matter.',
@@ -145,7 +145,7 @@ const links = {
       text: 'Préparer standards, parcours client et routines équipe avant lancement ou reprise saisonnière.',
     },
     {
-      href: '/fr/audit-formation-fb',
+      href: '/fr/formation-fb-restaurant',
       label: 'F&B',
       title: 'Audit et formation F&B',
       text: 'Observer restaurant, bar ou room service, puis former sur les écarts qui comptent.',
@@ -180,7 +180,7 @@ export default function LuxOpsTrainingMethodPage({ locale }: { locale: Locale })
   const content = CONTENT[locale]
   const isEn = locale === 'en'
   const trainingHref = isEn ? '/en/training' : '/fr/formation'
-  const fbTrainingHref = isEn ? '/en/fb-audit-training' : '/fr/audit-formation-fb'
+  const fbTrainingHref = `/${locale}/formation-fb-restaurant`
 
   return (
     <main className="bg-white pt-16">

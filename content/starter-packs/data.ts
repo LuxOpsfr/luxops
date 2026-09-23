@@ -216,12 +216,12 @@ export const STARTER_PACKS: StarterPackEntry[] = [
     price: 29,
     category: { en: 'Housekeeping', fr: 'Housekeeping' },
     title: {
-      en: 'Hotel Housekeeping Inspection Kit',
-      fr: 'Kit Inspection Housekeeping',
+      en: 'Housekeeping Starter Pack',
+      fr: 'Starter Pack Housekeeping',
     },
     shortTitle: {
-      en: 'Housekeeping Inspection Kit',
-      fr: 'Kit Inspection Housekeeping',
+      en: 'Housekeeping Starter Pack',
+      fr: 'Starter Pack Housekeeping',
     },
     description: {
       en: 'Editable room inspection checklists, control sheets and defect tracking tools for housekeeping teams looking to improve daily consistency.',
@@ -372,7 +372,7 @@ export const STARTER_PACKS: StarterPackEntry[] = [
       fr: 'Un kit opérationnel pratique pour les inspections chambre, contrôles superviseur et la régularité housekeeping.',
     },
     seo: {
-      title: 'Hotel Housekeeping Inspection Kit | LuxOps',
+      title: 'Hotel Housekeeping Starter Pack | LuxOps',
       description:
         'Editable room inspection checklists, supervisor control sheets and housekeeping tools for hotel teams.',
     },

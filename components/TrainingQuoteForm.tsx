@@ -10,15 +10,14 @@ interface TrainingQuoteFormData {
   name: string
   email: string
   company: string
-  phone?: string
-  timeframe?: string
-  participants?: string
+  improvement: string
 }
 
 const trainingFormCopy = {
   en: {
     messageTitle: 'Training quote request',
     propertyEmailLabel: 'Property',
+    improvementEmailLabel: 'What to improve',
     phoneEmailLabel: 'Phone',
     timeframeEmailLabel: 'Timing',
     participantsEmailLabel: 'Participants',
@@ -29,6 +28,8 @@ const trainingFormCopy = {
     emailPlaceholder: 'name@hotel.com',
     property: 'Property',
     propertyPlaceholder: 'Hotel or group name',
+    improvement: 'What would you like to improve?',
+    improvementPlaceholder: 'Tell us about the team, service or standards you want to develop.',
     phone: 'Phone',
     optional: 'Optional',
     timing: 'Timing',
@@ -40,11 +41,12 @@ const trainingFormCopy = {
     success: 'Thank you. Your training request has been sent.',
     error: 'The request could not be sent. Please email contact@luxops.fr.',
     sending: 'Sending...',
-    submit: 'Request a Training Quote',
+    submit: 'Discuss My Training Needs',
   },
   fr: {
     messageTitle: 'Demande de devis formation sur site',
     propertyEmailLabel: 'Etablissement',
+    improvementEmailLabel: 'Objectif de formation',
     phoneEmailLabel: 'Téléphone',
     timeframeEmailLabel: 'Période envisagée',
     participantsEmailLabel: 'Nombre de collaborateurs',
@@ -55,6 +57,8 @@ const trainingFormCopy = {
     emailPlaceholder: 'name@hotel.com',
     property: 'Etablissement',
     propertyPlaceholder: 'Nom de l’hôtel ou du groupe',
+    improvement: 'Que souhaitez-vous améliorer ?',
+    improvementPlaceholder: 'Précisez le service, les standards ou les pratiques à renforcer.',
     phone: 'Téléphone',
     optional: 'Optionnel',
     timing: 'Période',
@@ -66,11 +70,12 @@ const trainingFormCopy = {
     success: 'Merci. Votre demande formation a bien été envoyée.',
     error: 'La demande n’a pas pu être envoyée. Vous pouvez écrire à contact@luxops.fr.',
     sending: 'Envoi...',
-    submit: 'Demander un devis formation',
+    submit: 'Parler de votre formation',
   },
   es: {
     messageTitle: 'Solicitud de presupuesto de formación en el hotel',
     propertyEmailLabel: 'Hotel',
+    improvementEmailLabel: 'Objetivo de formación',
     phoneEmailLabel: 'Teléfono',
     timeframeEmailLabel: 'Periodo previsto',
     participantsEmailLabel: 'Número de participantes',
@@ -81,6 +86,8 @@ const trainingFormCopy = {
     emailPlaceholder: 'nombre@hotel.com',
     property: 'Hotel',
     propertyPlaceholder: 'Nombre del hotel o grupo',
+    improvement: '¿Qué quieres mejorar?',
+    improvementPlaceholder: 'Describe el equipo, servicio o estándares que quieres desarrollar.',
     phone: 'Teléfono',
     optional: 'Opcional',
     timing: 'Periodo',
@@ -114,9 +121,7 @@ export default function TrainingQuoteForm({ locale }: { locale: string }) {
       copy.messageTitle,
       '',
       `${copy.propertyEmailLabel} : ${data.company}`,
-      data.phone ? `${copy.phoneEmailLabel} : ${data.phone}` : null,
-      data.timeframe ? `${copy.timeframeEmailLabel} : ${data.timeframe}` : null,
-      data.participants ? `${copy.participantsEmailLabel} : ${data.participants}` : null,
+      `${copy.improvementEmailLabel} : ${data.improvement}`,
     ].filter(Boolean).join('\n')
 
     try {
@@ -138,9 +143,7 @@ export default function TrainingQuoteForm({ locale }: { locale: string }) {
         reset()
         posthog.capture('training_quote_requested', {
           locale,
-          has_phone: Boolean(data.phone),
-          has_timeframe: Boolean(data.timeframe),
-          has_participants: Boolean(data.participants),
+          has_improvement: true,
         })
       } else {
         setStatus('error')
@@ -150,12 +153,12 @@ export default function TrainingQuoteForm({ locale }: { locale: string }) {
     }
   }
 
-  const labelClass = 'block text-[10px] font-bold uppercase tracking-widest text-[#737685] mb-2'
-  const fieldClass = 'w-full px-4 py-3 text-sm text-[#0a1d2e] bg-white border border-[#d8deea] focus:outline-none focus:ring-2 focus:ring-[#003d9b]/15'
+  const labelClass = 'mb-1.5 block text-[10px] font-semibold uppercase tracking-[0.16em] text-[#687169]'
+  const fieldClass = 'w-full border border-[rgba(32,35,31,0.16)] bg-[#fcfbf8] px-3.5 py-2.5 text-sm text-[#0f211a] placeholder:text-[#8a938b] focus:outline-none focus:ring-2 focus:ring-[#a58658]/20 lg:py-2'
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-3 lg:space-y-2">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:gap-2">
         <div>
           <label className={labelClass}>{copy.name}</label>
           <input
@@ -177,7 +180,7 @@ export default function TrainingQuoteForm({ locale }: { locale: string }) {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div>
         <div>
           <label className={labelClass}>{copy.property}</label>
           <input
@@ -187,42 +190,20 @@ export default function TrainingQuoteForm({ locale }: { locale: string }) {
           />
           {errors.company && <p className="text-xs text-red-600 mt-1">{copy.required}</p>}
         </div>
-        <div>
-          <label className={labelClass}>{copy.phone}</label>
-          <input
-            {...register('phone')}
-            className={fieldClass}
-            placeholder={copy.optional}
-          />
-        </div>
       </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div>
-          <label className={labelClass}>{copy.timing}</label>
-          <input
-            {...register('timeframe')}
-            className={fieldClass}
-            placeholder={copy.timingPlaceholder}
-          />
-        </div>
-        <div>
-          <label className={labelClass}>{copy.teamSize}</label>
-          <input
-            {...register('participants')}
-            className={fieldClass}
-            placeholder={copy.teamSizePlaceholder}
-          />
-        </div>
+      <div>
+        <label className={labelClass}>{copy.improvement}</label>
+        <textarea {...register('improvement', { required: true })} className={`${fieldClass} min-h-28 resize-y lg:min-h-20`} placeholder={copy.improvementPlaceholder} />
+        {errors.improvement && <p className="mt-1 text-xs text-red-600">{copy.required}</p>}
       </div>
 
       {status === 'success' && (
-        <div className="p-4 text-sm text-[#003d9b] bg-[#eef4ff]">
+        <div className="bg-[#e7e0d5] p-3.5 text-sm text-[#24362f]">
           {copy.success}
         </div>
       )}
       {status === 'error' && (
-        <div className="p-4 text-sm text-red-700 bg-red-50">
+        <div className="bg-red-50 p-3.5 text-sm text-red-700">
           {copy.error}
         </div>
       )}
@@ -230,7 +211,7 @@ export default function TrainingQuoteForm({ locale }: { locale: string }) {
       <button
         type="submit"
         disabled={status === 'loading'}
-        className="w-full px-6 py-4 bg-[#003d9b] text-white font-bold text-sm hover:bg-[#0a1d2e] transition-colors disabled:opacity-60"
+        className="w-full bg-[#0f211a] px-6 py-3.5 text-sm font-semibold text-[#f5f1e9] transition-colors hover:bg-[#24362f] disabled:opacity-60 lg:py-3"
       >
         {status === 'loading' ? copy.sending : copy.submit}
       </button>

@@ -4,10 +4,10 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useTranslations } from 'next-intl'
-import { Menu, X, Globe, ShoppingCart, User } from 'lucide-react'
+import { Globe, Menu, ShoppingCart, User, X } from 'lucide-react'
 import { useCart } from '@/context/CartContext'
 import { ACTIVE_LOCALES, LOCALE_META, toActiveLocale } from '@/lib/i18n'
-import { localizePathname, localizedPath, localizedRoutePath } from '@/lib/localized-routes'
+import { localizePathname, localizedPath, localizedRoutePath, routeSupportsLocale } from '@/lib/localized-routes'
 import type { Locale } from '@/lib/i18n'
 
 interface HeaderProps {
@@ -17,19 +17,19 @@ interface HeaderProps {
 const headerCopy = {
   en: {
     tagline: 'Standardizing Excellence in High-End Hospitality',
-    portal: 'My account',
+    portal: 'Login',
     cart: 'Cart',
     toggleMenu: 'Toggle menu',
   },
   fr: {
-    tagline: 'L’Excellence Opérationnelle en Hôtellerie de Luxe',
-    portal: 'Mon espace',
+    tagline: 'Standardizing Excellence in High-End Hospitality',
+    portal: 'Connexion',
     cart: 'Panier',
     toggleMenu: 'Ouvrir le menu',
   },
   es: {
-    tagline: 'Excelencia operativa para hotelería high-end',
-    portal: 'Mi espacio',
+    tagline: 'Standardizing Excellence in High-End Hospitality',
+    portal: 'Login',
     cart: 'Carrito',
     toggleMenu: 'Abrir menú',
   },
@@ -46,108 +46,106 @@ export default function Header({ locale }: HeaderProps) {
   const { items, openCart } = useCart()
 
   const navLinks = [
-    { href: localizedRoutePath('playbooks', currentLocale), label: t('playbooks') },
-    { href: localizedRoutePath('training', currentLocale), label: t('training') },
-    { href: localizedRoutePath('qualityAudit', currentLocale), label: t('audit') },
-    { href: localizedRoutePath('bespokeProcess', currentLocale), label: t('process') },
+    { routeId: 'playbooks' as const, label: currentLocale === 'fr' ? 'Manuels SOP' : currentLocale === 'es' ? 'Manuales SOP' : 'SOP Manuals' },
+    { routeId: 'training' as const, label: t('training') },
   ]
+    .filter((link) => routeSupportsLocale(link.routeId, currentLocale))
+    .map((link) => ({
+      href: localizedRoutePath(link.routeId, currentLocale),
+      label: link.label,
+    }))
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo */}
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-[rgba(32,35,31,0.14)] bg-[#f5f1e9]/95 backdrop-blur">
+      <div className="mx-auto flex max-w-[1680px] items-center justify-between px-5 md:px-12 lg:px-16" style={{ height: 'calc(var(--site-header-height) - 1px)' }}>
         <Link
           href={localizedRoutePath('home', currentLocale)}
-          className="flex flex-col gap-[3px] no-underline"
+          className="flex flex-col no-underline"
+          style={{ gap: '6px' }}
         >
           <span
-            className="font-bold uppercase text-[#0a1d2e]"
+            className="text-[#0f211a]"
             style={{
               fontFamily: 'var(--font-display)',
-              fontSize: '1rem',
-              letterSpacing: '0.22em',
+              fontSize: '1.625rem',
+              fontWeight: 500,
               lineHeight: 1,
             }}
           >
             LuxOps
           </span>
           <span
-            className="hidden lg:block text-[#003d9b] font-medium uppercase"
+            className="hidden font-semibold uppercase text-[#687169] sm:block"
             style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: '7.5px',
-              letterSpacing: '0.14em',
-              lineHeight: 1,
-              opacity: 0.75,
+              fontSize: '0.625rem',
+              letterSpacing: 0,
+              lineHeight: 1.2,
             }}
           >
             {copy.tagline}
           </span>
         </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center justify-center gap-8 flex-1">
+        <nav className="hidden flex-1 items-center justify-center gap-8 lg:flex">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm text-gray-500 hover:text-[#111111] transition-colors font-medium"
+              className={`border-b py-1 text-[0.9rem] font-semibold transition-colors ${
+                pathname === link.href
+                  ? 'border-[#24362f] text-[#24362f]'
+                  : 'border-transparent text-[#4f5a52] hover:border-[#9da99e] hover:text-[#24362f]'
+              }`}
             >
               {link.label}
             </Link>
           ))}
         </nav>
 
-        {/* Right actions */}
-        <div className="flex items-center gap-4">
-          {/* Language switcher */}
-          <div className="flex items-center gap-2 text-sm text-gray-400">
-            <Globe size={14} />
+        <div className="flex items-center gap-2 sm:gap-4">
+          <div className="hidden items-center gap-2 text-sm text-[#687169] sm:flex">
+            <Globe size={14} strokeWidth={1.5} />
             {switchLocales.map((targetLocale) => (
               <Link
                 key={targetLocale}
                 href={localizePathname(pathname, targetLocale)}
-                className="font-semibold uppercase hover:text-[#111111] transition-colors"
+                className="font-semibold uppercase transition-colors hover:text-[#24362f]"
               >
                 {LOCALE_META[targetLocale].shortLabel}
               </Link>
             ))}
           </div>
 
-          {/* Mon espace */}
           <Link
             href={portalHref}
-            className="p-1.5 text-gray-600 hover:text-[#111111] transition-colors"
+            className="p-1.5 text-[#4f5a52] transition-colors hover:text-[#24362f] lg:hidden"
             aria-label={copy.portal}
           >
-            <User size={20} />
+            <User size={19} strokeWidth={1.5} />
           </Link>
 
-          {/* Cart */}
           <button
             onClick={openCart}
-            className="relative p-1.5 text-gray-600 hover:text-[#111111] transition-colors"
+            className="relative p-1.5 text-[#4f5a52] transition-colors hover:text-[#24362f]"
             aria-label={copy.cart}
           >
-            <ShoppingCart size={20} />
+            <ShoppingCart size={19} strokeWidth={1.5} />
             {items.length > 0 && (
-              <span className="absolute -top-1 -right-1 w-4 h-4 bg-[#111111] text-white text-[10px] font-bold rounded-full flex items-center justify-center">
+              <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-[2px] bg-[#24362f] text-[10px] font-bold text-[#f5f1e9]">
                 {items.length}
               </span>
             )}
           </button>
 
-          {/* CTA */}
           <Link
-            href={localizedRoutePath('contact', currentLocale)}
-            className="hidden lg:inline-flex items-center px-4 py-2 bg-[#111111] text-white text-sm font-medium rounded-lg hover:bg-[#333333] transition-colors"
+            href={portalHref}
+            className="hidden items-center border border-[#24362f] px-5 py-2 text-sm font-semibold text-[#24362f] transition-colors hover:bg-[#24362f] hover:text-[#f5f1e9] lg:inline-flex"
           >
-            {t('get_in_touch')}
+            {copy.portal}
           </Link>
 
-          {/* Mobile toggle */}
           <button
-            className="lg:hidden p-1.5 text-gray-600"
+            className="p-1.5 text-[#4f5a52] lg:hidden"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label={copy.toggleMenu}
           >
@@ -156,32 +154,44 @@ export default function Header({ locale }: HeaderProps) {
         </div>
       </div>
 
-      {/* Mobile menu */}
       {menuOpen && (
-        <div className="lg:hidden bg-white border-t border-gray-100 px-6 py-5 flex flex-col gap-4">
+        <div className="flex flex-col gap-4 border-t border-[rgba(32,35,31,0.14)] bg-[#f5f1e9] px-6 py-5 lg:hidden">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="text-gray-700 hover:text-[#111111] py-1 font-medium text-sm"
+              className="py-1 text-sm font-semibold text-[#4f5a52] hover:text-[#24362f]"
             >
               {link.label}
             </Link>
           ))}
+          <div className="flex items-center gap-3 border-t border-[rgba(32,35,31,0.12)] pt-4 text-sm text-[#687169]">
+            <Globe size={14} strokeWidth={1.5} />
+            {switchLocales.map((targetLocale) => (
+              <Link
+                key={targetLocale}
+                href={localizePathname(pathname, targetLocale)}
+                onClick={() => setMenuOpen(false)}
+                className="font-semibold uppercase transition-colors hover:text-[#24362f]"
+              >
+                {LOCALE_META[targetLocale].shortLabel}
+              </Link>
+            ))}
+          </div>
           <Link
             href={portalHref}
             onClick={() => setMenuOpen(false)}
-            className="text-gray-700 hover:text-[#111111] py-1 font-medium text-sm"
+            className="py-1 text-sm font-semibold text-[#4f5a52] hover:text-[#24362f]"
           >
             {copy.portal}
           </Link>
           <Link
-            href={localizedRoutePath('contact', currentLocale)}
+            href={portalHref}
             onClick={() => setMenuOpen(false)}
-            className="inline-flex items-center justify-center px-4 py-2.5 bg-[#111111] text-white text-sm font-medium rounded-lg mt-2"
+            className="mt-2 inline-flex items-center justify-center bg-[#24362f] px-4 py-3 text-sm font-semibold text-[#f5f1e9]"
           >
-            {t('get_in_touch')}
+            {copy.portal}
           </Link>
         </div>
       )}

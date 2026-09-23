@@ -242,9 +242,9 @@ const relatedLinks: Record<Locale, LinkCard[]> = {
       body: 'Service sequence, briefing, opening, closing, recovery and manager controls.',
     },
     {
-      href: '/en/quality-audit',
+      href: '/en/training',
       label: 'Audit',
-      title: 'Quality audit',
+      title: 'Operational training',
       body: 'Structured review of standards, execution gaps and operational follow-up.',
     },
   ],
@@ -268,9 +268,9 @@ const relatedLinks: Record<Locale, LinkCard[]> = {
       body: 'Séquence de service, briefing, ouverture, fermeture, recovery et contrôles manager.',
     },
     {
-      href: '/fr/audit-qualite',
+      href: '/fr/formation',
       label: 'Audit',
-      title: 'Audit qualité',
+      title: 'Formation opérationnelle',
       body: 'Revue structurée des standards, écarts d’exécution et suivis opérationnels.',
     },
   ],

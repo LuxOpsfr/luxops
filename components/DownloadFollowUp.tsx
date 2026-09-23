@@ -24,7 +24,7 @@ const PRODUCTS: Record<DepartmentId, {
     playbook: { slug: 'fo', en: 'Front Office Playbook', fr: 'Playbook Front Office' },
   },
   hsk: {
-    starter: { slug: 'hsk-starter-pack', en: 'Housekeeping Inspection Kit', fr: 'Kit Inspection Housekeeping' },
+    starter: { slug: 'hsk-starter-pack', en: 'Housekeeping Starter Pack', fr: 'Starter Pack Housekeeping' },
     playbook: { slug: 'hsk', en: 'Housekeeping Playbook', fr: 'Playbook Housekeeping' },
   },
   fb: {
@@ -57,6 +57,15 @@ export default function DownloadFollowUp({ locale }: { locale: string }) {
   const [department, setDepartment] = useState<DepartmentId | null>(null)
 
   useEffect(() => {
+    let previewTimer: number | undefined
+    if (process.env.NODE_ENV === 'development') {
+      const params = new URLSearchParams(window.location.search)
+      const previewDepartment = params.get('department')
+      if (params.get('preview') === 'download' && previewDepartment && previewDepartment in PRODUCTS) {
+        previewTimer = window.setTimeout(() => setDepartment(previewDepartment as DepartmentId), 0)
+      }
+    }
+
     function showFollowUp(event: Event) {
       const detail = (event as CustomEvent<DownloadDetail>).detail ?? {}
       const nextDepartment = resolveDepartment(detail)
@@ -78,6 +87,7 @@ export default function DownloadFollowUp({ locale }: { locale: string }) {
     window.addEventListener('luxops:download-follow-up', showFollowUp)
     window.addEventListener('keydown', closeOnEscape)
     return () => {
+      if (previewTimer !== undefined) window.clearTimeout(previewTimer)
       window.removeEventListener('luxops:download-follow-up', showFollowUp)
       window.removeEventListener('keydown', closeOnEscape)
     }
@@ -92,24 +102,24 @@ export default function DownloadFollowUp({ locale }: { locale: string }) {
       role="region"
       aria-label={isEn ? 'Download next steps' : 'Suite du téléchargement'}
       aria-live="polite"
-      className="fixed inset-x-3 bottom-3 z-[90] border border-[#cbd8e8] bg-white p-5 shadow-[0_22px_70px_rgba(10,29,46,0.24)] sm:inset-x-auto sm:bottom-6 sm:right-6 sm:w-[430px] sm:p-6"
+      className="fixed inset-x-3 bottom-3 z-[90] border border-[rgba(32,35,31,0.18)] bg-[#fcfbf8] p-5 text-[#0f211a] shadow-[0_20px_55px_rgba(15,33,26,0.18)] sm:inset-x-auto sm:bottom-6 sm:right-6 sm:w-[430px] sm:p-6"
     >
       <button
         type="button"
         onClick={() => setDepartment(null)}
         aria-label={isEn ? 'Close' : 'Fermer'}
-        className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center text-[#4f6074] transition-colors hover:bg-[#eef4ff] hover:text-[#0a1d2e]"
+        className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center text-[#5d665f] transition-colors hover:bg-[#e7e0d5] hover:text-[#0f211a]"
       >
         <X size={18} />
       </button>
 
-      <div className="mb-5 flex h-10 w-10 items-center justify-center bg-[#eef4ff] text-[#003d9b]">
+      <div className="mb-5 flex h-10 w-10 items-center justify-center bg-[#e7e0d5] text-[#0f211a]">
         <Check size={19} />
       </div>
-      <p className="mb-2 pr-10 font-display text-xl font-extrabold text-[#0a1d2e]">
+      <p className="mb-2 pr-10 font-display text-xl font-medium text-[#0f211a]">
         {isEn ? 'Your PDF download has started' : 'Le téléchargement de votre PDF a démarré'}
       </p>
-      <p className="mb-6 text-sm leading-relaxed text-[#4f6074]">
+      <p className="mb-6 text-sm leading-relaxed text-[#5d665f]">
         {product.starter
           ? isEn
             ? 'For editable files and the complete set of practical tools, continue with the Starter Pack.'
@@ -125,7 +135,7 @@ export default function DownloadFollowUp({ locale }: { locale: string }) {
             href={`/${locale}/playbooks/${product.starter.slug}`}
             eventName="download_follow_up_clicked"
             eventProperties={{ department, destination: 'starter_pack', locale }}
-            className="inline-flex items-center justify-between gap-3 bg-[#003d9b] px-5 py-3.5 text-sm font-bold text-white transition-colors hover:bg-[#002f78]"
+            className="inline-flex items-center justify-between gap-3 bg-[#0f211a] px-5 py-3.5 text-sm font-semibold text-[#fcfbf8] transition-colors hover:bg-[#24362f]"
           >
             <span className="inline-flex items-center gap-2">
               <FileCheck2 size={17} />
@@ -141,7 +151,7 @@ export default function DownloadFollowUp({ locale }: { locale: string }) {
           href={`/${locale}/playbooks/${product.playbook.slug}`}
           eventName="download_follow_up_clicked"
           eventProperties={{ department, destination: 'playbook', locale }}
-          className="inline-flex items-center justify-between gap-3 border border-[#cbd8e8] px-5 py-3.5 text-sm font-bold text-[#0a1d2e] transition-colors hover:border-[#003d9b] hover:text-[#003d9b]"
+          className="inline-flex items-center justify-between gap-3 border border-[rgba(32,35,31,0.2)] px-5 py-3.5 text-sm font-semibold text-[#0f211a] transition-colors hover:border-[#a58658]"
         >
           <span className="inline-flex items-center gap-2">
             <BookOpen size={17} />

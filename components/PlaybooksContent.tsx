@@ -1,246 +1,195 @@
 'use client'
 
 import { useState } from 'react'
-import { useTranslations } from 'next-intl'
+import Link from 'next/link'
 import {
   ArrowRight,
   CheckCircle2,
   ChevronRight,
   PackageCheck,
+  ShieldCheck,
 } from 'lucide-react'
-import Link from 'next/link'
 import AddToCartButton from '@/components/AddToCartButton'
+import ProductPreviewCarousel from '@/components/ProductPreviewCarousel'
 import SamePageAnchor from '@/components/SamePageAnchor'
 import { PLAYBOOKS, BUNDLE_PRICE_ID } from '@/content/playbooks/data'
 import { STARTER_PACKS } from '@/content/starter-packs/data'
 import { useCurrency } from '@/context/CurrencyContext'
-import { formatCurrencyAmount } from '@/lib/pricing'
-import ProductPreviewCarousel from '@/components/ProductPreviewCarousel'
 import { toActiveLocale } from '@/lib/i18n'
 import type { Locale } from '@/lib/i18n'
+import { formatCurrencyAmount } from '@/lib/pricing'
 import { localizedRoutePath } from '@/lib/localized-routes'
 
-const playbooksCopy = {
-  en: {
-    allFilter: 'All Playbooks',
-    starterValueProps: ['Practical templates', 'PDF + PPTX', 'FR & EN included'],
-    playbookValueProps: ['Complete SOP reference', 'PDF + PowerPoint', 'FR & EN included'],
-    starterCta: (price: string) => `View starter packs at ${price}`,
-    playbookCta: (price: string) => `View playbooks at ${price}`,
-    freeChapterCta: 'Download free chapter',
-    starterBadge: 'New · Starter Pack',
-    practicalTools: 'practical tools',
-    fullPlaybook: 'Full Playbook',
-    perPlaybook: 'per playbook',
-    freeChapterBanner:
-      'Not ready to buy? Download a free introduction chapter before choosing a playbook.',
-    downloadFreeChapter: 'Download free chapter →',
-    playbooksCount: 'Playbooks',
-    allPlaybooksTitle: 'All Playbooks',
-    newLabel: 'New',
-    starterPacksTitle: 'Starter Packs',
-    starterPacksIntro: 'Practical checklists, templates and scripts designed for quick local adaptation and daily operational use.',
-    needFullSet: 'Need the full set?',
-    addedLabel: 'In Cart',
-    addPlaybook: (price: string) => `Add to cart · ${price}`,
-    addStarterPack: (price: string) => `Add to cart · ${price}`,
-    priceIdNeeded: 'Price ID needed',
-    viewDetails: 'View details',
-    bundleFeatures: ['4 department playbooks', 'PDF + PowerPoint', 'FR & EN included'],
-    bundlePrice: 'Bundle price',
-    insteadOf: (price: string) => `instead of ${price}`,
-    bundleSave: 'Save when you need the full set.',
-    bundleCartTitle: 'Complete Bundle · All 4 Playbooks',
-    bundleCta: (price: string) => `Get the Bundle · ${price}`,
-    customTitle: 'Need something more specific?',
-    customText:
-      'We can build department-specific SOPs around your property, your standards, and the way your teams operate.',
-    customCta: 'Learn more',
-    testimonialsTitle: 'Where the playbooks fit best',
-    testimonials: [
-      {
-        quote: 'A new or seasonal team needs one shared operating sequence before the first busy service.',
-        role: 'Independent 4-star hotel · Front Office / Housekeeping',
-      },
-      {
-        quote: 'A department has useful habits, but handovers, inspection criteria and escalation rules are still too oral.',
-        role: 'Boutique hotel · Rooms Division',
-      },
-      {
-        quote: 'Management wants a structured SOP base before adapting PMS wording, roles and brand standards.',
-        role: 'Small hotel group · Multi-property operations',
-      },
-      {
-        quote: 'A property wants to stop rebuilding procedures from a blank page whenever a manager changes.',
-        role: 'General management · Independent hotel',
-      },
-    ],
-    goFurther: 'Go further',
-    trainingTitle: 'Deploy your playbooks with a trainer on site',
-    trainingText:
-      'Buying the playbooks is a strong first step. To make sure your teams understand the structure, adapt it to your property and build lasting habits, our on-site training sessions go through the procedures with the team. Playbooks are included and handed to every participant at the end of the session.',
-    trainingCta: 'Discover on-site training',
-  },
-  fr: {
-    allFilter: 'Tous les Playbooks',
-    starterValueProps: ['Templates pratiques', 'PDF + PPTX', 'FR & EN inclus'],
-    playbookValueProps: ['Référence SOP complète', 'PDF + PowerPoint', 'FR & EN inclus'],
-    starterCta: (price: string) => `Voir les starter packs à ${price}`,
-    playbookCta: (price: string) => `Voir les playbooks à ${price}`,
-    freeChapterCta: 'Télécharger un chapitre gratuit',
-    starterBadge: 'Nouveau · Starter Pack',
-    practicalTools: 'outils pratiques',
-    fullPlaybook: 'Playbook complet',
-    perPlaybook: 'par playbook',
-    freeChapterBanner:
-      "Pas encore prêt à acheter ? Téléchargez un chapitre d'introduction gratuit avant de choisir un playbook.",
-    downloadFreeChapter: 'Télécharger un chapitre →',
-    playbooksCount: 'Playbooks',
-    allPlaybooksTitle: 'Tous les Playbooks',
-    newLabel: 'Nouveau',
-    starterPacksTitle: 'Starter Packs',
-    starterPacksIntro: 'Checklists, templates et scripts pratiques conçus pour une adaptation locale rapide et un usage opérationnel quotidien.',
-    needFullSet: 'Besoin du set complet ?',
-    addedLabel: 'Ajouté',
-    addPlaybook: (price: string) => `Ajouter au panier · ${price}`,
-    addStarterPack: (price: string) => `Ajouter au panier · ${price}`,
-    priceIdNeeded: 'Price ID requis',
-    viewDetails: 'Voir les détails',
-    bundleFeatures: ['4 playbooks département', 'PDF + PowerPoint', 'FR & EN inclus'],
-    bundlePrice: 'Prix bundle',
-    insteadOf: (price: string) => `au lieu de ${price}`,
-    bundleSave: 'Économisez si vous avez besoin de l’ensemble.',
-    bundleCartTitle: 'Bundle Complet · 4 Playbooks',
-    bundleCta: (price: string) => `Acheter le Bundle · ${price}`,
-    customTitle: 'Besoin de quelque chose de plus spécifique ?',
-    customText:
-      'Nous pouvons construire des procédures sur-mesure autour de votre établissement, de vos standards et du fonctionnement de vos équipes.',
-    customCta: 'En savoir plus',
-    testimonialsTitle: 'Où les playbooks sont les plus utiles',
-    testimonials: [
-      {
-        quote: 'Une équipe nouvelle ou saisonnière a besoin d’une séquence commune avant le premier service chargé.',
-        role: 'Hôtel indépendant 4 étoiles · Réception / Housekeeping',
-      },
-      {
-        quote: 'Un département possède de bonnes habitudes, mais les passations, critères d’inspection et règles d’escalade restent trop oraux.',
-        role: 'Boutique hotel · Division Chambres',
-      },
-      {
-        quote: 'La direction veut une base SOP structurée avant d’adapter les termes PMS, les rôles et les standards de marque.',
-        role: 'Petit groupe hôtelier · Opérations multi-sites',
-      },
-      {
-        quote: 'Un établissement veut éviter de reconstruire ses procédures depuis zéro à chaque changement de manager.',
-        role: 'Direction générale · Hôtel indépendant',
-      },
-    ],
-    goFurther: 'Aller plus loin',
-    trainingTitle: 'Déployez vos playbooks avec un formateur sur site',
-    trainingText:
-      "Acquérir les playbooks est une excellente première étape. Pour que vos équipes comprennent la structure, l’adaptent à votre établissement et construisent des habitudes durables, nos formations sur site parcourent les procédures avec l’équipe. Les playbooks sont remis à chaque participant en fin de session.",
-    trainingCta: 'Découvrir la formation sur site',
-  },
-  es: {
-    allFilter: 'Todos los Playbooks',
-    starterValueProps: ['Plantillas prácticas', 'PDF + PPTX', 'FR + EN incluidos'],
-    playbookValueProps: ['Referencia SOP completa', 'PDF + PowerPoint', 'FR + EN incluidos'],
-    starterCta: (price: string) => `Ver starter packs a ${price}`,
-    playbookCta: (price: string) => `Ver playbooks a ${price}`,
-    freeChapterCta: 'Descargar capítulo gratuito',
-    starterBadge: 'Nuevo · Starter Pack',
-    practicalTools: 'herramientas prácticas',
-    fullPlaybook: 'Playbook completo',
-    perPlaybook: 'por playbook',
-    freeChapterBanner:
-      '¿Aún no estás listo para comprar? Descarga un capítulo de introducción gratuito antes de elegir un playbook.',
-    downloadFreeChapter: 'Descargar capítulo →',
-    playbooksCount: 'Playbooks',
-    allPlaybooksTitle: 'Todos los Playbooks',
-    newLabel: 'Nuevo',
-    starterPacksTitle: 'Starter Packs',
-    starterPacksIntro: 'Checklists, plantillas y scripts prácticos diseñados para una adaptación local rápida y uso operativo diario.',
-    needFullSet: '¿Necesitas el set completo?',
-    addedLabel: 'Añadido',
-    addPlaybook: (price: string) => `Añadir al carrito · ${price}`,
-    addStarterPack: (price: string) => `Añadir al carrito · ${price}`,
-    priceIdNeeded: 'Price ID requerido',
-    viewDetails: 'Ver detalles',
-    bundleFeatures: ['4 playbooks por departamento', 'PDF + PowerPoint', 'FR + EN incluidos'],
-    bundlePrice: 'Precio del pack',
-    insteadOf: (price: string) => `en lugar de ${price}`,
-    bundleSave: 'Ahorra si necesitas el conjunto completo.',
-    bundleCartTitle: 'Pack completo · 4 Playbooks',
-    bundleCta: (price: string) => `Comprar el pack · ${price}`,
-    customTitle: '¿Necesitas algo más específico?',
-    customText:
-      'Podemos crear SOPs específicos por departamento alrededor de tu propiedad, tus estándares y la forma de trabajar de tus equipos.',
-    customCta: 'Más información',
-    testimonialsTitle: 'Dónde encajan mejor los playbooks',
-    testimonials: [
-      {
-        quote: 'Un equipo nuevo o temporal necesita una secuencia común antes del primer servicio exigente.',
-        role: 'Hotel independiente 4 estrellas · Front Office / Housekeeping',
-      },
-      {
-        quote: 'Un departamento tiene buenos hábitos, pero los handovers, criterios de inspección y reglas de escalación siguen siendo demasiado orales.',
-        role: 'Hotel boutique · Rooms Division',
-      },
-      {
-        quote: 'La dirección quiere una base SOP estructurada antes de adaptar PMS, roles y estándares de marca.',
-        role: 'Grupo hotelero pequeño · Operaciones multi-propiedad',
-      },
-      {
-        quote: 'Una propiedad quiere dejar de reconstruir procedimientos desde cero cada vez que cambia un manager.',
-        role: 'Dirección general · Hotel independiente',
-      },
-    ],
-    goFurther: 'Ir más lejos',
-    trainingTitle: 'Despliega tus playbooks con un formador en sitio',
-    trainingText:
-      'Comprar los playbooks es un primer paso sólido. Para que tus equipos entiendan la estructura, la adapten a la propiedad y creen hábitos duraderos, nuestras formaciones en sitio recorren los procedimientos con el equipo. Los playbooks se entregan a cada participante al final de la sesión.',
-    trainingCta: 'Descubrir la formación en sitio',
-  },
-} satisfies Partial<Record<Locale, {
-  allFilter: string
+type PlaybooksPageCopy = {
+  heroEyebrow: string
+  heroTitle: string
+  heroText: string
+  heroPrimary: (price: string) => string
+  heroSecondary: (price: string) => string
+  freeChapter: string
+  heroProof: string[]
+  heroNote: string
+  heroPreviewLabel: string
+  heroPagesLabel: string
+  starterLabel: string
+  starterTitle: string
+  starterText: string
   starterValueProps: string[]
+  playbooksLabel: string
+  playbooksTitle: string
+  playbooksText: string
+  allFilter: string
   playbookValueProps: string[]
-  starterCta: (price: string) => string
-  playbookCta: (price: string) => string
-  freeChapterCta: string
-  starterBadge: string
-  practicalTools: string
-  fullPlaybook: string
-  perPlaybook: string
-  freeChapterBanner: string
-  downloadFreeChapter: string
-  playbooksCount: string
-  allPlaybooksTitle: string
-  newLabel: string
-  starterPacksTitle: string
-  starterPacksIntro: string
-  needFullSet: string
   addedLabel: string
-  addPlaybook: (price: string) => string
   addStarterPack: (price: string) => string
-  priceIdNeeded: string
+  addPlaybook: (price: string) => string
   viewDetails: string
+  priceIdNeeded: string
+  bundleLabel: string
+  bundleTitle: string
+  bundleText: string
   bundleFeatures: string[]
-  bundlePrice: string
-  insteadOf: (price: string) => string
-  bundleSave: string
+  bundlePriceLabel: string
+  savings: (price: string) => string
   bundleCartTitle: string
   bundleCta: (price: string) => string
-  customTitle: string
-  customText: string
-  customCta: string
-  testimonialsTitle: string
-  testimonials: { quote: string; role: string }[]
-  goFurther: string
+  scenariosLabel: string
+  scenariosTitle: string
+  scenarios: { title: string; text: string }[]
+  trainingLabel: string
   trainingTitle: string
   trainingText: string
   trainingCta: string
-}>>
+}
+
+const pageCopy = {
+  en: {
+    heroEyebrow: 'Hotel SOP manuals & operational tools',
+    heroTitle: 'Ready-to-use hotel standards, without the blank page.',
+    heroText:
+      'LuxOps SOP manuals give managers the procedures, service scripts, checklists and training support they need to align teams faster and reduce improvisation on the floor.',
+    heroPrimary: (price: string) => `Explore SOP Manuals · ${price}`,
+    heroSecondary: (price: string) => `Explore Starter Packs · ${price}`,
+    freeChapter: 'Preview a free chapter',
+    heroProof: ['PDF + editable PowerPoint', 'English and French included', 'Instant download', 'Built for daily operations'],
+    heroNote: 'A practical base your managers can adapt to the language, tools and service identity of your property.',
+    heroPreviewLabel: 'Front Office sample preview',
+    heroPagesLabel: 'pages',
+    starterLabel: 'Start fast',
+    starterTitle: 'Starter packs for immediate operational wins.',
+    starterText:
+      'Use these when a team needs practical tools now: checklists, scripts, handover templates and control sheets that managers can adapt in minutes.',
+    starterValueProps: ['Practical templates', 'PDF + PPTX', 'FR & EN included'],
+    playbooksLabel: 'Full department SOP manuals',
+    playbooksTitle: 'A complete operating reference for each department.',
+    playbooksText:
+      'Each full playbook gives the department a structured reference: service sequences, SOPs, scripts, manager checkpoints and training material.',
+    allFilter: 'All',
+    playbookValueProps: ['Complete SOP reference', 'PDF + PowerPoint', 'FR & EN included'],
+    addedLabel: 'In Cart',
+    addStarterPack: (price: string) => `Add to cart · ${price}`,
+    addPlaybook: (price: string) => `Add to cart · ${price}`,
+    viewDetails: 'View details',
+    priceIdNeeded: 'Price ID needed',
+    bundleLabel: 'Best value',
+    bundleTitle: 'Build one shared operating base across the hotel.',
+    bundleText:
+      'The complete bundle brings Front Office, Housekeeping, F&B and Spa into one coherent standard library for managers and teams.',
+    bundleFeatures: ['4 department playbooks', 'PDF + PowerPoint', 'FR & EN included'],
+    bundlePriceLabel: 'Bundle price',
+    savings: (price: string) => `Save ${price} when purchased together`,
+    bundleCartTitle: 'Complete Bundle · All 4 Playbooks',
+    bundleCta: (price: string) => `Get the bundle · ${price}`,
+    scenariosLabel: 'Where they fit',
+    scenariosTitle: 'Useful when standards need to become visible, not theoretical.',
+    scenarios: [
+      {
+        title: 'New manager',
+        text: 'Give the department a clear base instead of rebuilding procedures from memory.',
+      },
+      {
+        title: 'Seasonal team',
+        text: 'Onboard faster with checklists, scripts and shared operating expectations.',
+      },
+      {
+        title: 'Uneven execution',
+        text: 'Help managers observe the same control points and correct gaps consistently.',
+      },
+      {
+        title: 'Pre-opening',
+        text: 'Start with a mature operating structure before adapting it to the property.',
+      },
+    ],
+    trainingLabel: 'Operational training',
+    trainingTitle: 'Bought the standards. Need help putting them into practice?',
+    trainingText:
+      'On-site or remote training helps managers and teams understand, adapt and apply the standards in daily operations.',
+    trainingCta: 'Explore training',
+  },
+  fr: {
+    heroEyebrow: 'Manuels SOP & outils opérationnels',
+    heroTitle: 'Des standards hôteliers prêts à déployer, sans repartir de zéro.',
+    heroText:
+      'Les manuels SOP LuxOps donnent aux managers des procédures, des scripts, des checklists et des supports de formation pour aligner les équipes plus vite et réduire l’improvisation sur le terrain.',
+    heroPrimary: (price: string) => `Découvrir les manuels SOP · ${price}`,
+    heroSecondary: (price: string) => `Découvrir les Starter Packs · ${price}`,
+    freeChapter: 'Consulter un chapitre gratuit',
+    heroProof: ['PDF + PowerPoint modifiable', 'Français et anglais inclus', 'Téléchargement immédiat', 'Conçu pour l’exploitation'],
+    heroNote: 'Une base pratique que vos managers peuvent adapter au vocabulaire, aux outils et à l’identité de service de votre établissement.',
+    heroPreviewLabel: 'Aperçu Front Office',
+    heroPagesLabel: 'pages',
+    starterLabel: 'Démarrer vite',
+    starterTitle: 'Des starter packs pour gagner immédiatement en structure.',
+    starterText:
+      'À utiliser lorsqu’une équipe a besoin d’outils concrets tout de suite : checklists, scripts, templates de passation et feuilles de contrôle adaptables en quelques minutes.',
+    starterValueProps: ['Templates pratiques', 'PDF + PPTX', 'FR & EN inclus'],
+    playbooksLabel: 'Manuels SOP complets par département',
+    playbooksTitle: 'Un référentiel opérationnel complet pour chaque métier.',
+    playbooksText:
+      'Chaque playbook complet donne au département une référence structurée : séquences de service, SOPs, scripts, points de contrôle manager et supports de formation.',
+    allFilter: 'Tous',
+    playbookValueProps: ['Référence SOP complète', 'PDF + PowerPoint', 'FR & EN inclus'],
+    addedLabel: 'Ajouté',
+    addStarterPack: (price: string) => `Ajouter au panier · ${price}`,
+    addPlaybook: (price: string) => `Ajouter au panier · ${price}`,
+    viewDetails: 'Voir les détails',
+    priceIdNeeded: 'Price ID requis',
+    bundleLabel: 'Les quatre départements réunis',
+    bundleTitle: 'Créer une base opérationnelle commune dans tout l’hôtel.',
+    bundleText:
+      'Le bundle complet réunit Front Office, Housekeeping, F&B et Spa dans une bibliothèque de standards cohérente pour les managers et les équipes.',
+    bundleFeatures: ['4 playbooks département', 'PDF + PowerPoint', 'FR & EN inclus'],
+    bundlePriceLabel: 'Prix de l’ensemble',
+    savings: (price: string) => `Économisez ${price} en achetant l’ensemble`,
+    bundleCartTitle: 'Bundle Complet · 4 Playbooks',
+    bundleCta: (price: string) => `Ajouter les 4 manuels au panier · ${price}`,
+    scenariosLabel: 'Cas d’usage',
+    scenariosTitle: 'Utile lorsque les standards doivent devenir visibles, pas théoriques.',
+    scenarios: [
+      {
+        title: 'Nouveau manager',
+        text: 'Donner au département une base claire au lieu de reconstruire les procédures de mémoire.',
+      },
+      {
+        title: 'Équipe saisonnière',
+        text: 'Accélérer l’intégration avec des checklists, scripts et attentes opérationnelles communes.',
+      },
+      {
+        title: 'Exécution irrégulière',
+        text: 'Aider les managers à observer les mêmes points de contrôle et à corriger les écarts.',
+      },
+      {
+        title: 'Pré-ouverture',
+        text: 'Partir d’une structure mature avant de l’adapter à l’établissement.',
+      },
+    ],
+    trainingLabel: 'Formation opérationnelle',
+    trainingTitle: 'Vos standards sont prêts. Comment les faire vivre sur le terrain ?',
+    trainingText:
+      'Sur site ou à distance, la formation aide vos managers et vos équipes à comprendre, adapter et appliquer les standards au quotidien.',
+    trainingCta: 'Découvrir la formation',
+  },
+} satisfies Partial<Record<Locale, PlaybooksPageCopy>>
 
 const playbookListingEs = {
   fo: {
@@ -252,51 +201,39 @@ const playbookListingEs = {
       'SOPs de check-in/check-out',
       'Plantillas de comunicación con huéspedes',
       'Técnicas de upselling',
-      'Estándares de concierge',
-      'Resolución de quejas',
-      'Procedimientos de night audit',
     ],
   },
   hsk: {
     title: 'Playbook Housekeeping',
     dept: 'Housekeeping',
     desc:
-      'Checklists de inspección de habitaciones, gestión de ropa blanca y productos, protocolos de limpieza y estándares de control de calidad para mantener el mismo nivel operativo de la primera habitación a la última.',
+      'Checklists de inspección de habitaciones, gestión de ropa blanca y productos, protocolos de limpieza y estándares de control de calidad.',
     highlights: [
-      'Checklists de inspección de habitaciones',
+      'Checklists de inspección',
       'SOPs de gestión de ropa blanca',
-      'Procedimientos de cobertura',
-      'Métodos de control de calidad',
-      'Integración de sistemas digitales',
-      'Estándares de sostenibilidad',
+      'Control de calidad',
     ],
   },
   fb: {
     title: 'Playbook F&B',
     dept: 'Food & Beverage',
     desc:
-      'Secuencias y estándares de servicio para restaurante, bar, desayuno y room service, con un marco procedural claro para cada interacción, cada mesa y cada servicio.',
+      'Secuencias y estándares de servicio para restaurante, bar, desayuno y room service, con un marco procedural claro para cada interacción.',
     highlights: [
-      'Estándares de servicio de restaurante',
-      'Guía de operaciones de bar',
-      'Protocolos de servicio de vino',
-      'SOPs de room service',
-      'Mise en place y estaciones',
-      'Métodos de service recovery',
+      'Estándares de restaurante',
+      'Operaciones de bar',
+      'Room service',
     ],
   },
   spa: {
     title: 'Playbook Spa & Wellness',
     dept: 'Spa & Wellness',
     desc:
-      'Protocolos de tratamientos, estándares del recorrido del huésped, conducta de terapeutas, retail y gestión de reservas para un spa donde la consistencia impulsa la experiencia.',
+      'Protocolos de tratamientos, estándares del recorrido del huésped, conducta de terapeutas, retail y gestión de reservas.',
     highlights: [
       'Protocolos de tratamientos',
-      'Estándares de preparación de salas',
-      'Mapa del recorrido del huésped',
-      'Conocimiento de producto y retail',
-      'Estándares de presentación de terapeutas',
-      'Métodos de control de calidad',
+      'Preparación de salas',
+      'Guest journey',
     ],
   },
 }
@@ -306,48 +243,41 @@ const starterPackListingEs = {
     category: 'Front Office',
     shortTitle: 'Starter Pack Front Office',
     description:
-      'Checklists de recepción, plantillas de handover y herramientas de comunicación con huéspedes listas para usar, diseñadas para estructurar los básicos diarios del Front Office.',
-    bullets: [
-      'SOPs de check-in / check-out',
-      'Plantilla de handover de turno',
-      'Scripts de quejas y comunicación con huéspedes',
-    ],
+      'Checklists de recepción, plantillas de handover y herramientas de comunicación con huéspedes listas para usar.',
+    bullets: ['SOPs de check-in / check-out', 'Plantilla de handover', 'Scripts de comunicación'],
   },
   'hsk-starter-pack': {
     category: 'Housekeeping',
     shortTitle: 'Kit de inspección Housekeeping',
     description:
-      'Checklists de inspección de habitaciones, hojas de control y herramientas de seguimiento de defectos listas para usar por equipos de housekeeping.',
-    bullets: [
-      'Checklists de inspección de habitación',
-      'Hoja de control de supervisor',
-      'Seguimiento de defectos frecuentes y mantenimiento',
-    ],
+      'Checklists de inspección de habitaciones, hojas de control y herramientas de seguimiento listas para usar.',
+    bullets: ['Checklists de inspección', 'Hoja de control', 'Seguimiento de defectos'],
   },
   'fb-starter-pack': {
     category: 'Food & Beverage',
     shortTitle: 'Starter Pack F&B',
     description:
-      'Checklists, scripts y plantillas de servicio F&B listas para usar para estructurar restaurante, bar y room service.',
-    bullets: [
-      'Secuencias de servicio y checklists',
-      'Plantillas de briefing y mise en place',
-      'Scripts de comunicación y service recovery',
-    ],
+      'Checklists, scripts et plantillas de servicio F&B para restaurante, bar y room service.',
+    bullets: ['Secuencias de servicio', 'Briefing y mise en place', 'Service recovery'],
   },
 }
 
 export default function PlaybooksContent({ locale }: { locale: string }) {
-  const t = useTranslations('playbooks_page')
   const activeLocale = toActiveLocale(locale)
-  const copy = playbooksCopy[activeLocale as keyof typeof playbooksCopy] ?? playbooksCopy.en
+  const copy = pageCopy[activeLocale as keyof typeof pageCopy] ?? pageCopy.en
   const lang = activeLocale === 'fr' ? 'fr' : 'en'
   const detailLocale = activeLocale === 'fr' ? 'fr' : 'en'
   const { currency, priceFor, formatProductPrice } = useCurrency()
-
   const [activeFilter, setActiveFilter] = useState<string>('all')
-  const bundleReferencePrice = formatCurrencyAmount(priceFor('playbook') * 4, currency, locale)
 
+  const detailPlaybooksHref = localizedRoutePath('playbooks', detailLocale)
+  const freeChapterHref = localizedRoutePath('freeHotelProcedures', activeLocale)
+  const bundleSavings = formatCurrencyAmount(priceFor('playbook') * 4 - priceFor('bundle'), currency, locale)
+  const starterPacksForDisplay = [...STARTER_PACKS].sort((a, b) => {
+    if (a.id === 'fb-starter-pack') return -1
+    if (b.id === 'fb-starter-pack') return 1
+    return 0
+  })
   const categories = [
     { key: 'all', label: copy.allFilter },
     { key: 'fo', label: 'Front Office' },
@@ -355,265 +285,103 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
     { key: 'fb', label: 'F&B' },
     { key: 'spa', label: 'Spa & Wellness' },
   ]
-
   const filteredPlaybooks =
-    activeFilter === 'all' ? PLAYBOOKS : PLAYBOOKS.filter((pb) => pb.id === activeFilter)
-  const starterPacksForDisplay = [...STARTER_PACKS].sort((a, b) => {
-    if (a.id === 'fb-starter-pack') return -1
-    if (b.id === 'fb-starter-pack') return 1
-    return 0
-  })
-
-  const detailPlaybooksHref = localizedRoutePath('playbooks', detailLocale)
-  const freeChapterHref = localizedRoutePath('freeHotelProcedures', activeLocale)
+    activeFilter === 'all' ? PLAYBOOKS : PLAYBOOKS.filter((playbook) => playbook.id === activeFilter)
 
   return (
-    <div className="pt-16 bg-white">
-      {/* Hero */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-12 items-center">
-            <div className="min-w-0">
-              <h1 className="font-display text-5xl md:text-6xl font-extrabold text-[#0a1d2e] mb-5 leading-tight tracking-tight">
-                {t('title')}
-              </h1>
-              <p className="text-lg text-[#4f6074] leading-relaxed max-w-2xl mb-8">
-                {t('subtitle')}
-              </p>
-              <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3">
-                <SamePageAnchor
-                  href="#starter-packs"
-                  className="inline-flex justify-center items-center gap-2 px-7 py-4 bg-[#003d9b] text-white font-bold text-sm hover:bg-[#002d7a] transition-colors"
-                  style={{ borderRadius: '0.125rem' }}
-                >
-                  {copy.starterCta(formatProductPrice('starter_pack'))}
-                  <ArrowRight size={16} />
-                </SamePageAnchor>
-                <SamePageAnchor
-                  href="#department-playbooks"
-                  className="inline-flex justify-center items-center gap-2 px-7 py-4 border border-[#c3c6d6] text-[#0a1d2e] font-bold text-sm hover:border-[#003d9b] hover:text-[#003d9b] transition-colors"
-                  style={{ borderRadius: '0.125rem' }}
-                >
-                  {copy.playbookCta(formatProductPrice('playbook'))}
-                </SamePageAnchor>
-                <a
-                  href={freeChapterHref}
-                  className="inline-flex justify-center items-center gap-2 px-7 py-4 border border-[#c3c6d6] text-[#0a1d2e] font-bold text-sm hover:border-[#003d9b] hover:text-[#003d9b] transition-colors"
-                  style={{ borderRadius: '0.125rem' }}
-                >
-                  {copy.freeChapterCta}
-                </a>
-              </div>
-            </div>
-
-            <div className="min-w-0 bg-[#f8f9ff] p-6 sm:p-8" style={{ borderRadius: '0.125rem' }}>
-              <div className="grid gap-4">
-                <div className="min-w-0 bg-white p-6 sm:p-7 shadow-sm" style={{ borderRadius: '0.125rem' }}>
-                  <div className="mb-5">
-                    <p className="text-xs font-bold uppercase tracking-widest text-[#003d9b]">
-                      {copy.starterBadge}
-                    </p>
-                  </div>
-                  <div className="flex flex-wrap items-end gap-3 mb-6">
-                    <span className="font-display text-6xl font-extrabold text-[#0a1d2e]">
-                      {formatProductPrice('starter_pack')}
-                    </span>
-                    <span className="text-sm text-[#4f6074] pb-3">
-                      {copy.practicalTools}
-                    </span>
-                  </div>
-                  <div className="space-y-3">
-                    {copy.starterValueProps.map((item) => (
-                      <div key={item} className="flex gap-3 text-sm text-[#4f6074]">
-                        <CheckCircle2 size={18} className="text-[#003d9b] flex-shrink-0 mt-0.5" />
-                        <span>{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="min-w-0 bg-white/70 p-6 border border-[#e3e8f4]" style={{ borderRadius: '0.125rem' }}>
-                  <p className="text-xs font-bold uppercase tracking-widest text-[#737685] mb-4">
-                    {copy.fullPlaybook}
-                  </p>
-                  <div className="flex flex-wrap items-end gap-3 mb-5">
-                    <span className="font-display text-4xl font-extrabold text-[#0a1d2e]">
-                      {formatProductPrice('playbook')}
-                    </span>
-                    <span className="text-sm text-[#4f6074] pb-2">
-                      {copy.perPlaybook}
-                    </span>
-                  </div>
-                  <div className="space-y-2">
-                    {copy.playbookValueProps.map((item) => (
-                      <div key={item} className="flex gap-3 text-sm text-[#4f6074]">
-                        <CheckCircle2 size={16} className="text-[#003d9b] flex-shrink-0 mt-0.5" />
-                        <span>{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Free chapter banner */}
-      <section className="px-6 pb-10">
-        <div
-          className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 px-7 py-5"
-          style={{ backgroundColor: '#eef4ff', borderLeft: '3px solid #003d9b', borderRadius: '0.125rem' }}
-        >
-          <p className="text-sm text-[#0a1d2e] font-medium">
-            {copy.freeChapterBanner}
+    <div className="flex flex-col bg-[#f5f1e9] pt-[var(--site-header-height)] text-[#20231f]">
+      <section className="subpage-hero-viewport grid border-b border-[rgba(32,35,31,0.14)] lg:grid-cols-[54%_46%]">
+        <div className="flex flex-col justify-center px-6 py-12 md:px-16 lg:px-12 lg:py-6 xl:px-16 2xl:px-20">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-[#a58658]">
+            {copy.heroEyebrow}
           </p>
-          <Link
-            href={freeChapterHref}
-            className="flex-shrink-0 text-xs font-bold text-[#003d9b] underline underline-offset-4 hover:text-[#002d7a] transition-colors whitespace-nowrap"
-          >
-            {copy.downloadFreeChapter}
-          </Link>
-        </div>
-      </section>
-
-      {/* Department playbooks */}
-      <main className="max-w-7xl mx-auto px-6 py-16 flex flex-col">
-        <div
-          id="department-playbooks"
-          className="scroll-mt-28 flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-10"
-        >
-          <div className="max-w-2xl">
-            <p className="text-xs font-bold uppercase tracking-widest text-[#003d9b] mb-4">
-              {filteredPlaybooks.length} {copy.playbooksCount}
-            </p>
-            <h2 className="font-display text-4xl md:text-5xl font-extrabold text-[#0a1d2e] mb-4 tracking-tight">
-              {copy.allPlaybooksTitle}
-            </h2>
-            <p className="text-[#4f6074] leading-relaxed">{t('product_intro')}</p>
-          </div>
-
-          <div className="flex flex-wrap gap-2">
-            {categories.map((cat) => (
-              <button
-                key={cat.key}
-                onClick={() => setActiveFilter(cat.key)}
-                className="px-4 py-2 text-sm font-bold transition-all"
-                style={{
-                  color: activeFilter === cat.key ? '#ffffff' : '#4f6074',
-                  backgroundColor: activeFilter === cat.key ? '#003d9b' : '#f8f9ff',
-                  border: activeFilter === cat.key ? '1px solid #003d9b' : '1px solid rgba(195,198,214,0.55)',
-                  borderRadius: '0.125rem',
-                }}
+          <h1 className="max-w-[670px] font-display text-[2.35rem] font-medium leading-[1.04] text-[#0f211a] md:text-[2.7rem] xl:text-[3rem] 2xl:text-[3.35rem]">
+            {copy.heroTitle}
+          </h1>
+          <p className="mt-4 max-w-[610px] text-base leading-7 text-[#5d665f] xl:text-lg xl:leading-8">
+            {copy.heroText}
+          </p>
+          <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <SamePageAnchor
+              href="#department-playbooks"
+              className="inline-flex items-center justify-center gap-2 bg-[#0f211a] px-6 py-3.5 text-sm font-semibold text-[#f5f1e9] transition-colors hover:bg-[#24362f]"
+            >
+              {copy.heroPrimary(formatProductPrice('playbook'))}
+              <ArrowRight size={16} strokeWidth={1.5} />
+            </SamePageAnchor>
+            <SamePageAnchor
+              href="#starter-packs"
+              className="inline-flex items-center justify-center border border-[#24362f] px-6 py-3.5 text-sm font-semibold text-[#24362f] transition-colors hover:bg-[#e7e0d5]"
+            >
+              {copy.heroSecondary(formatProductPrice('starter_pack'))}
+            </SamePageAnchor>
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-1">
+              <SamePageAnchor href="#bundle" className="inline-flex items-center gap-1 border-b border-[#24362f] py-2 text-sm font-semibold text-[#24362f]">
+                {lang === 'fr' ? `Bundle 4 manuels · ${formatProductPrice('bundle')}` : `Four-manual bundle · ${formatProductPrice('bundle')}`}
+                <ArrowRight size={14} strokeWidth={1.5} />
+              </SamePageAnchor>
+              <Link
+                href={freeChapterHref}
+                className="inline-flex items-center gap-1 border-b border-[#24362f] py-2 text-sm font-semibold text-[#24362f] hover:text-[#0f211a]"
               >
-                {cat.label}
-              </button>
+                {copy.freeChapter}<ArrowRight size={14} strokeWidth={1.5} />
+              </Link>
+            </div>
+          </div>
+          <div className="mt-5 grid max-w-[640px] grid-cols-2 gap-x-5 gap-y-2 border-y border-[rgba(32,35,31,0.14)] py-3 lg:grid-cols-4">
+            {copy.heroProof.map((item) => (
+              <div key={item} className="flex gap-2 text-[0.7rem] font-semibold leading-4 text-[#24362f]">
+                <CheckCircle2 size={14} className="mt-0.5 flex-shrink-0 text-[#a58658]" strokeWidth={1.7} />
+                <span>{item}</span>
+              </div>
             ))}
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
-          {filteredPlaybooks.map((pb) => {
-            const esListing = activeLocale === 'es' ? playbookListingEs[pb.id] : undefined
-            const pbTitle = esListing?.title ?? pb.title[lang]
-            const pbDept = esListing?.dept ?? pb.dept[lang]
-            const pbDesc = esListing?.desc ?? pb.desc[lang]
-            const pbHighlights = esListing?.highlights ?? pb.highlights[lang]
-
-            return (
-              <article
-                key={pb.id}
-                className="bg-white flex flex-col transition-all duration-300 hover:shadow-2xl"
-                style={{ boxShadow: '0 2px 12px rgba(10,29,46,0.06)', borderRadius: '0.125rem' }}
-              >
-                <Link href={`${detailPlaybooksHref}/${pb.id}`} className="block group">
-                  <div
-                    className="relative overflow-hidden"
-                    style={{ aspectRatio: '16/10', backgroundColor: '#dae9ff' }}
-                  >
-                    <ProductPreviewCarousel productId={pb.id} locale={locale} variant="card" />
-                  </div>
-                </Link>
-
-                <div className="p-6 flex flex-col flex-1">
-                  <div className="flex items-center justify-between mb-4">
-                    <span
-                      className="text-[10px] font-bold uppercase tracking-widest px-2 py-1 text-[#003d9b]"
-                      style={{ backgroundColor: '#eef4ff', borderRadius: '0.125rem' }}
-                    >
-                      {pbDept}
-                    </span>
-                    <span className="font-display text-2xl font-extrabold text-[#0a1d2e]">
-                      {formatProductPrice('playbook')}
-                    </span>
-                  </div>
-
-                  <h3 className="font-display text-xl font-bold text-[#0a1d2e] mb-2">
-                    {pbTitle}
-                  </h3>
-                  <p className="text-sm text-[#4f6074] leading-relaxed mb-5 flex-1">{pbDesc}</p>
-
-                  <ul className="space-y-2 mb-6">
-                    {pbHighlights.slice(0, 3).map((highlight) => (
-                      <li key={highlight} className="flex gap-2 text-xs text-[#4f6074]">
-                        <CheckCircle2 size={14} className="text-[#003d9b] flex-shrink-0 mt-0.5" />
-                        <span>{highlight}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div className="space-y-3">
-                    <AddToCartButton
-                      item={{
-                        priceId: pb.priceId,
-                        title: pbTitle,
-                        price: priceFor('playbook'),
-                        currency,
-                        productType: 'playbook',
-                      }}
-                      addedLabel={copy.addedLabel}
-                      className="w-full flex items-center justify-center gap-2 py-3 bg-[#003d9b] text-white font-bold text-xs uppercase tracking-widest hover:bg-[#002d7a] transition-colors rounded-[2px]"
-                    >
-                      {copy.addPlaybook(formatProductPrice('playbook'))}
-                    </AddToCartButton>
-                    <Link
-                      href={`${detailPlaybooksHref}/${pb.id}`}
-                      className="w-full flex items-center justify-center gap-2 py-3 text-[#003d9b] font-bold text-xs uppercase tracking-widest hover:bg-[#eef4ff] transition-colors"
-                      style={{ border: '1px solid #003d9b', borderRadius: '0.125rem' }}
-                    >
-                      <span>{copy.viewDetails}</span>
-                      <ChevronRight size={14} />
-                    </Link>
-                  </div>
-                </div>
-              </article>
-            )
-          })}
-        </div>
-
-        <section id="starter-packs" className="pb-20" style={{ order: -1 }}>
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-10">
-            <div className="max-w-2xl">
-              <p className="inline-flex items-center px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-[#003d9b] bg-[#eef4ff] mb-4">
-                {copy.newLabel}
+        <div className="relative flex min-h-[500px] items-center justify-center overflow-hidden bg-[#e7e0d5] px-6 py-8 md:px-12">
+          <div className="absolute inset-0 opacity-40" style={{ backgroundImage: 'radial-gradient(#a58658 0.55px, transparent 0.55px)', backgroundSize: '24px 24px' }} />
+          <div className="relative grid w-full max-w-[680px] gap-6 lg:grid-cols-[0.72fr_1.28fr] lg:items-center">
+            <div className="border-y border-[rgba(32,35,31,0.18)] py-6">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#a58658]">
+                {copy.heroPreviewLabel}
               </p>
-              <h2 className="font-display text-4xl md:text-5xl font-extrabold text-[#0a1d2e] mb-4 tracking-tight">
-                {copy.starterPacksTitle}
+              <div className="mt-6 grid grid-cols-2 gap-4">
+                <div><p className="font-display text-[2.8rem] leading-none text-[#0f211a]">12</p><p className="mt-2 text-xs font-semibold uppercase text-[#3d4a41]">{lang === 'fr' ? 'chapitres' : 'chapters'}</p></div>
+                <div><p className="font-display text-[2.8rem] leading-none text-[#0f211a]">250</p><p className="mt-2 text-xs font-semibold uppercase text-[#3d4a41]">{copy.heroPagesLabel}</p></div>
+              </div>
+              <p className="mt-6 text-sm leading-7 text-[#5d665f]">
+                {copy.heroNote}
+              </p>
+            </div>
+            <ProductPreviewCarousel productId="fo" locale={locale} variant="compactHero" />
+          </div>
+        </div>
+      </section>
+
+      <section id="starter-packs" className="order-3 scroll-mt-24 border-t border-[rgba(32,35,31,0.14)] px-6 py-12 md:px-16 md:py-14">
+        <div className="mx-auto max-w-[1680px]">
+          <div className="mb-10 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-3xl">
+              <p className="mb-5 text-xs font-semibold uppercase tracking-[0.16em] text-[#a58658]">
+                {copy.starterLabel}
+              </p>
+              <h2 className="font-display text-[2rem] font-medium leading-[1.08] text-[#0f211a] md:text-[2.5rem]">
+                {copy.starterTitle}
               </h2>
-              <p className="text-[#4f6074] leading-relaxed">
-                {copy.starterPacksIntro}
+              <p className="mt-5 max-w-2xl text-lg leading-8 text-[#5d665f]">
+                {copy.starterText}
               </p>
             </div>
             <SamePageAnchor
               href="#bundle"
-              className="inline-flex items-center gap-2 text-xs font-bold text-[#003d9b] underline underline-offset-4 hover:text-[#002d7a] transition-colors"
+              className="inline-flex w-fit items-center gap-2 border-b border-[#24362f] pb-1 text-sm font-semibold text-[#24362f]"
             >
-              {copy.needFullSet}
-              <ArrowRight size={14} />
+              {copy.bundleTitle}
+              <ArrowRight size={15} strokeWidth={1.5} />
             </SamePageAnchor>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="grid gap-6 lg:grid-cols-3">
             {starterPacksForDisplay.map((pack) => {
               const isPurchasable = Boolean(pack.priceId)
               const esListing = activeLocale === 'es' ? starterPackListingEs[pack.id] : undefined
@@ -623,48 +391,36 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
               const packBullets = esListing?.bullets ?? pack.bullets[lang]
 
               return (
-                <article
-                  key={pack.id}
-                  className="bg-white flex flex-col transition-all duration-300 hover:shadow-2xl"
-                  style={{ boxShadow: '0 2px 12px rgba(10,29,46,0.06)', borderRadius: '0.125rem' }}
-                >
-                  <Link href={`${detailPlaybooksHref}/${pack.id}`} className="block group">
-                    <div
-                      className="relative overflow-hidden"
-                      style={{ aspectRatio: '16/7', backgroundColor: '#dae9ff' }}
-                    >
+                <article key={pack.id} className="group flex flex-col border border-[rgba(32,35,31,0.14)] bg-[#fcfbf8]">
+                  <Link href={`${detailPlaybooksHref}/${pack.id}`} className="block">
+                    <div className="relative aspect-[16/6] overflow-hidden border-b border-[rgba(32,35,31,0.14)]">
                       <ProductPreviewCarousel productId={pack.id} locale={locale} variant="card" />
                     </div>
                   </Link>
-
-                  <div className="p-6 flex flex-col flex-1">
-                    <div className="flex items-center justify-between mb-4">
-                      <span
-                        className="text-[10px] font-bold uppercase tracking-widest px-2 py-1 text-[#003d9b]"
-                        style={{ backgroundColor: '#eef4ff', borderRadius: '0.125rem' }}
-                      >
+                  <div className="flex flex-1 flex-col p-6">
+                    <div className="flex items-start justify-between gap-4">
+                      <p className="text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#a58658]">
                         {packCategory}
-                      </span>
-                      <span className="font-display text-2xl font-extrabold text-[#0a1d2e]">
+                      </p>
+                      <p className="font-display text-3xl font-medium text-[#0f211a]">
                         {formatProductPrice('starter_pack')}
-                      </span>
+                      </p>
                     </div>
-
-                    <h3 className="font-display text-xl font-bold text-[#0a1d2e] mb-2">
+                    <h3 className="mt-5 min-h-[3.6rem] font-display text-[1.45rem] font-medium leading-[1.1] text-[#0f211a]">
                       {packTitle}
                     </h3>
-                    <p className="text-sm text-[#4f6074] leading-relaxed mb-5 flex-1">{packDescription}</p>
-
-                    <ul className="space-y-2 mb-6">
-                      {packBullets.map((bullet) => (
-                        <li key={bullet} className="flex gap-2 text-xs text-[#4f6074]">
-                          <CheckCircle2 size={14} className="text-[#003d9b] flex-shrink-0 mt-0.5" />
-                          <span>{bullet}</span>
-                        </li>
+                    <p className="mt-4 min-h-[5.6rem] text-sm leading-7 text-[#5d665f]">
+                      {packDescription}
+                    </p>
+                    <div className="mt-5 space-y-3 border-y border-[rgba(32,35,31,0.12)] py-5">
+                      {[...copy.starterValueProps, ...packBullets].slice(0, 3).map((item) => (
+                        <div key={item} className="flex gap-3 text-sm text-[#24362f]">
+                          <CheckCircle2 size={16} className="mt-0.5 flex-shrink-0 text-[#a58658]" strokeWidth={1.7} />
+                          <span>{item}</span>
+                        </div>
                       ))}
-                    </ul>
-
-                    <div className="space-y-3">
+                    </div>
+                    <div className="mt-6 grid gap-3">
                       {isPurchasable ? (
                         <AddToCartButton
                           item={{
@@ -675,7 +431,7 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                             productType: 'starter_pack',
                           }}
                           addedLabel={copy.addedLabel}
-                          className="w-full flex items-center justify-center gap-2 py-3 bg-[#003d9b] text-white font-bold text-xs uppercase tracking-widest hover:bg-[#002d7a] transition-colors rounded-[2px]"
+                          className="inline-flex w-full items-center justify-center gap-2 bg-[#0f211a] px-5 py-3.5 text-sm font-semibold text-[#f5f1e9] transition-colors hover:bg-[#24362f]"
                         >
                           {copy.addStarterPack(formatProductPrice('starter_pack'))}
                         </AddToCartButton>
@@ -683,18 +439,17 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                         <button
                           type="button"
                           disabled
-                          className="w-full flex items-center justify-center gap-2 py-3 bg-[#c3c6d6] text-white font-bold text-xs uppercase tracking-widest cursor-not-allowed rounded-[2px]"
+                          className="inline-flex w-full cursor-not-allowed items-center justify-center bg-[#9da99e] px-5 py-3.5 text-sm font-semibold text-[#f5f1e9]"
                         >
                           {copy.priceIdNeeded}
                         </button>
                       )}
                       <Link
                         href={`${detailPlaybooksHref}/${pack.id}`}
-                        className="w-full flex items-center justify-center gap-2 py-3 text-[#003d9b] font-bold text-xs uppercase tracking-widest hover:bg-[#eef4ff] transition-colors"
-                        style={{ border: '1px solid #003d9b', borderRadius: '0.125rem' }}
+                        className="inline-flex w-full items-center justify-center gap-2 border border-[#24362f] px-5 py-3.5 text-sm font-semibold text-[#24362f] transition-colors hover:bg-[#e7e0d5]"
                       >
-                        <span>{copy.viewDetails}</span>
-                        <ChevronRight size={14} />
+                        {copy.viewDetails}
+                        <ChevronRight size={15} strokeWidth={1.5} />
                       </Link>
                     </div>
                   </div>
@@ -702,143 +457,209 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
               )
             })}
           </div>
-        </section>
-      </main>
+        </div>
+      </section>
 
-      {/* Bundle upgrade */}
-      <section id="bundle" className="py-18 px-6 bg-[#f8f9ff]">
-        <div className="max-w-7xl mx-auto">
-          <div
-            className="grid lg:grid-cols-[1fr_0.72fr] gap-10 bg-white p-8 md:p-10"
-            style={{ borderRadius: '0.125rem', boxShadow: '0 2px 12px rgba(10,29,46,0.06)' }}
-          >
-            <div>
-              <p className="text-xs font-bold uppercase tracking-widest text-[#003d9b] mb-4">{t('bundle_label')}</p>
-              <h2 className="font-display text-3xl md:text-4xl font-extrabold text-[#0a1d2e] mb-4">
-                {t('bundle_desc')}
+      <section id="department-playbooks" className="order-1 scroll-mt-24 border-y border-[rgba(32,35,31,0.14)] bg-[#e7e0d5] px-6 py-16 md:px-16 md:py-20">
+        <div className="mx-auto max-w-[1680px]">
+          <div className="mb-10 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-3xl">
+              <p className="mb-5 text-xs font-semibold uppercase tracking-[0.16em] text-[#a58658]">
+                {copy.playbooksLabel}
+              </p>
+              <h2 className="font-display text-[2.35rem] font-medium leading-[1.08] text-[#0f211a] md:text-[3.25rem]">
+                {copy.playbooksTitle}
               </h2>
-              <p className="text-[#4f6074] leading-relaxed max-w-2xl mb-7">
-                {t('bundle_subtitle')}
+              <p className="mt-5 max-w-2xl text-lg leading-8 text-[#5d665f]">
+                {copy.playbooksText}
               </p>
-              <div className="grid sm:grid-cols-3 gap-3">
-                {copy.bundleFeatures.map((item) => (
-                  <div key={item} className="flex gap-2 text-sm text-[#4f6074]">
-                    <PackageCheck size={17} className="text-[#003d9b] flex-shrink-0 mt-0.5" />
-                    <span>{item}</span>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {categories.map((category) => (
+                <button
+                  key={category.key}
+                  type="button"
+                  onClick={() => setActiveFilter(category.key)}
+                  className={`border px-4 py-2 text-sm font-semibold transition-colors ${
+                    activeFilter === category.key
+                      ? 'border-[#0f211a] bg-[#0f211a] text-[#f5f1e9]'
+                      : 'border-[rgba(36,54,47,0.24)] text-[#24362f] hover:bg-[#f5f1e9]'
+                  }`}
+                >
+                  {category.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {filteredPlaybooks.map((playbook) => {
+              const esListing = activeLocale === 'es' ? playbookListingEs[playbook.id] : undefined
+              const playbookTitle = esListing?.title ?? playbook.title[lang]
+              const playbookDept = esListing?.dept ?? playbook.dept[lang]
+              const playbookDesc = esListing?.desc ?? playbook.desc[lang]
+              const playbookHighlights = esListing?.highlights ?? playbook.highlights[lang]
+
+              return (
+                <article key={playbook.id} className="group flex h-full flex-col border border-[rgba(32,35,31,0.14)] bg-[#fcfbf8]">
+                  <Link href={`${detailPlaybooksHref}/${playbook.id}`} className="block">
+                    <div className="relative aspect-[16/10] overflow-hidden border-b border-[rgba(32,35,31,0.14)]">
+                      <ProductPreviewCarousel productId={playbook.id} locale={locale} variant="card" />
+                      {playbook.id === 'hsk' && <span className="absolute left-4 top-4 bg-[#0f211a] px-3 py-1.5 text-[0.65rem] font-semibold uppercase tracking-[0.12em] text-white">{lang === 'fr' ? 'Top vente' : 'Best seller'}</span>}
+                    </div>
+                  </Link>
+                  <div className="flex flex-1 flex-col p-6">
+                    <div className="flex items-start justify-between gap-4">
+                      <p className="text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#a58658]">
+                        {playbookDept}
+                      </p>
+                      <p className="font-display text-3xl font-medium text-[#0f211a]">
+                        {formatProductPrice('playbook')}
+                      </p>
+                    </div>
+                    <h3 className="mt-5 min-h-[3.5rem] font-display text-[1.55rem] font-medium leading-[1.1] text-[#0f211a]">
+                      {playbookTitle}
+                    </h3>
+                    <p className="mt-4 min-h-[5.4rem] flex-1 text-sm leading-6 text-[#5d665f]">
+                      {playbookDesc}
+                    </p>
+                    <div className="mt-5 space-y-3 border-y border-[rgba(32,35,31,0.12)] py-5">
+                      {[...copy.playbookValueProps.slice(0, 1), ...playbookHighlights.slice(0, 2)].map((item) => (
+                        <div key={item} className="flex gap-3 text-sm text-[#24362f]">
+                          <PackageCheck size={16} className="mt-0.5 flex-shrink-0 text-[#a58658]" strokeWidth={1.7} />
+                          <span>{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="mt-auto grid gap-3 pt-6">
+                      <AddToCartButton
+                        item={{
+                          priceId: playbook.priceId,
+                          title: playbookTitle,
+                          price: priceFor('playbook'),
+                          currency,
+                          productType: 'playbook',
+                        }}
+                        addedLabel={copy.addedLabel}
+                        className="inline-flex w-full items-center justify-center gap-2 bg-[#0f211a] px-5 py-3.5 text-sm font-semibold text-[#f5f1e9] transition-colors hover:bg-[#24362f]"
+                      >
+                        {copy.addPlaybook(formatProductPrice('playbook'))}
+                      </AddToCartButton>
+                      <Link
+                        href={`${detailPlaybooksHref}/${playbook.id}`}
+                        className="inline-flex w-full items-center justify-center gap-2 border border-[#24362f] px-5 py-3.5 text-sm font-semibold text-[#24362f] transition-colors hover:bg-[#f5f1e9]"
+                      >
+                        {copy.viewDetails}
+                        <ChevronRight size={15} strokeWidth={1.5} />
+                      </Link>
+                    </div>
                   </div>
-                ))}
-              </div>
-            </div>
+                </article>
+              )
+            })}
+          </div>
+        </div>
+      </section>
 
-            <div className="bg-[#003d9b] text-white p-7 flex flex-col justify-between" style={{ borderRadius: '0.125rem' }}>
-              <div>
-                <p className="text-xs font-bold uppercase tracking-widest opacity-70 mb-3">
-                  {copy.bundlePrice}
-                </p>
-                <div className="flex items-end gap-3 mb-3">
-                  <span className="font-display text-5xl font-extrabold">{formatProductPrice('bundle')}</span>
-                  <span className="text-sm opacity-75 pb-2">
-                    {copy.insteadOf(bundleReferencePrice)}
-                  </span>
+      <section id="bundle" className="order-2 scroll-mt-24 px-6 py-16 md:px-16 md:py-20">
+        <div className="mx-auto grid max-w-[1380px] border border-[rgba(32,35,31,0.14)] bg-[#fcfbf8] lg:grid-cols-[1.08fr_0.92fr]">
+          <div className="p-8 md:p-12">
+            <p className="mb-5 text-xs font-semibold uppercase tracking-[0.16em] text-[#a58658]">
+              {copy.bundleLabel}
+            </p>
+            <h2 className="max-w-3xl font-display text-[2.35rem] font-medium leading-[1.08] text-[#0f211a] md:text-[3.25rem]">
+              {copy.bundleTitle}
+            </h2>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-[#5d665f]">
+              {copy.bundleText}
+            </p>
+            <div className="mt-10 grid gap-5 sm:grid-cols-3">
+              {copy.bundleFeatures.map((feature) => (
+                <div key={feature} className="border-t border-[rgba(32,35,31,0.14)] pt-5">
+                  <ShieldCheck size={20} className="mb-4 text-[#a58658]" strokeWidth={1.6} />
+                  <p className="text-sm font-semibold text-[#24362f]">{feature}</p>
                 </div>
-                <p className="text-sm opacity-75 mb-7">
-                  {copy.bundleSave}
-                </p>
+              ))}
+            </div>
+          </div>
+          <div className="flex flex-col justify-between bg-[#0f211a] p-8 text-[#f5f1e9] md:p-12">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[rgba(245,241,233,0.6)]">
+                {copy.bundlePriceLabel}
+              </p>
+              <div className="mt-7 flex flex-wrap items-end gap-4">
+                <span className="font-display text-[4rem] font-medium leading-none">
+                  {formatProductPrice('bundle')}
+                </span>
+                <span className="pb-2 text-sm text-[rgba(245,241,233,0.66)]">
+                  {copy.savings(bundleSavings)}
+                </span>
               </div>
-              <AddToCartButton
-                item={{
-                  priceId: BUNDLE_PRICE_ID,
-                  title: copy.bundleCartTitle,
-                  price: priceFor('bundle'),
-                  currency,
-                  productType: 'bundle',
-                }}
-                addedLabel={copy.addedLabel}
-                className="w-full px-5 py-3 bg-white text-[#003d9b] text-sm font-bold hover:bg-[#f8f9ff] transition-colors rounded-[2px]"
-              >
-                {copy.bundleCta(formatProductPrice('bundle'))}
-              </AddToCartButton>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Custom SOP CTA */}
-      <section className="py-16 px-6 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div
-            className="flex flex-col lg:flex-row items-center justify-between gap-8 p-8"
-            style={{ backgroundColor: '#0a1d2e', borderRadius: '0.125rem' }}
-          >
-            <div className="text-white max-w-2xl">
-              <p className="font-display font-bold text-2xl mb-3">
-                {copy.customTitle}
-              </p>
-              <p className="text-sm opacity-80 leading-relaxed">
-                {copy.customText}
-              </p>
-            </div>
-            <Link
-              href={localizedRoutePath('bespokeProcess', activeLocale)}
-              className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-white text-[#0a1d2e] font-bold text-sm hover:bg-[#f8f9ff] transition-colors"
-              style={{ borderRadius: '0.125rem' }}
+            <AddToCartButton
+              item={{
+                priceId: BUNDLE_PRICE_ID,
+                title: copy.bundleCartTitle,
+                price: priceFor('bundle'),
+                currency,
+                productType: 'bundle',
+              }}
+              addedLabel={copy.addedLabel}
+              className="mt-10 inline-flex w-full items-center justify-center bg-[#f5f1e9] px-6 py-4 text-sm font-semibold text-[#0f211a] transition-colors hover:bg-[#fcfbf8]"
             >
-              {copy.customCta}
-              <ArrowRight size={16} />
-            </Link>
+              {copy.bundleCta(formatProductPrice('bundle'))}
+            </AddToCartButton>
           </div>
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-20 px-6 bg-white" style={{ borderTop: '1px solid rgba(195,198,214,0.2)' }}>
-        <div className="max-w-7xl mx-auto">
-          <p className="text-xs font-bold uppercase tracking-widest text-[#4f6074] mb-10">
-            {copy.testimonialsTitle}
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {copy.testimonials.map((item) => (
-              <div
-                key={item.role}
-                className="flex flex-col justify-between p-6"
-                style={{ backgroundColor: '#f8f9ff', borderRadius: '0.125rem' }}
-              >
-                <p className="text-sm text-[#0a1d2e] leading-relaxed mb-6">{item.quote}</p>
-                <p className="text-xs font-bold text-[#4f6074] uppercase tracking-widest">{item.role}</p>
+      <section className="order-4 border-y border-[rgba(32,35,31,0.14)] bg-[#fcfbf8] px-6 py-16 md:px-16 md:py-20">
+        <div className="mx-auto max-w-[1680px]">
+          <div className="mb-10 max-w-4xl">
+            <p className="mb-5 text-xs font-semibold uppercase tracking-[0.16em] text-[#a58658]">
+              {copy.scenariosLabel}
+            </p>
+            <h2 className="font-display text-[2.35rem] font-medium leading-[1.08] text-[#0f211a] md:text-[3.25rem]">
+              {copy.scenariosTitle}
+            </h2>
+          </div>
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {copy.scenarios.map((scenario, index) => (
+              <div key={scenario.title} className="border-t border-[rgba(32,35,31,0.16)] pt-6">
+                <p className="font-display text-5xl italic text-[rgba(15,33,26,0.18)]">
+                  {String(index + 1).padStart(2, '0')}.
+                </p>
+                <h3 className="mt-6 text-xs font-semibold uppercase tracking-[0.16em] text-[#24362f]">
+                  {scenario.title}
+                </h3>
+                <p className="mt-4 text-sm leading-7 text-[#5d665f]">
+                  {scenario.text}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Cross-sell Formation */}
-      <section className="py-16 px-6" style={{ backgroundColor: '#f8f9ff' }}>
-        <div className="max-w-7xl mx-auto">
-          <div
-            className="flex flex-col lg:flex-row items-center gap-10 p-10"
-            style={{ backgroundColor: '#eef4ff', borderRadius: '0.125rem', borderLeft: '4px solid #003d9b' }}
-          >
-            <div className="flex-1">
-              <div className="text-xs font-bold uppercase tracking-widest text-[#003d9b] mb-4">
-                {copy.goFurther}
-              </div>
-              <h2 className="font-display text-2xl font-extrabold text-[#0a1d2e] mb-3">
-                {copy.trainingTitle}
-              </h2>
-              <p className="text-[#4f6074] leading-relaxed text-sm max-w-xl">
-                {copy.trainingText}
-              </p>
-            </div>
+      <section className="order-5 bg-[#0f211a] px-6 py-16 text-[#f5f1e9] md:px-16 md:py-20">
+          <div className="mx-auto max-w-4xl">
+            <p className="mb-5 text-xs font-semibold uppercase tracking-[0.16em] text-[#a58658]">
+              {copy.trainingLabel}
+            </p>
+            <h2 className="font-display text-[2.25rem] font-medium leading-[1.1] md:text-[3rem]">
+              {copy.trainingTitle}
+            </h2>
+            <p className="mt-6 text-lg leading-8 text-[rgba(245,241,233,0.72)]">
+              {copy.trainingText}
+            </p>
             <Link
               href={localizedRoutePath('training', activeLocale)}
-              className="flex-shrink-0 inline-flex items-center gap-2 px-8 py-4 bg-[#003d9b] text-white font-bold text-sm hover:bg-[#002d7a] transition-colors"
-              style={{ borderRadius: '0.125rem' }}
+              className="mt-9 inline-flex items-center gap-2 border-b border-[#f5f1e9] pb-1 text-sm font-semibold text-[#f5f1e9]"
             >
               {copy.trainingCta}
-              <ArrowRight size={16} />
+              <ArrowRight size={15} strokeWidth={1.5} />
             </Link>
           </div>
-        </div>
       </section>
     </div>
   )

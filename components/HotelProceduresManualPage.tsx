@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowRight, BookOpen, ClipboardCheck, GraduationCap, Layers, ShieldCheck } from 'lucide-react'
+import { ArrowRight, BookOpen, ClipboardCheck, ShieldCheck } from 'lucide-react'
 import TrackedLink from '@/components/TrackedLink'
 
 type Locale = 'en' | 'fr'
@@ -229,10 +229,10 @@ const productLinks: Record<Locale, LinkCard[]> = {
       body: 'Preview how LuxOps procedures are structured before choosing a product.',
     },
     {
-      href: '/en/bespoke-process',
-      label: 'Custom',
-      title: 'Custom process documentation',
-      body: 'Turn your own standards, values and service rituals into operational procedures.',
+      href: '/en/training',
+      label: 'Training',
+      title: 'Put standards into practice',
+      body: 'Help managers and teams apply the procedures during daily service.',
     },
     {
       href: '/en/training',
@@ -255,10 +255,10 @@ const productLinks: Record<Locale, LinkCard[]> = {
       body: 'Voir comment les procédures LuxOps sont structurées avant de choisir un produit.',
     },
     {
-      href: '/fr/process-sur-mesure',
-      label: 'Sur mesure',
-      title: 'Documentation process sur mesure',
-      body: 'Transformer vos standards, valeurs et rituels de service en procédures opérationnelles.',
+      href: '/fr/formation',
+      label: 'Formation',
+      title: 'Déployer les standards sur le terrain',
+      body: 'Aider les managers et les équipes à appliquer les procédures au quotidien.',
     },
     {
       href: '/fr/formation',

@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react'
 import { useRouter, useParams } from 'next/navigation'
-import { supabase } from '@/lib/supabase'
 import PortalShell from '@/components/portal/PortalShell'
 import { Save, CheckCircle } from 'lucide-react'
 
@@ -35,28 +34,33 @@ export default function ProfilePage() {
 
   useEffect(() => {
     const load = async () => {
-      const { data: { session } } = await supabase.auth.getSession()
-      if (!session) { router.replace(`/${locale}/portal/login`); return }
+      try {
+        const { supabase } = await import('@/lib/supabase')
+        const { data: { session } } = await supabase.auth.getSession()
+        if (!session) { router.replace(`/${locale}/portal/login`); return }
 
-      setEmail(session.user.email ?? '')
-      setUserId(session.user.id)
+        setEmail(session.user.email ?? '')
+        setUserId(session.user.id)
 
-      const { data } = await supabase
-        .from('profiles')
-        .select('*')
-        .eq('id', session.user.id)
-        .single()
+        const { data } = await supabase
+          .from('profiles')
+          .select('*')
+          .eq('id', session.user.id)
+          .single()
 
-      if (data) {
-        setProfile({
-          full_name: data.full_name ?? '',
-          hotel_name: data.hotel_name ?? '',
-          role: data.role ?? '',
-          notify_new_resources: data.notify_new_resources ?? true,
-          notify_updates: data.notify_updates ?? true,
-        })
+        if (data) {
+          setProfile({
+            full_name: data.full_name ?? '',
+            hotel_name: data.hotel_name ?? '',
+            role: data.role ?? '',
+            notify_new_resources: data.notify_new_resources ?? true,
+            notify_updates: data.notify_updates ?? true,
+          })
+        }
+        setLoading(false)
+      } catch {
+        router.replace(`/${locale}/portal/login`)
       }
-      setLoading(false)
     }
     load()
   }, [locale, router])
@@ -65,15 +69,19 @@ export default function ProfilePage() {
     e.preventDefault()
     setSaving(true)
 
-    await supabase.from('profiles').upsert({
-      id: userId,
-      ...profile,
-      updated_at: new Date().toISOString(),
-    })
+    try {
+      const { supabase } = await import('@/lib/supabase')
+      await supabase.from('profiles').upsert({
+        id: userId,
+        ...profile,
+        updated_at: new Date().toISOString(),
+      })
 
-    setSaving(false)
-    setSaved(true)
-    setTimeout(() => setSaved(false), 3000)
+      setSaved(true)
+      setTimeout(() => setSaved(false), 3000)
+    } finally {
+      setSaving(false)
+    }
   }
 
   if (loading) {

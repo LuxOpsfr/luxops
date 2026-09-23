@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react'
 import { useRouter, useParams } from 'next/navigation'
 import Link from 'next/link'
-import { supabase } from '@/lib/supabase'
 import PortalShell from '@/components/portal/PortalShell'
 import { Download, BookOpen, Package, ChevronDown, ChevronUp, FileText } from 'lucide-react'
 import { PLAYBOOKS, getPlaybookIds, type Playbook, type Chapter } from '@/lib/chapters'
@@ -35,17 +34,22 @@ export default function DashboardPage() {
 
   useEffect(() => {
     const load = async () => {
-      const { data: { session } } = await supabase.auth.getSession()
-      if (!session) { router.replace(`/${locale}/portal/login`); return }
-      setEmail(session.user.email ?? '')
+      try {
+        const { supabase } = await import('@/lib/supabase')
+        const { data: { session } } = await supabase.auth.getSession()
+        if (!session) { router.replace(`/${locale}/portal/login`); return }
+        setEmail(session.user.email ?? '')
 
-      const { data } = await supabase
-        .from('purchases')
-        .select('*')
-        .order('created_at', { ascending: false })
+        const { data } = await supabase
+          .from('purchases')
+          .select('*')
+          .order('created_at', { ascending: false })
 
-      setPurchases(data ?? [])
-      setLoading(false)
+        setPurchases(data ?? [])
+        setLoading(false)
+      } catch {
+        router.replace(`/${locale}/portal/login`)
+      }
     }
     load()
   }, [locale, router])

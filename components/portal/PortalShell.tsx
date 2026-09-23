@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
-import { supabase } from '@/lib/supabase'
 import { identifyPostHogUser, resetPostHogUser } from '@/lib/posthogIdentity'
 import {
   User,
@@ -16,17 +15,18 @@ interface PortalShellProps {
   locale: string
   email: string
   children: React.ReactNode
+  preview?: boolean
 }
 
-export default function PortalShell({ locale, email, children }: PortalShellProps) {
+export default function PortalShell({ locale, email, children, preview = false }: PortalShellProps) {
   const pathname = usePathname()
   const router = useRouter()
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const isFr = locale === 'fr'
 
   useEffect(() => {
-    identifyPostHogUser(email, { locale, source: 'portal_shell' })
-  }, [email, locale])
+    if (!preview) identifyPostHogUser(email, { locale, source: 'portal_shell' })
+  }, [email, locale, preview])
 
   const navItems = [
     {
@@ -42,6 +42,8 @@ export default function PortalShell({ locale, email, children }: PortalShellProp
   ]
 
   const handleSignOut = async () => {
+    if (preview) return
+    const { supabase } = await import('@/lib/supabase')
     await supabase.auth.signOut()
     resetPostHogUser()
     router.push(`/${locale}/portal/login`)
@@ -52,18 +54,10 @@ export default function PortalShell({ locale, email, children }: PortalShellProp
       {/* Logo */}
       <div className="px-6 py-6 border-b border-white/10">
         <Link href={`/${locale}`} className="flex flex-col gap-[3px] no-underline">
-          <span
-            className="font-bold uppercase text-white"
-            style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: '1rem',
-              letterSpacing: '0.22em',
-              lineHeight: 1,
-            }}
-          >
+          <span className="font-display text-[1.75rem] leading-none text-white">
             LuxOps
           </span>
-          <span className="text-[9px] text-white/40 uppercase" style={{ letterSpacing: '0.12em' }}>
+          <span className="mt-1 text-[9px] uppercase tracking-[0.12em] text-white/50">
             {isFr ? 'Espace client' : 'Client portal'}
           </span>
         </Link>
@@ -81,7 +75,7 @@ export default function PortalShell({ locale, email, children }: PortalShellProp
               onClick={() => setSidebarOpen(false)}
               className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
                 isActive
-                  ? 'bg-white/15 text-white'
+                  ? 'border-l-2 border-[#a58658] bg-white/10 text-white'
                   : 'text-white/60 hover:text-white hover:bg-white/10'
               }`}
             >
@@ -99,6 +93,7 @@ export default function PortalShell({ locale, email, children }: PortalShellProp
         </div>
         <button
           onClick={handleSignOut}
+          disabled={preview}
           className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-white/60 hover:text-white hover:bg-white/10 transition-colors"
         >
           <LogOut size={17} />
@@ -133,15 +128,7 @@ export default function PortalShell({ locale, email, children }: PortalShellProp
         {/* Mobile top bar */}
         <div className="lg:hidden flex items-center justify-between px-4 py-3 bg-[#1A2E44] text-white">
           <Link href={`/${locale}`} className="no-underline">
-            <span
-              className="font-bold uppercase text-white"
-              style={{
-                fontFamily: 'var(--font-display)',
-                fontSize: '0.9rem',
-                letterSpacing: '0.22em',
-                lineHeight: 1,
-              }}
-            >
+            <span className="font-display text-2xl leading-none text-white">
               LuxOps
             </span>
           </Link>

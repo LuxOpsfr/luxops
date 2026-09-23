@@ -3,7 +3,6 @@
 import { useState } from 'react'
 import { useParams } from 'next/navigation'
 import Link from 'next/link'
-import { supabase } from '@/lib/supabase'
 import posthog from 'posthog-js'
 import { identifyPostHogUser } from '@/lib/posthogIdentity'
 
@@ -30,24 +29,30 @@ export default function RegisterPage() {
       return
     }
 
-    const { error } = await supabase.auth.signUp({
-      email,
-      password,
-      options: {
-        emailRedirectTo: `${window.location.origin}/${locale}/portal/dashboard`,
-      },
-    })
+    try {
+      const { supabase } = await import('@/lib/supabase')
+      const { error } = await supabase.auth.signUp({
+        email,
+        password,
+        options: {
+          emailRedirectTo: `${window.location.origin}/${locale}/portal/dashboard`,
+        },
+      })
 
-    if (error) {
-      setError(error.message)
+      if (error) {
+        setError(error.message)
+        setLoading(false)
+        return
+      }
+
+      identifyPostHogUser(email, { locale, source: 'portal_register' })
+      posthog.capture('user_signed_up', { locale })
+      setSuccess(true)
       setLoading(false)
-      return
+    } catch {
+      setError(isFr ? 'Inscription momentanément indisponible.' : 'Registration is temporarily unavailable.')
+      setLoading(false)
     }
-
-    identifyPostHogUser(email, { locale, source: 'portal_register' })
-    posthog.capture('user_signed_up', { locale })
-    setSuccess(true)
-    setLoading(false)
   }
 
   if (success) {

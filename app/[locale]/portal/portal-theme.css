@@ -1,0 +1,46 @@
+.portal-theme {
+  background: #f5f1e9;
+  color: #0f211a;
+}
+
+.portal-theme [class*="bg-[#F5F7FA]"] {
+  background: #f5f1e9;
+}
+
+.portal-theme [class*="bg-[#1A2E44]"],
+.portal-theme [class*="bg-[#0f1e2e]"] {
+  background: #0f211a;
+}
+
+.portal-theme [class*="text-[#1A2E44]"],
+.portal-theme [class*="text-[#0a1d2e]"],
+.portal-theme [class*="text-[#0056D2]"],
+.portal-theme [class*="text-[#2E7D32]"] {
+  color: #0f211a;
+}
+
+.portal-theme [class*="border-[#1A2E44]"] {
+  border-color: #0f211a;
+}
+
+.portal-theme :is(.rounded-lg, .rounded-xl, .rounded-2xl) {
+  border-radius: 2px;
+}
+
+.portal-theme [class*="shadow-"] {
+  box-shadow: none;
+}
+
+.portal-theme .bg-white {
+  background: #fcfbf8;
+}
+
+.portal-theme .text-white {
+  color: #fcfbf8;
+}
+
+.portal-theme main h1,
+.portal-theme main h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+}

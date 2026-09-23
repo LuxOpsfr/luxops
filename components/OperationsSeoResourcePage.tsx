@@ -732,11 +732,11 @@ const CONTENT: Record<OperationsResourceKind, Record<Locale, ResourceContent>> =
         },
       ],
       product: {
-        title: 'Housekeeping Inspection Kit',
+        title: 'Housekeeping Starter Pack',
         body:
           'Use the kit when you need editable room inspection checklists, supervisor control sheets and defect tracking tools.',
         href: '/playbooks/hsk-starter-pack',
-        cta: 'View Housekeeping Inspection Kit',
+        cta: 'View Housekeeping Starter Pack',
         eventName: 'hsk_starter_pack_cta_clicked',
       },
       playbook: {
@@ -873,11 +873,11 @@ const CONTENT: Record<OperationsResourceKind, Record<Locale, ResourceContent>> =
         },
       ],
       product: {
-        title: 'Housekeeping Inspection Kit',
+        title: 'Housekeeping Starter Pack',
         body:
           'Utilisez le kit si vous avez besoin de grilles d’inspection modifiables, feuilles de contrôle gouvernante et outils de suivi des défauts.',
         href: '/playbooks/hsk-starter-pack',
-        cta: 'Voir le Housekeeping Inspection Kit',
+        cta: 'Voir le Housekeeping Starter Pack',
         eventName: 'hsk_starter_pack_cta_clicked',
       },
       playbook: {
@@ -1300,11 +1300,11 @@ const CONTENT: Record<OperationsResourceKind, Record<Locale, ResourceContent>> =
         },
       ],
       product: {
-        title: 'Housekeeping Inspection Kit',
+        title: 'Housekeeping Starter Pack',
         body:
           'Use the kit when you need editable inspection controls, supervisor sheets and practical room readiness tools.',
         href: '/playbooks/hsk-starter-pack',
-        cta: 'View Housekeeping Inspection Kit',
+        cta: 'View Housekeeping Starter Pack',
         eventName: 'hsk_starter_pack_cta_clicked',
       },
       playbook: {
@@ -1441,11 +1441,11 @@ const CONTENT: Record<OperationsResourceKind, Record<Locale, ResourceContent>> =
         },
       ],
       product: {
-        title: 'Housekeeping Inspection Kit',
+        title: 'Housekeeping Starter Pack',
         body:
           'Utilisez le kit si vous avez besoin de grilles d’inspection modifiables, feuilles de contrôle gouvernante et outils room readiness.',
         href: '/playbooks/hsk-starter-pack',
-        cta: 'Voir le Housekeeping Inspection Kit',
+        cta: 'Voir le Housekeeping Starter Pack',
         eventName: 'hsk_starter_pack_cta_clicked',
       },
       playbook: {

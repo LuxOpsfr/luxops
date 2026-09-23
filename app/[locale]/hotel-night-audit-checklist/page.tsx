@@ -290,6 +290,8 @@ export default async function HotelNightAuditChecklistPage({ params }: { params:
           </div>
         </section>
 
+        <EditorialRouteImage route="hotel-night-audit-checklist" alt="Hotel front desk at night" />
+
         {/* Step-by-step checklist */}
         <section className="max-w-4xl mx-auto px-6 py-12">
           <div className="border border-gray-200 rounded-2xl p-6 md:p-8 bg-white shadow-sm">
@@ -585,3 +587,4 @@ export default async function HotelNightAuditChecklistPage({ params }: { params:
     </>
   )
 }
+import EditorialRouteImage from '@/components/EditorialRouteImage'

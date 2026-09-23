@@ -9,17 +9,17 @@ const playbooksMetadata = {
   en: {
     title: 'Hotel SOP Playbooks for 5-Star Operations | LuxOps',
     description:
-      'Professionally written hotel operations products for luxury hotel teams: starter packs from €29 and full SOP playbooks from €67.',
+      'Professionally written hotel SOP manuals and practical starter packs for luxury hotel teams, available in English and French.',
   },
   fr: {
     title: 'Playbooks SOP pour Hôtels 5 Étoiles | LuxOps',
     description:
-      'Produits opérationnels pour équipes hôtelières haut de gamme : starter packs à partir de 29 € et playbooks SOP complets à partir de 67 €.',
+      'Manuels SOP complets et Starter Packs pratiques pour les équipes hôtelières haut de gamme, en français et en anglais.',
   },
   es: {
     title: 'Playbooks SOP para operaciones hoteleras 5 estrellas | LuxOps',
     description:
-      'Productos operativos para equipos hoteleros high-end: starter packs desde 29 € y playbooks SOP completos desde 67 €.',
+      'Manuales SOP completos y Starter Packs prácticos para equipos hoteleros, disponibles en francés e inglés.',
   },
 } satisfies Partial<Record<Locale, { title: string; description: string }>>
 
