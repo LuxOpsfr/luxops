@@ -274,7 +274,11 @@ export default function LeadMagnetForm({ locale }: { locale: string }) {
       </div>
 
       <div className="flex flex-col sm:flex-row gap-3">
+        <label htmlFor="lead-magnet-email" className="sr-only">
+          {isEn ? 'Your email address' : 'Votre adresse email'}
+        </label>
         <input
+          id="lead-magnet-email"
           type="email"
           required
           value={email}

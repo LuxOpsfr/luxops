@@ -56,9 +56,10 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <label className={labelClass}>{t('name')}</label>
+          <label htmlFor="contact-name" className={labelClass}>{t('name')}</label>
           <div className={wrapClass} style={{ borderRadius: '0.125rem' }}>
             <input
+              id="contact-name"
               {...register('name', { required: true })}
               className={inputClass}
               style={{ borderRadius: '0.125rem' }}
@@ -68,9 +69,10 @@ export default function ContactForm() {
           {errors.name && <p className="text-red-500 text-xs mt-1">{t('required')}</p>}
         </div>
         <div>
-          <label className={labelClass}>{t('email')}</label>
+          <label htmlFor="contact-email" className={labelClass}>{t('email')}</label>
           <div className={wrapClass} style={{ borderRadius: '0.125rem' }}>
             <input
+              id="contact-email"
               {...register('email', { required: true, pattern: /^\S+@\S+\.\S+$/ })}
               type="email"
               className={inputClass}
@@ -83,9 +85,10 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className={labelClass}>{t('company')}</label>
+        <label htmlFor="contact-company" className={labelClass}>{t('company')}</label>
         <div className={wrapClass} style={{ borderRadius: '0.125rem' }}>
           <input
+            id="contact-company"
             {...register('company')}
             className={inputClass}
             style={{ borderRadius: '0.125rem' }}
@@ -96,20 +99,23 @@ export default function ContactForm() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <label className={labelClass}>{t('subject')}</label>
+          <label htmlFor="contact-subject" className={labelClass}>{t('subject')}</label>
           <div className={wrapClass} style={{ borderRadius: '0.125rem' }}>
             <input
-              {...register('subject')}
+              id="contact-subject"
+              {...register('subject', { required: true })}
               className={inputClass}
               style={{ borderRadius: '0.125rem' }}
               placeholder={t('subject_placeholder')}
             />
           </div>
+          {errors.subject && <p className="text-red-500 text-xs mt-1">{t('required')}</p>}
         </div>
         <div>
-          <label className={labelClass}>{t('need_type')}</label>
+          <label htmlFor="contact-need-type" className={labelClass}>{t('need_type')}</label>
           <div className={wrapClass} style={{ borderRadius: '0.125rem' }}>
             <select
+              id="contact-need-type"
               {...register('need_type')}
               className={`${inputClass} cursor-pointer`}
               style={{ borderRadius: '0.125rem' }}
@@ -124,9 +130,10 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className={labelClass}>{t('message')}</label>
+        <label htmlFor="contact-message" className={labelClass}>{t('message')}</label>
         <div className={wrapClass} style={{ borderRadius: '0.125rem' }}>
           <textarea
+            id="contact-message"
             {...register('message', { required: true })}
             rows={6}
             className={`${inputClass} resize-none`}

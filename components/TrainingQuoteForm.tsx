@@ -160,8 +160,9 @@ export default function TrainingQuoteForm({ locale }: { locale: string }) {
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-3 lg:space-y-2">
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:gap-2">
         <div>
-          <label className={labelClass}>{copy.name}</label>
+          <label htmlFor="training-name" className={labelClass}>{copy.name}</label>
           <input
+            id="training-name"
             {...register('name', { required: true })}
             className={fieldClass}
             placeholder={copy.namePlaceholder}
@@ -169,8 +170,9 @@ export default function TrainingQuoteForm({ locale }: { locale: string }) {
           {errors.name && <p className="text-xs text-red-600 mt-1">{copy.required}</p>}
         </div>
         <div>
-          <label className={labelClass}>{copy.email}</label>
+          <label htmlFor="training-email" className={labelClass}>{copy.email}</label>
           <input
+            id="training-email"
             {...register('email', { required: true, pattern: /^\S+@\S+\.\S+$/ })}
             type="email"
             className={fieldClass}
@@ -182,8 +184,9 @@ export default function TrainingQuoteForm({ locale }: { locale: string }) {
 
       <div>
         <div>
-          <label className={labelClass}>{copy.property}</label>
+          <label htmlFor="training-company" className={labelClass}>{copy.property}</label>
           <input
+            id="training-company"
             {...register('company', { required: true })}
             className={fieldClass}
             placeholder={copy.propertyPlaceholder}
@@ -192,8 +195,8 @@ export default function TrainingQuoteForm({ locale }: { locale: string }) {
         </div>
       </div>
       <div>
-        <label className={labelClass}>{copy.improvement}</label>
-        <textarea {...register('improvement', { required: true })} className={`${fieldClass} min-h-28 resize-y lg:min-h-20`} placeholder={copy.improvementPlaceholder} />
+        <label htmlFor="training-improvement" className={labelClass}>{copy.improvement}</label>
+        <textarea id="training-improvement" {...register('improvement', { required: true })} className={`${fieldClass} min-h-28 resize-y lg:min-h-20`} placeholder={copy.improvementPlaceholder} />
         {errors.improvement && <p className="mt-1 text-xs text-red-600">{copy.required}</p>}
       </div>
 
