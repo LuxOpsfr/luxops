@@ -1,293 +1,54 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-import { useRouter, useParams } from 'next/navigation'
+import { useEffect, useMemo, useState } from 'react'
+import { useParams, useRouter } from 'next/navigation'
+import Image from 'next/image'
 import Link from 'next/link'
+import { ArrowRight, BookOpen, Check, ChevronDown, FileText, Gift, HelpCircle, MessageCircle, Package, Presentation } from 'lucide-react'
 import PortalShell from '@/components/portal/PortalShell'
-import { Download, BookOpen, Package, ChevronDown, ChevronUp, FileText } from 'lucide-react'
-import { PLAYBOOKS, getPlaybookIds, type Playbook, type Chapter } from '@/lib/chapters'
+import { PLAYBOOKS, getPlaybookIds, type Chapter, type Playbook } from '@/lib/chapters'
 
-interface Purchase {
-  id: string
-  product_name: string
-  price_id: string
-  download_url: string | null
-  created_at: string
-  locale: string
+interface Purchase { id: string; product_name: string; price_id: string; download_url: string | null; created_at: string; locale: string }
+type Locale = 'fr' | 'en' | 'es'
+
+const STORAGE = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/Playbook/`
+const ui = {
+  fr: { portal:'Espace client', hello:'Bonjour,', intro:'Retrouvez vos manuels, vos fichiers et les avantages réservés aux clients LuxOps.', library:'Votre bibliothèque opérationnelle', libraryBody:'Un espace unique pour consulter vos références SOP et préparer vos briefings avec les équipes.', manual:'manuel', manuals:'manuels', files:'fichiers disponibles', resources:'Vos ressources', available:'Disponibles dans votre bibliothèque', formats:'PDF et PPTX modifiable', open:'Ouvrir le manuel', close:'Fermer les chapitres', chapters:'chapitres', pdf:'PDF', pptx:'PPTX modifiable', benefit:'Avantage réservé aux clients', discount:'-20 % sur votre prochain manuel SOP', discountBody:'Pour vous remercier de votre achat, LuxOps vous réserve une remise privée sur un autre manuel de votre choix.', privateOffer:'Offre associée à votre compte', choose:'Choisir mon prochain manuel', complete:'Compléter votre bibliothèque', completeBody:'Des références complémentaires à celles que vous possédez déjà.', discover:'Découvrir', support:"Besoin d'aide avec vos ressources ?", supportBody:'Notre équipe peut vérifier un accès ou vous orienter vers le format le plus pertinent.', contact:'Contacter LuxOps', empty:'Aucun achat trouvé', emptyBody:"Utilisez l’adresse e-mail employée lors de votre achat ou découvrez les manuels SOP LuxOps.", browse:'Voir les manuels SOP' },
+  en: { portal:'Client portal', hello:'Hello,', intro:'Access your manuals, files and benefits reserved for LuxOps clients.', library:'Your operational library', libraryBody:'One place to consult your SOP references and prepare team briefings.', manual:'manual', manuals:'manuals', files:'files available', resources:'Your resources', available:'Available in your library', formats:'PDF and editable PPTX', open:'Open the manual', close:'Close chapters', chapters:'chapters', pdf:'PDF', pptx:'Editable PPTX', benefit:'Client-only benefit', discount:'20% off your next SOP manual', discountBody:'As a thank you for your purchase, LuxOps has reserved a private saving on another manual of your choice.', privateOffer:'Offer linked to your account', choose:'Choose my next manual', complete:'Complete your library', completeBody:'References that complement the resources you already own.', discover:'Discover', support:'Need help with your resources?', supportBody:'Our team can check your access or recommend the most relevant format.', contact:'Contact LuxOps', empty:'No purchases found', emptyBody:'Use the email address from your purchase or discover the LuxOps SOP manuals.', browse:'Browse SOP manuals' },
+  es: { portal:'Espacio cliente', hello:'Hola,', intro:'Accede a tus manuales, archivos y ventajas reservadas para clientes LuxOps.', library:'Tu biblioteca operativa', libraryBody:'Un espacio único para consultar tus referencias SOP y preparar los briefings del equipo.', manual:'manual', manuals:'manuales', files:'archivos disponibles', resources:'Tus recursos', available:'Disponibles en tu biblioteca', formats:'PDF y PPTX editable', open:'Abrir el manual', close:'Cerrar capítulos', chapters:'capítulos', pdf:'PDF', pptx:'PPTX editable', benefit:'Ventaja exclusiva para clientes', discount:'20% en tu próximo manual SOP', discountBody:'Para agradecer tu compra, LuxOps te reserva un descuento privado en otro manual de tu elección.', privateOffer:'Oferta vinculada a tu cuenta', choose:'Elegir mi próximo manual', complete:'Completa tu biblioteca', completeBody:'Referencias complementarias a los recursos que ya tienes.', discover:'Descubrir', support:'¿Necesitas ayuda con tus recursos?', supportBody:'Nuestro equipo puede comprobar tu acceso o recomendarte el formato más adecuado.', contact:'Contactar con LuxOps', empty:'No se han encontrado compras', emptyBody:'Utiliza el correo de tu compra o descubre los manuales SOP LuxOps.', browse:'Ver los manuales SOP' },
+} as const
+
+const presentation: Record<string, { image:string; department:string; slug:string; body:Record<Locale,string> }> = {
+  'front-office': { image:'/images/editorial-hospitality/dept-front-office-v2.jpg', department:'Front Office', slug:'fo', body:{ fr:'Parcours client, communication, check-in, check-out et management de la réception.', en:'Guest journey, communication, check-in, check-out and front office management.', es:'Experiencia del cliente, comunicación, check-in, check-out y gestión de recepción.' } },
+  housekeeping: { image:'/images/editorial-hospitality/dept-housekeeping-v2.jpg', department:'Housekeeping', slug:'hsk', body:{ fr:'Procédures, inspections et outils de pilotage pour structurer les opérations Housekeeping.', en:'Procedures, inspections and management tools for structured Housekeeping operations.', es:'Procedimientos, inspecciones y herramientas de gestión para las operaciones Housekeeping.' } },
+  fb: { image:'/images/editorial-hospitality/dept-food-beverage-v2.jpg', department:'Food & Beverage', slug:'fb', body:{ fr:'Séquences de service, restaurant, bar, petit-déjeuner et room service.', en:'Service sequences, restaurant, bar, breakfast and room service.', es:'Secuencias de servicio, restaurante, bar, desayuno y room service.' } },
+  spa: { image:'/images/editorial-hospitality/dept-spa-wellness-v2.jpg', department:'Spa & Wellness', slug:'spa', body:{ fr:'Parcours client, protocoles de soins, standards de présentation et pilotage du spa.', en:'Guest journey, treatment protocols, presentation standards and spa management.', es:'Experiencia del cliente, protocolos de tratamiento, presentación y gestión del spa.' } },
+  'fo-starter-pack': { image:'/product-previews/fo-starter-pack/fr/01-sop-check-in.webp', department:'Front Office', slug:'fo-starter-pack', body:{ fr:'Checklists, scripts et outils modifiables pour les opérations de réception.', en:'Editable checklists, scripts and tools for front office operations.', es:'Checklists, guiones y herramientas editables para recepción.' } },
+  'hsk-starter-pack': { image:'/product-previews/hsk-starter-pack/fr/01-inspection-depart.webp', department:'Housekeeping', slug:'hsk-starter-pack', body:{ fr:"Checklists d’inspection et outils de contrôle pour les équipes Housekeeping.", en:'Inspection checklists and control tools for Housekeeping teams.', es:'Checklists de inspección y herramientas de control para Housekeeping.' } },
+  'fb-starter-pack': { image:'/product-previews/fb-starter-pack/fr/01-ouverture-restaurant.webp', department:'Food & Beverage', slug:'fb-starter-pack', body:{ fr:'Checklists et outils pratiques pour le restaurant, le bar et le room service.', en:'Practical checklists and tools for restaurant, bar and room service.', es:'Checklists y herramientas para restaurante, bar y room service.' } },
 }
-
-const SUPABASE_STORAGE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL + '/storage/v1/object/public/Playbook/'
-
-function fileUrl(path: string) {
-  return SUPABASE_STORAGE_URL + path
-}
+const mainManualIds = ['front-office', 'housekeeping', 'fb', 'spa']
+const fileUrl = (path:string) => `${STORAGE}${path}`
 
 export default function DashboardPage() {
-  const router = useRouter()
-  const params = useParams()
-  const locale = params.locale as string
-
-  const [email, setEmail] = useState('')
-  const [purchases, setPurchases] = useState<Purchase[]>([])
-  const [loading, setLoading] = useState(true)
-  const isFr = locale === 'fr'
-
-  useEffect(() => {
-    const load = async () => {
-      try {
-        const { supabase } = await import('@/lib/supabase')
-        const { data: { session } } = await supabase.auth.getSession()
-        if (!session) { router.replace(`/${locale}/portal/login`); return }
-        setEmail(session.user.email ?? '')
-
-        const { data } = await supabase
-          .from('purchases')
-          .select('*')
-          .order('created_at', { ascending: false })
-
-        setPurchases(data ?? [])
-        setLoading(false)
-      } catch {
-        router.replace(`/${locale}/portal/login`)
-      }
-    }
-    load()
-  }, [locale, router])
-
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-[#F5F7FA]">
-        <div className="w-6 h-6 border-2 border-[#1A2E44] border-t-transparent rounded-full animate-spin" />
-      </div>
-    )
-  }
-
-  // Collect unique playbook IDs from all purchases
-  const unlockedPlaybookIds = new Set<string>()
-  for (const p of purchases) {
-    for (const id of getPlaybookIds(p.price_id)) {
-      unlockedPlaybookIds.add(id)
-    }
-  }
-
-  const unlockedPlaybooks = Array.from(unlockedPlaybookIds)
-    .map(id => PLAYBOOKS[id])
-    .filter(Boolean)
-
-  return (
-    <PortalShell locale={locale} email={email}>
-      {/* Header */}
-      <div className="mb-8">
-        <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-1">
-          {isFr ? 'Tableau de bord' : 'Dashboard'}
-        </p>
-        <h1 className="text-2xl font-bold text-[#1A2E44]">
-          {isFr ? 'Bibliothèque opérationnelle' : 'Operational Library'}
-        </h1>
-        <p className="text-sm text-gray-500 mt-1">
-          {isFr
-            ? 'Vos playbooks et ressources téléchargeables, organisés par chapitre.'
-            : 'Your playbooks and downloadable resources, organised by chapter.'}
-        </p>
-      </div>
-
-      {/* Stats */}
-      {purchases.length > 0 && (
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-          <div className="bg-white rounded-xl border border-gray-100 p-5">
-            <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">
-              {isFr ? 'Produits achetés' : 'Purchased products'}
-            </p>
-            <p className="text-3xl font-bold text-[#1A2E44]">{unlockedPlaybooks.length}</p>
-          </div>
-          <div className="bg-white rounded-xl border border-gray-100 p-5">
-            <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">
-              {isFr ? 'Fichiers disponibles' : 'Available files'}
-            </p>
-            <p className="text-3xl font-bold text-[#2E7D32]">
-              {unlockedPlaybooks.reduce((acc, p) => acc + p.chapters.length, 0)}
-            </p>
-          </div>
-          <div className="bg-white rounded-xl border border-gray-100 p-5 hidden lg:block">
-            <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">
-              {isFr ? 'Formats disponibles' : 'Available formats'}
-            </p>
-            <p className="text-3xl font-bold text-[#1A2E44]">PDF + PPTX</p>
-          </div>
-        </div>
-      )}
-
-      {/* Empty state */}
-      {unlockedPlaybooks.length === 0 ? (
-        <div className="bg-white border border-gray-100 rounded-2xl p-12 text-center">
-          <div className="w-14 h-14 bg-[#EEF2F7] rounded-2xl flex items-center justify-center mx-auto mb-4">
-            <Package size={24} className="text-[#1A2E44]" />
-          </div>
-          <h2 className="text-base font-bold text-[#1A2E44] mb-2">
-            {isFr ? 'Aucun achat trouvé' : 'No purchases found'}
-          </h2>
-          <p className="text-sm text-gray-500 mb-6 max-w-sm mx-auto">
-            {isFr
-              ? "Utilisez l'email avec lequel vous avez effectué votre achat, ou explorez nos playbooks."
-              : 'Use the email you used for your purchase, or explore our playbooks.'}
-          </p>
-          <Link
-            href={`/${locale}/playbooks`}
-            className="inline-flex items-center px-5 py-2.5 bg-[#1A2E44] text-white text-sm font-semibold rounded-lg hover:bg-[#0f1e2e] transition-colors"
-          >
-            {isFr ? 'Voir les playbooks' : 'Browse playbooks'}
-          </Link>
-        </div>
-      ) : (
-        <div className="grid gap-5">
-          {unlockedPlaybooks.map(playbook => (
-            <PlaybookCard key={playbook.id} playbook={playbook} isFr={isFr} />
-          ))}
-        </div>
-      )}
-
-      {/* Support */}
-      <div className="mt-10 pt-8 border-t border-gray-100 text-center">
-        <p className="text-sm text-gray-400">
-          {isFr ? 'Un problème avec votre accès ?' : 'Issue with your access?'}{' '}
-          <Link href={`/${locale}/contact`} className="text-[#0056D2] hover:underline font-medium">
-            {isFr ? 'Contactez-nous' : 'Contact us'}
-          </Link>
-        </p>
-      </div>
-    </PortalShell>
-  )
+  const router = useRouter(); const params = useParams(); const locale = params.locale as string
+  const lang:Locale = locale === 'fr' || locale === 'es' ? locale : 'en'; const t = ui[lang]
+  const [email,setEmail] = useState(''); const [purchases,setPurchases] = useState<Purchase[]>([]); const [loading,setLoading] = useState(true)
+  useEffect(() => { const load = async () => { try { const { supabase } = await import('@/lib/supabase'); const { data:{ session } } = await supabase.auth.getSession(); if (!session) { router.replace(`/${locale}/portal/login`); return } setEmail(session.user.email ?? ''); const { data } = await supabase.from('purchases').select('*').order('created_at',{ascending:false}); setPurchases(data ?? []); setLoading(false) } catch { router.replace(`/${locale}/portal/login`) } }; load() },[locale,router])
+  const unlockedIds = useMemo(() => { const ids = new Set<string>(); purchases.forEach(p => getPlaybookIds(p.price_id).forEach(id => ids.add(id))); return ids },[purchases])
+  const playbooks = Array.from(unlockedIds).map(id => PLAYBOOKS[id]).filter(Boolean)
+  const recommendations = mainManualIds.filter(id => !unlockedIds.has(id)).slice(0,2)
+  const fileCount = playbooks.reduce((n,p) => n + p.chapters.length * 2,0)
+  if (loading) return <div className="flex min-h-screen items-center justify-center bg-[#f5f1e9]"><div className="h-6 w-6 animate-spin rounded-full border-2 border-[#d8d0c3] border-t-[#0f211a]" /></div>
+  return <PortalShell locale={locale} email={email}>
+    <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end"><div><p className="mb-2 text-[10px] font-bold uppercase tracking-[0.18em] text-[#a58658]">{t.portal}</p><h1 className="text-[2.1rem] font-medium leading-tight sm:text-[2.6rem]">{t.hello}</h1><p className="mt-3 max-w-2xl text-sm leading-6 text-[#687169]">{t.intro}</p></div><p className="text-xs font-semibold text-[#687169]">{email}</p></div>
+    <section className="relative mb-9 min-h-[255px] overflow-hidden bg-[#0f211a] text-white"><Image src="/images/editorial-hospitality/playbooks-procedures-wide-v3.jpg" alt="" fill priority className="object-cover object-center opacity-35" sizes="(min-width:1024px) 970px, 100vw"/><div className="absolute inset-0 bg-gradient-to-r from-[#0f211a] via-[#0f211a]/90 to-[#0f211a]/25"/><div className="relative flex min-h-[255px] max-w-[650px] flex-col justify-center px-7 py-10 sm:px-10"><p className="mb-3 text-[10px] font-bold uppercase tracking-[0.18em] text-[#d8c39d]">LuxOps</p><h2 className="text-3xl font-medium leading-tight sm:text-4xl">{t.library}</h2><p className="mt-4 max-w-xl text-sm leading-6 text-white/70">{t.libraryBody}</p>{playbooks.length>0&&<div className="mt-7 flex flex-wrap gap-x-7 gap-y-2 text-xs font-semibold text-white/85"><span className="inline-flex items-center gap-2"><Check size={15} className="text-[#d8c39d]"/>{playbooks.length} {playbooks.length>1?t.manuals:t.manual}</span><span className="inline-flex items-center gap-2"><Check size={15} className="text-[#d8c39d]"/>{fileCount} {t.files}</span></div>}</div></section>
+    {playbooks.length===0 ? <section className="border border-[#d8d0c3] bg-[#fcfbf8] px-6 py-14 text-center"><Package size={28} className="mx-auto mb-4 text-[#a58658]"/><h2 className="text-2xl font-medium">{t.empty}</h2><p className="mx-auto mt-3 max-w-lg text-sm leading-6 text-[#687169]">{t.emptyBody}</p><Link href={`/${locale}/playbooks`} className="mt-6 inline-flex items-center gap-2 bg-[#0f211a] px-5 py-3 text-sm font-semibold text-white">{t.browse}<ArrowRight size={15}/></Link></section> : <div className="grid gap-8 xl:grid-cols-[minmax(0,1fr)_330px]"><div><div className="mb-4 flex items-end justify-between gap-4"><h2 className="text-2xl font-medium">{t.resources}</h2><span className="hidden text-xs text-[#687169] sm:block">{t.available}</span></div><div className="grid gap-5">{playbooks.map(p=><PlaybookCard key={p.id} playbook={p} lang={lang}/>)}</div></div>{recommendations.length>0&&<aside className="h-fit border border-[#cdb98f] bg-[#efe6d5] p-7 xl:sticky xl:top-8"><div className="mb-6 flex h-11 w-11 items-center justify-center bg-[#0f211a] text-white"><Gift size={20}/></div><p className="mb-3 text-[10px] font-bold uppercase tracking-[0.16em] text-[#8b6d41]">{t.benefit}</p><h2 className="text-[1.75rem] font-medium leading-tight">{t.discount}</h2><p className="mt-4 text-sm leading-6 text-[#59635c]">{t.discountBody}</p><div className="my-6 border-y border-[#cdb98f] py-4"><p className="flex items-center gap-2 text-xs font-semibold"><Check size={15}/>{t.privateOffer}</p></div><a href="#recommendations" className="inline-flex w-full items-center justify-center gap-2 bg-[#0f211a] px-4 py-3 text-sm font-semibold text-white">{t.choose}<ArrowRight size={15}/></a></aside>}</div>}
+    {recommendations.length>0&&<section id="recommendations" className="mt-12 border-t border-[#d8d0c3] pt-10"><p className="mb-2 text-[10px] font-bold uppercase tracking-[0.16em] text-[#a58658]">LuxOps</p><h2 className="text-3xl font-medium">{t.complete}</h2><p className="mt-2 text-sm text-[#687169]">{t.completeBody}</p><div className="mt-6 grid gap-5 md:grid-cols-2">{recommendations.map(id=><Recommendation key={id} id={id} lang={lang} cta={t.discover}/>)}</div></section>}
+    <section className="mt-10 flex flex-col justify-between gap-5 border-y border-[#d8d0c3] py-7 sm:flex-row sm:items-center"><div className="flex gap-4"><HelpCircle className="mt-0.5 shrink-0 text-[#a58658]" size={21}/><div><h2 className="text-xl font-medium">{t.support}</h2><p className="mt-1 text-sm leading-6 text-[#687169]">{t.supportBody}</p></div></div><Link href={`/${locale}/contact`} className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold underline underline-offset-4">{t.contact}<MessageCircle size={16}/></Link></section>
+  </PortalShell>
 }
 
-function PlaybookCard({ playbook, isFr }: { playbook: Playbook; isFr: boolean }) {
-  const [open, setOpen] = useState(true)
-
-  return (
-    <div className="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm">
-      {/* Playbook header */}
-      <button
-        onClick={() => setOpen(o => !o)}
-        className="w-full flex items-center justify-between px-6 py-5 hover:bg-gray-50 transition-colors"
-      >
-        <div className="flex items-center gap-4">
-          <div
-            className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-            style={{ backgroundColor: `${playbook.color}15` }}
-          >
-            <BookOpen size={18} style={{ color: playbook.color }} />
-          </div>
-          <div className="text-left">
-            <h2 className="font-bold text-[#1A2E44] text-base">
-              {isFr ? playbook.titleFr : playbook.titleEn}
-            </h2>
-            <p className="text-xs text-gray-400 mt-0.5">
-              {playbook.chapters.length} {isFr ? 'fichiers' : 'files'} · PDF + PPTX
-            </p>
-          </div>
-        </div>
-        <div className="flex items-center gap-3">
-          <span
-            className="text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full hidden sm:inline"
-            style={{ backgroundColor: `${playbook.color}15`, color: playbook.color }}
-          >
-            {isFr ? 'Débloqué' : 'Unlocked'}
-          </span>
-          {open ? (
-            <ChevronUp size={18} className="text-gray-400" />
-          ) : (
-            <ChevronDown size={18} className="text-gray-400" />
-          )}
-        </div>
-      </button>
-
-      {/* Chapters list */}
-      {open && (
-        <div className="border-t border-gray-100">
-          {playbook.chapters.map((chapter, idx) => (
-            <ChapterRow
-              key={chapter.number}
-              chapter={chapter}
-              isFr={isFr}
-              color={playbook.color}
-              isLast={idx === playbook.chapters.length - 1}
-            />
-          ))}
-        </div>
-      )}
-    </div>
-  )
-}
-
-function ChapterRow({
-  chapter,
-  isFr,
-  color,
-  isLast,
-}: {
-  chapter: Chapter
-  isFr: boolean
-  color: string
-  isLast: boolean
-}) {
-  const pdfUrl = fileUrl(isFr ? chapter.pdfFr : chapter.pdfEn)
-  const pptxUrl = fileUrl(isFr ? chapter.pptxFr : chapter.pptxEn)
-
-  return (
-    <div className={`flex items-center justify-between px-6 py-4 gap-4 hover:bg-gray-50 transition-colors ${!isLast ? 'border-b border-gray-50' : ''}`}>
-      <div className="flex items-center gap-3 min-w-0">
-        <span
-          className="text-xs font-bold tabular-nums flex-shrink-0 w-7 text-center"
-          style={{ color }}
-        >
-          {String(chapter.number).padStart(2, '0')}
-        </span>
-        <p className="text-sm font-medium text-[#1A2E44] truncate">
-          {isFr ? chapter.titleFr : chapter.titleEn}
-        </p>
-      </div>
-
-      <div className="flex items-center gap-2 flex-shrink-0">
-        <a
-          href={pdfUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg border transition-colors"
-          style={{
-            borderColor: `${color}40`,
-            color: color,
-            backgroundColor: `${color}08`,
-          }}
-          onMouseEnter={e => {
-            (e.currentTarget as HTMLElement).style.backgroundColor = `${color}18`
-          }}
-          onMouseLeave={e => {
-            (e.currentTarget as HTMLElement).style.backgroundColor = `${color}08`
-          }}
-        >
-          <FileText size={12} />
-          PDF
-        </a>
-        <a
-          href={pptxUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg border transition-colors"
-          style={{
-            borderColor: '#64748b40',
-            color: '#475569',
-            backgroundColor: '#f8fafc',
-          }}
-          onMouseEnter={e => {
-            (e.currentTarget as HTMLElement).style.backgroundColor = '#f1f5f9'
-          }}
-          onMouseLeave={e => {
-            (e.currentTarget as HTMLElement).style.backgroundColor = '#f8fafc'
-          }}
-        >
-          <Download size={12} />
-          PPTX
-        </a>
-      </div>
-    </div>
-  )
-}
+function PlaybookCard({playbook,lang}:{playbook:Playbook;lang:Locale}) { const [open,setOpen]=useState(true); const d=presentation[playbook.id]; return <article className="overflow-hidden border border-[#d8d0c3] bg-[#fcfbf8]"><div className="grid md:grid-cols-[230px_minmax(0,1fr)]"><div className="relative min-h-[230px] bg-[#e7e0d5]"><Image src={d?.image??'/images/editorial-hospitality/playbooks-flatlay.jpg'} alt="" fill className="object-cover" sizes="230px"/></div><div className="flex flex-col justify-center p-6 sm:p-8"><p className="mb-3 text-[10px] font-bold uppercase tracking-[0.16em] text-[#a58658]">{d?.department??'LuxOps'}</p><h3 className="text-[1.7rem] font-medium leading-tight">{lang==='fr'?playbook.titleFr:playbook.titleEn}</h3><p className="mt-3 max-w-xl text-sm leading-6 text-[#687169]">{d?.body[lang]}</p><div className="mt-5 flex flex-wrap gap-4 text-xs font-semibold"><span className="inline-flex items-center gap-2"><BookOpen size={15}/>{playbook.chapters.length} {ui[lang].chapters}</span><span className="inline-flex items-center gap-2"><FileText size={15}/>{ui[lang].formats}</span></div><button onClick={()=>setOpen(v=>!v)} className="mt-6 inline-flex w-fit items-center gap-2 bg-[#0f211a] px-5 py-3 text-sm font-semibold text-white">{open?ui[lang].close:ui[lang].open}<ChevronDown size={16} className={open?'rotate-180':''}/></button></div></div>{open&&<div className="border-t border-[#d8d0c3]">{playbook.chapters.map(c=><ChapterRow key={c.number} chapter={c} lang={lang}/>)}</div>}</article> }
+function ChapterRow({chapter,lang}:{chapter:Chapter;lang:Locale}) { const fr=lang==='fr'; return <div className="flex flex-col gap-4 border-b border-[#e7e0d5] px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-7"><div className="flex min-w-0 items-center gap-4"><span className="font-display text-sm text-[#a58658]">{String(chapter.number).padStart(2,'0')}</span><p className="text-sm font-semibold">{fr?chapter.titleFr:chapter.titleEn}</p></div><div className="flex flex-wrap gap-2 pl-8 sm:flex-nowrap sm:pl-0"><a href={fileUrl(fr?chapter.pdfFr:chapter.pdfEn)} target="_blank" rel="noopener noreferrer" className="inline-flex h-9 items-center gap-2 border border-[#d8d0c3] px-3 text-xs font-semibold"><FileText size={14}/>{ui[lang].pdf}</a><a href={fileUrl(fr?chapter.pptxFr:chapter.pptxEn)} target="_blank" rel="noopener noreferrer" className="inline-flex h-9 items-center gap-2 border border-[#d8d0c3] px-3 text-xs font-semibold"><Presentation size={14}/>{ui[lang].pptx}</a></div></div> }
+function Recommendation({id,lang,cta}:{id:string;lang:Locale;cta:string}) { const p=PLAYBOOKS[id],d=presentation[id]; const title=lang==='fr'?p.titleFr.replace('Playbook','Manuel SOP'):p.titleEn.replace('Playbook','SOP Manual'); return <article className="grid overflow-hidden border border-[#d8d0c3] bg-[#fcfbf8] sm:grid-cols-[210px_minmax(0,1fr)]"><div className="relative min-h-[190px]"><Image src={d.image} alt="" fill className="object-cover" sizes="210px"/></div><div className="flex flex-col justify-center p-6"><h3 className="text-xl font-medium">{title}</h3><p className="mt-3 text-sm leading-6 text-[#687169]">{d.body[lang]}</p><Link href={`/${lang}/playbooks/${d.slug}`} className="mt-5 inline-flex w-fit items-center gap-2 text-sm font-semibold underline underline-offset-4">{cta}<ArrowRight size={15}/></Link></div></article> }

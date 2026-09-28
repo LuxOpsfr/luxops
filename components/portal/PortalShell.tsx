@@ -22,7 +22,12 @@ export default function PortalShell({ locale, email, children, preview = false }
   const pathname = usePathname()
   const router = useRouter()
   const [sidebarOpen, setSidebarOpen] = useState(false)
-  const isFr = locale === 'fr'
+  const lang = locale === 'fr' || locale === 'es' ? locale : 'en'
+  const labels = {
+    fr: { portal: 'Espace client', resources: 'Mes ressources', profile: 'Mon profil', signOut: 'Déconnexion' },
+    en: { portal: 'Client portal', resources: 'My resources', profile: 'My profile', signOut: 'Sign out' },
+    es: { portal: 'Espacio cliente', resources: 'Mis recursos', profile: 'Mi perfil', signOut: 'Cerrar sesión' },
+  }[lang]
 
   useEffect(() => {
     if (!preview) identifyPostHogUser(email, { locale, source: 'portal_shell' })
@@ -31,12 +36,12 @@ export default function PortalShell({ locale, email, children, preview = false }
   const navItems = [
     {
       href: `/${locale}/portal/dashboard`,
-      label: isFr ? 'Mes ressources' : 'My resources',
+      label: labels.resources,
       icon: BookOpen,
     },
     {
       href: `/${locale}/portal/profile`,
-      label: isFr ? 'Mon profil' : 'My profile',
+      label: labels.profile,
       icon: User,
     },
   ]
@@ -50,21 +55,24 @@ export default function PortalShell({ locale, email, children, preview = false }
   }
 
   const renderSidebar = () => (
-    <aside className="w-64 flex-shrink-0 flex flex-col bg-[#1A2E44] text-white min-h-screen">
+    <aside className="flex min-h-screen w-[270px] flex-shrink-0 flex-col bg-[#0f211a] text-[#fcfbf8]">
       {/* Logo */}
-      <div className="px-6 py-6 border-b border-white/10">
-        <Link href={`/${locale}`} className="flex flex-col gap-[3px] no-underline">
-          <span className="font-display text-[1.75rem] leading-none text-white">
+      <div className="border-b border-white/10 px-7 py-7">
+        <Link href={`/${locale}`} className="flex flex-col no-underline">
+          <span
+            className="text-[1.9rem] leading-none text-white"
+            style={{ fontFamily: 'var(--font-display)', fontWeight: 500 }}
+          >
             LuxOps
           </span>
-          <span className="mt-1 text-[9px] uppercase tracking-[0.12em] text-white/50">
-            {isFr ? 'Espace client' : 'Client portal'}
+          <span className="mt-2 text-[9px] font-semibold uppercase tracking-[0.16em] text-white/50">
+            {labels.portal}
           </span>
         </Link>
       </div>
 
       {/* Nav */}
-      <nav className="flex-1 px-3 py-6 flex flex-col gap-1">
+      <nav className="flex flex-1 flex-col gap-2 px-4 py-7">
         {navItems.map(item => {
           const Icon = item.icon
           const isActive = pathname === item.href
@@ -73,10 +81,10 @@ export default function PortalShell({ locale, email, children, preview = false }
               key={item.href}
               href={item.href}
               onClick={() => setSidebarOpen(false)}
-              className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
+              className={`flex items-center gap-3 border-l-2 px-4 py-3 text-sm font-medium transition-colors ${
                 isActive
-                  ? 'border-l-2 border-[#a58658] bg-white/10 text-white'
-                  : 'text-white/60 hover:text-white hover:bg-white/10'
+                  ? 'border-[#a58658] bg-white/10 text-white'
+                  : 'border-transparent text-white/60 hover:bg-white/5 hover:text-white'
               }`}
             >
               <Icon size={17} />
@@ -87,24 +95,22 @@ export default function PortalShell({ locale, email, children, preview = false }
       </nav>
 
       {/* User + sign out */}
-      <div className="px-3 py-4 border-t border-white/10">
-        <div className="px-3 py-2 mb-1">
-          <p className="text-xs text-white/40 truncate">{email}</p>
-        </div>
+      <div className="border-t border-white/10 px-4 py-5">
+        <p className="truncate px-4 pb-2 text-xs text-white/40">{email}</p>
         <button
           onClick={handleSignOut}
           disabled={preview}
-          className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-white/60 hover:text-white hover:bg-white/10 transition-colors"
+          className="flex w-full items-center gap-3 px-4 py-2.5 text-sm text-white/60 transition-colors hover:text-white"
         >
           <LogOut size={17} />
-          {isFr ? 'Déconnexion' : 'Sign out'}
+          {labels.signOut}
         </button>
       </div>
     </aside>
   )
 
   return (
-    <div className="flex min-h-screen bg-[#F5F7FA]">
+    <div className="flex min-h-screen bg-[#f5f1e9]">
       {/* Desktop sidebar */}
       <div className="hidden lg:flex">
         {renderSidebar()}
@@ -126,9 +132,12 @@ export default function PortalShell({ locale, email, children, preview = false }
       {/* Main content */}
       <div className="flex-1 flex flex-col min-w-0">
         {/* Mobile top bar */}
-        <div className="lg:hidden flex items-center justify-between px-4 py-3 bg-[#1A2E44] text-white">
+        <div className="flex items-center justify-between border-b border-[#d8d0c3] bg-[#fcfbf8] px-5 py-4 text-[#0f211a] lg:hidden">
           <Link href={`/${locale}`} className="no-underline">
-            <span className="font-display text-2xl leading-none text-white">
+            <span
+              className="text-2xl leading-none text-[#0f211a]"
+              style={{ fontFamily: 'var(--font-display)', fontWeight: 500 }}
+            >
               LuxOps
             </span>
           </Link>
@@ -138,7 +147,7 @@ export default function PortalShell({ locale, email, children, preview = false }
         </div>
 
         {/* Page content */}
-        <main className="flex-1 px-6 py-8 max-w-5xl w-full mx-auto">
+        <main className="mx-auto w-full max-w-[1240px] flex-1 px-5 py-8 sm:px-8 lg:px-12 lg:py-11">
           {children}
         </main>
       </div>
