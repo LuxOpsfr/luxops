@@ -11,6 +11,10 @@ const DEPT_LABELS: Record<string, { en: string; fr: string }> = {
   spa: { en: 'Spa & Wellness', fr: 'Spa & Wellness' },
 }
 
+// Les téléchargements antérieurs au lancement de l'email de bienvenue ne
+// signifient pas que cet email a déjà été envoyé.
+const WELCOME_EMAIL_TRACKING_START = '2026-09-28T15:05:00.000Z'
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
@@ -35,6 +39,7 @@ export async function POST(request: NextRequest) {
       .from('leads')
       .select('email')
       .ilike('email', normalizedEmail)
+      .gte('created_at', WELCOME_EMAIL_TRACKING_START)
       .limit(1)
 
     if (lookupError) {
