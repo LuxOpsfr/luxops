@@ -5,6 +5,7 @@ import { useParams } from 'next/navigation'
 import Link from 'next/link'
 import posthog from 'posthog-js'
 import { identifyPostHogUser } from '@/lib/posthogIdentity'
+import BrandLogo from '@/components/BrandLogo'
 
 export default function RegisterPage() {
   const params = useParams()
@@ -59,17 +60,7 @@ export default function RegisterPage() {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center px-4">
         <Link href={`/${locale}`} className="mb-8 no-underline">
-          <span
-            className="font-bold uppercase text-[#0a1d2e]"
-            style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: '1rem',
-              letterSpacing: '0.22em',
-              lineHeight: 1,
-            }}
-          >
-            LuxOps
-          </span>
+          <BrandLogo showMonogram />
         </Link>
         <div className="w-full max-w-md bg-white rounded-2xl shadow-sm border border-gray-100 p-8 text-center">
           <div className="w-12 h-12 bg-[#E8F5E9] rounded-full flex items-center justify-center mx-auto mb-4">
@@ -92,8 +83,8 @@ export default function RegisterPage() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-4">
-      <Link href={`/${locale}`} className="mb-8 text-[#1A2E44] font-bold text-xl tracking-widest">
-        LuxOps
+      <Link href={`/${locale}`} className="mb-8 no-underline">
+        <BrandLogo showMonogram />
       </Link>
 
       <div className="w-full max-w-md bg-white rounded-2xl shadow-sm border border-gray-100 p-8">

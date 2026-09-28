@@ -5,6 +5,7 @@ import { useRouter, useParams } from 'next/navigation'
 import Link from 'next/link'
 import posthog from 'posthog-js'
 import { identifyPostHogUser } from '@/lib/posthogIdentity'
+import BrandLogo from '@/components/BrandLogo'
 
 export default function LoginPage() {
   const router = useRouter()
@@ -40,14 +41,7 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-5 py-14">
       <Link href={`/${locale}`} className="mb-10 no-underline">
-        <span
-          className="font-display text-[2.2rem] text-[#0f211a]"
-          style={{
-            lineHeight: 1,
-          }}
-        >
-          LuxOps
-        </span>
+        <BrandLogo showMonogram />
       </Link>
 
       <div className="w-full max-w-[460px] border border-[rgba(32,35,31,0.14)] bg-[#fcfbf8] px-7 py-9 sm:px-10 sm:py-11">

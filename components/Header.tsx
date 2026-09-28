@@ -9,6 +9,7 @@ import { useCart } from '@/context/CartContext'
 import { ACTIVE_LOCALES, LOCALE_META, toActiveLocale } from '@/lib/i18n'
 import { localizePathname, localizedPath, localizedRoutePath, routeSupportsLocale } from '@/lib/localized-routes'
 import type { Locale } from '@/lib/i18n'
+import BrandLogo from '@/components/BrandLogo'
 
 interface HeaderProps {
   locale: string
@@ -58,32 +59,8 @@ export default function Header({ locale }: HeaderProps) {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-[rgba(32,35,31,0.14)] bg-[#f5f1e9]/95 backdrop-blur">
       <div className="mx-auto flex max-w-[1680px] items-center justify-between px-5 md:px-12 lg:px-16" style={{ height: 'calc(var(--site-header-height) - 1px)' }}>
-        <Link
-          href={localizedRoutePath('home', currentLocale)}
-          className="flex flex-col no-underline"
-          style={{ gap: '6px' }}
-        >
-          <span
-            className="text-[#0f211a]"
-            style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: '1.625rem',
-              fontWeight: 500,
-              lineHeight: 1,
-            }}
-          >
-            LuxOps
-          </span>
-          <span
-            className="hidden font-semibold uppercase text-[#687169] sm:block"
-            style={{
-              fontSize: '0.625rem',
-              letterSpacing: 0,
-              lineHeight: 1.2,
-            }}
-          >
-            {copy.tagline}
-          </span>
+        <Link href={localizedRoutePath('home', currentLocale)} className="no-underline" aria-label="LuxOps">
+          <BrandLogo compact showTagline showMonogram />
         </Link>
 
         <nav className="hidden flex-1 items-center justify-center gap-8 lg:flex">

@@ -58,8 +58,7 @@ export function buildLuxOpsEmail({
             <tr>
               <td class="email-header" style="padding:32px 36px 28px;border-bottom:1px solid #d8d0c3;text-align:${alignment};">
                 <a href="${SITE_URL}/${locale}" style="color:#0f211a;text-decoration:none;">
-                  <span style="font-family:Georgia,'Times New Roman',serif;font-size:31px;line-height:1;font-weight:400;">LuxOps</span>
-                  <span style="display:block;margin-top:7px;color:#687169;font-size:9px;line-height:1.4;letter-spacing:1.5px;text-transform:uppercase;">Standardizing excellence in high-end hospitality</span>
+                  <img src="${SITE_URL}/brand/luxops-wordmark-dark.png" width="330" alt="LuxOps — Standardizing Excellence in High-End Hospitality" style="display:block;width:100%;max-width:330px;height:auto;border:0;${alignment === 'center' ? 'margin:0 auto;' : ''}">
                 </a>
               </td>
             </tr>

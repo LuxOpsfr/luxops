@@ -6,6 +6,7 @@ import { toActiveLocale } from '@/lib/i18n'
 import type { Locale } from '@/lib/i18n'
 import { localizedPath, localizedRoutePath, routeSupportsLocale } from '@/lib/localized-routes'
 import type { LocalizedRouteId } from '@/lib/localized-routes'
+import BrandLogo from '@/components/BrandLogo'
 
 interface FooterProps {
   locale: string
@@ -130,18 +131,8 @@ export default function Footer({ locale }: FooterProps) {
       <div className="mx-auto max-w-[1680px] px-6 py-14 md:px-16">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1.25fr_repeat(3,1fr)]">
           <div className="md:col-span-1">
-            <div className="mb-3">
-              <span
-                className="text-[#f5f1e9]"
-                style={{
-                  fontFamily: 'var(--font-display)',
-                  fontSize: '1.85rem',
-                  fontWeight: 500,
-                  lineHeight: 1,
-                }}
-              >
-                LuxOps
-              </span>
+            <div className="mb-5">
+              <BrandLogo tone="light" showMonogram />
             </div>
             <p className="max-w-xs text-sm leading-relaxed text-[#b9c2ba]">{copy.tagline}</p>
           </div>

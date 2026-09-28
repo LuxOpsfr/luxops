@@ -1,8 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <!-- Open book left page -->
-  <path d="M3 8 C3 8 3 24 3 24 C3 24 10 22.5 16 25 L16 9 C16 9 9 7 3 8Z" fill="#1A2E44"/>
-  <!-- Open book right page -->
-  <path d="M29 8 C29 8 29 24 29 24 C29 24 22 22.5 16 25 L16 9 C16 9 23 7 29 8Z" fill="#1A2E44" opacity="0.6"/>
-  <!-- Spine -->
-  <line x1="16" y1="9" x2="16" y2="25" stroke="#1A2E44" stroke-width="1.5"/>
+  <rect width="32" height="32" fill="#0F211A"/>
+  <rect x="3.5" y="3.5" width="25" height="25" stroke="#F5F1E9"/>
+  <rect x="6.25" y="6.25" width="19.5" height="19.5" stroke="#A58658" stroke-opacity="0.72" stroke-width="0.75"/>
+  <path d="M9.25 10V21.25H14.6" stroke="#F5F1E9" stroke-width="1.65" stroke-linecap="square"/>
+  <ellipse cx="20.2" cy="15.65" rx="3.25" ry="5.65" stroke="#F5F1E9" stroke-width="1.65"/>
 </svg>

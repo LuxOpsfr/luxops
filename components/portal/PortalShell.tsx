@@ -10,6 +10,7 @@ import {
   Menu,
   BookOpen,
 } from 'lucide-react'
+import BrandLogo from '@/components/BrandLogo'
 
 interface PortalShellProps {
   locale: string
@@ -59,12 +60,7 @@ export default function PortalShell({ locale, email, children, preview = false }
       {/* Logo */}
       <div className="border-b border-white/10 px-7 py-7">
         <Link href={`/${locale}`} className="flex flex-col no-underline">
-          <span
-            className="text-[1.9rem] leading-none text-white"
-            style={{ fontFamily: 'var(--font-display)', fontWeight: 500 }}
-          >
-            LuxOps
-          </span>
+          <BrandLogo tone="light" showMonogram compact />
           <span className="mt-2 text-[9px] font-semibold uppercase tracking-[0.16em] text-white/50">
             {labels.portal}
           </span>
@@ -134,12 +130,7 @@ export default function PortalShell({ locale, email, children, preview = false }
         {/* Mobile top bar */}
         <div className="flex items-center justify-between border-b border-[#d8d0c3] bg-[#fcfbf8] px-5 py-4 text-[#0f211a] lg:hidden">
           <Link href={`/${locale}`} className="no-underline">
-            <span
-              className="text-2xl leading-none text-[#0f211a]"
-              style={{ fontFamily: 'var(--font-display)', fontWeight: 500 }}
-            >
-              LuxOps
-            </span>
+            <BrandLogo compact />
           </Link>
           <button onClick={() => setSidebarOpen(true)}>
             <Menu size={22} />
