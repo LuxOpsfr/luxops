@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { getPostHogClient } from '@/lib/posthog-server'
 import { getResendClient } from '@/lib/resend'
 import { getSupabaseAdmin } from '@/lib/supabase-admin'
+import { normalizeLeadEmail, normalizeLeadLocale, sendFreeChapterWelcomeEmail } from '@/lib/lead-email'
 
 const DEPT_LABELS: Record<string, { en: string; fr: string }> = {
   fo: { en: 'Front Office', fr: 'Front Office' },
@@ -15,7 +16,7 @@ export async function POST(request: NextRequest) {
     const body = await request.json()
     const { email, department, locale, currentUrl, pathname, posthogDistinctId, posthogSessionId } = body
 
-    if (!email || !department) {
+    if (typeof email !== 'string' || !/^\S+@\S+\.\S+$/.test(email) || !department) {
       return NextResponse.json({ error: 'Missing fields' }, { status: 400 })
     }
 
@@ -24,28 +25,52 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Invalid department' }, { status: 400 })
     }
 
+    const normalizedEmail = normalizeLeadEmail(email)
+    const normalizedLocale = normalizeLeadLocale(locale)
+    const supabase = getSupabaseAdmin()
+
+    // Chaque téléchargement reste enregistré, mais le premier sert de repère
+    // pour ne jamais envoyer plusieurs fois l'email de bienvenue.
+    const { data: previousLeads, error: lookupError } = await supabase
+      .from('leads')
+      .select('email')
+      .ilike('email', normalizedEmail)
+      .limit(1)
+
+    if (lookupError) {
+      console.error('[LuxOps Lead Lookup Error]', lookupError)
+    }
+
+    const isFirstDownload = !lookupError && (previousLeads?.length ?? 0) === 0
+
     // 1. Sauvegarde Supabase - priorité absolue
-    await getSupabaseAdmin().from('leads').insert({ email, department, locale })
+    const { error: insertError } = await supabase
+      .from('leads')
+      .insert({ email: normalizedEmail, department, locale: normalizedLocale })
+
+    if (insertError) {
+      throw insertError
+    }
 
     // 2. Tracking serveur PostHog - non-bloquant
     try {
       const posthog = getPostHogClient()
       if (posthog) {
         posthog.capture({
-          distinctId: posthogDistinctId || email,
+          distinctId: posthogDistinctId || normalizedEmail,
           event: 'lead_magnet_submitted',
           properties: {
-            email,
+            email: normalizedEmail,
             department,
             department_label: dept.en,
-            locale,
+            locale: normalizedLocale,
             current_url: currentUrl,
             pathname,
             posthog_session_id: posthogSessionId,
             source: 'server',
             $set: {
-              email,
-              lead_email: email,
+              email: normalizedEmail,
+              lead_email: normalizedEmail,
             },
           },
         })
@@ -60,14 +85,14 @@ export async function POST(request: NextRequest) {
       await getResendClient().emails.send({
         from: 'LuxOps <delivery@luxops.fr>',
         to: 'contact@luxops.fr',
-        replyTo: email,
-        subject: `Nouveau lead : ${dept.fr} (${(locale as string)?.toUpperCase()}) : ${email}`,
+        replyTo: normalizedEmail,
+        subject: `Nouveau lead : ${dept.fr} (${normalizedLocale.toUpperCase()}) : ${normalizedEmail}`,
         html: `
           <div style="font-family: sans-serif; max-width: 600px;">
             <h2 style="color: #003d9b;">Nouveau téléchargement gratuit : LuxOps</h2>
-            <p><strong>Email :</strong> ${email}</p>
+            <p><strong>Email :</strong> ${normalizedEmail}</p>
             <p><strong>Département :</strong> ${dept.fr} / ${dept.en}</p>
-            <p><strong>Langue :</strong> ${(locale as string)?.toUpperCase()}</p>
+            <p><strong>Langue :</strong> ${normalizedLocale.toUpperCase()}</p>
             <p style="color:#888; font-size:12px;">Lead enregistré en base Supabase.</p>
           </div>
         `,
@@ -76,7 +101,19 @@ export async function POST(request: NextRequest) {
       console.error('[LuxOps Resend Error: lead sauvegardé en Supabase]', emailError)
     }
 
-    // 4. Toujours retourner succès
+    // 4. Email client envoyé une seule fois, quel que soit le nombre d'extraits.
+    if (isFirstDownload) {
+      try {
+        await sendFreeChapterWelcomeEmail({
+          to: normalizedEmail,
+          locale: normalizedLocale,
+        })
+      } catch (emailError) {
+        console.error('[LuxOps Resend Error: email de bienvenue non envoyé]', emailError)
+      }
+    }
+
+    // 5. Toujours retourner succès
     return NextResponse.json({ success: true })
 
   } catch (error) {

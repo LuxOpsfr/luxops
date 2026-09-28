@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import posthog from 'posthog-js'
 
 interface FormData {
@@ -16,6 +16,7 @@ interface FormData {
 
 export default function ContactForm() {
   const t = useTranslations('contact_page')
+  const locale = useLocale()
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const {
     register,
@@ -30,7 +31,7 @@ export default function ContactForm() {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, locale }),
       })
       if (res.ok) {
         setStatus('success')

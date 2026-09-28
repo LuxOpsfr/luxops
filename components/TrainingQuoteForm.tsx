@@ -135,6 +135,7 @@ export default function TrainingQuoteForm({ locale }: { locale: string }) {
           subject: copy.subject,
           need_type: 'training',
           message,
+          locale: activeLocale,
         }),
       })
 

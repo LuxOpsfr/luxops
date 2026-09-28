@@ -36,7 +36,7 @@ export async function POST(request: NextRequest) {
     }
 
     const origin = request.headers.get('origin') || 'https://www.luxops.fr'
-    const lang = locale === 'fr' ? 'fr' : 'en'
+    const lang = locale === 'fr' || locale === 'es' ? locale : 'en'
     const checkoutCurrency = isSupportedCurrency(currency) ? currency : 'EUR'
 
     const session = await getStripeClient().checkout.sessions.create({
@@ -48,7 +48,7 @@ export async function POST(request: NextRequest) {
         quantity: 1,
       })),
       return_url: `${origin}/${lang}/success?session_id={CHECKOUT_SESSION_ID}`,
-      locale: lang === 'fr' ? 'fr' : 'en',
+      locale: lang,
       metadata: {
         locale: lang,
         ...(cleanMetadataValue(posthogDistinctId) && { posthog_distinct_id: cleanMetadataValue(posthogDistinctId) }),

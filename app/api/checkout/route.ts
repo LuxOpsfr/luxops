@@ -32,7 +32,7 @@ export async function POST(request: NextRequest) {
     const checkoutCurrency = isSupportedCurrency(currency) ? currency : 'EUR'
 
     const origin = request.headers.get('origin') || 'https://www.luxops.fr'
-    const lang = locale === 'fr' ? 'fr' : 'en'
+    const lang = locale === 'fr' || locale === 'es' ? locale : 'en'
 
     const session = await getStripeClient().checkout.sessions.create({
       mode: 'payment',
@@ -40,7 +40,7 @@ export async function POST(request: NextRequest) {
       line_items: [{ price: priceId, quantity: 1 }],
       success_url: `${origin}/${lang}/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${origin}/${lang}/playbooks`,
-      locale: lang === 'fr' ? 'fr' : 'en',
+      locale: lang,
       metadata: {
         locale: lang,
         ...(cleanMetadataValue(posthogDistinctId) && { posthog_distinct_id: cleanMetadataValue(posthogDistinctId) }),
