@@ -76,6 +76,12 @@ export default function RegisterPage() {
               ? `Un lien de confirmation a été envoyé à ${email}. Cliquez dessus pour accéder à votre espace.`
               : `A confirmation link has been sent to ${email}. Click it to access your portal.`}
           </p>
+          <p className="mt-5 text-sm text-[#687169]">
+            {isFr ? 'Vous aviez déjà créé un compte ?' : 'Already created an account?'}{' '}
+            <Link href={`/${locale}/portal/forgot-password`} className="font-semibold text-[#0f211a] underline underline-offset-4">
+              {isFr ? 'Réinitialiser le mot de passe' : 'Reset your password'}
+            </Link>
+          </p>
         </div>
       </div>
     )

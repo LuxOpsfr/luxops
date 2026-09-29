@@ -18,6 +18,7 @@ export default function LoginPage() {
   const [error, setError] = useState('')
 
   const isFr = locale === 'fr'
+  const forgotLabel = locale === 'fr' ? 'Mot de passe oublié ?' : locale === 'es' ? '¿Has olvidado tu contraseña?' : 'Forgot your password?'
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -71,9 +72,10 @@ export default function LoginPage() {
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-[#0f211a] mb-1.5 uppercase tracking-wide">
-              {isFr ? 'Mot de passe' : 'Password'}
-            </label>
+            <div className="mb-1.5 flex items-center justify-between gap-4">
+              <label className="block text-xs font-semibold text-[#0f211a] uppercase tracking-wide">{isFr ? 'Mot de passe' : 'Password'}</label>
+              <Link href={`/${locale}/portal/forgot-password`} className="text-xs font-semibold text-[#687169] underline underline-offset-4 hover:text-[#0f211a]">{forgotLabel}</Link>
+            </div>
             <input
               type="password"
               required
