@@ -107,19 +107,22 @@ export async function POST(request: NextRequest) {
     }
 
     // 4. Email client envoyé une seule fois, quel que soit le nombre d'extraits.
+    let welcomeEmailSent = false
     if (isFirstDownload) {
       try {
         await sendFreeChapterWelcomeEmail({
           to: normalizedEmail,
           locale: normalizedLocale,
+          department: department as 'fo' | 'hsk' | 'fb' | 'spa',
         })
+        welcomeEmailSent = true
       } catch (emailError) {
         console.error('[LuxOps Resend Error: email de bienvenue non envoyé]', emailError)
       }
     }
 
     // 5. Toujours retourner succès
-    return NextResponse.json({ success: true })
+    return NextResponse.json({ success: true, welcomeEmailSent })
 
   } catch (error) {
     console.error('[LuxOps Lead Magnet Error]', error)

@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Download, ChevronRight, Check, ArrowRight, FileCheck2, BookOpen } from 'lucide-react'
 import posthog from 'posthog-js'
 import TrackedLink from '@/components/TrackedLink'
@@ -72,6 +72,9 @@ export default function LeadMagnetForm({ locale }: { locale: string }) {
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [downloadDept, setDownloadDept] = useState<string>('')
+  const [welcomeEmailSent, setWelcomeEmailSent] = useState(false)
+  const successRef = useRef<HTMLDivElement>(null)
+  const successHeadingRef = useRef<HTMLHeadingElement>(null)
 
   useEffect(() => {
     if (process.env.NODE_ENV !== 'development') return
@@ -80,10 +83,22 @@ export default function LeadMagnetForm({ locale }: { locale: string }) {
       const department = params.get('department') || 'hsk'
       if (DOWNLOAD_URLS[department]) {
         setDownloadDept(department)
+        setWelcomeEmailSent(true)
         setStatus('success')
       }
     }
   }, [])
+
+  useEffect(() => {
+    if (status !== 'success') return
+
+    const frame = window.requestAnimationFrame(() => {
+      successRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      successHeadingRef.current?.focus({ preventScroll: true })
+    })
+
+    return () => window.cancelAnimationFrame(frame)
+  }, [status])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -104,7 +119,9 @@ export default function LeadMagnetForm({ locale }: { locale: string }) {
         }),
       })
       if (!res.ok) throw new Error()
+      const data = await res.json()
       setDownloadDept(selected)
+      setWelcomeEmailSent(Boolean(data.welcomeEmailSent))
       setStatus('success')
       posthog.capture('lead_magnet_submitted', {
         department: selected,
@@ -119,44 +136,61 @@ export default function LeadMagnetForm({ locale }: { locale: string }) {
     const urls = DOWNLOAD_URLS[downloadDept]
     const dept = DEPARTMENTS.find(d => d.key === downloadDept)
     const nextStep = NEXT_STEPS[downloadDept]
+    const primaryDownload = isEn
+      ? { href: urls.en, label: 'Open the English chapter' }
+      : { href: urls.fr, label: 'Ouvrir le chapitre en français' }
+    const secondaryDownload = isEn
+      ? { href: urls.fr, label: 'Read the French version' }
+      : { href: urls.en, label: 'Consulter la version anglaise' }
     return (
-      <div className="mx-auto max-w-4xl">
-        <div className="mx-auto max-w-xl text-center">
+      <div ref={successRef} className="mx-auto max-w-4xl scroll-mt-24">
+        <div className="mx-auto max-w-2xl border border-[#a58658] bg-[#fcfbf8] px-5 py-8 text-center shadow-[0_18px_50px_rgba(15,33,26,0.08)] sm:px-10 sm:py-10">
           <div
-            className="mx-auto mb-6 flex h-12 w-12 items-center justify-center bg-[#0f211a]"
+            className="mx-auto mb-5 flex h-12 w-12 items-center justify-center bg-[#0f211a]"
             style={{ borderRadius: '0.125rem' }}
           >
             <Check className="text-white" size={24} />
           </div>
-          <h2 className="mb-3 font-display text-2xl font-medium text-[#0f211a]">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-[#a58658]">
+            {isEn ? 'Your requested document' : 'Votre document demandé'}
+          </p>
+          <h2
+            ref={successHeadingRef}
+            tabIndex={-1}
+            className="mb-3 font-display text-3xl font-medium text-[#0f211a] outline-none"
+          >
             {isEn ? 'Your chapter is ready' : 'Votre chapitre est prêt'}
           </h2>
-          <p className="mb-8 leading-relaxed text-[#5d665f]">
+          <p className="mx-auto mb-7 max-w-xl leading-relaxed text-[#5d665f]">
             {isEn
-              ? `Download the introduction chapter of the ${dept?.en} Playbook below. Both language versions are included.`
-              : `Téléchargez ci-dessous le chapitre d'introduction du Playbook ${dept?.fr}. Les deux versions linguistiques sont incluses.`}
+              ? `Open the introduction chapter of the ${dept?.en} Playbook below.${welcomeEmailSent ? ' A copy of this download link has also been sent to your email address.' : ''}`
+              : `Ouvrez ci-dessous le chapitre d'introduction du Playbook ${dept?.fr}.${welcomeEmailSent ? ' Le lien de téléchargement vient également de vous être envoyé par email.' : ''}`}
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <div className="mx-auto flex max-w-lg flex-col gap-3">
             <a
-              href={urls.en}
+              href={primaryDownload.href}
               download
-              className="inline-flex items-center justify-center gap-2 bg-[#0f211a] px-6 py-3 text-sm font-semibold text-white"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-14 items-center justify-center gap-3 bg-[#0f211a] px-6 py-4 text-sm font-semibold text-white"
               style={{ borderRadius: '0.125rem' }}
             >
-              <Download size={16} /> English PDF
+              <Download size={18} /> {primaryDownload.label}
             </a>
             <a
-              href={urls.fr}
+              href={secondaryDownload.href}
               download
-              className="inline-flex items-center justify-center gap-2 border border-[#24362f] px-6 py-3 text-sm font-semibold text-[#24362f]"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-12 items-center justify-center gap-2 border border-[#24362f] px-6 py-3 text-sm font-semibold text-[#24362f]"
               style={{ borderRadius: '0.125rem' }}
             >
-              <Download size={16} /> PDF Français
+              <Download size={16} /> {secondaryDownload.label}
             </a>
           </div>
         </div>
 
-        <div className="mt-14 border-t border-[rgba(32,35,31,0.16)] pt-12 text-left">
+        <div className="mt-16 border-t border-[rgba(32,35,31,0.16)] pt-12 text-left">
           <div className="mb-8 max-w-2xl">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-[#a58658]">
               {isEn ? 'Continue with the complete tools' : 'Poursuivre avec les outils complets'}
