@@ -29,8 +29,22 @@ const presentation: Record<string, { image:string; department:string; slug:strin
   'hsk-starter-pack': { image:'/product-previews/hsk-starter-pack/fr/01-inspection-depart.webp', department:'Housekeeping', slug:'hsk-starter-pack', body:{ fr:"Checklists d’inspection et outils de contrôle pour les équipes Housekeeping.", en:'Inspection checklists and control tools for Housekeeping teams.', es:'Checklists de inspección y herramientas de control para Housekeeping.' } },
   'fb-starter-pack': { image:'/product-previews/fb-starter-pack/fr/01-ouverture-restaurant.webp', department:'Food & Beverage', slug:'fb-starter-pack', body:{ fr:'Checklists et outils pratiques pour le restaurant, le bar et le room service.', en:'Practical checklists and tools for restaurant, bar and room service.', es:'Checklists y herramientas para restaurante, bar y room service.' } },
 }
+const starterPackVisuals: Record<string, string> = {
+  'fo-starter-pack': 'fo',
+  'hsk-starter-pack': 'hsk',
+  'fb-starter-pack': 'fb',
+}
 const mainManualIds = ['front-office', 'housekeeping', 'fb', 'spa']
 const fileUrl = (path:string) => `${STORAGE}${path}`
+
+function presentationImage(id:string, lang:Locale) {
+  const starterPack = starterPackVisuals[id]
+  if (starterPack) {
+    const visualLocale = lang === 'fr' ? 'fr' : 'en'
+    return `/images/starter-packs/2027/${visualLocale}/${starterPack}-starter-pack-2027.webp`
+  }
+  return presentation[id]?.image ?? '/images/editorial-hospitality/playbooks-flatlay.jpg'
+}
 
 export default function DashboardPage({preview=false}:{preview?:boolean}) {
   const router = useRouter()
@@ -149,9 +163,10 @@ function Stat({value,label}:{value:string;label:string}) { return <div className
 function PlaybookCard({playbook,lang,initiallyOpen,preview}:{playbook:Playbook;lang:Locale;initiallyOpen:boolean;preview:boolean}) {
   const [open,setOpen] = useState(initiallyOpen)
   const d=presentation[playbook.id]
+  const isStarterPack = Boolean(starterPackVisuals[playbook.id])
   return <article className="overflow-hidden rounded-[24px] border border-[#e7e1d5] bg-[#fffefa] shadow-[0_8px_28px_rgba(36,49,39,0.045)] transition-shadow hover:shadow-[0_14px_38px_rgba(36,49,39,0.08)]">
     <div className="grid md:grid-cols-[210px_minmax(0,1fr)]">
-      <div className="relative min-h-[190px] bg-[#e9e3d7] md:min-h-[220px]"><Image src={d?.image??'/images/editorial-hospitality/playbooks-flatlay.jpg'} alt="" fill className="object-cover" sizes="(min-width:768px) 210px, 100vw"/></div>
+      <div className={`relative min-h-[190px] md:min-h-[220px] ${isStarterPack?'bg-[#f3f0e8]':'bg-[#e9e3d7]'}`}><Image src={presentationImage(playbook.id,lang)} alt="" fill className={isStarterPack?'object-contain':'object-cover'} sizes="(min-width:768px) 210px, 100vw"/></div>
       <div className="flex flex-col justify-center p-5 sm:p-7">
         <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.18em] text-[#a27c43]">{d?.department??'LuxOps'}</p>
         <h3 className="font-display text-[1.65rem] font-medium leading-tight tracking-[-0.025em]">{playbookTitle(playbook,lang)}</h3>
