@@ -154,12 +154,12 @@ export default function TrainingQuoteForm({ locale }: { locale: string }) {
     }
   }
 
-  const labelClass = 'mb-1.5 block text-[10px] font-semibold uppercase tracking-[0.16em] text-[#687169]'
-  const fieldClass = 'w-full border border-[rgba(32,35,31,0.16)] bg-[#fcfbf8] px-3.5 py-2.5 text-sm text-[#0f211a] placeholder:text-[#8a938b] focus:outline-none focus:ring-2 focus:ring-[#a58658]/20 lg:py-2'
+  const labelClass = 'mb-1.5 block text-[11px] font-semibold text-[#59645c]'
+  const fieldClass = 'w-full rounded-xl border border-[rgba(32,35,31,0.14)] bg-[#fcfbf8] px-4 py-3 text-sm text-[#0f211a] placeholder:text-[#8a938b] transition focus:border-[#a58658] focus:outline-none focus:ring-4 focus:ring-[#a58658]/10'
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-3 lg:space-y-2">
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:gap-2">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <div>
           <label htmlFor="training-name" className={labelClass}>{copy.name}</label>
           <input
@@ -202,12 +202,12 @@ export default function TrainingQuoteForm({ locale }: { locale: string }) {
       </div>
 
       {status === 'success' && (
-        <div className="bg-[#e7e0d5] p-3.5 text-sm text-[#24362f]">
+        <div className="rounded-xl bg-[#f5f1e9] p-4 text-sm text-[#24362f]">
           {copy.success}
         </div>
       )}
       {status === 'error' && (
-        <div className="bg-red-50 p-3.5 text-sm text-red-700">
+        <div className="rounded-xl bg-red-50 p-4 text-sm text-red-700">
           {copy.error}
         </div>
       )}
@@ -215,7 +215,7 @@ export default function TrainingQuoteForm({ locale }: { locale: string }) {
       <button
         type="submit"
         disabled={status === 'loading'}
-        className="w-full bg-[#0f211a] px-6 py-3.5 text-sm font-semibold text-[#f5f1e9] transition-colors hover:bg-[#24362f] disabled:opacity-60 lg:py-3"
+        className="w-full rounded-full bg-[#0f211a] px-6 py-3.5 text-sm font-semibold text-[#f5f1e9] shadow-[0_7px_20px_rgba(16,37,29,.12)] transition duration-200 hover:-translate-y-0.5 hover:bg-[#24362f] disabled:opacity-60"
       >
         {status === 'loading' ? copy.sending : copy.submit}
       </button>

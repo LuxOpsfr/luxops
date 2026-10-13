@@ -9,9 +9,10 @@ interface Props {
   className?: string
   children: React.ReactNode
   addedLabel?: string
+  openCartOnAdd?: boolean
 }
 
-export default function AddToCartButton({ item, className, children, addedLabel }: Props) {
+export default function AddToCartButton({ item, className, children, addedLabel, openCartOnAdd = false }: Props) {
   const { addItem, items, openCart } = useCart()
   const inCart = items.some(i => i.priceId === item.priceId)
 
@@ -35,6 +36,7 @@ export default function AddToCartButton({ item, className, children, addedLabel 
         currency: item.currency,
         product_type: productType,
       })
+      if (openCartOnAdd) openCart()
     }
   }
 

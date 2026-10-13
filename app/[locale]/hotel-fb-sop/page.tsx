@@ -183,9 +183,9 @@ const FAQS_EN: FaqItem[] = [
       'Yes. Independent hotels usually need practical procedures that are easy to adapt. The important point is to document the actual flow of service, not copy a generic brand manual.',
   },
   {
-    question: 'Should I start with a starter pack or the full playbook?',
+    question: 'Should I start with a starter pack or the full SOP manual?',
     answer:
-      'Use the starter pack if you need immediate checklists, scripts and control tools. Use the full playbook if you need the complete F&B SOP reference with detailed procedures and department standards.',
+      'Use the starter pack if you need immediate checklists, scripts and control tools. Use the full SOP manual if you need the complete F&B SOP reference with detailed procedures and department standards.',
   },
 ]
 
@@ -206,9 +206,9 @@ const FAQS_FR: FaqItem[] = [
       'Oui. Les hôtels indépendants ont besoin de procédures pratiques et faciles à adapter. Le point important est de documenter le vrai flux de service, pas de copier un manuel de marque générique.',
   },
   {
-    question: 'Faut-il commencer par un starter pack ou le playbook complet ?',
+    question: 'Faut-il commencer par un starter pack ou le Manuel SOP complet ?',
     answer:
-      'Utilisez le starter pack si vous avez besoin de checklists, scripts et outils de contrôle immédiats. Utilisez le playbook complet si vous avez besoin de toute la référence SOP F&B avec procédures détaillées et standards de département.',
+      'Utilisez le starter pack si vous avez besoin de checklists, scripts et outils de contrôle immédiats. Utilisez le Manuel SOP complet si vous avez besoin de toute la référence SOP F&B avec procédures détaillées et standards de département.',
   },
 ]
 
@@ -325,14 +325,14 @@ export default async function HotelFbSopPage({ params }: { params: Promise<{ loc
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      <main className="bg-white">
-        <section className="bg-[#1A2E44] text-white px-6 pt-36 md:pt-40 pb-20">
+      <main className="bg-[#fcfbf8]">
+        <section className="bg-[#0f211a] text-white px-6 pt-36 md:pt-40 pb-20">
           <div className="max-w-5xl mx-auto text-center">
-            <span className="inline-flex items-center gap-2 bg-white/10 text-white text-xs font-semibold px-4 py-2 rounded-full mb-6 tracking-widest uppercase">
+            <span className="inline-flex items-center gap-2 bg-[#fcfbf8]/10 text-white text-xs font-semibold px-4 py-2 rounded-full mb-6 tracking-widest uppercase">
               <UtensilsCrossed size={15} />
               {isEN ? 'Food & Beverage SOP' : 'SOP Food & Beverage'}
             </span>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+            <h1 className="font-display text-4xl font-medium mb-6 leading-[1.08] sm:text-5xl md:text-[3.5rem]">
               {isEN
                 ? 'Hotel F&B SOP: Restaurant, Bar and Room Service Procedures'
                 : 'SOP F&B hôtel : procédures restaurant, bar et room service'}
@@ -347,7 +347,7 @@ export default async function HotelFbSopPage({ params }: { params: Promise<{ loc
                 href={`/${locale}/playbooks/fb-starter-pack`}
                 eventName="fb_starter_pack_cta_clicked"
                 eventProperties={{ source_page: `/${locale}/hotel-fb-sop`, position: 'hero' }}
-                className="inline-flex items-center justify-center gap-2 bg-white text-[#1A2E44] px-7 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+                className="inline-flex items-center justify-center gap-2 bg-[#fcfbf8] text-[#0f211a] px-7 py-4 rounded-full font-semibold hover:bg-gray-100 transition-colors"
               >
                 {isEN ? 'View F&B Starter Pack' : 'Voir le Starter Pack F&B'}
                 <ArrowRight size={18} />
@@ -356,9 +356,9 @@ export default async function HotelFbSopPage({ params }: { params: Promise<{ loc
                 href={`/${locale}/playbooks/fb`}
                 eventName="fb_playbook_cta_clicked"
                 eventProperties={{ source_page: `/${locale}/hotel-fb-sop`, position: 'hero' }}
-                className="inline-flex items-center justify-center gap-2 border border-white/30 text-white px-7 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors"
+                className="inline-flex items-center justify-center gap-2 border border-white/30 text-white px-7 py-4 rounded-full font-semibold hover:bg-[#fcfbf8]/10 transition-colors"
               >
-                {isEN ? 'See Full F&B Playbook' : 'Voir le Playbook F&B complet'}
+                {isEN ? 'See Full F&B SOP manual' : 'Voir le Manuel SOP F&B complet'}
               </TrackedLink>
             </div>
           </div>
@@ -369,7 +369,7 @@ export default async function HotelFbSopPage({ params }: { params: Promise<{ loc
         <section className="py-16 px-6 border-b border-gray-100">
           <div className="max-w-5xl mx-auto grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-start">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-[#0056D2] mb-4">
+              <p className="text-xs font-semibold uppercase tracking-widest text-[#a58658] mb-4">
                 {isEN ? 'Operational purpose' : 'Objectif opérationnel'}
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-[#111111] mb-5">
@@ -390,8 +390,8 @@ export default async function HotelFbSopPage({ params }: { params: Promise<{ loc
                 </p>
               </div>
             </div>
-            <div className="bg-[#F6F8FB] border border-gray-200 rounded-xl p-6">
-              <p className="text-sm font-semibold text-[#1A2E44] mb-4">
+            <div className="bg-[#f5f1e9] border border-gray-200 rounded-2xl p-6">
+              <p className="text-sm font-semibold text-[#0f211a] mb-4">
                 {isEN ? 'Core F&B SOP modules' : 'Modules SOP F&B essentiels'}
               </p>
               <div className="space-y-3">
@@ -400,7 +400,7 @@ export default async function HotelFbSopPage({ params }: { params: Promise<{ loc
                   : ['Séquence de service restaurant', 'Service petit-déjeuner', 'Bar et service des boissons', 'Flux room service', 'Gestion allergènes', 'Recovery client et réclamations']
                 ).map((item) => (
                   <div key={item} className="flex gap-3 text-sm text-gray-700">
-                    <CheckCircle2 size={17} className="text-[#0056D2] flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 size={17} className="text-[#a58658] flex-shrink-0 mt-0.5" />
                     <span>{item}</span>
                   </div>
                 ))}
@@ -409,10 +409,10 @@ export default async function HotelFbSopPage({ params }: { params: Promise<{ loc
           </div>
         </section>
 
-        <section className="py-16 px-6 bg-white">
+        <section className="py-16 px-6 bg-[#fcfbf8]">
           <div className="max-w-6xl mx-auto">
             <div className="max-w-3xl mb-10">
-              <p className="text-xs font-semibold uppercase tracking-widest text-[#0056D2] mb-4">
+              <p className="text-xs font-semibold uppercase tracking-widest text-[#a58658] mb-4">
                 {isEN ? 'What to document' : 'Ce qu’il faut documenter'}
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-[#111111] mb-4">
@@ -430,14 +430,14 @@ export default async function HotelFbSopPage({ params }: { params: Promise<{ loc
                 const icons = [UtensilsCrossed, Coffee, GlassWater, ConciergeBell, ClipboardCheck, CheckCircle2]
                 const Icon = icons[index]
                 return (
-                  <article key={area.title} className="border border-gray-200 rounded-xl p-6 hover:border-[#1A2E44] transition-colors">
-                    <Icon size={24} className="text-[#0056D2] mb-4" />
+                  <article key={area.title} className="border border-gray-200 rounded-2xl p-6 hover:border-[#0f211a] transition-colors">
+                    <Icon size={24} className="text-[#a58658] mb-4" />
                     <h3 className="text-xl font-bold text-[#111111] mb-3">{area.title}</h3>
                     <p className="text-sm text-gray-600 leading-relaxed mb-5">{area.body}</p>
                     <div className="space-y-2">
                       {area.points.map((point) => (
                         <div key={point} className="flex gap-2 text-sm text-gray-700">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#0056D2] mt-2 flex-shrink-0" />
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#a58658] mt-2 flex-shrink-0" />
                           <span>{point}</span>
                         </div>
                       ))}
@@ -449,10 +449,10 @@ export default async function HotelFbSopPage({ params }: { params: Promise<{ loc
           </div>
         </section>
 
-        <section className="py-16 px-6 bg-[#F6F8FB] border-y border-gray-100">
+        <section className="py-16 px-6 bg-[#f5f1e9] border-y border-gray-100">
           <div className="max-w-6xl mx-auto">
             <div className="max-w-3xl mx-auto text-center mb-10">
-              <p className="text-xs font-semibold uppercase tracking-widest text-[#0056D2] mb-4">
+              <p className="text-xs font-semibold uppercase tracking-widest text-[#a58658] mb-4">
                 {isEN ? 'Free operational extract' : 'Extrait opérationnel'}
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-[#111111] mb-4">
@@ -460,18 +460,18 @@ export default async function HotelFbSopPage({ params }: { params: Promise<{ loc
               </h2>
               <p className="text-gray-600 leading-relaxed">
                 {isEN
-                  ? 'This is the type of practical logic used inside the LuxOps F&B Starter Pack and F&B Playbook.'
-                  : 'C’est le type de logique pratique utilisée dans le Starter Pack F&B et le Playbook F&B LuxOps.'}
+                  ? 'This is the type of practical logic used inside the LuxOps F&B Starter Pack and F&B SOP manual.'
+                  : 'C’est le type de logique pratique utilisée dans le Starter Pack F&B et le Manuel SOP F&B LuxOps.'}
               </p>
             </div>
             <div className="grid lg:grid-cols-3 gap-6">
               {dailyFlow.map((block) => (
-                <div key={block.title} className="bg-white border border-gray-200 rounded-xl p-6">
+                <div key={block.title} className="bg-[#fcfbf8] border border-gray-200 rounded-2xl p-6">
                   <h3 className="text-lg font-bold text-[#111111] mb-5">{block.title}</h3>
                   <div className="space-y-4">
                     {block.items.map((item) => (
                       <div key={item} className="flex gap-3 text-sm text-gray-700 leading-relaxed">
-                        <CheckCircle2 size={16} className="text-[#0056D2] flex-shrink-0 mt-0.5" />
+                        <CheckCircle2 size={16} className="text-[#a58658] flex-shrink-0 mt-0.5" />
                         <span>{item}</span>
                       </div>
                     ))}
@@ -484,8 +484,8 @@ export default async function HotelFbSopPage({ params }: { params: Promise<{ loc
 
         <section className="py-16 px-6">
           <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-6">
-            <div className="border border-[#D7E4F7] bg-[#F4F8FF] rounded-xl p-8">
-              <p className="text-xs font-semibold uppercase tracking-widest text-[#0056D2] mb-4">
+            <div className="border border-[#e7e1d7] bg-[#f5f1e9] rounded-2xl p-8">
+              <p className="text-xs font-semibold uppercase tracking-widest text-[#a58658] mb-4">
                 {isEN ? 'Starter Pack' : 'Starter Pack'}
               </p>
               <h2 className="text-3xl font-bold text-[#111111] mb-4">
@@ -500,18 +500,18 @@ export default async function HotelFbSopPage({ params }: { params: Promise<{ loc
                 href={`/${locale}/playbooks/fb-starter-pack`}
                 eventName="fb_starter_pack_cta_clicked"
                 eventProperties={{ source_page: `/${locale}/hotel-fb-sop`, position: 'comparison' }}
-                className="inline-flex items-center gap-2 bg-[#0056D2] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#0046B8] transition-colors"
+                className="inline-flex items-center gap-2 bg-[#a58658] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#24362f] transition-colors"
               >
                 {isEN ? 'View Starter Pack' : 'Voir le Starter Pack'}
                 <ArrowRight size={17} />
               </TrackedLink>
             </div>
-            <div className="border border-gray-200 rounded-xl p-8">
+            <div className="border border-gray-200 rounded-2xl p-8">
               <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-4">
                 {isEN ? 'Full reference' : 'Référence complète'}
               </p>
               <h2 className="text-3xl font-bold text-[#111111] mb-4">
-                {isEN ? 'Full F&B Playbook' : 'Playbook F&B complet'}
+                {isEN ? 'Full F&B SOP manual' : 'SOP manual F&B complet'}
               </h2>
               <p className="text-gray-600 leading-relaxed mb-6">
                 {isEN
@@ -522,27 +522,27 @@ export default async function HotelFbSopPage({ params }: { params: Promise<{ loc
                 href={`/${locale}/playbooks/fb`}
                 eventName="fb_playbook_cta_clicked"
                 eventProperties={{ source_page: `/${locale}/hotel-fb-sop`, position: 'comparison' }}
-                className="inline-flex items-center gap-2 border border-[#1A2E44] text-[#1A2E44] px-6 py-3 rounded-lg font-semibold hover:bg-[#1A2E44] hover:text-white transition-colors"
+                className="inline-flex items-center gap-2 border border-[#0f211a] text-[#0f211a] px-6 py-3 rounded-full font-semibold hover:bg-[#0f211a] hover:text-white transition-colors"
               >
-                {isEN ? 'See Full Playbook' : 'Voir le Playbook complet'}
+                {isEN ? 'See Full SOP manual' : 'Voir le Manuel SOP complet'}
                 <ArrowRight size={17} />
               </TrackedLink>
             </div>
           </div>
         </section>
 
-        <section className="py-16 px-6 bg-[#F6F8FB] border-y border-gray-100">
+        <section className="py-16 px-6 bg-[#f5f1e9] border-y border-gray-100">
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-8">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-widest text-[#0056D2] mb-4">
+                <p className="text-xs font-semibold uppercase tracking-widest text-[#a58658] mb-4">
                   {isEN ? 'F&B guides' : 'Guides F&B'}
                 </p>
                 <h2 className="text-3xl font-bold text-[#111111]">
                   {isEN ? 'Related F&B procedure guides' : 'Guides F&B associés'}
                 </h2>
               </div>
-              <Link href={`/${locale}/blog`} className="text-sm font-semibold text-[#0056D2] hover:underline">
+              <Link href={`/${locale}/blog`} className="text-sm font-semibold text-[#a58658] hover:underline">
                 {isEN ? 'View all guides' : 'Voir tous les guides'}
               </Link>
             </div>
@@ -551,7 +551,7 @@ export default async function HotelFbSopPage({ params }: { params: Promise<{ loc
                 <Link
                   key={article.href}
                   href={localizeHref(locale, article.href)}
-                  className="group block bg-white border border-gray-200 rounded-xl p-6 hover:border-[#1A2E44] hover:shadow-sm transition-all"
+                  className="group block bg-[#fcfbf8] border border-gray-200 rounded-2xl p-6 hover:border-[#0f211a] hover:shadow-sm transition-all"
                 >
                   <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">
                     {isEN ? 'Guide' : 'Guide'}
@@ -568,7 +568,7 @@ export default async function HotelFbSopPage({ params }: { params: Promise<{ loc
           </div>
         </section>
 
-        <section className="py-16 px-6 bg-white">
+        <section className="py-16 px-6 bg-[#fcfbf8]">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-[#111111] mb-8">
               {isEN ? 'Frequently asked questions' : 'Questions fréquentes'}
@@ -591,15 +591,15 @@ export default async function HotelFbSopPage({ params }: { params: Promise<{ loc
             </h2>
             <p className="text-gray-300 leading-relaxed mb-8">
               {isEN
-                ? 'Start with practical checklists and scripts, then move to the full F&B Playbook when you need the complete department reference.'
-                : 'Commencez avec des checklists et scripts pratiques, puis passez au Playbook F&B complet lorsque vous avez besoin de toute la référence du département.'}
+                ? 'Start with practical checklists and scripts, then move to the full F&B SOP manual when you need the complete department reference.'
+                : 'Commencez avec des checklists et scripts pratiques, puis passez au Manuel SOP F&B complet lorsque vous avez besoin de toute la référence du département.'}
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <TrackedLink
                 href={`/${locale}/playbooks/fb-starter-pack`}
                 eventName="fb_starter_pack_cta_clicked"
                 eventProperties={{ source_page: `/${locale}/hotel-fb-sop`, position: 'final' }}
-                className="inline-flex items-center justify-center gap-2 bg-white text-[#111111] px-7 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+                className="inline-flex items-center justify-center gap-2 bg-[#fcfbf8] text-[#111111] px-7 py-4 rounded-full font-semibold hover:bg-gray-100 transition-colors"
               >
                 {isEN ? 'View F&B Starter Pack' : 'Voir le Starter Pack F&B'}
                 <ArrowRight size={18} />
@@ -608,9 +608,9 @@ export default async function HotelFbSopPage({ params }: { params: Promise<{ loc
                 href={`/${locale}/free-hotel-procedures`}
                 eventName="free_chapter_cta_clicked"
                 eventProperties={{ source_page: `/${locale}/hotel-fb-sop`, position: 'final' }}
-                className="inline-flex items-center justify-center gap-2 border border-white/30 text-white px-7 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors"
+                className="inline-flex items-center justify-center gap-2 border border-white/30 text-white px-7 py-4 rounded-full font-semibold hover:bg-[#fcfbf8]/10 transition-colors"
               >
-                {isEN ? 'Download a Free Chapter' : 'Télécharger un chapitre gratuit'}
+                {isEN ? 'Receive a sample chapter' : 'Recevoir un chapitre de découverte'}
               </TrackedLink>
             </div>
           </div>

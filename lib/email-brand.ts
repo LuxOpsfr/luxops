@@ -49,7 +49,7 @@ export function buildLuxOpsEmail({
       }
     </style>
   </head>
-  <body style="margin:0;padding:0;background:#f3efe7;color:#0f211a;font-family:Arial,Helvetica,sans-serif;">
+  <body style="margin:0;padding:0;background:#f3efe7;color:#0f211a;font-family:'Avenir Next',Avenir,'Helvetica Neue',Arial,sans-serif;">
     <div style="display:none;max-height:0;overflow:hidden;opacity:0;color:transparent;">${previewText}</div>
     <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background:#f3efe7;">
       <tr>
@@ -58,7 +58,7 @@ export function buildLuxOpsEmail({
             <tr>
               <td class="email-header" style="padding:32px 36px 28px;border-bottom:1px solid #d8d0c3;text-align:${alignment};">
                 <a href="${SITE_URL}/${locale}" style="color:#0f211a;text-decoration:none;">
-                  <img src="${SITE_URL}/brand/luxops-wordmark-dark.png" width="330" alt="LuxOps — Standardizing Excellence in High-End Hospitality" style="display:block;width:100%;max-width:330px;height:auto;border:0;${alignment === 'center' ? 'margin:0 auto;' : ''}">
+                  <img src="${SITE_URL}/brand/luxops-wordmark-dark.png" width="330" alt="LuxOps. Standardizing Excellence in High-End Hospitality" style="display:block;width:100%;max-width:330px;height:auto;border:0;${alignment === 'center' ? 'margin:0 auto;' : ''}">
                 </a>
               </td>
             </tr>

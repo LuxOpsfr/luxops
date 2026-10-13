@@ -151,8 +151,8 @@ export const STARTER_PACKS: StarterPackEntry[] = [
     },
     fullPlaybookId: 'fo',
     fullPlaybookTitle: {
-      en: 'Full Front Office Playbook',
-      fr: 'Playbook Front Office complet',
+      en: 'Complete Front Office SOP Manual',
+      fr: 'Manuel SOP Front Office complet',
     },
     faq: [
       {
@@ -191,12 +191,12 @@ export const STARTER_PACKS: StarterPackEntry[] = [
       },
       {
         question: {
-          en: 'What is the difference with the full playbook?',
-          fr: 'Quelle différence avec le playbook complet ?',
+          en: 'What is the difference with the complete SOP manual?',
+          fr: 'Quelle différence avec le manuel SOP complet ?',
         },
         answer: {
-          en: 'The Starter Pack gives you editable daily tools. The full playbook gives you the complete SOP reference and operational structure behind the department.',
-          fr: 'Le Starter Pack donne des outils quotidiens modifiables. Le playbook complet apporte la référence SOP complète et la structure opérationnelle du département.',
+          en: 'The Starter Pack gives you editable daily tools. The complete SOP manual gives you the full reference and operational structure behind the department.',
+          fr: 'Le Starter Pack donne des outils quotidiens modifiables. Le manuel SOP complet apporte la référence et la structure opérationnelle complète du département.',
         },
       },
     ],
@@ -315,8 +315,8 @@ export const STARTER_PACKS: StarterPackEntry[] = [
     },
     fullPlaybookId: 'hsk',
     fullPlaybookTitle: {
-      en: 'Full Housekeeping Playbook',
-      fr: 'Playbook Housekeeping complet',
+      en: 'Complete Housekeeping SOP Manual',
+      fr: 'Manuel SOP Housekeeping complet',
     },
     faq: [
       {
@@ -358,12 +358,12 @@ export const STARTER_PACKS: StarterPackEntry[] = [
       },
       {
         question: {
-          en: 'What is the difference with the full playbook?',
-          fr: 'Quelle différence avec le playbook complet ?',
+          en: 'What is the difference with the complete SOP manual?',
+          fr: 'Quelle différence avec le manuel SOP complet ?',
         },
         answer: {
-          en: 'The kit focuses on inspection tools and control sheets. The full playbook covers the whole housekeeping department and its SOP structure.',
-          fr: 'Le kit se concentre sur les outils d’inspection et les feuilles de contrôle. Le playbook complet couvre l’ensemble du département housekeeping et sa structure SOP.',
+          en: 'The kit focuses on inspection tools and control sheets. The complete SOP manual covers the whole housekeeping department and its operational standards.',
+          fr: 'Le kit se concentre sur les outils d’inspection et les feuilles de contrôle. Le manuel SOP complet couvre l’ensemble du département housekeeping et ses standards opérationnels.',
         },
       },
     ],
@@ -488,8 +488,8 @@ export const STARTER_PACKS: StarterPackEntry[] = [
     },
     fullPlaybookId: 'fb',
     fullPlaybookTitle: {
-      en: 'Full F&B Playbook',
-      fr: 'Playbook F&B complet',
+      en: 'Complete F&B SOP Manual',
+      fr: 'Manuel SOP F&B complet',
     },
     faq: [
       {
@@ -528,12 +528,12 @@ export const STARTER_PACKS: StarterPackEntry[] = [
       },
       {
         question: {
-          en: 'What is the difference with the full playbook?',
-          fr: 'Quelle différence avec le playbook complet ?',
+          en: 'What is the difference with the complete SOP manual?',
+          fr: 'Quelle différence avec le manuel SOP complet ?',
         },
         answer: {
-          en: 'The Starter Pack gives you practical daily tools. The full playbook gives you the complete F&B SOP structure, detailed standards and broader department guidance.',
-          fr: 'Le Starter Pack donne des outils quotidiens pratiques. Le playbook complet apporte la structure SOP F&B complète, les standards détaillés et la guidance globale du département.',
+          en: 'The Starter Pack gives you practical daily tools. The complete SOP manual gives you the full F&B structure, detailed standards and broader department guidance.',
+          fr: 'Le Starter Pack donne des outils quotidiens pratiques. Le manuel SOP complet apporte toute la structure F&B, les standards détaillés et les repères du département.',
         },
       },
     ],

@@ -49,21 +49,20 @@ export default function ContactForm() {
   }
 
   const inputClass =
-    'w-full px-4 py-3 text-sm text-[#0f211a] bg-white focus:outline-none focus:ring-2 focus:ring-[#a58658]/30 transition-colors'
+    'w-full rounded-xl px-4 py-3.5 text-sm text-[#0f211a] bg-white focus:outline-none focus:ring-2 focus:ring-[#a58658]/30 transition-colors'
   const labelClass = 'block text-xs font-semibold uppercase tracking-[0.14em] text-[#4f5a52] mb-2'
-  const wrapClass = 'border border-[rgba(32,35,31,0.2)]'
+  const wrapClass = 'overflow-hidden rounded-xl border border-[rgba(32,35,31,0.18)] transition-colors focus-within:border-[#a58658]'
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
           <label htmlFor="contact-name" className={labelClass}>{t('name')}</label>
-          <div className={wrapClass} style={{ borderRadius: '0.125rem' }}>
+          <div className={wrapClass}>
             <input
               id="contact-name"
               {...register('name', { required: true })}
               className={inputClass}
-              style={{ borderRadius: '0.125rem' }}
               placeholder={t('name_placeholder')}
             />
           </div>
@@ -71,13 +70,12 @@ export default function ContactForm() {
         </div>
         <div>
           <label htmlFor="contact-email" className={labelClass}>{t('email')}</label>
-          <div className={wrapClass} style={{ borderRadius: '0.125rem' }}>
+          <div className={wrapClass}>
             <input
               id="contact-email"
               {...register('email', { required: true, pattern: /^\S+@\S+\.\S+$/ })}
               type="email"
               className={inputClass}
-              style={{ borderRadius: '0.125rem' }}
               placeholder={t('email_placeholder')}
             />
           </div>
@@ -87,12 +85,11 @@ export default function ContactForm() {
 
       <div>
         <label htmlFor="contact-company" className={labelClass}>{t('company')}</label>
-        <div className={wrapClass} style={{ borderRadius: '0.125rem' }}>
+        <div className={wrapClass}>
           <input
             id="contact-company"
             {...register('company')}
             className={inputClass}
-            style={{ borderRadius: '0.125rem' }}
             placeholder={t('company_placeholder')}
           />
         </div>
@@ -101,12 +98,11 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
           <label htmlFor="contact-subject" className={labelClass}>{t('subject')}</label>
-          <div className={wrapClass} style={{ borderRadius: '0.125rem' }}>
+          <div className={wrapClass}>
             <input
               id="contact-subject"
               {...register('subject', { required: true })}
               className={inputClass}
-              style={{ borderRadius: '0.125rem' }}
               placeholder={t('subject_placeholder')}
             />
           </div>
@@ -114,12 +110,11 @@ export default function ContactForm() {
         </div>
         <div>
           <label htmlFor="contact-need-type" className={labelClass}>{t('need_type')}</label>
-          <div className={wrapClass} style={{ borderRadius: '0.125rem' }}>
+          <div className={wrapClass}>
             <select
               id="contact-need-type"
               {...register('need_type')}
               className={`${inputClass} cursor-pointer`}
-              style={{ borderRadius: '0.125rem' }}
             >
               <option value="">{t('need_placeholder')}</option>
               <option value="playbooks">{t('need_playbooks')}</option>
@@ -132,13 +127,12 @@ export default function ContactForm() {
 
       <div>
         <label htmlFor="contact-message" className={labelClass}>{t('message')}</label>
-        <div className={wrapClass} style={{ borderRadius: '0.125rem' }}>
+        <div className={wrapClass}>
           <textarea
             id="contact-message"
             {...register('message', { required: true })}
             rows={6}
             className={`${inputClass} resize-none`}
-            style={{ borderRadius: '0.125rem' }}
             placeholder={t('message_placeholder')}
           />
         </div>
@@ -147,7 +141,7 @@ export default function ContactForm() {
 
       {status === 'success' && (
         <div
-          className="bg-[#e7e0d5] p-4 text-sm text-[#0f211a]"
+          className="rounded-xl bg-[#e7e0d5] p-4 text-sm text-[#0f211a]"
         >
           {t('success')}
         </div>
@@ -155,7 +149,7 @@ export default function ContactForm() {
       {status === 'error' && (
         <div
           className="p-4 text-sm text-red-700"
-          style={{ backgroundColor: '#fef2f2', borderRadius: '0.125rem' }}
+          style={{ backgroundColor: '#fef2f2', borderRadius: '0.75rem' }}
         >
           {t('error')}
         </div>
@@ -164,7 +158,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === 'loading'}
-        className="w-full bg-[#0f211a] px-6 py-4 text-sm font-semibold text-[#f5f1e9] transition-colors hover:bg-[#24362f] disabled:opacity-60"
+        className="w-full rounded-full bg-[#0f211a] px-6 py-4 text-sm font-semibold text-[#f5f1e9] shadow-[0_8px_20px_rgba(15,33,26,.12)] transition hover:-translate-y-0.5 hover:bg-[#24362f] disabled:opacity-60"
       >
         {status === 'loading' ? t('sending') : t('send')}
       </button>

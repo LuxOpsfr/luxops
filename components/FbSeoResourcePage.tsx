@@ -85,7 +85,7 @@ const SEQUENCE_EN: ResourceContent = {
   title: 'Food and Beverage Service Sequence',
   metaTitle: 'Food and Beverage Service Sequence for Hotels | LuxOps',
   metaDescription:
-    'A hotel F&B service sequence adapted from the LuxOps F&B Playbook: 21 restaurant service steps, timing standards, briefing, mise en place and recovery rules.',
+    'A hotel F&B service sequence adapted from the LuxOps F&B SOP manual: 21 restaurant service steps, timing standards, briefing, mise en place and recovery rules.',
   keywords:
     'food and beverage service sequence, service sequence in serving food and beverage, hotel restaurant service sequence, F&B service procedure hotel',
   eyebrow: 'F&B service sequence',
@@ -95,14 +95,14 @@ const SEQUENCE_EN: ResourceContent = {
   sourceNote:
     'This page summarizes one operational method used inside the LuxOps F&B products. The complete checklists and editable tools are available in the paid versions.',
   extractedFrom:
-    'Extracted from the restaurant service, mise en place and guest recovery chapters of the LuxOps F&B Playbook.',
+    'Extracted from the restaurant service, mise en place and guest recovery chapters of the LuxOps F&B SOP manual.',
   primaryCta: 'View F&B Starter Pack',
-  secondaryCta: 'View Full F&B Playbook',
-  freeChapterCta: 'Download a Free Chapter',
+  secondaryCta: 'View Full F&B SOP manual',
+  freeChapterCta: 'Receive a Sample Chapter',
   sectionLabel: '21-step service flow',
   sectionTitle: 'The sequence from guest arrival to farewell',
   sectionIntro:
-    'The playbook treats service as a choreographed sequence, not as a random list of tasks. Each step connects naturally to the next, so the team can stay warm, precise and consistent.',
+    'The SOP manual treats service as a choreographed sequence, not as a random list of tasks. Each step connects naturally to the next, so the team can stay warm, precise and consistent.',
   steps: [
     { label: '01', action: 'Welcome and greet', timing: 'Within 10 seconds' },
     { label: '02', action: 'Escort to table', timing: 'Immediate' },
@@ -159,7 +159,7 @@ const SEQUENCE_EN: ResourceContent = {
     },
     {
       title: 'Recovery if timing slips',
-      intro: 'The playbook uses a simple rule: the guest should hear from the team before frustration is visible.',
+      intro: 'The SOP manual uses a simple rule: the guest should hear from the team before frustration is visible.',
       items: [
         'Acknowledge the delay before the guest needs to ask',
         'Give a brief and honest update without defensive excuses',
@@ -180,7 +180,7 @@ const SEQUENCE_EN: ResourceContent = {
   productTitle: 'F&B Starter Pack',
   productText:
     'Includes daily service checklist, restaurant opening checklist, restaurant closing checklist, service sequence SOP, briefing template, table inspection checklist, recovery scripts, allergen tracker and room service checklist.',
-  playbookTitle: 'Full F&B Playbook',
+  playbookTitle: 'Full F&B SOP manual',
   playbookText:
     'The complete reference for restaurant, breakfast, bar, wine, room service, guest interaction, mise en place, team management and quality standards.',
   relatedTitle: 'Need the room service version?',
@@ -207,7 +207,7 @@ const SEQUENCE_EN: ResourceContent = {
   ],
   finalTitle: 'Turn the sequence into daily service tools',
   finalText:
-    'Use the starter pack for editable checklists and the full playbook when you need the complete F&B department reference.',
+    'Use the starter pack for editable checklists and the full SOP manual when you need the complete F&B department reference.',
 }
 
 const SEQUENCE_FR: ResourceContent = {
@@ -216,7 +216,7 @@ const SEQUENCE_FR: ResourceContent = {
   title: 'Séquence de service restaurant hôtel',
   metaTitle: 'Séquence de service restaurant hôtel | LuxOps',
   metaDescription:
-    'Séquence de service restaurant hôtel adaptée du Playbook F&B LuxOps : 21 étapes, timing, briefing, mise en place, prise de commande et recovery client.',
+    'Séquence de service restaurant hôtel adaptée du Manuel SOP F&B LuxOps : 21 étapes, timing, briefing, mise en place, prise de commande et recovery client.',
   keywords:
     'séquence service restaurant hôtel, standards service F&B hôtel, procédure service restaurant, SOP restaurant hôtel, food and beverage hôtel',
   eyebrow: 'Séquence de service restaurant',
@@ -226,14 +226,14 @@ const SEQUENCE_FR: ResourceContent = {
   sourceNote:
     'Cette page résume une méthode opérationnelle utilisée dans les produits F&B LuxOps. Les checklists complètes et outils modifiables sont disponibles dans les versions payantes.',
   extractedFrom:
-    'Extrait des chapitres service restaurant, mise en place et recovery client du Playbook F&B LuxOps.',
+    'Extrait des chapitres service restaurant, mise en place et recovery client du Manuel SOP F&B LuxOps.',
   primaryCta: 'Voir le Starter Pack F&B',
-  secondaryCta: 'Voir le Playbook F&B complet',
-  freeChapterCta: 'Télécharger un chapitre gratuit',
+  secondaryCta: 'Voir le Manuel SOP F&B complet',
+  freeChapterCta: 'Recevoir un chapitre de découverte',
   sectionLabel: 'Séquence en 21 étapes',
   sectionTitle: 'Le déroulé complet, de l’arrivée client au départ',
   sectionIntro:
-    'Le playbook traite le service comme une séquence chorégraphiée, et non comme une succession de tâches isolées. Chaque étape s’enchaîne avec la suivante, ce qui permet à l’équipe de rester naturelle, précise et régulière.',
+    'Le manuel SOP traite le service comme une séquence chorégraphiée, et non comme une succession de tâches isolées. Chaque étape s’enchaîne avec la suivante, ce qui permet à l’équipe de rester naturelle, précise et régulière.',
   steps: [
     { label: '01', action: 'Accueillir et saluer', timing: 'Dans les 10 secondes' },
     { label: '02', action: 'Accompagner à la table', timing: 'Immédiatement' },
@@ -290,7 +290,7 @@ const SEQUENCE_FR: ResourceContent = {
     },
     {
       title: 'Recovery si le timing se dégrade',
-      intro: 'Le playbook suit une règle simple : le client doit recevoir une information avant que la frustration soit visible.',
+      intro: 'Le manuel SOP suit une règle simple : le client doit recevoir une information avant que la frustration soit visible.',
       items: [
         'Reconnaître le retard avant que le client ait besoin de demander',
         'Donner une information brève et honnête, sans justification défensive',
@@ -311,7 +311,7 @@ const SEQUENCE_FR: ResourceContent = {
   productTitle: 'Starter Pack F&B',
   productText:
     'Inclut checklist service quotidien, checklist ouverture restaurant, checklist fermeture, SOP séquence de service, template de briefing, checklist inspection de table, scripts recovery, tracker allergènes et checklist room service.',
-  playbookTitle: 'Playbook F&B complet',
+  playbookTitle: 'Manuel SOP F&B complet',
   playbookText:
     'La référence complète pour restaurant, petit-déjeuner, bar, vin, room service, interaction client, mise en place, management équipe et standards qualité.',
   relatedTitle: 'Vous voulez la version room service ?',
@@ -338,7 +338,7 @@ const SEQUENCE_FR: ResourceContent = {
   ],
   finalTitle: 'Transformer la séquence en outils de service quotidiens',
   finalText:
-    'Utilisez le Starter Pack pour des checklists prêtes à l’emploi, puis le Playbook complet lorsque vous avez besoin de toute la référence F&B du département.',
+    'Utilisez le Starter Pack pour des checklists prêtes à l’emploi, puis le Manuel SOP complet lorsque vous avez besoin de toute la référence F&B du département.',
 }
 
 const ROOM_SERVICE_EN: ResourceContent = {
@@ -347,7 +347,7 @@ const ROOM_SERVICE_EN: ResourceContent = {
   title: 'Hotel Room Service Checklist',
   metaTitle: 'Hotel Room Service Checklist and SOP | LuxOps',
   metaDescription:
-    'A hotel room service checklist adapted from the LuxOps F&B Playbook: order taking, timing, tray and trolley setup, delivery protocol, delay recovery and tray collection.',
+    'A hotel room service checklist adapted from the LuxOps F&B SOP manual: order taking, timing, tray and trolley setup, delivery protocol, delay recovery and tray collection.',
   keywords:
     'hotel room service checklist, hotel room service SOP, room service procedure, room service order taking procedures, in-room dining checklist',
   eyebrow: 'Room service checklist',
@@ -357,10 +357,10 @@ const ROOM_SERVICE_EN: ResourceContent = {
   sourceNote:
     'This page summarizes one operational method used inside the LuxOps F&B products. The complete room service tools are available in the paid versions.',
   extractedFrom:
-    'Extracted from the room service, guest interaction, mise en place and quality chapters of the LuxOps F&B Playbook.',
+    'Extracted from the room service, guest interaction, mise en place and quality chapters of the LuxOps F&B SOP manual.',
   primaryCta: 'View F&B Starter Pack',
-  secondaryCta: 'View Full F&B Playbook',
-  freeChapterCta: 'Download a Free Chapter',
+  secondaryCta: 'View Full F&B SOP manual',
+  freeChapterCta: 'Receive a Sample Chapter',
   sectionLabel: 'Operational checklist',
   sectionTitle: 'The room service flow from call to collection',
   sectionIntro:
@@ -435,7 +435,7 @@ const ROOM_SERVICE_EN: ResourceContent = {
   productTitle: 'F&B Starter Pack',
   productText:
     'Includes a room service checklist, daily service checklist, opening and closing checklists, briefing template, service sequence SOP, recovery scripts and allergen tracker.',
-  playbookTitle: 'Full F&B Playbook',
+  playbookTitle: 'Full F&B SOP manual',
   playbookText:
     'The complete reference for room service philosophy, order taking, tray and trolley setup, timing standards, VIP in-room dining, troubleshooting and quality control.',
   relatedTitle: 'Need the restaurant service sequence?',
@@ -452,7 +452,7 @@ const ROOM_SERVICE_EN: ResourceContent = {
     {
       question: 'What is the standard room service timing in hotels?',
       answer:
-        'The LuxOps F&B Playbook uses reference targets: continental breakfast 20 to 25 minutes, full breakfast 25 to 30 minutes, lunch 30 to 35 minutes, dinner 35 to 45 minutes and beverages only 15 to 20 minutes.',
+        'The LuxOps F&B SOP manual uses reference targets: continental breakfast 20 to 25 minutes, full breakfast 25 to 30 minutes, lunch 30 to 35 minutes, dinner 35 to 45 minutes and beverages only 15 to 20 minutes.',
     },
     {
       question: 'Is room service part of the restaurant SOP?',
@@ -462,7 +462,7 @@ const ROOM_SERVICE_EN: ResourceContent = {
   ],
   finalTitle: 'Make room service easier to control',
   finalText:
-    'Start with the checklist in the F&B Starter Pack, then use the full playbook when you need the complete room service SOP and quality control reference.',
+    'Start with the checklist in the F&B Starter Pack, then use the full SOP manual when you need the complete room service SOP and quality control reference.',
 }
 
 const ROOM_SERVICE_FR: ResourceContent = {
@@ -471,7 +471,7 @@ const ROOM_SERVICE_FR: ResourceContent = {
   title: 'Checklist room service hôtel',
   metaTitle: 'Checklist room service hôtel et SOP | LuxOps',
   metaDescription:
-    'Checklist room service hôtel adaptée du Playbook F&B LuxOps : prise de commande, timing, dressage plateau et chariot, livraison, recovery retard et débarrassage.',
+    'Checklist room service hôtel adaptée du Manuel SOP F&B LuxOps : prise de commande, timing, dressage plateau et chariot, livraison, recovery retard et débarrassage.',
   keywords:
     'checklist room service hôtel, SOP room service hôtel, procédure room service, prise de commande room service, service en chambre hôtel',
   eyebrow: 'Checklist room service',
@@ -481,10 +481,10 @@ const ROOM_SERVICE_FR: ResourceContent = {
   sourceNote:
     'Cette page résume une méthode opérationnelle utilisée dans les produits F&B LuxOps. Les outils room service complets sont disponibles dans les versions payantes.',
   extractedFrom:
-    'Extrait des chapitres room service, interaction client, mise en place et qualité du Playbook F&B LuxOps.',
+    'Extrait des chapitres room service, interaction client, mise en place et qualité du Manuel SOP F&B LuxOps.',
   primaryCta: 'Voir le Starter Pack F&B',
-  secondaryCta: 'Voir le Playbook F&B complet',
-  freeChapterCta: 'Télécharger un chapitre gratuit',
+  secondaryCta: 'Voir le Manuel SOP F&B complet',
+  freeChapterCta: 'Recevoir un chapitre de découverte',
   sectionLabel: 'Checklist opérationnelle',
   sectionTitle: 'Le flux room service, de l’appel au débarrassage',
   sectionIntro:
@@ -559,7 +559,7 @@ const ROOM_SERVICE_FR: ResourceContent = {
   productTitle: 'Starter Pack F&B',
   productText:
     'Inclut checklist room service, checklist service quotidien, checklists ouverture et fermeture, template de briefing, SOP séquence de service, scripts recovery et tracker allergènes.',
-  playbookTitle: 'Playbook F&B complet',
+  playbookTitle: 'Manuel SOP F&B complet',
   playbookText:
     'La référence complète pour philosophie room service, prise de commande, dressage plateau et chariot, standards de timing, VIP in-room dining, troubleshooting et contrôle qualité.',
   relatedTitle: 'Besoin de la séquence restaurant ?',
@@ -576,7 +576,7 @@ const ROOM_SERVICE_FR: ResourceContent = {
     {
       question: 'Quels sont les délais standard du room service ?',
       answer:
-        'Le Playbook F&B LuxOps utilise ces repères : petit-déjeuner continental 20 à 25 minutes, petit-déjeuner complet 25 à 30 minutes, déjeuner 30 à 35 minutes, dîner 35 à 45 minutes et boissons seules 15 à 20 minutes.',
+        'Le Manuel SOP F&B LuxOps utilise ces repères : petit-déjeuner continental 20 à 25 minutes, petit-déjeuner complet 25 à 30 minutes, déjeuner 30 à 35 minutes, dîner 35 à 45 minutes et boissons seules 15 à 20 minutes.',
     },
     {
       question: 'Le room service fait-il partie de la SOP restaurant ?',
@@ -586,7 +586,7 @@ const ROOM_SERVICE_FR: ResourceContent = {
   ],
   finalTitle: 'Rendre le room service plus facile à contrôler',
   finalText:
-    'Commencez avec la checklist du Starter Pack F&B, puis utilisez le Playbook complet lorsque vous avez besoin de toute la procédure room service et du contrôle qualité.',
+    'Commencez avec la checklist du Starter Pack F&B, puis utilisez le Manuel SOP complet lorsque vous avez besoin de toute la procédure room service et du contrôle qualité.',
 }
 
 const RESTAURANT_OPENING_EN: ResourceContent = {
@@ -607,8 +607,8 @@ const RESTAURANT_OPENING_EN: ResourceContent = {
   extractedFrom:
     'Based on the restaurant opening checklist, table inspection checklist, service briefing and mise en place standards from LuxOps F&B resources.',
   primaryCta: 'View F&B Starter Pack',
-  secondaryCta: 'View Full F&B Playbook',
-  freeChapterCta: 'Download a Free Chapter',
+  secondaryCta: 'View Full F&B SOP manual',
+  freeChapterCta: 'Receive a Sample Chapter',
   sectionLabel: 'Pre-service flow',
   sectionTitle: 'What to check before opening the restaurant',
   sectionIntro:
@@ -682,7 +682,7 @@ const RESTAURANT_OPENING_EN: ResourceContent = {
   productTitle: 'F&B Starter Pack',
   productText:
     'Includes restaurant opening checklist, closing checklist, daily service checklist, briefing template, table inspection checklist, service sequence SOP and recovery scripts.',
-  playbookTitle: 'Full F&B Playbook',
+  playbookTitle: 'Full F&B SOP manual',
   playbookText:
     'The complete reference for restaurant service, breakfast, bar, wine, room service, guest interaction, mise en place, team management and quality standards.',
   relatedTitle: 'Need the full service sequence?',
@@ -709,7 +709,7 @@ const RESTAURANT_OPENING_EN: ResourceContent = {
   ],
   finalTitle: 'Prepare the restaurant before pressure starts',
   finalText:
-    'Use the starter pack for editable restaurant opening tools and the full playbook when you need the complete F&B operating reference.',
+    'Use the starter pack for editable restaurant opening tools and the full SOP manual when you need the complete F&B operating reference.',
 }
 
 const RESTAURANT_OPENING_FR: ResourceContent = {
@@ -730,8 +730,8 @@ const RESTAURANT_OPENING_FR: ResourceContent = {
   extractedFrom:
     'Adapté de la checklist d’ouverture restaurant, de la checklist inspection de table, du briefing pré-service et des standards de mise en place des ressources F&B LuxOps.',
   primaryCta: 'Voir le Starter Pack F&B',
-  secondaryCta: 'Voir le Playbook F&B complet',
-  freeChapterCta: 'Télécharger un chapitre gratuit',
+  secondaryCta: 'Voir le Manuel SOP F&B complet',
+  freeChapterCta: 'Recevoir un chapitre de découverte',
   sectionLabel: 'Flux pré-service',
   sectionTitle: 'Ce qu’il faut contrôler avant d’ouvrir le restaurant',
   sectionIntro:
@@ -805,7 +805,7 @@ const RESTAURANT_OPENING_FR: ResourceContent = {
   productTitle: 'Starter Pack F&B',
   productText:
     'Inclut checklist d’ouverture restaurant, checklist de fermeture, checklist service quotidien, template de briefing, checklist inspection de table, SOP séquence de service et scripts recovery.',
-  playbookTitle: 'Playbook F&B complet',
+  playbookTitle: 'Manuel SOP F&B complet',
   playbookText:
     'La référence complète pour service restaurant, petit-déjeuner, bar, vin, room service, interaction client, mise en place, management d’équipe et standards qualité.',
   relatedTitle: 'Besoin de la séquence de service complète ?',
@@ -832,7 +832,7 @@ const RESTAURANT_OPENING_FR: ResourceContent = {
   ],
   finalTitle: 'Préparer le restaurant avant que la pression commence',
   finalText:
-    'Utilisez le Starter Pack pour des outils d’ouverture prêts à l’emploi, puis le Playbook complet lorsque vous avez besoin de toute la référence opérationnelle F&B.',
+    'Utilisez le Starter Pack pour des outils d’ouverture prêts à l’emploi, puis le Manuel SOP complet lorsque vous avez besoin de toute la référence opérationnelle F&B.',
 }
 
 const BAR_OPENING_EN: ResourceContent = {
@@ -851,10 +851,10 @@ const BAR_OPENING_EN: ResourceContent = {
   sourceNote:
     'This page summarizes one operational method used inside the LuxOps F&B products. The complete checklists and editable PPTX tools are available in the paid versions.',
   extractedFrom:
-    'Adapted from the bar operations, mise en place, responsible service, stock control and quality chapters of the LuxOps F&B Playbook.',
+    'Adapted from the bar operations, mise en place, responsible service, stock control and quality chapters of the LuxOps F&B SOP manual.',
   primaryCta: 'View F&B Starter Pack',
-  secondaryCta: 'View Full F&B Playbook',
-  freeChapterCta: 'Download a Free Chapter',
+  secondaryCta: 'View Full F&B SOP manual',
+  freeChapterCta: 'Receive a Sample Chapter',
   sectionLabel: 'Pre-service bar setup',
   sectionTitle: 'What to check before opening the bar',
   sectionIntro:
@@ -926,7 +926,7 @@ const BAR_OPENING_EN: ResourceContent = {
   productTitle: 'F&B Starter Pack',
   productText:
     'Includes restaurant and bar service tools, daily service checklist, opening and closing checklists, briefing template, service sequence SOP, recovery scripts and allergen tracker.',
-  playbookTitle: 'Full F&B Playbook',
+  playbookTitle: 'Full F&B SOP manual',
   playbookText:
     'The complete reference for restaurant, breakfast, bar, wine, room service, guest interaction, mise en place, team management and quality standards.',
   relatedTitle: 'Need the restaurant opening checklist?',
@@ -953,7 +953,7 @@ const BAR_OPENING_EN: ResourceContent = {
   ],
   finalTitle: 'Prepare the bar before service pressure starts',
   finalText:
-    'Use the starter pack for editable F&B tools and the full playbook when you need the complete bar and service operating reference.',
+    'Use the starter pack for editable F&B tools and the full SOP manual when you need the complete bar and service operating reference.',
 }
 
 const BAR_OPENING_FR: ResourceContent = {
@@ -972,10 +972,10 @@ const BAR_OPENING_FR: ResourceContent = {
   sourceNote:
     'Cette page reprend une méthode opérationnelle utilisée dans les produits F&B LuxOps. Les checklists complètes et supports PPTX modifiables sont disponibles dans les versions payantes.',
   extractedFrom:
-    'Adapté des chapitres bar, mise en place, service responsable, contrôle stock et qualité du Playbook F&B LuxOps.',
+    'Adapté des chapitres bar, mise en place, service responsable, contrôle stock et qualité du Manuel SOP F&B LuxOps.',
   primaryCta: 'Voir le Starter Pack F&B',
-  secondaryCta: 'Voir le Playbook F&B complet',
-  freeChapterCta: 'Télécharger un chapitre gratuit',
+  secondaryCta: 'Voir le Manuel SOP F&B complet',
+  freeChapterCta: 'Recevoir un chapitre de découverte',
   sectionLabel: 'Mise en place pré-service',
   sectionTitle: 'Ce qu’il faut contrôler avant d’ouvrir le bar',
   sectionIntro:
@@ -1047,7 +1047,7 @@ const BAR_OPENING_FR: ResourceContent = {
   productTitle: 'Starter Pack F&B',
   productText:
     'Inclut outils restaurant et bar, checklist service quotidien, checklists ouverture et fermeture, template de briefing, SOP séquence de service, scripts recovery et tracker allergènes.',
-  playbookTitle: 'Playbook F&B complet',
+  playbookTitle: 'Manuel SOP F&B complet',
   playbookText:
     'La référence complète pour restaurant, petit-déjeuner, bar, vin, room service, interaction client, mise en place, management équipe et standards qualité.',
   relatedTitle: 'Besoin de la checklist ouverture restaurant ?',
@@ -1074,7 +1074,7 @@ const BAR_OPENING_FR: ResourceContent = {
   ],
   finalTitle: 'Préparer le bar avant la pression du service',
   finalText:
-    'Utilisez le Starter Pack pour des outils F&B prêts à l’emploi, puis le Playbook complet lorsque vous avez besoin de toute la référence opérationnelle bar et service.',
+    'Utilisez le Starter Pack pour des outils F&B prêts à l’emploi, puis le Manuel SOP complet lorsque vous avez besoin de toute la référence opérationnelle bar et service.',
 }
 
 const RESTAURANT_CLOSING_EN: ResourceContent = {
@@ -1093,10 +1093,10 @@ const RESTAURANT_CLOSING_EN: ResourceContent = {
   sourceNote:
     'This page summarizes one operational method used inside the LuxOps F&B products. The complete checklists and editable PPTX tools are available in the paid versions.',
   extractedFrom:
-    'Adapted from the Restaurant Closing Checklist, service handover, mise en place, stock control and quality chapters of the LuxOps F&B Playbook.',
+    'Adapted from the Restaurant Closing Checklist, service handover, mise en place, stock control and quality chapters of the LuxOps F&B SOP manual.',
   primaryCta: 'View F&B Starter Pack',
-  secondaryCta: 'View Full F&B Playbook',
-  freeChapterCta: 'Download a Free Chapter',
+  secondaryCta: 'View Full F&B SOP manual',
+  freeChapterCta: 'Receive a Sample Chapter',
   sectionLabel: 'End-of-service flow',
   sectionTitle: 'What to check before closing the restaurant',
   sectionIntro:
@@ -1172,7 +1172,7 @@ const RESTAURANT_CLOSING_EN: ResourceContent = {
   productTitle: 'F&B Starter Pack',
   productText:
     'Includes restaurant opening and closing checklists, daily service checklist, briefing template, service sequence SOP, table inspection checklist, recovery scripts and allergen tracker.',
-  playbookTitle: 'Full F&B Playbook',
+  playbookTitle: 'Full F&B SOP manual',
   playbookText:
     'The complete reference for restaurant service, breakfast, bar, wine, room service, guest interaction, mise en place, team management and quality standards.',
   relatedTitle: 'Need the opening version?',
@@ -1199,7 +1199,7 @@ const RESTAURANT_CLOSING_EN: ResourceContent = {
   ],
   finalTitle: 'Close the restaurant with the next service in mind',
   finalText:
-    'Use the starter pack for editable F&B closing tools and the full playbook when you need the complete restaurant operating reference.',
+    'Use the starter pack for editable F&B closing tools and the full SOP manual when you need the complete restaurant operating reference.',
 }
 
 const RESTAURANT_CLOSING_FR: ResourceContent = {
@@ -1218,10 +1218,10 @@ const RESTAURANT_CLOSING_FR: ResourceContent = {
   sourceNote:
     'Cette page reprend une méthode opérationnelle utilisée dans les produits F&B LuxOps. Les checklists complètes et supports PPTX modifiables sont disponibles dans les versions payantes.',
   extractedFrom:
-    'Adapté de la checklist fermeture restaurant, des sections passation, mise en place, contrôle stock et qualité du Playbook F&B LuxOps.',
+    'Adapté de la checklist fermeture restaurant, des sections passation, mise en place, contrôle stock et qualité du Manuel SOP F&B LuxOps.',
   primaryCta: 'Voir le Starter Pack F&B',
-  secondaryCta: 'Voir le Playbook F&B complet',
-  freeChapterCta: 'Télécharger un chapitre gratuit',
+  secondaryCta: 'Voir le Manuel SOP F&B complet',
+  freeChapterCta: 'Recevoir un chapitre de découverte',
   sectionLabel: 'Flux de fin de service',
   sectionTitle: 'Ce qu’il faut contrôler avant de fermer le restaurant',
   sectionIntro:
@@ -1297,7 +1297,7 @@ const RESTAURANT_CLOSING_FR: ResourceContent = {
   productTitle: 'Starter Pack F&B',
   productText:
     'Inclut checklists ouverture et fermeture restaurant, checklist service quotidien, template de briefing, SOP séquence de service, checklist inspection de table, scripts recovery et tracker allergènes.',
-  playbookTitle: 'Playbook F&B complet',
+  playbookTitle: 'Manuel SOP F&B complet',
   playbookText:
     'La référence complète pour service restaurant, petit-déjeuner, bar, vin, room service, interaction client, mise en place, management équipe et standards qualité.',
   relatedTitle: 'Besoin de la version ouverture ?',
@@ -1324,7 +1324,7 @@ const RESTAURANT_CLOSING_FR: ResourceContent = {
   ],
   finalTitle: 'Fermer le restaurant en pensant au prochain service',
   finalText:
-    'Utilisez le Starter Pack pour des outils F&B prêts à l’emploi, puis le Playbook complet lorsque vous avez besoin de toute la référence opérationnelle restaurant.',
+    'Utilisez le Starter Pack pour des outils F&B prêts à l’emploi, puis le Manuel SOP complet lorsque vous avez besoin de toute la référence opérationnelle restaurant.',
 }
 
 const CONTENT: Record<ResourceKind, Record<Locale, ResourceContent>> = {
@@ -1341,7 +1341,7 @@ function getFbClusterLinks(locale: Locale, currentKind: ResourceKind): ClusterLi
       {
         href: '/en/hotel-fb-sop',
         label: 'F&B SOP hub',
-        text: 'Central page for F&B SOPs, starter pack and playbook links.',
+        text: 'Central page for F&B SOPs, starter pack and SOP manual links.',
       },
       {
         kind: 'restaurantOpening',
@@ -1383,7 +1383,7 @@ function getFbClusterLinks(locale: Locale, currentKind: ResourceKind): ClusterLi
       {
         href: '/fr/hotel-fb-sop',
         label: 'Hub SOP F&B',
-        text: 'Page centrale pour les SOP F&B, le starter pack et le playbook.',
+        text: 'Page centrale pour les SOP F&B, le starter pack et le manuel SOP.',
       },
       {
         kind: 'restaurantOpening',
@@ -1468,7 +1468,7 @@ export function FbSeoResourcePage({ kind, locale }: { kind: ResourceKind; locale
         : kind === 'restaurantClosing'
           ? isEN ? '/downloads/checklists/en/restaurant-closing-checklist.pdf' : '/downloads/checklists/fr/checklist-fermeture-restaurant.pdf'
           : null
-  const checklistCta = isEN ? 'Download a free printable PDF copy' : 'Télécharger le PDF gratuit à imprimer'
+  const checklistCta = isEN ? 'Download printable PDF' : 'Télécharger le PDF à imprimer'
   const clusterLinks = getFbClusterLinks(locale, kind)
 
   const schema = {
@@ -1493,18 +1493,18 @@ export function FbSeoResourcePage({ kind, locale }: { kind: ResourceKind; locale
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      <main className="bg-white">
-        <section className="bg-[#1A2E44] text-white px-6 pt-36 md:pt-40 pb-18 md:pb-20">
+      <main className="bg-[#fcfbf8] text-[#0f211a]">
+        <section className="bg-[#0f211a] px-6 pb-16 pt-28 text-white md:pb-20 md:pt-32">
           <div className="max-w-5xl mx-auto text-center">
             <span className="inline-flex items-center gap-2 bg-white/10 text-white text-xs font-semibold px-4 py-2 rounded-full mb-6 tracking-widest uppercase">
               <UtensilsCrossed size={15} />
               {content.eyebrow}
             </span>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">{content.h1}</h1>
+            <h1 className="mb-6 font-display text-4xl font-medium leading-[1.08] sm:text-5xl md:text-[3.5rem]">{content.h1}</h1>
             <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-5">
               {content.subtitle}
             </p>
-            <p className="text-sm text-blue-100/90 max-w-3xl mx-auto leading-relaxed mb-9">
+            <p className="text-sm text-white/75 max-w-3xl mx-auto leading-relaxed mb-9">
               {content.sourceNote}
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -1512,7 +1512,7 @@ export function FbSeoResourcePage({ kind, locale }: { kind: ResourceKind; locale
                 href={`/${locale}/playbooks/fb-starter-pack`}
                 eventName="fb_starter_pack_cta_clicked"
                 eventProperties={{ source_page: sourcePage, position: 'hero' }}
-                className="inline-flex items-center justify-center gap-2 bg-white text-[#1A2E44] px-7 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+                className="inline-flex items-center justify-center gap-2 bg-white text-[#0f211a] px-7 py-4 rounded-full font-semibold hover:bg-gray-100 transition-colors"
               >
                 {content.primaryCta}
                 <ArrowRight size={18} />
@@ -1521,7 +1521,7 @@ export function FbSeoResourcePage({ kind, locale }: { kind: ResourceKind; locale
                 href={`/${locale}/playbooks/fb`}
                 eventName="fb_playbook_cta_clicked"
                 eventProperties={{ source_page: sourcePage, position: 'hero' }}
-                className="inline-flex items-center justify-center gap-2 border border-white/30 text-white px-7 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors"
+                className="inline-flex items-center justify-center gap-2 border border-white/30 text-white px-7 py-4 rounded-full font-semibold hover:bg-white/10 transition-colors"
               >
                 {content.secondaryCta}
               </TrackedLink>
@@ -1536,7 +1536,7 @@ export function FbSeoResourcePage({ kind, locale }: { kind: ResourceKind; locale
                   locale,
                   placement: 'hero',
                 } : { source_page: sourcePage, position: 'hero' }}
-                className="inline-flex items-center justify-center gap-2 border border-white/30 text-white px-7 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors"
+                className="inline-flex items-center justify-center gap-2 border border-white/30 text-white px-7 py-4 rounded-full font-semibold hover:bg-white/10 transition-colors"
               >
                 {checklistHref ? checklistCta : content.freeChapterCta}
               </TrackedLink>
@@ -1546,24 +1546,24 @@ export function FbSeoResourcePage({ kind, locale }: { kind: ResourceKind; locale
 
         {kind === 'sequence' && <EditorialRouteImage route="sequence-service-restaurant-hotel" alt={content.title} />}
 
-        <section className="py-10 px-6 bg-[#F6F8FB] border-b border-gray-100">
+        <section className="border-b border-[#e7e1d7] bg-[#f5f1e9] px-6 py-10">
           <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-5 md:items-center">
             <div className="w-12 h-12 rounded-full bg-[#E7F0FF] flex items-center justify-center flex-shrink-0">
-              <FileText size={22} className="text-[#0056D2]" />
+              <FileText size={22} className="text-[#a58658]" />
             </div>
             <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-[#0056D2] mb-2">
+              <p className="text-xs font-semibold uppercase tracking-widest text-[#a58658] mb-2">
                 {isEN ? 'Source note' : 'Note source'}
               </p>
               <p className="text-gray-700 leading-relaxed">{content.extractedFrom}</p>
               {checklistHref ? (
-                <p className="text-sm text-[#4f6074] leading-relaxed mt-3">
+                <p className="text-sm text-[#687169] leading-relaxed mt-3">
                   {isEN
                     ? 'You can also browse every printable checklist in one place.'
                     : 'Vous pouvez aussi retrouver toutes les checklists prêtes à imprimer au même endroit.'}{' '}
                   <Link
                     href={isEN ? '/en/free-hotel-checklists' : '/fr/checklists-hotel-gratuites'}
-                    className="font-semibold text-[#003d9b] hover:underline"
+                    className="font-semibold text-[#92734a] hover:underline"
                   >
                     {isEN ? 'View the free checklist hub' : 'Voir le hub des checklists gratuites'}
                   </Link>
@@ -1576,7 +1576,7 @@ export function FbSeoResourcePage({ kind, locale }: { kind: ResourceKind; locale
         <section className="py-16 px-6">
           <div className="max-w-6xl mx-auto">
             <div className="max-w-3xl mb-10">
-              <p className="text-xs font-semibold uppercase tracking-widest text-[#0056D2] mb-4">
+              <p className="text-xs font-semibold uppercase tracking-widest text-[#a58658] mb-4">
                 {content.sectionLabel}
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-[#111111] mb-4">
@@ -1590,7 +1590,7 @@ export function FbSeoResourcePage({ kind, locale }: { kind: ResourceKind; locale
                 {content.steps.map((step) => (
                   <div key={step.label} className="border border-gray-200 rounded-xl p-5 bg-white">
                     <div className="flex items-start gap-4">
-                      <span className="w-10 h-10 rounded-lg bg-[#0056D2] text-white text-sm font-bold flex items-center justify-center flex-shrink-0">
+                      <span className="w-10 h-10 rounded-full bg-[#a58658] text-white text-sm font-bold flex items-center justify-center flex-shrink-0">
                         {step.label}
                       </span>
                       <div>
@@ -1621,10 +1621,10 @@ export function FbSeoResourcePage({ kind, locale }: { kind: ResourceKind; locale
           </section>
         ) : null}
 
-        <section className="py-16 px-6 bg-[#F6F8FB] border-y border-gray-100">
+        <section className="border-y border-[#e7e1d7] bg-[#f5f1e9] px-6 py-16">
           <div className="max-w-6xl mx-auto grid lg:grid-cols-[0.9fr_1.1fr] gap-8 items-start">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-[#0056D2] mb-4">
+              <p className="text-xs font-semibold uppercase tracking-widest text-[#a58658] mb-4">
                 {isEN ? 'Operational reference' : 'Repère opérationnel'}
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-[#111111] mb-4">
@@ -1636,7 +1636,7 @@ export function FbSeoResourcePage({ kind, locale }: { kind: ResourceKind; locale
               <div className="space-y-4">
                 {content.extractItems.map((item) => (
                   <div key={item} className="flex gap-3 text-gray-700 leading-relaxed">
-                    <CheckCircle2 size={18} className="text-[#0056D2] flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 size={18} className="text-[#a58658] flex-shrink-0 mt-0.5" />
                     <span>{item}</span>
                   </div>
                 ))}
@@ -1647,11 +1647,11 @@ export function FbSeoResourcePage({ kind, locale }: { kind: ResourceKind; locale
 
         <section className="py-16 px-6">
           <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-6">
-            <div className="border border-[#D7E4F7] bg-[#F4F8FF] rounded-xl p-8">
+            <div className="rounded-2xl border border-[#e7e1d7] bg-[#f5f1e9] p-8">
               <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center mb-5">
-                <ClipboardCheck size={24} className="text-[#0056D2]" />
+                <ClipboardCheck size={24} className="text-[#a58658]" />
               </div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-[#0056D2] mb-4">
+              <p className="text-xs font-semibold uppercase tracking-widest text-[#a58658] mb-4">
                 {isEN ? 'Practical toolkit' : 'Kit pratique'}
               </p>
               <h2 className="text-3xl font-bold text-[#111111] mb-4">{content.productTitle}</h2>
@@ -1660,26 +1660,26 @@ export function FbSeoResourcePage({ kind, locale }: { kind: ResourceKind; locale
                 href={`/${locale}/playbooks/fb-starter-pack`}
                 eventName="fb_starter_pack_cta_clicked"
                 eventProperties={{ source_page: sourcePage, position: 'product_block' }}
-                className="inline-flex items-center gap-2 bg-[#0056D2] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#0046B8] transition-colors"
+                className="inline-flex items-center gap-2 bg-[#a58658] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#92734a] transition-colors"
               >
                 {content.primaryCta}
                 <ArrowRight size={17} />
               </TrackedLink>
             </div>
-            <div className="border border-gray-200 rounded-xl p-8">
-              <div className="w-12 h-12 rounded-xl bg-[#F6F8FB] flex items-center justify-center mb-5">
-                <ListChecks size={24} className="text-[#1A2E44]" />
+            <div className="rounded-2xl border border-[#e7e1d7] bg-white p-8">
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#f5f1e9]">
+                <ListChecks size={24} className="text-[#0f211a]" />
               </div>
               <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-4">
                 {isEN ? 'Full reference' : 'Référence complète'}
               </p>
-              <h2 className="text-3xl font-bold text-[#111111] mb-4">{content.playbookTitle}</h2>
+              <h2 className="mb-4 font-serif text-2xl font-medium text-[#0f211a] md:text-3xl">{content.playbookTitle}</h2>
               <p className="text-gray-600 leading-relaxed mb-6">{content.playbookText}</p>
               <TrackedLink
                 href={`/${locale}/playbooks/fb`}
                 eventName="fb_playbook_cta_clicked"
                 eventProperties={{ source_page: sourcePage, position: 'product_block' }}
-                className="inline-flex items-center gap-2 border border-[#1A2E44] text-[#1A2E44] px-6 py-3 rounded-lg font-semibold hover:bg-[#1A2E44] hover:text-white transition-colors"
+                className="inline-flex items-center gap-2 border border-[#0f211a] text-[#0f211a] px-6 py-3 rounded-full font-semibold hover:bg-[#0f211a] hover:text-white transition-colors"
               >
                 {content.secondaryCta}
                 <ArrowRight size={17} />
@@ -1691,7 +1691,7 @@ export function FbSeoResourcePage({ kind, locale }: { kind: ResourceKind; locale
         <section className="py-14 px-6 bg-white">
           <div className="max-w-5xl mx-auto border border-gray-200 rounded-2xl p-8 md:p-10 flex flex-col md:flex-row gap-8 md:items-center md:justify-between">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-[#0056D2] mb-3">
+              <p className="text-xs font-semibold uppercase tracking-widest text-[#a58658] mb-3">
                 {isEN ? 'Related resource' : 'Ressource liée'}
               </p>
               <h2 className="text-2xl md:text-3xl font-bold text-[#111111] mb-3">{content.relatedTitle}</h2>
@@ -1699,7 +1699,7 @@ export function FbSeoResourcePage({ kind, locale }: { kind: ResourceKind; locale
             </div>
             <Link
               href={`/${locale}${content.relatedHref}`}
-              className="inline-flex items-center justify-center gap-2 border border-[#1A2E44] text-[#1A2E44] px-6 py-3 rounded-lg font-semibold hover:bg-[#1A2E44] hover:text-white transition-colors flex-shrink-0"
+              className="inline-flex items-center justify-center gap-2 border border-[#0f211a] text-[#0f211a] px-6 py-3 rounded-full font-semibold hover:bg-[#0f211a] hover:text-white transition-colors flex-shrink-0"
             >
               {content.relatedCta}
               <ArrowRight size={17} />
@@ -1707,10 +1707,10 @@ export function FbSeoResourcePage({ kind, locale }: { kind: ResourceKind; locale
           </div>
         </section>
 
-        <section className="py-16 px-6 bg-[#F6F8FB] border-y border-gray-100">
+        <section className="py-16 px-6 bg-[#f5f1e9] border-y border-[#e7e1d7]">
           <div className="max-w-6xl mx-auto">
             <div className="max-w-3xl mb-8">
-              <p className="text-xs font-semibold uppercase tracking-widest text-[#0056D2] mb-3">
+              <p className="text-xs font-semibold uppercase tracking-widest text-[#a58658] mb-3">
                 {isEN ? 'F&B resources' : 'Ressources F&B'}
               </p>
               <h2 className="text-3xl font-bold text-[#111111] mb-3">
@@ -1727,16 +1727,16 @@ export function FbSeoResourcePage({ kind, locale }: { kind: ResourceKind; locale
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="group border border-gray-200 bg-white rounded-xl p-5 hover:border-[#0056D2] hover:shadow-sm transition-all"
+                  className="group border border-[#e7e1d7] bg-white rounded-xl p-5 hover:border-[#cbb487] hover:shadow-sm transition-all"
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div>
-                      <h3 className="font-bold text-[#111111] mb-2 group-hover:text-[#0056D2] transition-colors">
+                      <h3 className="font-bold text-[#111111] mb-2 group-hover:text-[#a58658] transition-colors">
                         {link.label}
                       </h3>
                       <p className="text-sm text-gray-600 leading-relaxed">{link.text}</p>
                     </div>
-                    <ArrowRight size={17} className="text-[#0056D2] flex-shrink-0 mt-1" />
+                    <ArrowRight size={17} className="text-[#a58658] flex-shrink-0 mt-1" />
                   </div>
                 </Link>
               ))}
@@ -1744,7 +1744,7 @@ export function FbSeoResourcePage({ kind, locale }: { kind: ResourceKind; locale
           </div>
         </section>
 
-        <section className="py-16 px-6 bg-[#F6F8FB] border-y border-gray-100">
+        <section className="py-16 px-6 bg-[#f5f1e9] border-y border-[#e7e1d7]">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-[#111111] mb-8">
               {isEN ? 'Frequently asked questions' : 'Questions fréquentes'}
@@ -1780,7 +1780,7 @@ export function FbSeoResourcePage({ kind, locale }: { kind: ResourceKind; locale
                 href={`/${locale}/playbooks/fb-starter-pack`}
                 eventName="fb_starter_pack_cta_clicked"
                 eventProperties={{ source_page: sourcePage, position: 'final' }}
-                className="inline-flex items-center justify-center gap-2 bg-white text-[#111111] px-7 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+                className="inline-flex items-center justify-center gap-2 bg-white text-[#111111] px-7 py-4 rounded-full font-semibold hover:bg-gray-100 transition-colors"
               >
                 {content.primaryCta}
                 <ArrowRight size={18} />
@@ -1796,7 +1796,7 @@ export function FbSeoResourcePage({ kind, locale }: { kind: ResourceKind; locale
                   locale,
                   placement: 'final',
                 } : { source_page: sourcePage, position: 'final' }}
-                className="inline-flex items-center justify-center gap-2 border border-white/30 text-white px-7 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors"
+                className="inline-flex items-center justify-center gap-2 border border-white/30 text-white px-7 py-4 rounded-full font-semibold hover:bg-white/10 transition-colors"
               >
                 {checklistHref ? checklistCta : content.freeChapterCta}
               </TrackedLink>
@@ -1812,8 +1812,8 @@ function ChecklistCard({ block }: { block: ChecklistBlock }) {
   return (
     <article className="border border-gray-200 rounded-xl p-6 bg-white">
       <div className="flex gap-3 items-start mb-4">
-        <div className="w-10 h-10 rounded-lg bg-[#F4F8FF] flex items-center justify-center flex-shrink-0">
-          <ConciergeBell size={20} className="text-[#0056D2]" />
+        <div className="w-10 h-10 rounded-full bg-[#f5f1e9] flex items-center justify-center flex-shrink-0">
+          <ConciergeBell size={20} className="text-[#a58658]" />
         </div>
         <div>
           <h3 className="text-xl font-bold text-[#111111]">{block.title}</h3>
@@ -1823,7 +1823,7 @@ function ChecklistCard({ block }: { block: ChecklistBlock }) {
       <div className="space-y-3">
         {block.items.map((item) => (
           <div key={item} className="flex gap-3 text-sm text-gray-700 leading-relaxed">
-            <CheckCircle2 size={16} className="text-[#0056D2] flex-shrink-0 mt-0.5" />
+            <CheckCircle2 size={16} className="text-[#a58658] flex-shrink-0 mt-0.5" />
             <span>{item}</span>
           </div>
         ))}

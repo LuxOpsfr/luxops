@@ -17,18 +17,18 @@ const departmentLabels: Record<LeadDepartment, string> = {
   spa: 'Spa & Wellness',
 }
 
-const chapterUrls: Record<LeadDepartment, { en: string; fr: string }> = {
-  fo: { en: `${SITE_URL}/downloads/fo-intro-en.pdf`, fr: `${SITE_URL}/downloads/fo-intro-fr.pdf` },
-  hsk: { en: `${SITE_URL}/downloads/hsk-intro-en.pdf`, fr: `${SITE_URL}/downloads/hsk-intro-fr.pdf` },
-  fb: { en: `${SITE_URL}/downloads/fb-intro-en.pdf`, fr: `${SITE_URL}/downloads/fb-intro-fr.pdf` },
-  spa: { en: `${SITE_URL}/downloads/spa-intro-en.pdf`, fr: `${SITE_URL}/downloads/spa-intro-fr.pdf` },
+export const FREE_CHAPTER_OBJECTS: Record<LeadDepartment, { en: string; fr: string }> = {
+  fo: { en: 'front-office/pdf/en/ch04-guest-communication.pdf', fr: 'front-office/pdf/fr/ch04-communication-client.pdf' },
+  hsk: { en: 'housekeeping/pdf/en/ch04-public-areas.pdf', fr: 'housekeeping/pdf/fr/ch04-parties-communes.pdf' },
+  fb: { en: 'fb/pdf/en/ch04-bar.pdf', fr: 'fb/pdf/fr/ch04-bar.pdf' },
+  spa: { en: 'spa/pdf/en/ch04-treatment-menu.pdf', fr: 'spa/pdf/fr/ch04-carte-soins.pdf' },
 }
 
 const copy = {
   en: {
     subject: 'Your LuxOps chapter is ready',
     preview: 'Thank you for downloading a LuxOps introductory chapter.',
-    eyebrow: 'Your complimentary chapter',
+    eyebrow: 'Your sample chapter',
     title: 'A first look at the LuxOps method',
     greeting: 'Hello,',
     intro: 'Thank you for downloading an introductory chapter from LuxOps. It gives you an overview of the principles and structure behind our operational manuals.',
@@ -48,7 +48,7 @@ const copy = {
   fr: {
     subject: 'Votre chapitre LuxOps est disponible',
     preview: "Merci d'avoir téléchargé un chapitre d'introduction LuxOps.",
-    eyebrow: 'Votre chapitre offert',
+    eyebrow: 'Votre chapitre découverte',
     title: 'Un premier aperçu de la méthode LuxOps',
     greeting: 'Bonjour,',
     intro: "Merci d'avoir téléchargé un chapitre d'introduction LuxOps. Il vous permet de découvrir les principes et la structure de nos manuels opérationnels.",
@@ -68,7 +68,7 @@ const copy = {
   es: {
     subject: 'Tu capítulo LuxOps está disponible',
     preview: 'Gracias por descargar un capítulo de introducción de LuxOps.',
-    eyebrow: 'Tu capítulo gratuito',
+    eyebrow: 'Tu capítulo de muestra',
     title: 'Una primera visión del método LuxOps',
     greeting: 'Hola,',
     intro: 'Gracias por descargar un capítulo de introducción de LuxOps. Te permite descubrir los principios y la estructura de nuestros manuales operativos.',
@@ -95,17 +95,20 @@ export function normalizeLeadEmail(email: string) {
   return email.trim().toLowerCase()
 }
 
-export function leadWelcomeIdempotencyKey(email: string) {
-  const emailHash = createHash('sha256').update(normalizeLeadEmail(email)).digest('hex').slice(0, 32)
+export function leadWelcomeIdempotencyKey(email: string, requestId?: string) {
+  const emailHash = createHash('sha256').update(`${normalizeLeadEmail(email)}:${requestId ?? 'welcome'}`).digest('hex').slice(0, 32)
   return `free-chapter-welcome-${emailHash}`
 }
 
-export function buildFreeChapterWelcomeEmail(locale?: string, department: LeadDepartment = 'hsk') {
+export function buildFreeChapterWelcomeEmail(
+  locale: string | undefined,
+  department: LeadDepartment,
+  chapterUrls: { en: string; fr: string },
+) {
   const lang = normalizeLeadLocale(locale)
   const t = copy[lang]
-  const urls = chapterUrls[department]
-  const primaryUrl = lang === 'fr' ? urls.fr : urls.en
-  const secondaryUrl = lang === 'fr' ? urls.en : urls.fr
+  const primaryUrl = lang === 'fr' ? chapterUrls.fr : chapterUrls.en
+  const secondaryUrl = lang === 'fr' ? chapterUrls.en : chapterUrls.fr
 
   return {
     subject: t.subject,
@@ -171,12 +174,16 @@ export async function sendFreeChapterWelcomeEmail({
   to,
   locale,
   department,
+  requestId,
+  chapterUrls,
 }: {
   to: string
   locale?: string
   department: LeadDepartment
+  requestId?: string
+  chapterUrls: { en: string; fr: string }
 }) {
-  const email = buildFreeChapterWelcomeEmail(locale, department)
+  const email = buildFreeChapterWelcomeEmail(locale, department, chapterUrls)
 
   return getResendClient().emails.send(
     {
@@ -186,6 +193,6 @@ export async function sendFreeChapterWelcomeEmail({
       subject: email.subject,
       html: email.html,
     },
-    { idempotencyKey: leadWelcomeIdempotencyKey(to) }
+    { idempotencyKey: leadWelcomeIdempotencyKey(to, requestId) }
   )
 }

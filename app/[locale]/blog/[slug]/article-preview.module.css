@@ -9,6 +9,11 @@
   padding-block: clamp(4rem, 7vw, 7rem);
 }
 
+.preview a,
+.preview button {
+  transition-duration: 220ms;
+}
+
 .preview .hero > div,
 .preview .productCta > div,
 .preview .leadMagnet > div,
@@ -91,7 +96,8 @@
   background: #0f211a;
   border-color: #0f211a;
   color: #f5f1e9;
-  border-radius: 0;
+  border-radius: 999px;
+  box-shadow: 0 8px 20px rgba(15, 33, 26, .12);
 }
 
 .preview .secondaryButton,
@@ -99,12 +105,12 @@
   background: transparent;
   border-color: #0f211a;
   color: #0f211a;
-  border-radius: 0;
+  border-radius: 999px;
 }
 
 .preview .leadMagnet {
-  background: #e7e0d5;
-  border-color: rgba(32, 35, 31, 0.14);
+  background: #f5f1e9;
+  border-color: rgba(32, 35, 31, 0.12);
 }
 
 .preview .leadMagnet :global(p:nth-child(2)) {
@@ -118,13 +124,13 @@
 .preview .body :global(nav),
 .preview .body :global(.rounded-xl),
 .preview .body :global(.rounded-2xl) {
-  border-radius: 0;
+  border-radius: 1.25rem;
   border-color: rgba(32, 35, 31, 0.14);
-  background: #f5f1e9;
+  background: #fcfbf8;
 }
 
 .preview .excerpt :global(.divide-y) {
-  border-radius: 0;
+  border-radius: 1rem;
   border-color: rgba(32, 35, 31, 0.14);
 }
 
@@ -151,7 +157,7 @@
 }
 
 .preview .related :global(a) {
-  border-radius: 0;
+  border-radius: 1.1rem;
   border-color: rgba(32, 35, 31, 0.14);
   background: #fcfbf8;
 }
@@ -166,9 +172,26 @@
 }
 
 .preview .finalCta :global(a) {
-  border-radius: 0;
+  border-radius: 999px;
   color: #0f211a;
   background: #f5f1e9;
+}
+
+.preview .editorialImage {
+  border-radius: 1.5rem;
+  box-shadow: 0 20px 48px rgba(40, 40, 30, .12);
+}
+
+.preview .productCta :global(h2),
+.preview .excerpt :global(h2),
+.preview .body :global(h2),
+.preview .finalCta :global(h2) {
+  font-weight: 500;
+}
+
+.preview .body :global(nav a:hover),
+.preview .related :global(a:hover) {
+  color: #705431;
 }
 
 @media (max-width: 640px) {
@@ -187,6 +210,7 @@
   .preview .editorialImage {
     max-height: 300px;
     object-position: center 42%;
+    border-radius: 1rem;
   }
 
   .preview .leadMagnet :global(a) {

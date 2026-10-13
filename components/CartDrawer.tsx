@@ -48,9 +48,10 @@ const cartCopy = {
 
 interface CartDrawerProps {
   locale: string
+  portal?: boolean
 }
 
-export default function CartDrawer({ locale }: CartDrawerProps) {
+export default function CartDrawer({ locale, portal = false }: CartDrawerProps) {
   const { items, removeItem, isOpen, closeCart } = useCart()
   const [view, setView] = useState<'cart' | 'checkout'>('cart')
   const [loading, setLoading] = useState(false)
@@ -110,6 +111,7 @@ export default function CartDrawer({ locale }: CartDrawerProps) {
               currency,
               posthogDistinctId: posthog.get_distinct_id(),
               posthogSessionId: posthog.get_session_id?.(),
+              returnToPortal: portal,
             }),
           })
           const { clientSecret } = await res.json()
@@ -135,7 +137,7 @@ export default function CartDrawer({ locale }: CartDrawerProps) {
     return () => {
       cancelled = true
     }
-  }, [currency, items, locale, view])
+  }, [currency, items, locale, portal, view])
 
   if (!isOpen) return null
 

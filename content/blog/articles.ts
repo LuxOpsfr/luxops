@@ -29,18 +29,18 @@ export const articles: BilingualArticle[] = [
   {
     slug: 'hotel-operations-playbook',
     en: {
-      title: 'What Is a Hotel Operations Playbook? (And Why Every Property Needs One)',
+      title: 'Hotel SOP Manuals: What They Include and Why Every Property Needs One',
       description:
-        'A hotel operations playbook is a structured collection of SOPs, service standards, and procedures for every department. Learn what it contains, why it matters, and how to implement one.',
+        'A hotel operations SOP manual is a structured collection of SOPs, service standards, and procedures for every department. Learn what it contains, why it matters, and how to implement one.',
       date: '2026-03-10',
       readTime: '7 min read',
       intro:
-        'Most operational problems in hotels are not complex. They are the result of procedures that were never written down. The check-in that runs differently depending on who is at the desk. The housekeeping inspection that varies by room attendant. The complaint that gets handled inconsistently because there is no agreed standard. A hotel operations playbook is how properties fix that. Not all at once, but department by department, shift by shift.',
+        'Most operational problems in hotels are not complex. They are the result of procedures that were never written down. The check-in that runs differently depending on who is at the desk. The housekeeping inspection that varies by room attendant. The complaint that gets handled inconsistently because there is no agreed standard. A hotel operations SOP manual is how properties fix that. Not all at once, but department by department, shift by shift.',
       sections: [
         {
-          h2: 'What Is a Hotel Operations Playbook?',
+          h2: 'What Is a Hotel Operations SOP manual?',
           content:
-            'A hotel operations playbook is a structured, department-by-department reference that documents the procedures, service standards, and protocols your team needs to work consistently. It is the institutional memory of the property: what experienced staff carry in their heads, written down and made accessible to everyone. When it works well, a new team member joining on a Monday can follow the same standard as someone who has been at the property for three years.',
+            'A hotel operations SOP manual is a structured, department-by-department reference that documents the procedures, service standards, and protocols your team needs to work consistently. It is the institutional memory of the property: what experienced staff carry in their heads, written down and made accessible to everyone. When it works well, a new team member joining on a Monday can follow the same standard as someone who has been at the property for three years.',
           h3Items: [
             {
               heading: 'SOPs (Standard Operating Procedures)',
@@ -61,7 +61,7 @@ export const articles: BilingualArticle[] = [
           ],
         },
         {
-          h2: 'Why Hotels Without a Playbook Struggle',
+          h2: 'Why Hotels Without an SOP manual Struggle',
           content:
             "Most hotel operational problems trace back to the same root cause: knowledge that lives in people's heads rather than on paper. When those people leave, and in hospitality turnover is high, that knowledge leaves with them. A new hire starts from scratch. The team runs slightly differently every shift. Guests notice, even if they cannot name what is wrong.",
           h3Items: [
@@ -71,18 +71,18 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: 'Slow Onboarding',
-              text: "Without documented procedures, new staff spend weeks learning informally through observation and correction. A playbook cuts that significantly and reduces the errors that frustrate guests during the first weeks of a new hire's tenure.",
+              text: "Without documented procedures, new staff spend weeks learning informally through observation and correction. An SOP manual cuts that significantly and reduces the errors that frustrate guests during the first weeks of a new hire's tenure.",
             },
             {
               heading: 'Management Dependency',
-              text: 'When nothing is written down, supervisors spend their time fielding basic questions instead of running the floor. A playbook shifts that dynamic and gives the team the autonomy to work to a standard without constant oversight.',
+              text: 'When nothing is written down, supervisors spend their time fielding basic questions instead of running the floor. An SOP manual shifts that dynamic and gives the team the autonomy to work to a standard without constant oversight.',
             },
           ],
         },
         {
-          h2: 'What a Hotel Operations Playbook Covers',
+          h2: 'What a Hotel Operations SOP manual Covers',
           content:
-            'A useful playbook reflects how the hotel actually runs, department by department. At LuxOps, playbooks are structured around four core operational areas, each with dedicated procedures and service standards built from real hotel work.',
+            'A useful SOP manual reflects how the hotel actually runs, department by department. At LuxOps, SOP manuals are structured around four core operational areas, each with dedicated procedures and service standards built from real hotel work.',
           h3Items: [
             {
               heading: 'Front Office',
@@ -103,9 +103,9 @@ export const articles: BilingualArticle[] = [
           ],
         },
         {
-          h2: 'How to Implement a Playbook in Your Property',
+          h2: 'How to Implement an SOP manual in Your Property',
           content:
-            'A playbook only delivers value when it is embedded in daily operations. A PDF that sits in a shared folder and is never opened serves no purpose. These are the steps that actually make a playbook stick.',
+            'An SOP manual only delivers value when it is embedded in daily operations. A PDF that sits in a shared folder and is never opened serves no purpose. These are the steps that actually make an SOP manual stick.',
           h3Items: [
             {
               heading: '1. Start with your highest-impact department',
@@ -117,37 +117,37 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: '3. Train, do not just distribute',
-              text: 'A playbook introduced in a training session lands differently from one sent as an email attachment. Walking the team through it, letting them ask questions, practicing the steps: that is how adoption happens.',
+              text: 'An SOP manual introduced in a training session lands differently from one sent as an email attachment. Walking the team through it, letting them ask questions, practicing the steps: that is how adoption happens.',
             },
             {
               heading: '4. Review quarterly',
-              text: 'Operations change. A playbook that is six months out of date quietly starts working against you. Staff follow the document, not the current standard, or they stop following it entirely. Build a review schedule from the start.',
+              text: 'Operations change. An SOP manual that is six months out of date quietly starts working against you. Staff follow the document, not the current standard, or they stop following it entirely. Build a review schedule from the start.',
             },
           ],
         },
         {
-          h2: 'Ready-Made Playbooks vs. Building From Scratch',
+          h2: 'Ready-Made SOP manuals vs. Building From Scratch',
           content:
-            'Building a full hotel operations playbook from scratch takes months and requires the kind of operational expertise most properties cannot dedicate internally. Ready-made playbooks built from real hotel experience give you a professionally structured foundation to adapt for your property, rather than starting from nothing. LuxOps playbooks cover Front Office, Housekeeping, F&B, and Spa, each running between 200 and 280 pages of documented procedures and service standards.',
+            'Building a full hotel operations SOP manual from scratch takes months and requires the kind of operational expertise most properties cannot dedicate internally. Ready-made SOP manuals built from real hotel experience give you a professionally structured foundation to adapt for your property, rather than starting from nothing. LuxOps SOP manuals cover Front Office, Housekeeping, F&B, and Spa, each running between 200 and 280 pages of documented procedures and service standards.',
         },
       ],
       conclusion:
-        'A hotel operations playbook is not a bureaucratic document. It is what lets teams deliver consistent, reliable service regardless of who is on shift. Whether built from scratch or adapted from a structured template, the value shows up quickly: shorter onboarding times, fewer errors, and guests who get the same experience on their second visit as their first.',
-      cta: { text: 'View Our Playbooks', href: '/en/playbooks' },
+        'A hotel operations SOP manual is not a bureaucratic document. It is what lets teams deliver consistent, reliable service regardless of who is on shift. Whether built from scratch or adapted from a structured template, the value shows up quickly: shorter onboarding times, fewer errors, and guests who get the same experience on their second visit as their first.',
+      cta: { text: 'View Our SOP manuals', href: '/en/playbooks' },
     },
     fr: {
-      title: "Playbook opérationnel : structurer les SOP, standards et routines par département",
+      title: "Manuel SOP opérationnel : structurer les SOP, standards et routines par département",
       description:
-        "Un playbook opérationnel regroupe les SOPs, standards de service, checklists et routines de passation dont les équipes ont besoin pour travailler avec constance.",
+        "Un manuel SOP opérationnel regroupe les SOPs, standards de service, checklists et routines de passation dont les équipes ont besoin pour travailler avec constance.",
       date: '2026-03-10',
       readTime: '7 min de lecture',
       intro:
-        "La plupart des problèmes opérationnels ne sont pas complexes. Ils viennent souvent de procédures qui n’ont jamais été écrites clairement. Le check-in qui se déroule différemment selon qui est à la réception. L’inspection de chambre qui varie d’un valet à l’autre. La réclamation traitée de façon incohérente parce qu’il n’existe pas de standard établi. Un playbook opérationnel règle ce sujet département par département, shift par shift.",
+        "La plupart des problèmes opérationnels ne sont pas complexes. Ils viennent souvent de procédures qui n’ont jamais été écrites clairement. Le check-in qui se déroule différemment selon qui est à la réception. L’inspection de chambre qui varie d’un valet à l’autre. La réclamation traitée de façon incohérente parce qu’il n’existe pas de standard établi. Un manuel SOP opérationnel règle ce sujet département par département, shift par shift.",
       sections: [
         {
-          h2: "Qu’est-ce qu’un playbook opérationnel ?",
+          h2: "Qu’est-ce qu’un manuel SOP opérationnel ?",
           content:
-            "Un playbook opérationnel est un document de référence structuré, département par département, qui documente les procédures, standards de service et protocoles dont les équipes ont besoin pour travailler de façon constante. C’est la mémoire opérationnelle de l’établissement : ce que les collaborateurs expérimentés portent dans leur tête, mis par écrit et rendu accessible à tous. Quand il fonctionne bien, un nouveau collaborateur arrivé le lundi peut travailler au même standard que quelqu’un présent depuis trois ans.",
+            "Un manuel SOP opérationnel est un document de référence structuré, département par département, qui documente les procédures, standards de service et protocoles dont les équipes ont besoin pour travailler de façon constante. C’est la mémoire opérationnelle de l’établissement : ce que les collaborateurs expérimentés portent dans leur tête, mis par écrit et rendu accessible à tous. Quand il fonctionne bien, un nouveau collaborateur arrivé le lundi peut travailler au même standard que quelqu’un présent depuis trois ans.",
           h3Items: [
             {
               heading: 'SOPs (procédures opérationnelles standard)',
@@ -168,7 +168,7 @@ export const articles: BilingualArticle[] = [
           ],
         },
         {
-          h2: "Pourquoi les établissements sans playbook peinent à performer",
+          h2: "Pourquoi les établissements sans manuel SOP peinent à performer",
           content:
             "La plupart des problèmes opérationnels ont la même cause : des savoirs qui vivent dans les têtes plutôt que sur un support clair. Quand ces personnes partent, ces savoirs partent avec elles. Un nouveau collaborateur repart de zéro. L’équipe fonctionne un peu différemment à chaque service. Les clients le sentent, même s’ils ne savent pas toujours l’expliquer.",
           h3Items: [
@@ -178,18 +178,18 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: 'Intégration lente',
-              text: "Sans procédures documentées, les nouveaux collaborateurs passent des semaines à apprendre de façon informelle, par observation et correction. Un playbook réduit significativement ce délai et diminue les erreurs qui agacent les clients pendant les premières semaines d\'un nouveau.",
+              text: "Sans procédures documentées, les nouveaux collaborateurs passent des semaines à apprendre de façon informelle, par observation et correction. Un manuel SOP réduit significativement ce délai et diminue les erreurs qui agacent les clients pendant les premières semaines d\'un nouveau.",
             },
             {
               heading: 'Dépendance au management',
-              text: "Quand rien n\'est écrit, les superviseurs passent leur temps à répondre à des questions basiques au lieu de gérer le service. Un playbook change cette dynamique et donne à l\'équipe l\'autonomie de travailler selon un standard sans supervision constante.",
+              text: "Quand rien n\'est écrit, les superviseurs passent leur temps à répondre à des questions basiques au lieu de gérer le service. Un manuel SOP change cette dynamique et donne à l\'équipe l\'autonomie de travailler selon un standard sans supervision constante.",
             },
           ],
         },
         {
-          h2: 'Ce que couvre un playbook opérationnel',
+          h2: 'Ce que couvre un manuel SOP opérationnel',
           content:
-            "Un playbook utile reflète le fonctionnement réel de l’établissement, département par département. Les playbooks LuxOps sont structurés autour de quatre domaines opérationnels centraux, chacun avec des procédures et standards de service issus du terrain.",
+            "Un manuel SOP utile reflète le fonctionnement réel de l’établissement, département par département. Les Manuels SOP LuxOps sont structurés autour de quatre domaines opérationnels centraux, chacun avec des procédures et standards de service issus du terrain.",
           h3Items: [
             {
               heading: 'Front Office',
@@ -210,9 +210,9 @@ export const articles: BilingualArticle[] = [
           ],
         },
         {
-          h2: 'Comment mettre en place un playbook dans votre établissement',
+          h2: 'Comment mettre en place un manuel SOP dans votre établissement',
           content:
-            "Un playbook ne délivre de la valeur que lorsqu\'il est ancré dans les opérations quotidiennes. Un PDF qui dort dans un dossier partagé sans jamais être ouvert ne sert à rien. Voici les étapes qui font réellement tenir un playbook dans la durée.",
+            "Un manuel SOP ne délivre de la valeur que lorsqu\'il est ancré dans les opérations quotidiennes. Un PDF qui dort dans un dossier partagé sans jamais être ouvert ne sert à rien. Voici les étapes qui font réellement tenir un manuel SOP dans la durée.",
           h3Items: [
             {
               heading: '1. Commencez par le département à plus fort impact',
@@ -224,35 +224,35 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: '3. Formez, ne distribuez pas simplement',
-              text: "Un playbook présenté lors d\'une session de formation a un impact très différent d\'un PDF envoyé par email. Faire parcourir les étapes, laisser l\'équipe poser des questions, pratiquer les séquences : c\'est comme ça que l\'adoption se produit.",
+              text: "Un manuel SOP présenté lors d\'une session de formation a un impact très différent d\'un PDF envoyé par email. Faire parcourir les étapes, laisser l\'équipe poser des questions, pratiquer les séquences : c\'est comme ça que l\'adoption se produit.",
             },
             {
               heading: '4. Révisez trimestriellement',
-              text: "Les opérations évoluent. Un playbook obsolète de six mois commence silencieusement à travailler contre vous : l\'équipe suit le document plutôt que le standard actuel, ou elle arrête de le suivre. Intégrez un calendrier de révision dès le départ.",
+              text: "Les opérations évoluent. Un manuel SOP obsolète de six mois commence silencieusement à travailler contre vous : l\'équipe suit le document plutôt que le standard actuel, ou elle arrête de le suivre. Intégrez un calendrier de révision dès le départ.",
             },
           ],
         },
         {
-          h2: 'Playbooks prêts à l’emploi ou construction depuis zéro',
+          h2: 'Manuels SOP prêts à l’emploi ou construction depuis zéro',
           content:
-            "Construire un playbook opérationnel complet depuis zéro prend des mois et requiert une expertise opérationnelle que la plupart des établissements ne peuvent pas dédier en interne. Les playbooks prêts à l’emploi construits à partir de l’expérience terrain donnent une base structurée à adapter à l’établissement, plutôt que de partir d’une page blanche. Les playbooks LuxOps couvrent le Front Office, le housekeeping, le F&B et le spa, chacun représentant entre 200 et 280 pages de procédures et standards documentés.",
+            "Construire un manuel SOP opérationnel complet depuis zéro prend des mois et requiert une expertise opérationnelle que la plupart des établissements ne peuvent pas dédier en interne. Les Manuels SOP prêts à l’emploi construits à partir de l’expérience terrain donnent une base structurée à adapter à l’établissement, plutôt que de partir d’une page blanche. Les Manuels SOP LuxOps couvrent le Front Office, le housekeeping, le F&B et le spa, chacun représentant entre 200 et 280 pages de procédures et standards documentés.",
         },
       ],
       conclusion:
-        "Un playbook opérationnel n’est pas un document bureaucratique. C’est ce qui permet aux équipes de délivrer un service fiable et constant, quel que soit le collaborateur en poste. Construit depuis zéro ou adapté à partir d’un modèle structuré, la valeur se concrétise rapidement : intégration plus rapide, moins d’erreurs et clients qui retrouvent le même niveau de service à chaque passage.",
-      cta: { text: 'Voir les playbooks et starter packs', href: '/fr/playbooks' },
+        "Un manuel SOP opérationnel n’est pas un document bureaucratique. C’est ce qui permet aux équipes de délivrer un service fiable et constant, quel que soit le collaborateur en poste. Construit depuis zéro ou adapté à partir d’un modèle structuré, la valeur se concrétise rapidement : intégration plus rapide, moins d’erreurs et clients qui retrouvent le même niveau de service à chaque passage.",
+      cta: { text: 'Voir les Manuels SOP et starter packs', href: '/fr/playbooks' },
     },
   },
   {
     slug: 'how-to-write-hotel-sops',
     en: {
-      title: 'How to Write Hotel SOPs: The LuxOps Playbook Method',
+      title: 'How to Write Hotel SOPs: A Practical LuxOps Method',
       description:
-        'Learn how to write hotel SOPs using a playbook structure: trigger, owner, sequence, standard, exception, handover and supervisor check. Includes hotel SOP examples.',
+        'Learn how to write hotel SOPs using an SOP manual structure: trigger, owner, sequence, standard, exception, handover and supervisor check. Includes hotel SOP examples.',
       date: '2026-03-12',
       readTime: '8 min read',
       intro:
-        'Writing hotel SOPs sounds straightforward until you try to use them on shift. A useful SOP is not a polished policy paragraph. It is a playbook page: the trigger that starts the task, the role that owns it, the exact sequence, the quality standard, the exceptions, the escalation path and the handover evidence. This guide shows how to write hotel standard operating procedures in the same format used inside the LuxOps playbooks, with examples from housekeeping and front desk operations.',
+        'Writing hotel SOPs sounds straightforward until you try to use them on shift. A useful SOP is not a polished policy paragraph. It is an SOP manual page: the trigger that starts the task, the role that owns it, the exact sequence, the quality standard, the exceptions, the escalation path and the handover evidence. This guide shows how to write hotel standard operating procedures in the same format used inside the LuxOps SOP manuals, with examples from housekeeping and front desk operations.',
       sections: [
         {
           h2: 'What Makes a Good Hotel SOP?',
@@ -280,7 +280,7 @@ export const articles: BilingualArticle[] = [
         {
           h2: 'The LuxOps Structure for a Hotel SOP',
           content:
-            'Every SOP should contain the same operating fields in the same order. This is what turns a hotel SOP from a document into a usable playbook page that a new hire, supervisor and department head can all work from.',
+            'Every SOP should contain the same operating fields in the same order. This is what turns a hotel SOP from a document into a usable SOP manual page that a new hire, supervisor and department head can all work from.',
           h3Items: [
             {
               heading: 'Trigger',
@@ -363,14 +363,14 @@ export const articles: BilingualArticle[] = [
           ],
         },
         {
-          h2: 'Use a Playbook Template Instead of a Blank Page',
+          h2: 'Use an SOP manual Template Instead of a Blank Page',
           content:
-            'Writing a full hotel SOP library from scratch is a substantial project. A working operation needs procedures for front desk, housekeeping, F&B, spa, night audit, Lost & Found, DND, room inspection, complaints, handovers and training. The value of a playbook template is that the operational logic is already built: sequence, timing, standards, exception rules and supervisor controls. Your work becomes customisation for your property, not invention from a blank page.',
+            'Writing a full hotel SOP library from scratch is a substantial project. A working operation needs procedures for front desk, housekeeping, F&B, spa, night audit, Lost & Found, DND, room inspection, complaints, handovers and training. The value of an SOP manual template is that the operational logic is already built: sequence, timing, standards, exception rules and supervisor controls. Your work becomes customisation for your property, not invention from a blank page.',
         },
       ],
       conclusion:
-        'The best hotel SOPs read like operational tools, not office documents. They tell the team what triggers the task, who owns it, what sequence to follow, what standard to hit, when to escalate and what evidence to leave behind. That is the difference between a SOP folder and a hotel operations playbook.',
-      cta: { text: 'Explore Our SOP Playbooks', href: '/en/playbooks' },
+        'The best hotel SOPs read like operational tools, not office documents. They tell the team what triggers the task, who owns it, what sequence to follow, what standard to hit, when to escalate and what evidence to leave behind. That is the difference between a SOP folder and a hotel operations SOP manual.',
+      cta: { text: 'Explore Our SOP manuals', href: '/en/playbooks' },
     },
     fr: {
       title: 'Comment rédiger une SOP vraiment utile pour les équipes terrain',
@@ -497,7 +497,7 @@ export const articles: BilingualArticle[] = [
       ],
       conclusion:
         "Une SOP ne vaut que par son usage réel. L’observation, le langage simple, le test avec un nouveau collaborateur et la cadence de révision distinguent une documentation qui aide le terrain d’un document rangé dans un dossier. L’investissement est modeste. La différence opérationnelle ne l’est pas.",
-      cta: { text: 'Voir les playbooks SOP', href: '/fr/playbooks' },
+      cta: { text: 'Voir les Manuels SOP', href: '/fr/playbooks' },
     },
   },
   {
@@ -509,7 +509,7 @@ export const articles: BilingualArticle[] = [
       date: '2026-03-14',
       readTime: '9 min read',
       intro:
-        'Front office is the management term. Front desk is what many hotel teams and guests call the place where the procedure actually happens. For SEO and for operations, both matter. A good front office SOP library must cover the front desk moments that create the stay: pre-arrival review, check-in, room not ready, payment handling, check-out, billing disputes, guest recovery, telephone standards and shift handover. This guide is adapted from the LuxOps Front Office Playbook and shows what these SOPs should contain when they are written for daily use, not for a dusty binder.',
+        'Front office is the management term. Front desk is what many hotel teams and guests call the place where the procedure actually happens. For SEO and for operations, both matter. A good front office SOP library must cover the front desk moments that create the stay: pre-arrival review, check-in, room not ready, payment handling, check-out, billing disputes, guest recovery, telephone standards and shift handover. This guide is adapted from the LuxOps Front Office SOP manual and shows what these SOPs should contain when they are written for daily use, not for a dusty binder.',
       sections: [
         {
           h2: 'Why Front Office and Front Desk SOPs Matter',
@@ -518,7 +518,7 @@ export const articles: BilingualArticle[] = [
           h3Items: [
             {
               heading: 'Turnover impact',
-              text: 'Front desk turnover is high in most hotels. Without written SOPs, every departure takes operating knowledge with it: how to handle early arrivals, what to say when a card is declined, which billing disputes can be solved by the agent and which need manager approval. A new hire should learn from the playbook first, then from shadowing, not the other way around.',
+              text: 'Front desk turnover is high in most hotels. Without written SOPs, every departure takes operating knowledge with it: how to handle early arrivals, what to say when a card is declined, which billing disputes can be solved by the agent and which need manager approval. A new hire should learn from the SOP manual first, then from shadowing, not the other way around.',
             },
             {
               heading: 'Brand consistency',
@@ -545,7 +545,7 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: 'Complaint handling SOP',
-              text: 'The LuxOps playbook uses the LEARN flow: Listen, Empathise, Apologise, Resolve, Notify. The critical rule is that active and recent complaints must be discussed at every morning meeting and every shift handover until they are closed.',
+              text: 'The LuxOps SOP manual uses the LEARN flow: Listen, Empathise, Apologise, Resolve, Notify. The critical rule is that active and recent complaints must be discussed at every morning meeting and every shift handover until they are closed.',
             },
             {
               heading: 'Telephone and communication SOP',
@@ -598,7 +598,7 @@ export const articles: BilingualArticle[] = [
       ],
       conclusion:
         'A documented front office is a resilient front office. When the team has structured procedures to follow, not just what they were told by the person who trained them, quality stops depending on experience level. A new agent on a Monday morning should be working to the same standard as your most experienced member on a Friday evening. Written procedures are the only way to make that reliable.',
-      cta: { text: 'View the Front Office Playbook', href: '/en/playbooks/fo' },
+      cta: { text: 'View the Front Office SOP manual', href: '/en/playbooks/fo' },
     },
     fr: {
       title: 'SOPs Front Office : à quoi ressemblent de vraies procédures',
@@ -696,7 +696,7 @@ export const articles: BilingualArticle[] = [
       ],
       conclusion:
         "Un front office documenté est un front office résilient. Quand l\'équipe dispose de procédures structurées à suivre, pas seulement ce que lui a dit la personne qui l\'a formée, la qualité cesse de dépendre du niveau d\'expérience. Un nouvel agent un lundi matin doit travailler au même standard que le membre le plus expérimenté de l\'équipe un vendredi soir. Des procédures écrites sont le seul moyen de rendre ça fiable.",
-      cta: { text: 'Voir le Playbook Front Office', href: '/fr/playbooks' },
+      cta: { text: 'Voir le Manuel SOP Front Office', href: '/fr/playbooks' },
     },
   },
   {
@@ -791,14 +791,14 @@ export const articles: BilingualArticle[] = [
           ],
         },
         {
-          h2: 'Using a Housekeeping Playbook',
+          h2: 'Using a Housekeeping SOP manual',
           content:
-            "A complete housekeeping playbook provides pre-built inspection checklists by room type, departure clean procedures, stayover procedures, turndown SOPs, linen management protocols, deep cleaning schedules, and lost and found procedures, all formatted for immediate team use. Rather than building this documentation from scratch, a structured playbook gives the head of housekeeping a professional base to customise for the property's specific room types and standards.",
+            "A complete housekeeping SOP manual provides pre-built inspection checklists by room type, departure clean procedures, stayover procedures, turndown SOPs, linen management protocols, deep cleaning schedules, and lost and found procedures, all formatted for immediate team use. Rather than building this documentation from scratch, a structured SOP manual gives the head of housekeeping a professional base to customise for the property's specific room types and standards.",
         },
       ],
       conclusion:
         'Housekeeping runs on discipline and detail. The properties that maintain consistently high room quality are the ones where every team member, not just the most experienced, knows exactly what standard they are working to and has the checklist to verify their own work. Structure in housekeeping is not about micromanaging the team. It is about making it straightforward for them to do their job well, every room, every shift.',
-      cta: { text: 'View the Housekeeping Playbook', href: '/en/playbooks' },
+      cta: { text: 'View the Housekeeping SOP manual', href: '/en/playbooks' },
     },
     fr: {
       title: "Checklist Housekeeping Hôtelier : Standards d'Inspection des Chambres pour Établissements Haut de Gamme",
@@ -890,14 +890,14 @@ export const articles: BilingualArticle[] = [
           ],
         },
         {
-          h2: 'Utiliser un Playbook Housekeeping',
+          h2: 'Utiliser un Manuel SOP Housekeeping',
           content:
-            "Un playbook housekeeping complet fournit des checklists d\'inspection pré-construites par type de chambre, des procédures de nettoyage de départ, des procédures de recouche, des SOPs de couverture, des protocoles de gestion du linge, des plannings de nettoyage approfondi et des procédures d\'objets trouvés, le tout formaté pour une utilisation immédiate par l\'équipe. Plutôt que de construire cette documentation depuis zéro, un playbook structuré donne à la gouvernante une base professionnelle à personnaliser selon les types de chambres et standards spécifiques de l\'établissement.",
+            "Un manuel SOP housekeeping complet fournit des checklists d\'inspection pré-construites par type de chambre, des procédures de nettoyage de départ, des procédures de recouche, des SOPs de couverture, des protocoles de gestion du linge, des plannings de nettoyage approfondi et des procédures d\'objets trouvés, le tout formaté pour une utilisation immédiate par l\'équipe. Plutôt que de construire cette documentation depuis zéro, un manuel SOP structuré donne à la gouvernante une base professionnelle à personnaliser selon les types de chambres et standards spécifiques de l\'établissement.",
         },
       ],
       conclusion:
         "Le housekeeping fonctionne à la discipline et au détail. Les établissements qui maintiennent un niveau de chambre constamment élevé sont ceux où chaque collaborateur, pas seulement les plus expérimentés, sait exactement quel standard est attendu et dispose de la checklist pour vérifier son propre travail. La structure en housekeeping n\'est pas une question de micromanagement. C\'est ce qui permet à l\'équipe de bien faire son travail, chaque chambre, chaque service.",
-      cta: { text: 'Voir le Playbook Housekeeping', href: '/fr/playbooks' },
+      cta: { text: 'Voir le Manuel SOP Housekeeping', href: '/fr/playbooks' },
     },
   },
   {
@@ -905,16 +905,16 @@ export const articles: BilingualArticle[] = [
     en: {
       title: 'F&B Service Standards: Restaurant, Bar, Room Service and Recovery',
       description:
-        'F&B service standards adapted from the LuxOps F&B Playbook: 21-step restaurant sequence, bar standards, room service timing, allergen handling and service recovery.',
+        'F&B service standards adapted from the LuxOps F&B SOP manual: 21-step restaurant sequence, bar standards, room service timing, allergen handling and service recovery.',
       date: '2026-03-16',
       readTime: '10 min read',
       intro:
-        'This guide is adapted from the LuxOps F&B Playbook and the F&B Service Starter Pack. In any operation with a restaurant, bar, breakfast or room service, F&B standards need to connect service preparation, guest interaction, recovery and quality control into one operating language. The point is not to make every interaction sound the same. The point is to make sure every team member knows what to prepare, what to check, what to say, when to escalate and how to close the service properly.',
+        'This guide is adapted from the LuxOps F&B SOP manual and the F&B Service Starter Pack. In any operation with a restaurant, bar, breakfast or room service, F&B standards need to connect service preparation, guest interaction, recovery and quality control into one operating language. The point is not to make every interaction sound the same. The point is to make sure every team member knows what to prepare, what to check, what to say, when to escalate and how to close the service properly.',
       sections: [
         {
           h2: 'The F&B standard starts before the guest arrives',
           content:
-            'The LuxOps F&B Playbook treats pre-service preparation as part of the guest experience. If the briefing is vague, the station is half-stocked or the team does not know the allergies and VIP notes, the service is already fragile before the first table is seated.',
+            'The LuxOps F&B SOP manual treats pre-service preparation as part of the guest experience. If the briefing is vague, the station is half-stocked or the team does not know the allergies and VIP notes, the service is already fragile before the first table is seated.',
           h3Items: [
             {
               heading: 'Personal readiness',
@@ -933,11 +933,11 @@ export const articles: BilingualArticle[] = [
         {
           h2: 'Restaurant service should follow a controlled sequence',
           content:
-            'Chapter 2 of the F&B Playbook uses a 21-step restaurant service sequence. The value of the sequence is that it gives the team a shared rhythm. The server can remain warm and natural because the operational order is already clear.',
+            'Chapter 2 of the F&B SOP manual uses a 21-step restaurant service sequence. The value of the sequence is that it gives the team a shared rhythm. The server can remain warm and natural because the operational order is already clear.',
           h3Items: [
             {
               heading: 'Arrival and seating',
-              text: 'The sequence begins with welcome within 10 seconds, immediate escort to table, chair assistance, menu presentation within 30 seconds of seating and napkin service as guests settle. The playbook is explicit: never point, always escort.',
+              text: 'The sequence begins with welcome within 10 seconds, immediate escort to table, chair assistance, menu presentation within 30 seconds of seating and napkin service as guests settle. The SOP manual is explicit: never point, always escort.',
             },
             {
               heading: 'Water, drinks and order taking',
@@ -964,7 +964,7 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: 'Drink timing',
-              text: 'The playbook gives practical timing standards: draft beer in 30 to 45 seconds, wine by the glass around 1 minute, a simple mixed drink in 1 to 2 minutes, a standard cocktail in 2 to 3 minutes, and a complex craft cocktail in 3 to 5 minutes.',
+              text: 'The SOP manual gives practical timing standards: draft beer in 30 to 45 seconds, wine by the glass around 1 minute, a simple mixed drink in 1 to 2 minutes, a standard cocktail in 2 to 3 minutes, and a complex craft cocktail in 3 to 5 minutes.',
             },
             {
               heading: 'Beverage consistency',
@@ -975,7 +975,7 @@ export const articles: BilingualArticle[] = [
         {
           h2: 'Room service standards are restaurant standards in private',
           content:
-            'Chapter 6 of the playbook defines room service as an elevated private dining experience, not a reduced restaurant service. The guest receives the standard in their personal space, with only one interaction to get it right.',
+            'Chapter 6 of the SOP manual defines room service as an elevated private dining experience, not a reduced restaurant service. The guest receives the standard in their personal space, with only one interaction to get it right.',
           h3Items: [
             {
               heading: 'Timing standards',
@@ -998,7 +998,7 @@ export const articles: BilingualArticle[] = [
           h3Items: [
             {
               heading: 'Service recovery',
-              text: 'For wrong orders, long waits, quality issues or billing disputes, the playbook gives a step-by-step response: acknowledge, own the issue, give a clear action, follow up and document. The server does not disappear after escalating.',
+              text: 'For wrong orders, long waits, quality issues or billing disputes, the SOP manual gives a step-by-step response: acknowledge, own the issue, give a clear action, follow up and document. The server does not disappear after escalating.',
             },
             {
               heading: 'Allergen protocol',
@@ -1011,16 +1011,16 @@ export const articles: BilingualArticle[] = [
           ],
         },
         {
-          h2: 'Starter Pack vs. full F&B Playbook',
+          h2: 'Starter Pack vs. full F&B SOP manual',
           content:
-            'The F&B Starter Pack is designed for immediate use: daily service checklist, restaurant opening checklist, restaurant closing checklist, service sequence SOP, briefing template, table inspection checklist, recovery scripts, allergen tracker, room service checklist, upselling cheat sheet and onboarding checklist. The full playbook goes wider and deeper across restaurant, breakfast, bar, wine, room service, guest interaction, mise en place, team management and quality standards.',
+            'The F&B Starter Pack is designed for immediate use: daily service checklist, restaurant opening checklist, restaurant closing checklist, service sequence SOP, briefing template, table inspection checklist, recovery scripts, allergen tracker, room service checklist, upselling cheat sheet and onboarding checklist. The full SOP manual goes wider and deeper across restaurant, breakfast, bar, wine, room service, guest interaction, mise en place, team management and quality standards.',
           h3Items: [
             {
               heading: 'Use the starter pack for daily execution',
               text: 'Use it when managers need printable checklists and scripts that can be placed in the service binder, used during briefing, or included in onboarding.',
             },
             {
-              heading: 'Use the playbook for the full SOP structure',
+              heading: 'Use the SOP manual for the full SOP structure',
               text: 'Use it when the department needs a complete operating reference, including standards, procedures, troubleshooting, quality controls and management structure.',
             },
           ],
@@ -1033,16 +1033,16 @@ export const articles: BilingualArticle[] = [
     fr: {
       title: 'Standards de service F&B : restaurant, bar, room service et recovery',
       description:
-        "Standards de service F&B adaptés du Playbook F&B LuxOps : séquence restaurant en 21 étapes, bar, room service, allergènes et recovery client.",
+        "Standards de service F&B adaptés du Manuel SOP F&B LuxOps : séquence restaurant en 21 étapes, bar, room service, allergènes et recovery client.",
       date: '2026-03-16',
       readTime: '10 min de lecture',
       intro:
-        "Ce guide est adapté du playbook F&B LuxOps et du starter pack F&B. Dans un établissement avec restaurant, bar, petit-déjeuner ou room service, les standards F&B doivent relier la préparation, l’interaction client, le recovery et le contrôle qualité autour d’un même langage opérationnel. L’objectif n’est pas de rendre chaque interaction identique, mais de faire en sorte que chaque collaborateur sache quoi préparer, quoi contrôler, quoi dire, quand escalader et comment clôturer le service correctement.",
+        "Ce guide est adapté du manuel SOP F&B LuxOps et du starter pack F&B. Dans un établissement avec restaurant, bar, petit-déjeuner ou room service, les standards F&B doivent relier la préparation, l’interaction client, le recovery et le contrôle qualité autour d’un même langage opérationnel. L’objectif n’est pas de rendre chaque interaction identique, mais de faire en sorte que chaque collaborateur sache quoi préparer, quoi contrôler, quoi dire, quand escalader et comment clôturer le service correctement.",
       sections: [
         {
           h2: 'Le standard F&B commence avant l’arrivée du client',
           content:
-            "Dans le Playbook F&B LuxOps, la préparation pré-service fait déjà partie de l’expérience client. Si le briefing reste vague, si le poste est incomplet ou si l’équipe ne connaît pas les allergies et les notes VIP, le service est fragilisé avant même l’installation de la première table.",
+            "Dans le Manuel SOP F&B LuxOps, la préparation pré-service fait déjà partie de l’expérience client. Si le briefing reste vague, si le poste est incomplet ou si l’équipe ne connaît pas les allergies et les notes VIP, le service est fragilisé avant même l’installation de la première table.",
           h3Items: [
             {
               heading: 'Préparation individuelle',
@@ -1061,11 +1061,11 @@ export const articles: BilingualArticle[] = [
         {
           h2: 'Le service restaurant doit suivre une séquence contrôlée',
           content:
-            "Le chapitre consacré au service restaurant dans le Playbook F&B s’appuie sur une séquence de service en 21 étapes. Sa valeur est de donner à l’équipe un rythme partagé. Le serveur peut rester chaleureux et naturel, justement parce que l’ordre opérationnel est déjà clair.",
+            "Le chapitre consacré au service restaurant dans le Manuel SOP F&B s’appuie sur une séquence de service en 21 étapes. Sa valeur est de donner à l’équipe un rythme partagé. Le serveur peut rester chaleureux et naturel, justement parce que l’ordre opérationnel est déjà clair.",
           h3Items: [
             {
               heading: 'Accueil et placement',
-              text: "La séquence commence par l’accueil dans les 10 secondes, l’accompagnement immédiat à table, l’aide à l’installation, la présentation des cartes dans les 30 secondes suivant l’installation, puis le service des serviettes pendant que les clients prennent place. Le principe du playbook est clair : ne jamais pointer, toujours accompagner.",
+              text: "La séquence commence par l’accueil dans les 10 secondes, l’accompagnement immédiat à table, l’aide à l’installation, la présentation des cartes dans les 30 secondes suivant l’installation, puis le service des serviettes pendant que les clients prennent place. Le principe du manuel SOP est clair : ne jamais pointer, toujours accompagner.",
             },
             {
               heading: 'Eau, boissons et prise de commande',
@@ -1092,7 +1092,7 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: 'Timing boissons',
-              text: "Le playbook donne des repères concrets : bière pression en 30 à 45 secondes, vin au verre autour d’une minute, boisson mélangée simple en 1 à 2 minutes, cocktail standard en 2 à 3 minutes, cocktail signature complexe en 3 à 5 minutes.",
+              text: "Le manuel SOP donne des repères concrets : bière pression en 30 à 45 secondes, vin au verre autour d’une minute, boisson mélangée simple en 1 à 2 minutes, cocktail standard en 2 à 3 minutes, cocktail signature complexe en 3 à 5 minutes.",
             },
             {
               heading: 'Régularité des boissons',
@@ -1126,7 +1126,7 @@ export const articles: BilingualArticle[] = [
           h3Items: [
             {
               heading: 'Service recovery',
-              text: "Pour erreur de commande, attente longue, problème de qualité ou litige de facturation, le playbook donne une réponse séquencée : reconnaître, porter le sujet, donner une action claire, faire le suivi et documenter. Le serveur ne disparaît pas après l’escalade.",
+              text: "Pour erreur de commande, attente longue, problème de qualité ou litige de facturation, le manuel SOP donne une réponse séquencée : reconnaître, porter le sujet, donner une action claire, faire le suivi et documenter. Le serveur ne disparaît pas après l’escalade.",
             },
             {
               heading: 'Protocole allergènes',
@@ -1139,16 +1139,16 @@ export const articles: BilingualArticle[] = [
           ],
         },
         {
-          h2: 'Starter pack ou playbook F&B complet ?',
+          h2: 'Starter pack ou manuel SOP F&B complet ?',
           content:
-            "Le starter pack F&B est conçu pour une utilisation immédiate : checklist de service quotidien, checklist d’ouverture restaurant, checklist de fermeture, SOP de séquence de service, template de briefing, checklist d’inspection de table, scripts de recovery, tracker allergènes, checklist room service, fiche upselling et checklist onboarding. Le playbook complet va plus loin sur le restaurant, le petit-déjeuner, le bar, le vin, le room service, l’interaction client, la mise en place, le management et la qualité.",
+            "Le starter pack F&B est conçu pour une utilisation immédiate : checklist de service quotidien, checklist d’ouverture restaurant, checklist de fermeture, SOP de séquence de service, template de briefing, checklist d’inspection de table, scripts de recovery, tracker allergènes, checklist room service, fiche upselling et checklist onboarding. Le manuel SOP complet va plus loin sur le restaurant, le petit-déjeuner, le bar, le vin, le room service, l’interaction client, la mise en place, le management et la qualité.",
           h3Items: [
             {
               heading: 'Utiliser le starter pack pour l’exécution quotidienne',
               text: "Il est utile lorsque les managers ont besoin de checklists et scripts imprimables à placer dans le classeur de service, à utiliser en briefing ou à intégrer dans l’onboarding.",
             },
             {
-              heading: 'Utiliser le playbook pour la structure SOP complète',
+              heading: 'Utiliser le manuel SOP pour la structure SOP complète',
               text: "Il est utile lorsque le département a besoin d’une référence complète : standards, procédures, gestion des situations sensibles, contrôles qualité et structure de management.",
             },
           ],
@@ -1291,7 +1291,7 @@ export const articles: BilingualArticle[] = [
       ],
       conclusion:
         'Front office procedures are not bureaucracy. They are what allows the team to perform at the same level regardless of the shift, the volume, or the experience level of the person at the desk. When procedures are documented and understood, the quality stops being individual and starts being structural. Guests feel that difference, and so do the review scores.',
-      cta: { text: 'View Front Office Playbook', href: '/en/playbooks' },
+      cta: { text: 'View Front Office SOP manual', href: '/en/playbooks' },
     },
     fr: {
       title: 'Procédures Front Office Hôtel : Le Guide Complet pour les Établissements de Luxe',
@@ -1423,7 +1423,7 @@ export const articles: BilingualArticle[] = [
       ],
       conclusion:
         "Les procédures front office ne sont pas de la bureaucratie. Elles sont ce qui permet à l\'équipe de performer au même niveau quel que soit le service, le volume ou le niveau d\'expérience de la personne à la réception. Quand les procédures sont documentées et comprises, la qualité cesse d\'être individuelle pour devenir structurelle. Les clients sentent cette différence, et les scores d\'évaluation aussi.",
-      cta: { text: 'Voir le Playbook Front Office', href: '/fr/playbooks' },
+      cta: { text: 'Voir le Manuel SOP Front Office', href: '/fr/playbooks' },
     },
   },
   {
@@ -1431,11 +1431,11 @@ export const articles: BilingualArticle[] = [
     en: {
       title: 'Hotel Room Inspection Checklist: Housekeeping Supervisor SOP and 100-Point Score',
       description:
-        'A hotel room inspection checklist adapted from the LuxOps Housekeeping Playbook: Clean vs Inspected workflow, 100-point scoring, bathroom checks, defect tracking and supervisor release rules.',
+        'A hotel room inspection checklist adapted from the LuxOps Housekeeping SOP manual: Clean vs Inspected workflow, 100-point scoring, bathroom checks, defect tracking and supervisor release rules.',
       date: '2026-03-28',
       readTime: '12 min read',
       intro:
-        'A clean room and an inspected room are not the same thing. In the LuxOps Housekeeping Playbook, a departure room is not ready for sale when the room attendant finishes cleaning it. It is only ready after a supervisor has physically inspected it, corrected any defects, and updated the PMS from Clean to Inspected. This hotel room inspection checklist is adapted from the LuxOps quality control chapter and shows the supervisor SOP: fixed inspection sequence, 100-point scoring model, bathroom and bedroom criteria, defect log and release rule for Front Desk.',
+        'A clean room and an inspected room are not the same thing. In the LuxOps Housekeeping SOP manual, a departure room is not ready for sale when the room attendant finishes cleaning it. It is only ready after a supervisor has physically inspected it, corrected any defects, and updated the PMS from Clean to Inspected. This hotel room inspection checklist is adapted from the LuxOps quality control chapter and shows the supervisor SOP: fixed inspection sequence, 100-point scoring model, bathroom and bedroom criteria, defect log and release rule for Front Desk.',
       sections: [
         {
           h2: 'The Room Status Workflow: Clean Is Not Inspected',
@@ -1582,7 +1582,7 @@ export const articles: BilingualArticle[] = [
       ],
       conclusion:
         'A strong room inspection checklist does more than catch missed dust or a streaky mirror. It protects the room status workflow, gives Front Office confidence in the rooms it assigns, and gives housekeeping supervisors real coaching data. The standard is simple: every room attendant owns self-inspection, every departure room is verified before release, and every defect becomes information the team can use to improve.',
-      cta: { text: 'View the Housekeeping Playbook', href: '/en/playbooks/hsk' },
+      cta: { text: 'View the Housekeeping SOP manual', href: '/en/playbooks/hsk' },
       faqs: [
         {
           question: 'What is a room inspection checklist in housekeeping?',
@@ -1602,7 +1602,7 @@ export const articles: BilingualArticle[] = [
         {
           question: 'How often should a hotel room be inspected by a supervisor?',
           answer:
-            'In the LuxOps Housekeeping Playbook, 100% of departure rooms should be inspected before release. Stayover rooms should be spot-checked at 20 to 30% per day, with priority for newer attendants, VIP rooms, long-stay guests and rooms connected to previous complaints.',
+            'In the LuxOps Housekeeping SOP manual, 100% of departure rooms should be inspected before release. Stayover rooms should be spot-checked at 20 to 30% per day, with priority for newer attendants, VIP rooms, long-stay guests and rooms connected to previous complaints.',
         },
         {
           question: 'What is the difference between a room attendant check and a supervisor inspection?',
@@ -1757,7 +1757,7 @@ export const articles: BilingualArticle[] = [
       ],
       conclusion:
         "Une inspection de chambre n'est utile que si les critères derrière elle le sont aussi. Une gouvernante d'étage qui travaille à partir d'une checklist définie et documente ce qu'elle trouve crée un système qui s'améliore dans le temps. Celle qui se base sur une impression générale crée un système qui n'est cohérent que tant qu'elle est en poste. Le protocole d'inspection est l'une des procédures les plus importantes dans un SOP housekeeping, et l'une des plus souvent sous-documentées.",
-      cta: { text: 'Voir le Playbook Housekeeping', href: '/fr/playbooks' },
+      cta: { text: 'Voir le Manuel SOP Housekeeping', href: '/fr/playbooks' },
       faqs: [
         {
           question: "Qu'est-ce qu'une checklist d'inspection chambre en housekeeping ?",
@@ -1792,11 +1792,11 @@ export const articles: BilingualArticle[] = [
     en: {
       title: 'Restaurant SOP: 21-Step Service Sequence, Opening and Closing',
       description:
-        'Restaurant SOP guide adapted from the LuxOps F&B Playbook: opening checklist, 21-step service sequence, table inspection, order taking, recovery and closing handover.',
+        'Restaurant SOP guide adapted from the LuxOps F&B SOP manual: opening checklist, 21-step service sequence, table inspection, order taking, recovery and closing handover.',
       date: '2026-03-29',
       readTime: '10 min read',
       intro:
-        'This restaurant SOP guide is adapted from the LuxOps F&B Playbook and the F&B Starter Pack. It focuses on the operating rhythm that makes restaurant service consistent: opening preparation, briefing, table inspection, the 21-step service sequence, recovery rules and closing handover. The point is not to make service mechanical. It is to remove operational doubt so the team can focus on the guest.',
+        'This restaurant SOP guide is adapted from the LuxOps F&B SOP manual and the F&B Starter Pack. It focuses on the operating rhythm that makes restaurant service consistent: opening preparation, briefing, table inspection, the 21-step service sequence, recovery rules and closing handover. The point is not to make service mechanical. It is to remove operational doubt so the team can focus on the guest.',
       sections: [
         {
           h2: 'Opening procedure: T-90 to doors open',
@@ -1820,7 +1820,7 @@ export const articles: BilingualArticle[] = [
         {
           h2: 'The 21-step restaurant service sequence',
           content:
-            'The F&B Playbook gives the restaurant team a complete 21-step sequence. It is not a script. It is the operating order that keeps the guest experience flowing from entrance to farewell.',
+            'The F&B SOP manual gives the restaurant team a complete 21-step sequence. It is not a script. It is the operating order that keeps the guest experience flowing from entrance to farewell.',
           h3Items: [
             {
               heading: 'Arrival and first contact',
@@ -1839,7 +1839,7 @@ export const articles: BilingualArticle[] = [
         {
           h2: 'Order taking is a control point, not transcription',
           content:
-            'The playbook is clear on order taking: the server listens completely, asks clarifying questions, notes allergies prominently, repeats the order and communicates kitchen requirements properly. This is where many service failures are prevented before they exist.',
+            'The SOP manual is clear on order taking: the server listens completely, asks clarifying questions, notes allergies prominently, repeats the order and communicates kitchen requirements properly. This is where many service failures are prevented before they exist.',
           h3Items: [
             {
               heading: 'Allergy capture',
@@ -1858,11 +1858,11 @@ export const articles: BilingualArticle[] = [
         {
           h2: 'Table inspection and mise en place',
           content:
-            'Chapter 8 of the playbook defines mise en place as physical, mental and organizational readiness. The starter pack turns that into a table inspection checklist the team can actually use before service.',
+            'Chapter 8 of the SOP manual defines mise en place as physical, mental and organizational readiness. The starter pack turns that into a table inspection checklist the team can actually use before service.',
           h3Items: [
             {
               heading: 'Physical table standard',
-              text: 'The playbook gives exact placement references: show plate 1 inch or 2.5 cm from the edge, fork 1 inch from the plate, glasses above the knife tip, and minimum 24 inches or 60 cm between covers.',
+              text: 'The SOP manual gives exact placement references: show plate 1 inch or 2.5 cm from the edge, fork 1 inch from the plate, glasses above the knife tip, and minimum 24 inches or 60 cm between covers.',
             },
             {
               heading: 'Station readiness',
@@ -1891,17 +1891,17 @@ export const articles: BilingualArticle[] = [
         },
       ],
       conclusion:
-        'A restaurant SOP is useful when it follows the real shift: opening, briefing, service sequence, order control, table maintenance, recovery and closing. The LuxOps F&B Starter Pack gives the daily checklists and scripts. The full F&B Playbook gives the complete department reference.',
+        'A restaurant SOP is useful when it follows the real shift: opening, briefing, service sequence, order control, table maintenance, recovery and closing. The LuxOps F&B Starter Pack gives the daily checklists and scripts. The full F&B SOP manual gives the complete department reference.',
       cta: { text: 'View the F&B Starter Pack', href: '/en/playbooks/fb-starter-pack' },
     },
     fr: {
       title: "SOP restaurant : ouverture, séquence de service et fermeture",
       description:
-        "Guide SOP restaurant adapté du Playbook F&B LuxOps : checklist d’ouverture, séquence de service en 21 étapes, inspection de table, prise de commande, recovery et clôture.",
+        "Guide SOP restaurant adapté du Manuel SOP F&B LuxOps : checklist d’ouverture, séquence de service en 21 étapes, inspection de table, prise de commande, recovery et clôture.",
       date: '2026-03-29',
       readTime: '10 min de lecture',
       intro:
-        "Ce guide SOP restaurant est adapté du playbook F&B LuxOps et du starter pack F&B. Il s’applique aussi bien à un restaurant d’établissement, un resort, un coffee shop, un point de vente indépendant ou une salle de petit-déjeuner. Le sujet reste le même : préparation d’ouverture, briefing, inspection de table, séquence de service, règles de recovery et passation de clôture. L’objectif n’est pas de rendre le service mécanique, mais de retirer le doute opérationnel pour que l’équipe puisse se concentrer sur le client.",
+        "Ce guide SOP restaurant est adapté du manuel SOP F&B LuxOps et du starter pack F&B. Il s’applique aussi bien à un restaurant d’établissement, un resort, un coffee shop, un point de vente indépendant ou une salle de petit-déjeuner. Le sujet reste le même : préparation d’ouverture, briefing, inspection de table, séquence de service, règles de recovery et passation de clôture. L’objectif n’est pas de rendre le service mécanique, mais de retirer le doute opérationnel pour que l’équipe puisse se concentrer sur le client.",
       sections: [
         {
           h2: 'Procédure d’ouverture : de T-90 à l’ouverture des portes',
@@ -1925,7 +1925,7 @@ export const articles: BilingualArticle[] = [
         {
           h2: 'La séquence restaurant en 21 étapes',
           content:
-            "Le playbook F&B donne à l’équipe restaurant une séquence complète en 21 étapes. Ce n’est pas un script. C’est l’ordre opérationnel qui garde l’expérience fluide, de l’entrée du client jusqu’à l’au revoir.",
+            "Le manuel SOP F&B donne à l’équipe restaurant une séquence complète en 21 étapes. Ce n’est pas un script. C’est l’ordre opérationnel qui garde l’expérience fluide, de l’entrée du client jusqu’à l’au revoir.",
           h3Items: [
             {
               heading: 'Arrivée et premier contact',
@@ -1944,7 +1944,7 @@ export const articles: BilingualArticle[] = [
         {
           h2: 'La prise de commande est un point de contrôle',
           content:
-            "Le playbook est clair sur la prise de commande : le serveur écoute entièrement, pose les questions de clarification, signale les allergies, répète la commande et transmet correctement les informations à la cuisine. C’est là que beaucoup d’incidents sont évités avant d’exister.",
+            "Le manuel SOP est clair sur la prise de commande : le serveur écoute entièrement, pose les questions de clarification, signale les allergies, répète la commande et transmet correctement les informations à la cuisine. C’est là que beaucoup d’incidents sont évités avant d’exister.",
           h3Items: [
             {
               heading: 'Capture des allergies',
@@ -1967,7 +1967,7 @@ export const articles: BilingualArticle[] = [
           h3Items: [
             {
               heading: 'Standard physique de la table',
-              text: "Le playbook donne des repères précis : assiette de présentation à 2,5 cm du bord, fourchette à 2,5 cm de l’assiette, verres au-dessus de la pointe du couteau et 60 cm minimum entre deux couverts.",
+              text: "Le manuel SOP donne des repères précis : assiette de présentation à 2,5 cm du bord, fourchette à 2,5 cm de l’assiette, verres au-dessus de la pointe du couteau et 60 cm minimum entre deux couverts.",
             },
             {
               heading: 'Stations prêtes',
@@ -1996,7 +1996,7 @@ export const articles: BilingualArticle[] = [
         },
       ],
       conclusion:
-        "Une SOP restaurant utile suit le vrai déroulé d’un shift : ouverture, briefing, séquence de service, prise de commande, suivi de table, recovery et clôture. Le starter pack F&B donne les checklists et scripts du quotidien. Le playbook F&B complet apporte toute la référence du département.",
+        "Une SOP restaurant utile suit le vrai déroulé d’un shift : ouverture, briefing, séquence de service, prise de commande, suivi de table, recovery et clôture. Le starter pack F&B donne les checklists et scripts du quotidien. Le manuel SOP F&B complet apporte toute la référence du département.",
       cta: { text: 'Voir le starter pack F&B', href: '/fr/playbooks/fb-starter-pack' },
     },
   },
@@ -2105,7 +2105,7 @@ export const articles: BilingualArticle[] = [
       ],
       conclusion:
         'A spa procedure does not make every treatment the same. It makes every treatment possible. The structure behind a wellness experience: the prepared room, the properly conducted consultation, the precise timing. That is what gives the therapist the conditions to do their best work. That work is human and individual. The procedures that frame it are not.',
-      cta: { text: 'View the Spa & Wellness Playbook', href: '/en/playbooks' },
+      cta: { text: 'View the Spa & Wellness SOP manual', href: '/en/playbooks' },
     },
     fr: {
       title: "Procédures de service au spa : comment structurer les soins dans un établissement haut de gamme",
@@ -2210,7 +2210,7 @@ export const articles: BilingualArticle[] = [
       ],
       conclusion:
         "Une procédure spa ne rend pas tous les soins identiques. Elle rend chaque soin possible. La cabine préparée, la consultation bien menée, le timing respecté : c'est ce qui donne au thérapeute les conditions pour faire son meilleur travail. Ce travail est humain et singulier. Ce qui l'encadre ne l'est pas.",
-      cta: { text: 'Voir le Playbook Spa & Wellness', href: '/fr/playbooks' },
+      cta: { text: 'Voir le Manuel SOP Spa & Wellness', href: '/fr/playbooks' },
     },
   },
   {
@@ -2218,16 +2218,16 @@ export const articles: BilingualArticle[] = [
     en: {
       title: 'Room Service SOP: Order Taking, Tray Setup and Delivery Standards',
       description:
-        'Room service SOP adapted from the LuxOps F&B Playbook: order taking, delivery timing, tray and trolley setup, in-room protocol, delay recovery and tray collection.',
+        'Room service SOP adapted from the LuxOps F&B SOP manual: order taking, delivery timing, tray and trolley setup, in-room protocol, delay recovery and tray collection.',
       date: '2026-03-31',
       readTime: '9 min read',
       intro:
-        'This room service SOP is adapted from the LuxOps F&B Playbook and the F&B Starter Pack. The playbook defines in-room dining as the restaurant standard delivered into the guest’s private space. There is no dining room atmosphere, no floor manager passing by and no second interaction to correct the impression. The order, timing, tray, delivery and collection must therefore be controlled as one flow.',
+        'This room service SOP is adapted from the LuxOps F&B SOP manual and the F&B Starter Pack. The SOP manual defines in-room dining as the restaurant standard delivered into the guest’s private space. There is no dining room atmosphere, no floor manager passing by and no second interaction to correct the impression. The order, timing, tray, delivery and collection must therefore be controlled as one flow.',
       sections: [
         {
           h2: 'Room service is not reduced restaurant service',
           content:
-            'Chapter 6 of the playbook frames room service as a complete private dining experience. The setting changes from the restaurant to the guest room, but the standard should not drop. The service becomes more concentrated because one interaction has to carry the whole experience.',
+            'Chapter 6 of the SOP manual frames room service as a complete private dining experience. The setting changes from the restaurant to the guest room, but the standard should not drop. The service becomes more concentrated because one interaction has to carry the whole experience.',
           h3Items: [
             {
               heading: 'What every delivery must include',
@@ -2235,7 +2235,7 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: 'Why guests choose room service',
-              text: 'The playbook lists privacy, convenience, comfort, work, celebration, illness, late or early hours and children as common reasons. Each reason changes the tone of service. Some guests want full setup, others want minimal interaction.',
+              text: 'The SOP manual lists privacy, convenience, comfort, work, celebration, illness, late or early hours and children as common reasons. Each reason changes the tone of service. Some guests want full setup, others want minimal interaction.',
             },
             {
               heading: 'Restaurant quality, private context',
@@ -2265,7 +2265,7 @@ export const articles: BilingualArticle[] = [
         {
           h2: 'Timing standards and delay protocol',
           content:
-            'The playbook gives clear target times because room service timing is promised directly to the guest. A missed promise is not just a kitchen delay. It is a trust issue.',
+            'The SOP manual gives clear target times because room service timing is promised directly to the guest. A missed promise is not just a kitchen delay. It is a trust issue.',
           h3Items: [
             {
               heading: 'Reference timing',
@@ -2288,7 +2288,7 @@ export const articles: BilingualArticle[] = [
           h3Items: [
             {
               heading: 'When to use tray or trolley',
-              text: 'The playbook uses a tray for 1 to 2 guests, simple orders and beverages. It uses a trolley for 2 or more guests, multiple courses and hot items. A trolley with hotbox is used for full meals or orders that need temperature hold.',
+              text: 'The SOP manual uses a tray for 1 to 2 guests, simple orders and beverages. It uses a trolley for 2 or more guests, multiple courses and hot items. A trolley with hotbox is used for full meals or orders that need temperature hold.',
             },
             {
               heading: 'Tray setup checklist',
@@ -2321,22 +2321,22 @@ export const articles: BilingualArticle[] = [
         },
       ],
       conclusion:
-        'Room service works when order capture, timing, setup, delivery and pickup are managed as one controlled flow. The F&B Starter Pack includes a practical room service checklist for daily use. The full F&B Playbook gives the complete procedure, timing standards, VIP logic, troubleshooting and quality control.',
+        'Room service works when order capture, timing, setup, delivery and pickup are managed as one controlled flow. The F&B Starter Pack includes a practical room service checklist for daily use. The full F&B SOP manual gives the complete procedure, timing standards, VIP logic, troubleshooting and quality control.',
       cta: { text: 'View the F&B Starter Pack', href: '/en/playbooks/fb-starter-pack' },
     },
     fr: {
       title: "SOP room service : prise de commande, plateau et livraison",
       description:
-        "SOP room service adaptée du Playbook F&B LuxOps : prise de commande, timing, dressage du plateau et du chariot, protocole en chambre, retard et débarrassage.",
+        "SOP room service adaptée du Manuel SOP F&B LuxOps : prise de commande, timing, dressage du plateau et du chariot, protocole en chambre, retard et débarrassage.",
       date: '2026-03-31',
       readTime: '9 min de lecture',
       intro:
-        "Cette SOP room service est adaptée du playbook F&B LuxOps et du starter pack F&B. Le playbook définit le room service comme le standard restaurant porté dans l’espace privé du client. Il n’y a pas d’ambiance de salle, pas de manager qui passe pour repérer un retard et pas de deuxième interaction pour corriger l’impression. La commande, le timing, le plateau, la livraison et le débarrassage doivent donc être pensés comme un seul flux contrôlé.",
+        "Cette SOP room service est adaptée du manuel SOP F&B LuxOps et du starter pack F&B. Le manuel SOP définit le room service comme le standard restaurant porté dans l’espace privé du client. Il n’y a pas d’ambiance de salle, pas de manager qui passe pour repérer un retard et pas de deuxième interaction pour corriger l’impression. La commande, le timing, le plateau, la livraison et le débarrassage doivent donc être pensés comme un seul flux contrôlé.",
       sections: [
         {
           h2: 'Le room service n’est pas un service restaurant diminué',
           content:
-            "Le chapitre 6 du playbook présente le room service comme une expérience gastronomique privée complète. Le cadre change, du restaurant à la chambre, mais le standard ne doit pas baisser. Le service devient plus concentré, car une seule interaction porte toute l’expérience.",
+            "Le chapitre 6 du manuel SOP présente le room service comme une expérience gastronomique privée complète. Le cadre change, du restaurant à la chambre, mais le standard ne doit pas baisser. Le service devient plus concentré, car une seule interaction porte toute l’expérience.",
           h3Items: [
             {
               heading: 'Ce que chaque livraison doit inclure',
@@ -2344,7 +2344,7 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: 'Pourquoi les clients commandent en chambre',
-              text: "Le playbook liste confidentialité, confort, travail, célébration, maladie, horaires tardifs ou matinaux et enfants comme raisons fréquentes. Chaque raison change le ton de service. Certains clients veulent une installation complète, d’autres une interaction minimale.",
+              text: "Le manuel SOP liste confidentialité, confort, travail, célébration, maladie, horaires tardifs ou matinaux et enfants comme raisons fréquentes. Chaque raison change le ton de service. Certains clients veulent une installation complète, d’autres une interaction minimale.",
             },
             {
               heading: 'Qualité restaurant, contexte privé',
@@ -2374,7 +2374,7 @@ export const articles: BilingualArticle[] = [
         {
           h2: 'Standards de timing et protocole de retard',
           content:
-            "Le playbook donne des délais cibles clairs, car le timing room service est promis directement au client. Une promesse manquée n’est pas seulement un retard cuisine. C’est un sujet de confiance.",
+            "Le manuel SOP donne des délais cibles clairs, car le timing room service est promis directement au client. Une promesse manquée n’est pas seulement un retard cuisine. C’est un sujet de confiance.",
           h3Items: [
             {
               heading: 'Délais de référence',
@@ -2397,7 +2397,7 @@ export const articles: BilingualArticle[] = [
           h3Items: [
             {
               heading: 'Quand utiliser plateau ou chariot',
-              text: "Le playbook recommande le plateau pour 1 à 2 couverts, les commandes simples et les boissons. Le chariot est privilégié à partir de 2 couverts, pour plusieurs plats ou pour les préparations chaudes. Le chariot avec boîte chauffante sert aux repas complets ou aux commandes nécessitant un maintien en température.",
+              text: "Le manuel SOP recommande le plateau pour 1 à 2 couverts, les commandes simples et les boissons. Le chariot est privilégié à partir de 2 couverts, pour plusieurs plats ou pour les préparations chaudes. Le chariot avec boîte chauffante sert aux repas complets ou aux commandes nécessitant un maintien en température.",
             },
             {
               heading: 'Checklist plateau',
@@ -2430,20 +2430,20 @@ export const articles: BilingualArticle[] = [
         },
       ],
       conclusion:
-        "Le room service fonctionne lorsque la prise de commande, le timing, le dressage, la livraison et le débarrassage sont gérés comme un seul flux contrôlé. Le starter pack F&B inclut une checklist room service pratique pour le quotidien. Le playbook F&B complet apporte la procédure complète, les standards de timing, la logique VIP, la gestion des situations sensibles et le contrôle qualité.",
+        "Le room service fonctionne lorsque la prise de commande, le timing, le dressage, la livraison et le débarrassage sont gérés comme un seul flux contrôlé. Le starter pack F&B inclut une checklist room service pratique pour le quotidien. Le manuel SOP F&B complet apporte la procédure complète, les standards de timing, la logique VIP, la gestion des situations sensibles et le contrôle qualité.",
       cta: { text: 'Voir le starter pack F&B', href: '/fr/playbooks/fb-starter-pack' },
     },
   },
   {
     slug: 'hotel-standard-operating-procedures',
     en: {
-      title: 'Hotel Standard Operating Procedures: SOP Playbook Guide for Hotel Managers',
+      title: 'Hotel Standard Operating Procedures: A Guide for Hotel Managers',
       description:
-        'A practical hotel SOP guide covering front desk, housekeeping, room inspection, handover, escalation, SOP templates and playbook-based operating standards.',
+        'A practical hotel SOP guide covering front desk, housekeeping, room inspection, handover, escalation, SOP templates and SOP manual-based operating standards.',
       date: '2026-04-28',
       readTime: '9 min read',
       intro:
-        'Most hotels have some version of standard operating procedures. Fewer have a real SOP playbook. The difference is operational. A SOP folder stores documents. A hotel operations playbook tells the team what triggers the task, who owns it, what sequence to follow, what standard to hit, when to escalate and what evidence to leave behind. This guide explains what hotel SOPs should cover, using concrete examples from housekeeping, room inspection and front desk procedures.',
+        'Most hotels have some version of standard operating procedures. Fewer have a complete SOP manual. The difference is operational. A SOP folder stores documents. A hotel operations manual tells the team what triggers the task, who owns it, what sequence to follow, what standard to hit, when to escalate and what evidence to leave behind. This guide explains what hotel SOPs should cover, using concrete examples from housekeeping, room inspection and front desk procedures.',
       sections: [
         {
           h2: 'What Hotel Standard Operating Procedures Actually Are',
@@ -2562,7 +2562,7 @@ export const articles: BilingualArticle[] = [
       ],
       conclusion:
         'A hotel standard operating procedure is only as useful as its adoption. Writing the document is the start. The work is building a culture where procedures are the default, where staff know where to find them, where managers enforce them during inspections and briefings, and where the library is kept current as the property evolves. That is a management discipline, not a documentation project.',
-      cta: { text: 'View Our SOP Playbooks', href: '/en/playbooks' },
+      cta: { text: 'View Our SOP manuals', href: '/en/playbooks' },
       faqs: [
         {
           question: 'How many SOPs does a hotel typically need?',
@@ -2708,7 +2708,7 @@ export const articles: BilingualArticle[] = [
       ],
       conclusion:
         'Une procédure opérationnelle n’est utile que si elle est adoptée. Rédiger le document est le point de départ. Le travail consiste à construire une culture où les procédures deviennent la norme, où les équipes savent où les trouver, où les managers les utilisent lors des inspections et des briefings, et où la bibliothèque reste à jour au fil de l’évolution de l’établissement. C’est une discipline managériale, pas un projet documentaire.',
-      cta: { text: 'Voir les playbooks SOP', href: '/fr/playbooks' },
+      cta: { text: 'Voir les Manuels SOP', href: '/fr/playbooks' },
       faqs: [
         {
           question: 'Combien de SOPs faut-il généralement prévoir ?',
@@ -2730,16 +2730,16 @@ export const articles: BilingualArticle[] = [
     en: {
       title: 'Hotel Front Desk Procedures: Check-In, Check-Out, Billing and Handover SOPs',
       description:
-        'Step-by-step hotel front desk procedures from the LuxOps Front Office Playbook: check-in, check-out, room not ready, billing disputes, wake-up calls and shift handover.',
+        'Step-by-step hotel front desk procedures from the LuxOps Front Office SOP manual: check-in, check-out, room not ready, billing disputes, wake-up calls and shift handover.',
       date: '2026-04-28',
       readTime: '10 min read',
       intro:
-        'The front desk is where every guest stay begins and ends, but it is also where operational gaps become visible fastest. A room not ready, a declined card, a billing dispute, a wake-up call missed or a complaint transferred without context can undo a good stay in minutes. This guide is adapted from the LuxOps Front Office Playbook and focuses on the front desk procedures hotels should document first: check-in, check-out, room not ready, payment handling, guest recovery, telephone standards and shift handover.',
+        'The front desk is where every guest stay begins and ends, but it is also where operational gaps become visible fastest. A room not ready, a declined card, a billing dispute, a wake-up call missed or a complaint transferred without context can undo a good stay in minutes. This guide is adapted from the LuxOps Front Office SOP manual and focuses on the front desk procedures hotels should document first: check-in, check-out, room not ready, payment handling, guest recovery, telephone standards and shift handover.',
       sections: [
         {
           h2: 'Check-In Procedure',
           content:
-            'Check-in sets the tone for the entire stay. The LuxOps playbook treats check-in as a controlled sequence, not a greeting followed by PMS work. The agent should know the guest file before the guest reaches the desk, and the room should only be assigned once housekeeping has released it as Inspected.',
+            'Check-in sets the tone for the entire stay. The LuxOps SOP manual treats check-in as a controlled sequence, not a greeting followed by PMS work. The agent should know the guest file before the guest reaches the desk, and the room should only be assigned once housekeeping has released it as Inspected.',
           h3Items: [
             {
               heading: 'Pre-arrival preparation',
@@ -2755,7 +2755,7 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: 'Credit card authorisation and incidental holds',
-              text: 'The authorisation amount and hold duration should be defined in the SOP and communicated clearly at check-in. The playbook formula should be property-specific, but the logic is consistent: room charges plus an incidental buffer by night, or incidentals only for prepaid stays. Disputes at check-out often start when this explanation is skipped.',
+              text: 'The authorisation amount and hold duration should be defined in the SOP and communicated clearly at check-in. The SOP manual formula should be property-specific, but the logic is consistent: room charges plus an incidental buffer by night, or incidentals only for prepaid stays. Disputes at check-out often start when this explanation is skipped.',
             },
           ],
         },
@@ -2785,7 +2785,7 @@ export const articles: BilingualArticle[] = [
           h3Items: [
             {
               heading: 'The recovery sequence',
-              text: 'Use the LEARN framework from the playbook: Listen fully, Empathise with the impact, Apologise for the experience, Resolve with a concrete action and Notify the supervisor. The front desk agent should give a timeline, not a vague promise. "I will speak with housekeeping and have this resolved within 30 minutes" is stronger than "we will look into it."',
+              text: 'Use the LEARN framework from the SOP manual: Listen fully, Empathise with the impact, Apologise for the experience, Resolve with a concrete action and Notify the supervisor. The front desk agent should give a timeline, not a vague promise. "I will speak with housekeeping and have this resolved within 30 minutes" is stronger than "we will look into it."',
             },
             {
               heading: 'Agent authority and escalation triggers',
@@ -2853,7 +2853,7 @@ export const articles: BilingualArticle[] = [
       ],
       conclusion:
         'Front desk procedures are the connective tissue of the guest experience. Check-in sets the tone. Complaint handling determines whether problems become reviews. Check-out is the final impression. And the handover log is what keeps the quality consistent across shifts. When each of these procedures is documented, trained and enforced, the front desk operates as a system rather than a collection of individual performances.',
-      cta: { text: 'View the Front Office Playbook', href: '/en/playbooks/fo' },
+      cta: { text: 'View the Front Office SOP manual', href: '/en/playbooks/fo' },
       faqs: [
         {
           question: 'What is the most important front desk SOP in a hotel?',
@@ -2999,7 +2999,7 @@ export const articles: BilingualArticle[] = [
       ],
       conclusion:
         'Les procédures de réception sont le tissu conjonctif de l\'expérience client. Le check-in donne le ton. La gestion des réclamations détermine si les problèmes deviennent des avis. Le check-out est la dernière impression. Et le journal de passation est ce qui maintient la qualité cohérente d\'un service à l\'autre. Quand chacune de ces procédures est documentée, formée et appliquée, la réception fonctionne comme un système plutôt qu\'une collection de performances individuelles.',
-      cta: { text: 'Voir le Playbook Front Office', href: '/fr/playbooks' },
+      cta: { text: 'Voir le Manuel SOP Front Office', href: '/fr/playbooks' },
       faqs: [
         {
           question: 'Quelle est la procédure de réception la plus importante dans un hôtel ?',
@@ -3063,7 +3063,7 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: 'It ends with something participants can use',
-              text: 'The goal of a training session is not understanding in the room. It is application on the floor. Every participant should leave with a physical reference they can consult independently: a playbook, a checklist, a procedure card. Something that reinforces the standard between sessions.',
+              text: 'The goal of a training session is not understanding in the room. It is application on the floor. Every participant should leave with a physical reference they can consult independently: an SOP manual, a checklist, a procedure card. Something that reinforces the standard between sessions.',
             },
           ],
         },
@@ -3156,7 +3156,7 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: 'Elle se termine avec un support que les participants peuvent utiliser',
-              text: 'L\'objectif d\'une session de formation n\'est pas la compréhension dans la salle. C\'est l\'application sur le terrain. Chaque participant doit repartir avec un document de référence qu\'il peut consulter de façon autonome : un playbook, une checklist, une fiche procédure. Un support qui ancre le standard entre les sessions.',
+              text: 'L\'objectif d\'une session de formation n\'est pas la compréhension dans la salle. C\'est l\'application sur le terrain. Chaque participant doit repartir avec un document de référence qu\'il peut consulter de façon autonome : un manuel SOP, une checklist, une fiche procédure. Un support qui ancre le standard entre les sessions.',
             },
           ],
         },
@@ -3265,7 +3265,7 @@ export const articles: BilingualArticle[] = [
           h3Items: [
             {
               heading: 'A reference they can use independently',
-              text: 'Every training session should end with participants holding a physical reference: a procedure card, a checklist, a playbook section. A team member who can look something up without asking a supervisor builds confidence shift by shift. Confidence reduces the impulse to leave.',
+              text: 'Every training session should end with participants holding a physical reference: a procedure card, a checklist, an SOP manual section. A team member who can look something up without asking a supervisor builds confidence shift by shift. Confidence reduces the impulse to leave.',
             },
             {
               heading: 'Supervisors who manage rather than repeat themselves',
@@ -3361,7 +3361,7 @@ export const articles: BilingualArticle[] = [
           h3Items: [
             {
               heading: "Un support utilisable en autonomie",
-              text: "Chaque session de formation doit se terminer avec les participants repartant avec un document de référence : une fiche procédure, une checklist, une section de playbook. Un collaborateur qui peut trouver une réponse sans solliciter son responsable gagne en assurance de service en service. L'assurance réduit l'envie de partir.",
+              text: "Chaque session de formation doit se terminer avec les participants repartant avec un document de référence : une fiche procédure, une checklist, une section de manuel SOP. Un collaborateur qui peut trouver une réponse sans solliciter son responsable gagne en assurance de service en service. L'assurance réduit l'envie de partir.",
             },
             {
               heading: "Des managers qui encadrent plutôt qu'ils ne répètent",
@@ -3562,11 +3562,11 @@ export const articles: BilingualArticle[] = [
     en: {
       title: 'Hotel Room Attendant Checklist: Daily SOP for Departure Rooms and Stayovers',
       description:
-        'A practical room attendant checklist adapted from the LuxOps Housekeeping Playbook: trolley setup, room entry, departure room sequence, stayover service, DND and final self-inspection.',
+        'A practical room attendant checklist adapted from the LuxOps Housekeeping SOP manual: trolley setup, room entry, departure room sequence, stayover service, DND and final self-inspection.',
       date: '2026-05-02',
       readTime: '9 min read',
       intro:
-        'A room attendant checklist is useful only if it follows the real rhythm of the floor. It should start before the room is opened, with trolley setup and assignment review, then guide the attendant through room entry, departure room cleaning, stayover service, bathroom standards, Lost & Found, DND and final self-inspection. This article is adapted from the LuxOps Housekeeping Playbook and gives hotels a practical daily SOP for room attendants, not a generic cleaning list.',
+        'A room attendant checklist is useful only if it follows the real rhythm of the floor. It should start before the room is opened, with trolley setup and assignment review, then guide the attendant through room entry, departure room cleaning, stayover service, bathroom standards, Lost & Found, DND and final self-inspection. This article is adapted from the LuxOps Housekeeping SOP manual and gives hotels a practical daily SOP for room attendants, not a generic cleaning list.',
       sections: [
         {
           h2: 'What a Room Attendant Checklist Should Actually Control',
@@ -3579,7 +3579,7 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: 'During the room',
-              text: 'Follow the same physical sequence every time. For departure rooms, the LuxOps playbook uses seven phases: initial assessment, bathroom deep clean, bedroom cleaning, bed making, closet and storage, minibar and beverage area, final presentation.',
+              text: 'Follow the same physical sequence every time. For departure rooms, the LuxOps SOP manual uses seven phases: initial assessment, bathroom deep clean, bedroom cleaning, bed making, closet and storage, minibar and beverage area, final presentation.',
             },
             {
               heading: 'Before leaving',
@@ -3658,7 +3658,7 @@ export const articles: BilingualArticle[] = [
       ],
       conclusion:
         'A strong room attendant checklist makes quality repeatable. It gives the attendant a fixed sequence, protects guest belongings, reduces missed details and gives the supervisor a clear basis for inspection.',
-      cta: { text: 'View the Housekeeping Playbook', href: '/playbooks/hsk' },
+      cta: { text: 'View the Housekeeping SOP manual', href: '/playbooks/hsk' },
       faqs: [
         {
           question: 'What is a room attendant checklist?',
@@ -3668,18 +3668,18 @@ export const articles: BilingualArticle[] = [
         {
           question: 'How long should a room attendant take to clean a hotel room?',
           answer:
-            'In the LuxOps Housekeeping Playbook, a standard departure room target is 45 to 60 minutes, a standard stayover is 25 to 35 minutes, and a deep clean is 90 to 120 minutes.',
+            'In the LuxOps Housekeeping SOP manual, a standard departure room target is 45 to 60 minutes, a standard stayover is 25 to 35 minutes, and a deep clean is 90 to 120 minutes.',
         },
       ],
     },
     fr: {
       title: "Checklist équipier d'étage : SOP quotidienne pour chambres à blanc et recouches",
       description:
-        "Checklist opérationnelle issue du Playbook Housekeeping LuxOps : chariot, entrée en chambre, chambre à blanc, recouche, DND, objets trouvés et auto-contrôle.",
+        "Checklist opérationnelle issue du Manuel SOP Housekeeping LuxOps : chariot, entrée en chambre, chambre à blanc, recouche, DND, objets trouvés et auto-contrôle.",
       date: '2026-05-02',
       readTime: '9 min de lecture',
       intro:
-        "Une checklist équipier d'étage n'est utile que si elle suit le rythme réel d'un étage. Elle doit commencer avant l'entrée en chambre, avec le chariot et la fiche de travail, puis guider l'équipier sur le protocole d'entrée, la chambre à blanc, la recouche, la salle de bain, les objets trouvés, le DND et l'auto-contrôle final. Cet article s'inspire du Playbook Housekeeping LuxOps et donne une SOP quotidienne exploitable, pas une simple liste de ménage.",
+        "Une checklist équipier d'étage n'est utile que si elle suit le rythme réel d'un étage. Elle doit commencer avant l'entrée en chambre, avec le chariot et la fiche de travail, puis guider l'équipier sur le protocole d'entrée, la chambre à blanc, la recouche, la salle de bain, les objets trouvés, le DND et l'auto-contrôle final. Cet article s'inspire du Manuel SOP Housekeeping LuxOps et donne une SOP quotidienne exploitable, pas une simple liste de ménage.",
       sections: [
         {
           h2: "Ce qu'une checklist équipier d'étage doit contrôler",
@@ -3692,7 +3692,7 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: 'Pendant la chambre',
-              text: "Pour une chambre à blanc, le playbook LuxOps utilise sept phases : évaluation initiale, nettoyage approfondi de la salle de bain, nettoyage de la chambre, confection du lit, penderie et rangements, minibar et zone boissons, présentation finale.",
+              text: "Pour une chambre à blanc, le manuel SOP LuxOps utilise sept phases : évaluation initiale, nettoyage approfondi de la salle de bain, nettoyage de la chambre, confection du lit, penderie et rangements, minibar et zone boissons, présentation finale.",
             },
             {
               heading: 'Avant de sortir',
@@ -3771,7 +3771,7 @@ export const articles: BilingualArticle[] = [
       ],
       conclusion:
         "Une bonne checklist équipier d'étage rend la qualité répétable. Elle donne une séquence fixe, protège les affaires du client, réduit les oublis et donne à la gouvernante une base claire d'inspection.",
-      cta: { text: 'Voir le Playbook Housekeeping', href: '/playbooks/hsk' },
+      cta: { text: 'Voir le Manuel SOP Housekeeping', href: '/playbooks/hsk' },
       faqs: [
         {
           question: "Qu'est-ce qu'une checklist équipier d'étage ?",
@@ -3781,7 +3781,7 @@ export const articles: BilingualArticle[] = [
         {
           question: "Combien de temps faut-il pour remettre une chambre d'hôtel ?",
           answer:
-            "Dans le Playbook Housekeeping LuxOps, les repères indicatifs sont de 45 à 60 minutes pour une chambre à blanc standard haut de gamme, 25 à 35 minutes pour une recouche et 90 à 120 minutes pour un grand nettoyage. Ils doivent être adaptés à la surface, aux équipements, au niveau de service et à l'organisation de l'équipe.",
+            "Dans le Manuel SOP Housekeeping LuxOps, les repères indicatifs sont de 45 à 60 minutes pour une chambre à blanc standard haut de gamme, 25 à 35 minutes pour une recouche et 90 à 120 minutes pour un grand nettoyage. Ils doivent être adaptés à la surface, aux équipements, au niveau de service et à l'organisation de l'équipe.",
         },
       ],
     },
@@ -3791,11 +3791,11 @@ export const articles: BilingualArticle[] = [
     en: {
       title: 'Hotel Front Desk Checklist: Shift Opening, Check-In, Check-Out and Handover',
       description:
-        'A hotel front desk checklist adapted from the LuxOps Front Office Playbook: shift opening, arrivals, check-in, room not ready, check-out, billing and handover.',
+        'A hotel front desk checklist adapted from the LuxOps Front Office SOP manual: shift opening, arrivals, check-in, room not ready, check-out, billing and handover.',
       date: '2026-05-02',
       readTime: '8 min read',
       intro:
-        'A hotel front desk checklist should protect the guest journey across the full shift, not just remind agents to smile. The desk controls arrivals, payments, room readiness, complaints, wake-up calls, billing, check-out and handover. This guide is adapted from the LuxOps Front Office Playbook and gives front desk agents and supervisors a practical shift checklist for daily use.',
+        'A hotel front desk checklist should protect the guest journey across the full shift, not just remind agents to smile. The desk controls arrivals, payments, room readiness, complaints, wake-up calls, billing, check-out and handover. This guide is adapted from the LuxOps Front Office SOP manual and gives front desk agents and supervisors a practical shift checklist for daily use.',
       sections: [
         {
           h2: 'Shift Opening Checklist',
@@ -3872,7 +3872,7 @@ export const articles: BilingualArticle[] = [
       ],
       conclusion:
         'A front desk checklist is not admin. It is how the desk protects first impression, last impression, revenue, guest recovery and continuity between shifts.',
-      cta: { text: 'View the Front Office Playbook', href: '/playbooks/fo' },
+      cta: { text: 'View the Front Office SOP manual', href: '/playbooks/fo' },
       faqs: [
         {
           question: 'What should be included in a hotel front desk checklist?',
@@ -3889,11 +3889,11 @@ export const articles: BilingualArticle[] = [
     fr: {
       title: 'Checklist réception hôtel : ouverture de shift, check-in, check-out et passation',
       description:
-        'Checklist réception issue du Playbook Front Office LuxOps : prise de poste, arrivées, check-in, chambre non prête, check-out, litiges facture et passation.',
+        'Checklist réception issue du Manuel SOP Front Office LuxOps : prise de poste, arrivées, check-in, chambre non prête, check-out, litiges facture et passation.',
       date: '2026-05-02',
       readTime: '8 min de lecture',
       intro:
-        "Une checklist réception ne sert pas seulement à rappeler de sourire au client. Elle protège le parcours client sur tout le shift : arrivées, paiements, statut des chambres, réclamations, appels réveil, facturation, check-out et passation. Ce guide s'inspire du Playbook Front Office LuxOps et propose une checklist de réception utilisable au quotidien par les réceptionnistes et chefs de réception.",
+        "Une checklist réception ne sert pas seulement à rappeler de sourire au client. Elle protège le parcours client sur tout le shift : arrivées, paiements, statut des chambres, réclamations, appels réveil, facturation, check-out et passation. Ce guide s'inspire du Manuel SOP Front Office LuxOps et propose une checklist de réception utilisable au quotidien par les réceptionnistes et chefs de réception.",
       sections: [
         {
           h2: 'Checklist de prise de poste',
@@ -3970,7 +3970,7 @@ export const articles: BilingualArticle[] = [
       ],
       conclusion:
         "Une checklist réception n'est pas de l'administratif. C'est ce qui protège la première impression, la dernière impression, le revenu, la récupération de service et la continuité entre shifts.",
-      cta: { text: 'Voir le Playbook Front Office', href: '/playbooks/fo' },
+      cta: { text: 'Voir le Manuel SOP Front Office', href: '/playbooks/fo' },
       faqs: [
         {
           question: 'Que doit contenir une checklist réception hôtel ?',
@@ -3994,7 +3994,7 @@ export const articles: BilingualArticle[] = [
       date: '2026-05-02',
       readTime: '7 min read',
       intro:
-        'A Do Not Disturb sign looks simple, but the procedure behind it is one of the most important housekeeping SOPs in a hotel. The team must respect guest privacy while maintaining safety awareness, service continuity and accurate documentation. This guide is adapted from the LuxOps Housekeeping Playbook and shows how to manage DND rooms without improvisation.',
+        'A Do Not Disturb sign looks simple, but the procedure behind it is one of the most important housekeeping SOPs in a hotel. The team must respect guest privacy while maintaining safety awareness, service continuity and accurate documentation. This guide is adapted from the LuxOps Housekeeping SOP manual and shows how to manage DND rooms without improvisation.',
       sections: [
         {
           h2: 'The Core DND Rule',
@@ -4082,7 +4082,7 @@ export const articles: BilingualArticle[] = [
       ],
       conclusion:
         'A hotel DND procedure protects privacy and safety at the same time. The rule is not complicated: do not knock, do not enter, document, contact at the defined time and escalate extended DND through the supervisor and duty manager.',
-      cta: { text: 'View the Housekeeping Playbook', href: '/playbooks/hsk' },
+      cta: { text: 'View the Housekeeping SOP manual', href: '/playbooks/hsk' },
       faqs: [
         {
           question: 'What does DND mean in hotel housekeeping?',
@@ -4099,11 +4099,11 @@ export const articles: BilingualArticle[] = [
     fr: {
       title: 'Procédure DND hôtel : SOP Housekeeping pour les chambres Ne pas déranger',
       description:
-        "Procédure DND issue du Playbook Housekeeping LuxOps : règle Ne pas déranger, contact à 14h, message sous la porte, documentation, escalade et contrôle sécurité après 24h.",
+        "Procédure DND issue du Manuel SOP Housekeeping LuxOps : règle Ne pas déranger, contact à 14h, message sous la porte, documentation, escalade et contrôle sécurité après 24h.",
       date: '2026-05-02',
       readTime: '7 min de lecture',
       intro:
-        "Un panneau Ne pas déranger semble simple, mais la procédure derrière est l'une des SOP housekeeping les plus importantes d'un hôtel. L'équipe doit respecter la vie privée du client tout en maintenant la vigilance sécurité, la continuité de service et une documentation claire. Ce guide s'inspire du Playbook Housekeeping LuxOps et montre comment gérer les chambres DND sans improvisation.",
+        "Un panneau Ne pas déranger semble simple, mais la procédure derrière est l'une des SOP housekeeping les plus importantes d'un hôtel. L'équipe doit respecter la vie privée du client tout en maintenant la vigilance sécurité, la continuité de service et une documentation claire. Ce guide s'inspire du Manuel SOP Housekeeping LuxOps et montre comment gérer les chambres DND sans improvisation.",
       sections: [
         {
           h2: 'La règle DND fondamentale',
@@ -4191,7 +4191,7 @@ export const articles: BilingualArticle[] = [
       ],
       conclusion:
         "Une procédure DND protège à la fois la vie privée et la sécurité. La règle est simple : ne pas frapper, ne pas entrer, documenter, contacter à l'heure définie et escalader les DND prolongés via le superviseur et le manager en duty.",
-      cta: { text: 'Voir le Playbook Housekeeping', href: '/playbooks/hsk' },
+      cta: { text: 'Voir le Manuel SOP Housekeeping', href: '/playbooks/hsk' },
       faqs: [
         {
           question: 'Que signifie DND en housekeeping hôtelier ?',
@@ -4211,11 +4211,11 @@ export const articles: BilingualArticle[] = [
     en: {
       title: 'Hotel Room Cleaning Checklist: Departure Room, Stayover and Final Self-Check',
       description:
-        'A playbook-based hotel room cleaning checklist for housekeeping teams: trolley setup, room entry, departure room sequence, stayover service, bathroom standards and final self-inspection.',
+        'An SOP manual-based hotel room cleaning checklist for housekeeping teams: trolley setup, room entry, departure room sequence, stayover service, bathroom standards and final self-inspection.',
       date: '2026-05-03',
       readTime: '9 min read',
       intro:
-        'A hotel room cleaning checklist should follow the way a room is actually serviced on shift. The LuxOps Housekeeping Playbook separates preparation, room entry, departure cleaning, stayover service, deep cleaning, DND and final self-inspection. This free extract gives housekeeping teams a practical structure for Room Attendants, supervisors and managers who need consistency without turning the room into a box-ticking exercise.',
+        'A hotel room cleaning checklist should follow the way a room is actually serviced on shift. The LuxOps Housekeeping SOP manual separates preparation, room entry, departure cleaning, stayover service, deep cleaning, DND and final self-inspection. This free extract gives housekeeping teams a practical structure for Room Attendants, supervisors and managers who need consistency without turning the room into a box-ticking exercise.',
       sections: [
         {
           h2: 'Start before the room: trolley, assignment and priorities',
@@ -4307,7 +4307,7 @@ export const articles: BilingualArticle[] = [
       ],
       conclusion:
         'A strong hotel room cleaning checklist does not replace training. It protects the training. It gives every Room Attendant the same order, every supervisor the same control points and every arriving guest the same first impression.',
-      cta: { text: 'View the Housekeeping Playbook', href: '/playbooks/hsk' },
+      cta: { text: 'View the Housekeeping SOP manual', href: '/playbooks/hsk' },
       faqs: [
         {
           question: 'How long should it take to clean a hotel room?',
@@ -4324,11 +4324,11 @@ export const articles: BilingualArticle[] = [
     fr: {
       title: 'Checklist de nettoyage de chambre d’hôtel : chambre à blanc, recouche et auto-contrôle',
       description:
-        'Checklist de nettoyage de chambre d’hôtel issue du Playbook Housekeeping LuxOps : chariot, entrée en chambre, chambre à blanc, recouche, salle de bain, lit et auto-contrôle final.',
+        'Checklist de nettoyage de chambre d’hôtel issue du Manuel SOP Housekeeping LuxOps : chariot, entrée en chambre, chambre à blanc, recouche, salle de bain, lit et auto-contrôle final.',
       date: '2026-05-03',
       readTime: '9 min de lecture',
       intro:
-        'Une checklist de nettoyage de chambre doit suivre le vrai déroulé du shift, pas une liste générique de tâches copiée-collée. Dans un service de housekeeping, la qualité se joue souvent avant même d’entrer dans la chambre : chariot prêt, feuille de route comprise, priorités claires, puis chambre à blanc ou recouche selon le statut. Cet extrait du Playbook Housekeeping LuxOps reprend cette logique terrain, avec une séquence utilisable par les Room Attendants, les gouvernantes et les managers.',
+        'Une checklist de nettoyage de chambre doit suivre le vrai déroulé du shift, pas une liste générique de tâches copiée-collée. Dans un service de housekeeping, la qualité se joue souvent avant même d’entrer dans la chambre : chariot prêt, feuille de route comprise, priorités claires, puis chambre à blanc ou recouche selon le statut. Cet extrait du Manuel SOP Housekeeping LuxOps reprend cette logique terrain, avec une séquence utilisable par les Room Attendants, les gouvernantes et les managers.',
       sections: [
         {
           h2: 'Commencer avant la chambre : chariot, feuille de route et priorités',
@@ -4420,7 +4420,7 @@ export const articles: BilingualArticle[] = [
       ],
       conclusion:
         'Une bonne checklist de nettoyage de chambre ne remplace pas la formation. Elle la protège. Elle donne le même ordre à chaque Room Attendant, les mêmes points de contrôle à chaque gouvernante et la même première impression à chaque client.',
-      cta: { text: 'Voir le Playbook Housekeeping', href: '/playbooks/hsk' },
+      cta: { text: 'Voir le Manuel SOP Housekeeping', href: '/playbooks/hsk' },
       faqs: [
         {
           question: 'Combien de temps faut-il pour nettoyer une chambre d’hôtel ?',
@@ -4444,7 +4444,7 @@ export const articles: BilingualArticle[] = [
       date: '2026-05-03',
       readTime: '8 min read',
       intro:
-        'The housekeeping supervisor is the quality gate between a room that looks clean and a room that can be sold. In the LuxOps Housekeeping Playbook, a Room Attendant marks the room Clean, but only a supervisor or manager can release it as Inspected. This checklist is built for that control moment: inspection, release, defect tracking and coaching.',
+        'The housekeeping supervisor is the quality gate between a room that looks clean and a room that can be sold. In the LuxOps Housekeeping SOP manual, a Room Attendant marks the room Clean, but only a supervisor or manager can release it as Inspected. This checklist is built for that control moment: inspection, release, defect tracking and coaching.',
       sections: [
         {
           h2: 'The supervisor’s first rule: Clean is not sellable',
@@ -4525,7 +4525,7 @@ export const articles: BilingualArticle[] = [
       ],
       conclusion:
         'A housekeeping supervisor checklist is not a policing tool. It is the system that protects arriving guests, supports Room Attendants and gives Front Office confidence that an assigned room is genuinely ready.',
-      cta: { text: 'View the Housekeeping Playbook', href: '/playbooks/hsk' },
+      cta: { text: 'View the Housekeeping SOP manual', href: '/playbooks/hsk' },
       faqs: [
         {
           question: 'Should every hotel departure room be inspected?',
@@ -4542,11 +4542,11 @@ export const articles: BilingualArticle[] = [
     fr: {
       title: 'Checklist pour gouvernante d’hôtel : inspection chambre, libération et coaching',
       description:
-        'Checklist pour gouvernante d’hôtel issue du Playbook Housekeeping LuxOps : inspection chambre départ, statut Clean/Inspected, contrôles de recouche, suivi des défauts et coaching.',
+        'Checklist pour gouvernante d’hôtel issue du Manuel SOP Housekeeping LuxOps : inspection chambre départ, statut Clean/Inspected, contrôles de recouche, suivi des défauts et coaching.',
       date: '2026-05-03',
       readTime: '8 min de lecture',
       intro:
-        'La gouvernante est le point de contrôle entre une chambre qui paraît propre et une chambre réellement attribuable. Dans le Playbook Housekeeping LuxOps, le Room Attendant passe la chambre en Clean après son service, mais seule la gouvernante ou le manager peut la libérer en Inspected. Cette checklist reprend ce moment critique du service de housekeeping : inspection, libération, suivi des défauts et coaching.',
+        'La gouvernante est le point de contrôle entre une chambre qui paraît propre et une chambre réellement attribuable. Dans le Manuel SOP Housekeeping LuxOps, le Room Attendant passe la chambre en Clean après son service, mais seule la gouvernante ou le manager peut la libérer en Inspected. Cette checklist reprend ce moment critique du service de housekeeping : inspection, libération, suivi des défauts et coaching.',
       sections: [
         {
           h2: 'Première règle : Clean n’est pas vendable',
@@ -4627,7 +4627,7 @@ export const articles: BilingualArticle[] = [
       ],
       conclusion:
         'Une checklist pour gouvernante n’est pas un outil de sanction. C’est le système qui protège les arrivées, soutient les Room Attendants et donne à la réception la certitude qu’une chambre attribuée est vraiment prête.',
-      cta: { text: 'Voir le Playbook Housekeeping', href: '/playbooks/hsk' },
+      cta: { text: 'Voir le Manuel SOP Housekeeping', href: '/playbooks/hsk' },
       faqs: [
         {
           question: 'Faut-il inspecter toutes les chambres départ ?',
@@ -4651,7 +4651,7 @@ export const articles: BilingualArticle[] = [
       date: '2026-05-03',
       readTime: '7 min read',
       intro:
-        'Bathroom defects create some of the strongest guest reactions in hotels. A single hair, water spot or odour can erase the impression of an otherwise well-presented room. The LuxOps Housekeeping Playbook treats bathroom cleaning as a fixed sequence: clean to dirty, top to bottom, dry to wet where possible, with final checks from the guest perspective.',
+        'Bathroom defects create some of the strongest guest reactions in hotels. A single hair, water spot or odour can erase the impression of an otherwise well-presented room. The LuxOps Housekeeping SOP manual treats bathroom cleaning as a fixed sequence: clean to dirty, top to bottom, dry to wet where possible, with final checks from the guest perspective.',
       sections: [
         {
           h2: 'Prepare the bathroom before applying products',
@@ -4694,7 +4694,7 @@ export const articles: BilingualArticle[] = [
       ],
       conclusion:
         'A hotel bathroom cleaning SOP succeeds when the sequence is always the same. The Room Attendant knows what to clean, in what order and to what standard; the supervisor knows exactly what to verify before release.',
-      cta: { text: 'View the Housekeeping Playbook', href: '/playbooks/hsk' },
+      cta: { text: 'View the Housekeeping SOP manual', href: '/playbooks/hsk' },
       faqs: [
         {
           question: 'What is the correct order for cleaning a hotel bathroom?',
@@ -4711,11 +4711,11 @@ export const articles: BilingualArticle[] = [
     fr: {
       title: 'SOP de nettoyage de salle de bain d’hôtel : procédure étape par étape',
       description:
-        'SOP de nettoyage de salle de bain d’hôtel issue du Playbook Housekeeping LuxOps : séquence propre-sale, miroir, vasque, douche, toilettes, sol, amenities et inspection par la gouvernante.',
+        'SOP de nettoyage de salle de bain d’hôtel issue du Manuel SOP Housekeeping LuxOps : séquence propre-sale, miroir, vasque, douche, toilettes, sol, amenities et inspection par la gouvernante.',
       date: '2026-05-03',
       readTime: '7 min de lecture',
       intro:
-        'Les défauts de salle de bain déclenchent certaines des réactions client les plus fortes en hôtellerie. Un cheveu, une trace d’eau ou une odeur peut annuler l’impression d’une chambre pourtant bien présentée. Dans le Playbook Housekeeping LuxOps, le nettoyage de la salle de bain suit une séquence fixe : du propre vers le sale, du haut vers le bas, puis un contrôle final depuis la perspective client.',
+        'Les défauts de salle de bain déclenchent certaines des réactions client les plus fortes en hôtellerie. Un cheveu, une trace d’eau ou une odeur peut annuler l’impression d’une chambre pourtant bien présentée. Dans le Manuel SOP Housekeeping LuxOps, le nettoyage de la salle de bain suit une séquence fixe : du propre vers le sale, du haut vers le bas, puis un contrôle final depuis la perspective client.',
       sections: [
         {
           h2: 'Préparer la salle de bain avant les produits',
@@ -4758,7 +4758,7 @@ export const articles: BilingualArticle[] = [
       ],
       conclusion:
         'Une SOP de salle de bain fonctionne lorsque la séquence ne change pas. Le Room Attendant sait quoi nettoyer, dans quel ordre et à quel standard ; la gouvernante sait exactement quoi vérifier avant libération.',
-      cta: { text: 'Voir le Playbook Housekeeping', href: '/playbooks/hsk' },
+      cta: { text: 'Voir le Manuel SOP Housekeeping', href: '/playbooks/hsk' },
       faqs: [
         {
           question: 'Dans quel ordre nettoyer une salle de bain d’hôtel ?',

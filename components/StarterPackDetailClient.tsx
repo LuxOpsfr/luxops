@@ -19,7 +19,7 @@ import { StarterPackEntry } from '@/content/starter-packs/data'
 import { useCart } from '@/context/CartContext'
 import { useCurrency } from '@/context/CurrencyContext'
 import TrackedLink from '@/components/TrackedLink'
-import ProductPreviewCarousel from '@/components/ProductPreviewCarousel'
+import StarterPackCoverVisual from '@/components/StarterPackCoverVisual'
 
 const benefitIcons = [
   ClipboardCheck,
@@ -39,38 +39,40 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
   const isEn = locale === 'en'
   const lang = locale as 'en' | 'fr'
   const [openFaq, setOpenFaq] = useState<number | null>(null)
-  const { addItem, items } = useCart()
+  const { addItem, items, openCart } = useCart()
   const { currency, priceFor, formatProductPrice } = useCurrency()
 
   const inCart = items.some((item) => item.priceId === pack.priceId)
   const fullPlaybookHref = `/${locale}/playbooks/${pack.fullPlaybookId}`
 
   function handleAddToCart() {
-    if (!inCart) {
-      addItem({
-        priceId: pack.priceId,
-        title: pack.shortTitle[lang],
-        price: priceFor('starter_pack'),
-        currency,
-        productType: 'starter_pack',
-      })
-      posthog.capture('product_added_to_cart', {
-        price_id: pack.priceId,
-        title: pack.shortTitle[lang],
-        price: priceFor('starter_pack'),
-        currency,
-        locale,
-        product_type: 'starter_pack',
-      })
-      posthog.capture('starter_pack_added_to_cart', {
-        price_id: pack.priceId,
-        title: pack.shortTitle[lang],
-        price: priceFor('starter_pack'),
-        currency,
-        locale,
-        product_type: 'starter_pack',
-      })
+    if (inCart) {
+      openCart()
+      return
     }
+    addItem({
+      priceId: pack.priceId,
+      title: pack.shortTitle[lang],
+      price: priceFor('starter_pack'),
+      currency,
+      productType: 'starter_pack',
+    })
+    posthog.capture('product_added_to_cart', {
+      price_id: pack.priceId,
+      title: pack.shortTitle[lang],
+      price: priceFor('starter_pack'),
+      currency,
+      locale,
+      product_type: 'starter_pack',
+    })
+    posthog.capture('starter_pack_added_to_cart', {
+      price_id: pack.priceId,
+      title: pack.shortTitle[lang],
+      price: priceFor('starter_pack'),
+      currency,
+      locale,
+      product_type: 'starter_pack',
+    })
   }
 
   return (
@@ -81,51 +83,34 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
           className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#687169] hover:text-[#0f211a] transition-colors"
         >
           <ArrowLeft size={14} />
-          {isEn ? 'All Playbooks' : 'Tous les produits'}
+          {isEn ? 'All SOP manuals' : 'Tous les produits'}
         </Link>
       </div>
 
-      <section
-        className="relative px-6 py-20 border-b overflow-hidden"
-        style={{
-          backgroundImage: 'radial-gradient(rgba(165,134,88,0.22) 0.5px, transparent 0.5px)',
-          backgroundSize: '24px 24px',
-          borderColor: 'rgba(32,35,31,0.14)',
-        }}
-      >
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-[1fr_0.72fr] gap-12 items-center">
-          <div>
-            <div
-              className="inline-flex items-center gap-2 px-3 py-1 text-[#0f211a] font-bold text-[10px] uppercase tracking-widest mb-6"
-              style={{ backgroundColor: '#e7e0d5', borderRadius: '0.125rem' }}
-            >
-              <span className="w-2 h-2 bg-[#0f211a] rounded-full" />
-              {pack.category[lang]} · {isEn ? 'Starter Pack' : 'Starter Pack'}
+      <section className="relative overflow-hidden px-5 pb-16 pt-8 md:px-8 md:pb-20 md:pt-10">
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-[500px] bg-[radial-gradient(ellipse_at_18%_25%,rgba(184,151,96,.12),transparent_56%)]" />
+        <div className="relative mx-auto grid max-w-[1320px] items-center gap-9 lg:grid-cols-[.94fr_1.06fr] lg:gap-16">
+          <div className="mx-auto w-full max-w-[500px]">
+            <StarterPackCoverVisual pack={pack} locale={locale} />
+          </div>
+
+          <div className="max-w-2xl">
+            <div className="text-[10px] font-semibold uppercase tracking-[.14em] text-[#795d32]">
+              {pack.category[lang]} · Starter Pack
             </div>
-            <h1 className="font-display text-5xl md:text-7xl font-extrabold tracking-tight leading-none text-[#0f211a] mb-6">
+            <h1 className="mt-5 font-display text-[clamp(2.5rem,5vw,4.6rem)] font-medium leading-[1.02] tracking-[-.035em] text-[#10251d]">
               {pack.title[lang]}
             </h1>
-            <p className="text-xl text-[#687169] leading-relaxed max-w-2xl mb-4">
-              {pack.subtitle[lang]}
-            </p>
-            <p className="text-sm text-[#687169] leading-relaxed max-w-2xl mb-8">
-              {pack.supportLine[lang]}
-            </p>
+            <p className="mt-5 max-w-2xl text-base leading-7 text-[#626b64] md:text-lg md:leading-8">{pack.subtitle[lang]}</p>
+            <p className="mt-3 max-w-2xl text-sm leading-6 text-[#72766e]">{pack.supportLine[lang]}</p>
 
-            <div className="flex flex-col sm:flex-row gap-3 mb-5">
-              <button
-                onClick={handleAddToCart}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#0f211a] text-white font-bold text-sm hover:bg-[#24362f] transition-colors"
-                style={{ borderRadius: '0.125rem' }}
-              >
-                <ShoppingCart size={16} />
-                {inCart
-                  ? isEn
-                    ? 'In Cart'
-                    : 'Ajouté'
-                  : isEn
-                    ? `Add to cart · ${formatProductPrice('starter_pack')}`
-                    : `Ajouter au panier · ${formatProductPrice('starter_pack')}`}
+            <div className="mt-6 grid grid-cols-2 gap-2 rounded-[20px] border border-[#e9e3d9] bg-white/70 p-4 text-xs text-[#46554b]">
+              {pack.formats[lang].map((format) => <span key={format} className="flex items-center gap-2"><CheckCircle2 size={15} className="shrink-0 text-[#a58658]" />{format}</span>)}
+            </div>
+            <div className="mt-6 flex flex-wrap items-center gap-4">
+              <span className="font-display text-3xl font-semibold text-[#10251d]">{formatProductPrice('starter_pack')}</span>
+              <button onClick={handleAddToCart} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#10251d] px-6 py-3 text-sm font-semibold text-white shadow-[0_8px_20px_rgba(16,37,29,.16)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#2a4335] hover:shadow-[0_12px_24px_rgba(16,37,29,.22)]">
+                <ShoppingCart size={16} />{inCart ? (isEn ? 'Open cart' : 'Voir le panier') : (isEn ? 'Add to cart' : 'Ajouter au panier')}
               </button>
               <TrackedLink
                 href={fullPlaybookHref}
@@ -136,23 +121,10 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
                   product: pack.fullPlaybookTitle.en,
                   cta_label: isEn ? `See ${pack.fullPlaybookTitle.en}` : `Voir le ${pack.fullPlaybookTitle.fr}`,
                 }}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-[#a58658] text-[#0f211a] font-bold text-sm hover:border-[#0f211a] hover:text-[#0f211a] transition-colors"
-                style={{ borderRadius: '0.125rem' }}
-              >
-                {isEn
-                  ? `See ${pack.fullPlaybookTitle.en}`
-                  : `Voir le ${pack.fullPlaybookTitle.fr}`}
-              </TrackedLink>
+                className="text-sm font-medium text-[#46554b] underline decoration-[#c4af8c] underline-offset-4 transition hover:text-[#10251d]"
+              >{isEn ? `See ${pack.fullPlaybookTitle.en}` : `Voir le ${pack.fullPlaybookTitle.fr}`}</TrackedLink>
             </div>
-
-            <p className="text-xs text-[#687169]">
-              {formatProductPrice('starter_pack')} · {isEn ? 'Instant download' : 'Téléchargement instantané'} ·{' '}
-              {isEn ? 'Editable files included' : 'Fichiers modifiables inclus'}
-            </p>
-          </div>
-
-          <div className="w-full">
-            <ProductPreviewCarousel productId={pack.id} locale={locale} />
+            <p className="mt-3 text-[11px] text-[#81827b]">{isEn ? 'Instant download · Editable files included' : 'Téléchargement immédiat · Fichiers modifiables inclus'}</p>
           </div>
         </div>
       </section>
@@ -176,7 +148,7 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
               <div
                 key={tool}
                 className="border border-[rgba(32,35,31,0.12)] bg-white p-5"
-                style={{ borderRadius: '0.125rem' }}
+                style={{ borderRadius: '1rem' }}
               >
                 <p className="mb-3 text-[10px] font-bold text-[#a58658]">
                   {String(index + 1).padStart(2, '0')}
@@ -210,7 +182,7 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
                   key={benefit}
                   className="bg-white p-6"
                   style={{
-                    borderRadius: '0.125rem',
+                    borderRadius: '1rem',
                     boxShadow: '0 2px 8px rgba(15,33,26,0.05)',
                   }}
                 >
@@ -255,7 +227,7 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
               <div
                 key={format}
                 className="flex gap-3 border border-[rgba(32,35,31,0.12)] bg-white p-5"
-                style={{ borderRadius: '0.125rem' }}
+                style={{ borderRadius: '1rem' }}
               >
                 <CheckCircle2
                   size={18}
@@ -273,8 +245,8 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
           <div className="max-w-2xl mb-10">
             <p className="text-xs font-bold uppercase tracking-widest text-[#0f211a] mb-4">
               {isEn
-                ? 'Starter Pack vs Full Playbook'
-                : 'Starter Pack vs Playbook complet'}
+                ? 'Starter Pack and complete SOP manual'
+                : 'Starter Pack et manuel SOP complet'}
             </p>
             <h2 className="font-display text-4xl font-extrabold text-[#0f211a] tracking-tight">
               {isEn
@@ -283,7 +255,7 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
             </h2>
           </div>
           <div className="grid lg:grid-cols-2 gap-6">
-            <div className="border border-[rgba(32,35,31,0.12)] bg-[#fcfbf8] p-7" style={{ borderRadius: '0.125rem' }}>
+            <div className="border border-[rgba(32,35,31,0.12)] bg-[#fcfbf8] p-7" style={{ borderRadius: '1rem' }}>
               <div className="flex items-center justify-between mb-5">
                 <h3 className="font-display text-2xl font-bold text-[#0f211a]">
                   {pack.shortTitle[lang]}
@@ -298,7 +270,7 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
             </div>
             <div
               className="bg-[#0f211a] text-white p-7"
-              style={{ borderRadius: '0.125rem' }}
+              style={{ borderRadius: '1rem' }}
             >
               <div className="flex items-center justify-between gap-4 mb-5">
                 <h3 className="font-display text-2xl font-bold">
@@ -347,7 +319,7 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
               <div
                 key={item.question.en}
                 className="border border-[rgba(32,35,31,0.12)] bg-white"
-                style={{ borderRadius: '0.125rem' }}
+                style={{ borderRadius: '1rem' }}
               >
                 <button
                   type="button"
@@ -379,35 +351,6 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
         </div>
       </section>
 
-      <section className="bg-[#0f211a] px-6 py-20 text-center text-white">
-        <div className="max-w-2xl mx-auto">
-          <h2 className="font-display text-4xl font-extrabold tracking-tight mb-4">
-            {isEn
-              ? `Get the ${pack.shortTitle.en}`
-              : `Obtenir le ${pack.shortTitle.fr}`}
-          </h2>
-          <p
-            className="text-lg mb-8"
-            style={{ color: 'rgba(255,255,255,0.75)' }}
-          >
-            {pack.finalText[lang]}
-          </p>
-          <button
-            onClick={handleAddToCart}
-            className="inline-flex items-center justify-center gap-2 px-10 py-4 bg-white text-[#0f211a] font-bold hover:bg-[#fcfbf8] transition-colors"
-            style={{ borderRadius: '0.125rem' }}
-          >
-            <ShoppingCart size={16} />
-            {inCart
-              ? isEn
-                ? 'In Cart'
-                : 'Ajouté'
-              : isEn
-                ? `Add to cart · ${formatProductPrice('starter_pack')}`
-                : `Ajouter au panier · ${formatProductPrice('starter_pack')}`}
-          </button>
-        </div>
-      </section>
     </div>
   )
 }

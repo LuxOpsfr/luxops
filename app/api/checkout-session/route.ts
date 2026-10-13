@@ -23,7 +23,7 @@ function cleanMetadataValue(value: unknown) {
 
 export async function POST(request: NextRequest) {
   try {
-    const { items, locale, currency, posthogDistinctId, posthogSessionId } = await request.json()
+    const { items, locale, currency, posthogDistinctId, posthogSessionId, returnToPortal } = await request.json()
 
     if (!Array.isArray(items) || items.length === 0) {
       return NextResponse.json({ error: 'No items' }, { status: 400 })
@@ -43,11 +43,14 @@ export async function POST(request: NextRequest) {
       ui_mode: 'embedded',
       mode: 'payment',
       currency: stripeCurrency(checkoutCurrency),
+      allow_promotion_codes: true,
       line_items: items.map((item: { priceId: string }) => ({
         price: item.priceId,
         quantity: 1,
       })),
-      return_url: `${origin}/${lang}/success?session_id={CHECKOUT_SESSION_ID}`,
+      return_url: returnToPortal === true
+        ? `${origin}/${lang}/portal/dashboard?session_id={CHECKOUT_SESSION_ID}`
+        : `${origin}/${lang}/success?session_id={CHECKOUT_SESSION_ID}`,
       locale: lang,
       metadata: {
         locale: lang,

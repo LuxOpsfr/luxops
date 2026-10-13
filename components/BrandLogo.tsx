@@ -23,14 +23,14 @@ export default function BrandLogo({
         <span
           aria-hidden="true"
           className="relative inline-flex shrink-0 items-center justify-center"
-          style={{ width: compact ? 30 : 38, height: compact ? 30 : 38, border: `1px solid ${primary}` }}
+          style={{ width: compact ? 34 : 40, height: compact ? 34 : 40, border: `1px solid ${primary}` }}
         >
           <span className="absolute inset-[3px]" style={{ border: `1px solid ${secondary}`, opacity: 0.72 }} />
           <span
             style={{
               color: primary,
               fontFamily: 'var(--font-brand)',
-              fontSize: compact ? '0.72rem' : '0.88rem',
+              fontSize: compact ? '0.76rem' : '0.9rem',
               fontWeight: 600,
               lineHeight: 1,
             }}
@@ -45,7 +45,7 @@ export default function BrandLogo({
           className="brand-wordmark"
           style={{
             color: primary,
-            fontSize: compact ? '1.55rem' : '1.95rem',
+            fontSize: compact ? '1.65rem' : '2rem',
             lineHeight: 0.88,
           }}
         >
@@ -53,8 +53,8 @@ export default function BrandLogo({
         </span>
         {showTagline && (
           <span
-            className="mt-2 hidden font-semibold uppercase sm:block"
-            style={{ color: muted, fontSize: '0.56rem', lineHeight: 1.25, letterSpacing: 0 }}
+            className="mt-1.5 hidden font-semibold uppercase sm:block"
+            style={{ color: muted, fontSize: '0.59rem', lineHeight: 1.25, letterSpacing: 0 }}
           >
             Standardizing Excellence in High-End Hospitality
           </span>

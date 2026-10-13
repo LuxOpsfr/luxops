@@ -109,15 +109,15 @@ export default async function FrontOfficeSopPage({ params }: { params: Promise<{
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-    <main className="bg-white">
+    <main className="bg-[#fcfbf8]">
 
       {/* Hero */}
-      <section className="bg-[#1A2E44] text-white py-20 px-6">
+      <section className="bg-[#0f211a] text-white py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <span className="inline-block bg-[#0056D2] text-white text-xs font-semibold px-3 py-1 rounded-full mb-6 tracking-widest uppercase">
+          <span className="inline-block bg-[#a58658] text-white text-xs font-semibold px-3 py-1 rounded-full mb-6 tracking-widest uppercase">
             {isEN ? 'Front Office SOP' : 'Procédures réception'}
           </span>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+          <h1 className="font-display text-4xl font-medium mb-6 leading-[1.08] sm:text-5xl md:text-[3.5rem]">
             {isEN
               ? 'Front Office SOPs: Built Around How the Desk Actually Works'
               : 'Procédures de réception hôtelière : construites pour le fonctionnement réel du service'}
@@ -129,9 +129,9 @@ export default async function FrontOfficeSopPage({ params }: { params: Promise<{
           </p>
           <Link
             href={`/${locale}/playbooks/fo`}
-            className="inline-block bg-[#0056D2] hover:bg-[#0041A3] text-white font-semibold px-8 py-4 rounded-lg transition-colors text-base"
+            className="inline-block bg-[#a58658] hover:bg-[#24362f] text-white font-semibold px-8 py-4 rounded-full transition-colors text-base"
           >
-            {isEN ? 'View Front Office Playbook' : 'Voir le Playbook réception'}
+            {isEN ? 'View Front Office SOP manual' : 'Voir le Manuel SOP réception'}
           </Link>
         </div>
       </section>
@@ -139,31 +139,31 @@ export default async function FrontOfficeSopPage({ params }: { params: Promise<{
       <EditorialRouteImage route="front-office-sop" alt="Hotel front office" />
 
       {/* Product paths */}
-      <section className="py-10 px-6 bg-white border-b border-gray-100">
+      <section className="py-10 px-6 bg-[#fcfbf8] border-b border-gray-100">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="text-[10px] font-bold uppercase tracking-widest text-[#003d9b] mb-3">
+          <p className="text-[10px] font-bold uppercase tracking-widest text-[#0f211a] mb-3">
             {isEN ? 'Front Office resources' : 'Ressources réception'}
           </p>
-          <h2 className="text-2xl font-bold text-[#1A2E44] mb-3">
+          <h2 className="text-2xl font-bold text-[#0f211a] mb-3">
             {isEN ? 'Choose the right front desk resource' : 'Choisir le bon support pour la réception'}
           </h2>
           <p className="text-sm text-gray-500 leading-relaxed max-w-2xl mx-auto mb-7">
             {isEN
-              ? 'Use the Starter Pack for practical checklists, handovers and scripts. Use the full Front Office Playbook when you need the complete SOP reference for the department.'
-              : 'Utilisez le Starter Pack pour les checklists, passations et scripts du quotidien. Utilisez le Playbook Front Office complet si vous avez besoin de toute la référence SOP du service.'}
+              ? 'Use the Starter Pack for practical checklists, handovers and scripts. Use the full Front Office SOP manual when you need the complete SOP reference for the department.'
+              : 'Utilisez le Starter Pack pour les checklists, passations et scripts du quotidien. Utilisez le Manuel SOP Front Office complet si vous avez besoin de toute la référence SOP du service.'}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link
               href={`/${locale}/playbooks/fo-starter-pack`}
-              className="inline-flex min-w-[240px] items-center justify-center gap-2 rounded-lg bg-[#003d9b] px-5 py-3 text-sm font-semibold text-white hover:bg-[#002d7a] transition-colors"
+              className="inline-flex min-w-[240px] items-center justify-center gap-2 rounded-full bg-[#0f211a] px-5 py-3 text-sm font-semibold text-white hover:bg-[#24362f] transition-colors"
             >
               {isEN ? 'View the Front Office Starter Pack' : 'Voir le Starter Pack Front Office'} <ArrowRight size={16} />
             </Link>
             <Link
               href={`/${locale}/playbooks/fo`}
-              className="inline-flex min-w-[240px] items-center justify-center gap-2 rounded-lg border border-[#003d9b] px-5 py-3 text-sm font-semibold text-[#003d9b] hover:bg-[#eef4ff] transition-colors"
+              className="inline-flex min-w-[240px] items-center justify-center gap-2 rounded-full border border-[#0f211a] px-5 py-3 text-sm font-semibold text-[#0f211a] hover:bg-[#f5f1e9] transition-colors"
             >
-              {isEN ? 'View the Front Office Playbook' : 'Voir le Playbook Front Office'} <ArrowRight size={16} />
+              {isEN ? 'View the Front Office SOP manual' : 'Voir le Manuel SOP Front Office'} <ArrowRight size={16} />
             </Link>
           </div>
         </div>
@@ -172,19 +172,19 @@ export default async function FrontOfficeSopPage({ params }: { params: Promise<{
       {/* Lead magnet */}
       <section
         className="py-10 border-b"
-        style={{ backgroundColor: '#eef4ff', borderColor: 'rgba(195,198,214,0.3)' }}
+        style={{ backgroundColor: '#f5f1e9', borderColor: '#e7e1d7' }}
       >
         <div className="max-w-screen-xl mx-auto px-6 flex flex-col sm:flex-row items-start sm:items-center gap-6">
           <div className="flex-1">
-            <p className="text-[10px] font-bold uppercase tracking-widest text-[#003d9b] mb-2">
-              {isEN ? 'Free resource' : 'Ressource gratuite'}
+            <p className="text-[10px] font-bold uppercase tracking-widest text-[#0f211a] mb-2">
+              {isEN ? 'Sample chapter' : 'Chapitre de découverte'}
             </p>
-            <p className="font-bold text-[#0a1d2e] text-lg mb-1">
+            <p className="font-bold text-[#0f211a] text-lg mb-1">
               {isEN
-                ? 'Download a free chapter of the Front Office Playbook'
-                : 'Téléchargez un chapitre gratuit du Playbook Réception'}
+                ? 'Receive a sample chapter from the Front Office SOP manual'
+                : 'Recevoir un chapitre de découverte du Manuel SOP Front Office'}
             </p>
-            <p className="text-sm text-[#4f6074]">
+            <p className="text-sm text-[#687169]">
               {isEN
                 ? 'See what structured front office procedures look like in practice.'
                 : 'Découvrez à quoi ressemblent des procédures de réception structurées.'}
@@ -193,9 +193,9 @@ export default async function FrontOfficeSopPage({ params }: { params: Promise<{
           <Link
             href={`/${locale}/free-hotel-procedures`}
             className="inline-flex items-center gap-2 px-6 py-3 text-white font-bold text-sm flex-shrink-0 hover:opacity-90 transition-opacity"
-            style={{ background: 'linear-gradient(135deg, #003d9b, #0052cc)', borderRadius: '0.125rem' }}
+            style={{ background: '#0f211a', borderRadius: '999px' }}
           >
-            {isEN ? 'Download free' : 'Télécharger gratuitement'} <ArrowRight size={18} />
+            {isEN ? 'Choose a chapter' : 'Choisir un chapitre'} <ArrowRight size={18} />
           </Link>
         </div>
       </section>
@@ -203,10 +203,10 @@ export default async function FrontOfficeSopPage({ params }: { params: Promise<{
       {/* Front office cluster */}
       <section className="py-12 px-6 border-b border-gray-100">
         <div className="max-w-5xl mx-auto">
-          <p className="text-[10px] font-bold uppercase tracking-widest text-[#003d9b] mb-3">
+          <p className="text-[10px] font-bold uppercase tracking-widest text-[#0f211a] mb-3">
             {isEN ? 'Related front office pages' : 'Pages liées à la réception'}
           </p>
-          <h2 className="text-2xl font-bold text-[#1A2E44] mb-6">
+          <h2 className="text-2xl font-bold text-[#0f211a] mb-6">
             {isEN ? 'Build the full front desk operating system' : 'Structurer tout le fonctionnement de la réception'}
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -245,9 +245,9 @@ export default async function FrontOfficeSopPage({ params }: { params: Promise<{
               <Link
                 key={item.href}
                 href={item.href}
-                className="rounded-xl border border-gray-200 bg-white p-5 transition-colors hover:border-[#003d9b]"
+                className="rounded-2xl border border-gray-200 bg-[#fcfbf8] p-5 transition-colors hover:border-[#0f211a]"
               >
-                <p className="font-semibold text-[#1A2E44] mb-2">{item.title}</p>
+                <p className="font-semibold text-[#0f211a] mb-2">{item.title}</p>
                 <p className="text-sm text-gray-500 leading-relaxed">{item.desc}</p>
               </Link>
             ))}
@@ -258,7 +258,7 @@ export default async function FrontOfficeSopPage({ params }: { params: Promise<{
       {/* What a front office SOP system actually covers */}
       <section className="py-16 px-6">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold text-[#1A2E44] mb-6">
+          <h2 className="text-2xl font-bold text-[#0f211a] mb-6">
             {isEN
               ? 'What a front office SOP system actually covers'
               : 'Ce que doivent couvrir les procédures de réception'}
@@ -288,15 +288,15 @@ export default async function FrontOfficeSopPage({ params }: { params: Promise<{
       {/* Core procedure areas */}
       <section className="py-16 px-6 bg-gray-50">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold text-[#1A2E44] mb-8">
+          <h2 className="text-2xl font-bold text-[#0f211a] mb-8">
             {isEN
               ? 'Core procedure areas in a front office SOP'
               : 'Les procédures essentielles d\'une réception hôtelière'}
           </h2>
           <div className="space-y-6">
             {sopAreas.map((item) => (
-              <div key={item.title} className="bg-white border border-gray-100 rounded-lg p-6">
-                <h3 className="font-semibold text-[#1A2E44] mb-2">{item.title}</h3>
+              <div key={item.title} className="bg-[#fcfbf8] border border-gray-100 rounded-2xl p-6">
+                <h3 className="font-semibold text-[#0f211a] mb-2">{item.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{item.body}</p>
               </div>
             ))}
@@ -307,7 +307,7 @@ export default async function FrontOfficeSopPage({ params }: { params: Promise<{
       {/* Why this needs to be documented */}
       <section className="py-16 px-6">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold text-[#1A2E44] mb-6">
+          <h2 className="text-2xl font-bold text-[#0f211a] mb-6">
             {isEN ? 'Why this needs to be documented' : 'Pourquoi ces procédures doivent être écrites'}
           </h2>
           {isEN ? (
@@ -333,21 +333,21 @@ export default async function FrontOfficeSopPage({ params }: { params: Promise<{
       </section>
 
       {/* CTA */}
-      <section className="bg-[#1A2E44] py-16 px-6 text-center text-white">
+      <section className="bg-[#0f211a] py-16 px-6 text-center text-white">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-2xl font-bold mb-4">
-            {isEN ? 'The complete front office SOP system' : 'Le playbook réception complet'}
+            {isEN ? 'The complete front office SOP system' : 'Le Manuel SOP réception complet'}
           </h2>
           <p className="text-gray-300 mb-8">
             {isEN
-              ? 'The LuxOps Front Office Playbook covers the full procedure set for a luxury hotel reception: guest interactions, shift structure, exception handling, night audit and reporting. 12 chapters, PDF and PowerPoint, EN and FR.'
-              : 'Le Playbook Réception LuxOps couvre l\'ensemble des procédures pour une réception hôtelière haut de gamme : accueil client, organisation des services, gestion des situations difficiles, Night Audit et reportings. 12 chapitres, PDF et PowerPoint, en français et en anglais.'}
+              ? 'The LuxOps Front Office SOP manual covers the full procedure set for a luxury hotel reception: guest interactions, shift structure, exception handling, night audit and reporting. 12 chapters, PDF and PowerPoint, EN and FR.'
+              : 'Le Manuel SOP Réception LuxOps couvre l\'ensemble des procédures pour une réception hôtelière haut de gamme : accueil client, organisation des services, gestion des situations difficiles, Night Audit et reportings. 12 chapitres, PDF et PowerPoint, en français et en anglais.'}
           </p>
           <Link
             href={`/${locale}/playbooks/fo`}
-            className="inline-block bg-[#0056D2] hover:bg-[#0041A3] text-white font-semibold px-8 py-4 rounded-lg transition-colors"
+            className="inline-block bg-[#a58658] hover:bg-[#24362f] text-white font-semibold px-8 py-4 rounded-full transition-colors"
           >
-            {isEN ? 'View Front Office Playbook' : 'Voir le Playbook réception'}
+            {isEN ? 'View Front Office SOP manual' : 'Voir le Manuel SOP réception'}
           </Link>
         </div>
       </section>

@@ -10,6 +10,7 @@ export interface PlaybookEntry {
   chapters: { en: string[]; fr: string[] }
   priceId: string
   previewImage?: string
+  previewChapter: { number: number; title: { en: string; fr: string }; pages: { en: number; fr: number } }
 }
 
 export const PLAYBOOKS: PlaybookEntry[] = [
@@ -17,13 +18,14 @@ export const PLAYBOOKS: PlaybookEntry[] = [
     id: 'fo',
     priceId: 'price_1TZRZZDVLJTOFkjUd3B9x44e',
     previewImage: '/Previews/fo-preview.jpg.png',
+    previewChapter: { number: 4, title: { en: 'Guest Communication', fr: 'Communication client' }, pages: { en: 28, fr: 29 } },
     title: { en: 'Front Office SOP Manual', fr: 'Manuel SOP Front Office' },
     dept: { en: 'Front Office', fr: 'Front Office' },
     desc: {
       en: 'Service sequences, guest communication, complaint handling, upselling, night audit, and the procedural structure that keeps a front desk consistent across every shift.',
       fr: "Séquences de service, communication client, gestion des réclamations, vente additionnelle, night audit, et la base procédurale qui assure la constance d'une réception sur chaque service.",
     },
-    pages: '~250 pages',
+    pages: '~300 pages',
     highlights: {
       en: [
         'Check-in/out SOPs',
@@ -75,6 +77,7 @@ export const PLAYBOOKS: PlaybookEntry[] = [
   },
   {
     previewImage: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&h=500&fit=crop&q=80',
+    previewChapter: { number: 4, title: { en: 'Public Areas & Specialty Cleaning', fr: 'Espaces communs & nettoyages spéciaux' }, pages: { en: 33, fr: 41 } },
     id: 'hsk',
     priceId: 'price_1TBZ9TDVLJTOFkjUwWnoKaGk',
     title: { en: 'Housekeeping SOP Manual', fr: 'Manuel SOP Housekeeping' },
@@ -83,7 +86,7 @@ export const PLAYBOOKS: PlaybookEntry[] = [
       en: 'Room inspection checklists, linen and product management, cleaning protocols, and quality control standards, structured to maintain the same operational level from the first room to the last.',
       fr: "Checklists d'inspection des chambres, gestion du linge et des produits, protocoles de nettoyage et standards de contrôle qualité, structurés pour maintenir le même niveau opérationnel de la première chambre à la dernière.",
     },
-    pages: '~220 pages',
+    pages: '~300 pages',
     highlights: {
       en: [
         'Room inspection checklists',
@@ -133,13 +136,14 @@ export const PLAYBOOKS: PlaybookEntry[] = [
     id: 'fb',
     priceId: 'price_1TZRYvDVLJTOFkjUNuiqbADG',
     previewImage: '/Previews/fb-preview.jpg.png',
+    previewChapter: { number: 4, title: { en: 'Bar & Beverage Service', fr: 'Bar & service des boissons' }, pages: { en: 17, fr: 17 } },
     title: { en: 'F&B SOP Manual', fr: 'Manuel SOP F&B' },
     dept: { en: 'Food & Beverage', fr: 'Food & Beverage' },
     desc: {
       en: 'Service sequences and standards for restaurant, bar, breakfast, and room service, a procedural framework that gives teams clarity on every guest interaction, every cover, and every service.',
       fr: 'Séquences de service et standards pour le restaurant, le bar, le petit-déjeuner et le room service, un cadre procédural qui donne aux équipes une base claire pour chaque interaction client, chaque couvert et chaque service.',
     },
-    pages: '~280 pages',
+    pages: '~175 pages',
     highlights: {
       en: [
         'Restaurant service standards',
@@ -187,6 +191,7 @@ export const PLAYBOOKS: PlaybookEntry[] = [
   },
   {
     previewImage: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&h=500&fit=crop&q=80',
+    previewChapter: { number: 4, title: { en: 'Treatment Menu & Techniques', fr: 'Carte de soins & techniques' }, pages: { en: 16, fr: 16 } },
     id: 'spa',
     priceId: 'price_1TZRY9DVLJTOFkjUfkYQJAsW',
     title: { en: 'Spa & Wellness SOP Manual', fr: 'Manuel SOP Spa & Wellness' },
@@ -195,7 +200,7 @@ export const PLAYBOOKS: PlaybookEntry[] = [
       en: 'Treatment protocols, guest journey standards, therapist conduct, retail procedures, and booking management, built for a spa where consistency and guest experience drive performance.',
       fr: "Protocoles de soins, standards du parcours client, conduite des thérapeutes, procédures retail et gestion des réservations, conçu pour un spa où la constance et l'expérience client sont les principaux facteurs de performance.",
     },
-    pages: '~200 pages',
+    pages: '~150 pages',
     highlights: {
       en: [
         'Treatment protocols',

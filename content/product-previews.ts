@@ -18,14 +18,14 @@ export const PRODUCT_PREVIEWS: Record<
 > = {
   fo: {
     en: [
-      { src: '/product-previews/fo/en/01-check-in-process.webp', alt: 'Front Office Playbook check-in registration process' },
-      { src: '/product-previews/fo/en/02-complaint-management.webp', alt: 'Front Office Playbook complaint management framework' },
-      { src: '/product-previews/fo/en/03-night-shift-timeline.webp', alt: 'Front Office Playbook night shift timeline' },
+      { src: '/Previews/front-office-chapter04/en/page-01.png', alt: 'Front Office SOP Manual 2027: Chapter 04 cover' },
+      { src: '/Previews/front-office-chapter04/en/page-02.png', alt: 'Front Office SOP Manual 2027: Chapter 04 contents' },
+      { src: '/Previews/front-office-chapter04/en/page-03.png', alt: 'Front Office SOP Manual 2027: communication principles' },
     ],
     fr: [
-      { src: '/product-previews/fo/fr/01-processus-check-in.webp', alt: 'Processus de check-in du Playbook Front Office' },
-      { src: '/product-previews/fo/fr/02-suivi-reclamations.webp', alt: 'Suivi des réclamations du Playbook Front Office' },
-      { src: '/product-previews/fo/fr/03-chronologie-night-shift.webp', alt: 'Chronologie du night shift du Playbook Front Office' },
+      { src: '/Previews/front-office-chapter04/fr/page-01.png', alt: 'Manuel SOP Front Office 2027 : couverture du chapitre 04' },
+      { src: '/Previews/front-office-chapter04/fr/page-02.png', alt: 'Manuel SOP Front Office 2027 : sommaire du chapitre 04' },
+      { src: '/Previews/front-office-chapter04/fr/page-03.png', alt: 'Manuel SOP Front Office 2027 : principes de communication' },
     ],
   },
   hsk: {
@@ -66,38 +66,38 @@ export const PRODUCT_PREVIEWS: Record<
   },
   'fo-starter-pack': {
     en: [
-      { src: '/product-previews/fo-starter-pack/en/01-check-in-sop.webp', alt: 'Front Office Starter Pack check-in SOP' },
-      { src: '/product-previews/fo-starter-pack/en/02-shift-handover.webp', alt: 'Front Office Starter Pack shift handover template' },
-      { src: '/product-previews/fo-starter-pack/en/03-vip-arrival.webp', alt: 'Front Office Starter Pack VIP arrival checklist' },
+      { src: '/product-previews/2027-starter-packs/fo/en/page-01.webp', alt: 'Front Office Starter Pack 2027 cover' },
+      { src: '/product-previews/2027-starter-packs/fo/en/page-02.webp', alt: 'Front Office Starter Pack 2027 contents' },
+      { src: '/product-previews/2027-starter-packs/fo/en/page-04.webp', alt: 'Front Office Starter Pack 2027 daily reception checklist' },
     ],
     fr: [
-      { src: '/product-previews/fo-starter-pack/fr/01-sop-check-in.webp', alt: 'SOP de check-in du Starter Pack Front Office' },
-      { src: '/product-previews/fo-starter-pack/fr/02-passation-shift.webp', alt: 'Template de passation du Starter Pack Front Office' },
-      { src: '/product-previews/fo-starter-pack/fr/03-arrivee-vip.webp', alt: 'Checklist arrivée VIP du Starter Pack Front Office' },
+      { src: '/product-previews/2027-starter-packs/fo/fr/page-01.webp', alt: 'Couverture du Starter Pack Front Office 2027' },
+      { src: '/product-previews/2027-starter-packs/fo/fr/page-02.webp', alt: 'Sommaire du Starter Pack Front Office 2027' },
+      { src: '/product-previews/2027-starter-packs/fo/fr/page-04.webp', alt: 'Checklist quotidienne de la réception 2027' },
     ],
   },
   'hsk-starter-pack': {
     en: [
-      { src: '/product-previews/hsk-starter-pack/en/01-departure-inspection.webp', alt: 'Housekeeping Inspection Kit departure room checklist' },
-      { src: '/product-previews/hsk-starter-pack/en/02-supervisor-control.webp', alt: 'Housekeeping Inspection Kit supervisor control sheet' },
-      { src: '/product-previews/hsk-starter-pack/en/03-common-defects.webp', alt: 'Housekeeping Inspection Kit common defects checklist' },
+      { src: '/product-previews/2027-starter-packs/hsk/en/page-01.webp', alt: 'Housekeeping Starter Pack 2027 cover' },
+      { src: '/product-previews/2027-starter-packs/hsk/en/page-02.webp', alt: 'Housekeeping Starter Pack 2027 contents' },
+      { src: '/product-previews/2027-starter-packs/hsk/en/page-04.webp', alt: 'Housekeeping Starter Pack 2027 room inspection checklist' },
     ],
     fr: [
-      { src: '/product-previews/hsk-starter-pack/fr/01-inspection-depart.webp', alt: 'Checklist inspection chambre départ du Kit Housekeeping' },
-      { src: '/product-previews/hsk-starter-pack/fr/02-controle-superviseur.webp', alt: 'Feuille de contrôle superviseur du Kit Housekeeping' },
-      { src: '/product-previews/hsk-starter-pack/fr/03-defauts-frequents.webp', alt: 'Checklist des défauts fréquents du Kit Housekeeping' },
+      { src: '/product-previews/2027-starter-packs/hsk/fr/page-01.webp', alt: 'Couverture du Starter Pack Housekeeping 2027' },
+      { src: '/product-previews/2027-starter-packs/hsk/fr/page-02.webp', alt: 'Sommaire du Starter Pack Housekeeping 2027' },
+      { src: '/product-previews/2027-starter-packs/hsk/fr/page-04.webp', alt: 'Checklist d’inspection d’une chambre 2027' },
     ],
   },
   'fb-starter-pack': {
     en: [
-      { src: '/product-previews/fb-starter-pack/en/01-restaurant-opening.webp', alt: 'F&B Starter Pack restaurant opening checklist' },
-      { src: '/product-previews/fb-starter-pack/en/02-service-sequence.webp', alt: 'F&B Starter Pack service sequence SOP' },
-      { src: '/product-previews/fb-starter-pack/en/03-table-inspection.webp', alt: 'F&B Starter Pack table inspection checklist' },
+      { src: '/product-previews/2027-starter-packs/fb/en/page-01.webp', alt: 'F&B Starter Pack 2027 cover' },
+      { src: '/product-previews/2027-starter-packs/fb/en/page-02.webp', alt: 'F&B Starter Pack 2027 contents' },
+      { src: '/product-previews/2027-starter-packs/fb/en/page-04.webp', alt: 'F&B Starter Pack 2027 daily service checklist' },
     ],
     fr: [
-      { src: '/product-previews/fb-starter-pack/fr/01-ouverture-restaurant.webp', alt: 'Checklist ouverture restaurant du Starter Pack F&B' },
-      { src: '/product-previews/fb-starter-pack/fr/02-sequence-service.webp', alt: 'Séquence de service du Starter Pack F&B' },
-      { src: '/product-previews/fb-starter-pack/fr/03-inspection-table.webp', alt: 'Checklist inspection table du Starter Pack F&B' },
+      { src: '/product-previews/2027-starter-packs/fb/fr/page-01.webp', alt: 'Couverture du Starter Pack F&B 2027' },
+      { src: '/product-previews/2027-starter-packs/fb/fr/page-02.webp', alt: 'Sommaire du Starter Pack F&B 2027' },
+      { src: '/product-previews/2027-starter-packs/fb/fr/page-04.webp', alt: 'Checklist quotidienne de service F&B 2027' },
     ],
   },
 }

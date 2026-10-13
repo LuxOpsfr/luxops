@@ -18,7 +18,7 @@ export default function EditorialRouteImage({ route, alt, locale = 'fr' }: { rou
 
     return (
       <figure className="mx-auto my-12 w-full max-w-[900px] px-6">
-        <div className="grid grid-cols-3 gap-2 bg-[#e7e0d5] p-3 sm:gap-4 sm:p-7">
+        <div className="grid grid-cols-3 gap-2 rounded-[1.5rem] border border-[#e7e1d7] bg-[#f5f1e9] p-3 shadow-[0_18px_42px_rgba(40,40,30,.08)] sm:gap-4 sm:p-7">
           {samples.map((src, index) => (
             <Image
               key={src}
@@ -27,7 +27,7 @@ export default function EditorialRouteImage({ route, alt, locale = 'fr' }: { rou
               width={1000}
               height={1413}
               sizes="(max-width: 900px) 30vw, 270px"
-              className="aspect-[1000/1413] w-full bg-white object-cover"
+              className="aspect-[1000/1413] w-full rounded-[.75rem] border border-white/70 bg-white object-cover"
             />
           ))}
         </div>
@@ -41,12 +41,12 @@ export default function EditorialRouteImage({ route, alt, locale = 'fr' }: { rou
   return (
     <figure className="mx-auto my-12 w-full max-w-[900px] px-6">
       <Image
-        src={editorialImageUrl(file)}
+        src={editorialImageUrl(file, locale)}
         alt={alt}
         width={1080}
         height={675}
         sizes="(max-width: 900px) 100vw, 900px"
-        className="aspect-[16/10] w-full object-cover"
+        className="aspect-[16/10] w-full rounded-[1.5rem] border border-[#e7e1d7] object-cover shadow-[0_18px_42px_rgba(40,40,30,.08)]"
       />
     </figure>
   )

@@ -182,15 +182,15 @@ export default async function HousekeepingSopPage({ params }: { params: Promise<
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <main className="bg-white">
+      <main className="bg-[#fcfbf8]">
 
         {/* Hero */}
-        <section className="bg-[#1A2E44] text-white py-20 px-6">
+        <section className="bg-[#0f211a] text-white py-20 px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <span className="inline-block bg-[#2E7D32] text-white text-xs font-semibold px-3 py-1 rounded-full mb-6 tracking-widest uppercase">
+            <span className="inline-block bg-[#92734a] text-white text-xs font-semibold px-3 py-1 rounded-full mb-6 tracking-widest uppercase">
               {isEN ? 'Housekeeping SOP' : 'Procédures housekeeping'}
             </span>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+            <h1 className="font-display text-4xl font-medium mb-6 leading-[1.08] sm:text-5xl md:text-[3.5rem]">
               {isEN
                 ? 'Housekeeping SOP: What It Covers and How to Structure One'
                 : 'SOP Housekeeping Hôtel : structurer la chambre à blanc, la recouche et l’inspection'}
@@ -202,9 +202,9 @@ export default async function HousekeepingSopPage({ params }: { params: Promise<
             </p>
             <Link
               href={`/${locale}/playbooks/hsk`}
-              className="inline-block bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold px-8 py-4 rounded-lg transition-colors text-base"
+              className="inline-block bg-[#92734a] hover:bg-[#705431] text-white font-semibold px-8 py-4 rounded-full transition-colors text-base"
             >
-              {isEN ? 'View Housekeeping Playbook' : 'Voir le Playbook Housekeeping'}
+              {isEN ? 'View Housekeeping SOP manual' : 'Voir le Manuel SOP Housekeeping'}
             </Link>
           </div>
         </section>
@@ -214,19 +214,19 @@ export default async function HousekeepingSopPage({ params }: { params: Promise<
         {/* Lead magnet */}
         <section
           className="py-10 border-b"
-          style={{ backgroundColor: '#eef4ff', borderColor: 'rgba(195,198,214,0.3)' }}
+          style={{ backgroundColor: '#f5f1e9', borderColor: '#e7e1d7' }}
         >
           <div className="max-w-screen-xl mx-auto px-6 flex flex-col sm:flex-row items-start sm:items-center gap-6">
             <div className="flex-1">
-              <p className="text-[10px] font-bold uppercase tracking-widest text-[#003d9b] mb-2">
-                {isEN ? 'Free resource' : 'Ressource gratuite'}
+              <p className="text-[10px] font-bold uppercase tracking-widest text-[#0f211a] mb-2">
+                {isEN ? 'Sample chapter' : 'Chapitre de découverte'}
               </p>
-              <p className="font-bold text-[#0a1d2e] text-lg mb-1">
+              <p className="font-bold text-[#0f211a] text-lg mb-1">
                 {isEN
-                  ? 'Download a free chapter of the Housekeeping Playbook'
-                  : 'Téléchargez un chapitre gratuit du Playbook Housekeeping'}
+                  ? 'Receive a sample chapter from the Housekeeping SOP manual'
+                  : 'Recevoir un chapitre de découverte du Manuel SOP Housekeeping'}
               </p>
-              <p className="text-sm text-[#4f6074]">
+              <p className="text-sm text-[#687169]">
                 {isEN
                   ? 'See what structured housekeeping procedures look like in practice.'
                   : "Découvrez à quoi ressemblent des procédures housekeeping structurées avec le vocabulaire et les séquences du terrain."}
@@ -235,22 +235,22 @@ export default async function HousekeepingSopPage({ params }: { params: Promise<
             <Link
               href={`/${locale}/free-hotel-procedures`}
               className="inline-flex items-center gap-2 px-6 py-3 text-white font-bold text-sm flex-shrink-0 hover:opacity-90 transition-opacity"
-              style={{ background: 'linear-gradient(135deg, #003d9b, #0052cc)', borderRadius: '0.125rem' }}
+              style={{ background: '#0f211a', borderRadius: '999px' }}
             >
-              {isEN ? 'Download free' : 'Télécharger gratuitement'} <ArrowRight size={18} />
+              {isEN ? 'Choose a chapter' : 'Choisir un chapitre'} <ArrowRight size={18} />
             </Link>
           </div>
         </section>
 
         {/* Printable checklists */}
-        <section className="py-12 px-6 bg-white border-b border-gray-100">
+        <section className="py-12 px-6 bg-[#fcfbf8] border-b border-gray-100">
           <div className="max-w-4xl mx-auto">
             <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-8 items-center">
               <div>
-                <p className="text-xs font-bold uppercase tracking-widest text-[#0056D2] mb-3">
+                <p className="text-xs font-bold uppercase tracking-widest text-[#a58658] mb-3">
                   {isEN ? 'Printable controls' : 'Contrôles imprimables'}
                 </p>
-                <h2 className="text-2xl font-bold text-[#1A2E44] mb-3">
+                <h2 className="text-2xl font-bold text-[#0f211a] mb-3">
                   {isEN ? 'Need the matching housekeeping checklists?' : 'Besoin des checklists housekeeping associées ?'}
                 </h2>
                 <p className="text-gray-600 leading-relaxed">
@@ -262,12 +262,12 @@ export default async function HousekeepingSopPage({ params }: { params: Promise<
               <div className="grid sm:grid-cols-2 gap-3">
                 <Link
                   href={`/${locale}/hotel-housekeeping-checklist`}
-                  className="rounded-lg border border-[#1A2E44] bg-[#1A2E44] p-5 text-white hover:bg-[#243d57] transition-colors"
+                  className="rounded-2xl border border-[#0f211a] bg-[#0f211a] p-5 text-white hover:bg-[#24362f] transition-colors"
                 >
                   <h3 className="font-semibold mb-2">
                     {isEN ? 'Housekeeping checklist hub' : 'Hub checklists housekeeping'}
                   </h3>
-                  <p className="text-sm text-blue-100 leading-relaxed">
+                  <p className="text-sm text-[#e4e8e2] leading-relaxed">
                     {isEN
                       ? 'Download the role-based PDF checklists.'
                       : 'Télécharger les checklists PDF par poste.'}
@@ -275,9 +275,9 @@ export default async function HousekeepingSopPage({ params }: { params: Promise<
                 </Link>
                 <Link
                   href={`/${locale}/playbooks/hsk-starter-pack`}
-                  className="rounded-lg border border-gray-200 bg-[#f7f9fc] p-5 hover:border-[#1A2E44] transition-colors"
+                  className="rounded-2xl border border-gray-200 bg-[#fcfbf8] p-5 hover:border-[#0f211a] transition-colors"
                 >
-                  <h3 className="font-semibold text-[#1A2E44] mb-2">
+                  <h3 className="font-semibold text-[#0f211a] mb-2">
                     {isEN ? 'Inspection kit' : 'Kit inspection'}
                   </h3>
                   <p className="text-sm text-gray-600 leading-relaxed">
@@ -291,19 +291,19 @@ export default async function HousekeepingSopPage({ params }: { params: Promise<
           </div>
         </section>
 
-        {/* Playbook excerpt */}
-        <section className="py-16 px-6 bg-white">
-          <div className="max-w-3xl mx-auto rounded-xl border border-[#d8e6f7] bg-[#f4f8ff] p-8">
-            <p className="text-xs font-semibold uppercase tracking-widest text-[#2E7D32] mb-3">
-              {isEN ? 'Adapted from the LuxOps Housekeeping Playbook' : 'Adapté du Playbook Housekeeping LuxOps'}
+        {/* SOP manual excerpt */}
+        <section className="py-16 px-6 bg-[#fcfbf8]">
+          <div className="max-w-3xl mx-auto rounded-2xl border border-[#e7e1d7] bg-[#f5f1e9] p-8">
+            <p className="text-xs font-semibold uppercase tracking-widest text-[#92734a] mb-3">
+              {isEN ? 'Adapted from the LuxOps Housekeeping SOP manual' : 'Adapté du Manuel SOP Housekeeping LuxOps'}
             </p>
-            <h2 className="text-2xl font-bold text-[#1A2E44] mb-4">
+            <h2 className="text-2xl font-bold text-[#0f211a] mb-4">
               {isEN ? 'A complete SOP includes timing, status and exception rules' : 'Une SOP complète inclut timing, statuts et règles d’exception'}
             </h2>
             <p className="text-gray-600 leading-relaxed mb-6">
               {isEN
-                ? 'The departure room SOP in the LuxOps playbook is built around a 7-phase sequence, an indicative 45-60 minute target for a standard high-end room, and a hard rule: a room marked Clean by the attendant is not sellable until a supervisor marks it Inspected. The timing must be adapted to room size, layout, amenities and staffing.'
-                : "La SOP chambre départ du playbook LuxOps repose sur une séquence en 7 phases, un repère indicatif de 45 à 60 minutes pour une chambre standard haut de gamme, et une règle ferme : une chambre passée en propre par l'équipier n'est pas vendable tant qu'une gouvernante ne l'a pas passée en inspectée. Le timing doit être adapté à la surface, la configuration, les équipements et les effectifs."}
+                ? 'The departure room SOP in the LuxOps SOP manual is built around a 7-phase sequence, an indicative 45-60 minute target for a standard high-end room, and a hard rule: a room marked Clean by the attendant is not sellable until a supervisor marks it Inspected. The timing must be adapted to room size, layout, amenities and staffing.'
+                : "La SOP chambre départ du Manuel SOP LuxOps repose sur une séquence en 7 phases, un repère indicatif de 45 à 60 minutes pour une chambre standard haut de gamme, et une règle ferme : une chambre passée en propre par l'équipier n'est pas vendable tant qu'une gouvernante ne l'a pas passée en inspectée. Le timing doit être adapté à la surface, la configuration, les équipements et les effectifs."}
             </p>
             <div className="grid sm:grid-cols-2 gap-4">
               {(isEN ? [
@@ -317,8 +317,8 @@ export default async function HousekeepingSopPage({ params }: { params: Promise<
                 ['Score qualité', 'Salle de bain 35, chambre 35, présentation 20, maintenance 10.'],
                 ['Exceptions', 'Objet trouvé, DND, suspicion punaises ou panne maintenance déclenchent une escalade immédiate.'],
               ]).map(([title, body]) => (
-                <div key={title} className="bg-white rounded-lg p-4">
-                  <h3 className="font-semibold text-[#1A2E44] mb-2">{title}</h3>
+                <div key={title} className="bg-[#fcfbf8] rounded-2xl p-4">
+                  <h3 className="font-semibold text-[#0f211a] mb-2">{title}</h3>
                   <p className="text-sm text-gray-600 leading-relaxed">{body}</p>
                 </div>
               ))}
@@ -329,7 +329,7 @@ export default async function HousekeepingSopPage({ params }: { params: Promise<
         {/* What is a housekeeping SOP */}
         <section className="py-16 px-6">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl font-bold text-[#1A2E44] mb-6">
+            <h2 className="text-2xl font-bold text-[#0f211a] mb-6">
               {isEN ? 'What Is a Housekeeping SOP?' : "Qu'est-ce qu'un SOP housekeeping ?"}
             </h2>
             {isEN ? (
@@ -363,7 +363,7 @@ export default async function HousekeepingSopPage({ params }: { params: Promise<
         {/* Two levels of housekeeping procedures */}
         <section className="py-16 px-6 bg-gray-50">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl font-bold text-[#1A2E44] mb-6">
+            <h2 className="text-2xl font-bold text-[#0f211a] mb-6">
               {isEN ? 'Two levels of housekeeping procedures' : 'Deux niveaux de procédures housekeeping'}
             </h2>
             {isEN ? (
@@ -391,13 +391,13 @@ export default async function HousekeepingSopPage({ params }: { params: Promise<
         {/* Core housekeeping SOPs */}
         <section className="py-16 px-6">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl font-bold text-[#1A2E44] mb-8">
+            <h2 className="text-2xl font-bold text-[#0f211a] mb-8">
               {isEN ? 'Core housekeeping SOPs' : 'Les SOPs housekeeping essentiels'}
             </h2>
             <div className="space-y-6">
               {sops.map((item) => (
-                <div key={item.title} className="bg-white border border-gray-100 rounded-lg p-6">
-                  <h3 className="font-semibold text-[#1A2E44] mb-2">{item.title}</h3>
+                <div key={item.title} className="bg-[#fcfbf8] border border-gray-100 rounded-2xl p-6">
+                  <h3 className="font-semibold text-[#0f211a] mb-2">{item.title}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed">{item.body}</p>
                 </div>
               ))}
@@ -408,7 +408,7 @@ export default async function HousekeepingSopPage({ params }: { params: Promise<
         {/* How SOPs and checklists work together */}
         <section className="py-16 px-6 bg-gray-50">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl font-bold text-[#1A2E44] mb-6">
+            <h2 className="text-2xl font-bold text-[#0f211a] mb-6">
               {isEN ? 'How SOPs and checklists work together' : 'Comment les SOPs et les checklists fonctionnent ensemble'}
             </h2>
             {isEN ? (
@@ -436,13 +436,13 @@ export default async function HousekeepingSopPage({ params }: { params: Promise<
         {/* FAQ */}
         <section className="py-16 px-6">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl font-bold text-[#1A2E44] mb-8">
+            <h2 className="text-2xl font-bold text-[#0f211a] mb-8">
               {isEN ? 'Frequently Asked Questions' : 'Foire aux questions'}
             </h2>
             <div className="space-y-6">
               {faqs.map((item) => (
                 <div key={item.question} className="border-b border-gray-100 pb-6 last:border-0 last:pb-0">
-                  <h3 className="font-semibold text-[#1A2E44] mb-2">{item.question}</h3>
+                  <h3 className="font-semibold text-[#0f211a] mb-2">{item.question}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed">{item.answer}</p>
                 </div>
               ))}
@@ -453,7 +453,7 @@ export default async function HousekeepingSopPage({ params }: { params: Promise<
         {/* CTA */}
         <section className="py-12 px-6 bg-gray-50 border-t border-gray-100">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl font-bold text-[#1A2E44] mb-6">
+            <h2 className="text-2xl font-bold text-[#0f211a] mb-6">
               {isEN ? 'Housekeeping SOP cluster' : 'Cluster SOP housekeeping'}
             </h2>
             <div className="grid sm:grid-cols-2 gap-4">
@@ -469,8 +469,8 @@ export default async function HousekeepingSopPage({ params }: { params: Promise<
                   href: `/${locale}/blog/hotel-room-cleaning-checklist`,
                   title: isEN ? 'Hotel Room Cleaning Checklist' : 'Checklist de nettoyage de chambre',
                   desc: isEN
-                    ? 'The departure room and stayover sequence from the playbook.'
-                    : 'La séquence chambre à blanc et recouche issue du playbook.',
+                    ? 'The departure room and stayover sequence from the SOP manual.'
+                    : 'La séquence chambre à blanc et recouche issue du Manuel SOP.',
                 },
                 {
                   href: `/${locale}/blog/hotel-housekeeping-supervisor-checklist`,
@@ -504,9 +504,9 @@ export default async function HousekeepingSopPage({ params }: { params: Promise<
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="block rounded-lg border border-gray-200 bg-white p-5 hover:border-[#1A2E44] transition-colors"
+                  className="block rounded-2xl border border-gray-200 bg-[#fcfbf8] p-5 hover:border-[#0f211a] transition-colors"
                 >
-                  <h3 className="font-semibold text-[#1A2E44] mb-1">{item.title}</h3>
+                  <h3 className="font-semibold text-[#0f211a] mb-1">{item.title}</h3>
                   <p className="text-sm text-gray-500 leading-relaxed">{item.desc}</p>
                 </Link>
               ))}
@@ -515,21 +515,21 @@ export default async function HousekeepingSopPage({ params }: { params: Promise<
         </section>
 
         {/* CTA */}
-        <section className="bg-[#1A2E44] py-16 px-6 text-center text-white">
+        <section className="bg-[#0f211a] py-16 px-6 text-center text-white">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-2xl font-bold mb-4">
               {isEN ? 'The complete housekeeping system' : 'Le système housekeeping complet'}
             </h2>
             <p className="text-gray-300 mb-8">
               {isEN
-                ? 'The LuxOps Housekeeping Playbook covers both levels: room attendant procedures and supervisory control protocols. 10 chapters, inspection frameworks, training guides and shift management tools. PDF and PowerPoint, EN and FR.'
-                : "Le Playbook Housekeeping LuxOps couvre les deux niveaux : procédures équipier et protocoles de contrôle superviseur. 10 chapitres, grilles d'inspection, guides de formation et outils de gestion de service. PDF et PowerPoint, EN et FR."}
+                ? 'The LuxOps Housekeeping SOP manual covers both levels: room attendant procedures and supervisory control protocols. 10 chapters, inspection frameworks, training guides and shift management tools. PDF and PowerPoint, EN and FR.'
+                : "Le Manuel SOP Housekeeping LuxOps couvre les deux niveaux : procédures équipier et protocoles de contrôle superviseur. 10 chapitres, grilles d'inspection, guides de formation et outils de gestion de service. PDF et PowerPoint, EN et FR."}
             </p>
             <Link
               href={`/${locale}/playbooks/hsk`}
-              className="inline-block bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold px-8 py-4 rounded-lg transition-colors"
+              className="inline-block bg-[#92734a] hover:bg-[#705431] text-white font-semibold px-8 py-4 rounded-full transition-colors"
             >
-              {isEN ? 'View Housekeeping Playbook' : 'Voir le Playbook Housekeeping'}
+              {isEN ? 'View Housekeeping SOP manual' : 'Voir le Manuel SOP Housekeeping'}
             </Link>
           </div>
         </section>

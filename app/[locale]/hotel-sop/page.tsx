@@ -13,8 +13,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       ? 'Hotel SOP Templates and Starter Packs | LuxOps'
       : 'Procédures opérationnelles hôtelières et starter packs | LuxOps',
     description: isEN
-      ? 'Hotel SOP templates, starter packs and department playbooks for front office, housekeeping, F&B and spa. Practical hotel procedures, checklists and SOP examples ready to adapt.'
-      : 'Modèles de SOP hôtel, starter packs et playbooks par département pour la réception, le housekeeping, le F&B et le spa. Procédures, checklists et exemples prêts à adapter.',
+      ? 'Hotel SOP templates, starter packs and department SOP manuals for front office, housekeeping, F&B and spa. Practical hotel procedures, checklists and SOP examples ready to adapt.'
+      : 'Modèles de SOP hôtel, starter packs et Manuels SOP par département pour la réception, le housekeeping, le F&B et le spa. Procédures, checklists et exemples prêts à adapter.',
     keywords: isEN
       ? 'hotel sop, hotel sop template, hotel standard operating procedures, hotel sop sample, hotel operations manual template, luxury hotel sop'
       : 'sop hôtel, modèle sop hôtel, procédures opérationnelles hôtel, manuel opérations hôtel, procédures hôtelières',
@@ -32,28 +32,28 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 const DEPARTMENTS_EN = [
   {
     name: 'Front Office',
-    color: '#0056D2',
+    color: '#a58658',
     chapters: 12,
     desc: 'Check-in variations, check-out and billing, reservation handling, shift handover, complaint procedure, night audit, emergency protocols',
     href: '/en/front-office-sop',
   },
   {
     name: 'Housekeeping',
-    color: '#2E7D32',
+    color: '#92734a',
     chapters: 10,
     desc: 'Room cleaning sequences, supervisor inspection, turndown service, linen management, lost property, shift handover',
     href: '/en/housekeeping-sop',
   },
   {
     name: 'Food & Beverage',
-    color: '#B45309',
+    color: '#92734a',
     chapters: 10,
     desc: 'Service opening sequences, table service standards, bar procedures, complaint handling, allergen management, closing and handover',
     href: '/en/hotel-fb-sop',
   },
   {
     name: 'Spa & Wellness',
-    color: '#7C3AED',
+    color: '#92734a',
     chapters: 9,
     desc: 'Treatment reception, therapist protocols, hygiene standards, booking management, guest journey, retail and upsell',
     href: '/en/playbooks/spa',
@@ -63,28 +63,28 @@ const DEPARTMENTS_EN = [
 const DEPARTMENTS_FR = [
   {
     name: 'Réception',
-    color: '#0056D2',
+    color: '#a58658',
     chapters: 12,
     desc: 'Variations de check-in, check-out et facturation, gestion des réservations, passation de service, procédure plainte, audit de nuit, protocoles d\'urgence',
     href: '/fr/front-office-sop',
   },
   {
     name: 'Housekeeping',
-    color: '#2E7D32',
+    color: '#92734a',
     chapters: 10,
     desc: 'Séquences de remise en état, inspection superviseur, service de couverture, gestion du linge, objets trouvés, passation de service',
     href: '/fr/housekeeping-sop',
   },
   {
     name: 'Food & Beverage',
-    color: '#B45309',
+    color: '#92734a',
     chapters: 10,
     desc: 'Séquences d\'ouverture de service, standards de service en salle, procédures bar, gestion des plaintes, gestion des allergènes, fermeture et passation',
     href: '/fr/hotel-fb-sop',
   },
   {
     name: 'Spa & Wellness',
-    color: '#7C3AED',
+    color: '#92734a',
     chapters: 9,
     desc: 'Accueil en spa, protocoles thérapeute, standards d\'hygiène, gestion des réservations, parcours client, retail et upsell',
     href: '/fr/playbooks/spa',
@@ -207,7 +207,7 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
         url: localizedPath(locale, '/hotel-sop'),
         hasOfferCatalog: {
           '@type': 'OfferCatalog',
-          name: isEN ? 'Hotel SOP playbooks by department' : 'Playbooks SOP par département',
+          name: isEN ? 'Hotel SOP manuals by department' : 'Manuels SOP par département',
           itemListElement: [
             ...starterPacks.map((pack) => ({
               '@type': 'Offer',
@@ -226,7 +226,7 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
               priceCurrency: 'EUR',
               itemOffered: {
                 '@type': 'CreativeWork',
-                name: `${department.name} SOP Playbook`,
+                name: isEN ? `${department.name} SOP manual` : `Manuel SOP ${department.name}`,
                 description: department.desc,
                 url: `${localizedPath(locale)}${department.href ? department.href.replace(`/${locale}`, '') : '/playbooks'}`,
               },
@@ -245,23 +245,23 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-    <main className="bg-white">
+    <main className="bg-[#fcfbf8]">
 
       {/* Hero */}
-      <section className="bg-[#1A2E44] text-white px-6 pt-32 pb-20">
+      <section className="bg-[#0f211a] text-white px-6 pt-32 pb-20">
         <div className="max-w-4xl mx-auto text-center">
-          <span className="inline-block bg-white/10 text-white text-xs font-semibold px-3 py-1 rounded-full mb-6 tracking-widest uppercase">
+          <span className="inline-block bg-[#fcfbf8]/10 text-white text-xs font-semibold px-3 py-1 rounded-full mb-6 tracking-widest uppercase">
             {isEN ? 'Hotel SOP Templates' : 'Procédures opérationnelles hôtelières'}
           </span>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+          <h1 className="font-display text-4xl font-medium mb-6 leading-[1.08] sm:text-5xl md:text-[3.5rem]">
             {isEN
               ? 'Hotel Standard Operating Procedures: Built for How Hotels Actually Run'
               : 'Procédures opérationnelles hôtelières : conçues pour le fonctionnement réel'}
           </h1>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-10">
             {isEN
-              ? 'Practical hotel SOP documents by department. Start with a focused starter pack for daily tools, or move to a complete department playbook when you need the full procedure reference.'
-              : 'Des documents SOP hôteliers pratiques par département. Commencez par un starter pack ciblé pour les outils du quotidien, ou passez au playbook complet lorsque vous avez besoin de toute la référence procédure.'}
+              ? 'Practical hotel SOP documents by department. Start with a focused starter pack for daily tools, or move to a complete department SOP manual when you need the full procedure reference.'
+              : 'Des documents SOP hôteliers pratiques par département. Commencez par un starter pack ciblé pour les outils du quotidien, ou passez au Manuel SOP complet lorsque vous avez besoin de toute la référence procédure.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <TrackedLink
@@ -273,7 +273,7 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
                 product: 'starter_packs_section',
                 cta_label: isEN ? 'Start with Starter Packs' : 'Commencer avec les starter packs',
               }}
-              className="inline-block bg-white text-[#1A2E44] font-semibold px-8 py-4 rounded-lg transition-colors hover:bg-gray-100"
+              className="inline-block bg-[#fcfbf8] text-[#0f211a] font-semibold px-8 py-4 rounded-2xl transition-colors hover:bg-gray-100"
             >
               {isEN ? 'Start with Starter Packs' : 'Commencer avec les starter packs'}
             </TrackedLink>
@@ -284,11 +284,11 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
                 source_page: `/${locale}/hotel-sop`,
                 placement: 'hero',
                 product: 'department_playbooks_section',
-                cta_label: isEN ? 'View Department Playbooks' : 'Voir les playbooks',
+                cta_label: isEN ? 'View Department SOP manuals' : 'Voir les Manuels SOP',
               }}
-              className="inline-block border border-white/40 text-white font-semibold px-8 py-4 rounded-lg transition-colors hover:bg-white/10"
+              className="inline-block border border-white/40 text-white font-semibold px-8 py-4 rounded-2xl transition-colors hover:bg-[#fcfbf8]/10"
             >
-              {isEN ? 'View Department Playbooks' : 'Voir les playbooks'}
+              {isEN ? 'View Department SOP manuals' : 'Voir les Manuels SOP'}
             </TrackedLink>
             <TrackedLink
               href={`/${locale}/free-hotel-procedures`}
@@ -296,25 +296,25 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
               eventProperties={{
                 source_page: `/${locale}/hotel-sop`,
                 placement: 'hero',
-                cta_label: isEN ? 'Download Free Chapter' : 'Télécharger un chapitre gratuit',
+                cta_label: isEN ? 'Receive a sample chapter' : 'Recevoir un chapitre de découverte',
               }}
-              className="inline-block border border-white/20 text-white font-semibold px-8 py-4 rounded-lg transition-colors hover:bg-white/10"
+              className="inline-block border border-white/20 text-white font-semibold px-8 py-4 rounded-2xl transition-colors hover:bg-[#fcfbf8]/10"
             >
-              {isEN ? 'Download Free Chapter' : 'Télécharger un chapitre gratuit'}
+              {isEN ? 'Receive a sample chapter' : 'Recevoir un chapitre de découverte'}
             </TrackedLink>
           </div>
         </div>
       </section>
 
       {/* Starter packs */}
-      <section id="starter-packs" className="py-16 px-6 bg-white border-b border-gray-100">
+      <section id="starter-packs" className="py-16 px-6 bg-[#fcfbf8] border-b border-gray-100">
         <div className="max-w-4xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-10">
             <div>
-              <p className="text-[10px] font-bold uppercase tracking-widest text-[#003d9b] mb-2">
+              <p className="text-[10px] font-bold uppercase tracking-widest text-[#0f211a] mb-2">
                 {isEN ? 'New' : 'Nouveau'}
               </p>
-              <h2 className="text-2xl font-bold text-[#1A2E44] mb-3">
+              <h2 className="text-2xl font-bold text-[#0f211a] mb-3">
                 {isEN ? 'Start with practical SOP tools' : 'Commencer avec des outils SOP pratiques'}
               </h2>
               <p className="text-gray-600 max-w-2xl">
@@ -323,7 +323,7 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
                   : 'Des checklists, modèles et scripts ciblés que vos équipes peuvent utiliser immédiatement.'}
               </p>
             </div>
-            <p className="text-sm font-semibold text-[#1A2E44]">
+            <p className="text-sm font-semibold text-[#0f211a]">
               {isEN ? 'From ' : 'À partir de '}
               <PriceDisplay productType="starter_pack" />
             </p>
@@ -331,21 +331,21 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
 
           <div className="grid md:grid-cols-2 gap-6">
             {starterPacks.map((pack) => (
-              <article key={pack.href} className="border border-gray-100 rounded-xl p-6 hover:shadow-md transition-shadow">
+              <article key={pack.href} className="border border-gray-100 rounded-2xl p-6 hover:shadow-md transition-shadow">
                 <div className="flex items-start justify-between gap-4 mb-4">
                   <div>
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-[#003d9b] mb-2">
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-[#0f211a] mb-2">
                       {pack.label}
                     </p>
-                    <h3 className="text-xl font-bold text-[#1A2E44]">{pack.title}</h3>
+                    <h3 className="text-xl font-bold text-[#0f211a]">{pack.title}</h3>
                   </div>
-                  <PriceDisplay productType="starter_pack" className="text-xl font-bold text-[#1A2E44]" />
+                  <PriceDisplay productType="starter_pack" className="text-xl font-bold text-[#0f211a]" />
                 </div>
                 <p className="text-sm text-gray-600 leading-relaxed mb-5">{pack.desc}</p>
                 <ul className="space-y-2 mb-6">
                   {pack.points.map((point) => (
                     <li key={point} className="text-sm text-gray-700 flex gap-2">
-                      <span className="text-[#003d9b]">✓</span>
+                      <span className="text-[#0f211a]">✓</span>
                       <span>{point}</span>
                     </li>
                   ))}
@@ -360,7 +360,7 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
                     cta_label: isEN ? 'View Starter Pack' : 'Voir le starter pack',
                   }}
                   className="inline-flex items-center justify-center w-full px-6 py-3 text-white font-bold text-sm hover:opacity-90 transition-opacity"
-                  style={{ background: 'linear-gradient(135deg, #003d9b, #0052cc)', borderRadius: '0.125rem' }}
+                  style={{ background: '#0f211a', borderRadius: '999px' }}
                 >
                   {isEN ? 'View Starter Pack' : 'Voir le starter pack'}
                 </TrackedLink>
@@ -373,19 +373,19 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
       {/* Lead magnet */}
       <section
         className="py-10 border-b"
-        style={{ backgroundColor: '#eef4ff', borderColor: 'rgba(195,198,214,0.3)' }}
+        style={{ backgroundColor: '#f5f1e9', borderColor: '#e7e1d7' }}
       >
         <div className="max-w-screen-xl mx-auto px-6 flex flex-col sm:flex-row items-start sm:items-center gap-6">
           <div className="flex-1">
-            <p className="text-[10px] font-bold uppercase tracking-widest text-[#003d9b] mb-2">
-              {isEN ? 'Free resource' : 'Ressource gratuite'}
+            <p className="text-[10px] font-bold uppercase tracking-widest text-[#0f211a] mb-2">
+              {isEN ? 'Sample chapter' : 'Chapitre de découverte'}
             </p>
-            <p className="font-bold text-[#0a1d2e] text-lg mb-1">
+            <p className="font-bold text-[#0f211a] text-lg mb-1">
               {isEN
-                ? 'Download a free chapter from any department playbook'
-                : "Téléchargez un chapitre gratuit d'un playbook de votre choix"}
+                ? 'Receive a sample chapter from any department SOP manual'
+                : 'Recevoir un chapitre de découverte du Manuel SOP de votre choix'}
             </p>
-            <p className="text-sm text-[#4f6074]">
+            <p className="text-sm text-[#687169]">
               {isEN
                 ? 'Front Office, Housekeeping, F&B or Spa. See what structured hotel SOPs look like in practice.'
                 : 'Réception, Housekeeping, F&B ou Spa. Découvrez à quoi ressemblent des procédures hôtelières structurées.'}
@@ -397,12 +397,12 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
             eventProperties={{
               source_page: `/${locale}/hotel-sop`,
               placement: 'lead_magnet_band',
-              cta_label: isEN ? 'Download free' : 'Télécharger gratuitement',
+              cta_label: isEN ? 'Choose a chapter' : 'Choisir un chapitre',
             }}
             className="inline-flex items-center gap-2 px-6 py-3 text-white font-bold text-sm flex-shrink-0 hover:opacity-90 transition-opacity"
-            style={{ background: 'linear-gradient(135deg, #003d9b, #0052cc)', borderRadius: '0.125rem' }}
+            style={{ background: '#0f211a', borderRadius: '999px' }}
           >
-            {isEN ? 'Download free' : 'Télécharger gratuitement'} <ArrowRight size={18} />
+            {isEN ? 'Choose a chapter' : 'Choisir un chapitre'} <ArrowRight size={18} />
           </TrackedLink>
         </div>
       </section>
@@ -410,7 +410,7 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
       {/* What makes hotel SOPs useful or not */}
       <section className="py-16 px-6 bg-gray-50">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold text-[#1A2E44] mb-8">
+          <h2 className="text-2xl font-bold text-[#0f211a] mb-8">
             {isEN ? 'What makes a hotel SOP useful' : 'Ce qui rend un SOP hôtelier utile'}
           </h2>
           {isEN ? (
@@ -444,20 +444,20 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
       {/* Department cards */}
       <section id="department-playbooks" className="py-16 px-6">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-[#1A2E44] mb-2 text-center">
-            {isEN ? '4 Department SOP Playbooks' : '4 playbooks par département'}
+          <h2 className="text-2xl font-bold text-[#0f211a] mb-2 text-center">
+            {isEN ? '4 Department SOP manuals' : '4 Manuels SOP par département'}
           </h2>
           <p className="text-gray-500 text-center mb-12">
             {isEN
-              ? 'Each playbook is a complete, standalone SOP system for its department.'
-              : 'Chaque playbook est un système de procédures complet et autonome pour son département.'}
+              ? 'Each SOP manual is a complete, standalone SOP system for its department.'
+              : 'Chaque Manuel SOP est un système de procédures complet et autonome pour son département.'}
           </p>
           <div className="grid md:grid-cols-2 gap-6">
             {departments.map((dept) => (
-              <div key={dept.name} className="border border-gray-100 rounded-xl p-6 hover:shadow-md transition-shadow">
+              <div key={dept.name} className="border border-gray-100 rounded-2xl p-6 hover:shadow-md transition-shadow">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-3 h-3 rounded-full" style={{ background: dept.color }} />
-                  <h3 className="font-bold text-[#1A2E44] text-lg">{dept.name}</h3>
+                  <h3 className="font-bold text-[#0f211a] text-lg">{dept.name}</h3>
                   <span className="ml-auto text-xs text-gray-400 font-medium">
                     {dept.chapters} {isEN ? 'chapters' : 'chapitres'}
                   </span>
@@ -470,12 +470,12 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
                     source_page: `/${locale}/hotel-sop`,
                     placement: 'department_playbook_card',
                     product: `${dept.name} SOP Playbook`,
-                    cta_label: isEN ? 'View playbook' : 'Voir le playbook',
+                    cta_label: isEN ? 'View SOP manual' : 'Voir le Manuel SOP',
                   }}
                   className="text-sm font-semibold hover:underline"
                   style={{ color: dept.color }}
                 >
-                  {isEN ? 'View playbook →' : 'Voir le playbook →'}
+                  {isEN ? 'View SOP manual →' : 'Voir le Manuel SOP →'}
                 </TrackedLink>
               </div>
             ))}
@@ -484,10 +484,10 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
       </section>
 
       {/* Practical sample */}
-      <section className="py-16 px-6 bg-white border-t border-gray-100">
+      <section className="py-16 px-6 bg-[#fcfbf8] border-t border-gray-100">
         <div className="max-w-4xl mx-auto">
           <div className="max-w-3xl mb-10">
-            <h2 className="text-2xl font-bold text-[#1A2E44] mb-4">
+            <h2 className="text-2xl font-bold text-[#0f211a] mb-4">
               {isEN ? 'What a real SOP should specify' : 'Ce qu\'une vraie procédure doit préciser'}
             </h2>
             <p className="text-gray-600 leading-relaxed">
@@ -496,7 +496,7 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
                 : "Une procédure hôtelière utile enlève l'ambiguïté. Elle indique quoi faire, qui est responsable, quand escalader et quelle trace laisser pour le service suivant."}
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-px bg-gray-200 border border-gray-200 rounded-lg overflow-hidden">
+          <div className="grid md:grid-cols-3 gap-px bg-gray-200 border border-gray-200 rounded-2xl overflow-hidden">
             {(isEN ? [
               { label: 'Trigger', value: 'Guest disputes a minibar charge during check-out' },
               { label: 'Owner', value: 'Front desk agent validates the item, then escalates above the approved adjustment limit' },
@@ -506,8 +506,8 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
               { label: 'Responsable', value: "Le réceptionniste vérifie l'élément, puis escalade au-delà du seuil d'ajustement autorisé" },
               { label: 'Trace', value: 'Note de facturation, motif d\'ajustement, validation manager et suivi housekeeping si le stock est incertain' },
             ]).map((item) => (
-              <div key={item.label} className="bg-white p-6">
-                <p className="text-xs font-bold uppercase tracking-widest text-[#0056D2] mb-3">{item.label}</p>
+              <div key={item.label} className="bg-[#fcfbf8] p-6">
+                <p className="text-xs font-bold uppercase tracking-widest text-[#a58658] mb-3">{item.label}</p>
                 <p className="text-sm leading-relaxed text-gray-700">{item.value}</p>
               </div>
             ))}
@@ -518,25 +518,25 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
       {/* How the system fits together */}
       <section className="py-16 px-6 bg-gray-50">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold text-[#1A2E44] mb-8">
-            {isEN ? 'How the four playbooks fit together' : 'Comment les quatre playbooks s\'articulent'}
+          <h2 className="text-2xl font-bold text-[#0f211a] mb-8">
+            {isEN ? 'How the four SOP manuals fit together' : 'Comment les quatre Manuels SOP s\'articulent'}
           </h2>
           {isEN ? (
             <>
               <p className="text-gray-600 leading-relaxed mb-5">
-                Each playbook is a standalone SOP system for its department. A front office team can deploy the front office playbook without needing the others. The same is true for housekeeping, F&B and spa.
+                Each manual is a standalone SOP system for its department. A front office team can use its manual without needing the others. The same is true for housekeeping, F&B and spa.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Where properties run multiple departments under the same management, using the same playbook structure creates a consistent framework across the operation. Procedures, inspection standards and handover formats are aligned across departments, which reduces the friction that comes from teams using incompatible formats.
+                Where properties run multiple departments under the same management, using the same manual structure creates a consistent framework across the operation. Procedures, inspection standards and handover formats are aligned across departments, which reduces the friction that comes from teams using incompatible formats.
               </p>
             </>
           ) : (
             <>
               <p className="text-gray-600 leading-relaxed mb-5">
-                Chaque playbook est un système de procédures autonome pour son département. Une équipe réception peut déployer le playbook réception sans avoir besoin des autres. Il en va de même pour le housekeeping, le F&B et le spa.
+                Chaque manuel est un système de procédures autonome pour son département. Une équipe réception peut utiliser son manuel sans avoir besoin des autres. Il en va de même pour le housekeeping, le F&B et le spa.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                {"Pour les établissements qui gèrent plusieurs départements sous la même direction, utiliser la même structure de playbook crée un cadre cohérent pour l'ensemble de l'opération. Les procédures, les standards d'inspection et les formats de passation sont alignés entre les départements, ce qui réduit les frictions liées à l'utilisation de formats incompatibles."}
+                {"Pour les établissements qui gèrent plusieurs départements sous la même direction, utiliser la même structure de Manuel SOP crée un cadre cohérent pour l'ensemble de l'opération. Les procédures, les standards d'inspection et les formats de passation sont alignés entre les départements, ce qui réduit les frictions liées à l'utilisation de formats incompatibles."}
               </p>
             </>
           )}
@@ -544,17 +544,17 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
       </section>
 
       {/* Internal cluster */}
-      <section className="py-16 px-6 bg-white">
+      <section className="py-16 px-6 bg-[#fcfbf8]">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-[#1A2E44] mb-8">
+          <h2 className="text-2xl font-bold text-[#0f211a] mb-8">
             {isEN ? 'Build your SOP library by department' : 'Construire votre bibliothèque SOP par département'}
           </h2>
           <div className="grid md:grid-cols-2 gap-4">
             {[
               {
                 href: isEN ? '/en/hotel-operations-playbook' : '/fr/manuel-procedure-hotellerie',
-                title: isEN ? 'Hotel Operations Playbook' : 'Manuel de procédures hôtelières',
-                body: isEN ? 'Understand how SOPs, checklists, training and standards work together in a complete playbook.' : 'Comprendre comment SOP, checklists, formation et standards fonctionnent ensemble dans un manuel complet.',
+                title: isEN ? 'Hotel Operations SOP manual' : 'Manuel de procédures hôtelières',
+                body: isEN ? 'Understand how SOPs, checklists, training and standards work together in a complete SOP manual.' : 'Comprendre comment SOP, checklists, formation et standards fonctionnent ensemble dans un manuel complet.',
               },
               {
                 href: `/${locale}/front-office-sop`,
@@ -587,8 +587,8 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
                 body: isEN ? 'Printable role-based checklists for room attendants, public areas and floor supervisors.' : 'Checklists imprimables par poste pour femme de chambre, équipier lieux publics et gouvernante.',
               },
             ].map((item) => (
-              <Link key={item.href} href={item.href} className="border border-gray-100 rounded-lg p-6 hover:border-[#1A2E44] hover:shadow-sm transition-all">
-                <h3 className="font-semibold text-[#1A2E44] mb-2">{item.title}</h3>
+              <Link key={item.href} href={item.href} className="border border-gray-100 rounded-2xl p-6 hover:border-[#0f211a] hover:shadow-sm transition-all">
+                <h3 className="font-semibold text-[#0f211a] mb-2">{item.title}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{item.body}</p>
               </Link>
             ))}
@@ -599,11 +599,11 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
       {/* FAQ */}
       <section className="py-16 px-6 bg-gray-50">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold text-[#1A2E44] mb-8">FAQ</h2>
+          <h2 className="text-2xl font-bold text-[#0f211a] mb-8">FAQ</h2>
           <div className="space-y-4">
             {faqs.map((faq) => (
-              <div key={faq.question} className="bg-white border border-gray-100 rounded-lg p-6">
-                <h3 className="font-semibold text-[#1A2E44] mb-2">{faq.question}</h3>
+              <div key={faq.question} className="bg-[#fcfbf8] border border-gray-100 rounded-2xl p-6">
+                <h3 className="font-semibold text-[#0f211a] mb-2">{faq.question}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{faq.answer}</p>
               </div>
             ))}
@@ -612,9 +612,9 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
       </section>
 
       {/* Final CTA */}
-      <section className="bg-[#1A2E44] py-16 px-6 text-center text-white">
+      <section className="bg-[#0f211a] py-16 px-6 text-center text-white">
         <div className="max-w-2xl mx-auto">
-          <div className="inline-block bg-white/10 text-white text-xs font-semibold px-3 py-1 rounded-full mb-6 tracking-widest uppercase">
+          <div className="inline-block bg-[#fcfbf8]/10 text-white text-xs font-semibold px-3 py-1 rounded-full mb-6 tracking-widest uppercase">
             {isEN ? 'Choose your SOP format' : 'Choisir votre format SOP'}
           </div>
           <h2 className="text-2xl font-bold mb-4">
@@ -622,8 +622,8 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
           </h2>
           <p className="text-gray-300 mb-8">
             {isEN
-              ? 'If you need practical hotel SOP tools quickly, start with a starter pack. If you need the full procedure reference, choose the department playbook.'
-              : 'Si vous avez besoin rapidement d\'outils SOP pratiques, commencez par un starter pack. Si vous cherchez la référence procédure complète, choisissez le playbook département.'}
+              ? 'If you need practical hotel SOP tools quickly, start with a starter pack. If you need the full procedure reference, choose the department SOP manual.'
+              : 'Si vous avez besoin rapidement d\'outils SOP pratiques, commencez par un starter pack. Si vous cherchez la référence procédure complète, choisissez le Manuel SOP département.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <TrackedLink
@@ -635,7 +635,7 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
                 product: 'starter_packs_section',
                 cta_label: isEN ? 'View Starter Packs' : 'Voir les starter packs',
               }}
-              className="inline-block bg-white text-[#1A2E44] font-semibold px-8 py-4 rounded-lg transition-colors hover:bg-gray-100"
+              className="inline-block bg-[#fcfbf8] text-[#0f211a] font-semibold px-8 py-4 rounded-2xl transition-colors hover:bg-gray-100"
             >
               {isEN ? 'View Starter Packs' : 'Voir les starter packs'}
             </TrackedLink>
@@ -646,11 +646,11 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
                 source_page: `/${locale}/hotel-sop`,
                 placement: 'final_cta',
                 product: 'department_playbooks_section',
-                cta_label: isEN ? 'View Playbooks' : 'Voir les playbooks',
+                cta_label: isEN ? 'View SOP manuals' : 'Voir les Manuels SOP',
               }}
-              className="inline-block border border-white/40 text-white font-semibold px-8 py-4 rounded-lg transition-colors hover:bg-white/10"
+              className="inline-block border border-white/40 text-white font-semibold px-8 py-4 rounded-2xl transition-colors hover:bg-[#fcfbf8]/10"
             >
-              {isEN ? 'View Playbooks' : 'Voir les playbooks'}
+              {isEN ? 'View SOP manuals' : 'Voir les Manuels SOP'}
             </TrackedLink>
           </div>
         </div>

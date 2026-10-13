@@ -8,17 +8,17 @@ const aboutMetadata = {
   en: {
     title: 'About LuxOps | Hotel Operations Specialists',
     description:
-      'LuxOps provides structured operational methods for high-end hotels. Playbooks, SOPs, audits and training built from years of real hotel operations experience.',
+      'LuxOps provides structured operational methods for high-end hotels. SOP manuals, audits and training built from years of real hotel operations experience.',
   },
   fr: {
     title: 'À Propos de LuxOps | Spécialistes des Opérations Hôtelières',
     description:
-      "LuxOps propose des méthodes opérationnelles structurées pour hôtels haut de gamme. Playbooks, SOPs, audits et formations issus de l'exploitation hôtelière réelle.",
+      "LuxOps propose des méthodes opérationnelles structurées pour hôtels haut de gamme. Manuels SOP, audits et formations issus de l'exploitation hôtelière réelle.",
   },
   es: {
     title: 'Sobre LuxOps | Especialistas en operaciones hoteleras',
     description:
-      'LuxOps ofrece métodos operativos estructurados para hoteles high-end: playbooks, SOPs, auditorías y formación creados desde años de experiencia real en operaciones hoteleras.',
+      'LuxOps ofrece métodos operativos estructurados para hoteles de alta gama: manuales SOP, auditorías y formación creados desde años de experiencia real en operaciones hoteleras.',
   },
 } satisfies Partial<Record<Locale, { title: string; description: string }>>
 
@@ -97,7 +97,7 @@ function AboutContent({ locale }: { locale: string }) {
       <section className="border-b border-[rgba(32,35,31,0.14)] px-6 py-16 md:px-16 md:py-24">
         <div className="mx-auto max-w-[1320px]">
           <p className="mb-5 text-xs font-semibold uppercase tracking-[0.16em] text-[#a58658]">LuxOps</p>
-          <h1 className="max-w-4xl font-display text-5xl font-medium leading-[1.04] md:text-7xl">{t('title')}</h1>
+          <h1 className="max-w-4xl font-display text-4xl font-medium leading-[1.06] sm:text-5xl md:text-[3.5rem]">{t('title')}</h1>
           <p className="mt-7 max-w-3xl text-lg leading-8 text-[#5d665f]">{t('subtitle')}</p>
         </div>
       </section>

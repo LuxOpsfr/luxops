@@ -35,7 +35,7 @@ const STATS: Record<string, { value: string; label: { en: string; fr: string } }
 const FAQ: Record<string, { q: { en: string; fr: string }; a: { en: string; fr: string } }[]> = {
   fo: [
     {
-      q: { en: 'What format is the playbook delivered in?', fr: 'Dans quel format le playbook est-il livré ?' },
+      q: { en: 'What format is the SOP manual delivered in?', fr: 'Dans quel format le manuel SOP est-il livré ?' },
       a: { en: 'You receive a high-resolution interactive PDF and a PowerPoint file, accessible directly from your client portal.', fr: 'Vous recevez un PDF interactif haute résolution et un fichier PowerPoint, accessibles depuis votre espace client.' },
     },
     {
@@ -51,12 +51,12 @@ const FAQ: Record<string, { q: { en: string; fr: string }; a: { en: string; fr: 
       a: { en: 'They are built from real operational practice in high-end hotel environments and designed around common 4- and 5-star service principles. They remain editable operating references, not a certification or a replacement for your own brand standards.', fr: "Elles sont issues de la pratique opérationnelle réelle dans des environnements hôteliers haut de gamme et construites autour des principes de service courants en 4 et 5 étoiles. Elles restent des références opérationnelles modifiables, pas une certification ni un remplacement de vos standards de marque." },
     },
     {
-      q: { en: 'Is the playbook available in French and English?', fr: 'Le playbook est-il disponible en français et en anglais ?' },
+      q: { en: 'Is the manual available in French and English?', fr: 'Le manuel est-il disponible en français et en anglais ?' },
       a: { en: 'Yes, you receive both the French and English versions with your purchase.', fr: 'Oui, vous recevez les versions française et anglaise avec votre achat.' },
     },
     {
       q: { en: 'Are updates included?', fr: 'Les mises à jour sont-elles incluses ?' },
-      a: { en: 'Product revisions are included while this playbook is actively maintained. Any material change to delivery, access or update policy should be checked in the commercial terms before purchase.', fr: "Les révisions du produit sont incluses tant que ce playbook est activement maintenu. Toute modification importante concernant la livraison, l’accès ou les mises à jour doit être vérifiée dans les conditions commerciales avant achat." },
+      a: { en: 'Product revisions are included while this manual is actively maintained. Any material change to delivery, access or update policy should be checked in the commercial terms before purchase.', fr: "Les révisions du produit sont incluses tant que ce manuel est activement maintenu. Toute modification importante concernant la livraison, l’accès ou les mises à jour doit être vérifiée dans les conditions commerciales avant achat." },
     },
   ],
   hsk: [

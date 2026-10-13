@@ -127,7 +127,7 @@ export default function Footer({ locale }: FooterProps) {
     .filter((column) => column.links.length > 0)
 
   return (
-    <footer className="border-t border-[#324138] bg-[#102019] text-[#f5f1e9]">
+    <footer className="border-t border-[#324138] bg-[#0f211a] text-[#f5f1e9]">
       <div className="mx-auto max-w-[1680px] px-6 py-14 md:px-16">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1.25fr_repeat(3,1fr)]">
           <div className="md:col-span-1">

@@ -7,19 +7,16 @@ import { alternatesForRoute, localizedRouteUrl } from '@/lib/localized-routes'
 
 const playbooksMetadata = {
   en: {
-    title: 'Hotel SOP Playbooks for 5-Star Operations | LuxOps',
-    description:
-      'Professionally written hotel SOP manuals and practical starter packs for luxury hotel teams, available in English and French.',
+    title: 'Hotel SOP Manuals for Luxury Operations | LuxOps',
+    description: 'Operational SOP manuals and practical starter packs for hotel teams, available in English and French.',
   },
   fr: {
-    title: 'Playbooks SOP pour Hôtels 5 Étoiles | LuxOps',
-    description:
-      'Manuels SOP complets et Starter Packs pratiques pour les équipes hôtelières haut de gamme, en français et en anglais.',
+    title: 'Manuels SOP pour l’hôtellerie haut de gamme | LuxOps',
+    description: 'Manuels SOP opérationnels et Starter Packs pratiques pour les équipes hôtelières, en français et en anglais.',
   },
   es: {
-    title: 'Playbooks SOP para operaciones hoteleras 5 estrellas | LuxOps',
-    description:
-      'Manuales SOP completos y Starter Packs prácticos para equipos hoteleros, disponibles en francés e inglés.',
+    title: 'Manuales SOP para operaciones hoteleras | LuxOps',
+    description: 'Manuales SOP operativos y Starter Packs para equipos hoteleros, disponibles en francés e inglés.',
   },
 } satisfies Partial<Record<Locale, { title: string; description: string }>>
 
@@ -84,15 +81,15 @@ function playbooksSchema(locale: string) {
       {
         '@type': 'ItemList',
         name: isFr
-          ? 'Playbooks Opérationnels Hôteliers'
+          ? 'Manuels SOP Opérationnels Hôteliers'
           : isEs
-            ? 'Playbooks operativos hoteleros'
-            : 'Hotel Operations Playbooks',
+            ? 'Manuales SOP operativos hoteleros'
+            : 'Hotel Operations SOP Manuals',
         description: isFr
-          ? 'Playbooks opérationnels complets pour hôtels haut de gamme. Procédures, standards de service et SOPs pour la réception, le housekeeping, le F&B et le spa.'
+          ? 'Manuels SOP opérationnels pour hôtels haut de gamme : procédures, standards de service et outils pour la réception, le housekeeping, le F&B et le spa.'
           : isEs
-            ? 'Playbooks operativos completos para hoteles high-end. Procedimientos, estándares de servicio y SOPs para Front Office, Housekeeping, F&B y Spa.'
-            : 'Complete operational playbooks for high-end hotels. Documented procedures, service standards and SOPs for Front Office, Housekeeping, F&B and Spa departments.',
+            ? 'Manuales SOP operativos para hoteles de alta gama: procedimientos, estándares de servicio y herramientas para Front Office, Housekeeping, F&B y Spa.'
+            : 'Operational SOP manuals for high-end hotels, with procedures and service standards for Front Office, Housekeeping, F&B and Spa departments.',
         url: localizedRouteUrl('playbooks', activeLocale),
         itemListElement: [
     {
@@ -100,9 +97,9 @@ function playbooksSchema(locale: string) {
       position: 1,
       item: {
         '@type': 'Product',
-        name: 'Front Office Playbook',
+        name: 'Front Office SOP Manual',
         description:
-          'Check-in/out procedures, guest communication protocols, upselling techniques, night audit, PMS systems and concierge standards. ~250 pages. PDF + PPT.',
+          'Check-in/out procedures, guest communication protocols, upselling techniques, night audit, PMS systems and concierge standards. Approximately 300 pages. PDF + PPT.',
         image: sharedImage,
         brand: sharedBrand,
         offers: sharedOfferFields,
@@ -113,9 +110,9 @@ function playbooksSchema(locale: string) {
       position: 2,
       item: {
         '@type': 'Product',
-        name: 'Housekeeping Playbook',
+        name: 'Housekeeping SOP Manual',
         description:
-          'Room inspection checklists, linen management, deep cleaning protocols, quality control and sustainability practices. ~220 pages. PDF + PPT.',
+          'Room inspection checklists, linen management, deep cleaning protocols, quality control and sustainability practices. Approximately 300 pages. PDF + PPT.',
         image: sharedImage,
         brand: sharedBrand,
         offers: sharedOfferFields,
@@ -126,9 +123,9 @@ function playbooksSchema(locale: string) {
       position: 3,
       item: {
         '@type': 'Product',
-        name: 'F&B Playbook',
+        name: 'Food & Beverage SOP Manual',
         description:
-          'Restaurant & bar service standards, wine service, room service protocols and mise en place procedures. ~280 pages. PDF + PPT.',
+          'Restaurant & bar service standards, wine service, room service protocols and mise en place procedures. Approximately 175 pages. PDF + PPT.',
         image: sharedImage,
         brand: sharedBrand,
         offers: sharedOfferFields,
@@ -139,9 +136,9 @@ function playbooksSchema(locale: string) {
       position: 4,
       item: {
         '@type': 'Product',
-        name: 'Spa & Wellness Playbook',
+        name: 'Spa & Wellness SOP Manual',
         description:
-          'Treatment protocols, guest journey mapping, product knowledge, facilities management and therapist standards. ~200 pages. PDF + PPT.',
+          'Treatment protocols, guest journey mapping, product knowledge, facilities management and therapist standards. Approximately 150 pages. PDF + PPT.',
         image: sharedImage,
         brand: sharedBrand,
         offers: sharedOfferFields,
@@ -152,15 +149,15 @@ function playbooksSchema(locale: string) {
       {
         '@type': 'Product',
         name: isFr
-          ? 'Bundle complet SOP Hôtel'
+          ? 'Bundle complet des Manuels SOP Hôtel'
           : isEs
-            ? 'Pack completo SOP Hotel'
-            : 'Complete Hotel SOP Bundle',
+            ? 'Paquete completo de Manuales SOP de hotel'
+            : 'Complete Hotel SOP Manuals Bundle',
         description: isFr
-          ? 'Les quatre playbooks opérationnels LuxOps : Front Office, Housekeeping, F&B et Spa. Formats PDF et PowerPoint.'
+          ? 'Les quatre Manuels SOP LuxOps : Front Office, Housekeeping, Food & Beverage et Spa & Wellness. Formats PDF et PowerPoint modifiables, en français et en anglais.'
           : isEs
-            ? 'Los cuatro playbooks operativos LuxOps: Front Office, Housekeeping, F&B y Spa. Formatos PDF y PowerPoint.'
-            : 'All four LuxOps hotel operations playbooks: Front Office, Housekeeping, F&B and Spa. PDF and PowerPoint formats.',
+            ? 'Los cuatro Manuales SOP LuxOps: Front Office, Housekeeping, Food & Beverage y Spa & Wellness. Formatos PDF y PowerPoint editables, en francés e inglés.'
+            : 'All four LuxOps SOP manuals: Front Office, Housekeeping, Food & Beverage and Spa & Wellness. Editable PDF and PowerPoint in English and French.',
         image: sharedImage,
         brand: sharedBrand,
         offers: {
@@ -171,7 +168,7 @@ function playbooksSchema(locale: string) {
       },
       breadcrumbSchema([
         { name: 'LuxOps', url: localizedPath(activeLocale) },
-        { name: 'Playbooks', url: localizedRouteUrl('playbooks', activeLocale) },
+        { name: 'Manuels SOP', url: localizedRouteUrl('playbooks', activeLocale) },
       ]),
     ],
   }

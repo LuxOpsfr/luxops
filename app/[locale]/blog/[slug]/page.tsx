@@ -16,7 +16,7 @@ const KEYWORDS_EN: Record<string, string> = {
   'preparer-rentree-hotel-recrutement-formation': 'city hotel autumn season, hotel staff recruitment, hotel team training, hotel onboarding, hotel staffing plan, service standards training',
   'preparer-saison-hiver-hotel-formation-equipes': 'winter hotel season, seasonal hotel staff training, hotel pre-opening training, winter resort recruitment, seasonal hotel onboarding',
   'intelligence-artificielle-hotellerie-formation-equipes': 'AI in hotels, hotel AI training, hospitality artificial intelligence, AI hotel operations, hotel staff AI policy',
-  'hotel-operations-playbook': 'hotel operations playbook, hotel SOP, hotel procedures manual, hotel operations guide, luxury hotel management',
+  'hotel-operations-playbook': 'hotel operations SOP manual, hotel SOP, hotel procedures manual, hotel operations guide, luxury hotel management',
   'how-to-write-hotel-sops': 'how to write hotel SOPs, hotel standard operating procedures, hotel SOP template, hotel procedure writing',
   'hotel-front-office-sop': 'hotel front office SOP, hotel reception procedures, front desk standard operating procedures, check-in SOP hotel',
   'hotel-housekeeping-checklist': 'hotel housekeeping checklist, housekeeping SOP, room attendant checklist, hotel cleaning checklist',
@@ -43,8 +43,8 @@ const KEYWORDS_FR: Record<string, string> = {
   'preparer-rentree-hotel-recrutement-formation': 'rentrée hôtelière, recrutement hôtel, formation équipes hôtel, intégration personnel hôtel, planning effectifs hôtel, formation standards de service',
   'preparer-saison-hiver-hotel-formation-equipes': 'saison hiver hôtel, formation saisonniers hôtel, pré-ouverture hôtel, recrutement saisonnier hôtellerie, intégration équipe saisonnière',
   'intelligence-artificielle-hotellerie-formation-equipes': 'IA hôtellerie, intelligence artificielle hôtel, formation IA équipes hôtelières, IA opérations hôtelières, politique IA hôtel',
-  'hotel-operations-playbook': 'playbook opérationnel, SOP hôtel, procédures opérationnelles, guide opérations, standards de service',
-  'how-to-write-hotel-sops': 'rédiger SOP, procédures opérationnelles, modèle SOP, écrire procédures, playbook SOP',
+  'hotel-operations-playbook': 'manuel SOP opérationnel, SOP hôtel, procédures opérationnelles, guide opérations, standards de service',
+  'how-to-write-hotel-sops': 'rédiger SOP, procédures opérationnelles, modèle SOP, écrire procédures, manuel SOP',
   'hotel-front-office-sop': 'SOP réception hôtel, procédures front office hôtel, standard opérationnel réception hôtel',
   'hotel-housekeeping-checklist': 'checklist housekeeping hôtel, SOP housekeeping, checklist femme de chambre, procédures ménage hôtel',
   'hotel-fb-service-standards': 'standards service F&B, procédures restaurant, SOP restauration, room service, recovery client',
@@ -186,10 +186,10 @@ const PLAYBOOK_EXCERPTS: Record<string, {
 }> = {
   'housekeeping-room-inspection': {
     en: {
-      label: 'Free excerpt from the LuxOps Housekeeping Playbook',
+      label: 'Sample chapter from the LuxOps Housekeeping SOP manual',
       title: 'Departure room inspection: the LuxOps control flow',
       intro:
-        'This extract is adapted from Chapter 6, Quality Control & Inspections. It shows how the playbook turns room inspection into a repeatable supervisor routine, not a subjective final look.',
+        'This extract is adapted from Chapter 6, Quality Control & Inspections. It shows how the SOP manual turns room inspection into a repeatable supervisor routine, not a subjective final look.',
       rows: [
         { term: 'Self-inspection', detail: 'Every room, owned by the room attendant before the room is marked Clean.' },
         { term: 'Departure inspection', detail: '100% of departure rooms, physically verified by a supervisor before release.' },
@@ -197,11 +197,11 @@ const PLAYBOOK_EXCERPTS: Record<string, {
         { term: 'Scoring model', detail: '100 points: Bathroom 35, Bedroom 35, Presentation 20, Maintenance 10. Pass threshold: 90.' },
         { term: 'Critical rule', detail: 'A Clean room is not sellable. Only an Inspected room may be assigned by Front Office.' },
       ],
-      ctaText: 'View the Housekeeping Playbook',
+      ctaText: 'View the Housekeeping SOP manual',
       ctaHref: '/en/playbooks/hsk',
     },
     fr: {
-      label: 'Extrait gratuit du Playbook Housekeeping LuxOps',
+      label: 'chapitre de découverte du Manuel SOP Housekeeping LuxOps',
       title: 'Inspection chambre départ : le flux de contrôle LuxOps',
       intro:
         'Cet extrait est adapté du chapitre Contrôle Qualité & Inspections. Il transforme l’inspection chambre en routine superviseur mesurable, pas en simple coup d’oeil subjectif.',
@@ -212,13 +212,13 @@ const PLAYBOOK_EXCERPTS: Record<string, {
         { term: 'Score', detail: '100 points : salle de bain 35, chambre 35, présentation 20, maintenance 10. Seuil de passage : 90.' },
         { term: 'Règle critique', detail: 'Une chambre propre n’est pas vendable. Seule une chambre inspectée peut être attribuée par la réception.' },
       ],
-      ctaText: 'Voir le Playbook Housekeeping',
+      ctaText: 'Voir le Manuel SOP Housekeeping',
       ctaHref: '/fr/playbooks/hsk',
     },
   },
   'hotel-standard-operating-procedures': {
     en: {
-      label: 'Playbook-based SOP example',
+      label: 'SOP manual example',
       title: 'What “specific enough” looks like in a hotel SOP',
       intro:
         'A real SOP does not say “clean the room well.” It defines timing, ownership, sequence, exceptions and the status update that allows the next department to act.',
@@ -229,11 +229,11 @@ const PLAYBOOK_EXCERPTS: Record<string, {
         { term: 'Exception', detail: 'Guest belongings found during initial assessment: stop cleaning and follow Lost & Found immediately.' },
         { term: 'Handover', detail: 'Attendant sets Clean; supervisor inspects and sets Inspected; Front Office may now assign the room.' },
       ],
-      ctaText: 'Get the SOP Playbooks',
+      ctaText: 'Get the SOP manuals',
       ctaHref: '/en/playbooks',
     },
     fr: {
-      label: 'Exemple SOP issu du playbook',
+      label: 'Exemple de SOP issu d’un Manuel SOP',
       title: 'À quoi ressemble une SOP assez précise',
       intro:
         'Une vraie SOP ne dit pas “bien nettoyer la chambre”. Elle définit le timing, le responsable, la séquence, les exceptions et le statut qui permet au département suivant d’agir.',
@@ -244,16 +244,16 @@ const PLAYBOOK_EXCERPTS: Record<string, {
         { term: 'Exception', detail: 'Objet client trouvé pendant l’évaluation initiale : arrêt du nettoyage et procédure objets trouvés.' },
         { term: 'Passation', detail: 'La chambre passe en propre, puis la gouvernante inspecte et libère en inspectée pour la réception.' },
       ],
-      ctaText: 'Voir les playbooks SOP',
+      ctaText: 'Voir les Manuels SOP',
       ctaHref: '/fr/playbooks',
     },
   },
   'how-to-write-hotel-sops': {
     en: {
-      label: 'Free SOP structure from LuxOps',
+      label: 'SOP structure from LuxOps',
       title: 'The five fields every hotel SOP should include',
       intro:
-        'The LuxOps playbooks use SOPs as operating tools. Each procedure is written so a new team member can understand what happens before, during and after the task.',
+        'The LuxOps SOP manuals use SOPs as operating tools. Each procedure is written so a new team member can understand what happens before, during and after the task.',
       rows: [
         { term: 'Purpose', detail: 'Why the procedure exists and what guest or operational risk it protects.' },
         { term: 'Owner', detail: 'Who performs the task, who verifies it and who can approve exceptions.' },
@@ -261,14 +261,14 @@ const PLAYBOOK_EXCERPTS: Record<string, {
         { term: 'Quality check', detail: 'How the result is verified: checklist, score, PMS status, photo, signature or supervisor inspection.' },
         { term: 'Escalation', detail: 'What to do when the standard cannot be met: maintenance issue, guest complaint, DND, missing stock or lost property.' },
       ],
-      ctaText: 'Download a free playbook chapter',
+      ctaText: 'Receive a sample chapter',
       ctaHref: '/en/free-hotel-procedures',
     },
     fr: {
-      label: 'Structure SOP gratuite issue de LuxOps',
+      label: 'Structure SOP issue de LuxOps',
       title: 'Les cinq champs que chaque SOP doit contenir',
       intro:
-        'Les playbooks LuxOps traitent les SOP comme des outils opérationnels. Chaque procédure doit permettre à un nouveau collaborateur de comprendre ce qui se passe avant, pendant et après la tâche.',
+        'Les manuels SOP LuxOps traitent les SOP comme des outils opérationnels. Chaque procédure doit permettre à un nouveau collaborateur de comprendre ce qui se passe avant, pendant et après la tâche.',
       rows: [
         { term: 'Objectif', detail: 'Pourquoi la procédure existe et quel risque client ou opérationnel elle protège.' },
         { term: 'Responsable', detail: 'Qui réalise, qui vérifie et qui peut valider les exceptions.' },
@@ -276,16 +276,16 @@ const PLAYBOOK_EXCERPTS: Record<string, {
         { term: 'Contrôle qualité', detail: 'Comment le résultat est vérifié : checklist, score, PMS, photo, signature ou inspection.' },
         { term: 'Escalade', detail: 'Que faire si le standard ne peut pas être tenu : maintenance, réclamation, DND, stock manquant ou objet trouvé.' },
       ],
-      ctaText: 'Télécharger un chapitre gratuit',
+      ctaText: 'Recevoir un chapitre de découverte',
       ctaHref: '/fr/free-hotel-procedures',
     },
   },
   'hotel-operations-playbook': {
     en: {
-      label: 'What LuxOps playbooks contain',
-      title: 'A playbook is a system, not a folder of documents',
+      label: 'What LuxOps SOP manuals contain',
+      title: 'A SOP manual is a system, not a folder of documents',
       intro:
-        'The Housekeeping Playbook alone includes room cleaning, turndown, guest services, inspections, inventory, team management, health and safety and sustainability. The commercial value is the way these chapters connect.',
+        'The Housekeeping SOP manual alone includes room cleaning, turndown, guest services, inspections, inventory, team management, health and safety and sustainability. The commercial value is the way these chapters connect.',
       rows: [
         { term: 'Room cleaning', detail: 'Service times, 7-phase departure sequence, stayover rules, suite adjustments and DND protocol.' },
         { term: 'Quality control', detail: 'Self-inspection, 100% departure inspections, 20-30% stayover checks and deficiency tracking.' },
@@ -293,14 +293,14 @@ const PLAYBOOK_EXCERPTS: Record<string, {
         { term: 'Inventory', detail: 'Par levels, linen lifecycle, amenity standards, chemical safety, FIFO storage and CPOR tracking.' },
         { term: 'Management', detail: 'Role clarity, assignment sheets, supervisor ratios, daily checklist and performance metrics.' },
       ],
-      ctaText: 'View all playbooks',
+      ctaText: 'View all SOP manuals',
       ctaHref: '/en/playbooks',
     },
     fr: {
-      label: 'Ce que contiennent les playbooks LuxOps',
-      title: 'Un playbook est un système, pas un dossier de documents',
+      label: 'Ce que contiennent les manuels SOP LuxOps',
+      title: 'Un manuel SOP est un système, pas un dossier de documents',
       intro:
-        'Le Playbook Housekeeping couvre à lui seul nettoyage chambre, couverture, services client, inspections, stocks, management, santé-sécurité et durabilité. La valeur vient surtout de la façon dont ces chapitres se connectent.',
+        'Le Manuel SOP Housekeeping couvre à lui seul nettoyage chambre, couverture, services client, inspections, stocks, management, santé-sécurité et durabilité. La valeur vient surtout de la façon dont ces chapitres se connectent.',
       rows: [
         { term: 'Nettoyage chambre', detail: 'Temps de passage, séquence départ en 7 phases, recouche, suites et protocole DND.' },
         { term: 'Contrôle qualité', detail: 'Auto-contrôle, 100% des départs inspectés, 20-30% des recouches contrôlées et suivi des défauts.' },
@@ -308,13 +308,13 @@ const PLAYBOOK_EXCERPTS: Record<string, {
         { term: 'Stocks', detail: 'Par levels, cycle du linge, amenities, sécurité produits, FIFO et CPOR.' },
         { term: 'Management', detail: 'Rôles, feuilles de route, ratios superviseur, checklist quotidienne et métriques.' },
       ],
-      ctaText: 'Voir tous les playbooks',
+      ctaText: 'Voir tous les manuels SOP',
       ctaHref: '/fr/playbooks',
     },
   },
   'hotel-front-office-sop': {
     en: {
-      label: 'Free excerpt from the LuxOps Front Office Playbook',
+      label: 'Sample chapter from the LuxOps Front Office SOP manual',
       title: 'Front office SOPs need trigger, sequence and escalation',
       intro:
         'This extract is adapted from the check-in, guest communication and handover chapters. The point is not to script reception like a call centre, but to make the critical moments consistent across every shift.',
@@ -325,11 +325,11 @@ const PLAYBOOK_EXCERPTS: Record<string, {
         { term: 'Complaint handling', detail: 'Listen, empathise, apologise, resolve and notify. Active complaints must be shared in every handover until closed.' },
         { term: 'Shift handover', detail: 'Open requests, VIP notes, billing issues, room moves and recent complaints are documented so the next shift can act without rediscovery.' },
       ],
-      ctaText: 'View the Front Office Playbook',
+      ctaText: 'View the Front Office SOP manual',
       ctaHref: '/en/playbooks/fo',
     },
     fr: {
-      label: 'Extrait gratuit du Playbook Front Office LuxOps',
+      label: 'chapitre de découverte du Manuel SOP Front Office LuxOps',
       title: 'Une SOP réception doit définir déclencheur, séquence et escalade',
       intro:
         'Cet extrait est adapté des chapitres check-in, communication client et passation. L’objectif n’est pas de rendre la réception robotique, mais de rendre les moments critiques cohérents sur chaque shift.',
@@ -340,16 +340,16 @@ const PLAYBOOK_EXCERPTS: Record<string, {
         { term: 'Réclamation', detail: 'Écouter, reconnaître, s’excuser, résoudre et notifier. Toute réclamation active reste en passation jusqu’à clôture.' },
         { term: 'Passation', detail: 'Demandes ouvertes, VIP, facturation, room moves et réclamations récentes sont tracés pour que le shift suivant agisse sans repartir de zéro.' },
       ],
-      ctaText: 'Voir le Playbook Front Office',
+      ctaText: 'Voir le Manuel SOP Front Office',
       ctaHref: '/fr/playbooks/fo',
     },
   },
   'hotel-front-desk-procedures': {
     en: {
-      label: 'Free excerpt from the LuxOps Front Office Playbook',
+      label: 'Sample chapter from the LuxOps Front Office SOP manual',
       title: 'The front desk procedure stack that protects every shift',
       intro:
-        'The Front Office Playbook documents the routines that create the most guest impact and operational risk: check-in, check-out, billing review, complaint recovery and night handover.',
+        'The Front Office SOP manual documents the routines that create the most guest impact and operational risk: check-in, check-out, billing review, complaint recovery and night handover.',
       rows: [
         { term: 'Arrival control', detail: 'Arrivals, VIPs, preferences, pre-authorisations and room readiness are reviewed before the first peak check-in wave.' },
         { term: 'Billing review', detail: 'Room charges, F&B, minibar, spa, deposits and adjustments are verified before payment is taken at departure.' },
@@ -359,14 +359,14 @@ const PLAYBOOK_EXCERPTS: Record<string, {
       ],
       ctaText: 'View the Front Office Starter Pack',
       ctaHref: '/en/playbooks/fo-starter-pack',
-      secondaryCtaText: 'View the Front Office Playbook',
+      secondaryCtaText: 'View the Front Office SOP manual',
       secondaryCtaHref: '/en/playbooks/fo',
     },
     fr: {
-      label: 'Extrait gratuit du Playbook Front Office LuxOps',
+      label: 'chapitre de découverte du Manuel SOP Front Office LuxOps',
       title: 'Le socle de procédures réception qui protège chaque shift',
       intro:
-        'Le Playbook Front Office documente les routines à plus fort impact client et opérationnel : check-in, check-out, revue facturation, gestion des réclamations et passation de nuit.',
+        'Le Manuel SOP Front Office documente les routines à plus fort impact client et opérationnel : check-in, check-out, revue facturation, gestion des réclamations et passation de nuit.',
       rows: [
         { term: 'Contrôle arrivées', detail: 'Arrivées, VIP, préférences, préautorisations et disponibilité chambres sont vérifiés avant le premier pic de check-in.' },
         { term: 'Revue facturation', detail: 'Chambre, F&B, minibar, spa, acomptes et ajustements sont contrôlés avant encaissement au départ.' },
@@ -376,13 +376,13 @@ const PLAYBOOK_EXCERPTS: Record<string, {
       ],
       ctaText: 'Voir le Starter Pack Front Office',
       ctaHref: '/fr/playbooks/fo-starter-pack',
-      secondaryCtaText: 'Voir le Playbook Front Office',
+      secondaryCtaText: 'Voir le Manuel SOP Front Office',
       secondaryCtaHref: '/fr/playbooks/fo',
     },
   },
   'hotel-fb-service-standards': {
     en: {
-      label: 'Free excerpt from the LuxOps F&B Playbook',
+      label: 'Sample chapter from the LuxOps F&B SOP manual',
       title: 'Restaurant service standards become useful when they are sequenced',
       intro:
         'This extract is adapted from the restaurant service, mise en place and recovery chapters. A good F&B standard tells the team what to prepare, what to say, what to check and when to escalate.',
@@ -395,11 +395,11 @@ const PLAYBOOK_EXCERPTS: Record<string, {
       ],
       ctaText: 'View the F&B Starter Pack',
       ctaHref: '/en/playbooks/fb-starter-pack',
-      secondaryCtaText: 'View the F&B Playbook',
+      secondaryCtaText: 'View the F&B SOP manual',
       secondaryCtaHref: '/en/playbooks/fb',
     },
     fr: {
-      label: 'Extrait gratuit du Playbook F&B LuxOps',
+      label: 'chapitre de découverte du Manuel SOP F&B LuxOps',
       title: 'Les standards F&B deviennent utiles quand ils sont séquencés',
       intro:
         'Cet extrait est adapté des chapitres service restaurant, mise en place et recovery. Un bon standard F&B précise quoi préparer, quoi dire, quoi vérifier et quand escalader.',
@@ -412,16 +412,16 @@ const PLAYBOOK_EXCERPTS: Record<string, {
       ],
       ctaText: 'Voir le starter pack F&B',
       ctaHref: '/fr/playbooks/fb-starter-pack',
-      secondaryCtaText: 'Voir le playbook F&B',
+      secondaryCtaText: 'Voir le manuel SOP F&B',
       secondaryCtaHref: '/fr/playbooks/fb',
     },
   },
   'hotel-fb-restaurant-procedures': {
     en: {
-      label: 'Free excerpt from the LuxOps F&B Playbook',
+      label: 'Sample chapter from the LuxOps F&B SOP manual',
       title: 'The restaurant SOP sequence from briefing to close',
       intro:
-        'Restaurant procedures need a full operating rhythm. The playbook links briefing, setup, sequence of service, issue recovery and closing handover so the next service inherits a clean operation.',
+        'Restaurant procedures need a full operating rhythm. The SOP manual links briefing, setup, sequence of service, issue recovery and closing handover so the next service inherits a clean operation.',
       rows: [
         { term: 'Opening briefing', detail: 'The shift starts with covers, VIPs, special requests, menu knowledge, allergies and service roles aligned.' },
         { term: 'Station readiness', detail: 'Each station is checked for cleanliness, complete setup, backup mise en place and operational POS access.' },
@@ -431,14 +431,14 @@ const PLAYBOOK_EXCERPTS: Record<string, {
       ],
       ctaText: 'View the F&B Starter Pack',
       ctaHref: '/en/playbooks/fb-starter-pack',
-      secondaryCtaText: 'View the F&B Playbook',
+      secondaryCtaText: 'View the F&B SOP manual',
       secondaryCtaHref: '/en/playbooks/fb',
     },
     fr: {
-      label: 'Extrait gratuit du Playbook F&B LuxOps',
+      label: 'chapitre de découverte du Manuel SOP F&B LuxOps',
       title: 'La séquence SOP restaurant, du briefing à la clôture',
       intro:
-        'Les procédures restaurant doivent suivre un vrai rythme opérationnel. Le playbook relie briefing, mise en place, séquence de service, recovery et passation pour que le service suivant reparte proprement.',
+        'Les procédures restaurant doivent suivre un vrai rythme opérationnel. Le manuel SOP relie briefing, mise en place, séquence de service, recovery et passation pour que le service suivant reparte proprement.',
       rows: [
         { term: 'Briefing ouverture', detail: 'Couverts, VIP, demandes spéciales, connaissance menu, allergies et rôles de service sont alignés.' },
         { term: 'Poste prêt', detail: 'Chaque rang est contrôlé : propreté, mise en place complète, stock de secours et accès POS opérationnel.' },
@@ -448,16 +448,16 @@ const PLAYBOOK_EXCERPTS: Record<string, {
       ],
       ctaText: 'Voir le starter pack F&B',
       ctaHref: '/fr/playbooks/fb-starter-pack',
-      secondaryCtaText: 'Voir le playbook F&B',
+      secondaryCtaText: 'Voir le manuel SOP F&B',
       secondaryCtaHref: '/fr/playbooks/fb',
     },
   },
   'hotel-room-service-sops': {
     en: {
-      label: 'Free excerpt from the LuxOps F&B Playbook',
+      label: 'Sample chapter from the LuxOps F&B SOP manual',
       title: 'Room service SOPs are logistics, presentation and timing',
       intro:
-        'Room service fails when order capture, tray setup, delivery timing and tray collection are treated as separate habits. The F&B playbook turns them into one controlled flow.',
+        'Room service fails when order capture, tray setup, delivery timing and tray collection are treated as separate habits. The F&B SOP manual turns them into one controlled flow.',
       rows: [
         { term: 'Order capture', detail: 'Confirm room number, guest name, timing, allergies, modifiers, payment status and any access instruction before sending.' },
         { term: 'Tray setup', detail: 'Tray or trolley presentation is checked for temperature, covers, cutlery, condiments, napkin, glassware and bill folder.' },
@@ -467,14 +467,14 @@ const PLAYBOOK_EXCERPTS: Record<string, {
       ],
       ctaText: 'View the F&B Starter Pack',
       ctaHref: '/en/playbooks/fb-starter-pack',
-      secondaryCtaText: 'View the F&B Playbook',
+      secondaryCtaText: 'View the F&B SOP manual',
       secondaryCtaHref: '/en/playbooks/fb',
     },
     fr: {
-      label: 'Extrait gratuit du Playbook F&B LuxOps',
+      label: 'chapitre de découverte du Manuel SOP F&B LuxOps',
       title: 'Le room service, c’est logistique, présentation et timing',
       intro:
-        'Le room service se dégrade quand prise de commande, dressage, timing de livraison et débarrassage sont traités séparément. Le playbook F&B en fait un seul flux contrôlé.',
+        'Le room service se dégrade quand prise de commande, dressage, timing de livraison et débarrassage sont traités séparément. Le manuel SOP F&B en fait un seul flux contrôlé.',
       rows: [
         { term: 'Prise de commande', detail: 'Confirmer chambre, nom client, timing, allergies, modifications, paiement et consigne d’accès avant envoi.' },
         { term: 'Dressage plateau', detail: 'Plateau ou trolley contrôlé : température, couverts, condiments, serviette, verrerie et pochette addition.' },
@@ -484,13 +484,13 @@ const PLAYBOOK_EXCERPTS: Record<string, {
       ],
       ctaText: 'Voir le starter pack F&B',
       ctaHref: '/fr/playbooks/fb-starter-pack',
-      secondaryCtaText: 'Voir le playbook F&B',
+      secondaryCtaText: 'Voir le manuel SOP F&B',
       secondaryCtaHref: '/fr/playbooks/fb',
     },
   },
   'hotel-spa-wellness-sops': {
     en: {
-      label: 'Free excerpt from the LuxOps Spa & Wellness Playbook',
+      label: 'Sample chapter from the LuxOps Spa & Wellness SOP manual',
       title: 'Spa SOPs connect room setup, guest journey and safety',
       intro:
         'This extract is adapted from treatment room, guest journey and quality control chapters. Spa standards must protect both the sensory experience and the safety of the treatment.',
@@ -501,11 +501,11 @@ const PLAYBOOK_EXCERPTS: Record<string, {
         { term: 'Post-treatment', detail: 'Belongings are confirmed, treatment record completed, product recommendation noted and room status updated.' },
         { term: 'Quality control', detail: 'Daily pre-opening inspections and monthly treatment observations turn quality into coaching, not surveillance.' },
       ],
-      ctaText: 'View the Spa & Wellness Playbook',
+      ctaText: 'View the Spa & Wellness SOP manual',
       ctaHref: '/en/playbooks/spa',
     },
     fr: {
-      label: 'Extrait gratuit du Playbook Spa & Wellness LuxOps',
+      label: 'chapitre de découverte du Manuel SOP Spa & Wellness LuxOps',
       title: 'Les SOP spa relient préparation, parcours client et sécurité',
       intro:
         'Cet extrait est adapté des chapitres treatment room, parcours client et contrôle qualité. Les standards spa protègent à la fois l’expérience sensorielle et la sécurité du soin.',
@@ -516,13 +516,13 @@ const PLAYBOOK_EXCERPTS: Record<string, {
         { term: 'Après-soin', detail: 'Effets personnels confirmés, fiche soin complétée, recommandation produit notée et statut cabine mis à jour.' },
         { term: 'Contrôle qualité', detail: 'Inspections quotidiennes pré-ouverture et observations mensuelles transforment la qualité en coaching, pas en surveillance.' },
       ],
-      ctaText: 'Voir le Playbook Spa & Wellness',
+      ctaText: 'Voir le Manuel SOP Spa & Wellness',
       ctaHref: '/fr/playbooks/spa',
     },
   },
   'hotel-staff-training-service-standards': {
     en: {
-      label: 'Playbook-based training excerpt',
+      label: 'SOP manual training excerpt',
       title: 'Train teams on procedures, not slogans',
       intro:
         'The strongest hotel training sessions use documented procedures as the spine. Teams practise the exact moments they face on shift: guest welcome, inspection, recovery, handover and escalation.',
@@ -537,7 +537,7 @@ const PLAYBOOK_EXCERPTS: Record<string, {
       ctaHref: '/en/training',
     },
     fr: {
-      label: 'Extrait formation basé sur les playbooks',
+      label: 'Extrait formation basé sur les manuels SOP',
       title: 'Former les équipes sur des procédures, pas sur des slogans',
       intro:
         'Les meilleures formations utilisent les procédures documentées comme colonne vertébrale. Les équipes pratiquent les moments exacts vécus en service : accueil, inspection, recovery, passation et escalade.',
@@ -554,10 +554,10 @@ const PLAYBOOK_EXCERPTS: Record<string, {
   },
   'hotel-staff-turnover-training': {
     en: {
-      label: 'Playbook-based training excerpt',
+      label: 'SOP manual training excerpt',
       title: 'Procedure-based training reduces early friction',
       intro:
-        'Turnover becomes more expensive when new hires learn through fragments. A playbook-based training system gives them the operating map before habits become inconsistent.',
+        'Turnover becomes more expensive when new hires learn through fragments. A SOP manual training system gives them the operating map before habits become inconsistent.',
       rows: [
         { term: 'First-week clarity', detail: 'New hires know the department’s core routines, quality gates, escalation points and vocabulary from the start.' },
         { term: 'Consistent coaching', detail: 'Supervisors coach from the same written standard instead of passing on personal preferences.' },
@@ -569,10 +569,10 @@ const PLAYBOOK_EXCERPTS: Record<string, {
       ctaHref: '/en/training',
     },
     fr: {
-      label: 'Extrait formation basé sur les playbooks',
+      label: 'Extrait formation basé sur les manuels SOP',
       title: 'La formation par procédures réduit la friction des débuts',
       intro:
-        'Le turnover coûte plus cher quand les nouvelles recrues apprennent par fragments. Une formation basée sur les playbooks donne la carte opérationnelle avant que les habitudes ne divergent.',
+        'Le turnover coûte plus cher quand les nouvelles recrues apprennent par fragments. Une formation basée sur les manuels SOP donne la carte opérationnelle avant que les habitudes ne divergent.',
       rows: [
         { term: 'Clarté semaine 1', detail: 'Les nouvelles recrues connaissent routines clés, contrôles qualité, escalades et vocabulaire du département dès le départ.' },
         { term: 'Coaching cohérent', detail: 'Les superviseurs coachent depuis le même standard écrit, pas depuis des préférences individuelles.' },
@@ -586,10 +586,10 @@ const PLAYBOOK_EXCERPTS: Record<string, {
   },
   'hotel-new-hire-onboarding': {
     en: {
-      label: 'Playbook-based onboarding excerpt',
+      label: 'SOP manual onboarding excerpt',
       title: 'A 30/60/90 onboarding system needs documented standards',
       intro:
-        'Onboarding works when the first months are mapped to real operating standards. The playbooks give new hires a reference they can revisit after the first training session.',
+        'Onboarding works when the first months are mapped to real operating standards. The SOP manuals give new hires a reference they can revisit after the first training session.',
       rows: [
         { term: 'Day 1', detail: 'Role expectations, grooming, guest language, safety rules, reporting lines and the department’s most important quality standards.' },
         { term: 'Week 1', detail: 'Shadowing around core procedures: opening, guest interaction, task sequence, checklist use and handover.' },
@@ -601,10 +601,10 @@ const PLAYBOOK_EXCERPTS: Record<string, {
       ctaHref: '/en/training',
     },
     fr: {
-      label: 'Extrait onboarding basé sur les playbooks',
+      label: 'Extrait onboarding basé sur les manuels SOP',
       title: 'Un onboarding 30/60/90 jours a besoin de standards documentés',
       intro:
-        'L’onboarding fonctionne quand les premiers mois sont reliés aux vrais standards opérationnels. Les playbooks donnent aux recrues une référence à reprendre après la première formation.',
+        'L’onboarding fonctionne quand les premiers mois sont reliés aux vrais standards opérationnels. Les manuels SOP donnent aux recrues une référence à reprendre après la première formation.',
       rows: [
         { term: 'Jour 1', detail: 'Attentes du rôle, grooming, langage client, sécurité, lignes hiérarchiques et standards qualité essentiels du département.' },
         { term: 'Semaine 1', detail: 'Observation des procédures clés : ouverture, interaction client, séquence tâche, checklist et passation.' },
@@ -618,7 +618,7 @@ const PLAYBOOK_EXCERPTS: Record<string, {
   },
   'hotel-room-attendant-checklist': {
     en: {
-      label: 'Free excerpt from the LuxOps Housekeeping Playbook',
+      label: 'Sample chapter from the LuxOps Housekeeping SOP manual',
       title: 'Room attendant checklist: the LuxOps daily sequence',
       intro: 'This extract is adapted from the room cleaning standards chapter. It links trolley setup, room entry, departure cleaning, stayover service and final self-inspection.',
       rows: [
@@ -627,11 +627,11 @@ const PLAYBOOK_EXCERPTS: Record<string, {
         { term: 'DND', detail: 'Do not knock, do not enter, document and follow the property contact protocol.' },
         { term: 'Release rule', detail: 'Room attendant marks Clean; supervisor releases as Inspected.' },
       ],
-      ctaText: 'View the Housekeeping Playbook',
+      ctaText: 'View the Housekeeping SOP manual',
       ctaHref: '/en/playbooks/hsk',
     },
     fr: {
-      label: 'Extrait gratuit du Playbook Housekeeping LuxOps',
+      label: 'chapitre de découverte du Manuel SOP Housekeeping LuxOps',
       title: 'Checklist équipier d’étage : la séquence quotidienne LuxOps',
       intro: 'Cet extrait est adapté du chapitre Standards & procédures de nettoyage des chambres. Il relie chariot, entrée en chambre, chambre à blanc, recouche et auto-contrôle final.',
       rows: [
@@ -640,13 +640,13 @@ const PLAYBOOK_EXCERPTS: Record<string, {
         { term: 'DND', detail: 'Ne pas frapper, ne pas entrer, documenter et suivre le protocole de contact de l’établissement.' },
         { term: 'Libération', detail: 'L’équipier passe en Propre ; la gouvernante libère en Inspectée.' },
       ],
-      ctaText: 'Voir le Playbook Housekeeping',
+      ctaText: 'Voir le Manuel SOP Housekeeping',
       ctaHref: '/fr/playbooks/hsk',
     },
   },
   'hotel-room-cleaning-checklist': {
     en: {
-      label: 'Free excerpt from the LuxOps Housekeeping Playbook',
+      label: 'Sample chapter from the LuxOps Housekeeping SOP manual',
       title: 'Room cleaning sequence: the 7 phases that keep quality stable',
       intro: 'This extract is adapted from Chapter 2, Room Cleaning Standards & Procedures. It turns room cleaning into a repeatable operating flow for departure rooms and stayovers.',
       rows: [
@@ -656,11 +656,11 @@ const PLAYBOOK_EXCERPTS: Record<string, {
         { term: 'Stayover', detail: 'Indicative 25-35 minutes, refreshing the room without disturbing guest belongings or preferences.' },
         { term: 'Self-check', detail: 'The attendant stands at the doorway and inspects the room as the next guest would.' },
       ],
-      ctaText: 'View the Housekeeping Playbook',
+      ctaText: 'View the Housekeeping SOP manual',
       ctaHref: '/en/playbooks/hsk',
     },
     fr: {
-      label: 'Extrait gratuit du Playbook Housekeeping LuxOps',
+      label: 'chapitre de découverte du Manuel SOP Housekeeping LuxOps',
       title: 'Séquence de nettoyage de chambre : les 7 phases qui stabilisent la qualité',
       intro: 'Cet extrait est adapté du chapitre Standards & procédures de nettoyage des chambres. Il transforme le service de chambre en flux opérationnel répétable, aussi bien pour une chambre à blanc que pour une recouche.',
       rows: [
@@ -670,13 +670,13 @@ const PLAYBOOK_EXCERPTS: Record<string, {
         { term: 'Recouche', detail: 'Repère indicatif de 25-35 minutes, en rafraîchissant la chambre sans déranger les affaires ni préférences client.' },
         { term: 'Auto-contrôle', detail: 'Le Room Attendant se place à la porte et inspecte la chambre comme le prochain client.' },
       ],
-      ctaText: 'Voir le Playbook Housekeeping',
+      ctaText: 'Voir le Manuel SOP Housekeeping',
       ctaHref: '/fr/playbooks/hsk',
     },
   },
   'hotel-housekeeping-supervisor-checklist': {
     en: {
-      label: 'Free excerpt from the LuxOps Housekeeping Playbook',
+      label: 'Sample chapter from the LuxOps Housekeeping SOP manual',
       title: 'Supervisor inspection: Clean is not ready for sale',
       intro: 'This extract is adapted from Chapter 6, Quality Control & Inspections. It defines the control point between housekeeping and front desk room assignment.',
       rows: [
@@ -686,11 +686,11 @@ const PLAYBOOK_EXCERPTS: Record<string, {
         { term: '20-30% stayovers', detail: 'Stayover spot checks prioritise new attendants, VIPs, long stays and previous complaints.' },
         { term: '90/100 threshold', detail: 'LuxOps scoring uses Bathroom 35, Bedroom 35, Presentation 20 and Maintenance 10.' },
       ],
-      ctaText: 'View the Housekeeping Playbook',
+      ctaText: 'View the Housekeeping SOP manual',
       ctaHref: '/en/playbooks/hsk',
     },
     fr: {
-      label: 'Extrait gratuit du Playbook Housekeeping LuxOps',
+      label: 'chapitre de découverte du Manuel SOP Housekeeping LuxOps',
       title: 'Inspection gouvernante : Clean n’est pas attribuable',
       intro: 'Cet extrait est adapté du chapitre Contrôle Qualité & Inspections. Il définit le point de contrôle entre le service de housekeeping et l’attribution par la réception.',
       rows: [
@@ -700,13 +700,13 @@ const PLAYBOOK_EXCERPTS: Record<string, {
         { term: '20-30% recouches', detail: 'Les contrôles recouche priorisent nouveaux équipiers, VIP, longs séjours et réclamations.' },
         { term: 'Seuil 90/100', detail: 'Le score LuxOps répartit salle de bain 35, chambre 35, présentation 20 et maintenance 10.' },
       ],
-      ctaText: 'Voir le Playbook Housekeeping',
+      ctaText: 'Voir le Manuel SOP Housekeeping',
       ctaHref: '/fr/playbooks/hsk',
     },
   },
   'hotel-bathroom-cleaning-sop': {
     en: {
-      label: 'Free excerpt from the LuxOps Housekeeping Playbook',
+      label: 'Sample chapter from the LuxOps Housekeeping SOP manual',
       title: 'Bathroom SOP: clean to dirty, top to bottom',
       intro: 'This extract is adapted from the bathroom standards section of the room cleaning chapter. It gives attendants and supervisors the same sequence and inspection language.',
       rows: [
@@ -716,11 +716,11 @@ const PLAYBOOK_EXCERPTS: Record<string, {
         { term: 'Toilet last', detail: 'Exterior, seat, underside, bowl, under-rim, base and behind toilet are cleaned last.' },
         { term: 'Final rule', detail: 'No hair anywhere. Floor dry, amenities aligned, scent fresh and neutral.' },
       ],
-      ctaText: 'View the Housekeeping Playbook',
+      ctaText: 'View the Housekeeping SOP manual',
       ctaHref: '/en/playbooks/hsk',
     },
     fr: {
-      label: 'Extrait gratuit du Playbook Housekeeping LuxOps',
+      label: 'chapitre de découverte du Manuel SOP Housekeeping LuxOps',
       title: 'SOP de salle de bain : du propre vers le sale, du haut vers le bas',
       intro: 'Cet extrait est adapté de la section salle de bain du chapitre sur le nettoyage des chambres. Il donne aux Room Attendants et aux gouvernantes la même séquence et le même langage d’inspection.',
       rows: [
@@ -730,13 +730,13 @@ const PLAYBOOK_EXCERPTS: Record<string, {
         { term: 'Toilettes en dernier', detail: 'Extérieur, abattant, dessous, cuvette, sous-rebord, base et arrière sont nettoyés en dernier.' },
         { term: 'Règle finale', detail: 'Aucun cheveu. Sol sec, amenities alignés, odeur fraîche et neutre.' },
       ],
-      ctaText: 'Voir le Playbook Housekeeping',
+      ctaText: 'Voir le Manuel SOP Housekeeping',
       ctaHref: '/fr/playbooks/hsk',
     },
   },
   'hotel-front-desk-checklist': {
     en: {
-      label: 'Free excerpt from the LuxOps Front Office Playbook',
+      label: 'Sample chapter from the LuxOps Front Office SOP manual',
       title: 'Front desk checklist: what the shift must control',
       intro: 'This extract is adapted from the check-in, check-out and communication chapters. It turns front desk work into a shift control system.',
       rows: [
@@ -745,11 +745,11 @@ const PLAYBOOK_EXCERPTS: Record<string, {
         { term: 'Check-out', detail: 'Verify folio, process payment, close invoice and notify housekeeping.' },
         { term: 'Handover', detail: 'Log pending requests, complaints, room moves, billing issues and unusual decisions.' },
       ],
-      ctaText: 'View the Front Office Playbook',
+      ctaText: 'View the Front Office SOP manual',
       ctaHref: '/en/playbooks/fo',
     },
     fr: {
-      label: 'Extrait gratuit du Playbook Front Office LuxOps',
+      label: 'chapitre de découverte du Manuel SOP Front Office LuxOps',
       title: 'Checklist réception : ce que le shift doit contrôler',
       intro: 'Cet extrait est adapté des chapitres check-in, check-out et communication client. Il transforme la réception en système de contrôle du shift.',
       rows: [
@@ -758,13 +758,13 @@ const PLAYBOOK_EXCERPTS: Record<string, {
         { term: 'Check-out', detail: 'Vérifier le folio, traiter le paiement, clôturer la facture et notifier le housekeeping.' },
         { term: 'Passation', detail: 'Tracer demandes en attente, réclamations, room moves, litiges facture et décisions inhabituelles.' },
       ],
-      ctaText: 'Voir le Playbook Front Office',
+      ctaText: 'Voir le Manuel SOP Front Office',
       ctaHref: '/fr/playbooks/fo',
     },
   },
   'hotel-dnd-procedure': {
     en: {
-      label: 'Free excerpt from the LuxOps Housekeeping Playbook',
+      label: 'Sample chapter from the LuxOps Housekeeping SOP manual',
       title: 'DND procedure: privacy first, safety always',
       intro: 'This extract is adapted from the DND protocol. The goal is to respect privacy while maintaining documentation, service continuity and safety awareness.',
       rows: [
@@ -773,11 +773,11 @@ const PLAYBOOK_EXCERPTS: Record<string, {
         { term: 'Door message', detail: 'Leave a discreet message if there is no answer, inviting the guest to request service.' },
         { term: '24 hours', detail: 'Extended DND triggers supervisor and duty manager escalation for a welfare check.' },
       ],
-      ctaText: 'View the Housekeeping Playbook',
+      ctaText: 'View the Housekeeping SOP manual',
       ctaHref: '/en/playbooks/hsk',
     },
     fr: {
-      label: 'Extrait gratuit du Playbook Housekeeping LuxOps',
+      label: 'chapitre de découverte du Manuel SOP Housekeeping LuxOps',
       title: 'Procédure DND : vie privée d’abord, sécurité toujours',
       intro: 'Cet extrait est adapté du protocole DND. L’objectif est de respecter la tranquillité du client tout en maintenant documentation, continuité de service et vigilance sécurité.',
       rows: [
@@ -786,7 +786,7 @@ const PLAYBOOK_EXCERPTS: Record<string, {
         { term: 'Message', detail: 'Sans réponse, laisser un message discret sous la porte pour proposer le service.' },
         { term: '24 heures', detail: 'Un DND prolongé déclenche l’escalade superviseur et manager en duty pour contrôle sécurité.' },
       ],
-      ctaText: 'Voir le Playbook Housekeeping',
+      ctaText: 'Voir le Manuel SOP Housekeeping',
       ctaHref: '/fr/playbooks/hsk',
     },
   },
@@ -816,19 +816,19 @@ const ARTICLE_PRODUCT_CTAS: Record<string, {
     en: {
       label: 'Housekeeping tools',
       title: 'Need a practical room inspection toolkit?',
-      text: 'Use the inspection kit for editable control sheets, or the full playbook for the complete housekeeping SOP system.',
+      text: 'Use the inspection kit for editable control sheets, or the full SOP manual for the complete housekeeping SOP system.',
       primaryText: 'View the Housekeeping Starter Pack',
       primaryHref: '/en/playbooks/hsk-starter-pack',
-      secondaryText: 'View the Housekeeping Playbook',
+      secondaryText: 'View the Housekeeping SOP manual',
       secondaryHref: '/en/playbooks/hsk',
     },
     fr: {
       label: 'Outils housekeeping',
       title: 'Besoin d’un kit pratique pour contrôler les chambres ?',
-      text: 'Utilisez le kit inspection pour les feuilles de contrôle modifiables, ou le playbook complet pour toute la structure SOP du département.',
+      text: 'Utilisez le kit inspection pour les feuilles de contrôle modifiables, ou le manuel SOP complet pour toute la structure SOP du département.',
       primaryText: 'Voir le Starter Pack Housekeeping',
       primaryHref: '/fr/playbooks/hsk-starter-pack',
-      secondaryText: 'Voir le Playbook Housekeeping',
+      secondaryText: 'Voir le Manuel SOP Housekeeping',
       secondaryHref: '/fr/playbooks/hsk',
     },
   },
@@ -836,19 +836,19 @@ const ARTICLE_PRODUCT_CTAS: Record<string, {
     en: {
       label: 'Hotel SOP tools',
       title: 'Need SOP templates your team can actually use?',
-      text: 'Start with focused starter packs for daily tools, or browse the full department playbooks for the complete SOP structure.',
+      text: 'Start with focused starter packs for daily tools, or browse the full department SOP manuals for the complete SOP structure.',
       primaryText: 'View Starter Packs',
       primaryHref: '/en/playbooks#starter-packs',
-      secondaryText: 'View SOP Playbooks',
+      secondaryText: 'View SOP manuals',
       secondaryHref: '/en/playbooks#department-playbooks',
     },
     fr: {
       label: 'Outils SOP',
       title: 'Besoin de modèles SOP vraiment utilisables par vos équipes ?',
-      text: 'Commencez avec des starter packs ciblés pour les outils du quotidien, ou consultez les playbooks complets par département.',
+      text: 'Commencez avec des starter packs ciblés pour les outils du quotidien, ou consultez les manuels SOP complets par département.',
       primaryText: 'Voir les starter packs',
       primaryHref: '/fr/playbooks#starter-packs',
-      secondaryText: 'Voir les playbooks SOP',
+      secondaryText: 'Voir les Manuels SOP',
       secondaryHref: '/fr/playbooks#department-playbooks',
     },
   },
@@ -856,19 +856,19 @@ const ARTICLE_PRODUCT_CTAS: Record<string, {
     en: {
       label: 'Front Office tools',
       title: 'Need editable front desk procedures?',
-      text: 'Start with practical templates for daily reception work, or go deeper with the complete Front Office Playbook.',
+      text: 'Start with practical templates for daily reception work, or go deeper with the complete Front Office SOP manual.',
       primaryText: 'View the Front Office Starter Pack',
       primaryHref: '/en/playbooks/fo-starter-pack',
-      secondaryText: 'View the Front Office Playbook',
+      secondaryText: 'View the Front Office SOP manual',
       secondaryHref: '/en/playbooks/fo',
     },
     fr: {
       label: 'Outils Front Office',
       title: 'Besoin de procédures réception prêtes à adapter ?',
-      text: 'Commencez avec des modèles pratiques pour le quotidien de la réception, ou allez plus loin avec le Playbook Front Office complet.',
+      text: 'Commencez avec des modèles pratiques pour le quotidien de la réception, ou allez plus loin avec le Manuel SOP Front Office complet.',
       primaryText: 'Voir le Starter Pack Front Office',
       primaryHref: '/fr/playbooks/fo-starter-pack',
-      secondaryText: 'Voir le Playbook Front Office',
+      secondaryText: 'Voir le Manuel SOP Front Office',
       secondaryHref: '/fr/playbooks/fo',
     },
   },
@@ -876,19 +876,19 @@ const ARTICLE_PRODUCT_CTAS: Record<string, {
     en: {
       label: 'F&B tools',
       title: 'Need editable F&B service tools?',
-      text: 'Start with practical restaurant, bar and room service checklists, or go deeper with the complete F&B Playbook.',
+      text: 'Start with practical restaurant, bar and room service checklists, or go deeper with the complete F&B SOP manual.',
       primaryText: 'View the F&B Starter Pack',
       primaryHref: '/en/playbooks/fb-starter-pack',
-      secondaryText: 'View the F&B Playbook',
+      secondaryText: 'View the F&B SOP manual',
       secondaryHref: '/en/playbooks/fb',
     },
     fr: {
       label: 'Outils F&B',
       title: 'Vous voulez des outils F&B prêts à adapter sur le terrain ?',
-      text: 'Le starter pack rassemble des checklists pratiques pour le restaurant, le bar et le room service. Le playbook F&B complet va plus loin avec toute la structure SOP du département.',
+      text: 'Le starter pack rassemble des checklists pratiques pour le restaurant, le bar et le room service. Le manuel SOP F&B complet va plus loin avec toute la structure SOP du département.',
       primaryText: 'Voir le starter pack F&B',
       primaryHref: '/fr/playbooks/fb-starter-pack',
-      secondaryText: 'Voir le playbook F&B',
+      secondaryText: 'Voir le manuel SOP F&B',
       secondaryHref: '/fr/playbooks/fb',
     },
   },
@@ -896,19 +896,19 @@ const ARTICLE_PRODUCT_CTAS: Record<string, {
     en: {
       label: 'Restaurant service tools',
       title: 'Need a practical restaurant service toolkit?',
-      text: 'Use the F&B Starter Pack for opening, closing, briefing and recovery tools, or the full playbook for the complete SOP structure.',
+      text: 'Use the F&B Starter Pack for opening, closing, briefing and recovery tools, or the full SOP manual for the complete SOP structure.',
       primaryText: 'View the F&B Starter Pack',
       primaryHref: '/en/playbooks/fb-starter-pack',
-      secondaryText: 'View the F&B Playbook',
+      secondaryText: 'View the F&B SOP manual',
       secondaryHref: '/en/playbooks/fb',
     },
     fr: {
       label: 'Outils restaurant',
       title: 'Pour structurer le service restaurant sans repartir de zéro',
-      text: 'Le starter pack F&B regroupe les outils d’ouverture, de fermeture, de briefing et de recovery. Le playbook complet apporte ensuite toute la structure SOP du service restaurant.',
+      text: 'Le starter pack F&B regroupe les outils d’ouverture, de fermeture, de briefing et de recovery. Le manuel SOP complet apporte ensuite toute la structure SOP du service restaurant.',
       primaryText: 'Voir le starter pack F&B',
       primaryHref: '/fr/playbooks/fb-starter-pack',
-      secondaryText: 'Voir le playbook F&B',
+      secondaryText: 'Voir le manuel SOP F&B',
       secondaryHref: '/fr/playbooks/fb',
     },
   },
@@ -916,19 +916,19 @@ const ARTICLE_PRODUCT_CTAS: Record<string, {
     en: {
       label: 'Room service tools',
       title: 'Need a room service checklist your team can use today?',
-      text: 'Use the F&B Starter Pack for room service controls, order taking, tray setup and recovery scripts, or the full playbook for the complete F&B SOP system.',
+      text: 'Use the F&B Starter Pack for room service controls, order taking, tray setup and recovery scripts, or the full SOP manual for the complete F&B SOP system.',
       primaryText: 'View the F&B Starter Pack',
       primaryHref: '/en/playbooks/fb-starter-pack',
-      secondaryText: 'View the F&B Playbook',
+      secondaryText: 'View the F&B SOP manual',
       secondaryHref: '/en/playbooks/fb',
     },
     fr: {
       label: 'Outils room service',
       title: 'Pour fiabiliser le room service dès le prochain shift',
-      text: 'Le starter pack F&B couvre les contrôles room service, la prise de commande, le dressage du plateau et les scripts de recovery. Le playbook complet apporte la structure SOP F&B dans son ensemble.',
+      text: 'Le starter pack F&B couvre les contrôles room service, la prise de commande, le dressage du plateau et les scripts de recovery. Le manuel SOP complet apporte la structure SOP F&B dans son ensemble.',
       primaryText: 'Voir le starter pack F&B',
       primaryHref: '/fr/playbooks/fb-starter-pack',
-      secondaryText: 'Voir le playbook F&B',
+      secondaryText: 'Voir le manuel SOP F&B',
       secondaryHref: '/fr/playbooks/fb',
     },
   },
@@ -1132,7 +1132,7 @@ export default async function BlogArticlePage({
       />
       <div className={`pt-16 ${styles.preview}`}>
         {/* Hero */}
-        <section className={`py-20 bg-gradient-to-b from-gray-50 to-white ${styles.hero}`}>
+        <section className={`py-20 ${styles.hero}`}>
           <div className="max-w-3xl mx-auto px-6">
             <Link
               href={`/${locale}/blog`}
@@ -1149,7 +1149,7 @@ export default async function BlogArticlePage({
               <span className="text-xs text-gray-300">·</span>
               <span className="text-xs text-gray-400">{content.date}</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-[#111111] leading-tight mb-6">
+            <h1 className="font-display text-4xl font-medium leading-[1.08] text-[#0f211a] mb-6 md:text-[3.25rem]">
               {content.title}
             </h1>
             <p className="text-lg text-gray-400 leading-relaxed">{content.intro}</p>
@@ -1159,7 +1159,7 @@ export default async function BlogArticlePage({
         {blogEditorialImages[slug] && (
           <figure className={styles.editorialFigure}>
             <Image
-              src={editorialImageUrl(blogEditorialImages[slug])}
+              src={editorialImageUrl(blogEditorialImages[slug], locale)}
               alt={isEn ? `Illustration for ${content.title}` : `Illustration pour ${content.title}`}
               width={1080}
               height={720}
@@ -1172,7 +1172,7 @@ export default async function BlogArticlePage({
         {productCta && (
           <section className={`py-10 bg-white border-b border-gray-100 ${styles.productCta}`}>
             <div className="max-w-3xl mx-auto px-6 text-center">
-              <p className="text-[10px] font-bold uppercase tracking-widest text-[#003d9b] mb-3">
+              <p className="text-[10px] font-bold uppercase tracking-widest text-[#92734a] mb-3">
                 {productCta.label}
               </p>
               <h2 className="text-2xl font-bold text-[#111111] mb-3">{productCta.title}</h2>
@@ -1191,7 +1191,7 @@ export default async function BlogArticlePage({
                     cta_position: 'primary',
                     article_slug: slug,
                   }}
-                  className={`inline-flex min-w-[240px] items-center justify-center gap-2 rounded-lg bg-[#003d9b] px-5 py-3 text-sm font-semibold text-white hover:bg-[#002d7a] transition-colors ${styles.primaryButton}`}
+                  className={`inline-flex min-w-[240px] items-center justify-center gap-2 rounded-full bg-[#0f211a] px-5 py-3 text-sm font-semibold text-white hover:bg-[#24362f] transition-colors ${styles.primaryButton}`}
                 >
                   {productCta.primaryText} <ArrowRight size={16} />
                 </TrackedLink>
@@ -1206,7 +1206,7 @@ export default async function BlogArticlePage({
                     cta_position: 'secondary',
                     article_slug: slug,
                   }}
-                  className={`inline-flex min-w-[240px] items-center justify-center gap-2 rounded-lg border border-[#003d9b] px-5 py-3 text-sm font-semibold text-[#003d9b] hover:bg-[#eef4ff] transition-colors ${styles.secondaryButton}`}
+                  className={`inline-flex min-w-[240px] items-center justify-center gap-2 rounded-full border border-[#cbb487] px-5 py-3 text-sm font-semibold text-[#314137] hover:bg-[#f5f1e9] transition-colors ${styles.secondaryButton}`}
                 >
                   {productCta.secondaryText} <ArrowRight size={16} />
                 </TrackedLink>
@@ -1219,60 +1219,59 @@ export default async function BlogArticlePage({
         {!productCta?.primaryHref.includes('/downloads/') && (() => {
           const DEPT_MAP: Record<string, { titleEn: string; titleFr: string }> = {
             'housekeeping-room-inspection': {
-              titleEn: 'Download a free chapter of the Housekeeping Playbook',
-              titleFr: 'Téléchargez un chapitre gratuit du Playbook Housekeeping',
+              titleEn: 'Receive a sample chapter from the Housekeeping SOP manual',
+              titleFr: 'Recevoir un chapitre de découverte du Manuel SOP Housekeeping',
             },
             'hotel-room-attendant-checklist': {
-              titleEn: 'Download a free chapter of the Housekeeping Playbook',
-              titleFr: 'Téléchargez un chapitre gratuit du Playbook Housekeeping',
+              titleEn: 'Receive a sample chapter from the Housekeeping SOP manual',
+              titleFr: 'Recevoir un chapitre de découverte du Manuel SOP Housekeeping',
             },
             'hotel-room-cleaning-checklist': {
-              titleEn: 'Download a free chapter of the Housekeeping Playbook',
-              titleFr: 'Téléchargez un chapitre gratuit du Playbook Housekeeping',
+              titleEn: 'Receive a sample chapter from the Housekeeping SOP manual',
+              titleFr: 'Recevoir un chapitre de découverte du Manuel SOP Housekeeping',
             },
             'hotel-housekeeping-supervisor-checklist': {
-              titleEn: 'Download a free chapter of the Housekeeping Playbook',
-              titleFr: 'Téléchargez un chapitre gratuit du Playbook Housekeeping',
+              titleEn: 'Receive a sample chapter from the Housekeeping SOP manual',
+              titleFr: 'Recevoir un chapitre de découverte du Manuel SOP Housekeeping',
             },
             'hotel-bathroom-cleaning-sop': {
-              titleEn: 'Download a free chapter of the Housekeeping Playbook',
-              titleFr: 'Téléchargez un chapitre gratuit du Playbook Housekeeping',
+              titleEn: 'Receive a sample chapter from the Housekeeping SOP manual',
+              titleFr: 'Recevoir un chapitre de découverte du Manuel SOP Housekeeping',
             },
             'hotel-dnd-procedure': {
-              titleEn: 'Download a free chapter of the Housekeeping Playbook',
-              titleFr: 'Téléchargez un chapitre gratuit du Playbook Housekeeping',
+              titleEn: 'Receive a sample chapter from the Housekeeping SOP manual',
+              titleFr: 'Recevoir un chapitre de découverte du Manuel SOP Housekeeping',
             },
             'hotel-front-office-sop': {
-              titleEn: 'Download a free chapter of the Front Office Playbook',
-              titleFr: 'Téléchargez un chapitre gratuit du Playbook Réception',
+              titleEn: 'Receive a sample chapter from the Front Office SOP manual',
+              titleFr: 'Recevoir un chapitre de découverte du Manuel SOP Front Office',
             },
             'hotel-front-office-procedures': {
-              titleEn: 'Download a free chapter of the Front Office Playbook',
-              titleFr: 'Téléchargez un chapitre gratuit du Playbook Réception',
+              titleEn: 'Receive a sample chapter from the Front Office SOP manual',
+              titleFr: 'Recevoir un chapitre de découverte du Manuel SOP Front Office',
             },
             'hotel-front-desk-procedures': {
-              titleEn: 'Download a free chapter of the Front Office Playbook',
-              titleFr: 'Téléchargez un chapitre gratuit du Playbook Réception',
+              titleEn: 'Receive a sample chapter from the Front Office SOP manual',
+              titleFr: 'Recevoir un chapitre de découverte du Manuel SOP Front Office',
             },
           }
           const lm = DEPT_MAP[slug] ?? {
-            titleEn: 'Download a free introductory chapter',
-            titleFr: "Téléchargez un chapitre d'introduction gratuit",
+            titleEn: 'Receive a sample chapter from an SOP manual',
+            titleFr: 'Recevoir un chapitre de découverte d’un Manuel SOP',
           }
           return (
             <section
               className={`py-10 border-t border-b ${styles.leadMagnet}`}
-              style={slug === 'housekeeping-room-inspection' ? undefined : { backgroundColor: '#eef4ff', borderColor: 'rgba(195,198,214,0.3)' }}
             >
               <div className="max-w-3xl mx-auto px-6 flex flex-col sm:flex-row items-start sm:items-center gap-6">
                 <div className="flex-1">
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-[#003d9b] mb-2">
-                    {isEn ? 'Free resource' : 'Ressource gratuite'}
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-[#92734a] mb-2">
+                    {isEn ? 'Sample chapter' : 'Chapitre de découverte'}
                   </p>
-                  <p className="font-bold text-[#0a1d2e] text-lg mb-1">
+                  <p className="font-display font-medium text-[#0f211a] text-lg mb-1">
                     {isEn ? lm.titleEn : lm.titleFr}
                   </p>
-                  <p className="text-sm text-[#4f6074]">
+                  <p className="text-sm text-[#687169]">
                     {isEn
                       ? 'See what structured hotel procedures look like in practice.'
                       : 'Découvrez à quoi ressemblent des procédures opérationnelles structurées.'}
@@ -1280,27 +1279,26 @@ export default async function BlogArticlePage({
                 </div>
                 <Link
                   href={`/${locale}/free-hotel-procedures`}
-                  className="inline-flex items-center gap-2 px-6 py-3 text-white font-bold text-sm flex-shrink-0 hover:opacity-90 transition-opacity"
-                  style={slug === 'housekeeping-room-inspection' ? undefined : { background: 'linear-gradient(135deg, #003d9b, #0052cc)', borderRadius: '0.125rem' }}
+                  className="inline-flex items-center gap-2 rounded-full bg-[#0f211a] px-6 py-3 text-sm font-semibold text-white shadow-[0_8px_20px_rgba(15,33,26,.12)] transition hover:-translate-y-0.5 hover:bg-[#24362f]"
                 >
-                  {isEn ? 'Download free' : 'Télécharger gratuitement'} <ArrowRight size={16} />
+                  {isEn ? 'Choose a chapter' : 'Choisir un chapitre'} <ArrowRight size={16} />
                 </Link>
               </div>
             </section>
           )
         })()}
 
-        {/* Playbook excerpt - proof and CTA early in the read */}
+        {/* SOP manual excerpt - proof and CTA early in the read */}
         {playbookExcerpt && (
           <section className={`py-12 bg-white border-b border-gray-100 ${styles.excerpt}`}>
             <div className="max-w-3xl mx-auto px-6">
-              <div className="rounded-xl border border-[#d8e6f7] bg-[#f4f8ff] p-8">
-                <p className="text-xs font-semibold uppercase tracking-widest text-[#003d9b] mb-3">
+              <div className="rounded-[1.25rem] border border-[#e7e1d7] bg-[#f5f1e9] p-6 sm:p-8">
+                <p className="text-xs font-semibold uppercase tracking-widest text-[#92734a] mb-3">
                   {playbookExcerpt.label}
                 </p>
-                <h2 className="text-2xl font-bold text-[#111111] mb-3">{playbookExcerpt.title}</h2>
+                <h2 className="mb-3 font-display text-2xl font-medium text-[#0f211a] md:text-3xl">{playbookExcerpt.title}</h2>
                 <p className="text-gray-600 leading-relaxed mb-6">{playbookExcerpt.intro}</p>
-                <div className="divide-y divide-[#dbe8ff] rounded-lg overflow-hidden border border-[#dbe8ff] bg-white mb-6">
+                <div className="divide-y divide-[#e7e1d7] overflow-hidden rounded-[1rem] border border-[#e7e1d7] bg-white mb-6">
                   {playbookExcerpt.rows.map((row) => (
                     <div key={row.term} className="grid sm:grid-cols-[150px_1fr] gap-3 p-4">
                       <h3 className="font-semibold text-[#111111] text-sm">{row.term}</h3>
@@ -1312,14 +1310,14 @@ export default async function BlogArticlePage({
                   <div className="flex flex-col sm:flex-row gap-3">
                     <Link
                       href={playbookExcerpt.ctaHref}
-                      className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#003d9b] px-5 py-3 text-sm font-semibold text-white hover:bg-[#002d7a] transition-colors"
+                      className="inline-flex items-center justify-center gap-2 rounded-full bg-[#0f211a] px-5 py-3 text-sm font-semibold text-white shadow-[0_8px_20px_rgba(15,33,26,.12)] transition hover:-translate-y-0.5 hover:bg-[#24362f]"
                     >
                       {playbookExcerpt.ctaText} <ArrowRight size={16} />
                     </Link>
                     {playbookExcerpt.secondaryCtaText && playbookExcerpt.secondaryCtaHref && (
                       <Link
                         href={playbookExcerpt.secondaryCtaHref}
-                        className="inline-flex items-center justify-center gap-2 rounded-lg border border-[#003d9b] px-5 py-3 text-sm font-semibold text-[#003d9b] hover:bg-white transition-colors"
+                        className="inline-flex items-center justify-center gap-2 rounded-full border border-[#cbb487] px-5 py-3 text-sm font-semibold text-[#314137] transition hover:bg-white"
                       >
                         {playbookExcerpt.secondaryCtaText} <ArrowRight size={16} />
                       </Link>

@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { getPostHogClient } from '@/lib/posthog-server'
 import { getResendClient } from '@/lib/resend'
 import { getSupabaseAdmin } from '@/lib/supabase-admin'
-import { normalizeLeadEmail, normalizeLeadLocale, sendFreeChapterWelcomeEmail } from '@/lib/lead-email'
+import { FREE_CHAPTER_OBJECTS, normalizeLeadEmail, normalizeLeadLocale, sendFreeChapterWelcomeEmail } from '@/lib/lead-email'
 
 const DEPT_LABELS: Record<string, { en: string; fr: string }> = {
   fo: { en: 'Front Office', fr: 'Front Office' },
@@ -18,7 +18,7 @@ const WELCOME_EMAIL_TRACKING_START = '2026-09-28T15:05:00.000Z'
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
-    const { email, department, locale, currentUrl, pathname, posthogDistinctId, posthogSessionId } = body
+    const { email, department, locale, currentUrl, pathname, posthogDistinctId, posthogSessionId, requestChapterEmail, requestId } = body
 
     if (typeof email !== 'string' || !/^\S+@\S+\.\S+$/.test(email) || !department) {
       return NextResponse.json({ error: 'Missing fields' }, { status: 400 })
@@ -33,8 +33,9 @@ export async function POST(request: NextRequest) {
     const normalizedLocale = normalizeLeadLocale(locale)
     const supabase = getSupabaseAdmin()
 
-    // Chaque téléchargement reste enregistré, mais le premier sert de repère
-    // pour ne jamais envoyer plusieurs fois l'email de bienvenue.
+    // Chaque téléchargement reste enregistré. Le premier déclenche l'email
+    // historique de bienvenue ; le nouveau formulaire modal demande un envoi
+    // explicite à chaque soumission.
     const { data: previousLeads, error: lookupError } = await supabase
       .from('leads')
       .select('email')
@@ -47,6 +48,34 @@ export async function POST(request: NextRequest) {
     }
 
     const isFirstDownload = !lookupError && (previousLeads?.length ?? 0) === 0
+
+    // Resolve both language versions from the current public Supabase bucket
+    // before recording a lead or sending the email. This keeps the sample
+    // chapter aligned with the 2027 files used by the client portal.
+    const shouldSendWelcomeEmail = isFirstDownload || requestChapterEmail === true
+    let chapterUrls: { en: string; fr: string } | undefined
+    if (shouldSendWelcomeEmail) {
+      try {
+        const objectPaths = FREE_CHAPTER_OBJECTS[department as keyof typeof FREE_CHAPTER_OBJECTS]
+        const resolved = {} as { en: string; fr: string }
+        for (const language of ['en', 'fr'] as const) {
+          const objectPath = objectPaths[language]
+          const folderPath = objectPath.slice(0, objectPath.lastIndexOf('/'))
+          const fileName = objectPath.slice(objectPath.lastIndexOf('/') + 1)
+          const { data: files, error: storageError } = await supabase.storage
+            .from('Playbook')
+            .list(folderPath, { search: fileName, limit: 100 })
+          if (storageError || !files?.some((file) => file.name === fileName)) {
+            throw storageError ?? new Error(`Missing sample chapter: ${objectPath}`)
+          }
+          resolved[language] = supabase.storage.from('Playbook').getPublicUrl(objectPath).data.publicUrl
+        }
+        chapterUrls = resolved
+      } catch (storageError) {
+        console.error('[LuxOps Lead Magnet Error: chapitre 4 Supabase indisponible]', storageError)
+        return NextResponse.json({ error: 'Chapter unavailable' }, { status: 503 })
+      }
+    }
 
     // 1. Sauvegarde Supabase - priorité absolue
     const { error: insertError } = await supabase
@@ -108,16 +137,21 @@ export async function POST(request: NextRequest) {
 
     // 4. Email client envoyé une seule fois, quel que soit le nombre d'extraits.
     let welcomeEmailSent = false
-    if (isFirstDownload) {
+    if (shouldSendWelcomeEmail && chapterUrls) {
       try {
         await sendFreeChapterWelcomeEmail({
           to: normalizedEmail,
           locale: normalizedLocale,
           department: department as 'fo' | 'hsk' | 'fb' | 'spa',
+          requestId: requestChapterEmail === true && typeof requestId === 'string' ? requestId : undefined,
+          chapterUrls,
         })
         welcomeEmailSent = true
       } catch (emailError) {
         console.error('[LuxOps Resend Error: email de bienvenue non envoyé]', emailError)
+        if (requestChapterEmail === true) {
+          return NextResponse.json({ error: 'Email delivery failed' }, { status: 502 })
+        }
       }
     }
 

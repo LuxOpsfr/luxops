@@ -55,7 +55,7 @@ function ContactContent() {
       <section className="border-b border-[rgba(32,35,31,0.14)] px-6 py-16 md:px-16 md:py-24">
         <div className="mx-auto max-w-[1320px]">
           <p className="mb-5 text-xs font-semibold uppercase tracking-[0.16em] text-[#a58658]">{tNav('contact')}</p>
-          <h1 className="font-display text-5xl font-medium leading-[1.04] md:text-7xl">{t('title')}</h1>
+          <h1 className="font-display text-4xl font-medium leading-[1.06] sm:text-5xl md:text-[3.5rem]">{t('title')}</h1>
           <p className="mt-7 max-w-2xl text-lg leading-8 text-[#5d665f]">{t('subtitle')}</p>
         </div>
       </section>

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
-import EditorialRouteImage from '@/components/EditorialRouteImage'
+import Image from 'next/image'
+import { ArrowRight, BookOpen, Download } from 'lucide-react'
 
 export async function generateMetadata({
   params,
@@ -31,21 +31,21 @@ export async function generateMetadata({
 const enFaqs = [
   {
     q: 'What is a hotel SOP?',
-    a: 'A hotel SOP is a written set of instructions that defines how a specific task should be performed in a hotel department. When procedures are written clearly, teams can work to the same standard across shifts, regardless of who is on duty. Without that documentation, the quality of a check-in or a room inspection depends on the individual doing it, which is not a reliable foundation. SOPs cover the full operational range: arrival and departure sequences at the front desk, room inspection criteria in housekeeping, service sequences in F&B, booking procedures in spa. LuxOps provides department-specific playbooks built from real hotel work, not from generic operations templates.',
+    a: 'A hotel SOP is a written set of instructions that defines how a specific task should be performed in a hotel department. When procedures are written clearly, teams can work to the same standard across shifts, regardless of who is on duty. Without that documentation, the quality of a check-in or a room inspection depends on the individual doing it, which is not a reliable foundation. SOPs cover the full operational range: arrival and departure sequences at the front desk, room inspection criteria in housekeeping, service sequences in F&B, booking procedures in spa. LuxOps provides department-specific SOP manuals built from real hotel work, not from generic operations templates.',
     link: '/playbooks',
-    linkLabel: 'Explore our operational playbooks',
+    linkLabel: 'Explore SOP manuals',
   },
   {
     q: 'What should a hotel operations manual include?',
-    a: 'A useful manual covers all the departments that interact with guests or support the guest experience: Front Office, Housekeeping, F&B, Spa, Concierge, Engineering and HR. For each one, it should document the procedures teams follow daily, the service standards they work to, quality checklists used for inspection, and escalation paths when something goes wrong. It should also include onboarding material so new team members have a clear reference from their first shift. The key distinction between a manual that works and one that does not is whether it is built for daily use and not one filed away for audits. LuxOps playbooks are organised by department and built to serve as working operational references.',
+    a: 'A useful manual covers all the departments that interact with guests or support the guest experience: Front Office, Housekeeping, F&B, Spa, Concierge and Engineering. For each one, it should document the procedures teams follow daily, the service standards they work to, quality checklists used for inspection, and escalation paths when something goes wrong. It should also include onboarding material so new team members have a clear reference from their first shift. The key distinction between a manual that works and one that does not is whether it is built for daily use and not one filed away for audits. LuxOps SOP manuals are organised by department and built to serve as working operational references.',
     link: '/playbooks',
-    linkLabel: 'View hotel operations playbooks',
+    linkLabel: 'View hotel SOP manuals',
   },
   {
     q: 'How are housekeeping SOPs structured?',
-    a: 'Housekeeping SOPs typically organise around three operational areas. The first is room preparation: the entry sequence, task order, and quality criteria for a room ready for the guest. The second is linen and amenity management: par levels, replenishment cycles, and handling procedures that keep supplies consistent across floors. The third is the inspection process: room release checklists, supervisory sign-off, and how defects are logged and escalated. Additional procedures cover turndown service, deep-cleaning schedules, lost and found, and guest requests. Each SOP should be specific enough that someone new to the department can follow it without asking a supervisor. The LuxOps Housekeeping Playbook covers all of this across approximately 220 pages.',
+    a: 'Housekeeping SOPs typically organise around three operational areas. The first is room preparation: the entry sequence, task order, and quality criteria for a room ready for the guest. The second is linen and amenity management: par levels, replenishment cycles, and handling procedures that keep supplies consistent across floors. The third is the inspection process: room release checklists, supervisory sign-off, and how defects are logged and escalated. Additional procedures cover turndown service, deep-cleaning schedules, lost and found, and guest requests. Each SOP should be specific enough that someone new to the department can follow it without asking a supervisor. The LuxOps Housekeeping SOP manual covers these areas across approximately 220 pages.',
     link: '/playbooks',
-    linkLabel: 'Housekeeping Playbook',
+    linkLabel: 'Housekeeping SOP manual',
   },
   {
     q: 'What are hotel service standards?',
@@ -60,10 +60,10 @@ const enFaqs = [
     linkLabel: 'Explore operational training',
   },
   {
-    q: 'What is a hotel playbook?',
-    a: 'A useful hotel playbook gives teams one place to find the procedures, service standards, scripts, and checklists they need to work properly. It is organised by department and written for daily operational use, not as a reference document for managers, but as a working tool for the people delivering the service. Unlike a generic policy document, a playbook contains the actual steps: how a check-in runs, what a room inspection covers, how a complaint gets escalated. LuxOps playbooks cover Front Office, Housekeeping, F&B and Spa, and are available in both English and French.',
+    q: 'What should a hotel SOP manual include?',
+    a: 'A useful hotel SOP manual gives teams one place to find the procedures, service standards, scripts, and checklists they need to work properly. It is organised by department and written for daily operational use, as a working tool for the people delivering the service. It contains the actual steps: how a check-in runs, what a room inspection covers, and how a complaint gets escalated. LuxOps manuals cover Front Office, Housekeeping, F&B and Spa, and are available in English and French.',
     link: '/playbooks',
-    linkLabel: 'Browse operational playbooks',
+    linkLabel: 'Browse SOP manuals',
   },
   {
     q: 'How are hotel procedures documented?',
@@ -94,21 +94,21 @@ const enFaqs = [
 const frFaqs = [
   {
     q: 'Qu\'est-ce qu\'un SOP hôtelier ?',
-    a: 'Un SOP hôtelier est un ensemble d\'instructions écrites qui définit comment une tâche précise doit être réalisée dans un département. Quand les procédures sont clairement rédigées, les équipes peuvent travailler au même standard d\'un service à l\'autre, quel que soit le collaborateur en poste. Sans cette documentation, la qualité d\'un check-in ou d\'une inspection de chambre dépend de la personne qui l\'exécute. Les SOPs couvrent l\'ensemble du spectre opérationnel : séquences d\'arrivée et de départ à la réception, critères d\'inspection des chambres en housekeeping, séquences de service en F&B, procédures de réservation au spa. LuxOps propose des playbooks par département issus du travail hôtelier réel, pas de templates opérationnels génériques.',
+    a: 'Un SOP hôtelier est un ensemble d\'instructions écrites qui définit comment une tâche précise doit être réalisée dans un département. Quand les procédures sont clairement rédigées, les équipes peuvent travailler au même standard d\'un service à l\'autre, quel que soit le collaborateur en poste. Sans cette documentation, la qualité d\'un check-in ou d\'une inspection de chambre dépend de la personne qui l\'exécute. Les SOPs couvrent l\'ensemble du spectre opérationnel : séquences d\'arrivée et de départ à la réception, critères d\'inspection des chambres en housekeeping, séquences de service en F&B, procédures de réservation au spa. LuxOps propose des Manuels SOP par département issus du travail hôtelier réel, pas de modèles génériques.',
     link: '/playbooks',
-    linkLabel: 'Découvrir nos playbooks opérationnels',
+    linkLabel: 'Découvrir nos Manuels SOP',
   },
   {
     q: 'Que doit contenir un manuel opérationnel hôtelier ?',
-    a: 'Un manuel utile couvre tous les départements en contact avec les clients ou qui soutiennent leur expérience : Front Office, Housekeeping, F&B, Spa, Conciergerie, Maintenance et RH. Pour chacun, il doit documenter les procédures quotidiennes, les standards de service de référence, les checklists d\'inspection et les chemins d\'escalade quand quelque chose ne se passe pas comme prévu. Il doit aussi inclure des supports d\'intégration pour que les nouveaux collaborateurs aient une référence claire dès leur premier service. La différence entre un manuel qui fonctionne et un qui ne fonctionne pas, c\'est la structure pour un usage quotidien concret, pas un document classé pour les audits. Les playbooks LuxOps sont organisés par département et construits pour servir de références opérationnelles actives.',
+    a: 'Un manuel utile couvre les départements en contact avec les clients ou qui soutiennent leur expérience : Front Office, Housekeeping, F&B, Spa, Conciergerie et Maintenance. Pour chacun, il doit documenter les procédures quotidiennes, les standards de service de référence, les checklists d\'inspection et les chemins d\'escalade quand quelque chose ne se passe pas comme prévu. Il doit aussi inclure des supports d\'intégration pour que les nouveaux collaborateurs aient une référence claire dès leur premier service. La différence entre un manuel qui fonctionne et un qui ne fonctionne pas, c\'est la structure pour un usage quotidien concret, pas un document classé pour les audits. Les Manuels SOP LuxOps sont organisés par département et construits pour servir de références opérationnelles actives.',
     link: '/playbooks',
-    linkLabel: 'Voir les playbooks hôteliers',
+    linkLabel: 'Voir les Manuels SOP hôteliers',
   },
   {
     q: 'Comment sont structurées les procédures housekeeping ?',
-    a: 'Les procédures housekeeping s\'organisent autour de trois domaines opérationnels. Le premier est la préparation des chambres : la séquence d\'entrée, l\'ordre des tâches et les critères de qualité qui définissent à quoi ressemble une chambre prête pour le client. Le deuxième est la gestion du linge et des amenities : niveaux de par stock, cycles de réapprovisionnement et protocoles de manipulation qui maintiennent la régularité des approvisionnements sur les étages. Le troisième est le processus d\'inspection : checklists de libération de chambre, validation par le superviseur, et comment les défauts sont notés et remontés. Des procédures complémentaires couvrent le service de couverture, les nettoyages approfondis, les objets trouvés et les demandes clients. Le Playbook Housekeeping LuxOps couvre l\'ensemble de ces éléments sur environ 220 pages.',
+    a: 'Les procédures housekeeping s\'organisent autour de trois domaines opérationnels. Le premier est la préparation des chambres : la séquence d\'entrée, l\'ordre des tâches et les critères de qualité qui définissent à quoi ressemble une chambre prête pour le client. Le deuxième est la gestion du linge et des amenities : niveaux de par stock, cycles de réapprovisionnement et protocoles de manipulation qui maintiennent la régularité des approvisionnements sur les étages. Le troisième est le processus d\'inspection : checklists de libération de chambre, validation par le superviseur, et comment les défauts sont notés et remontés. Des procédures complémentaires couvrent le service de couverture, les nettoyages approfondis, les objets trouvés et les demandes clients. Le Manuel SOP Housekeeping LuxOps couvre l\'ensemble de ces éléments sur environ 220 pages.',
     link: '/playbooks',
-    linkLabel: 'Playbook Housekeeping',
+    linkLabel: 'Manuel SOP Housekeeping',
   },
   {
     q: 'Que sont les standards de service hôtelier ?',
@@ -123,10 +123,10 @@ const frFaqs = [
     linkLabel: 'Découvrir la formation opérationnelle',
   },
   {
-    q: 'Qu\'est-ce qu\'un playbook hôtelier ?',
-    a: 'Un playbook hôtelier utile donne aux équipes un seul endroit où trouver les procédures, standards de service, scripts et checklists dont elles ont besoin pour bien travailler. Il est organisé par département et rédigé pour un usage opérationnel quotidien, pas comme un document de référence pour les managers, mais comme un outil de travail pour les personnes qui font le service. Contrairement à un document de politique générale, un playbook contient les étapes réelles : comment se déroule un check-in, ce que couvre une inspection de chambre, comment une réclamation est escaladée. Les playbooks LuxOps couvrent le Front Office, le Housekeeping, le F&B et le Spa, et sont disponibles en français et en anglais.',
+    q: 'Que doit contenir un Manuel SOP hôtelier ?',
+    a: 'Un Manuel SOP hôtelier utile donne aux équipes un seul endroit où trouver les procédures, standards de service, scripts et checklists dont elles ont besoin pour bien travailler. Il est organisé par département et rédigé pour un usage opérationnel quotidien, comme un outil de travail pour les personnes qui font le service. Il contient les étapes réelles : comment se déroule un check-in, ce que couvre une inspection de chambre, comment une réclamation est escaladée. Les Manuels SOP LuxOps couvrent le Front Office, le Housekeeping, le F&B et le Spa, en français et en anglais.',
     link: '/playbooks',
-    linkLabel: 'Voir les playbooks opérationnels',
+    linkLabel: 'Voir les Manuels SOP',
   },
   {
     q: 'Comment documenter les procédures hôtelières ?',
@@ -183,20 +183,35 @@ export default async function ResourcesPage({
     })),
   }
 
+  const samplePages = isEn
+    ? [
+        { src: '/images/editorial-hospitality/manual-covers-2027/fo-en.jpg', label: 'Front Office' },
+        { src: '/images/editorial-hospitality/manual-covers-2027/hsk-en.jpg', label: 'Housekeeping' },
+        { src: '/images/editorial-hospitality/manual-covers-2027/fb-en.jpg', label: 'Food & Beverage' },
+        { src: '/images/editorial-hospitality/manual-covers-2027/spa-en.jpg', label: 'Spa & Wellness' },
+      ]
+    : [
+        { src: '/images/editorial-hospitality/manual-covers-2027/fo-fr.jpg', label: 'Front Office' },
+        { src: '/images/editorial-hospitality/manual-covers-2027/hsk-fr.jpg', label: 'Housekeeping' },
+        { src: '/images/editorial-hospitality/manual-covers-2027/fb-fr.jpg', label: 'Food & Beverage' },
+        { src: '/images/editorial-hospitality/manual-covers-2027/spa-fr.jpg', label: 'Spa & Wellness' },
+      ]
+
   return (
-    <div className="pt-16">
+    <div className="bg-[#f5f1e9] pt-[var(--site-header-height)] text-[#0f211a]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
       {/* Hero */}
-      <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h1 className="text-4xl sm:text-5xl font-bold text-[#111111] mb-4">
+      <section className="border-b border-[#e7e1d7] px-6 py-16 md:px-16 md:py-20">
+        <div className="mx-auto max-w-[1280px]">
+          <p className="mb-4 text-[10px] font-semibold uppercase tracking-[.18em] text-[#92734a]">LuxOps · {isEn ? 'Knowledge & practice' : 'Savoir-faire & pratique'}</p>
+          <h1 className="max-w-3xl font-display text-4xl font-medium leading-[1.08] text-[#0f211a] sm:text-5xl md:text-[3.5rem]">
             {isEn ? 'Hotel Operations Resources' : 'Ressources Opérationnelles Hôtelières'}
           </h1>
-          <p className="text-xl text-gray-400 leading-relaxed">
+          <p className="mt-5 max-w-2xl text-base leading-7 text-[#687169] md:text-lg">
             {isEn
               ? 'Practical guidance on hotel SOPs, procedures, and service standards. Built around how hotel departments actually operate.'
               : 'R\u00e9ponses pratiques sur les SOPs h\u00f4teliers, les proc\u00e9dures op\u00e9rationnelles et les standards de service. Construites autour du fonctionnement r\u00e9el des d\u00e9partements h\u00f4teliers.'}
@@ -204,74 +219,85 @@ export default async function ResourcesPage({
         </div>
       </section>
 
-      <EditorialRouteImage route="resources" locale={locale} alt={isEn ? 'Hotel operating documents' : 'Documents opérationnels hôteliers'} />
+      <section className="px-6 py-10 md:px-16 md:py-14">
+        <div className="mx-auto grid max-w-[1280px] gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {samplePages.map((sample) => (
+            <article key={sample.label} className="group overflow-hidden rounded-[1.25rem] border border-[#e7e1d7] bg-[#fcfbf8] shadow-[0_8px_24px_rgba(40,40,30,.045)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_16px_34px_rgba(40,40,30,.1)]">
+              <div className="relative flex aspect-[1.2] items-center justify-center overflow-hidden bg-[#eee8dc] p-3">
+                <Image src={sample.src} alt={isEn ? `${sample.label} SOP manual, 2027 edition` : `Manuel SOP ${sample.label}, édition 2027`} fill sizes="(max-width: 768px) 50vw, 25vw" className="object-contain p-3 drop-shadow-[0_10px_14px_rgba(15,33,26,.18)] transition-transform duration-500 group-hover:scale-[1.035]" />
+              </div>
+              <p className="px-4 py-3 text-sm font-medium text-[#314137]">{sample.label}</p>
+            </article>
+          ))}
+        </div>
+      </section>
 
       {/* Free chapter lead magnet */}
-      <section className="py-12 px-6 bg-white border-b border-gray-100">
-        <div className="max-w-4xl mx-auto">
-          <div
-            className="flex flex-col md:flex-row items-center justify-between gap-6 p-8"
-            style={{ backgroundColor: '#eef4ff', borderRadius: '0.125rem' }}
-          >
+      <section className="px-6 py-5 md:px-16">
+        <div className="mx-auto max-w-[1280px]">
+          <div className="flex flex-col items-start justify-between gap-5 rounded-[1.5rem] border border-[#e4d8c2] bg-[#fcfbf8] p-6 shadow-[0_10px_28px_rgba(40,40,30,.045)] md:flex-row md:items-center md:p-8">
             <div>
-              <p className="text-xs font-bold uppercase tracking-widest text-[#003d9b] mb-2">
-                {isEn ? 'Free resource' : 'Ressource gratuite'}
+              <p className="mb-2 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[.16em] text-[#92734a]">
+                <BookOpen size={14} />{isEn ? 'A first look inside' : 'Un premier aperçu du contenu'}
               </p>
-              <h2 className="font-display text-xl font-extrabold text-[#0a1d2e] mb-1">
-                {isEn ? 'Download a free introduction chapter' : 'Télécharger un chapitre d\'introduction gratuit'}
+              <h2 className="mb-1 font-display text-2xl font-medium text-[#0f211a]">
+                {isEn ? 'Receive a sample chapter' : 'Recevoir un chapitre de découverte'}
               </h2>
-              <p className="text-sm text-[#4f6074]">
+              <p className="max-w-2xl text-sm leading-6 text-[#687169]">
                 {isEn
-                  ? 'Choose your department: Front Office, Housekeeping, F&B or Spa, and download the introduction chapter of the corresponding playbook. Free, in English and French.'
-                  : 'Choisissez votre département : Réception, Housekeeping, F&B ou Spa, et téléchargez le chapitre d\'introduction du playbook correspondant. Gratuit, en français et en anglais.'}
+                  ? 'Choose Front Office, Housekeeping, F&B or Spa to receive a chapter from the corresponding SOP manual.'
+                  : 'Choisissez Front Office, Housekeeping, F&B ou Spa pour recevoir un chapitre du manuel SOP correspondant.'}
               </p>
             </div>
             <Link
               href={`/${locale}/free-hotel-procedures`}
-              className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3 bg-[#003d9b] text-white font-bold text-sm whitespace-nowrap"
-              style={{ borderRadius: '0.125rem' }}
+              className="inline-flex min-h-12 flex-shrink-0 items-center gap-2 rounded-full bg-[#0f211a] px-6 py-3 text-sm font-semibold text-[#fcfbf8] shadow-[0_8px_20px_rgba(15,33,26,.14)] transition hover:-translate-y-0.5 hover:bg-[#24362f]"
             >
-              {isEn ? 'Get the free chapter' : 'Obtenir le chapitre gratuit'} <ArrowRight size={14} />
+              <Download size={15} />{isEn ? 'Choose a chapter' : 'Choisir un chapitre'} <ArrowRight size={14} />
             </Link>
           </div>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-[#111111] mb-12">
+      <section className="bg-[#fcfbf8] px-6 py-14 md:px-16 md:py-20">
+        <div className="mx-auto max-w-[980px]">
+          <p className="mb-3 text-[10px] font-semibold uppercase tracking-[.18em] text-[#92734a]">{isEn ? 'Frequently asked questions' : 'Questions fréquentes'}</p>
+          <h2 className="mb-8 font-display text-3xl font-medium text-[#0f211a] md:text-4xl">
             {isEn ? 'Operational Standards & SOPs' : 'Standards Opérationnels & SOPs'}
           </h2>
 
-          <div className="space-y-10">
+          <div className="divide-y divide-[#e7e1d7] rounded-[1.25rem] border border-[#e7e1d7] bg-white px-5 md:px-7">
             {faqs.map((faq, i) => (
-              <div key={i} className="border-b border-gray-100 pb-10 last:border-0">
-                <h3 className="text-xl font-semibold text-[#111111] mb-4">{faq.q}</h3>
-                <p className="text-gray-500 leading-relaxed text-base mb-4">{faq.a}</p>
+              <details key={i} className="group py-5">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-5 font-display text-lg font-medium text-[#24362f] marker:hidden [&::-webkit-details-marker]:hidden">
+                  {faq.q}<span className="text-xl font-light text-[#a58658] transition-transform group-open:rotate-45">+</span>
+                </summary>
+                <p className="max-w-3xl pt-4 text-sm leading-7 text-[#687169]">{faq.a}</p>
                 {faq.link && faq.linkLabel && (
                   <Link
                     href={localizedLink(faq.link)}
-                    className="inline-flex items-center gap-1.5 text-sm font-medium text-[#111111] hover:gap-3 transition-all"
+                    className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-[#705431] transition-all hover:gap-3"
                   >
                     {faq.linkLabel} <ArrowRight size={14} />
                   </Link>
                 )}
-              </div>
+              </details>
             ))}
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-gradient-to-br from-[#111111] to-[#333333]">
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
+      <section className="px-6 py-14 md:px-16 md:py-20">
+        <div className="mx-auto max-w-[980px] rounded-[1.75rem] bg-[#0f211a] px-7 py-12 text-center text-[#fcfbf8] shadow-[0_18px_40px_rgba(15,33,26,.12)] md:px-12">
+          <p className="mb-3 text-[10px] font-semibold uppercase tracking-[.18em] text-[#c8ad7a]">LuxOps</p>
+          <h2 className="mb-4 font-display text-3xl font-medium text-[#fcfbf8] md:text-4xl">
             {isEn
               ? 'Putting structure behind these questions'
               : 'Mettre de la structure derri\u00e8re ces questions'}
           </h2>
-          <p className="text-gray-300 mb-10 text-lg font-light">
+          <p className="mx-auto mb-8 max-w-2xl text-base leading-7 text-[#d1d5cf]">
             {isEn
               ? 'If these are the operational questions your property is working through, LuxOps provides SOP manuals, starter packs and on-property training built for real hotel teams.'
               : 'Si votre établissement cherche à structurer ses opérations, LuxOps propose des manuels SOP, des Starter Packs et des formations en établissement pour les équipes hôtelières.'}
@@ -279,13 +305,13 @@ export default async function ResourcesPage({
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href={`/${locale}/playbooks`}
-              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#111111] font-semibold rounded-xl hover:bg-gray-100 transition-colors text-base"
+              className="inline-flex items-center gap-2 rounded-full bg-[#f5f1e9] px-7 py-3.5 text-sm font-semibold text-[#0f211a] transition hover:-translate-y-0.5 hover:bg-white"
             >
-              {isEn ? 'Explore Playbooks' : 'Découvrir les Playbooks'} <ArrowRight size={18} />
+              {isEn ? 'Explore SOP manuals' : 'Découvrir les Manuels SOP'} <ArrowRight size={16} />
             </Link>
             <Link
               href={`/${locale}/contact`}
-              className="inline-flex items-center gap-2 px-8 py-4 border-2 border-white/30 text-white font-medium rounded-xl hover:border-white/60 transition-colors text-base"
+              className="inline-flex items-center gap-2 rounded-full border border-white/35 px-7 py-3.5 text-sm font-medium text-white transition hover:border-white/70"
             >
               {isEn ? 'Book a Consultation' : 'Réserver une Consultation'}
             </Link>
