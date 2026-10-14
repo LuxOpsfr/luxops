@@ -102,11 +102,11 @@ export default function SampleChapterModal({ locale, onClose }: Props) {
             <p className="mx-auto mt-3 max-w-sm text-sm leading-6 text-[#626b64]">
               {emailSent
                 ? (isEn
-                    ? `The ${selectedDepartment?.en} sample chapter has been sent to ${email}.`
-                    : `Le chapitre découverte ${selectedDepartment?.fr} a été envoyé à ${email}.`)
+                    ? `The ${selectedDepartment?.en} sample has been sent to ${email}.`
+                    : `L’extrait ${selectedDepartment?.fr} a été envoyé à ${email}.`)
                 : (isEn
-                    ? 'This chapter has already been requested with this address. Please check your inbox.'
-                    : 'Ce chapitre a déjà été demandé avec cette adresse. Vérifiez votre boîte mail.')}
+                    ? 'A sample has already been requested with this address. Please check your inbox.'
+                    : 'Un extrait a déjà été demandé avec cette adresse. Vérifiez votre boîte mail.')}
             </p>
             <button type="button" onClick={onClose} className="mt-7 rounded-full bg-[#10251d] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#294437]">
               {isEn ? 'Back to the manuals' : 'Revenir aux manuels'}
@@ -115,13 +115,13 @@ export default function SampleChapterModal({ locale, onClose }: Props) {
         ) : (
           <>
             <p className="mb-2 text-[10px] font-semibold uppercase tracking-[.17em] text-[#987746]">
-              {isEn ? 'A chapter to explore' : 'Un chapitre à découvrir'}
+              {isEn ? 'A sample to explore' : 'Un extrait à découvrir'}
             </p>
             <h2 id="sample-chapter-title" className="max-w-[420px] font-display text-[2rem] font-medium leading-tight tracking-[-.025em] text-[#10251d]">
               {isEn ? 'Choose a department' : 'Choisissez un département'}
             </h2>
             <p className="mt-2 max-w-[420px] text-sm leading-6 text-[#687169]">
-              {isEn ? 'We will send the introductory chapter to your email.' : 'Nous vous envoyons le chapitre d’introduction par email.'}
+              {isEn ? 'We will email you a complimentary sample from the selected department.' : 'Nous vous envoyons par email un extrait opérationnel du département choisi.'}
             </p>
 
             <form onSubmit={handleSubmit} className="mt-6">
@@ -169,10 +169,10 @@ export default function SampleChapterModal({ locale, onClose }: Props) {
               >
                 {status === 'loading'
                   ? (isEn ? 'Sending…' : 'Envoi…')
-                  : (isEn ? 'Email me the chapter' : 'Recevoir le chapitre par email')}
+                  : (isEn ? 'Email me the sample' : 'Recevoir l’extrait par email')}
               </button>
               <p className="mt-3 text-center text-[11px] leading-5 text-[#848981]">
-                {isEn ? 'The chapter download link will be sent to this address.' : 'Le lien de téléchargement du chapitre sera envoyé à cette adresse.'}
+                {isEn ? 'The sample download link will be sent to this address.' : 'Le lien de téléchargement de l’extrait sera envoyé à cette adresse.'}
               </p>
             </form>
           </>

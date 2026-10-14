@@ -1,5 +1,6 @@
 import { getSupabaseAdmin } from '@/lib/supabase-admin'
 import { normalizeLeadEmail } from '@/lib/lead-email'
+import { getResendClient } from '@/lib/resend'
 
 export const runtime = 'nodejs'
 
@@ -20,6 +21,13 @@ const PDF_OBJECTS = {
     fr: 'spa/pdf/fr/ch04-carte-soins.pdf',
     en: 'spa/pdf/en/ch04-treatment-menu.pdf',
   },
+} as const
+
+const DEPARTMENT_LABELS = {
+  fo: 'Front Office',
+  hsk: 'Housekeeping',
+  fb: 'Food & Beverage',
+  spa: 'Spa & Wellness',
 } as const
 
 export async function POST(request: Request) {
@@ -51,6 +59,36 @@ export async function POST(request: Request) {
       .insert({ email: normalizeLeadEmail(email), department: product, locale })
     if (leadError) throw leadError
 
+    // The chapter is delivered directly as a PDF. Also notify LuxOps so this
+    // lead reaches the same inbox as requests from the other lead forms.
+    try {
+      const safeEmail = normalizeLeadEmail(email).replace(/[&<>"']/g, (character) => ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;',
+      })[character] ?? character)
+      await getResendClient().emails.send({
+        from: 'LuxOps <delivery@luxops.fr>',
+        to: 'contact@luxops.fr',
+        replyTo: normalizeLeadEmail(email),
+        subject: `Nouveau téléchargement du chapitre 04 : ${DEPARTMENT_LABELS[product]} (${locale.toUpperCase()})`,
+        html: `
+          <div style="font-family: sans-serif; max-width: 600px;">
+            <h2 style="color: #10251d;">Nouveau lead depuis l’aperçu du chapitre 04</h2>
+            <p><strong>Email :</strong> ${safeEmail}</p>
+            <p><strong>Département :</strong> ${DEPARTMENT_LABELS[product]}</p>
+            <p><strong>Langue :</strong> ${locale.toUpperCase()}</p>
+            <p style="color:#888; font-size:12px;">Le PDF complet a été remis au visiteur et le lead est enregistré dans Supabase.</p>
+          </div>
+        `,
+      })
+    } catch (notificationError) {
+      // Keep the visitor's PDF delivery independent from the internal alert.
+      console.error('[LuxOps Resend Error: chapter lead notification]', notificationError)
+    }
+
     const filenames = {
       fo: { fr: 'LuxOps-Chapitre-04-Communication-Client-2027.pdf', en: 'LuxOps-Chapter-04-Guest-Communication-2027.pdf' },
       hsk: { fr: 'LuxOps-Chapitre-04-Housekeeping-2027.pdf', en: 'LuxOps-Chapter-04-Housekeeping-2027.pdf' },
@@ -66,7 +104,8 @@ export async function POST(request: Request) {
         'Cache-Control': 'no-store',
       },
     })
-  } catch {
+  } catch (error) {
+    console.error('[LuxOps Chapter 04 Download Error]', error)
     return Response.json({ error: 'Chapter PDF is unavailable' }, { status: 404 })
   }
 }

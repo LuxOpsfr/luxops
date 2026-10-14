@@ -50,31 +50,29 @@ export async function POST(request: NextRequest) {
     const isFirstDownload = !lookupError && (previousLeads?.length ?? 0) === 0
 
     // Resolve both language versions from the current public Supabase bucket
-    // before recording a lead or sending the email. This keeps the sample
-    // chapter aligned with the 2027 files used by the client portal.
+    // before recording a lead. The immediate download and follow-up email then
+    // use the same current 2027 sample files.
     const shouldSendWelcomeEmail = isFirstDownload || requestChapterEmail === true
-    let chapterUrls: { en: string; fr: string } | undefined
-    if (shouldSendWelcomeEmail) {
-      try {
-        const objectPaths = FREE_CHAPTER_OBJECTS[department as keyof typeof FREE_CHAPTER_OBJECTS]
-        const resolved = {} as { en: string; fr: string }
-        for (const language of ['en', 'fr'] as const) {
-          const objectPath = objectPaths[language]
-          const folderPath = objectPath.slice(0, objectPath.lastIndexOf('/'))
-          const fileName = objectPath.slice(objectPath.lastIndexOf('/') + 1)
-          const { data: files, error: storageError } = await supabase.storage
-            .from('Playbook')
-            .list(folderPath, { search: fileName, limit: 100 })
-          if (storageError || !files?.some((file) => file.name === fileName)) {
-            throw storageError ?? new Error(`Missing sample chapter: ${objectPath}`)
-          }
-          resolved[language] = supabase.storage.from('Playbook').getPublicUrl(objectPath).data.publicUrl
+    let chapterUrls: { en: string; fr: string }
+    try {
+      const objectPaths = FREE_CHAPTER_OBJECTS[department as keyof typeof FREE_CHAPTER_OBJECTS]
+      const resolved = {} as { en: string; fr: string }
+      for (const language of ['en', 'fr'] as const) {
+        const objectPath = objectPaths[language]
+        const folderPath = objectPath.slice(0, objectPath.lastIndexOf('/'))
+        const fileName = objectPath.slice(objectPath.lastIndexOf('/') + 1)
+        const { data: files, error: storageError } = await supabase.storage
+          .from('Playbook')
+          .list(folderPath, { search: fileName, limit: 100 })
+        if (storageError || !files?.some((file) => file.name === fileName)) {
+          throw storageError ?? new Error(`Missing sample file: ${objectPath}`)
         }
-        chapterUrls = resolved
-      } catch (storageError) {
-        console.error('[LuxOps Lead Magnet Error: chapitre 4 Supabase indisponible]', storageError)
-        return NextResponse.json({ error: 'Chapter unavailable' }, { status: 503 })
+        resolved[language] = supabase.storage.from('Playbook').getPublicUrl(objectPath).data.publicUrl
       }
+      chapterUrls = resolved
+    } catch (storageError) {
+      console.error('[LuxOps Lead Magnet Error: sample unavailable in Supabase]', storageError)
+      return NextResponse.json({ error: 'Sample unavailable' }, { status: 503 })
     }
 
     // 1. Sauvegarde Supabase - priorité absolue
@@ -156,7 +154,7 @@ export async function POST(request: NextRequest) {
     }
 
     // 5. Toujours retourner succès
-    return NextResponse.json({ success: true, welcomeEmailSent })
+    return NextResponse.json({ success: true, welcomeEmailSent, downloadUrls: chapterUrls })
 
   } catch (error) {
     console.error('[LuxOps Lead Magnet Error]', error)

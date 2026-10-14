@@ -37,13 +37,6 @@ const DEPARTMENTS = [
   },
 ]
 
-const DOWNLOAD_URLS: Record<string, { en: string; fr: string }> = {
-  fo: { en: '/downloads/fo-intro-en.pdf', fr: '/downloads/fo-intro-fr.pdf' },
-  hsk: { en: '/downloads/hsk-intro-en.pdf', fr: '/downloads/hsk-intro-fr.pdf' },
-  fb: { en: '/downloads/fb-intro-en.pdf', fr: '/downloads/fb-intro-fr.pdf' },
-  spa: { en: '/downloads/spa-intro-en.pdf', fr: '/downloads/spa-intro-fr.pdf' },
-}
-
 const NEXT_STEPS: Record<string, {
   starter?: { slug: string; en: string; fr: string }
   playbook: { slug: string; en: string; fr: string }
@@ -72,6 +65,7 @@ export default function LeadMagnetForm({ locale }: { locale: string }) {
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [downloadDept, setDownloadDept] = useState<string>('')
+  const [downloadUrls, setDownloadUrls] = useState<{ en: string; fr: string } | null>(null)
   const [welcomeEmailSent, setWelcomeEmailSent] = useState(false)
   const successRef = useRef<HTMLDivElement>(null)
   const successHeadingRef = useRef<HTMLHeadingElement>(null)
@@ -81,8 +75,9 @@ export default function LeadMagnetForm({ locale }: { locale: string }) {
     const params = new URLSearchParams(window.location.search)
     if (params.get('preview') === 'success') {
       const department = params.get('department') || 'hsk'
-      if (DOWNLOAD_URLS[department]) {
+      if (DEPARTMENTS.some((item) => item.key === department)) {
         setDownloadDept(department)
+        setDownloadUrls({ en: '#preview', fr: '#preview' })
         setWelcomeEmailSent(true)
         setStatus('success')
       }
@@ -120,7 +115,11 @@ export default function LeadMagnetForm({ locale }: { locale: string }) {
       })
       if (!res.ok) throw new Error()
       const data = await res.json()
+      if (typeof data.downloadUrls?.en !== 'string' || typeof data.downloadUrls?.fr !== 'string') {
+        throw new Error('Sample download URLs are missing')
+      }
       setDownloadDept(selected)
+      setDownloadUrls({ en: data.downloadUrls.en, fr: data.downloadUrls.fr })
       setWelcomeEmailSent(Boolean(data.welcomeEmailSent))
       setStatus('success')
       posthog.capture('lead_magnet_submitted', {
@@ -133,14 +132,15 @@ export default function LeadMagnetForm({ locale }: { locale: string }) {
   }
 
   if (status === 'success') {
-    const urls = DOWNLOAD_URLS[downloadDept]
+    if (!downloadUrls) return null
+    const urls = downloadUrls
     const dept = DEPARTMENTS.find(d => d.key === downloadDept)
     const nextStep = NEXT_STEPS[downloadDept]
     const primaryDownload = isEn
-      ? { href: urls.en, label: 'Open the English chapter' }
-      : { href: urls.fr, label: 'Ouvrir le chapitre en français' }
+      ? { href: urls.en, label: 'Open the English sample' }
+      : { href: urls.fr, label: 'Ouvrir l’extrait en français' }
     const secondaryDownload = isEn
-      ? { href: urls.fr, label: 'Read the French version' }
+      ? { href: urls.fr, label: 'View the French version' }
       : { href: urls.en, label: 'Consulter la version anglaise' }
     return (
       <div ref={successRef} className="mx-auto max-w-4xl scroll-mt-24">
@@ -152,19 +152,19 @@ export default function LeadMagnetForm({ locale }: { locale: string }) {
             <Check className="text-white" size={24} />
           </div>
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-[#a58658]">
-            {isEn ? 'Your requested document' : 'Votre document demandé'}
+            {isEn ? 'Your complimentary sample' : 'Votre extrait offert'}
           </p>
           <h2
             ref={successHeadingRef}
             tabIndex={-1}
             className="mb-3 font-display text-3xl font-medium text-[#0f211a] outline-none"
           >
-            {isEn ? 'Your chapter is ready' : 'Votre chapitre est prêt'}
+            {isEn ? 'Your sample is ready' : 'Votre extrait est prêt'}
           </h2>
           <p className="mx-auto mb-7 max-w-xl leading-relaxed text-[#5d665f]">
             {isEn
-              ? `Open the introduction chapter of the ${dept?.en} Playbook below.${welcomeEmailSent ? ' A copy of this download link has also been sent to your email address.' : ''}`
-              : `Ouvrez ci-dessous le chapitre d'introduction du Playbook ${dept?.fr}.${welcomeEmailSent ? ' Le lien de téléchargement vient également de vous être envoyé par email.' : ''}`}
+              ? `Open your practical sample from the ${dept?.en} Playbook below.${welcomeEmailSent ? ' A copy of these download links has also been sent to your email address.' : ''}`
+              : `Ouvrez ci-dessous votre extrait opérationnel du Playbook ${dept?.fr}.${welcomeEmailSent ? ' Les liens de téléchargement viennent également de vous être envoyés par email.' : ''}`}
           </p>
           <div className="mx-auto flex max-w-lg flex-col gap-3">
             <a
@@ -200,8 +200,8 @@ export default function LeadMagnetForm({ locale }: { locale: string }) {
             </h3>
             <p className="leading-relaxed text-[#5d665f]">
               {isEn
-                ? 'The free chapter introduces the method. The Starter Pack provides editable daily tools, while the full Playbook brings together the complete department reference.'
-                : 'Le chapitre gratuit présente la méthode. Le Starter Pack apporte des outils quotidiens modifiables, tandis que le Playbook réunit toute la référence du département.'}
+                ? 'The sample offers a practical preview. The Starter Pack provides editable daily tools, while the full Playbook brings together the complete department reference.'
+                : 'L’extrait vous donne un aperçu concret. Le Starter Pack apporte des outils quotidiens modifiables, tandis que le Playbook réunit toute la référence du département.'}
             </p>
           </div>
 
@@ -212,10 +212,10 @@ export default function LeadMagnetForm({ locale }: { locale: string }) {
               </div>
               <p className="mb-2 text-xs font-bold uppercase tracking-widest text-[#737685]">01</p>
               <h4 className="mb-2 font-display text-lg font-medium text-[#0f211a]">
-                {isEn ? 'Free chapter' : 'Chapitre gratuit'}
+                  {isEn ? 'Complimentary sample' : 'Extrait offert'}
               </h4>
               <p className="text-sm leading-relaxed text-[#5d665f]">
-                {isEn ? 'Method overview and introduction.' : 'Présentation de la méthode et introduction.'}
+                {isEn ? 'A practical extract from the selected department.' : 'Un extrait opérationnel du département choisi.'}
               </p>
             </div>
 
@@ -329,7 +329,7 @@ export default function LeadMagnetForm({ locale }: { locale: string }) {
         >
           {status === 'loading'
             ? (isEn ? 'Sending...' : 'Envoi...')
-            : (isEn ? 'Get the Chapter' : 'Recevoir le chapitre')}
+            : (isEn ? 'Get your sample' : 'Recevoir mon extrait')}
           {status !== 'loading' && <ChevronRight size={16} />}
         </button>
       </div>

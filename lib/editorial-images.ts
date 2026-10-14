@@ -14,7 +14,7 @@ export const blogEditorialImages: Record<string, string> = {
   'hotel-fb-restaurant-procedures': image('dept-food-beverage-v2.jpg'),
   'hotel-spa-wellness-sops': image('dept-spa-wellness-v2.jpg'),
   'hotel-room-service-sops': image('fb-room-service.png'),
-  'hotel-standard-operating-procedures': image('hero-lobby-operations-wide-v3.jpg'),
+  'hotel-standard-operating-procedures': image('housekeeping-cottonbro-6466482.jpg'),
   'hotel-front-desk-procedures': image('hero-reception-natural-v4.png'),
   'hotel-staff-training-service-standards': image('training-meeting-natural-v2.jpg'),
   'hotel-staff-turnover-training': image('training-team-natural-v4.png'),
@@ -28,14 +28,14 @@ export const blogEditorialImages: Record<string, string> = {
 }
 
 export const resourceEditorialImages: Record<string, string> = {
-  resources: image('hero-lobby-operations-wide-v3.jpg'),
+  resources: image('housekeeping-cottonbro-6466482.jpg'),
   'housekeeping-sop': image('dept-housekeeping-v2.jpg'),
   'front-office-sop': image('dept-front-office-v2.jpg'),
   'hotel-fb-sop': image('dept-food-beverage-v2.jpg'),
   'sequence-service-restaurant-hotel': image('fb-breakfast-buffet.png'),
   'hotel-night-audit-checklist': image('hero-hotel-operations-briefing-hd.png'),
   'formation-pre-ouverture': image('team-briefing-european-v2.jpg'),
-  'free-hotel-procedures': image('hero-lobby-operations-wide-v3.jpg'),
+  'free-hotel-procedures': image('housekeeping-cottonbro-6466482.jpg'),
 }
 
 export const editorialImageUrl = (file: string, _locale = 'fr') => file

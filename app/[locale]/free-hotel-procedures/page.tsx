@@ -12,11 +12,11 @@ export async function generateMetadata({
   const isEn = locale === 'en'
   return {
     title: isEn
-      ? 'Free SOP Manual Preview | Download an Introduction Chapter | LuxOps'
-      : "Extrait gratuit des manuels SOP | Télécharger un chapitre d'introduction | LuxOps",
+      ? 'Free SOP Manual Sample | LuxOps'
+      : 'Extrait gratuit des manuels SOP | LuxOps',
     description: isEn
-      ? 'Download a free introduction chapter from the LuxOps hotel operations playbooks. Choose your department: Front Office, Housekeeping, Food & Beverage or Spa. Available in English and French.'
-      : "Téléchargez gratuitement un chapitre d'introduction des playbooks opérationnels LuxOps. Choisissez votre département : Front Office, Housekeeping, F&B ou Spa. Disponible en français et en anglais.",
+      ? 'Explore a practical sample from the LuxOps hotel operations playbooks. Choose Front Office, Housekeeping, Food & Beverage or Spa, and receive it in English and French.'
+      : 'Découvrez un extrait opérationnel des playbooks LuxOps. Choisissez Front Office, Housekeeping, Food & Beverage ou Spa, en français et en anglais.',
     alternates: {
       canonical: `https://www.luxops.fr/${locale}/free-hotel-procedures`,
       languages: {
@@ -38,18 +38,14 @@ export default async function FreeHotelProceduresPage({
 
   const whatIsInside = isEn
     ? [
-        'The 5 core operating principles of the department',
-        'How to use the playbook with your team',
-        'Adaptation guide by property type and size',
-        'Internal quality standards and audit preparation framework',
-        'Quick-start guide by role: new staff, experienced staff, trainers',
+        'A focused operational topic from the department you choose',
+        'Practical procedures and standards drawn from the corresponding playbook',
+        'A first look at the level of detail used in the complete SOP reference',
       ]
     : [
-        'Les 5 principes fondamentaux du département',
-        "Comment utiliser le playbook avec votre équipe",
-        "Guide d'adaptation par type et taille d'établissement",
-        'Référentiel qualité interne et cadre de préparation audit',
-        'Guide de démarrage rapide par rôle : nouveau collaborateur, expérimenté, formateur',
+        'Un sujet opérationnel ciblé dans le département choisi',
+        'Des procédures et standards pratiques issus du playbook correspondant',
+        'Un aperçu du niveau de détail de la référence SOP complète',
       ]
 
   return (
@@ -72,13 +68,17 @@ export default async function FreeHotelProceduresPage({
           </h1>
           <p className="text-xl text-[#59645f] max-w-2xl mx-auto leading-relaxed">
             {isEn
-              ? 'Choose your department and download the introduction chapter of the corresponding LuxOps playbook. Free, in English and French.'
-              : "Choisissez votre département et téléchargez le chapitre d'introduction du playbook LuxOps correspondant. Gratuit, en français et en anglais."}
+              ? 'Choose a department to receive a practical sample from its LuxOps playbook, in English and French.'
+              : 'Choisissez un département pour recevoir un extrait opérationnel de son playbook LuxOps, en français et en anglais.'}
           </p>
         </div>
       </section>
 
-      <EditorialRouteImage route="free-hotel-procedures" locale={locale} alt={isEn ? 'Hotel operations manual' : 'Manuel de procédures hôtelières'} />
+      <EditorialRouteImage
+        route="free-hotel-procedures"
+        locale={locale}
+        alt={isEn ? 'A hotel housekeeper arranging a guest-room pillow' : 'Une femme de chambre arrange un oreiller dans une chambre d’hôtel'}
+      />
 
       {/* Stats bar */}
       <section className="py-10 px-6 bg-white border-b border-[#ded8cd]">
@@ -107,8 +107,8 @@ export default async function FreeHotelProceduresPage({
             </h2>
             <p className="text-[#59645f] leading-relaxed">
               {isEn
-                ? 'Each introduction chapter covers the philosophy, principles and structure behind the full playbook. Enter your email and download both language versions immediately.'
-                : "Chaque chapitre d'introduction couvre la philosophie, les principes et la structure du playbook complet. Entrez votre email et téléchargez immédiatement les deux versions linguistiques."}
+                ? 'Get a complimentary sample featuring practical procedures from your chosen department. Enter your email to access both language versions.'
+                : 'Recevez un extrait gratuit présentant des procédures concrètes du département choisi. Indiquez votre email pour accéder aux deux versions linguistiques.'}
             </p>
           </div>
           <LeadMagnetForm locale={locale} />
@@ -128,8 +128,8 @@ export default async function FreeHotelProceduresPage({
               </p>
               <h2 className="font-display text-3xl font-medium text-[#172822] mb-3">
                 {isEn
-                  ? 'Need practical tools after the free chapter?'
-                  : 'Besoin d’outils pratiques après le chapitre gratuit ?'}
+                  ? 'Looking for practical tools to go further?'
+                  : 'Besoin d’outils pratiques pour aller plus loin ?'}
               </h2>
               <p className="text-[#59645f] leading-relaxed">
                 {isEn
@@ -191,8 +191,8 @@ export default async function FreeHotelProceduresPage({
           <div className="max-w-2xl">
             <h2 className="font-display text-3xl font-medium text-[#172822] mb-8">
               {isEn
-                ? 'What is inside the introduction chapter?'
-                : "Qu'est-ce que contient le chapitre d'introduction ?"}
+                ? 'A practical sample from your chosen department'
+                : 'Un aperçu concret de votre département'}
             </h2>
             <div className="space-y-4">
               {whatIsInside.map((item, i) => (
@@ -208,8 +208,8 @@ export default async function FreeHotelProceduresPage({
             <div className="mt-10 pt-8 border-t border-gray-200">
               <p className="text-sm text-[#59645f] leading-relaxed">
                 {isEn
-                  ? 'The full playbook continues with 9 to 11 additional chapters covering department-specific procedures in detail: cleaning protocols, service sequences, inspection criteria, onboarding guides and shift management.'
-                  : "Le playbook complet se poursuit avec 9 à 11 chapitres supplémentaires couvrant les procédures du département en détail : protocoles de nettoyage, séquences de service, critères d'inspection, guides d'intégration et gestion des shifts."}
+                  ? 'The sample is selected to give you a direct, practical view of the procedures available in the full department playbook.'
+                  : 'Cet extrait vous donne un aperçu direct et concret des procédures réunies dans le playbook complet de votre département.'}
               </p>
             </div>
           </div>
