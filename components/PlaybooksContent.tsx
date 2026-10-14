@@ -227,6 +227,19 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                 <ShoppingBag size={15} strokeWidth={1.7} />{text.bundleCta}<ArrowRight size={14} />
               </AddToCartButton>
             </div>
+            <button
+              type="button"
+              onClick={() => setIsSampleModalOpen(true)}
+              className="mt-2 inline-flex min-h-11 items-center justify-center gap-2 self-start rounded-full border border-[#cdb78e] bg-white px-5 text-[11px] font-semibold text-[#24362f] shadow-[0_4px_12px_rgba(57,50,36,.04)] transition duration-300 hover:-translate-y-0.5 hover:border-[#a7834d] hover:bg-[#fffdf8] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8b6a36]"
+            >
+              <Download size={15} strokeWidth={1.7} className="text-[#8b6a36]" />
+              {lang === 'fr'
+                ? 'Recevoir un chapitre découverte'
+                : lang === 'es'
+                  ? 'Recibir un capítulo de muestra'
+                  : 'Get a sample chapter'}
+              <ArrowRight size={14} />
+            </button>
           </div>
 
           <div className="relative mx-auto aspect-[1.3] w-full max-w-[740px] rounded-[28px] bg-[#eee8dc] p-3 shadow-[0_18px_42px_rgba(78,63,40,.13)] sm:rounded-[34px] sm:p-4 lg:max-w-none">
