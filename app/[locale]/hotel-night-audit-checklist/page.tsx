@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import TrackedLink from '@/components/TrackedLink'
+import ChecklistEditorialHero from '@/components/ChecklistEditorialHero'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
@@ -254,51 +255,36 @@ export default async function HotelNightAuditChecklistPage({ params }: { params:
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <main className="min-h-screen bg-white">
+      <main className="min-h-screen bg-[#fcfbf8]">
 
-        {/* Hero */}
-        <section className="bg-[#1A2E44] text-white px-6 pt-36 md:pt-40 pb-20">
-          <div className="max-w-3xl mx-auto text-center">
-            <span className="inline-block bg-[#0056D2] text-white text-xs font-semibold px-3 py-1 rounded-full mb-6 tracking-widest uppercase">
-              {isEN ? 'Front Office Night Operations' : 'Réception Service de nuit'}
-            </span>
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">
-              {isEN
-                ? 'Hotel Night Audit Checklist: What to Close, Reconcile and Hand Over'
-                : 'Checklist Night Audit : clôture PMS, VCC, caisse et passation'}
-            </h1>
-            <p className="text-lg text-blue-100 max-w-2xl mx-auto mb-8">
-              {isEN
-                ? 'A printable Night Audit checklist for shift takeover, credit control, VCC processing, PMS close, next-day preparation and AM handover. Adapted from the LuxOps Front Office Playbook.'
-                : 'Une checklist Night Audit imprimable pour la prise de shift, le contrôle crédit, les VCC, la clôture PMS, la préparation AM et la passation. Adaptée du Playbook Front Office LuxOps.'}
-            </p>
-            <TrackedLink
-              href={isEN ? '/downloads/checklists/en/night-audit-checklist.pdf' : '/downloads/checklists/fr/checklist-night-audit.pdf'}
-              download
-              eventName="free_checklist_download_clicked"
-              eventProperties={{
-                source_page: "/" + locale + "/hotel-night-audit-checklist",
-                checklist_name: isEN ? 'night_audit_checklist' : 'checklist_night_audit',
-                department: 'front_office',
-                locale,
-                placement: 'hero',
-              }}
-              className="inline-block bg-white text-[#1A2E44] px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 transition-colors"
-            >
-              {isEN ? 'Download a free printable PDF copy' : 'Télécharger le PDF gratuit à imprimer'}
-            </TrackedLink>
-          </div>
-        </section>
-
-        <EditorialRouteImage route="hotel-night-audit-checklist" alt="Hotel front desk at night" />
+        <ChecklistEditorialHero
+          eyebrow={isEN ? 'Front Office · Night Operations' : 'Réception · Service de nuit'}
+          title={isEN ? 'Hotel Night Audit Checklist' : 'Checklist Night Audit'}
+          description={isEN
+            ? 'A practical sequence for credit control, VCC processing, PMS close, next-day preparation and morning handover.'
+            : 'Une séquence pratique pour le contrôle crédit, les VCC, la clôture PMS, la préparation du lendemain et la passation du matin.'}
+          imageSrc="/images/editorial-hospitality/hero-hotel-operations-briefing-hd.png"
+          imageAlt={isEN ? 'Hotel operations team reviewing the evening handover' : 'Équipe hôtelière préparant la passation opérationnelle'}
+          imageAspect="16/10"
+        >
+          <TrackedLink
+            href={isEN ? '/downloads/checklists/en/night-audit-checklist.pdf' : '/downloads/checklists/fr/checklist-night-audit.pdf'}
+            download
+            eventName="free_checklist_download_clicked"
+            eventProperties={{ source_page: `/${locale}/hotel-night-audit-checklist`, checklist_name: isEN ? 'night_audit_checklist' : 'checklist_night_audit', department: 'front_office', locale, placement: 'hero' }}
+            className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#0f211a] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#24362f]"
+          >
+            {isEN ? 'Download the free PDF' : 'Télécharger le PDF gratuit'}
+          </TrackedLink>
+        </ChecklistEditorialHero>
 
         {/* Step-by-step checklist */}
         <section className="max-w-4xl mx-auto px-6 py-12">
-          <div className="border border-gray-200 rounded-2xl p-6 md:p-8 bg-white shadow-sm">
-            <p className="text-[10px] font-bold uppercase tracking-widest text-[#003d9b] mb-3">
+          <div className="rounded-[1.75rem] border border-[#e7e1d7] bg-white p-6 shadow-[0_12px_36px_rgba(15,33,26,0.05)] md:p-9">
+            <p className="text-[10px] font-bold uppercase tracking-widest text-[#a58658] mb-3">
               {isEN ? 'Step-by-step procedure' : 'Séquence opérationnelle'}
             </p>
-            <h2 className="text-2xl font-bold text-[#1A2E44] mb-4">
+            <h2 className="text-2xl font-bold text-[#0f211a] mb-4">
               {isEN
                 ? 'Night Audit checklist: the 6 steps to close the day correctly'
                 : 'Checklist Night Audit : les 6 étapes pour clôturer la journée correctement'}
@@ -326,11 +312,11 @@ export default async function HotelNightAuditChecklistPage({ params }: { params:
                     'Rapports et préparation AM',
                     'Passation AM et main courante',
                   ]).map((item, index) => (
-                <div key={item} className="flex items-start gap-3 rounded-lg border border-gray-100 bg-gray-50 p-4">
-                  <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-[#003d9b] text-xs font-bold text-white">
+                <div key={item} className="flex items-start gap-3 rounded-2xl border border-[#eee8de] bg-[#fcfbf8] p-4">
+                  <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-[#a58658] text-xs font-bold text-white">
                     {index + 1}
                   </span>
-                  <span className="text-sm font-semibold text-[#1A2E44] leading-snug">{item}</span>
+                  <span className="text-sm font-semibold text-[#0f211a] leading-snug">{item}</span>
                 </div>
               ))}
             </div>
@@ -338,12 +324,12 @@ export default async function HotelNightAuditChecklistPage({ params }: { params:
         </section>
 
         {/* Product paths */}
-        <section className="py-10 px-6 bg-white border-b border-gray-100">
+        <section className="py-10 px-6 bg-[#fcfbf8] border-b border-[#e7e1d7]">
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-[10px] font-bold uppercase tracking-widest text-[#003d9b] mb-3">
+            <p className="text-[10px] font-bold uppercase tracking-widest text-[#a58658] mb-3">
               {isEN ? 'Front Office tools' : 'Outils réception'}
             </p>
-            <h2 className="text-2xl font-bold text-[#1A2E44] mb-3">
+            <h2 className="text-2xl font-bold text-[#0f211a] mb-3">
               {isEN ? 'Need practical night audit tools?' : 'Besoin d’outils pratiques pour le Night Audit ?'}
             </h2>
             <p className="text-sm text-gray-500 leading-relaxed max-w-2xl mx-auto mb-7">
@@ -361,7 +347,7 @@ export default async function HotelNightAuditChecklistPage({ params }: { params:
                   product: 'front_office_starter_pack',
                   cta_label: isEN ? 'View the Front Office Starter Pack' : 'Voir le Starter Pack Front Office',
                 }}
-                className="inline-flex min-w-[240px] items-center justify-center gap-2 rounded-lg bg-[#003d9b] px-5 py-3 text-sm font-semibold text-white hover:bg-[#002d7a] transition-colors"
+                className="inline-flex min-w-[240px] items-center justify-center gap-2 rounded-lg bg-[#a58658] px-5 py-3 text-sm font-semibold text-white hover:bg-[#92734a] transition-colors"
               >
                 {isEN ? 'View the Front Office Starter Pack' : 'Voir le Starter Pack Front Office'} <ArrowRight size={16} />
               </TrackedLink>
@@ -374,7 +360,7 @@ export default async function HotelNightAuditChecklistPage({ params }: { params:
                   product: 'front_office_playbook',
                   cta_label: isEN ? 'View the Front Office Playbook' : 'Voir le Playbook Front Office',
                 }}
-                className="inline-flex min-w-[240px] items-center justify-center gap-2 rounded-lg border border-[#003d9b] px-5 py-3 text-sm font-semibold text-[#003d9b] hover:bg-[#eef4ff] transition-colors"
+                className="inline-flex min-w-[240px] items-center justify-center gap-2 rounded-lg border border-[#a58658] px-5 py-3 text-sm font-semibold text-[#a58658] hover:bg-[#f5f1e9] transition-colors"
               >
                 {isEN ? 'View the Front Office Playbook' : 'Voir le Playbook Front Office'} <ArrowRight size={16} />
               </TrackedLink>
@@ -385,14 +371,14 @@ export default async function HotelNightAuditChecklistPage({ params }: { params:
         {/* Checklist hub link */}
         <section
           className="py-8 border-b"
-          style={{ backgroundColor: '#eef4ff', borderColor: 'rgba(195,198,214,0.3)' }}
+          style={{ backgroundColor: '#f5f1e9', borderColor: 'rgba(195,198,214,0.3)' }}
         >
           <div className="max-w-3xl mx-auto px-6 text-center">
-            <p className="text-sm text-[#4f6074] leading-relaxed">
+            <p className="text-sm text-[#5d665f] leading-relaxed">
               {isEN
                 ? 'Need more printable resources? View the full checklist hub for front office, housekeeping, restaurant opening and room service.'
                 : 'Besoin d’autres ressources prêtes à imprimer ? Consultez le hub complet des checklists : réception, housekeeping, ouverture restaurant et room service.'}{' '}
-              <Link href={isEN ? '/en/free-hotel-checklists' : '/fr/checklists-hotel-gratuites'} className="font-semibold text-[#003d9b] hover:underline">
+              <Link href={isEN ? '/en/free-hotel-checklists' : '/fr/checklists-hotel-gratuites'} className="font-semibold text-[#a58658] hover:underline">
                 {isEN ? 'View all free checklists' : 'Voir toutes les checklists gratuites'}
               </Link>
             </p>
@@ -401,7 +387,7 @@ export default async function HotelNightAuditChecklistPage({ params }: { params:
 
         {/* Why night audit matters */}
         <section className="max-w-3xl mx-auto px-6 py-12">
-          <h2 className="text-2xl font-bold text-[#1A2E44] mb-4">
+          <h2 className="text-2xl font-bold text-[#0f211a] mb-4">
             {isEN
               ? 'Why the night audit is the most under-documented shift'
               : 'Pourquoi le Night Audit est souvent le shift le moins documenté'}
@@ -445,10 +431,10 @@ export default async function HotelNightAuditChecklistPage({ params }: { params:
         {phases.map((phase, pi) => (
           <section key={pi} className="max-w-3xl mx-auto px-6 pb-12">
             <div className="mb-6">
-              <h2 className="text-2xl font-bold text-[#1A2E44] mb-2">{phase.phase}</h2>
+              <h2 className="text-2xl font-bold text-[#0f211a] mb-2">{phase.phase}</h2>
               <p className="text-gray-500 text-sm leading-relaxed">{phase.intro}</p>
             </div>
-            <div className="border border-gray-200 rounded-xl overflow-hidden">
+            <div className="border border-[#e7e1d7] rounded-xl overflow-hidden">
               <ul className="divide-y divide-gray-100">
                 {phase.items.map((item, ii) => (
                   <li key={ii} className="flex items-start gap-3 px-5 py-3 text-sm text-gray-700">
@@ -462,9 +448,9 @@ export default async function HotelNightAuditChecklistPage({ params }: { params:
         ))}
 
         {/* How night audit connects to morning */}
-        <section className="py-14 px-6 bg-gray-50 border-t border-b border-gray-100">
+        <section className="py-14 px-6 bg-[#f5f1e9] border-t border-b border-[#e7e1d7]">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl font-bold text-[#1A2E44] mb-4">
+            <h2 className="text-2xl font-bold text-[#0f211a] mb-4">
               {isEN
                 ? 'How the night audit connects to morning operations'
                 : 'Comment le Night Audit conditionne le Shift AM'}
@@ -502,14 +488,14 @@ export default async function HotelNightAuditChecklistPage({ params }: { params:
         </section>
 
         {/* FAQ */}
-        <section className="max-w-3xl mx-auto px-6 py-12 border-t border-gray-100">
-          <h2 className="text-2xl font-bold text-[#1A2E44] mb-8">
+        <section className="max-w-3xl mx-auto px-6 py-12 border-t border-[#e7e1d7]">
+          <h2 className="text-2xl font-bold text-[#0f211a] mb-8">
             {isEN ? 'Frequently Asked Questions' : 'Questions fréquentes'}
           </h2>
           <div className="space-y-6">
             {faq.map(({ q, a }, i) => (
-              <div key={i} className="border-b border-gray-100 pb-6 last:border-0 last:pb-0">
-                <h3 className="font-semibold text-[#1A2E44] mb-2">{q}</h3>
+              <div key={i} className="border-b border-[#e7e1d7] pb-6 last:border-0 last:pb-0">
+                <h3 className="font-semibold text-[#0f211a] mb-2">{q}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{a}</p>
               </div>
             ))}
@@ -517,8 +503,8 @@ export default async function HotelNightAuditChecklistPage({ params }: { params:
         </section>
 
         {/* Related resources */}
-        <section className="max-w-3xl mx-auto px-6 py-12 border-t border-gray-100">
-          <h2 className="text-xl font-bold text-[#1A2E44] mb-6">
+        <section className="max-w-3xl mx-auto px-6 py-12 border-t border-[#e7e1d7]">
+          <h2 className="text-xl font-bold text-[#0f211a] mb-6">
             {isEN ? 'Related resources' : 'Ressources associées'}
           </h2>
           <div className="grid sm:grid-cols-2 gap-4">
@@ -547,9 +533,9 @@ export default async function HotelNightAuditChecklistPage({ params }: { params:
               <Link
                 key={link.href}
                 href={link.href}
-                className="border border-gray-200 rounded-xl p-5 hover:border-[#1A2E44] transition-colors group"
+                className="border border-[#e7e1d7] rounded-xl p-5 hover:border-[#a58658] transition-colors group"
               >
-                <p className="font-semibold text-[#1A2E44] group-hover:underline">{link.title}</p>
+                <p className="font-semibold text-[#0f211a] group-hover:underline">{link.title}</p>
                 <p className="text-sm text-gray-500 mt-1">{link.desc}</p>
               </Link>
             ))}
@@ -557,12 +543,12 @@ export default async function HotelNightAuditChecklistPage({ params }: { params:
         </section>
 
         {/* CTA */}
-        <section className="bg-[#1A2E44] py-16 px-6">
+        <section className="bg-[#0f211a] py-16 px-6">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-2xl font-bold text-white mb-4">
               {isEN ? 'The complete front office system' : 'Le système réception complet'}
             </h2>
-            <p className="text-blue-100 mb-8">
+            <p className="text-[#e9e5dc] mb-8">
               {isEN
                 ? 'The LuxOps Front Office Playbook covers every shift: opening, day operations, night audit and handover. 12 chapters, PDF and PowerPoint, EN and FR.'
                 : 'Le Playbook Réception LuxOps couvre chaque shift : ouverture, opérations de jour, Night Audit, contrôle crédit, VCC, caisse et passation. 12 chapitres, PDF et PowerPoint, EN et FR.'}
@@ -576,7 +562,7 @@ export default async function HotelNightAuditChecklistPage({ params }: { params:
                 product: 'front_office_playbook',
                 cta_label: isEN ? 'View Front Office Playbook' : 'Voir le Playbook Réception',
               }}
-              className="inline-block bg-white text-[#1A2E44] px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 transition-colors"
+              className="inline-block bg-[#fcfbf8] text-[#0f211a] px-8 py-4 rounded-xl font-semibold hover:bg-[#f5f1e9] transition-colors"
             >
               {isEN ? 'View Front Office Playbook' : 'Voir le Playbook Réception'}
             </TrackedLink>
@@ -587,4 +573,3 @@ export default async function HotelNightAuditChecklistPage({ params }: { params:
     </>
   )
 }
-import EditorialRouteImage from '@/components/EditorialRouteImage'

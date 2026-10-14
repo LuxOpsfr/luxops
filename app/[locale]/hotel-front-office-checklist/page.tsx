@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import TrackedLink from '@/components/TrackedLink'
+import ChecklistEditorialHero from '@/components/ChecklistEditorialHero'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
@@ -331,49 +332,36 @@ export default async function HotelFrontOfficeChecklistPage({ params }: { params
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <main className="min-h-screen bg-white">
+      <main className="min-h-screen bg-[#fcfbf8]">
 
-        {/* Hero */}
-        <section className="bg-[#1A2E44] text-white px-6 pt-36 md:pt-40 pb-20">
-          <div className="max-w-3xl mx-auto text-center">
-            <span className="inline-block bg-white/10 text-white text-xs font-semibold px-4 py-2 rounded-full mb-6 tracking-widest uppercase">
-              {isEN ? 'Front Office checklist' : 'Checklist réception'}
-            </span>
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">
-              {isEN
-                ? 'Front Desk Daily Checklist for Hotels'
-                : 'Checklist quotidienne réception'}
-            </h1>
-            <p className="text-lg text-blue-100 max-w-2xl mx-auto mb-8">
-              {isEN
-                ? 'A printable checklist for shift opening, live desk control, VIP arrivals, billing follow-up and shift handover. Adapted from the LuxOps Front Office Playbook.'
-                : 'Une checklist imprimable pour la prise de poste, le suivi du desk, les arrivées VIP, la facturation et la passation. Adaptée du Playbook Front Office LuxOps.'}
-            </p>
-            <TrackedLink
-              href={isEN ? '/downloads/checklists/en/front-desk-daily-checklist.pdf' : '/downloads/checklists/fr/checklist-quotidienne-reception.pdf'}
-              download
-              eventName="free_checklist_download_clicked"
-              eventProperties={{
-                source_page: "/" + locale + "/hotel-front-office-checklist",
-                checklist_name: isEN ? 'front_desk_daily_checklist' : 'checklist_quotidienne_reception',
-                department: 'front_office',
-                locale,
-                placement: 'hero',
-              }}
-              className="inline-block bg-white text-[#1A2E44] px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 transition-colors"
-            >
-              {isEN ? 'Download a free printable PDF copy' : 'Télécharger le PDF gratuit à imprimer'}
-            </TrackedLink>
-          </div>
-        </section>
+        <ChecklistEditorialHero
+          eyebrow={isEN ? 'Front Office operations' : 'Opérations réception'}
+          title={isEN ? 'Front Desk Daily Checklist' : 'Checklist quotidienne réception'}
+          description={isEN
+            ? 'A clear shift routine for desk opening, guest arrivals, billing checks and a reliable handover.'
+            : 'Une routine de shift claire pour l’ouverture du desk, les arrivées, le contrôle de la facturation et une passation fiable.'}
+          imageSrc="/images/editorial-hospitality/hero-reception-natural-v4.png"
+          imageAlt={isEN ? 'Front office team welcoming hotel guests' : 'Équipe de réception accueillant des clients à l’hôtel'}
+          imageAspect="16/10"
+        >
+          <TrackedLink
+            href={isEN ? '/downloads/checklists/en/front-desk-daily-checklist.pdf' : '/downloads/checklists/fr/checklist-quotidienne-reception.pdf'}
+            download
+            eventName="free_checklist_download_clicked"
+            eventProperties={{ source_page: `/${locale}/hotel-front-office-checklist`, checklist_name: isEN ? 'front_desk_daily_checklist' : 'checklist_quotidienne_reception', department: 'front_office', locale, placement: 'hero' }}
+            className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#0f211a] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#24362f]"
+          >
+            {isEN ? 'Download the free PDF' : 'Télécharger le PDF gratuit'}
+          </TrackedLink>
+        </ChecklistEditorialHero>
 
         {/* Product paths */}
-        <section className="py-10 px-6 bg-white border-b border-gray-100">
+        <section className="bg-[#fcfbf8] px-6 py-12 md:py-16">
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-[10px] font-bold uppercase tracking-widest text-[#003d9b] mb-3">
+            <p className="text-[10px] font-bold uppercase tracking-widest text-[#a58658] mb-3">
               {isEN ? 'Front Office tools' : 'Outils réception'}
             </p>
-            <h2 className="text-2xl font-bold text-[#1A2E44] mb-3">
+            <h2 className="text-2xl font-bold text-[#0f211a] mb-3">
               {isEN ? 'Need practical front office tools?' : 'Besoin d’outils pratiques pour la réception ?'}
             </h2>
             <p className="text-sm text-gray-500 leading-relaxed max-w-2xl mx-auto mb-7">
@@ -391,7 +379,7 @@ export default async function HotelFrontOfficeChecklistPage({ params }: { params
                   product: 'front_office_starter_pack',
                   cta_label: isEN ? 'View the Front Office Starter Pack' : 'Voir le Starter Pack Front Office',
                 }}
-                className="inline-flex min-w-[240px] items-center justify-center gap-2 rounded-lg bg-[#003d9b] px-5 py-3 text-sm font-semibold text-white hover:bg-[#002d7a] transition-colors"
+                className="inline-flex min-h-12 min-w-[240px] items-center justify-center gap-2 rounded-full bg-[#0f211a] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#24362f]"
               >
                 {isEN ? 'View the Front Office Starter Pack' : 'Voir le Starter Pack Front Office'} <ArrowRight size={16} />
               </TrackedLink>
@@ -404,7 +392,7 @@ export default async function HotelFrontOfficeChecklistPage({ params }: { params
                   product: 'front_office_playbook',
                   cta_label: isEN ? 'View the Front Office Playbook' : 'Voir le Playbook Front Office',
                 }}
-                className="inline-flex min-w-[240px] items-center justify-center gap-2 rounded-lg border border-[#003d9b] px-5 py-3 text-sm font-semibold text-[#003d9b] hover:bg-[#eef4ff] transition-colors"
+                className="inline-flex min-h-12 min-w-[240px] items-center justify-center gap-2 rounded-full border border-[#d8cfc0] bg-white px-6 py-3 text-sm font-semibold text-[#24362f] transition-colors hover:bg-[#f5f1e9]"
               >
                 {isEN ? 'View the Front Office Playbook' : 'Voir le Playbook Front Office'} <ArrowRight size={16} />
               </TrackedLink>
@@ -413,11 +401,11 @@ export default async function HotelFrontOfficeChecklistPage({ params }: { params
         </section>
 
         {/* Related operating procedures */}
-        <section className="max-w-4xl mx-auto px-6 py-10 border-b border-gray-100">
-          <p className="text-[10px] font-bold uppercase tracking-widest text-[#003d9b] mb-3">
+        <section className="max-w-4xl mx-auto px-6 py-10 border-b border-[#e7e1d7]">
+          <p className="text-[10px] font-bold uppercase tracking-widest text-[#a58658] mb-3">
             {isEN ? 'Related front desk procedures' : 'Procédures réception associées'}
           </p>
-          <h2 className="text-2xl font-bold text-[#1A2E44] mb-6">
+          <h2 className="text-2xl font-bold text-[#0f211a] mb-6">
             {isEN ? 'Turn the checklist into a complete shift routine' : 'Transformer la checklist en vraie routine de shift'}
           </h2>
           <div className="grid sm:grid-cols-3 gap-4">
@@ -441,9 +429,9 @@ export default async function HotelFrontOfficeChecklistPage({ params }: { params
               <Link
                 key={link.href}
                 href={link.href}
-                className="rounded-xl border border-gray-200 bg-white p-5 transition-colors hover:border-[#003d9b]"
+                className="rounded-[1.35rem] border border-[#e7e1d7] bg-white p-5 shadow-[0_8px_24px_rgba(15,33,26,0.04)] transition duration-300 hover:-translate-y-0.5 hover:border-[#cbb487] hover:shadow-[0_14px_32px_rgba(15,33,26,0.08)]"
               >
-                <h3 className="font-semibold text-[#1A2E44] mb-2">{link.title}</h3>
+                <h3 className="font-semibold text-[#0f211a] mb-2">{link.title}</h3>
                 <p className="text-sm text-gray-500 leading-relaxed">{link.desc}</p>
               </Link>
             ))}
@@ -453,14 +441,14 @@ export default async function HotelFrontOfficeChecklistPage({ params }: { params
         {/* Checklist hub link */}
         <section
           className="py-8 border-b"
-          style={{ backgroundColor: '#eef4ff', borderColor: 'rgba(195,198,214,0.3)' }}
+          style={{ backgroundColor: '#f5f1e9', borderColor: 'rgba(195,198,214,0.3)' }}
         >
           <div className="max-w-3xl mx-auto px-6 text-center">
-            <p className="text-sm text-[#4f6074] leading-relaxed">
+            <p className="text-sm text-[#5d665f] leading-relaxed">
               {isEN
                 ? 'Need more printable resources? View the full checklist hub for housekeeping, front office, Night Audit, restaurant opening and room service.'
                 : 'Besoin d’autres ressources prêtes à imprimer ? Consultez le hub complet des checklists : housekeeping, réception, Night Audit, ouverture restaurant et room service.'}{' '}
-              <Link href={isEN ? '/en/free-hotel-checklists' : '/fr/checklists-hotel-gratuites'} className="font-semibold text-[#003d9b] hover:underline">
+              <Link href={isEN ? '/en/free-hotel-checklists' : '/fr/checklists-hotel-gratuites'} className="font-semibold text-[#a58658] hover:underline">
                 {isEN ? 'View all free checklists' : 'Voir toutes les checklists gratuites'}
               </Link>
             </p>
@@ -469,7 +457,7 @@ export default async function HotelFrontOfficeChecklistPage({ params }: { params
 
         {/* Intro */}
         <section className="max-w-3xl mx-auto px-6 py-12">
-          <h2 className="text-2xl font-bold text-[#1A2E44] mb-4">
+          <h2 className="text-2xl font-bold text-[#0f211a] mb-4">
             {isEN ? 'One standard, applied at every handover' : 'Un standard, appliqué à chaque passation'}
           </h2>
           {isEN ? (
@@ -487,14 +475,14 @@ export default async function HotelFrontOfficeChecklistPage({ params }: { params
         {roles.map((role, ri) => (
           <section key={ri} className="max-w-3xl mx-auto px-6 pb-12">
             <div className="mb-6">
-              <h2 className="text-2xl font-bold text-[#1A2E44] mb-2">{role.role}</h2>
+              <h2 className="text-2xl font-bold text-[#0f211a] mb-2">{role.role}</h2>
               <p className="text-gray-500 text-sm leading-relaxed">{role.intro}</p>
             </div>
             <div className="space-y-4">
               {role.sections.map((sec, si) => (
-                <div key={si} className="border border-gray-200 rounded-xl overflow-hidden">
-                  <div className="bg-[#F5F7FA] px-5 py-3">
-                    <h3 className="font-semibold text-[#1A2E44] text-sm uppercase tracking-wide">{sec.title}</h3>
+                <div key={si} className="border border-[#e7e1d7] rounded-xl overflow-hidden">
+                  <div className="bg-[#f5f1e9] px-5 py-3">
+                    <h3 className="font-semibold text-[#0f211a] text-sm uppercase tracking-wide">{sec.title}</h3>
                   </div>
                   <ul className="divide-y divide-gray-100">
                     {sec.items.map((item, ii) => (
@@ -512,7 +500,7 @@ export default async function HotelFrontOfficeChecklistPage({ params }: { params
 
         {/* Audit scoring grid */}
         <section className="max-w-3xl mx-auto px-6 pb-12">
-          <h2 className="text-2xl font-bold text-[#1A2E44] mb-2">
+          <h2 className="text-2xl font-bold text-[#0f211a] mb-2">
             {isEN ? 'Front Office Quality Scoring Grid' : 'Grille de notation qualité réception'}
           </h2>
           <p className="text-gray-500 text-sm mb-6 leading-relaxed">
@@ -520,10 +508,10 @@ export default async function HotelFrontOfficeChecklistPage({ params }: { params
               ? 'Score each point 0 to 2. Total out of 20. Use this for internal brand checks and preparation work. 18 to 20: strong execution. 14 to 17: monitor. Below 14: immediate action required. LuxOps is not affiliated with LQA or Forbes Travel Guide.'
               : "Notez chaque point de 0 à 2. Total sur 20. Utilisez cette grille pour les contrôles internes et la préparation qualité. 18 à 20 : exécution solide. 14 à 17 : à surveiller. En dessous de 14 : action immédiate requise. LuxOps n'est pas affilié à LQA ni à Forbes Travel Guide."}
           </p>
-          <div className="border border-gray-200 rounded-xl overflow-hidden">
+          <div className="border border-[#e7e1d7] rounded-xl overflow-hidden">
             <table className="w-full text-sm">
               <thead>
-                <tr className="bg-[#1A2E44] text-white">
+                <tr className="bg-[#0f211a] text-white">
                   <th className="text-left px-4 py-3 font-semibold w-1/4">
                     {isEN ? 'Category' : 'Catégorie'}
                   </th>
@@ -537,13 +525,13 @@ export default async function HotelFrontOfficeChecklistPage({ params }: { params
               </thead>
               <tbody>
                 {auditRows.map((row, i) => (
-                  <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-[#F5F7FA]'}>
+                  <tr key={i} className={i % 2 === 0 ? 'bg-[#fcfbf8]' : 'bg-[#f5f1e9]'}>
                     <td className="px-4 py-3 text-gray-500 text-xs font-medium">{row.category}</td>
                     <td className="px-4 py-3 text-gray-700">{row.checkpoint}</td>
                     <td className="px-4 py-3 text-center text-gray-400 font-mono">/2</td>
                   </tr>
                 ))}
-                <tr className="bg-[#1A2E44] text-white font-bold">
+                <tr className="bg-[#0f211a] text-white font-bold">
                   <td className="px-4 py-3" colSpan={2}>Total</td>
                   <td className="px-4 py-3 text-center font-mono">/20</td>
                 </tr>
@@ -553,8 +541,8 @@ export default async function HotelFrontOfficeChecklistPage({ params }: { params
         </section>
 
         {/* SOP implementation */}
-        <section className="max-w-3xl mx-auto px-6 py-12 border-t border-gray-100">
-          <h2 className="text-2xl font-bold text-[#1A2E44] mb-6">
+        <section className="max-w-3xl mx-auto px-6 py-12 border-t border-[#e7e1d7]">
+          <h2 className="text-2xl font-bold text-[#0f211a] mb-6">
             {isEN
               ? 'How to implement front office checklists that actually get used'
               : 'Comment mettre en place des checklists réception réellement utilisées'}
@@ -566,7 +554,7 @@ export default async function HotelFrontOfficeChecklistPage({ params }: { params
                   {String(i + 1).padStart(2, '0')}
                 </div>
                 <div>
-                  <h3 className="font-semibold text-[#1A2E44] mb-1">{item.title}</h3>
+                  <h3 className="font-semibold text-[#0f211a] mb-1">{item.title}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed">{item.body}</p>
                 </div>
               </div>
@@ -575,14 +563,14 @@ export default async function HotelFrontOfficeChecklistPage({ params }: { params
         </section>
 
         {/* FAQ */}
-        <section className="max-w-3xl mx-auto px-6 py-12 border-t border-gray-100">
-          <h2 className="text-2xl font-bold text-[#1A2E44] mb-8">
+        <section className="max-w-3xl mx-auto px-6 py-12 border-t border-[#e7e1d7]">
+          <h2 className="text-2xl font-bold text-[#0f211a] mb-8">
             {isEN ? 'Frequently Asked Questions' : 'Questions fréquentes'}
           </h2>
           <div className="space-y-6">
             {faq.map(({ q, a }, i) => (
-              <div key={i} className="border-b border-gray-100 pb-6 last:border-0 last:pb-0">
-                <h3 className="font-semibold text-[#1A2E44] mb-2">{q}</h3>
+              <div key={i} className="border-b border-[#e7e1d7] pb-6 last:border-0 last:pb-0">
+                <h3 className="font-semibold text-[#0f211a] mb-2">{q}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{a}</p>
               </div>
             ))}
@@ -590,8 +578,8 @@ export default async function HotelFrontOfficeChecklistPage({ params }: { params
         </section>
 
         {/* Related resources */}
-        <section className="max-w-3xl mx-auto px-6 py-12 border-t border-gray-100">
-          <h2 className="text-xl font-bold text-[#1A2E44] mb-6">
+        <section className="max-w-3xl mx-auto px-6 py-12 border-t border-[#e7e1d7]">
+          <h2 className="text-xl font-bold text-[#0f211a] mb-6">
             {isEN ? 'Related resources' : 'Ressources associées'}
           </h2>
           <div className="grid sm:grid-cols-2 gap-4">
@@ -620,9 +608,9 @@ export default async function HotelFrontOfficeChecklistPage({ params }: { params
               <Link
                 key={link.href}
                 href={link.href}
-                className="border border-gray-200 rounded-xl p-5 hover:border-[#1A2E44] transition-colors group"
+                className="border border-[#e7e1d7] rounded-xl p-5 hover:border-[#a58658] transition-colors group"
               >
-                <p className="font-semibold text-[#1A2E44] group-hover:underline">{link.title}</p>
+                <p className="font-semibold text-[#0f211a] group-hover:underline">{link.title}</p>
                 <p className="text-sm text-gray-500 mt-1">{link.desc}</p>
               </Link>
             ))}
@@ -630,19 +618,19 @@ export default async function HotelFrontOfficeChecklistPage({ params }: { params
         </section>
 
         {/* CTA */}
-        <section className="bg-[#1A2E44] py-16 px-6">
+        <section className="bg-[#0f211a] py-16 px-6">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-2xl font-bold text-white mb-4">
               {isEN ? 'The complete front office system' : 'Le système réception complet'}
             </h2>
-            <p className="text-blue-100 mb-8">
+            <p className="text-[#e9e5dc] mb-8">
               {isEN
                 ? 'The LuxOps Front Office Playbook includes the full SOP documentation, inspection frameworks, training guides and shift management tools. 12 chapters, PDF and PowerPoint, EN and FR.'
                 : "Le Playbook Réception LuxOps comprend l'ensemble de la documentation SOP, les grilles d'inspection, les guides de formation et les outils de gestion des services. 12 chapitres, PDF et PowerPoint, EN et FR."}
             </p>
             <Link
               href={`/${locale}/playbooks/fo`}
-              className="inline-block bg-white text-[#1A2E44] px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 transition-colors"
+              className="inline-block bg-[#fcfbf8] text-[#0f211a] px-8 py-4 rounded-xl font-semibold hover:bg-[#f5f1e9] transition-colors"
             >
               {isEN ? 'View Front Office Playbook' : 'Voir le Playbook Réception'}
             </Link>

@@ -10,10 +10,9 @@ import {
   ListChecks,
   ShieldCheck,
   Sparkles,
-  UtensilsCrossed,
 } from 'lucide-react'
 import TrackedLink from '@/components/TrackedLink'
-import EditorialRouteImage from '@/components/EditorialRouteImage'
+import ChecklistEditorialHero from '@/components/ChecklistEditorialHero'
 import { breadcrumbSchema, faqSchema, localizedPath } from '@/lib/seo'
 
 type Locale = 'en' | 'fr'
@@ -1494,61 +1493,66 @@ export function FbSeoResourcePage({ kind, locale }: { kind: ResourceKind; locale
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <main className="bg-[#fcfbf8] text-[#0f211a]">
-        <section className="bg-[#0f211a] px-6 pb-16 pt-28 text-white md:pb-20 md:pt-32">
-          <div className="max-w-5xl mx-auto text-center">
-            <span className="inline-flex items-center gap-2 bg-white/10 text-white text-xs font-semibold px-4 py-2 rounded-full mb-6 tracking-widest uppercase">
-              <UtensilsCrossed size={15} />
-              {content.eyebrow}
-            </span>
-            <h1 className="mb-6 font-display text-4xl font-medium leading-[1.08] sm:text-5xl md:text-[3.5rem]">{content.h1}</h1>
-            <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-5">
-              {content.subtitle}
-            </p>
-            <p className="text-sm text-white/75 max-w-3xl mx-auto leading-relaxed mb-9">
-              {content.sourceNote}
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
+        <ChecklistEditorialHero
+          eyebrow={content.eyebrow}
+          title={content.h1}
+          description={content.subtitle}
+          imageSrc={kind === 'sequence'
+            ? '/images/editorial-hospitality/food-beverage.jpg'
+            : kind === 'roomService'
+              ? '/images/editorial-hospitality/fb-room-service.png'
+              : kind === 'barOpening'
+                ? '/images/editorial-hospitality/fb-cocktail-garnish.png'
+                : '/images/editorial-hospitality/fb-breakfast-buffet.png'}
+          imageAlt={content.title}
+        >
+          {checklistHref ? (
+            <>
+              <TrackedLink
+                href={checklistHref}
+                download
+                eventName="free_checklist_download_clicked"
+                eventProperties={{ source_page: sourcePage, checklist_name: kind, department: 'fb', locale, placement: 'hero' }}
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#0f211a] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#24362f]"
+              >
+                {checklistCta}
+                <ArrowRight size={17} />
+              </TrackedLink>
               <TrackedLink
                 href={`/${locale}/playbooks/fb-starter-pack`}
                 eventName="fb_starter_pack_cta_clicked"
                 eventProperties={{ source_page: sourcePage, position: 'hero' }}
-                className="inline-flex items-center justify-center gap-2 bg-white text-[#0f211a] px-7 py-4 rounded-full font-semibold hover:bg-gray-100 transition-colors"
+                className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#d8cfc0] bg-white/70 px-6 py-3 text-sm font-semibold text-[#24362f] transition-colors hover:bg-white"
               >
                 {content.primaryCta}
-                <ArrowRight size={18} />
+              </TrackedLink>
+            </>
+          ) : (
+            <>
+              <TrackedLink
+                href={`/${locale}/playbooks/fb-starter-pack`}
+                eventName="fb_starter_pack_cta_clicked"
+                eventProperties={{ source_page: sourcePage, position: 'hero' }}
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#0f211a] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#24362f]"
+              >
+                {content.primaryCta}
+                <ArrowRight size={17} />
               </TrackedLink>
               <TrackedLink
                 href={`/${locale}/playbooks/fb`}
                 eventName="fb_playbook_cta_clicked"
                 eventProperties={{ source_page: sourcePage, position: 'hero' }}
-                className="inline-flex items-center justify-center gap-2 border border-white/30 text-white px-7 py-4 rounded-full font-semibold hover:bg-white/10 transition-colors"
+                className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#d8cfc0] bg-white/70 px-6 py-3 text-sm font-semibold text-[#24362f] transition-colors hover:bg-white"
               >
                 {content.secondaryCta}
               </TrackedLink>
-              <TrackedLink
-                href={checklistHref ?? `/${locale}/free-hotel-procedures`}
-                {...(checklistHref ? { download: true } : {})}
-                eventName={checklistHref ? 'free_checklist_download_clicked' : 'free_chapter_cta_clicked'}
-                eventProperties={checklistHref ? {
-                  source_page: sourcePage,
-                  checklist_name: kind,
-                  department: 'fb',
-                  locale,
-                  placement: 'hero',
-                } : { source_page: sourcePage, position: 'hero' }}
-                className="inline-flex items-center justify-center gap-2 border border-white/30 text-white px-7 py-4 rounded-full font-semibold hover:bg-white/10 transition-colors"
-              >
-                {checklistHref ? checklistCta : content.freeChapterCta}
-              </TrackedLink>
-            </div>
-          </div>
-        </section>
-
-        {kind === 'sequence' && <EditorialRouteImage route="sequence-service-restaurant-hotel" alt={content.title} />}
+            </>
+          )}
+        </ChecklistEditorialHero>
 
         <section className="border-b border-[#e7e1d7] bg-[#f5f1e9] px-6 py-10">
           <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-5 md:items-center">
-            <div className="w-12 h-12 rounded-full bg-[#E7F0FF] flex items-center justify-center flex-shrink-0">
+            <div className="w-12 h-12 rounded-full bg-[#f5f1e9] flex items-center justify-center flex-shrink-0">
               <FileText size={22} className="text-[#a58658]" />
             </div>
             <div>
@@ -1579,7 +1583,7 @@ export function FbSeoResourcePage({ kind, locale }: { kind: ResourceKind; locale
               <p className="text-xs font-semibold uppercase tracking-widest text-[#a58658] mb-4">
                 {content.sectionLabel}
               </p>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#111111] mb-4">
+              <h2 className="font-display text-3xl md:text-4xl font-medium text-[#0f211a] mb-4">
                 {content.sectionTitle}
               </h2>
               <p className="text-gray-600 leading-relaxed">{content.sectionIntro}</p>
@@ -1588,13 +1592,13 @@ export function FbSeoResourcePage({ kind, locale }: { kind: ResourceKind; locale
             {content.steps ? (
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {content.steps.map((step) => (
-                  <div key={step.label} className="border border-gray-200 rounded-xl p-5 bg-white">
+                    <div key={step.label} className="rounded-[1.35rem] border border-[#e7e1d7] bg-white p-5 shadow-[0_8px_24px_rgba(15,33,26,0.04)]">
                     <div className="flex items-start gap-4">
                       <span className="w-10 h-10 rounded-full bg-[#a58658] text-white text-sm font-bold flex items-center justify-center flex-shrink-0">
                         {step.label}
                       </span>
                       <div>
-                        <h3 className="font-bold text-[#111111] mb-1">{step.action}</h3>
+                        <h3 className="font-bold text-[#0f211a] mb-1">{step.action}</h3>
                         <p className="text-sm text-gray-500">{step.timing}</p>
                       </div>
                     </div>
@@ -1627,7 +1631,7 @@ export function FbSeoResourcePage({ kind, locale }: { kind: ResourceKind; locale
               <p className="text-xs font-semibold uppercase tracking-widest text-[#a58658] mb-4">
                 {isEN ? 'Operational reference' : 'Repère opérationnel'}
               </p>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#111111] mb-4">
+              <h2 className="font-display text-3xl md:text-4xl font-medium text-[#0f211a] mb-4">
                 {content.extractTitle}
               </h2>
               <p className="text-gray-600 leading-relaxed">{content.extractText}</p>
@@ -1654,7 +1658,7 @@ export function FbSeoResourcePage({ kind, locale }: { kind: ResourceKind; locale
               <p className="text-xs font-semibold uppercase tracking-widest text-[#a58658] mb-4">
                 {isEN ? 'Practical toolkit' : 'Kit pratique'}
               </p>
-              <h2 className="text-3xl font-bold text-[#111111] mb-4">{content.productTitle}</h2>
+              <h2 className="text-3xl font-bold text-[#0f211a] mb-4">{content.productTitle}</h2>
               <p className="text-gray-600 leading-relaxed mb-6">{content.productText}</p>
               <TrackedLink
                 href={`/${locale}/playbooks/fb-starter-pack`}
@@ -1694,7 +1698,7 @@ export function FbSeoResourcePage({ kind, locale }: { kind: ResourceKind; locale
               <p className="text-xs font-semibold uppercase tracking-widest text-[#a58658] mb-3">
                 {isEN ? 'Related resource' : 'Ressource liée'}
               </p>
-              <h2 className="text-2xl md:text-3xl font-bold text-[#111111] mb-3">{content.relatedTitle}</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-[#0f211a] mb-3">{content.relatedTitle}</h2>
               <p className="text-gray-600 leading-relaxed max-w-2xl">{content.relatedText}</p>
             </div>
             <Link
@@ -1713,7 +1717,7 @@ export function FbSeoResourcePage({ kind, locale }: { kind: ResourceKind; locale
               <p className="text-xs font-semibold uppercase tracking-widest text-[#a58658] mb-3">
                 {isEN ? 'F&B resources' : 'Ressources F&B'}
               </p>
-              <h2 className="text-3xl font-bold text-[#111111] mb-3">
+              <h2 className="text-3xl font-bold text-[#0f211a] mb-3">
                 {isEN ? 'Continue with the right F&B checklist' : 'Continuer avec la bonne checklist F&B'}
               </h2>
               <p className="text-gray-600 leading-relaxed">
@@ -1731,7 +1735,7 @@ export function FbSeoResourcePage({ kind, locale }: { kind: ResourceKind; locale
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div>
-                      <h3 className="font-bold text-[#111111] mb-2 group-hover:text-[#a58658] transition-colors">
+                      <h3 className="font-bold text-[#0f211a] mb-2 group-hover:text-[#a58658] transition-colors">
                         {link.label}
                       </h3>
                       <p className="text-sm text-gray-600 leading-relaxed">{link.text}</p>
@@ -1746,13 +1750,13 @@ export function FbSeoResourcePage({ kind, locale }: { kind: ResourceKind; locale
 
         <section className="py-16 px-6 bg-[#f5f1e9] border-y border-[#e7e1d7]">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-[#111111] mb-8">
+            <h2 className="text-3xl font-bold text-[#0f211a] mb-8">
               {isEN ? 'Frequently asked questions' : 'Questions fréquentes'}
             </h2>
             <div className="space-y-6">
               {content.faqs.map((faq) => (
                 <div key={faq.question} className="bg-white border border-gray-200 rounded-xl p-6">
-                  <h3 className="text-lg font-bold text-[#111111] mb-2">{faq.question}</h3>
+                  <h3 className="text-lg font-bold text-[#0f211a] mb-2">{faq.question}</h3>
                   <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
                 </div>
               ))}
@@ -1780,7 +1784,7 @@ export function FbSeoResourcePage({ kind, locale }: { kind: ResourceKind; locale
                 href={`/${locale}/playbooks/fb-starter-pack`}
                 eventName="fb_starter_pack_cta_clicked"
                 eventProperties={{ source_page: sourcePage, position: 'final' }}
-                className="inline-flex items-center justify-center gap-2 bg-white text-[#111111] px-7 py-4 rounded-full font-semibold hover:bg-gray-100 transition-colors"
+                className="inline-flex items-center justify-center gap-2 bg-white text-[#0f211a] px-7 py-4 rounded-full font-semibold hover:bg-gray-100 transition-colors"
               >
                 {content.primaryCta}
                 <ArrowRight size={18} />
@@ -1810,13 +1814,13 @@ export function FbSeoResourcePage({ kind, locale }: { kind: ResourceKind; locale
 
 function ChecklistCard({ block }: { block: ChecklistBlock }) {
   return (
-    <article className="border border-gray-200 rounded-xl p-6 bg-white">
+    <article className="rounded-[1.5rem] border border-[#e7e1d7] bg-white p-6 shadow-[0_10px_30px_rgba(15,33,26,0.045)] md:p-7">
       <div className="flex gap-3 items-start mb-4">
         <div className="w-10 h-10 rounded-full bg-[#f5f1e9] flex items-center justify-center flex-shrink-0">
           <ConciergeBell size={20} className="text-[#a58658]" />
         </div>
         <div>
-          <h3 className="text-xl font-bold text-[#111111]">{block.title}</h3>
+          <h3 className="text-xl font-bold text-[#0f211a]">{block.title}</h3>
           {block.intro ? <p className="text-sm text-gray-500 leading-relaxed mt-2">{block.intro}</p> : null}
         </div>
       </div>

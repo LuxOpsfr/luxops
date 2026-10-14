@@ -486,15 +486,15 @@ export default function FreeHotelChecklistsHub({ locale }: { locale: Locale }) {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <main className="bg-[#fcfbf8] text-[#0f211a]">
-        <section className="border-b border-[rgba(32,35,31,0.14)] bg-[#f5f1e9] px-6 pb-16 pt-[calc(var(--site-header-height)+4rem)] md:pb-20 md:pt-[calc(var(--site-header-height)+5rem)]">
+        <section className="bg-[#f5f1e9] px-5 pb-14 pt-[calc(var(--site-header-height)+2rem)] md:px-8 md:pb-20 md:pt-[calc(var(--site-header-height)+3rem)]">
           <div className="max-w-6xl mx-auto">
             <div className="max-w-4xl">
-              <span className="mb-6 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-[#a58658]">
+              <span className="mb-5 inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-[#a58658]">
                 <Download size={15} />
                 {content.eyebrow}
               </span>
-              <h1 className="mb-6 max-w-4xl font-display text-4xl font-medium leading-[1.05] md:text-6xl">{content.h1}</h1>
-              <p className="mb-6 max-w-3xl text-lg leading-relaxed text-[#3d4a41] md:text-xl">
+              <h1 className="mb-5 max-w-4xl font-display text-[clamp(2.5rem,6vw,4.5rem)] font-medium leading-[1.02] tracking-[-0.035em]">{content.h1}</h1>
+              <p className="mb-4 max-w-3xl text-lg leading-8 text-[#3d4a41] md:text-xl">
                 {content.subtitle}
               </p>
               <p className="max-w-3xl text-sm leading-relaxed text-[#5d665f] md:text-base">
@@ -502,7 +502,7 @@ export default function FreeHotelChecklistsHub({ locale }: { locale: Locale }) {
               </p>
             </div>
 
-            <div className="mt-10 grid max-w-3xl gap-4 sm:grid-cols-3">
+            <div className="mt-8 grid max-w-3xl gap-3 sm:grid-cols-3">
               <Stat value={String(totalItems)} label={isEN ? 'Checklist cards' : 'Checklists'} />
               <Stat value={String(availableItems)} label={isEN ? 'Ready PDFs' : 'PDF prêts'} />
               <Stat value="EN + FR" label={isEN ? 'Languages' : 'Langues'} />
@@ -606,9 +606,9 @@ function DepartmentSection({
   sourcePage: string
 }) {
   return (
-    <section id={department.id} className={`px-6 py-16 ${index % 2 === 0 ? 'bg-[#fcfbf8]' : 'bg-[#f5f1e9]'}`}>
-      <div className="max-w-6xl mx-auto">
-        <div className="max-w-3xl mb-10">
+    <section id={department.id} className={`px-5 py-14 md:px-8 md:py-20 ${index % 2 === 0 ? 'bg-[#fcfbf8]' : 'bg-[#f5f1e9]'}`}>
+      <div className="mx-auto max-w-[1320px]">
+        <div className="mb-8 max-w-3xl md:mb-10">
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-[#a58658]">
             {department.label}
           </p>
@@ -616,7 +616,7 @@ function DepartmentSection({
           <p className="text-gray-600 leading-relaxed">{department.intro}</p>
         </div>
 
-        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3 md:gap-5">
           {department.items.map((item) => (
             <ChecklistCard
               key={item.href}
@@ -628,7 +628,7 @@ function DepartmentSection({
           ))}
         </div>
 
-        <div className="mt-8 grid md:grid-cols-2 gap-4">
+        <div className="mt-6 grid gap-4 md:grid-cols-2">
           <CommercialCta
             eyebrow={content.starterPrefix}
             title={department.starterLabel}
@@ -661,15 +661,15 @@ function ChecklistCard({
   departmentId: string
 }) {
   return (
-    <article className="flex min-h-[300px] flex-col border border-[rgba(32,35,31,0.14)] bg-[#fcfbf8] p-6">
-      <div className="flex items-start justify-between gap-4 mb-5">
-        <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center bg-[#e7e0d5]">
+    <article className="group flex min-h-[270px] flex-col rounded-[1.5rem] border border-[rgba(32,35,31,0.10)] bg-[#fffefa] p-5 shadow-[0_8px_28px_rgba(15,33,26,0.035)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_38px_rgba(15,33,26,0.09)] sm:p-6">
+      <div className="mb-5 flex items-start justify-between gap-4">
+        <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-[#f1ecdf]">
           <FileText size={23} className="text-[#24362f]" />
         </div>
         <span
           className={
             item.available
-              ? 'bg-[#e7e0d5] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#24362f]'
+              ? 'rounded-full bg-[#f1ecdf] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#24362f]'
               : 'text-[10px] font-bold uppercase tracking-widest text-gray-500 bg-gray-100 px-3 py-1.5 rounded-full'
           }
         >
@@ -691,7 +691,7 @@ function ChecklistCard({
             checklist: item.title,
             status: item.available ? 'available' : 'preparing',
           }}
-          className="inline-flex w-full items-center justify-center gap-2 bg-[#0f211a] px-5 py-3 font-semibold text-white transition-colors hover:bg-[#24362f]"
+          className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-[#0f211a] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#24362f]"
           download
         >
           <Download size={17} />
@@ -699,7 +699,7 @@ function ChecklistCard({
         </TrackedLink>
         <Link
           href={item.sourceHref}
-          className="inline-flex w-full items-center justify-center gap-2 px-5 py-2.5 font-semibold text-[#24362f] transition-colors hover:bg-[#e7e0d5]"
+          className="inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-[#24362f] transition-colors hover:bg-[#f1ecdf]"
         >
           {content.sourceLabel}
           <ArrowRight size={16} />
@@ -727,7 +727,7 @@ function CommercialCta({
       href={href}
       eventName={eventName}
       eventProperties={{ source_page: sourcePage, position: 'department_cta' }}
-      className="group border border-[rgba(32,35,31,0.18)] p-6 transition-colors hover:border-[#a58658]"
+      className="group rounded-[1.5rem] border border-[rgba(32,35,31,0.12)] bg-[#fffefa] p-6 shadow-[0_8px_28px_rgba(15,33,26,0.035)] transition duration-300 hover:-translate-y-0.5 hover:border-[#a58658] hover:shadow-[0_16px_32px_rgba(15,33,26,0.08)]"
     >
       <div className="flex gap-4 items-start">
         <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center bg-[#e7e0d5]">

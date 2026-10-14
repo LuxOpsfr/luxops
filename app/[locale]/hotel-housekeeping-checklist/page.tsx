@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import TrackedLink from '@/components/TrackedLink'
+import ChecklistEditorialHero from '@/components/ChecklistEditorialHero'
 import SamePageAnchor from '@/components/SamePageAnchor'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -443,57 +444,35 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <main className="min-h-screen bg-white">
+      <main className="min-h-screen bg-[#fcfbf8]">
 
-        {/* Hero */}
-        <section className="bg-[#1A2E44] text-white px-6 pt-32 pb-20">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">
-              {isEN
-                ? 'Housekeeping Checklist: Room Attendant, Supervisor Inspection & HSK SOP'
-                : 'Checklist housekeeping : chambre à blanc, recouche et inspection gouvernante'}
-            </h1>
-            <p className="text-lg text-blue-100 max-w-2xl mx-auto mb-8">
-              {isEN
-                ? 'A playbook-based hotel housekeeping checklist covering departure rooms, stayovers, Clean vs Inspected room status, supervisor inspection and the 100-point HSK quality grid.'
-                : 'Une checklist issue du Playbook Housekeeping LuxOps : séquence chambre à blanc, recouche, chariot, auto-contrôle, inspection gouvernante, statut Clean/Inspected et grille qualité 100 points.'}
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <SamePageAnchor
-                href="#housekeeping-pdfs"
-                className="inline-block bg-white text-[#1A2E44] px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
-              >
-                {isEN ? 'View the free printable PDFs' : 'Voir les PDF gratuits à imprimer'}
-              </SamePageAnchor>
-              <TrackedLink
-                href={`/${locale}/playbooks/hsk-starter-pack`}
-                eventName="starter_pack_cta_clicked"
-                eventProperties={{
-                  source_page: `/${locale}/hotel-housekeeping-checklist`,
-                  placement: 'hero',
-                  product: 'housekeeping_inspection_kit',
-                  cta_label: isEN ? 'View Housekeeping Starter Pack' : 'Voir le Starter Pack Housekeeping',
-                }}
-                className="inline-block bg-[#0056D2] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#0047ad] transition-colors"
-              >
-                {isEN ? 'View Housekeeping Starter Pack' : 'Voir le Starter Pack Housekeeping'}
-              </TrackedLink>
-              <TrackedLink
-                href={`/${locale}/playbooks/hsk`}
-                eventName="playbook_cta_clicked"
-                eventProperties={{
-                  source_page: `/${locale}/hotel-housekeeping-checklist`,
-                  placement: 'hero',
-                  product: 'housekeeping_playbook',
-                  cta_label: isEN ? 'View Housekeeping Playbook' : 'Voir le Playbook Housekeeping',
-                }}
-                className="inline-block bg-[#244763] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#2c5575] transition-colors"
-              >
-                {isEN ? 'View Housekeeping Playbook' : 'Voir le Playbook Housekeeping'}
-              </TrackedLink>
-            </div>
-          </div>
-        </section>
+        <ChecklistEditorialHero
+          eyebrow={isEN ? 'Housekeeping operations' : 'Opérations housekeeping'}
+          title={isEN
+            ? 'Hotel Housekeeping Checklist'
+            : 'Checklist housekeeping en hôtel'}
+          description={isEN
+            ? 'Practical checklists for room attendants and supervisors, from room preparation to final inspection.'
+            : 'Des checklists pratiques pour les équipes d’étage et les gouvernantes, de la préparation de la chambre à son inspection finale.'}
+          imageSrc="/images/editorial-hospitality/housekeeping-cottonbro-6466482.jpg"
+          imageAlt={isEN ? 'Housekeeper preparing a hotel room' : 'Équipière housekeeping préparant une chambre d’hôtel'}
+          imageAspect="3/2"
+        >
+          <SamePageAnchor
+            href="#housekeeping-pdfs"
+            className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#0f211a] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#24362f]"
+          >
+            {isEN ? 'Choose a free checklist' : 'Choisir une checklist gratuite'}
+          </SamePageAnchor>
+          <TrackedLink
+            href={`/${locale}/playbooks/hsk-starter-pack`}
+            eventName="starter_pack_cta_clicked"
+            eventProperties={{ source_page: `/${locale}/hotel-housekeeping-checklist`, placement: 'hero', product: 'housekeeping_inspection_kit', cta_label: isEN ? 'Housekeeping Starter Pack' : 'Starter Pack Housekeeping' }}
+            className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#d8cfc0] bg-white/70 px-6 py-3 text-sm font-semibold text-[#24362f] transition-colors hover:bg-white"
+          >
+            {isEN ? 'Explore the Starter Pack' : 'Découvrir le Starter Pack'}
+          </TrackedLink>
+        </ChecklistEditorialHero>
 
         {/* Product paths */}
         <section className="max-w-5xl mx-auto px-6 pt-12">
@@ -540,11 +519,11 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
                   product: item.product,
                   cta_label: item.label,
                 }}
-                className="block border border-gray-200 rounded-xl p-5 hover:border-[#1A2E44] hover:shadow-sm transition-all"
+                className="group block rounded-[1.5rem] border border-[#e7e1d7] bg-white p-6 shadow-[0_8px_28px_rgba(15,33,26,0.04)] transition duration-300 hover:-translate-y-1 hover:border-[#cbb487] hover:shadow-[0_18px_38px_rgba(15,33,26,0.09)]"
               >
-                <h2 className="text-lg font-bold text-[#1A2E44] mb-2">{item.title}</h2>
+                <h2 className="text-lg font-bold text-[#0f211a] mb-2">{item.title}</h2>
                 <p className="text-sm text-gray-600 leading-relaxed mb-4">{item.body}</p>
-                <span className="text-sm font-semibold text-[#0056D2]">{item.label}</span>
+                <span className="text-sm font-semibold text-[#a58658]">{item.label}</span>
               </TrackedLink>
             ))}
           </div>
@@ -553,10 +532,10 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
         {/* Printable PDF downloads */}
         <section id="housekeeping-pdfs" className="max-w-6xl mx-auto px-6 py-12">
           <div className="max-w-3xl mb-8">
-            <p className="text-xs font-bold uppercase tracking-widest text-[#0056D2] mb-3">
+            <p className="text-xs font-bold uppercase tracking-widest text-[#a58658] mb-3">
               {isEN ? 'Printable PDF checklists' : 'Checklists PDF à imprimer'}
             </p>
-            <h2 className="text-2xl md:text-3xl font-bold text-[#1A2E44] mb-3">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#0f211a] mb-3">
               {isEN ? 'Download the housekeeping checklists by role and room task' : 'Télécharger les checklists housekeeping par poste et par tâche'}
             </h2>
             <p className="text-gray-600 leading-relaxed">
@@ -567,11 +546,11 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
           </div>
           <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
             {downloads.map((item) => (
-              <div key={item.href} className="border border-gray-200 rounded-lg p-6 flex flex-col min-h-[320px]">
-                <p className="text-xs font-semibold uppercase tracking-wide text-[#0056D2] mb-2">
+              <div key={item.href} className="flex min-h-[300px] flex-col rounded-[1.5rem] border border-[#e7e1d7] bg-white p-6 shadow-[0_8px_28px_rgba(15,33,26,0.04)]">
+                <p className="text-xs font-semibold uppercase tracking-wide text-[#a58658] mb-2">
                   {isEN ? 'Printable PDF' : 'PDF imprimable'}
                 </p>
-                <h3 className="text-xl font-bold text-[#1A2E44] mb-2 leading-tight">{item.title}</h3>
+                <h3 className="text-xl font-bold text-[#0f211a] mb-2 leading-tight">{item.title}</h3>
                 <p className="text-sm font-medium text-gray-500 mb-3">{item.role}</p>
                 <p className="text-sm text-gray-600 leading-relaxed mb-6 flex-1">{item.body}</p>
                 <TrackedLink
@@ -585,20 +564,20 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
                     locale,
                     placement: 'download_grid',
                   }}
-                  className="inline-flex justify-center bg-[#1A2E44] text-white px-5 py-3 rounded-lg text-sm font-semibold hover:bg-[#243d57] transition-colors"
+                  className="inline-flex min-h-12 justify-center rounded-full bg-[#0f211a] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#24362f]"
                 >
                   {isEN ? 'Download PDF copy' : 'Télécharger le PDF'}
                 </TrackedLink>
               </div>
             ))}
           </div>
-          <div className="mt-8 rounded-xl border border-[#d8e6f7] bg-[#f4f8ff] p-6 md:p-8">
+          <div className="mt-8 rounded-xl border border-[#e7e1d7] bg-[#f5f1e9] p-6 md:p-8">
             <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-6 items-center">
               <div>
-                <p className="text-xs font-bold uppercase tracking-widest text-[#0056D2] mb-3">
+                <p className="text-xs font-bold uppercase tracking-widest text-[#a58658] mb-3">
                   {isEN ? 'Supervisor inspection focus' : 'Focus inspection gouvernante'}
                 </p>
-                <h3 className="text-2xl font-bold text-[#1A2E44] mb-3">
+                <h3 className="text-2xl font-bold text-[#0f211a] mb-3">
                   {isEN ? 'Use the supervisor checklist before releasing the room' : 'Contrôler la chambre avant libération'}
                 </h3>
                 <p className="text-sm text-gray-600 leading-relaxed">
@@ -619,7 +598,7 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
                     locale,
                     placement: 'supervisor_focus',
                   }}
-                  className="inline-flex justify-center bg-[#1A2E44] text-white px-5 py-3 rounded-lg text-sm font-semibold hover:bg-[#243d57] transition-colors"
+                  className="inline-flex justify-center bg-[#0f211a] text-white px-5 py-3 rounded-lg text-sm font-semibold hover:bg-[#24362f] transition-colors"
                 >
                   {isEN ? 'Download the supervisor PDF' : 'Télécharger la checklist gouvernante'}
                 </TrackedLink>
@@ -632,7 +611,7 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
                     product: 'housekeeping_inspection_kit',
                     cta_label: isEN ? 'View Housekeeping Starter Pack' : 'Voir le Starter Pack Housekeeping',
                   }}
-                  className="inline-flex justify-center border border-[#1A2E44] bg-white text-[#1A2E44] px-5 py-3 rounded-lg text-sm font-semibold hover:bg-[#F5F7FA] transition-colors"
+                  className="inline-flex justify-center border border-[#a58658] bg-[#fcfbf8] text-[#0f211a] px-5 py-3 rounded-lg text-sm font-semibold hover:bg-[#f5f1e9] transition-colors"
                 >
                   {isEN ? 'View the inspection kit' : 'Voir le kit inspection'}
                 </TrackedLink>
@@ -642,7 +621,7 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
           <div className="mt-6 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3">
             <Link
               href={`/${locale}/playbooks/hsk`}
-              className="inline-flex justify-center border border-[#1A2E44] text-[#1A2E44] px-6 py-3 rounded-lg font-semibold hover:bg-[#F5F7FA] transition-colors"
+              className="inline-flex justify-center border border-[#a58658] text-[#0f211a] px-6 py-3 rounded-lg font-semibold hover:bg-[#f5f1e9] transition-colors"
             >
               {isEN ? 'Get the full Housekeeping Playbook' : 'Accéder au Playbook Housekeeping complet'}
             </Link>
@@ -651,7 +630,7 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
 
         {/* Intro */}
         <section className="max-w-3xl mx-auto px-6 py-12">
-          <h2 className="text-2xl font-bold text-[#1A2E44] mb-4">
+          <h2 className="text-2xl font-bold text-[#0f211a] mb-4">
             {isEN ? 'One standard, applied at every step' : 'Un standard, appliqué à chaque étape'}
           </h2>
           {isEN ? (
@@ -677,11 +656,11 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
 
         {/* Playbook excerpt */}
         <section className="max-w-3xl mx-auto px-6 pb-12">
-          <div className="border border-[#d8e6f7] bg-[#f4f8ff] rounded-xl p-6">
-            <p className="text-xs font-bold uppercase tracking-widest text-[#0056D2] mb-3">
+          <div className="border border-[#e7e1d7] bg-[#f5f1e9] rounded-xl p-6">
+            <p className="text-xs font-bold uppercase tracking-widest text-[#a58658] mb-3">
               {isEN ? 'Free excerpt from the LuxOps Housekeeping Playbook' : 'Extrait gratuit du Playbook Housekeeping LuxOps'}
             </p>
-            <h2 className="text-2xl font-bold text-[#1A2E44] mb-4">
+            <h2 className="text-2xl font-bold text-[#0f211a] mb-4">
               {isEN ? 'The inspection rule that protects check-in quality' : 'La règle d’inspection qui protège la qualité des arrivées'}
             </h2>
             <p className="text-gray-600 leading-relaxed mb-5">
@@ -699,8 +678,8 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
                 ['Inspectée', 'Statut posé par la gouvernante après contrôle checklist. Attribuable par la réception.'],
                 ['Non conforme', "Correction immédiate, réinspection et défaut tracé pour coaching."],
               ]).map(([label, body]) => (
-                <div key={label} className="bg-white rounded-lg p-4">
-                  <h3 className="font-semibold text-[#1A2E44] mb-2">{label}</h3>
+                <div key={label} className="bg-[#fcfbf8] rounded-lg p-4">
+                  <h3 className="font-semibold text-[#0f211a] mb-2">{label}</h3>
                   <p className="text-sm text-gray-600 leading-relaxed">{body}</p>
                 </div>
               ))}
@@ -712,14 +691,14 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
         {roles.map((role, ri) => (
           <section key={ri} className="max-w-3xl mx-auto px-6 pb-12">
             <div className="mb-6">
-              <h2 className="text-2xl font-bold text-[#1A2E44] mb-2">{role.role}</h2>
+              <h2 className="text-2xl font-bold text-[#0f211a] mb-2">{role.role}</h2>
               <p className="text-gray-500 text-sm leading-relaxed">{role.intro}</p>
             </div>
             <div className="space-y-4">
               {role.sections.map((sec, si) => (
-                <div key={si} className="border border-gray-200 rounded-xl overflow-hidden">
-                  <div className="bg-[#F5F7FA] px-5 py-3">
-                    <h3 className="font-semibold text-[#1A2E44] text-sm uppercase tracking-wide">{sec.title}</h3>
+                <div key={si} className="border border-[#e7e1d7] rounded-xl overflow-hidden">
+                  <div className="bg-[#f5f1e9] px-5 py-3">
+                    <h3 className="font-semibold text-[#0f211a] text-sm uppercase tracking-wide">{sec.title}</h3>
                   </div>
                   <ul className="divide-y divide-gray-100">
                     {sec.items.map((item, ii) => (
@@ -737,7 +716,7 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
 
         {/* Audit scoring grid */}
         <section className="max-w-3xl mx-auto px-6 pb-12">
-          <h2 className="text-2xl font-bold text-[#1A2E44] mb-2">
+          <h2 className="text-2xl font-bold text-[#0f211a] mb-2">
             {isEN ? 'Short Quality Audit Scoring Grid' : 'Grille courte de notation qualité'}
           </h2>
           <p className="text-gray-500 text-sm mb-6 leading-relaxed">
@@ -745,10 +724,10 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
               ? 'Score each point 0 to 2. This visible extract is a short grid out of 20 for internal checks. The complete playbook uses a separate 100-point model with weighted categories. LuxOps is not affiliated with LQA or Forbes Travel Guide.'
               : "Notez chaque point de 0 à 2. Cet extrait visible est une grille courte sur 20 pour les contrôles internes. Le playbook complet utilise un modèle séparé sur 100 points avec catégories pondérées. LuxOps n'est pas affilié à LQA ni à Forbes Travel Guide."}
           </p>
-          <div className="border border-gray-200 rounded-xl overflow-hidden">
+          <div className="border border-[#e7e1d7] rounded-xl overflow-hidden">
             <table className="w-full text-sm">
               <thead>
-                <tr className="bg-[#1A2E44] text-white">
+                <tr className="bg-[#0f211a] text-white">
                   <th className="text-left px-4 py-3 font-semibold w-1/4">
                     {isEN ? 'Category' : 'Catégorie'}
                   </th>
@@ -762,13 +741,13 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
               </thead>
               <tbody>
                 {auditRows.map((row, i) => (
-                  <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-[#F5F7FA]'}>
+                  <tr key={i} className={i % 2 === 0 ? 'bg-[#fcfbf8]' : 'bg-[#f5f1e9]'}>
                     <td className="px-4 py-3 text-gray-500 text-xs font-medium">{row.category}</td>
                     <td className="px-4 py-3 text-gray-700">{row.checkpoint}</td>
                     <td className="px-4 py-3 text-center text-gray-400 font-mono">/2</td>
                   </tr>
                 ))}
-                <tr className="bg-[#1A2E44] text-white font-bold">
+                <tr className="bg-[#0f211a] text-white font-bold">
                   <td className="px-4 py-3" colSpan={2}>Total</td>
                   <td className="px-4 py-3 text-center font-mono">/20</td>
                 </tr>
@@ -778,9 +757,9 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
         </section>
 
         {/* Lead magnet */}
-        <section className="bg-[#F5F7FA] py-12 px-6">
+        <section className="bg-[#f5f1e9] py-12 px-6">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-2xl font-bold text-[#1A2E44] mb-3">
+            <h2 className="text-2xl font-bold text-[#0f211a] mb-3">
               {isEN ? 'Use the PDFs on the floor, then standardize the full SOP' : 'Utilisez les PDF sur le terrain, puis standardisez toute la procédure'}
             </h2>
             <p className="text-gray-600 mb-6 leading-relaxed">
@@ -791,7 +770,7 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
             <div className="flex flex-col sm:flex-row justify-center gap-3">
               <SamePageAnchor
                 href="#housekeeping-pdfs"
-                className="inline-block bg-[#1A2E44] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#243d57] transition-colors"
+                className="inline-block bg-[#0f211a] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#24362f] transition-colors"
               >
                 {isEN ? 'View the free PDFs' : 'Voir les PDF gratuits'}
               </SamePageAnchor>
@@ -804,7 +783,7 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
                   product: 'housekeeping_playbook',
                   cta_label: isEN ? 'View Full Playbook' : 'Voir le Playbook complet',
                 }}
-                className="inline-block bg-white text-[#1A2E44] border border-[#1A2E44] px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
+                className="inline-block bg-[#fcfbf8] text-[#0f211a] border border-[#a58658] px-8 py-4 rounded-lg font-semibold hover:bg-[#f5f1e9] transition-colors"
               >
                 {isEN ? 'View Full Playbook' : 'Voir le Playbook complet'}
               </TrackedLink>
@@ -814,7 +793,7 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
 
         {/* SOP implementation */}
         <section className="max-w-3xl mx-auto px-6 py-12">
-          <h2 className="text-2xl font-bold text-[#1A2E44] mb-6">
+          <h2 className="text-2xl font-bold text-[#0f211a] mb-6">
             {isEN
               ? 'How to implement a housekeeping SOP in your hotel'
               : 'Comment mettre en place une SOP housekeeping dans votre hôtel'}
@@ -826,7 +805,7 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
                   {String(i + 1).padStart(2, '0')}
                 </div>
                 <div>
-                  <h3 className="font-semibold text-[#1A2E44] mb-1">{item.title}</h3>
+                  <h3 className="font-semibold text-[#0f211a] mb-1">{item.title}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed">{item.body}</p>
                 </div>
               </div>
@@ -835,14 +814,14 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
         </section>
 
         {/* FAQ */}
-        <section className="max-w-3xl mx-auto px-6 py-12 border-t border-gray-100">
-          <h2 className="text-2xl font-bold text-[#1A2E44] mb-8">
+        <section className="max-w-3xl mx-auto px-6 py-12 border-t border-[#e7e1d7]">
+          <h2 className="text-2xl font-bold text-[#0f211a] mb-8">
             {isEN ? 'Frequently Asked Questions' : 'Questions Fréquentes'}
           </h2>
           <div className="space-y-6">
             {faq.map(({ q, a }, i) => (
               <div key={i}>
-                <h3 className="font-semibold text-[#1A2E44] mb-2">{q}</h3>
+                <h3 className="font-semibold text-[#0f211a] mb-2">{q}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{a}</p>
               </div>
             ))}
@@ -850,12 +829,12 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
         </section>
 
         {/* CTA */}
-        <section className="bg-[#1A2E44] py-16 px-6">
+        <section className="bg-[#0f211a] py-16 px-6">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-2xl font-bold text-white mb-4">
               {isEN ? 'The complete housekeeping system' : 'Le système housekeeping complet'}
             </h2>
-            <p className="text-blue-100 mb-8">
+            <p className="text-[#e9e5dc] mb-8">
               {isEN
                 ? 'The LuxOps Housekeeping Playbook includes the full SOP documentation, inspection frameworks, training guides and control tools used by housekeeping teams across luxury and boutique properties. 10 chapters, ready to adapt to your property.'
                 : "Le Playbook Housekeeping LuxOps comprend l'ensemble de la documentation SOP, les grilles d'inspection, les guides de formation et les outils de contrôle utilisés par les équipes housekeeping des établissements de luxe et boutique. 10 chapitres, prêts à adapter à votre établissement."}
@@ -869,7 +848,7 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
                 product: 'housekeeping_playbook',
                 cta_label: isEN ? 'View Housekeeping Playbook' : 'Voir le Playbook Housekeeping',
               }}
-              className="inline-block bg-white text-[#1A2E44] px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 transition-colors"
+              className="inline-block bg-[#fcfbf8] text-[#0f211a] px-8 py-4 rounded-xl font-semibold hover:bg-[#f5f1e9] transition-colors"
             >
               {isEN ? 'View Housekeeping Playbook' : 'Voir le Playbook Housekeeping'}
             </TrackedLink>
@@ -878,7 +857,7 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
 
         {/* Related resources */}
         <section className="max-w-3xl mx-auto px-6 py-12">
-          <h2 className="text-xl font-bold text-[#1A2E44] mb-6">
+          <h2 className="text-xl font-bold text-[#0f211a] mb-6">
             {isEN ? 'Related resources' : 'Ressources associées'}
           </h2>
           <div className="grid sm:grid-cols-2 gap-4">
@@ -943,9 +922,9 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
               <Link
                 key={link.href}
                 href={link.href}
-                className="border border-gray-200 rounded-xl p-5 hover:border-[#1A2E44] transition-colors group"
+                className="border border-[#e7e1d7] rounded-xl p-5 hover:border-[#a58658] transition-colors group"
               >
-                <p className="font-semibold text-[#1A2E44] group-hover:underline">{link.title}</p>
+                <p className="font-semibold text-[#0f211a] group-hover:underline">{link.title}</p>
                 <p className="text-sm text-gray-500 mt-1">{link.desc}</p>
               </Link>
             ))}
