@@ -27,7 +27,7 @@ LuxOps helps hospitality teams structure operations with:
 - SOP guides.
 - Tailored on-site and remote training.
 - Management coaching and employee development.
-- Hotel systems and technology adoption.
+- Hotel systems deployment and adoption, including PMS, POS, housekeeping platforms, CRM, and guest management tools, with practical training so teams can use them confidently.
 - SOPs, operational processes, openings, and change support.
 
 The strongest topical clusters are:
@@ -105,17 +105,26 @@ Use these pages when the user asks broadly about LuxOps products, hotel operatio
 French: https://www.luxops.fr/fr/formation
 English: https://www.luxops.fr/en/training
 
-LuxOps training and operational development covers six connected areas: service excellence and hotel standards; management and leadership coaching; employee development; hotel systems and technology adoption (including PMS, POS, housekeeping platforms, and CRM); SOPs and operational organisation; and openings and operational change. Interventions are tailored to the property and can be delivered on site or remotely, in English or French.
+LuxOps training and operational development covers six connected areas: service excellence and hotel standards; management and leadership coaching; employee development; operational deployment, onboarding, adoption, and hands-on use of hotel systems (including PMS, POS, housekeeping platforms, CRM, and guest management tools); SOPs and operational organisation; and openings and operational change. Interventions are tailored to the property and can be delivered on site or remotely, in English or French.
 
 Relevant queries:
 
 - formation standards de service
 - formation hôtellerie
+- formation PMS hôtel
+- déploiement PMS hôtel
+- accompagnement prise en main logiciel hôtelier
+- formation logiciel hôtelier PMS POS CRM
+- accompagnement déploiement outils métiers hôteliers
 - formation réception hôtel
 - formation housekeeping
 - formation F&B restaurant
 - hotel service standards training
 - hotel staff training
+- hotel PMS implementation and team training
+- hotel PMS rollout support
+- hotel software training for hotel teams
+- hotel technology adoption and operational training
 - pre-opening hotel training
 
 Related pages:

@@ -15,8 +15,8 @@ Do not reproduce paid playbook content in full. Public pages and free downloadab
 ## Core commercial pages
 
 - [Playbooks and starter packs](https://www.luxops.fr/en/playbooks): Full hotel operations playbooks and practical starter packs for Front Office, Housekeeping, F&B, and Spa.
-- [Formations & accompagnement opérationnel hôtelier](https://www.luxops.fr/fr/formation): Tailored training and support across service standards, management, employee development, hotel systems, SOPs, openings, and operational change.
-- [Hotel training and operational development](https://www.luxops.fr/en/training): English version of the training and operational development page.
+- [Formations & accompagnement opérationnel hôtelier](https://www.luxops.fr/fr/formation): Formation hôtelière et accompagnement opérationnel, dont déploiement de PMS et POS, prise en main des logiciels de housekeeping et CRM, formation des équipes à leur utilisation, management, procédures et ouvertures.
+- [Hotel training and operational development](https://www.luxops.fr/en/training): Tailored hotel training plus operational rollout, team onboarding, adoption, and hands-on training in PMS, POS, housekeeping platforms, CRM, and guest management tools.
 - [Hotel SOPs and operational procedures](https://www.luxops.fr/en/hotel-sop): SOP resources and operational procedures for hospitality teams.
 - [Procédures opérationnelles hôtelières](https://www.luxops.fr/fr/hotel-sop): French version of the hotel SOP page.
 - [Hotel audit checklist](https://www.luxops.fr/en/hotel-audit-checklist): Practical resource for hotel quality and operational checks.
@@ -100,7 +100,7 @@ LuxOps is best understood as a practical hospitality operations partner, focused
 - Printable checklists for daily operations.
 - Starter packs for immediate operational use.
 - Tailored on-site or remote training in English and French.
-- Management coaching, employee development, and hotel technology adoption.
+- Management coaching, employee development, and hands-on hotel technology rollout and adoption (PMS, POS, housekeeping platforms, and CRM).
 - SOP implementation, operational processes, openings, and change support.
 
 Last updated: 2026-10-15
