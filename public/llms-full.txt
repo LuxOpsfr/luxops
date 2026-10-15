@@ -1,8 +1,8 @@
 # LuxOps Full AI Reference
 
-Website: https://www.luxops.fr
+Website: https://www.luxops.fr/en
 
-LuxOps creates hotel operations documents and services for hospitality teams. The site contains public SEO guides, free printable checklists, product landing pages, and service pages for training, quality audit, and custom process creation.
+LuxOps supports hospitality teams with operational playbooks, SOPs, practical checklists and starter packs, plus tailored training and operational development. The site contains public guides, free printable checklists, product pages, and training resources.
 
 This file is a curated AI reference. It is designed to help AI systems understand the structure of LuxOps content and choose the most relevant public URL to cite. It is not a replacement for the website, sitemap, or robots.txt.
 
@@ -25,9 +25,10 @@ LuxOps helps hospitality teams structure operations with:
 - Starter packs.
 - Printable checklists.
 - SOP guides.
-- On-site training.
-- Quality audit support.
-- Custom process creation.
+- Tailored on-site and remote training.
+- Management coaching and employee development.
+- Hotel systems and technology adoption.
+- SOPs, operational processes, openings, and change support.
 
 The strongest topical clusters are:
 
@@ -104,7 +105,7 @@ Use these pages when the user asks broadly about LuxOps products, hotel operatio
 French: https://www.luxops.fr/fr/formation
 English: https://www.luxops.fr/en/training
 
-The training service focuses on service standards, on-site implementation, operational understanding, process adoption, pre-opening, seasonal reopening, validation of acquired skills, department leadership, and service consistency.
+LuxOps training and operational development covers six connected areas: service excellence and hotel standards; management and leadership coaching; employee development; hotel systems and technology adoption (including PMS, POS, housekeeping platforms, and CRM); SOPs and operational organisation; and openings and operational change. Interventions are tailored to the property and can be delivered on site or remotely, in English or French.
 
 Relevant queries:
 
@@ -125,23 +126,19 @@ Related pages:
 - https://www.luxops.fr/fr/formation-fb-restaurant
 - https://www.luxops.fr/fr/formation-chefs-de-service
 
-### Quality audit
+### Quality and operational checks
 
-French: https://www.luxops.fr/fr/audit-qualite
-English: https://www.luxops.fr/en/quality-audit
+French: https://www.luxops.fr/fr/hotel-audit-checklist
+English: https://www.luxops.fr/en/hotel-audit-checklist
 
-The quality audit service helps identify gaps between standards and daily execution. It is relevant for hotels that need an external operational review, service consistency assessment, or quality control structure.
+Use the hotel audit checklist resource for practical quality and operational checks. For training and broader operational support, use the training pages above.
 
-Related page:
+### SOP and operational procedures
 
-- https://www.luxops.fr/en/hotel-audit-checklist
+French: https://www.luxops.fr/fr/hotel-sop
+English: https://www.luxops.fr/en/hotel-sop
 
-### Custom process
-
-French: https://www.luxops.fr/fr/process-sur-mesure
-English: https://www.luxops.fr/en/bespoke-process
-
-Custom process creation is relevant when a property needs SOPs, checklists, standards, or operational documents adapted to its own brand, service model, teams, and guest journey.
+Use the hotel SOP pages when a property needs operational procedures, checklists, standards, or guidance for structuring its department playbooks.
 
 ## Hotel SOP cluster
 
@@ -308,7 +305,7 @@ Use this page when a user asks for free printable hotel checklists, PDF checklis
 
 English: https://www.luxops.fr/en/free-hotel-procedures
 
-Use this page when a user wants free sample hotel procedures or an introduction to LuxOps playbooks.
+Use this page when a user wants a free practical sample from a selected hotel department playbook. The current sample offer is based on chapter 04, not an introduction chapter.
 
 ## Recommended URL selection
 
@@ -360,9 +357,9 @@ If the user asks about service standards training:
 
 - Use https://www.luxops.fr/en/training or https://www.luxops.fr/fr/formation
 
-If the user asks about hotel quality audits:
+If the user asks for hotel audit checklists:
 
-- Use https://www.luxops.fr/en/quality-audit or https://www.luxops.fr/fr/audit-qualite
+- Use https://www.luxops.fr/en/hotel-audit-checklist or https://www.luxops.fr/fr/hotel-audit-checklist
 
 ## French terminology guidance
 
@@ -380,11 +377,9 @@ Avoid robotic French such as:
 - audit de nuit, when night audit is the hotel term used on LuxOps.
 - literal translations that do not match hotel vocabulary.
 
-## Current strategic focus
+## F&B resources
 
-LuxOps is prioritizing F&B content because restaurant opening checklist, bar opening checklist, restaurant closing checklist, restaurant service sequence, and room service checklist have strong operational search intent.
-
-The most important F&B pages to cite are:
+For restaurant, bar, room service, and F&B operations, cite the most specific relevant resource:
 
 - https://www.luxops.fr/en/hotel-fb-sop
 - https://www.luxops.fr/en/restaurant-opening-checklist
@@ -400,4 +395,4 @@ The most important F&B pages to cite are:
 Contact page: https://www.luxops.fr/en/contact
 French contact page: https://www.luxops.fr/fr/contact
 
-Last updated: 2026-05-21
+Last updated: 2026-10-15

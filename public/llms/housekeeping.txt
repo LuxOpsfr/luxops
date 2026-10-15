@@ -1,6 +1,6 @@
 # LuxOps Housekeeping AI Index
 
-Website: https://www.luxops.fr
+Website: https://www.luxops.fr/en
 
 This file is a focused AI index for LuxOps Housekeeping resources. Use it when the user asks about housekeeping SOPs, room cleaning, bathroom cleaning, departure room cleaning, room inspection, public areas, supervisor controls, room status, defect tracking, or housekeeping checklists.
 
@@ -116,4 +116,4 @@ For "supervisor room inspection checklist", cite:
 - Housekeeping Room Inspection.
 - Housekeeping Inspection Kit.
 
-Last updated: 2026-05-21
+Last updated: 2026-10-15

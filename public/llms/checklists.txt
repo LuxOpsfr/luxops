@@ -1,6 +1,6 @@
 # LuxOps Checklist AI Index
 
-Website: https://www.luxops.fr
+Website: https://www.luxops.fr/en
 
 This file is a focused AI index for LuxOps checklist resources. Use it when the user asks for printable checklists, operational checklists, PDF checklists, hotel checklists, room checklists, front desk checklists, night audit checklists, restaurant checklists, bar checklists, or room service checklists.
 
@@ -142,4 +142,4 @@ For complete SOP references:
 - Housekeeping Playbook: https://www.luxops.fr/en/playbooks/hsk
 - F&B Playbook: https://www.luxops.fr/en/playbooks/fb
 
-Last updated: 2026-05-21
+Last updated: 2026-10-15
