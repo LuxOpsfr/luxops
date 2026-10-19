@@ -68,6 +68,9 @@ export function buildSaleNotificationEmail(session: Stripe.Checkout.Session, lin
   ].join('')
 
   const subjectEmail = buyerEmail.replace(/[\r\n]/g, ' ')
+  const intro = session.livemode
+    ? 'Un paiement vient d’être confirmé sur LuxOps.'
+    : 'Ceci est un exemple de notification. Aucune vente réelle n’a été effectuée.'
   return {
     subject: `${session.livemode ? '' : '[TEST] '}Nouvelle vente LuxOps · ${formatAmount(total, currency)} · ${subjectEmail}`,
     html: buildLuxOpsEmail({
@@ -76,7 +79,7 @@ export function buildSaleNotificationEmail(session: Stripe.Checkout.Session, lin
       title: 'Nouvelle vente LuxOps',
       previewText: `${formatAmount(total, currency)} · ${subjectEmail}`,
       content: `
-        <p style="margin:0 0 22px;color:#526158;font-size:15px;line-height:1.7;">Un paiement vient d’être confirmé sur LuxOps.</p>
+        <p style="margin:0 0 22px;color:#526158;font-size:15px;line-height:1.7;">${intro}</p>
         <p style="margin:0 0 8px;color:#a58658;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;">Acheteur</p>
         <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin:0 0 24px;">${detailsHtml}</table>
         <p style="margin:0 0 8px;color:#a58658;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;">Détail de la vente</p>
