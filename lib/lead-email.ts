@@ -185,7 +185,7 @@ export async function sendFreeChapterWelcomeEmail({
 }) {
   const email = buildFreeChapterWelcomeEmail(locale, department, chapterUrls)
 
-  return getResendClient().emails.send(
+  const result = await getResendClient().emails.send(
     {
       from: 'LuxOps <delivery@luxops.fr>',
       to,
@@ -195,4 +195,7 @@ export async function sendFreeChapterWelcomeEmail({
     },
     { idempotencyKey: leadWelcomeIdempotencyKey(to, requestId) }
   )
+
+  if (result.error) throw result.error
+  return result
 }

@@ -5,6 +5,7 @@ import { DOWNLOADS, BUNDLE_PRICE_ID, ALL_PLAYBOOK_PRICE_IDS } from '@/lib/downlo
 import { getPostHogClient } from '@/lib/posthog-server'
 import { getStripeClient, getStripeWebhookSecret } from '@/lib/stripe'
 import { getSupabaseAdmin } from '@/lib/supabase-admin'
+import { sendSaleNotificationEmail } from '@/lib/sales-notification-email'
 
 export async function POST(request: NextRequest) {
   const body = await request.text()
@@ -28,7 +29,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Invalid signature' }, { status: 400 })
   }
 
-  if (event.type === 'checkout.session.completed') {
+  if (event.type === 'checkout.session.completed' || event.type === 'checkout.session.async_payment_succeeded') {
     const session = event.data.object as Stripe.Checkout.Session
 
     if (session.payment_status !== 'paid') {
@@ -45,7 +46,7 @@ export async function POST(request: NextRequest) {
 
     const lineItems = await stripe.checkout.sessions.listLineItems(session.id, {
       expand: ['data.price'],
-      limit: 10,
+      limit: 100,
     })
 
     const priceIds = lineItems.data
@@ -90,6 +91,14 @@ export async function POST(request: NextRequest) {
       } else {
         console.log(`[Webhook] Purchase saved to Supabase: ${productName} → ${customerEmail}`)
       }
+    }
+
+    // One alert per paid Stripe session, including purchases with a portal discount.
+    try {
+      await sendSaleNotificationEmail(session, lineItems.data)
+      console.log(`[Webhook] Sale notification sent for ${session.id}`)
+    } catch (err) {
+      console.error(`[Webhook] Failed to send sale notification for ${session.id}:`, err)
     }
 
     // Track purchase in PostHog

@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { randomUUID } from 'node:crypto'
 import { getPostHogClient } from '@/lib/posthog-server'
 import { getResendClient } from '@/lib/resend'
 import { getSupabaseAdmin } from '@/lib/supabase-admin'
@@ -10,10 +11,6 @@ const DEPT_LABELS: Record<string, { en: string; fr: string }> = {
   fb: { en: 'Food & Beverage', fr: 'Food & Beverage' },
   spa: { en: 'Spa & Wellness', fr: 'Spa & Wellness' },
 }
-
-// Les téléchargements antérieurs au lancement de l'email de bienvenue ne
-// signifient pas que cet email a déjà été envoyé.
-const WELCOME_EMAIL_TRACKING_START = '2026-09-28T15:05:00.000Z'
 
 export async function POST(request: NextRequest) {
   try {
@@ -33,26 +30,9 @@ export async function POST(request: NextRequest) {
     const normalizedLocale = normalizeLeadLocale(locale)
     const supabase = getSupabaseAdmin()
 
-    // Chaque téléchargement reste enregistré. Le premier déclenche l'email
-    // historique de bienvenue ; le nouveau formulaire modal demande un envoi
-    // explicite à chaque soumission.
-    const { data: previousLeads, error: lookupError } = await supabase
-      .from('leads')
-      .select('email')
-      .ilike('email', normalizedEmail)
-      .gte('created_at', WELCOME_EMAIL_TRACKING_START)
-      .limit(1)
-
-    if (lookupError) {
-      console.error('[LuxOps Lead Lookup Error]', lookupError)
-    }
-
-    const isFirstDownload = !lookupError && (previousLeads?.length ?? 0) === 0
-
     // Resolve both language versions from the current public Supabase bucket
     // before recording a lead. The immediate download and follow-up email then
     // use the same current 2027 sample files.
-    const shouldSendWelcomeEmail = isFirstDownload || requestChapterEmail === true
     let chapterUrls: { en: string; fr: string }
     try {
       const objectPaths = FREE_CHAPTER_OBJECTS[department as keyof typeof FREE_CHAPTER_OBJECTS]
@@ -133,15 +113,16 @@ export async function POST(request: NextRequest) {
       console.error('[LuxOps Resend Error: lead sauvegardé en Supabase]', emailError)
     }
 
-    // 4. Email client envoyé une seule fois, quel que soit le nombre d'extraits.
+    // 4. Chaque demande reçoit l'extrait du département choisi, même si
+    // l'adresse a déjà demandé un autre extrait.
     let welcomeEmailSent = false
-    if (shouldSendWelcomeEmail && chapterUrls) {
+    if (chapterUrls) {
       try {
         await sendFreeChapterWelcomeEmail({
           to: normalizedEmail,
           locale: normalizedLocale,
           department: department as 'fo' | 'hsk' | 'fb' | 'spa',
-          requestId: requestChapterEmail === true && typeof requestId === 'string' ? requestId : undefined,
+          requestId: typeof requestId === 'string' && requestId ? requestId : randomUUID(),
           chapterUrls,
         })
         welcomeEmailSent = true
