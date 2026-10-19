@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
-import { Mail } from 'lucide-react'
+import { Instagram, Linkedin, Mail } from 'lucide-react'
 import CurrencySelector from '@/components/CurrencySelector'
 import { toActiveLocale } from '@/lib/i18n'
 import type { Locale } from '@/lib/i18n'
@@ -135,6 +135,26 @@ export default function Footer({ locale }: FooterProps) {
               <BrandLogo tone="light" showMonogram />
             </div>
             <p className="max-w-xs text-sm leading-relaxed text-[#b9c2ba]">{copy.tagline}</p>
+            <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
+              <a
+                href="https://www.instagram.com/luxops.fr/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm text-[#b9c2ba] transition-colors hover:text-white"
+              >
+                <Instagram size={17} strokeWidth={1.5} aria-hidden="true" />
+                Instagram
+              </a>
+              <a
+                href="https://www.linkedin.com/company/luxops-fr/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm text-[#b9c2ba] transition-colors hover:text-white"
+              >
+                <Linkedin size={17} strokeWidth={1.5} aria-hidden="true" />
+                LinkedIn
+              </a>
+            </div>
           </div>
 
           {visibleColumns.map((column) => (
