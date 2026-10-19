@@ -3,6 +3,11 @@ import { alternatesForPath, localizedUrl } from './localized-routes'
 
 export { SITE_URL }
 
+export const ORGANIZATION_SOCIAL_PROFILES = [
+  'https://www.instagram.com/luxops.fr/',
+  'https://www.linkedin.com/company/luxops-fr/',
+]
+
 export function localizedPath(locale: string, path = '') {
   return localizedUrl(locale, path || '/')
 }
@@ -27,7 +32,7 @@ export function organizationSchema(locale: string) {
         : safeLocale === 'es'
           ? 'Playbooks operativos y formación hotelera para estructurar, comunicar y aplicar estándares en hoteles high-end.'
         : 'Hotel operations playbooks and hotel training for high-end hospitality teams.',
-    sameAs: [],
+    sameAs: ORGANIZATION_SOCIAL_PROFILES,
     areaServed: [
       { '@type': 'Country', name: 'France' },
       { '@type': 'Place', name: 'Europe' },

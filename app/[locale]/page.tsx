@@ -3,6 +3,7 @@ import HomeLanding from '@/components/HomeLanding'
 import { ACTIVE_LOCALES, toActiveLocale } from '@/lib/i18n'
 import type { Locale } from '@/lib/i18n'
 import { alternatesForRoute, localizedRouteUrl } from '@/lib/localized-routes'
+import { ORGANIZATION_SOCIAL_PROFILES } from '@/lib/seo'
 
 const homeMetadata = {
   en: {
@@ -27,6 +28,7 @@ const orgSchema = {
       '@id': 'https://www.luxops.fr/#organization',
       name: 'LuxOps',
       url: 'https://www.luxops.fr',
+      sameAs: ORGANIZATION_SOCIAL_PROFILES,
       description: 'Operational SOP manuals and hotel training.',
       contactPoint: { '@type': 'ContactPoint', email: 'contact@luxops.fr', contactType: 'customer service' },
     },
