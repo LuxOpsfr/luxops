@@ -82,7 +82,7 @@ export const articles: BilingualArticle[] = [
         {
           h2: 'What a Hotel Operations SOP manual Covers',
           content:
-            'A useful SOP manual reflects how the hotel actually runs, department by department. At LuxOps, SOP manuals are structured around four core operational areas, each with dedicated procedures and service standards built from real hotel work.',
+            'A useful SOP manual reflects how the hotel actually runs, department by department. The five LuxOps manuals cover Front Office, Housekeeping, Food & Beverage, Spa & Wellness and Revenue Management, each with procedures suited to its scope.',
           h3Items: [
             {
               heading: 'Front Office',
@@ -99,6 +99,10 @@ export const articles: BilingualArticle[] = [
             {
               heading: 'Spa & Wellness',
               text: 'Treatment delivery standards, therapist conduct protocols, booking management, wellness programme structure, pre- and post-treatment care.',
+            },
+            {
+              heading: 'Revenue Management & Distribution',
+              text: 'Reservations, demand forecasts, rates, availability, distribution, groups and results reviews.',
             },
           ],
         },
@@ -128,7 +132,7 @@ export const articles: BilingualArticle[] = [
         {
           h2: 'Ready-Made SOP manuals vs. Building From Scratch',
           content:
-            'Building a full hotel operations SOP manual from scratch takes months and requires the kind of operational expertise most properties cannot dedicate internally. Ready-made SOP manuals built from real hotel experience give you a professionally structured foundation to adapt for your property, rather than starting from nothing. LuxOps SOP manuals cover Front Office, Housekeeping, F&B, and Spa, each running between 200 and 280 pages of documented procedures and service standards.',
+            'Building a full hotel operations SOP manual from scratch takes months and requires the kind of operational expertise most properties cannot dedicate internally. Ready-made SOP manuals built from real hotel experience give you a professionally structured foundation to adapt for your property, rather than starting from nothing. LuxOps offers five separate manuals for Front Office, Housekeeping, F&B, Spa & Wellness and Revenue Management.',
         },
       ],
       conclusion:
@@ -189,7 +193,7 @@ export const articles: BilingualArticle[] = [
         {
           h2: 'Ce que couvre un manuel SOP opérationnel',
           content:
-            "Un manuel SOP utile reflète le fonctionnement réel de l’établissement, département par département. Les Manuels SOP LuxOps sont structurés autour de quatre domaines opérationnels centraux, chacun avec des procédures et standards de service issus du terrain.",
+            "Un manuel SOP utile reflète le fonctionnement réel de l’établissement, département par département. Les cinq Manuels SOP LuxOps couvrent le Front Office, le housekeeping, le F&B, le spa et le revenue management, avec des procédures adaptées à chaque domaine.",
           h3Items: [
             {
               heading: 'Front Office',
@@ -206,6 +210,10 @@ export const articles: BilingualArticle[] = [
             {
               heading: 'Spa & Wellness',
               text: "Standards de délivrance des soins, protocoles de conduite du thérapeute, gestion des réservations, structure du programme bien-être.",
+            },
+            {
+              heading: 'Revenue Management & Distribution',
+              text: 'Réservations, prévisions de demande, tarifs, disponibilités, distribution, groupes et suivi des résultats.',
             },
           ],
         },
@@ -235,7 +243,7 @@ export const articles: BilingualArticle[] = [
         {
           h2: 'Manuels SOP prêts à l’emploi ou construction depuis zéro',
           content:
-            "Construire un manuel SOP opérationnel complet depuis zéro prend des mois et requiert une expertise opérationnelle que la plupart des établissements ne peuvent pas dédier en interne. Les Manuels SOP prêts à l’emploi construits à partir de l’expérience terrain donnent une base structurée à adapter à l’établissement, plutôt que de partir d’une page blanche. Les Manuels SOP LuxOps couvrent le Front Office, le housekeeping, le F&B et le spa, chacun représentant entre 200 et 280 pages de procédures et standards documentés.",
+            "Construire un manuel SOP opérationnel complet depuis zéro prend des mois et requiert une expertise opérationnelle que la plupart des établissements ne peuvent pas dédier en interne. Les Manuels SOP prêts à l’emploi construits à partir de l’expérience terrain donnent une base structurée à adapter à l’établissement, plutôt que de partir d’une page blanche. LuxOps propose cinq manuels distincts pour le Front Office, le housekeeping, le F&B, le spa et le revenue management.",
         },
       ],
       conclusion:
@@ -2505,7 +2513,7 @@ export const articles: BilingualArticle[] = [
         {
           h2: 'Core SOP Categories by Department',
           content:
-            'Hotel operations divide into four primary departments, each with distinct SOP requirements. The procedures that drive the most guest-facing risk, front office, housekeeping, food and beverage, and spa, are where documented standards have the clearest ROI.',
+            'The LuxOps collection covers five hotel practice areas with distinct SOP requirements: front office, housekeeping, food and beverage, spa and revenue management. Each calls for procedures appropriate to its own decisions and risks.',
           h3Items: [
             {
               heading: 'Front desk (front office)',
@@ -2522,6 +2530,10 @@ export const articles: BilingualArticle[] = [
             {
               heading: 'Spa and wellness',
               text: 'Priority SOPs: treatment room preparation, guest consultation and intake, contraindication screening, treatment protocol by modality, retail recommendation sequence and post-treatment follow-up. Spa SOPs carry a safety dimension that other departments do not. A guest with a health contraindication receiving a treatment that should not have been performed is an operational and legal failure, not just a service failure.',
+            },
+            {
+              heading: 'Revenue management and distribution',
+              text: 'Priority procedures: review reservations and demand, update forecasts, document rate and availability decisions, control distribution and review results.',
             },
           ],
         },
@@ -2566,7 +2578,7 @@ export const articles: BilingualArticle[] = [
       faqs: [
         {
           question: 'How many SOPs does a hotel typically need?',
-          answer: 'A mid-size hotel with four to five departments typically maintains between 40 and 80 active SOPs across front desk, housekeeping, F&B and spa. The number matters less than coverage of high-frequency and high-risk procedures. Start with 8 to 10 per department and expand from there.',
+          answer: 'The useful number depends on the hotel and the procedures it needs to control across its departments. Coverage of high-frequency and high-risk work matters more than a fixed total. Start with the priority procedures in each department and expand the library as needs become clear.',
         },
         {
           question: 'How often should hotel SOPs be reviewed?',
@@ -2651,7 +2663,7 @@ export const articles: BilingualArticle[] = [
         {
           h2: 'Catégories de SOP principales par département',
           content:
-            'Les opérations se divisent en départements avec des exigences SOP distinctes. Les procédures qui génèrent le plus de risques côté client, réception, housekeeping, restauration et spa, sont celles où les standards documentés ont le meilleur retour sur investissement.',
+            'La collection LuxOps couvre cinq domaines avec des exigences SOP distinctes : réception, housekeeping, restauration, spa et revenue management. Chacun demande des procédures adaptées à ses décisions et à ses risques.',
           h3Items: [
             {
               heading: 'Réception (front office)',
@@ -2668,6 +2680,10 @@ export const articles: BilingualArticle[] = [
             {
               heading: 'Spa et bien-être',
               text: 'SOP prioritaires : préparation de la salle de soins, consultation et prise en charge client, screening des contre-indications, protocole de soin par modalité, séquence de recommandation retail et suivi post-soin. Les SOP spa comportent une dimension sécurité que les autres départements n\'ont pas. Un client présentant une contre-indication recevant un soin qui n\'aurait pas dû être réalisé est un manquement opérationnel et juridique, pas seulement un manquement de service.',
+            },
+            {
+              heading: 'Revenue management et distribution',
+              text: 'Procédures prioritaires : analyser les réservations et la demande, mettre à jour le forecast, documenter les décisions de tarifs et de disponibilités, contrôler la distribution et suivre les résultats.',
             },
           ],
         },
@@ -2712,7 +2728,7 @@ export const articles: BilingualArticle[] = [
       faqs: [
         {
           question: 'Combien de SOPs faut-il généralement prévoir ?',
-          answer: 'Un établissement de taille moyenne avec quatre à cinq départements maintient généralement entre 40 et 80 SOPs actives couvrant la réception, le housekeeping, la restauration et le spa. Le nombre importe moins que la couverture des procédures à haute fréquence et à haut risque. Commencez par 8 à 10 par département et développez à partir de là.',
+          answer: 'Le nombre utile dépend de l’établissement et des procédures à maîtriser dans ses départements. La couverture des tâches fréquentes et à risque importe davantage qu’un total fixe. Commencez par les procédures prioritaires de chaque département, puis développez la bibliothèque selon les besoins constatés.',
         },
         {
           question: 'À quelle fréquence les SOPs doivent-elles être révisées ?',

@@ -85,7 +85,7 @@ export default async function FreeHotelProceduresPage({
         <div className="max-w-screen-xl mx-auto">
           <div className="grid grid-cols-3 gap-8 text-center max-w-lg mx-auto">
             {[
-              { value: '4', label: isEn ? 'Departments' : 'Départements' },
+              { value: '5', label: isEn ? 'Departments' : 'Départements' },
               { value: 'EN+FR', label: isEn ? 'Languages' : 'Langues' },
               { value: '100%', label: isEn ? 'Free' : 'Gratuit' },
             ].map((stat, i) => (
@@ -173,8 +173,8 @@ export default async function FreeHotelProceduresPage({
                 </h3>
                 <p className="text-sm text-[#59645f] leading-relaxed mb-5">
                   {isEn
-                    ? 'Department-level SOP systems for Front Office, Housekeeping, Food & Beverage and Spa operations.'
-                    : 'Systèmes SOP par département pour la réception, le housekeeping, le Food & Beverage et les opérations spa.'}
+                    ? 'Five SOP manuals for Front Office, Housekeeping, Food & Beverage, Spa and Revenue Management.'
+                    : 'Cinq Manuels SOP pour la réception, le housekeeping, le Food & Beverage, le spa et le revenue management.'}
                 </p>
                 <span className="text-sm font-semibold text-[#172822] group-hover:underline">
                   {isEn ? 'View full playbooks' : 'Voir les playbooks complets'}

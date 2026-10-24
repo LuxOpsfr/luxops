@@ -327,7 +327,7 @@ const faqs: Record<Locale, FAQItem[]> = {
     {
       question: 'Should procedures be written by department or by guest journey?',
       answer:
-        'Both are useful, but the operational base should be written by department first. Front Office, Housekeeping, F&B and Spa each need their own routines, controls and escalation rules. The guest journey can then connect those departments.',
+        'Both are useful, but the operational base should be written by department first. Front Office, Housekeeping, F&B, Spa and Revenue Management each need their own routines, controls and escalation rules. The guest journey can then connect the guest-facing departments.',
     },
     {
       question: 'What is the first procedure to write?',
@@ -349,7 +349,7 @@ const faqs: Record<Locale, FAQItem[]> = {
     {
       question: 'Faut-il écrire les procédures par département ou par parcours client ?',
       answer:
-        'Les deux approches sont utiles, mais la base opérationnelle doit d’abord être structurée par département. Réception, housekeeping, F&B et spa ont chacun leurs routines, contrôles et règles d’escalade. Le parcours client peut ensuite relier ces départements.',
+        'Les deux approches sont utiles, mais la base opérationnelle doit d’abord être structurée par département. Réception, housekeeping, F&B, spa et revenue management ont chacun leurs routines, contrôles et règles d’escalade. Le parcours client peut ensuite relier les départements en contact avec les clients.',
     },
     {
       question: 'Quelle procédure écrire en premier ?',

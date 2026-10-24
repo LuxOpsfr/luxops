@@ -455,8 +455,8 @@ export default async function HowToImproveHotelOperationsPage({ params }: { para
             </h2>
             <p className="text-gray-300 mb-8">
               {isEN
-                ? 'The LuxOps playbooks provide the procedures, checklists and training guides for all four departments. Built to be deployed immediately, not adapted for six months before use.'
-                : 'Les playbooks LuxOps fournissent les procédures, les checklists et les guides de formation pour les quatre départements. Conçus pour être déployés immédiatement, pas adaptés pendant six mois avant utilisation.'}
+                ? 'The five LuxOps SOP manuals cover Front Office, Housekeeping, F&B, Spa and Revenue Management with editable operational references.'
+                : 'Les cinq Manuels SOP LuxOps couvrent la réception, le housekeeping, le F&B, le spa et le revenue management avec des référentiels opérationnels modifiables.'}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

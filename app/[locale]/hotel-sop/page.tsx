@@ -13,8 +13,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       ? 'Hotel SOP Templates and Starter Packs | LuxOps'
       : 'Procédures opérationnelles hôtelières et starter packs | LuxOps',
     description: isEN
-      ? 'Hotel SOP templates, starter packs and department SOP manuals for front office, housekeeping, F&B and spa. Practical hotel procedures, checklists and SOP examples ready to adapt.'
-      : 'Modèles de SOP hôtel, starter packs et Manuels SOP par département pour la réception, le housekeeping, le F&B et le spa. Procédures, checklists et exemples prêts à adapter.',
+      ? 'Hotel SOP templates, starter packs and five SOP manuals: front office, housekeeping, F&B, spa and revenue management. Practical procedures and examples ready to adapt.'
+      : 'Modèles de SOP hôtel, starter packs et cinq Manuels SOP : réception, housekeeping, F&B, spa et revenue management. Procédures et exemples prêts à adapter.',
     keywords: isEN
       ? 'hotel sop, hotel sop template, hotel standard operating procedures, hotel sop sample, hotel operations manual template, luxury hotel sop'
       : 'sop hôtel, modèle sop hôtel, procédures opérationnelles hôtel, manuel opérations hôtel, procédures hôtelières',
@@ -58,6 +58,13 @@ const DEPARTMENTS_EN = [
     desc: 'Treatment reception, therapist protocols, hygiene standards, booking management, guest journey, retail and upsell',
     href: '/en/playbooks/spa',
   },
+  {
+    name: 'Revenue Management',
+    color: '#92734a',
+    chapters: 8,
+    desc: 'Reservations, demand forecasting, rates, availability, distribution, groups and performance review',
+    href: '/en/playbooks/revenue-management',
+  },
 ]
 
 const DEPARTMENTS_FR = [
@@ -88,6 +95,13 @@ const DEPARTMENTS_FR = [
     chapters: 9,
     desc: 'Accueil en spa, protocoles thérapeute, standards d\'hygiène, gestion des réservations, parcours client, retail et upsell',
     href: '/fr/playbooks/spa',
+  },
+  {
+    name: 'Revenue Management',
+    color: '#92734a',
+    chapters: 8,
+    desc: 'Réservations, prévisions de demande, tarifs, disponibilités, distribution, groupes et suivi des résultats',
+    href: '/fr/playbooks/revenue-management',
   },
 ]
 
@@ -148,7 +162,7 @@ const FAQS_EN = [
   {
     question: 'What is included in a complete hotel SOP system?',
     answer:
-      'A complete system covers guest-facing interactions, back-of-house routines, handovers, quality checks, escalation rules and department-specific exceptions. For a hotel, that normally means Front Office, Housekeeping, F&B and Spa or Wellness procedures.',
+      'A complete system covers guest-facing interactions, back-of-house routines, handovers, quality checks, escalation rules and department-specific exceptions. The five LuxOps manuals address Front Office, Housekeeping, F&B, Spa or Wellness and Revenue Management procedures.',
   },
   {
     question: 'Can SOPs be customized for independent hotels?',
@@ -171,7 +185,7 @@ const FAQS_FR = [
   {
     question: 'Que contient un système complet de procédures hôtelières ?',
     answer:
-      "Un système complet couvre les interactions client, les routines back-of-house, les passations, les contrôles qualité, les règles d'escalade et les exceptions propres à chaque département. Pour un hôtel, cela inclut généralement la réception, le housekeeping, le F&B et le spa.",
+      "Un système complet couvre les interactions client, les routines back-of-house, les passations, les contrôles qualité, les règles d'escalade et les exceptions propres à chaque département. Les cinq Manuels SOP LuxOps traitent de la réception, du housekeeping, du F&B, du spa et du revenue management.",
   },
   {
     question: 'Les SOPs peuvent-ils être adaptés à un hôtel indépendant ?',
@@ -199,8 +213,8 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
         '@type': 'Service',
         name: isEN ? 'Hotel SOP Templates' : 'Procédures opérationnelles hôtelières',
         description: isEN
-          ? 'Complete hotel SOP system covering front office, housekeeping, F&B and spa. Built by hospitality professionals.'
-          : 'Procédures opérationnelles complètes couvrant la réception, le housekeeping, le F&B et le spa. Conçues par des professionnels de l\'hôtellerie.',
+          ? 'Five hotel SOP manuals covering front office, housekeeping, F&B, spa and revenue management. Built by hospitality professionals.'
+          : 'Cinq Manuels SOP couvrant la réception, le housekeeping, le F&B, le spa et le revenue management. Conçus par des professionnels de l\'hôtellerie.',
         provider: { '@id': 'https://www.luxops.fr/#organization' },
         serviceType: 'Hotel Standard Operating Procedures',
         areaServed: 'Worldwide',
@@ -387,8 +401,8 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
             </p>
             <p className="text-sm text-[#687169]">
               {isEN
-                ? 'Front Office, Housekeeping, F&B or Spa. See what structured hotel SOPs look like in practice.'
-                : 'Réception, Housekeeping, F&B ou Spa. Découvrez à quoi ressemblent des procédures hôtelières structurées.'}
+                ? 'Front Office, Housekeeping, F&B, Spa or Revenue Management. See what structured hotel SOPs look like in practice.'
+                : 'Réception, housekeeping, F&B, spa ou revenue management. Découvrez à quoi ressemblent des procédures hôtelières structurées.'}
             </p>
           </div>
           <TrackedLink
@@ -445,7 +459,7 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
       <section id="department-playbooks" className="py-16 px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-[#0f211a] mb-2 text-center">
-            {isEN ? '4 Department SOP manuals' : '4 Manuels SOP par département'}
+            {isEN ? '5 SOP manuals by department' : '5 Manuels SOP par département'}
           </h2>
           <p className="text-gray-500 text-center mb-12">
             {isEN
@@ -519,12 +533,12 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
       <section className="py-16 px-6 bg-gray-50">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold text-[#0f211a] mb-8">
-            {isEN ? 'How the four SOP manuals fit together' : 'Comment les quatre Manuels SOP s\'articulent'}
+            {isEN ? 'How the five SOP manuals fit together' : 'Comment les cinq Manuels SOP s\'articulent'}
           </h2>
           {isEN ? (
             <>
               <p className="text-gray-600 leading-relaxed mb-5">
-                Each manual is a standalone SOP system for its department. A front office team can use its manual without needing the others. The same is true for housekeeping, F&B and spa.
+                Each manual is a standalone SOP system for its department. A front office team can use its manual without needing the others. The same is true for housekeeping, F&B, spa and revenue management.
               </p>
               <p className="text-gray-600 leading-relaxed">
                 Where properties run multiple departments under the same management, using the same manual structure creates a consistent framework across the operation. Procedures, inspection standards and handover formats are aligned across departments, which reduces the friction that comes from teams using incompatible formats.
@@ -533,7 +547,7 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
           ) : (
             <>
               <p className="text-gray-600 leading-relaxed mb-5">
-                Chaque manuel est un système de procédures autonome pour son département. Une équipe réception peut utiliser son manuel sans avoir besoin des autres. Il en va de même pour le housekeeping, le F&B et le spa.
+                Chaque manuel est un système de procédures autonome pour son département. Une équipe réception peut utiliser son manuel sans avoir besoin des autres. Il en va de même pour le housekeeping, le F&B, le spa et le revenue management.
               </p>
               <p className="text-gray-600 leading-relaxed">
                 {"Pour les établissements qui gèrent plusieurs départements sous la même direction, utiliser la même structure de Manuel SOP crée un cadre cohérent pour l'ensemble de l'opération. Les procédures, les standards d'inspection et les formats de passation sont alignés entre les départements, ce qui réduit les frictions liées à l'utilisation de formats incompatibles."}

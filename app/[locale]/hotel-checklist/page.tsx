@@ -437,8 +437,8 @@ export default async function HotelChecklistPage({ params }: { params: Promise<{
           </h2>
           <p className="text-gray-300 mb-8">
             {isEN
-              ? 'The LuxOps playbooks include the procedures, service standards, checklists, and control tools that support consistent day-to-day execution. Built for front office, housekeeping, F&B and spa departments.'
-              : "Les playbooks LuxOps intègrent les procédures, les standards de service, les checklists et les outils de contrôle qui soutiennent une exécution quotidienne cohérente. Conçus pour la réception, le housekeeping, le F&B et le spa."}
+              ? 'The five LuxOps SOP manuals cover Front Office, Housekeeping, F&B, Spa and Revenue Management with department-specific procedures and controls.'
+              : "Les cinq Manuels SOP LuxOps couvrent la réception, le housekeeping, le F&B, le spa et le revenue management avec des procédures et contrôles adaptés à chaque domaine."}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

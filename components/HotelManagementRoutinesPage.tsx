@@ -184,7 +184,7 @@ const resourceLinks: Record<Locale, LinkCard[]> = {
       href: '/en/playbooks',
       label: 'Playbooks',
       title: 'Operational playbooks',
-      body: 'Department SOP references for Front Office, Housekeeping, F&B and Spa.',
+      body: 'Five SOP manuals for Front Office, Housekeeping, F&B, Spa and Revenue Management.',
     },
     {
       href: '/en/hotel-operations-playbook',
@@ -210,7 +210,7 @@ const resourceLinks: Record<Locale, LinkCard[]> = {
       href: '/fr/playbooks',
       label: 'Playbooks',
       title: 'Playbooks opérationnels',
-      body: 'Références SOP par département pour Réception, Housekeeping, F&B et Spa.',
+      body: 'Cinq Manuels SOP pour la réception, le housekeeping, le F&B, le spa et le revenue management.',
     },
     {
       href: '/fr/manuel-procedure-hotellerie',

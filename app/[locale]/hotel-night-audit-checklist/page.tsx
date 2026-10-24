@@ -522,7 +522,7 @@ export default async function HotelNightAuditChecklistPage({ params }: { params:
               {
                 href: `/${locale}/hotel-sop`,
                 title: isEN ? 'Hotel SOP Templates' : 'Modèles de SOP',
-                desc: isEN ? 'SOP system for all four hotel departments' : 'Système de procédures pour les quatre départements hôteliers',
+                desc: isEN ? 'Explore the five LuxOps SOP manuals' : 'Découvrir les cinq Manuels SOP LuxOps',
               },
               {
                 href: `/${locale}/hotel-audit-checklist`,

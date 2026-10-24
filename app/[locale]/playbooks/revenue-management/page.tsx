@@ -2,10 +2,10 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { ArrowRight, BookOpen, Check, Languages, Presentation } from 'lucide-react'
-import { REVENUE_PRODUCT_CHAPTERS, REVENUE_PRODUCT_PATH } from '@/content/revenue-management-product'
+import { REVENUE_PRODUCT_PATH } from '@/content/revenue-management-product'
 import { revenueManagementDrafts } from '@/content/blog/revenue-management-drafts'
 import { breadcrumbSchema } from '@/lib/seo'
-import { RevenueBundleOffer, RevenueManualCartButton, RevenueManualPrice, RevenuePreviewStage } from '@/components/RevenueProductControls'
+import { RevenueChapterList, RevenueOfferSelector, RevenuePreviewStage } from '@/components/RevenueProductControls'
 
 const copy = {
   fr: {
@@ -105,14 +105,7 @@ export default async function RevenueManagementProductPage({ params }: { params:
             <h1 className="mt-2.5 font-display text-[clamp(1.9rem,2.5vw,2.2rem)] font-medium leading-[1.12] tracking-[-.015em] text-[#10251d]">{text.title}</h1>
             <p className="mt-2 max-w-2xl text-sm leading-[1.55] text-[#697169] md:text-[14px]">{text.intro}</p>
 
-            <div className="mt-3 space-y-2">
-              <article className="rounded-[17px] border border-[#c7a76e] bg-white px-3.5 py-3 shadow-[0_6px_18px_rgba(40,35,24,.06)] sm:px-4 sm:py-3.5">
-                <div className="flex items-center justify-between gap-3"><div className="flex min-w-0 items-center gap-2.5"><span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full"><span className="flex h-4 w-4 items-center justify-center rounded-full border border-[#a58658]"><span className="h-2 w-2 rounded-full bg-[#10251d]" /></span></span><h2 className="text-[12px] font-semibold text-[#25382d] sm:text-[13px]">{text.productLabel}</h2></div><RevenueManualPrice /></div>
-                <p className="ml-[26px] mt-1 text-[10px] leading-[1.4] text-[#74766e] sm:text-[11px]">{text.productDetail}</p>
-                <div className="ml-[26px] mt-2 flex justify-end border-t border-dashed border-[#e8e2d7] pt-2"><RevenueManualCartButton locale={locale} /></div>
-              </article>
-              <RevenueBundleOffer locale={locale} />
-            </div>
+            <RevenueOfferSelector locale={locale} />
 
             <div className="mt-2 grid grid-cols-2 gap-x-4 gap-y-1.5 rounded-[15px] border border-[#e9e3d9] bg-white/55 px-3.5 py-2.5 sm:px-4">
               {text.facts.map((fact, index) => <span key={fact} className="flex items-center gap-2 text-[10px] leading-4 text-[#46554b] sm:text-[11px]"><span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#f1ede5] text-[#a17f49]">{index === 0 ? <BookOpen size={11} /> : index === 1 ? <Languages size={11} /> : index === 2 ? <Presentation size={11} /> : <Check size={11} />}</span>{fact}</span>)}
@@ -121,7 +114,7 @@ export default async function RevenueManagementProductPage({ params }: { params:
         </div>
       </section>
 
-      <section id="chapters" className="scroll-mt-24 bg-[#fcfbf8] px-5 py-16 md:px-8 md:py-20"><div className="mx-auto max-w-[1320px]"><div className="mb-8 flex flex-wrap items-end justify-between gap-4"><div><p className="mb-2 text-[10px] font-bold uppercase tracking-[.18em] text-[#a58658]">{text.structureLabel}</p><h2 className="font-display text-3xl font-medium tracking-tight text-[#10251d] md:text-4xl">{text.chaptersTitle}</h2></div><p className="max-w-lg text-sm leading-6 text-[#72766e]">{text.chaptersIntro} {locale === 'fr' ? 'Environ 115 pages au total.' : 'Approximately 115 pages in total.'}</p></div><div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">{REVENUE_PRODUCT_CHAPTERS.map((chapter) => <article key={chapter.number} className={`relative flex min-h-[92px] flex-col justify-between rounded-[18px] border bg-white p-4 sm:p-5 ${chapter.number === '02' ? 'border-[#c7a76e] shadow-[0_5px_18px_rgba(40,35,24,.05)]' : 'border-[#ece6dc]'}`}><span className="font-display text-xl text-[#b89760]">{chapter.number}</span><h3 className="mt-2 text-sm font-semibold leading-5 text-[#26392e]">{chapter.title[locale]}</h3></article>)}</div></div></section>
+      <RevenueChapterList locale={locale} />
 
       <section className="border-y border-[#e8e2d7] bg-[#f1ede5] px-5 py-14 md:px-8 md:py-18"><div className="mx-auto grid max-w-[1320px] gap-10 lg:grid-cols-[.85fr_1.15fr]"><div><h2 className="font-display text-3xl font-medium text-[#10251d] md:text-4xl">{text.aboutTitle}</h2><p className="mt-5 text-sm leading-7 text-[#687169]">{text.aboutText}</p></div><div className="rounded-[22px] border border-[#e4dac8] bg-white p-6 sm:p-8"><h3 className="font-display text-2xl text-[#10251d]">{text.scopeTitle}</h3><ul className="mt-5 grid gap-4 sm:grid-cols-2">{text.scope.map((item) => <li key={item} className="flex items-start gap-2.5 text-sm leading-6 text-[#46554b]"><Check size={16} className="mt-1 shrink-0 text-[#a58658]" />{item}</li>)}</ul></div></div></section>
 

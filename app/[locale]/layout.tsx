@@ -15,7 +15,7 @@ const GA_ID = 'G-0CDGZY9FPZ'
 export const metadata: Metadata = {
   title: 'LuxOps | Hotel Operations Playbooks & Training',
   description:
-    'Operational playbooks and on-site or remote training for high-end hotels. Front Office, Housekeeping, F&B, Spa. Built from real hotel operations.',
+    'Operational playbooks and on-site or remote training for high-end hotels. Front Office, Housekeeping, F&B, Spa and Revenue Management. Built from real hotel operations.',
   keywords: [
     'hotel operations playbook',
     'hotel SOP',
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     siteName: 'LuxOps',
     title: 'LuxOps | Hotel Operations Playbooks & Training',
     description:
-      'Operational playbooks and on-site or remote training for high-end hotels. Front Office, Housekeeping, F&B, Spa. Built from real hotel operations.',
+      'Operational playbooks and on-site or remote training for high-end hotels. Front Office, Housekeeping, F&B, Spa and Revenue Management. Built from real hotel operations.',
     url: 'https://www.luxops.fr',
     images: [
       {

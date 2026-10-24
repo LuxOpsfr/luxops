@@ -35,8 +35,9 @@ export function RevenuePreviewStage({ locale }: { locale: Locale }) {
   </div>
 }
 
-export function RevenueBundleOffer({ locale }: { locale: Locale }) {
+export function RevenueOfferSelector({ locale }: { locale: Locale }) {
   const isFr = locale === 'fr'
+  const [selectedOffer, setSelectedOffer] = useState<'manual' | 'bundle'>('manual')
   const { addItem, items, openCart } = useCart()
   const { currency, priceFor, formatProductPrice } = useCurrency()
   const inCart = items.some((item) => item.priceId === BUNDLE_PRICE_ID)
@@ -46,11 +47,47 @@ export function RevenueBundleOffer({ locale }: { locale: Locale }) {
     addItem({ priceId: BUNDLE_PRICE_ID, title: isFr ? 'Bundle complet · 5 manuels SOP' : 'Complete bundle · 5 SOP manuals', price: priceFor('bundle'), currency, productType: 'bundle' })
   }
 
-  return <article className="group/offer rounded-[17px] border border-[#e6e1d8] bg-white/85 px-3.5 py-3 transition duration-200 hover:border-[#c7a76e] hover:shadow-[0_8px_20px_rgba(40,35,24,.08)] sm:px-4 sm:py-3.5">
-    <div className="flex items-center justify-between gap-3"><div className="flex min-w-0 items-center gap-2.5"><span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full"><span className="h-4 w-4 rounded-full border border-[#c9c4b9]" /></span><h2 className="text-[12px] font-semibold text-[#25382d] sm:text-[13px]">{isFr ? 'Bundle · 5 manuels SOP' : 'Bundle · 5 SOP manuals'}</h2></div><span className="shrink-0 font-display text-lg font-semibold leading-none text-[#25382d] sm:text-xl">{formatProductPrice('bundle')} <small className="font-sans text-[9px] font-normal text-[#85867f]">TTC</small></span></div>
-    <p className="ml-[26px] mt-1 text-[10px] leading-[1.4] text-[#74766e] sm:text-[11px]">Front Office · Housekeeping · F&B · Spa · Revenue Management</p>
-    <div className="ml-[26px] mt-2 flex items-center justify-between gap-3 border-t border-dashed border-[#e8e2d7] pt-2"><span className="text-[9px] font-medium text-[#9a7948]">{isFr ? 'Tarif maintenu à 199 €' : 'Same €199 price'}</span><button type="button" onClick={handleAddBundle} className="inline-flex min-h-8 items-center gap-1.5 rounded-full border border-[#d8d2c7] bg-white px-3.5 text-[10px] font-semibold text-[#25382d] transition hover:border-[#10251d] hover:bg-[#f8f6f1] sm:text-[11px]"><ShoppingCart size={12} />{inCart ? (isFr ? 'Voir le panier' : 'Open cart') : (isFr ? 'Ajouter' : 'Add')}</button></div>
-  </article>
+  return <div className="mt-3 space-y-2" role="radiogroup" aria-label={isFr ? 'Choisir un produit' : 'Choose a product'}>
+    <article onClick={() => setSelectedOffer('manual')} className={`group/offer cursor-pointer rounded-[17px] border bg-white px-3.5 py-3 transition duration-200 hover:border-[#a58658] hover:shadow-[0_10px_24px_rgba(40,35,24,.1)] sm:px-4 sm:py-3.5 ${selectedOffer === 'manual' ? 'border-[#c7a76e] shadow-[0_6px_18px_rgba(40,35,24,.06)]' : 'border-[#e6e1d8]'}`}>
+      <div className="flex items-center justify-between gap-3"><div className="flex min-w-0 items-center gap-2.5"><button type="button" role="radio" aria-checked={selectedOffer === 'manual'} aria-label={isFr ? 'Manuel Revenue Management & Distribution' : 'Revenue Management & Distribution SOP Manual'} onClick={() => setSelectedOffer('manual')} className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full outline-none focus-visible:ring-2 focus-visible:ring-[#b89760] focus-visible:ring-offset-2"><span className={`flex h-4 w-4 items-center justify-center rounded-full border ${selectedOffer === 'manual' ? 'border-[#a58658]' : 'border-[#c9c4b9]'}`}>{selectedOffer === 'manual' && <span className="h-2 w-2 rounded-full bg-[#10251d]" />}</span></button><h2 className="text-[12px] font-semibold text-[#25382d] sm:text-[13px]">{isFr ? 'Manuel Revenue Management & Distribution' : 'Revenue Management & Distribution SOP Manual'}</h2></div><RevenueManualPrice /></div>
+      <p className="ml-[26px] mt-1 text-[10px] leading-[1.4] text-[#74766e] sm:text-[11px]">{isFr ? 'Manuel complet · 8 chapitres · ~115 pages · PDF et PowerPoint modifiable.' : 'Complete manual · 8 chapters · ~115 pages · PDF and editable PowerPoint.'}</p>
+      <div className="ml-[26px] mt-2 flex justify-end border-t border-dashed border-[#e8e2d7] pt-2"><RevenueManualCartButton locale={locale} /></div>
+    </article>
+    <article onClick={() => setSelectedOffer('bundle')} className={`group/offer cursor-pointer rounded-[17px] border bg-white/85 px-3.5 py-3 transition duration-200 hover:border-[#c7a76e] hover:shadow-[0_8px_20px_rgba(40,35,24,.08)] sm:px-4 sm:py-3.5 ${selectedOffer === 'bundle' ? 'border-[#c7a76e] shadow-[0_6px_18px_rgba(40,35,24,.06)]' : 'border-[#e6e1d8]'}`}>
+      <div className="flex items-center justify-between gap-3"><div className="flex min-w-0 items-center gap-2.5"><button type="button" role="radio" aria-checked={selectedOffer === 'bundle'} aria-label={isFr ? 'Bundle · 5 manuels SOP' : 'Bundle · 5 SOP manuals'} onClick={() => setSelectedOffer('bundle')} className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full outline-none focus-visible:ring-2 focus-visible:ring-[#b89760] focus-visible:ring-offset-2"><span className={`flex h-4 w-4 items-center justify-center rounded-full border ${selectedOffer === 'bundle' ? 'border-[#a58658]' : 'border-[#c9c4b9]'}`}>{selectedOffer === 'bundle' && <span className="h-2 w-2 rounded-full bg-[#10251d]" />}</span></button><h2 className="text-[12px] font-semibold text-[#25382d] sm:text-[13px]">{isFr ? 'Bundle · 5 manuels SOP' : 'Bundle · 5 SOP manuals'}</h2></div><span className="shrink-0 font-display text-lg font-semibold leading-none text-[#25382d] sm:text-xl">{formatProductPrice('bundle')} <small className="font-sans text-[9px] font-normal text-[#85867f]">TTC</small></span></div>
+      <p className="ml-[26px] mt-1 text-[10px] leading-[1.4] text-[#74766e] sm:text-[11px]">Front Office · Housekeeping · F&B · Spa · Revenue Management</p>
+      <div className="ml-[26px] mt-2 flex items-center justify-between gap-3 border-t border-dashed border-[#e8e2d7] pt-2"><span className="text-[9px] font-medium text-[#9a7948]">{isFr ? 'Tarif maintenu à 199 €' : 'Same €199 price'}</span><button type="button" onClick={handleAddBundle} className="inline-flex min-h-8 items-center gap-1.5 rounded-full border border-[#d8d2c7] bg-white px-3.5 text-[10px] font-semibold text-[#25382d] transition hover:border-[#10251d] hover:bg-[#f8f6f1] sm:text-[11px]"><ShoppingCart size={12} />{inCart ? (isFr ? 'Voir le panier' : 'Open cart') : (isFr ? 'Ajouter' : 'Add')}</button></div>
+    </article>
+  </div>
+}
+
+export function RevenueChapterList({ locale }: { locale: Locale }) {
+  const [sampleOpen, setSampleOpen] = useState(false)
+  const isFr = locale === 'fr'
+  const sampleChapter = REVENUE_PRODUCT_CHAPTERS[1]
+
+  return <section id="chapters" className="scroll-mt-24 bg-[#fcfbf8] px-5 py-16 md:px-8 md:py-20">
+    <div className="mx-auto max-w-[1320px]">
+      <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <p className="mb-2 text-[10px] font-bold uppercase tracking-[.18em] text-[#a58658]">{isFr ? 'Structure du manuel' : 'Manual structure'}</p>
+          <h2 className="font-display text-3xl font-medium tracking-tight text-[#10251d] md:text-4xl">{isFr ? 'Les 8 chapitres opérationnels' : '8 operational chapters'}</h2>
+        </div>
+        <p className="max-w-lg text-sm leading-6 text-[#72766e]">{isFr ? 'Un parcours de la lecture des réservations à la revue des décisions et des résultats. Environ 115 pages au total.' : 'A route from understanding reservations to reviewing decisions and results. Approximately 115 pages in total.'}</p>
+      </div>
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {REVENUE_PRODUCT_CHAPTERS.map((chapter) => <article key={chapter.number} className={`group/chapter relative flex min-h-[92px] flex-col justify-between rounded-[18px] border bg-white p-4 transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_24px_rgba(40,35,24,.07)] sm:p-5 ${chapter.number === '02' ? 'border-[#c7a76e] shadow-[0_5px_18px_rgba(40,35,24,.05)]' : 'border-[#ece6dc] hover:border-[#d9c59f]'}`}>
+          <span className="font-display text-xl text-[#b89760]">{chapter.number}</span>
+          <div className="mt-2 flex items-end justify-between gap-3">
+            <h3 className="text-sm font-semibold leading-5 text-[#26392e]">{chapter.title[locale]}</h3>
+            {chapter.number === '02' && <button type="button" onClick={() => setSampleOpen(true)} className="shrink-0 rounded-full bg-[#10251d] px-3 py-1.5 text-[10px] font-semibold text-white transition hover:bg-[#2a4335]">{isFr ? 'Lire l’extrait' : 'Read sample'}</button>}
+          </div>
+          {chapter.number === '02' && <span className="absolute -top-2.5 right-3 rounded-full bg-[#10251d] px-2.5 py-1 text-[9px] font-semibold uppercase tracking-wide text-[#f7f4ec]">{isFr ? 'Extrait' : 'Sample'}</span>}
+        </article>)}
+      </div>
+    </div>
+    {sampleOpen && <FrontOfficeExcerptDialog locale={locale} startPage={1} productId="revenue" chapterTitle={sampleChapter.title[locale]} chapterNumber={2} chapterPages={16} onClose={() => setSampleOpen(false)} />}
+  </section>
 }
 
 export function RevenueManualCartButton({ locale }: { locale: Locale }) {

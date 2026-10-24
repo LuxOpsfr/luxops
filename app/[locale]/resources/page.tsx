@@ -62,7 +62,7 @@ const enFaqs = [
   },
   {
     q: 'What should a hotel SOP manual include?',
-    a: 'A useful hotel SOP manual gives teams one place to find the procedures, service standards, scripts, and checklists they need to work properly. It is organised by department and written for daily operational use, as a working tool for the people delivering the service. It contains the actual steps: how a check-in runs, what a room inspection covers, and how a complaint gets escalated. LuxOps manuals cover Front Office, Housekeeping, F&B and Spa, and are available in English and French.',
+    a: 'A useful hotel SOP manual gives teams one place to find the procedures, service standards, scripts, and checklists they need to work properly. It is organised by department and written for daily operational use, as a working tool for the people delivering the service. It contains the actual steps: how a check-in runs, what a room inspection covers, and how a complaint gets escalated. The five LuxOps manuals cover Front Office, Housekeeping, F&B, Spa and Revenue Management, and are available in English and French.',
     link: '/playbooks',
     linkLabel: 'Browse SOP manuals',
   },
@@ -125,7 +125,7 @@ const frFaqs = [
   },
   {
     q: 'Que doit contenir un Manuel SOP hôtelier ?',
-    a: 'Un Manuel SOP hôtelier utile donne aux équipes un seul endroit où trouver les procédures, standards de service, scripts et checklists dont elles ont besoin pour bien travailler. Il est organisé par département et rédigé pour un usage opérationnel quotidien, comme un outil de travail pour les personnes qui font le service. Il contient les étapes réelles : comment se déroule un check-in, ce que couvre une inspection de chambre, comment une réclamation est escaladée. Les Manuels SOP LuxOps couvrent le Front Office, le Housekeeping, le F&B et le Spa, en français et en anglais.',
+    a: 'Un Manuel SOP hôtelier utile donne aux équipes un seul endroit où trouver les procédures, standards de service, scripts et checklists dont elles ont besoin pour bien travailler. Il est organisé par département et rédigé pour un usage opérationnel quotidien, comme un outil de travail pour les personnes qui font le service. Il contient les étapes réelles : comment se déroule un check-in, ce que couvre une inspection de chambre, comment une réclamation est escaladée. Les cinq Manuels SOP LuxOps couvrent le Front Office, le housekeeping, le F&B, le spa et le revenue management, en français et en anglais.',
     link: '/playbooks',
     linkLabel: 'Voir les Manuels SOP',
   },
