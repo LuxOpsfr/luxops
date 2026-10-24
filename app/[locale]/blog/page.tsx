@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight, ArrowUpRight, BookOpen, Clock, FileText, Hotel } from 'lucide-react'
 import { articles } from '@/content/blog/articles'
+import { revenueManagementDrafts } from '@/content/blog/revenue-management-drafts'
 import { blogEditorialImages, editorialImageUrl } from '@/lib/editorial-images'
 
 export async function generateMetadata({
@@ -37,6 +38,7 @@ export default async function BlogPage({
 }) {
   const { locale } = await params
   const isEn = locale === 'en'
+  const revenueLocale = isEn ? 'en' : 'fr'
   const topicClusters = isEn ? [
     { href: '/hotel-sop', label: 'Hotel SOP Templates', desc: 'The main pillar page for standard operating procedures across departments.' },
     { href: '/front-office-sop', label: 'Front Office SOP', desc: 'Reception, check-in, billing, handover and night audit procedures.' },
@@ -94,6 +96,27 @@ export default async function BlogPage({
                   <ArrowUpRight size={17} className="mt-1 shrink-0 text-[#a58658] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </Link>
               ))}
+            </div>
+          </div>
+          <div className="mb-12">
+            <div className="mb-5 flex flex-wrap items-end justify-between gap-4">
+              <div>
+                <p className="mb-2 text-[10px] font-semibold uppercase tracking-[.18em] text-[#92734a]">Revenue Management</p>
+                <h2 className="font-display text-2xl font-medium text-[#0f211a] md:text-3xl">{isEn ? 'Revenue Management guides' : 'Guides Revenue Management'}</h2>
+              </div>
+              <Link href={`/${revenueLocale}/playbooks/revenue-management`} className="inline-flex items-center gap-2 text-sm font-semibold text-[#314137] hover:underline">
+                {isEn ? 'Explore the SOP manual' : 'Découvrir le manuel SOP'} <ArrowRight size={15} />
+              </Link>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {revenueManagementDrafts.map((article) => {
+                const content = isEn ? article.en : article.fr
+                return <Link key={article.slug} href={`/${revenueLocale}/blog/${article.slug}`} className="group flex h-full flex-col rounded-[1.25rem] border border-[#e7e1d7] bg-white p-5 transition hover:border-[#cbb487] hover:shadow-[0_12px_26px_rgba(40,40,30,.07)]">
+                  <h3 className="font-display text-lg font-medium leading-snug text-[#0f211a]">{content.title}</h3>
+                  <p className="mt-3 line-clamp-3 text-sm leading-6 text-[#687169]">{content.description}</p>
+                  <span className="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-semibold text-[#314137]">{isEn ? 'Read the guide' : 'Lire le guide'} <ArrowRight size={14} /></span>
+                </Link>
+              })}
             </div>
           </div>
           <div className="mb-5 flex items-end justify-between gap-5">

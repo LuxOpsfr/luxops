@@ -14,6 +14,14 @@ export interface PlaybookDownload {
 }
 
 export const DOWNLOADS: Record<string, PlaybookDownload> = {
+  price_1UU4ZYDVLJTOFkjUSDgIJ4pD: {
+    titleEn: 'Revenue Management & Distribution SOP Manual',
+    titleFr: 'Manuel Revenue Management & Distribution',
+    pdfEn: 'BUNDLE',
+    pptEn: 'BUNDLE',
+    pdfFr: 'BUNDLE',
+    pptFr: 'BUNDLE',
+  },
   // Front Office Starter Pack - €29
   price_1TUONHDVLJTOFkjUjE391FrX: {
     titleEn: 'Front Office Starter Pack',
@@ -124,10 +132,10 @@ export const DOWNLOADS: Record<string, PlaybookDownload> = {
     pptFr: 'PLACEHOLDER_SPA_PPT_FR',
   },
 
-  // Bundle - €199 (all 4 playbooks)
+  // Bundle - €199 (all 5 playbooks)
   price_1TZRWjDVLJTOFkjUjIKWDnyi: {
-    titleEn: 'Complete Bundle: All 4 Playbooks',
-    titleFr: 'Bundle Complet : 4 Playbooks',
+    titleEn: 'Complete Bundle: All 5 Playbooks',
+    titleFr: 'Bundle Complet : 5 Playbooks',
     // Bundle uses same links as individual playbooks, handled separately in email
     pdfEn: 'BUNDLE',
     pptEn: 'BUNDLE',
@@ -135,10 +143,10 @@ export const DOWNLOADS: Record<string, PlaybookDownload> = {
     pptFr: 'BUNDLE',
   },
 
-  // Bundle - legacy €199 (all 4 playbooks)
+  // Bundle - legacy €199
   price_1TBZB5DVLJTOFkjUwmgvTPRW: {
-    titleEn: 'Complete Bundle: All 4 Playbooks',
-    titleFr: 'Bundle Complet : 4 Playbooks',
+    titleEn: 'Complete Bundle: All 5 Playbooks',
+    titleFr: 'Bundle Complet : 5 Playbooks',
     // Bundle uses same links as individual playbooks, handled separately in email
     pdfEn: 'BUNDLE',
     pptEn: 'BUNDLE',
@@ -154,4 +162,5 @@ export const ALL_PLAYBOOK_PRICE_IDS = [
   'price_1TBZ9TDVLJTOFkjUwWnoKaGk',
   'price_1TZRYvDVLJTOFkjUNuiqbADG',
   'price_1TZRY9DVLJTOFkjUfkYQJAsW',
+  'price_1UU4ZYDVLJTOFkjUSDgIJ4pD',
 ]

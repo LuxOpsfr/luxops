@@ -35,6 +35,13 @@ const DEPARTMENTS = [
     desc_en: '9 chapters · Treatment protocols, guest journey, retail and wellness standards',
     desc_fr: '9 chapitres · Protocoles de soins, parcours client, retail et standards wellness',
   },
+  {
+    key: 'revenue',
+    en: 'Revenue Management',
+    fr: 'Revenue Management',
+    desc_en: 'Chapter 02 · Reservations, demand and forecasting',
+    desc_fr: 'Chapitre 02 · Réservations, demande et forecast',
+  },
 ]
 
 const NEXT_STEPS: Record<string, {
@@ -56,6 +63,9 @@ const NEXT_STEPS: Record<string, {
   spa: {
     playbook: { slug: 'spa', en: 'Spa & Wellness Playbook', fr: 'Playbook Spa & Wellness' },
   },
+  revenue: {
+    playbook: { slug: 'revenue-management', en: 'Revenue Management SOP Manual', fr: 'Manuel SOP Revenue Management' },
+  },
 }
 
 export default function LeadMagnetForm({ locale }: { locale: string }) {
@@ -76,10 +86,13 @@ export default function LeadMagnetForm({ locale }: { locale: string }) {
     if (params.get('preview') === 'success') {
       const department = params.get('department') || 'hsk'
       if (DEPARTMENTS.some((item) => item.key === department)) {
-        setDownloadDept(department)
-        setDownloadUrls({ en: '#preview', fr: '#preview' })
-        setWelcomeEmailSent(true)
-        setStatus('success')
+        const frame = window.requestAnimationFrame(() => {
+          setDownloadDept(department)
+          setDownloadUrls({ en: '#preview', fr: '#preview' })
+          setWelcomeEmailSent(true)
+          setStatus('success')
+        })
+        return () => window.cancelAnimationFrame(frame)
       }
     }
   }, [])
@@ -257,7 +270,7 @@ export default function LeadMagnetForm({ locale }: { locale: string }) {
                 {isEn ? 'Complete SOP reference for the department.' : 'Référence SOP complète du département.'}
               </p>
               <TrackedLink
-                href={`/${locale}/playbooks/${nextStep.playbook.slug}`}
+                href={`/${downloadDept === 'revenue' ? (isEn ? 'en' : 'fr') : locale}/playbooks/${nextStep.playbook.slug}`}
                 eventName="lead_magnet_next_step_clicked"
                 eventProperties={{ department: downloadDept, destination: 'playbook', locale }}
                 className="inline-flex items-center gap-2 text-sm font-semibold text-[#24362f]"

@@ -74,6 +74,160 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- playbooksRevenueManagement EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/playbooks/revenue-management</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/playbooks/revenue-management"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/playbooks/revenue-management"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/playbooks/revenue-management"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-10-24</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- playbooksRevenueManagement FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/playbooks/revenue-management</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/playbooks/revenue-management"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/playbooks/revenue-management"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/playbooks/revenue-management"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-10-24</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- blogRevenueRevpar EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/blog/calcul-revpar-adr-taux-occupation</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/calcul-revpar-adr-taux-occupation"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/calcul-revpar-adr-taux-occupation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/calcul-revpar-adr-taux-occupation"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-10-24</lastmod>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- blogRevenueRevpar FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/blog/calcul-revpar-adr-taux-occupation</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/calcul-revpar-adr-taux-occupation"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/calcul-revpar-adr-taux-occupation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/calcul-revpar-adr-taux-occupation"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-10-24</lastmod>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- blogRevenueGuide EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/blog/revenue-management-hotelier-guide</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/revenue-management-hotelier-guide"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/revenue-management-hotelier-guide"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/revenue-management-hotelier-guide"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-10-24</lastmod>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- blogRevenueGuide FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/blog/revenue-management-hotelier-guide</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/revenue-management-hotelier-guide"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/revenue-management-hotelier-guide"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/revenue-management-hotelier-guide"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-10-24</lastmod>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- blogRevenueLearning EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/blog/apprendre-revenue-management-hotelier</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/apprendre-revenue-management-hotelier"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/apprendre-revenue-management-hotelier"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/apprendre-revenue-management-hotelier"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-10-24</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- blogRevenueLearning FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/blog/apprendre-revenue-management-hotelier</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/apprendre-revenue-management-hotelier"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/apprendre-revenue-management-hotelier"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/apprendre-revenue-management-hotelier"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-10-24</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- blogRevenuePickup EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/blog/pickup-forecast-hotelier</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/pickup-forecast-hotelier"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/pickup-forecast-hotelier"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/pickup-forecast-hotelier"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-10-24</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- blogRevenuePickup FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/blog/pickup-forecast-hotelier</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/pickup-forecast-hotelier"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/pickup-forecast-hotelier"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/pickup-forecast-hotelier"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-10-24</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- blogRevenueDistribution EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/blog/distribution-hoteliere-ota-direct</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/distribution-hoteliere-ota-direct"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/distribution-hoteliere-ota-direct"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/distribution-hoteliere-ota-direct"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-10-24</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- blogRevenueDistribution FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/blog/distribution-hoteliere-ota-direct</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/distribution-hoteliere-ota-direct"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/distribution-hoteliere-ota-direct"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/distribution-hoteliere-ota-direct"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-10-24</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- blogRevenuePricing EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/blog/strategie-tarifaire-hotel</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/strategie-tarifaire-hotel"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/strategie-tarifaire-hotel"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/strategie-tarifaire-hotel"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-10-24</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- blogRevenuePricing FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/blog/strategie-tarifaire-hotel</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/strategie-tarifaire-hotel"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/strategie-tarifaire-hotel"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/strategie-tarifaire-hotel"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-10-24</lastmod>
+    <priority>0.8</priority>
+  </url>
+
   <!-- freeHotelChecklists EN -->
   <url>
     <loc>https://www.luxops.fr/en/free-hotel-checklists</loc>

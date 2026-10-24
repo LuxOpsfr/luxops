@@ -23,6 +23,7 @@ const ALL_INDIVIDUAL_PRICE_IDS = [
   'price_1TBZ9TDVLJTOFkjUwWnoKaGk',
   'price_1TZRYvDVLJTOFkjUNuiqbADG',
   'price_1TZRY9DVLJTOFkjUfkYQJAsW',
+  'price_1UU4ZYDVLJTOFkjUSDgIJ4pD',
 ]
 
 const PLAYBOOK_NAMES: Record<string, Record<EmailLocale, string>> = {
@@ -36,8 +37,9 @@ const PLAYBOOK_NAMES: Record<string, Record<EmailLocale, string>> = {
   'price_1TBZ9iDVLJTOFkjU3Os9VLRc': { en: 'F&B SOP Manual', fr: 'Manuel SOP F&B', es: 'Manual SOP F&B' },
   'price_1TZRY9DVLJTOFkjUfkYQJAsW': { en: 'Spa & Wellness SOP Manual', fr: 'Manuel SOP Spa & Wellness', es: 'Manual SOP Spa & Wellness' },
   'price_1TBZ9vDVLJTOFkjUT1FHhqUi': { en: 'Spa & Wellness SOP Manual', fr: 'Manuel SOP Spa & Wellness', es: 'Manual SOP Spa & Wellness' },
-  'price_1TZRWjDVLJTOFkjUjIKWDnyi': { en: 'Complete collection: 4 SOP manuals', fr: 'Collection complète : 4 manuels SOP', es: 'Colección completa: 4 manuales SOP' },
-  'price_1TBZB5DVLJTOFkjUwmgvTPRW': { en: 'Complete collection: 4 SOP manuals', fr: 'Collection complète : 4 manuels SOP', es: 'Colección completa: 4 manuales SOP' },
+  'price_1UU4ZYDVLJTOFkjUSDgIJ4pD': { en: 'Revenue Management & Distribution SOP Manual', fr: 'Manuel SOP Revenue Management & Distribution', es: 'Manual SOP Revenue Management & Distribution' },
+  'price_1TZRWjDVLJTOFkjUjIKWDnyi': { en: 'Complete collection: 5 SOP manuals', fr: 'Collection complète : 5 manuels SOP', es: 'Colección completa: 5 manuales SOP' },
+  'price_1TBZB5DVLJTOFkjUwmgvTPRW': { en: 'Complete collection: 5 SOP manuals', fr: 'Collection complète : 5 manuels SOP', es: 'Colección completa: 5 manuales SOP' },
 }
 
 const purchaseCopy = {

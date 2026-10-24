@@ -8,7 +8,6 @@ import { BUNDLE_PRICE_ID, PlaybookEntry } from '@/content/playbooks/data'
 import { getStarterPack } from '@/content/starter-packs/data'
 import { useCart } from '@/context/CartContext'
 import { useCurrency } from '@/context/CurrencyContext'
-import { formatCurrencyAmount } from '@/lib/pricing'
 import TrackedLink from '@/components/TrackedLink'
 import ProductPreviewCarousel from '@/components/ProductPreviewCarousel'
 import StarterPackCoverVisual from '@/components/StarterPackCoverVisual'
@@ -125,7 +124,7 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
 
   const handleAddBundle = () => {
     const price = priceFor('bundle')
-    const title = isEn ? 'Complete Bundle · 4 SOP Manuals' : 'Bundle complet · 4 manuels SOP'
+    const title = isEn ? 'Complete Bundle · 5 SOP Manuals' : 'Bundle complet · 5 manuels SOP'
     const inBundleCart = items.some((item) => item.priceId === BUNDLE_PRICE_ID)
     if (inBundleCart) {
       openCart()
@@ -243,12 +242,12 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
 
                 <article className={`group/offer rounded-[17px] border px-3.5 py-3 transition duration-200 hover:border-[#c7a76e] hover:shadow-[0_8px_20px_rgba(40,35,24,.08)] sm:px-4 sm:py-3.5 ${selectedOffer === 'bundle' ? 'border-[#c7a76e] bg-white shadow-[0_6px_18px_rgba(40,35,24,.06)]' : 'border-[#e6e1d8] bg-white/85'}`}>
                   <div className="flex items-center justify-between gap-3">
-                    <div className="flex min-w-0 items-center gap-2.5"><button type="button" role="radio" aria-checked={selectedOffer === 'bundle'} aria-label={isEn ? 'Bundle · 4 SOP manuals' : 'Bundle · 4 manuels SOP'} onClick={() => setSelectedOffer('bundle')} className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full outline-none focus-visible:ring-2 focus-visible:ring-[#b89760] focus-visible:ring-offset-2"><span className={`flex h-4 w-4 items-center justify-center rounded-full border ${selectedOffer === 'bundle' ? 'border-[#a58658]' : 'border-[#c9c4b9]'}`}>{selectedOffer === 'bundle' && <span className="h-2 w-2 rounded-full bg-[#10251d]" />}</span></button><h2 className="truncate text-[12px] font-semibold text-[#25382d] sm:text-[13px]">{isEn ? 'Bundle · 4 SOP manuals' : 'Bundle · 4 manuels SOP'}</h2></div>
+                    <div className="flex min-w-0 items-center gap-2.5"><button type="button" role="radio" aria-checked={selectedOffer === 'bundle'} aria-label={isEn ? 'Bundle · 5 SOP manuals' : 'Bundle · 5 manuels SOP'} onClick={() => setSelectedOffer('bundle')} className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full outline-none focus-visible:ring-2 focus-visible:ring-[#b89760] focus-visible:ring-offset-2"><span className={`flex h-4 w-4 items-center justify-center rounded-full border ${selectedOffer === 'bundle' ? 'border-[#a58658]' : 'border-[#c9c4b9]'}`}>{selectedOffer === 'bundle' && <span className="h-2 w-2 rounded-full bg-[#10251d]" />}</span></button><h2 className="truncate text-[12px] font-semibold text-[#25382d] sm:text-[13px]">{isEn ? 'Bundle · 5 SOP manuals' : 'Bundle · 5 manuels SOP'}</h2></div>
                     <span className="shrink-0 font-display text-lg font-semibold leading-none text-[#25382d] sm:text-xl">{formatProductPrice('bundle')} <small className="font-sans text-[9px] font-normal text-[#85867f]">TTC</small></span>
                   </div>
-                  <p className="ml-[26px] mt-1 text-[10px] leading-[1.4] text-[#74766e] sm:text-[11px]">{isEn ? 'Front Office · Housekeeping · F&B · Spa' : 'Front Office · Housekeeping · F&B · Spa'}</p>
+                  <p className="ml-[26px] mt-1 text-[10px] leading-[1.4] text-[#74766e] sm:text-[11px]">Front Office · Housekeeping · F&B · Spa · Revenue Management</p>
                   <div className="ml-[26px] mt-2 flex items-center justify-between gap-3 border-t border-dashed border-[#e8e2d7] pt-2">
-                    <span className="text-[9px] font-medium text-[#9a7948]">{priceFor('playbook') * 4 > priceFor('bundle') ? (isEn ? `Save ${formatCurrencyAmount(priceFor('playbook') * 4 - priceFor('bundle'), currency, locale)}` : `Économisez ${formatCurrencyAmount(priceFor('playbook') * 4 - priceFor('bundle'), currency, locale)}`) : (isEn ? 'All 4 manuals' : 'Les 4 manuels')}</span>
+                    <span className="text-[9px] font-medium text-[#9a7948]">{isEn ? 'Same €199 price' : 'Tarif maintenu à 199 €'}</span>
                     <button type="button" onClick={handleAddBundle} className="inline-flex min-h-8 items-center gap-1.5 rounded-full border border-[#d8d2c7] bg-white px-3.5 text-[10px] font-semibold text-[#25382d] transition hover:border-[#10251d] hover:bg-[#f8f6f1] sm:text-[11px]">
                       <ShoppingCart size={12} />{items.some((item) => item.priceId === BUNDLE_PRICE_ID) ? (isEn ? 'Open cart' : 'Voir le panier') : (isEn ? 'Add' : 'Ajouter')}
                     </button>

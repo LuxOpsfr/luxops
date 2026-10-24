@@ -15,8 +15,8 @@ export async function generateMetadata({
       ? 'Free SOP Manual Sample | LuxOps'
       : 'Extrait gratuit des manuels SOP | LuxOps',
     description: isEn
-      ? 'Explore a practical sample from the LuxOps hotel operations playbooks. Choose Front Office, Housekeeping, Food & Beverage or Spa, and receive it in English and French.'
-      : 'Découvrez un extrait opérationnel des playbooks LuxOps. Choisissez Front Office, Housekeeping, Food & Beverage ou Spa, en français et en anglais.',
+      ? 'Explore a practical sample from a LuxOps SOP manual. Choose Front Office, Housekeeping, Food & Beverage, Spa or Revenue Management, in English and French.'
+      : 'Découvrez un extrait d’un manuel SOP LuxOps : Front Office, Housekeeping, Food & Beverage, Spa ou Revenue Management, en français et en anglais.',
     alternates: {
       canonical: `https://www.luxops.fr/${locale}/free-hotel-procedures`,
       languages: {

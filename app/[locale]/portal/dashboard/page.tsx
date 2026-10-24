@@ -25,6 +25,7 @@ const presentation: Record<string, { image:string; department:string; slug:strin
   housekeeping: { image:'/images/editorial-hospitality/dept-housekeeping-v2.jpg', department:'Housekeeping', slug:'hsk', body:{ fr:'Procédures, inspections et outils de pilotage pour structurer les opérations Housekeeping.', en:'Procedures, inspections and management tools for structured Housekeeping operations.', es:'Procedimientos, inspecciones y herramientas de gestión para las operaciones Housekeeping.' } },
   fb: { image:'/images/editorial-hospitality/dept-food-beverage-v2.jpg', department:'Food & Beverage', slug:'fb', body:{ fr:'Séquences de service, restaurant, bar, petit-déjeuner et room service.', en:'Service sequences, restaurant, bar, breakfast and room service.', es:'Secuencias de servicio, restaurante, bar, desayuno y room service.' } },
   spa: { image:'/images/editorial-hospitality/dept-spa-wellness-v2.jpg', department:'Spa & Wellness', slug:'spa', body:{ fr:'Parcours client, protocoles de soins, standards de présentation et pilotage du spa.', en:'Guest journey, treatment protocols, presentation standards and spa management.', es:'Experiencia del cliente, protocolos de tratamiento, presentación y gestión del spa.' } },
+  'revenue-management': { image:'/images/editorial-hospitality/dept-revenue-management-v1.png', department:'Revenue Management & Distribution', slug:'revenue-management', body:{ fr:'Réservations, forecast, tarifs, distribution et suivi des résultats.', en:'Reservations, forecasting, rates, distribution and results reviews.', es:'Reservas, previsiones, tarifas, distribución y seguimiento de resultados.' } },
   'fo-starter-pack': { image:'/product-previews/fo-starter-pack/fr/01-sop-check-in.webp', department:'Front Office', slug:'fo-starter-pack', body:{ fr:'Checklists, scripts et outils modifiables pour les opérations de réception.', en:'Editable checklists, scripts and tools for front office operations.', es:'Checklists, guiones y herramientas editables para recepción.' } },
   'hsk-starter-pack': { image:'/product-previews/hsk-starter-pack/fr/01-inspection-depart.webp', department:'Housekeeping', slug:'hsk-starter-pack', body:{ fr:"Checklists d’inspection et outils de contrôle pour les équipes Housekeeping.", en:'Inspection checklists and control tools for Housekeeping teams.', es:'Checklists de inspección y herramientas de control para Housekeeping.' } },
   'fb-starter-pack': { image:'/product-previews/fb-starter-pack/fr/01-ouverture-restaurant.webp', department:'Food & Beverage', slug:'fb-starter-pack', body:{ fr:'Checklists et outils pratiques pour le restaurant, le bar et le room service.', en:'Practical checklists and tools for restaurant, bar and room service.', es:'Checklists y herramientas para restaurante, bar y room service.' } },
@@ -34,7 +35,7 @@ const starterPackVisuals: Record<string, string> = {
   'hsk-starter-pack': 'hsk',
   'fb-starter-pack': 'fb',
 }
-const mainManualIds = ['front-office', 'housekeeping', 'fb', 'spa']
+const mainManualIds = ['front-office', 'housekeeping', 'fb', 'spa', 'revenue-management']
 const fileUrl = (path:string) => `${STORAGE}${path}`
 
 function presentationImage(id:string, lang:Locale) {
@@ -54,18 +55,14 @@ export default function DashboardPage({preview=false}:{preview?:boolean}) {
   const t = ui[lang]
   const [email,setEmail] = useState('')
   const [profile,setProfile] = useState<ClientProfile>({full_name:'',hotel_name:''})
-  const [purchases,setPurchases] = useState<Purchase[]>([])
-  const [loading,setLoading] = useState(true)
+  const [purchases,setPurchases] = useState<Purchase[]>(() => preview ? [
+    { id:'preview-fo', product_name:'Manuel SOP Front Office', price_id:'price_1TZRZZDVLJTOFkjUd3B9x44e', download_url:null, created_at:'', locale },
+    { id:'preview-hsk', product_name:'Manuel SOP Housekeeping', price_id:'price_1TBZ9TDVLJTOFkjUwWnoKaGk', download_url:null, created_at:'', locale },
+  ] : [])
+  const [loading,setLoading] = useState(!preview)
 
   useEffect(() => {
-    if (preview) {
-      setPurchases([
-        { id:'preview-fo', product_name:'Manuel SOP Front Office', price_id:'price_1TZRZZDVLJTOFkjUd3B9x44e', download_url:null, created_at:'', locale },
-        { id:'preview-hsk', product_name:'Manuel SOP Housekeeping', price_id:'price_1TBZ9TDVLJTOFkjUwWnoKaGk', download_url:null, created_at:'', locale },
-      ])
-      setLoading(false)
-      return
-    }
+    if (preview) return
     const load = async () => {
       try {
         const { supabase } = await import('@/lib/supabase')

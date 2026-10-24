@@ -3,7 +3,7 @@ import { buildLuxOpsEmail, emailButtonStyle } from './email-brand'
 import { getResendClient } from './resend'
 
 type LeadLocale = 'en' | 'fr' | 'es'
-type LeadDepartment = 'fo' | 'hsk' | 'fb' | 'spa'
+type LeadDepartment = 'fo' | 'hsk' | 'fb' | 'spa' | 'revenue'
 
 const SITE_URL = 'https://www.luxops.fr'
 const RESOURCE_IMAGE_URL = `${SITE_URL}/images/email/resources-banner.jpg`
@@ -15,6 +15,7 @@ const departmentLabels: Record<LeadDepartment, string> = {
   hsk: 'Housekeeping',
   fb: 'Food & Beverage',
   spa: 'Spa & Wellness',
+  revenue: 'Revenue Management & Distribution',
 }
 
 export const FREE_CHAPTER_OBJECTS: Record<LeadDepartment, { en: string; fr: string }> = {
@@ -22,6 +23,7 @@ export const FREE_CHAPTER_OBJECTS: Record<LeadDepartment, { en: string; fr: stri
   hsk: { en: 'housekeeping/pdf/en/ch04-public-areas.pdf', fr: 'housekeeping/pdf/fr/ch04-parties-communes.pdf' },
   fb: { en: 'fb/pdf/en/ch04-bar.pdf', fr: 'fb/pdf/fr/ch04-bar.pdf' },
   spa: { en: 'spa/pdf/en/ch04-treatment-menu.pdf', fr: 'spa/pdf/fr/ch04-carte-soins.pdf' },
+  revenue: { en: 'revenue-management/pdf/en/ch02-reservations-demand-forecasting.pdf', fr: 'revenue-management/pdf/fr/ch02-reservations-demande-forecast.pdf' },
 }
 
 const copy = {

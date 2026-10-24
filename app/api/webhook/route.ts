@@ -58,7 +58,7 @@ export async function POST(request: NextRequest) {
     const posthogSessionId = session.metadata?.posthog_session_id
 
     // Determine which playbooks to record in Supabase
-    const playbookPriceIds = priceIds.includes(BUNDLE_PRICE_ID)
+    const playbookPriceIds = priceIds.some(id => id === BUNDLE_PRICE_ID || id === 'price_1TBZB5DVLJTOFkjUwmgvTPRW')
       ? ALL_PLAYBOOK_PRICE_IDS
       : priceIds
 

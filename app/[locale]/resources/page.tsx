@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight, BookOpen, Download } from 'lucide-react'
+import { revenueManagementDrafts } from '@/content/blog/revenue-management-drafts'
 
 export async function generateMetadata({
   params,
@@ -161,6 +162,7 @@ export default async function ResourcesPage({
 }) {
   const { locale } = await params
   const isEn = locale === 'en'
+  const revenueLocale = isEn ? 'en' : 'fr'
   const faqs = isEn ? enFaqs : frFaqs
   const localizedLink = (href: string) => {
     const canonicalByLocale: Record<string, string> = {
@@ -189,12 +191,14 @@ export default async function ResourcesPage({
         { src: '/images/editorial-hospitality/manual-covers-2027/hsk-en.jpg', label: 'Housekeeping' },
         { src: '/images/editorial-hospitality/manual-covers-2027/fb-en.jpg', label: 'Food & Beverage' },
         { src: '/images/editorial-hospitality/manual-covers-2027/spa-en.jpg', label: 'Spa & Wellness' },
+        { src: '/product-previews/revenue/en/ch02-cover.png', label: 'Revenue Management' },
       ]
     : [
         { src: '/images/editorial-hospitality/manual-covers-2027/fo-fr.jpg', label: 'Front Office' },
         { src: '/images/editorial-hospitality/manual-covers-2027/hsk-fr.jpg', label: 'Housekeeping' },
         { src: '/images/editorial-hospitality/manual-covers-2027/fb-fr.jpg', label: 'Food & Beverage' },
         { src: '/images/editorial-hospitality/manual-covers-2027/spa-fr.jpg', label: 'Spa & Wellness' },
+        { src: '/product-previews/revenue/fr/ch02-cover.png', label: 'Revenue Management' },
       ]
 
   return (
@@ -220,7 +224,7 @@ export default async function ResourcesPage({
       </section>
 
       <section className="px-6 py-10 md:px-16 md:py-14">
-        <div className="mx-auto grid max-w-[1280px] gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mx-auto grid max-w-[1280px] gap-3 sm:grid-cols-2 lg:grid-cols-5">
           {samplePages.map((sample) => (
             <article key={sample.label} className="group overflow-hidden rounded-[1.25rem] border border-[#e7e1d7] bg-[#fcfbf8] shadow-[0_8px_24px_rgba(40,40,30,.045)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_16px_34px_rgba(40,40,30,.1)]">
               <div className="relative flex aspect-[1.2] items-center justify-center overflow-hidden bg-[#eee8dc] p-3">
@@ -245,8 +249,8 @@ export default async function ResourcesPage({
               </h2>
               <p className="max-w-2xl text-sm leading-6 text-[#687169]">
                 {isEn
-                  ? 'Choose Front Office, Housekeeping, F&B or Spa to receive a chapter from the corresponding SOP manual.'
-                  : 'Choisissez Front Office, Housekeeping, F&B ou Spa pour recevoir un chapitre du manuel SOP correspondant.'}
+                  ? 'Choose Front Office, Housekeeping, F&B, Spa or Revenue Management to receive a chapter from the corresponding SOP manual.'
+                  : 'Choisissez Front Office, Housekeeping, F&B, Spa ou Revenue Management pour recevoir un chapitre du manuel SOP correspondant.'}
               </p>
             </div>
             <Link
@@ -255,6 +259,25 @@ export default async function ResourcesPage({
             >
               <Download size={15} />{isEn ? 'Choose a chapter' : 'Choisir un chapitre'} <ArrowRight size={14} />
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6 py-12 md:px-16 md:py-16">
+        <div className="mx-auto max-w-[1280px]">
+          <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <p className="mb-2 text-[10px] font-semibold uppercase tracking-[.16em] text-[#92734a]">Revenue Management</p>
+              <h2 className="font-display text-3xl font-medium text-[#0f211a]">{isEn ? 'Revenue Management resources' : 'Ressources Revenue Management'}</h2>
+            </div>
+            <Link href={`/${revenueLocale}/playbooks/revenue-management`} className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[#0f211a] px-5 text-sm font-semibold text-white hover:bg-[#24362f]">
+              {isEn ? 'View the SOP manual' : 'Voir le manuel SOP'} <ArrowRight size={15} />
+            </Link>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {revenueManagementDrafts.map((article) => <Link key={article.slug} href={`/${revenueLocale}/blog/${article.slug}`} className="flex items-center justify-between gap-3 rounded-[1.1rem] border border-[#e7e1d7] bg-[#fcfbf8] p-4 text-sm font-medium text-[#314137] transition hover:border-[#cbb487]">
+              {isEn ? article.en.title : article.fr.title}<ArrowRight size={15} className="shrink-0 text-[#92734a]" />
+            </Link>)}
           </div>
         </div>
       </section>

@@ -62,14 +62,16 @@ export default function FrontOfficeExcerptDialog({
 }: {
   locale: string
   startPage?: number
-  productId?: 'fo' | 'hsk' | 'fb' | 'spa'
+  productId?: 'fo' | 'hsk' | 'fb' | 'spa' | 'revenue'
   chapterTitle?: string
   chapterNumber?: number
   chapterPages?: number
   onClose: () => void
 }) {
   const lang = locale === 'fr' ? 'fr' : 'en'
-  const copy = COPY[lang]
+  const copy = productId === 'revenue'
+    ? { ...COPY[lang], chapter: lang === 'fr' ? 'Chapitre 02' : 'Chapter 02', title: lang === 'fr' ? 'Réservations, demande et forecast' : 'Reservations, demand and forecasting', cover: lang === 'fr' ? 'Couverture du chapitre 02' : 'Chapter 02 cover' }
+    : COPY[lang]
   const [isOpen, setIsOpen] = useState(false)
   const [showCover, setShowCover] = useState(startPage === 1)
   const [isCompact, setIsCompact] = useState(false)
@@ -109,7 +111,7 @@ export default function FrontOfficeExcerptDialog({
     if (startPage === 1) {
       window.setTimeout(() => setShowCover(false), 520)
     }
-  }, [isCompact, startPage])
+  }, [isCompact, startPage, setZoom])
 
   useEffect(() => {
     const timer = window.setTimeout(openBook, 40)

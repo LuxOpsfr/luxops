@@ -6,6 +6,7 @@ import { ArrowRight, ArrowUpRight, BookOpen, CircleCheck, FileText, GraduationCa
 import AddToCartButton from '@/components/AddToCartButton'
 import { BUNDLE_PRICE_ID, PLAYBOOKS } from '@/content/playbooks/data'
 import { STARTER_PACKS } from '@/content/starter-packs/data'
+import { REVENUE_PRODUCT_PATH } from '@/content/revenue-management-product'
 import { useCurrency } from '@/context/CurrencyContext'
 import { localizedRoutePath } from '@/lib/localized-routes'
 
@@ -34,14 +35,15 @@ const copy = {
     quote: 'Sur devis',
     trainingAction: 'Découvrir la formation',
     departmentsLabel: 'Référentiels métiers',
-    departmentsTitle: 'Les 4 départements opérationnels',
+    departmentsTitle: 'Cinq référentiels pour les opérations et la performance',
     departmentsIntro: 'Chaque département dispose de son Manuel SOP. Les Starter Packs regroupent des outils complémentaires, vendus séparément.',
     manual: 'Manuel SOP complet',
     starter: 'Starter Pack',
     viewDossier: 'Voir le département',
-    bundleLabel: 'L’ensemble des 4 Manuels SOP',
+    revenueText: 'Forecast, tarifs, disponibilités, distribution, groupes et suivi des résultats pour piloter la performance commerciale.',
+    bundleLabel: 'L’ensemble des 5 Manuels SOP',
     bundleTitle: 'Une base opérationnelle commune à tout l’hôtel.',
-    bundleText: 'Front Office, Housekeeping, Food & Beverage et Spa. PDF et PowerPoint modifiables, en français et en anglais.',
+    bundleText: 'Front Office, Housekeeping, Food & Beverage, Spa et Revenue Management. PDF et PowerPoint modifiables, en français et en anglais.',
     addBundle: 'Ajouter le bundle au panier',
     adoptionLabel: 'Des outils conçus pour être utilisés',
     adoptionTitle: 'Des standards prêts à prendre leur place dans vos opérations.',
@@ -82,14 +84,15 @@ const copy = {
     quote: 'By proposal',
     trainingAction: 'Explore training',
     departmentsLabel: 'Operational references',
-    departmentsTitle: 'Four operational departments',
+    departmentsTitle: 'Five references for operations and performance',
     departmentsIntro: 'Each department has its own SOP Manual. Starter Packs bring together complementary tools and are sold separately.',
     manual: 'Complete SOP Manual',
     starter: 'Starter Pack',
     viewDossier: 'View department',
-    bundleLabel: 'All four SOP Manuals',
+    revenueText: 'Forecasting, rates, availability, distribution, groups and results to guide commercial performance.',
+    bundleLabel: 'All five SOP Manuals',
     bundleTitle: 'One shared operational foundation across the hotel.',
-    bundleText: 'Front Office, Housekeeping, Food & Beverage and Spa. Editable PDF and PowerPoint, in French and English.',
+    bundleText: 'Front Office, Housekeeping, Food & Beverage, Spa and Revenue Management. Editable PDF and PowerPoint, in French and English.',
     addBundle: 'Add bundle to cart',
     adoptionLabel: 'Tools designed to be used',
     adoptionTitle: 'Standards ready to take their place in your operations.',
@@ -130,14 +133,15 @@ const copy = {
     quote: 'Presupuesto personalizado',
     trainingAction: 'Descubrir la formación',
     departmentsLabel: 'Referenciales profesionales',
-    departmentsTitle: 'Cuatro departamentos operativos',
+    departmentsTitle: 'Cinco referentes para operaciones y rendimiento',
     departmentsIntro: 'Cada departamento tiene su Manual SOP. Los Starter Packs reúnen herramientas complementarias y se venden por separado.',
     manual: 'Manual SOP completo',
     starter: 'Starter Pack',
     viewDossier: 'Ver departamento',
-    bundleLabel: 'Los cuatro Manuales SOP',
+    revenueText: 'Previsiones, tarifas, disponibilidad, distribución, grupos y resultados para dirigir el rendimiento comercial.',
+    bundleLabel: 'Los cinco Manuales SOP',
     bundleTitle: 'Una base operativa común para todo el hotel.',
-    bundleText: 'Front Office, Housekeeping, Food & Beverage y Spa. PDF y PowerPoint editables en francés e inglés.',
+    bundleText: 'Front Office, Housekeeping, Food & Beverage, Spa y Revenue Management. PDF y PowerPoint editables en francés e inglés.',
     addBundle: 'Añadir el bundle al carrito',
     adoptionLabel: 'Herramientas diseñadas para usarse',
     adoptionTitle: 'Estándares listos para integrarse en tus operaciones.',
@@ -279,19 +283,19 @@ export default function HomeLanding({ locale }: { locale: string }) {
             </div>
             <Link href={manualsHref} className="inline-flex w-fit items-center gap-1.5 rounded-full border border-[#d9d1c4] bg-white/70 px-4 py-2 text-xs font-semibold text-[#33443a] transition hover:bg-white">{t.finalCatalog}<ArrowRight size={13} /></Link>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-5">
             {departments.map((department) => {
               const manual = PLAYBOOKS.find((item) => item.id === department.id)!
               const starterPack = STARTER_PACKS.find((item) => item.fullPlaybookId === department.id)
               const detailHref = `${localizedRoutePath('playbooks', productLocale)}/${manual.id}`
-              return <article key={department.id} className="group overflow-hidden rounded-[1.35rem] border border-[#e5dfd4] bg-white shadow-[0_8px_25px_rgba(43,40,32,.045)] transition duration-300 hover:-translate-y-1 hover:border-[#d5c3a1] hover:shadow-[0_18px_40px_rgba(43,40,32,.11)]">
+              return <article key={department.id} className="group flex h-full flex-col overflow-hidden rounded-[1.35rem] border border-[#e5dfd4] bg-white shadow-[0_8px_25px_rgba(43,40,32,.045)] transition duration-300 hover:-translate-y-1 hover:border-[#d5c3a1] hover:shadow-[0_18px_40px_rgba(43,40,32,.11)]">
                 <div className="relative aspect-[1.72] overflow-hidden bg-[#e6dfd3]">
                   <Image src={`${imageBase}/${department.image}`} alt={manual.dept[productLocale]} fill sizes="(min-width: 1280px) 25vw, (min-width: 640px) 50vw, 100vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.045]" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#101f18]/70 via-transparent to-transparent" />
                   <span className="absolute left-4 top-4 rounded-full border border-white/45 bg-[#faf7f2]/85 px-2.5 py-1 text-[9px] font-semibold uppercase tracking-[.15em] text-[#263a30] backdrop-blur">{department.label[lang]}</span>
                   <h3 className="absolute bottom-4 left-4 right-4 font-display text-2xl font-medium text-white">{manual.dept[productLocale]}</h3>
                 </div>
-                <div className="p-4">
+                <div className="flex flex-1 flex-col p-4">
                   <p className="line-clamp-3 min-h-[3.5rem] text-[12px] leading-[1.55] text-[#687169]">{manual.desc[productLocale]}</p>
                   <div className="mt-3 border-t border-[#eee9e0]">
                     <Link href={detailHref} className="flex items-center justify-between gap-2 py-2.5 text-[11px] text-[#59645c] transition-colors hover:text-[#0f211a]">
@@ -301,10 +305,27 @@ export default function HomeLanding({ locale }: { locale: string }) {
                       <span>{t.starter}</span><span className="shrink-0 font-semibold text-[#25382d]">{formatProductPrice('starter_pack')}<ArrowUpRight size={12} className="ml-1 inline" /></span>
                     </Link>}
                   </div>
-                  <Link href={detailHref} className="mt-1 flex min-h-10 items-center justify-between rounded-full bg-[#f4f0e8] px-3.5 text-[11px] font-semibold text-[#263a30] transition-colors hover:bg-[#e9e0d2]">{t.viewDossier}<ArrowRight size={14} /></Link>
+                  <Link href={detailHref} className="mt-auto flex min-h-10 items-center justify-between rounded-full bg-[#f4f0e8] px-3.5 text-[11px] font-semibold text-[#263a30] transition-colors hover:bg-[#e9e0d2]">{t.viewDossier}<ArrowRight size={14} /></Link>
                 </div>
               </article>
             })}
+            <article className="group flex h-full flex-col overflow-hidden rounded-[1.35rem] border border-[#d8c6a6] bg-white shadow-[0_8px_25px_rgba(43,40,32,.045)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(43,40,32,.11)]">
+              <div className="relative aspect-[1.72] overflow-hidden bg-[#e9e2d4]">
+                <Image src={`${imageBase}/dept-revenue-management-v1.png`} alt={lang === 'fr' ? 'Espace de travail Revenue Management dans un hôtel' : 'Hotel revenue management workspace'} fill sizes="(min-width: 1280px) 25vw, (min-width: 640px) 50vw, 100vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.045]" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#101f18]/70 via-transparent to-transparent" />
+                <span className="absolute left-4 top-4 rounded-full border border-white/45 bg-[#faf7f2]/85 px-2.5 py-1 text-[9px] font-semibold uppercase tracking-[.15em] text-[#263a30] backdrop-blur">Revenue Management</span>
+                <h3 className="absolute bottom-4 left-4 right-4 whitespace-nowrap font-display text-[clamp(1.05rem,1.4vw,1.5rem)] font-medium text-white">Revenue Management</h3>
+              </div>
+              <div className="flex flex-1 flex-col p-4">
+                <p className="line-clamp-3 min-h-[3.5rem] text-[12px] leading-[1.55] text-[#687169]">{t.revenueText}</p>
+                <div className="mt-3 border-t border-[#eee9e0]">
+                  <Link href={`/${productLocale}${REVENUE_PRODUCT_PATH}`} className="flex items-center justify-between gap-2 py-2.5 text-[11px] text-[#59645c] transition-colors hover:text-[#0f211a]">
+                    <span>{t.manual}</span><span className="shrink-0 font-semibold text-[#25382d]">{formatProductPrice('playbook')}<ArrowUpRight size={12} className="ml-1 inline" /></span>
+                  </Link>
+                </div>
+                <Link href={`/${productLocale}${REVENUE_PRODUCT_PATH}`} className="mt-auto flex min-h-10 items-center justify-between rounded-full bg-[#f4f0e8] px-3.5 text-[11px] font-semibold text-[#263a30] transition-colors hover:bg-[#e9e0d2]">{t.viewDossier}<ArrowRight size={14} /></Link>
+              </div>
+            </article>
           </div>
 
           <div className="relative mt-5 overflow-hidden rounded-[1.45rem] bg-[#0f211a] px-5 py-5 text-[#f8f6f0] shadow-[0_16px_38px_rgba(16,37,29,.12)] sm:px-7 lg:flex lg:items-center lg:justify-between lg:gap-8">
@@ -314,7 +335,7 @@ export default function HomeLanding({ locale }: { locale: string }) {
               <h3 className="mt-1.5 font-display text-xl font-medium sm:text-2xl">{t.bundleTitle}</h3>
               <p className="mt-1.5 max-w-3xl text-xs leading-5 text-white/70">{t.bundleText}</p>
             </div>
-            <AddToCartButton item={{ priceId: BUNDLE_PRICE_ID, title: lang === 'fr' ? 'Bundle Complet · 4 Manuels SOP' : 'Complete Bundle · 4 SOP Manuals', price: priceFor('bundle'), currency, productType: 'bundle' }} className="relative mt-4 inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-full bg-[#f4ead7] px-5 text-xs font-semibold text-[#173025] transition hover:-translate-y-0.5 hover:bg-white lg:mt-0">
+            <AddToCartButton item={{ priceId: BUNDLE_PRICE_ID, title: lang === 'fr' ? 'Bundle Complet · 5 Manuels SOP' : 'Complete Bundle · 5 SOP Manuals', price: priceFor('bundle'), currency, productType: 'bundle' }} className="relative mt-4 inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-full bg-[#f4ead7] px-5 text-xs font-semibold text-[#173025] transition hover:-translate-y-0.5 hover:bg-white lg:mt-0">
               <ShoppingCart size={14} />{t.addBundle} · {formatProductPrice('bundle')}
             </AddToCartButton>
           </div>

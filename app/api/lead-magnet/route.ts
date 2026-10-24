@@ -10,6 +10,7 @@ const DEPT_LABELS: Record<string, { en: string; fr: string }> = {
   hsk: { en: 'Housekeeping', fr: 'Housekeeping' },
   fb: { en: 'Food & Beverage', fr: 'Food & Beverage' },
   spa: { en: 'Spa & Wellness', fr: 'Spa & Wellness' },
+  revenue: { en: 'Revenue Management & Distribution', fr: 'Revenue Management & Distribution' },
 }
 
 export async function POST(request: NextRequest) {
@@ -121,7 +122,7 @@ export async function POST(request: NextRequest) {
         await sendFreeChapterWelcomeEmail({
           to: normalizedEmail,
           locale: normalizedLocale,
-          department: department as 'fo' | 'hsk' | 'fb' | 'spa',
+          department: department as keyof typeof FREE_CHAPTER_OBJECTS,
           requestId: typeof requestId === 'string' && requestId ? requestId : randomUUID(),
           chapterUrls,
         })

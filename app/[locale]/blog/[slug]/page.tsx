@@ -4,12 +4,14 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight, ArrowLeft, Clock, CheckCircle2 } from 'lucide-react'
 import { articles } from '@/content/blog/articles'
+import { getRevenueManagementDraft, revenueManagementDrafts } from '@/content/blog/revenue-management-drafts'
 import { breadcrumbSchema, faqSchema as buildFaqSchema, localizedPath } from '@/lib/seo'
 import TrackedLink from '@/components/TrackedLink'
 import { ACTIVE_LOCALES, toActiveLocale } from '@/lib/i18n'
 import { localizePathname } from '@/lib/localized-routes'
 import styles from './article-preview.module.css'
 import { blogEditorialImages, editorialImageUrl } from '@/lib/editorial-images'
+import RevenueManagementDraftPage from '@/components/RevenueManagementDraftPage'
 
 // Keywords per article - improves indexation signals for Google
 const KEYWORDS_EN: Record<string, string> = {
@@ -1024,9 +1026,14 @@ function productCtaEventName(href: string) {
 }
 
 export async function generateStaticParams() {
-  return articles.flatMap((article) =>
-    ACTIVE_LOCALES.map((locale) => ({ locale, slug: article.slug }))
-  )
+  return [
+    ...articles.flatMap((article) =>
+      ACTIVE_LOCALES.map((locale) => ({ locale, slug: article.slug }))
+    ),
+    ...revenueManagementDrafts.flatMap((article) =>
+      (['fr', 'en'] as const).map((locale) => ({ locale, slug: article.slug }))
+    ),
+  ]
 }
 
 export async function generateMetadata({
@@ -1036,6 +1043,23 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale, slug } = await params
   const activeLocale = toActiveLocale(locale)
+  const revenueDraft = getRevenueManagementDraft(slug)
+  if (revenueDraft) {
+    if (activeLocale !== 'fr' && activeLocale !== 'en') return {}
+    const content = revenueDraft[activeLocale]
+    return {
+      title: `${content.seoTitle ?? content.title} | LuxOps`,
+      description: content.description,
+      alternates: {
+        canonical: `https://www.luxops.fr/${activeLocale}/blog/${slug}`,
+        languages: {
+          fr: `https://www.luxops.fr/fr/blog/${slug}`,
+          en: `https://www.luxops.fr/en/blog/${slug}`,
+          'x-default': `https://www.luxops.fr/en/blog/${slug}`,
+        },
+      },
+    }
+  }
   const article = articles.find((a) => a.slug === slug)
   if (!article) return {}
   const content = activeLocale === 'en' ? article.en : article.fr
@@ -1062,6 +1086,11 @@ export default async function BlogArticlePage({
 }) {
   const { locale, slug } = await params
   const activeLocale = toActiveLocale(locale)
+  const revenueDraft = getRevenueManagementDraft(slug)
+  if (revenueDraft) {
+    if (activeLocale !== 'fr' && activeLocale !== 'en') notFound()
+    return <RevenueManagementDraftPage article={revenueDraft} locale={activeLocale} />
+  }
   const article = articles.find((a) => a.slug === slug)
   if (!article) notFound()
 

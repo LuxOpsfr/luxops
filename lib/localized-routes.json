@@ -21,6 +21,58 @@
     "lastModified": "2026-08-12",
     "priority": 0.9
   },
+  "playbooksRevenueManagement": {
+    "paths": {
+      "en": "/playbooks/revenue-management",
+      "fr": "/playbooks/revenue-management"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-10-24",
+    "priority": 0.9
+  },
+  "blogRevenueRevpar": {
+    "paths": { "en": "/blog/calcul-revpar-adr-taux-occupation", "fr": "/blog/calcul-revpar-adr-taux-occupation" },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-10-24",
+    "priority": 0.85
+  },
+  "blogRevenueGuide": {
+    "paths": { "en": "/blog/revenue-management-hotelier-guide", "fr": "/blog/revenue-management-hotelier-guide" },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-10-24",
+    "priority": 0.85
+  },
+  "blogRevenueLearning": {
+    "paths": { "en": "/blog/apprendre-revenue-management-hotelier", "fr": "/blog/apprendre-revenue-management-hotelier" },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-10-24",
+    "priority": 0.8
+  },
+  "blogRevenuePickup": {
+    "paths": { "en": "/blog/pickup-forecast-hotelier", "fr": "/blog/pickup-forecast-hotelier" },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-10-24",
+    "priority": 0.8
+  },
+  "blogRevenueDistribution": {
+    "paths": { "en": "/blog/distribution-hoteliere-ota-direct", "fr": "/blog/distribution-hoteliere-ota-direct" },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-10-24",
+    "priority": 0.8
+  },
+  "blogRevenuePricing": {
+    "paths": { "en": "/blog/strategie-tarifaire-hotel", "fr": "/blog/strategie-tarifaire-hotel" },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-10-24",
+    "priority": 0.8
+  },
   "freeHotelChecklists": {
     "paths": {
       "en": "/free-hotel-checklists",

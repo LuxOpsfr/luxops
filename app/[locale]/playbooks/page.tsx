@@ -86,10 +86,10 @@ function playbooksSchema(locale: string) {
             ? 'Manuales SOP operativos hoteleros'
             : 'Hotel Operations SOP Manuals',
         description: isFr
-          ? 'Manuels SOP opérationnels pour hôtels haut de gamme : procédures, standards de service et outils pour la réception, le housekeeping, le F&B et le spa.'
+          ? 'Cinq Manuels SOP pour hôtels haut de gamme : Front Office, Housekeeping, F&B, Spa & Wellness et Revenue Management.'
           : isEs
-            ? 'Manuales SOP operativos para hoteles de alta gama: procedimientos, estándares de servicio y herramientas para Front Office, Housekeeping, F&B y Spa.'
-            : 'Operational SOP manuals for high-end hotels, with procedures and service standards for Front Office, Housekeeping, F&B and Spa departments.',
+            ? 'Cinco Manuales SOP para hoteles de alta gama: Front Office, Housekeeping, F&B, Spa & Wellness y Revenue Management.'
+            : 'Five SOP manuals for high-end hotels: Front Office, Housekeeping, F&B, Spa & Wellness and Revenue Management.',
         url: localizedRouteUrl('playbooks', activeLocale),
         itemListElement: [
     {
@@ -144,6 +144,18 @@ function playbooksSchema(locale: string) {
         offers: sharedOfferFields,
       },
     },
+    {
+      '@type': 'ListItem',
+      position: 5,
+      item: {
+        '@type': 'Product',
+        name: 'Revenue Management & Distribution SOP Manual',
+        description: 'Reservations, demand forecasting, rates, availability, distribution, groups and performance reviews. Approximately 115 pages. PDF + PPT.',
+        image: sharedImage,
+        brand: sharedBrand,
+        offers: { ...sharedOfferFields, url: localizedRouteUrl('playbooksRevenueManagement', activeLocale) },
+      },
+    },
         ],
       },
       {
@@ -154,10 +166,10 @@ function playbooksSchema(locale: string) {
             ? 'Paquete completo de Manuales SOP de hotel'
             : 'Complete Hotel SOP Manuals Bundle',
         description: isFr
-          ? 'Les quatre Manuels SOP LuxOps : Front Office, Housekeeping, Food & Beverage et Spa & Wellness. Formats PDF et PowerPoint modifiables, en français et en anglais.'
+          ? 'Les cinq Manuels SOP LuxOps : Front Office, Housekeeping, Food & Beverage, Spa & Wellness et Revenue Management. Formats PDF et PowerPoint modifiables, en français et en anglais.'
           : isEs
-            ? 'Los cuatro Manuales SOP LuxOps: Front Office, Housekeeping, Food & Beverage y Spa & Wellness. Formatos PDF y PowerPoint editables, en francés e inglés.'
-            : 'All four LuxOps SOP manuals: Front Office, Housekeeping, Food & Beverage and Spa & Wellness. Editable PDF and PowerPoint in English and French.',
+            ? 'Los cinco Manuales SOP LuxOps: Front Office, Housekeeping, Food & Beverage, Spa & Wellness y Revenue Management. Formatos PDF y PowerPoint editables, en francés e inglés.'
+            : 'All five LuxOps SOP manuals: Front Office, Housekeeping, Food & Beverage, Spa & Wellness and Revenue Management. Editable PDF and PowerPoint in English and French.',
         image: sharedImage,
         brand: sharedBrand,
         offers: {

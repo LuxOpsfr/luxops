@@ -1,6 +1,8 @@
 import { getSupabaseAdmin } from '@/lib/supabase-admin'
 import { normalizeLeadEmail } from '@/lib/lead-email'
 import { getResendClient } from '@/lib/resend'
+import { readFile } from 'node:fs/promises'
+import { join } from 'node:path'
 
 export const runtime = 'nodejs'
 
@@ -21,6 +23,10 @@ const PDF_OBJECTS = {
     fr: 'spa/pdf/fr/ch04-carte-soins.pdf',
     en: 'spa/pdf/en/ch04-treatment-menu.pdf',
   },
+  revenue: {
+    fr: 'revenue-management/pdf/fr/ch02-reservations-demande-forecast.pdf',
+    en: 'revenue-management/pdf/en/ch02-reservations-demand-forecasting.pdf',
+  },
 } as const
 
 const DEPARTMENT_LABELS = {
@@ -28,6 +34,7 @@ const DEPARTMENT_LABELS = {
   hsk: 'Housekeeping',
   fb: 'Food & Beverage',
   spa: 'Spa & Wellness',
+  revenue: 'Revenue Management & Distribution',
 } as const
 
 export async function POST(request: Request) {
@@ -49,10 +56,19 @@ export async function POST(request: Request) {
 
   try {
     const supabase = getSupabaseAdmin()
-    const { data: pdfFile, error: storageError } = await supabase.storage
-      .from('Playbook')
-      .download(PDF_OBJECTS[product][locale])
-    if (storageError || !pdfFile) throw storageError ?? new Error('Chapter PDF is unavailable')
+    let pdfBytes: Uint8Array
+    if (product === 'revenue' && process.env.NODE_ENV === 'development') {
+      const sourceName = locale === 'fr'
+        ? 'CH02_Reservations_Demande_Forecast_FR.pdf'
+        : 'CH02_Reservations_Demand_Forecasting_EN.pdf'
+      pdfBytes = await readFile(join(process.cwd(), 'SOP_Manuals_Edition_2027', '05_REVENUE_MANAGEMENT', 'PDF', locale.toUpperCase(), sourceName))
+    } else {
+      const { data: pdfFile, error: storageError } = await supabase.storage
+        .from('Playbook')
+        .download(PDF_OBJECTS[product][locale])
+      if (storageError || !pdfFile) throw storageError ?? new Error('Chapter PDF is unavailable')
+      pdfBytes = new Uint8Array(await pdfFile.arrayBuffer())
+    }
 
     const { error: leadError } = await supabase
       .from('leads')
@@ -73,10 +89,10 @@ export async function POST(request: Request) {
         from: 'LuxOps <delivery@luxops.fr>',
         to: 'contact@luxops.fr',
         replyTo: normalizeLeadEmail(email),
-        subject: `Nouveau téléchargement du chapitre 04 : ${DEPARTMENT_LABELS[product]} (${locale.toUpperCase()})`,
+        subject: `Nouveau téléchargement du chapitre ${product === 'revenue' ? '02' : '04'} : ${DEPARTMENT_LABELS[product]} (${locale.toUpperCase()})`,
         html: `
           <div style="font-family: sans-serif; max-width: 600px;">
-            <h2 style="color: #10251d;">Nouveau lead depuis l’aperçu du chapitre 04</h2>
+            <h2 style="color: #10251d;">Nouveau lead depuis l’aperçu du chapitre ${product === 'revenue' ? '02' : '04'}</h2>
             <p><strong>Email :</strong> ${safeEmail}</p>
             <p><strong>Département :</strong> ${DEPARTMENT_LABELS[product]}</p>
             <p><strong>Langue :</strong> ${locale.toUpperCase()}</p>
@@ -94,10 +110,11 @@ export async function POST(request: Request) {
       hsk: { fr: 'LuxOps-Chapitre-04-Housekeeping-2027.pdf', en: 'LuxOps-Chapter-04-Housekeeping-2027.pdf' },
       fb: { fr: 'LuxOps-Chapitre-04-Bar-Boissons-2027.pdf', en: 'LuxOps-Chapter-04-Bar-Beverage-2027.pdf' },
       spa: { fr: 'LuxOps-Chapitre-04-Carte-de-Soins-2027.pdf', en: 'LuxOps-Chapter-04-Treatment-Menu-2027.pdf' },
+      revenue: { fr: 'LuxOps-Chapitre-02-Revenue-Management-2027.pdf', en: 'LuxOps-Chapter-02-Revenue-Management-2027.pdf' },
     }
     const filename = filenames[product][locale]
 
-    return new Response(new Uint8Array(await pdfFile.arrayBuffer()), {
+    return new Response(Uint8Array.from(pdfBytes), {
       headers: {
         'Content-Type': 'application/pdf',
         'Content-Disposition': `attachment; filename="${filename}"`,

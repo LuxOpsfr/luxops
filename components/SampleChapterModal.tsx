@@ -9,6 +9,7 @@ const departments = [
   { id: 'hsk', fr: 'Housekeeping', en: 'Housekeeping' },
   { id: 'fb', fr: 'Food & Beverage', en: 'Food & Beverage' },
   { id: 'spa', fr: 'Spa & Wellness', en: 'Spa & Wellness' },
+  { id: 'revenue', fr: 'Revenue Management', en: 'Revenue Management' },
 ] as const
 
 type Props = { locale: string; onClose: () => void }
@@ -21,7 +22,8 @@ export default function SampleChapterModal({ locale, onClose }: Props) {
   const [emailSent, setEmailSent] = useState(false)
   const dialogRef = useRef<HTMLDivElement>(null)
   const onCloseRef = useRef(onClose)
-  onCloseRef.current = onClose
+
+  useEffect(() => { onCloseRef.current = onClose }, [onClose])
 
   useEffect(() => {
     const previousOverflow = document.body.style.overflow
@@ -105,8 +107,8 @@ export default function SampleChapterModal({ locale, onClose }: Props) {
                     ? `The ${selectedDepartment?.en} sample has been sent to ${email}.`
                     : `L’extrait ${selectedDepartment?.fr} a été envoyé à ${email}.`)
                 : (isEn
-                    ? 'A sample has already been requested with this address. Please check your inbox.'
-                    : 'Un extrait a déjà été demandé avec cette adresse. Vérifiez votre boîte mail.')}
+                    ? 'If the sample does not arrive, please try again or contact us.'
+                  : 'Si vous ne recevez pas l’extrait, réessayez ou contactez-nous.')}
             </p>
             <button type="button" onClick={onClose} className="mt-7 rounded-full bg-[#10251d] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#294437]">
               {isEn ? 'Back to the manuals' : 'Revenir aux manuels'}

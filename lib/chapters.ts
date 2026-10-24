@@ -35,7 +35,8 @@ export const PRICE_TO_PLAYBOOK: Record<string, string> = {
   price_1TZRY9DVLJTOFkjUfkYQJAsW: 'spa',
   price_1TBZ9vDVLJTOFkjUT1FHhqUi: 'spa',
   price_1TZRWjDVLJTOFkjUjIKWDnyi: 'bundle',
-  price_1TBZB5DVLJTOFkjUwmgvTPRW: 'bundle', // bundle = all 4
+  price_1TBZB5DVLJTOFkjUwmgvTPRW: 'bundle',
+  price_1UU4ZYDVLJTOFkjUSDgIJ4pD: 'revenue-management',
   price_1TUONHDVLJTOFkjUjE391FrX: 'fo-starter-pack',
   price_1TUONXDVLJTOFkjUYvR8PUiS: 'hsk-starter-pack',
   price_1TVugvDVLJTOFkjUXI0cngur: 'fb-starter-pack',
@@ -44,6 +45,30 @@ export const PRICE_TO_PLAYBOOK: Record<string, string> = {
 export const BUNDLE_PRICE_ID = 'price_1TZRWjDVLJTOFkjUjIKWDnyi'
 
 export const PLAYBOOKS: Record<string, Playbook> = {
+  'revenue-management': {
+    id: 'revenue-management',
+    titleFr: 'Manuel Revenue Management & Distribution',
+    titleEn: 'Revenue Management & Distribution SOP Manual',
+    color: '#173b32',
+    chapters: [
+      ['Introduction au Revenue Management', 'Revenue Management introduction', 'ch01-introduction', 'ch01-introduction'],
+      ['Réservations, demande et forecast', 'Reservations, demand and forecasting', 'ch02-reservations-demande-forecast', 'ch02-reservations-demand-forecasting'],
+      ['Tarifs, offres et conditions de vente', 'Rates, offers and booking conditions', 'ch03-tarifs-offres-conditions', 'ch03-rates-offers-booking-conditions'],
+      ['Disponibilités, restrictions et surréservation', 'Availability, restrictions and overbooking', 'ch04-disponibilites-restrictions-surreservation', 'ch04-availability-restrictions-overbooking'],
+      ['Distribution et mise en vente', 'Distribution and selling', 'ch05-distribution-et-mise-en-vente', 'ch05-distribution-and-selling'],
+      ['Groupes et contrats négociés', 'Groups and negotiated contracts', 'ch06-groupes-et-contrats-negocies', 'ch06-groups-and-negotiated-contracts'],
+      ['Privatisations', 'Exclusive use', 'ch07-privatisations', 'ch07-exclusive-use'],
+      ['Yield meeting et résultats', 'Yield meetings and results', 'ch08-yield-meeting-resultats', 'ch08-yield-meetings-results'],
+    ].map(([titleFr, titleEn, slugFr, slugEn], index) => ({
+      number: index + 1,
+      titleFr,
+      titleEn,
+      pdfFr: `revenue-management/pdf/fr/${slugFr}.pdf`,
+      pdfEn: `revenue-management/pdf/en/${slugEn}.pdf`,
+      pptxFr: `revenue-management/pptx/fr/${slugFr}.pptx`,
+      pptxEn: `revenue-management/pptx/en/${slugEn}.pptx`,
+    })),
+  },
   'fo-starter-pack': {
     id: 'fo-starter-pack',
     titleFr: 'Starter Pack Front Office',
@@ -508,6 +533,6 @@ export const PLAYBOOKS: Record<string, Playbook> = {
 export function getPlaybookIds(priceId: string): string[] {
   const id = PRICE_TO_PLAYBOOK[priceId]
   if (!id) return []
-  if (id === 'bundle') return ['front-office', 'housekeeping', 'fb', 'spa']
+  if (id === 'bundle') return ['front-office', 'housekeeping', 'fb', 'spa', 'revenue-management']
   return [id]
 }

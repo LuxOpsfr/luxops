@@ -12,6 +12,7 @@ const MANUAL_PRICE_IDS: Record<string, string> = {
   housekeeping: 'price_1TBZ9TDVLJTOFkjUwWnoKaGk',
   fb: 'price_1TZRYvDVLJTOFkjUNuiqbADG',
   spa: 'price_1TZRY9DVLJTOFkjUfkYQJAsW',
+  'revenue-management': 'price_1UU4ZYDVLJTOFkjUSDgIJ4pD',
 }
 
 function promotionCodeFor(email: string) {

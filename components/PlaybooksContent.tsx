@@ -21,6 +21,7 @@ import SampleChapterModal from '@/components/SampleChapterModal'
 import SamePageAnchor from '@/components/SamePageAnchor'
 import { BUNDLE_PRICE_ID, PLAYBOOKS } from '@/content/playbooks/data'
 import { STARTER_PACKS } from '@/content/starter-packs/data'
+import { REVENUE_PRICE_ID, REVENUE_PRODUCT_PATH } from '@/content/revenue-management-product'
 import { useCurrency } from '@/context/CurrencyContext'
 import { toActiveLocale } from '@/lib/i18n'
 import { localizedRoutePath } from '@/lib/localized-routes'
@@ -43,18 +44,21 @@ const copy = {
     facts: ['PDF & PowerPoint modifiables', 'Français & anglais inclus', 'Téléchargement immédiat'],
     options: ['Manuel par département', 'Bundle intégral', 'Starter Packs de terrain'],
     departmentEyebrow: 'CATALOGUE DÉPARTEMENTAL',
-    departmentTitle: 'Les 4 Manuels Opérationnels Individuels',
-    departmentIntro: 'Choisissez un département ou réunissez les quatre manuels dans le bundle complet.',
+    departmentTitle: 'Les 5 Manuels Opérationnels',
+    departmentIntro: 'Cinq référentiels pour les opérations hôtelières et la performance commerciale. Le nouveau manuel Revenue Management rejoint le bundle au même prix.',
+    revenueBadge: 'INCLUS DANS LE BUNDLE',
+    revenueDescription: 'Prévisions de demande, stratégie tarifaire, disponibilités, distribution et gestion des groupes : des procédures pour guider les décisions commerciales et suivre la performance de l’hôtel.',
+    revenueDetails: 'Découvrir les chapitres',
     manual: 'Manuel SOP complet',
     manualCta: (price: string) => `Ajouter le manuel · ${price}`,
     details: 'Voir le contenu',
     starterInline: 'Starter Pack',
-    bundleTitle: 'Les 4 Manuels SOP : une suite opérationnelle complète',
+    bundleTitle: 'Les 5 Manuels SOP : une suite opérationnelle complète',
     bundleText:
-      'Front Office, Housekeeping, Food & Beverage et Spa & Wellness, dans les deux langues et en formats modifiables.',
-    bundleSaving: (price: string) => `${price} d’économie par rapport à l’achat séparé`,
+      'Front Office, Housekeeping, Food & Beverage, Spa & Wellness et Revenue Management, dans les deux langues et en formats modifiables.',
+    bundleSaving: () => 'Tarif maintenu à 199 €',
     bundlePrice: '199 € TTC',
-    bundleCtaPrice: (price: string) => `Ajouter les 4 manuels · ${price}`,
+    bundleCtaPrice: (price: string) => `Ajouter les 5 manuels · ${price}`,
     startersEyebrow: 'OUTILS OPÉRATIONNELS COMPLÉMENTAIRES',
     startersTitle: 'Starter Packs de terrain : fiches et checklists opérationnelles',
     startersText:
@@ -80,18 +84,21 @@ const copy = {
     facts: ['Editable PDF & PowerPoint', 'English & French included', 'Instant download'],
     options: ['Manual by department', 'Complete bundle', 'Practical Starter Packs'],
     departmentEyebrow: 'DEPARTMENT CATALOGUE',
-    departmentTitle: 'The 4 Individual Operating Manuals',
-    departmentIntro: 'Choose one department or bring all four manuals together in the complete bundle.',
+    departmentTitle: 'The 5 Operating Manuals',
+    departmentIntro: 'Five references for hotel operations and commercial performance. The new Revenue Management manual joins the bundle at the same price.',
+    revenueBadge: 'INCLUDED IN THE BUNDLE',
+    revenueDescription: 'Demand forecasting, pricing strategy, availability, distribution and group business: procedures to guide commercial decisions and track hotel performance.',
+    revenueDetails: 'Explore the chapters',
     manual: 'Complete SOP Manual',
     manualCta: (price: string) => `Add the manual · ${price}`,
     details: 'View contents',
     starterInline: 'Starter Pack',
-    bundleTitle: 'The 4 SOP Manuals: a complete operating suite',
+    bundleTitle: 'The 5 SOP Manuals: a complete operating suite',
     bundleText:
-      'Front Office, Housekeeping, Food & Beverage and Spa & Wellness, in both languages and editable formats.',
-    bundleSaving: (price: string) => `Save ${price} compared with separate purchases`,
+      'Front Office, Housekeeping, Food & Beverage, Spa & Wellness and Revenue Management, in both languages and editable formats.',
+    bundleSaving: () => 'Same €199 price',
     bundlePrice: '€199 incl. tax',
-    bundleCtaPrice: (price: string) => `Add all 4 manuals · ${price}`,
+    bundleCtaPrice: (price: string) => `Add all 5 manuals · ${price}`,
     startersEyebrow: 'COMPLEMENTARY TOOLS',
     startersTitle: 'Practical Starter Packs: operational sheets & checklists',
     startersText:
@@ -117,18 +124,21 @@ const copy = {
     facts: ['PDF y PowerPoint editables', 'Francés e inglés incluidos', 'Descarga inmediata'],
     options: ['Manual por departamento', 'Paquete completo', 'Starter Packs prácticos'],
     departmentEyebrow: 'CATÁLOGO POR DEPARTAMENTO',
-    departmentTitle: 'Los 4 Manuales Operativos Individuales',
-    departmentIntro: 'Elija un departamento o reúna los cuatro manuales en el paquete completo.',
+    departmentTitle: 'Los 5 Manuales Operativos',
+    departmentIntro: 'Cinco referentes para las operaciones hoteleras y el rendimiento comercial. El nuevo manual Revenue Management se añade al paquete al mismo precio.',
+    revenueBadge: 'INCLUIDO EN EL PAQUETE',
+    revenueDescription: 'Previsión de la demanda, estrategia de precios, disponibilidad, distribución y gestión de grupos: procedimientos para orientar las decisiones comerciales y seguir el rendimiento del hotel.',
+    revenueDetails: 'Descubrir los capítulos',
     manual: 'Manual SOP completo',
     manualCta: (price: string) => `Añadir manual · ${price}`,
     details: 'Ver el contenido',
     starterInline: 'Starter Pack',
-    bundleTitle: 'Los 4 Manuales SOP: una suite operativa completa',
+    bundleTitle: 'Los 5 Manuales SOP: una suite operativa completa',
     bundleText:
-      'Front Office, Housekeeping, Food & Beverage y Spa & Wellness, en ambos idiomas y en formatos editables.',
-    bundleSaving: (price: string) => `Ahorre ${price} frente a la compra por separado`,
+      'Front Office, Housekeeping, Food & Beverage, Spa & Wellness y Revenue Management, en ambos idiomas y en formatos editables.',
+    bundleSaving: () => 'Mismo precio: 199 €',
     bundlePrice: '199 € IVA incl.',
-    bundleCtaPrice: (price: string) => `Añadir los 4 manuales · ${price}`,
+    bundleCtaPrice: (price: string) => `Añadir los 5 manuales · ${price}`,
     startersEyebrow: 'HERRAMIENTAS COMPLEMENTARIAS',
     startersTitle: 'Starter Packs de terreno: fichas y checklists operativas',
     startersText:
@@ -170,13 +180,6 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
     manual,
     starter: STARTER_PACKS.find((pack) => pack.fullPlaybookId === manual.id),
   }))
-  const bundleSavingAmount = priceFor('playbook') * 4 - priceFor('bundle')
-  const formattedSaving = new Intl.NumberFormat(lang === 'fr' ? 'fr-FR' : lang === 'es' ? 'es-ES' : 'en-GB', {
-    style: 'currency',
-    currency,
-    maximumFractionDigits: 0,
-  }).format(bundleSavingAmount)
-
   const starterPreview = `/images/starter-packs/2027/${dataLang}/starter-packs-collection-2027.webp`
 
   return (
@@ -216,7 +219,7 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                 openCartOnAdd
                 item={{
                   priceId: BUNDLE_PRICE_ID,
-                  title: lang === 'fr' ? 'Bundle complet · 4 Manuels SOP' : lang === 'es' ? 'Paquete completo · 4 Manuales SOP' : 'Complete bundle · 4 SOP Manuals',
+                  title: lang === 'fr' ? 'Bundle complet · 5 Manuels SOP' : lang === 'es' ? 'Paquete completo · 5 Manuales SOP' : 'Complete bundle · 5 SOP Manuals',
                   price: priceFor('bundle'),
                   currency,
                   productType: 'bundle',
@@ -270,17 +273,17 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
       <section aria-label={lang === 'fr' ? 'Choisir une formule' : lang === 'es' ? 'Elegir una opción' : 'Choose an option'} className="border-b border-[#e9e3d8] bg-[#f4f1eb] px-5 pt-3 pb-3 sm:px-8 lg:px-10 lg:pr-24">
         <div className="mx-auto grid max-w-[1440px] gap-2.5 md:grid-cols-3">
           <SamePageAnchor href="#department-playbooks" className="flex min-h-[66px] items-center justify-between gap-3 rounded-2xl border border-[#e8e2d7] bg-white px-4 py-3 text-left shadow-[0_3px_12px_rgba(45,42,34,.035)] transition hover:-translate-y-0.5 hover:shadow-md">
-            <span className="flex min-w-0 items-center gap-3"><span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#f1eee7] text-[#84663a]"><FileText size={16} /></span><span className="min-w-0"><span className="block truncate text-[11px] font-semibold text-[#25362c]">{text.options[0]}</span><span className="block text-[9px] text-[#6b746d]">{lang === 'fr' ? 'Front Office, HK, F&B, Spa' : 'Front Office, HK, F&B, Spa'}</span></span></span>
+            <span className="flex min-w-0 items-center gap-3"><span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#f1eee7] text-[#84663a]"><FileText size={16} /></span><span className="min-w-0"><span className="block truncate text-[11px] font-semibold text-[#25362c]">{text.options[0]}</span><span className="block text-[9px] text-[#6b746d]">Front Office, HK, F&B, Spa, Revenue</span></span></span>
             <span className="shrink-0 text-right text-xs font-semibold text-[#1d3026]">{formatProductPrice('playbook')}<span className="block text-[9px] font-normal text-[#828880]">{lang === 'fr' ? 'par unité' : lang === 'es' ? 'por unidad' : 'each'}</span></span>
           </SamePageAnchor>
           <AddToCartButton
             openCartOnAdd
-            item={{ priceId: BUNDLE_PRICE_ID, title: lang === 'fr' ? 'Bundle complet · 4 Manuels SOP' : lang === 'es' ? 'Paquete completo · 4 Manuales SOP' : 'Complete bundle · 4 SOP Manuals', price: priceFor('bundle'), currency, productType: 'bundle' }}
+            item={{ priceId: BUNDLE_PRICE_ID, title: lang === 'fr' ? 'Bundle complet · 5 Manuels SOP' : lang === 'es' ? 'Paquete completo · 5 Manuales SOP' : 'Complete bundle · 5 SOP Manuals', price: priceFor('bundle'), currency, productType: 'bundle' }}
             addedLabel={lang === 'fr' ? 'Dans le panier' : lang === 'es' ? 'En la cesta' : 'In cart'}
             className="flex min-h-[66px] items-center justify-between gap-3 rounded-2xl border border-[#d9c69e] bg-[#fffdf8] px-4 py-3 text-left shadow-[0_3px_12px_rgba(45,42,34,.035)] transition hover:-translate-y-0.5 hover:shadow-md"
           >
-            <span className="flex min-w-0 items-center gap-3"><span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#f2e5c8] text-[#806035]"><PackageCheck size={16} /></span><span className="min-w-0"><span className="block truncate text-[11px] font-semibold text-[#25362c]">{text.options[1]}</span><span className="block text-[9px] text-[#6b746d]">{text.bundleSaving(formattedSaving)}</span></span></span>
-            <span className="shrink-0 text-right text-xs font-semibold text-[#1d3026]">{formatProductPrice('bundle')}<span className="block text-[9px] font-normal text-[#828880]">{lang === 'fr' ? 'les 4' : lang === 'es' ? 'los 4' : 'all 4'}</span></span>
+            <span className="flex min-w-0 items-center gap-3"><span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#f2e5c8] text-[#806035]"><PackageCheck size={16} /></span><span className="min-w-0"><span className="block truncate text-[11px] font-semibold text-[#25362c]">{text.options[1]}</span><span className="block text-[9px] text-[#6b746d]">{text.bundleSaving()}</span></span></span>
+            <span className="shrink-0 text-right text-xs font-semibold text-[#1d3026]">{formatProductPrice('bundle')}<span className="block text-[9px] font-normal text-[#828880]">{lang === 'fr' ? 'les 5' : lang === 'es' ? 'los 5' : 'all 5'}</span></span>
           </AddToCartButton>
           <SamePageAnchor href="#starter-packs" className="flex min-h-[66px] items-center justify-between gap-3 rounded-2xl border border-[#e8e2d7] bg-white px-4 py-3 text-left shadow-[0_3px_12px_rgba(45,42,34,.035)] transition hover:-translate-y-0.5 hover:shadow-md">
             <span className="flex min-w-0 items-center gap-3"><span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#f1eee7] text-[#59645c]"><Check size={16} /></span><span className="min-w-0"><span className="block truncate text-[11px] font-semibold text-[#25362c]">{text.options[2]}</span><span className="block text-[9px] text-[#6b746d]">{lang === 'fr' ? 'Fiches vendues séparément' : lang === 'es' ? 'Fichas vendidas por separado' : 'Sheets sold separately'}</span></span></span>
@@ -298,7 +301,7 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
             </div>
             <p className="max-w-lg text-sm leading-6 text-[#687169] md:text-base">{text.departmentIntro}</p>
           </div>
-          <div className="grid items-stretch gap-4 sm:grid-cols-2 xl:grid-cols-4 xl:gap-4">
+          <div className="grid items-stretch gap-4 sm:grid-cols-2 xl:grid-cols-5 xl:gap-4">
             {departments.map(({ manual, starter }, index) => {
               const title = manual.title[dataLang]
               const detailHref = `${catalogueHref}/${manual.id}`
@@ -318,7 +321,7 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                     <span className="absolute bottom-3 left-4 right-3 font-display text-[1.25rem] font-medium leading-tight tracking-[-0.02em] text-white drop-shadow-sm">{title}</span>
                   </Link>
                   <div className="flex flex-1 flex-col p-4">
-                    <p className="min-h-[78px] text-[11px] leading-[1.55] text-[#687169]">{manual.desc[dataLang]}</p>
+                    <p className="line-clamp-7 min-h-[78px] overflow-hidden text-[11px] leading-[1.55] text-[#687169] sm:h-[120px]">{manual.desc[dataLang]}</p>
                     <div className="mt-3 flex items-center gap-1.5 text-[10px] font-medium text-[#4b594f]">
                       <Check size={12} className="shrink-0 text-[#a58658]" strokeWidth={2} />{lang === 'fr' ? 'PDF & PPTX modifiables · FR & EN' : lang === 'es' ? 'PDF y PPTX editables · FR y EN' : 'Editable PDF & PPTX · EN & FR'}
                     </div>
@@ -352,19 +355,43 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                           <ShoppingBag size={12} />{text.starterCta(formatProductPrice('starter_pack'))}
                         </AddToCartButton>
                       </div>
-                    ) : (
-                      <div className="mt-2 flex min-h-[70px] items-center rounded-xl border border-[#eee9e0] bg-[#f7f5f0] px-3 text-[10px] leading-4 text-[#687169]">
-                        {lang === 'fr' ? 'Les checklists Spa sont intégrées au Manuel SOP complet.' : lang === 'es' ? 'Las checklists de Spa están incluidas en el Manual SOP completo.' : 'Spa checklists are included in the complete SOP Manual.'}
-                      </div>
-                    )}
-                    <Link href={detailHref} className="mt-3 inline-flex items-center justify-center gap-1.5 py-1 text-[10px] font-semibold text-[#566158] transition-colors hover:text-[#10271e]">
+                    ) : null}
+                    <Link href={detailHref} className="mt-auto inline-flex min-h-10 items-center justify-center gap-1.5 pt-3 text-[10px] font-semibold text-[#566158] transition-colors hover:text-[#10271e]">
                       {text.details}<ArrowUpRight size={13} strokeWidth={1.7} />
                     </Link>
                   </div>
-                  <span className="sr-only">{index + 1} / {departments.length}</span>
+                  <span className="sr-only">{index + 1} / {departments.length + 1}</span>
                 </article>
               )
             })}
+            <article className="group flex h-full flex-col overflow-hidden rounded-[22px] border border-[#d8c6a6] bg-white shadow-[0_5px_20px_rgba(39,42,35,0.045)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_38px_rgba(39,42,35,0.09)]">
+              <Link href={`/${dataLang}${REVENUE_PRODUCT_PATH}`} className="relative block aspect-[1.62] overflow-hidden bg-[#e9e2d4]" aria-label="Revenue Management">
+                <Image src="/images/editorial-hospitality/dept-revenue-management-v1.png" alt={lang === 'fr' ? 'Espace de travail Revenue Management dans un hôtel' : 'Hotel revenue management workspace'} fill sizes="(min-width: 1280px) 25vw, (min-width: 768px) 50vw, 100vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.035]" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#101b16]/75 via-transparent to-[#101b16]/10" />
+                <span className="absolute left-3.5 top-3.5 rounded-full border border-white/40 bg-[#fffdf8]/90 px-2.5 py-1 text-[.55rem] font-semibold uppercase tracking-[.1em] text-[#455047] shadow-sm backdrop-blur-sm">Revenue Management</span>
+                <span className="absolute bottom-3 left-4 right-3 whitespace-nowrap font-display text-[1.25rem] font-medium leading-tight tracking-[-0.02em] text-white drop-shadow-sm">Revenue Management</span>
+              </Link>
+              <div className="flex flex-1 flex-col p-4">
+                <p className="line-clamp-7 min-h-[78px] overflow-hidden text-[11px] leading-[1.55] text-[#687169] sm:h-[120px]">{text.revenueDescription}</p>
+                <div className="mt-3 flex items-center gap-1.5 text-[10px] font-medium text-[#4b594f]"><Check size={12} className="shrink-0 text-[#a58658]" />{lang === 'fr' ? 'PDF & PPTX modifiables · FR & EN' : lang === 'es' ? 'PDF y PPTX editables · FR y EN' : 'Editable PDF & PPTX · EN & FR'}</div>
+                <p className="mt-1 text-[10px] leading-4 text-[#737a72]">~115 {lang === 'es' ? 'páginas' : 'pages'}</p>
+                <div className="mt-3 rounded-xl border border-[#e9e3d8] bg-[#f7f5f0] p-3">
+                  <div className="mb-2 flex items-center justify-between gap-2">
+                    <span className="text-[9px] font-semibold uppercase tracking-[.1em] text-[#7d6540]">{text.manual}</span>
+                    <span className="text-xs font-semibold text-[#25362c]">{formatProductPrice('playbook')} <span className="text-[9px] font-normal">{text.ttc}</span></span>
+                  </div>
+                  <AddToCartButton
+                    openCartOnAdd
+                    item={{ priceId: REVENUE_PRICE_ID, title: lang === 'fr' ? 'Manuel SOP Revenue Management & Distribution' : 'Revenue Management & Distribution SOP Manual', price: priceFor('playbook'), currency, productType: 'playbook' }}
+                    addedLabel={lang === 'fr' ? 'Dans le panier' : lang === 'es' ? 'En la cesta' : 'In cart'}
+                    className="inline-flex min-h-9 w-full items-center justify-center gap-1.5 rounded-lg bg-[#10271e] px-3 py-2 text-[10px] font-semibold text-[#fffdf8] transition-colors hover:bg-[#1c3a2c]"
+                  >
+                    <ShoppingBag size={13} />{text.manualCta(formatProductPrice('playbook'))}
+                  </AddToCartButton>
+                </div>
+                <Link href={`/${dataLang}${REVENUE_PRODUCT_PATH}`} className="mt-auto inline-flex min-h-10 items-center justify-center gap-1.5 pt-3 text-[10px] font-semibold text-[#566158] transition-colors hover:text-[#10271e]">{text.details}<ArrowUpRight size={13} /></Link>
+              </div>
+            </article>
           </div>
         </div>
       </section>
@@ -380,18 +407,18 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                 { Icon: FileText, label: lang === 'fr' ? 'PDF & PowerPoint modifiables' : lang === 'es' ? 'PDF y PowerPoint editables' : 'Editable PDF & PowerPoint' },
                 { Icon: Languages, label: lang === 'fr' ? 'Français & anglais' : lang === 'es' ? 'Francés e inglés' : 'English & French' },
                 { Icon: Download, label: lang === 'fr' ? 'Téléchargement immédiat' : lang === 'es' ? 'Descarga inmediata' : 'Instant download' },
-                { Icon: Check, label: lang === 'fr' ? '4 départements hôteliers' : lang === 'es' ? '4 departamentos hoteleros' : '4 hotel departments' },
+                { Icon: Check, label: lang === 'fr' ? '5 référentiels hôteliers' : lang === 'es' ? '5 referentes hoteleros' : '5 hotel references' },
               ].map(({ Icon, label }) => <span key={label} className="inline-flex items-center gap-2"><Icon size={15} className="text-[#d5ba83]" strokeWidth={1.6} />{label}</span>)}
             </div>
           </div>
           <div className="relative flex flex-col justify-center border-t border-white/15 bg-white/[0.035] px-6 py-7 sm:px-9 lg:min-w-[340px] lg:border-l lg:border-t-0 lg:px-10">
             <p className="font-display text-5xl font-medium tracking-[-0.035em]">{formatProductPrice('bundle')}</p>
-            <p className="mt-2 text-xs font-medium text-[#d5ba83]">{text.bundleSaving(formattedSaving)}</p>
+            <p className="mt-2 text-xs font-medium text-[#d5ba83]">{text.bundleSaving()}</p>
             <AddToCartButton
               openCartOnAdd
               item={{
                 priceId: BUNDLE_PRICE_ID,
-                title: lang === 'fr' ? 'Bundle complet · 4 Manuels SOP' : lang === 'es' ? 'Paquete completo · 4 Manuales SOP' : 'Complete bundle · 4 SOP Manuals',
+                title: lang === 'fr' ? 'Bundle complet · 5 Manuels SOP' : lang === 'es' ? 'Paquete completo · 5 Manuales SOP' : 'Complete bundle · 5 SOP Manuals',
                 price: priceFor('bundle'),
                 currency,
                 productType: 'bundle',
