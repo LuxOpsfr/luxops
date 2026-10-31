@@ -283,7 +283,7 @@ export default function HomeLanding({ locale }: { locale: string }) {
             {departments.map((department) => {
               const manual = PLAYBOOKS.find((item) => item.id === department.id)!
               const detailHref = `${localizedRoutePath('playbooks', productLocale)}/${manual.id}`
-              return <article key={department.id} className="group flex h-full flex-col overflow-hidden rounded-[1.35rem] border border-[#e5dfd4] bg-white shadow-[0_8px_25px_rgba(43,40,32,.045)] transition duration-300 hover:-translate-y-1 hover:border-[#d5c3a1] hover:shadow-[0_18px_40px_rgba(43,40,32,.11)]">
+              return <Link key={department.id} href={detailHref} aria-label={`${t.viewDossier} : ${manual.dept[productLocale]}`} className="group flex h-full flex-col overflow-hidden rounded-[1.35rem] border border-[#e5dfd4] bg-white shadow-[0_8px_25px_rgba(43,40,32,.045)] transition duration-300 hover:-translate-y-1 hover:border-[#d5c3a1] hover:shadow-[0_18px_40px_rgba(43,40,32,.11)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a58658]">
                 <div className="relative aspect-[1.72] overflow-hidden bg-[#e6dfd3]">
                   <Image src={`${imageBase}/${department.image}`} alt={manual.dept[productLocale]} fill sizes="(min-width: 1280px) 25vw, (min-width: 640px) 50vw, 100vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.045]" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#101f18]/70 via-transparent to-transparent" />
@@ -293,15 +293,15 @@ export default function HomeLanding({ locale }: { locale: string }) {
                 <div className="flex flex-1 flex-col p-4">
                   <p className="line-clamp-3 min-h-[3.5rem] text-[12px] leading-[1.55] text-[#687169]">{manual.desc[productLocale]}</p>
                   <div className="mt-3 border-t border-[#eee9e0]">
-                    <Link href={detailHref} className="flex items-center justify-between gap-2 py-2.5 text-[11px] text-[#59645c] transition-colors hover:text-[#0f211a]">
+                    <div className="flex items-center justify-between gap-2 py-2.5 text-[11px] text-[#59645c] transition-colors group-hover:text-[#0f211a]">
                       <span>{t.manual}</span><span className="shrink-0 font-semibold text-[#25382d]">{formatProductPrice('playbook')}<ArrowUpRight size={12} className="ml-1 inline" /></span>
-                    </Link>
+                    </div>
                   </div>
-                  <Link href={detailHref} className="mt-auto flex min-h-10 items-center justify-between rounded-full bg-[#f4f0e8] px-3.5 text-[11px] font-semibold text-[#263a30] transition-colors hover:bg-[#e9e0d2]">{t.viewDossier}<ArrowRight size={14} /></Link>
+                  <span className="mt-auto flex min-h-10 items-center justify-between rounded-full bg-[#f4f0e8] px-3.5 text-[11px] font-semibold text-[#263a30] transition-colors group-hover:bg-[#e9e0d2]">{t.viewDossier}<ArrowRight size={14} /></span>
                 </div>
-              </article>
+              </Link>
             })}
-            <article className="group flex h-full flex-col overflow-hidden rounded-[1.35rem] border border-[#d8c6a6] bg-white shadow-[0_8px_25px_rgba(43,40,32,.045)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(43,40,32,.11)]">
+            <Link href={`/${productLocale}${REVENUE_PRODUCT_PATH}`} aria-label={`${t.viewDossier} : Revenue Management`} className="group flex h-full flex-col overflow-hidden rounded-[1.35rem] border border-[#d8c6a6] bg-white shadow-[0_8px_25px_rgba(43,40,32,.045)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(43,40,32,.11)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a58658]">
               <div className="relative aspect-[1.72] overflow-hidden bg-[#e9e2d4]">
                 <Image src={`${imageBase}/dept-revenue-management-v1.png`} alt={lang === 'fr' ? 'Espace de travail Revenue Management dans un hôtel' : 'Hotel revenue management workspace'} fill sizes="(min-width: 1280px) 25vw, (min-width: 640px) 50vw, 100vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.045]" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#101f18]/70 via-transparent to-transparent" />
@@ -311,13 +311,13 @@ export default function HomeLanding({ locale }: { locale: string }) {
               <div className="flex flex-1 flex-col p-4">
                 <p className="line-clamp-3 min-h-[3.5rem] text-[12px] leading-[1.55] text-[#687169]">{t.revenueText}</p>
                 <div className="mt-3 border-t border-[#eee9e0]">
-                  <Link href={`/${productLocale}${REVENUE_PRODUCT_PATH}`} className="flex items-center justify-between gap-2 py-2.5 text-[11px] text-[#59645c] transition-colors hover:text-[#0f211a]">
+                  <div className="flex items-center justify-between gap-2 py-2.5 text-[11px] text-[#59645c] transition-colors group-hover:text-[#0f211a]">
                     <span>{t.manual}</span><span className="shrink-0 font-semibold text-[#25382d]">{formatProductPrice('playbook')}<ArrowUpRight size={12} className="ml-1 inline" /></span>
-                  </Link>
+                  </div>
                 </div>
-                <Link href={`/${productLocale}${REVENUE_PRODUCT_PATH}`} className="mt-auto flex min-h-10 items-center justify-between rounded-full bg-[#f4f0e8] px-3.5 text-[11px] font-semibold text-[#263a30] transition-colors hover:bg-[#e9e0d2]">{t.viewDossier}<ArrowRight size={14} /></Link>
+                <span className="mt-auto flex min-h-10 items-center justify-between rounded-full bg-[#f4f0e8] px-3.5 text-[11px] font-semibold text-[#263a30] transition-colors group-hover:bg-[#e9e0d2]">{t.viewDossier}<ArrowRight size={14} /></span>
               </div>
-            </article>
+            </Link>
           </div>
 
           <div className="relative mt-5 overflow-hidden rounded-[1.45rem] bg-[#0f211a] px-5 py-5 text-[#f8f6f0] shadow-[0_16px_38px_rgba(16,37,29,.12)] sm:px-7 lg:flex lg:items-center lg:justify-between lg:gap-8">

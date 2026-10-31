@@ -41,7 +41,7 @@ const copy = {
     departmentsCta: 'Choisir un manuel · dès 67 €',
     bundleCta: 'Ajouter le bundle · 199 €',
     facts: ['PDF & PowerPoint modifiables', 'Français & anglais inclus', 'Téléchargement immédiat'],
-    options: ['Manuel par département', 'Bundle intégral'],
+    options: ['Manuel par département', 'Catalogue complet'],
     departmentEyebrow: 'CATALOGUE DÉPARTEMENTAL',
     departmentTitle: 'Les 5 Manuels Opérationnels',
     departmentIntro: 'Cinq référentiels pour les opérations hôtelières et la performance commerciale. Le nouveau manuel Revenue Management rejoint le bundle au même prix.',
@@ -72,7 +72,7 @@ const copy = {
     departmentsCta: 'Choose a manual · from €67',
     bundleCta: 'Add the bundle · €199',
     facts: ['Editable PDF & PowerPoint', 'English & French included', 'Instant download'],
-    options: ['Manual by department', 'Complete bundle'],
+    options: ['Manual by department', 'Complete catalogue'],
     departmentEyebrow: 'DEPARTMENT CATALOGUE',
     departmentTitle: 'The 5 Operating Manuals',
     departmentIntro: 'Five references for hotel operations and commercial performance. The new Revenue Management manual joins the bundle at the same price.',
@@ -103,7 +103,7 @@ const copy = {
     departmentsCta: 'Elegir un manual · desde 67 €',
     bundleCta: 'Añadir el paquete · 199 €',
     facts: ['PDF y PowerPoint editables', 'Francés e inglés incluidos', 'Descarga inmediata'],
-    options: ['Manual por departamento', 'Paquete completo'],
+    options: ['Manual por departamento', 'Catálogo completo'],
     departmentEyebrow: 'CATÁLOGO POR DEPARTAMENTO',
     departmentTitle: 'Los 5 Manuales Operativos',
     departmentIntro: 'Cinco referentes para las operaciones hoteleras y el rendimiento comercial. El nuevo manual Revenue Management se añade al paquete al mismo precio.',
@@ -250,8 +250,8 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
             addedLabel={lang === 'fr' ? 'Dans le panier' : lang === 'es' ? 'En la cesta' : 'In cart'}
             className="flex min-h-[66px] items-center justify-between gap-3 rounded-2xl border border-[#d9c69e] bg-[#fffdf8] px-4 py-3 text-left shadow-[0_3px_12px_rgba(45,42,34,.035)] transition hover:-translate-y-0.5 hover:shadow-md"
           >
-            <span className="flex min-w-0 items-center gap-3"><span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#f2e5c8] text-[#806035]"><PackageCheck size={16} /></span><span className="min-w-0"><span className="block truncate text-[11px] font-semibold text-[#25362c]">{text.options[1]}</span><span className="block text-[9px] text-[#6b746d]">{text.bundleSaving()}</span></span></span>
-            <span className="shrink-0 text-right text-xs font-semibold text-[#1d3026]">{formatProductPrice('bundle')}<span className="block text-[9px] font-normal text-[#828880]">{lang === 'fr' ? 'les 5' : lang === 'es' ? 'los 5' : 'all 5'}</span></span>
+            <span className="flex min-w-0 items-center gap-3"><span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#f2e5c8] text-[#806035]"><PackageCheck size={16} /></span><span className="min-w-0"><span className="block truncate text-[11px] font-semibold text-[#25362c]">{text.options[1]}</span><span className="block whitespace-nowrap text-[9px] text-[#6b746d]">{lang === 'fr' ? '5 manuels + 3 Starter Packs' : lang === 'es' ? '5 manuales + 3 Starter Packs' : '5 manuals + 3 Starter Packs'}</span></span></span>
+            <span className="shrink-0 text-right text-xs font-semibold text-[#1d3026]">{formatProductPrice('bundle')}<span className="block text-[9px] font-normal text-[#828880]">{lang === 'fr' ? 'tout inclus' : lang === 'es' ? 'todo incluido' : 'all included'}</span></span>
           </AddToCartButton>
         </div>
       </section>
@@ -270,8 +270,9 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
               const title = manual.title[dataLang]
               const detailHref = `${catalogueHref}/${manual.id}`
               return (
-                <article key={manual.id} className="group flex h-full flex-col overflow-hidden rounded-[22px] border border-[#e6e1d7] bg-white shadow-[0_5px_20px_rgba(39,42,35,0.045)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_38px_rgba(39,42,35,0.09)]">
-                  <Link href={detailHref} className="relative block aspect-[1.62] overflow-hidden bg-[#e7e0d5]" aria-label={title}>
+                <article key={manual.id} className="group relative isolate flex h-full flex-col overflow-hidden rounded-[22px] border border-[#e6e1d7] bg-white shadow-[0_5px_20px_rgba(39,42,35,0.045)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_38px_rgba(39,42,35,0.09)]">
+                  <Link href={detailHref} aria-label={lang === 'fr' ? `Voir ${title}` : lang === 'es' ? `Ver ${title}` : `View ${title}`} className="absolute inset-0 z-10 rounded-[22px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a58658]" />
+                  <div className="relative block aspect-[1.62] overflow-hidden bg-[#e7e0d5]">
                     <DepartmentImage id={manual.id} title={title} />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#101b16]/75 via-transparent to-[#101b16]/10" />
                     <span className="absolute left-3.5 top-3.5 rounded-full border border-white/40 bg-[#fffdf8]/90 px-2.5 py-1 text-[0.55rem] font-semibold uppercase tracking-[0.1em] text-[#455047] shadow-sm backdrop-blur-sm">
@@ -283,7 +284,7 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                       </span>
                     ) : null}
                     <span className="absolute bottom-3 left-4 right-3 font-display text-[1.25rem] font-medium leading-tight tracking-[-0.02em] text-white drop-shadow-sm">{title}</span>
-                  </Link>
+                  </div>
                   <div className="flex flex-1 flex-col p-4">
                     <p className="line-clamp-7 min-h-[78px] overflow-hidden text-[11px] leading-[1.55] text-[#687169] sm:h-[120px]">{manual.desc[dataLang]}</p>
                     <div className="mt-3 flex items-center gap-1.5 text-[10px] font-medium text-[#4b594f]">
@@ -299,26 +300,27 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                         openCartOnAdd
                         item={{ priceId: manual.priceId, title, price: priceFor('playbook'), currency, productType: 'playbook' }}
                         addedLabel={lang === 'fr' ? 'Dans le panier' : lang === 'es' ? 'En la cesta' : 'In cart'}
-                        className="inline-flex min-h-9 w-full items-center justify-center gap-1.5 rounded-lg bg-[#10271e] px-3 py-2 text-[10px] font-semibold text-[#fffdf8] transition-colors hover:bg-[#1c3a2c]"
+                        className="relative z-20 inline-flex min-h-9 w-full items-center justify-center gap-1.5 rounded-lg bg-[#10271e] px-3 py-2 text-[10px] font-semibold text-[#fffdf8] transition-colors hover:bg-[#1c3a2c]"
                       >
                         <ShoppingBag size={13} />{text.manualCta(formatProductPrice('playbook'))}
                       </AddToCartButton>
                     </div>
-                    <Link href={detailHref} className="mt-auto inline-flex min-h-10 items-center justify-center gap-1.5 pt-3 text-[10px] font-semibold text-[#566158] transition-colors hover:text-[#10271e]">
+                    <span className="mt-auto inline-flex min-h-10 items-center justify-center gap-1.5 pt-3 text-[10px] font-semibold text-[#566158] transition-colors group-hover:text-[#10271e]">
                       {text.details}<ArrowUpRight size={13} strokeWidth={1.7} />
-                    </Link>
+                    </span>
                   </div>
                   <span className="sr-only">{index + 1} / {departments.length + 1}</span>
                 </article>
               )
             })}
-            <article className="group flex h-full flex-col overflow-hidden rounded-[22px] border border-[#d8c6a6] bg-white shadow-[0_5px_20px_rgba(39,42,35,0.045)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_38px_rgba(39,42,35,0.09)]">
-              <Link href={`/${dataLang}${REVENUE_PRODUCT_PATH}`} className="relative block aspect-[1.62] overflow-hidden bg-[#e9e2d4]" aria-label="Revenue Management">
+            <article className="group relative isolate flex h-full flex-col overflow-hidden rounded-[22px] border border-[#d8c6a6] bg-white shadow-[0_5px_20px_rgba(39,42,35,0.045)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_38px_rgba(39,42,35,0.09)]">
+              <Link href={`/${dataLang}${REVENUE_PRODUCT_PATH}`} aria-label={lang === 'fr' ? 'Voir le manuel Revenue Management' : lang === 'es' ? 'Ver el manual Revenue Management' : 'View the Revenue Management manual'} className="absolute inset-0 z-10 rounded-[22px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a58658]" />
+              <div className="relative block aspect-[1.62] overflow-hidden bg-[#e9e2d4]">
                 <Image src="/images/editorial-hospitality/dept-revenue-management-v1.png" alt={lang === 'fr' ? 'Espace de travail Revenue Management dans un hôtel' : 'Hotel revenue management workspace'} fill sizes="(min-width: 1280px) 25vw, (min-width: 768px) 50vw, 100vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.035]" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#101b16]/75 via-transparent to-[#101b16]/10" />
                 <span className="absolute left-3.5 top-3.5 rounded-full border border-white/40 bg-[#fffdf8]/90 px-2.5 py-1 text-[.55rem] font-semibold uppercase tracking-[.1em] text-[#455047] shadow-sm backdrop-blur-sm">Revenue Management</span>
                 <span className="absolute bottom-3 left-4 right-3 whitespace-nowrap font-display text-[1.25rem] font-medium leading-tight tracking-[-0.02em] text-white drop-shadow-sm">Revenue Management</span>
-              </Link>
+              </div>
               <div className="flex flex-1 flex-col p-4">
                 <p className="line-clamp-7 min-h-[78px] overflow-hidden text-[11px] leading-[1.55] text-[#687169] sm:h-[120px]">{text.revenueDescription}</p>
                 <div className="mt-3 flex items-center gap-1.5 text-[10px] font-medium text-[#4b594f]"><Check size={12} className="shrink-0 text-[#a58658]" />{lang === 'fr' ? 'PDF & PPTX modifiables · FR & EN' : lang === 'es' ? 'PDF y PPTX editables · FR y EN' : 'Editable PDF & PPTX · EN & FR'}</div>
@@ -332,12 +334,12 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                     openCartOnAdd
                     item={{ priceId: REVENUE_PRICE_ID, title: lang === 'fr' ? 'Manuel SOP Revenue Management & Distribution' : 'Revenue Management & Distribution SOP Manual', price: priceFor('playbook'), currency, productType: 'playbook' }}
                     addedLabel={lang === 'fr' ? 'Dans le panier' : lang === 'es' ? 'En la cesta' : 'In cart'}
-                    className="inline-flex min-h-9 w-full items-center justify-center gap-1.5 rounded-lg bg-[#10271e] px-3 py-2 text-[10px] font-semibold text-[#fffdf8] transition-colors hover:bg-[#1c3a2c]"
+                    className="relative z-20 inline-flex min-h-9 w-full items-center justify-center gap-1.5 rounded-lg bg-[#10271e] px-3 py-2 text-[10px] font-semibold text-[#fffdf8] transition-colors hover:bg-[#1c3a2c]"
                   >
                     <ShoppingBag size={13} />{text.manualCta(formatProductPrice('playbook'))}
                   </AddToCartButton>
                 </div>
-                <Link href={`/${dataLang}${REVENUE_PRODUCT_PATH}`} className="mt-auto inline-flex min-h-10 items-center justify-center gap-1.5 pt-3 text-[10px] font-semibold text-[#566158] transition-colors hover:text-[#10271e]">{text.details}<ArrowUpRight size={13} /></Link>
+                <span className="mt-auto inline-flex min-h-10 items-center justify-center gap-1.5 pt-3 text-[10px] font-semibold text-[#566158] transition-colors group-hover:text-[#10271e]">{text.details}<ArrowUpRight size={13} /></span>
               </div>
             </article>
           </div>

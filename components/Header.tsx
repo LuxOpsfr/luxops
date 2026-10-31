@@ -58,12 +58,12 @@ export default function Header({ locale }: HeaderProps) {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-[rgba(32,35,31,0.14)] bg-[#f5f1e9]/95 backdrop-blur">
-      <div className="mx-auto flex max-w-[1680px] items-center justify-between px-5 md:px-12 lg:px-16" style={{ height: 'calc(var(--site-header-height) - 1px)' }}>
+      <div className="relative mx-auto flex max-w-[1680px] items-center justify-between px-5 md:px-12 lg:px-16" style={{ height: 'calc(var(--site-header-height) - 1px)' }}>
         <Link href={localizedRoutePath('home', currentLocale)} className="no-underline" aria-label="LuxOps">
           <BrandLogo compact showTagline showMonogram />
         </Link>
 
-        <nav className="hidden flex-1 items-center justify-center gap-8 lg:flex">
+        <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center justify-center gap-8 xl:flex">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -95,7 +95,7 @@ export default function Header({ locale }: HeaderProps) {
 
           <Link
             href={portalHref}
-            className="p-1.5 text-[#4f5a52] transition-colors hover:text-[#24362f] lg:hidden"
+            className="p-1.5 text-[#4f5a52] transition-colors hover:text-[#24362f] xl:hidden"
             aria-label={copy.portal}
           >
             <User size={19} strokeWidth={1.5} />
@@ -116,13 +116,13 @@ export default function Header({ locale }: HeaderProps) {
 
           <Link
             href={portalHref}
-            className="hidden items-center border border-[#24362f] px-5 py-2 text-sm font-semibold text-[#24362f] transition-colors hover:bg-[#24362f] hover:text-[#f5f1e9] lg:inline-flex"
+            className="hidden items-center border border-[#24362f] px-5 py-2 text-sm font-semibold text-[#24362f] transition-colors hover:bg-[#24362f] hover:text-[#f5f1e9] xl:inline-flex"
           >
             {copy.portal}
           </Link>
 
           <button
-            className="p-1.5 text-[#4f5a52] lg:hidden"
+            className="p-1.5 text-[#4f5a52] xl:hidden"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label={copy.toggleMenu}
           >
@@ -132,7 +132,7 @@ export default function Header({ locale }: HeaderProps) {
       </div>
 
       {menuOpen && (
-        <div className="flex flex-col gap-4 border-t border-[rgba(32,35,31,0.14)] bg-[#f5f1e9] px-6 py-5 lg:hidden">
+        <div className="flex flex-col gap-4 border-t border-[rgba(32,35,31,0.14)] bg-[#f5f1e9] px-6 py-5 xl:hidden">
           {navLinks.map((link) => (
             <Link
               key={link.href}
