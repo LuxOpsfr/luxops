@@ -465,18 +465,18 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
             {isEN ? 'Choose a free checklist' : 'Choisir une checklist gratuite'}
           </SamePageAnchor>
           <TrackedLink
-            href={`/${locale}/playbooks/hsk-starter-pack`}
-            eventName="starter_pack_cta_clicked"
-            eventProperties={{ source_page: `/${locale}/hotel-housekeeping-checklist`, placement: 'hero', product: 'housekeeping_inspection_kit', cta_label: isEN ? 'Housekeeping Starter Pack' : 'Starter Pack Housekeeping' }}
+            href={`/${locale}/playbooks/hsk`}
+            eventName="playbook_cta_clicked"
+            eventProperties={{ source_page: `/${locale}/hotel-housekeeping-checklist`, placement: 'hero', product: 'housekeeping_playbook', cta_label: isEN ? 'Housekeeping SOP manual' : 'Manuel SOP Housekeeping' }}
             className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#d8cfc0] bg-white/70 px-6 py-3 text-sm font-semibold text-[#24362f] transition-colors hover:bg-white"
           >
-            {isEN ? 'Explore the Starter Pack' : 'Découvrir le Starter Pack'}
+            {isEN ? 'Explore the SOP manual' : 'Découvrir le Manuel SOP'}
           </TrackedLink>
         </ChecklistEditorialHero>
 
         {/* Product paths */}
         <section className="max-w-5xl mx-auto px-6 pt-12">
-          <div className="grid md:grid-cols-3 gap-4">
+          <div className="grid md:grid-cols-2 gap-4">
             {[
               {
                 title: isEN ? 'Free printable checklists' : 'Checklists gratuites à imprimer',
@@ -487,16 +487,6 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
                 label: isEN ? 'View free PDFs' : 'Voir les PDF gratuits',
                 eventName: 'seo_cta_clicked',
                 product: 'housekeeping_free_pdfs',
-              },
-              {
-                title: isEN ? 'Housekeeping Starter Pack' : 'Starter Pack Housekeeping',
-                body: isEN
-                  ? 'Use the inspection kit when you need editable control sheets, room inspection tools and defect tracking.'
-                  : 'Utilisez le kit quand vous avez besoin de feuilles de contrôle modifiables, outils d’inspection chambre et suivi des défauts.',
-                href: `/${locale}/playbooks/hsk-starter-pack`,
-                label: isEN ? 'View Inspection Kit' : 'Voir le kit inspection',
-                eventName: 'starter_pack_cta_clicked',
-                product: 'housekeeping_inspection_kit',
               },
               {
                 title: isEN ? 'Full Housekeeping Playbook' : 'Playbook Housekeeping complet',
@@ -602,19 +592,7 @@ export default async function HotelHousekeepingChecklist({ params }: { params: P
                 >
                   {isEN ? 'Download the supervisor PDF' : 'Télécharger la checklist gouvernante'}
                 </TrackedLink>
-                <TrackedLink
-                  href={`/${locale}/playbooks/hsk-starter-pack`}
-                  eventName="starter_pack_cta_clicked"
-                  eventProperties={{
-                    source_page: `/${locale}/hotel-housekeeping-checklist`,
-                    placement: 'supervisor_focus',
-                    product: 'housekeeping_inspection_kit',
-                    cta_label: isEN ? 'View Housekeeping Starter Pack' : 'Voir le Starter Pack Housekeeping',
-                  }}
-                  className="inline-flex justify-center border border-[#a58658] bg-[#fcfbf8] text-[#0f211a] px-5 py-3 rounded-lg text-sm font-semibold hover:bg-[#f5f1e9] transition-colors"
-                >
-                  {isEN ? 'View the inspection kit' : 'Voir le kit inspection'}
-                </TrackedLink>
+
               </div>
             </div>
           </div>

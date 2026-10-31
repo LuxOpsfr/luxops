@@ -158,9 +158,14 @@ export async function generateMetadata({
   if (!pb && !starterPack) return {}
   const lang = locale as 'en' | 'fr'
   if (starterPack) {
+    const includedWithManual = ['fo-starter-pack', 'hsk-starter-pack', 'fb-starter-pack'].includes(id)
     return {
-      title: starterPack.seo.title,
-      description: starterPack.seo.description,
+      title: includedWithManual
+        ? (lang === 'fr' ? `${starterPack.tools.fr.length} outils inclus dans le Manuel SOP ${starterPack.category.fr} | LuxOps` : `${starterPack.tools.en.length} tools included with the ${starterPack.category.en} SOP Manual | LuxOps`)
+        : starterPack.seo.title,
+      description: includedWithManual
+        ? (lang === 'fr' ? `${starterPack.subtitle.fr} Inclus dans le Manuel SOP ${starterPack.category.fr} LuxOps.` : `${starterPack.subtitle.en} Included with the LuxOps ${starterPack.category.en} SOP Manual.`)
+        : starterPack.seo.description,
       alternates: {
         canonical: `https://www.luxops.fr/${locale}/playbooks/${id}`,
         languages: {

@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { Download, ChevronRight, Check, ArrowRight, FileCheck2, BookOpen } from 'lucide-react'
+import { Download, ChevronRight, Check, ArrowRight, BookOpen } from 'lucide-react'
 import posthog from 'posthog-js'
 import TrackedLink from '@/components/TrackedLink'
 import { useCurrency } from '@/context/CurrencyContext'
@@ -45,19 +45,15 @@ const DEPARTMENTS = [
 ]
 
 const NEXT_STEPS: Record<string, {
-  starter?: { slug: string; en: string; fr: string }
   playbook: { slug: string; en: string; fr: string }
 }> = {
   fo: {
-    starter: { slug: 'fo-starter-pack', en: 'Front Office Starter Pack', fr: 'Starter Pack Front Office' },
     playbook: { slug: 'fo', en: 'Front Office Playbook', fr: 'Playbook Front Office' },
   },
   hsk: {
-    starter: { slug: 'hsk-starter-pack', en: 'Housekeeping Starter Pack', fr: 'Starter Pack Housekeeping' },
     playbook: { slug: 'hsk', en: 'Housekeeping Playbook', fr: 'Playbook Housekeeping' },
   },
   fb: {
-    starter: { slug: 'fb-starter-pack', en: 'F&B Service Starter Pack', fr: 'Starter Pack F&B' },
     playbook: { slug: 'fb', en: 'F&B Playbook', fr: 'Playbook F&B' },
   },
   spa: {
@@ -213,12 +209,12 @@ export default function LeadMagnetForm({ locale }: { locale: string }) {
             </h3>
             <p className="leading-relaxed text-[#5d665f]">
               {isEn
-                ? 'The sample offers a practical preview. The Starter Pack provides editable daily tools, while the full Playbook brings together the complete department reference.'
-                : 'L’extrait vous donne un aperçu concret. Le Starter Pack apporte des outils quotidiens modifiables, tandis que le Playbook réunit toute la référence du département.'}
+                ? 'The sample offers a practical preview. The full manual brings together the complete department reference and editable files.'
+                : 'L’extrait vous donne un aperçu concret. Le manuel complet réunit la référence du département et les fichiers modifiables.'}
             </p>
           </div>
 
-          <div className={`grid gap-4 ${nextStep.starter ? 'md:grid-cols-3' : 'md:grid-cols-2'}`}>
+          <div className="grid gap-4 md:grid-cols-2">
             <div className="border border-[rgba(32,35,31,0.16)] bg-[#fcfbf8] p-6">
               <div className="mb-5 flex h-9 w-9 items-center justify-center bg-[#e7e0d5] text-[#24362f]">
                 <Check size={17} />
@@ -232,36 +228,12 @@ export default function LeadMagnetForm({ locale }: { locale: string }) {
               </p>
             </div>
 
-            {nextStep.starter ? (
-              <div className="border border-[#a58658] bg-[#f5f1e9] p-6">
-                <div className="mb-5 flex h-9 w-9 items-center justify-center bg-[#e7e0d5] text-[#24362f]">
-                  <FileCheck2 size={17} />
-                </div>
-                <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-[#a58658]">02</p>
-                <h4 className="mb-2 font-display text-lg font-medium text-[#0f211a]">
-                  {isEn ? nextStep.starter.en : nextStep.starter.fr}
-                </h4>
-                <p className="mb-5 text-sm leading-relaxed text-[#5d665f]">
-                  {isEn ? 'Editable checklists and tools for immediate use.' : 'Checklists et outils modifiables pour un usage immédiat.'}
-                </p>
-                <TrackedLink
-                  href={`/${locale}/playbooks/${nextStep.starter.slug}`}
-                  eventName="lead_magnet_next_step_clicked"
-                  eventProperties={{ department: downloadDept, destination: 'starter_pack', locale }}
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-[#24362f]"
-                >
-                  {isEn ? `View at ${formatProductPrice('starter_pack')}` : `Voir à ${formatProductPrice('starter_pack')}`}
-                  <ArrowRight size={15} />
-                </TrackedLink>
-              </div>
-            ) : null}
-
             <div className="border border-[rgba(32,35,31,0.16)] bg-[#fcfbf8] p-6">
               <div className="mb-5 flex h-9 w-9 items-center justify-center bg-[#e7e0d5] text-[#24362f]">
                 <BookOpen size={17} />
               </div>
               <p className="mb-2 text-xs font-bold uppercase tracking-widest text-[#737685]">
-                {nextStep.starter ? '03' : '02'}
+                02
               </p>
               <h4 className="mb-2 font-display text-lg font-medium text-[#0f211a]">
                 {isEn ? nextStep.playbook.en : nextStep.playbook.fr}

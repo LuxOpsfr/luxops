@@ -334,23 +334,10 @@ export default async function HotelNightAuditChecklistPage({ params }: { params:
             </h2>
             <p className="text-sm text-gray-500 leading-relaxed max-w-2xl mx-auto mb-7">
               {isEN
-                ? 'Start with the Front Office Starter Pack for daily checklists and handovers, or use the full Front Office Playbook for the complete SOP reference.'
-                : 'Commencez avec le Starter Pack Front Office pour les checklists et passations du quotidien, ou utilisez le Playbook Front Office complet pour toute la référence SOP.'}
+                ? 'The Front Office SOP manual includes the complete department reference plus 12 editable Starter Pack tools for daily checklists and handovers.'
+                : 'Le Manuel SOP Front Office inclut la référence complète du service et les 12 outils modifiables du Starter Pack pour les checklists et passations du quotidien.'}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <TrackedLink
-                href={`/${locale}/playbooks/fo-starter-pack`}
-                eventName="starter_pack_cta_clicked"
-                eventProperties={{
-                  source_page: `/${locale}/hotel-night-audit-checklist`,
-                  placement: 'product_paths',
-                  product: 'front_office_starter_pack',
-                  cta_label: isEN ? 'View the Front Office Starter Pack' : 'Voir le Starter Pack Front Office',
-                }}
-                className="inline-flex min-w-[240px] items-center justify-center gap-2 rounded-lg bg-[#a58658] px-5 py-3 text-sm font-semibold text-white hover:bg-[#92734a] transition-colors"
-              >
-                {isEN ? 'View the Front Office Starter Pack' : 'Voir le Starter Pack Front Office'} <ArrowRight size={16} />
-              </TrackedLink>
               <TrackedLink
                 href={`/${locale}/playbooks/fo`}
                 eventName="playbook_cta_clicked"
@@ -360,7 +347,7 @@ export default async function HotelNightAuditChecklistPage({ params }: { params:
                   product: 'front_office_playbook',
                   cta_label: isEN ? 'View the Front Office Playbook' : 'Voir le Playbook Front Office',
                 }}
-                className="inline-flex min-w-[240px] items-center justify-center gap-2 rounded-lg border border-[#a58658] px-5 py-3 text-sm font-semibold text-[#a58658] hover:bg-[#f5f1e9] transition-colors"
+                className="inline-flex min-w-[240px] items-center justify-center gap-2 rounded-lg bg-[#a58658] px-5 py-3 text-sm font-semibold text-white hover:bg-[#92734a] transition-colors"
               >
                 {isEN ? 'View the Front Office Playbook' : 'Voir le Playbook Front Office'} <ArrowRight size={16} />
               </TrackedLink>

@@ -1,0 +1,176 @@
+export type PracticeManualId = 'hsk' | 'fb' | 'spa' | 'revenue-management'
+
+type PracticeCopy = {
+  title: string
+  intro: string
+  audience: string
+  contents: string
+  usage: string
+  chapterDescriptions: string[]
+  captions: [string, string, string]
+}
+
+export const MANUAL_PRACTICE: Record<PracticeManualId, { fr: PracticeCopy; en: PracticeCopy }> = {
+  hsk: {
+    fr: {
+      title: 'Un référentiel opérationnel pour des chambres impeccables, chaque jour',
+      intro: 'De la préparation des chambres à leur inspection finale, la qualité du Housekeeping repose sur des méthodes précises, une organisation efficace et une coordination constante avec les autres départements. Ce manuel rassemble les procédures essentielles pour harmoniser les pratiques, faciliter les contrôles et maintenir le même niveau d’exigence, quelle que soit la chambre ou l’équipe en service.',
+      audience: 'Conçu pour les directions d’hôtel, Executive Housekeepers, gouvernantes générales, superviseurs et équipes d’étages. Un support commun pour définir les attentes, accompagner les nouvelles recrues, organiser le travail quotidien et renforcer la régularité des prestations.',
+      contents: '10 chapitres couvrant les procédures de nettoyage, les standards de préparation des chambres, les outils digitaux, l’entretien des espaces communs, les interactions clients, les inspections, la gestion du linge et des stocks, le management et la sécurité. Des procédures détaillées, checklists et méthodes de contrôle qualité, disponibles en français et en anglais, aux formats PDF et PowerPoint modifiable. Le Starter Pack inclus ajoute 9 outils pratiques.',
+      usage: 'Sélectionnez les procédures adaptées à votre établissement, à ses équipements et à son organisation. Utilisez-les pour former les équipes, structurer les séquences de nettoyage, accompagner les superviseurs et réaliser les inspections. Les supports modifiables permettent d’intégrer vos propres critères de qualité et de faire évoluer les méthodes avec les besoins du département.',
+      chapterDescriptions: [
+        'Objectif, structure et utilisation du manuel.',
+        'Départs, recouches, grand nettoyage, lits et salles de bains.',
+        'Service du soir, création d’ambiance et attentions VIP.',
+        'Lobbies, couloirs, sanitaires, espaces fitness et zones de service.',
+        'Blanchisserie, demandes clients, réclamations et service recovery.',
+        'Inspections, préparation LQA et suivi des anomalies.',
+        'Linge, amenities, minibar, produits, niveaux de stock et commandes.',
+        'Organisation, intégration, formation, performance et planning.',
+        'Équipements de protection, produits chimiques, ergonomie et urgences.',
+        'Programmes environnementaux, réduction des déchets et meilleures pratiques.',
+      ],
+      captions: ['Un référentiel commun', 'Des procédures à adapter', 'Des outils pratiques pour les équipes'],
+    },
+    en: {
+      title: 'An operating reference for consistently prepared rooms',
+      intro: 'From room preparation to final inspection, housekeeping quality depends on clear methods, effective organisation and coordination with other departments. This manual brings essential procedures together to align practices, support inspections and maintain the same standards across rooms and shifts.',
+      audience: 'Designed for hotel directors, Executive Housekeepers, head housekeepers, supervisors and room attendants. A shared resource to set expectations, onboard new colleagues, organise daily work and maintain consistent service.',
+      contents: '10 chapters cover cleaning procedures, room preparation standards, digital tools, public areas, guest interactions, inspections, linen and supplies, team management and safety. Detailed procedures, checklists and quality control methods in French and English, as PDF and editable PowerPoint files. The included Starter Pack adds 9 practical tools.',
+      usage: 'Select the procedures that fit your property, equipment and organisation. Use them to train teams, structure cleaning sequences, support supervisors and carry out inspections. Adapt the editable materials to your quality criteria as the department evolves.',
+      chapterDescriptions: [
+        'Purpose, structure and guidance on using the manual.',
+        'Departure, stay-over and deep cleaning; beds and bathrooms.',
+        'Evening service, atmosphere and VIP turndowns.',
+        'Lobbies, corridors, restrooms, fitness areas and back of house.',
+        'Laundry, guest requests, complaints and service recovery.',
+        'Inspections, LQA preparation and deficiency tracking.',
+        'Linen, amenities, minibar, chemicals, stock levels and ordering.',
+        'Organisation, onboarding, training, performance and scheduling.',
+        'Protective equipment, chemicals, ergonomics and emergencies.',
+        'Environmental programmes, waste reduction and best practices.',
+      ],
+      captions: ['A shared reference', 'Procedures to adapt', 'Practical tools for teams'],
+    },
+  },
+  fb: {
+    fr: {
+      title: 'Un référentiel opérationnel pour un service fluide et constant',
+      intro: 'De la mise en place à la clôture du service, chaque interaction contribue à l’expérience du client. Ce manuel rassemble les procédures essentielles de restauration et de bar pour structurer les séquences de service, harmoniser les pratiques entre les équipes et accompagner les managers dans l’organisation quotidienne des différents points de vente.',
+      audience: 'Conçu pour les directions d’hôtel, F&B Directors, Restaurant Managers, responsables de bar et équipes de salle. Un support commun pour transmettre les standards, intégrer les nouveaux collaborateurs, clarifier les responsabilités et assurer une qualité de service cohérente entre les différents points de vente.',
+      contents: '10 chapitres couvrant le service en restaurant, le petit-déjeuner, le bar, le service des vins, le room service, la relation client, la gestion des réclamations, la mise en place, le management et le contrôle qualité. Des séquences de service détaillées, scripts, procédures et checklists, disponibles en français et en anglais, aux formats PDF et PowerPoint modifiable. Le Starter Pack inclus ajoute 12 outils pratiques.',
+      usage: 'Adaptez les procédures à vos concepts de restauration, à vos cartes et à votre organisation. Utilisez-les pour former les collaborateurs, préparer les briefings, structurer la mise en place et accompagner les équipes pendant le service. Le format modifiable permet de décliner les standards selon les besoins de chaque point de vente.',
+      chapterDescriptions: [
+        'Objectif du manuel, philosophie de service et standards de l’expérience F&B.',
+        'Accueil, prise de commande, déroulé du repas et clôture du service.',
+        'Préparation du buffet, accueil, réassort et séquences du petit-déjeuner.',
+        'Mise en place du bar, préparation et service des boissons.',
+        'Présentation, conseil et service des vins.',
+        'Prise de commande, préparation, livraison et débarrassage en chambre.',
+        'Communication avec le client, réclamations et service recovery.',
+        'Préparation des stations, équipements et fournitures avant le service.',
+        'Briefings, répartition des rôles et coordination des équipes.',
+        'Contrôles de qualité, hygiène et conformité des opérations.',
+      ],
+      captions: ['Un référentiel commun', 'Des séquences de service à adapter', 'Des outils pratiques pour les équipes'],
+    },
+    en: {
+      title: 'An operating reference for smooth, consistent service',
+      intro: 'From mise en place to closing, every interaction shapes the guest experience. This manual brings essential restaurant and bar procedures together to structure service sequences, align teams and support managers in the daily operation of each outlet.',
+      audience: 'Designed for hotel directors, F&B Directors, Restaurant Managers, bar managers and service teams. A shared resource to communicate standards, onboard new colleagues, clarify responsibilities and maintain consistent service across outlets.',
+      contents: '10 chapters cover restaurant service, breakfast, bar, wine service, room service, guest relations, complaint handling, mise en place, management and quality control. Detailed service sequences, scripts, procedures and checklists in French and English, as PDF and editable PowerPoint files. The included Starter Pack adds 12 practical tools.',
+      usage: 'Adapt the procedures to your restaurant concepts, menus and organisation. Use them to train staff, prepare briefings, structure mise en place and guide teams during service. The editable format lets you tailor standards to each outlet.',
+      chapterDescriptions: [
+        'Purpose, service philosophy and F&B guest experience standards.',
+        'Welcome, ordering, meal sequence and closing service.',
+        'Buffet preparation, guest welcome, replenishment and breakfast flow.',
+        'Bar setup, drink preparation and beverage service.',
+        'Wine presentation, recommendations and service.',
+        'Ordering, preparation, delivery and clearance in guest rooms.',
+        'Guest communication, complaints and service recovery.',
+        'Preparation of stations, equipment and supplies before service.',
+        'Briefings, roles and team coordination.',
+        'Quality checks, hygiene and operational compliance.',
+      ],
+      captions: ['A shared reference', 'Service sequences to adapt', 'Practical tools for teams'],
+    },
+  },
+  spa: {
+    fr: {
+      title: 'Un référentiel opérationnel pour une expérience Spa maîtrisée',
+      intro: 'De l’accueil du client à la réalisation des soins, la qualité d’un Spa repose sur la précision des gestes, la préparation des espaces et la coordination des équipes. Ce manuel réunit les procédures essentielles pour harmoniser les pratiques, structurer les protocoles de service et accompagner les collaborateurs dans la délivrance d’une expérience cohérente et personnalisée.',
+      audience: 'Conçu pour les directions d’hôtel, Spa Managers, responsables de soins et équipes Spa & Wellness. Un support commun pour organiser les opérations, accompagner les thérapeutes, transmettre les standards de service et maintenir une qualité d’accueil et de prise en charge homogène.',
+      contents: '9 chapitres couvrant la préparation des cabines, le parcours client, les protocoles de soins, la connaissance des produits, la vente retail, la gestion des équipements, le management des équipes et le contrôle qualité. Des procédures, standards professionnels et outils de référence, disponibles en français et en anglais, aux formats PDF et PowerPoint modifiable.',
+      usage: 'Adaptez les procédures à votre carte de soins, à vos équipements et aux produits de votre marque partenaire. Utilisez-les pour former les thérapeutes, préparer les cabines, structurer les briefings et contrôler la qualité des prestations. Le format modifiable permet de faire évoluer les standards selon les besoins de votre Spa.',
+      chapterDescriptions: [
+        'Philosophie, principes fondamentaux et adaptation à l’établissement.',
+        'Préparation, rotation entre clients, nettoyage approfondi et inspection.',
+        'Réservation, accueil, consultation, soin, départ et prise en charge des plaintes.',
+        'Catégories de soins, techniques, contre-indications et gestion du temps.',
+        'Connaissance des produits, vente retail et suivi des résultats.',
+        'Espaces thermaux, vestiaires, équipements, ouverture et fermeture.',
+        'Organisation, planning, intégration, briefing et performance des équipes.',
+        'Inspections, retours clients, indicateurs et amélioration continue.',
+        'Tenue, présentation, comportement et préparation avant chaque service.',
+      ],
+      captions: ['Un référentiel commun', 'Des protocoles à adapter', 'Des outils pratiques pour les équipes'],
+    },
+    en: {
+      title: 'An operating reference for a consistent Spa experience',
+      intro: 'From the guest welcome to treatment delivery, Spa quality depends on precise techniques, prepared spaces and coordinated teams. This manual brings essential procedures together to align practices, structure service protocols and help staff deliver a consistent, personal experience.',
+      audience: 'Designed for hotel directors, Spa Managers, treatment supervisors and Spa & Wellness teams. A shared resource to organise operations, support therapists, communicate service standards and maintain a consistent guest welcome and treatment experience.',
+      contents: '9 chapters cover treatment room preparation, the guest journey, treatment protocols, product knowledge, retail sales, facilities, team management and quality control. Procedures, professional standards and reference tools in French and English, as PDF and editable PowerPoint files.',
+      usage: 'Adapt the procedures to your treatment menu, facilities and partner products. Use them to train therapists, prepare rooms, structure briefings and monitor service quality. The editable format lets your standards evolve with your Spa.',
+      chapterDescriptions: [
+        'Service philosophy, core principles and adaptation to your property.',
+        'Preparation, room turnover, deep cleaning and inspection.',
+        'Booking, welcome, consultation, treatment, departure and complaints.',
+        'Treatment categories, techniques, contraindications and timing.',
+        'Product knowledge, retail conversations and performance tracking.',
+        'Wet areas, changing rooms, equipment, opening and closing.',
+        'Organisation, scheduling, onboarding, briefings and performance.',
+        'Inspections, guest feedback, indicators and continuous improvement.',
+        'Uniform, presentation, conduct and readiness for each shift.',
+      ],
+      captions: ['A shared reference', 'Protocols to adapt', 'Practical tools for teams'],
+    },
+  },
+  'revenue-management': {
+    fr: {
+      title: 'Un référentiel opérationnel pour piloter les revenus de votre hôtel',
+      intro: 'De l’analyse des réservations aux décisions tarifaires, le Revenue Management repose sur une lecture rigoureuse des données et une coordination efficace entre les équipes commerciales et opérationnelles. Ce manuel structure les principales méthodes de prévision, de tarification et de distribution pour mieux comprendre la demande, préparer les décisions et suivre leurs résultats.',
+      audience: 'Conçu pour les directions d’hôtel, Revenue Managers, responsables des réservations, équipes commerciales et responsables impliqués dans les décisions de vente. Un support commun pour organiser les analyses, clarifier les responsabilités et partager une méthode de pilotage cohérente entre les différents services.',
+      contents: '8 chapitres couvrant l’analyse des réservations et de la demande, les prévisions, la construction des tarifs, la gestion des disponibilités et des restrictions, la distribution, les contrats groupes et négociés, les privatisations et les réunions de yield. Des méthodes opérationnelles, points de contrôle et cadres de décision, disponibles en français et en anglais, aux formats PDF et PowerPoint modifiable.',
+      usage: 'Adaptez les méthodes à votre PMS, à vos canaux de distribution, à votre segmentation et à votre stratégie commerciale. Utilisez-les pour structurer les analyses de pickup, préparer les prévisions, organiser les réunions de yield et suivre les décisions tarifaires. Le format modifiable permet d’intégrer vos propres indicateurs et règles de pilotage.',
+      chapterDescriptions: [
+        'Responsabilités, informations utiles et mise en place du suivi des ventes.',
+        'Rapports, segments, pick-up, événements, concurrence et forecast.',
+        'Grille tarifaire, écarts entre catégories, offres et conditions de réservation.',
+        'Disponibilités par date, blocs, restrictions et risque de surréservation.',
+        'Publication des tarifs, contrôle des offres et performance des canaux.',
+        'Demandes groupes, cotations, contrats négociés et transmission aux services.',
+        'Demandes de privatisation, chiffrage de l’exclusivité et alternatives.',
+        'Réunion de yield, comparaison au forecast et au budget, suivi des écarts.',
+      ],
+      captions: ['Un référentiel commun', 'Des décisions à structurer', 'Des outils pratiques pour l’analyse'],
+    },
+    en: {
+      title: 'An operating reference for managing hotel revenue',
+      intro: 'From reservation analysis to pricing decisions, revenue management depends on careful use of data and coordination between commercial and operational teams. This manual structures core forecasting, pricing and distribution methods to understand demand, prepare decisions and review results.',
+      audience: 'Designed for hotel directors, Revenue Managers, reservations managers, commercial teams and colleagues involved in sales decisions. A shared resource to organise analysis, clarify responsibilities and apply a consistent approach across departments.',
+      contents: '8 chapters cover reservations and demand analysis, forecasts, rate structures, availability and restrictions, distribution, group and negotiated contracts, exclusive use and yield meetings. Operational methods, checks and decision frameworks in French and English, as PDF and editable PowerPoint files.',
+      usage: 'Adapt the methods to your PMS, distribution channels, segmentation and commercial strategy. Use them to structure pick-up analysis, prepare forecasts, run yield meetings and track pricing decisions. The editable format lets you add your own indicators and management rules.',
+      chapterDescriptions: [
+        'Responsibilities, key information and the first room sales reviews.',
+        'Reports, segments, pick-up, events, competitors and forecasting.',
+        'Rate structure, room type differentials, offers and booking conditions.',
+        'Availability by date, blocks, restrictions and overbooking risk.',
+        'Publishing rates, checking online offers and channel performance.',
+        'Group enquiries, quotations, negotiated contracts and team handovers.',
+        'Exclusive-use enquiries, pricing and alternative proposals.',
+        'Yield meetings, forecast and budget comparisons, and variance reviews.',
+      ],
+      captions: ['A shared reference', 'Decisions to structure', 'Practical tools for analysis'],
+    },
+  },
+}

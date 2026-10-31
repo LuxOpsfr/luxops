@@ -8,15 +8,15 @@ import { alternatesForRoute, localizedRouteUrl } from '@/lib/localized-routes'
 const playbooksMetadata = {
   en: {
     title: 'Hotel SOP Manuals for Luxury Operations | LuxOps',
-    description: 'Operational SOP manuals and practical starter packs for hotel teams, available in English and French.',
+    description: 'Operational SOP manuals with included practical tools for hotel teams, available in English and French.',
   },
   fr: {
     title: 'Manuels SOP pour l’hôtellerie haut de gamme | LuxOps',
-    description: 'Manuels SOP opérationnels et Starter Packs pratiques pour les équipes hôtelières, en français et en anglais.',
+    description: 'Manuels SOP opérationnels avec outils pratiques inclus pour les équipes hôtelières, en français et en anglais.',
   },
   es: {
     title: 'Manuales SOP para operaciones hoteleras | LuxOps',
-    description: 'Manuales SOP operativos y Starter Packs para equipos hoteleros, disponibles en francés e inglés.',
+    description: 'Manuales SOP operativos con herramientas prácticas incluidas, disponibles en francés e inglés.',
   },
 } satisfies Partial<Record<Locale, { title: string; description: string }>>
 

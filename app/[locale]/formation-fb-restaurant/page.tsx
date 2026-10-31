@@ -37,8 +37,8 @@ const frenchData = (locale: string): TrainingSeoPageData => ({
   context:
     'Le F&B exige du rythme, de la préparation, une communication fluide et des réflexes de recovery. La formation permet de travailler les moments qui font réellement la qualité perçue : mise en place, accueil, prise de commande, envoi, suivi de table, allergènes, addition et clôture du service.',
   primaryCta: 'Demander un devis formation',
-  secondaryCta: 'Voir le Starter Pack F&B',
-  secondaryHref: `/${locale}/playbooks/fb-starter-pack`,
+  secondaryCta: 'Voir le Manuel SOP F&B',
+  secondaryHref: `/${locale}/playbooks/fb`,
   overviewLabel: 'Enjeu',
   overviewTitle: 'Rendre la séquence de service plus stable',
   overviewText:
@@ -74,7 +74,7 @@ const frenchData = (locale: string): TrainingSeoPageData => ({
   methodLabel: 'Méthode',
   methodTitle: 'Des standards appliqués pendant le vrai rythme du service',
   methodText:
-    'La formation peut partir du Playbook F&B, du Starter Pack F&B ou de vos standards internes. Le travail consiste à traduire les procédures en gestes, phrases, timings, contrôles et réflexes réellement utilisables pendant un service chargé.',
+    'La formation peut partir du Manuel SOP F&B et de ses outils inclus, ou de vos standards internes. Le travail consiste à traduire les procédures en gestes, phrases, timings, contrôles et réflexes réellement utilisables pendant un service chargé.',
   outcomes: [
     'Des briefings plus utiles avant le service.',
     'Une séquence de restaurant plus fluide et régulière.',
@@ -121,8 +121,8 @@ const englishData = (locale: string): TrainingSeoPageData => ({
   context:
     'F&B requires pace, preparation, clear communication and recovery habits. Training focuses on the moments that shape perceived quality: setup, welcome, order taking, service flow, table follow-up, allergens, billing and closing the service.',
   primaryCta: 'Request a training quote',
-  secondaryCta: 'View F&B Starter Pack',
-  secondaryHref: `/${locale}/playbooks/fb-starter-pack`,
+  secondaryCta: 'View the F&B SOP manual',
+  secondaryHref: `/${locale}/playbooks/fb`,
   overviewLabel: 'Challenge',
   overviewTitle: 'Make the service sequence more stable',
   overviewText:
@@ -158,7 +158,7 @@ const englishData = (locale: string): TrainingSeoPageData => ({
   methodLabel: 'Method',
   methodTitle: 'Standards applied during the real pace of service',
   methodText:
-    'Training can use the F&B Playbook, the F&B Starter Pack or your internal standards. The work is to translate procedures into gestures, phrases, timings, controls and habits that teams can use during a busy service.',
+    'Training can use the F&B SOP manual and its included tools, or your internal standards. The work is to translate procedures into gestures, phrases, timings, controls and habits that teams can use during a busy service.',
   outcomes: [
     'Briefings become more useful before service.',
     'The restaurant sequence becomes more fluid and consistent.',

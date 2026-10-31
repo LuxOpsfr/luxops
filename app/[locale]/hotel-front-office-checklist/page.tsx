@@ -366,23 +366,10 @@ export default async function HotelFrontOfficeChecklistPage({ params }: { params
             </h2>
             <p className="text-sm text-gray-500 leading-relaxed max-w-2xl mx-auto mb-7">
               {isEN
-                ? 'Start with the Front Office Starter Pack for daily checklists and handovers, or use the full Front Office Playbook for the complete SOP reference.'
-                : 'Commencez avec le Starter Pack Front Office pour les checklists et passations du quotidien, ou utilisez le Playbook Front Office complet pour toute la référence SOP.'}
+                ? 'The Front Office SOP manual includes the complete department reference plus 12 editable Starter Pack tools for daily checklists and handovers.'
+                : 'Le Manuel SOP Front Office inclut la référence complète du service et les 12 outils modifiables du Starter Pack pour les checklists et passations du quotidien.'}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <TrackedLink
-                href={`/${locale}/playbooks/fo-starter-pack`}
-                eventName="starter_pack_cta_clicked"
-                eventProperties={{
-                  source_page: `/${locale}/hotel-front-office-checklist`,
-                  placement: 'product_paths',
-                  product: 'front_office_starter_pack',
-                  cta_label: isEN ? 'View the Front Office Starter Pack' : 'Voir le Starter Pack Front Office',
-                }}
-                className="inline-flex min-h-12 min-w-[240px] items-center justify-center gap-2 rounded-full bg-[#0f211a] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#24362f]"
-              >
-                {isEN ? 'View the Front Office Starter Pack' : 'Voir le Starter Pack Front Office'} <ArrowRight size={16} />
-              </TrackedLink>
               <TrackedLink
                 href={`/${locale}/playbooks/fo`}
                 eventName="playbook_cta_clicked"
@@ -392,7 +379,7 @@ export default async function HotelFrontOfficeChecklistPage({ params }: { params
                   product: 'front_office_playbook',
                   cta_label: isEN ? 'View the Front Office Playbook' : 'Voir le Playbook Front Office',
                 }}
-                className="inline-flex min-h-12 min-w-[240px] items-center justify-center gap-2 rounded-full border border-[#d8cfc0] bg-white px-6 py-3 text-sm font-semibold text-[#24362f] transition-colors hover:bg-[#f5f1e9]"
+                className="inline-flex min-h-12 min-w-[240px] items-center justify-center gap-2 rounded-full bg-[#0f211a] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#24362f]"
               >
                 {isEN ? 'View the Front Office Playbook' : 'Voir le Playbook Front Office'} <ArrowRight size={16} />
               </TrackedLink>

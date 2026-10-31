@@ -274,7 +274,7 @@ export default async function HousekeepingSopPage({ params }: { params: Promise<
                   </p>
                 </Link>
                 <Link
-                  href={`/${locale}/playbooks/hsk-starter-pack`}
+                  href={`/${locale}/playbooks/hsk`}
                   className="rounded-2xl border border-gray-200 bg-[#fcfbf8] p-5 hover:border-[#0f211a] transition-colors"
                 >
                   <h3 className="font-semibold text-[#0f211a] mb-2">

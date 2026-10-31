@@ -95,7 +95,7 @@ const SEQUENCE_EN: ResourceContent = {
     'This page summarizes one operational method used inside the LuxOps F&B products. The complete checklists and editable tools are available in the paid versions.',
   extractedFrom:
     'Extracted from the restaurant service, mise en place and guest recovery chapters of the LuxOps F&B SOP manual.',
-  primaryCta: 'View F&B Starter Pack',
+  primaryCta: 'View the F&B SOP manual',
   secondaryCta: 'View Full F&B SOP manual',
   freeChapterCta: 'Receive a Sample Chapter',
   sectionLabel: '21-step service flow',
@@ -176,7 +176,7 @@ const SEQUENCE_EN: ResourceContent = {
     'Checkback standard: satisfaction checked 2 minutes after the main course',
     'Farewell standard: warm, personal and ideally by name',
   ],
-  productTitle: 'F&B Starter Pack',
+  productTitle: 'Practical F&B tools included',
   productText:
     'Includes daily service checklist, restaurant opening checklist, restaurant closing checklist, service sequence SOP, briefing template, table inspection checklist, recovery scripts, allergen tracker and room service checklist.',
   playbookTitle: 'Full F&B SOP manual',
@@ -206,7 +206,7 @@ const SEQUENCE_EN: ResourceContent = {
   ],
   finalTitle: 'Turn the sequence into daily service tools',
   finalText:
-    'Use the starter pack for editable checklists and the full SOP manual when you need the complete F&B department reference.',
+    'The F&B SOP manual includes editable checklists and the complete department reference.',
 }
 
 const SEQUENCE_FR: ResourceContent = {
@@ -226,7 +226,7 @@ const SEQUENCE_FR: ResourceContent = {
     'Cette page résume une méthode opérationnelle utilisée dans les produits F&B LuxOps. Les checklists complètes et outils modifiables sont disponibles dans les versions payantes.',
   extractedFrom:
     'Extrait des chapitres service restaurant, mise en place et recovery client du Manuel SOP F&B LuxOps.',
-  primaryCta: 'Voir le Starter Pack F&B',
+  primaryCta: 'Voir le Manuel SOP F&B',
   secondaryCta: 'Voir le Manuel SOP F&B complet',
   freeChapterCta: 'Recevoir un chapitre de découverte',
   sectionLabel: 'Séquence en 21 étapes',
@@ -307,7 +307,7 @@ const SEQUENCE_FR: ResourceContent = {
     'Suivi : satisfaction vérifiée 2 minutes après le plat principal',
     'Départ : au revoir chaleureux, personnalisé et idéalement par le nom',
   ],
-  productTitle: 'Starter Pack F&B',
+  productTitle: 'Outils F&B pratiques inclus',
   productText:
     'Inclut checklist service quotidien, checklist ouverture restaurant, checklist fermeture, SOP séquence de service, template de briefing, checklist inspection de table, scripts recovery, tracker allergènes et checklist room service.',
   playbookTitle: 'Manuel SOP F&B complet',
@@ -337,7 +337,7 @@ const SEQUENCE_FR: ResourceContent = {
   ],
   finalTitle: 'Transformer la séquence en outils de service quotidiens',
   finalText:
-    'Utilisez le Starter Pack pour des checklists prêtes à l’emploi, puis le Manuel SOP complet lorsque vous avez besoin de toute la référence F&B du département.',
+    'Le Manuel SOP F&B inclut des checklists prêtes à l’emploi et toute la référence du département.',
 }
 
 const ROOM_SERVICE_EN: ResourceContent = {
@@ -357,7 +357,7 @@ const ROOM_SERVICE_EN: ResourceContent = {
     'This page summarizes one operational method used inside the LuxOps F&B products. The complete room service tools are available in the paid versions.',
   extractedFrom:
     'Extracted from the room service, guest interaction, mise en place and quality chapters of the LuxOps F&B SOP manual.',
-  primaryCta: 'View F&B Starter Pack',
+  primaryCta: 'View the F&B SOP manual',
   secondaryCta: 'View Full F&B SOP manual',
   freeChapterCta: 'Receive a Sample Chapter',
   sectionLabel: 'Operational checklist',
@@ -431,7 +431,7 @@ const ROOM_SERVICE_EN: ResourceContent = {
     'The order must be repeated before the kitchen starts production',
     'Pickup is part of the standard, not an afterthought',
   ],
-  productTitle: 'F&B Starter Pack',
+  productTitle: 'Practical F&B tools included',
   productText:
     'Includes a room service checklist, daily service checklist, opening and closing checklists, briefing template, service sequence SOP, recovery scripts and allergen tracker.',
   playbookTitle: 'Full F&B SOP manual',
@@ -461,7 +461,7 @@ const ROOM_SERVICE_EN: ResourceContent = {
   ],
   finalTitle: 'Make room service easier to control',
   finalText:
-    'Start with the checklist in the F&B Starter Pack, then use the full SOP manual when you need the complete room service SOP and quality control reference.',
+    'The F&B SOP manual includes the room service checklist, complete procedures and quality control reference.',
 }
 
 const ROOM_SERVICE_FR: ResourceContent = {
@@ -481,7 +481,7 @@ const ROOM_SERVICE_FR: ResourceContent = {
     'Cette page résume une méthode opérationnelle utilisée dans les produits F&B LuxOps. Les outils room service complets sont disponibles dans les versions payantes.',
   extractedFrom:
     'Extrait des chapitres room service, interaction client, mise en place et qualité du Manuel SOP F&B LuxOps.',
-  primaryCta: 'Voir le Starter Pack F&B',
+  primaryCta: 'Voir le Manuel SOP F&B',
   secondaryCta: 'Voir le Manuel SOP F&B complet',
   freeChapterCta: 'Recevoir un chapitre de découverte',
   sectionLabel: 'Checklist opérationnelle',
@@ -555,7 +555,7 @@ const ROOM_SERVICE_FR: ResourceContent = {
     'La commande doit être répétée avant que la cuisine lance la production',
     'Le débarrassage fait partie du standard, ce n’est pas un détail secondaire',
   ],
-  productTitle: 'Starter Pack F&B',
+  productTitle: 'Outils F&B pratiques inclus',
   productText:
     'Inclut checklist room service, checklist service quotidien, checklists ouverture et fermeture, template de briefing, SOP séquence de service, scripts recovery et tracker allergènes.',
   playbookTitle: 'Manuel SOP F&B complet',
@@ -585,7 +585,7 @@ const ROOM_SERVICE_FR: ResourceContent = {
   ],
   finalTitle: 'Rendre le room service plus facile à contrôler',
   finalText:
-    'Commencez avec la checklist du Starter Pack F&B, puis utilisez le Manuel SOP complet lorsque vous avez besoin de toute la procédure room service et du contrôle qualité.',
+    'Le Manuel SOP F&B inclut la checklist room service, les procédures complètes et la référence pour le contrôle qualité.',
 }
 
 const RESTAURANT_OPENING_EN: ResourceContent = {
@@ -605,7 +605,7 @@ const RESTAURANT_OPENING_EN: ResourceContent = {
     'This page summarizes one operational method used inside the LuxOps F&B products. The complete checklists and editable tools are available in the paid versions.',
   extractedFrom:
     'Based on the restaurant opening checklist, table inspection checklist, service briefing and mise en place standards from LuxOps F&B resources.',
-  primaryCta: 'View F&B Starter Pack',
+  primaryCta: 'View the F&B SOP manual',
   secondaryCta: 'View Full F&B SOP manual',
   freeChapterCta: 'Receive a Sample Chapter',
   sectionLabel: 'Pre-service flow',
@@ -678,7 +678,7 @@ const RESTAURANT_OPENING_EN: ResourceContent = {
     'T-40: briefing with reservations, VIPs and menu changes',
     'T-20: final inspection before the doors open',
   ],
-  productTitle: 'F&B Starter Pack',
+  productTitle: 'Practical F&B tools included',
   productText:
     'Includes restaurant opening checklist, closing checklist, daily service checklist, briefing template, table inspection checklist, service sequence SOP and recovery scripts.',
   playbookTitle: 'Full F&B SOP manual',
@@ -708,7 +708,7 @@ const RESTAURANT_OPENING_EN: ResourceContent = {
   ],
   finalTitle: 'Prepare the restaurant before pressure starts',
   finalText:
-    'Use the starter pack for editable restaurant opening tools and the full SOP manual when you need the complete F&B operating reference.',
+    'The F&B SOP manual includes editable restaurant opening tools and the complete operating reference.',
 }
 
 const RESTAURANT_OPENING_FR: ResourceContent = {
@@ -728,7 +728,7 @@ const RESTAURANT_OPENING_FR: ResourceContent = {
     'Cette page reprend une méthode opérationnelle utilisée dans les produits F&B LuxOps. Les checklists complètes et les supports modifiables sont disponibles dans les versions payantes.',
   extractedFrom:
     'Adapté de la checklist d’ouverture restaurant, de la checklist inspection de table, du briefing pré-service et des standards de mise en place des ressources F&B LuxOps.',
-  primaryCta: 'Voir le Starter Pack F&B',
+  primaryCta: 'Voir le Manuel SOP F&B',
   secondaryCta: 'Voir le Manuel SOP F&B complet',
   freeChapterCta: 'Recevoir un chapitre de découverte',
   sectionLabel: 'Flux pré-service',
@@ -801,7 +801,7 @@ const RESTAURANT_OPENING_FR: ResourceContent = {
     'T-40 : briefing avec réservations, VIP et changements de carte',
     'T-20 : inspection finale avant ouverture',
   ],
-  productTitle: 'Starter Pack F&B',
+  productTitle: 'Outils F&B pratiques inclus',
   productText:
     'Inclut checklist d’ouverture restaurant, checklist de fermeture, checklist service quotidien, template de briefing, checklist inspection de table, SOP séquence de service et scripts recovery.',
   playbookTitle: 'Manuel SOP F&B complet',
@@ -831,7 +831,7 @@ const RESTAURANT_OPENING_FR: ResourceContent = {
   ],
   finalTitle: 'Préparer le restaurant avant que la pression commence',
   finalText:
-    'Utilisez le Starter Pack pour des outils d’ouverture prêts à l’emploi, puis le Manuel SOP complet lorsque vous avez besoin de toute la référence opérationnelle F&B.',
+    'Le Manuel SOP F&B inclut des outils d’ouverture prêts à l’emploi et la référence opérationnelle complète.',
 }
 
 const BAR_OPENING_EN: ResourceContent = {
@@ -851,7 +851,7 @@ const BAR_OPENING_EN: ResourceContent = {
     'This page summarizes one operational method used inside the LuxOps F&B products. The complete checklists and editable PPTX tools are available in the paid versions.',
   extractedFrom:
     'Adapted from the bar operations, mise en place, responsible service, stock control and quality chapters of the LuxOps F&B SOP manual.',
-  primaryCta: 'View F&B Starter Pack',
+  primaryCta: 'View the F&B SOP manual',
   secondaryCta: 'View Full F&B SOP manual',
   freeChapterCta: 'Receive a Sample Chapter',
   sectionLabel: 'Pre-service bar setup',
@@ -922,7 +922,7 @@ const BAR_OPENING_EN: ResourceContent = {
     'Garnishes, juices and mixers prepared to par and protected',
     'POS, cash float, payment tools and tab procedures tested before the first order',
   ],
-  productTitle: 'F&B Starter Pack',
+  productTitle: 'Practical F&B tools included',
   productText:
     'Includes restaurant and bar service tools, daily service checklist, opening and closing checklists, briefing template, service sequence SOP, recovery scripts and allergen tracker.',
   playbookTitle: 'Full F&B SOP manual',
@@ -952,7 +952,7 @@ const BAR_OPENING_EN: ResourceContent = {
   ],
   finalTitle: 'Prepare the bar before service pressure starts',
   finalText:
-    'Use the starter pack for editable F&B tools and the full SOP manual when you need the complete bar and service operating reference.',
+    'The F&B SOP manual includes editable tools and the complete bar and service operating reference.',
 }
 
 const BAR_OPENING_FR: ResourceContent = {
@@ -972,7 +972,7 @@ const BAR_OPENING_FR: ResourceContent = {
     'Cette page reprend une méthode opérationnelle utilisée dans les produits F&B LuxOps. Les checklists complètes et supports PPTX modifiables sont disponibles dans les versions payantes.',
   extractedFrom:
     'Adapté des chapitres bar, mise en place, service responsable, contrôle stock et qualité du Manuel SOP F&B LuxOps.',
-  primaryCta: 'Voir le Starter Pack F&B',
+  primaryCta: 'Voir le Manuel SOP F&B',
   secondaryCta: 'Voir le Manuel SOP F&B complet',
   freeChapterCta: 'Recevoir un chapitre de découverte',
   sectionLabel: 'Mise en place pré-service',
@@ -1043,7 +1043,7 @@ const BAR_OPENING_FR: ResourceContent = {
     'Garnitures, jus et mixers préparés au niveau de par et protégés',
     'POS, fonds de caisse, terminaux et procédure d’ouverture des notes testés avant la première commande',
   ],
-  productTitle: 'Starter Pack F&B',
+  productTitle: 'Outils F&B pratiques inclus',
   productText:
     'Inclut outils restaurant et bar, checklist service quotidien, checklists ouverture et fermeture, template de briefing, SOP séquence de service, scripts recovery et tracker allergènes.',
   playbookTitle: 'Manuel SOP F&B complet',
@@ -1073,7 +1073,7 @@ const BAR_OPENING_FR: ResourceContent = {
   ],
   finalTitle: 'Préparer le bar avant la pression du service',
   finalText:
-    'Utilisez le Starter Pack pour des outils F&B prêts à l’emploi, puis le Manuel SOP complet lorsque vous avez besoin de toute la référence opérationnelle bar et service.',
+    'Le Manuel SOP F&B inclut des outils prêts à l’emploi et la référence opérationnelle complète pour le bar et le service.',
 }
 
 const RESTAURANT_CLOSING_EN: ResourceContent = {
@@ -1093,7 +1093,7 @@ const RESTAURANT_CLOSING_EN: ResourceContent = {
     'This page summarizes one operational method used inside the LuxOps F&B products. The complete checklists and editable PPTX tools are available in the paid versions.',
   extractedFrom:
     'Adapted from the Restaurant Closing Checklist, service handover, mise en place, stock control and quality chapters of the LuxOps F&B SOP manual.',
-  primaryCta: 'View F&B Starter Pack',
+  primaryCta: 'View the F&B SOP manual',
   secondaryCta: 'View Full F&B SOP manual',
   freeChapterCta: 'Receive a Sample Chapter',
   sectionLabel: 'End-of-service flow',
@@ -1168,7 +1168,7 @@ const RESTAURANT_CLOSING_EN: ResourceContent = {
     'Kitchen and bar aligned on 86’d items, ice, garnishes and next-day preparation',
     'Communication log completed before the manager signs off',
   ],
-  productTitle: 'F&B Starter Pack',
+  productTitle: 'Practical F&B tools included',
   productText:
     'Includes restaurant opening and closing checklists, daily service checklist, briefing template, service sequence SOP, table inspection checklist, recovery scripts and allergen tracker.',
   playbookTitle: 'Full F&B SOP manual',
@@ -1198,7 +1198,7 @@ const RESTAURANT_CLOSING_EN: ResourceContent = {
   ],
   finalTitle: 'Close the restaurant with the next service in mind',
   finalText:
-    'Use the starter pack for editable F&B closing tools and the full SOP manual when you need the complete restaurant operating reference.',
+    'The F&B SOP manual includes editable closing tools and the complete restaurant operating reference.',
 }
 
 const RESTAURANT_CLOSING_FR: ResourceContent = {
@@ -1218,7 +1218,7 @@ const RESTAURANT_CLOSING_FR: ResourceContent = {
     'Cette page reprend une méthode opérationnelle utilisée dans les produits F&B LuxOps. Les checklists complètes et supports PPTX modifiables sont disponibles dans les versions payantes.',
   extractedFrom:
     'Adapté de la checklist fermeture restaurant, des sections passation, mise en place, contrôle stock et qualité du Manuel SOP F&B LuxOps.',
-  primaryCta: 'Voir le Starter Pack F&B',
+  primaryCta: 'Voir le Manuel SOP F&B',
   secondaryCta: 'Voir le Manuel SOP F&B complet',
   freeChapterCta: 'Recevoir un chapitre de découverte',
   sectionLabel: 'Flux de fin de service',
@@ -1293,7 +1293,7 @@ const RESTAURANT_CLOSING_FR: ResourceContent = {
     'Cuisine et bar alignés sur les items 86’d, la glace, les garnitures et la préparation du lendemain',
     'Journal de communication complété avant signature manager',
   ],
-  productTitle: 'Starter Pack F&B',
+  productTitle: 'Outils F&B pratiques inclus',
   productText:
     'Inclut checklists ouverture et fermeture restaurant, checklist service quotidien, template de briefing, SOP séquence de service, checklist inspection de table, scripts recovery et tracker allergènes.',
   playbookTitle: 'Manuel SOP F&B complet',
@@ -1323,7 +1323,7 @@ const RESTAURANT_CLOSING_FR: ResourceContent = {
   ],
   finalTitle: 'Fermer le restaurant en pensant au prochain service',
   finalText:
-    'Utilisez le Starter Pack pour des outils F&B prêts à l’emploi, puis le Manuel SOP complet lorsque vous avez besoin de toute la référence opérationnelle restaurant.',
+    'Le Manuel SOP F&B inclut les outils F&B de clôture et la référence opérationnelle complète du restaurant.',
 }
 
 const CONTENT: Record<ResourceKind, Record<Locale, ResourceContent>> = {
@@ -1340,7 +1340,7 @@ function getFbClusterLinks(locale: Locale, currentKind: ResourceKind): ClusterLi
       {
         href: '/en/hotel-fb-sop',
         label: 'F&B SOP hub',
-        text: 'Central page for F&B SOPs, starter pack and SOP manual links.',
+        text: 'Central page for F&B SOPs and the manual with its included practical tools.',
       },
       {
         kind: 'restaurantOpening',
@@ -1382,7 +1382,7 @@ function getFbClusterLinks(locale: Locale, currentKind: ResourceKind): ClusterLi
       {
         href: '/fr/hotel-fb-sop',
         label: 'Hub SOP F&B',
-        text: 'Page centrale pour les SOP F&B, le starter pack et le manuel SOP.',
+        text: 'Page centrale pour les SOP F&B et le manuel avec ses outils pratiques inclus.',
       },
       {
         kind: 'restaurantOpening',
@@ -1519,8 +1519,8 @@ export function FbSeoResourcePage({ kind, locale }: { kind: ResourceKind; locale
                 <ArrowRight size={17} />
               </TrackedLink>
               <TrackedLink
-                href={`/${locale}/playbooks/fb-starter-pack`}
-                eventName="fb_starter_pack_cta_clicked"
+                href={`/${locale}/playbooks/fb`}
+                eventName="fb_playbook_cta_clicked"
                 eventProperties={{ source_page: sourcePage, position: 'hero' }}
                 className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#d8cfc0] bg-white/70 px-6 py-3 text-sm font-semibold text-[#24362f] transition-colors hover:bg-white"
               >
@@ -1530,22 +1530,15 @@ export function FbSeoResourcePage({ kind, locale }: { kind: ResourceKind; locale
           ) : (
             <>
               <TrackedLink
-                href={`/${locale}/playbooks/fb-starter-pack`}
-                eventName="fb_starter_pack_cta_clicked"
+                href={`/${locale}/playbooks/fb`}
+                eventName="fb_playbook_cta_clicked"
                 eventProperties={{ source_page: sourcePage, position: 'hero' }}
                 className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#0f211a] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#24362f]"
               >
                 {content.primaryCta}
                 <ArrowRight size={17} />
               </TrackedLink>
-              <TrackedLink
-                href={`/${locale}/playbooks/fb`}
-                eventName="fb_playbook_cta_clicked"
-                eventProperties={{ source_page: sourcePage, position: 'hero' }}
-                className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#d8cfc0] bg-white/70 px-6 py-3 text-sm font-semibold text-[#24362f] transition-colors hover:bg-white"
-              >
-                {content.secondaryCta}
-              </TrackedLink>
+
             </>
           )}
         </ChecklistEditorialHero>
@@ -1656,19 +1649,11 @@ export function FbSeoResourcePage({ kind, locale }: { kind: ResourceKind; locale
                 <ClipboardCheck size={24} className="text-[#a58658]" />
               </div>
               <p className="text-xs font-semibold uppercase tracking-widest text-[#a58658] mb-4">
-                {isEN ? 'Practical toolkit' : 'Kit pratique'}
+                {isEN ? 'Tools included with the manual' : 'Outils inclus dans le manuel'}
               </p>
               <h2 className="text-3xl font-bold text-[#0f211a] mb-4">{content.productTitle}</h2>
               <p className="text-gray-600 leading-relaxed mb-6">{content.productText}</p>
-              <TrackedLink
-                href={`/${locale}/playbooks/fb-starter-pack`}
-                eventName="fb_starter_pack_cta_clicked"
-                eventProperties={{ source_page: sourcePage, position: 'product_block' }}
-                className="inline-flex items-center gap-2 bg-[#a58658] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#92734a] transition-colors"
-              >
-                {content.primaryCta}
-                <ArrowRight size={17} />
-              </TrackedLink>
+
             </div>
             <div className="rounded-2xl border border-[#e7e1d7] bg-white p-8">
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#f5f1e9]">
@@ -1781,8 +1766,8 @@ export function FbSeoResourcePage({ kind, locale }: { kind: ResourceKind; locale
             <p className="text-gray-300 leading-relaxed mb-8">{content.finalText}</p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <TrackedLink
-                href={`/${locale}/playbooks/fb-starter-pack`}
-                eventName="fb_starter_pack_cta_clicked"
+                href={`/${locale}/playbooks/fb`}
+                eventName="fb_playbook_cta_clicked"
                 eventProperties={{ source_page: sourcePage, position: 'final' }}
                 className="inline-flex items-center justify-center gap-2 bg-white text-[#0f211a] px-7 py-4 rounded-full font-semibold hover:bg-gray-100 transition-colors"
               >

@@ -125,7 +125,7 @@ const links = {
       text: 'Observe restaurant, bar or room service, then train on the gaps that matter.',
     },
     {
-      href: '/downloads/training/service-standards-training-programme-luxops-en.pdf',
+      href: '/downloads/training/luxops-hotel-training-operational-development-en.pdf',
       label: 'PDF',
       title: 'Training programme',
       text: 'A short programme overview to understand formats, modules and the LuxOps method.',

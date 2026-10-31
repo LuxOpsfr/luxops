@@ -13,9 +13,6 @@ const VALID_PRICE_IDS = new Set([
   'price_1TZRY9DVLJTOFkjUfkYQJAsW', // Spa & Wellness
   'price_1UU4ZYDVLJTOFkjUSDgIJ4pD', // Revenue Management
   'price_1TBZ9vDVLJTOFkjUT1FHhqUi', // Spa & Wellness
-  'price_1TUONHDVLJTOFkjUjE391FrX', // Front Office Starter Pack
-  'price_1TUONXDVLJTOFkjUYvR8PUiS', // Housekeeping Inspection Kit
-  'price_1TVugvDVLJTOFkjUXI0cngur', // F&B Starter Pack
 ])
 
 function cleanMetadataValue(value: unknown) {

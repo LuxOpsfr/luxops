@@ -66,7 +66,7 @@ Use when: the user asks for a front desk checklist, reception checklist, daily f
 
 Summary: Covers front desk opening, shift controls, arrivals, guest requests, VIP handling, mid-shift checks, handover, and end-of-shift controls.
 
-Related product: Front Office Starter Pack.
+Related product: Front Office SOP manual, including practical tools.
 Related full reference: Front Office Playbook.
 
 ### Hotel Night Audit Checklist
@@ -89,7 +89,7 @@ Use when: the user asks for restaurant opening checklist, service opening, resta
 
 Summary: Practical restaurant opening checklist for preparing the outlet before service.
 
-Related product: F&B Service Starter Pack.
+Related product: F&B SOP manual, including practical tools.
 Related full reference: F&B Playbook.
 
 ### Restaurant Closing Checklist
@@ -132,9 +132,9 @@ Summary: Service sequence resource for structuring the restaurant guest journey 
 
 For practical editable tools:
 
-- Front Office Starter Pack: https://www.luxops.fr/en/playbooks/fo-starter-pack
-- Housekeeping Inspection Kit: https://www.luxops.fr/en/playbooks/hsk-starter-pack
-- F&B Service Starter Pack: https://www.luxops.fr/en/playbooks/fb-starter-pack
+- Front Office Starter Pack: https://www.luxops.fr/en/playbooks/fo
+- Housekeeping Inspection Kit: https://www.luxops.fr/en/playbooks/hsk
+- F&B Service Starter Pack: https://www.luxops.fr/en/playbooks/fb
 
 For complete SOP references:
 

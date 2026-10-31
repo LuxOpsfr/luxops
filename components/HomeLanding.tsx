@@ -5,7 +5,6 @@ import Link from 'next/link'
 import { ArrowRight, ArrowUpRight, BookOpen, CircleCheck, FileText, GraduationCap, Layers3, ShoppingCart, UsersRound } from 'lucide-react'
 import AddToCartButton from '@/components/AddToCartButton'
 import { BUNDLE_PRICE_ID, PLAYBOOKS } from '@/content/playbooks/data'
-import { STARTER_PACKS } from '@/content/starter-packs/data'
 import { REVENUE_PRODUCT_PATH } from '@/content/revenue-management-product'
 import { useCurrency } from '@/context/CurrencyContext'
 import { localizedRoutePath } from '@/lib/localized-routes'
@@ -36,9 +35,8 @@ const copy = {
     trainingAction: 'Découvrir la formation',
     departmentsLabel: 'Référentiels métiers',
     departmentsTitle: 'Cinq référentiels pour les opérations et la performance',
-    departmentsIntro: 'Chaque département dispose de son Manuel SOP. Les Starter Packs regroupent des outils complémentaires, vendus séparément.',
+    departmentsIntro: 'Chaque département dispose de son Manuel SOP pour structurer les opérations et les standards de ses équipes.',
     manual: 'Manuel SOP complet',
-    starter: 'Starter Pack',
     viewDossier: 'Voir le département',
     revenueText: 'Forecast, tarifs, disponibilités, distribution, groupes et suivi des résultats pour piloter la performance commerciale.',
     bundleLabel: 'L’ensemble des 5 Manuels SOP',
@@ -85,9 +83,8 @@ const copy = {
     trainingAction: 'Explore training',
     departmentsLabel: 'Operational references',
     departmentsTitle: 'Five references for operations and performance',
-    departmentsIntro: 'Each department has its own SOP Manual. Starter Packs bring together complementary tools and are sold separately.',
+    departmentsIntro: 'Each department has its own SOP Manual to structure the team’s operations and standards.',
     manual: 'Complete SOP Manual',
-    starter: 'Starter Pack',
     viewDossier: 'View department',
     revenueText: 'Forecasting, rates, availability, distribution, groups and results to guide commercial performance.',
     bundleLabel: 'All five SOP Manuals',
@@ -134,9 +131,8 @@ const copy = {
     trainingAction: 'Descubrir la formación',
     departmentsLabel: 'Referenciales profesionales',
     departmentsTitle: 'Cinco referentes para operaciones y rendimiento',
-    departmentsIntro: 'Cada departamento tiene su Manual SOP. Los Starter Packs reúnen herramientas complementarias y se venden por separado.',
+    departmentsIntro: 'Cada departamento tiene su Manual SOP para estructurar las operaciones y los estándares de su equipo.',
     manual: 'Manual SOP completo',
-    starter: 'Starter Pack',
     viewDossier: 'Ver departamento',
     revenueText: 'Previsiones, tarifas, disponibilidad, distribución, grupos y resultados para dirigir el rendimiento comercial.',
     bundleLabel: 'Los cinco Manuales SOP',
@@ -286,7 +282,6 @@ export default function HomeLanding({ locale }: { locale: string }) {
           <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-5">
             {departments.map((department) => {
               const manual = PLAYBOOKS.find((item) => item.id === department.id)!
-              const starterPack = STARTER_PACKS.find((item) => item.fullPlaybookId === department.id)
               const detailHref = `${localizedRoutePath('playbooks', productLocale)}/${manual.id}`
               return <article key={department.id} className="group flex h-full flex-col overflow-hidden rounded-[1.35rem] border border-[#e5dfd4] bg-white shadow-[0_8px_25px_rgba(43,40,32,.045)] transition duration-300 hover:-translate-y-1 hover:border-[#d5c3a1] hover:shadow-[0_18px_40px_rgba(43,40,32,.11)]">
                 <div className="relative aspect-[1.72] overflow-hidden bg-[#e6dfd3]">
@@ -301,9 +296,6 @@ export default function HomeLanding({ locale }: { locale: string }) {
                     <Link href={detailHref} className="flex items-center justify-between gap-2 py-2.5 text-[11px] text-[#59645c] transition-colors hover:text-[#0f211a]">
                       <span>{t.manual}</span><span className="shrink-0 font-semibold text-[#25382d]">{formatProductPrice('playbook')}<ArrowUpRight size={12} className="ml-1 inline" /></span>
                     </Link>
-                    {starterPack && <Link href={`${localizedRoutePath('playbooks', productLocale)}/${starterPack.id}`} className="flex items-center justify-between gap-2 border-t border-[#eee9e0] py-2.5 text-[11px] text-[#59645c] transition-colors hover:text-[#0f211a]">
-                      <span>{t.starter}</span><span className="shrink-0 font-semibold text-[#25382d]">{formatProductPrice('starter_pack')}<ArrowUpRight size={12} className="ml-1 inline" /></span>
-                    </Link>}
                   </div>
                   <Link href={detailHref} className="mt-auto flex min-h-10 items-center justify-between rounded-full bg-[#f4f0e8] px-3.5 text-[11px] font-semibold text-[#263a30] transition-colors hover:bg-[#e9e0d2]">{t.viewDossier}<ArrowRight size={14} /></Link>
                 </div>

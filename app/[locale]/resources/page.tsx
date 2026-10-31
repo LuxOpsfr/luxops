@@ -322,8 +322,8 @@ export default async function ResourcesPage({
           </h2>
           <p className="mx-auto mb-8 max-w-2xl text-base leading-7 text-[#d1d5cf]">
             {isEn
-              ? 'If these are the operational questions your property is working through, LuxOps provides SOP manuals, starter packs and on-property training built for real hotel teams.'
-              : 'Si votre établissement cherche à structurer ses opérations, LuxOps propose des manuels SOP, des Starter Packs et des formations en établissement pour les équipes hôtelières.'}
+              ? 'If these are the operational questions your property is working through, LuxOps provides SOP manuals with practical tools and on-property training for hotel teams.'
+              : 'Si votre établissement cherche à structurer ses opérations, LuxOps propose des manuels SOP avec outils pratiques et des formations en établissement pour les équipes hôtelières.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

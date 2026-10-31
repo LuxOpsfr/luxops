@@ -93,9 +93,9 @@ const CONTENT: Record<OperationsResourceKind, Record<Locale, ResourceContent>> =
       subtitle:
         'A practical structure for reception teams to transfer pending arrivals, departures, guest requests, billing follow-up and sensitive cases without losing information between shifts.',
       sourceNote:
-        'Built from the handover logic used in the LuxOps Front Office Starter Pack and Front Office Playbook.',
+        'Built from the handover logic used in the LuxOps Front Office practical tools included and Front Office Playbook.',
       sourceDetail:
-        'The full paid resources include editable handover templates, check-in and check-out SOPs, guest communication scripts and the wider Front Office operating reference.',
+        'The Front Office manual includes editable handover templates, check-in and check-out SOPs, guest communication scripts and the wider operating reference.',
       sectionLabel: 'Shift control',
       sectionTitle: 'What a front desk handover must capture',
       sectionIntro:
@@ -164,12 +164,12 @@ const CONTENT: Record<OperationsResourceKind, Record<Locale, ResourceContent>> =
         },
       ],
       product: {
-        title: 'Front Office Starter Pack',
+        title: 'Front Office practical tools included',
         body:
-          'Use the Starter Pack when you need editable checklists, a handover template, complaint scripts and practical front desk tools for daily use.',
-        href: '/playbooks/fo-starter-pack',
-        cta: 'View Front Office Starter Pack',
-        eventName: 'fo_starter_pack_cta_clicked',
+          'The 12 editable Starter Pack tools are included with the Front Office SOP manual, alongside the complete department reference.',
+        href: '/playbooks/fo',
+        cta: 'Explore the 12 included tools',
+        eventName: 'fo_playbook_cta_clicked',
       },
       playbook: {
         title: 'Full Front Office Playbook',
@@ -196,7 +196,7 @@ const CONTENT: Record<OperationsResourceKind, Record<Locale, ResourceContent>> =
         {
           href: '/front-office-sop',
           label: 'Front Office SOP',
-          text: 'Central page for Front Office SOPs, starter pack and playbook links.',
+          text: 'Central page for Front Office SOPs, the complete manual and its included tools.',
         },
       ],
       faqs: [
@@ -234,9 +234,9 @@ const CONTENT: Record<OperationsResourceKind, Record<Locale, ResourceContent>> =
       subtitle:
         'Une structure simple pour transmettre les arrivées, départs, demandes clients, suivis de facturation et dossiers sensibles sans perdre d’information entre deux shifts.',
       sourceNote:
-        'Construit à partir de la logique de passation utilisée dans le Starter Pack Front Office et le Playbook Front Office LuxOps.',
+        'Construit à partir de la logique de passation utilisée dans le Outils pratiques Front Office inclus et le Playbook Front Office LuxOps.',
       sourceDetail:
-        'Les ressources complètes incluent les modèles modifiables de passation, les SOP check-in et check-out, les scripts de communication client et toute la référence opérationnelle Front Office.',
+        'Le manuel Front Office inclut les modèles modifiables de passation, les SOP check-in et check-out, les scripts de communication client et toute la référence opérationnelle du service.',
       sectionLabel: 'Contrôle de shift',
       sectionTitle: 'Ce qu’une passation réception doit vraiment transmettre',
       sectionIntro:
@@ -305,12 +305,12 @@ const CONTENT: Record<OperationsResourceKind, Record<Locale, ResourceContent>> =
         },
       ],
       product: {
-        title: 'Starter Pack Front Office',
+        title: 'Outils pratiques Front Office inclus',
         body:
-          'Utilisez le Starter Pack si vous avez besoin de checklists modifiables, d’un modèle de passation, de scripts réclamation et d’outils réception utilisables au quotidien.',
-        href: '/playbooks/fo-starter-pack',
-        cta: 'Voir le Starter Pack Front Office',
-        eventName: 'fo_starter_pack_cta_clicked',
+          'Les 12 outils modifiables du Starter Pack sont inclus avec le Manuel SOP Front Office et sa référence complète du service.',
+        href: '/playbooks/fo',
+        cta: 'Découvrir les 12 outils inclus',
+        eventName: 'fo_playbook_cta_clicked',
       },
       playbook: {
         title: 'Playbook Front Office complet',
@@ -337,7 +337,7 @@ const CONTENT: Record<OperationsResourceKind, Record<Locale, ResourceContent>> =
         {
           href: '/front-office-sop',
           label: 'SOP Front Office',
-          text: 'Page centrale pour les SOP Front Office, le starter pack et le playbook.',
+          text: 'Page centrale pour les SOP Front Office, le manuel complet et ses outils inclus.',
         },
       ],
       faqs: [
@@ -448,12 +448,12 @@ const CONTENT: Record<OperationsResourceKind, Record<Locale, ResourceContent>> =
         },
       ],
       product: {
-        title: 'Front Office Starter Pack',
+        title: 'Front Office practical tools included',
         body:
-          'Includes guest communication scripts, complaint handling tools, handover templates and practical reception checklists.',
-        href: '/playbooks/fo-starter-pack',
-        cta: 'View Front Office Starter Pack',
-        eventName: 'fo_starter_pack_cta_clicked',
+          'The 12 guest communication, complaint handling, handover and reception tools are included with the Front Office SOP manual.',
+        href: '/playbooks/fo',
+        cta: 'Explore the 12 included tools',
+        eventName: 'fo_playbook_cta_clicked',
       },
       playbook: {
         title: 'Front Office Playbook',
@@ -502,7 +502,7 @@ const CONTENT: Record<OperationsResourceKind, Record<Locale, ResourceContent>> =
       ],
       finalTitle: 'Make complaint handling consistent across shifts',
       finalText:
-        'Use the starter pack for scripts and daily tools, then move to the complete Front Office Playbook when the team needs the full guest journey reference.',
+        'The Front Office SOP manual includes daily scripts and tools alongside the complete guest journey reference.',
     },
     fr: {
       slug: '/procedure-reclamation-client',
@@ -589,12 +589,12 @@ const CONTENT: Record<OperationsResourceKind, Record<Locale, ResourceContent>> =
         },
       ],
       product: {
-        title: 'Starter Pack Front Office',
+        title: 'Outils pratiques Front Office inclus',
         body:
-          'Inclut des scripts de communication client, outils de traitement réclamation, modèles de passation et checklists réception.',
-        href: '/playbooks/fo-starter-pack',
-        cta: 'Voir le Starter Pack Front Office',
-        eventName: 'fo_starter_pack_cta_clicked',
+          'Les 12 scripts de communication, outils de traitement des réclamations, modèles de passation et checklists réception sont inclus avec le Manuel SOP Front Office.',
+        href: '/playbooks/fo',
+        cta: 'Découvrir les 12 outils inclus',
+        eventName: 'fo_playbook_cta_clicked',
       },
       playbook: {
         title: 'Playbook Front Office',
@@ -643,7 +643,7 @@ const CONTENT: Record<OperationsResourceKind, Record<Locale, ResourceContent>> =
       ],
       finalTitle: 'Rendre le traitement des réclamations régulier entre les shifts',
       finalText:
-        'Utilisez le Starter Pack pour les scripts et outils quotidiens, puis le Playbook Front Office complet lorsque l’équipe a besoin de toute la référence parcours client.',
+        'Le Manuel SOP Front Office inclut scripts et outils quotidiens avec la référence complète du parcours client.',
     },
   },
   hskDeepCleaning: {
@@ -732,12 +732,12 @@ const CONTENT: Record<OperationsResourceKind, Record<Locale, ResourceContent>> =
         },
       ],
       product: {
-        title: 'Housekeeping Starter Pack',
+        title: 'Housekeeping practical tools included',
         body:
           'Use the kit when you need editable room inspection checklists, supervisor control sheets and defect tracking tools.',
-        href: '/playbooks/hsk-starter-pack',
-        cta: 'View Housekeeping Starter Pack',
-        eventName: 'hsk_starter_pack_cta_clicked',
+        href: '/playbooks/hsk',
+        cta: 'View the Housekeeping SOP manual',
+        eventName: 'hsk_playbook_cta_clicked',
       },
       playbook: {
         title: 'Housekeeping Playbook',
@@ -873,12 +873,12 @@ const CONTENT: Record<OperationsResourceKind, Record<Locale, ResourceContent>> =
         },
       ],
       product: {
-        title: 'Housekeeping Starter Pack',
+        title: 'Housekeeping practical tools included',
         body:
           'Utilisez le kit si vous avez besoin de grilles d’inspection modifiables, feuilles de contrôle gouvernante et outils de suivi des défauts.',
-        href: '/playbooks/hsk-starter-pack',
-        cta: 'Voir le Housekeeping Starter Pack',
-        eventName: 'hsk_starter_pack_cta_clicked',
+        href: '/playbooks/hsk',
+        cta: 'Voir le Manuel SOP Housekeeping',
+        eventName: 'hsk_playbook_cta_clicked',
       },
       playbook: {
         title: 'Playbook Housekeeping',
@@ -1016,12 +1016,12 @@ const CONTENT: Record<OperationsResourceKind, Record<Locale, ResourceContent>> =
         },
       ],
       product: {
-        title: 'F&B Service Starter Pack',
+        title: 'F&B practical tools included',
         body:
-          'Use the Starter Pack for service checklists, opening and closing tools, restaurant sequence, room service controls and practical F&B templates.',
-        href: '/playbooks/fb-starter-pack',
-        cta: 'View F&B Starter Pack',
-        eventName: 'fb_starter_pack_cta_clicked',
+          'The F&B SOP manual includes service checklists, opening and closing tools, restaurant sequence, room service controls and practical templates.',
+        href: '/playbooks/fb',
+        cta: 'View the F&B SOP manual',
+        eventName: 'fb_playbook_cta_clicked',
       },
       playbook: {
         title: 'Full F&B Playbook',
@@ -1070,7 +1070,7 @@ const CONTENT: Record<OperationsResourceKind, Record<Locale, ResourceContent>> =
       ],
       finalTitle: 'Turn breakfast into a controlled daily service',
       finalText:
-        'Use the checklist for immediate structure, then continue with the F&B Starter Pack and Playbook when the team needs editable tools and complete SOPs.',
+        'The F&B SOP manual includes editable tools and complete procedures to continue after the free checklist.',
     },
     fr: {
       slug: '/checklist-service-petit-dejeuner',
@@ -1157,12 +1157,12 @@ const CONTENT: Record<OperationsResourceKind, Record<Locale, ResourceContent>> =
         },
       ],
       product: {
-        title: 'Starter Pack F&B',
+        title: 'Outils pratiques F&B inclus',
         body:
-          'Utilisez le Starter Pack pour les checklists de service, outils d’ouverture et fermeture, séquence restaurant, contrôles room service et modèles F&B pratiques.',
-        href: '/playbooks/fb-starter-pack',
-        cta: 'Voir le Starter Pack F&B',
-        eventName: 'fb_starter_pack_cta_clicked',
+          'Le Manuel SOP F&B inclut les checklists de service, les outils d’ouverture et de fermeture, la séquence restaurant, les contrôles room service et les modèles pratiques.',
+        href: '/playbooks/fb',
+        cta: 'Voir le Manuel SOP F&B',
+        eventName: 'fb_playbook_cta_clicked',
       },
       playbook: {
         title: 'Playbook F&B complet',
@@ -1211,7 +1211,7 @@ const CONTENT: Record<OperationsResourceKind, Record<Locale, ResourceContent>> =
       ],
       finalTitle: 'Transformer le petit déjeuner en service maîtrisé',
       finalText:
-        'Utilisez la checklist pour structurer rapidement le service, puis continuez avec le Starter Pack F&B et le Playbook lorsque l’équipe a besoin d’outils modifiables et de SOP complètes.',
+        'Utilisez la checklist pour structurer rapidement le service, puis continuez avec le Outils pratiques F&B inclus et le Playbook lorsque l’équipe a besoin d’outils modifiables et de SOP complètes.',
     },
   },
   roomStatusDiscrepancy: {
@@ -1300,12 +1300,12 @@ const CONTENT: Record<OperationsResourceKind, Record<Locale, ResourceContent>> =
         },
       ],
       product: {
-        title: 'Housekeeping Starter Pack',
+        title: 'Housekeeping practical tools included',
         body:
           'Use the kit when you need editable inspection controls, supervisor sheets and practical room readiness tools.',
-        href: '/playbooks/hsk-starter-pack',
-        cta: 'View Housekeeping Starter Pack',
-        eventName: 'hsk_starter_pack_cta_clicked',
+        href: '/playbooks/hsk',
+        cta: 'View the Housekeeping SOP manual',
+        eventName: 'hsk_playbook_cta_clicked',
       },
       playbook: {
         title: 'Housekeeping Playbook',
@@ -1441,12 +1441,12 @@ const CONTENT: Record<OperationsResourceKind, Record<Locale, ResourceContent>> =
         },
       ],
       product: {
-        title: 'Housekeeping Starter Pack',
+        title: 'Housekeeping practical tools included',
         body:
           'Utilisez le kit si vous avez besoin de grilles d’inspection modifiables, feuilles de contrôle gouvernante et outils room readiness.',
-        href: '/playbooks/hsk-starter-pack',
-        cta: 'Voir le Housekeeping Starter Pack',
-        eventName: 'hsk_starter_pack_cta_clicked',
+        href: '/playbooks/hsk',
+        cta: 'Voir le Manuel SOP Housekeeping',
+        eventName: 'hsk_playbook_cta_clicked',
       },
       playbook: {
         title: 'Playbook Housekeeping',
@@ -1565,7 +1565,7 @@ export function OperationsSeoResourcePage({
               {content.sourceNote}
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <TrackedLink
+              {content.product.href !== content.playbook.href && <TrackedLink
                 href={`/${locale}${content.product.href}`}
                 eventName={content.product.eventName}
                 eventProperties={{ source_page: sourcePage, position: 'hero' }}
@@ -1573,7 +1573,7 @@ export function OperationsSeoResourcePage({
               >
                 {content.product.cta}
                 <ArrowRight size={18} />
-              </TrackedLink>
+              </TrackedLink>}
               <TrackedLink
                 href={`/${locale}${content.playbook.href}`}
                 eventName={content.playbook.eventName}
@@ -1654,7 +1654,7 @@ export function OperationsSeoResourcePage({
 
         <section className="py-16 px-6">
           <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-6">
-            <ProductCard content={content.product} locale={locale} sourcePage={sourcePage} primary />
+            <ProductCard content={content.product} locale={locale} sourcePage={sourcePage} primary hideCta={content.product.href === content.playbook.href} />
             <ProductCard content={content.playbook} locale={locale} sourcePage={sourcePage} />
           </div>
         </section>
@@ -1720,12 +1720,12 @@ export function OperationsSeoResourcePage({
             <p className="text-gray-300 leading-relaxed mb-8">{content.finalText}</p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <TrackedLink
-                href={`/${locale}${content.product.href}`}
-                eventName={content.product.eventName}
+                href={`/${locale}${content.playbook.href}`}
+                eventName={content.playbook.eventName}
                 eventProperties={{ source_page: sourcePage, position: 'final' }}
                 className="inline-flex items-center justify-center gap-2 bg-white text-[#111111] px-7 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
               >
-                {content.product.cta}
+                {content.playbook.cta}
                 <ArrowRight size={18} />
               </TrackedLink>
               <TrackedLink
@@ -1765,11 +1765,13 @@ function ProductCard({
   locale,
   sourcePage,
   primary = false,
+  hideCta = false,
 }: {
   content: ProductLink
   locale: Locale
   sourcePage: string
   primary?: boolean
+  hideCta?: boolean
 }) {
   return (
     <div className={primary ? 'border border-[#D7E4F7] bg-[#F4F8FF] rounded-xl p-8' : 'border border-gray-200 rounded-xl p-8'}>
@@ -1781,7 +1783,7 @@ function ProductCard({
       </p>
       <h2 className="text-3xl font-bold text-[#111111] mb-4">{content.title}</h2>
       <p className="text-gray-600 leading-relaxed mb-6">{content.body}</p>
-      <TrackedLink
+      {!hideCta && <TrackedLink
         href={`/${locale}${content.href}`}
         eventName={content.eventName}
         eventProperties={{ source_page: sourcePage, position: primary ? 'starter_block' : 'playbook_block' }}
@@ -1791,7 +1793,7 @@ function ProductCard({
       >
         {content.cta}
         <ArrowRight size={17} />
-      </TrackedLink>
+      </TrackedLink>}
     </div>
   )
 }

@@ -36,9 +36,9 @@ const CONTENT = {
     intro:
       'A hotel operations playbook is the practical reference that connects procedures, service standards, checklists, training and daily management. It is not a generic manual stored in a folder. It is the document teams use to run the operation with consistency.',
     primaryCta: 'View department playbooks',
-    secondaryCta: 'Start with starter packs',
+    secondaryCta: 'Explore SOP manuals',
     productIntro:
-      'If you need daily tools first, start with a Starter Pack. If you need the full department reference, use the complete Playbook.',
+      'The complete department manual includes practical tools for daily use alongside the full SOP reference.',
     whatTitle: 'What is a hotel operations playbook?',
     whatBody:
       'A hotel operations playbook is a structured set of operating procedures for one or several departments. It explains how the work should be done, who owns each step, when to escalate, how information is handed over, and how quality is checked. It gives managers, supervisors and team members one shared reference instead of relying on memory, habits or verbal transmission.',
@@ -103,9 +103,9 @@ const CONTENT = {
     intro:
       'Un manuel de procédures hôtelières est la référence opérationnelle qui relie les procédures, les standards de service, les checklists, la formation et le management quotidien. Ce n’est pas un document générique rangé dans un dossier. C’est un support que les équipes peuvent utiliser pour travailler avec plus de régularité.',
     primaryCta: 'Voir les playbooks',
-    secondaryCta: 'Voir les starter packs',
+    secondaryCta: 'Voir les manuels SOP',
     productIntro:
-      'Si vous avez d’abord besoin d’outils du quotidien, commencez avec un Starter Pack. Si vous cherchez une référence complète par département, utilisez le Playbook complet.',
+      'Le manuel départemental comprend les outils du quotidien et la référence SOP complète.',
     whatTitle: 'Qu’est-ce qu’un manuel de procédures hôtelières ?',
     whatBody:
       'Un manuel de procédures hôtelières est un ensemble structuré de procédures opérationnelles pour un ou plusieurs départements. Il explique comment le travail doit être réalisé, qui est responsable de chaque étape, quand escalader, comment transmettre l’information et comment contrôler la qualité. Il donne aux managers, superviseurs et collaborateurs une référence commune au lieu de dépendre de la mémoire, des habitudes ou de la transmission orale.',
@@ -219,8 +219,8 @@ const productLinks: Record<Locale, LinkCard[]> = {
     {
       href: '/en/playbooks',
       label: 'Products',
-      title: 'Starter Packs and Playbooks',
-      body: 'Compare practical starter packs and complete department playbooks in one place.',
+      title: 'SOP manuals and practical tools',
+      body: 'Explore the complete department manuals and their included practical tools.',
     },
     {
       href: '/en/free-hotel-procedures',
@@ -245,8 +245,8 @@ const productLinks: Record<Locale, LinkCard[]> = {
     {
       href: '/fr/playbooks',
       label: 'Produits',
-      title: 'Starter packs et playbooks',
-      body: 'Comparer les starter packs pratiques et les playbooks complets par département.',
+      title: 'Manuels SOP et outils pratiques',
+      body: 'Découvrir les manuels complets et leurs outils pratiques inclus.',
     },
     {
       href: '/fr/free-hotel-procedures',
@@ -275,7 +275,7 @@ const relatedLinks: Record<Locale, LinkCard[]> = {
       href: '/en/hotel-sop',
       label: 'SOP',
       title: 'Hotel SOP templates',
-      body: 'A commercial overview of LuxOps SOP documents, starter packs and playbooks.',
+      body: 'An overview of LuxOps SOP manuals and included operational tools.',
     },
     {
       href: '/en/how-to-improve-hotel-operations',
@@ -295,7 +295,7 @@ const relatedLinks: Record<Locale, LinkCard[]> = {
       href: '/fr/hotel-sop',
       label: 'SOP',
       title: 'Modèles de SOP hôtel',
-      body: 'Vue d’ensemble commerciale des documents SOP, starter packs et playbooks LuxOps.',
+      body: 'Vue d’ensemble des manuels SOP LuxOps et de leurs outils opérationnels inclus.',
     },
     {
       href: '/fr/how-to-improve-hotel-operations',

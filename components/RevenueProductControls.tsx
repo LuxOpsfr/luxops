@@ -9,6 +9,7 @@ import { REVENUE_PRICE_ID, REVENUE_PRODUCT_CHAPTERS, revenueChapterCover } from 
 import AddToCartButton from '@/components/AddToCartButton'
 import { useCart } from '@/context/CartContext'
 import { useCurrency } from '@/context/CurrencyContext'
+import { ManualPracticeContent, ManualPromoGallery } from '@/components/ManualPracticeSection'
 
 type Locale = 'fr' | 'en'
 
@@ -63,31 +64,14 @@ export function RevenueOfferSelector({ locale }: { locale: Locale }) {
 
 export function RevenueChapterList({ locale }: { locale: Locale }) {
   const [sampleOpen, setSampleOpen] = useState(false)
-  const isFr = locale === 'fr'
   const sampleChapter = REVENUE_PRODUCT_CHAPTERS[1]
 
-  return <section id="chapters" className="scroll-mt-24 bg-[#fcfbf8] px-5 py-16 md:px-8 md:py-20">
+  return <><section id="chapters" className="scroll-mt-24 bg-[#fcfbf8] px-5 py-16 md:px-8 md:py-20">
     <div className="mx-auto max-w-[1320px]">
-      <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
-        <div>
-          <p className="mb-2 text-[10px] font-bold uppercase tracking-[.18em] text-[#a58658]">{isFr ? 'Structure du manuel' : 'Manual structure'}</p>
-          <h2 className="font-display text-3xl font-medium tracking-tight text-[#10251d] md:text-4xl">{isFr ? 'Les 8 chapitres opérationnels' : '8 operational chapters'}</h2>
-        </div>
-        <p className="max-w-lg text-sm leading-6 text-[#72766e]">{isFr ? 'Un parcours de la lecture des réservations à la revue des décisions et des résultats. Environ 115 pages au total.' : 'A route from understanding reservations to reviewing decisions and results. Approximately 115 pages in total.'}</p>
-      </div>
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-        {REVENUE_PRODUCT_CHAPTERS.map((chapter) => <article key={chapter.number} className={`group/chapter relative flex min-h-[92px] flex-col justify-between rounded-[18px] border bg-white p-4 transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_24px_rgba(40,35,24,.07)] sm:p-5 ${chapter.number === '02' ? 'border-[#c7a76e] shadow-[0_5px_18px_rgba(40,35,24,.05)]' : 'border-[#ece6dc] hover:border-[#d9c59f]'}`}>
-          <span className="font-display text-xl text-[#b89760]">{chapter.number}</span>
-          <div className="mt-2 flex items-end justify-between gap-3">
-            <h3 className="text-sm font-semibold leading-5 text-[#26392e]">{chapter.title[locale]}</h3>
-            {chapter.number === '02' && <button type="button" onClick={() => setSampleOpen(true)} className="shrink-0 rounded-full bg-[#10251d] px-3 py-1.5 text-[10px] font-semibold text-white transition hover:bg-[#2a4335]">{isFr ? 'Lire l’extrait' : 'Read sample'}</button>}
-          </div>
-          {chapter.number === '02' && <span className="absolute -top-2.5 right-3 rounded-full bg-[#10251d] px-2.5 py-1 text-[9px] font-semibold uppercase tracking-wide text-[#f7f4ec]">{isFr ? 'Extrait' : 'Sample'}</span>}
-        </article>)}
-      </div>
+      <ManualPracticeContent id="revenue-management" locale={locale} chapters={REVENUE_PRODUCT_CHAPTERS.map((chapter) => chapter.title[locale])} sampleIndex={1} onReadSample={() => setSampleOpen(true)} />
     </div>
     {sampleOpen && <FrontOfficeExcerptDialog locale={locale} startPage={1} productId="revenue" chapterTitle={sampleChapter.title[locale]} chapterNumber={2} chapterPages={16} onClose={() => setSampleOpen(false)} />}
-  </section>
+  </section><ManualPromoGallery id="revenue-management" locale={locale} /></>
 }
 
 export function RevenueManualCartButton({ locale }: { locale: Locale }) {

@@ -149,15 +149,15 @@ export default async function FrontOfficeSopPage({ params }: { params: Promise<{
           </h2>
           <p className="text-sm text-gray-500 leading-relaxed max-w-2xl mx-auto mb-7">
             {isEN
-              ? 'Use the Starter Pack for practical checklists, handovers and scripts. Use the full Front Office SOP manual when you need the complete SOP reference for the department.'
-              : 'Utilisez le Starter Pack pour les checklists, passations et scripts du quotidien. Utilisez le Manuel SOP Front Office complet si vous avez besoin de toute la référence SOP du service.'}
+              ? 'The Front Office SOP manual brings together the complete department reference and 12 editable Starter Pack tools for daily use.'
+              : 'Le Manuel SOP Front Office réunit la référence complète du service et les 12 outils modifiables du Starter Pack pour le quotidien.'}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link
-              href={`/${locale}/playbooks/fo-starter-pack`}
+              href={`/${locale}/playbooks/fo`}
               className="inline-flex min-w-[240px] items-center justify-center gap-2 rounded-full bg-[#0f211a] px-5 py-3 text-sm font-semibold text-white hover:bg-[#24362f] transition-colors"
             >
-              {isEN ? 'View the Front Office Starter Pack' : 'Voir le Starter Pack Front Office'} <ArrowRight size={16} />
+              {isEN ? 'Explore the 12 included tools' : 'Découvrir les 12 outils inclus'} <ArrowRight size={16} />
             </Link>
             <Link
               href={`/${locale}/playbooks/fo`}

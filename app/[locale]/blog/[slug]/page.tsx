@@ -359,8 +359,8 @@ const PLAYBOOK_EXCERPTS: Record<string, {
         { term: 'Dispute recovery', detail: 'The desk listens, reviews documentation, explains clearly, escalates where needed and records the outcome in the guest profile.' },
         { term: 'Night audit handover', detail: 'Open folios, discrepancies, high balances and next-day arrivals are prepared before the morning team starts.' },
       ],
-      ctaText: 'View the Front Office Starter Pack',
-      ctaHref: '/en/playbooks/fo-starter-pack',
+      ctaText: 'Explore the 12 tools included with the manual',
+      ctaHref: '/en/playbooks/fo',
       secondaryCtaText: 'View the Front Office SOP manual',
       secondaryCtaHref: '/en/playbooks/fo',
     },
@@ -376,8 +376,8 @@ const PLAYBOOK_EXCERPTS: Record<string, {
         { term: 'Litige client', detail: 'La réception écoute, vérifie les preuves, explique clairement, escalade si nécessaire et trace la résolution dans le profil client.' },
         { term: 'Passation Night Audit', detail: 'Folios ouverts, écarts, soldes élevés et arrivées du lendemain sont préparés avant l’arrivée de l’équipe matin.' },
       ],
-      ctaText: 'Voir le Starter Pack Front Office',
-      ctaHref: '/fr/playbooks/fo-starter-pack',
+      ctaText: 'Voir le Manuel SOP Front Office',
+      ctaHref: '/fr/playbooks/fo',
       secondaryCtaText: 'Voir le Manuel SOP Front Office',
       secondaryCtaHref: '/fr/playbooks/fo',
     },
@@ -395,8 +395,8 @@ const PLAYBOOK_EXCERPTS: Record<string, {
         { term: 'Service pacing', detail: 'Drinks, starters, mains, clearing and dessert are coordinated so the table never feels abandoned or rushed.' },
         { term: 'Recovery', detail: 'A wrong dish, delay or allergen concern is acknowledged immediately, owned by one person and escalated before the guest repeats it.' },
       ],
-      ctaText: 'View the F&B Starter Pack',
-      ctaHref: '/en/playbooks/fb-starter-pack',
+      ctaText: 'View the F&B SOP manual',
+      ctaHref: '/en/playbooks/fb',
       secondaryCtaText: 'View the F&B SOP manual',
       secondaryCtaHref: '/en/playbooks/fb',
     },
@@ -412,8 +412,8 @@ const PLAYBOOK_EXCERPTS: Record<string, {
         { term: 'Rythme du service', detail: 'Boissons, entrées, plats, débarrassage et dessert sont coordonnés pour éviter attente excessive ou précipitation.' },
         { term: 'Recovery', detail: 'Erreur plat, délai ou allergène sont reconnus immédiatement, portés par une personne et escaladés avant que le client ne répète.' },
       ],
-      ctaText: 'Voir le starter pack F&B',
-      ctaHref: '/fr/playbooks/fb-starter-pack',
+      ctaText: 'Voir le Manuel SOP F&B',
+      ctaHref: '/fr/playbooks/fb',
       secondaryCtaText: 'Voir le manuel SOP F&B',
       secondaryCtaHref: '/fr/playbooks/fb',
     },
@@ -431,8 +431,8 @@ const PLAYBOOK_EXCERPTS: Record<string, {
         { term: 'Guest issue', detail: 'The server owns the first response, informs the supervisor and closes the loop with the guest after resolution.' },
         { term: 'Closing handover', detail: 'Open checks, guest comments, stock issues, maintenance needs and next-service preparation are passed clearly.' },
       ],
-      ctaText: 'View the F&B Starter Pack',
-      ctaHref: '/en/playbooks/fb-starter-pack',
+      ctaText: 'View the F&B SOP manual',
+      ctaHref: '/en/playbooks/fb',
       secondaryCtaText: 'View the F&B SOP manual',
       secondaryCtaHref: '/en/playbooks/fb',
     },
@@ -448,8 +448,8 @@ const PLAYBOOK_EXCERPTS: Record<string, {
         { term: 'Incident client', detail: 'Le serveur porte la première réponse, informe le superviseur et boucle avec le client après résolution.' },
         { term: 'Passation clôture', detail: 'Notes ouvertes, commentaires clients, problèmes stock, besoins maintenance et préparation du service suivant sont transmis.' },
       ],
-      ctaText: 'Voir le starter pack F&B',
-      ctaHref: '/fr/playbooks/fb-starter-pack',
+      ctaText: 'Voir le Manuel SOP F&B',
+      ctaHref: '/fr/playbooks/fb',
       secondaryCtaText: 'Voir le manuel SOP F&B',
       secondaryCtaHref: '/fr/playbooks/fb',
     },
@@ -467,8 +467,8 @@ const PLAYBOOK_EXCERPTS: Record<string, {
         { term: 'In-room delivery', detail: 'Knock, announce, confirm placement preference, present items, explain bill or signature and leave the room cleanly.' },
         { term: 'Tray collection', detail: 'Collection is planned, not left to guest corridors. Outstanding trays are followed during floor rounds and shift handover.' },
       ],
-      ctaText: 'View the F&B Starter Pack',
-      ctaHref: '/en/playbooks/fb-starter-pack',
+      ctaText: 'View the F&B SOP manual',
+      ctaHref: '/en/playbooks/fb',
       secondaryCtaText: 'View the F&B SOP manual',
       secondaryCtaHref: '/en/playbooks/fb',
     },
@@ -484,8 +484,8 @@ const PLAYBOOK_EXCERPTS: Record<string, {
         { term: 'Livraison chambre', detail: 'Frapper, annoncer, confirmer l’emplacement, présenter les items, expliquer addition ou signature et sortir proprement.' },
         { term: 'Débarrassage', detail: 'La collecte est planifiée, pas abandonnée aux couloirs. Les plateaux ouverts sont suivis en ronde et en passation.' },
       ],
-      ctaText: 'Voir le starter pack F&B',
-      ctaHref: '/fr/playbooks/fb-starter-pack',
+      ctaText: 'Voir le Manuel SOP F&B',
+      ctaHref: '/fr/playbooks/fb',
       secondaryCtaText: 'Voir le manuel SOP F&B',
       secondaryCtaHref: '/fr/playbooks/fb',
     },
@@ -818,18 +818,18 @@ const ARTICLE_PRODUCT_CTAS: Record<string, {
     en: {
       label: 'Housekeeping tools',
       title: 'Need a practical room inspection toolkit?',
-      text: 'Use the inspection kit for editable control sheets, or the full SOP manual for the complete housekeeping SOP system.',
-      primaryText: 'View the Housekeeping Starter Pack',
-      primaryHref: '/en/playbooks/hsk-starter-pack',
+      text: 'The Housekeeping SOP manual includes editable inspection tools and the complete department reference.',
+      primaryText: 'View the Housekeeping SOP manual',
+      primaryHref: '/en/playbooks/hsk',
       secondaryText: 'View the Housekeeping SOP manual',
       secondaryHref: '/en/playbooks/hsk',
     },
     fr: {
       label: 'Outils housekeeping',
       title: 'Besoin d’un kit pratique pour contrôler les chambres ?',
-      text: 'Utilisez le kit inspection pour les feuilles de contrôle modifiables, ou le manuel SOP complet pour toute la structure SOP du département.',
-      primaryText: 'Voir le Starter Pack Housekeeping',
-      primaryHref: '/fr/playbooks/hsk-starter-pack',
+      text: 'Le Manuel SOP Housekeeping inclut des outils d’inspection modifiables et la référence complète du département.',
+      primaryText: 'Voir le Manuel SOP Housekeeping',
+      primaryHref: '/fr/playbooks/hsk',
       secondaryText: 'Voir le Manuel SOP Housekeeping',
       secondaryHref: '/fr/playbooks/hsk',
     },
@@ -838,18 +838,18 @@ const ARTICLE_PRODUCT_CTAS: Record<string, {
     en: {
       label: 'Hotel SOP tools',
       title: 'Need SOP templates your team can actually use?',
-      text: 'Start with focused starter packs for daily tools, or browse the full department SOP manuals for the complete SOP structure.',
-      primaryText: 'View Starter Packs',
-      primaryHref: '/en/playbooks#starter-packs',
+      text: 'Browse the department SOP manuals for complete procedures and the practical tools included with Front Office, Housekeeping and F&B.',
+      primaryText: 'View SOP manuals',
+      primaryHref: '/en/playbooks#department-playbooks',
       secondaryText: 'View SOP manuals',
       secondaryHref: '/en/playbooks#department-playbooks',
     },
     fr: {
       label: 'Outils SOP',
       title: 'Besoin de modèles SOP vraiment utilisables par vos équipes ?',
-      text: 'Commencez avec des starter packs ciblés pour les outils du quotidien, ou consultez les manuels SOP complets par département.',
-      primaryText: 'Voir les starter packs',
-      primaryHref: '/fr/playbooks#starter-packs',
+      text: 'Parcourez les manuels SOP par département pour les procédures complètes et les outils pratiques inclus avec Front Office, Housekeeping et F&B.',
+      primaryText: 'Voir les manuels SOP',
+      primaryHref: '/fr/playbooks#department-playbooks',
       secondaryText: 'Voir les Manuels SOP',
       secondaryHref: '/fr/playbooks#department-playbooks',
     },
@@ -858,18 +858,18 @@ const ARTICLE_PRODUCT_CTAS: Record<string, {
     en: {
       label: 'Front Office tools',
       title: 'Need editable front desk procedures?',
-      text: 'Start with practical templates for daily reception work, or go deeper with the complete Front Office SOP manual.',
-      primaryText: 'View the Front Office Starter Pack',
-      primaryHref: '/en/playbooks/fo-starter-pack',
+      text: 'The Front Office SOP manual includes practical templates for daily reception work and the complete department reference.',
+      primaryText: 'Explore the 12 included tools',
+      primaryHref: '/en/playbooks/fo',
       secondaryText: 'View the Front Office SOP manual',
       secondaryHref: '/en/playbooks/fo',
     },
     fr: {
       label: 'Outils Front Office',
       title: 'Besoin de procédures réception prêtes à adapter ?',
-      text: 'Commencez avec des modèles pratiques pour le quotidien de la réception, ou allez plus loin avec le Manuel SOP Front Office complet.',
-      primaryText: 'Voir le Starter Pack Front Office',
-      primaryHref: '/fr/playbooks/fo-starter-pack',
+      text: 'Le Manuel SOP Front Office inclut des modèles pratiques pour le quotidien de la réception et la référence complète du service.',
+      primaryText: 'Découvrir les 12 outils inclus',
+      primaryHref: '/fr/playbooks/fo',
       secondaryText: 'Voir le Manuel SOP Front Office',
       secondaryHref: '/fr/playbooks/fo',
     },
@@ -879,17 +879,17 @@ const ARTICLE_PRODUCT_CTAS: Record<string, {
       label: 'F&B tools',
       title: 'Need editable F&B service tools?',
       text: 'Start with practical restaurant, bar and room service checklists, or go deeper with the complete F&B SOP manual.',
-      primaryText: 'View the F&B Starter Pack',
-      primaryHref: '/en/playbooks/fb-starter-pack',
+      primaryText: 'View the F&B SOP manual',
+      primaryHref: '/en/playbooks/fb',
       secondaryText: 'View the F&B SOP manual',
       secondaryHref: '/en/playbooks/fb',
     },
     fr: {
       label: 'Outils F&B',
       title: 'Vous voulez des outils F&B prêts à adapter sur le terrain ?',
-      text: 'Le starter pack rassemble des checklists pratiques pour le restaurant, le bar et le room service. Le manuel SOP F&B complet va plus loin avec toute la structure SOP du département.',
-      primaryText: 'Voir le starter pack F&B',
-      primaryHref: '/fr/playbooks/fb-starter-pack',
+      text: 'Le Manuel SOP F&B inclut les checklists pratiques pour le restaurant, le bar et le room service avec toute la structure du département.',
+      primaryText: 'Voir le Manuel SOP F&B',
+      primaryHref: '/fr/playbooks/fb',
       secondaryText: 'Voir le manuel SOP F&B',
       secondaryHref: '/fr/playbooks/fb',
     },
@@ -898,18 +898,18 @@ const ARTICLE_PRODUCT_CTAS: Record<string, {
     en: {
       label: 'Restaurant service tools',
       title: 'Need a practical restaurant service toolkit?',
-      text: 'Use the F&B Starter Pack for opening, closing, briefing and recovery tools, or the full SOP manual for the complete SOP structure.',
-      primaryText: 'View the F&B Starter Pack',
-      primaryHref: '/en/playbooks/fb-starter-pack',
+      text: 'The F&B SOP manual includes opening, closing, briefing and recovery tools alongside the complete department reference.',
+      primaryText: 'View the F&B SOP manual',
+      primaryHref: '/en/playbooks/fb',
       secondaryText: 'View the F&B SOP manual',
       secondaryHref: '/en/playbooks/fb',
     },
     fr: {
       label: 'Outils restaurant',
       title: 'Pour structurer le service restaurant sans repartir de zéro',
-      text: 'Le starter pack F&B regroupe les outils d’ouverture, de fermeture, de briefing et de recovery. Le manuel SOP complet apporte ensuite toute la structure SOP du service restaurant.',
-      primaryText: 'Voir le starter pack F&B',
-      primaryHref: '/fr/playbooks/fb-starter-pack',
+      text: 'Le Manuel SOP F&B réunit les outils d’ouverture, de fermeture, de briefing et de recovery avec toutes les procédures du service restaurant.',
+      primaryText: 'Voir le Manuel SOP F&B',
+      primaryHref: '/fr/playbooks/fb',
       secondaryText: 'Voir le manuel SOP F&B',
       secondaryHref: '/fr/playbooks/fb',
     },
@@ -918,18 +918,18 @@ const ARTICLE_PRODUCT_CTAS: Record<string, {
     en: {
       label: 'Room service tools',
       title: 'Need a room service checklist your team can use today?',
-      text: 'Use the F&B Starter Pack for room service controls, order taking, tray setup and recovery scripts, or the full SOP manual for the complete F&B SOP system.',
-      primaryText: 'View the F&B Starter Pack',
-      primaryHref: '/en/playbooks/fb-starter-pack',
+      text: 'The F&B SOP manual includes practical room service controls, order taking, tray setup and recovery scripts alongside the complete department reference.',
+      primaryText: 'View the F&B SOP manual',
+      primaryHref: '/en/playbooks/fb',
       secondaryText: 'View the F&B SOP manual',
       secondaryHref: '/en/playbooks/fb',
     },
     fr: {
       label: 'Outils room service',
       title: 'Pour fiabiliser le room service dès le prochain shift',
-      text: 'Le starter pack F&B couvre les contrôles room service, la prise de commande, le dressage du plateau et les scripts de recovery. Le manuel SOP complet apporte la structure SOP F&B dans son ensemble.',
-      primaryText: 'Voir le starter pack F&B',
-      primaryHref: '/fr/playbooks/fb-starter-pack',
+      text: 'Le Manuel SOP F&B inclut les contrôles room service, la prise de commande, le dressage du plateau et les scripts de recovery avec les procédures complètes.',
+      primaryText: 'Voir le Manuel SOP F&B',
+      primaryHref: '/fr/playbooks/fb',
       secondaryText: 'Voir le manuel SOP F&B',
       secondaryHref: '/fr/playbooks/fb',
     },
@@ -941,8 +941,8 @@ const ARTICLE_PRODUCT_CTAS: Record<string, {
       text: 'Download the departure room cleaning checklist, then use the full checklist hub for every housekeeping PDF.',
       primaryText: 'Download the room cleaning PDF',
       primaryHref: '/downloads/checklists/en/departure-room-cleaning-checklist.pdf',
-      secondaryText: 'View the Housekeeping Starter Pack',
-      secondaryHref: '/en/playbooks/hsk-starter-pack',
+      secondaryText: 'View the Housekeeping SOP manual',
+      secondaryHref: '/en/playbooks/hsk',
     },
     fr: {
       label: 'Outils housekeeping',
@@ -950,8 +950,8 @@ const ARTICLE_PRODUCT_CTAS: Record<string, {
       text: 'Téléchargez la checklist chambre à blanc, puis utilisez le hub complet pour retrouver tous les PDF housekeeping.',
       primaryText: 'Télécharger le PDF chambre à blanc',
       primaryHref: '/downloads/checklists/fr/checklist-chambre-a-blanc.pdf',
-      secondaryText: 'Voir le Starter Pack Housekeeping',
-      secondaryHref: '/fr/playbooks/hsk-starter-pack',
+      secondaryText: 'Voir le Manuel SOP Housekeeping',
+      secondaryHref: '/fr/playbooks/hsk',
     },
   },
   'hotel-bathroom-cleaning-sop': {
@@ -961,8 +961,8 @@ const ARTICLE_PRODUCT_CTAS: Record<string, {
       text: 'Download the bathroom cleaning PDF aligned with this SOP, or use the inspection kit to standardise room controls.',
       primaryText: 'Download the bathroom PDF',
       primaryHref: '/downloads/checklists/en/hotel-bathroom-cleaning-checklist.pdf',
-      secondaryText: 'View the Housekeeping Starter Pack',
-      secondaryHref: '/en/playbooks/hsk-starter-pack',
+      secondaryText: 'View the Housekeeping SOP manual',
+      secondaryHref: '/en/playbooks/hsk',
     },
     fr: {
       label: 'Outils housekeeping',
@@ -970,8 +970,8 @@ const ARTICLE_PRODUCT_CTAS: Record<string, {
       text: 'Téléchargez le PDF salle de bain aligné avec cette SOP, ou utilisez le kit inspection pour standardiser les contrôles chambre.',
       primaryText: 'Télécharger le PDF salle de bain',
       primaryHref: '/downloads/checklists/fr/checklist-nettoyage-salle-de-bain-hotel.pdf',
-      secondaryText: 'Voir le Starter Pack Housekeeping',
-      secondaryHref: '/fr/playbooks/hsk-starter-pack',
+      secondaryText: 'Voir le Manuel SOP Housekeeping',
+      secondaryHref: '/fr/playbooks/hsk',
     },
   },
   'hotel-room-attendant-checklist': {
@@ -1001,8 +1001,8 @@ const ARTICLE_PRODUCT_CTAS: Record<string, {
       text: 'Download the supervisor PDF for assignments, departure inspections, VIP checks and Clean vs Inspected release.',
       primaryText: 'Download the supervisor PDF',
       primaryHref: '/downloads/housekeeping-checklists/en/floor-housekeeping-supervisor-checklist.pdf',
-      secondaryText: 'View the Housekeeping Starter Pack',
-      secondaryHref: '/en/playbooks/hsk-starter-pack',
+      secondaryText: 'View the Housekeeping SOP manual',
+      secondaryHref: '/en/playbooks/hsk',
     },
     fr: {
       label: 'Outils housekeeping',
@@ -1010,15 +1010,14 @@ const ARTICLE_PRODUCT_CTAS: Record<string, {
       text: 'Téléchargez le PDF pour les feuilles de route, l’inspection chambre départ, les VIP, la libération PMS et le coaching qualité.',
       primaryText: 'Télécharger le PDF gouvernante',
       primaryHref: '/downloads/housekeeping-checklists/fr/checklist-gouvernante-etage-superviseur.pdf',
-      secondaryText: 'Voir le Starter Pack Housekeeping',
-      secondaryHref: '/fr/playbooks/hsk-starter-pack',
+      secondaryText: 'Voir le Manuel SOP Housekeeping',
+      secondaryHref: '/fr/playbooks/hsk',
     },
   },
 }
 
 function productCtaEventName(href: string) {
   if (href.includes('/downloads/')) return 'free_checklist_download_clicked'
-  if (href.includes('starter-pack')) return 'starter_pack_cta_clicked'
   if (href.includes('hotel-housekeeping-checklist')) return 'pdf_pack_cta_clicked'
   if (href.includes('free-hotel-procedures')) return 'free_chapter_cta_clicked'
   if (href.includes('playbooks')) return 'playbook_cta_clicked'
@@ -1224,7 +1223,7 @@ export default async function BlogArticlePage({
                 >
                   {productCta.primaryText} <ArrowRight size={16} />
                 </TrackedLink>
-                <TrackedLink
+                {productCta.secondaryHref !== productCta.primaryHref && <TrackedLink
                   href={productCta.secondaryHref}
                   {...(productCta.secondaryHref.includes('/downloads/') ? { download: true } : {})}
                   eventName={productCtaEventName(productCta.secondaryHref)}
@@ -1238,7 +1237,7 @@ export default async function BlogArticlePage({
                   className={`inline-flex min-w-[240px] items-center justify-center gap-2 rounded-full border border-[#cbb487] px-5 py-3 text-sm font-semibold text-[#314137] hover:bg-[#f5f1e9] transition-colors ${styles.secondaryButton}`}
                 >
                   {productCta.secondaryText} <ArrowRight size={16} />
-                </TrackedLink>
+                </TrackedLink>}
               </div>
             </div>
           </section>
@@ -1343,7 +1342,7 @@ export default async function BlogArticlePage({
                     >
                       {playbookExcerpt.ctaText} <ArrowRight size={16} />
                     </Link>
-                    {playbookExcerpt.secondaryCtaText && playbookExcerpt.secondaryCtaHref && (
+                    {playbookExcerpt.secondaryCtaText && playbookExcerpt.secondaryCtaHref && playbookExcerpt.secondaryCtaHref !== playbookExcerpt.ctaHref && (
                       <Link
                         href={playbookExcerpt.secondaryCtaHref}
                         className="inline-flex items-center justify-center gap-2 rounded-full border border-[#cbb487] px-5 py-3 text-sm font-semibold text-[#314137] transition hover:bg-white"
@@ -1452,15 +1451,15 @@ export default async function BlogArticlePage({
             ],
             'hotel-fb-service-standards': [
               { href: '/hotel-fb-sop', labelEn: 'F&B SOP', labelFr: 'SOP F&B', descEn: 'The pillar guide for restaurant, bar, room service and service recovery procedures.', descFr: 'Le guide pilier pour procédures restaurant, bar, room service et recovery client.' },
-              { href: '/playbooks/fb-starter-pack', labelEn: 'F&B Starter Pack', labelFr: 'Starter pack F&B', descEn: 'Practical checklists, scripts and control tools for daily F&B service.', descFr: 'Checklists, scripts et outils de contrôle pour le service F&B quotidien.' },
+              { href: '/playbooks/fb', labelEn: 'F&B SOP manual', labelFr: 'Manuel SOP F&B', descEn: 'Practical checklists, scripts and control tools for daily F&B service.', descFr: 'Checklists, scripts et outils de contrôle pour le service F&B quotidien.' },
             ],
             'hotel-fb-restaurant-procedures': [
               { href: '/hotel-fb-sop', labelEn: 'F&B SOP', labelFr: 'SOP F&B', descEn: 'The complete F&B SOP structure around service sequence, mise en place and controls.', descFr: 'La structure SOP F&B complète autour de la séquence de service, mise en place et contrôles.' },
-              { href: '/playbooks/fb-starter-pack', labelEn: 'F&B Starter Pack', labelFr: 'Starter pack F&B', descEn: 'Opening checklist, closing checklist, briefing template and recovery scripts.', descFr: 'Checklist ouverture, checklist fermeture, briefing et scripts recovery.' },
+              { href: '/playbooks/fb', labelEn: 'F&B SOP manual', labelFr: 'Manuel SOP F&B', descEn: 'Opening checklist, closing checklist, briefing template and recovery scripts.', descFr: 'Checklist ouverture, checklist fermeture, briefing et scripts recovery.' },
             ],
             'hotel-room-service-sops': [
               { href: '/hotel-fb-sop', labelEn: 'F&B SOP', labelFr: 'SOP F&B', descEn: 'Room service connected to the wider restaurant, bar and F&B control system.', descFr: 'Room service relié au système de contrôle restaurant, bar et F&B.' },
-              { href: '/playbooks/fb-starter-pack', labelEn: 'F&B Starter Pack', labelFr: 'Starter pack F&B', descEn: 'Room service checklist, guest recovery scripts and service control tools.', descFr: 'Checklist room service, scripts recovery et outils de contrôle de service.' },
+              { href: '/playbooks/fb', labelEn: 'F&B SOP manual', labelFr: 'Manuel SOP F&B', descEn: 'Room service checklist, guest recovery scripts and service control tools.', descFr: 'Checklist room service, scripts recovery et outils de contrôle de service.' },
             ],
             'hotel-front-office-procedures': [
               { href: '/front-office-sop', labelEn: 'Front Office SOP', labelFr: 'SOP réception', descEn: 'Procedures built around how the front desk actually works.', descFr: 'Procédures construites autour du fonctionnement réel de la réception.' },

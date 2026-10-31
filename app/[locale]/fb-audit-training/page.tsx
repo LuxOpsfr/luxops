@@ -98,8 +98,8 @@ const englishData = (locale: string): TrainingSeoPageData => ({
       text: 'Pillar page for service standards, restaurant, bar and room service procedures.',
     },
     {
-      href: `/${locale}/playbooks/fb-starter-pack`,
-      title: 'F&B Starter Pack',
+      href: `/${locale}/playbooks/fb`,
+      title: 'F&B SOP manual',
       text: 'Editable practical tools to structure F&B operational basics.',
     },
   ],

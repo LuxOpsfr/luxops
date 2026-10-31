@@ -133,30 +133,30 @@ export default async function FreeHotelProceduresPage({
               </h2>
               <p className="text-[#59645f] leading-relaxed">
                 {isEn
-                  ? 'Continue with focused starter packs for immediate daily use, or browse the full department playbooks when you need the complete SOP reference.'
-                  : 'Continuez avec des starter packs ciblés pour une utilisation immédiate, ou consultez les playbooks complets par département lorsque vous avez besoin de la référence SOP complète.'}
+                  ? 'Explore the Front Office manual for an editable reference and practical tools, or browse all five department manuals.'
+                  : 'Découvrez le manuel Front Office pour une référence modifiable et des outils pratiques, ou parcourez les cinq manuels par département.'}
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-4">
               <Link
-                href={`/${locale}/playbooks#starter-packs`}
+                href={`/${locale}/playbooks/fo`}
                 className="group bg-white border border-gray-100 p-6 hover:shadow-md transition-all"
                 style={{ borderRadius: '0.125rem' }}
               >
                 <p className="text-[11px] uppercase tracking-widest text-[#775d39] mb-3">
-                  {isEn ? 'Starter Packs' : 'Starter Packs'}
+                  {isEn ? 'Front Office' : 'Front Office'}
                 </p>
                 <h3 className="font-display text-xl font-medium text-[#172822] mb-3">
-                  {isEn ? 'Focused operational kits' : 'Kits opérationnels ciblés'}
+                  {isEn ? 'Manual and practical tools' : 'Manuel et outils pratiques'}
                 </h3>
                 <p className="text-sm text-[#59645f] leading-relaxed mb-5">
                   {isEn
-                    ? 'Checklists, templates and scripts designed for fast implementation by front office and housekeeping teams.'
-                    : 'Checklists, modèles et scripts conçus pour une mise en place rapide par les équipes réception et housekeeping.'}
+                    ? 'The complete Front Office SOP manual includes editable checklists, templates and scripts.'
+                    : 'Le manuel SOP Front Office complet inclut des checklists, modèles et scripts modifiables.'}
                 </p>
                 <span className="text-sm font-semibold text-[#172822] group-hover:underline">
-                  {isEn ? 'Explore starter packs' : 'Voir les starter packs'}
+                  {isEn ? 'Explore the manual' : 'Voir le manuel'}
                 </span>
               </Link>
 

@@ -20,7 +20,6 @@ import AddToCartButton from '@/components/AddToCartButton'
 import SampleChapterModal from '@/components/SampleChapterModal'
 import SamePageAnchor from '@/components/SamePageAnchor'
 import { BUNDLE_PRICE_ID, PLAYBOOKS } from '@/content/playbooks/data'
-import { STARTER_PACKS } from '@/content/starter-packs/data'
 import { REVENUE_PRICE_ID, REVENUE_PRODUCT_PATH } from '@/content/revenue-management-product'
 import { useCurrency } from '@/context/CurrencyContext'
 import { toActiveLocale } from '@/lib/i18n'
@@ -42,7 +41,7 @@ const copy = {
     departmentsCta: 'Choisir un manuel · dès 67 €',
     bundleCta: 'Ajouter le bundle · 199 €',
     facts: ['PDF & PowerPoint modifiables', 'Français & anglais inclus', 'Téléchargement immédiat'],
-    options: ['Manuel par département', 'Bundle intégral', 'Starter Packs de terrain'],
+    options: ['Manuel par département', 'Bundle intégral'],
     departmentEyebrow: 'CATALOGUE DÉPARTEMENTAL',
     departmentTitle: 'Les 5 Manuels Opérationnels',
     departmentIntro: 'Cinq référentiels pour les opérations hôtelières et la performance commerciale. Le nouveau manuel Revenue Management rejoint le bundle au même prix.',
@@ -52,21 +51,12 @@ const copy = {
     manual: 'Manuel SOP complet',
     manualCta: (price: string) => `Ajouter le manuel · ${price}`,
     details: 'Voir le contenu',
-    starterInline: 'Starter Pack',
     bundleTitle: 'Les 5 Manuels SOP : une suite opérationnelle complète',
     bundleText:
-      'Front Office, Housekeeping, Food & Beverage, Spa & Wellness et Revenue Management, dans les deux langues et en formats modifiables.',
+      'Front Office, Housekeeping, Food & Beverage, Spa & Wellness et Revenue Management, dans les deux langues et en formats modifiables. Les Starter Packs Front Office, Housekeeping et F&B sont inclus avec leurs manuels respectifs.',
     bundleSaving: () => 'Tarif maintenu à 199 €',
     bundlePrice: '199 € TTC',
     bundleCtaPrice: (price: string) => `Ajouter les 5 manuels · ${price}`,
-    startersEyebrow: 'OUTILS OPÉRATIONNELS COMPLÉMENTAIRES',
-    startersTitle: 'Starter Packs de terrain : fiches et checklists opérationnelles',
-    startersText:
-      'Des outils de terrain complémentaires, vendus séparément du Manuel SOP. Disponibles pour Front Office, Housekeeping et Food & Beverage.',
-    starterPrice: '29 € TTC',
-    starterCta: (price: string) => `Ajouter le Starter Pack · ${price}`,
-    starterDetails: 'Découvrir les outils',
-    sampleCaption: 'Starter Packs 2027 · Front Office, Housekeeping & F&B',
     trainingEyebrow: 'CONSEIL & TRANSMISSION',
     trainingTitle: 'Déployer ces standards auprès de vos équipes',
     trainingText:
@@ -82,7 +72,7 @@ const copy = {
     departmentsCta: 'Choose a manual · from €67',
     bundleCta: 'Add the bundle · €199',
     facts: ['Editable PDF & PowerPoint', 'English & French included', 'Instant download'],
-    options: ['Manual by department', 'Complete bundle', 'Practical Starter Packs'],
+    options: ['Manual by department', 'Complete bundle'],
     departmentEyebrow: 'DEPARTMENT CATALOGUE',
     departmentTitle: 'The 5 Operating Manuals',
     departmentIntro: 'Five references for hotel operations and commercial performance. The new Revenue Management manual joins the bundle at the same price.',
@@ -92,21 +82,12 @@ const copy = {
     manual: 'Complete SOP Manual',
     manualCta: (price: string) => `Add the manual · ${price}`,
     details: 'View contents',
-    starterInline: 'Starter Pack',
     bundleTitle: 'The 5 SOP Manuals: a complete operating suite',
     bundleText:
-      'Front Office, Housekeeping, Food & Beverage, Spa & Wellness and Revenue Management, in both languages and editable formats.',
+      'Front Office, Housekeeping, Food & Beverage, Spa & Wellness and Revenue Management, in both languages and editable formats. The Front Office, Housekeeping and F&B Starter Packs are included with their respective manuals.',
     bundleSaving: () => 'Same €199 price',
     bundlePrice: '€199 incl. tax',
     bundleCtaPrice: (price: string) => `Add all 5 manuals · ${price}`,
-    startersEyebrow: 'COMPLEMENTARY TOOLS',
-    startersTitle: 'Practical Starter Packs: operational sheets & checklists',
-    startersText:
-      'Practical team tools sold separately from the SOP Manual. Available for Front Office, Housekeeping and Food & Beverage.',
-    starterPrice: '€29 incl. tax',
-    starterCta: (price: string) => `Add Starter Pack · ${price}`,
-    starterDetails: 'View the tools',
-    sampleCaption: '2027 Starter Packs · Front Office, Housekeeping & F&B',
     trainingEyebrow: 'ADVICE & IMPLEMENTATION',
     trainingTitle: 'Put these standards into practice with your teams',
     trainingText:
@@ -122,7 +103,7 @@ const copy = {
     departmentsCta: 'Elegir un manual · desde 67 €',
     bundleCta: 'Añadir el paquete · 199 €',
     facts: ['PDF y PowerPoint editables', 'Francés e inglés incluidos', 'Descarga inmediata'],
-    options: ['Manual por departamento', 'Paquete completo', 'Starter Packs prácticos'],
+    options: ['Manual por departamento', 'Paquete completo'],
     departmentEyebrow: 'CATÁLOGO POR DEPARTAMENTO',
     departmentTitle: 'Los 5 Manuales Operativos',
     departmentIntro: 'Cinco referentes para las operaciones hoteleras y el rendimiento comercial. El nuevo manual Revenue Management se añade al paquete al mismo precio.',
@@ -132,21 +113,12 @@ const copy = {
     manual: 'Manual SOP completo',
     manualCta: (price: string) => `Añadir manual · ${price}`,
     details: 'Ver el contenido',
-    starterInline: 'Starter Pack',
     bundleTitle: 'Los 5 Manuales SOP: una suite operativa completa',
     bundleText:
-      'Front Office, Housekeeping, Food & Beverage, Spa & Wellness y Revenue Management, en ambos idiomas y en formatos editables.',
+      'Front Office, Housekeeping, Food & Beverage, Spa & Wellness y Revenue Management, en ambos idiomas y en formatos editables. Los Starter Packs Front Office, Housekeeping y F&B se incluyen con sus respectivos manuales.',
     bundleSaving: () => 'Mismo precio: 199 €',
     bundlePrice: '199 € IVA incl.',
     bundleCtaPrice: (price: string) => `Añadir los 5 manuales · ${price}`,
-    startersEyebrow: 'HERRAMIENTAS COMPLEMENTARIAS',
-    startersTitle: 'Starter Packs de terreno: fichas y checklists operativas',
-    startersText:
-      'Herramientas prácticas complementarias, vendidas por separado del Manual SOP. Disponibles para Front Office, Housekeeping y Food & Beverage.',
-    starterPrice: '29 € IVA incl.',
-    starterCta: (price: string) => `Añadir Starter Pack · ${price}`,
-    starterDetails: 'Descubrir las herramientas',
-    sampleCaption: 'Starter Packs 2027 · Front Office, Housekeeping & F&B',
     trainingEyebrow: 'ASESORAMIENTO Y TRANSMISIÓN',
     trainingTitle: 'Implantar estos estándares con sus equipos',
     trainingText:
@@ -176,11 +148,7 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
   const { currency, priceFor, formatProductPrice } = useCurrency()
   const [isSampleModalOpen, setIsSampleModalOpen] = useState(false)
   const catalogueHref = localizedRoutePath('playbooks', lang)
-  const departments = PLAYBOOKS.map((manual) => ({
-    manual,
-    starter: STARTER_PACKS.find((pack) => pack.fullPlaybookId === manual.id),
-  }))
-  const starterPreview = `/images/starter-packs/2027/${dataLang}/starter-packs-collection-2027.webp`
+  const departments = PLAYBOOKS
 
   return (
     <main className="bg-[#fcf9f4] pt-[var(--site-header-height)] text-[#20231f]">
@@ -271,7 +239,7 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
       </section>
 
       <section aria-label={lang === 'fr' ? 'Choisir une formule' : lang === 'es' ? 'Elegir una opción' : 'Choose an option'} className="border-b border-[#e9e3d8] bg-[#f4f1eb] px-5 pt-3 pb-3 sm:px-8 lg:px-10 lg:pr-24">
-        <div className="mx-auto grid max-w-[1440px] gap-2.5 md:grid-cols-3">
+        <div className="mx-auto grid max-w-[1440px] gap-2.5 md:grid-cols-2">
           <SamePageAnchor href="#department-playbooks" className="flex min-h-[66px] items-center justify-between gap-3 rounded-2xl border border-[#e8e2d7] bg-white px-4 py-3 text-left shadow-[0_3px_12px_rgba(45,42,34,.035)] transition hover:-translate-y-0.5 hover:shadow-md">
             <span className="flex min-w-0 items-center gap-3"><span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#f1eee7] text-[#84663a]"><FileText size={16} /></span><span className="min-w-0"><span className="block truncate text-[11px] font-semibold text-[#25362c]">{text.options[0]}</span><span className="block text-[9px] text-[#6b746d]">Front Office, HK, F&B, Spa, Revenue</span></span></span>
             <span className="shrink-0 text-right text-xs font-semibold text-[#1d3026]">{formatProductPrice('playbook')}<span className="block text-[9px] font-normal text-[#828880]">{lang === 'fr' ? 'par unité' : lang === 'es' ? 'por unidad' : 'each'}</span></span>
@@ -285,10 +253,6 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
             <span className="flex min-w-0 items-center gap-3"><span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#f2e5c8] text-[#806035]"><PackageCheck size={16} /></span><span className="min-w-0"><span className="block truncate text-[11px] font-semibold text-[#25362c]">{text.options[1]}</span><span className="block text-[9px] text-[#6b746d]">{text.bundleSaving()}</span></span></span>
             <span className="shrink-0 text-right text-xs font-semibold text-[#1d3026]">{formatProductPrice('bundle')}<span className="block text-[9px] font-normal text-[#828880]">{lang === 'fr' ? 'les 5' : lang === 'es' ? 'los 5' : 'all 5'}</span></span>
           </AddToCartButton>
-          <SamePageAnchor href="#starter-packs" className="flex min-h-[66px] items-center justify-between gap-3 rounded-2xl border border-[#e8e2d7] bg-white px-4 py-3 text-left shadow-[0_3px_12px_rgba(45,42,34,.035)] transition hover:-translate-y-0.5 hover:shadow-md">
-            <span className="flex min-w-0 items-center gap-3"><span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#f1eee7] text-[#59645c]"><Check size={16} /></span><span className="min-w-0"><span className="block truncate text-[11px] font-semibold text-[#25362c]">{text.options[2]}</span><span className="block text-[9px] text-[#6b746d]">{lang === 'fr' ? 'Fiches vendues séparément' : lang === 'es' ? 'Fichas vendidas por separado' : 'Sheets sold separately'}</span></span></span>
-            <span className="shrink-0 text-right text-xs font-semibold text-[#1d3026]">{formatProductPrice('starter_pack')}<span className="block text-[9px] font-normal text-[#828880]">{lang === 'fr' ? 'par pack' : lang === 'es' ? 'por pack' : 'per pack'}</span></span>
-          </SamePageAnchor>
         </div>
       </section>
 
@@ -302,7 +266,7 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
             <p className="max-w-lg text-sm leading-6 text-[#687169] md:text-base">{text.departmentIntro}</p>
           </div>
           <div className="grid items-stretch gap-4 sm:grid-cols-2 xl:grid-cols-5 xl:gap-4">
-            {departments.map(({ manual, starter }, index) => {
+            {departments.map((manual, index) => {
               const title = manual.title[dataLang]
               const detailHref = `${catalogueHref}/${manual.id}`
               return (
@@ -340,22 +304,6 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                         <ShoppingBag size={13} />{text.manualCta(formatProductPrice('playbook'))}
                       </AddToCartButton>
                     </div>
-                    {starter ? (
-                      <div className="mt-2 rounded-xl border border-[#eee9e0] bg-white p-3">
-                        <div className="mb-2 flex items-center justify-between gap-2">
-                          <span className="text-[9px] font-semibold uppercase tracking-[.1em] text-[#687169]">{text.starterInline}</span>
-                          <span className="text-xs font-semibold text-[#25362c]">{formatProductPrice('starter_pack')}</span>
-                        </div>
-                        <AddToCartButton
-                          openCartOnAdd
-                          item={{ priceId: starter.priceId, title: starter.shortTitle[dataLang], price: priceFor('starter_pack'), currency, productType: 'starter_pack' }}
-                          addedLabel={lang === 'fr' ? 'Dans le panier' : lang === 'es' ? 'En la cesta' : 'In cart'}
-                          className="inline-flex min-h-8 w-full items-center justify-center gap-1.5 rounded-lg border border-[#ddd4c3] bg-[#fffdf8] px-3 py-1.5 text-[10px] font-semibold text-[#34463a] transition-colors hover:bg-[#f4f1eb]"
-                        >
-                          <ShoppingBag size={12} />{text.starterCta(formatProductPrice('starter_pack'))}
-                        </AddToCartButton>
-                      </div>
-                    ) : null}
                     <Link href={detailHref} className="mt-auto inline-flex min-h-10 items-center justify-center gap-1.5 pt-3 text-[10px] font-semibold text-[#566158] transition-colors hover:text-[#10271e]">
                       {text.details}<ArrowUpRight size={13} strokeWidth={1.7} />
                     </Link>
@@ -428,67 +376,6 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
             >
               {text.bundleCtaPrice(formatProductPrice('bundle'))}<ArrowRight size={16} />
             </AddToCartButton>
-          </div>
-        </div>
-      </section>
-
-      <section id="starter-packs" className="scroll-mt-24 border-y border-[#e8e3da] bg-[#f1eee7] px-5 py-12 sm:px-8 md:px-12 md:py-16 xl:px-16">
-        <div className="mx-auto max-w-[1480px]">
-          <div className="mb-7 flex flex-col gap-3 md:mb-9 md:flex-row md:items-end md:justify-between">
-            <div className="max-w-3xl">
-              <p className="mb-3 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#9a7844]">{text.startersEyebrow}</p>
-              <h2 className="font-display text-[2rem] font-medium leading-tight tracking-[-0.025em] text-[#10271e] md:text-[2.6rem]">{text.startersTitle}</h2>
-            </div>
-            <p className="max-w-2xl text-sm leading-6 text-[#687169] md:text-base">{text.startersText}</p>
-          </div>
-          <div className="grid items-stretch gap-5 lg:grid-cols-[.82fr_1.18fr] lg:gap-7">
-            <figure className="relative min-h-[390px] overflow-hidden rounded-[26px] border border-[#e2dbcf] bg-[#e8e1d5] p-5 shadow-[0_12px_32px_rgba(58,48,31,.08)] sm:min-h-[470px] sm:p-7">
-              <Image
-                src={starterPreview}
-                alt={text.sampleCaption}
-                fill
-                priority
-                sizes="(min-width: 1024px) 34vw, 90vw"
-                className="object-contain transition-transform duration-700 hover:scale-[1.025]"
-              />
-              <figcaption className="sr-only">{text.sampleCaption}</figcaption>
-            </figure>
-            <div className="flex flex-col gap-3">
-              {STARTER_PACKS.map((pack) => {
-                const title = pack.shortTitle[dataLang]
-                const detailHref = `${catalogueHref}/${pack.id}`
-                const packKey = pack.id.replace('-starter-pack', '')
-                const previewSrc = `/images/starter-packs/2027/${dataLang}/${packKey}-starter-pack-2027.webp`
-                return (
-                  <article key={pack.id} className="grid flex-1 grid-cols-[74px_1fr] items-center gap-4 rounded-[21px] border border-[#e5dfd4] bg-[#fffdf9] p-3.5 shadow-[0_4px_16px_rgba(39,42,35,.035)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_28px_rgba(39,42,35,.075)] sm:grid-cols-[88px_1fr] sm:gap-5 sm:p-4">
-                    <Link href={detailHref} className="relative aspect-[.72] overflow-hidden rounded-lg border border-[#ebe6dc] bg-white shadow-[0_4px_10px_rgba(37,34,26,.1)]" aria-label={title}>
-                      <Image src={previewSrc} alt="" fill sizes="90px" className="object-cover object-center transition-transform duration-500 hover:scale-[1.04]" />
-                    </Link>
-                    <div className="min-w-0">
-                      <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-1">
-                        <div>
-                          <p className="text-[9px] font-semibold uppercase tracking-[.13em] text-[#9a7844]">{pack.category[dataLang]}</p>
-                          <Link href={detailHref} className="mt-1 block font-display text-[1.18rem] font-medium leading-tight text-[#10271e] hover:text-[#755a31]">{title}</Link>
-                        </div>
-                        <span className="whitespace-nowrap text-sm font-semibold text-[#27382f]">{formatProductPrice('starter_pack')} <span className="text-[9px] font-normal text-[#7d837d]">{text.ttc}</span></span>
-                      </div>
-                      <p className="mt-1.5 line-clamp-2 text-[11px] leading-[1.55] text-[#687169]">{pack.description[dataLang]}</p>
-                      <div className="mt-2.5 flex flex-wrap items-center justify-between gap-2">
-                        <Link href={detailHref} className="inline-flex items-center gap-1 text-[10px] font-semibold text-[#667067] hover:text-[#10271e]">{text.starterDetails}<ArrowUpRight size={12} /></Link>
-                        <AddToCartButton
-                          openCartOnAdd
-                          item={{ priceId: pack.priceId, title, price: priceFor('starter_pack'), currency, productType: 'starter_pack' }}
-                          addedLabel={lang === 'fr' ? 'Dans le panier' : lang === 'es' ? 'En la cesta' : 'In cart'}
-                          className="inline-flex min-h-8 items-center justify-center gap-1.5 rounded-full bg-[#10271e] px-3.5 py-1.5 text-[10px] font-semibold text-[#fffdf8] transition-colors hover:bg-[#1c3a2c]"
-                        >
-                          <ShoppingBag size={12} />{text.starterCta(formatProductPrice('starter_pack'))}<ArrowRight size={12} />
-                        </AddToCartButton>
-                      </div>
-                    </div>
-                  </article>
-                )
-              })}
-            </div>
           </div>
         </div>
       </section>

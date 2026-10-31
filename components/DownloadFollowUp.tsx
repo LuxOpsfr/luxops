@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { ArrowRight, BookOpen, Check, FileCheck2, X } from 'lucide-react'
+import { ArrowRight, BookOpen, Check, X } from 'lucide-react'
 import posthog from 'posthog-js'
 import TrackedLink from '@/components/TrackedLink'
 import { useCurrency } from '@/context/CurrencyContext'
@@ -16,19 +16,15 @@ interface DownloadDetail {
 }
 
 const PRODUCTS: Record<DepartmentId, {
-  starter?: { slug: string; en: string; fr: string }
   playbook: { slug: string; en: string; fr: string }
 }> = {
   fo: {
-    starter: { slug: 'fo-starter-pack', en: 'Front Office Starter Pack', fr: 'Starter Pack Front Office' },
     playbook: { slug: 'fo', en: 'Front Office Playbook', fr: 'Playbook Front Office' },
   },
   hsk: {
-    starter: { slug: 'hsk-starter-pack', en: 'Housekeeping Starter Pack', fr: 'Starter Pack Housekeeping' },
     playbook: { slug: 'hsk', en: 'Housekeeping Playbook', fr: 'Playbook Housekeeping' },
   },
   fb: {
-    starter: { slug: 'fb-starter-pack', en: 'F&B Service Starter Pack', fr: 'Starter Pack F&B' },
     playbook: { slug: 'fb', en: 'F&B Playbook', fr: 'Playbook F&B' },
   },
   spa: {
@@ -120,38 +116,17 @@ export default function DownloadFollowUp({ locale }: { locale: string }) {
         {isEn ? 'Your PDF download has started' : 'Le téléchargement de votre PDF a démarré'}
       </p>
       <p className="mb-6 text-sm leading-relaxed text-[#5d665f]">
-        {product.starter
-          ? isEn
-            ? 'For editable files and the complete set of practical tools, continue with the Starter Pack.'
-            : 'Pour obtenir les fichiers modifiables et l’ensemble des outils pratiques, poursuivez avec le Starter Pack.'
-          : isEn
-            ? 'For the complete department procedures and editable files, continue with the Playbook.'
-            : 'Pour obtenir toutes les procédures du département et les fichiers modifiables, poursuivez avec le Playbook.'}
+        {isEn
+          ? 'Explore the complete department manual for editable procedures and practical tools.'
+          : 'Découvrez le manuel complet du département pour les procédures modifiables et les outils pratiques.'}
       </p>
 
       <div className="flex flex-col gap-3">
-        {product.starter ? (
-          <TrackedLink
-            href={`/${locale}/playbooks/${product.starter.slug}`}
-            eventName="download_follow_up_clicked"
-            eventProperties={{ department, destination: 'starter_pack', locale }}
-            className="inline-flex items-center justify-between gap-3 bg-[#0f211a] px-5 py-3.5 text-sm font-semibold text-[#fcfbf8] transition-colors hover:bg-[#24362f]"
-          >
-            <span className="inline-flex items-center gap-2">
-              <FileCheck2 size={17} />
-              {isEn ? product.starter.en : product.starter.fr}
-            </span>
-            <span className="inline-flex items-center gap-2 whitespace-nowrap">
-              {formatProductPrice('starter_pack')} <ArrowRight size={16} />
-            </span>
-          </TrackedLink>
-        ) : null}
-
         <TrackedLink
           href={`/${locale}/playbooks/${product.playbook.slug}`}
           eventName="download_follow_up_clicked"
           eventProperties={{ department, destination: 'playbook', locale }}
-          className="inline-flex items-center justify-between gap-3 border border-[rgba(32,35,31,0.2)] px-5 py-3.5 text-sm font-semibold text-[#0f211a] transition-colors hover:border-[#a58658]"
+          className="inline-flex items-center justify-between gap-3 bg-[#0f211a] px-5 py-3.5 text-sm font-semibold text-[#fcfbf8] transition-colors hover:bg-[#24362f]"
         >
           <span className="inline-flex items-center gap-2">
             <BookOpen size={17} />

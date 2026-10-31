@@ -102,8 +102,8 @@ const frenchData = (locale: string): TrainingSeoPageData => ({
       text: 'Briefings, suivi terrain, contrôle qualité et accompagnement des responsables opérationnels.',
     },
     {
-      href: `/${locale}/playbooks/hsk-starter-pack`,
-      title: 'Housekeeping Starter Pack',
+      href: `/${locale}/playbooks/hsk`,
+      title: 'Housekeeping SOP manual',
       text: 'Checklists et outils de contrôle pour soutenir le travail d’inspection et de suivi qualité.',
     },
   ],
@@ -186,8 +186,8 @@ const englishData = (locale: string): TrainingSeoPageData => ({
       text: 'Briefings, floor follow-up, quality control and support for operational managers.',
     },
     {
-      href: `/${locale}/playbooks/hsk-starter-pack`,
-      title: 'Housekeeping Starter Pack',
+      href: `/${locale}/playbooks/hsk`,
+      title: 'Housekeeping SOP manual',
       text: 'Checklists and control tools to support inspection and quality follow-up.',
     },
   ],

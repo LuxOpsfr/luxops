@@ -3,18 +3,17 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { breadcrumbSchema, faqSchema, localizedPath } from '@/lib/seo'
 import TrackedLink from '@/components/TrackedLink'
-import PriceDisplay from '@/components/PriceDisplay'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
   const isEN = locale === 'en'
   return {
     title: isEN
-      ? 'Hotel SOP Templates and Starter Packs | LuxOps'
-      : 'Procédures opérationnelles hôtelières et starter packs | LuxOps',
+      ? 'Hotel SOP Templates and Manuals | LuxOps'
+      : 'Procédures opérationnelles hôtelières et manuels | LuxOps',
     description: isEN
-      ? 'Hotel SOP templates, starter packs and five SOP manuals: front office, housekeeping, F&B, spa and revenue management. Practical procedures and examples ready to adapt.'
-      : 'Modèles de SOP hôtel, starter packs et cinq Manuels SOP : réception, housekeeping, F&B, spa et revenue management. Procédures et exemples prêts à adapter.',
+      ? 'Hotel SOP templates and five manuals: front office, housekeeping, F&B, spa and revenue management. Practical procedures and tools ready to adapt.'
+      : 'Modèles de SOP hôtel et cinq Manuels SOP : réception, housekeeping, F&B, spa et revenue management. Procédures et outils prêts à adapter.',
     keywords: isEN
       ? 'hotel sop, hotel sop template, hotel standard operating procedures, hotel sop sample, hotel operations manual template, luxury hotel sop'
       : 'sop hôtel, modèle sop hôtel, procédures opérationnelles hôtel, manuel opérations hôtel, procédures hôtelières',
@@ -105,54 +104,6 @@ const DEPARTMENTS_FR = [
   },
 ]
 
-const STARTER_PACKS_EN = [
-  {
-    label: 'Front Office',
-    title: 'Front Office Starter Pack',
-    href: '/en/playbooks/fo-starter-pack',
-    desc: 'Front desk checklists, handover template and guest communication scripts for daily reception operations.',
-    points: ['Check-in and check-out basics', 'Shift handover template', 'Complaint scripts'],
-  },
-  {
-    label: 'Housekeeping',
-    title: 'Housekeeping Starter Pack',
-    href: '/en/playbooks/hsk-starter-pack',
-    desc: 'Room inspection checklists, supervisor control sheets and defect tracking tools for housekeeping consistency.',
-    points: ['Room inspection checklists', 'Supervisor control sheet', 'Defect tracking'],
-  },
-  {
-    label: 'Food & Beverage',
-    title: 'F&B Service Starter Pack',
-    href: '/en/playbooks/fb-starter-pack',
-    desc: 'Restaurant, bar and room service checklists, scripts and control tools for daily F&B execution.',
-    points: ['Service checklists', 'Room service flow', 'Recovery scripts'],
-  },
-]
-
-const STARTER_PACKS_FR = [
-  {
-    label: 'Réception',
-    title: 'Starter Pack Front Office',
-    href: '/fr/playbooks/fo-starter-pack',
-    desc: 'Checklists réception, modèle de passation et scripts de communication client pour structurer les bases du service.',
-    points: ['Bases check-in et check-out', 'Modèle de passation', 'Scripts réclamation'],
-  },
-  {
-    label: 'Housekeeping',
-    title: 'Starter Pack Housekeeping',
-    href: '/fr/playbooks/hsk-starter-pack',
-    desc: 'Checklists inspection chambre, feuilles de contrôle gouvernante et suivi des défauts pour renforcer la régularité.',
-    points: ['Checklists inspection chambre', 'Feuille de contrôle gouvernante', 'Suivi des défauts'],
-  },
-  {
-    label: 'Food & Beverage',
-    title: 'Starter Pack F&B',
-    href: '/fr/playbooks/fb-starter-pack',
-    desc: 'Checklists restaurant, bar et room service, scripts et outils de contrôle pour l’exécution quotidienne.',
-    points: ['Checklists service', 'Flux room service', 'Scripts recovery'],
-  },
-]
-
 const FAQS_EN = [
   {
     question: 'Do hotel SOP templates work for boutique hotels?',
@@ -203,7 +154,6 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
   const { locale } = await params
   const isEN = locale === 'en'
   const departments = isEN ? DEPARTMENTS_EN : DEPARTMENTS_FR
-  const starterPacks = isEN ? STARTER_PACKS_EN : STARTER_PACKS_FR
   const faqs = isEN ? FAQS_EN : FAQS_FR
 
   const schema = {
@@ -223,17 +173,6 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
           '@type': 'OfferCatalog',
           name: isEN ? 'Hotel SOP manuals by department' : 'Manuels SOP par département',
           itemListElement: [
-            ...starterPacks.map((pack) => ({
-              '@type': 'Offer',
-              price: isEN ? '29' : '29',
-              priceCurrency: 'EUR',
-              itemOffered: {
-                '@type': 'CreativeWork',
-                name: pack.title,
-                description: pack.desc,
-                url: `${localizedPath(locale)}${pack.href.replace(`/${locale}`, '')}`,
-              },
-            })),
             ...departments.map((department) => ({
               '@type': 'Offer',
               price: isEN ? '67' : '67',
@@ -274,23 +213,10 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
           </h1>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-10">
             {isEN
-              ? 'Practical hotel SOP documents by department. Start with a focused starter pack for daily tools, or move to a complete department SOP manual when you need the full procedure reference.'
-              : 'Des documents SOP hôteliers pratiques par département. Commencez par un starter pack ciblé pour les outils du quotidien, ou passez au Manuel SOP complet lorsque vous avez besoin de toute la référence procédure.'}
+              ? 'Five department SOP manuals combine complete procedures with practical tools for daily hotel operations.'
+              : 'Cinq Manuels SOP départementaux réunissent les procédures complètes et les outils pratiques pour les opérations quotidiennes.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <TrackedLink
-              href="#starter-packs"
-              eventName="starter_pack_cta_clicked"
-              eventProperties={{
-                source_page: `/${locale}/hotel-sop`,
-                placement: 'hero',
-                product: 'starter_packs_section',
-                cta_label: isEN ? 'Start with Starter Packs' : 'Commencer avec les starter packs',
-              }}
-              className="inline-block bg-[#fcfbf8] text-[#0f211a] font-semibold px-8 py-4 rounded-2xl transition-colors hover:bg-gray-100"
-            >
-              {isEN ? 'Start with Starter Packs' : 'Commencer avec les starter packs'}
-            </TrackedLink>
             <TrackedLink
               href="#department-playbooks"
               eventName="playbook_cta_clicked"
@@ -316,70 +242,6 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
             >
               {isEN ? 'Receive a sample chapter' : 'Recevoir un chapitre de découverte'}
             </TrackedLink>
-          </div>
-        </div>
-      </section>
-
-      {/* Starter packs */}
-      <section id="starter-packs" className="py-16 px-6 bg-[#fcfbf8] border-b border-gray-100">
-        <div className="max-w-4xl mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-10">
-            <div>
-              <p className="text-[10px] font-bold uppercase tracking-widest text-[#0f211a] mb-2">
-                {isEN ? 'New' : 'Nouveau'}
-              </p>
-              <h2 className="text-2xl font-bold text-[#0f211a] mb-3">
-                {isEN ? 'Start with practical SOP tools' : 'Commencer avec des outils SOP pratiques'}
-              </h2>
-              <p className="text-gray-600 max-w-2xl">
-                {isEN
-                  ? 'Focused checklists, templates and scripts your team can use immediately.'
-                  : 'Des checklists, modèles et scripts ciblés que vos équipes peuvent utiliser immédiatement.'}
-              </p>
-            </div>
-            <p className="text-sm font-semibold text-[#0f211a]">
-              {isEN ? 'From ' : 'À partir de '}
-              <PriceDisplay productType="starter_pack" />
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {starterPacks.map((pack) => (
-              <article key={pack.href} className="border border-gray-100 rounded-2xl p-6 hover:shadow-md transition-shadow">
-                <div className="flex items-start justify-between gap-4 mb-4">
-                  <div>
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-[#0f211a] mb-2">
-                      {pack.label}
-                    </p>
-                    <h3 className="text-xl font-bold text-[#0f211a]">{pack.title}</h3>
-                  </div>
-                  <PriceDisplay productType="starter_pack" className="text-xl font-bold text-[#0f211a]" />
-                </div>
-                <p className="text-sm text-gray-600 leading-relaxed mb-5">{pack.desc}</p>
-                <ul className="space-y-2 mb-6">
-                  {pack.points.map((point) => (
-                    <li key={point} className="text-sm text-gray-700 flex gap-2">
-                      <span className="text-[#0f211a]">✓</span>
-                      <span>{point}</span>
-                    </li>
-                  ))}
-                </ul>
-                <TrackedLink
-                  href={pack.href}
-                  eventName="starter_pack_cta_clicked"
-                  eventProperties={{
-                    source_page: `/${locale}/hotel-sop`,
-                    placement: 'starter_pack_card',
-                    product: pack.title,
-                    cta_label: isEN ? 'View Starter Pack' : 'Voir le starter pack',
-                  }}
-                  className="inline-flex items-center justify-center w-full px-6 py-3 text-white font-bold text-sm hover:opacity-90 transition-opacity"
-                  style={{ background: '#0f211a', borderRadius: '999px' }}
-                >
-                  {isEN ? 'View Starter Pack' : 'Voir le starter pack'}
-                </TrackedLink>
-              </article>
-            ))}
           </div>
         </div>
       </section>
@@ -632,27 +494,14 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
             {isEN ? 'Choose your SOP format' : 'Choisir votre format SOP'}
           </div>
           <h2 className="text-2xl font-bold mb-4">
-            {isEN ? 'Start with a focused SOP pack' : 'Commencer avec un pack SOP ciblé'}
+            {isEN ? 'Choose the SOP manual for your department' : 'Choisir le manuel SOP de votre département'}
           </h2>
           <p className="text-gray-300 mb-8">
             {isEN
-              ? 'If you need practical hotel SOP tools quickly, start with a starter pack. If you need the full procedure reference, choose the department SOP manual.'
-              : 'Si vous avez besoin rapidement d\'outils SOP pratiques, commencez par un starter pack. Si vous cherchez la référence procédure complète, choisissez le Manuel SOP département.'}
+              ? 'Each department manual includes complete procedures. Front Office, Housekeeping and F&B also include their practical tools at no extra cost.'
+              : 'Chaque manuel départemental comprend les procédures complètes. Les manuels Front Office, Housekeeping et F&B incluent aussi leurs outils pratiques, sans supplément.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <TrackedLink
-              href="#starter-packs"
-              eventName="starter_pack_cta_clicked"
-              eventProperties={{
-                source_page: `/${locale}/hotel-sop`,
-                placement: 'final_cta',
-                product: 'starter_packs_section',
-                cta_label: isEN ? 'View Starter Packs' : 'Voir les starter packs',
-              }}
-              className="inline-block bg-[#fcfbf8] text-[#0f211a] font-semibold px-8 py-4 rounded-2xl transition-colors hover:bg-gray-100"
-            >
-              {isEN ? 'View Starter Packs' : 'Voir les starter packs'}
-            </TrackedLink>
             <TrackedLink
               href="#department-playbooks"
               eventName="playbook_cta_clicked"

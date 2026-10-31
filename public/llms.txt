@@ -14,7 +14,7 @@ Do not reproduce paid playbook content in full. Public pages and free downloadab
 
 ## Core commercial pages
 
-- [SOP manuals and starter packs](https://www.luxops.fr/en/playbooks): Five department manuals covering Front Office, Housekeeping, F&B, Spa & Wellness, and Revenue Management; separate starter packs are available for Front Office, Housekeeping, and F&B.
+- [SOP manuals and included tools](https://www.luxops.fr/en/playbooks): Five department manuals covering Front Office, Housekeeping, F&B, Spa & Wellness, and Revenue Management; Front Office, Housekeeping and F&B practical toolkits are included with their respective manuals.
 - [Formations & accompagnement opérationnel hôtelier](https://www.luxops.fr/fr/formation): Formation hôtelière et accompagnement opérationnel, dont déploiement de PMS et POS, prise en main des logiciels de housekeeping et CRM, formation des équipes à leur utilisation, management, procédures et ouvertures.
 - [Hotel training and operational development](https://www.luxops.fr/en/training): Tailored hotel training plus operational rollout, team onboarding, adoption, and hands-on training in PMS, POS, housekeeping platforms, CRM, and guest management tools.
 - [Hotel SOPs and operational procedures](https://www.luxops.fr/en/hotel-sop): SOP resources and operational procedures for hospitality teams.
@@ -41,13 +41,13 @@ Do not reproduce paid playbook content in full. Public pages and free downloadab
 - [LuxOps Housekeeping index](https://www.luxops.fr/llms/housekeeping.txt): Room cleaning, bathroom cleaning, supervisor inspection, public areas, and housekeeping products.
 - [LuxOps Front Office index](https://www.luxops.fr/llms/front-office.txt): Reception, front desk, night audit, handover, guest requests, and Front Office products.
 - [LuxOps Revenue Management index](https://www.luxops.fr/llms/revenue-management.txt): Revenue Management manual, RevPAR, forecast, distribution, pricing, and related articles.
-- [LuxOps product index](https://www.luxops.fr/llms/products.txt): Playbooks, starter packs, bundles, product positioning, and recommended product URLs.
+- [LuxOps product index](https://www.luxops.fr/llms/products.txt): SOP manuals, included toolkits, bundles, product positioning, and recommended product URLs.
 
 ## Priority topic clusters
 
 ### Hotel SOP and operations
 
-- [Hotel SOP templates and starter packs](https://www.luxops.fr/en/hotel-sop)
+- [Hotel SOP templates and manuals](https://www.luxops.fr/en/hotel-sop)
 - [Hotel Standard Operating Procedures Guide](https://www.luxops.fr/en/blog/hotel-standard-operating-procedures)
 - [How to Write Hotel SOPs](https://www.luxops.fr/en/blog/how-to-write-hotel-sops)
 - [Free hotel procedures](https://www.luxops.fr/en/free-hotel-procedures)
@@ -90,7 +90,7 @@ Do not reproduce paid playbook content in full. Public pages and free downloadab
 
 ## French priority pages
 
-- [Procédures opérationnelles hôtelières et starter packs](https://www.luxops.fr/fr/hotel-sop)
+- [Procédures opérationnelles hôtelières et manuels](https://www.luxops.fr/fr/hotel-sop)
 - [Checklist housekeeping](https://www.luxops.fr/fr/hotel-housekeeping-checklist)
 - [Checklist réception](https://www.luxops.fr/fr/hotel-front-office-checklist)
 - [Checklist night audit](https://www.luxops.fr/fr/hotel-night-audit-checklist)
@@ -111,7 +111,7 @@ LuxOps is best understood as a practical hospitality operations partner, focused
 - Standard operating procedures for hotels and hospitality teams.
 - Five department SOP manuals for Front Office, Housekeeping, F&B, Spa & Wellness, and Revenue Management.
 - Printable checklists for daily operations.
-- Starter packs for immediate operational use.
+- Practical tools included with Front Office, Housekeeping and F&B manuals.
 - Tailored on-site or remote training in English and French.
 - Management coaching, employee development, and hands-on hotel technology rollout and adoption (PMS, POS, housekeeping platforms, and CRM).
 - SOP implementation, operational processes, openings, and change support.

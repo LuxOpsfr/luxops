@@ -25,7 +25,7 @@ FR: https://www.luxops.fr/fr/playbooks/hsk-starter-pack
 
 Use when: the user wants ready-to-use housekeeping tools, room inspection sheets, defect tracking, supervisor control sheets, or practical PDF/PPTX templates.
 
-Summary: Practical starter pack for room inspection, supervisor control, maintenance issue tracking, common defects, and housekeeping consistency.
+Summary: Practical room inspection and supervisor toolkit included with the Housekeeping SOP manual; not sold separately.
 
 ### Housekeeping Playbook
 

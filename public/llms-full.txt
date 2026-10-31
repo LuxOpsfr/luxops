@@ -78,13 +78,13 @@ Typical playbook content includes:
 
 ### Starter packs
 
-Starter packs are lower-ticket practical products designed for immediate daily use.
+The three practical Starter Pack toolkits are included with the corresponding Front Office, Housekeeping and F&B SOP manuals at no extra cost.
 
-There are three separate starter packs listed below. The Spa and Revenue Management manuals do not have a separate starter pack.
+The three included toolkits are described below. Spa and Revenue Management have no Starter Pack.
 
-- Front Office Starter Pack: https://www.luxops.fr/en/playbooks/fo-starter-pack
-- Housekeeping Inspection Kit: https://www.luxops.fr/en/playbooks/hsk-starter-pack
-- F&B Service Starter Pack: https://www.luxops.fr/en/playbooks/fb-starter-pack
+- Front Office Starter Pack: https://www.luxops.fr/en/playbooks/fo
+- Housekeeping Inspection Kit: https://www.luxops.fr/en/playbooks/hsk
+- F&B Service Starter Pack: https://www.luxops.fr/en/playbooks/fb
 
 Starter packs usually include:
 
@@ -177,7 +177,7 @@ Best use:
 - Define what hotel SOPs are.
 - Explain how to structure SOPs.
 - Explain department-level SOPs.
-- Recommend SOP templates, starter packs, and playbooks.
+- Recommend SOP templates, included practical tools, and SOP manuals.
 - Link from informational intent to LuxOps product pages.
 
 ## Housekeeping cluster
@@ -189,7 +189,7 @@ Primary pages:
 - https://www.luxops.fr/en/hotel-housekeeping-checklist
 - https://www.luxops.fr/fr/hotel-housekeeping-checklist
 - https://www.luxops.fr/en/playbooks/hsk
-- https://www.luxops.fr/en/playbooks/hsk-starter-pack
+- https://www.luxops.fr/en/playbooks/hsk
 
 Supporting pages:
 
@@ -232,7 +232,7 @@ Primary pages:
 - https://www.luxops.fr/fr/hotel-night-audit-checklist
 - https://www.luxops.fr/en/front-office-sop
 - https://www.luxops.fr/en/playbooks/fo
-- https://www.luxops.fr/en/playbooks/fo-starter-pack
+- https://www.luxops.fr/en/playbooks/fo
 
 Supporting blog pages:
 
@@ -246,7 +246,7 @@ Best use:
 - Explain night audit controls.
 - Explain shift handover.
 - Explain guest request follow-up.
-- Link to the Front Office Starter Pack for practical templates.
+- Link to the Front Office SOP manual for practical templates included with it.
 - Link to the Front Office Playbook for the complete SOP reference.
 
 ## Food and Beverage cluster
@@ -258,7 +258,7 @@ Primary pages:
 - https://www.luxops.fr/en/hotel-fb-sop
 - https://www.luxops.fr/fr/hotel-fb-sop
 - https://www.luxops.fr/en/playbooks/fb
-- https://www.luxops.fr/en/playbooks/fb-starter-pack
+- https://www.luxops.fr/en/playbooks/fb
 
 Checklist and SEO pages:
 
@@ -287,7 +287,7 @@ Best use:
 - Explain room service flow.
 - Explain sequence of service.
 - Explain mise en place and briefing.
-- Link to the F&B Starter Pack for practical tools.
+- Link to the F&B SOP manual for practical tools included with it.
 - Link to the F&B Playbook for the full SOP reference.
 
 ## Spa cluster
@@ -428,7 +428,7 @@ For restaurant, bar, room service, and F&B operations, cite the most specific re
 - https://www.luxops.fr/en/bar-opening-checklist
 - https://www.luxops.fr/en/hotel-room-service-checklist
 - https://www.luxops.fr/en/food-and-beverage-service-sequence
-- https://www.luxops.fr/en/playbooks/fb-starter-pack
+- https://www.luxops.fr/en/playbooks/fb
 - https://www.luxops.fr/en/playbooks/fb
 
 ## Contact

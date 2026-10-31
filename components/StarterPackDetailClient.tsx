@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import posthog from 'posthog-js'
 import {
@@ -42,8 +42,16 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
   const { addItem, items, openCart } = useCart()
   const { currency, priceFor, formatProductPrice } = useCurrency()
 
+  const includedWithManual = ['fo-starter-pack', 'hsk-starter-pack', 'fb-starter-pack'].includes(pack.id)
+  const toolCount = pack.tools[lang].length
   const inCart = items.some((item) => item.priceId === pack.priceId)
   const fullPlaybookHref = `/${locale}/playbooks/${pack.fullPlaybookId}`
+
+  useEffect(() => {
+    if (includedWithManual) {
+      posthog.capture('starter_pack_page_viewed', { product: pack.id, locale, presentation: 'included_with_manual' })
+    }
+  }, [includedWithManual, locale, pack.id])
 
   function handleAddToCart() {
     if (inCart) {
@@ -79,40 +87,38 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
     <div className="min-h-screen bg-[#f5f1e9] pt-[var(--site-header-height)]">
       <div className="max-w-7xl mx-auto px-6 pt-8">
         <Link
-          href={`/${locale}/playbooks`}
+          href={includedWithManual ? fullPlaybookHref : `/${locale}/playbooks`}
           className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#687169] hover:text-[#0f211a] transition-colors"
         >
           <ArrowLeft size={14} />
-          {isEn ? 'All SOP manuals' : 'Tous les produits'}
+          {includedWithManual ? pack.fullPlaybookTitle[lang] : (isEn ? 'All SOP manuals' : 'Tous les produits')}
         </Link>
       </div>
 
       <section className="relative overflow-hidden px-5 pb-16 pt-8 md:px-8 md:pb-20 md:pt-10">
         <div className="pointer-events-none absolute inset-x-0 top-0 h-[500px] bg-[radial-gradient(ellipse_at_18%_25%,rgba(184,151,96,.12),transparent_56%)]" />
         <div className="relative mx-auto grid max-w-[1320px] items-center gap-9 lg:grid-cols-[.94fr_1.06fr] lg:gap-16">
-          <div className="mx-auto w-full max-w-[500px]">
+          <div className={`mx-auto w-full max-w-[500px] ${includedWithManual ? 'order-2 lg:order-1' : ''}`}>
             <StarterPackCoverVisual pack={pack} locale={locale} />
           </div>
 
-          <div className="max-w-2xl">
+          <div className={`max-w-2xl ${includedWithManual ? 'order-1 lg:order-2' : ''}`}>
             <div className="text-[10px] font-semibold uppercase tracking-[.14em] text-[#795d32]">
-              {pack.category[lang]} · Starter Pack
+              {includedWithManual ? (isEn ? `Included with the ${pack.category.en} manual` : `Inclus dans le manuel ${pack.category.fr}`) : `${pack.category[lang]} · Starter Pack`}
             </div>
-            <h1 className="mt-5 font-display text-[clamp(2.5rem,5vw,4.6rem)] font-medium leading-[1.02] tracking-[-.035em] text-[#10251d]">
-              {pack.title[lang]}
+            <h1 className={`font-display font-medium leading-[1.04] tracking-[-.035em] text-[#10251d] ${includedWithManual ? 'mt-4 text-[clamp(2.15rem,3.4vw,3.35rem)]' : 'mt-5 text-[clamp(2.5rem,5vw,4.6rem)]'}`}>
+              {includedWithManual ? (isEn ? `${toolCount} ${pack.category.en} tools included with the manual` : `${toolCount} outils ${pack.category.fr} inclus dans le manuel`) : pack.title[lang]}
             </h1>
-            <p className="mt-5 max-w-2xl text-base leading-7 text-[#626b64] md:text-lg md:leading-8">{pack.subtitle[lang]}</p>
-            <p className="mt-3 max-w-2xl text-sm leading-6 text-[#72766e]">{pack.supportLine[lang]}</p>
+            <p className="mt-4 max-w-2xl text-base leading-7 text-[#626b64] md:text-lg md:leading-8">{includedWithManual ? (isEn ? `${pack.subtitle.en} These tools help teams put the manual’s procedures into daily practice.` : `${pack.subtitle.fr} Ces outils aident les équipes à appliquer les procédures du manuel au quotidien.`) : pack.subtitle[lang]}</p>
+            <p className="mt-3 max-w-2xl text-sm leading-6 text-[#72766e]">{includedWithManual ? (isEn ? `The Starter Pack is included with the ${pack.fullPlaybookTitle.en} at €67 incl. tax. It is no longer sold separately.` : `Le Starter Pack est inclus dans le ${pack.fullPlaybookTitle.fr} à 67 € TTC. Il n’est plus proposé à l’achat séparément.`) : pack.supportLine[lang]}</p>
 
             <div className="mt-6 grid grid-cols-2 gap-2 rounded-[20px] border border-[#e9e3d9] bg-white/70 p-4 text-xs text-[#46554b]">
               {pack.formats[lang].map((format) => <span key={format} className="flex items-center gap-2"><CheckCircle2 size={15} className="shrink-0 text-[#a58658]" />{format}</span>)}
             </div>
-            <div className="mt-6 flex flex-wrap items-center gap-4">
-              <span className="font-display text-3xl font-semibold text-[#10251d]">{formatProductPrice('starter_pack')}</span>
-              <button onClick={handleAddToCart} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#10251d] px-6 py-3 text-sm font-semibold text-white shadow-[0_8px_20px_rgba(16,37,29,.16)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#2a4335] hover:shadow-[0_12px_24px_rgba(16,37,29,.22)]">
-                <ShoppingCart size={16} />{inCart ? (isEn ? 'Open cart' : 'Voir le panier') : (isEn ? 'Add to cart' : 'Ajouter au panier')}
-              </button>
-              <TrackedLink
+            <div className="mt-5 flex flex-wrap items-center gap-4">
+              {includedWithManual ? null : <span className="font-display text-3xl font-semibold text-[#10251d]">{formatProductPrice('starter_pack')}</span>}
+              {includedWithManual ? <TrackedLink href={fullPlaybookHref} eventName="playbook_cta_clicked" eventProperties={{ source_page: `/${locale}/playbooks/${pack.id}`, placement: 'starter_pack_hero', product: pack.fullPlaybookTitle.en, cta_label: isEn ? 'View the manual' : 'Voir le manuel' }} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#10251d] px-6 py-3 text-sm font-semibold text-white shadow-[0_8px_20px_rgba(16,37,29,.16)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#2a4335]"><ArrowRight size={16} />{isEn ? `View the complete manual · ${formatProductPrice('playbook')}` : `Voir le manuel complet · ${formatProductPrice('playbook')}`}</TrackedLink> : <button onClick={handleAddToCart} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#10251d] px-6 py-3 text-sm font-semibold text-white shadow-[0_8px_20px_rgba(16,37,29,.16)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#2a4335] hover:shadow-[0_12px_24px_rgba(16,37,29,.22)]"><ShoppingCart size={16} />{inCart ? (isEn ? 'Open cart' : 'Voir le panier') : (isEn ? 'Add to cart' : 'Ajouter au panier')}</button>}
+              {!includedWithManual && <TrackedLink
                 href={fullPlaybookHref}
                 eventName="playbook_cta_clicked"
                 eventProperties={{
@@ -122,9 +128,9 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
                   cta_label: isEn ? `See ${pack.fullPlaybookTitle.en}` : `Voir le ${pack.fullPlaybookTitle.fr}`,
                 }}
                 className="text-sm font-medium text-[#46554b] underline decoration-[#c4af8c] underline-offset-4 transition hover:text-[#10251d]"
-              >{isEn ? `See ${pack.fullPlaybookTitle.en}` : `Voir le ${pack.fullPlaybookTitle.fr}`}</TrackedLink>
+              >{isEn ? `See ${pack.fullPlaybookTitle.en}` : `Voir le ${pack.fullPlaybookTitle.fr}`}</TrackedLink>}
             </div>
-            <p className="mt-3 text-[11px] text-[#81827b]">{isEn ? 'Instant download · Editable files included' : 'Téléchargement immédiat · Fichiers modifiables inclus'}</p>
+            {!includedWithManual && <p className="mt-3 text-[11px] text-[#81827b]">{isEn ? 'Instant download · Editable files included' : 'Téléchargement immédiat · Fichiers modifiables inclus'}</p>}
           </div>
         </div>
       </section>
@@ -240,7 +246,7 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
         </div>
       </section>
 
-      <section className="bg-[#f5f1e9] px-6 py-20">
+      {!includedWithManual && <section className="bg-[#f5f1e9] px-6 py-20">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-2xl mb-10">
             <p className="text-xs font-bold uppercase tracking-widest text-[#0f211a] mb-4">
@@ -249,9 +255,7 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
                 : 'Starter Pack et manuel SOP complet'}
             </p>
             <h2 className="font-display text-4xl font-extrabold text-[#0f211a] tracking-tight">
-              {isEn
-                ? 'Choose the right level of structure'
-                : 'Choisir le bon niveau de structure'}
+              {includedWithManual ? (isEn ? 'The manual and its practical tools' : 'Le manuel et ses outils de terrain') : (isEn ? 'Choose the right level of structure' : 'Choisir le bon niveau de structure')}
             </h2>
           </div>
           <div className="grid lg:grid-cols-2 gap-6">
@@ -260,12 +264,10 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
                 <h3 className="font-display text-2xl font-bold text-[#0f211a]">
                   {pack.shortTitle[lang]}
                 </h3>
-                <span className="font-display text-3xl font-extrabold text-[#0f211a]">
-                  {formatProductPrice('starter_pack')}
-                </span>
+                <span className="font-display text-lg font-semibold text-[#0f211a]">{includedWithManual ? (isEn ? 'Included' : 'Inclus') : formatProductPrice('starter_pack')}</span>
               </div>
               <p className="text-[#687169] leading-relaxed">
-                {pack.starterComparison[lang]}
+                {includedWithManual ? (isEn ? `${toolCount} editable tools included with the ${pack.fullPlaybookTitle.en}.` : `${toolCount} outils modifiables inclus avec le ${pack.fullPlaybookTitle.fr}.`) : pack.starterComparison[lang]}
               </p>
             </div>
             <div
@@ -284,7 +286,7 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
                 className="text-sm leading-relaxed mb-6"
                 style={{ color: 'rgba(255,255,255,0.75)' }}
               >
-                {pack.fullComparison[lang]}
+                {includedWithManual ? (isEn ? 'The full SOP reference and the 12 practical tools are available together through the manual purchase.' : 'La référence SOP complète et les 12 outils pratiques sont réunis dans l’achat du manuel.') : pack.fullComparison[lang]}
               </p>
               <TrackedLink
                 href={fullPlaybookHref}
@@ -293,21 +295,17 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
                   source_page: `/${locale}/playbooks/${pack.id}`,
                   placement: 'comparison_block',
                   product: pack.fullPlaybookTitle.en,
-                  cta_label: isEn
-                    ? `Need the complete reference? View the ${pack.fullPlaybookTitle.en}`
-                    : `Besoin de la référence complète ? Voir le ${pack.fullPlaybookTitle.fr}`,
+                  cta_label: includedWithManual ? (isEn ? 'View manual with included Starter Pack' : 'Voir le manuel avec Starter Pack inclus') : (isEn ? `Need the complete reference? View the ${pack.fullPlaybookTitle.en}` : `Besoin de la référence complète ? Voir le ${pack.fullPlaybookTitle.fr}`),
                 }}
                 className="inline-flex items-center gap-2 text-sm font-bold text-white underline underline-offset-4"
               >
-                {isEn
-                  ? `Need the complete reference? View the ${pack.fullPlaybookTitle.en}`
-                  : `Besoin de la référence complète ? Voir le ${pack.fullPlaybookTitle.fr}`}
+                {includedWithManual ? (isEn ? `Get both with the manual · ${formatProductPrice('playbook')}` : `Obtenir les deux avec le manuel · ${formatProductPrice('playbook')}`) : (isEn ? `Need the complete reference? View the ${pack.fullPlaybookTitle.en}` : `Besoin de la référence complète ? Voir le ${pack.fullPlaybookTitle.fr}`)}
                 <ArrowRight size={15} />
               </TrackedLink>
             </div>
           </div>
         </div>
-      </section>
+      </section>}
 
       <section className="bg-[#fcfbf8] px-6 py-20">
         <div className="max-w-3xl mx-auto">
@@ -341,7 +339,11 @@ export default function StarterPackDetailClient({ pack, locale }: Props) {
                 {openFaq === index && (
                   <div className="px-6 pb-6">
                     <p className="text-sm text-[#687169] leading-relaxed">
-                      {item.answer[lang]}
+                      {includedWithManual && index === pack.faq.length - 1
+                        ? (isEn
+                          ? `The Starter Pack contains ${toolCount} editable day-to-day tools. The complete SOP manual provides the department’s full operational reference and includes this Starter Pack at no extra cost.`
+                          : `Le Starter Pack contient ${toolCount} outils quotidiens modifiables. Le manuel SOP apporte la référence opérationnelle complète du département et inclut ce Starter Pack sans supplément.`)
+                        : item.answer[lang]}
                     </p>
                   </div>
                 )}

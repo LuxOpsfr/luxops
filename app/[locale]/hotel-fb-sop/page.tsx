@@ -183,9 +183,9 @@ const FAQS_EN: FaqItem[] = [
       'Yes. Independent hotels usually need practical procedures that are easy to adapt. The important point is to document the actual flow of service, not copy a generic brand manual.',
   },
   {
-    question: 'Should I start with a starter pack or the full SOP manual?',
+    question: 'Are practical F&B tools included with the SOP manual?',
     answer:
-      'Use the starter pack if you need immediate checklists, scripts and control tools. Use the full SOP manual if you need the complete F&B SOP reference with detailed procedures and department standards.',
+      'Yes. The F&B SOP manual includes practical checklists, scripts and control tools, together with detailed procedures and department standards.',
   },
 ]
 
@@ -206,9 +206,9 @@ const FAQS_FR: FaqItem[] = [
       'Oui. Les hôtels indépendants ont besoin de procédures pratiques et faciles à adapter. Le point important est de documenter le vrai flux de service, pas de copier un manuel de marque générique.',
   },
   {
-    question: 'Faut-il commencer par un starter pack ou le Manuel SOP complet ?',
+    question: 'Les outils pratiques F&B sont-ils inclus dans le Manuel SOP ?',
     answer:
-      'Utilisez le starter pack si vous avez besoin de checklists, scripts et outils de contrôle immédiats. Utilisez le Manuel SOP complet si vous avez besoin de toute la référence SOP F&B avec procédures détaillées et standards de département.',
+      'Oui. Le Manuel SOP F&B inclut les checklists, scripts et outils de contrôle pratiques avec les procédures détaillées et les standards du département.',
   },
 ]
 
@@ -344,22 +344,15 @@ export default async function HotelFbSopPage({ params }: { params: Promise<{ loc
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <TrackedLink
-                href={`/${locale}/playbooks/fb-starter-pack`}
-                eventName="fb_starter_pack_cta_clicked"
-                eventProperties={{ source_page: `/${locale}/hotel-fb-sop`, position: 'hero' }}
-                className="inline-flex items-center justify-center gap-2 bg-[#fcfbf8] text-[#0f211a] px-7 py-4 rounded-full font-semibold hover:bg-gray-100 transition-colors"
-              >
-                {isEN ? 'View F&B Starter Pack' : 'Voir le Starter Pack F&B'}
-                <ArrowRight size={18} />
-              </TrackedLink>
-              <TrackedLink
                 href={`/${locale}/playbooks/fb`}
                 eventName="fb_playbook_cta_clicked"
                 eventProperties={{ source_page: `/${locale}/hotel-fb-sop`, position: 'hero' }}
-                className="inline-flex items-center justify-center gap-2 border border-white/30 text-white px-7 py-4 rounded-full font-semibold hover:bg-[#fcfbf8]/10 transition-colors"
+                className="inline-flex items-center justify-center gap-2 bg-[#fcfbf8] text-[#0f211a] px-7 py-4 rounded-full font-semibold hover:bg-gray-100 transition-colors"
               >
-                {isEN ? 'See Full F&B SOP manual' : 'Voir le Manuel SOP F&B complet'}
+                {isEN ? 'View the F&B SOP manual' : 'Voir le Manuel SOP F&B'}
+                <ArrowRight size={18} />
               </TrackedLink>
+
             </div>
           </div>
         </section>
@@ -460,8 +453,8 @@ export default async function HotelFbSopPage({ params }: { params: Promise<{ loc
               </h2>
               <p className="text-gray-600 leading-relaxed">
                 {isEN
-                  ? 'This is the type of practical logic used inside the LuxOps F&B Starter Pack and F&B SOP manual.'
-                  : 'C’est le type de logique pratique utilisée dans le Starter Pack F&B et le Manuel SOP F&B LuxOps.'}
+                  ? 'This practical logic is included in the LuxOps F&B SOP manual and its operational tools.'
+                  : 'Cette logique pratique est présente dans le Manuel SOP F&B LuxOps et ses outils opérationnels inclus.'}
               </p>
             </div>
             <div className="grid lg:grid-cols-3 gap-6">
@@ -486,25 +479,17 @@ export default async function HotelFbSopPage({ params }: { params: Promise<{ loc
           <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-6">
             <div className="border border-[#e7e1d7] bg-[#f5f1e9] rounded-2xl p-8">
               <p className="text-xs font-semibold uppercase tracking-widest text-[#a58658] mb-4">
-                {isEN ? 'Starter Pack' : 'Starter Pack'}
+                {isEN ? 'Included tools' : 'Outils inclus'}
               </p>
               <h2 className="text-3xl font-bold text-[#111111] mb-4">
-                {isEN ? 'F&B Service Starter Pack' : 'Starter Pack F&B'}
+                {isEN ? 'Practical F&B tools' : 'Outils pratiques F&B'}
               </h2>
               <p className="text-gray-600 leading-relaxed mb-6">
                 {isEN
-                  ? 'Use this when you need immediate tools: daily service checklist, opening and closing checklists, briefing template, room service checklist, allergen tracker and recovery scripts.'
-                  : 'À utiliser si vous avez besoin d’outils immédiats : checklist service quotidien, checklists ouverture et fermeture, briefing, checklist room service, suivi allergènes et scripts recovery.'}
+                  ? 'Included with the F&B SOP manual: daily service, opening and closing checklists, briefing template, room service checklist, allergen tracker and recovery scripts.'
+                  : 'Inclus dans le Manuel SOP F&B : checklists de service, d’ouverture et de fermeture, briefing, room service, suivi des allergènes et scripts de recovery.'}
               </p>
-              <TrackedLink
-                href={`/${locale}/playbooks/fb-starter-pack`}
-                eventName="fb_starter_pack_cta_clicked"
-                eventProperties={{ source_page: `/${locale}/hotel-fb-sop`, position: 'comparison' }}
-                className="inline-flex items-center gap-2 bg-[#a58658] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#24362f] transition-colors"
-              >
-                {isEN ? 'View Starter Pack' : 'Voir le Starter Pack'}
-                <ArrowRight size={17} />
-              </TrackedLink>
+
             </div>
             <div className="border border-gray-200 rounded-2xl p-8">
               <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-4">
@@ -591,17 +576,17 @@ export default async function HotelFbSopPage({ params }: { params: Promise<{ loc
             </h2>
             <p className="text-gray-300 leading-relaxed mb-8">
               {isEN
-                ? 'Start with practical checklists and scripts, then move to the full F&B SOP manual when you need the complete department reference.'
-                : 'Commencez avec des checklists et scripts pratiques, puis passez au Manuel SOP F&B complet lorsque vous avez besoin de toute la référence du département.'}
+                ? 'The F&B SOP manual combines practical checklists and scripts with the complete department reference.'
+                : 'Le Manuel SOP F&B réunit checklists et scripts pratiques avec la référence complète du département.'}
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <TrackedLink
-                href={`/${locale}/playbooks/fb-starter-pack`}
-                eventName="fb_starter_pack_cta_clicked"
+                href={`/${locale}/playbooks/fb`}
+                eventName="fb_playbook_cta_clicked"
                 eventProperties={{ source_page: `/${locale}/hotel-fb-sop`, position: 'final' }}
                 className="inline-flex items-center justify-center gap-2 bg-[#fcfbf8] text-[#111111] px-7 py-4 rounded-full font-semibold hover:bg-gray-100 transition-colors"
               >
-                {isEN ? 'View F&B Starter Pack' : 'Voir le Starter Pack F&B'}
+                {isEN ? 'View the F&B SOP manual' : 'Voir le Manuel SOP F&B'}
                 <ArrowRight size={18} />
               </TrackedLink>
               <TrackedLink

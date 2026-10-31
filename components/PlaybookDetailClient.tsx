@@ -3,17 +3,17 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowLeft, BookOpen, Check, ChevronDown, Download, FileText, Languages, Presentation, RefreshCw, ShoppingCart } from 'lucide-react'
+import { ArrowLeft, BookOpen, Check, ChevronDown, Download, FileText, Gift, Languages, Presentation, RefreshCw, ShoppingCart } from 'lucide-react'
 import { BUNDLE_PRICE_ID, PlaybookEntry } from '@/content/playbooks/data'
 import { getStarterPack } from '@/content/starter-packs/data'
 import { useCart } from '@/context/CartContext'
 import { useCurrency } from '@/context/CurrencyContext'
 import TrackedLink from '@/components/TrackedLink'
 import ProductPreviewCarousel from '@/components/ProductPreviewCarousel'
-import StarterPackCoverVisual from '@/components/StarterPackCoverVisual'
 import HousekeepingProductProof from '@/components/HousekeepingProductProof'
 import ProductCredibility from '@/components/ProductCredibility'
 import FrontOfficeExcerptDialog from '@/components/FrontOfficeExcerptDialog'
+import { ManualPracticeContent, ManualPromoGallery } from '@/components/ManualPracticeSection'
 import posthog from 'posthog-js'
 
 interface Stat {
@@ -33,17 +33,50 @@ interface Props {
   locale: string
 }
 
+const FRONT_OFFICE_CHAPTER_DESCRIPTIONS = {
+  fr: [
+    'Objectif du manuel, structure et conseils d’utilisation.',
+    'Parcours d’arrivée, accueil VIP, attribution des chambres et attentions en chambre.',
+    'Départ, vérification du folio, check-out express, départ tardif et bagages.',
+    'Contact avant l’arrivée, messages pendant le séjour, réclamations et service recovery.',
+    'Surclassements, revenus annexes, scripts de vente et suivi des résultats.',
+    'Opérations PMS, gestion des canaux, paiements, packages tiers et pannes système.',
+    'Clôture de journée, rapprochements, rapports et opérations nocturnes.',
+    'Organisation, intégration, formation et développement de l’équipe.',
+    'Incendie, évacuation, urgences médicales ou techniques et gestion de crise.',
+    'Standards de service, comportements relationnels, suivi qualité et amélioration continue.',
+    'Réservations, transferts, colis, accueil VIP, facturation et passations de service.',
+    'Accueil et départ, préparation des véhicules, stockage des bagages et checklists.',
+  ],
+  en: [
+    'Purpose, structure and guidance on using the manual.',
+    'Arrival workflows, VIP programmes, room assignment and in-room amenities.',
+    'Departures, folio review, express checkout, late checkout and luggage handling.',
+    'Pre-arrival contact, in-stay messaging, complaints and service recovery.',
+    'Room upgrades, ancillary revenue, sales scripts and performance tracking.',
+    'PMS operations, channel management, payments, third-party packages and system failures.',
+    'End-of-day procedures, reconciliation, reports and overnight operations.',
+    'Organisation, onboarding, training and team development.',
+    'Fire, evacuation, medical or technical emergencies and crisis management.',
+    'Service standards, interpersonal behaviours, quality monitoring and continuous improvement.',
+    'Reservations, transfers, parcels, VIP service, billing and shift handovers.',
+    'Arrivals and departures, vehicle preparation, luggage storage and checklists.',
+  ],
+}
+
 export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale }: Props) {
   const isEn = locale === 'en'
   const lang = locale as 'en' | 'fr'
   const [openFaq, setOpenFaq] = useState<number | null>(null)
-  const [selectedOffer, setSelectedOffer] = useState<'manual' | 'starter' | 'bundle'>('manual')
+  const [selectedOffer, setSelectedOffer] = useState<'manual' | 'bundle'>('manual')
   const [showExcerpt, setShowExcerpt] = useState(false)
   const [excerptStartPage, setExcerptStartPage] = useState(1)
   const { addItem, items, openCart } = useCart()
   const { currency, priceFor, formatProductPrice } = useCurrency()
   const isEditorialManual = ['fo', 'hsk', 'fb', 'spa'].includes(pb.id)
   const starterPack = getStarterPack(`${pb.id}-starter-pack`)
+  const includesStarterPack = Boolean(starterPack)
+  const starterToolCount = starterPack?.tools[lang].length ?? 0
   const previewProductId = pb.id === 'fo' ? 'front-office' : pb.id
   const previewRoot = `/Previews/${previewProductId}-chapter${String(pb.previewChapter.number).padStart(2, '0')}/${lang}`
   const previewExtension = pb.id === 'fo' ? 'png' : 'jpg'
@@ -91,34 +124,6 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
       currency,
       locale,
       product_type: 'playbook',
-    })
-  }
-
-  const handleAddStarterPack = () => {
-    if (!starterPack) return
-    const price = priceFor('starter_pack')
-    const title = starterPack.title[lang]
-    const inStarterCart = items.some((item) => item.priceId === starterPack.priceId)
-    if (inStarterCart) {
-      openCart()
-      return
-    }
-    addItem({ priceId: starterPack.priceId, title, price, currency, productType: 'starter_pack' })
-    posthog.capture('product_added_to_cart', {
-      price_id: starterPack.priceId,
-      title,
-      price,
-      currency,
-      locale,
-      product_type: 'starter_pack',
-    })
-    posthog.capture('starter_pack_added_to_cart', {
-      price_id: starterPack.priceId,
-      title,
-      price,
-      currency,
-      locale,
-      product_type: 'starter_pack',
     })
   }
 
@@ -208,6 +213,15 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
                 {pb.desc[lang]}
               </p>
 
+              {includesStarterPack && starterPack && starterPackHref && <div id="included-tools" className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 rounded-[17px] border border-[#d6bd8e] bg-[#f5efe2] px-4 py-3 sm:flex-nowrap">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#e4d0ab] text-[#493923]"><Gift size={20} /></span>
+                <div className="min-w-0 flex-1">
+                  <p className="text-[10px] font-bold uppercase tracking-[.14em] text-[#765a33]">{isEn ? `${starterToolCount} practical tools included` : `${starterToolCount} outils opérationnels inclus`}</p>
+                  <p className="text-[11px] leading-5 text-[#344b3c] sm:text-xs">{isEn ? `${starterPack.subtitle.en} Included with your manual at no extra cost.` : `${starterPack.subtitle.fr} Inclus avec votre manuel, sans supplément.`}</p>
+                </div>
+                <TrackedLink href={starterPackHref} eventName="starter_pack_details_clicked" eventProperties={{ source_page: `/${locale}/playbooks/${pb.id}`, placement: 'manual_offer_bonus', product: starterPack.id }} className="shrink-0 text-xs font-semibold text-[#274433] underline decoration-[#b99b69] underline-offset-4 hover:text-[#10251d]">{isEn ? `Explore the ${starterToolCount} tools` : `Découvrir les ${starterToolCount} outils`} <span aria-hidden="true">→</span></TrackedLink>
+              </div>}
+
               <div className="mt-3 space-y-2" role="radiogroup" aria-label={isEn ? 'Choose a product' : 'Choisir un produit'}>
                 <article onClick={() => setSelectedOffer('manual')} className={`group/offer cursor-pointer rounded-[17px] border px-3.5 py-3 transition duration-200 hover:border-[#a58658] hover:shadow-[0_10px_24px_rgba(40,35,24,.1)] sm:px-4 sm:py-3.5 ${selectedOffer === 'manual' ? 'border-[#c7a76e] bg-white shadow-[0_6px_18px_rgba(40,35,24,.06)]' : 'border-[#e6e1d8] bg-white/85'}`}>
                   <div className="flex items-center justify-between gap-3">
@@ -217,7 +231,7 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
                     </div>
                     <span className="shrink-0 font-display text-lg font-semibold leading-none text-[#25382d] sm:text-xl">{formatProductPrice('playbook')} <small className="font-sans text-[9px] font-normal text-[#85867f]">TTC</small></span>
                   </div>
-                  <p className="ml-[26px] mt-1 text-[10px] leading-[1.4] text-[#74766e] sm:text-[11px]">{isEn ? `Complete manual · ${chapters.length} chapters · PDF and editable PowerPoint.` : `Manuel complet · ${chapters.length} chapitres · PDF et PowerPoint modifiable.`}</p>
+                  <p className="ml-[26px] mt-1 text-[10px] leading-[1.4] text-[#74766e] sm:text-[11px]">{includesStarterPack ? (isEn ? `${chapters.length} chapters · PDF and editable PowerPoint · ${starterToolCount} practical tools included.` : `${chapters.length} chapitres · PDF et PowerPoint modifiable · ${starterToolCount} outils inclus.`) : (isEn ? `Complete manual · ${chapters.length} chapters · PDF and editable PowerPoint.` : `Manuel complet · ${chapters.length} chapitres · PDF et PowerPoint modifiable.`)}</p>
                   <div className="ml-[26px] mt-2 flex items-center justify-between gap-3 border-t border-dashed border-[#e8e2d7] pt-2">
                     <span className="text-[9px] text-[#81827b]">{isEn ? 'Instant delivery' : 'Livraison instantanée'}</span>
                     <button type="button" onClick={handleAddToCart} className="inline-flex min-h-8 items-center gap-1.5 rounded-full bg-[#10251d] px-3.5 text-[10px] font-semibold text-white transition hover:bg-[#2a4335] sm:text-[11px]">
@@ -226,26 +240,13 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
                   </div>
                 </article>
 
-                {starterPack && <article onClick={() => setSelectedOffer('starter')} className={`group/offer cursor-pointer rounded-[17px] border px-3.5 py-3 transition duration-200 hover:border-[#c7a76e] hover:shadow-[0_8px_20px_rgba(40,35,24,.08)] sm:px-4 sm:py-3.5 ${selectedOffer === 'starter' ? 'border-[#c7a76e] bg-white shadow-[0_6px_18px_rgba(40,35,24,.06)]' : 'border-[#e6e1d8] bg-white/85'}`}>
-                  <div className="flex items-center justify-between gap-3">
-                    <div className="flex min-w-0 items-center gap-2.5"><button type="button" role="radio" aria-checked={selectedOffer === 'starter'} aria-label={starterPack.title[lang]} onClick={() => setSelectedOffer('starter')} className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full outline-none focus-visible:ring-2 focus-visible:ring-[#b89760] focus-visible:ring-offset-2"><span className={`flex h-4 w-4 items-center justify-center rounded-full border ${selectedOffer === 'starter' ? 'border-[#a58658]' : 'border-[#c9c4b9]'}`}>{selectedOffer === 'starter' && <span className="h-2 w-2 rounded-full bg-[#10251d]" />}</span></button><h2 className="truncate text-[12px] font-semibold text-[#25382d] sm:text-[13px]">{starterPack.title[lang]}</h2></div>
-                    <span className="shrink-0 font-display text-lg font-semibold leading-none text-[#25382d] sm:text-xl">{formatProductPrice('starter_pack')} <small className="font-sans text-[9px] font-normal text-[#85867f]">TTC</small></span>
-                  </div>
-                  <p className="ml-[26px] mt-1 text-[10px] leading-[1.4] text-[#74766e] sm:text-[11px]">{starterPack.subtitle[lang]}</p>
-                  <div className="ml-[26px] mt-2 flex items-center justify-between gap-3 border-t border-dashed border-[#e8e2d7] pt-2">
-                    <Link href={starterPackHref!} className="text-[9px] text-[#72766e] underline decoration-[#c8b995] underline-offset-2">{isEn ? 'See included tools' : 'Voir les outils inclus'}</Link>
-                    <button type="button" onClick={handleAddStarterPack} className="inline-flex min-h-8 items-center gap-1.5 rounded-full border border-[#d8d2c7] bg-white px-3.5 text-[10px] font-semibold text-[#25382d] transition hover:border-[#10251d] hover:bg-[#f8f6f1] sm:text-[11px]">
-                      <ShoppingCart size={12} />{items.some((item) => item.priceId === starterPack.priceId) ? (isEn ? 'Open cart' : 'Voir le panier') : (isEn ? 'Add' : 'Ajouter')}
-                    </button>
-                  </div>
-                </article>}
-
                 <article onClick={() => setSelectedOffer('bundle')} className={`group/offer cursor-pointer rounded-[17px] border px-3.5 py-3 transition duration-200 hover:border-[#c7a76e] hover:shadow-[0_8px_20px_rgba(40,35,24,.08)] sm:px-4 sm:py-3.5 ${selectedOffer === 'bundle' ? 'border-[#c7a76e] bg-white shadow-[0_6px_18px_rgba(40,35,24,.06)]' : 'border-[#e6e1d8] bg-white/85'}`}>
                   <div className="flex items-center justify-between gap-3">
                     <div className="flex min-w-0 items-center gap-2.5"><button type="button" role="radio" aria-checked={selectedOffer === 'bundle'} aria-label={isEn ? 'Bundle · 5 SOP manuals' : 'Bundle · 5 manuels SOP'} onClick={() => setSelectedOffer('bundle')} className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full outline-none focus-visible:ring-2 focus-visible:ring-[#b89760] focus-visible:ring-offset-2"><span className={`flex h-4 w-4 items-center justify-center rounded-full border ${selectedOffer === 'bundle' ? 'border-[#a58658]' : 'border-[#c9c4b9]'}`}>{selectedOffer === 'bundle' && <span className="h-2 w-2 rounded-full bg-[#10251d]" />}</span></button><h2 className="truncate text-[12px] font-semibold text-[#25382d] sm:text-[13px]">{isEn ? 'Bundle · 5 SOP manuals' : 'Bundle · 5 manuels SOP'}</h2></div>
                     <span className="shrink-0 font-display text-lg font-semibold leading-none text-[#25382d] sm:text-xl">{formatProductPrice('bundle')} <small className="font-sans text-[9px] font-normal text-[#85867f]">TTC</small></span>
                   </div>
                   <p className="ml-[26px] mt-1 text-[10px] leading-[1.4] text-[#74766e] sm:text-[11px]">Front Office · Housekeeping · F&B · Spa · Revenue Management</p>
+                  {includesStarterPack && <p className="ml-[26px] mt-1 text-[10px] font-medium leading-[1.4] text-[#6b5738] sm:text-[11px]">{isEn ? `${pb.dept.en} Starter Pack included with the ${pb.dept.en} manual.` : `Starter Pack ${pb.dept.fr} inclus avec le manuel ${pb.dept.fr}.`}</p>}
                   <div className="ml-[26px] mt-2 flex items-center justify-between gap-3 border-t border-dashed border-[#e8e2d7] pt-2">
                     <span className="text-[9px] font-medium text-[#9a7948]">{isEn ? 'Same €199 price' : 'Tarif maintenu à 199 €'}</span>
                     <button type="button" onClick={handleAddBundle} className="inline-flex min-h-8 items-center gap-1.5 rounded-full border border-[#d8d2c7] bg-white px-3.5 text-[10px] font-semibold text-[#25382d] transition hover:border-[#10251d] hover:bg-[#f8f6f1] sm:text-[11px]">
@@ -340,23 +341,23 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
             </div>
             {starterPackHref && (
               <p className="text-sm text-[#687169]">
-                {isEn ? 'Looking for a lighter starting point? ' : 'Besoin d’une première base plus ciblée ? '}
+                {isEn ? 'Explore the practical tools included with this manual: ' : 'Découvrir les outils pratiques inclus avec ce manuel : '}
                 <TrackedLink
                   href={starterPackHref}
-                  eventName="starter_pack_cta_clicked"
+                  eventName="starter_pack_details_clicked"
                   eventProperties={{
                     source_page: `/${locale}/playbooks/${pb.id}`,
                     placement: 'playbook_hero',
                     product: `${pb.id}_starter_pack`,
                     cta_label: isEn
-                      ? `View Starter Pack · ${formatProductPrice('starter_pack')}`
-                      : `Voir le Starter Pack · ${formatProductPrice('starter_pack')}`,
+                      ? 'View included tools'
+                      : 'Voir les outils inclus',
                   }}
                   className="font-semibold text-[#0f211a] underline underline-offset-4"
                 >
                   {isEn
-                    ? `View Starter Pack · ${formatProductPrice('starter_pack')}`
-                    : `Voir le Starter Pack · ${formatProductPrice('starter_pack')}`}
+                    ? 'View included tools'
+                    : 'Voir les outils inclus'}
                 </TrackedLink>
               </p>
             )}
@@ -402,36 +403,81 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
       {/* Contents */}
       <section className="bg-[#fcfbf8] px-5 py-16 md:px-8 md:py-20">
         <div className="mx-auto max-w-[1320px]">
-          <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
-            <div>
-              {isEditorialManual && <p className="mb-2 text-[10px] font-bold uppercase tracking-[.18em] text-[#a58658]">{isEn ? 'Manual structure' : 'Structure du manuel'}</p>}
-              <h2 className="font-display text-3xl font-medium tracking-tight text-[#10251d] md:text-4xl">
-                {isEditorialManual ? (isEn ? `${chapters.length} operational chapters` : `Les ${chapters.length} chapitres opérationnels`) : (isEn ? 'Inside the manual' : 'Dans le manuel')}
-              </h2>
-            </div>
-            {isEditorialManual && <p className="max-w-lg text-sm leading-6 text-[#72766e]">{isEn ? `A complete operating reference for ${pb.dept.en}.` : `Un référentiel opérationnel complet pour le département ${pb.dept.fr}.`}</p>}
-          </div>
-          <div className={isEditorialManual ? 'grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3' : 'grid grid-cols-1 gap-x-10 md:grid-cols-2'}>
-            {chapters.map((chapter, index) => (
-              isEditorialManual ? (
-                <article key={chapter} className={`group/chapter relative flex min-h-[92px] flex-col justify-between rounded-[18px] border bg-white p-4 transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_24px_rgba(40,35,24,.07)] sm:p-5 ${index === 3 ? 'border-[#c7a76e] shadow-[0_5px_18px_rgba(40,35,24,.05)]' : 'border-[#ece6dc] hover:border-[#d9c59f]'}`}>
-                  <span className="font-display text-xl text-[#b89760]">{String(index + 1).padStart(2, '0')}</span>
-                  <div className="mt-2 flex items-end justify-between gap-3">
-                    <h3 className="text-sm font-semibold leading-5 text-[#26392e]">{chapter}</h3>
-                    {index === previewChapterIndex && <button type="button" onClick={() => { setExcerptStartPage(1); setShowExcerpt(true) }} className="shrink-0 rounded-full bg-[#10251d] px-3 py-1.5 text-[10px] font-semibold text-white transition hover:bg-[#2a4335]">{isEn ? 'Read sample' : 'Lire l’extrait'}</button>}
-                  </div>
-                  {index === previewChapterIndex && <span className="absolute -top-2.5 right-3 rounded-full bg-[#10251d] px-2.5 py-1 text-[9px] font-semibold uppercase tracking-wide text-[#f7f4ec]">{isEn ? 'Sample' : 'Extrait'}</span>}
-                </article>
-              ) : (
-                <div key={chapter} className="flex gap-5 border-t border-[rgba(32,35,31,0.14)] py-5">
-                  <span className="font-display text-2xl text-[#a58658]">{String(index + 1).padStart(2, '0')}</span>
-                  <h3 className="pt-1 text-base font-semibold leading-6 text-[#0f211a]">{chapter}</h3>
+          {pb.id === 'fo' ? (
+            <>
+              <div className="grid gap-8 lg:grid-cols-[.8fr_1.2fr] lg:items-end lg:gap-16">
+                <div>
+                  <p className="text-[10px] font-bold uppercase tracking-[.18em] text-[#a58658]">{isEn ? 'The manual in practice' : 'Le manuel en pratique'}</p>
+                  <h2 className="mt-3 max-w-xl font-display text-3xl font-medium leading-[1.15] tracking-tight text-[#10251d] md:text-4xl">
+                    {isEn ? 'An operating reference for a better-organised front desk' : 'Un référentiel opérationnel pour une réception mieux organisée'}
+                  </h2>
                 </div>
-              )
-            ))}
-          </div>
+                <p className="max-w-2xl text-sm leading-7 text-[#626b64] md:text-base">
+                  {isEn
+                    ? 'From first contact to departure, every guest interaction involves procedures, tools and several team members. This manual brings essential Front Office standards together in a structured reference to align practices, support training and guide teams in their daily work.'
+                    : 'Du premier contact au départ du client, chaque interaction mobilise des procédures, des outils et plusieurs collaborateurs. Ce manuel réunit les standards essentiels du Front Office dans un référentiel structuré, pour harmoniser les pratiques, faciliter la formation et accompagner les équipes dans leur travail quotidien.'}
+                </p>
+              </div>
+              <div className="mt-8 grid gap-3 md:grid-cols-3">
+                {[
+                  {
+                    number: '01',
+                    title: isEn ? 'Who it is for' : 'À qui il s’adresse',
+                    body: isEn
+                      ? 'Designed for hotel directors, Rooms Division Managers, front desk managers and their teams. A shared resource to set expectations, onboard new colleagues and give staff clear guidance at every experience level.'
+                      : 'Conçu pour les directions d’hôtel, Rooms Division Managers, responsables de réception et leurs équipes. Un support commun pour définir les attentes, accompagner les nouvelles recrues et donner aux collaborateurs des repères clairs, quel que soit leur niveau d’expérience.',
+                  },
+                  {
+                    number: '02',
+                    title: isEn ? 'What it contains' : 'Ce qu’il contient',
+                    body: isEn
+                      ? '12 chapters cover core front desk operations: arrivals and departures, guest communication, complaint handling, upselling, PMS, night audit, management and quality control. Detailed procedures, scripts and reference tools in French and English, as PDF and editable PowerPoint files. The included Starter Pack adds 12 practical tools.'
+                      : '12 chapitres couvrant les principales opérations de réception : arrivées et départs, communication client, gestion des réclamations, upselling, PMS, night audit, management et contrôle qualité. Des procédures détaillées, scripts et outils de référence, disponibles en français et en anglais, aux formats PDF et PowerPoint modifiable. Le Starter Pack inclus ajoute 12 outils pratiques.',
+                  },
+                  {
+                    number: '03',
+                    title: isEn ? 'How to use it' : 'Comment l’utiliser',
+                    body: isEn
+                      ? 'Consult the procedures as a daily reference, adapt them to your systems and standards, then use them to train staff, structure briefings and support managers. The editable format lets the reference evolve with your property.'
+                      : 'Consultez les procédures comme référence au quotidien, adaptez-les à vos outils et à vos standards, puis utilisez-les pour former vos collaborateurs, structurer vos briefings et accompagner les managers. Le format modifiable permet de faire évoluer le référentiel avec les besoins de votre établissement.',
+                  },
+                ].map((item) => (
+                  <article key={item.number} className="rounded-[18px] border border-[#e8e1d6] bg-white px-5 py-5 shadow-[0_5px_18px_rgba(40,35,24,.035)]">
+                    <span className="font-display text-xl text-[#b89760]">{item.number}</span>
+                    <h3 className="mt-2 font-display text-xl font-medium text-[#10251d]">{item.title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-[#626b64]">{item.body}</p>
+                  </article>
+                ))}
+              </div>
+              <details className="group mt-6 rounded-[18px] border border-[#e8e1d6] bg-[#f5f1e9]">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 marker:hidden sm:px-6 [&::-webkit-details-marker]:hidden">
+                  <span>
+                    <span className="block text-[10px] font-bold uppercase tracking-[.16em] text-[#94734b]">{isEn ? 'Contents' : 'Sommaire'}</span>
+                    <span className="mt-1 block font-display text-lg font-medium text-[#10251d] sm:text-xl">{isEn ? 'Explore the 12 chapters' : 'Explorer les 12 chapitres'}</span>
+                  </span>
+                  <ChevronDown size={20} className="shrink-0 text-[#10251d] transition-transform group-open:rotate-180" />
+                </summary>
+                <div className="grid gap-x-8 border-t border-[#e2dacd] px-5 py-3 sm:grid-cols-2 sm:px-6">
+                  {chapters.map((chapter, index) => (
+                    <div key={chapter} className="flex min-h-16 items-start gap-3 border-b border-[#e8e1d6] py-3 last:border-b-0">
+                      <span className="w-7 shrink-0 font-display text-lg text-[#b89760]">{String(index + 1).padStart(2, '0')}</span>
+                      <span className="min-w-0 flex-1">
+                        <span className="block text-sm font-medium text-[#26392e]">{chapter}</span>
+                        <span className="mt-1 block text-xs leading-5 text-[#72766e]">{FRONT_OFFICE_CHAPTER_DESCRIPTIONS[lang][index]}</span>
+                      </span>
+                      {index === previewChapterIndex && <button type="button" onClick={() => { setExcerptStartPage(1); setShowExcerpt(true) }} className="shrink-0 rounded-full bg-[#10251d] px-3 py-1.5 text-[10px] font-semibold text-white transition hover:bg-[#2a4335]">{isEn ? 'Read sample' : 'Lire l’extrait'}</button>}
+                    </div>
+                  ))}
+                </div>
+              </details>
+            </>
+          ) : (
+            <ManualPracticeContent id={pb.id} locale={lang} chapters={chapters} sampleIndex={previewChapterIndex} onReadSample={() => { setExcerptStartPage(1); setShowExcerpt(true) }} />
+          )}
         </div>
       </section>
+
+      <ManualPromoGallery id={pb.id} locale={lang} />
 
       {/* What's included */}
       {!isEditorialManual && <section className="py-24 px-6" style={{ backgroundColor: '#e7e0d5' }}>
@@ -505,31 +551,6 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
 
       {starterPack && pb.id === 'fo' && (
         <>
-          <section className="relative overflow-hidden bg-[#10251d] px-5 py-14 text-[#f7f4ec] md:px-8 md:py-20">
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_78%_52%,rgba(184,151,96,.13),transparent_42%)]" />
-            <div className="relative mx-auto grid max-w-[1240px] items-center gap-9 lg:grid-cols-[.92fr_1.08fr] lg:gap-16">
-              <div className="max-w-xl">
-                <p className="text-[10px] font-bold uppercase tracking-[.2em] text-[#c8ad7b]">{isEn ? 'A separate, practical toolkit' : 'Un kit pratique complémentaire'}</p>
-                <h2 className="mt-3 font-display text-4xl font-medium leading-[1.04] tracking-[-.025em] md:text-5xl">{starterPack.title[lang]}</h2>
-                <p className="mt-4 text-sm leading-7 text-white/70 md:text-base">{isEn ? 'A focused set of editable tools for daily reception operations. It complements the manual and is sold separately.' : 'Une sélection ciblée d’outils modifiables pour les opérations quotidiennes de la réception. Elle complète le manuel et constitue un produit distinct.'}</p>
-                <ul className="mt-5 space-y-2.5 text-sm text-white/80">
-                  {[isEn ? 'Check-in SOP' : 'SOP de check-in', isEn ? 'Shift handover' : 'Passation de shift', isEn ? 'VIP arrival checklist' : 'Checklist d’arrivée VIP'].map((tool) => <li key={tool} className="flex items-center gap-2.5"><Check size={15} className="text-[#c8ad7b]" />{tool}</li>)}
-                </ul>
-                <div className="mt-7 flex flex-wrap items-center gap-4">
-                  <span className="font-display text-3xl font-semibold">{formatProductPrice('starter_pack')}</span>
-                  <button type="button" onClick={handleAddStarterPack} className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/35 px-5 text-sm font-semibold transition duration-300 hover:-translate-y-0.5 hover:border-white hover:bg-white/10">
-                  <ShoppingCart size={15} />{items.some((item) => item.priceId === starterPack.priceId) ? (isEn ? 'Open cart' : 'Voir le panier') : (isEn ? 'Add the Starter Pack' : 'Ajouter le Starter Pack')}
-                  </button>
-                  <Link href={starterPackHref!} className="text-sm text-white/70 underline decoration-white/30 underline-offset-4 transition hover:text-white">{isEn ? 'See the 12 tools' : 'Voir les 12 outils'}</Link>
-                </div>
-                <p className="mt-4 text-[11px] text-white/50">PDF · PPTX modifiable · Français & anglais</p>
-              </div>
-              <div className="mx-auto w-full max-w-[540px]">
-                <StarterPackCoverVisual pack={starterPack} locale={locale} />
-              </div>
-            </div>
-          </section>
-
           <section className="border-y border-[#d8d0c3] bg-[#f1ede5] px-5 py-8 md:px-8">
             <div className="mx-auto flex max-w-screen-xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div>

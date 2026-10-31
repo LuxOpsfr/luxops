@@ -11,20 +11,14 @@ const copy = {
   fr: {
     manual: 'Manuel SOP complet',
     view: 'Voir le manuel',
-    starterText: 'Une première base ciblée pour les équipes qui souhaitent démarrer avec les outils essentiels.',
-    starterCta: 'Découvrir les Starter Packs',
   },
   en: {
     manual: 'Full SOP manual',
     view: 'View manual',
-    starterText: 'For teams looking for a lighter starting point, with practical tools for immediate use.',
-    starterCta: 'Explore Starter Packs',
   },
   es: {
     manual: 'Manual SOP completo',
     view: 'Ver manual',
-    starterText: 'Una primera base para equipos que buscan empezar con herramientas esenciales.',
-    starterCta: 'Explorar Starter Packs',
   },
 }
 
@@ -60,15 +54,6 @@ export default function HomeManuals({ locale, allResourcesLabel }: { locale: str
             </div>
           </Link>
         ))}
-      </div>
-      <div className="mt-12 flex flex-col gap-6 border-y border-[rgba(32,35,31,0.14)] py-7 md:flex-row md:items-center md:justify-between">
-        <div className="max-w-xl">
-          <h3 className="text-2xl font-medium text-[#0f211a]">Starter Packs</h3>
-          <p className="mt-2 text-sm leading-6 text-[#5d665f]">{labels.starterText}</p>
-        </div>
-        <Link href={`${catalogHref}#starter-packs`} className="inline-flex items-center gap-2 text-sm font-semibold text-[#24362f] hover:underline">
-          {labels.starterCta}<ArrowRight size={16} strokeWidth={1.5} />
-        </Link>
       </div>
       <Link href={catalogHref} className="mt-8 inline-flex items-center gap-2 border-b border-[#24362f] pb-1 text-sm font-semibold text-[#24362f]">
         {allResourcesLabel}<ArrowRight size={16} strokeWidth={1.5} />

@@ -533,6 +533,9 @@ export const PLAYBOOKS: Record<string, Playbook> = {
 export function getPlaybookIds(priceId: string): string[] {
   const id = PRICE_TO_PLAYBOOK[priceId]
   if (!id) return []
-  if (id === 'bundle') return ['front-office', 'housekeeping', 'fb', 'spa', 'revenue-management']
+  if (id === 'bundle') return ['front-office', 'fo-starter-pack', 'housekeeping', 'hsk-starter-pack', 'fb', 'fb-starter-pack', 'spa', 'revenue-management']
+  if (id === 'front-office') return ['front-office', 'fo-starter-pack']
+  if (id === 'housekeeping') return ['housekeeping', 'hsk-starter-pack']
+  if (id === 'fb') return ['fb', 'fb-starter-pack']
   return [id]
 }

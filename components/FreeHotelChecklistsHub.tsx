@@ -26,9 +26,7 @@ type Department = {
   label: string
   title: string
   intro: string
-  starterHref: string
   playbookHref: string
-  starterLabel: string
   playbookLabel: string
   items: ChecklistItem[]
 }
@@ -45,11 +43,10 @@ const CONTENT = {
     subtitle:
       'Practical PDF checklists adapted from LuxOps operational resources and organized by department for quick local adaptation on the floor.',
     intro:
-      'Start with the free printable checklist when you need a simple floor tool. Use the Starter Pack when you need editable files, templates and scripts, and the full Playbook when you need the complete SOP reference.',
+      'Start with a free printable checklist, then explore the complete department manual for editable procedures and practical tools.',
     downloadLabel: 'Download PDF',
     availableLabel: 'Available now',
     preparingLabel: 'PDF being prepared',
-    starterPrefix: 'Need editable tools?',
     playbookPrefix: 'Need the full SOP reference?',
     sourceLabel: 'View related guide',
     departments: [
@@ -59,9 +56,7 @@ const CONTENT = {
         title: 'Housekeeping checklists',
         intro:
           'Room cleaning, floor supervision, public areas and inspection controls for daily HSK operations.',
-        starterHref: '/en/playbooks/hsk-starter-pack',
         playbookHref: '/en/playbooks/hsk',
-        starterLabel: 'View Housekeeping Starter Pack',
         playbookLabel: 'View Housekeeping Playbook',
         items: [
           {
@@ -117,9 +112,7 @@ const CONTENT = {
         title: 'Front Office checklists',
         intro:
           'Reception checklists for shift opening, desk readiness, guest flow, handover and night audit controls.',
-        starterHref: '/en/playbooks/fo-starter-pack',
         playbookHref: '/en/playbooks/fo',
-        starterLabel: 'View Front Office Starter Pack',
         playbookLabel: 'View Front Office Playbook',
         items: [
           {
@@ -148,9 +141,7 @@ const CONTENT = {
         title: 'F&B checklists',
         intro:
           'Restaurant, bar and room service checklists for service readiness, timing, setup, closing and handover.',
-        starterHref: '/en/playbooks/fb-starter-pack',
         playbookHref: '/en/playbooks/fb',
-        starterLabel: 'View F&B Starter Pack',
         playbookLabel: 'View F&B Playbook',
         items: [
           {
@@ -201,12 +192,12 @@ const CONTENT = {
       {
         question: 'Can I edit them?',
         answer:
-          'The free files are designed as printable PDFs. If you need editable PPTX files, templates and trackers, use the relevant Starter Pack.',
+          'The free files are printable PDFs. The corresponding SOP manual provides editable files and practical tools for the department.',
       },
       {
-        question: 'What is the difference with Starter Packs?',
+        question: 'What is the difference with a full SOP manual?',
         answer:
-          'The free PDFs are simple floor tools. Starter Packs include editable files, scripts, trackers and more complete operational templates.',
+          'The free PDFs are simple floor tools. The complete manual includes department procedures and editable files; Front Office, Housekeeping and F&B manuals also include practical tool packs.',
       },
       {
         question: 'Are they suitable for independent hotels?',
@@ -216,7 +207,7 @@ const CONTENT = {
       {
         question: 'Can I use them for staff training?',
         answer:
-          'Yes. They can support onboarding and coaching, especially when combined with the Starter Packs or full department Playbooks.',
+          'Yes. They can support onboarding and coaching, especially alongside the complete department manual.',
       },
     ],
   },
@@ -231,11 +222,10 @@ const CONTENT = {
     subtitle:
       'Des checklists PDF pratiques issues des ressources opérationnelles LuxOps, organisées par département et pensées pour le terrain.',
     intro:
-      'Commencez avec une checklist PDF gratuite lorsque vous avez besoin d’un outil simple à imprimer. Utilisez le Starter Pack si vous avez besoin de fichiers modifiables, de templates et de scripts, puis le Playbook complet pour toute la référence SOP.',
+      'Commencez avec une checklist PDF gratuite, puis découvrez le manuel complet du département pour les procédures modifiables et les outils pratiques.',
     downloadLabel: 'Télécharger le PDF',
     availableLabel: 'Disponible',
     preparingLabel: 'PDF en préparation',
-    starterPrefix: 'Besoin d’outils modifiables ?',
     playbookPrefix: 'Besoin de la référence SOP complète ?',
     sourceLabel: 'Voir le guide lié',
     departments: [
@@ -245,9 +235,7 @@ const CONTENT = {
         title: 'Checklists housekeeping',
         intro:
           'Nettoyage chambre, inspection gouvernante, lieux publics et contrôles qualité pour les opérations HSK quotidiennes.',
-        starterHref: '/fr/playbooks/hsk-starter-pack',
         playbookHref: '/fr/playbooks/hsk',
-        starterLabel: 'Voir le Starter Pack Housekeeping',
         playbookLabel: 'Voir le Playbook Housekeeping',
         items: [
           {
@@ -303,9 +291,7 @@ const CONTENT = {
         title: 'Checklists réception',
         intro:
           'Checklists réception pour ouverture de service, préparation du desk, flux client, passation et Night Audit.',
-        starterHref: '/fr/playbooks/fo-starter-pack',
         playbookHref: '/fr/playbooks/fo',
-        starterLabel: 'Voir le Starter Pack Front Office',
         playbookLabel: 'Voir le Playbook Front Office',
         items: [
           {
@@ -334,9 +320,7 @@ const CONTENT = {
         title: 'Checklists F&B',
         intro:
           'Checklists restaurant, bar et room service pour préparer le service, contrôler le timing, fermer proprement et sécuriser la passation.',
-        starterHref: '/fr/playbooks/fb-starter-pack',
         playbookHref: '/fr/playbooks/fb',
-        starterLabel: 'Voir le Starter Pack F&B',
         playbookLabel: 'Voir le Playbook F&B',
         items: [
           {
@@ -387,12 +371,12 @@ const CONTENT = {
       {
         question: 'Puis-je les modifier ?',
         answer:
-          'Les fichiers gratuits sont pensés comme PDF imprimables. Pour des fichiers PPTX modifiables, des templates et des trackers, utilisez le Starter Pack correspondant.',
+          'Les fichiers gratuits sont des PDF à imprimer. Le manuel SOP correspondant fournit des fichiers modifiables et des outils pratiques pour le département.',
       },
       {
-        question: 'Quelle différence avec les Starter Packs ?',
+        question: 'Quelle différence avec un manuel SOP complet ?',
         answer:
-          'Les PDF gratuits sont des outils simples pour le terrain. Les Starter Packs incluent des fichiers modifiables, scripts, trackers et templates opérationnels plus complets.',
+          'Les PDF gratuits sont des outils simples pour le terrain. Le manuel complet réunit les procédures et les fichiers modifiables ; les manuels Front Office, Housekeeping et F&B incluent aussi des packs d’outils pratiques.',
       },
       {
         question: 'Est-ce adapté aux établissements indépendants ?',
@@ -402,7 +386,7 @@ const CONTENT = {
       {
         question: 'Peut-on les utiliser pour former les équipes ?',
         answer:
-          'Oui. Elles peuvent soutenir l’onboarding et le coaching, surtout lorsqu’elles sont utilisées avec les Starter Packs ou les Playbooks complets.',
+          'Oui. Elles peuvent soutenir l’intégration et la formation, surtout avec le manuel complet du département.',
       },
     ],
   },
@@ -418,7 +402,6 @@ const CONTENT = {
   downloadLabel: string
   availableLabel: string
   preparingLabel: string
-  starterPrefix: string
   playbookPrefix: string
   sourceLabel: string
   departments: Department[]
@@ -556,17 +539,17 @@ export default function FreeHotelChecklistsHub({ locale }: { locale: Locale }) {
             </h2>
             <p className="text-gray-300 leading-relaxed mb-8">
               {isEN
-                ? 'Use the free PDFs for quick floor deployment, then move to Starter Packs when you need editable tools and complete department templates.'
-                : 'Utilisez les PDF gratuits pour un déploiement rapide sur le terrain, puis passez aux Starter Packs lorsque vous avez besoin d’outils modifiables et de templates complets par département.'}
+                ? 'Use the free PDFs for quick floor deployment, then explore the SOP manuals for editable procedures and included practical tools.'
+                : 'Utilisez les PDF gratuits pour un déploiement rapide sur le terrain, puis découvrez les manuels SOP pour les procédures modifiables et les outils pratiques inclus.'}
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <TrackedLink
-                href={`/${locale}/playbooks#starter-packs`}
-                eventName="starter_packs_cta_clicked"
+                href={`/${locale}/playbooks#department-playbooks`}
+                eventName="playbook_cta_clicked"
                 eventProperties={{ source_page: sourcePage, position: 'final' }}
                 className="inline-flex items-center justify-center gap-2 bg-[#fcfbf8] px-7 py-4 font-semibold text-[#0f211a] transition-colors hover:bg-[#e7e0d5]"
               >
-                {isEN ? 'View Starter Packs' : 'Voir les Starter Packs'}
+                {isEN ? 'View SOP manuals' : 'Voir les manuels SOP'}
                 <ArrowRight size={18} />
               </TrackedLink>
               <TrackedLink
@@ -628,14 +611,7 @@ function DepartmentSection({
           ))}
         </div>
 
-        <div className="mt-6 grid gap-4 md:grid-cols-2">
-          <CommercialCta
-            eyebrow={content.starterPrefix}
-            title={department.starterLabel}
-            href={department.starterHref}
-            eventName="starter_pack_cta_clicked"
-            sourcePage={sourcePage}
-          />
+        <div className="mt-6">
           <CommercialCta
             eyebrow={content.playbookPrefix}
             title={department.playbookLabel}

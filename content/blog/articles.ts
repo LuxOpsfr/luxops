@@ -248,7 +248,7 @@ export const articles: BilingualArticle[] = [
       ],
       conclusion:
         "Un manuel SOP opérationnel n’est pas un document bureaucratique. C’est ce qui permet aux équipes de délivrer un service fiable et constant, quel que soit le collaborateur en poste. Construit depuis zéro ou adapté à partir d’un modèle structuré, la valeur se concrétise rapidement : intégration plus rapide, moins d’erreurs et clients qui retrouvent le même niveau de service à chaque passage.",
-      cta: { text: 'Voir les Manuels SOP et starter packs', href: '/fr/playbooks' },
+      cta: { text: 'Voir les Manuels SOP et leurs outils inclus', href: '/fr/playbooks' },
     },
   },
   {
@@ -917,7 +917,7 @@ export const articles: BilingualArticle[] = [
       date: '2026-03-16',
       readTime: '10 min read',
       intro:
-        'This guide is adapted from the LuxOps F&B SOP manual and the F&B Service Starter Pack. In any operation with a restaurant, bar, breakfast or room service, F&B standards need to connect service preparation, guest interaction, recovery and quality control into one operating language. The point is not to make every interaction sound the same. The point is to make sure every team member knows what to prepare, what to check, what to say, when to escalate and how to close the service properly.',
+        'This guide is adapted from the LuxOps F&B SOP manual and its included practical tools. In any operation with a restaurant, bar, breakfast or room service, F&B standards need to connect service preparation, guest interaction, recovery and quality control into one operating language. The point is not to make every interaction sound the same. The point is to make sure every team member knows what to prepare, what to check, what to say, when to escalate and how to close the service properly.',
       sections: [
         {
           h2: 'The F&B standard starts before the guest arrives',
@@ -1019,12 +1019,12 @@ export const articles: BilingualArticle[] = [
           ],
         },
         {
-          h2: 'Starter Pack vs. full F&B SOP manual',
+          h2: 'Practical tools included with the F&B SOP manual',
           content:
-            'The F&B Starter Pack is designed for immediate use: daily service checklist, restaurant opening checklist, restaurant closing checklist, service sequence SOP, briefing template, table inspection checklist, recovery scripts, allergen tracker, room service checklist, upselling cheat sheet and onboarding checklist. The full SOP manual goes wider and deeper across restaurant, breakfast, bar, wine, room service, guest interaction, mise en place, team management and quality standards.',
+            'The F&B SOP manual includes ready-to-use tools: daily service checklist, restaurant opening checklist, restaurant closing checklist, service sequence SOP, briefing template, table inspection checklist, recovery scripts, allergen tracker, room service checklist, upselling cheat sheet and onboarding checklist. The full SOP manual goes wider and deeper across restaurant, breakfast, bar, wine, room service, guest interaction, mise en place, team management and quality standards.',
           h3Items: [
             {
-              heading: 'Use the starter pack for daily execution',
+              heading: 'Use the included tools for daily execution',
               text: 'Use it when managers need printable checklists and scripts that can be placed in the service binder, used during briefing, or included in onboarding.',
             },
             {
@@ -1036,7 +1036,7 @@ export const articles: BilingualArticle[] = [
       ],
       conclusion:
         'F&B standards are useful only when they are operational. The standard has to appear in the briefing, the station, the table, the bar, the tray, the recovery script and the closing handover. When those pieces are documented together, consistency becomes easier to coach and easier to repeat.',
-      cta: { text: 'View the F&B Starter Pack', href: '/en/playbooks/fb-starter-pack' },
+      cta: { text: 'View the F&B SOP manual', href: '/en/playbooks/fb' },
     },
     fr: {
       title: 'Standards de service F&B : restaurant, bar, room service et recovery',
@@ -1045,7 +1045,7 @@ export const articles: BilingualArticle[] = [
       date: '2026-03-16',
       readTime: '10 min de lecture',
       intro:
-        "Ce guide est adapté du manuel SOP F&B LuxOps et du starter pack F&B. Dans un établissement avec restaurant, bar, petit-déjeuner ou room service, les standards F&B doivent relier la préparation, l’interaction client, le recovery et le contrôle qualité autour d’un même langage opérationnel. L’objectif n’est pas de rendre chaque interaction identique, mais de faire en sorte que chaque collaborateur sache quoi préparer, quoi contrôler, quoi dire, quand escalader et comment clôturer le service correctement.",
+        "Ce guide est adapté du manuel SOP F&B LuxOps et de ses outils pratiques inclus. Dans un établissement avec restaurant, bar, petit-déjeuner ou room service, les standards F&B doivent relier la préparation, l’interaction client, le recovery et le contrôle qualité autour d’un même langage opérationnel. L’objectif n’est pas de rendre chaque interaction identique, mais de faire en sorte que chaque collaborateur sache quoi préparer, quoi contrôler, quoi dire, quand escalader et comment clôturer le service correctement.",
       sections: [
         {
           h2: 'Le standard F&B commence avant l’arrivée du client',
@@ -1058,7 +1058,7 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: 'Briefing pré-service',
-              text: "Le template de briefing du starter pack couvre le nombre de réservations, les VIP, les occasions spéciales, les changements de carte, les articles indisponibles, les suggestions de vins, les accords mets et vins, les notes de direction et les affectations de rangs. C’est à ce moment-là que toute l’équipe reçoit la même lecture du service à venir.",
+              text: "Le template de briefing inclus couvre le nombre de réservations, les VIP, les occasions spéciales, les changements de carte, les articles indisponibles, les suggestions de vins, les accords mets et vins, les notes de direction et les affectations de rangs. C’est à ce moment-là que toute l’équipe reçoit la même lecture du service à venir.",
             },
             {
               heading: 'Inspection finale',
@@ -1147,12 +1147,12 @@ export const articles: BilingualArticle[] = [
           ],
         },
         {
-          h2: 'Starter pack ou manuel SOP F&B complet ?',
+          h2: 'Outils inclus dans le Manuel SOP F&B',
           content:
-            "Le starter pack F&B est conçu pour une utilisation immédiate : checklist de service quotidien, checklist d’ouverture restaurant, checklist de fermeture, SOP de séquence de service, template de briefing, checklist d’inspection de table, scripts de recovery, tracker allergènes, checklist room service, fiche upselling et checklist onboarding. Le manuel SOP complet va plus loin sur le restaurant, le petit-déjeuner, le bar, le vin, le room service, l’interaction client, la mise en place, le management et la qualité.",
+            "Le Manuel SOP F&B inclut des outils immédiatement utilisables : checklist de service quotidien, checklist d’ouverture restaurant, checklist de fermeture, SOP de séquence de service, template de briefing, checklist d’inspection de table, scripts de recovery, tracker allergènes, checklist room service, fiche upselling et checklist onboarding. Le manuel SOP complet va plus loin sur le restaurant, le petit-déjeuner, le bar, le vin, le room service, l’interaction client, la mise en place, le management et la qualité.",
           h3Items: [
             {
-              heading: 'Utiliser le starter pack pour l’exécution quotidienne',
+              heading: 'Utiliser les outils inclus pour l’exécution quotidienne',
               text: "Il est utile lorsque les managers ont besoin de checklists et scripts imprimables à placer dans le classeur de service, à utiliser en briefing ou à intégrer dans l’onboarding.",
             },
             {
@@ -1164,7 +1164,7 @@ export const articles: BilingualArticle[] = [
       ],
       conclusion:
         "Les standards F&B ne sont utiles que lorsqu’ils deviennent opérationnels. Ils doivent se voir dans le briefing, le poste, la table, le bar, le plateau, le script de recovery et la passation de clôture. Lorsque ces éléments sont documentés ensemble, la régularité devient plus facile à coacher et à répéter.",
-      cta: { text: 'Voir le starter pack F&B', href: '/fr/playbooks/fb-starter-pack' },
+      cta: { text: 'Voir le Manuel SOP F&B', href: '/fr/playbooks/fb' },
     },
   },
   {
@@ -1804,12 +1804,12 @@ export const articles: BilingualArticle[] = [
       date: '2026-03-29',
       readTime: '10 min read',
       intro:
-        'This restaurant SOP guide is adapted from the LuxOps F&B SOP manual and the F&B Starter Pack. It focuses on the operating rhythm that makes restaurant service consistent: opening preparation, briefing, table inspection, the 21-step service sequence, recovery rules and closing handover. The point is not to make service mechanical. It is to remove operational doubt so the team can focus on the guest.',
+        'This restaurant SOP guide is adapted from the LuxOps F&B SOP manual and its included practical tools. It focuses on the operating rhythm that makes restaurant service consistent: opening preparation, briefing, table inspection, the 21-step service sequence, recovery rules and closing handover. The point is not to make service mechanical. It is to remove operational doubt so the team can focus on the guest.',
       sections: [
         {
           h2: 'Opening procedure: T-90 to doors open',
           content:
-            'The starter pack opening checklist starts 90 minutes before service. This matters because the restaurant cannot recover fully from a weak opening: missing mise en place becomes slow service, slow service becomes stress, and stress becomes visible to the guest.',
+            'The included opening checklist starts 90 minutes before service. This matters because the restaurant cannot recover fully from a weak opening: missing mise en place becomes slow service, slow service becomes stress, and stress becomes visible to the guest.',
           h3Items: [
             {
               heading: 'T-90: personal and product readiness',
@@ -1866,7 +1866,7 @@ export const articles: BilingualArticle[] = [
         {
           h2: 'Table inspection and mise en place',
           content:
-            'Chapter 8 of the SOP manual defines mise en place as physical, mental and organizational readiness. The starter pack turns that into a table inspection checklist the team can actually use before service.',
+            'Chapter 8 of the SOP manual defines mise en place as physical, mental and organizational readiness. The included toolkit turns that into a table inspection checklist the team can actually use before service.',
           h3Items: [
             {
               heading: 'Physical table standard',
@@ -1885,7 +1885,7 @@ export const articles: BilingualArticle[] = [
         {
           h2: 'Closing procedure and handover',
           content:
-            'A clean closing procedure protects the next service. The F&B Starter Pack includes a restaurant closing checklist so the end of shift is not handled from memory.',
+            'A clean closing procedure protects the next service. The F&B SOP manual includes a restaurant closing checklist so the end of shift is not handled from memory.',
           h3Items: [
             {
               heading: 'Closing tasks',
@@ -1899,8 +1899,8 @@ export const articles: BilingualArticle[] = [
         },
       ],
       conclusion:
-        'A restaurant SOP is useful when it follows the real shift: opening, briefing, service sequence, order control, table maintenance, recovery and closing. The LuxOps F&B Starter Pack gives the daily checklists and scripts. The full F&B SOP manual gives the complete department reference.',
-      cta: { text: 'View the F&B Starter Pack', href: '/en/playbooks/fb-starter-pack' },
+        'A restaurant SOP is useful when it follows the real shift: opening, briefing, service sequence, order control, table maintenance, recovery and closing. The LuxOps F&B SOP manual combines daily checklists and scripts with the complete department reference.',
+      cta: { text: 'View the F&B SOP manual', href: '/en/playbooks/fb' },
     },
     fr: {
       title: "SOP restaurant : ouverture, séquence de service et fermeture",
@@ -1909,12 +1909,12 @@ export const articles: BilingualArticle[] = [
       date: '2026-03-29',
       readTime: '10 min de lecture',
       intro:
-        "Ce guide SOP restaurant est adapté du manuel SOP F&B LuxOps et du starter pack F&B. Il s’applique aussi bien à un restaurant d’établissement, un resort, un coffee shop, un point de vente indépendant ou une salle de petit-déjeuner. Le sujet reste le même : préparation d’ouverture, briefing, inspection de table, séquence de service, règles de recovery et passation de clôture. L’objectif n’est pas de rendre le service mécanique, mais de retirer le doute opérationnel pour que l’équipe puisse se concentrer sur le client.",
+        "Ce guide SOP restaurant est adapté du manuel SOP F&B LuxOps et de ses outils pratiques inclus. Il s’applique aussi bien à un restaurant d’établissement, un resort, un coffee shop, un point de vente indépendant ou une salle de petit-déjeuner. Le sujet reste le même : préparation d’ouverture, briefing, inspection de table, séquence de service, règles de recovery et passation de clôture. L’objectif n’est pas de rendre le service mécanique, mais de retirer le doute opérationnel pour que l’équipe puisse se concentrer sur le client.",
       sections: [
         {
           h2: 'Procédure d’ouverture : de T-90 à l’ouverture des portes',
           content:
-            "La checklist d’ouverture du starter pack démarre 90 minutes avant le service. C’est important, car le restaurant se remet rarement complètement d’une mauvaise ouverture : une mise en place incomplète devient un service lent, un service lent devient du stress, et le stress devient visible pour le client.",
+            "La checklist d’ouverture incluse démarre 90 minutes avant le service. C’est important, car le restaurant se remet rarement complètement d’une mauvaise ouverture : une mise en place incomplète devient un service lent, un service lent devient du stress, et le stress devient visible pour le client.",
           h3Items: [
             {
               heading: 'T-90 : préparation individuelle et connaissance du jour',
@@ -1960,7 +1960,7 @@ export const articles: BilingualArticle[] = [
             },
             {
               heading: 'Recommandations précises',
-              text: "L’upselling fonctionne quand il est contextuel. La fiche upselling du starter pack encourage des suggestions précises : vin avec un steak, jus frais au petit-déjeuner, café ou digestif avec dessert, pas une pression générique.",
+              text: "L’upselling fonctionne quand il est contextuel. La fiche upselling incluse encourage des suggestions précises : vin avec un steak, jus frais au petit-déjeuner, café ou digestif avec dessert, pas une pression générique.",
             },
             {
               heading: 'Responsabilité du rythme',
@@ -1971,7 +1971,7 @@ export const articles: BilingualArticle[] = [
         {
           h2: 'Inspection de table et mise en place',
           content:
-            "Le chapitre mise en place présente la préparation comme une disponibilité physique, mentale et organisationnelle. Le starter pack transforme cette logique en checklist d’inspection de table, directement utilisable par l’équipe avant le service.",
+            "Le chapitre mise en place présente la préparation comme une disponibilité physique, mentale et organisationnelle. Les outils inclus transforment cette logique en checklist d’inspection de table, directement utilisable par l’équipe avant le service.",
           h3Items: [
             {
               heading: 'Standard physique de la table',
@@ -1990,7 +1990,7 @@ export const articles: BilingualArticle[] = [
         {
           h2: 'Clôture de service et passation',
           content:
-            "Une bonne clôture protège le service suivant. Le starter pack F&B inclut une checklist de fermeture restaurant afin que la fin de shift ne soit pas gérée de mémoire.",
+            "Une bonne clôture protège le service suivant. Le Manuel SOP F&B inclut une checklist de fermeture restaurant afin que la fin de shift ne soit pas gérée de mémoire.",
           h3Items: [
             {
               heading: 'Tâches de clôture',
@@ -2004,8 +2004,8 @@ export const articles: BilingualArticle[] = [
         },
       ],
       conclusion:
-        "Une SOP restaurant utile suit le vrai déroulé d’un shift : ouverture, briefing, séquence de service, prise de commande, suivi de table, recovery et clôture. Le starter pack F&B donne les checklists et scripts du quotidien. Le manuel SOP F&B complet apporte toute la référence du département.",
-      cta: { text: 'Voir le starter pack F&B', href: '/fr/playbooks/fb-starter-pack' },
+        "Une SOP restaurant utile suit le vrai déroulé d’un shift : ouverture, briefing, séquence de service, prise de commande, suivi de table, recovery et clôture. Le Manuel SOP F&B réunit les checklists et scripts du quotidien avec la référence complète du département.",
+      cta: { text: 'Voir le Manuel SOP F&B', href: '/fr/playbooks/fb' },
     },
   },
   {
@@ -2230,7 +2230,7 @@ export const articles: BilingualArticle[] = [
       date: '2026-03-31',
       readTime: '9 min read',
       intro:
-        'This room service SOP is adapted from the LuxOps F&B SOP manual and the F&B Starter Pack. The SOP manual defines in-room dining as the restaurant standard delivered into the guest’s private space. There is no dining room atmosphere, no floor manager passing by and no second interaction to correct the impression. The order, timing, tray, delivery and collection must therefore be controlled as one flow.',
+        'This room service SOP is adapted from the LuxOps F&B SOP manual and its included practical tools. The SOP manual defines in-room dining as the restaurant standard delivered into the guest’s private space. There is no dining room atmosphere, no floor manager passing by and no second interaction to correct the impression. The order, timing, tray, delivery and collection must therefore be controlled as one flow.',
       sections: [
         {
           h2: 'Room service is not reduced restaurant service',
@@ -2329,8 +2329,8 @@ export const articles: BilingualArticle[] = [
         },
       ],
       conclusion:
-        'Room service works when order capture, timing, setup, delivery and pickup are managed as one controlled flow. The F&B Starter Pack includes a practical room service checklist for daily use. The full F&B SOP manual gives the complete procedure, timing standards, VIP logic, troubleshooting and quality control.',
-      cta: { text: 'View the F&B Starter Pack', href: '/en/playbooks/fb-starter-pack' },
+        'Room service works when order capture, timing, setup, delivery and pickup are managed as one controlled flow. The F&B SOP manual includes a practical room service checklist for daily use. The manual also gives the complete procedure, timing standards, VIP logic, troubleshooting and quality control.',
+      cta: { text: 'View the F&B SOP manual', href: '/en/playbooks/fb' },
     },
     fr: {
       title: "SOP room service : prise de commande, plateau et livraison",
@@ -2339,7 +2339,7 @@ export const articles: BilingualArticle[] = [
       date: '2026-03-31',
       readTime: '9 min de lecture',
       intro:
-        "Cette SOP room service est adaptée du manuel SOP F&B LuxOps et du starter pack F&B. Le manuel SOP définit le room service comme le standard restaurant porté dans l’espace privé du client. Il n’y a pas d’ambiance de salle, pas de manager qui passe pour repérer un retard et pas de deuxième interaction pour corriger l’impression. La commande, le timing, le plateau, la livraison et le débarrassage doivent donc être pensés comme un seul flux contrôlé.",
+        "Cette SOP room service est adaptée du manuel SOP F&B LuxOps et de ses outils pratiques inclus. Le manuel SOP définit le room service comme le standard restaurant porté dans l’espace privé du client. Il n’y a pas d’ambiance de salle, pas de manager qui passe pour repérer un retard et pas de deuxième interaction pour corriger l’impression. La commande, le timing, le plateau, la livraison et le débarrassage doivent donc être pensés comme un seul flux contrôlé.",
       sections: [
         {
           h2: 'Le room service n’est pas un service restaurant diminué',
@@ -2438,8 +2438,8 @@ export const articles: BilingualArticle[] = [
         },
       ],
       conclusion:
-        "Le room service fonctionne lorsque la prise de commande, le timing, le dressage, la livraison et le débarrassage sont gérés comme un seul flux contrôlé. Le starter pack F&B inclut une checklist room service pratique pour le quotidien. Le manuel SOP F&B complet apporte la procédure complète, les standards de timing, la logique VIP, la gestion des situations sensibles et le contrôle qualité.",
-      cta: { text: 'Voir le starter pack F&B', href: '/fr/playbooks/fb-starter-pack' },
+        "Le room service fonctionne lorsque la prise de commande, le timing, le dressage, la livraison et le débarrassage sont gérés comme un seul flux contrôlé. Le Manuel SOP F&B inclut une checklist room service pratique pour le quotidien. Le manuel apporte aussi la procédure complète, les standards de timing, la logique VIP, la gestion des situations sensibles et le contrôle qualité.",
+      cta: { text: 'Voir le Manuel SOP F&B', href: '/fr/playbooks/fb' },
     },
   },
   {
