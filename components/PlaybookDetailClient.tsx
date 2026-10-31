@@ -246,7 +246,7 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
                     <span className="shrink-0 font-display text-lg font-semibold leading-none text-[#25382d] sm:text-xl">{formatProductPrice('bundle')} <small className="font-sans text-[9px] font-normal text-[#85867f]">TTC</small></span>
                   </div>
                   <p className="ml-[26px] mt-1 text-[10px] leading-[1.4] text-[#74766e] sm:text-[11px]">Front Office · Housekeeping · F&B · Spa · Revenue Management</p>
-                  {includesStarterPack && <p className="ml-[26px] mt-1 text-[10px] font-medium leading-[1.4] text-[#6b5738] sm:text-[11px]">{isEn ? `${pb.dept.en} Starter Pack included with the ${pb.dept.en} manual.` : `Starter Pack ${pb.dept.fr} inclus avec le manuel ${pb.dept.fr}.`}</p>}
+                  <p className="ml-[26px] mt-1 text-[10px] font-medium leading-[1.4] text-[#6b5738] sm:text-[11px]">{isEn ? '3 Starter Packs included: Front Office, Housekeeping and F&B.' : '3 Starter Packs inclus : Front Office, Housekeeping et F&B.'}</p>
                   <div className="ml-[26px] mt-2 flex items-center justify-between gap-3 border-t border-dashed border-[#e8e2d7] pt-2">
                     <span className="text-[9px] font-medium text-[#9a7948]">{isEn ? 'Same €199 price' : 'Tarif maintenu à 199 €'}</span>
                     <button type="button" onClick={handleAddBundle} className="inline-flex min-h-8 items-center gap-1.5 rounded-full border border-[#d8d2c7] bg-white px-3.5 text-[10px] font-semibold text-[#25382d] transition hover:border-[#10251d] hover:bg-[#f8f6f1] sm:text-[11px]">
