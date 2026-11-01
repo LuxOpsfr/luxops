@@ -162,7 +162,7 @@ const departments = [
   { id: 'fo', image: 'dept-front-office-v2.jpg', label: { fr: 'Hébergement', en: 'Rooms', es: 'Alojamiento' } },
   { id: 'hsk', image: 'dept-housekeeping-v2.jpg', label: { fr: 'Gouvernance', en: 'Housekeeping', es: 'Pisos' } },
   { id: 'fb', image: 'dept-food-beverage-v2.jpg', label: { fr: 'Gastronomie', en: 'Food & Beverage', es: 'Gastronomía' } },
-  { id: 'spa', image: 'dept-spa-wellness-v2.jpg', label: { fr: 'Bien-être', en: 'Wellness', es: 'Bienestar' } },
+  { id: 'spa', image: 'spa-wellness.jpg', label: { fr: 'Bien-être', en: 'Wellness', es: 'Bienestar' } },
 ] as const
 
 const proofItems = [

@@ -12,7 +12,7 @@ export const blogEditorialImages: Record<string, string> = {
   'hotel-front-office-procedures': image('hero-reception-natural-v4.png'),
   'housekeeping-room-inspection': image('housekeeping-cottonbro-6466482.jpg'),
   'hotel-fb-restaurant-procedures': image('dept-food-beverage-v2.jpg'),
-  'hotel-spa-wellness-sops': image('dept-spa-wellness-v2.jpg'),
+  'hotel-spa-wellness-sops': image('spa-wellness.jpg'),
   'hotel-room-service-sops': image('fb-room-service.png'),
   'hotel-standard-operating-procedures': image('housekeeping-cottonbro-6466482.jpg'),
   'hotel-front-desk-procedures': image('hero-reception-natural-v4.png'),

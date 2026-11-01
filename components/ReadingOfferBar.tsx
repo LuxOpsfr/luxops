@@ -25,9 +25,12 @@ export default function ReadingOfferBar({ locale, href, articleSlug, sourcePage,
   useEffect(() => {
     const update = () => {
       const articleBody = document.getElementById('article-reading-start')
+      const earlyOffer = document.getElementById('article-offer-start')
       const finalOffer = document.getElementById('article-final-offer')
       const footer = document.querySelector('footer')
-      const readingStarted = articleBody
+      const readingStarted = earlyOffer
+        ? earlyOffer.getBoundingClientRect().bottom < window.innerHeight * 0.18
+        : articleBody
         ? articleBody.getBoundingClientRect().top < window.innerHeight * 0.7
         : window.scrollY > 650
       const finalOfferReached = ((finalOffer ?? footer)?.getBoundingClientRect().top ?? Infinity) < window.innerHeight * 0.9

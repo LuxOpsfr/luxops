@@ -30,7 +30,7 @@ const offers = {
     imageAlt: { fr: 'Table de restaurant hôtelier dressée', en: 'Hotel restaurant table setting' },
   },
   spa: {
-    path: '/playbooks/spa', image: '/images/editorial-hospitality/dept-spa-wellness-v2.jpg',
+    path: '/playbooks/spa', image: '/images/editorial-hospitality/spa-wellness.jpg',
     department: 'Spa & Wellness',
     title: { fr: 'Manuel SOP Spa & Wellness', en: 'Spa & Wellness SOP Manual' },
     mobileTitle: 'Spa & Wellness',

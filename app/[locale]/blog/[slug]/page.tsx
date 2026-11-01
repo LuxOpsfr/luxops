@@ -1145,6 +1145,7 @@ export default async function BlogArticlePage({
   const upgrade = CONTENT_UPGRADES[slug]?.[isEn ? 'en' : 'fr']
   const playbookExcerpt = PLAYBOOK_EXCERPTS[slug]?.[isEn ? 'en' : 'fr']
   const productCta = ARTICLE_PRODUCT_CTAS[slug]?.[isEn ? 'en' : 'fr']
+  const earlyManualOffer = Boolean(playbookExcerpt && !productCta?.primaryHref.includes('/downloads/'))
 
   return (
     <>
@@ -1188,6 +1189,12 @@ export default async function BlogArticlePage({
           </div>
         </section>
 
+        {earlyManualOffer && (
+          <aside id="article-offer-start" className="mx-auto max-w-[900px] px-6 py-7" aria-label={isEn ? 'Manual related to this guide' : 'Manuel associé à ce guide'}>
+            <ArticleManualCard locale={isEn ? 'en' : 'fr'} articleSlug={slug} variant="wide" placement="article_intro_offer" {...manualOffer} />
+          </aside>
+        )}
+
         {blogEditorialImages[slug] && (
           <figure className={styles.editorialFigure}>
             <Image
@@ -1201,7 +1208,7 @@ export default async function BlogArticlePage({
           </figure>
         )}
 
-        {productCta && (
+        {productCta && !earlyManualOffer && (
           <section className={`py-10 bg-white border-b border-gray-100 ${styles.productCta}`}>
             <div className="max-w-3xl mx-auto px-6 text-center">
               <p className="text-[10px] font-bold uppercase tracking-widest text-[#92734a] mb-3">

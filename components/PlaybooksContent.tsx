@@ -29,7 +29,7 @@ const departmentImages = {
   fo: '/images/editorial-hospitality/dept-front-office-v2.jpg',
   hsk: '/images/editorial-hospitality/dept-housekeeping-v2.jpg',
   fb: '/images/editorial-hospitality/dept-food-beverage-v2.jpg',
-  spa: '/images/editorial-hospitality/dept-spa-wellness-v2.jpg',
+  spa: '/images/editorial-hospitality/spa-wellness.jpg',
 } as const
 
 const copy = {
