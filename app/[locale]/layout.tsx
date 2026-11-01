@@ -9,6 +9,7 @@ import { CurrencyProvider } from '@/context/CurrencyContext'
 import { Analytics } from '@vercel/analytics/next'
 import { organizationSchema } from '@/lib/seo'
 import { LOCALE_META, toActiveLocale } from '@/lib/i18n'
+import ContextualResourceOffer from '@/components/ContextualResourceOffer'
 
 const GA_ID = 'G-0CDGZY9FPZ'
 
@@ -115,6 +116,7 @@ export default async function LocaleLayout({
             <CartProvider>
               <SiteShell locale={activeLocale}>
                 {children}
+                <ContextualResourceOffer routeLocale={activeLocale} />
               </SiteShell>
             </CartProvider>
           </CurrencyProvider>

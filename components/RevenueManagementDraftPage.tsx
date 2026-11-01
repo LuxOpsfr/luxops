@@ -5,6 +5,8 @@ import { revenueManagementDrafts } from '@/content/blog/revenue-management-draft
 import RevenueMetricsCalculator from '@/components/RevenueMetricsCalculator'
 import { REVENUE_PRODUCT_PATH } from '@/content/revenue-management-product'
 import { breadcrumbSchema } from '@/lib/seo'
+import ReadingOfferBar from '@/components/ReadingOfferBar'
+import ArticleManualCard from '@/components/ArticleManualCard'
 
 export default function RevenueManagementDraftPage({
   article,
@@ -61,7 +63,7 @@ export default function RevenueManagementDraftPage({
           <Image src={heroImage.src} alt={heroImage.alt[locale]} fill priority sizes="(min-width: 1120px) 1050px, 100vw" className="object-cover object-center" />
         </div>}
 
-        <div className="grid gap-12 py-10 lg:grid-cols-[minmax(0,1fr)_250px]">
+        <div id="article-reading-start" className="grid gap-12 py-10 lg:grid-cols-[minmax(0,1fr)_250px]">
           <div className="order-2 min-w-0 lg:order-1">
             {article.slug === 'calcul-revpar-adr-taux-occupation' && <RevenueMetricsCalculator locale={locale} />}
 
@@ -135,7 +137,21 @@ export default function RevenueManagementDraftPage({
           </div>
 
           <aside className="order-1 lg:order-2 lg:sticky lg:top-28 lg:self-start" aria-label={isFr ? 'Sommaire de l’article' : 'Article contents'}>
-            <div className="rounded-2xl border border-[#e7e1d7] bg-white p-5">
+            <div className="mb-4 hidden lg:block">
+              <ArticleManualCard
+                locale={locale}
+                href={`/${locale}${REVENUE_PRODUCT_PATH}`}
+                articleSlug={article.slug}
+                department="Revenue Management"
+                title="Revenue Management"
+                description={isFr
+                  ? 'Forecast, tarifs, disponibilités et distribution : des procédures pour piloter les décisions commerciales.'
+                  : 'Forecasting, rates, availability and distribution: procedures for commercial decisions.'}
+                image="/images/editorial-hospitality/dept-revenue-management-v1.png"
+                imageAlt={isFr ? 'Espace de travail Revenue Management dans un hôtel' : 'Hotel revenue management workspace'}
+              />
+            </div>
+            <div className="rounded-2xl border border-[#e7e1d7] bg-white p-5 lg:max-h-[calc(100svh-30rem)] lg:overflow-y-auto">
               <p className="mb-4 text-xs font-semibold uppercase tracking-[.14em] text-[#92734a]">{isFr ? 'Dans ce guide' : 'In this guide'}</p>
               <ul className="space-y-3 text-sm leading-5">
                 {content.sections.map((section) => (
@@ -159,7 +175,7 @@ export default function RevenueManagementDraftPage({
           </div>
         </section>
 
-        <section className="mt-10 rounded-2xl border border-[#d9c9aa] bg-[#f8f5ed] p-6 sm:p-8">
+        <section id="article-final-offer" className="mt-10 rounded-2xl border border-[#d9c9aa] bg-[#f8f5ed] p-6 sm:p-8">
           <p className="text-xs font-semibold uppercase tracking-[.14em] text-[#92734a]">{isFr ? 'Pour aller plus loin' : 'Go further'}</p>
           <h2 className="mt-2 font-display text-2xl">Revenue Management &amp; Distribution</h2>
           <p className="mt-3 max-w-2xl leading-7 text-[#536057]">
@@ -171,6 +187,17 @@ export default function RevenueManagementDraftPage({
             {isFr ? 'Découvrir le manuel et ses chapitres' : 'Explore the handbook and its chapters'}<span aria-hidden="true">→</span>
           </Link>
         </section>
+        <ReadingOfferBar
+          locale={locale}
+          href={`/${locale}${REVENUE_PRODUCT_PATH}`}
+          articleSlug={article.slug}
+          title={isFr ? 'Manuel Revenue Management' : 'Revenue Management manual'}
+          mobileTitle="Revenue Management"
+          benefit={isFr ? 'Procédures et fichiers modifiables.' : 'Procedures and editable files.'}
+          image="/images/editorial-hospitality/dept-revenue-management-v1.png"
+          imageAlt={isFr ? 'Espace de travail Revenue Management' : 'Revenue Management workspace'}
+          mobileOnly
+        />
       </div>
     </article>
   )

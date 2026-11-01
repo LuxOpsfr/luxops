@@ -194,6 +194,16 @@
   color: #705431;
 }
 
+@media (min-width: 1024px) {
+  .preview .body > .articleWithOffer {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 240px;
+    gap: 2rem;
+    max-width: 1080px;
+    align-items: start;
+  }
+}
+
 @media (max-width: 640px) {
   .preview .hero {
     padding-block: 3.5rem;

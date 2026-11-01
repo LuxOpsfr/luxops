@@ -12,6 +12,9 @@ import { localizePathname } from '@/lib/localized-routes'
 import styles from './article-preview.module.css'
 import { blogEditorialImages, editorialImageUrl } from '@/lib/editorial-images'
 import RevenueManagementDraftPage from '@/components/RevenueManagementDraftPage'
+import ReadingOfferBar from '@/components/ReadingOfferBar'
+import ArticleManualCard from '@/components/ArticleManualCard'
+import { getManualOffer, manualOfferForBlog } from '@/lib/manual-offers'
 
 // Keywords per article - improves indexation signals for Google
 const KEYWORDS_EN: Record<string, string> = {
@@ -1095,6 +1098,7 @@ export default async function BlogArticlePage({
 
   const isEn = activeLocale === 'en'
   const content = isEn ? article.en : article.fr
+  const manualOffer = getManualOffer(manualOfferForBlog(slug), isEn ? 'en' : 'fr', activeLocale)
   const localizedLink = (href: string) => {
     if (href.startsWith('/en/') || href.startsWith('/fr/')) return href
     if (href.startsWith('/')) return localizePathname(href, activeLocale)
@@ -1358,8 +1362,8 @@ export default async function BlogArticlePage({
         )}
 
         {/* Article body - all sections */}
-        <section className={`py-12 bg-white ${styles.body}`}>
-          <div className="max-w-3xl mx-auto px-6">
+        <section id="article-reading-start" className={`py-12 bg-white ${styles.body}`}>
+          <div className={`max-w-3xl mx-auto px-6 ${styles.articleWithOffer}`}>
             <div className="prose-style">
               <nav className="mb-12 rounded-xl border border-gray-100 bg-gray-50 p-6">
                 <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-4">
@@ -1427,6 +1431,9 @@ export default async function BlogArticlePage({
                 </div>
               )}
             </div>
+            <aside className="hidden self-start lg:sticky lg:top-28 lg:block" aria-label={isEn ? 'Related manual' : 'Manuel associé'}>
+              <ArticleManualCard locale={isEn ? 'en' : 'fr'} articleSlug={slug} {...manualOffer} />
+            </aside>
           </div>
         </section>
 
@@ -1536,7 +1543,7 @@ export default async function BlogArticlePage({
         })()}
 
         {/* CTA */}
-        <section className={`py-16 bg-[#111111] ${styles.finalCta}`}>
+        <section id="article-final-offer" className={`py-16 bg-[#111111] ${styles.finalCta}`}>
           <div className="max-w-3xl mx-auto px-6 text-center">
             <h2 className="text-2xl font-bold text-white mb-6">
               {isEn ? 'Ready to structure your operations?' : 'Prêt à structurer vos opérations ?'}
@@ -1549,6 +1556,13 @@ export default async function BlogArticlePage({
             </Link>
           </div>
         </section>
+        <ReadingOfferBar
+          locale={isEn ? 'en' : 'fr'}
+          articleSlug={slug}
+          benefit={manualOffer.note || manualOffer.description}
+          mobileOnly
+          {...manualOffer}
+        />
       </div>
     </>
   )
