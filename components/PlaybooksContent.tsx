@@ -34,13 +34,14 @@ const departmentImages = {
 
 const copy = {
   fr: {
-    eyebrow: 'BOUTIQUE OPÉRATIONNELLE · FICHIERS NUMÉRIQUES',
-    title: 'Les Manuels SOP, prêts à télécharger et personnaliser.',
+    eyebrow: 'MANUELS SOP OPÉRATIONNELS',
+    title: 'Faites vivre les standards de l’hôtellerie cinq étoiles au quotidien.',
     intro:
-      'Procédures opérationnelles de référence pour l’hôtellerie de luxe. Fichiers PDF et PowerPoint (.pptx) modifiables, en français et en anglais.',
+      'Des manuels SOP prêts à l’emploi pour former vos équipes plus vite, harmoniser le service et ne plus rédiger chaque procédure de zéro.',
     departmentsCta: 'Choisir un manuel · dès 67 €',
     bundleCta: 'Ajouter le bundle · 199 €',
-    facts: ['PDF & PowerPoint modifiables', 'Français & anglais inclus', 'Téléchargement immédiat'],
+    benefits: ['Formez plus vite', 'Harmonisez vos équipes', 'Adaptez à votre hôtel'],
+    formatNote: 'PDF et PowerPoint modifiables · Français et anglais inclus · Téléchargement immédiat',
     options: ['Manuel par département', 'Catalogue complet'],
     departmentEyebrow: 'CATALOGUE DÉPARTEMENTAL',
     departmentTitle: 'Les 5 Manuels Opérationnels',
@@ -65,13 +66,14 @@ const copy = {
     ttc: 'TTC',
   },
   en: {
-    eyebrow: 'OPERATIONAL SHOP · DIGITAL FILES',
-    title: 'Official SOP Manuals, ready to download and customise.',
+    eyebrow: 'OPERATIONAL SOP MANUALS',
+    title: 'Bring five-star standards into daily hotel operations.',
     intro:
-      'Operational reference procedures for luxury hospitality. Editable PDF and PowerPoint (.pptx) files, in English and French.',
+      'Ready-to-use SOP manuals to train teams faster, align service standards and stop building procedures from scratch.',
     departmentsCta: 'Choose a manual · from €67',
     bundleCta: 'Add the bundle · €199',
-    facts: ['Editable PDF & PowerPoint', 'English & French included', 'Instant download'],
+    benefits: ['Train faster', 'Standardise your teams', 'Customise to your hotel'],
+    formatNote: 'Editable PDF & PowerPoint · English & French included · Instant download',
     options: ['Manual by department', 'Complete catalogue'],
     departmentEyebrow: 'DEPARTMENT CATALOGUE',
     departmentTitle: 'The 5 Operating Manuals',
@@ -96,13 +98,14 @@ const copy = {
     ttc: 'incl. tax',
   },
   es: {
-    eyebrow: 'TIENDA OPERATIVA · ARCHIVOS DIGITALES',
-    title: 'Manuales SOP oficiales, listos para descargar y personalizar.',
+    eyebrow: 'MANUALES SOP OPERATIVOS',
+    title: 'Lleve los estándares de cinco estrellas a las operaciones diarias de su hotel.',
     intro:
-      'Encuentre los procedimientos esenciales de cada departamento hotelero en manuales diseñados para adaptarse a su establecimiento.',
+      'Manuales SOP listos para usar con los que formar al equipo más rápido, unificar el servicio y dejar de redactar cada procedimiento desde cero.',
     departmentsCta: 'Elegir un manual · desde 67 €',
     bundleCta: 'Añadir el paquete · 199 €',
-    facts: ['PDF y PowerPoint editables', 'Francés e inglés incluidos', 'Descarga inmediata'],
+    benefits: ['Forme más rápido', 'Unifique a sus equipos', 'Adapte a su hotel'],
+    formatNote: 'PDF y PowerPoint editables · Inglés y francés incluidos · Descarga inmediata',
     options: ['Manual por departamento', 'Catálogo completo'],
     departmentEyebrow: 'CATÁLOGO POR DEPARTAMENTO',
     departmentTitle: 'Los 5 Manuales Operativos',
@@ -162,28 +165,35 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
             <h1 className="max-w-[600px] font-display text-[clamp(2.05rem,2.9vw,2.75rem)] font-medium leading-[1.07] tracking-[-.035em] text-[#0f211a]">
               {text.title}
             </h1>
-            <p className="mt-3 max-w-[570px] text-[13px] leading-5 text-[#626b64] md:text-[14px] md:leading-6">
+            <p className="mt-4 max-w-[600px] text-[14px] leading-6 text-[#626b64] md:text-[15px] md:leading-6">
               {text.intro}
             </p>
-            <div className="mt-3 grid max-w-[620px] grid-cols-1 gap-1.5 sm:grid-cols-3">
-              {text.facts.map((fact, index) => {
-                const Icon = index === 0 ? FileText : index === 1 ? Languages : Download
-                return (
-                  <div key={fact} className="flex min-h-9 items-center gap-1.5 rounded-xl border border-[#ede8df] bg-[#f4f1eb] px-2.5 py-1.5 text-[10px] font-medium leading-4 text-[#4f5c52]">
-                    <Icon size={14} className="shrink-0 text-[#8b6a36]" strokeWidth={1.7} />
-                    {fact}
-                  </div>
-                )
-              })}
-            </div>
-            <div className="mt-3.5 flex flex-col gap-2 sm:flex-row">
+            <ul className="mt-5 flex max-w-[620px] flex-wrap gap-x-5 gap-y-2.5" aria-label={lang === 'fr' ? 'Bénéfices des manuels' : lang === 'es' ? 'Beneficios de los manuales' : 'Benefits of the manuals'}>
+              {text.benefits.map((benefit) => (
+                <li key={benefit} className="flex items-center gap-1.5 text-[12px] font-semibold leading-5 text-[#254034] md:text-[13px]">
+                  <Check size={15} className="shrink-0 text-[#9b7743]" strokeWidth={2} />{benefit}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-4 max-w-[620px] text-[11px] font-medium leading-5 text-[#6a736b]">{text.formatNote}</p>
+            <div className="mt-5 flex flex-col gap-2 sm:flex-row">
               <SamePageAnchor
                 href="#department-playbooks"
                 className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-[#0f211a] px-5 text-[11px] font-semibold text-white shadow-[0_7px_20px_rgba(16,37,29,.13)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#263d31]"
               >
                 {text.departmentsCta}<ArrowDown size={15} strokeWidth={1.7} />
               </SamePageAnchor>
-              <AddToCartButton
+              <button
+                type="button"
+                onClick={() => setIsSampleModalOpen(true)}
+                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-[#cdb78e] bg-white px-5 text-[11px] font-semibold text-[#24362f] shadow-[0_4px_12px_rgba(57,50,36,.04)] transition duration-300 hover:-translate-y-0.5 hover:border-[#a7834d] hover:bg-[#fffdf8] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8b6a36]"
+              >
+                <Download size={15} strokeWidth={1.7} className="text-[#8b6a36]" />
+                {lang === 'fr' ? 'Recevoir un chapitre découverte' : lang === 'es' ? 'Recibir un capítulo de muestra' : 'Get a sample chapter'}
+                <ArrowRight size={14} />
+              </button>
+            </div>
+            <AddToCartButton
                 openCartOnAdd
                 item={{
                   priceId: BUNDLE_PRICE_ID,
@@ -193,24 +203,10 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                   productType: 'bundle',
                 }}
                 addedLabel={lang === 'fr' ? 'Dans le panier' : lang === 'es' ? 'En la cesta' : 'In cart'}
-                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-[#d7d1c5] bg-white px-5 text-[11px] font-semibold text-[#24362f] shadow-[0_4px_12px_rgba(57,50,36,.04)] transition duration-300 hover:-translate-y-0.5 hover:border-[#b89760]"
+                className="mt-3 inline-flex items-center gap-1.5 text-[11px] font-semibold text-[#465b4d] underline decoration-[#b89760] underline-offset-4 transition hover:text-[#0f211a]"
               >
-                <ShoppingBag size={15} strokeWidth={1.7} />{text.bundleCta}<ArrowRight size={14} />
+                <ShoppingBag size={14} strokeWidth={1.7} />{text.bundleCta}<ArrowRight size={13} />
               </AddToCartButton>
-            </div>
-            <button
-              type="button"
-              onClick={() => setIsSampleModalOpen(true)}
-              className="mt-2 inline-flex min-h-11 items-center justify-center gap-2 self-start rounded-full border border-[#cdb78e] bg-white px-5 text-[11px] font-semibold text-[#24362f] shadow-[0_4px_12px_rgba(57,50,36,.04)] transition duration-300 hover:-translate-y-0.5 hover:border-[#a7834d] hover:bg-[#fffdf8] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8b6a36]"
-            >
-              <Download size={15} strokeWidth={1.7} className="text-[#8b6a36]" />
-              {lang === 'fr'
-                ? 'Recevoir un chapitre découverte'
-                : lang === 'es'
-                  ? 'Recibir un capítulo de muestra'
-                  : 'Get a sample chapter'}
-              <ArrowRight size={14} />
-            </button>
           </div>
 
           <div className="relative mx-auto aspect-[1.3] w-full max-w-[740px] rounded-[28px] bg-[#eee8dc] p-3 shadow-[0_18px_42px_rgba(78,63,40,.13)] sm:rounded-[34px] sm:p-4 lg:max-w-none">
