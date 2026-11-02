@@ -15,6 +15,7 @@ import RevenueManagementDraftPage from '@/components/RevenueManagementDraftPage'
 import ReadingOfferBar from '@/components/ReadingOfferBar'
 import ArticleManualCard from '@/components/ArticleManualCard'
 import { getManualOffer, manualOfferForBlog } from '@/lib/manual-offers'
+import BlogSearchLandingPreview from '@/components/BlogSearchLandingPreview'
 
 // Keywords per article - improves indexation signals for Google
 const KEYWORDS_EN: Record<string, string> = {
@@ -1146,6 +1147,20 @@ export default async function BlogArticlePage({
   const playbookExcerpt = PLAYBOOK_EXCERPTS[slug]?.[isEn ? 'en' : 'fr']
   const productCta = ARTICLE_PRODUCT_CTAS[slug]?.[isEn ? 'en' : 'fr']
   const earlyManualOffer = Boolean(playbookExcerpt && !productCta?.primaryHref.includes('/downloads/'))
+
+  const resourceLandingSlugs = ['hotel-front-desk-procedures', 'hotel-bathroom-cleaning-sop', 'hotel-room-service-sops', 'housekeeping-room-inspection'] as const
+  const resourceLandingSlug = resourceLandingSlugs.includes(slug as typeof resourceLandingSlugs[number])
+    ? slug as typeof resourceLandingSlugs[number]
+    : null
+
+  if (resourceLandingSlug && (activeLocale === 'fr' || activeLocale === 'en')) {
+    return <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      {faqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }} />
+      <BlogSearchLandingPreview locale={activeLocale} slug={resourceLandingSlug} article={content} extra={upgrade} excerpt={playbookExcerpt} />
+    </>
+  }
 
   return (
     <>
