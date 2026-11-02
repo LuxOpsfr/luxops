@@ -10,9 +10,9 @@ import PriceDisplay from '@/components/PriceDisplay'
 import TrackedLink from '@/components/TrackedLink'
 
 type Locale = 'fr' | 'en'
-type Slug = 'hotel-front-desk-procedures' | 'hotel-bathroom-cleaning-sop' | 'hotel-room-service-sops' | 'housekeeping-room-inspection'
-type Copy = { eyebrow: string; answerTitle: string; answerIntro: string; steps: string[]; bridgeTitle: string; bridgeText: string; pdfLabel: string; pdfHref: string; related: { href: string; title: string }[] }
-type Config = { productId: 'fo' | 'hsk' | 'fb'; department: string; sampleTitle: Record<Locale, string>; samplePages: Record<Locale, number>; image: string; copy: Record<Locale, Copy> }
+type Slug = 'hotel-front-desk-procedures' | 'hotel-bathroom-cleaning-sop' | 'hotel-room-service-sops' | 'housekeeping-room-inspection' | 'hotel-housekeeping-supervisor-checklist' | 'hotel-spa-wellness-sops' | 'hotel-fb-restaurant-procedures' | 'hotel-front-office-sop' | 'hotel-room-cleaning-checklist'
+type Copy = { eyebrow: string; answerTitle: string; answerIntro: string; steps: string[]; bridgeTitle: string; bridgeText: string; pdfLabel?: string; pdfHref?: string; downloadTitle?: string; related: { href: string; title: string }[] }
+type Config = { productId: 'fo' | 'hsk' | 'fb' | 'spa'; department: string; sampleTitle: Record<Locale, string>; samplePages: Record<Locale, number>; image: string; copy: Record<Locale, Copy> }
 
 const CONFIG: Record<Slug, Config> = {
   'hotel-front-desk-procedures': {
@@ -43,6 +43,201 @@ const CONFIG: Record<Slug, Config> = {
       en: { eyebrow: 'Room inspection · quality control', answerTitle: 'A clean room is not yet released', answerIntro: 'A departure room moves from Clean to Inspected only after a supervisor or manager has physically checked it.', steps: ['Assess the first impression from the doorway: scent, temperature, bed, lighting and order.', 'Inspect bedroom and bathroom in a fixed sequence, including high-risk areas.', 'Test equipment, amenities and presentation details.', 'Log defects by room and request a specific correction.', 'Reinspect, release the room in the PMS and communicate its status to Front Office.'], bridgeTitle: 'Turn defects into a shared standard', bridgeText: 'The Housekeeping manual connects inspection, room status, cleaning methods, quality scoring and team coaching.', pdfLabel: 'Download the supervisor checklist', pdfHref: '/downloads/housekeeping-checklists/en/floor-housekeeping-supervisor-checklist.pdf', related: [{ href: '/en/hotel-housekeeping-checklist', title: 'Free Housekeeping checklists' }, { href: '/en/blog/hotel-bathroom-cleaning-sop', title: 'Bathroom cleaning SOP' }, { href: '/en/blog/hotel-housekeeping-supervisor-checklist', title: 'Supervisor checklist' }] },
     },
   },
+  'hotel-housekeeping-supervisor-checklist': {
+    productId: 'hsk', department: 'Housekeeping', sampleTitle: { fr: 'Espaces communs & nettoyages spéciaux', en: 'Public Areas & Specialty Cleaning' }, samplePages: { fr: 41, en: 33 }, image: '/images/editorial-hospitality/housekeeping-cottonbro-6466482.jpg',
+    copy: {
+      fr: {
+        eyebrow: 'Checklist gouvernante · inspection et libération',
+        answerTitle: 'Les six contrôles de la gouvernante avant de libérer une chambre',
+        answerIntro: 'Le statut « propre » signale le travail terminé par l’équipier. La chambre ne passe à « inspectée » qu’après un contrôle physique et une éventuelle correction.',
+        steps: [
+          'Prioriser les départs, arrivées anticipées, VIP, chambres bloquées et demandes de la réception.',
+          'Répartir les chambres selon la charge réelle et vérifier linge, produits, chariots et équipements.',
+          'Inspecter depuis la porte, puis suivre le même parcours : chambre, salle de bain, équipements et présentation.',
+          'Noter chaque écart par chambre et donner une correction précise à la personne concernée.',
+          'Réinspecter les points corrigés avant de passer la chambre à « inspectée » dans le PMS.',
+          'Transmettre la disponibilité à la réception et utiliser les défauts récurrents pour coacher l’équipe.',
+        ],
+        bridgeTitle: 'Une inspection reproductible sur chaque étage',
+        bridgeText: 'Le manuel Housekeeping relie la checklist aux standards de nettoyage, aux statuts des chambres et au suivi des défauts. Ouvrez un vrai chapitre pour voir comment les procédures sont présentées.',
+        pdfLabel: 'Télécharger la checklist gouvernante', pdfHref: '/downloads/housekeeping-checklists/fr/checklist-gouvernante-etage-superviseur.pdf', downloadTitle: 'Besoin de la checklist gouvernante d’étage ?',
+        related: [{ href: '/fr/blog/housekeeping-room-inspection', title: 'Inspection de chambre' }, { href: '/fr/blog/hotel-room-cleaning-checklist', title: 'Nettoyage de chambre' }, { href: '/fr/hotel-housekeeping-checklist', title: 'Checklists Housekeeping' }],
+      },
+      en: {
+        eyebrow: 'Supervisor checklist · inspection and release',
+        answerTitle: 'Six supervisor checks before releasing a room',
+        answerIntro: 'Clean means the attendant has finished. A room becomes Inspected only after a physical check and any required correction.',
+        steps: [
+          'Prioritise departures, early arrivals, VIPs, blocked rooms and Front Office requests.',
+          'Allocate rooms by actual workload and check linen, supplies, trolleys and equipment.',
+          'Inspect from the doorway, then follow a fixed route through bedroom, bathroom, equipment and presentation.',
+          'Log each defect by room and assign a specific correction to the relevant team member.',
+          'Reinspect corrected points before changing the PMS status to Inspected.',
+          'Tell Front Office the room is ready and use recurring defects for team coaching.',
+        ],
+        bridgeTitle: 'Make inspection repeatable on every floor',
+        bridgeText: 'The Housekeeping manual connects the checklist with cleaning standards, room status and defect tracking. Open a real chapter to see how the procedures are presented.',
+        pdfLabel: 'Download the supervisor checklist', pdfHref: '/downloads/housekeeping-checklists/en/floor-housekeeping-supervisor-checklist.pdf', downloadTitle: 'Need the printable supervisor checklist?',
+        related: [{ href: '/en/blog/housekeeping-room-inspection', title: 'Room inspection procedure' }, { href: '/en/blog/hotel-room-cleaning-checklist', title: 'Room cleaning checklist' }, { href: '/en/hotel-housekeeping-checklist', title: 'Housekeeping checklists' }],
+      },
+    },
+  },
+  'hotel-spa-wellness-sops': {
+    productId: 'spa', department: 'Spa & Wellness', sampleTitle: { fr: 'Carte de soins & techniques', en: 'Treatment Menu & Techniques' }, samplePages: { fr: 16, en: 16 }, image: '/images/editorial-hospitality/spa-treatment-room.png',
+    copy: {
+      fr: {
+        eyebrow: 'SOP Spa · parcours de soin',
+        answerTitle: 'Une procédure Spa, de la préparation à la remise en état',
+        answerIntro: 'Le protocole doit rendre l’expérience constante sans rendre le soin mécanique. Chaque étape précise ce que l’équipe vérifie, communique et transmet.',
+        steps: [
+          'Avant l’ouverture, contrôler la cabine, le linge, les produits, la température, l’hygiène et le planning.',
+          'Accueillir le client et confirmer le soin, ses préférences, les précautions et le temps disponible.',
+          'Appliquer la séquence de soin prévue en adaptant pression, confort et communication au client.',
+          'Conclure le soin sans précipitation : retour au calme, conseils adaptés et prochaines étapes.',
+          'Remettre la cabine en état : nettoyage, linge, consommables, équipement et statut de disponibilité.',
+          'Tracer les incidents, demandes et retours utiles pour la prochaine équipe.',
+        ],
+        bridgeTitle: 'Des standards clairs, sans effacer la personnalisation',
+        bridgeText: 'Le manuel Spa & Wellness détaille le parcours client, les protocoles, la conduite des praticiens et l’organisation des cabines. Son chapitre consultable montre la forme réelle du document.',
+        related: [{ href: '/fr/free-hotel-procedures', title: 'Extraits gratuits des manuels' }, { href: '/fr/hotel-sop', title: 'Guide des SOP hôtelières' }, { href: '/fr/resources', title: 'Toutes les ressources' }],
+      },
+      en: {
+        eyebrow: 'Spa SOP · treatment journey',
+        answerTitle: 'A Spa procedure from preparation to room reset',
+        answerIntro: 'A protocol should make the experience consistent without making the treatment mechanical. Each stage says what the team checks, communicates and hands over.',
+        steps: [
+          'Before opening, check the treatment room, linen, products, temperature, hygiene and schedule.',
+          'Welcome the guest and confirm the treatment, preferences, precautions and available time.',
+          'Follow the treatment sequence while adapting pressure, comfort and communication to the guest.',
+          'Close without rushing: allow recovery, offer relevant advice and explain next steps.',
+          'Reset the room: clean surfaces, replace linen and consumables, check equipment and update availability.',
+          'Record incidents, requests and feedback that matter to the next shift.',
+        ],
+        bridgeTitle: 'Clear standards that leave room for personalisation',
+        bridgeText: 'The Spa & Wellness manual covers the guest journey, treatment protocols, therapist conduct and room operations. Its readable chapter shows the real document format.',
+        related: [{ href: '/en/free-hotel-procedures', title: 'Free manual chapters' }, { href: '/en/hotel-sop', title: 'Hotel SOP guide' }, { href: '/en/resources', title: 'All resources' }],
+      },
+    },
+  },
+  'hotel-fb-restaurant-procedures': {
+    productId: 'fb', department: 'Food & Beverage', sampleTitle: { fr: 'Bar & service des boissons', en: 'Bar & Beverage Service' }, samplePages: { fr: 17, en: 17 }, image: '/images/editorial-hospitality/fb-breakfast-buffet.png',
+    copy: {
+      fr: {
+        eyebrow: 'Procédures restaurant · séquence de service',
+        answerTitle: 'Du briefing à la fermeture : la séquence restaurant',
+        answerIntro: 'Un service fluide commence avant l’arrivée du premier client et se termine par une passation exploitable. Voici les contrôles à rendre explicites.',
+        steps: [
+          'Faire le briefing : réservations, groupes, allergies signalées, menu, ruptures et répartition des rôles.',
+          'Contrôler la salle, les tables, le matériel, le POS, les stocks et la coordination avec la cuisine.',
+          'Accueillir, installer, présenter l’offre et confirmer les besoins particuliers avant la prise de commande.',
+          'Cadencer boissons et plats, vérifier la satisfaction au bon moment et traiter tout écart sans attendre.',
+          'Contrôler l’addition, remercier le client et remettre la table selon le standard.',
+          'Fermer caisse et postes, noter les incidents, les manquants et les consignes pour le service suivant.',
+        ],
+        bridgeTitle: 'Transformer une séquence en standard de service',
+        bridgeText: 'Le manuel F&B documente les gestes, contrôles et passations pour le restaurant, le bar et le room service. Consultez son chapitre réel avant d’explorer le manuel complet.',
+        pdfLabel: 'Télécharger la checklist d’ouverture', pdfHref: '/downloads/checklists/fr/checklist-ouverture-restaurant.pdf',
+        related: [{ href: '/fr/checklist-ouverture-restaurant', title: 'Checklist ouverture restaurant' }, { href: '/fr/blog/hotel-room-service-sops', title: 'Procédure room service' }, { href: '/fr/hotel-fb-sop', title: 'Ressources F&B' }],
+      },
+      en: {
+        eyebrow: 'Restaurant SOP · service sequence',
+        answerTitle: 'From briefing to close: the restaurant sequence',
+        answerIntro: 'Smooth service starts before the first guest arrives and ends with a usable handover. These are the checks the team should make explicit.',
+        steps: [
+          'Brief the team on reservations, groups, known allergies, menu changes, shortages and roles.',
+          'Check dining room, tables, equipment, POS, stock and coordination with the kitchen.',
+          'Welcome and seat guests, explain the offer and confirm special requirements before taking orders.',
+          'Pace beverages and courses, check satisfaction at the right moment and resolve gaps promptly.',
+          'Verify the bill, thank the guest and reset the table to standard.',
+          'Close tills and stations; log incidents, shortages and instructions for the next service.',
+        ],
+        bridgeTitle: 'Turn a sequence into a service standard',
+        bridgeText: 'The F&B manual documents actions, checks and handovers for restaurant, bar and room service. Read its real chapter before exploring the complete manual.',
+        pdfLabel: 'Download the opening checklist', pdfHref: '/downloads/checklists/en/restaurant-opening-checklist.pdf',
+        related: [{ href: '/en/restaurant-opening-checklist', title: 'Restaurant opening checklist' }, { href: '/en/blog/hotel-room-service-sops', title: 'Room service SOP' }, { href: '/en/hotel-fb-sop', title: 'F&B resources' }],
+      },
+    },
+  },
+  'hotel-front-office-sop': {
+    productId: 'fo', department: 'Front Office', sampleTitle: { fr: 'Communication client', en: 'Guest Communication' }, samplePages: { fr: 29, en: 28 }, image: '/images/editorial-hospitality/hero-reception-natural-v4.png',
+    copy: {
+      fr: {
+        eyebrow: 'SOP Front Office · mode d’emploi',
+        answerTitle: 'Ce que doit contenir une SOP réception utilisable',
+        answerIntro: 'Une SOP efficace décrit une situation précise et donne à chaque vacation la même marche à suivre, y compris lorsqu’une exception survient.',
+        steps: [
+          'Nommer le scénario et son déclencheur : arrivée, départ, réclamation, changement de chambre ou passation.',
+          'Attribuer un responsable et les informations à vérifier avant d’agir : PMS, identité, paiement et statut chambre.',
+          'Écrire la séquence observable, avec les mots à dire et les contrôles à effectuer.',
+          'Prévoir les exceptions, le niveau d’autonomie et le point d’escalade vers un responsable.',
+          'Indiquer ce qui doit être enregistré dans le PMS et transmis à l’équipe suivante.',
+          'Tester la procédure en situation réelle, former l’équipe et réviser les écarts récurrents.',
+        ],
+        bridgeTitle: 'Du document au réflexe partagé par la réception',
+        bridgeText: 'Le manuel Front Office regroupe ces procédures de service, de communication et de contrôle dans un référentiel modifiable. Son chapitre consultable permet de juger le contenu avant achat.',
+        pdfLabel: 'Télécharger la checklist réception', pdfHref: '/downloads/checklists/fr/checklist-quotidienne-reception.pdf',
+        related: [{ href: '/fr/blog/hotel-front-desk-procedures', title: 'Procédure réception étape par étape' }, { href: '/fr/hotel-front-office-checklist', title: 'Checklist quotidienne réception' }, { href: '/fr/modele-passation-reception', title: 'Modèle de passation' }],
+      },
+      en: {
+        eyebrow: 'Front Office SOP · practical framework',
+        answerTitle: 'What a usable Front Office SOP should contain',
+        answerIntro: 'A useful SOP covers one specific situation and gives every shift the same course of action, including when an exception occurs.',
+        steps: [
+          'Name the scenario and trigger: arrival, departure, complaint, room move or shift handover.',
+          'Assign an owner and the facts to verify first: PMS record, identity, payment and room status.',
+          'Write observable steps, including what to say and what to check.',
+          'Define exceptions, decision authority and when to escalate to a manager.',
+          'Specify what must be recorded in the PMS and handed to the next shift.',
+          'Test the SOP in service, train the team and revise recurring gaps.',
+        ],
+        bridgeTitle: 'From document to a shared front desk reflex',
+        bridgeText: 'The Front Office manual brings service, communication and control procedures into one editable reference. Its readable chapter lets you assess the content before buying.',
+        pdfLabel: 'Download the front desk checklist', pdfHref: '/downloads/checklists/en/front-desk-daily-checklist.pdf',
+        related: [{ href: '/en/blog/hotel-front-desk-procedures', title: 'Front desk procedure step by step' }, { href: '/en/hotel-front-office-checklist', title: 'Front desk daily checklist' }, { href: '/en/front-desk-shift-handover-template', title: 'Shift handover template' }],
+      },
+    },
+  },
+  'hotel-room-cleaning-checklist': {
+    productId: 'hsk', department: 'Housekeeping', sampleTitle: { fr: 'Espaces communs & nettoyages spéciaux', en: 'Public Areas & Specialty Cleaning' }, samplePages: { fr: 41, en: 33 }, image: '/images/editorial-hospitality/housekeeping-cottonbro-6466482.jpg',
+    copy: {
+      fr: {
+        eyebrow: 'Nettoyage de chambre · checklist opérationnelle',
+        answerTitle: 'La chambre à blanc en sept phases contrôlables',
+        answerIntro: 'Une checklist efficace suit la séquence réelle du travail et se termine par un autocontrôle. La libération pour la vente dépend ensuite de l’inspection de la gouvernante.',
+        steps: [
+          'Préparer chariot, linge, produits et matériel ; lire les priorités et consignes de la chambre.',
+          'Frapper, annoncer le service, attendre et respecter les effets personnels et le statut du client.',
+          'Ouvrir, aérer, retirer déchets et linge usagé ; repérer maintenance et objets oubliés.',
+          'Nettoyer et désinfecter la salle de bain dans un ordre fixe, puis sécher et réapprovisionner.',
+          'Dépoussiérer la chambre du haut vers le bas et refaire le lit selon le standard.',
+          'Vérifier équipements, minibar, amenities, sols, vitres et présentation finale.',
+          'Faire l’autocontrôle depuis la porte, signaler les défauts et passer la chambre à « propre » pour inspection.',
+        ],
+        bridgeTitle: 'Une chambre propre, puis une chambre inspectée',
+        bridgeText: 'Le manuel Housekeeping précise les méthodes de nettoyage, le contrôle qualité et la responsabilité de chaque étape. Le chapitre consultable montre comment ces standards sont documentés.',
+        pdfLabel: 'Télécharger la checklist chambre à blanc', pdfHref: '/downloads/checklists/fr/checklist-chambre-a-blanc.pdf', downloadTitle: 'Besoin de checklists de nettoyage de chambre imprimables ?',
+        related: [{ href: '/fr/blog/hotel-bathroom-cleaning-sop', title: 'Nettoyage de salle de bain' }, { href: '/fr/blog/housekeeping-room-inspection', title: 'Inspection de chambre' }, { href: '/fr/hotel-housekeeping-checklist', title: 'Checklists Housekeeping' }],
+      },
+      en: {
+        eyebrow: 'Room cleaning · operational checklist',
+        answerTitle: 'Departure room cleaning in seven checkable phases',
+        answerIntro: 'An effective checklist follows the actual cleaning sequence and ends with a self-check. The room is released for sale only after supervisor inspection.',
+        steps: [
+          'Prepare trolley, linen, supplies and tools; review room priorities and special instructions.',
+          'Knock, announce service, wait and respect guest belongings and room status.',
+          'Open and ventilate; remove waste and used linen; note maintenance issues and lost property.',
+          'Clean and disinfect the bathroom in a fixed order, then dry and restock it.',
+          'Dust the bedroom top to bottom and make the bed to standard.',
+          'Check equipment, minibar, amenities, floors, glass and final presentation.',
+          'Self-inspect from the doorway, report defects and mark the room Clean for supervisor inspection.',
+        ],
+        bridgeTitle: 'First Clean, then Inspected',
+        bridgeText: 'The Housekeeping manual sets out cleaning methods, quality control and ownership of each stage. The readable chapter shows how those standards are documented.',
+        pdfLabel: 'Download the departure room checklist', pdfHref: '/downloads/checklists/en/departure-room-cleaning-checklist.pdf', downloadTitle: 'Need printable room cleaning tools?',
+        related: [{ href: '/en/blog/hotel-bathroom-cleaning-sop', title: 'Bathroom cleaning SOP' }, { href: '/en/blog/housekeeping-room-inspection', title: 'Room inspection' }, { href: '/en/hotel-housekeeping-checklist', title: 'Housekeeping checklists' }],
+      },
+    },
+  },
 }
 
 type Props = { locale: Locale; slug: Slug; article: BlogArticle; extra?: { title: string; intro: string; items: string[] }; excerpt?: { label: string; title: string; intro: string; rows: { term: string; detail: string }[] } }
@@ -69,7 +264,7 @@ export default function BlogSearchLandingPreview({ locale, slug, article, extra,
         <p className="mt-4 max-w-3xl text-base leading-7 text-[#526257]">{article.description}</p>
         <div className="mt-5 flex flex-wrap gap-3">
           <a href="#practical-answer" className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[#10251d] px-5 py-2.5 text-xs font-semibold text-white hover:bg-[#263c31]">{isEn ? 'Go to the practical answer' : 'Voir la réponse pratique'}<ArrowRight size={15} /></a>
-          <TrackedLink href={copy.pdfHref} download eventName="free_checklist_download_clicked" eventProperties={{ article_slug: slug, placement: 'blog_hero', department: config.productId }} onClick={() => setPdfClicked(true)} className="inline-flex min-h-11 items-center gap-2 rounded-full border border-[#baa783] bg-white px-5 py-2.5 text-xs font-semibold text-[#10251d] hover:bg-[#eee6d7]"><Download size={15} />{copy.pdfLabel}</TrackedLink>
+          {copy.pdfHref && <TrackedLink href={copy.pdfHref} download eventName="free_checklist_download_clicked" eventProperties={{ article_slug: slug, placement: 'blog_hero', department: config.productId }} onClick={() => setPdfClicked(true)} className="inline-flex min-h-11 items-center gap-2 rounded-full border border-[#baa783] bg-white px-5 py-2.5 text-xs font-semibold text-[#10251d] hover:bg-[#eee6d7]"><Download size={15} />{copy.pdfLabel}</TrackedLink>}
         </div>
       </div>
     </header>
@@ -81,7 +276,8 @@ export default function BlogSearchLandingPreview({ locale, slug, article, extra,
           <h2 className="mt-2 font-display text-[clamp(1.75rem,3vw,2.5rem)] leading-tight">{copy.answerTitle}</h2>
           <p className="mt-3 text-sm leading-6 text-[#526257]">{copy.answerIntro}</p>
           <ol className="mt-5 grid gap-2.5">{copy.steps.map((step, index) => <li key={step} className="flex gap-3 rounded-xl bg-[#f7f4ee] p-3.5 text-sm leading-6 text-[#32483a]"><span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#e9ddca] text-xs font-bold text-[#705630]">{index + 1}</span><span>{step}</span></li>)}</ol>
-          <div className="mt-5 flex flex-wrap items-center gap-3"><TrackedLink href={copy.pdfHref} download eventName="free_checklist_download_clicked" eventProperties={{ article_slug: slug, placement: 'blog_answer', department: config.productId }} onClick={() => setPdfClicked(true)} className="inline-flex min-h-11 items-center gap-2 rounded-full border border-[#baa783] px-4 py-2.5 text-xs font-semibold text-[#10251d]"><Download size={15} />{copy.pdfLabel}</TrackedLink><a href="#full-guide" className="inline-flex min-h-11 items-center gap-1 text-xs font-semibold text-[#244437] underline underline-offset-2">{isEn ? 'Read the detailed procedure' : 'Lire la procédure détaillée'}<ArrowRight size={14} /></a></div>
+          {copy.downloadTitle && <h2 className="mt-6 font-display text-xl leading-tight">{copy.downloadTitle}</h2>}
+          <div className="mt-5 flex flex-wrap items-center gap-3">{copy.pdfHref && <TrackedLink href={copy.pdfHref} download eventName="free_checklist_download_clicked" eventProperties={{ article_slug: slug, placement: 'blog_answer', department: config.productId }} onClick={() => setPdfClicked(true)} className="inline-flex min-h-11 items-center gap-2 rounded-full border border-[#baa783] px-4 py-2.5 text-xs font-semibold text-[#10251d]"><Download size={15} />{copy.pdfLabel}</TrackedLink>}<a href="#full-guide" className="inline-flex min-h-11 items-center gap-1 text-xs font-semibold text-[#244437] underline underline-offset-2">{isEn ? 'Read the detailed procedure' : 'Lire la procédure détaillée'}<ArrowRight size={14} /></a></div>
           {pdfClicked && <p role="status" className="mt-3 text-xs text-[#526257]">{isEn ? 'The PDF is ready. The detailed method and a manual sample are below.' : 'Le PDF est prêt. La méthode détaillée et un extrait du manuel figurent ci-dessous.'}</p>}
         </section>
 
