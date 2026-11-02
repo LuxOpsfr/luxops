@@ -12,11 +12,13 @@ const departments = [
   { id: 'revenue', fr: 'Revenue Management', en: 'Revenue Management' },
 ] as const
 
-type Props = { locale: string; onClose: () => void }
+type DepartmentId = (typeof departments)[number]['id']
 
-export default function SampleChapterModal({ locale, onClose }: Props) {
+type Props = { locale: string; onClose: () => void; initialDepartment?: DepartmentId }
+
+export default function SampleChapterModal({ locale, onClose, initialDepartment }: Props) {
   const isEn = locale === 'en'
-  const [department, setDepartment] = useState('')
+  const [department, setDepartment] = useState<DepartmentId | ''>(initialDepartment ?? '')
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [emailSent, setEmailSent] = useState(false)

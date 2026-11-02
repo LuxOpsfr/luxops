@@ -13,6 +13,7 @@ import ProductPreviewCarousel from '@/components/ProductPreviewCarousel'
 import HousekeepingProductProof from '@/components/HousekeepingProductProof'
 import ProductCredibility from '@/components/ProductCredibility'
 import FrontOfficeExcerptDialog from '@/components/FrontOfficeExcerptDialog'
+import SampleChapterModal from '@/components/SampleChapterModal'
 import { ManualPracticeContent, ManualPromoGallery } from '@/components/ManualPracticeSection'
 import posthog from 'posthog-js'
 
@@ -70,6 +71,7 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
   const [openFaq, setOpenFaq] = useState<number | null>(null)
   const [selectedOffer, setSelectedOffer] = useState<'manual' | 'bundle'>('manual')
   const [showExcerpt, setShowExcerpt] = useState(false)
+  const [showSampleForm, setShowSampleForm] = useState(false)
   const [excerptStartPage, setExcerptStartPage] = useState(1)
   const { addItem, items, openCart } = useCart()
   const { currency, priceFor, formatProductPrice } = useCurrency()
@@ -195,7 +197,7 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
                     <span className="mt-0.5 block text-[10px] leading-4 text-[#777970]">{pb.previewChapter.pages[lang]} {isEn ? 'pages · PDF · by email' : 'pages · PDF · par e-mail'}</span>
                   </span>
                 </div>
-                <button type="button" onClick={() => { setExcerptStartPage(12); setShowExcerpt(true) }} className="inline-flex min-h-10 shrink-0 items-center justify-center gap-2 rounded-full bg-[#10251d] px-4 text-[10px] font-semibold text-white shadow-[0_5px_14px_rgba(16,37,29,.12)] transition hover:-translate-y-0.5 hover:bg-[#263d31] sm:min-h-11 sm:px-5 sm:text-[11px]">
+                <button type="button" onClick={() => setShowSampleForm(true)} className="inline-flex min-h-10 shrink-0 items-center justify-center gap-2 rounded-full bg-[#10251d] px-4 text-[10px] font-semibold text-white shadow-[0_5px_14px_rgba(16,37,29,.12)] transition hover:-translate-y-0.5 hover:bg-[#263d31] sm:min-h-11 sm:px-5 sm:text-[11px]">
                   {isEn ? 'Get the complete PDF' : 'Recevoir le PDF complet'} <span aria-hidden="true">→</span>
                 </button>
               </div>
@@ -658,6 +660,9 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
           chapterPages={pb.previewChapter.pages[lang]}
           onClose={() => setShowExcerpt(false)}
         />
+      )}
+      {showSampleForm && isEditorialManual && (
+        <SampleChapterModal locale={locale} initialDepartment={pb.id} onClose={() => setShowSampleForm(false)} />
       )}
 
     </div>

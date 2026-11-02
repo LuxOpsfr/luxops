@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { BookOpen, Download, ShoppingCart } from 'lucide-react'
 import FrontOfficeExcerptDialog from '@/components/FrontOfficeExcerptDialog'
+import SampleChapterModal from '@/components/SampleChapterModal'
 import { BUNDLE_PRICE_ID } from '@/content/playbooks/data'
 import { REVENUE_PRICE_ID, REVENUE_PRODUCT_CHAPTERS, revenueChapterCover } from '@/content/revenue-management-product'
 import AddToCartButton from '@/components/AddToCartButton'
@@ -15,6 +16,7 @@ type Locale = 'fr' | 'en'
 
 export function RevenuePreviewStage({ locale }: { locale: Locale }) {
   const [startPage, setStartPage] = useState<number | null>(null)
+  const [showSampleForm, setShowSampleForm] = useState(false)
   const isFr = locale === 'fr'
   const chapter = REVENUE_PRODUCT_CHAPTERS[1]
 
@@ -30,9 +32,10 @@ export function RevenuePreviewStage({ locale }: { locale: Locale }) {
     </button>
     <div className="mt-3 flex flex-col gap-2.5 rounded-[18px] border border-[#e4dac8] bg-white/80 px-4 py-3.5 shadow-[0_5px_18px_rgba(45,39,28,.045)] sm:mt-4 sm:flex-row sm:items-center sm:justify-between sm:px-5">
       <div className="flex items-start gap-2.5"><span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#f1ede5] text-[#927345]"><Download size={15} /></span><span><span className="block text-[11px] font-semibold text-[#273a30] sm:text-xs">{isFr ? 'Télécharger le chapitre 02 complet' : 'Download Chapter 02 in full'}</span><span className="mt-0.5 block text-[10px] leading-4 text-[#777970]">16 {isFr ? 'pages · PDF · par e-mail' : 'pages · PDF · by email'}</span></span></div>
-      <button type="button" onClick={() => setStartPage(12)} className="inline-flex min-h-10 shrink-0 items-center justify-center gap-2 rounded-full bg-[#10251d] px-4 text-[10px] font-semibold text-white shadow-[0_5px_14px_rgba(16,37,29,.12)] transition hover:-translate-y-0.5 hover:bg-[#263d31] sm:min-h-11 sm:px-5 sm:text-[11px]">{isFr ? 'Recevoir le PDF complet' : 'Get the complete PDF'}<span aria-hidden="true">→</span></button>
+      <button type="button" onClick={() => setShowSampleForm(true)} className="inline-flex min-h-10 shrink-0 items-center justify-center gap-2 rounded-full bg-[#10251d] px-4 text-[10px] font-semibold text-white shadow-[0_5px_14px_rgba(16,37,29,.12)] transition hover:-translate-y-0.5 hover:bg-[#263d31] sm:min-h-11 sm:px-5 sm:text-[11px]">{isFr ? 'Recevoir le PDF complet' : 'Get the complete PDF'}<span aria-hidden="true">→</span></button>
     </div>
     {startPage !== null && <FrontOfficeExcerptDialog locale={locale} startPage={startPage} productId="revenue" chapterTitle={chapter.title[locale]} chapterNumber={2} chapterPages={16} onClose={() => setStartPage(null)} />}
+    {showSampleForm && <SampleChapterModal locale={locale} initialDepartment="revenue" onClose={() => setShowSampleForm(false)} />}
   </div>
 }
 
