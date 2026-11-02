@@ -1,7 +1,5 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
-import Image from 'next/image'
-import { ArrowRight, BookOpen, Download } from 'lucide-react'
+import ResourcesIndexProposal from '@/components/ResourcesIndexProposal'
 import { revenueManagementDrafts } from '@/content/blog/revenue-management-drafts'
 
 export async function generateMetadata({
@@ -155,192 +153,22 @@ const frFaqs = [
   },
 ]
 
-export default async function ResourcesPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>
-}) {
+export default async function ResourcesPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
   const isEn = locale === 'en'
-  const revenueLocale = isEn ? 'en' : 'fr'
   const faqs = isEn ? enFaqs : frFaqs
-  const localizedLink = (href: string) => {
-    const canonicalByLocale: Record<string, string> = {
-      '/formation': isEn ? '/en/training' : '/fr/formation',
-      '/free-hotel-checklists': isEn ? '/en/free-hotel-checklists' : '/fr/checklists-hotel-gratuites',
-    }
-    return canonicalByLocale[href] ?? `/${locale}${href}`
-  }
-
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: faqs.map((faq) => ({
+    mainEntity: faqs.map(faq => ({
       '@type': 'Question',
       name: faq.q,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.a,
-      },
+      acceptedAnswer: { '@type': 'Answer', text: faq.a },
     })),
   }
 
-  const samplePages = isEn
-    ? [
-        { src: '/images/editorial-hospitality/manual-covers-2027/fo-en.jpg', label: 'Front Office' },
-        { src: '/images/editorial-hospitality/manual-covers-2027/hsk-en.jpg', label: 'Housekeeping' },
-        { src: '/images/editorial-hospitality/manual-covers-2027/fb-en.jpg', label: 'Food & Beverage' },
-        { src: '/images/editorial-hospitality/manual-covers-2027/spa-en.jpg', label: 'Spa & Wellness' },
-        { src: '/product-previews/revenue/en/ch02-cover.png', label: 'Revenue Management' },
-      ]
-    : [
-        { src: '/images/editorial-hospitality/manual-covers-2027/fo-fr.jpg', label: 'Front Office' },
-        { src: '/images/editorial-hospitality/manual-covers-2027/hsk-fr.jpg', label: 'Housekeeping' },
-        { src: '/images/editorial-hospitality/manual-covers-2027/fb-fr.jpg', label: 'Food & Beverage' },
-        { src: '/images/editorial-hospitality/manual-covers-2027/spa-fr.jpg', label: 'Spa & Wellness' },
-        { src: '/product-previews/revenue/fr/ch02-cover.png', label: 'Revenue Management' },
-      ]
-
-  return (
-    <div className="bg-[#f5f1e9] pt-[var(--site-header-height)] text-[#0f211a]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-      />
-
-      {/* Hero */}
-      <section className="border-b border-[#e7e1d7] px-6 py-16 md:px-16 md:py-20">
-        <div className="mx-auto max-w-[1280px]">
-          <p className="mb-4 text-[10px] font-semibold uppercase tracking-[.18em] text-[#92734a]">LuxOps · {isEn ? 'Knowledge & practice' : 'Savoir-faire & pratique'}</p>
-          <h1 className="max-w-3xl font-display text-4xl font-medium leading-[1.08] text-[#0f211a] sm:text-5xl md:text-[3.5rem]">
-            {isEn ? 'Hotel Operations Resources' : 'Ressources Opérationnelles Hôtelières'}
-          </h1>
-          <p className="mt-5 max-w-2xl text-base leading-7 text-[#687169] md:text-lg">
-            {isEn
-              ? 'Practical guidance on hotel SOPs, procedures, and service standards. Built around how hotel departments actually operate.'
-              : 'R\u00e9ponses pratiques sur les SOPs h\u00f4teliers, les proc\u00e9dures op\u00e9rationnelles et les standards de service. Construites autour du fonctionnement r\u00e9el des d\u00e9partements h\u00f4teliers.'}
-          </p>
-        </div>
-      </section>
-
-      <section className="px-6 py-10 md:px-16 md:py-14">
-        <div className="mx-auto grid max-w-[1280px] gap-3 sm:grid-cols-2 lg:grid-cols-5">
-          {samplePages.map((sample) => (
-            <article key={sample.label} className="group overflow-hidden rounded-[1.25rem] border border-[#e7e1d7] bg-[#fcfbf8] shadow-[0_8px_24px_rgba(40,40,30,.045)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_16px_34px_rgba(40,40,30,.1)]">
-              <div className="relative flex aspect-[1.2] items-center justify-center overflow-hidden bg-[#eee8dc] p-3">
-                <Image src={sample.src} alt={isEn ? `${sample.label} SOP manual, 2027 edition` : `Manuel SOP ${sample.label}, édition 2027`} fill sizes="(max-width: 768px) 50vw, 25vw" className="object-contain p-3 drop-shadow-[0_10px_14px_rgba(15,33,26,.18)] transition-transform duration-500 group-hover:scale-[1.035]" />
-              </div>
-              <p className="px-4 py-3 text-sm font-medium text-[#314137]">{sample.label}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      {/* Free chapter lead magnet */}
-      <section className="px-6 py-5 md:px-16">
-        <div className="mx-auto max-w-[1280px]">
-          <div className="flex flex-col items-start justify-between gap-5 rounded-[1.5rem] border border-[#e4d8c2] bg-[#fcfbf8] p-6 shadow-[0_10px_28px_rgba(40,40,30,.045)] md:flex-row md:items-center md:p-8">
-            <div>
-              <p className="mb-2 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[.16em] text-[#92734a]">
-                <BookOpen size={14} />{isEn ? 'A first look inside' : 'Un premier aperçu du contenu'}
-              </p>
-              <h2 className="mb-1 font-display text-2xl font-medium text-[#0f211a]">
-                {isEn ? 'Receive a sample chapter' : 'Recevoir un chapitre de découverte'}
-              </h2>
-              <p className="max-w-2xl text-sm leading-6 text-[#687169]">
-                {isEn
-                  ? 'Choose Front Office, Housekeeping, F&B, Spa or Revenue Management to receive a chapter from the corresponding SOP manual.'
-                  : 'Choisissez Front Office, Housekeeping, F&B, Spa ou Revenue Management pour recevoir un chapitre du manuel SOP correspondant.'}
-              </p>
-            </div>
-            <Link
-              href={`/${locale}/free-hotel-procedures`}
-              className="inline-flex min-h-12 flex-shrink-0 items-center gap-2 rounded-full bg-[#0f211a] px-6 py-3 text-sm font-semibold text-[#fcfbf8] shadow-[0_8px_20px_rgba(15,33,26,.14)] transition hover:-translate-y-0.5 hover:bg-[#24362f]"
-            >
-              <Download size={15} />{isEn ? 'Choose a chapter' : 'Choisir un chapitre'} <ArrowRight size={14} />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="px-6 py-12 md:px-16 md:py-16">
-        <div className="mx-auto max-w-[1280px]">
-          <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <p className="mb-2 text-[10px] font-semibold uppercase tracking-[.16em] text-[#92734a]">Revenue Management</p>
-              <h2 className="font-display text-3xl font-medium text-[#0f211a]">{isEn ? 'Revenue Management resources' : 'Ressources Revenue Management'}</h2>
-            </div>
-            <Link href={`/${revenueLocale}/playbooks/revenue-management`} className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[#0f211a] px-5 text-sm font-semibold text-white hover:bg-[#24362f]">
-              {isEn ? 'View the SOP manual' : 'Voir le manuel SOP'} <ArrowRight size={15} />
-            </Link>
-          </div>
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {revenueManagementDrafts.map((article) => <Link key={article.slug} href={`/${revenueLocale}/blog/${article.slug}`} className="flex items-center justify-between gap-3 rounded-[1.1rem] border border-[#e7e1d7] bg-[#fcfbf8] p-4 text-sm font-medium text-[#314137] transition hover:border-[#cbb487]">
-              {isEn ? article.en.title : article.fr.title}<ArrowRight size={15} className="shrink-0 text-[#92734a]" />
-            </Link>)}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="bg-[#fcfbf8] px-6 py-14 md:px-16 md:py-20">
-        <div className="mx-auto max-w-[980px]">
-          <p className="mb-3 text-[10px] font-semibold uppercase tracking-[.18em] text-[#92734a]">{isEn ? 'Frequently asked questions' : 'Questions fréquentes'}</p>
-          <h2 className="mb-8 font-display text-3xl font-medium text-[#0f211a] md:text-4xl">
-            {isEn ? 'Operational Standards & SOPs' : 'Standards Opérationnels & SOPs'}
-          </h2>
-
-          <div className="divide-y divide-[#e7e1d7] rounded-[1.25rem] border border-[#e7e1d7] bg-white px-5 md:px-7">
-            {faqs.map((faq, i) => (
-              <details key={i} className="group py-5">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-5 font-display text-lg font-medium text-[#24362f] marker:hidden [&::-webkit-details-marker]:hidden">
-                  {faq.q}<span className="text-xl font-light text-[#a58658] transition-transform group-open:rotate-45">+</span>
-                </summary>
-                <p className="max-w-3xl pt-4 text-sm leading-7 text-[#687169]">{faq.a}</p>
-                {faq.link && faq.linkLabel && (
-                  <Link
-                    href={localizedLink(faq.link)}
-                    className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-[#705431] transition-all hover:gap-3"
-                  >
-                    {faq.linkLabel} <ArrowRight size={14} />
-                  </Link>
-                )}
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="px-6 py-14 md:px-16 md:py-20">
-        <div className="mx-auto max-w-[980px] rounded-[1.75rem] bg-[#0f211a] px-7 py-12 text-center text-[#fcfbf8] shadow-[0_18px_40px_rgba(15,33,26,.12)] md:px-12">
-          <p className="mb-3 text-[10px] font-semibold uppercase tracking-[.18em] text-[#c8ad7a]">LuxOps</p>
-          <h2 className="mb-4 font-display text-3xl font-medium text-[#fcfbf8] md:text-4xl">
-            {isEn
-              ? 'Putting structure behind these questions'
-              : 'Mettre de la structure derri\u00e8re ces questions'}
-          </h2>
-          <p className="mx-auto mb-8 max-w-2xl text-base leading-7 text-[#d1d5cf]">
-            {isEn
-              ? 'If these are the operational questions your property is working through, LuxOps provides SOP manuals with practical tools and on-property training for hotel teams.'
-              : 'Si votre établissement cherche à structurer ses opérations, LuxOps propose des manuels SOP avec outils pratiques et des formations en établissement pour les équipes hôtelières.'}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href={`/${locale}/playbooks`}
-              className="inline-flex items-center gap-2 rounded-full bg-[#f5f1e9] px-7 py-3.5 text-sm font-semibold text-[#0f211a] transition hover:-translate-y-0.5 hover:bg-white"
-            >
-              {isEn ? 'Explore SOP manuals' : 'Découvrir les Manuels SOP'} <ArrowRight size={16} />
-            </Link>
-            <Link
-              href={`/${locale}/contact`}
-              className="inline-flex items-center gap-2 rounded-full border border-white/35 px-7 py-3.5 text-sm font-medium text-white transition hover:border-white/70"
-            >
-              {isEn ? 'Book a Consultation' : 'Réserver une Consultation'}
-            </Link>
-          </div>
-        </div>
-      </section>
-    </div>
-  )
+  return <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+    <ResourcesIndexProposal locale={isEn ? 'en' : 'fr'} faqs={faqs} revenueArticles={revenueManagementDrafts} />
+  </>
 }

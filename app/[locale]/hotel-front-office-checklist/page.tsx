@@ -1,8 +1,5 @@
 import { Metadata } from 'next'
-import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
-import TrackedLink from '@/components/TrackedLink'
-import ChecklistEditorialHero from '@/components/ChecklistEditorialHero'
+import ChecklistResourceProposal from '@/components/ChecklistResourceProposal'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
@@ -316,9 +313,8 @@ export default async function HotelFrontOfficeChecklistPage({ params }: { params
   const isEN = locale === 'en'
   const roles = isEN ? ROLES_EN : ROLES_FR
   const auditRows = isEN ? AUDIT_ROWS_EN : AUDIT_ROWS_FR
-  const faq = isEN ? FAQ_EN : FAQ_FR
   const sopSteps = isEN ? SOP_STEPS_EN : SOP_STEPS_FR
-
+  const faq = isEN ? FAQ_EN : FAQ_FR
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -329,302 +325,20 @@ export default async function HotelFrontOfficeChecklistPage({ params }: { params
     })),
   }
 
-  return (
-    <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <main className="min-h-screen bg-[#fcfbf8]">
-
-        <ChecklistEditorialHero
-          eyebrow={isEN ? 'Front Office operations' : 'Opérations réception'}
-          title={isEN ? 'Front Desk Daily Checklist' : 'Checklist quotidienne réception'}
-          description={isEN
-            ? 'A clear shift routine for desk opening, guest arrivals, billing checks and a reliable handover.'
-            : 'Une routine de shift claire pour l’ouverture du desk, les arrivées, le contrôle de la facturation et une passation fiable.'}
-          imageSrc="/images/editorial-hospitality/hero-reception-natural-v4.png"
-          imageAlt={isEN ? 'Front office team welcoming hotel guests' : 'Équipe de réception accueillant des clients à l’hôtel'}
-          imageAspect="16/10"
-        >
-          <TrackedLink
-            href={isEN ? '/downloads/checklists/en/front-desk-daily-checklist.pdf' : '/downloads/checklists/fr/checklist-quotidienne-reception.pdf'}
-            download
-            eventName="free_checklist_download_clicked"
-            eventProperties={{ source_page: `/${locale}/hotel-front-office-checklist`, checklist_name: isEN ? 'front_desk_daily_checklist' : 'checklist_quotidienne_reception', department: 'front_office', locale, placement: 'hero' }}
-            className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#0f211a] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#24362f]"
-          >
-            {isEN ? 'Download the free PDF' : 'Télécharger le PDF gratuit'}
-          </TrackedLink>
-        </ChecklistEditorialHero>
-
-        {/* Product paths */}
-        <section className="bg-[#fcfbf8] px-6 py-12 md:py-16">
-          <div className="max-w-4xl mx-auto text-center">
-            <p className="text-[10px] font-bold uppercase tracking-widest text-[#a58658] mb-3">
-              {isEN ? 'Front Office tools' : 'Outils réception'}
-            </p>
-            <h2 className="text-2xl font-bold text-[#0f211a] mb-3">
-              {isEN ? 'Need practical front office tools?' : 'Besoin d’outils pratiques pour la réception ?'}
-            </h2>
-            <p className="text-sm text-gray-500 leading-relaxed max-w-2xl mx-auto mb-7">
-              {isEN
-                ? 'The Front Office SOP manual includes the complete department reference plus 12 editable Starter Pack tools for daily checklists and handovers.'
-                : 'Le Manuel SOP Front Office inclut la référence complète du service et les 12 outils modifiables du Starter Pack pour les checklists et passations du quotidien.'}
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <TrackedLink
-                href={`/${locale}/playbooks/fo`}
-                eventName="playbook_cta_clicked"
-                eventProperties={{
-                  source_page: `/${locale}/hotel-front-office-checklist`,
-                  placement: 'product_paths',
-                  product: 'front_office_playbook',
-                  cta_label: isEN ? 'View the Front Office Playbook' : 'Voir le Playbook Front Office',
-                }}
-                className="inline-flex min-h-12 min-w-[240px] items-center justify-center gap-2 rounded-full bg-[#0f211a] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#24362f]"
-              >
-                {isEN ? 'View the Front Office Playbook' : 'Voir le Playbook Front Office'} <ArrowRight size={16} />
-              </TrackedLink>
-            </div>
-          </div>
-        </section>
-
-        {/* Related operating procedures */}
-        <section className="max-w-4xl mx-auto px-6 py-10 border-b border-[#e7e1d7]">
-          <p className="text-[10px] font-bold uppercase tracking-widest text-[#a58658] mb-3">
-            {isEN ? 'Related front desk procedures' : 'Procédures réception associées'}
-          </p>
-          <h2 className="text-2xl font-bold text-[#0f211a] mb-6">
-            {isEN ? 'Turn the checklist into a complete shift routine' : 'Transformer la checklist en vraie routine de shift'}
-          </h2>
-          <div className="grid sm:grid-cols-3 gap-4">
-            {[
-              {
-                href: isEN ? '/en/front-desk-shift-handover-template' : '/fr/modele-passation-reception',
-                title: isEN ? 'Shift handover template' : 'Modèle de passation',
-                desc: isEN ? 'Keep pending items, VIP notes and next-shift priorities clear.' : 'Clarifier les suivis, notes VIP et priorités du service suivant.',
-              },
-              {
-                href: isEN ? '/en/guest-complaint-handling-sop' : '/fr/procedure-reclamation-client',
-                title: isEN ? 'Guest complaint SOP' : 'Réclamation client',
-                desc: isEN ? 'A practical sequence for listening, recovery and follow-up.' : 'Une séquence pratique pour écouter, corriger et assurer le suivi.',
-              },
-              {
-                href: isEN ? '/en/room-status-discrepancy-report' : '/fr/rapport-ecart-statut-chambre',
-                title: isEN ? 'Room status report' : 'Écart statut chambre',
-                desc: isEN ? 'Align Front Office and Housekeeping when the PMS status is wrong.' : 'Aligner réception et housekeeping quand le statut PMS est incohérent.',
-              },
-            ].map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="rounded-[1.35rem] border border-[#e7e1d7] bg-white p-5 shadow-[0_8px_24px_rgba(15,33,26,0.04)] transition duration-300 hover:-translate-y-0.5 hover:border-[#cbb487] hover:shadow-[0_14px_32px_rgba(15,33,26,0.08)]"
-              >
-                <h3 className="font-semibold text-[#0f211a] mb-2">{link.title}</h3>
-                <p className="text-sm text-gray-500 leading-relaxed">{link.desc}</p>
-              </Link>
-            ))}
-          </div>
-        </section>
-
-        {/* Checklist hub link */}
-        <section
-          className="py-8 border-b"
-          style={{ backgroundColor: '#f5f1e9', borderColor: 'rgba(195,198,214,0.3)' }}
-        >
-          <div className="max-w-3xl mx-auto px-6 text-center">
-            <p className="text-sm text-[#5d665f] leading-relaxed">
-              {isEN
-                ? 'Need more printable resources? View the full checklist hub for housekeeping, front office, Night Audit, restaurant opening and room service.'
-                : 'Besoin d’autres ressources prêtes à imprimer ? Consultez le hub complet des checklists : housekeeping, réception, Night Audit, ouverture restaurant et room service.'}{' '}
-              <Link href={isEN ? '/en/free-hotel-checklists' : '/fr/checklists-hotel-gratuites'} className="font-semibold text-[#a58658] hover:underline">
-                {isEN ? 'View all free checklists' : 'Voir toutes les checklists gratuites'}
-              </Link>
-            </p>
-          </div>
-        </section>
-
-        {/* Intro */}
-        <section className="max-w-3xl mx-auto px-6 py-12">
-          <h2 className="text-2xl font-bold text-[#0f211a] mb-4">
-            {isEN ? 'One standard, applied at every handover' : 'Un standard, appliqué à chaque passation'}
-          </h2>
-          {isEN ? (
-            <p className="text-gray-600 leading-relaxed">
-              This free checklist is built for the front desk shift itself: before taking the desk, at opening, during live operations, around VIP arrivals, through mid-shift controls and into the written handover. The goal is not to add paperwork. It is to make sure the next person on the desk receives clean information, clear follow-up items and a reception area ready for the next guest.
-            </p>
-          ) : (
-            <p className="text-gray-600 leading-relaxed">
-              Cette checklist est pensée pour le shift réception lui-même : avant la prise de poste, à l’ouverture, pendant les opérations, autour des arrivées VIP, lors du contrôle de milieu de shift et jusqu’à la passation écrite. L’objectif n’est pas d’ajouter de l’administratif. Il s’agit de transmettre une information propre, des suivis clairs et un desk prêt pour le prochain client.
-            </p>
-          )}
-        </section>
-
-        {/* Role-based checklists */}
-        {roles.map((role, ri) => (
-          <section key={ri} className="max-w-3xl mx-auto px-6 pb-12">
-            <div className="mb-6">
-              <h2 className="text-2xl font-bold text-[#0f211a] mb-2">{role.role}</h2>
-              <p className="text-gray-500 text-sm leading-relaxed">{role.intro}</p>
-            </div>
-            <div className="space-y-4">
-              {role.sections.map((sec, si) => (
-                <div key={si} className="border border-[#e7e1d7] rounded-xl overflow-hidden">
-                  <div className="bg-[#f5f1e9] px-5 py-3">
-                    <h3 className="font-semibold text-[#0f211a] text-sm uppercase tracking-wide">{sec.title}</h3>
-                  </div>
-                  <ul className="divide-y divide-gray-100">
-                    {sec.items.map((item, ii) => (
-                      <li key={ii} className="flex items-start gap-3 px-5 py-3 text-sm text-gray-700">
-                        <span className="mt-0.5 w-4 h-4 rounded border-2 border-gray-300 flex-shrink-0" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </section>
-        ))}
-
-        {/* Audit scoring grid */}
-        <section className="max-w-3xl mx-auto px-6 pb-12">
-          <h2 className="text-2xl font-bold text-[#0f211a] mb-2">
-            {isEN ? 'Front Office Quality Scoring Grid' : 'Grille de notation qualité réception'}
-          </h2>
-          <p className="text-gray-500 text-sm mb-6 leading-relaxed">
-            {isEN
-              ? 'Score each point 0 to 2. Total out of 20. Use this for internal brand checks and preparation work. 18 to 20: strong execution. 14 to 17: monitor. Below 14: immediate action required. LuxOps is not affiliated with LQA or Forbes Travel Guide.'
-              : "Notez chaque point de 0 à 2. Total sur 20. Utilisez cette grille pour les contrôles internes et la préparation qualité. 18 à 20 : exécution solide. 14 à 17 : à surveiller. En dessous de 14 : action immédiate requise. LuxOps n'est pas affilié à LQA ni à Forbes Travel Guide."}
-          </p>
-          <div className="border border-[#e7e1d7] rounded-xl overflow-hidden">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="bg-[#0f211a] text-white">
-                  <th className="text-left px-4 py-3 font-semibold w-1/4">
-                    {isEN ? 'Category' : 'Catégorie'}
-                  </th>
-                  <th className="text-left px-4 py-3 font-semibold">
-                    {isEN ? 'Checkpoint' : 'Point de contrôle'}
-                  </th>
-                  <th className="text-center px-4 py-3 font-semibold w-20">
-                    {isEN ? 'Score' : 'Note'}
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {auditRows.map((row, i) => (
-                  <tr key={i} className={i % 2 === 0 ? 'bg-[#fcfbf8]' : 'bg-[#f5f1e9]'}>
-                    <td className="px-4 py-3 text-gray-500 text-xs font-medium">{row.category}</td>
-                    <td className="px-4 py-3 text-gray-700">{row.checkpoint}</td>
-                    <td className="px-4 py-3 text-center text-gray-400 font-mono">/2</td>
-                  </tr>
-                ))}
-                <tr className="bg-[#0f211a] text-white font-bold">
-                  <td className="px-4 py-3" colSpan={2}>Total</td>
-                  <td className="px-4 py-3 text-center font-mono">/20</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        {/* SOP implementation */}
-        <section className="max-w-3xl mx-auto px-6 py-12 border-t border-[#e7e1d7]">
-          <h2 className="text-2xl font-bold text-[#0f211a] mb-6">
-            {isEN
-              ? 'How to implement front office checklists that actually get used'
-              : 'Comment mettre en place des checklists réception réellement utilisées'}
-          </h2>
-          <div className="space-y-6">
-            {sopSteps.map((item, i) => (
-              <div key={i} className="flex gap-5">
-                <div className="text-3xl font-bold text-gray-100 flex-shrink-0 w-10 pt-1">
-                  {String(i + 1).padStart(2, '0')}
-                </div>
-                <div>
-                  <h3 className="font-semibold text-[#0f211a] mb-1">{item.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{item.body}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* FAQ */}
-        <section className="max-w-3xl mx-auto px-6 py-12 border-t border-[#e7e1d7]">
-          <h2 className="text-2xl font-bold text-[#0f211a] mb-8">
-            {isEN ? 'Frequently Asked Questions' : 'Questions fréquentes'}
-          </h2>
-          <div className="space-y-6">
-            {faq.map(({ q, a }, i) => (
-              <div key={i} className="border-b border-[#e7e1d7] pb-6 last:border-0 last:pb-0">
-                <h3 className="font-semibold text-[#0f211a] mb-2">{q}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{a}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Related resources */}
-        <section className="max-w-3xl mx-auto px-6 py-12 border-t border-[#e7e1d7]">
-          <h2 className="text-xl font-bold text-[#0f211a] mb-6">
-            {isEN ? 'Related resources' : 'Ressources associées'}
-          </h2>
-          <div className="grid sm:grid-cols-2 gap-4">
-            {[
-              {
-                href: `/${locale}/front-office-sop`,
-                title: isEN ? 'Front Office SOP Guide' : 'Guide SOP Réception',
-                desc: isEN ? 'Standard operating procedures for hotel reception teams' : 'Procédures opérationnelles pour les équipes de réception',
-              },
-              {
-                href: `/${locale}/hotel-night-audit-checklist`,
-                title: isEN ? 'Night Audit Checklist' : 'Checklist Night Audit',
-                desc: isEN ? 'Step-by-step night audit procedure and morning handover' : 'Clôture PMS, VCC, caisse et passation du matin',
-              },
-              {
-                href: `/${locale}/hotel-housekeeping-checklist`,
-                title: isEN ? 'Hotel Housekeeping Checklist' : 'Checklist housekeeping',
-                desc: isEN ? 'Room inspection, supervisor rounds and internal quality scoring grid' : 'Inspection chambre, tournée superviseur et grille qualité interne',
-              },
-              {
-                href: `/${locale}/hotel-sop`,
-                title: isEN ? 'Hotel SOP Templates' : 'Modèles de SOP',
-                desc: isEN ? 'Complete standard operating procedures for all departments' : 'Procédures opérationnelles complètes pour tous les départements',
-              },
-            ].map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="border border-[#e7e1d7] rounded-xl p-5 hover:border-[#a58658] transition-colors group"
-              >
-                <p className="font-semibold text-[#0f211a] group-hover:underline">{link.title}</p>
-                <p className="text-sm text-gray-500 mt-1">{link.desc}</p>
-              </Link>
-            ))}
-          </div>
-        </section>
-
-        {/* CTA */}
-        <section className="bg-[#0f211a] py-16 px-6">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-2xl font-bold text-white mb-4">
-              {isEN ? 'The complete front office system' : 'Le système réception complet'}
-            </h2>
-            <p className="text-[#e9e5dc] mb-8">
-              {isEN
-                ? 'The LuxOps Front Office Playbook includes the full SOP documentation, inspection frameworks, training guides and shift management tools. 12 chapters, PDF and PowerPoint, EN and FR.'
-                : "Le Playbook Réception LuxOps comprend l'ensemble de la documentation SOP, les grilles d'inspection, les guides de formation et les outils de gestion des services. 12 chapitres, PDF et PowerPoint, EN et FR."}
-            </p>
-            <Link
-              href={`/${locale}/playbooks/fo`}
-              className="inline-block bg-[#fcfbf8] text-[#0f211a] px-8 py-4 rounded-xl font-semibold hover:bg-[#f5f1e9] transition-colors"
-            >
-              {isEN ? 'View Front Office Playbook' : 'Voir le Playbook Réception'}
-            </Link>
-          </div>
-        </section>
-
-      </main>
-    </>
-  )
+  return <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+    <ChecklistResourceProposal
+      locale={isEN ? 'en' : 'fr'}
+      kind="front-office"
+      title={isEN ? 'Front Desk Daily Checklist' : 'Checklist quotidienne réception'}
+      intro={isEN ? 'A clear shift routine for desk opening, guest arrivals, billing checks and a reliable handover.' : 'Une routine de shift claire pour l’ouverture du desk, les arrivées, le contrôle de la facturation et une passation fiable.'}
+      pdf={isEN ? '/downloads/checklists/en/front-desk-daily-checklist.pdf' : '/downloads/checklists/fr/checklist-quotidienne-reception.pdf'}
+      sections={[
+        ...roles.flatMap(role => role.sections.map(section => ({ title: section.title, intro: role.intro, items: section.items }))),
+        { title: isEN ? 'Front Office quality audit points' : 'Points d’audit qualité réception', items: auditRows.map(row => `${row.category} — ${row.checkpoint}`) },
+        ...sopSteps.map(step => ({ title: step.title, items: [step.body] })),
+      ]}
+      faq={faq}
+    />
+  </>
 }

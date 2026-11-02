@@ -1,13 +1,4 @@
-import Link from 'next/link'
-import {
-  ArrowRight,
-  CheckCircle2,
-  ClipboardCheck,
-  Download,
-  FileText,
-  Sparkles,
-} from 'lucide-react'
-import TrackedLink from '@/components/TrackedLink'
+import FreeChecklistsHubProposal from '@/components/FreeChecklistsHubProposal'
 import { SITE_URL, breadcrumbSchema, faqSchema, localizedPath } from '@/lib/seo'
 
 type Locale = 'en' | 'fr'
@@ -432,14 +423,6 @@ export function getFreeHotelChecklistsMetadata(locale: Locale) {
 
 export default function FreeHotelChecklistsHub({ locale }: { locale: Locale }) {
   const content = CONTENT[locale]
-  const isEN = locale === 'en'
-  const sourcePage = `/${locale}${content.slug}`
-  const totalItems = content.departments.reduce((sum, department) => sum + department.items.length, 0)
-  const availableItems = content.departments.reduce(
-    (sum, department) => sum + department.items.filter((item) => item.available).length,
-    0
-  )
-
   const schema = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -448,14 +431,12 @@ export default function FreeHotelChecklistsHub({ locale }: { locale: Locale }) {
         name: content.h1,
         description: content.metaDescription,
         url: localizedPath(locale, content.slug),
-        mainEntity: content.departments.flatMap((department) =>
-          department.items.map((item) => ({
-            '@type': 'DigitalDocument',
-            name: item.title,
-            description: item.body,
-            url: `${SITE_URL}${item.href}`,
-          }))
-        ),
+        mainEntity: content.departments.flatMap(department => department.items.map(item => ({
+          '@type': 'DigitalDocument',
+          name: item.title,
+          description: item.body,
+          url: `${SITE_URL}${item.href}`,
+        }))),
       },
       breadcrumbSchema([
         { name: 'LuxOps', url: localizedPath(locale) },
@@ -465,259 +446,8 @@ export default function FreeHotelChecklistsHub({ locale }: { locale: Locale }) {
     ],
   }
 
-  return (
-    <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      <main className="bg-[#fcfbf8] text-[#0f211a]">
-        <section className="bg-[#f5f1e9] px-5 pb-14 pt-[calc(var(--site-header-height)+2rem)] md:px-8 md:pb-20 md:pt-[calc(var(--site-header-height)+3rem)]">
-          <div className="max-w-6xl mx-auto">
-            <div className="max-w-4xl">
-              <span className="mb-5 inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-[#a58658]">
-                <Download size={15} />
-                {content.eyebrow}
-              </span>
-              <h1 className="mb-5 max-w-4xl font-display text-[clamp(2.5rem,6vw,4.5rem)] font-medium leading-[1.02] tracking-[-0.035em]">{content.h1}</h1>
-              <p className="mb-4 max-w-3xl text-lg leading-8 text-[#3d4a41] md:text-xl">
-                {content.subtitle}
-              </p>
-              <p className="max-w-3xl text-sm leading-relaxed text-[#5d665f] md:text-base">
-                {content.intro}
-              </p>
-            </div>
-
-            <div className="mt-8 grid max-w-3xl gap-3 sm:grid-cols-3">
-              <Stat value={String(totalItems)} label={isEN ? 'Checklist cards' : 'Checklists'} />
-              <Stat value={String(availableItems)} label={isEN ? 'Ready PDFs' : 'PDF prêts'} />
-              <Stat value="EN + FR" label={isEN ? 'Languages' : 'Langues'} />
-            </div>
-          </div>
-        </section>
-
-        {content.departments.map((department, index) => (
-          <DepartmentSection
-            key={department.id}
-            department={department}
-            index={index}
-            content={content}
-            sourcePage={sourcePage}
-          />
-        ))}
-
-        <section className="border-y border-[rgba(32,35,31,0.14)] bg-[#f5f1e9] px-6 py-20">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="mb-10 text-center font-display text-3xl font-medium text-[#0f211a] md:text-4xl">
-              {isEN ? 'Frequently asked questions' : 'Questions fréquentes'}
-            </h2>
-            <div className="border-t border-[rgba(32,35,31,0.2)]">
-              {content.faqs.map((faq) => (
-                <details key={faq.question} className="group border-b border-[rgba(32,35,31,0.2)]">
-                  <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-5 text-left text-base font-semibold text-[#0f211a] marker:hidden [&::-webkit-details-marker]:hidden">
-                    <span>{faq.question}</span><span aria-hidden="true" className="text-2xl font-light leading-none text-[#a58658] group-open:rotate-45">+</span>
-                  </summary>
-                  <p className="max-w-3xl pb-6 text-sm leading-7 text-[#5d665f]">{faq.answer}</p>
-                </details>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="bg-[#0f211a] px-6 py-16 text-[#fcfbf8]">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="flex justify-center gap-3 mb-6">
-              <span className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
-                <ClipboardCheck size={21} />
-              </span>
-              <span className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
-                <FileText size={21} />
-              </span>
-              <span className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
-                <Sparkles size={21} />
-              </span>
-            </div>
-            <h2 className="mb-4 font-display text-3xl font-medium">
-              {isEN ? 'Turn printable checklists into daily standards' : 'Transformer les checklists imprimables en standards quotidiens'}
-            </h2>
-            <p className="text-gray-300 leading-relaxed mb-8">
-              {isEN
-                ? 'Use the free PDFs for quick floor deployment, then explore the SOP manuals for editable procedures and included practical tools.'
-                : 'Utilisez les PDF gratuits pour un déploiement rapide sur le terrain, puis découvrez les manuels SOP pour les procédures modifiables et les outils pratiques inclus.'}
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <TrackedLink
-                href={`/${locale}/playbooks#department-playbooks`}
-                eventName="playbook_cta_clicked"
-                eventProperties={{ source_page: sourcePage, position: 'final' }}
-                className="inline-flex items-center justify-center gap-2 bg-[#fcfbf8] px-7 py-4 font-semibold text-[#0f211a] transition-colors hover:bg-[#e7e0d5]"
-              >
-                {isEN ? 'View SOP manuals' : 'Voir les manuels SOP'}
-                <ArrowRight size={18} />
-              </TrackedLink>
-              <TrackedLink
-                href={`/${locale}/free-hotel-procedures`}
-                eventName="free_chapter_cta_clicked"
-                eventProperties={{ source_page: sourcePage, position: 'final' }}
-                className="inline-flex items-center justify-center gap-2 border border-white/30 px-7 py-4 font-semibold text-white transition-colors hover:bg-white/10"
-              >
-                {isEN ? 'Download free chapters' : 'Télécharger les chapitres gratuits'}
-              </TrackedLink>
-            </div>
-          </div>
-        </section>
-      </main>
-    </>
-  )
-}
-
-function Stat({ value, label }: { value: string; label: string }) {
-  return (
-    <div className="border-t border-[rgba(32,35,31,0.2)] pt-4">
-      <p className="mb-1 font-display text-3xl">{value}</p>
-      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#5d665f]">{label}</p>
-    </div>
-  )
-}
-
-function DepartmentSection({
-  department,
-  index,
-  content,
-  sourcePage,
-}: {
-  department: Department
-  index: number
-  content: typeof CONTENT[Locale]
-  sourcePage: string
-}) {
-  return (
-    <section id={department.id} className={`px-5 py-14 md:px-8 md:py-20 ${index % 2 === 0 ? 'bg-[#fcfbf8]' : 'bg-[#f5f1e9]'}`}>
-      <div className="mx-auto max-w-[1320px]">
-        <div className="mb-8 max-w-3xl md:mb-10">
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-[#a58658]">
-            {department.label}
-          </p>
-          <h2 className="mb-4 font-display text-3xl font-medium text-[#0f211a] md:text-4xl">{department.title}</h2>
-          <p className="text-gray-600 leading-relaxed">{department.intro}</p>
-        </div>
-
-        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3 md:gap-5">
-          {department.items.map((item) => (
-            <ChecklistCard
-              key={item.href}
-              item={item}
-              content={content}
-              sourcePage={sourcePage}
-              departmentId={department.id}
-            />
-          ))}
-        </div>
-
-        <div className="mt-6">
-          <CommercialCta
-            eyebrow={content.playbookPrefix}
-            title={department.playbookLabel}
-            href={department.playbookHref}
-            eventName="playbook_cta_clicked"
-            sourcePage={sourcePage}
-          />
-        </div>
-      </div>
-    </section>
-  )
-}
-
-function ChecklistCard({
-  item,
-  content,
-  sourcePage,
-  departmentId,
-}: {
-  item: ChecklistItem
-  content: typeof CONTENT[Locale]
-  sourcePage: string
-  departmentId: string
-}) {
-  return (
-    <article className="group flex min-h-[270px] flex-col rounded-[1.5rem] border border-[rgba(32,35,31,0.10)] bg-[#fffefa] p-5 shadow-[0_8px_28px_rgba(15,33,26,0.035)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_38px_rgba(15,33,26,0.09)] sm:p-6">
-      <div className="mb-5 flex items-start justify-between gap-4">
-        <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-[#f1ecdf]">
-          <FileText size={23} className="text-[#24362f]" />
-        </div>
-        <span
-          className={
-            item.available
-              ? 'rounded-full bg-[#f1ecdf] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#24362f]'
-              : 'text-[10px] font-bold uppercase tracking-widest text-gray-500 bg-gray-100 px-3 py-1.5 rounded-full'
-          }
-        >
-          {item.available ? content.availableLabel : content.preparingLabel}
-        </span>
-      </div>
-
-      <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">{item.role}</p>
-      <h3 className="mb-4 font-display text-2xl font-medium leading-tight text-[#0f211a]">{item.title}</h3>
-      <p className="text-gray-600 leading-relaxed mb-6 flex-1">{item.body}</p>
-
-      <div className="space-y-3">
-        <TrackedLink
-          href={item.href}
-          eventName="free_checklist_download_clicked"
-          eventProperties={{
-            source_page: sourcePage,
-            department: departmentId,
-            checklist: item.title,
-            status: item.available ? 'available' : 'preparing',
-          }}
-          className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-[#0f211a] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#24362f]"
-          download
-        >
-          <Download size={17} />
-          {content.downloadLabel}
-        </TrackedLink>
-        <Link
-          href={item.sourceHref}
-          className="inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-[#24362f] transition-colors hover:bg-[#f1ecdf]"
-        >
-          {content.sourceLabel}
-          <ArrowRight size={16} />
-        </Link>
-      </div>
-    </article>
-  )
-}
-
-function CommercialCta({
-  eyebrow,
-  title,
-  href,
-  eventName,
-  sourcePage,
-}: {
-  eyebrow: string
-  title: string
-  href: string
-  eventName: string
-  sourcePage: string
-}) {
-  return (
-    <TrackedLink
-      href={href}
-      eventName={eventName}
-      eventProperties={{ source_page: sourcePage, position: 'department_cta' }}
-      className="group rounded-[1.5rem] border border-[rgba(32,35,31,0.12)] bg-[#fffefa] p-6 shadow-[0_8px_28px_rgba(15,33,26,0.035)] transition duration-300 hover:-translate-y-0.5 hover:border-[#a58658] hover:shadow-[0_16px_32px_rgba(15,33,26,0.08)]"
-    >
-      <div className="flex gap-4 items-start">
-        <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center bg-[#e7e0d5]">
-          <CheckCircle2 size={20} className="text-[#24362f]" />
-        </span>
-        <span>
-          <span className="block text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2">
-            {eyebrow}
-          </span>
-          <span className="font-display text-lg text-[#0f211a] transition-colors group-hover:text-[#a58658]">
-            {title}
-          </span>
-        </span>
-      </div>
-    </TrackedLink>
-  )
+  return <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+    <FreeChecklistsHubProposal locale={locale} departments={content.departments} faqs={content.faqs} />
+  </>
 }
