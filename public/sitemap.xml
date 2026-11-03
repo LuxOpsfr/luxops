@@ -484,6 +484,28 @@
     <priority>0.86</priority>
   </url>
 
+  <!-- trainingRevenueManagementHotel EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/hotel-revenue-management-training</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/hotel-revenue-management-training"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/formation-revenue-management-hotel"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/hotel-revenue-management-training"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- trainingRevenueManagementHotel FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/formation-revenue-management-hotel</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/formation-revenue-management-hotel"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/hotel-revenue-management-training"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/hotel-revenue-management-training"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.85</priority>
+  </url>
+
   <!-- resources EN -->
   <url>
     <loc>https://www.luxops.fr/en/resources</loc>
@@ -598,6 +620,28 @@
     <changefreq>weekly</changefreq>
     <lastmod>2026-03-28</lastmod>
     <priority>0.8</priority>
+  </url>
+
+  <!-- blogIncreaseHotelRevenue EN -->
+  <url>
+    <loc>https://www.luxops.fr/en/blog/increase-hotel-revenue</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/increase-hotel-revenue"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/augmenter-chiffre-affaires-hotel"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/increase-hotel-revenue"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.82</priority>
+  </url>
+
+  <!-- blogIncreaseHotelRevenue FR -->
+  <url>
+    <loc>https://www.luxops.fr/fr/blog/augmenter-chiffre-affaires-hotel</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/blog/augmenter-chiffre-affaires-hotel"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/blog/increase-hotel-revenue"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/blog/increase-hotel-revenue"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.82</priority>
   </url>
 
   <!-- blogHotelOperationsPlaybook EN -->

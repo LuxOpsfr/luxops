@@ -103,7 +103,7 @@ const trainingFormCopy = {
   },
 } satisfies Partial<Record<Locale, Record<string, string>>>
 
-export default function TrainingQuoteForm({ locale }: { locale: string }) {
+export default function TrainingQuoteForm({ locale, topic }: { locale: string; topic?: string }) {
   const activeLocale = toActiveLocale(locale)
   const copy = trainingFormCopy[activeLocale as keyof typeof trainingFormCopy] ?? trainingFormCopy.en
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
@@ -119,6 +119,7 @@ export default function TrainingQuoteForm({ locale }: { locale: string }) {
 
     const message = [
       copy.messageTitle,
+      ...(topic ? [`${activeLocale === 'fr' ? 'Thème' : activeLocale === 'es' ? 'Tema' : 'Topic'} : ${topic}`] : []),
       '',
       `${copy.propertyEmailLabel} : ${data.company}`,
       `${copy.improvementEmailLabel} : ${data.improvement}`,
@@ -132,7 +133,7 @@ export default function TrainingQuoteForm({ locale }: { locale: string }) {
           name: data.name,
           email: data.email,
           company: data.company,
-          subject: copy.subject,
+          subject: topic ? `${copy.subject} — ${topic}` : copy.subject,
           need_type: 'training',
           message,
           locale: activeLocale,
@@ -145,6 +146,7 @@ export default function TrainingQuoteForm({ locale }: { locale: string }) {
         posthog.capture('training_quote_requested', {
           locale,
           has_improvement: true,
+          ...(topic ? { topic } : {}),
         })
       } else {
         setStatus('error')

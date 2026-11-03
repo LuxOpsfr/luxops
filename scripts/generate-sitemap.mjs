@@ -62,7 +62,8 @@ for (const [routeId, route] of Object.entries(routes)) {
       )
       .join('\n')
 
-    const xDefaultPath = route.paths[defaultLocale] ?? path
+    const xDefaultLocale = route.paths[defaultLocale] ? defaultLocale : locale
+    const xDefaultPath = route.paths[xDefaultLocale]
     const lastModified = route.lastModified
       ? `\n    <lastmod>${escapeXml(route.lastModified)}</lastmod>`
       : ''
@@ -71,7 +72,7 @@ for (const [routeId, route] of Object.entries(routes)) {
   <url>
     <loc>${escapeXml(localizedUrl(locale, path))}</loc>
 ${alternates}
-    <xhtml:link rel="alternate" hreflang="x-default" href="${escapeXml(localizedUrl(defaultLocale, xDefaultPath))}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="${escapeXml(localizedUrl(xDefaultLocale, xDefaultPath))}"/>
     <changefreq>${escapeXml(route.changeFrequency ?? 'monthly')}</changefreq>${lastModified}
     <priority>${escapeXml(route.priority ?? 0.7)}</priority>
   </url>`)

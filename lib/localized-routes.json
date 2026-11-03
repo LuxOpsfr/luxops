@@ -216,6 +216,13 @@
     "lastModified": "2026-08-12",
     "priority": 0.86
   },
+  "trainingRevenueManagementHotel": {
+    "paths": { "fr": "/formation-revenue-management-hotel", "en": "/hotel-revenue-management-training" },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-11-03",
+    "priority": 0.85
+  },
   "resources": {
     "paths": {
       "en": "/resources",
@@ -257,6 +264,13 @@
     "changeFrequency": "weekly",
     "lastModified": "2026-03-28",
     "priority": 0.8
+  },
+  "blogIncreaseHotelRevenue": {
+    "paths": { "fr": "/blog/augmenter-chiffre-affaires-hotel", "en": "/blog/increase-hotel-revenue" },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-11-03",
+    "priority": 0.82
   },
   "blogHotelOperationsPlaybook": {
     "paths": {

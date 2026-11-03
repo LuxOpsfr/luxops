@@ -46,8 +46,8 @@ const content = {
   fr: {
     eyebrow: 'Formations & accompagnement opérationnel hôtelier',
     title: 'Faites grandir vos équipes. Renforcez vos opérations. Élevez vos standards.',
-    intro: 'De l’excellence de service à l’accompagnement managérial, du développement des compétences au déploiement des outils hôteliers, LuxOps propose des formations et un accompagnement sur mesure pour faire progresser vos équipes et optimiser vos opérations au quotidien.',
-    introSecondary: 'Dans votre établissement ou à distance, en français ou en anglais, nos interventions s’adaptent à vos équipes, à votre organisation et à vos priorités opérationnelles.',
+    intro: 'Faire évoluer un établissement ne consiste pas uniquement à former ses équipes. C’est aussi repenser les méthodes de travail, tirer parti des nouvelles technologies et construire des pratiques capables de durer.',
+    introSecondary: 'LuxOps associe développement des compétences, innovation opérationnelle et référentiels de travail dans des interventions concrètes, adaptées à vos équipes, vos outils et vos priorités.',
     mainCta: 'Demander une proposition sur mesure',
     imageAlt: 'Une formatrice accompagne une équipe hôtelière lors d’une session lumineuse dans un hôtel',
     expertiseLabel: 'Nos domaines d’expertise',
@@ -57,8 +57,8 @@ const content = {
       { title: 'Excellence de service et standards hôteliers', text: 'Parcours client, standards de service, accueil et prise en charge personnalisée, gestion des réclamations, traitement des situations délicates et harmonisation des pratiques entre les services.', icon: Star },
       { title: 'Accompagnement managérial et leadership', text: 'Accompagnement des chefs de service et des managers de proximité : posture managériale, animation des briefings, délégation, feedback, suivi de la performance et montée en compétences des équipes.', icon: UserRoundCog },
       { title: 'Développement des compétences', text: 'Intégration des nouveaux collaborateurs, formation aux métiers, développement de la polyvalence et de l’autonomie, accompagnement des évolutions internes et formation de formateurs internes.', icon: GraduationCap },
-      { title: 'Outils et solutions hôtelières', text: 'Accompagnement au déploiement et à la prise en main des outils métiers : PMS, POS, logiciels de housekeeping, CRM, plateformes de gestion de la relation client et autres solutions opérationnelles. Des formations pratiques pour permettre aux équipes d’exploiter pleinement leurs outils au quotidien.', icon: MonitorPlay },
-      { title: 'Procédures et organisation opérationnelle', text: 'Création et optimisation des procédures opérationnelles (SOP), checklists, circuits de communication, méthodes de contrôle et coordination interservices pour gagner en efficacité et en régularité.', icon: Workflow },
+      { title: 'Outils et solutions hôtelières', text: 'Accompagnement au déploiement des outils métiers : PMS, POS, logiciels de housekeeping, CRM et plateformes de relation client. Des formations pratiques pour exploiter les données, l’automatisation et l’IA de façon pertinente dans les opérations quotidiennes.', icon: MonitorPlay },
+      { title: 'Procédures et organisation opérationnelle', text: 'Création et optimisation des SOP, checklists, circuits de communication et méthodes de contrôle. Des référentiels vivants, adoptés par les équipes et mis à jour pour transmettre les pratiques lors des évolutions de personnel ou d’organisation.', icon: Workflow },
       { title: 'Ouvertures et accompagnement au changement', text: 'Accompagnement des préouvertures, réouvertures et lancements de saison : préparation des équipes, mise en place des méthodes de travail, déploiement de nouvelles procédures et accompagnement des évolutions organisationnelles.', icon: Building2 },
     ],
     momentsLabel: 'Déploiement opérationnel',
@@ -270,6 +270,18 @@ export function FormationContent({ locale }: { locale: string }) {
         </div>
       </section>
 
+      {activeLocale === 'fr' && <section className="px-5 py-10 sm:px-8 lg:px-12 lg:py-12">
+        <div className="mx-auto max-w-[1400px]">
+          <p className="text-[10px] font-semibold uppercase tracking-[.18em] text-[#92734a]">Notre approche</p>
+          <h2 className="mt-2 font-display text-2xl font-medium text-[#0f211a] sm:text-3xl">Faire évoluer les compétences, les outils et les méthodes.</h2>
+          <div className="mt-7 grid gap-5 border-t border-[#d8cfc1] pt-6 md:grid-cols-3 md:gap-8">
+            <div><h3 className="font-display text-xl text-[#0f211a]">Humain</h3><p className="mt-2 text-sm leading-6 text-[#626b64]">Développer les compétences, accompagner les managers et donner aux équipes les moyens de progresser.</p></div>
+            <div><h3 className="font-display text-xl text-[#0f211a]">Innovation</h3><p className="mt-2 text-sm leading-6 text-[#626b64]">Moderniser les pratiques grâce aux outils, aux données, à l’IA et à des méthodes de travail plus efficaces.</p></div>
+            <div><h3 className="font-display text-xl text-[#0f211a]">Référentiels</h3><p className="mt-2 text-sm leading-6 text-[#626b64]">Structurer les procédures et les routines pour transmettre les savoir-faire et maintenir les acquis dans la durée.</p></div>
+          </div>
+        </div>
+      </section>}
+
       <section className="border-y border-[#e7e1d7] bg-white/65 px-5 py-11 sm:px-8 lg:px-12 lg:py-14">
         <div className="mx-auto max-w-[1400px]">
           <div className="mb-7 max-w-3xl">
@@ -290,6 +302,17 @@ export function FormationContent({ locale }: { locale: string }) {
           </div>
         </div>
       </section>
+
+      {(activeLocale === 'fr' || activeLocale === 'en') && <section className="px-5 py-8 sm:px-8 lg:px-12 lg:py-10">
+        <div className="mx-auto flex max-w-[1400px] flex-col gap-5 rounded-[1.45rem] border border-[#e7e1d7] bg-[#f3efe7] px-6 py-6 sm:px-8 lg:flex-row lg:items-center lg:justify-between">
+          <div className="max-w-3xl">
+            <p className="text-[10px] font-semibold uppercase tracking-[.18em] text-[#92734a]">{activeLocale === 'fr' ? 'Formation spécialisée' : 'Specialised training'}</p>
+            <h2 className="mt-2 font-display text-xl font-medium text-[#0f211a] sm:text-2xl">{activeLocale === 'fr' ? 'Revenue Management & Performance commerciale' : 'Revenue Management & Commercial Performance'}</h2>
+            <p className="mt-2 text-sm leading-6 text-[#626b64]">{activeLocale === 'fr' ? 'Du pilotage tarifaire à la vente additionnelle, LuxOps accompagne les directions, les équipes réservations et Front Office. Formation terrain, outils de pilotage et méthodes opérationnelles se rejoignent pour inscrire les pratiques dans la durée.' : 'From pricing decisions to upselling, LuxOps works with hotel leaders, reservations and front office teams. Practical training, commercial tools and documented methods help the new practices last.'}</p>
+          </div>
+          <TrackedLink href={activeLocale === 'fr' ? '/fr/formation-revenue-management-hotel' : '/en/hotel-revenue-management-training'} eventName="training_specialization_clicked" eventProperties={{ source_page: activeLocale === 'fr' ? '/fr/formation' : '/en/training', destination_page: activeLocale === 'fr' ? '/fr/formation-revenue-management-hotel' : '/en/hotel-revenue-management-training', placement: 'expertise', topic: 'revenue_management', locale: activeLocale }} className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 self-start rounded-full border border-[#bda983] bg-white px-5 text-xs font-semibold text-[#0f211a] transition hover:bg-[#0f211a] hover:text-white lg:self-auto">{activeLocale === 'fr' ? 'Découvrir cette formation' : 'Explore this training'} <ArrowRight size={14} /></TrackedLink>
+        </div>
+      </section>}
 
       <section className="border-y border-[#e7e1d7] bg-white/65 px-5 py-11 sm:px-8 lg:px-12 lg:py-14">
         <div className="mx-auto max-w-[1400px]">
