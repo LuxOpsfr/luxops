@@ -1,7 +1,8 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { ArrowRight, BookOpen, Check, X } from 'lucide-react'
+import Image from 'next/image'
+import { ArrowRight, Check, X } from 'lucide-react'
 import posthog from 'posthog-js'
 import TrackedLink from '@/components/TrackedLink'
 import { useCurrency } from '@/context/CurrencyContext'
@@ -16,19 +17,56 @@ interface DownloadDetail {
 }
 
 const PRODUCTS: Record<DepartmentId, {
-  playbook: { slug: string; en: string; fr: string }
+  slug: string
+  image: string
+  name: { en: string; fr: string }
+  headline: { en: string; fr: string }
+  description: { en: string; fr: string }
+  includesTools: boolean
 }> = {
   fo: {
-    playbook: { slug: 'fo', en: 'Front Office Playbook', fr: 'Playbook Front Office' },
+    slug: 'fo',
+    image: '/images/editorial-hospitality/dept-front-office-v2.jpg',
+    name: { en: 'Front Office', fr: 'Front Office' },
+    headline: { en: 'Make every arrival feel considered.', fr: 'Soignez chaque arrivée, à chaque service.' },
+    description: {
+      en: 'From guest communication to shift handovers, give the front desk clear procedures to adapt and share.',
+      fr: 'De la communication client aux passations, donnez à la réception des procédures à adapter et partager.',
+    },
+    includesTools: true,
   },
   hsk: {
-    playbook: { slug: 'hsk', en: 'Housekeeping Playbook', fr: 'Playbook Housekeeping' },
+    slug: 'hsk',
+    image: '/images/editorial-hospitality/dept-housekeeping-v2.jpg',
+    name: { en: 'Housekeeping', fr: 'Housekeeping' },
+    headline: { en: 'Make every room meet the same standard.', fr: 'Le même standard, dans chaque chambre.' },
+    description: {
+      en: 'Go beyond a single checklist with room cleaning procedures, inspection standards and tools for your team.',
+      fr: 'Allez au-delà d’une checklist avec des procédures de nettoyage, des standards d’inspection et des outils pour l’équipe.',
+    },
+    includesTools: true,
   },
   fb: {
-    playbook: { slug: 'fb', en: 'F&B Playbook', fr: 'Playbook F&B' },
+    slug: 'fb',
+    image: '/images/editorial-hospitality/dept-food-beverage-v2.jpg',
+    name: { en: 'Food & Beverage', fr: 'Food & Beverage' },
+    headline: { en: 'Give every service a clear sequence.', fr: 'Une méthode claire pour chaque service.' },
+    description: {
+      en: 'Connect opening checks to the full restaurant, bar and room service procedures your team can adapt.',
+      fr: 'Reliez les contrôles d’ouverture aux procédures du restaurant, du bar et du room service à adapter.',
+    },
+    includesTools: true,
   },
   spa: {
-    playbook: { slug: 'spa', en: 'Spa & Wellness Playbook', fr: 'Playbook Spa & Wellness' },
+    slug: 'spa',
+    image: '/images/editorial-hospitality/dept-spa-wellness-v2.jpg',
+    name: { en: 'Spa & Wellness', fr: 'Spa & Bien-être' },
+    headline: { en: 'Make the guest journey feel seamless.', fr: 'Un parcours client fluide, du début à la fin.' },
+    description: {
+      en: 'Bring treatment protocols, room preparation and guest care into one operating reference for your spa.',
+      fr: 'Réunissez les protocoles de soin, la préparation des cabines et l’accueil dans un même référentiel.',
+    },
+    includesTools: false,
   },
 }
 
@@ -92,49 +130,60 @@ export default function DownloadFollowUp({ locale }: { locale: string }) {
   if (!department) return null
 
   const product = PRODUCTS[department]
+  const language = isEn ? 'en' : 'fr'
 
   return (
     <aside
       role="region"
       aria-label={isEn ? 'Download next steps' : 'Suite du téléchargement'}
       aria-live="polite"
-      className="fixed inset-x-3 bottom-3 z-[90] border border-[rgba(32,35,31,0.18)] bg-[#fcfbf8] p-5 text-[#0f211a] shadow-[0_20px_55px_rgba(15,33,26,0.18)] sm:inset-x-auto sm:bottom-6 sm:right-6 sm:w-[430px] sm:p-6"
+      className="fixed inset-x-3 bottom-3 z-[90] max-h-[calc(100dvh-1.5rem)] overflow-y-auto rounded-[26px] border border-[#e7dfd1] bg-[#fcfbf8] text-[#0f211a] shadow-[0_26px_70px_rgba(15,33,26,0.23)] sm:inset-x-auto sm:bottom-6 sm:right-6 sm:w-[460px] sm:rounded-[30px]"
     >
-      <button
-        type="button"
-        onClick={() => setDepartment(null)}
-        aria-label={isEn ? 'Close' : 'Fermer'}
-        className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center text-[#5d665f] transition-colors hover:bg-[#e7e0d5] hover:text-[#0f211a]"
-      >
-        <X size={18} />
-      </button>
-
-      <div className="mb-5 flex h-10 w-10 items-center justify-center bg-[#e7e0d5] text-[#0f211a]">
-        <Check size={19} />
+      <div className="relative h-[140px] overflow-hidden bg-[#23382d] sm:h-[158px]">
+        <Image
+          src={product.image}
+          alt={isEn ? `${product.name.en} in a luxury hotel` : `${product.name.fr} dans un hôtel de luxe`}
+          fill
+          sizes="(min-width: 640px) 460px, calc(100vw - 24px)"
+          className="object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#10251d]/65 via-transparent to-[#10251d]/20" />
+        <span className="absolute bottom-4 left-5 inline-flex items-center gap-2 rounded-full border border-white/25 bg-[#10251d]/85 px-3 py-1.5 text-[10px] font-semibold text-white backdrop-blur-sm sm:left-6">
+          <Check size={13} strokeWidth={2.2} />
+          {isEn ? 'Your PDF is downloading' : 'Votre PDF se télécharge'}
+        </span>
+        <button
+          type="button"
+          onClick={() => setDepartment(null)}
+          aria-label={isEn ? 'Close' : 'Fermer'}
+          className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-white/50 bg-[#fcfbf8]/95 text-[#31463a] shadow-sm transition hover:bg-white hover:text-[#0f211a]"
+        >
+          <X size={18} />
+        </button>
       </div>
-      <p className="mb-2 pr-10 font-display text-xl font-medium text-[#0f211a]">
-        {isEn ? 'Your PDF download has started' : 'Le téléchargement de votre PDF a démarré'}
-      </p>
-      <p className="mb-6 text-sm leading-relaxed text-[#5d665f]">
-        {isEn
-          ? 'Explore the complete department manual for editable procedures and practical tools.'
-          : 'Découvrez le manuel complet du département pour les procédures modifiables et les outils pratiques.'}
-      </p>
 
-      <div className="flex flex-col gap-3">
+      <div className="px-5 pb-5 pt-5 sm:px-6 sm:pb-6">
+        <p className="text-[10px] font-bold uppercase tracking-[.15em] text-[#937345]">
+          {isEn ? `${product.name.en} · SOP manual` : `${product.name.fr} · Manuel SOP`}
+        </p>
+        <h2 className="mt-2 max-w-[390px] font-display text-[1.55rem] font-medium leading-[1.13] tracking-[-.025em] text-[#10251d] sm:text-[1.7rem]">
+          {product.headline[language]}
+        </h2>
+        <p className="mt-2 text-[13px] leading-[1.55] text-[#5c6960]">
+          {product.description[language]}
+        </p>
+        <p className="mt-3 text-[11px] font-medium leading-5 text-[#607066]">
+          {isEn ? 'Editable PDF & PowerPoint · English & French' : 'PDF et PowerPoint modifiables · Français et anglais'}
+          {product.includesTools ? (isEn ? ' · Practical tools included' : ' · Outils pratiques inclus') : ''}
+        </p>
         <TrackedLink
-          href={`/${locale}/playbooks/${product.playbook.slug}`}
+          href={`/${locale}/playbooks/${product.slug}`}
           eventName="download_follow_up_clicked"
           eventProperties={{ department, destination: 'playbook', locale }}
-          className="inline-flex items-center justify-between gap-3 bg-[#0f211a] px-5 py-3.5 text-sm font-semibold text-[#fcfbf8] transition-colors hover:bg-[#24362f]"
+          className="mt-5 inline-flex min-h-12 w-full items-center justify-between gap-3 rounded-full bg-[#10251d] px-5 text-[12px] font-semibold text-[#fcfbf8] shadow-[0_8px_18px_rgba(15,33,26,.15)] transition hover:-translate-y-0.5 hover:bg-[#243f31] sm:text-[13px]"
         >
-          <span className="inline-flex items-center gap-2">
-            <BookOpen size={17} />
-            {isEn ? product.playbook.en : product.playbook.fr}
-          </span>
-          <span className="inline-flex items-center gap-2 whitespace-nowrap">
-            {formatProductPrice('playbook')} <ArrowRight size={16} />
-          </span>
+          <span>{isEn ? 'Explore the complete manual' : 'Découvrir le manuel complet'}</span>
+          <span className="inline-flex shrink-0 items-center gap-2">{formatProductPrice('playbook')} <ArrowRight size={16} /></span>
         </TrackedLink>
       </div>
     </aside>
