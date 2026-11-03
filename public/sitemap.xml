@@ -489,6 +489,7 @@
     <loc>https://www.luxops.fr/en/hotel-revenue-management-training</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/hotel-revenue-management-training"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/formation-revenue-management-hotel"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.luxops.fr/es/formacion-revenue-management-hotel"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/hotel-revenue-management-training"/>
     <changefreq>monthly</changefreq>
     <lastmod>2026-11-03</lastmod>
@@ -500,6 +501,19 @@
     <loc>https://www.luxops.fr/fr/formation-revenue-management-hotel</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/formation-revenue-management-hotel"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/hotel-revenue-management-training"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.luxops.fr/es/formacion-revenue-management-hotel"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/hotel-revenue-management-training"/>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- trainingRevenueManagementHotel ES -->
+  <url>
+    <loc>https://www.luxops.fr/es/formacion-revenue-management-hotel</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.luxops.fr/es/formacion-revenue-management-hotel"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.luxops.fr/en/hotel-revenue-management-training"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.luxops.fr/fr/formation-revenue-management-hotel"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.luxops.fr/en/hotel-revenue-management-training"/>
     <changefreq>monthly</changefreq>
     <lastmod>2026-11-03</lastmod>

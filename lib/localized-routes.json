@@ -217,7 +217,7 @@
     "priority": 0.86
   },
   "trainingRevenueManagementHotel": {
-    "paths": { "fr": "/formation-revenue-management-hotel", "en": "/hotel-revenue-management-training" },
+    "paths": { "fr": "/formation-revenue-management-hotel", "en": "/hotel-revenue-management-training", "es": "/formacion-revenue-management-hotel" },
     "sitemap": true,
     "changeFrequency": "monthly",
     "lastModified": "2026-11-03",
