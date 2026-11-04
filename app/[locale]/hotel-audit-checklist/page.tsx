@@ -1,14 +1,5 @@
 import { Metadata } from 'next'
-import Link from 'next/link'
-import {
-  ArrowRight,
-  ClipboardCheck,
-  FileCheck2,
-  ListChecks,
-  SearchCheck,
-  Target,
-} from 'lucide-react'
-import SamePageAnchor from '@/components/SamePageAnchor'
+import HotelAuditChecklistContent from '@/components/HotelAuditChecklistContent'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
@@ -141,16 +132,10 @@ const FAQ_FR = [
 ]
 
 const scoreCards = [
-  { score: '50 to 56', scoreFr: '50 à 56', tone: 'green', labelEn: 'Ready for external audit', labelFr: 'Prêt pour un audit externe' },
-  { score: '40 to 49', scoreFr: '40 à 49', tone: 'amber', labelEn: 'Monitor and coach', labelFr: 'Surveiller et accompagner' },
-  { score: 'Below 40', scoreFr: 'Moins de 40', tone: 'red', labelEn: 'Immediate action required', labelFr: 'Action immédiate requise' },
+  { score: '50 to 56', scoreFr: '50 à 56', tone: 'green', labelEn: 'Review the remaining gaps', labelFr: 'Vérifier les derniers écarts' },
+  { score: '40 to 49', scoreFr: '40 à 49', tone: 'amber', labelEn: 'Prioritise recurring gaps', labelFr: 'Prioriser les écarts récurrents' },
+  { score: 'Below 40', scoreFr: 'Moins de 40', tone: 'red', labelEn: 'Clarify the operating standards', labelFr: 'Clarifier les standards opérationnels' },
 ]
-
-function toneClasses(tone: string) {
-  if (tone === 'green') return 'border-emerald-200 bg-emerald-50 text-emerald-800'
-  if (tone === 'amber') return 'border-amber-200 bg-amber-50 text-amber-800'
-  return 'border-red-200 bg-red-50 text-red-800'
-}
 
 export default async function HotelAuditPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
@@ -158,8 +143,6 @@ export default async function HotelAuditPage({ params }: { params: Promise<{ loc
   const auditItems = isEN ? AUDIT_ITEMS_EN : AUDIT_ITEMS_FR
   const areas = isEN ? AREAS_EN : AREAS_FR
   const faq = isEN ? FAQ_EN : FAQ_FR
-  const trainingHref = isEN ? '/en/training' : '/fr/formation'
-  const checklistsHref = isEN ? '/en/free-hotel-checklists' : '/fr/checklists-hotel-gratuites'
 
   const faqSchema = {
     '@context': 'https://schema.org',
@@ -188,307 +171,13 @@ export default async function HotelAuditPage({ params }: { params: Promise<{ loc
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <main className="pt-16 bg-white">
-        <section
-          className="px-6 py-20 lg:py-24 border-b border-[#e8edf5]"
-          style={{
-            backgroundImage: 'radial-gradient(#c3c6d6 0.5px, transparent 0.5px)',
-            backgroundSize: '24px 24px',
-          }}
-        >
-          <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-12 items-start">
-            <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#eef4ff] text-[#003d9b] font-bold text-[10px] uppercase tracking-widest mb-7">
-                <span className="w-2 h-2 rounded-full bg-[#003d9b]" />
-                {isEN ? 'Quality audit checklist' : 'Checklist audit qualité'}
-              </div>
-              <h1 className="font-display text-4xl md:text-6xl font-extrabold tracking-tight leading-[0.98] text-[#0a1d2e] mb-6">
-                {isEN ? 'Hotel audit checklist' : 'Checklist audit hôtel'}
-              </h1>
-              <p className="text-lg md:text-xl text-[#4f6074] leading-relaxed max-w-2xl mb-6">
-                {isEN
-                  ? 'A practical scoring grid to review front office, housekeeping, F&B and guest experience standards.'
-                  : 'Une grille de contrôle simple pour évaluer la réception, le housekeeping, le F&B et l’expérience client.'}
-              </p>
-              <p className="text-sm text-[#737685] leading-relaxed max-w-2xl mb-8">
-                {isEN
-                  ? 'Use it as a monthly internal audit, a department review tool or a preparation step before an external quality visit.'
-                  : 'À utiliser comme audit interne mensuel, support de revue par département ou préparation avant un contrôle qualité externe.'}
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <SamePageAnchor
-                  href="#audit-grid"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-4 bg-[#003d9b] text-white font-bold text-sm hover:bg-[#0a1d2e] transition-colors"
-                >
-                  {isEN ? 'Use the checklist' : 'Voir la checklist'}
-                  <ArrowRight size={16} />
-                </SamePageAnchor>
-                <Link
-                  href={trainingHref}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-4 bg-white text-[#0a1d2e] border border-[#d8deea] font-bold text-sm hover:border-[#003d9b] transition-colors"
-                >
-                  {isEN ? 'Explore team training' : 'Découvrir la formation des équipes'}
-                </Link>
-              </div>
-            </div>
-
-            <div className="bg-white border border-[#d8deea] shadow-[0_24px_70px_rgba(10,29,46,0.10)] p-8 lg:p-10">
-              <div className="flex items-start gap-4 mb-7">
-                <div className="w-12 h-12 bg-[#eef4ff] flex items-center justify-center flex-shrink-0">
-                  <SearchCheck size={24} className="text-[#003d9b]" />
-                </div>
-                <div>
-                  <h2 className="font-display text-2xl font-extrabold text-[#0a1d2e] tracking-tight mb-2">
-                    {isEN ? 'What this checklist is for' : 'À quoi sert cette checklist'}
-                  </h2>
-                  <p className="text-sm text-[#4f6074] leading-relaxed">
-                    {isEN
-                      ? 'It gives management a quick but structured way to identify visible quality gaps, recurring service friction and standards that need follow-up.'
-                      : 'Elle donne à la direction une lecture rapide mais structurée des écarts visibles, des points de friction récurrents et des standards à reprendre.'}
-                  </p>
-                </div>
-              </div>
-              <div className="grid grid-cols-2 gap-3">
-                {[
-                  isEN ? '28 criteria' : '28 critères',
-                  isEN ? '4 areas' : '4 périmètres',
-                  isEN ? '0 to 2 scoring' : 'Notation 0 à 2',
-                  isEN ? 'Action priorities' : 'Priorités d’action',
-                ].map((item) => (
-                  <div key={item} className="border border-[#e8edf5] bg-[#f8f9ff] p-4">
-                    <p className="text-sm font-bold text-[#0a1d2e]">{item}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="px-6 py-16 bg-white">
-          <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
-            {[
-              {
-                icon: <ClipboardCheck size={20} className="text-[#003d9b]" />,
-                title: isEN ? 'Score each point' : 'Noter chaque point',
-                text: isEN
-                  ? 'Use 0 when the standard is not met, 1 when partially met and 2 when fully met.'
-                  : 'Utilisez 0 si le standard n’est pas atteint, 1 s’il est partiel et 2 s’il est pleinement atteint.',
-              },
-              {
-                icon: <Target size={20} className="text-[#003d9b]" />,
-                title: isEN ? 'Read patterns, not incidents' : 'Lire les tendances',
-                text: isEN
-                  ? 'One isolated miss matters less than a repeated gap across shifts, rooms or service moments.'
-                  : 'Un incident isolé compte moins qu’un écart répété sur plusieurs shifts, chambres ou moments de service.',
-              },
-              {
-                icon: <FileCheck2 size={20} className="text-[#003d9b]" />,
-                title: isEN ? 'Turn gaps into actions' : 'Transformer les écarts en actions',
-                text: isEN
-                  ? 'Each gap should lead to a process, checklist, training or management follow-up action.'
-                  : 'Chaque écart doit déboucher sur un process, une checklist, une formation ou un suivi managérial.',
-              },
-            ].map((item) => (
-              <div key={item.title} className="border border-[#e8edf5] bg-[#f8f9ff] p-7">
-                <div className="w-10 h-10 bg-white flex items-center justify-center mb-5">{item.icon}</div>
-                <h2 className="font-display text-xl font-bold text-[#0a1d2e] mb-3">{item.title}</h2>
-                <p className="text-sm text-[#4f6074] leading-relaxed">{item.text}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section id="audit-grid" className="px-6 py-20 bg-[#f8f9ff] scroll-mt-28">
-          <div className="max-w-screen-xl mx-auto">
-            <div className="max-w-2xl mb-12">
-              <p className="text-xs font-bold uppercase tracking-widest text-[#003d9b] mb-3">
-                {isEN ? 'Scoring grid' : 'Grille de notation'}
-              </p>
-              <h2 className="font-display text-3xl md:text-4xl font-extrabold text-[#0a1d2e] tracking-tight mb-4">
-                {isEN ? '28 criteria across the main guest-facing areas' : '28 critères sur les principaux points de contact client'}
-              </h2>
-              <p className="text-[#4f6074] leading-relaxed">
-                {isEN
-                  ? 'The goal is not to replace a full audit report. It is to create a consistent first read of where standards are holding and where follow-up is needed.'
-                  : 'L’objectif n’est pas de remplacer un rapport d’audit complet. Il s’agit d’obtenir une première lecture cohérente des standards qui tiennent et des points à reprendre.'}
-              </p>
-            </div>
-
-            <div className="space-y-6">
-              {areas.map((area) => {
-                const items = auditItems.filter((item) => item.area === area)
-                return (
-                  <div key={area} className="bg-white border border-[#d8deea]">
-                    <div className="flex items-center justify-between gap-4 bg-[#0a1d2e] text-white px-5 py-4">
-                      <h3 className="font-display font-bold text-lg">{area}</h3>
-                      <span className="text-xs font-bold uppercase tracking-widest text-white/70">
-                        {isEN ? 'Subtotal /16' : 'Sous-total /16'}
-                      </span>
-                    </div>
-                    <div className="divide-y divide-[#e8edf5]">
-                      {items.map((item, index) => (
-                        <div key={item.criterion} className="grid grid-cols-[1fr_90px] gap-4 px-5 py-4">
-                          <div className="flex gap-3">
-                            <span className="text-xs font-bold text-[#003d9b] mt-1">
-                              {String(index + 1).padStart(2, '0')}
-                            </span>
-                            <p className="text-sm text-[#4f6074] leading-relaxed">{item.criterion}</p>
-                          </div>
-                          <div className="text-center text-sm font-mono text-[#737685] border border-[#e8edf5] py-2">
-                            /2
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )
-              })}
-            </div>
-
-            <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
-              {scoreCards.map((card) => (
-                <div key={card.score} className={`border p-5 ${toneClasses(card.tone)}`}>
-                  <p className="font-display text-2xl font-extrabold mb-1">
-                    {isEN ? card.score : card.scoreFr}
-                  </p>
-                  <p className="text-sm font-semibold">{isEN ? card.labelEn : card.labelFr}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="px-6 py-20 bg-white">
-          <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-14 items-start">
-            <div>
-              <p className="text-xs font-bold uppercase tracking-widest text-[#003d9b] mb-3">
-                {isEN ? 'Audit method' : 'Méthode d’audit'}
-              </p>
-              <h2 className="font-display text-3xl md:text-4xl font-extrabold text-[#0a1d2e] tracking-tight mb-5">
-                {isEN ? 'Use the score to decide what happens next' : 'Utiliser le score pour décider de la suite'}
-              </h2>
-              <p className="text-[#4f6074] leading-relaxed">
-                {isEN
-                  ? 'The score is useful only if it leads to follow-up. Review the results within 48 hours, assign each recurring gap to an owner and connect it to a procedure, checklist or training action.'
-                  : 'Le score n’a de valeur que s’il déclenche une suite. Relisez les résultats sous 48 heures, attribuez chaque écart récurrent à un responsable et reliez-le à une procédure, une checklist ou une action de formation.'}
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {(isEN ? [
-                { title: 'Prepare the scope', text: 'Define the departments, date, expected standard and whether the audit is announced or unannounced.' },
-                { title: 'Observe the guest journey', text: 'Follow the experience as a guest would see it: arrival, room, service moments, requests and departure.' },
-                { title: 'Debrief quickly', text: 'Review scores by department and focus on repeated gaps instead of isolated mistakes.' },
-                { title: 'Track monthly', text: 'Use the same grid over time to see whether standards improve, slip or remain unstable.' },
-              ] : [
-                { title: 'Préparer le périmètre', text: 'Définir les départements, la date, le standard attendu et le niveau d’annonce de l’audit.' },
-                { title: 'Observer le parcours client', text: 'Suivre l’expérience telle qu’un client la vit : arrivée, chambre, service, demandes et départ.' },
-                { title: 'Débriefer rapidement', text: 'Relire les scores par département et se concentrer sur les écarts récurrents, pas sur les erreurs isolées.' },
-                { title: 'Suivre chaque mois', text: 'Utiliser la même grille dans le temps pour voir si les standards progressent, baissent ou restent instables.' },
-              ]).map((item) => (
-                <div key={item.title} className="border border-[#e8edf5] bg-[#f8f9ff] p-6">
-                  <ListChecks size={20} className="text-[#003d9b] mb-4" />
-                  <h3 className="font-display font-bold text-[#0a1d2e] mb-2">{item.title}</h3>
-                  <p className="text-sm text-[#4f6074] leading-relaxed">{item.text}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="px-6 py-20 bg-[#f8f9ff]">
-          <div className="max-w-screen-xl mx-auto">
-            <div className="max-w-2xl mb-10">
-              <p className="text-xs font-bold uppercase tracking-widest text-[#003d9b] mb-3">
-                {isEN ? 'Related tools' : 'Outils liés'}
-              </p>
-              <h2 className="font-display text-3xl md:text-4xl font-extrabold text-[#0a1d2e] tracking-tight mb-4">
-                {isEN ? 'When the audit reveals a gap, use the right operational support' : 'Quand l’audit révèle un écart, utilisez le bon support opérationnel'}
-              </h2>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {[
-                {
-                  href: checklistsHref,
-                  title: isEN ? 'Free checklists' : 'Checklists gratuites',
-                  desc: isEN ? 'Printable PDF checklists for housekeeping, front office and F&B.' : 'PDF à imprimer pour le housekeeping, la réception et le F&B.',
-                },
-                {
-                  href: `/${locale}/hotel-housekeeping-checklist`,
-                  title: isEN ? 'Housekeeping checklist' : 'Checklist housekeeping',
-                  desc: isEN ? 'Room checks, supervisor control and housekeeping quality standards.' : 'Contrôles chambre, inspection gouvernante et standards housekeeping.',
-                },
-                {
-                  href: `/${locale}/hotel-sop`,
-                  title: isEN ? 'Hotel SOP hub' : 'Hub SOP hôtel',
-                  desc: isEN ? 'Department procedures and playbook structure for recurring gaps.' : 'Procédures par département et structure playbook pour les écarts récurrents.',
-                },
-                {
-                  href: trainingHref,
-                  title: isEN ? 'Team training' : 'Formation des équipes',
-                  desc: isEN ? 'Turn these checkpoints into daily team habits.' : 'Transformer ces points de contrôle en habitudes quotidiennes.',
-                },
-              ].map((link) => (
-                <Link key={link.href} href={link.href} className="bg-white border border-[#e8edf5] p-6 hover:border-[#003d9b] transition-colors">
-                  <p className="font-display text-lg font-bold text-[#0a1d2e] mb-3">{link.title}</p>
-                  <p className="text-sm text-[#4f6074] leading-relaxed">{link.desc}</p>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="px-6 py-20 bg-white">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="font-display text-3xl font-extrabold text-[#0a1d2e] tracking-tight mb-8">
-              {isEN ? 'Frequently asked questions' : 'Questions fréquentes'}
-            </h2>
-            <div className="space-y-5">
-              {faq.map(({ q, a }) => (
-                <div key={q} className="border border-[#e8edf5] p-6">
-                  <h3 className="font-display font-bold text-[#0a1d2e] mb-3">{q}</h3>
-                  <p className="text-sm text-[#4f6074] leading-relaxed">{a}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="px-6 py-20 bg-[#0a1d2e]">
-          <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-12 items-center">
-            <div>
-              <p className="text-xs font-bold uppercase tracking-widest text-[#8fb7ff] mb-3">
-                {isEN ? 'Need a deeper review?' : 'Besoin d’une analyse plus complète ?'}
-              </p>
-              <h2 className="font-display text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-5">
-                {isEN ? 'A checklist gives a first read. An audit gives the roadmap.' : 'Une checklist donne une première lecture. Un audit donne la feuille de route.'}
-              </h2>
-              <p className="text-[#cbd5e1] leading-relaxed">
-                {isEN
-                  ? 'When the issue is not one checklist item but recurring inconsistency across departments, the on-site quality audit gives you priorities, root causes and practical next steps.'
-                  : 'Quand le sujet ne se limite pas à un point de checklist mais à des écarts récurrents entre services, l’audit qualité sur site permet d’identifier les priorités, les causes et les prochaines actions.'}
-              </p>
-            </div>
-            <div className="bg-white/5 border border-white/10 p-7 lg:p-8">
-              <h3 className="font-display text-2xl font-extrabold text-white tracking-tight mb-4">
-                {isEN ? 'Train your teams' : 'Former vos équipes'}
-              </h3>
-              <p className="text-sm text-[#cbd5e1] leading-relaxed mb-6">
-                {isEN
-                  ? 'Tell us which standards your teams need to put into practice.'
-                  : 'Précisez les standards que vos équipes souhaitent mettre en pratique.'}
-              </p>
-              <Link
-                href={trainingHref}
-                className="inline-flex items-center justify-center gap-2 px-6 py-4 bg-white text-[#0a1d2e] font-bold text-sm hover:bg-[#eef4ff] transition-colors"
-              >
-                {isEN ? 'Explore training' : 'Découvrir la formation'}
-                <ArrowRight size={16} />
-              </Link>
-            </div>
-          </div>
-        </section>
-      </main>
+      <HotelAuditChecklistContent
+        locale={locale}
+        auditItems={auditItems}
+        areas={areas}
+        faq={faq}
+        scoreCards={scoreCards}
+      />
     </>
   )
 }
