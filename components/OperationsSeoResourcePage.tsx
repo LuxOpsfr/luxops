@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import {
   ArrowRight,
@@ -93,7 +94,7 @@ const CONTENT: Record<OperationsResourceKind, Record<Locale, ResourceContent>> =
       subtitle:
         'A practical structure for reception teams to transfer pending arrivals, departures, guest requests, billing follow-up and sensitive cases without losing information between shifts.',
       sourceNote:
-        'Built from the handover logic used in the LuxOps Front Office practical tools included and Front Office Playbook.',
+        'This structure follows the handover approach used in the LuxOps Front Office practical tools and SOP manual.',
       sourceDetail:
         'The Front Office manual includes editable handover templates, check-in and check-out SOPs, guest communication scripts and the wider operating reference.',
       sectionLabel: 'Shift control',
@@ -234,7 +235,7 @@ const CONTENT: Record<OperationsResourceKind, Record<Locale, ResourceContent>> =
       subtitle:
         'Une structure simple pour transmettre les arrivées, départs, demandes clients, suivis de facturation et dossiers sensibles sans perdre d’information entre deux shifts.',
       sourceNote:
-        'Construit à partir de la logique de passation utilisée dans le Outils pratiques Front Office inclus et le Playbook Front Office LuxOps.',
+        'Cette structure reprend la logique de passation des outils pratiques et du Manuel SOP Front Office LuxOps.',
       sourceDetail:
         'Le manuel Front Office inclut les modèles modifiables de passation, les SOP check-in et check-out, les scripts de communication client et toute la référence opérationnelle du service.',
       sectionLabel: 'Contrôle de shift',
@@ -1527,6 +1528,34 @@ export function OperationsSeoResourcePage({
   const content = CONTENT[kind][locale]
   const isEN = locale === 'en'
   const sourcePage = `/${locale}${content.slug}`
+  const photos: Record<OperationsResourceKind, { image: string; enAlt: string; frAlt: string }> = {
+    frontDeskHandover: {
+      image: 'dept-front-office-v2.jpg',
+      enAlt: 'Hotel front desk',
+      frAlt: 'Réception d’hôtel',
+    },
+    guestComplaint: {
+      image: 'dept-front-office-v2.jpg',
+      enAlt: 'Hotel front desk',
+      frAlt: 'Réception d’hôtel',
+    },
+    hskDeepCleaning: {
+      image: 'dept-housekeeping-v2.jpg',
+      enAlt: 'Hotel housekeeping',
+      frAlt: 'Service housekeeping hôtelier',
+    },
+    breakfastService: {
+      image: 'dept-food-beverage-v2.jpg',
+      enAlt: 'Hotel restaurant service',
+      frAlt: 'Service de restauration hôtelière',
+    },
+    roomStatusDiscrepancy: {
+      image: 'dept-housekeeping-v2.jpg',
+      enAlt: 'Hotel housekeeping',
+      frAlt: 'Service housekeeping hôtelier',
+    },
+  }
+  const photo = photos[kind]
   const schema = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -1550,99 +1579,100 @@ export function OperationsSeoResourcePage({
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      <main className="bg-white">
-        <section className="bg-[#1A2E44] text-white px-6 pt-36 md:pt-40 pb-18 md:pb-20">
-          <div className="max-w-5xl mx-auto text-center">
-            <span className="inline-flex items-center gap-2 bg-white/10 text-white text-xs font-semibold px-4 py-2 rounded-full mb-6 tracking-widest uppercase">
-              <ClipboardCheck size={15} />
-              {content.eyebrow}
-            </span>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">{content.h1}</h1>
-            <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-5">
-              {content.subtitle}
-            </p>
-            <p className="text-sm text-blue-100/90 max-w-3xl mx-auto leading-relaxed mb-9">
-              {content.sourceNote}
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              {content.product.href !== content.playbook.href && <TrackedLink
-                href={`/${locale}${content.product.href}`}
-                eventName={content.product.eventName}
-                eventProperties={{ source_page: sourcePage, position: 'hero' }}
-                className="inline-flex items-center justify-center gap-2 bg-white text-[#1A2E44] px-7 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-              >
-                {content.product.cta}
-                <ArrowRight size={18} />
-              </TrackedLink>}
-              <TrackedLink
-                href={`/${locale}${content.playbook.href}`}
-                eventName={content.playbook.eventName}
-                eventProperties={{ source_page: sourcePage, position: 'hero' }}
-                className="inline-flex items-center justify-center gap-2 border border-white/30 text-white px-7 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors"
-              >
-                {content.playbook.cta}
-              </TrackedLink>
-              <TrackedLink
-                href={`/${locale}/free-hotel-procedures`}
-                eventName="free_chapter_cta_clicked"
-                eventProperties={{ source_page: sourcePage, position: 'hero' }}
-                className="inline-flex items-center justify-center gap-2 border border-white/30 text-white px-7 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors"
-              >
-                {isEN ? 'Download a Free Chapter' : 'Télécharger un chapitre gratuit'}
-              </TrackedLink>
-            </div>
-          </div>
-        </section>
-
-        <section className="py-10 px-6 bg-[#F6F8FB] border-b border-gray-100">
-          <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-5 md:items-center">
-            <div className="w-12 h-12 rounded-full bg-[#E7F0FF] flex items-center justify-center flex-shrink-0">
-              <FileText size={22} className="text-[#0056D2]" />
-            </div>
+      <main className="bg-[#fcfbf8] text-[#10251d]">
+        <section className="border-b border-[#e8e0d2] px-5 pb-12 pt-12 sm:px-8 md:pb-16 md:pt-16">
+          <div className="mx-auto grid max-w-[1300px] gap-9 lg:grid-cols-[minmax(0,1.05fr)_minmax(330px,.95fr)] lg:items-center">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-[#0056D2] mb-2">
-                {isEN ? 'Source note' : 'Note source'}
+              <p className="mb-5 flex items-center gap-2 text-xs font-semibold uppercase tracking-[.2em] text-[#96764a]">
+                <ClipboardCheck size={16} />
+                {content.eyebrow}
               </p>
-              <p className="text-gray-700 leading-relaxed">{content.sourceDetail}</p>
+              <h1 className="font-display max-w-[780px] text-[clamp(2.35rem,4.5vw,4.8rem)] leading-[1.05] tracking-[-.04em]">{content.h1}</h1>
+              <p className="mt-6 max-w-[700px] text-lg leading-relaxed text-[#58645c] md:text-xl">{content.subtitle}</p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a href="#practical-answer" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#10251d] px-6 text-sm font-semibold text-white transition hover:bg-[#244536]">
+                  {isEN ? 'See the practical answer' : 'Voir la réponse pratique'} <ArrowRight size={17} />
+                </a>
+              </div>
             </div>
-          </div>
-        </section>
-
-        <section className="py-16 px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="max-w-3xl mb-10">
-              <p className="text-xs font-semibold uppercase tracking-widest text-[#0056D2] mb-4">
-                {content.sectionLabel}
-              </p>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#111111] mb-4">{content.sectionTitle}</h2>
-              <p className="text-gray-600 leading-relaxed">{content.sectionIntro}</p>
-            </div>
-            <div className="grid md:grid-cols-2 gap-6">
-              {content.steps.map((step) => (
-                <article key={step.title} className="border border-gray-200 rounded-xl p-6 bg-white">
-                  <div className="flex gap-4">
-                    <span className="w-10 h-10 rounded-lg bg-[#0056D2] text-white font-bold flex items-center justify-center flex-shrink-0">
-                      ✓
-                    </span>
+            <div className="overflow-hidden rounded-[28px] border border-[#ddceb8] bg-white shadow-[0_20px_55px_rgba(16,37,29,.07)]">
+              <div className="border-b border-[#e9e1d5] bg-[#f4efe6] px-6 py-5 sm:px-8">
+                <p className="text-xs font-semibold uppercase tracking-[.18em] text-[#96764a]">{isEN ? 'Inside this resource' : 'Dans cette ressource'}</p>
+                <h2 className="font-display mt-2 text-2xl leading-tight sm:text-3xl">{content.checklistTitle}</h2>
+              </div>
+              <ol className="divide-y divide-[#eee9e0] px-6 sm:px-8">
+                {content.checklistBlocks.map((block, index) => (
+                  <li key={block.title} className="grid grid-cols-[2rem_1fr] gap-3 py-4">
+                    <span className="font-display text-lg leading-snug text-[#a88b62]">{String(index + 1).padStart(2, '0')}</span>
                     <div>
-                      <h3 className="text-xl font-bold text-[#111111] mb-2">{step.title}</h3>
-                      <p className="text-gray-600 leading-relaxed">{step.body}</p>
+                      <h3 className="text-sm font-semibold text-[#10251d]">{block.title}</h3>
+                      <p className="mt-1 text-xs leading-relaxed text-[#58645c]">{block.items[0]}</p>
                     </div>
-                  </div>
-                </article>
-              ))}
+                  </li>
+                ))}
+              </ol>
+              <div className="border-t border-[#e9e1d5] px-6 py-5 sm:px-8">
+                <a href="#resource-checklist" className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-[#10251d] underline decoration-[#cbb998] underline-offset-4 hover:text-[#6f5738]">
+                  {isEN ? 'See every control point' : 'Voir tous les points de contrôle'} <ArrowRight size={16} />
+                </a>
+              </div>
             </div>
           </div>
         </section>
 
-        <section className="py-16 px-6 bg-[#F6F8FB] border-y border-gray-100">
+        <section id="practical-answer" className="scroll-mt-28 border-b border-[#e8e0d2] bg-[#f4efe6] px-5 py-12 sm:px-8 md:py-16">
+          <div id="article-offer-start" className="mx-auto grid max-w-[1300px] gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(300px,.8fr)] lg:items-start">
+            <div>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[.2em] text-[#96764a]">{content.sectionLabel}</p>
+              <h2 className="font-display text-3xl leading-tight tracking-[-.035em] md:text-5xl">{content.sectionTitle}</h2>
+              <p className="mt-4 max-w-[780px] leading-relaxed text-[#58645c]">{content.sectionIntro}</p>
+              <ol className="mt-7 overflow-hidden rounded-[24px] border border-[#e6ddcf] bg-white shadow-[0_10px_30px_rgba(16,37,29,.04)]">
+                {content.steps.map((step, index) => (
+                  <li key={step.title} className="grid grid-cols-[auto_1fr] gap-4 border-b border-[#eee9e0] px-5 py-5 last:border-0 md:px-7">
+                    <span className="font-display text-lg leading-snug text-[#a88b62]">{String(index + 1).padStart(2, '0')}</span>
+                    <div>
+                      <h3 className="font-semibold text-[#10251d]">{step.title}</h3>
+                      <p className="mt-1 text-sm leading-relaxed text-[#58645c]">{step.body}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </div>
+            <aside className="overflow-hidden rounded-[26px] border border-[#ddceb8] bg-white shadow-[0_12px_32px_rgba(16,37,29,.05)] lg:sticky lg:top-28">
+              <div className="relative h-44 bg-[#eee5d6] sm:h-52">
+                <Image src={'/images/editorial-hospitality/' + photo.image} alt={isEN ? photo.enAlt : photo.frAlt} fill sizes="(max-width: 1024px) 100vw, 400px" className="object-cover object-center" />
+              </div>
+              <div className="p-6 md:p-7">
+                <p className="text-xs font-semibold uppercase tracking-[.18em] text-[#96764a]">{isEN ? 'Put it into practice' : 'Passer à la pratique'}</p>
+                <h3 className="font-display mt-3 text-2xl leading-tight">{content.playbook.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-[#58645c]">{content.playbook.body}</p>
+                <p className="mt-3 text-sm leading-relaxed text-[#58645c]">{content.product.body}</p>
+                <TrackedLink href={'/' + locale + content.playbook.href} eventName={content.playbook.eventName} eventProperties={{ source_page: sourcePage, position: 'practical_answer' }} className="mt-6 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-[#10251d] px-5 text-center text-sm font-semibold text-white transition hover:bg-[#244536]">{content.playbook.cta} <ArrowRight size={17} /></TrackedLink>
+                <TrackedLink href={'/' + locale + '/free-hotel-procedures'} eventName="free_chapter_cta_clicked" eventProperties={{ source_page: sourcePage, position: 'practical_answer' }} className="mt-3 inline-flex min-h-10 w-full items-center justify-center gap-2 text-center text-sm font-semibold text-[#10251d] underline decoration-[#cbb998] underline-offset-4">{isEN ? 'Receive a free sample chapter' : 'Recevoir un chapitre gratuit'} <ArrowRight size={15} /></TrackedLink>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section className="border-b border-[#e8e0d2] bg-[#fcfbf8] px-5 py-8 sm:px-8">
+          <div className="mx-auto flex max-w-[1300px] items-start gap-4">
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#eee5d6] text-[#96764a]"><FileText size={21} /></div>
+            <div>
+              <p className="mb-1 text-xs font-semibold uppercase tracking-[.18em] text-[#96764a]">{isEN ? 'From the manual' : 'Issu du manuel'}</p>
+              <p className="text-sm leading-relaxed text-[#58645c]">{content.sourceDetail}</p>
+              <p className="mt-1 text-xs leading-relaxed text-[#68736a]">{content.sourceNote}</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="resource-checklist" className="scroll-mt-28 py-16 px-6 bg-[#f4efe6] border-y border-gray-100">
           <div className="max-w-6xl mx-auto">
             <div className="max-w-3xl mb-10">
-              <p className="text-xs font-semibold uppercase tracking-widest text-[#0056D2] mb-4">
+              <p className="text-xs font-semibold uppercase tracking-widest text-[#96764a] mb-4">
                 {isEN ? 'Practical checklist' : 'Checklist pratique'}
               </p>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#111111] mb-4">{content.checklistTitle}</h2>
-              <p className="text-gray-600 leading-relaxed">{content.checklistIntro}</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#10251d] mb-4">{content.checklistTitle}</h2>
+              <p className="text-[#58645c] leading-relaxed">{content.checklistIntro}</p>
             </div>
             <div className="grid md:grid-cols-2 gap-6">
               {content.checklistBlocks.map((block) => (
@@ -1652,37 +1682,30 @@ export function OperationsSeoResourcePage({
           </div>
         </section>
 
-        <section className="py-16 px-6">
-          <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-6">
-            <ProductCard content={content.product} locale={locale} sourcePage={sourcePage} primary hideCta={content.product.href === content.playbook.href} />
-            <ProductCard content={content.playbook} locale={locale} sourcePage={sourcePage} />
-          </div>
-        </section>
-
-        <section className="py-16 px-6 bg-[#F6F8FB] border-y border-gray-100">
+        <section className="py-16 px-6 bg-[#f4efe6] border-y border-gray-100">
           <div className="max-w-6xl mx-auto">
             <div className="max-w-3xl mb-8">
-              <p className="text-xs font-semibold uppercase tracking-widest text-[#0056D2] mb-3">
+              <p className="text-xs font-semibold uppercase tracking-widest text-[#96764a] mb-3">
                 {isEN ? 'Internal resources' : 'Ressources liées'}
               </p>
-              <h2 className="text-3xl font-bold text-[#111111] mb-3">{content.relatedTitle}</h2>
-              <p className="text-gray-600 leading-relaxed">{content.relatedText}</p>
+              <h2 className="text-3xl font-bold text-[#10251d] mb-3">{content.relatedTitle}</h2>
+              <p className="text-[#58645c] leading-relaxed">{content.relatedText}</p>
             </div>
             <div className="grid md:grid-cols-3 gap-4">
               {content.relatedLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={`/${locale}${link.href}`}
-                  className="group border border-gray-200 bg-white rounded-xl p-5 hover:border-[#0056D2] hover:shadow-sm transition-all"
+                  className="group border border-gray-200 bg-white rounded-xl p-5 hover:border-[#96764a] hover:shadow-sm transition-all"
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div>
-                      <h3 className="font-bold text-[#111111] mb-2 group-hover:text-[#0056D2] transition-colors">
+                      <h3 className="font-bold text-[#10251d] mb-2 group-hover:text-[#96764a] transition-colors">
                         {link.label}
                       </h3>
-                      <p className="text-sm text-gray-600 leading-relaxed">{link.text}</p>
+                      <p className="text-sm text-[#58645c] leading-relaxed">{link.text}</p>
                     </div>
-                    <ArrowRight size={17} className="text-[#0056D2] flex-shrink-0 mt-1" />
+                    <ArrowRight size={17} className="text-[#96764a] flex-shrink-0 mt-1" />
                   </div>
                 </Link>
               ))}
@@ -1692,21 +1715,21 @@ export function OperationsSeoResourcePage({
 
         <section className="py-16 px-6">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-[#111111] mb-8">
+            <h2 className="text-3xl font-bold text-[#10251d] mb-8">
               {isEN ? 'Frequently asked questions' : 'Questions fréquentes'}
             </h2>
             <div className="space-y-6">
               {content.faqs.map((faq) => (
-                <div key={faq.question} className="bg-white border border-gray-200 rounded-xl p-6">
-                  <h3 className="text-lg font-bold text-[#111111] mb-2">{faq.question}</h3>
-                  <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                <div key={faq.question} className="bg-white border border-[#e6ddcf] rounded-[22px] p-6">
+                  <h3 className="text-lg font-bold text-[#10251d] mb-2">{faq.question}</h3>
+                  <p className="text-[#58645c] leading-relaxed">{faq.answer}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="py-16 px-6 bg-[#111111] text-white">
+        <section className="py-16 px-6 bg-[#10251d] text-white">
           <div className="max-w-4xl mx-auto text-center">
             <div className="flex justify-center gap-3 mb-6">
               <span className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
@@ -1723,7 +1746,7 @@ export function OperationsSeoResourcePage({
                 href={`/${locale}${content.playbook.href}`}
                 eventName={content.playbook.eventName}
                 eventProperties={{ source_page: sourcePage, position: 'final' }}
-                className="inline-flex items-center justify-center gap-2 bg-white text-[#111111] px-7 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+                className="inline-flex items-center justify-center gap-2 bg-white text-[#10251d] px-7 py-4 rounded-full font-semibold hover:bg-gray-100 transition-colors"
               >
                 {content.playbook.cta}
                 <ArrowRight size={18} />
@@ -1732,7 +1755,7 @@ export function OperationsSeoResourcePage({
                 href={`/${locale}/free-hotel-procedures`}
                 eventName="free_chapter_cta_clicked"
                 eventProperties={{ source_page: sourcePage, position: 'final' }}
-                className="inline-flex items-center justify-center gap-2 border border-white/30 text-white px-7 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors"
+                className="inline-flex items-center justify-center gap-2 border border-white/30 text-white px-7 py-4 rounded-full font-semibold hover:bg-white/10 transition-colors"
               >
                 {isEN ? 'Download a Free Chapter' : 'Télécharger un chapitre gratuit'}
               </TrackedLink>
@@ -1746,54 +1769,16 @@ export function OperationsSeoResourcePage({
 
 function ChecklistCard({ block }: { block: ChecklistBlock }) {
   return (
-    <article className="border border-gray-200 rounded-xl p-6 bg-white">
-      <h3 className="text-xl font-bold text-[#111111] mb-4">{block.title}</h3>
+    <article className="border border-[#e6ddcf] rounded-[22px] p-6 bg-white">
+      <h3 className="text-xl font-bold text-[#10251d] mb-4">{block.title}</h3>
       <div className="space-y-3">
         {block.items.map((item) => (
           <div key={item} className="flex gap-3 text-sm text-gray-700 leading-relaxed">
-            <CheckCircle2 size={16} className="text-[#0056D2] flex-shrink-0 mt-0.5" />
+            <CheckCircle2 size={16} className="text-[#96764a] flex-shrink-0 mt-0.5" />
             <span>{item}</span>
           </div>
         ))}
       </div>
     </article>
-  )
-}
-
-function ProductCard({
-  content,
-  locale,
-  sourcePage,
-  primary = false,
-  hideCta = false,
-}: {
-  content: ProductLink
-  locale: Locale
-  sourcePage: string
-  primary?: boolean
-  hideCta?: boolean
-}) {
-  return (
-    <div className={primary ? 'border border-[#D7E4F7] bg-[#F4F8FF] rounded-xl p-8' : 'border border-gray-200 rounded-xl p-8'}>
-      <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center mb-5">
-        <ClipboardCheck size={24} className={primary ? 'text-[#0056D2]' : 'text-[#1A2E44]'} />
-      </div>
-      <p className={primary ? 'text-xs font-semibold uppercase tracking-widest text-[#0056D2] mb-4' : 'text-xs font-semibold uppercase tracking-widest text-gray-400 mb-4'}>
-        {primary ? (locale === 'en' ? 'Practical toolkit' : 'Kit pratique') : (locale === 'en' ? 'Full reference' : 'Référence complète')}
-      </p>
-      <h2 className="text-3xl font-bold text-[#111111] mb-4">{content.title}</h2>
-      <p className="text-gray-600 leading-relaxed mb-6">{content.body}</p>
-      {!hideCta && <TrackedLink
-        href={`/${locale}${content.href}`}
-        eventName={content.eventName}
-        eventProperties={{ source_page: sourcePage, position: primary ? 'starter_block' : 'playbook_block' }}
-        className={primary
-          ? 'inline-flex items-center gap-2 bg-[#0056D2] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#0046B8] transition-colors'
-          : 'inline-flex items-center gap-2 border border-[#1A2E44] text-[#1A2E44] px-6 py-3 rounded-lg font-semibold hover:bg-[#1A2E44] hover:text-white transition-colors'}
-      >
-        {content.cta}
-        <ArrowRight size={17} />
-      </TrackedLink>}
-    </div>
   )
 }
