@@ -15,6 +15,11 @@ type Props = {
 
 export default function GeneralResourceLead({ locale, eyebrow, title, intro, answerTitle, answerIntro, points, source }: Props) {
   const en = locale === 'en'
+  const departments = [
+    { image: 'dept-front-office-v2.jpg', alt: en ? 'Hotel front desk' : 'Réception d’hôtel' },
+    { image: 'dept-housekeeping-v2.jpg', alt: en ? 'Hotel housekeeping' : 'Service housekeeping hôtelier' },
+    { image: 'dept-food-beverage-v2.jpg', alt: en ? 'Hotel restaurant service' : 'Service de restauration hôtelière' },
+  ]
 
   return (
     <>
@@ -36,9 +41,9 @@ export default function GeneralResourceLead({ locale, eyebrow, title, intro, ans
           </div>
           <div className="hidden overflow-hidden rounded-[30px] border border-[#ddceb8] bg-[#eee5d6] shadow-[0_25px_60px_rgba(16,37,29,0.08)] md:block">
             <div className="grid h-[260px] grid-cols-3 gap-1 overflow-hidden md:h-[340px]">
-              {(['front-office', 'housekeeping', 'fb'] as const).map((department) => (
-                <div key={department} className="relative overflow-hidden">
-                  <Image src={`/images/product-promo/${department}/manual-on-desk.jpg`} alt={en ? `${department} SOP manual` : `Manuel SOP ${department}`} fill sizes="(max-width: 1024px) 33vw, 220px" className="object-cover object-center" priority={department === 'housekeeping'} />
+              {departments.map((department, index) => (
+                <div key={department.image} className="relative overflow-hidden">
+                  <Image src={`/images/editorial-hospitality/${department.image}`} alt={department.alt} fill sizes="(max-width: 1024px) 33vw, 220px" className="object-cover object-center" priority={index === 0} />
                 </div>
               ))}
             </div>
