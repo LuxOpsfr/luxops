@@ -1,3 +1,4 @@
+import GeneralResourceLead from '@/components/GeneralResourceLead'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, BookOpen, ClipboardCheck, ShieldCheck } from 'lucide-react'
@@ -86,7 +87,7 @@ const CONTENT = {
     productTitle: 'Choose the right LuxOps format',
     finalTitle: 'Need a procedure system your teams can actually use?',
     finalBody:
-      'Start with a practical pack if you need immediate tools. Move to the full playbooks when you need complete SOP references by department.',
+      'Explore the five department manuals for complete SOP references and practical tools. Choose one manual for a specific team or the catalogue for the whole hotel.',
     faqTitle: 'Frequently asked questions',
     relatedTitle: 'Related pages',
   },
@@ -153,7 +154,7 @@ const CONTENT = {
     productTitle: 'Choisir le bon format LuxOps',
     finalTitle: 'Besoin d’un système de procédures vraiment utilisable ?',
     finalBody:
-      'Commencez avec un pack pratique si vous avez besoin d’outils immédiats. Passez aux playbooks complets si vous cherchez une référence SOP complète par département.',
+      'Explorez les cinq manuels départementaux pour accéder aux procédures complètes et aux outils pratiques. Choisissez un service ou le catalogue pour tout l’hôtel.',
     faqTitle: 'Questions fréquentes',
     relatedTitle: 'Pages liées',
   },
@@ -180,6 +181,12 @@ const departmentLinks: Record<Locale, LinkCard[]> = {
       body: 'Restaurant, bar, room service, breakfast, opening, closing and recovery standards.',
     },
     {
+      href: '/en/playbooks/revenue-management',
+      label: 'Revenue Management',
+      title: 'Revenue Management SOP',
+      body: 'Forecast, pricing, distribution, availability and performance review.',
+    },
+    {
       href: '/en/playbooks/spa',
       label: 'Spa',
       title: 'Spa & Wellness Playbook',
@@ -204,6 +211,12 @@ const departmentLinks: Record<Locale, LinkCard[]> = {
       label: 'F&B',
       title: 'SOP F&B',
       body: 'Restaurant, bar, room service, petit déjeuner, ouverture, fermeture et standards recovery.',
+    },
+    {
+      href: '/fr/playbooks/revenue-management',
+      label: 'Revenue Management',
+      title: 'SOP Revenue Management',
+      body: 'Forecast, tarifs, distribution, disponibilités et suivi des résultats.',
     },
     {
       href: '/fr/playbooks/spa',
@@ -430,48 +443,29 @@ export function HotelProceduresManualPage({ locale }: { locale: Locale }) {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <main className="min-h-screen bg-white">
-        <section className="bg-[#1A2E44] px-6 pt-32 pb-20 text-white">
-          <div className="mx-auto max-w-4xl text-center">
-            <p className="mb-5 inline-flex rounded-full bg-white/10 px-4 py-2 text-[11px] font-bold uppercase tracking-widest text-blue-100">
-              {content.eyebrow}
-            </p>
-            <h1 className="mb-6 text-4xl font-bold leading-tight md:text-5xl">
-              {content.h1}
-            </h1>
-            <p className="mx-auto mb-9 max-w-2xl text-lg leading-relaxed text-blue-100">
-              {content.intro}
-            </p>
-            <div className="flex flex-col justify-center gap-3 sm:flex-row">
-              <TrackedLink
-                href={`/${locale}/playbooks`}
-                eventName="playbook_cta_clicked"
-                eventProperties={{
-                  source_page: `/${locale}${content.slug}`,
-                  placement: 'hero',
-                  cta_label: content.primaryCta,
-                }}
-                className="inline-flex items-center justify-center gap-2 rounded-lg bg-white px-7 py-4 text-sm font-bold text-[#1A2E44] hover:bg-blue-50"
-              >
-                {content.primaryCta} <ArrowRight size={16} />
-              </TrackedLink>
-              <TrackedLink
-                href={`/${locale}/hotel-sop`}
-                eventName="seo_cta_clicked"
-                eventProperties={{
-                  source_page: `/${locale}${content.slug}`,
-                  placement: 'hero',
-                  cta_label: content.secondaryCta,
-                }}
-                className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/40 px-7 py-4 text-sm font-bold text-white hover:bg-white/10"
-              >
-                {content.secondaryCta} <ArrowRight size={16} />
-              </TrackedLink>
-            </div>
-          </div>
-        </section>
+      <main className="min-h-screen bg-[#fcfbf8] text-[#10251d]">
+        <GeneralResourceLead
+          locale={locale}
+          source="hotel-operations-playbook"
+          eyebrow={content.eyebrow}
+          title={content.h1}
+          intro={content.intro}
+          answerTitle={isEN ? 'How to structure a hotel procedures manual' : 'Comment structurer un manuel de procédures hôtelières'}
+          answerIntro={isEN ? 'Build a reference people can use during service: start with one department and its recurring operational moments, then connect procedures, checklists and training.' : 'Construisez une référence utilisable pendant le service : partez d’un département et de ses moments récurrents, puis reliez procédures, checklists et formation.'}
+          points={isEN ? [
+            'Define the service standard and the role responsible for each procedure.',
+            'Write the sequence for normal operations and for frequent exceptions.',
+            'Attach a checklist or control point to verify execution.',
+            'Keep handovers, escalation paths and training in the same reference.',
+          ] : [
+            'Définissez le standard de service et le poste responsable de chaque procédure.',
+            'Écrivez la séquence normale et le traitement des exceptions fréquentes.',
+            'Associez une checklist ou un point de contrôle à l’exécution.',
+            'Réunissez passations, escalades et formation dans la même référence.',
+          ]}
+        />
 
-        <section className="border-b border-gray-100 bg-gray-50 px-6 py-12">
+        <section className="border-b border-gray-100 bg-[#f4efe6] px-6 py-12">
           <div className="mx-auto grid max-w-5xl gap-5 md:grid-cols-3">
             {[
               {
@@ -499,10 +493,10 @@ export function HotelProceduresManualPage({ locale }: { locale: Locale }) {
               const Icon = item.icon
               return (
                 <article key={item.title} className="rounded-xl border border-gray-200 bg-white p-6">
-                  <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-full bg-[#eef4ff] text-[#003d9b]">
+                  <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-full bg-[#f4efe6] text-[#96764a]">
                     <Icon size={20} />
                   </div>
-                  <h2 className="mb-2 text-lg font-bold text-[#1A2E44]">{item.title}</h2>
+                  <h2 className="mb-2 text-lg font-bold text-[#10251d]">{item.title}</h2>
                   <p className="text-sm leading-relaxed text-gray-600">{item.body}</p>
                 </article>
               )
@@ -512,26 +506,26 @@ export function HotelProceduresManualPage({ locale }: { locale: Locale }) {
 
         <section className="px-6 py-16">
           <div className="mx-auto max-w-3xl">
-            <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[#003d9b]">
+            <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[#96764a]">
               {isEN ? 'Definition' : 'Définition'}
             </p>
-            <h2 className="mb-5 text-3xl font-bold text-[#1A2E44]">{content.whatTitle}</h2>
+            <h2 className="mb-5 font-display text-3xl font-medium text-[#10251d]">{content.whatTitle}</h2>
             <p className="text-lg leading-relaxed text-gray-600">{content.whatBody}</p>
           </div>
         </section>
 
-        <section className="border-y border-gray-100 bg-gray-50 px-6 py-16">
+        <section className="border-y border-gray-100 bg-[#f4efe6] px-6 py-16">
           <div className="mx-auto max-w-5xl">
             <div className="mb-9 max-w-3xl">
-              <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[#003d9b]">
+              <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[#96764a]">
                 {isEN ? 'Clarify the terms' : 'Clarifier les termes'}
               </p>
-              <h2 className="text-3xl font-bold text-[#1A2E44]">{content.differenceTitle}</h2>
+              <h2 className="font-display text-3xl font-medium text-[#10251d]">{content.differenceTitle}</h2>
             </div>
             <div className="grid gap-5 md:grid-cols-2">
               {content.blocks.map((block) => (
                 <article key={block.title} className="rounded-xl border border-gray-200 bg-white p-6">
-                  <h3 className="mb-3 text-xl font-bold text-[#1A2E44]">{block.title}</h3>
+                  <h3 className="mb-3 text-xl font-bold text-[#10251d]">{block.title}</h3>
                   <p className="text-sm leading-relaxed text-gray-600">{block.body}</p>
                 </article>
               ))}
@@ -542,10 +536,10 @@ export function HotelProceduresManualPage({ locale }: { locale: Locale }) {
         <section className="px-6 py-16">
           <div className="mx-auto grid max-w-5xl gap-10 lg:grid-cols-[0.9fr_1.1fr]">
             <div>
-              <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[#003d9b]">
+              <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[#96764a]">
                 {isEN ? 'Operational value' : 'Valeur opérationnelle'}
               </p>
-              <h2 className="mb-4 text-3xl font-bold text-[#1A2E44]">{content.whyTitle}</h2>
+              <h2 className="mb-4 font-display text-3xl font-medium text-[#10251d]">{content.whyTitle}</h2>
               <p className="leading-relaxed text-gray-600">
                 {isEN
                   ? 'The value of a procedure manual is not the document itself. The value is the operational behavior it makes repeatable.'
@@ -556,7 +550,7 @@ export function HotelProceduresManualPage({ locale }: { locale: Locale }) {
               <ul className="grid gap-4 sm:grid-cols-2">
                 {content.whyItems.map((item) => (
                   <li key={item} className="flex gap-3 text-sm leading-relaxed text-gray-700">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-[#003d9b]" />
+                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-[#96764a]" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -565,18 +559,18 @@ export function HotelProceduresManualPage({ locale }: { locale: Locale }) {
           </div>
         </section>
 
-        <section className="border-y border-gray-100 bg-[#f7f9fc] px-6 py-16">
+        <section className="border-y border-gray-100 bg-[#f4efe6] px-6 py-16">
           <div className="mx-auto max-w-4xl">
-            <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[#003d9b]">
+            <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[#96764a]">
               {isEN ? 'Recommended structure' : 'Structure recommandée'}
             </p>
-            <h2 className="mb-4 text-3xl font-bold text-[#1A2E44]">{content.structureTitle}</h2>
+            <h2 className="mb-4 font-display text-3xl font-medium text-[#10251d]">{content.structureTitle}</h2>
             <p className="mb-8 leading-relaxed text-gray-600">{content.structureIntro}</p>
             <div className="rounded-xl border border-gray-200 bg-white p-6">
               <ol className="space-y-4">
                 {content.structureItems.map((item, index) => (
                   <li key={item} className="grid grid-cols-[36px_1fr] gap-3 text-sm leading-relaxed text-gray-700">
-                    <span className="flex h-8 w-8 items-center justify-center rounded bg-[#003d9b] text-xs font-bold text-white">
+                    <span className="flex h-8 w-8 items-center justify-center rounded bg-[#96764a] text-xs font-bold text-white">
                       {String(index + 1).padStart(2, '0')}
                     </span>
                     <span className="pt-1">{item}</span>
@@ -590,22 +584,22 @@ export function HotelProceduresManualPage({ locale }: { locale: Locale }) {
         <section className="px-6 py-16">
           <div className="mx-auto max-w-5xl">
             <div className="mb-9 max-w-3xl">
-              <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[#003d9b]">
+              <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[#96764a]">
                 {isEN ? 'Department logic' : 'Logique par département'}
               </p>
-              <h2 className="text-3xl font-bold text-[#1A2E44]">{content.departmentsTitle}</h2>
+              <h2 className="font-display text-3xl font-medium text-[#10251d]">{content.departmentsTitle}</h2>
             </div>
             <div className="grid gap-5 md:grid-cols-2">
               {currentDepartmentLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="group rounded-xl border border-gray-200 bg-white p-6 transition-colors hover:border-[#003d9b]"
+                  className="group rounded-xl border border-gray-200 bg-white p-6 transition-colors hover:border-[#96764a]"
                 >
-                  <p className="mb-2 text-[10px] font-bold uppercase tracking-widest text-[#003d9b]">{link.label}</p>
-                  <h3 className="mb-2 text-xl font-bold text-[#1A2E44]">{link.title}</h3>
+                  <p className="mb-2 text-[10px] font-bold uppercase tracking-widest text-[#96764a]">{link.label}</p>
+                  <h3 className="mb-2 text-xl font-bold text-[#10251d]">{link.title}</h3>
                   <p className="mb-4 text-sm leading-relaxed text-gray-600">{link.body}</p>
-                  <span className="inline-flex items-center gap-2 text-sm font-semibold text-[#003d9b]">
+                  <span className="inline-flex items-center gap-2 text-sm font-semibold text-[#96764a]">
                     {isEN ? 'Open page' : 'Voir la page'} <ArrowRight size={15} />
                   </span>
                 </Link>
@@ -614,14 +608,14 @@ export function HotelProceduresManualPage({ locale }: { locale: Locale }) {
           </div>
         </section>
 
-        <section className="border-y border-gray-100 bg-gray-50 px-6 py-16">
+        <section className="border-y border-gray-100 bg-[#f4efe6] px-6 py-16">
           <div className="mx-auto max-w-5xl">
             <div className="mb-9 grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
               <div>
-                <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[#003d9b]">
+                <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[#96764a]">
                   {isEN ? 'From explanation to action' : 'De l’explication à l’action'}
                 </p>
-                <h2 className="text-3xl font-bold text-[#1A2E44]">{content.productTitle}</h2>
+                <h2 className="font-display text-3xl font-medium text-[#10251d]">{content.productTitle}</h2>
               </div>
               <p className="leading-relaxed text-gray-600">{content.productIntro}</p>
             </div>
@@ -630,12 +624,12 @@ export function HotelProceduresManualPage({ locale }: { locale: Locale }) {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="rounded-xl border border-gray-200 bg-white p-6 transition-colors hover:border-[#003d9b]"
+                  className="rounded-xl border border-gray-200 bg-white p-6 transition-colors hover:border-[#96764a]"
                 >
-                  <p className="mb-2 text-[10px] font-bold uppercase tracking-widest text-[#003d9b]">{link.label}</p>
-                  <h3 className="mb-2 text-xl font-bold text-[#1A2E44]">{link.title}</h3>
+                  <p className="mb-2 text-[10px] font-bold uppercase tracking-widest text-[#96764a]">{link.label}</p>
+                  <h3 className="mb-2 text-xl font-bold text-[#10251d]">{link.title}</h3>
                   <p className="mb-4 text-sm leading-relaxed text-gray-600">{link.body}</p>
-                  <span className="inline-flex items-center gap-2 text-sm font-semibold text-[#003d9b]">
+                  <span className="inline-flex items-center gap-2 text-sm font-semibold text-[#96764a]">
                     {isEN ? 'Continue' : 'Continuer'} <ArrowRight size={15} />
                   </span>
                 </Link>
@@ -646,14 +640,14 @@ export function HotelProceduresManualPage({ locale }: { locale: Locale }) {
 
         <section className="px-6 py-16">
           <div className="mx-auto max-w-3xl">
-            <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[#003d9b]">
+            <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[#96764a]">
               {isEN ? 'FAQ' : 'FAQ'}
             </p>
-            <h2 className="mb-8 text-3xl font-bold text-[#1A2E44]">{content.faqTitle}</h2>
+            <h2 className="mb-8 text-3xl font-bold text-[#10251d]">{content.faqTitle}</h2>
             <div className="space-y-6">
               {currentFaqs.map((item) => (
                 <article key={item.question} className="border-b border-gray-100 pb-6 last:border-b-0">
-                  <h3 className="mb-2 font-semibold text-[#1A2E44]">{item.question}</h3>
+                  <h3 className="mb-2 font-semibold text-[#10251d]">{item.question}</h3>
                   <p className="text-sm leading-relaxed text-gray-600">{item.answer}</p>
                 </article>
               ))}
@@ -661,14 +655,14 @@ export function HotelProceduresManualPage({ locale }: { locale: Locale }) {
           </div>
         </section>
 
-        <section className="bg-[#1A2E44] px-6 py-14 text-white">
+        <section className="bg-[#10251d] px-6 py-14 text-white">
           <div className="mx-auto flex max-w-5xl flex-col gap-6 md:flex-row md:items-center md:justify-between">
             <div className="max-w-2xl">
-              <p className="mb-3 text-xs font-bold uppercase tracking-widest text-blue-200">
+              <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[#d4c4ab]">
                 {isEN ? 'Next step' : 'Prochaine étape'}
               </p>
               <h2 className="mb-3 text-3xl font-bold">{content.finalTitle}</h2>
-              <p className="leading-relaxed text-blue-100">{content.finalBody}</p>
+              <p className="leading-relaxed text-[#e8e0d2]">{content.finalBody}</p>
             </div>
             <TrackedLink
               href={`/${locale}/playbooks`}
@@ -678,7 +672,7 @@ export function HotelProceduresManualPage({ locale }: { locale: Locale }) {
                 placement: 'final_cta',
                 cta_label: isEN ? 'View LuxOps products' : 'Voir les produits LuxOps',
               }}
-              className="inline-flex flex-shrink-0 items-center justify-center gap-2 rounded-lg bg-white px-7 py-4 text-sm font-bold text-[#1A2E44] hover:bg-blue-50"
+              className="inline-flex flex-shrink-0 items-center justify-center gap-2 rounded-lg bg-white px-7 py-4 text-sm font-bold text-[#10251d] hover:bg-blue-50"
             >
               {isEN ? 'View LuxOps products' : 'Voir les produits LuxOps'} <ArrowRight size={16} />
             </TrackedLink>
@@ -687,16 +681,16 @@ export function HotelProceduresManualPage({ locale }: { locale: Locale }) {
 
         <section className="px-6 py-12">
           <div className="mx-auto max-w-5xl">
-            <h2 className="mb-6 text-xl font-bold text-[#1A2E44]">{content.relatedTitle}</h2>
+            <h2 className="mb-6 text-xl font-bold text-[#10251d]">{content.relatedTitle}</h2>
             <div className="grid gap-4 md:grid-cols-3">
               {currentRelatedLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="rounded-xl border border-gray-200 bg-white p-5 transition-colors hover:border-[#003d9b]"
+                  className="rounded-xl border border-gray-200 bg-white p-5 transition-colors hover:border-[#96764a]"
                 >
-                  <p className="mb-2 text-[10px] font-bold uppercase tracking-widest text-[#003d9b]">{link.label}</p>
-                  <h3 className="mb-2 font-semibold text-[#1A2E44]">{link.title}</h3>
+                  <p className="mb-2 text-[10px] font-bold uppercase tracking-widest text-[#96764a]">{link.label}</p>
+                  <h3 className="mb-2 font-semibold text-[#10251d]">{link.title}</h3>
                   <p className="text-sm leading-relaxed text-gray-500">{link.body}</p>
                 </Link>
               ))}

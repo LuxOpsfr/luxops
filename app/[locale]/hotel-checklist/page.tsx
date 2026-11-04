@@ -1,3 +1,4 @@
+import GeneralResourceLead from '@/components/GeneralResourceLead'
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
@@ -232,47 +233,43 @@ export default async function HotelChecklistPage({ params }: { params: Promise<{
   const roles = isEN ? ROLES_EN : ROLES_FR
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-[#fcfbf8] text-[#10251d]">
 
-      {/* Hero */}
-      <section className="bg-[#1A2E44] text-white py-20 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <span className="inline-block bg-white/10 text-white text-xs font-semibold px-3 py-1 rounded-full mb-6 tracking-widest uppercase">
-            {isEN ? 'Hotel Operations' : 'Opérations hôtelières'}
-          </span>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-            {isEN
-              ? 'Hotel Operational Checklists: What Actually Makes Them Useful'
-              : 'Checklists Hôtel : Ce qui les rend vraiment utiles'}
-          </h1>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-10">
-            {isEN
-              ? 'Most hotel checklists fail because they are too generic. A useful checklist is always tied to a role, a shift, and a specific operational need.'
-              : "La plupart des checklists hôtelières échouent parce qu'elles sont trop génériques. Une checklist utile est toujours liée à un rôle, un moment et un besoin opérationnel précis."}
-          </p>
-          <Link
-            href={`/${locale}/playbooks`}
-            className="inline-block bg-white text-[#1A2E44] font-semibold px-8 py-4 rounded-lg transition-colors hover:bg-gray-100"
-          >
-            {isEN ? 'View Complete SOP Playbooks' : 'Voir les Playbooks complets'}
-          </Link>
-        </div>
-      </section>
+      <GeneralResourceLead
+        locale={isEN ? 'en' : 'fr'}
+        source="hotel-checklist"
+        eyebrow={isEN ? 'Hotel operations · Practical guide' : 'Opérations hôtelières · Guide pratique'}
+        title={isEN ? 'Hotel operational checklists: what makes them useful' : 'Checklists hôtel : ce qui les rend vraiment utiles'}
+        intro={isEN ? 'A useful hotel checklist tells one person what to verify at a precise moment. Here is how to build and use one that teams actually follow.' : 'Une checklist hôtelière utile indique à une personne quoi vérifier à un moment précis. Voici comment construire et utiliser un outil que les équipes appliquent vraiment.'}
+        answerTitle={isEN ? 'The four questions to answer before writing a checklist' : 'Les quatre questions à poser avant de rédiger une checklist'}
+        answerIntro={isEN ? 'Start with an operational need, then define the document. A checklist should confirm that work meets an agreed standard; the SOP behind it explains how to reach that standard.' : 'Partez du besoin opérationnel, puis définissez le document. La checklist confirme que le travail respecte le standard ; la procédure associée explique comment l’atteindre.'}
+        points={isEN ? [
+          'Who owns the check? Name the role, not just the department.',
+          'When does it happen? Opening, handover, room release, closing or exception.',
+          'What result must be secured? State the standard to verify.',
+          'Who signs off and what happens when a point fails? Record the action, not just the tick.',
+        ] : [
+          'Qui réalise le contrôle ? Désignez un poste, pas seulement un département.',
+          'À quel moment ? Ouverture, passation, libération d’une chambre, fermeture ou exception.',
+          'Quel résultat faut-il sécuriser ? Formulez le standard à vérifier.',
+          'Qui valide et que faire en cas d’écart ? Consignez l’action, pas seulement la coche.',
+        ]}
+      />
 
       {/* Intro */}
-      <section className="py-14 px-6 bg-gray-50 border-b border-gray-100">
+      <section className="py-14 px-6 bg-[#f4efe6] border-b border-gray-100">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold text-[#1A2E44] mb-4">
+          <h2 className="font-display text-2xl font-medium text-[#10251d] mb-4">
             {isEN
               ? 'Generic checklists rarely match how hotels actually run'
               : 'Une checklist générique ne reflète pas la façon dont un hôtel fonctionne réellement'}
           </h2>
-          <p className="text-gray-600 leading-relaxed mb-4">
+          <p className="text-[#58645c] leading-relaxed mb-4">
             {isEN
               ? 'In real hotel operations, a checklist is only useful when it belongs to someone at a specific moment in the day. A front desk opening checklist is not the same document as a shift handover checklist. A room attendant sequence card is not the same as a supervisor inspection form. Treating them as interchangeable is where most generic templates fall apart.'
               : "Dans les opérations hôtelières réelles, une checklist n'est utile que lorsqu'elle appartient à quelqu'un, à un moment précis de la journée. La checklist d'ouverture de la réception n'est pas le même document que la fiche de passation de service. La séquence de travail d'un équipier housekeeping n'est pas la même chose qu'une grille d'inspection superviseur. Traiter ces outils comme interchangeables, c'est là que la plupart des modèles génériques échouent."}
           </p>
-          <p className="text-gray-600 leading-relaxed">
+          <p className="text-[#58645c] leading-relaxed">
             {isEN
               ? 'The checklists that teams actually use are built around a shift, a handover, a service opening, or a control point that matters to a specific person. When those conditions are met, a checklist becomes a real operational tool. When they are not, it sits on a shelf.'
               : "Les checklists que les équipes utilisent réellement sont construites autour d'un service, d'une passation, d'une ouverture de point de vente ou d'un point de contrôle qui compte pour une personne précise. Quand ces conditions sont réunies, une checklist devient un vrai outil opérationnel. Sinon, elle reste dans un tiroir."}
@@ -283,12 +280,12 @@ export default async function HotelChecklistPage({ params }: { params: Promise<{
       {/* Why generic checklists fail */}
       <section className="py-16 px-6">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-[#1A2E44] mb-2">
+          <h2 className="font-display text-2xl font-medium text-[#10251d] mb-2">
             {isEN
               ? 'Why generic hotel checklists usually fail'
               : 'Pourquoi les checklists hôtelières génériques échouent généralement'}
           </h2>
-          <p className="text-gray-500 text-sm mb-10">
+          <p className="text-[#68736a] text-sm mb-10">
             {isEN
               ? 'Four patterns that make a checklist ineffective in practice.'
               : 'Quatre raisons qui rendent une checklist inefficace en pratique.'}
@@ -296,8 +293,8 @@ export default async function HotelChecklistPage({ params }: { params: Promise<{
           <div className="grid sm:grid-cols-2 gap-6">
             {whyFail.map((item) => (
               <div key={item.title} className="border border-gray-100 rounded-xl p-6">
-                <h3 className="font-semibold text-[#1A2E44] mb-2 text-base">{item.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{item.body}</p>
+                <h3 className="font-semibold text-[#10251d] mb-2 text-base">{item.title}</h3>
+                <p className="text-[#58645c] text-sm leading-relaxed">{item.body}</p>
               </div>
             ))}
           </div>
@@ -305,14 +302,14 @@ export default async function HotelChecklistPage({ params }: { params: Promise<{
       </section>
 
       {/* Principles */}
-      <section className="py-16 px-6 bg-gray-50 border-t border-b border-gray-100">
+      <section className="py-16 px-6 bg-[#f4efe6] border-t border-b border-gray-100">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-[#1A2E44] mb-2">
+          <h2 className="font-display text-2xl font-medium text-[#10251d] mb-2">
             {isEN
               ? 'What a useful hotel checklist is built around'
               : 'Sur quoi repose une checklist hôtelière vraiment utile'}
           </h2>
-          <p className="text-gray-500 text-sm mb-10">
+          <p className="text-[#68736a] text-sm mb-10">
             {isEN
               ? 'Four conditions that make the difference between a checklist that is used and one that is ignored.'
               : "Quatre conditions qui font la différence entre une checklist utilisée et une checklist ignorée."}
@@ -321,10 +318,10 @@ export default async function HotelChecklistPage({ params }: { params: Promise<{
             {principles.map((item) => (
               <div key={item.title} className="bg-white border border-gray-100 rounded-xl p-6">
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-2 h-2 rounded-full bg-[#0056D2] flex-shrink-0" />
-                  <h3 className="font-semibold text-[#1A2E44] text-base">{item.title}</h3>
+                  <div className="w-2 h-2 rounded-full bg-[#a58658] flex-shrink-0" />
+                  <h3 className="font-semibold text-[#10251d] text-base">{item.title}</h3>
                 </div>
-                <p className="text-gray-600 text-sm leading-relaxed">{item.body}</p>
+                <p className="text-[#58645c] text-sm leading-relaxed">{item.body}</p>
               </div>
             ))}
           </div>
@@ -334,12 +331,12 @@ export default async function HotelChecklistPage({ params }: { params: Promise<{
       {/* Examples by moment */}
       <section className="py-16 px-6">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-[#1A2E44] mb-2">
+          <h2 className="font-display text-2xl font-medium text-[#10251d] mb-2">
             {isEN
               ? 'Examples of operational checklists by moment'
               : 'Exemples de checklists opérationnelles par moment'}
           </h2>
-          <p className="text-gray-500 text-sm mb-10">
+          <p className="text-[#68736a] text-sm mb-10">
             {isEN
               ? 'Each of these serves a different purpose. They are not interchangeable.'
               : "Chacune de ces checklists a un objectif différent. Elles ne sont pas interchangeables."}
@@ -347,8 +344,8 @@ export default async function HotelChecklistPage({ params }: { params: Promise<{
           <div className="space-y-4">
             {moments.map((item) => (
               <div key={item.title} className="border border-gray-100 rounded-xl px-6 py-5">
-                <h3 className="font-semibold text-[#1A2E44] mb-1 text-sm">{item.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
+                <h3 className="font-semibold text-[#10251d] mb-1 text-sm">{item.title}</h3>
+                <p className="text-[#58645c] text-sm leading-relaxed">{item.description}</p>
               </div>
             ))}
           </div>
@@ -356,12 +353,12 @@ export default async function HotelChecklistPage({ params }: { params: Promise<{
       </section>
 
       {/* Examples by role */}
-      <section className="py-16 px-6 bg-gray-50 border-t border-b border-gray-100">
+      <section className="py-16 px-6 bg-[#f4efe6] border-t border-b border-gray-100">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-[#1A2E44] mb-2">
+          <h2 className="font-display text-2xl font-medium text-[#10251d] mb-2">
             {isEN ? 'Examples by role' : 'Exemples par rôle'}
           </h2>
-          <p className="text-gray-500 text-sm mb-10">
+          <p className="text-[#68736a] text-sm mb-10">
             {isEN
               ? 'The role determines the scope and depth of the checklist.'
               : "Le rôle détermine le périmètre et le niveau de détail de la checklist."}
@@ -369,7 +366,7 @@ export default async function HotelChecklistPage({ params }: { params: Promise<{
           <div className="divide-y divide-gray-100 border border-gray-100 rounded-xl overflow-hidden">
             {roles.map((item) => (
               <div key={item.role} className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-6 bg-white px-6 py-5">
-                <span className="text-sm font-semibold text-[#1A2E44] sm:w-56 flex-shrink-0">{item.role}</span>
+                <span className="text-sm font-semibold text-[#10251d] sm:w-56 flex-shrink-0">{item.role}</span>
                 <span className="text-sm text-gray-600 leading-relaxed">{item.note}</span>
               </div>
             ))}
@@ -380,15 +377,15 @@ export default async function HotelChecklistPage({ params }: { params: Promise<{
       {/* Checklist vs procedure */}
       <section className="py-14 px-6">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold text-[#1A2E44] mb-4">
+          <h2 className="font-display text-2xl font-medium text-[#10251d] mb-4">
             {isEN ? 'A checklist is not a procedure' : "Une checklist n'est pas une procédure"}
           </h2>
-          <p className="text-gray-600 leading-relaxed mb-4">
+          <p className="text-[#58645c] leading-relaxed mb-4">
             {isEN
               ? 'This distinction matters in practice. A checklist tells the team what must be verified at a given moment. It does not explain the full method. The procedure, SOP, or playbook sits behind it. When a room attendant checks that the bathroom meets standard, the checklist captures the sign-off. The SOP explains exactly how the bathroom should be cleaned to reach that standard.'
               : "Cette distinction a des conséquences concrètes. Une checklist indique à l'équipe ce qui doit être vérifié à un moment donné. Elle n'explique pas la méthode complète. La procédure, la SOP ou le playbook se trouve derrière. Quand un équipier housekeeping valide que la salle de bain est conforme au standard, la checklist capture la validation. La procédure explique exactement comment la salle de bain doit être nettoyée pour atteindre ce standard."}
           </p>
-          <p className="text-gray-600 leading-relaxed">
+          <p className="text-[#58645c] leading-relaxed">
             {isEN
               ? 'A checklist without a procedure behind it is often too shallow to be reliable. A procedure without a checklist to verify it is difficult to control consistently. The two tools work together. Neither replaces the other.'
               : "Une checklist sans procédure derrière elle est souvent trop superficielle pour être fiable. Une procédure sans checklist pour la contrôler est difficile à piloter de façon cohérente. Les deux outils fonctionnent ensemble. Aucun ne remplace l'autre."}
@@ -399,19 +396,19 @@ export default async function HotelChecklistPage({ params }: { params: Promise<{
       {/* Lead magnet */}
       <section
         className="py-10 border-b"
-        style={{ backgroundColor: '#eef4ff', borderColor: 'rgba(195,198,214,0.3)' }}
+        style={{ backgroundColor: '#f4efe6', borderColor: 'rgba(195,198,214,0.3)' }}
       >
         <div className="max-w-screen-xl mx-auto px-6 flex flex-col sm:flex-row items-start sm:items-center gap-6">
           <div className="flex-1">
-            <p className="text-[10px] font-bold uppercase tracking-widest text-[#003d9b] mb-2">
+            <p className="text-[10px] font-bold uppercase tracking-widest text-[#96764a] mb-2">
               {isEN ? 'Free resource' : 'Ressource gratuite'}
             </p>
-            <p className="font-bold text-[#0a1d2e] text-lg mb-1">
+            <p className="font-bold text-[#10251d] text-lg mb-1">
               {isEN
                 ? 'Download a free chapter from any department playbook'
                 : "Téléchargez un chapitre gratuit d'un playbook de votre choix"}
             </p>
-            <p className="text-sm text-[#4f6074]">
+            <p className="text-sm text-[#58645c]">
               {isEN
                 ? 'See what role-specific, shift-ready hotel checklists look like in practice.'
                 : 'Découvrez à quoi ressemblent des checklists hôtelières par rôle et par moment de service.'}
@@ -420,7 +417,7 @@ export default async function HotelChecklistPage({ params }: { params: Promise<{
           <Link
             href={`/${locale}/free-hotel-procedures`}
             className="inline-flex items-center gap-2 px-6 py-3 text-white font-bold text-sm flex-shrink-0 hover:opacity-90 transition-opacity"
-            style={{ background: 'linear-gradient(135deg, #003d9b, #0052cc)', borderRadius: '0.125rem' }}
+            style={{ background: '#10251d', borderRadius: '9999px' }}
           >
             {isEN ? 'Download free' : 'Télécharger gratuitement'} <ArrowRight size={18} />
           </Link>
@@ -428,7 +425,7 @@ export default async function HotelChecklistPage({ params }: { params: Promise<{
       </section>
 
       {/* CTA */}
-      <section className="bg-[#1A2E44] py-16 px-6 text-center text-white">
+      <section className="bg-[#10251d] py-16 px-6 text-center text-white">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-2xl font-bold mb-4">
             {isEN
@@ -443,7 +440,7 @@ export default async function HotelChecklistPage({ params }: { params: Promise<{
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href={`/${locale}/playbooks`}
-              className="inline-block bg-white text-[#1A2E44] font-semibold px-8 py-4 rounded-lg transition-colors hover:bg-gray-100"
+              className="inline-block bg-white text-[#10251d] font-semibold px-8 py-4 rounded-lg transition-colors hover:bg-gray-100"
             >
               {isEN ? 'View All Playbooks' : 'Voir tous les Playbooks'}
             </Link>

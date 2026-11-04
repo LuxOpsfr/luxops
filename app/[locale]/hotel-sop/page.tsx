@@ -1,6 +1,6 @@
+import GeneralResourceLead from '@/components/GeneralResourceLead'
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
 import { breadcrumbSchema, faqSchema, localizedPath } from '@/lib/seo'
 import TrackedLink from '@/components/TrackedLink'
 
@@ -200,90 +200,27 @@ export default async function HotelSopPage({ params }: { params: Promise<{ local
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
     <main className="bg-[#fcfbf8]">
 
-      {/* Hero */}
-      <section className="bg-[#0f211a] text-white px-6 pt-32 pb-20">
-        <div className="max-w-4xl mx-auto text-center">
-          <span className="inline-block bg-[#fcfbf8]/10 text-white text-xs font-semibold px-3 py-1 rounded-full mb-6 tracking-widest uppercase">
-            {isEN ? 'Hotel SOP Templates' : 'Procédures opérationnelles hôtelières'}
-          </span>
-          <h1 className="font-display text-4xl font-medium mb-6 leading-[1.08] sm:text-5xl md:text-[3.5rem]">
-            {isEN
-              ? 'Hotel Standard Operating Procedures: Built for How Hotels Actually Run'
-              : 'Procédures opérationnelles hôtelières : conçues pour le fonctionnement réel'}
-          </h1>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-10">
-            {isEN
-              ? 'Five department SOP manuals combine complete procedures with practical tools for daily hotel operations.'
-              : 'Cinq Manuels SOP départementaux réunissent les procédures complètes et les outils pratiques pour les opérations quotidiennes.'}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <TrackedLink
-              href="#department-playbooks"
-              eventName="playbook_cta_clicked"
-              eventProperties={{
-                source_page: `/${locale}/hotel-sop`,
-                placement: 'hero',
-                product: 'department_playbooks_section',
-                cta_label: isEN ? 'View Department SOP manuals' : 'Voir les Manuels SOP',
-              }}
-              className="inline-block border border-white/40 text-white font-semibold px-8 py-4 rounded-2xl transition-colors hover:bg-[#fcfbf8]/10"
-            >
-              {isEN ? 'View Department SOP manuals' : 'Voir les Manuels SOP'}
-            </TrackedLink>
-            <TrackedLink
-              href={`/${locale}/free-hotel-procedures`}
-              eventName="free_chapter_cta_clicked"
-              eventProperties={{
-                source_page: `/${locale}/hotel-sop`,
-                placement: 'hero',
-                cta_label: isEN ? 'Receive a sample chapter' : 'Recevoir un chapitre de découverte',
-              }}
-              className="inline-block border border-white/20 text-white font-semibold px-8 py-4 rounded-2xl transition-colors hover:bg-[#fcfbf8]/10"
-            >
-              {isEN ? 'Receive a sample chapter' : 'Recevoir un chapitre de découverte'}
-            </TrackedLink>
-          </div>
-        </div>
-      </section>
+      <GeneralResourceLead
+        locale={isEN ? 'en' : 'fr'}
+        source="hotel-sop"
+        eyebrow={isEN ? 'Hotel SOPs · Department guide' : 'SOP hôtel · Guide par département'}
+        title={isEN ? 'Hotel SOPs built for daily operations' : 'Procédures opérationnelles hôtelières pour le terrain'}
+        intro={isEN ? 'A hotel SOP should tell the team what to do, who decides and how to check the result. Explore the five departments and the procedures behind a consistent service.' : 'Une SOP hôtelière doit expliquer quoi faire, qui décide et comment contrôler le résultat. Découvrez les cinq départements et les procédures qui rendent le service régulier.'}
+        answerTitle={isEN ? 'What a hotel SOP needs to cover' : 'Ce qu’une SOP hôtelière doit préciser'}
+        answerIntro={isEN ? 'A procedure becomes useful when a new team member can follow it during a real shift, including when the standard sequence does not go to plan.' : 'Une procédure devient utile quand un nouveau collaborateur peut l’appliquer pendant un vrai service, y compris lorsque la situation sort du cadre habituel.'}
+        points={isEN ? [
+          'The trigger: when the procedure applies and who takes ownership.',
+          'The sequence: the actions to take and the information to record.',
+          'The exception: when and to whom a situation must be escalated.',
+          'The control: what a supervisor checks before sign-off or handover.',
+        ] : [
+          'Le déclencheur : quand la procédure s’applique et qui en est responsable.',
+          'La séquence : les actions à réaliser et les informations à consigner.',
+          'L’exception : quand et à qui une situation doit être transmise.',
+          'Le contrôle : ce que le superviseur vérifie avant validation ou passation.',
+        ]}
+      />
 
-      {/* Lead magnet */}
-      <section
-        className="py-10 border-b"
-        style={{ backgroundColor: '#f5f1e9', borderColor: '#e7e1d7' }}
-      >
-        <div className="max-w-screen-xl mx-auto px-6 flex flex-col sm:flex-row items-start sm:items-center gap-6">
-          <div className="flex-1">
-            <p className="text-[10px] font-bold uppercase tracking-widest text-[#0f211a] mb-2">
-              {isEN ? 'Sample chapter' : 'Chapitre de découverte'}
-            </p>
-            <p className="font-bold text-[#0f211a] text-lg mb-1">
-              {isEN
-                ? 'Receive a sample chapter from any department SOP manual'
-                : 'Recevoir un chapitre de découverte du Manuel SOP de votre choix'}
-            </p>
-            <p className="text-sm text-[#687169]">
-              {isEN
-                ? 'Front Office, Housekeeping, F&B, Spa or Revenue Management. See what structured hotel SOPs look like in practice.'
-                : 'Réception, housekeeping, F&B, spa ou revenue management. Découvrez à quoi ressemblent des procédures hôtelières structurées.'}
-            </p>
-          </div>
-          <TrackedLink
-            href={`/${locale}/free-hotel-procedures`}
-            eventName="free_chapter_cta_clicked"
-            eventProperties={{
-              source_page: `/${locale}/hotel-sop`,
-              placement: 'lead_magnet_band',
-              cta_label: isEN ? 'Choose a chapter' : 'Choisir un chapitre',
-            }}
-            className="inline-flex items-center gap-2 px-6 py-3 text-white font-bold text-sm flex-shrink-0 hover:opacity-90 transition-opacity"
-            style={{ background: '#0f211a', borderRadius: '999px' }}
-          >
-            {isEN ? 'Choose a chapter' : 'Choisir un chapitre'} <ArrowRight size={18} />
-          </TrackedLink>
-        </div>
-      </section>
-
-      {/* What makes hotel SOPs useful or not */}
       <section className="py-16 px-6 bg-gray-50">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold text-[#0f211a] mb-8">

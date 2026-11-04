@@ -1,3 +1,4 @@
+import GeneralResourceLead from '@/components/GeneralResourceLead'
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
@@ -228,50 +229,48 @@ export default async function HowToImproveHotelOperationsPage({ params }: { para
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <main className="min-h-screen bg-white">
+      <main className="min-h-screen bg-[#fcfbf8] text-[#10251d]">
 
-        {/* Hero */}
-        <section className="bg-[#1A2E44] text-white py-20 px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <span className="inline-block bg-white/10 text-white text-xs font-semibold px-3 py-1 rounded-full mb-6 tracking-widest uppercase">
-              {isEN ? 'Hotel Operations' : 'Opérations hôtelières'}
-            </span>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              {isEN
-                ? 'How to Improve Hotel Operations: What Actually Works'
-                : 'Comment améliorer les opérations hôtelières : ce qui fonctionne vraiment'}
-            </h1>
-            <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-10">
-              {isEN
-                ? 'Five practical levers for hotel managers covering SOPs, checklists, shift handovers, quality control and training. No generic advice. Only what changes performance in practice.'
-                : 'Cinq leviers pratiques pour les directeurs d\'hôtel couvrant les procédures, les checklists, les passations de service, le contrôle qualité et la formation. Pas de conseils génériques. Uniquement ce qui change les performances en pratique.'}
-            </p>
-            <Link
-              href={`/${locale}/free-hotel-procedures`}
-              className="inline-block bg-white text-[#1A2E44] font-semibold px-8 py-4 rounded-lg transition-colors hover:bg-gray-100"
-            >
-              {isEN ? 'Download a Free Procedure Chapter' : 'Télécharger un chapitre de procédure gratuit'}
-            </Link>
-          </div>
-        </section>
+        <GeneralResourceLead
+          locale={isEN ? 'en' : 'fr'}
+          source="how-to-improve-hotel-operations"
+          eyebrow={isEN ? 'Hotel operations · Action plan' : 'Opérations hôtelières · Plan d’action'}
+          title={isEN ? 'How to improve hotel operations' : 'Comment améliorer les opérations hôtelières'}
+          intro={isEN ? 'Start where service breaks down: handovers, undocumented exceptions and inconsistent controls. Five concrete levers help teams work to the same standard.' : 'Commencez là où le service se dégrade : passations, exceptions non documentées et contrôles inégaux. Cinq leviers concrets aident les équipes à appliquer le même standard.'}
+          answerTitle={isEN ? 'Five changes to make in a workable order' : 'Cinq changements à mettre en place dans le bon ordre'}
+          answerIntro={isEN ? 'Choose one recurring problem first. Document the expected method, make it easy to check, then train and review it with the team.' : 'Choisissez d’abord un problème récurrent. Écrivez la méthode attendue, rendez-la contrôlable, puis formez l’équipe et vérifiez son application.'}
+          points={isEN ? [
+            'Write the missing SOPs for the situations that generate complaints or rework.',
+            'Give each role a checklist tied to a specific moment and control point.',
+            'Structure shift handovers so open requests and exceptions have an owner.',
+            'Check quality before the guest experiences a failure.',
+            'Train to the written standard and review recurring gaps.',
+          ] : [
+            'Rédigez les procédures manquantes pour les situations qui génèrent des réclamations ou du retravail.',
+            'Donnez à chaque poste une checklist liée à un moment et à un point de contrôle.',
+            'Structurez les passations pour attribuer les demandes et exceptions en cours.',
+            'Contrôlez la qualité avant que le client ne subisse un écart.',
+            'Formez au standard écrit et réexaminez les écarts récurrents.',
+          ]}
+        />
 
         {/* Intro */}
-        <section className="py-14 px-6 bg-gray-50 border-b border-gray-100">
+        <section className="py-14 px-6 bg-[#f4efe6] border-b border-gray-100">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl font-bold text-[#1A2E44] mb-4">
+            <h2 className="font-display text-2xl font-medium text-[#10251d] mb-4">
               {isEN
                 ? 'The most common source of operational inconsistency'
                 : 'La source la plus fréquente d\'incohérence opérationnelle'}
             </h2>
             {isEN ? (
               <>
-                <p className="text-gray-600 leading-relaxed mb-4">
+                <p className="text-[#58645c] leading-relaxed mb-4">
                   Most hotel operations problems are not staff problems. They are system problems. The same task gets
                   done differently by different people not because one person is better than another, but because the
                   standard for that task was never written down. When the standard exists only in the head of the most
                   experienced team member, it disappears the moment that person moves to another property.
                 </p>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-[#58645c] leading-relaxed">
                   The five levers below address the most consistent gaps found across front office, housekeeping and
                   F&B operations in independent and luxury properties. None of them require additional headcount. All
                   of them require management time and consistent follow-through to implement correctly.
@@ -279,14 +278,14 @@ export default async function HowToImproveHotelOperationsPage({ params }: { para
               </>
             ) : (
               <>
-                <p className="text-gray-600 leading-relaxed mb-4">
+                <p className="text-[#58645c] leading-relaxed mb-4">
                   La plupart des problèmes opérationnels dans les hôtels ne sont pas des problèmes de personnel. Ce sont
                   des problèmes de système. La même tâche est réalisée différemment par des personnes différentes non
                   pas parce que l&apos;une est meilleure que l&apos;autre, mais parce que le standard de cette tâche
                   n&apos;a jamais été écrit. Quand le standard n&apos;existe que dans la tête du collaborateur le plus
                   expérimenté, il disparaît au moment où cette personne rejoint un autre établissement.
                 </p>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-[#58645c] leading-relaxed">
                   Les cinq leviers ci-dessous s&apos;attaquent aux lacunes les plus récurrentes constatées dans les
                   opérations de réception, de housekeeping et de F&B dans les hôtels indépendants et de luxe. Aucun
                   ne nécessite de recrutement supplémentaire. Tous nécessitent du temps de management et une mise en
@@ -299,17 +298,17 @@ export default async function HowToImproveHotelOperationsPage({ params }: { para
 
         {/* Five levers */}
         {levers.map((lever, li) => (
-          <section key={li} className={`py-16 px-6 ${li % 2 === 1 ? 'bg-gray-50' : ''}`}>
+          <section key={li} className={`py-16 px-6 ${li % 2 === 1 ? 'bg-[#f4efe6]' : ''}`}>
             <div className="max-w-3xl mx-auto">
               <div className="flex gap-4 items-start mb-6">
                 <span className="text-4xl font-bold text-gray-100 flex-shrink-0 leading-none pt-1">
                   {String(li + 1).padStart(2, '0')}
                 </span>
-                <h2 className="text-2xl font-bold text-[#1A2E44]">{lever.title}</h2>
+                <h2 className="font-display text-2xl font-medium text-[#10251d]">{lever.title}</h2>
               </div>
               <div className="space-y-4">
                 {lever.body.map((para, pi) => (
-                  <p key={pi} className="text-gray-600 leading-relaxed">{para}</p>
+                  <p key={pi} className="text-[#58645c] leading-relaxed">{para}</p>
                 ))}
               </div>
             </div>
@@ -319,19 +318,19 @@ export default async function HowToImproveHotelOperationsPage({ params }: { para
         {/* Lead magnet mid-page */}
         <section
           className="py-10 border-y"
-          style={{ backgroundColor: '#eef4ff', borderColor: 'rgba(195,198,214,0.3)' }}
+          style={{ backgroundColor: '#f4efe6', borderColor: 'rgba(195,198,214,0.3)' }}
         >
           <div className="max-w-screen-xl mx-auto px-6 flex flex-col sm:flex-row items-start sm:items-center gap-6">
             <div className="flex-1">
-              <p className="text-[10px] font-bold uppercase tracking-widest text-[#003d9b] mb-2">
+              <p className="text-[10px] font-bold uppercase tracking-widest text-[#96764a] mb-2">
                 {isEN ? 'Free resource' : 'Ressource gratuite'}
               </p>
-              <p className="font-bold text-[#0a1d2e] text-lg mb-1">
+              <p className="font-bold text-[#10251d] text-lg mb-1">
                 {isEN
                   ? 'Download a free chapter from any department playbook'
                   : "Téléchargez un chapitre gratuit d'un playbook de votre choix"}
               </p>
-              <p className="text-sm text-[#4f6074]">
+              <p className="text-sm text-[#58645c]">
                 {isEN
                   ? 'See what structured hotel procedures look like in practice: Front Office, Housekeeping, F&B or Spa.'
                   : 'Découvrez à quoi ressemblent des procédures hôtelières structurées : Réception, Housekeeping, F&B ou Spa.'}
@@ -340,7 +339,7 @@ export default async function HowToImproveHotelOperationsPage({ params }: { para
             <Link
               href={`/${locale}/free-hotel-procedures`}
               className="inline-flex items-center gap-2 px-6 py-3 text-white font-bold text-sm flex-shrink-0 hover:opacity-90 transition-opacity"
-              style={{ background: 'linear-gradient(135deg, #003d9b, #0052cc)', borderRadius: '0.125rem' }}
+              style={{ background: '#10251d', borderRadius: '9999px' }}
             >
               {isEN ? 'Download free' : 'Télécharger gratuitement'} <ArrowRight size={18} />
             </Link>
@@ -350,29 +349,29 @@ export default async function HowToImproveHotelOperationsPage({ params }: { para
         {/* Sequence */}
         <section className="py-16 px-6">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl font-bold text-[#1A2E44] mb-8">
+            <h2 className="font-display text-2xl font-medium text-[#10251d] mb-8">
               {isEN ? 'The sequence that works' : 'La séquence qui fonctionne'}
             </h2>
             <div className="space-y-4">
               {sequence.map((step, i) => (
                 <div key={i} className="flex gap-5 items-start">
                   <div
-                    className="w-7 h-7 rounded-full bg-[#1A2E44] text-white text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5"
+                    className="w-7 h-7 rounded-full bg-[#10251d] text-white text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5"
                   >
                     {i + 1}
                   </div>
-                  <p className="text-gray-600 leading-relaxed text-sm">{step}</p>
+                  <p className="text-[#58645c] leading-relaxed text-sm">{step}</p>
                 </div>
               ))}
             </div>
             {isEN ? (
-              <p className="text-gray-500 text-sm mt-8 leading-relaxed">
+              <p className="text-[#68736a] text-sm mt-8 leading-relaxed">
                 None of these steps is technically complex. All of them require sustained management attention to make
                 them hold over time. The properties that maintain consistent service are not the ones with the best
                 staff. They are the ones with the best systems.
               </p>
             ) : (
-              <p className="text-gray-500 text-sm mt-8 leading-relaxed">
+              <p className="text-[#68736a] text-sm mt-8 leading-relaxed">
                 Aucune de ces étapes n&apos;est techniquement complexe. Toutes nécessitent une attention managériale
                 soutenue pour tenir dans le temps. Les établissements qui maintiennent un service cohérent ne sont pas
                 ceux qui ont le meilleur personnel. Ce sont ceux qui ont les meilleurs systèmes.
@@ -382,16 +381,16 @@ export default async function HowToImproveHotelOperationsPage({ params }: { para
         </section>
 
         {/* FAQ */}
-        <section className="py-16 px-6 bg-gray-50 border-t border-gray-100">
+        <section className="py-16 px-6 bg-[#f4efe6] border-t border-gray-100">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl font-bold text-[#1A2E44] mb-8">
+            <h2 className="font-display text-2xl font-medium text-[#10251d] mb-8">
               {isEN ? 'Frequently Asked Questions' : 'Questions fréquentes'}
             </h2>
             <div className="space-y-6">
               {faq.map(({ q, a }, i) => (
                 <div key={i} className="border-b border-gray-100 pb-6 last:border-0 last:pb-0">
-                  <h3 className="font-semibold text-[#1A2E44] mb-2">{q}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{a}</p>
+                  <h3 className="font-semibold text-[#10251d] mb-2">{q}</h3>
+                  <p className="text-[#58645c] text-sm leading-relaxed">{a}</p>
                 </div>
               ))}
             </div>
@@ -400,7 +399,7 @@ export default async function HowToImproveHotelOperationsPage({ params }: { para
 
         {/* Related resources */}
         <section className="max-w-4xl mx-auto px-6 py-12">
-          <h2 className="text-xl font-bold text-[#1A2E44] mb-6">
+          <h2 className="text-xl font-bold text-[#10251d] mb-6">
             {isEN ? 'Related resources' : 'Ressources associées'}
           </h2>
           <div className="grid sm:grid-cols-2 gap-4">
@@ -436,9 +435,9 @@ export default async function HowToImproveHotelOperationsPage({ params }: { para
               <Link
                 key={link.href}
                 href={link.href}
-                className="border border-gray-200 rounded-xl p-5 hover:border-[#1A2E44] transition-colors group"
+                className="border border-gray-200 rounded-xl p-5 hover:border-[#10251d] transition-colors group"
               >
-                <p className="font-semibold text-[#1A2E44] group-hover:underline">{link.title}</p>
+                <p className="font-semibold text-[#10251d] group-hover:underline">{link.title}</p>
                 <p className="text-sm text-gray-500 mt-1">{link.desc}</p>
               </Link>
             ))}
@@ -446,7 +445,7 @@ export default async function HowToImproveHotelOperationsPage({ params }: { para
         </section>
 
         {/* CTA */}
-        <section className="bg-[#1A2E44] py-16 px-6 text-center text-white">
+        <section className="bg-[#10251d] py-16 px-6 text-center text-white">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-2xl font-bold mb-4">
               {isEN
@@ -461,7 +460,7 @@ export default async function HowToImproveHotelOperationsPage({ params }: { para
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href={`/${locale}/playbooks`}
-                className="inline-block bg-white text-[#1A2E44] font-semibold px-8 py-4 rounded-lg transition-colors hover:bg-gray-100"
+                className="inline-block bg-white text-[#10251d] font-semibold px-8 py-4 rounded-lg transition-colors hover:bg-gray-100"
               >
                 {isEN ? 'View All Playbooks' : 'Voir tous les Playbooks'}
               </Link>
