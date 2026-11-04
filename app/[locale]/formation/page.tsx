@@ -282,8 +282,8 @@ export function FormationContent({ locale }: { locale: string }) {
   const activeLocale = toActiveLocale(locale)
   const t = content[activeLocale as keyof typeof content] ?? content.en
   const brochureHref = activeLocale === 'fr'
-    ? '/downloads/training/luxops-formations-accompagnement-operationnel-fr.pdf'
-    : '/downloads/training/luxops-hotel-training-operational-development-en.pdf'
+    ? '/downloads/training/luxops-presentation-fr.pdf'
+    : '/downloads/training/luxops-presentation-en.pdf'
   const programmeHref = brochureHref
 
   return (
