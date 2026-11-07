@@ -32,42 +32,60 @@
     "priority": 0.9
   },
   "blogRevenueRevpar": {
-    "paths": { "en": "/blog/calcul-revpar-adr-taux-occupation", "fr": "/blog/calcul-revpar-adr-taux-occupation" },
+    "paths": {
+      "en": "/blog/calcul-revpar-adr-taux-occupation",
+      "fr": "/blog/calcul-revpar-adr-taux-occupation"
+    },
     "sitemap": true,
     "changeFrequency": "monthly",
     "lastModified": "2026-10-24",
     "priority": 0.85
   },
   "blogRevenueGuide": {
-    "paths": { "en": "/blog/revenue-management-hotelier-guide", "fr": "/blog/revenue-management-hotelier-guide" },
+    "paths": {
+      "en": "/blog/revenue-management-hotelier-guide",
+      "fr": "/blog/revenue-management-hotelier-guide"
+    },
     "sitemap": true,
     "changeFrequency": "monthly",
     "lastModified": "2026-10-24",
     "priority": 0.85
   },
   "blogRevenueLearning": {
-    "paths": { "en": "/blog/apprendre-revenue-management-hotelier", "fr": "/blog/apprendre-revenue-management-hotelier" },
+    "paths": {
+      "en": "/blog/apprendre-revenue-management-hotelier",
+      "fr": "/blog/apprendre-revenue-management-hotelier"
+    },
     "sitemap": true,
     "changeFrequency": "monthly",
     "lastModified": "2026-10-24",
     "priority": 0.8
   },
   "blogRevenuePickup": {
-    "paths": { "en": "/blog/pickup-forecast-hotelier", "fr": "/blog/pickup-forecast-hotelier" },
+    "paths": {
+      "en": "/blog/pickup-forecast-hotelier",
+      "fr": "/blog/pickup-forecast-hotelier"
+    },
     "sitemap": true,
     "changeFrequency": "monthly",
     "lastModified": "2026-10-24",
     "priority": 0.8
   },
   "blogRevenueDistribution": {
-    "paths": { "en": "/blog/distribution-hoteliere-ota-direct", "fr": "/blog/distribution-hoteliere-ota-direct" },
+    "paths": {
+      "en": "/blog/distribution-hoteliere-ota-direct",
+      "fr": "/blog/distribution-hoteliere-ota-direct"
+    },
     "sitemap": true,
     "changeFrequency": "monthly",
     "lastModified": "2026-10-24",
     "priority": 0.8
   },
   "blogRevenuePricing": {
-    "paths": { "en": "/blog/strategie-tarifaire-hotel", "fr": "/blog/strategie-tarifaire-hotel" },
+    "paths": {
+      "en": "/blog/strategie-tarifaire-hotel",
+      "fr": "/blog/strategie-tarifaire-hotel"
+    },
     "sitemap": true,
     "changeFrequency": "monthly",
     "lastModified": "2026-10-24",
@@ -217,7 +235,11 @@
     "priority": 0.86
   },
   "trainingRevenueManagementHotel": {
-    "paths": { "fr": "/formation-revenue-management-hotel", "en": "/hotel-revenue-management-training", "es": "/formacion-revenue-management-hotel" },
+    "paths": {
+      "fr": "/formation-revenue-management-hotel",
+      "en": "/hotel-revenue-management-training",
+      "es": "/formacion-revenue-management-hotel"
+    },
     "sitemap": true,
     "changeFrequency": "monthly",
     "lastModified": "2026-11-03",
@@ -266,7 +288,10 @@
     "priority": 0.8
   },
   "blogIncreaseHotelRevenue": {
-    "paths": { "fr": "/blog/augmenter-chiffre-affaires-hotel", "en": "/blog/increase-hotel-revenue" },
+    "paths": {
+      "fr": "/blog/augmenter-chiffre-affaires-hotel",
+      "en": "/blog/increase-hotel-revenue"
+    },
     "sitemap": true,
     "changeFrequency": "monthly",
     "lastModified": "2026-11-03",
@@ -299,7 +324,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-03-18",
+    "lastModified": "2026-11-07",
     "priority": 0.7
   },
   "blogHotelFbServiceStandards": {
@@ -309,7 +334,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-03-18",
+    "lastModified": "2026-11-07",
     "priority": 0.7
   },
   "hotelChecklist": {
@@ -409,7 +434,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-05-17",
+    "lastModified": "2026-11-07",
     "priority": 0.7
   },
   "formationReceptionHotel": {
@@ -419,7 +444,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-05-17",
+    "lastModified": "2026-11-07",
     "priority": 0.7
   },
   "formationEquipeHoteliere": {
@@ -439,7 +464,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-05-17",
+    "lastModified": "2026-11-07",
     "priority": 0.7
   },
   "formationPreOuverture": {
@@ -479,7 +504,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-07-17",
+    "lastModified": "2026-11-07",
     "priority": 0.72
   },
   "blogHotelStaffTrainingServiceStandards": {
@@ -489,7 +514,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-04-28",
+    "lastModified": "2026-11-07",
     "priority": 0.7
   },
   "blogHousekeepingRoomInspection": {
@@ -499,7 +524,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-05-27",
+    "lastModified": "2026-11-07",
     "priority": 0.7
   },
   "blogHotelFbRestaurantProcedures": {
@@ -509,7 +534,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-03-29",
+    "lastModified": "2026-11-07",
     "priority": 0.7
   },
   "blogHotelSpaWellnessSops": {
@@ -549,7 +574,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-04-28",
+    "lastModified": "2026-11-07",
     "priority": 0.7
   },
   "blogHotelStaffTurnoverTraining": {
@@ -559,7 +584,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-04-30",
+    "lastModified": "2026-11-07",
     "priority": 0.7
   },
   "blogHotelNewHireOnboarding": {
@@ -569,7 +594,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-04-30",
+    "lastModified": "2026-11-07",
     "priority": 0.7
   },
   "blogHotelRoomAttendantChecklist": {
@@ -619,7 +644,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-05-03",
+    "lastModified": "2026-11-07",
     "priority": 0.7
   },
   "blogHotelBathroomCleaningSop": {

@@ -1,17 +1,16 @@
 import type { Metadata } from 'next'
-import TrainingSeoPage, { type TrainingSeoPageData } from '@/components/TrainingSeoPage'
+import type { TrainingSeoPageData } from '@/components/TrainingSeoPage'
+import DepartmentTrainingPage from '@/components/DepartmentTrainingPage'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
   const isEn = locale === 'en'
 
   return {
-    title: isEn
-      ? 'Housekeeping Training: Room Standards, Inspection and Floor Supervision | LuxOps'
-      : 'Formation housekeeping : chambre, inspection et standards d’étage | LuxOps',
+    title: isEn ? "Hotel Housekeeping Training for Teams & Supervisors | LuxOps" : "Formation Housekeeping : équipes et gouvernantes | LuxOps",
     description: isEn
-      ? 'On-site housekeeping training for room cleaning sequences, bathroom standards, trolley setup, floor supervision, inspections and quality control.'
-      : 'Formation housekeeping sur site : chambre à blanc, recouche, salle de bain, chariot, inspection, gouvernante d’étage et contrôle qualité.',
+      ? "Sharpen your team’s eye for quality, develop professional judgement and bring five-star standards to every floor."
+      : "Affinez le regard qualité, développez l’autonomie des équipes et faites vivre les standards cinq étoiles à chaque étage.",
     alternates: {
       canonical: `https://www.luxops.fr/${locale}/formation-housekeeping-hotel`,
       languages: {
@@ -26,173 +25,159 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function FormationHousekeepingPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
   const isEn = locale === 'en'
-  return <TrainingSeoPage locale={locale} data={isEn ? englishData(locale) : frenchData(locale)} />
+  return <DepartmentTrainingPage department="hsk" locale={locale} data={isEn ? englishData() : frenchData()} />
 }
 
-const frenchData = (locale: string): TrainingSeoPageData => ({
-  badge: 'Formation housekeeping',
-  title: 'Formation housekeeping',
-  intro:
-    'Une formation terrain pour transmettre les bonnes séquences de chambre, les points d’inspection et les réflexes de contrôle qualité aux équipes d’étage.',
-  context:
-    'Le housekeeping ne se stabilise pas avec quelques jours d’observation. Il faut une méthode, un ordre de travail, des standards visibles, des contrôles compris et des responsables capables de reprendre les écarts sans casser le rythme de l’équipe.',
-  primaryCta: 'Demander un devis formation',
-  secondaryCta: 'Voir le Playbook Housekeeping',
-  secondaryHref: `/${locale}/playbooks/hsk`,
-  overviewLabel: 'Enjeu',
-  overviewTitle: 'Faire tenir le standard chambre dans la durée',
-  overviewText:
-    'Une chambre à blanc, une recouche, une salle de bain ou une inspection gouvernante ne suivent pas la même logique. La formation doit donc transmettre des séquences distinctes, des points de contrôle précis et une manière claire de corriger les écarts.',
-  modulesLabel: 'Modules housekeeping',
-  modulesTitle: 'Ce que la formation peut couvrir',
-  modules: [
+const frenchData = (): TrainingSeoPageData => ({
+  "badge": "Formation housekeeping",
+  "title": "Formation Housekeeping : l’excellence dans chaque détail.",
+  "intro": "Un accompagnement sur site qui associe exigence de présentation, management de proximité et méthodes de travail adaptées à votre établissement.",
+  "context": "Dans l’hôtellerie de luxe, la qualité d’une chambre ne se résume pas à sa propreté. Elle se lit dans la précision des finitions, la discrétion du service et l’attention portée aux habitudes du client.",
+  "primaryCta": "Demander un devis formation",
+  "secondaryCta": "Voir le Playbook Housekeeping",
+  "secondaryHref": "/fr/playbooks/hsk",
+  "overviewLabel": "L’exigence des étages",
+  "overviewTitle": "Passer d’un travail bien réalisé à une expérience irréprochable.",
+  "overviewText": "La formation s’appuie sur le savoir-faire de vos équipes pour affiner leur jugement, harmoniser l’évaluation de la qualité et renforcer le rôle des gouvernantes dans la progression de chacun.",
+  "modulesLabel": "Modules housekeeping",
+  "modulesTitle": "Perfectionner le savoir-faire. Faire durer les standards.",
+  "modules": [
     {
-      title: 'Chambre à blanc et recouche',
-      text: 'Clarifier les différences de séquence, de rythme, de retrait, de remise en place et de contrôle selon le type de chambre.',
+      "title": "Le regard qualité cinq étoiles",
+      "text": "Affiner l’évaluation des finitions, de la présentation et du confort. Harmoniser les critères d’inspection pour que chaque chambre reflète l’identité et l’exigence de votre établissement."
     },
     {
-      title: 'Salle de bain et surfaces',
-      text: 'Travailler l’ordre de traitement, le chrome, le tartre, les miroirs, les produits d’accueil, les toilettes, les sols et les finitions visibles.',
+      "title": "L’attention personnalisée et la discrétion",
+      "text": "Anticiper les préférences, respecter les effets personnels et adapter les attentions avec justesse. Développer une posture de service attentive, y compris lorsque le client est présent."
     },
     {
-      title: 'Chariot et linge',
-      text: 'Structurer le chargement, les dotations, le tri du linge, la gestion des manquants et l’organisation pendant la vacation.',
+      "title": "Le leadership des gouvernantes",
+      "text": "Transformer l’inspection en accompagnement : expliquer les attentes, donner un feedback précis et développer l’autonomie sans multiplier les reprises ou les contrôles."
     },
     {
-      title: 'Auto-contrôle',
-      text: 'Apprendre aux équipiers à vérifier avant de quitter la chambre, pour limiter les retours et responsabiliser le premier niveau de qualité.',
+      "title": "Des méthodes de travail plus fluides",
+      "text": "Repenser l’organisation des vacations, la circulation des informations et les priorités avec la réception et la maintenance. Identifier les étapes qui font perdre du temps sans contribuer à la qualité."
     },
     {
-      title: 'Inspection gouvernante',
-      text: 'Former les gouvernantes d’étage à contrôler dans un ordre clair, identifier les écarts, prioriser les reprises et libérer les chambres avec plus de confiance.',
+      "title": "Les outils au service des équipes",
+      "text": "Exploiter les logiciels Housekeeping, les statuts de chambre et les signalements pour fiabiliser le suivi. Faciliter leur adoption avec des usages simples, reliés aux situations de service."
     },
     {
-      title: 'Briefings et coaching qualité',
-      text: 'Utiliser les écarts constatés comme base de briefing et d’accompagnement, au lieu de refaire les mêmes corrections chaque jour.',
-    },
+      "title": "Un référentiel qui se transmet",
+      "text": "Formaliser les standards travaillés dans les procédures, checklists et supports de briefing. Donner aux responsables une base commune pour intégrer, accompagner et maintenir le niveau de service."
+    }
   ],
-  methodLabel: 'Méthode',
-  methodTitle: 'Une formation adaptée aux étages, au rythme et au niveau attendu',
-  methodText:
-    'La session peut s’appuyer sur le Playbook Housekeeping, sur vos checklists internes ou sur les points qualité déjà observés. Le travail porte sur les gestes, l’ordre, le vocabulaire, les priorités et la manière dont la gouvernante fait vivre le standard après la formation.',
-  outcomes: [
-    'Des séquences de chambre plus régulières entre collaborateurs.',
-    'Moins d’écarts visibles en salle de bain et sur les finitions.',
-    'Des gouvernantes plus structurées dans leurs inspections.',
-    'Des briefings plus utiles à partir des écarts observés.',
-    'Une meilleure coordination avec la réception et la maintenance.',
-    'Un support écrit à reprendre à l’intégration et en cours de saison.',
+  "methodLabel": "Méthode",
+  "methodTitle": "Perfectionner les pratiques dans votre environnement.",
+  "methodText": "Observation des pratiques, calibrage des inspections et mises en situation se déroulent au plus près de vos opérations. Les échanges avec les gouvernantes relient chaque ajustement à l’expérience client et aux conditions de travail des équipes.",
+  "outcomes": [
+    "Partager une même lecture des standards de présentation et de service.",
+    "Développer l’autonomie et l’attention personnalisée des équipes d’étage.",
+    "Renforcer le coaching quotidien des gouvernantes.",
+    "Faire vivre un référentiel commun, soutenu par les outils métier."
   ],
-  relatedLabel: 'Pages liées',
-  relatedTitle: 'Compléter le travail housekeeping',
-  related: [
+  "relatedLabel": "Pages liées",
+  "relatedTitle": "Compléter le travail housekeeping",
+  "related": [
     {
-      href: `/${locale}/methode-formation-luxops`,
-      title: 'Méthode de formation LuxOps',
-      text: 'Voir comment les standards d’étage deviennent des séquences, contrôles et routines reprises après la session.',
+      "href": "/fr/methode-formation-luxops",
+      "title": "Méthode de formation LuxOps",
+      "text": "Voir comment les standards d’étage deviennent des séquences, contrôles et routines reprises après la session."
     },
     {
-      href: `/${locale}/formation-equipe-hoteliere`,
-      title: 'Formation équipes hôtelières',
-      text: 'Page large pour les standards de service, la coordination entre services et l’intégration des collaborateurs.',
+      "href": "/fr/formation-equipe-hoteliere",
+      "title": "Formation équipes hôtelières",
+      "text": "Page large pour les standards de service, la coordination entre services et l’intégration des collaborateurs."
     },
     {
-      href: `/${locale}/formation-chefs-de-service`,
-      title: 'Formation chefs de service',
-      text: 'Briefings, suivi terrain, contrôle qualité et accompagnement des responsables opérationnels.',
+      "href": "/fr/formation-chefs-de-service",
+      "title": "Formation chefs de service",
+      "text": "Briefings, suivi terrain, contrôle qualité et accompagnement des responsables opérationnels."
     },
     {
-      href: `/${locale}/playbooks/hsk`,
-      title: 'Housekeeping SOP manual',
-      text: 'Checklists et outils de contrôle pour soutenir le travail d’inspection et de suivi qualité.',
-    },
+      "href": "/fr/playbooks/hsk",
+      "title": "Housekeeping SOP manual",
+      "text": "Checklists et outils de contrôle pour soutenir le travail d’inspection et de suivi qualité."
+    }
   ],
-  finalTitle: 'Besoin de stabiliser vos standards housekeeping ?',
-  finalText:
-    'Envoyez quelques informations sur votre établissement, la période envisagée et le nombre de collaborateurs concernés.',
-  finalCta: 'Demander un devis formation',
+  "finalTitle": "Besoin de stabiliser vos standards housekeeping ?",
+  "finalText": "Envoyez quelques informations sur votre établissement, la période envisagée et le nombre de collaborateurs concernés.",
+  "finalCta": "Demander un devis formation"
 })
 
-const englishData = (locale: string): TrainingSeoPageData => ({
-  badge: 'Housekeeping training',
-  title: 'Housekeeping training',
-  intro:
-    'On-property training to transmit room sequences, inspection points and quality control habits to housekeeping teams.',
-  context:
-    'Housekeeping consistency is not built through a few days of observation. It requires a method, a work order, visible standards, understood checks and supervisors who can correct gaps without slowing the team down.',
-  primaryCta: 'Request a training quote',
-  secondaryCta: 'View Housekeeping Playbook',
-  secondaryHref: `/${locale}/playbooks/hsk`,
-  overviewLabel: 'Challenge',
-  overviewTitle: 'Keep room standards consistent over time',
-  overviewText:
-    'A departure room, stayover, bathroom sequence or supervisor inspection do not follow the same logic. Training must therefore transmit distinct sequences, precise control points and a clear way to correct gaps.',
-  modulesLabel: 'Housekeeping modules',
-  modulesTitle: 'What the training can cover',
-  modules: [
+const englishData = (): TrainingSeoPageData => ({
+  "badge": "Housekeeping training",
+  "title": "Housekeeping training: excellence in every detail.",
+  "intro": "On-property development combining exacting presentation, hands-on leadership and working methods suited to your hotel.",
+  "context": "In luxury hospitality, a room’s quality goes beyond cleanliness. It is reflected in precise finishing, discreet service and attention to each guest’s habits.",
+  "primaryCta": "Request a training quote",
+  "secondaryCta": "View Housekeeping Playbook",
+  "secondaryHref": "/en/playbooks/hsk",
+  "overviewLabel": "Housekeeping excellence",
+  "overviewTitle": "From a well-prepared room to an exceptional guest experience.",
+  "overviewText": "Training builds on your team’s existing expertise to refine judgement, align quality assessments and strengthen supervisors’ role in developing every colleague.",
+  "modulesLabel": "Housekeeping modules",
+  "modulesTitle": "Refine the craft. Sustain the standards.",
+  "modules": [
     {
-      title: 'Departure rooms and stayovers',
-      text: 'Clarify the sequence, pace, removal, setup and control differences according to room status.',
+      "title": "An eye for five-star quality",
+      "text": "Refine the assessment of finishing, presentation and comfort. Align inspection criteria so every room reflects your property’s identity and service expectations."
     },
     {
-      title: 'Bathroom and surfaces',
-      text: 'Work through surface order, chrome, limescale, mirrors, amenities, toilets, floors and visible finishing points.',
+      "title": "Personal attention and discretion",
+      "text": "Anticipate preferences, respect personal belongings and tailor thoughtful touches. Develop an attentive service style, including when guests are present."
     },
     {
-      title: 'Trolley and linen',
-      text: 'Structure loading, par levels, linen sorting, missing items and organisation throughout the shift.',
+      "title": "Housekeeping leadership",
+      "text": "Turn inspections into coaching: communicate expectations, give specific feedback and build independence without relying on repeated corrections or checks."
     },
     {
-      title: 'Self-inspection',
-      text: 'Train attendants to check before leaving the room, limiting returns and owning the first level of quality.',
+      "title": "Smoother working methods",
+      "text": "Review shift organisation, information flow and priorities with Front Office and maintenance. Identify steps that consume time without contributing to quality."
     },
     {
-      title: 'Supervisor inspection',
-      text: 'Train floor supervisors to inspect in a clear order, identify gaps, prioritise returns and release rooms with more confidence.',
+      "title": "Systems that support the team",
+      "text": "Use Housekeeping software, room statuses and issue reporting to improve follow-up. Support adoption through straightforward uses linked to real service situations."
     },
     {
-      title: 'Briefings and quality coaching',
-      text: 'Use observed gaps as briefing and coaching material instead of repeating the same corrections every day.',
-    },
+      "title": "Standards that can be passed on",
+      "text": "Document the standards covered in procedures, checklists and briefing materials. Give managers a common reference for onboarding, coaching and sustaining service quality."
+    }
   ],
-  methodLabel: 'Method',
-  methodTitle: 'Training adapted to floors, pace and expected standard',
-  methodText:
-    'The session can use the Housekeeping Playbook, your internal checklists or existing quality observations. Work focuses on gestures, order, vocabulary, priorities and how supervisors keep the standard alive after training.',
-  outcomes: [
-    'Room sequences become more consistent between team members.',
-    'Visible bathroom and finishing gaps decrease.',
-    'Floor supervisors inspect with clearer structure.',
-    'Briefings become more useful because they use observed gaps.',
-    'Coordination improves with reception and maintenance.',
-    'The team keeps a written reference for onboarding and seasonal refreshers.',
+  "methodLabel": "Method",
+  "methodTitle": "Refine practice in your own environment.",
+  "methodText": "Observation, inspection calibration and practical scenarios take place close to your daily operations. Discussions with supervisors connect each improvement to the guest experience and the team’s working conditions.",
+  "outcomes": [
+    "Share a consistent understanding of presentation and service standards.",
+    "Develop independent judgement and personalised attention.",
+    "Strengthen supervisors’ daily coaching.",
+    "Maintain a shared reference supported by hotel systems."
   ],
-  relatedLabel: 'Related pages',
-  relatedTitle: 'Continue the housekeeping work',
-  related: [
+  "relatedLabel": "Related pages",
+  "relatedTitle": "Continue the housekeeping work",
+  "related": [
     {
-      href: `/${locale}/luxops-training-method`,
-      title: 'LuxOps training method',
-      text: 'See how floor standards become sequences, controls and routines reinforced after the session.',
+      "href": "/en/luxops-training-method",
+      "title": "LuxOps training method",
+      "text": "See how floor standards become sequences, controls and routines reinforced after the session."
     },
     {
-      href: `/${locale}/formation-equipe-hoteliere`,
-      title: 'Hotel team training',
-      text: 'The broader page for service standards, department coordination and onboarding.',
+      "href": "/en/formation-equipe-hoteliere",
+      "title": "Hotel team training",
+      "text": "The broader page for service standards, department coordination and onboarding."
     },
     {
-      href: `/${locale}/formation-chefs-de-service`,
-      title: 'Department leadership training',
-      text: 'Briefings, floor follow-up, quality control and support for operational managers.',
+      "href": "/en/formation-chefs-de-service",
+      "title": "Department leadership training",
+      "text": "Briefings, floor follow-up, quality control and support for operational managers."
     },
     {
-      href: `/${locale}/playbooks/hsk`,
-      title: 'Housekeeping SOP manual',
-      text: 'Checklists and control tools to support inspection and quality follow-up.',
-    },
+      "href": "/en/playbooks/hsk",
+      "title": "Housekeeping SOP manual",
+      "text": "Checklists and control tools to support inspection and quality follow-up."
+    }
   ],
-  finalTitle: 'Need to stabilise your housekeeping standards?',
-  finalText:
-    'Send a few details about your property, expected timing and the number of team members involved.',
-  finalCta: 'Request a training quote',
+  "finalTitle": "Need to stabilise your housekeeping standards?",
+  "finalText": "Send a few details about your property, expected timing and the number of team members involved.",
+  "finalCta": "Request a training quote"
 })

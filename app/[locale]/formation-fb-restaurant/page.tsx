@@ -1,17 +1,16 @@
 import type { Metadata } from 'next'
-import TrainingSeoPage, { type TrainingSeoPageData } from '@/components/TrainingSeoPage'
+import type { TrainingSeoPageData } from '@/components/TrainingSeoPage'
+import DepartmentTrainingPage from '@/components/DepartmentTrainingPage'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
   const isEn = locale === 'en'
 
   return {
-    title: isEn
-      ? 'F&B Training: Service Standards, Restaurant and Room Service | LuxOps'
-      : 'Formation F&B : standards de service, restaurant et room service | LuxOps',
+    title: isEn ? "Hotel F&B Training: Restaurant, Bar & Room Service | LuxOps" : "Formation F&B : service restaurant et hôtel | LuxOps",
     description: isEn
-      ? 'On-site F&B training for service sequence, restaurant opening, room service, allergens, briefings, guest communication and recovery.'
-      : 'Formation F&B sur site : séquence de service, ouverture restaurant, room service, allergènes, briefings, communication client et recovery.',
+      ? "Develop service presence, confident recommendations and team coordination for a dining experience worthy of five-star hospitality."
+      : "Développez la présence en salle, la qualité du conseil et la coordination de vos équipes pour une expérience de restauration à la hauteur d’un hôtel cinq étoiles.",
     alternates: {
       canonical: `https://www.luxops.fr/${locale}/formation-fb-restaurant`,
       languages: {
@@ -26,173 +25,159 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function FormationFbPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
   const isEn = locale === 'en'
-  return <TrainingSeoPage locale={locale} data={isEn ? englishData(locale) : frenchData(locale)} />
+  return <DepartmentTrainingPage department="fb" locale={locale} data={isEn ? englishData() : frenchData()} />
 }
 
-const frenchData = (locale: string): TrainingSeoPageData => ({
-  badge: 'Formation F&B',
-  title: 'Formation F&B',
-  intro:
-    'Une formation terrain pour aligner les équipes de salle, bar, petit-déjeuner et room service autour d’une séquence de service claire.',
-  context:
-    'Le F&B exige du rythme, de la préparation, une communication fluide et des réflexes de recovery. La formation permet de travailler les moments qui font réellement la qualité perçue : mise en place, accueil, prise de commande, envoi, suivi de table, allergènes, addition et clôture du service.',
-  primaryCta: 'Demander un devis formation',
-  secondaryCta: 'Voir le Manuel SOP F&B',
-  secondaryHref: `/${locale}/playbooks/fb`,
-  overviewLabel: 'Enjeu',
-  overviewTitle: 'Rendre la séquence de service plus stable',
-  overviewText:
-    'Un service restaurant ou room service ne tient pas uniquement grâce à la bonne volonté des équipes. Il tient quand la préparation, les rôles, le vocabulaire client, les timings et les reprises en cas d’écart sont compris par tous.',
-  modulesLabel: 'Modules F&B',
-  modulesTitle: 'Les sujets à travailler en formation F&B',
-  modules: [
+const frenchData = (): TrainingSeoPageData => ({
+  "badge": "Formation F&B",
+  "title": "Formation F&B : précision du service, justesse de l’attention.",
+  "intro": "Un accompagnement adapté au restaurant, au bar et au room service, qui associe savoir-être, maîtrise des standards et méthodes de travail plus fluides.",
+  "context": "L’excellence en restauration tient à l’équilibre entre précision et naturel : une recommandation juste, un rythme de service maîtrisé et une équipe qui se coordonne sans interrompre l’expérience du client.",
+  "primaryCta": "Demander un devis formation",
+  "secondaryCta": "Voir le Manuel SOP F&B",
+  "secondaryHref": "/fr/playbooks/fb",
+  "overviewLabel": "L’expérience en restauration",
+  "overviewTitle": "Un service précis qui laisse toute sa place au client.",
+  "overviewText": "Vos équipes possèdent les bases du métier. La formation les aide à affiner leur sens de l’observation, enrichir leur conseil et partager une même exigence, de la salle à la cuisine.",
+  "modulesLabel": "Modules F&B",
+  "modulesTitle": "Élever la qualité du service et du conseil.",
+  "modules": [
     {
-      title: 'Briefing et mise en place',
-      text: 'Préparer le service avec des priorités claires : réservations, VIP, allergies, tables sensibles, ruptures, menus et points de vigilance.',
+      "title": "La présence et l’élégance du service",
+      "text": "Affiner posture, gestuelle, vocabulaire et discrétion. Harmoniser les standards cinq étoiles tout en conservant une relation naturelle et la personnalité de votre établissement."
     },
     {
-      title: 'Accueil et installation',
-      text: 'Travailler l’arrivée du client, le rythme de prise en charge, le placement, la première boisson et les informations utiles sans surcharger l’échange.',
+      "title": "La connaissance produit et le conseil",
+      "text": "Faire de la maîtrise de l’offre un véritable atout de service. Construire des recommandations personnalisées et développer la vente additionnelle avec pertinence et aisance."
     },
     {
-      title: 'Prise de commande',
-      text: 'Sécuriser l’écoute, les questions de clarification, les allergies, les cuissons, les préférences et la transmission correcte en cuisine.',
+      "title": "Le rythme et la coordination du service",
+      "text": "Lire les attentes d’une table, ajuster l’enchaînement et synchroniser salle, bar et cuisine. Travailler la communication pendant les temps forts sans reporter la pression sur le client."
     },
     {
-      title: 'Séquence restaurant',
-      text: 'Clarifier le rythme : boissons, entrées, plats, débarrassage, dessert, addition, clôture et coordination avec la cuisine.',
+      "title": "L’attention aux demandes particulières",
+      "text": "Développer l’écoute, la précision des transmissions et la qualité du suivi. Aborder les préférences, demandes alimentaires et insatisfactions avec discernement et professionnalisme."
     },
     {
-      title: 'Room service',
-      text: 'Travailler la prise de commande, les délais annoncés, le dressage du plateau ou trolley, la livraison en chambre et la reprise.',
+      "title": "Des managers et des outils qui facilitent le service",
+      "text": "Renforcer les briefings et le coaching des responsables. Utiliser POS, réservations et informations clients pour simplifier la préparation et fiabiliser la coordination."
     },
     {
-      title: 'Recovery client',
-      text: 'Former les équipes à réagir vite lorsqu’un plat tarde, qu’une commande est incomplète ou qu’un client exprime une insatisfaction.',
-    },
+      "title": "Un référentiel vivant pour les équipes",
+      "text": "Formaliser les séquences de service, repères de présentation et pratiques de suivi. Relier ces supports à l’intégration et aux briefings pour maintenir l’exigence d’une équipe à l’autre."
+    }
   ],
-  methodLabel: 'Méthode',
-  methodTitle: 'Des standards appliqués pendant le vrai rythme du service',
-  methodText:
-    'La formation peut partir du Manuel SOP F&B et de ses outils inclus, ou de vos standards internes. Le travail consiste à traduire les procédures en gestes, phrases, timings, contrôles et réflexes réellement utilisables pendant un service chargé.',
-  outcomes: [
-    'Des briefings plus utiles avant le service.',
-    'Une séquence de restaurant plus fluide et régulière.',
-    'Une meilleure gestion des allergies et demandes spécifiques.',
-    'Des équipes plus à l’aise dans le recovery client.',
-    'Un room service plus clair dans la prise de commande et la livraison.',
-    'Des supports écrits à reprendre après la formation.',
+  "methodLabel": "Méthode",
+  "methodTitle": "Perfectionner le service dans vos espaces et avec votre offre.",
+  "methodText": "Les exercices s’appuient sur votre carte, vos séquences de service et les situations rencontrées par les équipes. Les débriefings mettent en relation posture, décisions et qualité de l’expérience client.",
+  "outcomes": [
+    "Incarner les standards de service avec précision et naturel.",
+    "Conseiller avec une meilleure connaissance du client et de l’offre.",
+    "Renforcer la coordination pendant les temps forts du service.",
+    "Donner aux responsables des supports pour transmettre et faire progresser."
   ],
-  relatedLabel: 'Pages liées',
-  relatedTitle: 'Compléter le travail F&B',
-  related: [
+  "relatedLabel": "Pages liées",
+  "relatedTitle": "Compléter le travail F&B",
+  "related": [
     {
-      href: `/${locale}/methode-formation-luxops`,
-      title: 'Méthode de formation LuxOps',
-      text: 'Préparer la formation à partir des standards, des situations réelles du service et des priorités des managers.',
+      "href": "/fr/methode-formation-luxops",
+      "title": "Méthode de formation LuxOps",
+      "text": "Préparer la formation à partir des standards, des situations réelles du service et des priorités des managers."
     },
     {
-      href: `/${locale}/hotel-fb-sop`,
-      title: 'SOP F&B',
-      text: 'Page pilier pour les procédures F&B, standards de service, restaurant, bar et room service.',
+      "href": "/fr/hotel-fb-sop",
+      "title": "SOP F&B",
+      "text": "Page pilier pour les procédures F&B, standards de service, restaurant, bar et room service."
     },
     {
-      href: `/${locale}/sequence-service-restaurant-hotel`,
-      title: 'Séquence de service',
-      text: 'Page dédiée aux étapes de service restaurant, de la préparation à la clôture.',
+      "href": "/fr/sequence-service-restaurant-hotel",
+      "title": "Séquence de service",
+      "text": "Page dédiée aux étapes de service restaurant, de la préparation à la clôture."
     },
     {
-      href: `/${locale}/playbooks/fb`,
-      title: 'Playbook F&B',
-      text: 'Référence complète pour structurer les standards, procédures et méthodes du département.',
-    },
+      "href": "/fr/playbooks/fb",
+      "title": "Playbook F&B",
+      "text": "Référence complète pour structurer les standards, procédures et méthodes du département."
+    }
   ],
-  finalTitle: 'Besoin de stabiliser vos standards F&B ?',
-  finalText:
-    'Envoyez quelques informations sur votre établissement, la période envisagée et le nombre de collaborateurs concernés.',
-  finalCta: 'Demander un devis formation',
+  "finalTitle": "Besoin de stabiliser vos standards F&B ?",
+  "finalText": "Envoyez quelques informations sur votre établissement, la période envisagée et le nombre de collaborateurs concernés.",
+  "finalCta": "Demander un devis formation"
 })
 
-const englishData = (locale: string): TrainingSeoPageData => ({
-  badge: 'F&B training',
-  title: 'F&B training',
-  intro:
-    'On-property training to align restaurant, bar, breakfast and room service teams around a clear service sequence.',
-  context:
-    'F&B requires pace, preparation, clear communication and recovery habits. Training focuses on the moments that shape perceived quality: setup, welcome, order taking, service flow, table follow-up, allergens, billing and closing the service.',
-  primaryCta: 'Request a training quote',
-  secondaryCta: 'View the F&B SOP manual',
-  secondaryHref: `/${locale}/playbooks/fb`,
-  overviewLabel: 'Challenge',
-  overviewTitle: 'Make the service sequence more stable',
-  overviewText:
-    'Restaurant or room service consistency does not rely on goodwill alone. It holds when preparation, roles, guest language, timings and recovery habits are understood by everyone.',
-  modulesLabel: 'F&B modules',
-  modulesTitle: 'What to work on in F&B training',
-  modules: [
+const englishData = (): TrainingSeoPageData => ({
+  "badge": "F&B training",
+  "title": "F&B training: precise service, thoughtful attention.",
+  "intro": "Support tailored to restaurant, bar and room service teams, combining service presence, exacting standards and smoother working methods.",
+  "context": "Dining excellence balances precision with ease: a well-judged recommendation, carefully paced service and a team that coordinates without interrupting the guest experience.",
+  "primaryCta": "Request a training quote",
+  "secondaryCta": "View the F&B SOP manual",
+  "secondaryHref": "/en/playbooks/fb",
+  "overviewLabel": "The dining experience",
+  "overviewTitle": "Precise service that keeps the guest at its heart.",
+  "overviewText": "Your team already knows the fundamentals. Training helps refine observation, enrich recommendations and build shared expectations from the dining room to the kitchen.",
+  "modulesLabel": "F&B modules",
+  "modulesTitle": "Elevate service quality and confident advice.",
+  "modules": [
     {
-      title: 'Briefing and setup',
-      text: 'Prepare service with clear priorities: reservations, VIPs, allergies, sensitive tables, unavailable items, menus and control points.',
+      "title": "Service presence and elegance",
+      "text": "Refine posture, gestures, language and discretion. Align five-star standards while preserving natural interactions and your property’s personality."
     },
     {
-      title: 'Welcome and seating',
-      text: 'Work through guest arrival, pace of attention, seating, first drink and useful information without overloading the interaction.',
+      "title": "Product knowledge and recommendations",
+      "text": "Turn knowledge of your offering into a service strength. Develop personalised recommendations and relevant, confident upselling."
     },
     {
-      title: 'Order taking',
-      text: 'Secure listening, clarification questions, allergies, cooking points, preferences and correct communication with the kitchen.',
+      "title": "Service pace and coordination",
+      "text": "Read a table’s expectations, adapt timing and synchronise restaurant, bar and kitchen. Practise communication during peak periods without passing the pressure on to guests."
     },
     {
-      title: 'Restaurant sequence',
-      text: 'Clarify the rhythm: drinks, starters, mains, clearing, dessert, billing, closing and coordination with the kitchen.',
+      "title": "Thoughtful responses to individual needs",
+      "text": "Develop listening, clear communication and attentive follow-up. Address preferences, dietary requests and dissatisfaction with sound judgement and professionalism."
     },
     {
-      title: 'Room service',
-      text: 'Train order taking, promised timing, tray or trolley setup, in-room delivery and clearance.',
+      "title": "Managers and systems that support service",
+      "text": "Strengthen briefings and manager coaching. Use POS, reservations and guest information to streamline preparation and improve coordination."
     },
     {
-      title: 'Guest recovery',
-      text: 'Help teams react quickly when a dish is delayed, an order is incomplete or a guest expresses dissatisfaction.',
-    },
+      "title": "A living reference for the team",
+      "text": "Document service sequences, presentation standards and follow-up practices. Connect these materials to onboarding and briefings to sustain quality across teams."
+    }
   ],
-  methodLabel: 'Method',
-  methodTitle: 'Standards applied during the real pace of service',
-  methodText:
-    'Training can use the F&B SOP manual and its included tools, or your internal standards. The work is to translate procedures into gestures, phrases, timings, controls and habits that teams can use during a busy service.',
-  outcomes: [
-    'Briefings become more useful before service.',
-    'The restaurant sequence becomes more fluid and consistent.',
-    'Allergens and specific requests are handled more safely.',
-    'Teams are more confident with guest recovery.',
-    'Room service order taking and delivery become clearer.',
-    'The team keeps written references after the session.',
+  "methodLabel": "Method",
+  "methodTitle": "Refine service in your spaces, using your own offering.",
+  "methodText": "Exercises use your menus, service sequences and situations encountered by your teams. Debriefs connect presence and decisions to the quality of the guest experience.",
+  "outcomes": [
+    "Deliver service standards with precision and warmth.",
+    "Recommend confidently through stronger guest and product knowledge.",
+    "Improve coordination at busy moments.",
+    "Equip managers with materials for coaching and knowledge transfer."
   ],
-  relatedLabel: 'Related pages',
-  relatedTitle: 'Continue the F&B work',
-  related: [
+  "relatedLabel": "Related pages",
+  "relatedTitle": "Continue the F&B work",
+  "related": [
     {
-      href: `/${locale}/luxops-training-method`,
-      title: 'LuxOps training method',
-      text: 'Prepare training from service standards, real operating situations and manager priorities.',
+      "href": "/en/luxops-training-method",
+      "title": "LuxOps training method",
+      "text": "Prepare training from service standards, real operating situations and manager priorities."
     },
     {
-      href: `/${locale}/hotel-fb-sop`,
-      title: 'F&B SOP',
-      text: 'Pillar page for F&B procedures, service standards, restaurant, bar and room service.',
+      "href": "/en/hotel-fb-sop",
+      "title": "F&B SOP",
+      "text": "Pillar page for F&B procedures, service standards, restaurant, bar and room service."
     },
     {
-      href: `/${locale}/food-and-beverage-service-sequence`,
-      title: 'Service sequence',
-      text: 'Dedicated page for restaurant service steps, from preparation to closing.',
+      "href": "/en/food-and-beverage-service-sequence",
+      "title": "Service sequence",
+      "text": "Dedicated page for restaurant service steps, from preparation to closing."
     },
     {
-      href: `/${locale}/playbooks/fb`,
-      title: 'F&B Playbook',
-      text: 'Full reference to structure department standards, procedures and working methods.',
-    },
+      "href": "/en/playbooks/fb",
+      "title": "F&B Playbook",
+      "text": "Full reference to structure department standards, procedures and working methods."
+    }
   ],
-  finalTitle: 'Need to stabilise your F&B standards?',
-  finalText:
-    'Send a few details about your property, expected timing and the number of team members involved.',
-  finalCta: 'Request a training quote',
+  "finalTitle": "Need to stabilise your F&B standards?",
+  "finalText": "Send a few details about your property, expected timing and the number of team members involved.",
+  "finalCta": "Request a training quote"
 })

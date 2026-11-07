@@ -1,3 +1,4 @@
+import { trainingEditorial } from './training-editorial'
 import { trainingSeasonalArticles } from './training-seasonal-articles'
 
 export interface BlogSection {
@@ -8,6 +9,8 @@ export interface BlogSection {
 
 export interface BlogArticle {
   title: string
+  seoTitle?: string
+  dateModified?: string
   description: string
   date: string
   readTime: string
@@ -24,7 +27,7 @@ export interface BilingualArticle {
   fr: BlogArticle
 }
 
-export const articles: BilingualArticle[] = [
+const baseArticles: BilingualArticle[] = [
   ...trainingSeasonalArticles,
   {
     slug: 'hotel-operations-playbook',
@@ -4790,3 +4793,9 @@ export const articles: BilingualArticle[] = [
     },
   },
 ]
+
+// Publication dates and URLs remain stable; only the audited FR/EN content is replaced.
+export const articles: BilingualArticle[] = baseArticles.map(article => {
+  const update = trainingEditorial[article.slug]
+  return update ? { ...article, fr: { ...article.fr, ...update.fr }, en: { ...article.en, ...update.en } } : article
+})

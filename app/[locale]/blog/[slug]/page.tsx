@@ -1068,7 +1068,7 @@ export async function generateMetadata({
   const content = activeLocale === 'en' ? article.en : article.fr
   const keywords = activeLocale === 'en' ? KEYWORDS_EN[slug] : KEYWORDS_FR[slug]
   return {
-    title: content.title + ' | LuxOps',
+    title: content.seoTitle ?? content.title + ' | LuxOps',
     description: content.description,
     ...(keywords && { keywords }),
     alternates: {
@@ -1112,7 +1112,7 @@ export default async function BlogArticlePage({
     headline: content.title,
     description: content.description,
     datePublished: content.date,
-    dateModified: content.date,
+    dateModified: content.dateModified ?? content.date,
     url: `https://www.luxops.fr/${activeLocale}/blog/${slug}`,
     mainEntityOfPage: {
       '@type': 'WebPage',
@@ -1148,7 +1148,7 @@ export default async function BlogArticlePage({
   const productCta = ARTICLE_PRODUCT_CTAS[slug]?.[isEn ? 'en' : 'fr']
   const earlyManualOffer = Boolean(playbookExcerpt && !productCta?.primaryHref.includes('/downloads/'))
 
-  const resourceLandingSlugs = ['hotel-front-desk-procedures', 'hotel-bathroom-cleaning-sop', 'hotel-room-service-sops', 'housekeeping-room-inspection', 'hotel-housekeeping-supervisor-checklist', 'hotel-spa-wellness-sops', 'hotel-fb-restaurant-procedures', 'hotel-front-office-sop', 'hotel-room-cleaning-checklist'] as const
+  const resourceLandingSlugs = ['hotel-front-desk-procedures', 'hotel-bathroom-cleaning-sop', 'hotel-room-service-sops', 'housekeeping-room-inspection', 'hotel-housekeeping-supervisor-checklist', 'hotel-spa-wellness-sops', 'hotel-fb-restaurant-procedures', 'hotel-front-office-sop', 'hotel-room-cleaning-checklist', 'hotel-staff-training-service-standards', 'hotel-staff-turnover-training', 'hotel-new-hire-onboarding', 'hotel-fb-service-standards'] as const
   const resourceLandingSlug = resourceLandingSlugs.includes(slug as typeof resourceLandingSlugs[number])
     ? slug as typeof resourceLandingSlugs[number]
     : null
