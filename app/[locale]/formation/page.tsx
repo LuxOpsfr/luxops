@@ -5,6 +5,7 @@ import { ArrowRight, Building2, CalendarDays, Check, ClipboardCheck, Download, G
 import SamePageAnchor from '@/components/SamePageAnchor'
 import TrackedLink from '@/components/TrackedLink'
 import TrainingQuoteForm from '@/components/TrainingQuoteForm'
+import TrainingPathwayCards from '@/components/TrainingPathwayCards'
 import { toActiveLocale } from '@/lib/i18n'
 import type { Locale } from '@/lib/i18n'
 import { alternatesForRoute, localizedRoutePath, localizedRouteUrl } from '@/lib/localized-routes'
@@ -295,10 +296,18 @@ export function FormationContent({ locale }: { locale: string }) {
             <h1 className="max-w-[600px] font-display text-4xl font-medium leading-[1.08] tracking-[-.035em] text-[#0f211a] sm:text-5xl md:text-[3.5rem]">{t.title}</h1>
             <p className="mt-4 max-w-[570px] text-[14px] leading-6 text-[#626b64] md:text-[15px] md:leading-7">{t.intro}</p>
             <p className="mt-3 max-w-[570px] text-[13px] leading-6 text-[#626b64] md:text-sm">{t.introSecondary}</p>
+            {activeLocale === 'es' ? (
             <div className="mt-6 flex flex-wrap gap-2.5">
               <SamePageAnchor href="#training-contact" className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[#0f211a] px-5 text-[11px] font-semibold text-white shadow-[0_7px_20px_rgba(16,37,29,.13)] transition hover:-translate-y-0.5 hover:bg-[#263d31]">{t.mainCta}<ArrowRight size={14} /></SamePageAnchor>
               <TrackedLink href={programmeHref} download eventName="training_programme_download_clicked" eventProperties={{ locale: activeLocale, placement: 'training_hero' }} className="inline-flex min-h-11 items-center gap-2 rounded-full border border-[#d7d1c5] bg-white/75 px-5 text-[11px] font-semibold text-[#24362f] transition hover:border-[#a58658] hover:bg-white"><Download size={14} />{t.programme}</TrackedLink>
             </div>
+            ) : (
+            <div data-training-hero-actions className="mt-6 grid gap-2.5 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+              <TrackedLink href={calendarUrl} target="_blank" rel="noopener noreferrer" eventName="training_call_clicked" eventProperties={{ locale: activeLocale, placement: 'hero' }} className="inline-flex min-h-14 items-center justify-center gap-2 rounded-full bg-[#0f211a] px-3 py-3 text-center text-[11px] font-semibold leading-4 text-white transition hover:bg-[#263d31]"><span>{activeLocale === 'fr' ? 'Parlons de votre projet · 20 min' : activeLocale === 'en' ? 'Let’s discuss your project · 20 min' : 'Hablemos de tu proyecto · 20 min'}</span><ArrowRight size={14} className="shrink-0" /></TrackedLink>
+              <SamePageAnchor href="#department-training" className="inline-flex min-h-14 items-center justify-center gap-2 rounded-full border border-[#d7d1c5] px-3 py-3 text-center text-[11px] font-semibold leading-4"><span>{activeLocale === 'fr' ? 'Choisir une formation par métier' : activeLocale === 'en' ? 'Explore training by department' : 'Elegir formación por departamento'}</span><ArrowRight size={14} className="shrink-0" /></SamePageAnchor>
+              <TrackedLink href={programmeHref} download eventName="training_programme_download_clicked" eventProperties={{ locale: activeLocale, placement: 'training_hero' }} className="inline-flex min-h-14 items-center justify-center gap-2 rounded-full border border-[#d7d1c5] bg-white/75 px-3 py-3 text-center text-[11px] font-semibold leading-4 text-[#24362f] transition hover:border-[#a58658] hover:bg-white"><Download size={14} className="shrink-0" /><span>{activeLocale === 'fr' ? 'Découvrir notre brochure' : activeLocale === 'en' ? 'Explore our brochure' : 'Descubrir nuestro folleto'}</span></TrackedLink>
+            </div>
+            )}
           </div>
           <div className="relative mx-auto aspect-[1.32] w-full max-w-[680px] overflow-hidden rounded-[28px] border border-[#e8e0d3] bg-[#eee8dc] shadow-[0_18px_42px_rgba(78,63,40,.13)] sm:rounded-[34px] lg:max-w-none">
             <Image src="/images/editorial-hospitality/training-brochure-cover.jpg" alt={t.imageAlt} fill priority sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover object-center transition-transform duration-700 hover:scale-[1.025]" />
@@ -315,6 +324,8 @@ export function FormationContent({ locale }: { locale: string }) {
           </div>
         </div>
       </section>
+
+      <TrainingPathwayCards locale={activeLocale} />
 
       <section className="border-y border-[#e7e1d7] bg-white/65 px-5 py-11 sm:px-8 lg:px-12 lg:py-14">
         <div className="mx-auto max-w-[1400px]">
@@ -337,6 +348,7 @@ export function FormationContent({ locale }: { locale: string }) {
         </div>
       </section>
 
+      {activeLocale === 'es' && (
       <section className="px-5 py-8 sm:px-8 lg:px-12 lg:py-10">
         <div className="mx-auto flex max-w-[1400px] flex-col gap-5 rounded-[1.45rem] border border-[#e7e1d7] bg-[#f3efe7] px-6 py-6 sm:px-8 lg:flex-row lg:items-center lg:justify-between">
           <div className="max-w-3xl">
@@ -344,9 +356,10 @@ export function FormationContent({ locale }: { locale: string }) {
             <h2 className="mt-2 font-display text-xl font-medium text-[#0f211a] sm:text-2xl">{t.specializationTitle}</h2>
             <p className="mt-2 text-sm leading-6 text-[#626b64]">{t.specializationText}</p>
           </div>
-          <TrackedLink href={t.specializationHref} eventName="training_specialization_clicked" eventProperties={{ source_page: activeLocale === 'fr' ? '/fr/formation' : `/${activeLocale}/training`, destination_page: t.specializationHref, placement: 'expertise', topic: 'revenue_management', locale: activeLocale }} className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 self-start rounded-full border border-[#bda983] bg-white px-5 text-xs font-semibold text-[#0f211a] transition hover:bg-[#0f211a] hover:text-white lg:self-auto">{t.specializationCta} <ArrowRight size={14} /></TrackedLink>
+          <TrackedLink href={t.specializationHref} eventName="training_specialization_clicked" eventProperties={{ source_page: `/${activeLocale}/training`, destination_page: t.specializationHref, placement: 'expertise', topic: 'revenue_management', locale: activeLocale }} className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 self-start rounded-full border border-[#bda983] bg-white px-5 text-xs font-semibold text-[#0f211a] transition hover:bg-[#0f211a] hover:text-white lg:self-auto">{t.specializationCta} <ArrowRight size={14} /></TrackedLink>
         </div>
       </section>
+      )}
 
       <section className="border-y border-[#e7e1d7] bg-white/65 px-5 py-11 sm:px-8 lg:px-12 lg:py-14">
         <div className="mx-auto max-w-[1400px]">
@@ -368,22 +381,7 @@ export function FormationContent({ locale }: { locale: string }) {
         </div>
       </section>
 
-      <section className="px-5 py-11 sm:px-8 lg:px-12 lg:py-14">
-        <div className="mx-auto grid max-w-[1400px] gap-7 lg:grid-cols-[.7fr_1.3fr] lg:items-end">
-          <div className="max-w-md">
-            <p className="text-[10px] font-semibold uppercase tracking-[.18em] text-[#92734a]">{t.methodLabel}</p>
-            <h2 className="mt-2 font-display text-2xl font-medium leading-tight text-[#0f211a] sm:text-3xl">{t.methodTitle}</h2>
-            <p className="mt-2 text-sm leading-6 text-[#697169]">{t.methodIntro}</p>
-          </div>
-          <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-            {t.steps.map((step, index) => <article key={step.title} className="relative overflow-hidden rounded-[1.15rem] border border-[#e7e1d7] bg-white px-4 py-4 shadow-[0_6px_20px_rgba(40,40,30,.035)]">
-              <span className="font-display text-2xl text-[#b59b6c]">0{index + 1}</span>
-              <h3 className="mt-2 font-display text-lg font-medium text-[#0f211a]">{step.title}</h3>
-              <p className="mt-1.5 text-[11px] leading-5 text-[#687169]">{step.detail}</p>
-            </article>)}
-          </div>
-        </div>
-      </section>
+
 
       <section className="bg-[#0f211a] px-5 py-10 text-[#f8f6f0] sm:px-8 lg:px-12 lg:py-12">
         <div className="mx-auto grid max-w-[1400px] gap-7 lg:grid-cols-[.95fr_1.05fr] lg:items-center">
