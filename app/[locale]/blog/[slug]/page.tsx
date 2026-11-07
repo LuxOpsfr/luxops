@@ -1148,7 +1148,7 @@ export default async function BlogArticlePage({
   const productCta = ARTICLE_PRODUCT_CTAS[slug]?.[isEn ? 'en' : 'fr']
   const earlyManualOffer = Boolean(playbookExcerpt && !productCta?.primaryHref.includes('/downloads/'))
 
-  const resourceLandingSlugs = ['hotel-front-desk-procedures', 'hotel-bathroom-cleaning-sop', 'hotel-room-service-sops', 'housekeeping-room-inspection', 'hotel-housekeeping-supervisor-checklist', 'hotel-spa-wellness-sops', 'hotel-fb-restaurant-procedures', 'hotel-front-office-sop', 'hotel-room-cleaning-checklist', 'hotel-staff-training-service-standards', 'hotel-staff-turnover-training', 'hotel-new-hire-onboarding', 'hotel-fb-service-standards'] as const
+  const resourceLandingSlugs = ['hotel-spa-staff-training', 'hotel-front-desk-procedures', 'hotel-bathroom-cleaning-sop', 'hotel-room-service-sops', 'housekeeping-room-inspection', 'hotel-housekeeping-supervisor-checklist', 'hotel-spa-wellness-sops', 'hotel-fb-restaurant-procedures', 'hotel-front-office-sop', 'hotel-room-cleaning-checklist', 'hotel-staff-training-service-standards', 'hotel-staff-turnover-training', 'hotel-new-hire-onboarding', 'hotel-fb-service-standards'] as const
   const resourceLandingSlug = resourceLandingSlugs.includes(slug as typeof resourceLandingSlugs[number])
     ? slug as typeof resourceLandingSlugs[number]
     : null

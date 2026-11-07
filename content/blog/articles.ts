@@ -1,3 +1,4 @@
+import { spaTrainingArticle } from '../spa-training'
 import { trainingEditorial } from './training-editorial'
 import { trainingSeasonalArticles } from './training-seasonal-articles'
 
@@ -28,6 +29,7 @@ export interface BilingualArticle {
 }
 
 const baseArticles: BilingualArticle[] = [
+  spaTrainingArticle,
   ...trainingSeasonalArticles,
   {
     slug: 'hotel-operations-playbook',

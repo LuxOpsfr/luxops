@@ -1,6 +1,8 @@
+import { spaTrainingPathway } from './spa-training'
 export const trainingCalendar = 'https://calendly.com/contact-luxops/30min'
-export type TrainingDepartment = 'hsk' | 'fo' | 'fb'
+export type TrainingDepartment = 'hsk' | 'fo' | 'fb' | 'spa'
 export const trainingPathways = {
+  spa: spaTrainingPathway,
   "hsk": {
     "slug": "formation-housekeeping-hotel",
     "image": "/images/training-concept/luxops-training-housekeeping-01.png",

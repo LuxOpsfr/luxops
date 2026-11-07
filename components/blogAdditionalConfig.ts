@@ -1,3 +1,4 @@
+import { spaTrainingConfig } from '@/content/spa-training'
 // Search landing copy for the remaining operational and training guides.
 // The original article body, headings, FAQ and metadata remain the detailed source.
 type Locale = 'fr' | 'en'
@@ -17,6 +18,7 @@ function entry(productId: Product, image: string, fr: Copy, en: Copy): Entry {
 }
 
 export const ADDITIONAL_BLOG_CONFIG = {
+  'hotel-spa-staff-training': { ...spaTrainingConfig, productId: 'spa' as const },
   'hotel-standard-operating-procedures': entry('catalog', '/images/editorial-hospitality/playbooks-procedures-wide-v3.jpg',
     { eyebrow: 'SOP hôtel · méthode', answerTitle: 'Une SOP utilisable tient en cinq éléments', answerIntro: 'Une procédure opérationnelle décrit ce qu’une personne doit faire, dans quel ordre, avec quel contrôle et quelle transmission.', steps: ['Définir le déclencheur : arrivée client, chambre libérée, ouverture du restaurant ou incident.', 'Nommer le poste responsable et les autres équipes impliquées.', 'Écrire la séquence en actions observables, dans l’ordre du service.', 'Fixer le contrôle attendu et le traitement d’un écart.', 'Prévoir la trace et la passation entre équipes.'], bridgeTitle: 'Des procédures cohérentes dans les cinq départements', bridgeText: 'Le catalogue LuxOps réunit cinq manuels SOP en français et en anglais. Chaque département garde ses propres séquences, avec un cadre commun pour les opérations.', related: [{ href: '/fr/blog/how-to-write-hotel-sops', title: 'Rédiger une SOP' }, { href: '/fr/free-hotel-procedures', title: 'Lire un chapitre gratuit' }] },
     { eyebrow: 'Hotel SOP · method', answerTitle: 'A usable SOP has five parts', answerIntro: 'An operating procedure says what a person does, in what order, how the result is checked and what is handed over.', steps: ['Define the trigger: guest arrival, room release, restaurant opening or incident.', 'Name the responsible role and other teams involved.', 'Write observable actions in service order.', 'State the expected check and how exceptions are handled.', 'Specify the record and shift handover.'], bridgeTitle: 'Consistent procedures across five departments', bridgeText: 'The LuxOps catalogue includes five SOP manuals in English and French. Each department keeps its own service sequence within one operational framework.', related: [{ href: '/en/blog/how-to-write-hotel-sops', title: 'How to write an SOP' }, { href: '/en/free-hotel-procedures', title: 'Read a free chapter' }] }),

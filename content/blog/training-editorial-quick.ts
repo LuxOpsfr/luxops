@@ -1,4 +1,6 @@
+import { spaTrainingQuick } from '../spa-training'
 export const trainingEditorialQuick: Record<string, Record<'fr' | 'en', { answerTitle: string; answerIntro: string; steps: string[]; bridgeTitle: string; bridgeText: string }>> = {
+  "hotel-spa-staff-training": spaTrainingQuick,
   "hotel-staff-training-service-standards": {
     "fr": {
       "answerTitle": "Passer du standard écrit au comportement observable",

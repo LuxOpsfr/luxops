@@ -806,5 +806,25 @@
     "changeFrequency": "monthly",
     "lastModified": "2026-09-23",
     "priority": 0.72
+  },
+  "trainingSpa": {
+    "paths": {
+      "fr": "/formation-spa-hotel",
+      "en": "/formation-spa-hotel"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-11-07",
+    "priority": 0.8
+  },
+  "blogHotelSpaStaffTraining": {
+    "paths": {
+      "fr": "/blog/hotel-spa-staff-training",
+      "en": "/blog/hotel-spa-staff-training"
+    },
+    "sitemap": true,
+    "changeFrequency": "monthly",
+    "lastModified": "2026-11-07",
+    "priority": 0.72
   }
 }
