@@ -102,6 +102,16 @@ const frenchData = (locale: string): TrainingSeoPageData => ({
       text: 'Chambre à blanc, recouche, inspection, chariot, salle de bain, briefings et contrôle qualité.',
     },
     {
+      href: `/${locale}/formation-fb-restaurant`,
+      title: 'Formation F&B',
+      text: 'Standards de service, coordination des équipes et excellence de l’expérience en restauration.',
+    },
+    {
+      href: `/${locale}/formation-spa-hotel`,
+      title: 'Formation Spa',
+      text: 'Qualité du parcours client, standards de soins et coordination des équipes du Spa.',
+    },
+    {
       href: `/${locale}/formation-chefs-de-service`,
       title: 'Formation chefs de service',
       text: 'Briefings, leadership terrain, accompagnement des équipes et maintien des standards dans la durée.',
@@ -184,6 +194,16 @@ const englishData = (locale: string): TrainingSeoPageData => ({
       href: `/${locale}/formation-housekeeping-hotel`,
       title: 'Housekeeping training',
       text: 'Departure rooms, stayovers, inspection, trolley setup, bathroom standards, briefings and quality control.',
+    },
+    {
+      href: `/${locale}/formation-fb-restaurant`,
+      title: 'F&B training',
+      text: 'Service standards, team coordination and excellence in the restaurant guest experience.',
+    },
+    {
+      href: `/${locale}/formation-spa-hotel`,
+      title: 'Spa training',
+      text: 'Guest journey quality, treatment standards and Spa team coordination.',
     },
     {
       href: `/${locale}/formation-chefs-de-service`,

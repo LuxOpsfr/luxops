@@ -7,7 +7,7 @@
     },
     "sitemap": true,
     "changeFrequency": "weekly",
-    "lastModified": "2026-08-12",
+    "lastModified": "2026-11-05",
     "priority": 1
   },
   "playbooks": {
@@ -18,7 +18,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-08-12",
+    "lastModified": "2026-11-02",
     "priority": 0.9
   },
   "playbooksRevenueManagement": {
@@ -28,7 +28,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-10-24",
+    "lastModified": "2026-11-02",
     "priority": 0.9
   },
   "blogRevenueRevpar": {
@@ -38,7 +38,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-10-24",
+    "lastModified": "2026-11-01",
     "priority": 0.85
   },
   "blogRevenueGuide": {
@@ -48,7 +48,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-10-24",
+    "lastModified": "2026-11-01",
     "priority": 0.85
   },
   "blogRevenueLearning": {
@@ -58,7 +58,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-10-24",
+    "lastModified": "2026-11-01",
     "priority": 0.8
   },
   "blogRevenuePickup": {
@@ -68,7 +68,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-10-24",
+    "lastModified": "2026-11-01",
     "priority": 0.8
   },
   "blogRevenueDistribution": {
@@ -78,7 +78,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-10-24",
+    "lastModified": "2026-11-01",
     "priority": 0.8
   },
   "blogRevenuePricing": {
@@ -88,7 +88,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-10-24",
+    "lastModified": "2026-11-01",
     "priority": 0.8
   },
   "freeHotelChecklists": {
@@ -98,7 +98,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-05-16",
+    "lastModified": "2026-11-02",
     "priority": 0.85
   },
   "playbooksFoStarterPack": {
@@ -108,7 +108,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-08-12",
+    "lastModified": "2026-10-31",
     "priority": 0.78
   },
   "playbooksHskStarterPack": {
@@ -118,7 +118,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-08-12",
+    "lastModified": "2026-10-31",
     "priority": 0.78
   },
   "playbooksFbStarterPack": {
@@ -128,7 +128,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-08-12",
+    "lastModified": "2026-10-31",
     "priority": 0.78
   },
   "hotelFbSop": {
@@ -138,7 +138,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-05-11",
+    "lastModified": "2026-10-31",
     "priority": 0.85
   },
   "foodAndBeverageServiceSequence": {
@@ -148,7 +148,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-05-12",
+    "lastModified": "2026-10-31",
     "priority": 0.8
   },
   "hotelRoomServiceChecklist": {
@@ -158,7 +158,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-05-12",
+    "lastModified": "2026-10-31",
     "priority": 0.8
   },
   "restaurantOpeningChecklist": {
@@ -168,7 +168,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-05-12",
+    "lastModified": "2026-10-31",
     "priority": 0.8
   },
   "barOpeningChecklist": {
@@ -178,7 +178,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-05-19",
+    "lastModified": "2026-10-31",
     "priority": 0.8
   },
   "restaurantClosingChecklist": {
@@ -188,7 +188,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-05-19",
+    "lastModified": "2026-10-31",
     "priority": 0.8
   },
   "notionTemplates": {
@@ -231,7 +231,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-08-12",
+    "lastModified": "2026-11-07",
     "priority": 0.86
   },
   "trainingRevenueManagementHotel": {
@@ -252,7 +252,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-03-18",
+    "lastModified": "2026-11-07",
     "priority": 0.7
   },
   "about": {
@@ -263,7 +263,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-03-18",
+    "lastModified": "2026-10-13",
     "priority": 0.6
   },
   "contact": {
@@ -274,7 +274,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-03-18",
+    "lastModified": "2026-10-13",
     "priority": 0.6
   },
   "blog": {
@@ -284,7 +284,7 @@
     },
     "sitemap": true,
     "changeFrequency": "weekly",
-    "lastModified": "2026-03-28",
+    "lastModified": "2026-11-07",
     "priority": 0.8
   },
   "blogIncreaseHotelRevenue": {
@@ -304,7 +304,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-03-18",
+    "lastModified": "2026-11-01",
     "priority": 0.7
   },
   "blogHowToWriteHotelSops": {
@@ -314,7 +314,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-03-18",
+    "lastModified": "2026-11-01",
     "priority": 0.7
   },
   "blogHotelFrontOfficeSop": {
@@ -344,7 +344,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-03-18",
+    "lastModified": "2026-11-04",
     "priority": 0.7
   },
   "hotelHousekeepingChecklist": {
@@ -354,7 +354,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-05-27",
+    "lastModified": "2026-11-02",
     "priority": 0.7
   },
   "frontOfficeSop": {
@@ -364,7 +364,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-05-27",
+    "lastModified": "2026-10-31",
     "priority": 0.7
   },
   "housekeepingSop": {
@@ -374,7 +374,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-03-18",
+    "lastModified": "2026-10-31",
     "priority": 0.7
   },
   "hotelSop": {
@@ -384,7 +384,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-03-18",
+    "lastModified": "2026-11-04",
     "priority": 0.7
   },
   "hotelAuditChecklist": {
@@ -394,7 +394,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-03-18",
+    "lastModified": "2026-11-04",
     "priority": 0.7
   },
   "howToImproveHotelOperations": {
@@ -404,7 +404,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-04-01",
+    "lastModified": "2026-11-04",
     "priority": 0.8
   },
   "hotelNightAuditChecklist": {
@@ -414,7 +414,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-05-27",
+    "lastModified": "2026-11-02",
     "priority": 0.75
   },
   "hotelFrontOfficeChecklist": {
@@ -424,7 +424,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-04-01",
+    "lastModified": "2026-11-02",
     "priority": 0.75
   },
   "formationHousekeepingHotel": {
@@ -454,7 +454,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-05-17",
+    "lastModified": "2026-11-07",
     "priority": 0.7
   },
   "formationFbRestaurant": {
@@ -474,7 +474,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-05-17",
+    "lastModified": "2026-09-23",
     "priority": 0.7
   },
   "formationChefsDeService": {
@@ -484,7 +484,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-05-17",
+    "lastModified": "2026-10-13",
     "priority": 0.7
   },
   "fbAuditTraining": {
@@ -544,7 +544,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-03-30",
+    "lastModified": "2026-11-02",
     "priority": 0.7
   },
   "blogHotelRoomServiceSops": {
@@ -554,7 +554,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-03-31",
+    "lastModified": "2026-11-02",
     "priority": 0.7
   },
   "blogHotelStandardOperatingProcedures": {
@@ -564,7 +564,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-04-28",
+    "lastModified": "2026-11-01",
     "priority": 0.7
   },
   "blogHotelFrontDeskProcedures": {
@@ -604,7 +604,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-05-17",
+    "lastModified": "2026-11-01",
     "priority": 0.7
   },
   "blogHotelFrontDeskChecklist": {
@@ -614,7 +614,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-05-17",
+    "lastModified": "2026-11-01",
     "priority": 0.7
   },
   "blogHotelDndProcedure": {
@@ -624,7 +624,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-05-17",
+    "lastModified": "2026-11-01",
     "priority": 0.7
   },
   "blogHotelRoomCleaningChecklist": {
@@ -634,7 +634,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-05-03",
+    "lastModified": "2026-11-02",
     "priority": 0.7
   },
   "blogHotelHousekeepingSupervisorChecklist": {
@@ -654,7 +654,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-05-03",
+    "lastModified": "2026-11-02",
     "priority": 0.7
   },
   "freeHotelProcedures": {
@@ -664,7 +664,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-03-28",
+    "lastModified": "2026-11-02",
     "priority": 0.8
   },
   "frontDeskShiftHandoverTemplate": {
@@ -674,7 +674,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-07-17",
+    "lastModified": "2026-11-04",
     "priority": 0.78
   },
   "guestComplaintHandlingSop": {
@@ -684,7 +684,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-07-17",
+    "lastModified": "2026-11-04",
     "priority": 0.78
   },
   "housekeepingDeepCleaningChecklist": {
@@ -694,7 +694,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-07-17",
+    "lastModified": "2026-11-04",
     "priority": 0.78
   },
   "breakfastServiceChecklist": {
@@ -704,7 +704,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-07-17",
+    "lastModified": "2026-11-04",
     "priority": 0.78
   },
   "roomStatusDiscrepancyReport": {
@@ -714,7 +714,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-07-17",
+    "lastModified": "2026-11-04",
     "priority": 0.78
   },
   "hotelOperationsPlaybook": {
@@ -724,7 +724,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-07-17",
+    "lastModified": "2026-11-04",
     "priority": 0.84
   },
   "hotelManagementRoutines": {
@@ -734,7 +734,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-07-17",
+    "lastModified": "2026-10-24",
     "priority": 0.82
   },
   "playbooksFo": {
@@ -744,7 +744,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-09-23",
+    "lastModified": "2026-11-02",
     "priority": 0.82
   },
   "playbooksHsk": {
@@ -754,7 +754,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-09-23",
+    "lastModified": "2026-11-02",
     "priority": 0.84
   },
   "playbooksFb": {
@@ -764,7 +764,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-09-23",
+    "lastModified": "2026-11-02",
     "priority": 0.82
   },
   "playbooksSpa": {
@@ -774,7 +774,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-09-23",
+    "lastModified": "2026-11-02",
     "priority": 0.82
   },
   "blogHotelAutumnRecruitmentTraining": {
@@ -784,7 +784,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-09-23",
+    "lastModified": "2026-11-01",
     "priority": 0.72
   },
   "blogHotelWinterSeasonTraining": {
@@ -794,7 +794,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-09-23",
+    "lastModified": "2026-11-01",
     "priority": 0.72
   },
   "blogHotelAiTraining": {
@@ -804,7 +804,7 @@
     },
     "sitemap": true,
     "changeFrequency": "monthly",
-    "lastModified": "2026-09-23",
+    "lastModified": "2026-11-01",
     "priority": 0.72
   },
   "trainingSpa": {
