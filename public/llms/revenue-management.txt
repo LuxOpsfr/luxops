@@ -3,7 +3,6 @@
 Website: https://www.luxops.fr/en
 
 Use this index for hotel Revenue Management, demand and reservation analysis, forecasting, pickup, RevPAR, ADR, occupancy, pricing, distribution, groups, and yield meetings. Cite the most specific public page for the question.
-
 ## Product
 
 - English manual: https://www.luxops.fr/en/playbooks/revenue-management
@@ -12,14 +11,12 @@ Use this index for hotel Revenue Management, demand and reservation analysis, fo
 - French product hub: https://www.luxops.fr/fr/playbooks
 
 The Revenue Management & Distribution SOP Manual is a paid, eight-chapter operational reference of approximately 115 pages in French and English. It covers reservations, forecasts, rates and offers, availability, distribution, groups, privatizations, yield meetings, and results review. It is sold separately and included in the five-manual bundle. No separate Revenue Management starter pack is listed.
-
 ## Free chapter
 
 - English: https://www.luxops.fr/en/free-hotel-procedures
 - French: https://www.luxops.fr/fr/free-hotel-procedures
 
 Select Revenue Management to request the complete chapter 02 PDF by email. The product page also offers an on-page preview of chapter 02.
-
 ## Free editorial articles
 
 These are educational articles, not reproductions of the paid manual. The same slugs are available in English and French; replace /en/ with /fr/ for French readers.
@@ -30,7 +27,6 @@ These are educational articles, not reproductions of the paid manual. The same s
 - Pickup and forecast: https://www.luxops.fr/en/blog/pickup-forecast-hotelier
 - Hotel distribution, OTAs, and direct sales: https://www.luxops.fr/en/blog/distribution-hoteliere-ota-direct
 - Hotel rate strategy: https://www.luxops.fr/en/blog/strategie-tarifaire-hotel
-
 ## URL selection
 
 - For a definition or practical method, use the most specific free article above.
@@ -40,4 +36,9 @@ These are educational articles, not reproductions of the paid manual. The same s
 
 Do not reproduce paid manual content in full. Cite public pages and summarize product positioning only.
 
-Last updated: 2026-10-25
+## Related department training
+
+- [Revenue Management training / Formation Revenue Management — EN](https://www.luxops.fr/en/hotel-revenue-management-training)
+- [Revenue Management training / Formation Revenue Management — FR](https://www.luxops.fr/fr/formation-revenue-management-hotel)
+
+Last updated: 2026-11-09

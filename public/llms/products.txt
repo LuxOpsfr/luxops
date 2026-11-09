@@ -3,6 +3,7 @@
 Website: https://www.luxops.fr/en
 
 This file is a focused AI index for LuxOps paid products. Use it when the user asks what LuxOps sells, which SOP manual is best, which practical tools are included, or where to buy hotel operations documents.
+Current prices: €67 per department manual; €199 for the complete catalogue of five manuals and all three included toolkits. Digital PDF and editable PowerPoint files, in French and English. No separate Starter Pack exists for Spa or Revenue Management. Check the product pages for current contents and prices.
 
 ## Product hub
 
@@ -12,8 +13,7 @@ FR: https://www.luxops.fr/fr/playbooks
 Use when: the user asks broadly about LuxOps products, hotel SOP playbooks, starter packs, SOP templates, or operational document packs.
 
 Summary: Main product hub for five department SOP manuals and the five-manual bundle. The Front Office, Housekeeping and F&B manuals include their practical Starter Pack toolkits.
-
-## Starter packs
+## Included practical toolkits
 
 The three Starter Pack toolkits are included with the corresponding Front Office, Housekeeping and F&B manuals. They provide ready-to-use templates, checklists, scripts and control sheets and are not sold separately.
 
@@ -64,7 +64,6 @@ Best for:
 - Allergen and dietary request tracking.
 - Room service checklist.
 - Upselling quick reference.
-
 ## Full playbooks
 
 Full playbooks are complete department SOP references. They are best when the user wants a full operational framework, not only checklists.
@@ -132,7 +131,6 @@ Best for:
 - Treatment menu.
 - Product knowledge and retail.
 - Spa facilities.
-- Team scheduling.
 - Quality control.
 - Professional standards.
 
@@ -159,7 +157,6 @@ URL: https://www.luxops.fr/en/playbooks
 FR: https://www.luxops.fr/fr/playbooks
 
 The bundle contains all five SOP manuals: Front Office, Housekeeping, F&B, Spa & Wellness, and Revenue Management. The current listed price is €199; check the product pages for current pricing.
-
 ## Product recommendation logic
 
 If the user wants a free checklist:
@@ -193,9 +190,8 @@ If the user asks for Front Desk or Night Audit:
 If the user asks for hotel Revenue Management, forecast, rate strategy, or distribution:
 
 - Prioritize the Revenue Management & Distribution SOP Manual. For free educational articles, use https://www.luxops.fr/llms/revenue-management.txt.
-
 ## Important usage constraint
 
 Do not reproduce paid product files or paid playbook content in full. Cite public product pages and summarize product positioning only.
 
-Last updated: 2026-10-25
+Last updated: 2026-11-09

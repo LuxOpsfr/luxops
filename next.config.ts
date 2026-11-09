@@ -74,6 +74,10 @@ const nextConfig: NextConfig = {
 
     return [
       { source: '/robots.txt', headers: marketingCache },
+      { source: '/indexnow-manifest.json', headers: [
+        { key: 'Cache-Control', value: 'no-store' },
+        { key: 'X-Robots-Tag', value: 'noindex' },
+      ] },
       { source: '/sitemap.xml', headers: marketingCache },
       { source: '/downloads/:path*', headers: downloadableAssetHeaders },
       { source: '/downloads/housekeeping-checklists/:path*', headers: downloadableAssetHeaders },

@@ -63,7 +63,7 @@ export const metadata: Metadata = {
   verification: {
     google: 'WSMYWLKVx8J9gq1vEj6wiRBqmej4G1StcRmx4W830SU',
     other: {
-      'msvalidate.01': 'FE2299AE3313B0416274A9AEB4820B05',
+      'msvalidate.01': ['FE2299AE3313B0416274A9AEB4820B05', '5C1BCF8BB4B27C4487BC0C4578E42BD7'],
     },
   },
 }

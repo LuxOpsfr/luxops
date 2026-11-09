@@ -182,6 +182,11 @@ export async function generateMetadata({
     description: pb.desc[lang],
     alternates: {
       canonical: `https://www.luxops.fr/${locale}/playbooks/${id}`,
+      languages: {
+        en: `https://www.luxops.fr/en/playbooks/${id}`,
+        fr: `https://www.luxops.fr/fr/playbooks/${id}`,
+        'x-default': `https://www.luxops.fr/en/playbooks/${id}`,
+      },
     },
   }
 }
