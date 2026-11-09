@@ -1,0 +1,34 @@
+name: IndexNow after production deployment
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: '25 7 * * *'
+permissions:
+  contents: read
+concurrency:
+  group: indexnow-production
+  cancel-in-progress: true
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/cache/restore@v4
+        with:
+          path: .indexnow-state
+          key: indexnow-v1-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: indexnow-v1-
+      - name: Wait for the exact commit on luxops.fr, then submit changes
+        run: node scripts/ping-indexnow.mjs
+        env:
+          INDEXNOW_EXPECTED_REVISION: ${{ github.sha }}
+      - uses: actions/cache/save@v4
+        with:
+          path: .indexnow-state
+          key: indexnow-v1-${{ github.run_id }}-${{ github.run_attempt }}
