@@ -1,6 +1,6 @@
 'use client'
 
-import Image from 'next/image'
+import { ManualMockupGallery } from './ManualMockups'
 import { ChevronDown } from 'lucide-react'
 import { MANUAL_PRACTICE, type PracticeManualId } from '@/content/playbooks/practice'
 
@@ -58,32 +58,5 @@ export function ManualPracticeContent({ id, locale, chapters, sampleIndex, onRea
 }
 
 export function ManualPromoGallery({ id, locale }: { id: PracticeManualId | 'fo'; locale: Locale }) {
-  const isEn = locale === 'en'
-  const folder = id === 'fo' ? 'front-office' : id === 'hsk' ? 'housekeeping' : id
-  const captions = id === 'fo'
-    ? (isEn ? ['A shared reference', 'Procedures to adapt', 'Practical tools for teams'] : ['Un référentiel commun', 'Des procédures à adapter', 'Des outils pratiques pour les équipes'])
-    : MANUAL_PRACTICE[id][locale].captions
-  const images = [
-    { file: 'manual-on-desk.jpg', alt: isEn ? 'Illustrative manual on a desk' : 'Mise en situation d’un manuel sur un bureau' },
-    { file: 'manual-open.jpg', alt: isEn ? 'Illustrative open operating manual' : 'Mise en situation d’un manuel opérationnel ouvert' },
-    { file: id === 'fo' ? 'opening-checklist.jpg' : 'checklist.jpg', alt: isEn ? 'Illustrative operational checklist' : 'Mise en situation d’une checklist opérationnelle' },
-  ]
-
-  return <section className="border-y border-[#e8e1d6] bg-[#f4f0e8] px-5 py-14 md:px-8 md:py-18">
-    <div className="mx-auto max-w-[1320px]">
-      <div className="mb-7 max-w-2xl">
-        <p className="text-[10px] font-bold uppercase tracking-[.18em] text-[#a58658]">{isEn ? 'In daily practice' : 'Au quotidien'}</p>
-        <h2 className="mt-2 font-display text-3xl font-medium leading-tight text-[#10251d] md:text-4xl">{isEn ? 'From reference to daily practice' : 'Du référentiel à la pratique quotidienne'}</h2>
-        <p className="mt-3 text-sm leading-7 text-[#626b64] md:text-base">{id === 'fo'
-          ? (isEn ? 'Procedures to consult, adapt and share with front desk teams. The images below are illustrative scenarios.' : 'Des procédures à consulter, adapter et partager avec les équipes de réception. Les images ci-dessous sont des mises en situation illustratives.')
-          : (isEn ? 'Procedures to consult, adapt and share with your team. The images below are illustrative scenarios.' : 'Des procédures à consulter, adapter et partager avec vos équipes. Les images ci-dessous sont des mises en situation illustratives.')}</p>
-      </div>
-      <div className="grid gap-4 md:grid-cols-3">
-        {images.map((visual, index) => <figure key={visual.file} className="overflow-hidden rounded-[18px] border border-[#e5dccf] bg-white">
-          <div className="relative aspect-[4/5] overflow-hidden"><Image src={`/images/product-promo/${folder}/${visual.file}`} alt={visual.alt} fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover" /></div>
-          <figcaption className="px-5 py-4 font-display text-lg text-[#10251d]">{captions[index]}</figcaption>
-        </figure>)}
-      </div>
-    </div>
-  </section>
+  return <ManualMockupGallery id={id === 'revenue-management' ? 'rm' : id} locale={locale} />
 }

@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
+import { ManualBook } from './ManualMockups'
 import Link from 'next/link'
 import { ArrowLeft, BookOpen, Check, ChevronDown, Download, FileText, Gift, Languages, Presentation, RefreshCw, ShoppingCart } from 'lucide-react'
 import { BUNDLE_PRICE_ID, PlaybookEntry } from '@/content/playbooks/data'
@@ -178,11 +178,7 @@ export default function PlaybookDetailClient({ playbook: pb, stats, faq, locale 
                   {isEn ? 'Chapter' : 'Chapitre'} {String(pb.previewChapter.number).padStart(2, '0')}
                 </span>
                 <span className="relative my-2.5 block h-[260px] w-[185px] [perspective:1200px] sm:h-[315px] sm:w-[224px] lg:h-[385px] lg:w-[274px]">
-                  <span aria-hidden="true" className="fo-book-pages absolute -right-2.5 top-2 h-[96%] w-[calc(100%+10px)] rounded-r-[9px]" />
-                  <span className="fo-book-cover absolute inset-0 block overflow-hidden rounded-[4px_9px_9px_4px] bg-[#10251d] shadow-[0_20px_34px_rgba(15,33,26,.2)]">
-                    <Image src={previewPages[0].src} alt={`${isEn ? 'Chapter' : 'Chapitre'} ${String(pb.previewChapter.number).padStart(2, '0')} · ${pb.previewChapter.title[lang]}`} fill priority unoptimized sizes="(min-width: 1024px) 24vw, 55vw" className="object-cover" />
-                    <span aria-hidden="true" className="fo-book-spine absolute inset-y-0 left-0 w-[7%]" />
-                  </span>
+                  <ManualBook src={previewPages[0].src} alt={`${pb.previewChapter.title[lang]} · ${isEn ? 'English edition' : 'Édition française'}`} priority />
                 </span>
                 <span className="preview-cta-chip inline-flex min-h-10 items-center gap-2 rounded-full border border-[#b89760] bg-[#10251d] px-4 text-[11px] font-semibold text-[#f5f1e9] shadow-[0_8px_18px_-4px_rgba(15,33,26,.35)] transition group-hover:bg-[#0f211a] sm:px-5 sm:text-xs">
                   <BookOpen size={14} className="text-[#d8bd91]" />{isEn ? `Read Chapter ${String(pb.previewChapter.number).padStart(2, '0')}` : `Lire le chapitre ${String(pb.previewChapter.number).padStart(2, '0')}`} <span aria-hidden="true">→</span>

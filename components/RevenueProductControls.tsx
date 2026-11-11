@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
+import { ManualBook } from './ManualMockups'
 import { BookOpen, Download, ShoppingCart } from 'lucide-react'
 import FrontOfficeExcerptDialog from '@/components/FrontOfficeExcerptDialog'
 import SampleChapterModal from '@/components/SampleChapterModal'
@@ -25,8 +25,7 @@ export function RevenuePreviewStage({ locale }: { locale: Locale }) {
       <span className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full border border-[#d8bd91]/30 bg-[#10251d] px-3 py-1.5 text-[9px] font-semibold uppercase tracking-[.08em] text-[#d8bd91] sm:left-5 sm:top-5 sm:px-3.5 sm:text-[10px]"><BookOpen size={12} /><span className="sm:hidden">{isFr ? 'Extrait' : 'Sample'}</span><span className="hidden sm:inline">{isFr ? 'Feuilleter un extrait' : 'Read a sample'}</span></span>
       <span className="absolute right-4 top-4 rounded-full border border-[#24362f]/15 bg-white/70 px-3 py-1.5 text-[9px] font-semibold text-[#24362f] sm:right-5 sm:top-5 sm:px-3.5 sm:text-[10px]">{isFr ? 'Chapitre' : 'Chapter'} 02</span>
       <span className="relative my-2.5 block h-[260px] w-[185px] [perspective:1200px] sm:h-[315px] sm:w-[224px] lg:h-[385px] lg:w-[274px]">
-        <span aria-hidden="true" className="fo-book-pages absolute -right-2.5 top-2 h-[96%] w-[calc(100%+10px)] rounded-r-[9px]" />
-        <span className="fo-book-cover absolute inset-0 block overflow-hidden rounded-[4px_9px_9px_4px] bg-[#10251d] shadow-[0_20px_34px_rgba(15,33,26,.2)]"><Image src={revenueChapterCover('02', locale)} alt={`${isFr ? 'Chapitre' : 'Chapter'} 02 · ${chapter.title[locale]}`} fill priority sizes="(min-width: 1024px) 24vw, 55vw" className="object-cover" /><span aria-hidden="true" className="fo-book-spine absolute inset-y-0 left-0 w-[7%]" /></span>
+        <ManualBook src={revenueChapterCover('02', locale)} alt={`${chapter.title[locale]} · ${isFr ? 'Édition française' : 'English edition'}`} priority />
       </span>
       <span className="preview-cta-chip inline-flex min-h-10 items-center gap-2 rounded-full border border-[#b89760] bg-[#10251d] px-4 text-[11px] font-semibold text-[#f5f1e9] shadow-[0_8px_18px_-4px_rgba(15,33,26,.35)] transition group-hover:bg-[#0f211a] sm:px-5 sm:text-xs"><BookOpen size={14} className="text-[#d8bd91]" />{isFr ? 'Lire le chapitre 02' : 'Read Chapter 02'}<span aria-hidden="true">→</span></span>
     </button>
