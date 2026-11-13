@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import styles from './PlaybooksContent.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
 import {
@@ -157,7 +158,8 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
     <main className="bg-[#fcf9f4] pt-[var(--site-header-height)] text-[#20231f]">
       <section className="overflow-hidden border-b border-[#e9e3d8] px-5 pb-3 pt-4 sm:px-8 lg:px-10 lg:pb-3 lg:pt-4">
         <div className="mx-auto grid max-w-[1440px] items-center gap-4 lg:grid-cols-[.93fr_1.07fr] lg:gap-6 xl:gap-8">
-          <div className="relative z-10 py-1">
+          <div className={`${styles.heroCopy} relative z-10 py-1`}>
+            <div className={styles.heroIntro}>
             <p className="mb-3 flex items-center gap-2 text-[0.64rem] font-semibold uppercase tracking-[0.14em] text-[#795d32]">
               <FileText size={13} strokeWidth={1.7} />
               {text.eyebrow}
@@ -168,6 +170,8 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
             <p className="mt-4 max-w-[600px] text-[14px] leading-6 text-[#626b64] md:text-[15px] md:leading-6">
               {text.intro}
             </p>
+            </div>
+            <div className={styles.heroDetails}>
             <ul className="mt-5 flex max-w-[620px] flex-wrap gap-x-5 gap-y-2.5" aria-label={lang === 'fr' ? 'Bénéfices des manuels' : lang === 'es' ? 'Beneficios de los manuales' : 'Benefits of the manuals'}>
               {text.benefits.map((benefit) => (
                 <li key={benefit} className="flex items-center gap-1.5 text-[12px] font-semibold leading-5 text-[#254034] md:text-[13px]">
@@ -175,8 +179,8 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                 </li>
               ))}
             </ul>
-            <p className="mt-4 max-w-[620px] text-[11px] font-medium leading-5 text-[#6a736b]">{text.formatNote}</p>
-            <div className="mt-5 flex flex-col gap-2 sm:flex-row">
+            <p className={`${styles.formatNote} mt-4 max-w-[620px] text-[11px] font-medium leading-5 text-[#6a736b]`}>{text.formatNote}</p>
+            <div className={`${styles.heroActions} mt-5 flex flex-col gap-2 sm:flex-row`}>
               <SamePageAnchor
                 href="#department-playbooks"
                 className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-[#0f211a] px-5 text-[11px] font-semibold text-white shadow-[0_7px_20px_rgba(16,37,29,.13)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#263d31]"
@@ -203,13 +207,14 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                   productType: 'bundle',
                 }}
                 addedLabel={lang === 'fr' ? 'Dans le panier' : lang === 'es' ? 'En la cesta' : 'In cart'}
-                className="mt-3 inline-flex items-center gap-1.5 text-[11px] font-semibold text-[#465b4d] underline decoration-[#b89760] underline-offset-4 transition hover:text-[#0f211a]"
+                className={`${styles.bundleAction} mt-3 inline-flex items-center gap-1.5 text-[11px] font-semibold text-[#465b4d] underline decoration-[#b89760] underline-offset-4 transition hover:text-[#0f211a]`}
               >
                 <ShoppingBag size={14} strokeWidth={1.7} />{text.bundleCta}<ArrowRight size={13} />
               </AddToCartButton>
+            </div>
           </div>
 
-          <div className="relative mx-auto aspect-[1.3] w-full max-w-[740px] rounded-[28px] bg-[#eee8dc] p-3 shadow-[0_18px_42px_rgba(78,63,40,.13)] sm:rounded-[34px] sm:p-4 lg:max-w-none">
+          <div className={`${styles.heroVisual} relative mx-auto aspect-[1.3] w-full max-w-[740px] rounded-[28px] bg-[#eee8dc] p-3 shadow-[0_18px_42px_rgba(78,63,40,.13)] sm:rounded-[34px] sm:p-4 lg:max-w-none`}>
             <div className="absolute inset-0 rounded-[inherit] bg-[radial-gradient(ellipse_at_52%_45%,#faf5e9_0%,#f2eadb_70%,#e8decd_100%)]" />
             <div className="absolute left-[13%] top-[17%] h-[66%] w-[32%] -rotate-[8deg] overflow-hidden rounded-[5px_9px_9px_5px] border border-[#d8c8a7] bg-[#10251d] shadow-[0_16px_32px_rgba(42,38,28,.15)] transition-transform duration-500 hover:-translate-y-1 hover:-rotate-[10deg]">
               <Image src="/images/editorial-hospitality/manual-covers-2027/fb-fr.jpg" alt="Couverture du Manuel SOP Food & Beverage, édition 2027" fill sizes="(min-width: 1024px) 18vw, 40vw" className="object-cover" />
