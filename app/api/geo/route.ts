@@ -7,5 +7,7 @@ export async function GET(request: NextRequest) {
     request.headers.get('x-country-code') ||
     ''
 
-  return NextResponse.json({ country })
+  return NextResponse.json({ country }, {
+    headers: { 'Cache-Control': 'private, no-store', 'Vary': 'x-vercel-ip-country, cf-ipcountry, x-country-code' },
+  })
 }

@@ -33,6 +33,7 @@ export const PRODUCT_PRICES: Record<PricedProductType, Record<SupportedCurrency,
 const EURO_COUNTRIES = new Set([
   'AT',
   'BE',
+  'BG',
   'CY',
   'DE',
   'EE',
@@ -54,7 +55,7 @@ const EURO_COUNTRIES = new Set([
 ])
 
 export function currencyForCountry(countryCode?: string | null): SupportedCurrency {
-  const country = countryCode?.toUpperCase()
+  const country = countryCode?.trim().toUpperCase()
 
   if (!country) return 'USD'
   if (EURO_COUNTRIES.has(country)) return 'EUR'

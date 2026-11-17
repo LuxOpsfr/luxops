@@ -1,7 +1,8 @@
 'use client'
 
-import { createContext, ReactNode, useContext, useMemo, useState } from 'react'
+import { createContext, ReactNode, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react'
 import {
+  currencyForCountry,
   formatPrice,
   getProductPrice,
   isSupportedCurrency,
@@ -32,17 +33,55 @@ export function CurrencyProvider({
   const defaultCurrency: SupportedCurrency = isSupportedCurrency(localeDefaultCurrency)
     ? localeDefaultCurrency
     : 'USD'
-  const [currency, setCurrencyState] = useState<SupportedCurrency>(() => {
-    if (typeof window === 'undefined') return defaultCurrency
+  // Keep the server and first client render identical, then resolve the visitor's market.
+  const [currency, setCurrencyState] = useState<SupportedCurrency>(defaultCurrency)
+  const manuallySelected = useRef(false)
 
-    const storedCurrency = window.localStorage.getItem(STORAGE_KEY)
-    return isSupportedCurrency(storedCurrency) ? storedCurrency : defaultCurrency
-  })
+  useEffect(() => {
+    let active = true
+    const controller = new AbortController()
+    const timeout = window.setTimeout(() => controller.abort(), 5000)
 
-  function setCurrency(nextCurrency: SupportedCurrency) {
+    async function resolveCurrency(): Promise<SupportedCurrency> {
+      try {
+        const storedCurrency = window.localStorage.getItem(STORAGE_KEY)
+        if (isSupportedCurrency(storedCurrency)) return storedCurrency
+      } catch {
+        // Storage can be blocked; country detection must still work.
+      }
+
+      try {
+        const response = await fetch('/api/geo', { cache: 'no-store', signal: controller.signal })
+        if (!response.ok) return 'USD'
+        const data = await response.json()
+        return currencyForCountry(typeof data?.country === 'string' ? data.country : null)
+      } catch {
+        return 'USD'
+      }
+    }
+
+    void resolveCurrency().then((resolved) => {
+      window.clearTimeout(timeout)
+      // A slow geolocation response must never overwrite a manual choice.
+      if (active && !manuallySelected.current) setCurrencyState(resolved)
+    })
+
+    return () => {
+      active = false
+      window.clearTimeout(timeout)
+      controller.abort()
+    }
+  }, [])
+
+  const setCurrency = useCallback((nextCurrency: SupportedCurrency) => {
+    manuallySelected.current = true
     setCurrencyState(nextCurrency)
-    window.localStorage.setItem(STORAGE_KEY, nextCurrency)
-  }
+    try {
+      window.localStorage.setItem(STORAGE_KEY, nextCurrency)
+    } catch {
+      // The selection remains usable for this visit even without browser storage.
+    }
+  }, [])
 
   const value = useMemo<CurrencyContextType>(
     () => ({
@@ -51,7 +90,7 @@ export function CurrencyProvider({
       priceFor: (productType) => getProductPrice(productType, currency),
       formatProductPrice: (productType) => formatPrice(productType, currency, locale),
     }),
-    [currency, locale],
+    [currency, locale, setCurrency],
   )
 
   return <CurrencyContext.Provider value={value}>{children}</CurrencyContext.Provider>

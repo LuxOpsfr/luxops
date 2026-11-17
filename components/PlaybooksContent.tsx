@@ -39,8 +39,8 @@ const copy = {
     title: 'Faites vivre les standards de l’hôtellerie cinq étoiles au quotidien.',
     intro:
       'Des manuels SOP prêts à l’emploi pour former vos équipes plus vite, harmoniser le service et ne plus rédiger chaque procédure de zéro.',
-    departmentsCta: 'Choisir un manuel · dès 67 €',
-    bundleCta: 'Ajouter le bundle · 199 €',
+    departmentsCta: (price: string) => `Choisir un manuel · dès ${price}`,
+    bundleCta: (price: string) => `Ajouter le bundle · ${price}`,
     benefits: ['Formez plus vite', 'Harmonisez vos équipes', 'Adaptez à votre hôtel'],
     formatNote: 'PDF et PowerPoint modifiables · Français et anglais inclus · Téléchargement immédiat',
     options: ['Manuel par département', 'Catalogue complet'],
@@ -56,7 +56,7 @@ const copy = {
     bundleTitle: 'Les 5 Manuels SOP : une suite opérationnelle complète',
     bundleText:
       'Front Office, Housekeeping, Food & Beverage, Spa & Wellness et Revenue Management, dans les deux langues et en formats modifiables. Les Starter Packs Front Office, Housekeeping et F&B sont inclus avec leurs manuels respectifs.',
-    bundleSaving: () => 'Tarif maintenu à 199 €',
+    bundleSaving: (price: string) => `Tarif maintenu à ${price}`,
     bundlePrice: '199 € TTC',
     bundleCtaPrice: (price: string) => `Ajouter les 5 manuels · ${price}`,
     trainingEyebrow: 'CONSEIL & TRANSMISSION',
@@ -71,8 +71,8 @@ const copy = {
     title: 'Bring five-star standards into daily hotel operations.',
     intro:
       'Ready-to-use SOP manuals to train teams faster, align service standards and stop building procedures from scratch.',
-    departmentsCta: 'Choose a manual · from €67',
-    bundleCta: 'Add the bundle · €199',
+    departmentsCta: (price: string) => `Choose a manual · from ${price}`,
+    bundleCta: (price: string) => `Add the bundle · ${price}`,
     benefits: ['Train faster', 'Standardise your teams', 'Customise to your hotel'],
     formatNote: 'Editable PDF & PowerPoint · English & French included · Instant download',
     options: ['Manual by department', 'Complete catalogue'],
@@ -88,7 +88,7 @@ const copy = {
     bundleTitle: 'The 5 SOP Manuals: a complete operating suite',
     bundleText:
       'Front Office, Housekeeping, Food & Beverage, Spa & Wellness and Revenue Management, in both languages and editable formats. The Front Office, Housekeeping and F&B Starter Packs are included with their respective manuals.',
-    bundleSaving: () => 'Same €199 price',
+    bundleSaving: (price: string) => `Same ${price} price`,
     bundlePrice: '€199 incl. tax',
     bundleCtaPrice: (price: string) => `Add all 5 manuals · ${price}`,
     trainingEyebrow: 'ADVICE & IMPLEMENTATION',
@@ -103,8 +103,8 @@ const copy = {
     title: 'Lleve los estándares de cinco estrellas a las operaciones diarias de su hotel.',
     intro:
       'Manuales SOP listos para usar con los que formar al equipo más rápido, unificar el servicio y dejar de redactar cada procedimiento desde cero.',
-    departmentsCta: 'Elegir un manual · desde 67 €',
-    bundleCta: 'Añadir el paquete · 199 €',
+    departmentsCta: (price: string) => `Elegir un manual · desde ${price}`,
+    bundleCta: (price: string) => `Añadir el paquete · ${price}`,
     benefits: ['Forme más rápido', 'Unifique a sus equipos', 'Adapte a su hotel'],
     formatNote: 'PDF y PowerPoint editables · Inglés y francés incluidos · Descarga inmediata',
     options: ['Manual por departamento', 'Catálogo completo'],
@@ -120,7 +120,7 @@ const copy = {
     bundleTitle: 'Los 5 Manuales SOP: una suite operativa completa',
     bundleText:
       'Front Office, Housekeeping, Food & Beverage, Spa & Wellness y Revenue Management, en ambos idiomas y en formatos editables. Los Starter Packs Front Office, Housekeeping y F&B se incluyen con sus respectivos manuales.',
-    bundleSaving: () => 'Mismo precio: 199 €',
+    bundleSaving: (price: string) => `Mismo precio: ${price}`,
     bundlePrice: '199 € IVA incl.',
     bundleCtaPrice: (price: string) => `Añadir los 5 manuales · ${price}`,
     trainingEyebrow: 'ASESORAMIENTO Y TRANSMISIÓN',
@@ -185,7 +185,7 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                 href="#department-playbooks"
                 className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-[#0f211a] px-5 text-[11px] font-semibold text-white shadow-[0_7px_20px_rgba(16,37,29,.13)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#263d31]"
               >
-                {text.departmentsCta}<ArrowDown size={15} strokeWidth={1.7} />
+                {text.departmentsCta(formatProductPrice('playbook'))}<ArrowDown size={15} strokeWidth={1.7} />
               </SamePageAnchor>
               <button
                 type="button"
@@ -209,7 +209,7 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
                 addedLabel={lang === 'fr' ? 'Dans le panier' : lang === 'es' ? 'En la cesta' : 'In cart'}
                 className={`${styles.bundleAction} mt-3 inline-flex items-center gap-1.5 text-[11px] font-semibold text-[#465b4d] underline decoration-[#b89760] underline-offset-4 transition hover:text-[#0f211a]`}
               >
-                <ShoppingBag size={14} strokeWidth={1.7} />{text.bundleCta}<ArrowRight size={13} />
+                <ShoppingBag size={14} strokeWidth={1.7} />{text.bundleCta(formatProductPrice('bundle'))}<ArrowRight size={13} />
               </AddToCartButton>
             </div>
           </div>
@@ -364,7 +364,7 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
           </div>
           <div className="relative flex flex-col justify-center border-t border-white/15 bg-white/[0.035] px-6 py-7 sm:px-9 lg:min-w-[340px] lg:border-l lg:border-t-0 lg:px-10">
             <p className="font-display text-5xl font-medium tracking-[-0.035em]">{formatProductPrice('bundle')}</p>
-            <p className="mt-2 text-xs font-medium text-[#d5ba83]">{text.bundleSaving()}</p>
+            <p className="mt-2 text-xs font-medium text-[#d5ba83]">{text.bundleSaving(formatProductPrice('bundle'))}</p>
             <AddToCartButton
               openCartOnAdd
               item={{
