@@ -151,7 +151,7 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
   const dataLang = lang === 'es' ? 'en' : lang
   const { currency, priceFor, formatProductPrice } = useCurrency()
   const [isSampleModalOpen, setIsSampleModalOpen] = useState(false)
-  const catalogueHref = localizedRoutePath('playbooks', lang)
+  const detailsBaseHref = localizedRoutePath('playbooks', dataLang)
   const departments = PLAYBOOKS
 
   return (
@@ -269,7 +269,7 @@ export default function PlaybooksContent({ locale }: { locale: string }) {
           <div className="grid items-stretch gap-4 sm:grid-cols-2 xl:grid-cols-5 xl:gap-4">
             {departments.map((manual, index) => {
               const title = manual.title[dataLang]
-              const detailHref = `${catalogueHref}/${manual.id}`
+              const detailHref = `${detailsBaseHref}/${manual.id}`
               return (
                 <article key={manual.id} className="group relative isolate flex h-full flex-col overflow-hidden rounded-[22px] border border-[#e6e1d7] bg-white shadow-[0_5px_20px_rgba(39,42,35,0.045)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_38px_rgba(39,42,35,0.09)]">
                   <Link href={detailHref} aria-label={lang === 'fr' ? `Voir ${title}` : lang === 'es' ? `Ver ${title}` : `View ${title}`} className="absolute inset-0 z-10 rounded-[22px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a58658]" />

@@ -88,6 +88,10 @@ export function localizePathname(pathname: string, targetLocale: string) {
       return localizedRoutePath(routeId, safeTargetLocale)
     }
 
+    if (splitLocalizedPathname(pathname).routePathname.startsWith('/playbooks/')) {
+      return localizedRoutePath('playbooks', safeTargetLocale)
+    }
+
     return localizedRoutePath('home', safeTargetLocale)
   }
 

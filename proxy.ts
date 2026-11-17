@@ -79,6 +79,12 @@ export default function proxy(request: NextRequest, event: NextFetchEvent) {
   if (isActiveLocale(maybeLocale)) {
     const routeId = routeIdFromPathname(pathname)
     if (maybeLocale !== 'en' && maybeLocale !== 'fr' && (!routeId || !routeSupportsLocale(routeId, maybeLocale))) {
+      // Keep existing manual links useful while product pages are FR/EN only.
+      if (routeId && pathname.startsWith(`/${maybeLocale}/playbooks/`)) {
+        const destination = request.nextUrl.clone()
+        destination.pathname = localizedRoutePath(routeId, DEFAULT_LOCALE)
+        return NextResponse.redirect(destination)
+      }
       return NextResponse.redirect(new URL(localizedRoutePath('home', maybeLocale), request.url))
     }
   }
