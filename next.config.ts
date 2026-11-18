@@ -1,5 +1,6 @@
 import type { NextConfig } from 'next'
 import createNextIntlPlugin from 'next-intl/plugin'
+import { withPostHogConfig } from '@posthog/nextjs-config'
 import { ACTIVE_LOCALE_PATTERN } from './lib/i18n'
 
 const withNextIntl = createNextIntlPlugin('./i18n/request.ts')
@@ -156,4 +157,21 @@ const nextConfig: NextConfig = {
   },
 }
 
-export default withNextIntl(nextConfig)
+const localizedConfig = withNextIntl(nextConfig)
+// This is a private build-time credential, not the public event capture key.
+// Without it (e.g. local development), do not generate public browser source maps.
+const posthogUploadKey = process.env.POSTHOG_API_KEY
+
+export default posthogUploadKey
+  ? withPostHogConfig(localizedConfig, {
+      personalApiKey: posthogUploadKey,
+      projectId: '174036',
+      host: 'https://eu.posthog.com',
+      sourcemaps: {
+        enabled: process.env.NODE_ENV === 'production',
+        releaseName: 'luxops',
+        releaseVersion: process.env.VERCEL_GIT_COMMIT_SHA,
+        deleteAfterUpload: true,
+      },
+    })
+  : localizedConfig
